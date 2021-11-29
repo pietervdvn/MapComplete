@@ -1086,6 +1086,9 @@
         "presets": {
             "1": {
                 "title": "Ladestation für e-bikes"
+            },
+            "0": {
+                "title": ""
             }
         },
         "tagRenderings": {
@@ -1119,7 +1122,105 @@
                 "question": "Welche Art der Authentifizierung ist an der Ladestation möglich?"
             },
             "Available_charging_stations (generated)": {
-                "question": "Welche Ladeanschlüsse gibt es hier?"
+                "question": "Welche Ladeanschlüsse gibt es hier?",
+                "mappings": {
+                    "22": {
+                        "then": ""
+                    },
+                    "18": {
+                        "then": ""
+                    },
+                    "28": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "16": {
+                        "then": ""
+                    },
+                    "27": {
+                        "then": ""
+                    },
+                    "29": {
+                        "then": ""
+                    },
+                    "24": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "21": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "15": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "23": {
+                        "then": ""
+                    },
+                    "25": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "17": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "19": {
+                        "then": ""
+                    },
+                    "20": {
+                        "then": ""
+                    },
+                    "30": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "31": {
+                        "then": ""
+                    },
+                    "26": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                }
             },
             "Network": {
                 "mappings": {
@@ -1200,7 +1301,191 @@
                     }
                 },
                 "question": "Welche Fahrzeuge dürfen hier laden?"
+            },
+            "plugs-3": {
+                "question": "",
+                "render": ""
+            },
+            "access": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "plugs-5": {
+                "render": "",
+                "question": ""
+            },
+            "fee": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "maxstay": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "phone": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-0": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-6": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-8": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-9": {
+                "question": "",
+                "render": ""
+            },
+            "email": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-14": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-15": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-2": {
+                "render": "",
+                "question": ""
+            },
+            "Auth phone": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-12": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-13": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-10": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-1": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-7": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-11": {
+                "render": "",
+                "question": ""
+            },
+            "capacity": {
+                "render": "",
+                "question": ""
+            },
+            "ref": {
+                "question": "",
+                "render": ""
+            },
+            "charge": {
+                "question": "",
+                "render": ""
+            },
+            "website": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-4": {
+                "question": "",
+                "render": ""
             }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "",
+                        "humanSingular": ""
+                    },
+                    "0": {
+                        "human": "",
+                        "humanSingular": ""
+                    },
+                    "2": {
+                        "humanSingular": "",
+                        "human": ""
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    },
+                    "1": {
+                        "human": ""
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": ""
         }
     },
     "crossings": {
@@ -3133,7 +3418,8 @@
                 "render": "Name: {name}"
             },
             "tree_node-ref:OnroerendErfgoed": {
-                "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?"
+                "question": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
+                "render": ""
             },
             "tree_node-wikidata": {
                 "question": "Was ist das passende Wikidata Element zu diesem Baum?",
