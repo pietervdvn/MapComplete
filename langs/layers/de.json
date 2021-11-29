@@ -10,6 +10,42 @@
         },
         "title": {
             "render": "Rettungswache"
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Welches Unternehmen betreibt diese Rettungswache?",
+                "render": "Diese Rettungswache wird betrieben von {operator}."
+            },
+            "ambulance-name": {
+                "question": "Wie heißt diese Rettungswache?",
+                "render": "Diese Rettungswache heißt {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Rettungswache wird von einer Behörde betrieben."
+                    },
+                    "1": {
+                        "then": "Die Rettungswache wird von einer gemeindenahen oder informellen Organisation betrieben."
+                    },
+                    "2": {
+                        "then": "Die Rettungswache wird von einer Freiwilligenorganisation betrieben."
+                    },
+                    "3": {
+                        "then": "Die Rettungswache wird von einer privaten Organisation betrieben."
+                    }
+                },
+                "question": "Wie kann der Betreiber der Rettungswache eingestuft werden?",
+                "render": "Der Betreiber ist eine {operator:type}."
+            },
+            "ambulance-place": {
+                "question": "Wo befindet sich die Rettungswache? (z. B. Name von Stadtviertel, Dorf oder Stadt)",
+                "render": "Diese Rettungswache befindet sich in {addr:place}."
+            },
+            "ambulance-street": {
+                "render": "Dieser Bahnhof liegt an der Straße {addr:street}.",
+                "question": " Wie lautet der Name der Straße, in der sich die Rettungswache befindet?"
+            }
         }
     },
     "artwork": {
@@ -1008,10 +1044,37 @@
                     },
                     "1": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "5": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772) <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker <i>ohne</i> Kabel</b>"
+                    },
+                    "7": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
+                    },
+                    "4": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
+                    },
+                    "6": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker, auch bekannt als Typ 1 Combo</b>"
+                    },
+                    "3": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
                     }
                 }
             }
-        }
+        },
+        "presets": {
+            "1": {
+                "title": "Ladestation für e-bikes"
+            },
+            "3": {
+                "title": "Ladestation"
+            },
+            "2": {
+                "title": "Ladestation für Autos"
+            }
+        },
+        "name": "Ladestationen"
     },
     "crossings": {
         "description": "Übergänge für Fußgänger und Radfahrer",
@@ -1925,16 +1988,16 @@
             "hydrant-state": {
                 "mappings": {
                     "0": {
-                        "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
+                        "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb"
                     },
                     "1": {
-                        "then": "Der Hydrant ist nicht verfügbar."
+                        "then": "Der Hydrant ist nicht verfügbar"
                     },
                     "2": {
-                        "then": "Der Hydrant wurde entfernt."
+                        "then": "Der Hydrant wurde entfernt"
                     }
                 },
-                "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten."
+                "question": "Ist dieser Hydrant noch in Betrieb?"
             },
             "hydrant-type": {
                 "mappings": {
