@@ -197,6 +197,7 @@ export default class BackgroundMapSwitch extends Combine {
 
         super(buttons)
         this.SetClass("flex")
+        currentBackground.addCallbackAndRun(bg => console.trace("Current background is", bg.id))
     }
 
 }

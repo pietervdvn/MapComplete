@@ -12,6 +12,7 @@ import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import SimpleAddUI, {PresetInfo} from "../BigComponents/SimpleAddUI";
+import BaseLayer from "../../Models/BaseLayer";
 
 export default class ConfirmLocationOfPoint extends Combine {
 
@@ -19,7 +20,8 @@ export default class ConfirmLocationOfPoint extends Combine {
     constructor(
         state: {
             osmConnection: OsmConnection,
-            featurePipeline: FeaturePipeline
+            featurePipeline: FeaturePipeline,
+            backgroundLayer: UIEventSource<BaseLayer>
         },
         filterViewIsOpened: UIEventSource<boolean>,
         preset: PresetInfo,
@@ -35,9 +37,11 @@ export default class ConfirmLocationOfPoint extends Combine {
             const zloc = {...loc, zoom: 19}
             const locationSrc = new UIEventSource(zloc);
 
-            let backgroundLayer = undefined;
+            let backgroundLayer = new UIEventSource(state?.backgroundLayer?.data ?? AvailableBaseLayers.osmCarto);
             if (preset.preciseInput.preferredBackground) {
-                backgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
+                const defaultBackground = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground));
+                // Note that we _break the link_ here, as the minimap will take care of the switching!
+                backgroundLayer.setData(defaultBackground.data)
             }
 
             let snapToFeatures: UIEventSource<{ feature: any }[]> = undefined
