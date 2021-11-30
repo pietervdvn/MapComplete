@@ -48,7 +48,7 @@
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Charging stations' shows bicycle=yes with a fixed text, namely '<b>Bcycles</b> can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows bicycle=yes with a fixed text, namely '<b>Bicycles</b> can be charged here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
     },
     {
@@ -313,6 +313,573 @@
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
+      "key": "socket:schuko:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:schuko:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:schuko:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:schuko:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:schuko:current",
+      "description": "Layer 'Charging stations' shows socket:socket:schuko:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:schuko:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:schuko:output",
+      "description": "Layer 'Charging stations' shows socket:socket:schuko:output=3.6 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> outputs at most 3.6 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "3.6 kw"
+    },
+    {
+      "key": "socket:typee:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:typee:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:typee:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:typee:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:typee:current",
+      "description": "Layer 'Charging stations' shows socket:socket:typee:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:typee:output",
+      "description": "Layer 'Charging stations' shows socket:socket:typee:output=3 kw with a fixed text, namely '<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs at most 3 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "3 kw"
+    },
+    {
+      "key": "socket:socket:typee:output",
+      "description": "Layer 'Charging stations' shows socket:socket:typee:output=22 kw with a fixed text, namely '<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs at most 22 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "22 kw"
+    },
+    {
+      "key": "socket:chademo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:chademo:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:chademo:voltage=500 V with a fixed text, namely '<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:chademo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:chademo:current",
+      "description": "Layer 'Charging stations' shows socket:socket:chademo:current=120 A with a fixed text, namely '<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs at most 120 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "120 A"
+    },
+    {
+      "key": "socket:chademo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:chademo:output",
+      "description": "Layer 'Charging stations' shows socket:socket:chademo:output=50 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs at most 50 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "50 kw"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_cable:voltage=200 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 200 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "200 V"
+    },
+    {
+      "key": "socket:socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_cable:voltage=240 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 240 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "240 V"
+    },
+    {
+      "key": "socket:type1_cable:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1_cable:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_cable:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_cable:output=3.7 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 3.7 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "3.7 kw"
+    },
+    {
+      "key": "socket:socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_cable:output=7 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 7 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "7 kw"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:voltage=200 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 200 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "200 V"
+    },
+    {
+      "key": "socket:socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:voltage=240 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 240 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "240 V"
+    },
+    {
+      "key": "socket:type1:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:output=3.7 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 3.7 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "3.7 kw"
+    },
+    {
+      "key": "socket:socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:output=6.6 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 6.6 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "6.6 kw"
+    },
+    {
+      "key": "socket:socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:output=7 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 7 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "7 kw"
+    },
+    {
+      "key": "socket:socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1:output=7.2 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 7.2 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "7.2 kw"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:voltage=400 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:voltage=1000 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs 1000 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "1000 V"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:current=50 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 50 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "50 A"
+    },
+    {
+      "key": "socket:socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:current=125 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:output=50 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 50 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "50 kw"
+    },
+    {
+      "key": "socket:socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:output=62.5 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 62.5 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "62.5 kw"
+    },
+    {
+      "key": "socket:socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:output=150 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 150 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "150 kw"
+    },
+    {
+      "key": "socket:socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type1_combo:output=350 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 350 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "350 kw"
+    },
+    {
+      "key": "socket:tesla_supercharger:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger:voltage=480 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "480 V"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger:current=125 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger:current=350 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger:output=120 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 120 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "120 kw"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger:output=150 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 150 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "150 kw"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger:output=250 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 250 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "250 kw"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type2:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type2:voltage=400 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type2:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:socket:type2:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type2:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type2:output=11 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 11 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "11 kw"
+    },
+    {
+      "key": "socket:socket:type2:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type2:output=22 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 22 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "22 kw"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_combo:voltage=500 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_combo:voltage=920 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "920 V"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_combo:current=125 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_combo:current=350 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:type2_combo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2_combo:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_combo:output=50 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 50 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "50 kw"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_cable:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_cable:voltage=400 V with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_cable:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_cable:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_cable:output=11 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "11 kw"
+    },
+    {
+      "key": "socket:socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows socket:socket:type2_cable:output=22 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "22 kw"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "920 V"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger_ccs:current=125 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger_ccs:current=350 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_supercharger_ccs:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_supercharger_ccs:output=50 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 50 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "50 kw"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=480 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "480 V"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=125 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=350 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=120 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 120 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "120 kw"
+    },
+    {
+      "key": "socket:socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=150 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 150 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "150 kw"
+    },
+    {
+      "key": "socket:socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=250 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 250 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "250 kw"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=400 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=11 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "11 kw"
+    },
+    {
+      "key": "socket:socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=22 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "22 kw"
+    },
+    {
+      "key": "socket:USB-A:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:USB-A:voltage",
+      "description": "Layer 'Charging stations' shows socket:socket:USB-A:voltage=5 V with a fixed text, namely '<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs 5 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "5 V"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows socket:socket:USB-A:current=1 A with a fixed text, namely '<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 1 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "1 A"
+    },
+    {
+      "key": "socket:socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows socket:socket:USB-A:current=2 A with a fixed text, namely '<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 2 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "2 A"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows socket:socket:USB-A:output=5w with a fixed text, namely '<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 5w' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "5w"
+    },
+    {
+      "key": "socket:socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows socket:socket:USB-A:output=10w with a fixed text, namely '<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 10w' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "10w"
+    },
+    {
+      "key": "socket:bosch_3pin:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_3pin:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_3pin:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_5pin:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:voltage' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_5pin:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:current' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_5pin:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:output' (in the MapComplete.osm.be theme 'Charging stations')"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Charging stations')"
     },
@@ -469,7 +1036,7 @@
     },
     {
       "key": "no:network",
-      "description": "Layer 'Charging stations' shows no:network=yes with a fixed text, namely 'Not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows no:network=yes with a fixed text, namely 'Not part of a bigger network, e.g. because the charging station is maintained by a local business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
     },
     {
@@ -489,8 +1056,23 @@
     },
     {
       "key": "network",
-      "description": "Layer 'Charging stations' shows network=eVgo with a fixed text, namely 'eVgo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
-      "value": "eVgo"
+      "description": "Layer 'Charging stations' shows network=EVgo with a fixed text, namely 'EVgo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "EVgo"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Allego with a fixed text, namely 'Allego' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "Allego"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Blue Corner with a fixed text, namely 'Blue Corner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "Blue Corner"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Tesla with a fixed text, namely 'Tesla' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "Tesla"
     },
     {
       "key": "operator",
@@ -543,128 +1125,128 @@
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "broken"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
-    },
-    {
-      "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
-      "value": ""
-    },
-    {
-      "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
-      "value": ""
-    },
-    {
-      "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
-      "value": ""
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
-      "value": ""
-    },
-    {
-      "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
-      "value": "charging_station"
     },
     {
       "key": "parking:fee",
@@ -675,6 +1257,11 @@
       "key": "parking:fee",
       "description": "Layer 'Charging stations' shows parking:fee=yes with a fixed text, namely 'An additional parking fee should be paid while charging' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Charging stations has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

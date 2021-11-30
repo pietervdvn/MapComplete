@@ -3,6 +3,29 @@
  Special and other useful layers 
 =================================
 
+ ## Table of contents
+
+1. [Special and other useful layers](#Special_and_other_useful_layers)
+1. [Priviliged layers](#Priviliged_layers)
+    + [gps_location](#gps_location)
+    + [gps_location_history](#gps_location_history)
+    + [home_location](#home_location)
+    + [gps_track](#gps_track)
+    + [type_node](#type_node)
+    + [conflation](#conflation)
+    + [left_right_style](#left_right_style)
+1. [Frequently reused layers](#Frequently_reused_layers)
+    + [bicycle_library](#bicycle_library)
+      * [Themes using this layer](#Themes_using_this_layer)
+    + [drinking_water](#drinking_water)
+      * [Themes using this layer](#Themes_using_this_layer)
+    + [food](#food)
+      * [Themes using this layer](#Themes_using_this_layer)
+    + [map](#map)
+      * [Themes using this layer](#Themes_using_this_layer)
+    + [all_streets](#all_streets)
+      * [Themes using this layer](#Themes_using_this_layer)
+
  MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here. 
 
  Priviliged layers 
@@ -11,6 +34,7 @@
  
 
   - [gps_location](#gps_location)
+  - [gps_location_history](#gps_location_history)
   - [home_location](#home_location)
   - [gps_track](#gps_track)
   - [type_node](#type_node)
@@ -33,6 +57,22 @@ Meta layer showing the current location of the user. Add this to your theme and 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
  
 
+### gps_location_history 
+
+
+
+Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object
+
+[Go to the source code](../assets/layers/gps_location_history/gps_location_history.json)
+
+
+
+  - **This layer is included automatically in every theme. This layer might contain no points**
+  - Not clickable by default. If you import this layer in your theme, override `title` to make this clickable
+  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
+  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
+ 
+
 ### home_location 
 
 
@@ -52,14 +92,14 @@ Meta layer showing the home location of the user. The home location can be set i
 
 
 
-Meta layer showing the previou locations of the user. Add this to your theme and override the icon to change the appearance of the current location.
+Meta layer showing the previous locations of the user as single line. Add this to your theme and override the icon to change the appearance of the current location.
 
 [Go to the source code](../assets/layers/gps_track/gps_track.json)
 
 
 
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
+  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
  
 
 ### type_node 

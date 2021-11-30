@@ -3,11 +3,11 @@
  Available types for text fields 
 =================================
 
+ ## Table of contents
 
+1. [Available types for text fields](#Available_types_for_text_fields)
 
-The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them
-
-## string
+ The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them ## string
 
 A basic string
 

@@ -163,6 +163,11 @@
       "key": "opening_hours",
       "description": "Layer 'Playgrounds' shows opening_hours= with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key opening_hours.",
       "value": ""
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Playgrounds has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

@@ -9,5 +9,11 @@
     "contact_name": "Pieter Vander Vennet, MapComplete",
     "contact_email": "pietervdvn@posteo.net"
   },
-  "tags": []
+  "tags": [
+    {
+      "key": "id",
+      "description": "The MapComplete theme Personal theme has a layer Your track showing features with this tag",
+      "value": "location_track"
+    }
+  ]
 }

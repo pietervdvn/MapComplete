@@ -155,6 +155,11 @@
       "key": "opening_hours",
       "description": "Layer 'Sport pitches' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
       "value": "24/7"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Sport pitches has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

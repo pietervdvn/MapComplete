@@ -88,6 +88,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Open Shop Map has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

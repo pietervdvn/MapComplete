@@ -344,6 +344,11 @@
       "key": "dog",
       "description": "Layer 'Restaurants and fast food' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "unleashed"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

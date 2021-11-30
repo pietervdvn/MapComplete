@@ -64,15 +64,6 @@
       "description": "The layer 'Has etymolgy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
-      "key": "wikidata",
-      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
-    },
-    {
-      "key": "wikidata",
-      "description": "Layer 'Has etymolgy' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Open Etymology Map') Picking this answer will delete the key wikidata.",
-      "value": ""
-    },
-    {
       "key": "name",
       "description": "The MapComplete theme Open Etymology Map has a layer Streets without etymology information showing features with this tag"
     },
@@ -124,15 +115,6 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Streets without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
-    },
-    {
-      "key": "wikidata",
-      "description": "Layer 'Streets without etymology information' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Open Etymology Map') Picking this answer will delete the key wikidata.",
-      "value": ""
     },
     {
       "key": "name",
@@ -194,13 +176,9 @@
       "description": "The layer 'Parks and forests without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
-      "key": "wikidata",
-      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
-    },
-    {
-      "key": "wikidata",
-      "description": "Layer 'Parks and forests without etymology information' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Open Etymology Map') Picking this answer will delete the key wikidata.",
-      "value": ""
+      "key": "id",
+      "description": "The MapComplete theme Open Etymology Map has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

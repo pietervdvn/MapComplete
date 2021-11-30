@@ -3,9 +3,29 @@
  Metatags 
 ==========
 
+ ## Table of contents
 
+1. [Metatags](#Metatags)
+  - [Metatags calculated by MapComplete](#Metatags_calculated_by_MapComplete)
+    + [_lat, _lon](#_lat,__lon)
+    + [_layer](#_layer)
+    + [_surface, _surface:ha](#_surface,__surface:ha)
+    + [_length, _length:km](#_length,__length:km)
+    + [Theme-defined keys](#Theme-defined_keys)
+    + [_country](#_country)
+    + [_isOpen, _isOpen:description](#_isOpen,__isOpen:description)
+    + [_direction:numerical, _direction:leftright](#_direction:numerical,__direction:leftright)
+    + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_now:date,__now:datetime,__loaded:date,__loaded:_datetime)
+    + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_edit:contributor,__last_edit:contributor:uid,__last_edit:changeset,__last_edit:timestamp,__version_number,__backend)
+    + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalk:left,_sidewalk:right,_generic_key:left:property,_generic_key:right:property)
+    + [distanceTo](#distanceTo)
+    + [overlapWith](#overlapWith)
+    + [closest](#closest)
+    + [closestn](#closestn)
+    + [memberships](#memberships)
+    + [get](#get)
 
-Metatags are extra tags available, in order to display more data or to give better questions.
+ Metatags are extra tags available, in order to display more data or to give better questions.
 
 The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
 
@@ -128,9 +148,7 @@ Information about the last edit of this object.
 
 Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined
 
-
-
-
+ 
 
  Calculating tags with Javascript 
 ----------------------------------
@@ -190,7 +208,7 @@ Some advanced functions are available on **feat** as well:
 
 ### distanceTo 
 
- Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object 
+ Calculates the distance between the feature and a specified point in meter. The input should either be a pair of coordinates, a geojson feature or the ID of an object 
 
   0. feature OR featureID OR longitude
   1. undefined OR latitude

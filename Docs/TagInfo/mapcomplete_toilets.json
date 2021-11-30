@@ -176,6 +176,39 @@
       "key": "toilets:paper_supplied",
       "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "no"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level= with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Open Toilet Map') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "1"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Open Toilet Map has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

@@ -1,33 +1,47 @@
 
 
-### Special tag renderings 
+ Special tag renderings 
+========================
 
+ ## Table of contents
 
+1. [Special tag renderings](#Special_tag_renderings)
+    + [all_tags](#all_tags)
+      * [Example usage](#Example_usage)
+    + [image_carousel](#image_carousel)
+      * [Example usage](#Example_usage)
+    + [image_upload](#image_upload)
+      * [Example usage](#Example_usage)
+    + [wikipedia](#wikipedia)
+      * [Example usage](#Example_usage)
+    + [minimap](#minimap)
+      * [Example usage](#Example_usage)
+    + [sided_minimap](#sided_minimap)
+      * [Example usage](#Example_usage)
+    + [reviews](#reviews)
+      * [Example usage](#Example_usage)
+    + [opening_hours_table](#opening_hours_table)
+      * [Example usage](#Example_usage)
+    + [live](#live)
+      * [Example usage](#Example_usage)
+    + [histogram](#histogram)
+      * [Example usage](#Example_usage)
+    + [share_link](#share_link)
+      * [Example usage](#Example_usage)
+    + [canonical](#canonical)
+      * [Example usage](#Example_usage)
+    + [import_button](#import_button)
+      * [Example usage](#Example_usage)
+    + [multi_apply](#multi_apply)
+      * [Example usage](#Example_usage)
+    + [tag_apply](#tag_apply)
+      * [Example usage](#Example_usage)
+    + [export_as_gpx](#export_as_gpx)
+      * [Example usage](#Example_usage)
+    + [clear_location_history](#clear_location_history)
+      * [Example usage](#Example_usage)
 
-In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
-
-General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
-
-
-
-  - [all_tags](#all_tags)
-  - [image_carousel](#image_carousel)
-  - [image_upload](#image_upload)
-  - [wikipedia](#wikipedia)
-  - [minimap](#minimap)
-  - [sided_minimap](#sided_minimap)
-  - [reviews](#reviews)
-  - [opening_hours_table](#opening_hours_table)
-  - [live](#live)
-  - [histogram](#histogram)
-  - [share_link](#share_link)
-  - [canonical](#canonical)
-  - [import_button](#import_button)
-  - [multi_apply](#multi_apply)
-  - [tag_apply](#tag_apply)
-
-
-
+ In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's. General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args 
 
 ### all_tags 
 
@@ -35,9 +49,7 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 #### Example usage 
 
- `{all_tags()}`
-
-
+ `{all_tags()}` 
 
 ### image_carousel 
 
@@ -50,9 +62,7 @@ image key/prefix (multiple values allowed if comma-seperated) | image,mapillary,
 
 #### Example usage 
 
- `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
-
-
+ `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}` 
 
 ### image_upload 
 
@@ -66,9 +76,7 @@ label | Add image | The text to show on the button
 
 #### Example usage 
 
- `{image_upload(image,Add image)}`
-
-
+ `{image_upload(image,Add image)}` 
 
 ### wikipedia 
 
@@ -81,9 +89,7 @@ keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show 
 
 #### Example usage 
 
- `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
-
-
+ `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height 
 
 ### minimap 
 
@@ -97,9 +103,7 @@ idKey | id | (Matches all resting arguments) This argument should be the key of 
 
 #### Example usage 
 
- `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`
-
-
+ `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}` 
 
 ### sided_minimap 
 
@@ -112,9 +116,7 @@ side | _undefined_ | The side to show, either `left` or `right`
 
 #### Example usage 
 
- `{sided_minimap(left)}`
-
-
+ `{sided_minimap(left)}` 
 
 ### reviews 
 
@@ -128,9 +130,7 @@ fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as sp
 
 #### Example usage 
 
- `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used
-
-
+ `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used 
 
 ### opening_hours_table 
 
@@ -145,9 +145,7 @@ postfix | _empty string_ | Remove this string from the end of the value before p
 
 #### Example usage 
 
- A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`
-
-
+ A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}` 
 
 ### live 
 
@@ -162,9 +160,7 @@ path | _undefined_ | The path (or shorthand) that should be returned
 
 #### Example usage 
 
- {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}
-
-
+ {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)} 
 
 ### histogram 
 
@@ -180,9 +176,7 @@ colors* | _undefined_ | (Matches all resting arguments - optional) Matches a reg
 
 #### Example usage 
 
- `{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram
-
-
+ `{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram 
 
 ### share_link 
 
@@ -195,9 +189,7 @@ url | _undefined_ | The url to share (default: current URL)
 
 #### Example usage 
 
- {share_link()} to share the current page, {share_link(<some_url>)} to share the given url
-
-
+ {share_link()} to share the current page, {share_link(<some_url>)} to share the given url 
 
 ### canonical 
 
@@ -210,9 +202,7 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
 #### Example usage 
 
- {canonical(length)} will give 42 metre (in french)
-
-
+ {canonical(length)} will give 42 metre (in french) 
 
 ### import_button 
 
@@ -276,9 +266,7 @@ snap max distance | 5 | The maximum distance that this point will move to snap o
 
 #### Example usage 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18,,5)}`
-
-
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18,,5)}` 
 
 ### multi_apply 
 
@@ -295,9 +283,7 @@ overwrite | _undefined_ | If set to 'true', the tags on the other objects will a
 
 #### Example usage 
 
- {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}
-
-
+ {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)} 
 
 ### tag_apply 
 
@@ -327,5 +313,21 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 #### Example usage 
 
  `{tag_apply(survey_date:=$_now:date, Surveyed today!)}` 
+
+### export_as_gpx 
+
+ Exports the selected feature as GPX-file 
+
+#### Example usage 
+
+ `{export_as_gpx()}` 
+
+### clear_location_history 
+
+ A button to remove the travelled track information from the device 
+
+#### Example usage 
+
+ `{clear_location_history()}` 
 
 This document is autogenerated from UI/SpecialVisualisations.ts

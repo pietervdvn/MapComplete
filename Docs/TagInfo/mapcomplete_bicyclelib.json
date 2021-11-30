@@ -93,6 +93,11 @@
     {
       "key": "description",
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Bicycle libraries')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Bicycle libraries has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

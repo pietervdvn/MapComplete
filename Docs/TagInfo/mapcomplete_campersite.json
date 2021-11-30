@@ -252,6 +252,11 @@
       "key": "power_supply",
       "description": "Layer 'Sanitary dump stations' shows power_supply=no with a fixed text, namely 'This place does not have power supply' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "no"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Campersites has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

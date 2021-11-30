@@ -172,6 +172,11 @@
       "key": "camera:mount",
       "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "ceiling"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Your track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }
