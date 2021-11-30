@@ -47,18 +47,10 @@ export default class Combine extends BaseUIElement {
         return el;
     }
     
-    public getToC(): Title[]{
-        const titles = []
-        for (const uiElement of this.uiElements) {
-            if(uiElement instanceof Combine){
-                titles.push(...uiElement.getToC())
-            }else if(uiElement instanceof Title){
-                titles.push(uiElement)
-            }
-        }
-        return titles
-        
-        
+    public getElements():  BaseUIElement[]{
+        return this.uiElements
     }
+    
+
 
 }

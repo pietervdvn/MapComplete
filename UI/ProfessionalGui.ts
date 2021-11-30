@@ -5,97 +5,10 @@ import Title from "./Base/Title";
 import Toggleable, {Accordeon} from "./Base/Toggleable";
 import List from "./Base/List";
 import BaseUIElement from "./BaseUIElement";
-import Link from "./Base/Link";
 import LanguagePicker from "./LanguagePicker";
-import Hash from "../Logic/Web/Hash";
-import {Translation} from "./i18n/Translation";
 import {SubtleButton} from "./Base/SubtleButton";
 import Svg from "../Svg";
-
-class TableOfContents extends Combine {
-
-    private readonly titles: Title[]
-
-    constructor(elements: Combine | Title[], options: {
-        noTopLevel: false | boolean,
-        maxDepth?: number
-    }) {
-        let titles: Title[]
-        if (elements instanceof Combine) {
-            titles = elements.getToC()
-        } else {
-            titles = elements
-        }
-
-        let els: { level: number, content: BaseUIElement }[] = []
-        for (const title of titles) {
-            let content: BaseUIElement
-            if (title.title instanceof Translation) {
-                content = title.title.Clone()
-            } else {
-                content = new FixedUiElement(title.title.ConstructElement().innerText)
-            }
-
-            const vis = new Link(content, "#" + title.id)
-
-            Hash.hash.addCallbackAndRun(h => {
-                if (h === title.id) {
-                    vis.SetClass("font-bold")
-                } else {
-                    vis.RemoveClass("font-bold")
-                }
-            })
-            els.push({level: title.level, content: vis})
-
-        }
-        if (options.noTopLevel) {
-            const minLevel = Math.min(...els.map(e => e.level))
-            els = els.filter(e => e.level !== minLevel && e.level <= (options.maxDepth + minLevel))
-        }
-
-
-        super(TableOfContents.mergeLevel(els).map(el => el.SetClass("mt-2")));
-        this.SetClass("flex flex-col")
-        this.titles = titles;
-    }
-
-    private static mergeLevel(elements: { level: number, content: BaseUIElement }[]): BaseUIElement[] {
-        const maxLevel = Math.max(...elements.map(e => e.level))
-        const minLevel = Math.min(...elements.map(e => e.level))
-        if (maxLevel === minLevel) {
-            return elements.map(e => e.content)
-        }
-        const result: { level: number, content: BaseUIElement } [] = []
-        let running: BaseUIElement[] = []
-        for (const element of elements) {
-            if (element.level === maxLevel) {
-                running.push(element.content)
-                continue
-            }
-            if (running.length !== undefined) {
-                result.push({
-                    content: new List(running),
-                    level: maxLevel - 1
-                })
-                running = []
-            }
-            result.push(element)
-        }
-        if (running.length !== undefined) {
-            result.push({
-                content: new List(running),
-                level: maxLevel - 1
-            })
-        }
-
-        return TableOfContents.mergeLevel(result)
-
-    }
-
-    AsMarkdown(): string {
-        return super.AsMarkdown();
-    }
-}
+import TableOfContents from "./Base/TableOfContents";
 
 class Snippet extends Toggleable {
     constructor(translations, ...extraContent: BaseUIElement[]) {

@@ -1,25 +1,26 @@
 import BaseUIElement from "../BaseUIElement";
 
 export class FixedUiElement extends BaseUIElement {
-    private _html: string;
+    public readonly content: string;
 
     constructor(html: string) {
         super();
-        this._html = html ?? "";
+        this.content = html ?? "";
     }
 
     InnerRender(): string {
-        return this._html;
+        return this.content;
     }
 
     AsMarkdown(): string {
-        return this._html;
+        return this.content;
     }
 
     protected InnerConstructElement(): HTMLElement {
         const e = document.createElement("span")
-        e.innerHTML = this._html
+        e.innerHTML = this.content
         return e;
     }
+    
 
 }

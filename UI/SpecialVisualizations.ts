@@ -698,16 +698,10 @@ export default class SpecialVisualizations {
                 ]
             ));
 
-
-        const toc = new List(
-            SpecialVisualizations.specialVisualizations.map(viz => new Link(viz.funcName, "#" + viz.funcName))
-        )
-
         return new Combine([
-                new Title("Special tag renderings", 3),
+                new Title("Special tag renderings", 1),
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
                 "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
-                toc,
                 ...helpTexts
             ]
         ).SetClass("flex flex-col");

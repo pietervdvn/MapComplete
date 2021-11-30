@@ -553,13 +553,15 @@ export default class ValidatedTextField {
         return input;
     }
 
-    public static HelpText(): string {
-        const explanations = ValidatedTextField.tpList.map(type => ["## " + type.name, "", type.explanation].join("\n")).join("\n\n")
+    public static HelpText(): BaseUIElement {
+        const explanations : BaseUIElement[]= 
+            ValidatedTextField.tpList.map(type =>
+                new Combine([new Title(type.name,3), type.explanation]).SetClass("flex flex-col"))
         return new Combine([
             new Title("Available types for text fields", 1),
             "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
-            explanations
-        ]).SetClass("flex flex-col").AsMarkdown()
+            ...explanations
+        ]).SetClass("flex flex-col")
     }
 
     private static tp(name: string,

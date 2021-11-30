@@ -1,6 +1,5 @@
 import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "./FixedUiElement";
-import Hash from "../../Logic/Web/Hash";
 
 export default class Title extends BaseUIElement {
     public readonly title: BaseUIElement;
@@ -17,7 +16,19 @@ export default class Title extends BaseUIElement {
             this.title = embedded
         }
         this.level = level;
-        this.id = this.title.ConstructElement()?.innerText?.replace(/ /g, '_') ?? ""
+        
+        let innerText : string = undefined;
+        if(typeof embedded === "string" ) {
+            innerText = embedded
+        }else if(embedded instanceof FixedUiElement){
+            innerText = embedded.content
+        }else{
+            this.title.ConstructElement()?.innerText
+        }
+        
+        this.id = innerText?.replace(/ /g, '-')
+            ?.replace(/[?#.;:/]/, "")
+            ?.toLowerCase() ?? ""
         this.SetClass(Title.defaultClassesPerLevel[level] ?? "")
     }
 

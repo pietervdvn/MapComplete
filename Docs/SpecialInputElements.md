@@ -5,29 +5,59 @@
 
  ## Table of contents
 
-1. [Available types for text fields](#Available_types_for_text_fields)
+1. [Available types for text fields](#available-types-for-text-fields)
+    + [string](#string)
+    + [text](#text)
+    + [date](#date)
+    + [direction](#direction)
+    + [length](#length)
+    + [wikidata](#wikidata)
+    + [int](#int)
+    + [nat](#nat)
+    + [pnat](#pnat)
+    + [float](#float)
+    + [pfloat](#pfloat)
+    + [email](#email)
+    + [url](#url)
+    + [phone](#phone)
+    + [opening_hours](#opening_hours)
+    + [color](#color)
 
- The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them ## string
+ The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them 
 
-A basic string
+### string 
 
-## text
 
-A string, but allows input of longer strings more comfortably and supports newlines (a text area)
 
-## date
+A basic string 
 
-A date
+### text 
 
-## direction
 
-A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)
 
-## length
+A string, but allows input of longer strings more comfortably and supports newlines (a text area) 
 
-A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
+### date 
 
-## wikidata
+
+
+A date 
+
+### direction 
+
+
+
+A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl) 
+
+### length 
+
+
+
+A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"] 
+
+### wikidata 
+
+
 
 A wikidata identifier, e.g. Q42. 
 
@@ -68,41 +98,59 @@ removePostfixes | remove these snippets of text from the end of the passed strin
         }
     ]
 }
-```
+``` 
 
-## int
+### int 
 
-A number
 
-## nat
 
-A positive number or zero
+A number 
 
-## pnat
+### nat 
 
-A strict positive number
 
-## float
 
-A decimal
+A positive number or zero 
 
-## pfloat
+### pnat 
 
-A positive decimal (incl zero)
 
-## email
 
-An email adress
+A strict positive number 
 
-## url
+### float 
 
-A url
 
-## phone
 
-A phone number
+A decimal 
 
-## opening_hours
+### pfloat 
+
+
+
+A positive decimal (incl zero) 
+
+### email 
+
+
+
+An email adress 
+
+### url 
+
+
+
+A url 
+
+### phone 
+
+
+
+A phone number 
+
+### opening_hours 
+
+
 
 Has extra elements to easily input when a POI is opened. 
 
@@ -139,9 +187,11 @@ postfix | Piece of text that will always be added to the end of the generated op
 }
 ```
 
-*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
+*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )` 
 
-## color
+### color 
+
+
 
 Shows a color picker 
 

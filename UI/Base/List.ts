@@ -10,7 +10,7 @@ export default class List extends BaseUIElement {
         super();
         this._ordered = ordered;
         this.uiElements = Utils.NoNull(uiElements)
-            .map(Translations.W);
+            .map(s => Translations.W(s));
     }
 
     AsMarkdown(): string {

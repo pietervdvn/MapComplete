@@ -5,8 +5,8 @@
 
  ## Table of contents
 
-1. [URL-parameters and URL-hash](#URL-parameters_and_URL-hash)
-  - [What is a URL parameter?](#what_is_a_url_parameter)
+1. [URL-parameters and URL-hash](#url-parameters-and-url-hash)
+  - [What is a URL parameter?](#what-is-a-url-parameter)
   - [fs-userbadge](#fs-userbadge)
   - [fs-search](#fs-search)
   - [fs-background](#fs-background)
@@ -24,10 +24,10 @@
   - [test](#test)
   - [debug](#debug)
   - [fake-user](#fake-user)
-  - [overpassUrl](#overpassUrl)
-  - [overpassTimeout](#overpassTimeout)
-  - [overpassMaxZoom](#overpassMaxZoom)
-  - [osmApiTileSize](#osmApiTileSize)
+  - [overpassUrl](#overpassurl)
+  - [overpassTimeout](#overpasstimeout)
+  - [overpassMaxZoom](#overpassmaxzoom)
+  - [osmApiTileSize](#osmapitilesize)
   - [background](#background)
   - [layer-<layer-id>](#layer-<layer-id>)
 

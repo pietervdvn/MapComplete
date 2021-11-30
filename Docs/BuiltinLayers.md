@@ -5,8 +5,8 @@
 
  ## Table of contents
 
-1. [Special and other useful layers](#Special_and_other_useful_layers)
-1. [Priviliged layers](#Priviliged_layers)
+1. [Special and other useful layers](#special-and-other-useful-layers)
+1. [Priviliged layers](#priviliged-layers)
     + [gps_location](#gps_location)
     + [gps_location_history](#gps_location_history)
     + [home_location](#home_location)
@@ -14,17 +14,17 @@
     + [type_node](#type_node)
     + [conflation](#conflation)
     + [left_right_style](#left_right_style)
-1. [Frequently reused layers](#Frequently_reused_layers)
+1. [Frequently reused layers](#frequently-reused-layers)
     + [bicycle_library](#bicycle_library)
-      * [Themes using this layer](#Themes_using_this_layer)
+      * [Themes using this layer](#themes-using-this-layer)
     + [drinking_water](#drinking_water)
-      * [Themes using this layer](#Themes_using_this_layer)
+      * [Themes using this layer](#themes-using-this-layer)
     + [food](#food)
-      * [Themes using this layer](#Themes_using_this_layer)
+      * [Themes using this layer](#themes-using-this-layer)
     + [map](#map)
-      * [Themes using this layer](#Themes_using_this_layer)
+      * [Themes using this layer](#themes-using-this-layer)
     + [all_streets](#all_streets)
-      * [Themes using this layer](#Themes_using_this_layer)
+      * [Themes using this layer](#themes-using-this-layer)
 
  MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here. 
 
