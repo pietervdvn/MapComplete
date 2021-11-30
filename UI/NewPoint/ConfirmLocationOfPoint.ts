@@ -21,7 +21,7 @@ export default class ConfirmLocationOfPoint extends Combine {
         state: {
             osmConnection: OsmConnection,
             featurePipeline: FeaturePipeline,
-            backgroundLayer: UIEventSource<BaseLayer>
+            backgroundLayer?: UIEventSource<BaseLayer>
         },
         filterViewIsOpened: UIEventSource<boolean>,
         preset: PresetInfo,
