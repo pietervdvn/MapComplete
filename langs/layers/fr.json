@@ -1,4 +1,53 @@
 {
+    "ambulancestation": {
+        "description": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+        "name": "Couche des ambulances",
+        "presets": {
+            "0": {
+                "description": "Ajouter une station d’ambulances à la carte",
+                "title": "Station d’ambulances"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Quel est l’exploitant de la station ?",
+                "render": "Cette station est opérée par {operator}."
+            },
+            "ambulance-name": {
+                "question": "Quel est le nom de cette station ?",
+                "render": "Cette station s’appelle {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "La station est opérée par le gouvernement."
+                    },
+                    "1": {
+                        "then": "La station est opérée par une organisation informelle."
+                    },
+                    "2": {
+                        "then": "La station est opérée par un groupe officiel de bénévoles."
+                    },
+                    "3": {
+                        "then": "La station est opérée par un groupe privé."
+                    }
+                },
+                "question": "Quel est le type d’exploitant ?",
+                "render": "L’exploitant est de type {operator:type}."
+            },
+            "ambulance-place": {
+                "question": "Dans quelle localité la station est-elle située ?",
+                "render": "La station fait partie de {addr:place}."
+            },
+            "ambulance-street": {
+                "question": " Quel est le nom de la rue où la station se situe ?",
+                "render": "La station fait partie de {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Station d’ambulances"
+        }
+    },
     "artwork": {
         "description": "Diverses œuvres d'art",
         "name": "Œuvres d'art",
@@ -1060,6 +1109,87 @@
             "render": "Eau potable"
         }
     },
+    "extinguisher": {
+        "description": "Couche des lances à incendie.",
+        "name": "Couche des extincteurs.",
+        "presets": {
+            "0": {
+                "description": "Un extincteur est un appareil portatif servant à éteindre un feu",
+                "title": "Extincteur"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Intérieur."
+                    },
+                    "1": {
+                        "then": "Extérieur."
+                    }
+                },
+                "question": "Où est-elle positionnée ?",
+                "render": "Emplacement : {location}"
+            }
+        },
+        "title": {
+            "render": "Exctincteurs"
+        }
+    },
+    "fire_station": {
+        "description": "Couche des stations de pompiers.",
+        "name": "Couche des stations de pompiers",
+        "presets": {
+            "0": {
+                "description": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+                "title": "Caserne de pompiers"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Brigade de Protection du Feu"
+                    }
+                },
+                "question": "Quel est l’exploitant de la station ?",
+                "render": "Cette station est opérée par {operator}."
+            },
+            "station-name": {
+                "question": "Quel est le nom de la station ?",
+                "render": "Cette station s’appelle {name}."
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "La station est opérée par le gouvernement."
+                    },
+                    "1": {
+                        "then": "La station est opérée par une organisation informelle."
+                    },
+                    "2": {
+                        "then": "La station est opérée par un groupe officiel de bénévoles."
+                    },
+                    "3": {
+                        "then": "La station est opérée par un groupe privé."
+                    }
+                },
+                "question": "Quel est le type d’exploitant ?",
+                "render": "L’exploitant est de type {operator:type}."
+            },
+            "station-place": {
+                "question": "Dans quelle localité la station est-elle située ?",
+                "render": "La station fait partie de {addr:place}."
+            },
+            "station-street": {
+                "question": " Quel est le nom de la rue dans lequel elle se situe ?",
+                "render": "La station fait partie de la {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Station de pompiers"
+        }
+    },
     "food": {
         "tagRenderings": {
             "friture-oil": {
@@ -1157,6 +1287,71 @@
                 }
             },
             "render": "Vélo fantôme"
+        }
+    },
+    "hydrant": {
+        "description": "Couche des bornes incendie.",
+        "name": "Carte des bornes incendie",
+        "presets": {
+            "0": {
+                "description": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
+                "title": "Borne incendie"
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": "La borne est de couleur inconnue."
+                    },
+                    "1": {
+                        "then": "La borne est jaune."
+                    },
+                    "2": {
+                        "then": "La borne est rouge."
+                    }
+                },
+                "question": "Quelle est la couleur de la borne ?",
+                "render": "La borne est {colour}"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "La borne est en état, ou partiellement en état, de fonctionner."
+                    },
+                    "1": {
+                        "then": "La borne est hors-service."
+                    },
+                    "2": {
+                        "then": "La borne a été retirée."
+                    }
+                },
+                "question": "Mettre à jour l’état de la borne."
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "0": {
+                        "then": "La borne est de type inconnu."
+                    },
+                    "1": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier."
+                    },
+                    "2": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau."
+                    },
+                    "3": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural."
+                    },
+                    "4": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré."
+                    }
+                },
+                "question": "De quel type de borne s’agit-il ?",
+                "render": " Type de borne : {fire_hydrant:type}"
+            }
+        },
+        "title": {
+            "render": "Bornes incendie"
         }
     },
     "information_board": {

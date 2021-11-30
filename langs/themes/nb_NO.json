@@ -235,61 +235,6 @@
         "title": "Spøkelsessykler"
     },
     "hailhydrant": {
-        "layers": {
-            "0": {
-                "description": "Kartlag for å vise brannhydranter.",
-                "name": "Kart over brannhydranter",
-                "presets": {
-                    "0": {
-                        "title": "Brannhydrant"
-                    }
-                },
-                "tagRenderings": {
-                    "hydrant-color": {
-                        "question": "Hvilken farge har brannhydranten?",
-                        "render": "Brannhydranter er {colour}"
-                    }
-                },
-                "title": {
-                    "render": "Brannhydrant"
-                }
-            },
-            "1": {
-                "description": "Kartlag for å vise brannslokkere.",
-                "name": "Kart over brannhydranter",
-                "presets": {
-                    "0": {
-                        "title": "Brannslukker"
-                    }
-                },
-                "title": {
-                    "render": "Brannslokkere"
-                }
-            },
-            "2": {
-                "name": "Kart over brannstasjoner",
-                "presets": {
-                    "0": {
-                        "title": "Brannstasjon"
-                    }
-                },
-                "tagRenderings": {
-                    "station-name": {
-                        "render": "Denne stasjonen heter {name}."
-                    },
-                    "station-operator": {
-                        "mappings": {
-                            "0": {
-                                "then": "Stasjonen drives av myndighetene."
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "render": "Brannstasjon"
-                }
-            }
-        },
         "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
     },
     "maps": {

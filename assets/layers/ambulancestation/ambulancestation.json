@@ -1,0 +1,234 @@
+{
+  "id": "ambulancestation",
+  "name": {
+    "en": "Map of ambulance stations",
+    "ja": "救急ステーションの地図",
+    "ru": "Карта станций скорой помощи",
+    "fr": "Couche des ambulances",
+    "de": "Karte der Rettungswachen",
+    "it": "Carta delle stazioni delle ambulanze"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=ambulance_station"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Ambulance Station",
+      "ru": "Станция скорой помощи",
+      "ja": "救急ステーション",
+      "fr": "Station d’ambulances",
+      "de": "Rettungswache",
+      "it": "Stazione delle ambulanze"
+    }
+  },
+  "description": {
+    "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+    "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
+    "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+    "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
+    "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali."
+  },
+  "tagRenderings": [
+    {
+      "id": "ambulance-name",
+      "freeform": {
+        "key": "name"
+      },
+      "question": {
+        "en": "What is the name of this ambulance station?",
+        "ja": "この救急ステーションの名前は何ですか?",
+        "ru": "Как называется эта станция скорой помощи?",
+        "fr": "Quel est le nom de cette station ?",
+        "it": "Qual è il nome di questa stazione delle ambulanze?"
+      },
+      "render": {
+        "en": "This station is called {name}.",
+        "ja": "このステーションの名前は{name}です。",
+        "ru": "Эта станция называется {name}.",
+        "fr": "Cette station s’appelle {name}.",
+        "it": "Questa stazione è chiamata {name}."
+      }
+    },
+    {
+      "id": "ambulance-street",
+      "freeform": {
+        "key": "addr:street"
+      },
+      "question": {
+        "en": " What is the street name where the station located?",
+        "ja": " 救急ステーションの所在地はどこですか?",
+        "ru": " По какому адресу расположена эта станция?",
+        "fr": " Quel est le nom de la rue où la station se situe ?",
+        "it": " Come si chiama la strada in cui si trova questa stazione?"
+      },
+      "render": {
+        "en": "This station is along a highway called {addr:street}.",
+        "ja": "{addr:street} 沿いにあります。",
+        "ru": "Эта станция расположена вдоль шоссе {addr:street}.",
+        "fr": "La station fait partie de {addr:street}.",
+        "it": "Questa stazione si trova in {addr:street}."
+      }
+    },
+    {
+      "id": "ambulance-place",
+      "question": {
+        "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+        "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
+        "ru": "Где расположена станция? (напр., название населённого пункта)",
+        "fr": "Dans quelle localité la station est-elle située ?",
+        "it": "Dove si trova la stazione? (ad es. quartiere, paese o città)"
+      },
+      "freeform": {
+        "key": "addr:place"
+      },
+      "render": {
+        "en": "This station is found within {addr:place}.",
+        "ja": "このステーションは{addr:place}にあります。",
+        "fr": "La station fait partie de {addr:place}.",
+        "it": "La stazione si trova a {addr:place}."
+      }
+    },
+    {
+      "id": "ambulance-agency",
+      "question": {
+        "en": "What agency operates this station?",
+        "ja": "このステーションを運営しているのはどこですか?",
+        "fr": "Quel est l’exploitant de la station ?",
+        "it": "Quale agenzia gestisce questa stazione?"
+      },
+      "render": {
+        "en": "This station is operated by {operator}.",
+        "ja": "このステーションは{operator}によって運営されています。",
+        "fr": "Cette station est opérée par {operator}.",
+        "it": "Questa stazione è gestita da {operator}."
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": []
+    },
+    {
+      "id": "ambulance-operator-type",
+      "question": {
+        "en": "How is the station operator classified?",
+        "ja": "ステーションの運営の分類は?",
+        "fr": "Quel est le type d’exploitant ?",
+        "it": "Com’è classificato il gestore della stazione?"
+      },
+      "render": {
+        "en": "The operator is a(n) {operator:type} entity.",
+        "ja": "運営者は、{operator:type} です。",
+        "fr": "L’exploitant est de type {operator:type}.",
+        "it": "L’operatore è un ente {operator:type}."
+      },
+      "freeform": {
+        "key": "operator:type"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator:type=government"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by the government.",
+            "ja": "ステーションは自治体が運営する。",
+            "fr": "La station est opérée par le gouvernement.",
+            "it": "La stazione è gestita dal governo."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=community"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a community-based, or informal organization.",
+            "ja": "任意団体やコミュニティが運営しているステーションである。",
+            "fr": "La station est opérée par une organisation informelle.",
+            "it": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=ngo"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a formal group of volunteers.",
+            "ja": "公益団体が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe officiel de bénévoles.",
+            "it": "La stazione è gestita da un gruppo ufficiale di volontari."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=private"
+            ]
+          },
+          "then": {
+            "en": "The station is privately operated.",
+            "ja": "個人が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe privé.",
+            "it": "La stazione è gestita da un privato."
+          }
+        }
+      ]
+    },
+    "images"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "emergency=ambulance_station"
+      ],
+      "title": {
+        "en": "Ambulance station",
+        "ru": "Станция скорой помощи",
+        "ja": "救急ステーション(消防署)",
+        "fr": "Station d’ambulances",
+        "de": "Rettungswache",
+        "it": "Stazione delle ambulanze"
+      },
+      "description": {
+        "en": "Add an ambulance station to the map",
+        "ja": "救急ステーション(消防署)をマップに追加する",
+        "ru": "Добавить станцию скорой помощи на карту",
+        "fr": "Ajouter une station d’ambulances à la carte",
+        "de": "Eine Rettungsstation der Karte hinzufügen",
+        "it": "Aggiungi una stazione delle ambulanza alla mappa"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+      },
+      "iconSize": {
+        "render": "35,35,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#00f"
+      },
+      "width": {
+        "render": "1"
+      }
+    }
+  ]
+}

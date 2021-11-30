@@ -1126,13 +1126,7 @@
                 "title": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
             },
             "1": {
-                "title": "oplaadpunt voor elektrische fietsen"
-            },
-            "2": {
                 "title": "oplaadstation voor elektrische auto's"
-            },
-            "3": {
-                "title": "oplaadstation"
             }
         },
         "tagRenderings": {

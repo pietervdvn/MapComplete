@@ -40,7 +40,7 @@
           "if": "bicycle=yes",
           "ifnot": "bicycle=no",
           "then": {
-            "en": "<b>Bcycles</b> can be charged here",
+            "en": "<b>Bicycles</b> can be charged here",
             "nl": "<b>Fietsen</b> kunnen hier opgeladen worden"
           }
         },
@@ -792,38 +792,12 @@
     {
       "tags": [
         "amenity=charging_station",
-        "motorcar=no",
-        "bicycle=yes"
-      ],
-      "title": {
-        "en": "charging station for e-bikes",
-        "nl": "oplaadpunt voor elektrische fietsen"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
-      }
-    },
-    {
-      "tags": [
-        "amenity=charging_station",
         "motorcar=yes",
         "bicycle=no"
       ],
       "title": {
         "en": "charging station for cars",
         "nl": "oplaadstation voor elektrische auto's"
-      },
-      "preciseInput": {
-        "preferredBackground": "map"
-      }
-    },
-    {
-      "tags": [
-        "amenity=charging_station"
-      ],
-      "title": {
-        "en": "charging station",
-        "nl": "oplaadstation"
       },
       "preciseInput": {
         "preferredBackground": "map"

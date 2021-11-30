@@ -76,6 +76,13 @@
             }
         }
     },
+    "extinguisher": {
+        "tagRenderings": {
+            "extinguisher-location": {
+                "render": "Loko: {location}"
+            }
+        }
+    },
     "ghost_bike": {
         "name": "Fantombiciklo",
         "presets": {
