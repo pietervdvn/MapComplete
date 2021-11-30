@@ -122,7 +122,7 @@
       "title": {
         "render": {
           "en": "cycle node <strong>{rcn_ref}</strong>",
-          "de": "Knotenpunkt"
+          "de": "Knotenpunkt <strong>{rcn_ref}</strong>"
         }
       },
       "presets": [

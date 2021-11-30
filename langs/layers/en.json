@@ -1099,13 +1099,7 @@
                 "title": "charging station with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
             },
             "1": {
-                "title": "charging station for e-bikes"
-            },
-            "2": {
                 "title": "charging station for cars"
-            },
-            "3": {
-                "title": "charging station"
             }
         },
         "tagRenderings": {
@@ -1306,7 +1300,7 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Bcycles</b> can be charged here"
+                        "then": "<b>Bicycles</b> can be charged here"
                     },
                     "1": {
                         "then": "<b>Cars</b> can be charged here"

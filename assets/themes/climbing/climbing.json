@@ -535,7 +535,8 @@
           "render": {
             "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>",
             "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>",
-            "it": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>"
+            "it": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>",
+            "de": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>"
           },
           "freeform": {
             "key": "_embedding_features_with_rock:rock"
@@ -620,7 +621,8 @@
             "then": {
               "en": "Climbing crag <b>{name}</b>",
               "fr": "Mur d’escalade <b>{name}</b>",
-              "it": "Muro da arrampicata <b>{name}</b>"
+              "it": "Muro da arrampicata <b>{name}</b>",
+              "de": "Klettergarten <b>{name}</b>"
             }
           },
           {
@@ -710,7 +712,8 @@
           "render": {
             "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
             "fr": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>",
-            "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>"
+            "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>",
+            "de": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>"
           },
           "condition": "_contained_climbing_routes~*",
           "id": "Contained_climbing_routes"
@@ -775,7 +778,8 @@
               "then": {
                 "en": "A climbing crag - a single rock or cliff with at least a few climbing routes",
                 "fr": "Mur d’escalade, rocher avec plusieurs voies d’escalades",
-                "it": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)"
+                "it": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)",
+                "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
               }
             },
             {

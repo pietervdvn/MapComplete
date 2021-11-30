@@ -251,7 +251,7 @@
           "en": "Is the street <b>{name}</b> a cyclestreet?",
           "ja": "この通りはcyclestreetですか?",
           "nb_NO": "Er denne gaten en sykkelvei?",
-          "de": "Ist diese Straße eine Fahrradstraße?",
+          "de": "Ist die Straße <b>{Name}</b> eine Fahrradstraße?",
           "it": "È una strada ciclabile?"
         },
         "mappings": [
