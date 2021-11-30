@@ -6,6 +6,8 @@ export default class Title extends BaseUIElement {
     public readonly title: BaseUIElement;
     public readonly level: number;
     public readonly id : string
+    
+    private static readonly defaultClassesPerLevel = ["", "text-3xl font-bold","text-2xl font-bold","text-xl font-bold", "text-lg font-bold"]
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
@@ -16,6 +18,7 @@ export default class Title extends BaseUIElement {
         }
         this.level = level;
         this.id = this.title.ConstructElement()?.innerText?.replace(/ /g, '_') ?? ""
+        this.SetClass(Title.defaultClassesPerLevel[level] ?? "")
     }
 
     AsMarkdown(): string {
