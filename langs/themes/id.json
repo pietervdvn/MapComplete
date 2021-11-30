@@ -115,21 +115,6 @@
             }
         }
     },
-    "hailhydrant": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "hydrant-type": {
-                        "mappings": {
-                            "3": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "trees": {
         "title": "Pohon"
     },

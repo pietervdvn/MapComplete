@@ -11,6 +11,10 @@ export class UIEventSource<T> {
     constructor(data: T, tag: string = "") {
         this.tag = tag;
         this.data = data;
+        if(tag === undefined || tag === ""){
+            const callstack = new Error().stack.split("\n")
+            this.tag = callstack[1]
+        }
         UIEventSource.allSources.push(this);
     }
 
@@ -278,9 +282,11 @@ export class UIEventSource<T> {
                   g: ((j: J, t: T) => T) = undefined): UIEventSource<J> {
         const self = this;
 
+        const stack = new Error().stack.split("\n");
+        const callee = stack[1]
         const newSource = new UIEventSource<J>(
             f(this.data),
-            "map(" + this.tag + ")"
+            "map(" + this.tag + ")@"+callee
         );
 
         const update = function () {

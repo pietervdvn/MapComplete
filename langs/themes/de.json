@@ -346,6 +346,9 @@
                         },
                         "question": "Wie heißt diese Kletterroute?",
                         "render": "<strong>{name}</strong>"
+                    },
+                    "Rock type": {
+                        "render": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>"
                     }
                 },
                 "title": {
@@ -373,6 +376,9 @@
                     "Contained routes length hist": {
                         "render": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
                     },
+                    "Contained_climbing_routes": {
+                        "render": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>"
+                    },
                     "Rock type (crag/rock/cliff only)": {
                         "mappings": {
                             "0": {
@@ -386,6 +392,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
+                            },
+                            "1": {
+                                "then": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
                             }
                         }
                     },
@@ -401,6 +410,9 @@
                 },
                 "title": {
                     "mappings": {
+                        "0": {
+                            "then": "Klettergarten <b>{name}</b>"
+                        },
                         "1": {
                             "then": "Klettergebiet <b>{name}</b>"
                         },
@@ -594,7 +606,7 @@
                     }
                 },
                 "title": {
-                    "render": "Knotenpunkt"
+                    "render": "Knotenpunkt <strong>{rcn_ref}</strong>"
                 }
             }
         },
@@ -644,7 +656,7 @@
                             "then": "Diese Straße ist keine Fahrradstraße"
                         }
                     },
-                    "question": "Ist diese Straße eine Fahrradstraße?"
+                    "question": "Ist die Straße <b>{Name}</b> eine Fahrradstraße?"
                 },
                 "1": {
                     "question": "Wann wird diese Straße eine Fahrradstraße?",
@@ -657,7 +669,7 @@
     },
     "cyclofix": {
         "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können auch interessante Orte zur Karte hinzuzufügen oder bearbeiten und weitere Daten durch Beantwortung von Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix — eine freie Karte für Radfahrer"
+        "title": "Cyclofix - die freie Karte für Radler"
     },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
@@ -854,139 +866,7 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.  \n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.  \n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
-        "layers": {
-            "0": {
-                "description": "Kartenebene zur Anzeige von Hydranten.",
-                "name": "Karte der Hydranten",
-                "presets": {
-                    "0": {
-                        "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
-                        "title": "Löschwasser-Hydrant"
-                    }
-                },
-                "tagRenderings": {
-                    "hydrant-color": {
-                        "mappings": {
-                            "0": {
-                                "then": "Die Farbe des Hydranten ist unbekannt."
-                            },
-                            "1": {
-                                "then": "Die Farbe des Hydranten ist gelb."
-                            },
-                            "2": {
-                                "then": "Die Farbe des Hydranten ist rot."
-                            }
-                        },
-                        "question": "Welche Farbe hat der Hydrant?",
-                        "render": "Der Hydrant hat die Farbe {colour}"
-                    },
-                    "hydrant-state": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb."
-                            },
-                            "1": {
-                                "then": "Der Hydrant ist nicht verfügbar."
-                            },
-                            "2": {
-                                "then": "Der Hydrant wurde entfernt."
-                            }
-                        },
-                        "question": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten."
-                    },
-                    "hydrant-type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Typ des Hydranten ist unbekannt."
-                            },
-                            "1": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
-                            },
-                            "2": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
-                            },
-                            "3": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
-                            },
-                            "4": {
-                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
-                            }
-                        },
-                        "question": "Um welche Art von Hydrant handelt es sich?",
-                        "render": " Hydranten-Typ: {fire_hydrant:type}"
-                    }
-                },
-                "title": {
-                    "render": "Hydrant"
-                }
-            },
-            "1": {
-                "description": "Kartenebene zur Anzeige von Hydranten.",
-                "name": "Karte mit Feuerlöschern.",
-                "presets": {
-                    "0": {
-                        "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
-                        "title": "Feuerlöscher"
-                    }
-                },
-                "tagRenderings": {
-                    "extinguisher-location": {
-                        "mappings": {
-                            "0": {
-                                "then": "Im Innenraum vorhanden."
-                            },
-                            "1": {
-                                "then": "Im Außenraum vorhanden."
-                            }
-                        },
-                        "question": "Wo befindet er sich?",
-                        "render": "Standort: {location}"
-                    }
-                },
-                "title": {
-                    "render": "Feuerlöscher"
-                }
-            },
-            "2": {
-                "description": "Kartenebene zur Darstellung von Feuerwachen.",
-                "name": "Karte der Feuerwachen",
-                "presets": {
-                    "0": {
-                        "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
-                        "title": "Feuerwache"
-                    }
-                },
-                "tagRenderings": {
-                    "station-agency": {
-                        "mappings": {
-                            "0": {
-                                "then": "Brandschutzbehörde"
-                            }
-                        }
-                    },
-                    "station-name": {
-                        "question": "Wie lautet der Name dieser Feuerwache?"
-                    }
-                },
-                "title": {
-                    "render": "Feuerwache"
-                }
-            },
-            "3": {
-                "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
-                "name": "Karte der Rettungswachen",
-                "presets": {
-                    "0": {
-                        "description": "Eine Rettungsstation der Karte hinzufügen",
-                        "title": "Rettungswache"
-                    }
-                },
-                "title": {
-                    "render": "Rettungswache"
-                }
-            }
-        },
+        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
     "maps": {
@@ -997,7 +877,7 @@
     "natuurpunt": {
         "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
         "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
-        "title": "Naturschutzgebiete"
+        "title": "Die Karte von Natuurpunt"
     },
     "observation_towers": {
         "description": "Öffentlich zugänglicher Aussichtsturm",
@@ -1044,7 +924,7 @@
                 }
             }
         },
-        "title": "OpenWindPowerMap"
+        "title": "Freie Windenergie-Karte"
     },
     "parkings": {
         "description": "Diese Karte zeigt Parkplätze",
@@ -1052,7 +932,7 @@
         "title": "Parken"
     },
     "personal": {
-        "description": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+        "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
         "title": "Persönliches Thema"
     },
     "playgrounds": {

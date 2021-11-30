@@ -1,4 +1,53 @@
 {
+    "ambulancestation": {
+        "description": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
+        "name": "救急ステーションの地図",
+        "presets": {
+            "0": {
+                "description": "救急ステーション(消防署)をマップに追加する",
+                "title": "救急ステーション(消防署)"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "このステーションを運営しているのはどこですか?",
+                "render": "このステーションは{operator}によって運営されています。"
+            },
+            "ambulance-name": {
+                "question": "この救急ステーションの名前は何ですか?",
+                "render": "このステーションの名前は{name}です。"
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "ステーションは自治体が運営する。"
+                    },
+                    "1": {
+                        "then": "任意団体やコミュニティが運営しているステーションである。"
+                    },
+                    "2": {
+                        "then": "公益団体が運営しているステーションである。"
+                    },
+                    "3": {
+                        "then": "個人が運営しているステーションである。"
+                    }
+                },
+                "question": "ステーションの運営の分類は?",
+                "render": "運営者は、{operator:type} です。"
+            },
+            "ambulance-place": {
+                "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
+                "render": "このステーションは{addr:place}にあります。"
+            },
+            "ambulance-street": {
+                "question": " 救急ステーションの所在地はどこですか?",
+                "render": "{addr:street} 沿いにあります。"
+            }
+        },
+        "title": {
+            "render": "救急ステーション"
+        }
+    },
     "artwork": {
         "description": "多様な作品",
         "name": "美術品",
@@ -72,6 +121,87 @@
             "render": "アートワーク"
         }
     },
+    "extinguisher": {
+        "description": "消火栓を表示するマップレイヤ。",
+        "name": "消火器の地図です。",
+        "presets": {
+            "0": {
+                "description": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
+                "title": "消火器"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "屋内にある。"
+                    },
+                    "1": {
+                        "then": "屋外にある。"
+                    }
+                },
+                "question": "どこにあるんですか?",
+                "render": "場所:{location}"
+            }
+        },
+        "title": {
+            "render": "消火器"
+        }
+    },
+    "fire_station": {
+        "description": "消防署を表示するためのマップレイヤ。",
+        "name": "消防署の地図",
+        "presets": {
+            "0": {
+                "description": "消防署は、運転していないときに消防車や消防士がいる場所です。",
+                "title": "消防署"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "消防局(消防庁)"
+                    }
+                },
+                "question": "このステーションを運営しているのはどこですか?",
+                "render": "このステーションは{operator}によって運営されています。"
+            },
+            "station-name": {
+                "question": "この消防署の名前は何ですか?",
+                "render": "このステーションの名前は{name}です。"
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "ステーションは自治体が運営する。"
+                    },
+                    "1": {
+                        "then": "任意団体やコミュニティが運営しているステーションである。"
+                    },
+                    "2": {
+                        "then": "公益団体が運営しているステーションである。"
+                    },
+                    "3": {
+                        "then": "個人が運営しているステーションである。"
+                    }
+                },
+                "question": "ステーションの運営の分類は?",
+                "render": "運営者は、{operator:type} です。"
+            },
+            "station-place": {
+                "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
+                "render": "このステーションは{addr:place}にあります。"
+            },
+            "station-street": {
+                "question": " 救急ステーションの所在地はどこですか?",
+                "render": "{addr:street} 沿いにあります。"
+            }
+        },
+        "title": {
+            "render": "消防署"
+        }
+    },
     "food": {
         "tagRenderings": {
             "friture-take-your-container": {
@@ -99,6 +229,71 @@
         },
         "title": {
             "render": "ゴーストバイク"
+        }
+    },
+    "hydrant": {
+        "description": "消火栓を表示するマップレイヤ。",
+        "name": "消火栓の地図",
+        "presets": {
+            "0": {
+                "description": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
+                "title": "消火栓"
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": "消火栓の色は不明です。"
+                    },
+                    "1": {
+                        "then": "消火栓の色は黄色です。"
+                    },
+                    "2": {
+                        "then": "消火栓の色は赤です。"
+                    }
+                },
+                "question": "消火栓の色は何色ですか?",
+                "render": "消火栓の色は{colour}です"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "消火栓は(完全にまたは部分的に)機能しています。"
+                    },
+                    "1": {
+                        "then": "消火栓は使用できません。"
+                    },
+                    "2": {
+                        "then": "消火栓が撤去されました。"
+                    }
+                },
+                "question": "消火栓のライフサイクルステータスを更新します。"
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "0": {
+                        "then": "消火栓の種類は不明です。"
+                    },
+                    "1": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> ピラー型。"
+                    },
+                    "2": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> パイプ型。"
+                    },
+                    "3": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> 壁型。"
+                    },
+                    "4": {
+                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" />地下式。"
+                    }
+                },
+                "question": "どんな消火栓なんですか?",
+                "render": " 消火栓のタイプ:{fire_hydrant:type}"
+            }
+        },
+        "title": {
+            "render": "消火栓"
         }
     },
     "shops": {
