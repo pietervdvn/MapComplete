@@ -216,7 +216,7 @@
         "en": "Is this hydrant still working?",
         "ja": "消火栓のライフサイクルステータスを更新します。",
         "fr": "Mettre à jour l’état de la borne.",
-        "de": "Aktualisieren Sie den Lebenszyklusstatus des Hydranten.",
+        "de": "Ist dieser Hydrant noch in Betrieb?",
         "it": "Aggiorna lo stato di funzionamento dell’idrante."
       },
       "mappings": [
@@ -231,7 +231,7 @@
             "ja": "消火栓は(完全にまたは部分的に)機能しています。",
             "ru": "Гидрант (полностью или частично) в рабочем состоянии",
             "fr": "La borne est en état, ou partiellement en état, de fonctionner.",
-            "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb.",
+            "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb",
             "it": "L’idrante è (parzialmente o completamente) funzionante."
           }
         },
@@ -246,7 +246,7 @@
             "en": "The hydrant is unavailable",
             "ja": "消火栓は使用できません。",
             "fr": "La borne est hors-service.",
-            "de": "Der Hydrant ist nicht verfügbar.",
+            "de": "Der Hydrant ist nicht verfügbar",
             "it": "L’idrante è fuori servizio."
           }
         },
@@ -262,7 +262,7 @@
             "ja": "消火栓が撤去されました。",
             "ru": "Гидрант демонтирован",
             "fr": "La borne a été retirée.",
-            "de": "Der Hydrant wurde entfernt.",
+            "de": "Der Hydrant wurde entfernt",
             "it": "L’idrante è stato rimosso."
           }
         }

@@ -1,5 +1,4 @@
 {
-
   "id": "grb_fixme",
   "title": {
     "nl": "GRB Fixup"
@@ -11,7 +10,8 @@
     "nl": "Gebouwen met een FIXME - wss GRB-import die gefixed moeten worden"
   },
   "language": [
-    "nl"
+    "nl",
+    "en"
   ],
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -34,8 +34,11 @@
       "id": "OSM-buildings-fixme",
       "name": "OSM-buildings with a fixme",
       "source": {
-        "osmTags": {"and": 
-          ["building~*","fixme~*"]
+        "osmTags": {
+          "and": [
+            "building~*",
+            "fixme~*"
+          ]
         },
         "maxCacheAge": 0
       },
@@ -283,21 +286,21 @@
       "minzoom": 14
     },
     {
-   "builtin":    "address",
+      "builtin": "address",
       "override": {
         "minzoom": 18
       }
     },
     {
-      "builtin":"crab_address",
+      "builtin": "crab_address",
       "override": {
         "minzoom": 18,
-        "+tagRenderings":[
+        "+tagRenderings": [
           {
             "id": "import-button",
             "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address)}"
-          } 
-        ] 
+          }
+        ]
       }
     }
   ],
@@ -305,5 +308,4 @@
   "defaultBackgroundId": "AGIVFlandersGRB",
   "overpassMaxZoom": 15,
   "osmApiTileSize": 17
-  
 }

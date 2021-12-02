@@ -20,12 +20,12 @@
         "render": "<div style='background:#faa' class='rounded-full'>{HNRLABEL}</div>"
       }
     }
-  ], 
+  ],
   "tagRenderings": [
     {
       "id": "render_crab",
       "render": {
-        "nl":"Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
+        "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
       }
     },
     "all_tags"

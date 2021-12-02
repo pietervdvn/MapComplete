@@ -198,7 +198,6 @@
           "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
         ]
       },
-    
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
