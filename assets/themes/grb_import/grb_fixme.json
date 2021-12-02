@@ -29,7 +29,6 @@
       "maxCacheAge": 0
     }
   },
-  "enableGeolocation": false,
   "layers": [
     {
       "id": "OSM-buildings-fixme",
@@ -274,6 +273,11 @@
             "type": "pnat"
           }
         },
+        {
+          "id": "fix_verdieping",
+          "render": "{tag_apply(fixme=;building:min_level=1,De eerste verdieping ontbreekt)}",
+          "condition": "fixme=verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!"
+        },
         "all_tags"
       ],
       "minzoom": 14
@@ -292,7 +296,7 @@
           {
             "id": "import-button",
             "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address)}"
-          }   
+          } 
         ] 
       }
     }

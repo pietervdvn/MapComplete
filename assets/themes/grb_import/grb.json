@@ -28,7 +28,6 @@
   "overrideAll": {
     "minzoom": 18
   },
-  "enableGeolocation": false,
   "layers": [
     {
       "builtin": "type_node",
