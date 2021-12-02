@@ -189,39 +189,16 @@
       "description": "Alamat"
     },
     {
-      "id": "addresses",
-      "name": {
-        "en": "Known addresses in OSM",
-        "de": "Bekannte Adressen in OSM"
+      "builtin": "address",
+      "override": {
+        "calculatedTags": [
+          "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
+          "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+          "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+          "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+        ]
       },
-      "minzoom": 18,
-      "source": {
-        "osmTags": {
-          "or": [
-            "addr:housenumber~*",
-            "addr:street~*",
-            "ref:inspireid~*"
-          ]
-        }
-      },
-      "calculatedTags": [
-        "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
-        "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
-        "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
-        "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
-      ],
-      "title": {
-        "render": {
-          "en": "Known address",
-          "de": "Bekannte Adresse"
-        }
-      },
-      "description": {
-        "en": "Addresses",
-        "nl": "Adressen",
-        "de": "Adressen",
-        "ru": "Адреса"
-      },
+    
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
@@ -346,59 +323,6 @@
           "id": "address-sign-image",
           "render": {
             "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
-          }
-        }
-      ],
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "location": [
-            "point"
-          ]
-        },
-        {
-          "color": {
-            "render": "#00f",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    {
-                      "and": [
-                        "addr:housenumber=",
-                        "nohousenumber!=yes"
-                      ]
-                    },
-                    "addr:street="
-                  ]
-                },
-                "then": "#ff0"
-              }
-            ]
-          },
-          "width": {
-            "render": "8"
           }
         }
       ]

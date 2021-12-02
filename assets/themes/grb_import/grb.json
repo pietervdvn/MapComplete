@@ -1,13 +1,13 @@
 {
   "id": "grb",
   "title": {
-    "nl": "GRB Fixup"
+    "nl": "GRB import helper"
   },
   "shortDescription": {
-    "nl": "Grb Fixup"
+    "nl": "Grb import helper tool"
   },
   "description": {
-    "nl": "GRB Fixup",
+    "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work."
   },
   "language": [
@@ -355,74 +355,50 @@
       ]
     },
     {
-      "id": "crab-addresses 2021-10-26",
-      "source": {
-        "osmTags": "HUISNR~*",
-        "geoJson": "https://raw.githubusercontent.com/pietervdvn/pietervdvn.github.io/master/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
-        "#geoJson": "https://pietervdvn.github.io/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
-        "geoJsonZoomLevel": 18,
-        "maxCacheAge": 0
-      },
-      "name": "CRAB-addressen",
-      "title": "CRAB-adres",
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "iconSize": "15,15,center",
-          "label": {
-            "render": "<div style='background:#faa' class='rounded-full'>{HNRLABEL}</div>"
-          }
-        }
-      ],
-      "calculatedTags": [
-        "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ",
-        "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']",
-        "_embedding_street=feat.get('_embedded_in')['addr:street']",
-        "_embedding_id=feat.get('_embedded_in').id"
-      ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
+      "builtin": "crab_address",
+      "override": {
+        "calculatedTags+": [
+          "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ",
+          "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']",
+          "_embedding_street=feat.get('_embedded_in')['addr:street']",
+          "_embedding_id=feat.get('_embedded_in').id"
+        ],
+        "isShown": {
+          "render": "yes",
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "_embedding_nr:={HUISNR}",
+                  "_embedding_street:={STRAATNM}"
+                ]
+              },
+              "then": "no"
+            }
+          ]
+        },
+        "tagRenderings+": [
           {
-            "if": {
+            "id": "render_embedded",
+            "render": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}",
+            "condition": {
               "and": [
-                "_embedding_nr:={HUISNR}",
-                "_embedding_street:={STRAATNM}"
+                "_embedding_street~*",
+                "_embedding_nr~*"
               ]
-            },
-            "then": "no"
+            }
+          },
+          {
+            "id": "import-button",
+            "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address,,,OSM-buildings,5)}"
+          },
+          {
+            "id": "apply-button",
+            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
+            "condition": "_embedded_in!="
           }
         ]
-      },
-      "tagRenderings": [
-        {
-          "id": "render_crab",
-          "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-        },
-        {
-          "id": "render_embedded",
-          "render": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}",
-          "condition": {
-            "and": [
-              "_embedding_street~*",
-              "_embedding_nr~*"
-            ]
-          }
-        },
-        "all_tags",
-        {
-          "id": "import-button",
-          "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address,,,OSM-buildings,5)}"
-        },
-        {
-          "id": "apply-button",
-          "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
-          "condition": "_embedded_in!="
-        }
-      ]
+      }
     },
     {
       "id": "GRB",
@@ -523,7 +499,8 @@
           }
         }
       ]
-    }
+    },
+    "address"
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",

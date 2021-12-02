@@ -31,8 +31,6 @@ import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import MultiApply from "./Popup/MultiApply";
 import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
-import Link from "./Base/Link";
-import List from "./Base/List";
 import {SubtleButton} from "./Base/SubtleButton";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {And} from "../Logic/Tags/And";

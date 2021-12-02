@@ -128,11 +128,13 @@ ${Utils.Special_visualizations_tagsToApplyHelpText}
             name: "minzoom",
             doc: "How far the contributor must zoom in before being able to import the point",
             defaultValue: "18"
-        }, {
+        }, 
+        {
             name: "Snap onto layer(s)/replace geometry with this other way",
             doc: " - If the value corresponding with this key starts with 'way/' and the feature is a LineString or Polygon, the original OSM-way geometry will be changed to match the new geometry\n" +
                 " - If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list",
-        }, {
+        }, 
+        {
             name: "snap max distance",
             doc: "The maximum distance that this point will move to snap onto a layer (in meters)",
             defaultValue: "5"
@@ -173,7 +175,7 @@ ${Utils.Special_visualizations_tagsToApplyHelpText}
         } else {
 
 
-            const snapToLayers = args[5]?.split(";").filter(s => s !== "")
+            const snapToLayers = args[5]?.split(";")?.filter(s => s !== "")
             const snapToLayersMaxDist = Number(args[6] ?? 6)
 
             if (targetLayer === undefined) {

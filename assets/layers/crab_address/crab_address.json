@@ -1,0 +1,33 @@
+{
+  "id": "crab_address",
+  "description": "Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override.",
+  "source": {
+    "osmTags": "HUISNR~*",
+    "geoJson": "https://pietervdvn.github.io/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
+    "geoJsonZoomLevel": 18,
+    "maxCacheAge": 0
+  },
+  "name": "CRAB-addressen",
+  "title": "CRAB-adres",
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "15,15,center",
+      "label": {
+        "render": "<div style='background:#faa' class='rounded-full'>{HNRLABEL}</div>"
+      }
+    }
+  ], 
+  "tagRenderings": [
+    {
+      "id": "render_crab",
+      "render": {
+        "nl":"Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
+      }
+    },
+    "all_tags"
+  ]
+}
