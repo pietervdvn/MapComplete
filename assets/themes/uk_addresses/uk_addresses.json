@@ -64,7 +64,7 @@
       },
       "minzoom": 18,
       "calculatedTags": [
-        "_has_address=feat.overlapWith('addresses').length > 0"
+        "_has_address=feat.overlapWith('address').length > 0"
       ],
       "#mapRendering": [
         {
@@ -126,11 +126,11 @@
         },
         {
           "id": "uk_addresses_import_button",
-          "render": "{import_button(addresses,ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
+          "render": "{import_button(address,ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
         }
       ],
       "calculatedTags": [
-        "_embedding_object=feat.overlapWith('addresses')[0]?.feat?.properties ?? null",
+        "_embedding_object=feat.overlapWith('address')[0]?.feat?.properties ?? null",
         "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
         "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
         "_embedding_inspire_polygon_has_address=feat.overlapWith('raw_inspire_polygons')[0]?.feat?.properties?._has_address",
