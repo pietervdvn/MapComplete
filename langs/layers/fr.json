@@ -2025,8 +2025,7 @@
         "name": "Toilettes",
         "presets": {
             "0": {
-                "description": "Des toilettes",
-                "title": "toilettes"
+                "title": "toilette publique"
             },
             "1": {
                 "description": "Toilettes avec au moins un WC accessible aux personnes à mobilité réduite",

@@ -1765,8 +1765,7 @@
         "name": "Servizi igienici",
         "presets": {
             "0": {
-                "description": "Servizi igienici aperti al pubblico",
-                "title": "servizi igienici"
+                "title": "servizi igienici aperti al pubblico"
             },
             "1": {
                 "description": "Servizi igienici che hanno almeno una toilette accessibile a persone in sedia a rotelle",

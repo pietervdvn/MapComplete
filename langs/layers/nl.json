@@ -4110,12 +4110,11 @@
         "name": "Toiletten",
         "presets": {
             "0": {
-                "description": "Een publieke toilet",
-                "title": "toilet"
+                "title": "publieke toilet"
             },
             "1": {
                 "description": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC",
-                "title": "een rolstoeltoegankelijke toilet"
+                "title": "rolstoeltoegankelijke, publieke toilet"
             }
         },
         "tagRenderings": {

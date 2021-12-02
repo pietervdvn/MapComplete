@@ -3996,8 +3996,7 @@
         "name": "Toilets",
         "presets": {
             "0": {
-                "description": "A publicly accessible toilet or restroom",
-                "title": "toilet"
+                "title": "public toilet"
             },
             "1": {
                 "description": "A restroom which has at least one wheelchair-accessible toilet",

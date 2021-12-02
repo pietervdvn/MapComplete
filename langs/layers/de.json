@@ -2790,8 +2790,7 @@
         "name": "Toiletten",
         "presets": {
             "0": {
-                "description": "Eine öffentlich zugängliche Toilette",
-                "title": "toilette"
+                "title": "öffentlich zugängliche Toilette"
             },
             "1": {
                 "description": "Eine Toilettenanlage mit mindestens einer rollstuhlgerechten Toilette",
