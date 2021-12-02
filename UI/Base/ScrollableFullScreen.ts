@@ -44,8 +44,10 @@ export default class ScrollableFullScreen extends UIElement {
         const self = this;
         isShown.addCallback(isShown => {
             if (isShown) {
-                self.Activate();
+                // We first must set the hash, then activate the panel
+                // If the order is wrong, this will cause the panel to disactivate again
                 Hash.hash.setData(hashToShow)
+                self.Activate();
             } else {
                 self.clear();
             }
