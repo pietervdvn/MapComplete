@@ -1,4 +1,17 @@
 {
+    "address": {
+        "description": "Adressen",
+        "tagRenderings": {
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit gebouw heeft geen huisnummer"
+                    }
+                },
+                "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+            }
+        }
+    },
     "artwork": {
         "description": "Verschillende soorten kunstwerken",
         "name": "Kunstwerken",
@@ -2039,6 +2052,13 @@
                         "human": "megawatt"
                     }
                 }
+            }
+        }
+    },
+    "crab_address": {
+        "tagRenderings": {
+            "render_crab": {
+                "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
             }
         }
     },

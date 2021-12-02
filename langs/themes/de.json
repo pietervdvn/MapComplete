@@ -1016,8 +1016,6 @@
         "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
         "layers": {
             "2": {
-                "description": "Adressen",
-                "name": "Bekannte Adressen in OSM",
                 "tagRenderings": {
                     "uk_addresses_explanation_osm": {
                         "render": "Diese Adresse ist in OpenStreetMap gespeichert"
@@ -1035,9 +1033,6 @@
                         "question": "In welcher Straße befindet sich diese Adresse?",
                         "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
                     }
-                },
-                "title": {
-                    "render": "Bekannte Adresse"
                 }
             }
         },

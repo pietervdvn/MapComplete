@@ -751,9 +751,49 @@
         "title": "Witte Fietsen"
     },
     "grb": {
-        "description": "GRB Fixup",
+        "description": "Dit thema helpt het GRB importeren.",
         "layers": {
             "1": {
+                "tagRenderings": {
+                    "grb-fixme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen fixme"
+                            }
+                        },
+                        "question": "Wat zegt de fixme?",
+                        "render": "De fixme is <b>{fixme}</b>"
+                    },
+                    "grb-housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen huisnummer"
+                            }
+                        },
+                        "question": "Wat is het huisnummer?",
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                    },
+                    "grb-min-level": {
+                        "question": "Hoeveel verdiepingen ontbreken?",
+                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
+                    },
+                    "grb-street": {
+                        "question": "Wat is de straat?",
+                        "render": "De straat is <b>{addr:street}</b>"
+                    },
+                    "grb-unit": {
+                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
+                    }
+                }
+            }
+        },
+        "shortDescription": "Grb import helper tool",
+        "title": "GRB import helper"
+    },
+    "grb_fixme": {
+        "description": "Gebouwen met een FIXME - wss GRB-import die gefixed moeten worden",
+        "layers": {
+            "0": {
                 "tagRenderings": {
                     "grb-fixme": {
                         "mappings": {
@@ -999,7 +1039,6 @@
         "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
         "layers": {
             "2": {
-                "description": "Adressen",
                 "tagRenderings": {
                     "uk_addresses_housenumber": {
                         "mappings": {

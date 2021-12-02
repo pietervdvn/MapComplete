@@ -1,4 +1,7 @@
 {
+    "address": {
+        "description": "Адреса"
+    },
     "ambulancestation": {
         "name": "Карта станций скорой помощи",
         "presets": {

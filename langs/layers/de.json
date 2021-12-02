@@ -1,4 +1,26 @@
 {
+    "address": {
+        "description": "Adressen",
+        "name": "Bekannte Adressen in OSM",
+        "tagRenderings": {
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Gebäude hat keine Hausnummer"
+                    }
+                },
+                "question": "Wie lautet die Nummer dieses Hauses?",
+                "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "In welcher Straße befindet sich diese Adresse?",
+                "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Bekannte Adresse"
+        }
+    },
     "ambulancestation": {
         "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
         "name": "Karte der Rettungswachen",

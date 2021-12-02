@@ -1,4 +1,29 @@
 {
+    "address": {
+        "description": "Addresses",
+        "name": "Known addresses in OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "What should be fixed here? Please explain"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "This building has no house number"
+                    }
+                },
+                "question": "What is the number of this house?",
+                "render": "The housenumber is <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "What street is this address located in?",
+                "render": "This address is in street <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Known address"
+        }
+    },
     "ambulancestation": {
         "description": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
         "name": "Map of ambulance stations",

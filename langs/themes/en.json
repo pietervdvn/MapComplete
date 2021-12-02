@@ -843,6 +843,17 @@
             }
         }
     },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "What kind of building is this?"
+                    }
+                }
+            }
+        }
+    },
     "hackerspaces": {
         "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
         "layers": {
@@ -1190,8 +1201,6 @@
                 }
             },
             "2": {
-                "description": "Addresses",
-                "name": "Known addresses in OSM",
                 "tagRenderings": {
                     "address-sign-image": {
                         "render": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
@@ -1215,9 +1224,6 @@
                         "question": "What street is this address located in?",
                         "render": "This address is in street <b>{addr:street}</b>"
                     }
-                },
-                "title": {
-                    "render": "Known address"
                 }
             }
         },
