@@ -659,7 +659,7 @@ function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]
 }
 
 
-// new StatsDownloader("stats").DownloadStats()
+new StatsDownloader("stats").DownloadStats()
 const allPaths = readdirSync("stats")
     .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
 let allFeatures: ChangeSetData[] = [].concat(...allPaths
