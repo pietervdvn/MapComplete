@@ -14,6 +14,7 @@
     + [type_node](#type_node)
     + [conflation](#conflation)
     + [left_right_style](#left_right_style)
+    + [split_point](#split_point)
 1. [Frequently reused layers](#frequently-reused-layers)
     + [bicycle_library](#bicycle_library)
       * [Themes using this layer](#themes-using-this-layer)
@@ -22,6 +23,8 @@
     + [food](#food)
       * [Themes using this layer](#themes-using-this-layer)
     + [map](#map)
+      * [Themes using this layer](#themes-using-this-layer)
+    + [walls_and_buildings](#walls_and_buildings)
       * [Themes using this layer](#themes-using-this-layer)
     + [all_streets](#all_streets)
       * [Themes using this layer](#themes-using-this-layer)
@@ -40,6 +43,7 @@
   - [type_node](#type_node)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
+  - [split_point](#split_point)
  
 
 ### gps_location 
@@ -141,6 +145,19 @@ Special meta-style which will show one single line, either on the left or on the
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
  
 
+### split_point 
+
+
+
+Layer rendering the little scissors for the minimap in the 'splitRoadWizard'
+
+[Go to the source code](../assets/layers/split_point/split_point.json)
+
+
+
+  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
+ 
+
  Frequently reused layers 
 ==========================
 
@@ -150,6 +167,7 @@ Special meta-style which will show one single line, either on the left or on the
   - [drinking_water](#drinking_water)
   - [food](#food)
   - [map](#map)
+  - [walls_and_buildings](#walls_and_buildings)
   - [all_streets](#all_streets)
  
 
@@ -248,6 +266,32 @@ A map, meant for tourists which is permanently installed in the public space
 
   - [maps](https://mapcomplete.osm.be/maps)
   - [nature](https://mapcomplete.osm.be/nature)
+ 
+
+### walls_and_buildings 
+
+
+
+Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, ...). This layer is invisible by default and not toggleable by the user.
+
+[Go to the source code](../assets/layers/walls_and_buildings/walls_and_buildings.json)
+
+
+
+  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
+  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [aed](https://mapcomplete.osm.be/aed)
+  - [surveillance](https://mapcomplete.osm.be/surveillance)
  
 
 ### all_streets 

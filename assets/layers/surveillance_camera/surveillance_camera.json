@@ -459,7 +459,22 @@
         "man_made=surveillance",
         "surveillance:type=camera"
       ],
-      "title": "Surveillance camera"
+      "title": {
+        "en":"surveillance camera"
+      }
+    },
+    {
+      "tags": [
+        "man_made=surveillance",
+        "surveillance:type=camera",
+        "camera:mount=wall"
+      ],
+      "title": {
+        "en":"surveillance camera mounted on a wall"
+      },
+      "preciseInput": {
+        "snapToLayer": "walls_and_buildings"
+      }
     }
   ],
   "mapRendering": [

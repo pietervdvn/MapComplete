@@ -13,7 +13,7 @@
         "point",
         "centroid"
       ],
-      "icon":  "circle:white;./assets/svg/scissors.svg",
+      "icon": "circle:white;./assets/svg/scissors.svg",
       "iconSize": "30,30,center"
     }
   ]

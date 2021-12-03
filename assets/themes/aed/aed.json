@@ -60,6 +60,7 @@
   "startLon": 0,
   "startZoom": 12,
   "layers": [
+    "walls_and_buildings",
     "defibrillator"
   ]
 }

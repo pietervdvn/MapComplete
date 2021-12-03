@@ -49,6 +49,7 @@
   "socialImage": "",
   "defaultBackgroundId": "osm",
   "layers": [
+    "walls_and_buildings",
     "direction",
     "surveillance_camera"
   ]

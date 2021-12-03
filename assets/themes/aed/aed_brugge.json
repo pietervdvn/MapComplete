@@ -16,6 +16,7 @@
   "startLon": 3.195682,
   "startZoom": 12,
   "layers": [
+    "walls_and_buildings",
     "defibrillator",
     {
       "id": "Brugge",
@@ -80,7 +81,8 @@
           },
           "iconSize": "20,20,center",
           "location": [
-            "point","centroid"
+            "point",
+            "centroid"
           ]
         }
       ]

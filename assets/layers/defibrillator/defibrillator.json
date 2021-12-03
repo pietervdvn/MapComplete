@@ -44,9 +44,20 @@
       },
       "tags": [
         "emergency=defibrillator"
+      ]
+    },
+    {
+      "title": {
+        "en": "defibrillator mounted on a wall",
+        "nl": "defibrillator die aan een muur hangt"
+      },
+      "tags": [
+        "emergency=defibrillator"
       ],
       "preciseInput": {
-        "preferredBackground": "map"
+        "preferredBackground": "map",
+        "snapToLayer": "walls_and_buildings",
+        "maxSnapDistance": 5
       }
     }
   ],
@@ -228,7 +239,7 @@
           }
         },
         {
-          "if": "defibrillator~",
+          "if": "defibrillator~*",
           "then": {
             "en": "This is a special type of defibrillator: {defibrillator}"
           },

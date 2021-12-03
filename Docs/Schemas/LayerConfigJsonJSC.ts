@@ -114,6 +114,10 @@ export default {
       "description": "The minimum needed zoomlevel required before loading of the data start\nDefault: 0",
       "type": "number"
     },
+    "shownByDefault": {
+      "description": "Indicates if this layer is shown by default;\ncan be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)",
+      "type": "boolean"
+    },
     "minzoomVisible": {
       "description": "The zoom level at which point the data is hidden again\nDefault: 100 (thus: always visible",
       "type": "number"
@@ -440,7 +444,7 @@ export default {
       "type": "object",
       "properties": {
         "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise",
+          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
           "type": "string"
         },
         "group": {

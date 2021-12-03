@@ -87,7 +87,7 @@
     },
     {
       "key": "defibrillator",
-      "description": "Layer 'Defibrillators' shows defibrillator~^$ with a fixed text, namely 'This is a special type of defibrillator: {defibrillator}' (in the MapComplete.osm.be theme 'Open AED Map')"
+      "description": "Layer 'Defibrillators' shows defibrillator~^..*$ with a fixed text, namely 'This is a special type of defibrillator: {defibrillator}' (in the MapComplete.osm.be theme 'Open AED Map')"
     },
     {
       "key": "level",
