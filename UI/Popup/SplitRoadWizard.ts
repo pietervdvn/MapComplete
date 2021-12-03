@@ -16,19 +16,10 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {BBox} from "../../Logic/BBox";
-
+import * as split_point from "../../assets/layers/split_point/split_point.json"
 export default class SplitRoadWizard extends Toggle {
-    private static splitLayerStyling = new LayerConfig({
-        id: "splitpositions",
-        source: {osmTags: "_cutposition=yes"},
-        mapRendering: [
-            {
-                location: ["point", "centroid"],
-                icon: {render: "circle:white;./assets/svg/scissors.svg"},
-                iconSize: {render: "30,30,center"}
-            }
-        ],
-    }, "(BUILTIN) SplitRoadWizard.ts", true)
+    // @ts-ignore
+    private static splitLayerStyling = new LayerConfig(split_point, "(BUILTIN) SplitRoadWizard.ts", true)
 
     public dialogIsOpened: UIEventSource<boolean>
 
@@ -68,14 +59,6 @@ export default class SplitRoadWizard extends Toggle {
         // Define how a cut is displayed on the map
 
         // Datalayer displaying the road and the cut points (if any)
-        new ShowDataLayer({
-            features: new StaticFeatureSource(splitPoints, true),
-            leafletMap: miniMap.leafletMap,
-            zoomToFeatures: false,
-            enablePopups: false,
-            layerToShow: SplitRoadWizard.splitLayerStyling,
-        })
-
         new ShowDataMultiLayer({
             features: new StaticFeatureSource([roadElement], false),
             layers: State.state.filteredLayers,
@@ -84,6 +67,16 @@ export default class SplitRoadWizard extends Toggle {
             zoomToFeatures: true,
             allElements: State.state.allElements,
         })
+        
+        new ShowDataLayer({
+            features: new StaticFeatureSource(splitPoints, true),
+            leafletMap: miniMap.leafletMap,
+            zoomToFeatures: false,
+            enablePopups: false,
+            layerToShow: SplitRoadWizard.splitLayerStyling,
+        })
+
+       
 
         /**
          * Handles a click on the overleaf map.
@@ -109,10 +102,8 @@ export default class SplitRoadWizard extends Toggle {
             const pointOnRoad = GeoOperations.nearestPoint(roadElement, coordinates); // pointOnRoad is a geojson
 
             // Update point properties to let it match the layer
-            pointOnRoad.properties._cutposition = "yes";
+            pointOnRoad.properties["_split_point"] = "yes";
 
-            // let the state remember the point, to be able to retrieve it later by id
-            State.state.allElements.addOrGetElement(pointOnRoad);
 
             // Add it to the list of all points and notify observers
             splitPoints.data.push({feature: pointOnRoad, freshness: new Date()}); // show the point on the data layer

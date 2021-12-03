@@ -217,7 +217,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }else if(icon === undefined){
             htmlEl = label
         }else if(label === undefined){
-            htmlEl = iconAndBadges
+            htmlEl =  new Combine([iconAndBadges]).SetStyle("flex flex-col")
         }else {
             htmlEl = new Combine([iconAndBadges, label]).SetStyle("flex flex-col")
         }
