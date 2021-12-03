@@ -460,7 +460,7 @@
         "surveillance:type=camera"
       ],
       "title": {
-        "en":"surveillance camera"
+        "en": "surveillance camera"
       }
     },
     {
@@ -470,7 +470,7 @@
         "camera:mount=wall"
       ],
       "title": {
-        "en":"surveillance camera mounted on a wall"
+        "en": "surveillance camera mounted on a wall"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"

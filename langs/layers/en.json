@@ -2554,6 +2554,9 @@
         "presets": {
             "0": {
                 "title": "Defibrillator"
+            },
+            "1": {
+                "title": "defibrillator mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -3858,6 +3861,14 @@
     },
     "surveillance_camera": {
         "name": "Surveillance camera's",
+        "presets": {
+            "0": {
+                "title": "surveillance camera"
+            },
+            "1": {
+                "title": "surveillance camera mounted on a wall"
+            }
+        },
         "tagRenderings": {
             "Camera type: fixed; panning; dome": {
                 "mappings": {
@@ -4312,6 +4323,12 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "walls_and_buildings": {
+        "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, ...). This layer is invisible by default and not toggleable by the user.",
+        "title": {
+            "render": "Wall or building"
         }
     },
     "waste_basket": {

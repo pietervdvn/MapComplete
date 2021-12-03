@@ -2550,6 +2550,9 @@
         "presets": {
             "0": {
                 "title": "Defibrillator"
+            },
+            "1": {
+                "title": "defibrillator die aan een muur hangt"
             }
         },
         "tagRenderings": {
