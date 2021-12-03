@@ -109,6 +109,13 @@ export interface LayerConfigJson {
      */
     minzoom?: number;
 
+
+    /**
+     * Indicates if this layer is shown by default;
+     * can be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)
+     */
+    shownByDefault?: true | boolean;
+    
     /**
      * The zoom level at which point the data is hidden again
      * Default: 100 (thus: always visible

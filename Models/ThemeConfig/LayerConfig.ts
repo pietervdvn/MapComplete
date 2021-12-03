@@ -47,6 +47,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly deletion: DeleteConfig | null;
     public readonly allowMove: MoveConfig | null
     public readonly allowSplit: boolean
+    public readonly shownByDefault: boolean;
     /**
      * In seconds
      */
@@ -147,6 +148,7 @@ export default class LayerConfig extends WithContextLoader {
         this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
+        this.shownByDefault = json.shownByDefault ?? true;
         if (json.presets !== undefined && json.presets?.map === undefined) {
             throw "Presets should be a list of items (at " + context + ")"
         }

@@ -221,6 +221,8 @@ export default class LayoutConfig {
             result.push(AllKnownLayers.sharedLayers.get(defaultLayer))
         }
 
+      
+        
         return {layers: result, extractAllNodes: exportAllNodes}
     }
 

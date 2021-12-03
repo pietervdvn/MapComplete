@@ -255,6 +255,9 @@ export class TagUtils {
             }
             if (tag.indexOf("~") >= 0) {
                 const split = Utils.SplitFirst(tag, "~");
+                if(split[1] === "") {
+                    throw "Detected a regextag with an empty regex; this is not allowed. Use '"+split[0]+"='instead (at "+context+")"
+                }
                 if (split[1] === "*") {
                     split[1] = "..*"
                 }

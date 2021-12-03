@@ -77,6 +77,7 @@ export default class LegacyJsonConvert {
         delete config["iconSize"]
         delete config["rotation"]
         delete config["wayHandling"]
+        delete config["hideUnderlayingFeaturesMinPercentage"]
         
         for (const mapRenderingElement of config.mapRendering) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {

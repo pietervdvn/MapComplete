@@ -301,7 +301,7 @@ export default class MapState extends UserRelatedState {
             } else {
                 isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "layer-" + layer.id,
-                    "true",
+                     ""+layer.shownByDefault,
                     "Wether or not layer " + layer.id + " is shown"
                 )
             }
