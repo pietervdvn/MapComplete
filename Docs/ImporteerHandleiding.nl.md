@@ -9,13 +9,14 @@ Om een dataset te importeren, zijn er enkele stappen die doorlopen moeten worden
 3. Community inlichten en Importeren voorbereiden
 4. Importeren!
 
-0. Geschikte data
------------------
+
+
+## 0. Geschikte data
+
 
 Is de data die je wenst te importeren geschikt voor OpenStreetMap? Is ze dus verifieerbaar ter plaatse door een andere contributor? Is ze ietwat permantent?
 
-1. Licentie nakijken
----------------------
+## 1. Licentie nakijken
 
 
 Voordat we een dataset in OpenStreetMap kunnen toevoegen, moeten we nagaan of dit wel mag van de oorspronkelijke maker van de dataset.
@@ -23,8 +24,7 @@ Voordat we een dataset in OpenStreetMap kunnen toevoegen, moeten we nagaan of di
 Is er een licentievermelding bij de databron? Kijk deze dan na of er toestemming is voor hergebruik (ook commercieel) en redistributie.
 Indien er een attributie voor de dataset moet zijn, dan kan de bronvermelding in de changeset (als source) aangeduid worden en/of kan de auteur vermeld worden op [deze wikipagina]. **Vraag na of deze bronvermelding voldoende is**
 
-2. Importeermethode bepalen
----------------------------
+## 2. Importeermethode bepalen
 
 De volgende vraag is hoe deze data geimporteerd zal worden. Ook hier moeten verschillende vragen beantwoord worden:
 
@@ -95,8 +95,7 @@ Dit kan bijvoorbeeld met QGIS of met JOSM gedaan worden.
 
 Ten slotte moet men ook voorkomen dat er duplicaten ontstaan: twee objecten in OpenStreetMap die beiden hetzelfde voorwerp voorstellen.
 
-3. Community inlichten en importeren voorbereiden
--------------------------------------------------
+## 3. Community inlichten en importeren voorbereiden
 
 Indien er een grote import gaat gebeuren, dient de community hiervan ingelicht te worden. Door dit in de community te bespreken, worden fouten voorkomen. Ook helpt dit om medecontributors warm te maken en niet-betrokken contributors geen verassingen te bezorgen.
 
@@ -107,7 +106,6 @@ Voor kleinere datasets is dit slechts een formaliteit - zeker indien de data ged
 Ondertussen kan de import voorbereid worden door op kleine schaal te importeren (bv. een beperkt gebied of een beperkt aantal punten).
 Indien er een MapComplete-thema wordt opgezet, kan dit ook al getest worden en naar de community gestuurd worden.
 
-4. Importeren!
---------------
+## 4. Importeren!
 
 Na enkele weken zijn we hier eindelijk aangeland! Tijd om de data in OpenStreetMap te importeren! 
