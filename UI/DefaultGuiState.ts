@@ -18,7 +18,7 @@ export class DefaultGuiState {
         this.welcomeMessageOpenedTab = UIEventSource.asFloat(QueryParameters.GetQueryParameter(
             "tab",
             "0",
-            `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`
+            `The tab that is shown in the welcome-message.`
         ));
         this.welcomeMessageIsOpened = QueryParameters.GetBooleanQueryParameter(
             "welcome-control-toggle",

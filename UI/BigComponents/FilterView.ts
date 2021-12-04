@@ -20,7 +20,7 @@ export default class FilterView extends VariableUiElement {
         const backgroundSelector = new Toggle(
             new BackgroundSelector(),
             undefined,
-            State.state.featureSwitchBackgroundSlection
+            State.state.featureSwitchBackgroundSelection
         )
         super(
             filteredLayer.map((filteredLayers) => {
