@@ -166,7 +166,7 @@ export default class LayoutConfig {
                         return
                     } else {
                         const shared = AllKnownLayers.sharedLayers.get(layer)
-                        if(shared === undefined){
+                        if (shared === undefined) {
                             throw `Shared layer ${layer} not found (at ${context}.layers[${i}])`
                         }
                         result.push(shared)
@@ -212,15 +212,39 @@ export default class LayoutConfig {
             })
 
         });
-        
+
         // Some special layers which are always included by default
         for (const defaultLayer of AllKnownLayers.added_by_default) {
-            if(result.some(l => l?.id === defaultLayer)){
+            if (result.some(l => l?.id === defaultLayer)) {
                 continue; // Already added
             }
-            result.push(AllKnownLayers.sharedLayers.get(defaultLayer))
+            const sharedLayer = AllKnownLayers.sharedLayers.get(defaultLayer)
+            if (sharedLayer !== undefined) {
+                result.push(sharedLayer)
+            }
         }
 
+
+        let unmetDependencies: { dependency: string, layer: string }[] = []
+        do {
+            const dependencies: { dependency: string, layer: string }[] = [].concat(...result.map(l => Array.from(l.getDependencies()).map(d => ({
+                dependency: d,
+                layer: l.id
+            }))))
+            const loadedLayers = new Set(result.map(r => r.id))
+            unmetDependencies = dependencies.filter(dep => !loadedLayers.has(dep.dependency))
+            for (const unmetDependency of unmetDependencies) {
+
+                console.log("Recursively loading unmet dependency ", unmetDependency.dependency, "(needed by " + unmetDependency.layer + ")")
+                const dep = AllKnownLayers.sharedLayers.get(unmetDependency.dependency)
+                if (dep === undefined) {
+                    throw "The layer '" + unmetDependency.layer + "' needs '" + unmetDependency.dependency + "' to be loaded, but it could not be found as builtin layer (at " + context + ")"
+                }
+                result.unshift(dep)
+                unmetDependencies = unmetDependencies.filter(d => d.dependency !== unmetDependency.dependency)
+            }
+
+        } while (unmetDependencies.length > 0)
         return {layers: result, extractAllNodes: exportAllNodes}
     }
 
@@ -300,9 +324,9 @@ export default class LayoutConfig {
     public isLeftRightSensitive() {
         return this.layers.some(l => l.isLeftRightSensitive())
     }
-    
-    public getMatchingLayer(tags: any) : LayerConfig | undefined{
-        if(tags === undefined){
+
+    public getMatchingLayer(tags: any): LayerConfig | undefined {
+        if (tags === undefined) {
             return undefined
         }
         for (const layer of this.layers) {

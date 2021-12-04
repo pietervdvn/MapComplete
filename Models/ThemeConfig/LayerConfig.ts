@@ -1,7 +1,7 @@
 import {Translation} from "../../UI/i18n/Translation";
 import SourceConfig from "./SourceConfig";
 import TagRenderingConfig from "./TagRenderingConfig";
-import PresetConfig from "./PresetConfig";
+import PresetConfig, {PreciseInput} from "./PresetConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
@@ -26,19 +26,19 @@ import * as icons from "../../assets/tagRenderings/icons.json"
 
 export default class LayerConfig extends WithContextLoader {
 
-    id: string;
-    name: Translation;
-    description: Translation;
-    source: SourceConfig;
-    calculatedTags: [string, string][];
-    doNotDownload: boolean;
-    passAllFeatures: boolean;
-    isShown: TagRenderingConfig;
-    minzoom: number;
-    minzoomVisible: number;
-    maxzoom: number;
-    title?: TagRenderingConfig;
-    titleIcons: TagRenderingConfig[];
+    public readonly id: string;
+    public readonly name: Translation;
+    public readonly description: Translation;
+    public readonly source: SourceConfig;
+    public readonly calculatedTags: [string, string][];
+    public readonly doNotDownload: boolean;
+    public readonly  passAllFeatures: boolean;
+    public readonly isShown: TagRenderingConfig;
+    public readonly  minzoom: number;
+    public readonly  minzoomVisible: number;
+    public readonly  maxzoom: number;
+    public readonly title?: TagRenderingConfig;
+    public readonly titleIcons: TagRenderingConfig[];
 
     public readonly mapRendering: PointRenderingConfig[]
     public readonly lineRendering: LineRenderingConfig[]
@@ -52,10 +52,10 @@ export default class LayerConfig extends WithContextLoader {
      */
     public readonly maxAgeOfCache: number
 
-    presets: PresetConfig[];
+    public readonly presets: PresetConfig[];
 
-    tagRenderings: TagRenderingConfig[];
-    filters: FilterConfig[];
+    public readonly tagRenderings: TagRenderingConfig[];
+    public readonly filters: FilterConfig[];
 
     constructor(
         json: LayerConfigJson,
@@ -151,8 +151,7 @@ export default class LayerConfig extends WithContextLoader {
             throw "Presets should be a list of items (at " + context + ")"
         }
         this.presets = (json.presets ?? []).map((pr, i) => {
-
-            let preciseInput: any = {
+            let preciseInput: PreciseInput = {
                 preferredBackground: ["photo"],
                 snapToLayers: undefined,
                 maxSnapDistance: undefined
@@ -163,6 +162,7 @@ export default class LayerConfig extends WithContextLoader {
                         preferredBackground: undefined
                     }
                 }
+                
                 let snapToLayers: string[];
                 if (typeof pr.preciseInput.snapToLayer === "string") {
                     snapToLayers = [pr.preciseInput.snapToLayer]
@@ -178,7 +178,7 @@ export default class LayerConfig extends WithContextLoader {
                 }
                 preciseInput = {
                     preferredBackground: preferredBackground,
-                    snapToLayers: snapToLayers,
+                    snapToLayers,
                     maxSnapDistance: pr.preciseInput.maxSnapDistance ?? 10
                 }
             }
@@ -439,6 +439,10 @@ export default class LayerConfig extends WithContextLoader {
             ]
         }
 
+        for (const dep of Array.from(this.getDependencies())) {
+            extraProps.push(new Combine(["This layer will automatically load ", new Link(dep, "#"+dep)," into the layout as it depends on it."]))
+        }
+
         return new Combine([
             new Title(this.id, 3),
             this.description,
@@ -477,5 +481,24 @@ export default class LayerConfig extends WithContextLoader {
 
     public isLeftRightSensitive(): boolean {
         return this.lineRendering.some(lr => lr.leftRightSensitive)
+    }
+
+    /**
+     * Returns a set of all other layer-ids that this layer needs to function.
+     * E.g. if this layers does snap to another layer in the preset, this other layer id will be mentioned
+     */
+    public getDependencies(): Set<string>{
+        const deps = new Set<string>()
+
+        for (const preset of this.presets ?? []) {
+            if(preset.preciseInput?.snapToLayers === undefined){
+                continue
+            }
+            preset.preciseInput?.snapToLayers?.forEach(id => {
+                deps.add(id);
+            })
+        }
+        
+        return deps
     }
 }
