@@ -39,15 +39,23 @@ export class AllKnownLayouts {
                 throw "Priviliged layer definition not found: " + id
             }
         }
+
         const allLayers: LayerConfig[] = Array.from(AllKnownLayers.sharedLayers.values())
+            .filter(layer => AllKnownLayers.priviliged_layers.indexOf(layer.id) < 0)
+
+        const builtinLayerIds: Set<string> = new Set<string>()
+        allLayers.forEach(l => builtinLayerIds.add(l.id))
 
         const themesPerLayer = new Map<string, string[]>()
 
         for (const layout of Array.from(AllKnownLayouts.allKnownLayouts.values())) {
-            if(layout.hideFromOverview){
+            if (layout.hideFromOverview) {
                 continue
             }
             for (const layer of layout.layers) {
+                if (!builtinLayerIds.has(layer.id)) {
+                    continue
+                }
                 if (!themesPerLayer.has(layer.id)) {
                     themesPerLayer.set(layer.id, [])
                 }
@@ -57,8 +65,9 @@ export class AllKnownLayouts {
 
 
         let popularLayerCutoff = 2;
-        const popupalLayers = allLayers.filter((layer) => themesPerLayer.get(layer.id)?.length >= 2)
-            .filter(layer => AllKnownLayers.priviliged_layers.indexOf(layer.id) < 0)
+        const popuparLayers = allLayers.filter(layer => themesPerLayer.get(layer.id)?.length >= 2)
+
+        const unpopularLayers = allLayers.filter(layer => themesPerLayer.get(layer.id)?.length < 2)
 
         return new Combine([
             new Title("Special and other useful layers", 1),
@@ -68,10 +77,15 @@ export class AllKnownLayouts {
             ...AllKnownLayers.priviliged_layers
                 .map(id => AllKnownLayers.sharedLayers.get(id))
                 .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) < 0)),
-            new Title("Frequently reused layers", 1),
-            "The following layers are used by at least "+popularLayerCutoff+" mapcomplete themes and might be interesting for your custom theme too",
-            new List(popupalLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),
-            ...popupalLayers.map((layer) => layer.GenerateDocumentation(themesPerLayer.get(layer.id)))
+            new Title("Normal layers", 1),
+            "The following layers are included in MapComplete",
+            new Title("Frequently reused layers", 2),
+            "The following layers are used by at least " + popularLayerCutoff + " mapcomplete themes and might be interesting for your custom theme too",
+            new List(popuparLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),
+            ...popuparLayers.map((layer) => layer.GenerateDocumentation(themesPerLayer.get(layer.id))),
+            new List(unpopularLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),
+            ...unpopularLayers.map(layer => layer.GenerateDocumentation(themesPerLayer.get(layer.id))
+            )
         ])
 
 
