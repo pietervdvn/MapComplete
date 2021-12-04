@@ -1,0 +1,211 @@
+{
+  "id": "entrance",
+  "name": {
+    "en": "Entrance"
+  },
+  "description": {
+    "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "entrance~*",
+        "indoor=door"
+      ]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Entrance"
+    }
+  },
+  "tagRenderings": [
+    {
+      "id": "Entrance type",
+      "question": {
+        "en": "What type of entrance is this?"
+      },
+      "mappings": [
+        {
+          "if": "entrance=yes",
+          "then": {
+            "en": "No specific entrance type is known"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "entrance=",
+              "indoor=door"
+            ]
+          },
+          "then": {
+            "en": "This is an indoor door, separating a room or a corridor within a single building"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=main"
+            ]
+          },
+          "then": {
+            "en": "This is the main entrance"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=secondary"
+            ]
+          },
+          "then": {
+            "en": "This is a secondary entrance"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=service"
+            ]
+          },
+          "then": {
+            "en": "This is a service entrance - normally only used for employees, delivery, ..."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=exit"
+            ]
+          },
+          "then": {
+            "en": "This is an exit where one can not enter"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=entrance"
+            ]
+          },
+          "then": {
+            "en": "This is an entrance where one can only enter (but not exit)"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=emergency"
+            ]
+          },
+          "then": {
+            "en": "This is emergency exit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=home"
+            ]
+          },
+          "then": {
+            "en": "This is the entrance to a private home"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Door_type",
+      "question": {
+        "en": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"
+      },
+      "mappings": [
+        {
+          "if": "door=yes",
+          "then": {
+            "en": "The door type is not known"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "door=hinged",
+          "then": {
+            "en": "A classical, hinged door supported by joints",
+            "nl": "Een gewone deur die aan scharnieren ophangt en openzwaait"
+          }
+        },
+        {
+          "if": "door=revolving",
+          "then": {
+            "en": "A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure",
+            "nl": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait"
+          }
+        },
+        {
+          "if": "door=overhead",
+          "then": {
+            "en": "A door which rolls from overhead, typically seen for garages",
+            "nl": "Een poort die langs boven dichtrolt, typisch voor garages"
+          }
+        },
+        {
+          "if": "door=no",
+          "then": {
+            "en": "This is an entrance without a physical door"
+          },
+          "hideInAnswer": "entrance="
+        }
+      ]
+    },
+    {
+      "id": "width",
+      "render": {
+        "en": "This door has a width of {canonical(width)} meter"
+      },
+      "question": {
+        "en":"What is the width of this door/entrance?"
+      },
+      "freeform": {
+        "key": "width",
+        "type": "length"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/entrance/door.svg",
+        "mappings": [
+          {
+            "if": "entrance=emergency",
+            "then": "./assets/layers/entrance/emergency_door.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "presets": [
+    {
+      "title": "entrance",
+      "preciseInput": {
+        "preferredBackground": "photo",
+        "snapToLayer": "walls_and_buildings"
+      },
+      "tags": ["entrance=yes"]
+    }
+  ]
+}
