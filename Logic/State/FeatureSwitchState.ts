@@ -16,7 +16,7 @@ export default class FeatureSwitchState {
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
-    public readonly featureSwitchBackgroundSlection: UIEventSource<boolean>;
+    public readonly featureSwitchBackgroundSelection: UIEventSource<boolean>;
     public readonly featureSwitchAddNew: UIEventSource<boolean>;
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>;
     public readonly featureSwitchIframePopoutEnabled: UIEventSource<boolean>;
@@ -72,7 +72,7 @@ export default class FeatureSwitchState {
             (layoutToUse) => layoutToUse?.enableSearch ?? true,
             "Disables/Enables the search bar"
         );
-        this.featureSwitchBackgroundSlection = featSw(
+        this.featureSwitchBackgroundSelection = featSw(
             "fs-background",
             (layoutToUse) => layoutToUse?.enableBackgroundLayerSelection ?? true,
             "Disables/Enables the background layer control"

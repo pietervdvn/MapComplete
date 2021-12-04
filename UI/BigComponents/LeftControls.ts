@@ -19,6 +19,7 @@ import BackgroundMapSwitch from "./BackgroundMapSwitch";
 export default class LeftControls extends Combine {
 
     constructor(state: {
+                    featureSwitchBackgroundSelection: UIEventSource<boolean>;
                     layoutToUse: LayoutConfig,
                     featurePipeline: FeaturePipeline,
                     currentBounds: UIEventSource<BBox>,
@@ -74,10 +75,16 @@ export default class LeftControls extends Combine {
             undefined,
             state.featureSwitchFilter
         );
+        
+        const mapSwitch = new Toggle(
+            new BackgroundMapSwitch(state, state.backgroundLayer),
+            undefined,
+            state.featureSwitchBackgroundSelection
+        )
 
         super([filterButton,
             downloadButtonn,
-            new BackgroundMapSwitch(state, state.backgroundLayer)
+           mapSwitch
         ])
 
         this.SetClass("flex flex-col")

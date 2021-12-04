@@ -1,0 +1,22 @@
+[
+  {
+    "path": "door.svg",
+    "license": "CC-BY 3.0 Unported",
+    "authors": [
+      "Icons Bazaar"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Noun_Project_Door_icon_1512154.svg"
+    ]
+  },
+  {
+    "path": "emergency_door.svg",
+    "license": "CC-BY-SA 4.0 international",
+    "authors": [
+      "PanierAvide"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Emergency_door_icon.svg"
+    ]
+  }
+]

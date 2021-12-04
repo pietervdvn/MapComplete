@@ -1,0 +1,12 @@
+[
+  {
+    "path": "logo.svg",
+    "license": "GPL",
+    "authors": [
+      "sebkur"
+    ],
+    "sources": [
+      "https://github.com/mobanisto/MapComplete/commit/1aeb1fdb5b09908d67907f3c816152bfebfdcc79"
+    ]
+  }
+]
