@@ -48,7 +48,7 @@
       "tags": [
         "highway=street_lamp"
       ],
-      "preciseInput": true
+      "preciseInput": {}
     }
   ],
   "tagRenderings": [
@@ -366,9 +366,12 @@
       }
     }
   ],
-  "deletion": true,
+  "deletion": {},
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
+  },
+  "description": {
+    "en": "A layer showing street lights"
   }
 }

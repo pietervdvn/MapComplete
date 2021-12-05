@@ -214,5 +214,8 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
+  }
 }

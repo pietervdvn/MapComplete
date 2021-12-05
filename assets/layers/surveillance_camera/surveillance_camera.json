@@ -536,5 +536,8 @@
         "render": "8"
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+  }
 }

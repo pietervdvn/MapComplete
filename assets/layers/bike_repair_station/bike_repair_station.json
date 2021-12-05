@@ -769,5 +769,8 @@
         "render": "1"
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands"
+  }
 }

@@ -222,5 +222,8 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing memorials for cyclists, killed in road accidents"
+  }
 }

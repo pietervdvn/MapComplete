@@ -675,5 +675,8 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
+  }
 }

@@ -1330,5 +1330,8 @@
         ]
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\""
+  }
 }

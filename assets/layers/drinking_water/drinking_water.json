@@ -187,5 +187,9 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing drinking water fountains",
+    "nl": "Deze laag toont drinkwaterpunten"
+  }
 }

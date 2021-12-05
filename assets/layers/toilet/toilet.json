@@ -573,5 +573,8 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing (public) toilets"
+  }
 }

@@ -44,5 +44,8 @@
       "color": "#937f20",
       "width": "1"
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing village-green (which are communal green areas, but not quite parks\""
+  }
 }

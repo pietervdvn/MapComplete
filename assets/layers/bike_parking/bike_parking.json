@@ -563,5 +563,8 @@
       "color": "#00f",
       "width": "1"
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing where you can park your bike"
+  }
 }

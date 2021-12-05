@@ -78,5 +78,8 @@
         "render": "2"
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer with bike-themed objects but who don't match any other layer"
+  }
 }

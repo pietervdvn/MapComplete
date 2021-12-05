@@ -643,5 +643,9 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "nl": "Deze laag toont zitbanken en enkele vragen over deze zitbanken",
+    "en": "A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them."
+  }
 }

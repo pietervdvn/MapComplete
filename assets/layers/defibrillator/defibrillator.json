@@ -579,5 +579,8 @@
     {
       "color": "#0000ff"
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
+  }
 }

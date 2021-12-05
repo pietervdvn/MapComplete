@@ -619,5 +619,8 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing trees"
+  }
 }

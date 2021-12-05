@@ -175,5 +175,8 @@
         "render": "8"
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing all public-transport-stops which do have a bench"
+  }
 }
