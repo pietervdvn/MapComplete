@@ -32,8 +32,8 @@ export class Changes {
 
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
-    
-    private _state : { allElements: ElementStorage; historicalUserLocations: FeatureSource }
+
+    private _state: { allElements: ElementStorage; historicalUserLocations: FeatureSource }
 
     constructor(leftRightSensitive: boolean = false) {
         this._leftRightSensitive = leftRightSensitive;
@@ -120,13 +120,13 @@ export class Changes {
             })
     }
 
-    private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]){
+    private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
 
         if (this._state === undefined) {
             // No state loaded -> we can't calculate...
             return;
         }
-        if(!change.trackStatistics){
+        if (!change.trackStatistics) {
             // Probably irrelevant, such as a new helper node
             return;
         }
@@ -139,34 +139,34 @@ export class Changes {
                 const diff = (now.getTime() - visitTime.getTime()) / 1000
                 return diff < Constants.nearbyVisitTime;
             })
-        if(recentLocationPoints.length === 0){
+        if (recentLocationPoints.length === 0) {
             // Probably no GPS enabled/no fix 
             return;
         }
-        
+
         // The applicable points, contain information in their properties about location, time and GPS accuracy
         // They are all GeoLocationPointProperties
         // We walk every change and determine the closest distance possible
         // Only if the change itself does _not_ contain any coordinates, we fall back and search the original feature in the state
-        
-        const changedObjectCoordinates : [number, number][] = []
-        
+
+        const changedObjectCoordinates: [number, number][] = []
+
         const feature = this._state.allElements.ContainingFeatures.get(change.mainObjectId)
-        if(feature !== undefined){
-        changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
+        if (feature !== undefined) {
+            changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
         }
 
         for (const changeDescription of changeDescriptions) {
-            const chng : {lat: number, lon: number} | {coordinates : [number,number][]} | {members} = changeDescription.changes
-            if(chng === undefined){
+            const chng: { lat: number, lon: number } | { coordinates: [number, number][] } | { members } = changeDescription.changes
+            if (chng === undefined) {
                 continue
             }
-           if(chng["lat"] !== undefined){
-               changedObjectCoordinates.push([chng["lat"],chng["lon"]])
-           }
-           if(chng["coordinates"] !== undefined){
-               changedObjectCoordinates.push(...chng["coordinates"])
-           }
+            if (chng["lat"] !== undefined) {
+                changedObjectCoordinates.push([chng["lat"], chng["lon"]])
+            }
+            if (chng["coordinates"] !== undefined) {
+                changedObjectCoordinates.push(...chng["coordinates"])
+            }
         }
 
         return Math.min(...changedObjectCoordinates.map(coor =>
@@ -176,7 +176,7 @@ export class Changes {
             }))
         ))
     }
-    
+
     public async applyAction(action: OsmChangeAction): Promise<void> {
         const changeDescriptions = await action.Perform(this)
         changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(action, changeDescriptions)
@@ -190,12 +190,12 @@ export class Changes {
         this.allChanges.data.push(...changes)
         this.allChanges.ping()
     }
-    
+
     public useLocationHistory(state: {
         allElements: ElementStorage,
         historicalUserLocations: FeatureSource
-    }){
-        this._state= state
+    }) {
+        this._state = state
     }
 
     public registerIdRewrites(mappings: Map<string, string>): void {
@@ -212,7 +212,13 @@ export class Changes {
     private async flushSelectChanges(pending: ChangeDescription[]): Promise<boolean> {
         const self = this;
         const neededIds = Changes.GetNeededIds(pending)
-        const osmObjects = await Promise.all(neededIds.map(id => OsmObject.DownloadObjectAsync(id)));
+
+        const osmObjects = Utils.NoNull(await Promise.all(neededIds.map(async id =>
+            OsmObject.DownloadObjectAsync(id).catch(e => {
+                console.error("Could not download OSM-object", id, " dropping it from the changes")
+                pending = pending.filter(ch => ch.type + "/" + ch.id !== id)
+                return undefined;
+            }))));
 
         if (this._leftRightSensitive) {
             osmObjects.forEach(obj => SimpleMetaTagger.removeBothTagging(obj.tags))
@@ -243,41 +249,41 @@ export class Changes {
                 key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
                 value: descr.meta.specialMotivation
             }))
-        
+
         const distances = Utils.NoNull(pending.map(descr => descr.meta.distanceToObject));
         distances.sort((a, b) => a - b)
         const perBinCount = Constants.distanceToChangeObjectBins.map(_ => 0)
 
         let j = 0;
         const maxDistances = Constants.distanceToChangeObjectBins
-        for (let i = 0; i < maxDistances.length; i++){
+        for (let i = 0; i < maxDistances.length; i++) {
             const maxDistance = maxDistances[i];
             // distances is sorted in ascending order, so as soon as one is to big, all the resting elements will be bigger too
-            while(j < distances.length && distances[j] < maxDistance){
-                perBinCount[i] ++
+            while (j < distances.length && distances[j] < maxDistance) {
+                perBinCount[i]++
                 j++
             }
         }
 
         const perBinMessage = Utils.NoNull(perBinCount.map((count, i) => {
-            if(count === 0){
+            if (count === 0) {
                 return undefined
             }
-            const maxD =maxDistances[i]
+            const maxD = maxDistances[i]
             let key = `change_within_${maxD}m`
-            if(maxD === Number.MAX_VALUE){
+            if (maxD === Number.MAX_VALUE) {
                 key = `change_over_${maxDistances[i - 1]}m`
             }
             return {
-                key ,
+                key,
                 value: count,
-                aggregate:true
+                aggregate: true
             }
         }))
-        
+
         // This method is only called with changedescriptions for this theme
         const theme = pending[0].meta.theme
-        const metatags : ChangesetTag[] = [{
+        const metatags: ChangesetTag[] = [{
             key: "comment",
             value: "Adding data with #MapComplete for theme #" + theme
         },
