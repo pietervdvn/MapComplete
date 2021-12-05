@@ -575,6 +575,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing (public) toilets"
+    "en": "A layer showing (public) toilets",
+    "nl": "Een laag die publieke toiletten toont"
   }
 }
