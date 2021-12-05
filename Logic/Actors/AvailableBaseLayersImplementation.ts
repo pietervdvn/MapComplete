@@ -22,7 +22,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             feature: null,
             max_zoom: 19,
             min_zoom: 0,
-            isBest: false, // This is a lie! Of course OSM is the best map! (But not in this context)
+            isBest: true, // Of course, OpenStreetMap is the best map!
             category: "osmbasedmap"
         }
 
