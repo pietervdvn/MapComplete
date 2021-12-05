@@ -23,6 +23,7 @@ import {Tiles} from "../../Models/TileRange";
 import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 import MapState from "../State/MapState";
+import {ElementStorage} from "../ElementStorage";
 
 
 /**
@@ -160,7 +161,7 @@ export default class FeaturePipeline {
                     state.currentBounds, state.locationControl,
                     (tileIndex, freshness) => self.freshnesses.get(id).addTileLoad(tileIndex, freshness),
                     (tile) => {
-                        new RegisteringAllFromFeatureSourceActor(tile)
+                        new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                         hierarchy.registerTile(tile);
                         tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
                     }
@@ -180,13 +181,13 @@ export default class FeaturePipeline {
                         minZoomLevel: this.osmSourceZoomLevel,
                         dontEnforceMinZoom: true,
                         registerTile: (tile) => {
-                            new RegisteringAllFromFeatureSourceActor(tile)
+                            new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                             perLayerHierarchy.get(id).registerTile(tile)
                             tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
                         }
                     })
                 } else {
-                    new RegisteringAllFromFeatureSourceActor(src)
+                    new RegisteringAllFromFeatureSourceActor(src, state.allElements)
                     perLayerHierarchy.get(id).registerTile(src)
                     src.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(src))
                 }
@@ -194,7 +195,7 @@ export default class FeaturePipeline {
                 new DynamicGeoJsonTileSource(
                     filteredLayer,
                     tile => {
-                        new RegisteringAllFromFeatureSourceActor(tile)
+                        new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                         perLayerHierarchy.get(id).registerTile(tile)
                         tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
                     },
@@ -208,7 +209,7 @@ export default class FeaturePipeline {
             isActive: useOsmApi,
             neededTiles: neededTilesFromOsm,
             handleTile: tile => {
-                new RegisteringAllFromFeatureSourceActor(tile)
+                new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                 if (tile.layer.layerDef.maxAgeOfCache > 0) {
                     const saver = self.localStorageSavers.get(tile.layer.layerDef.id)
                     if(saver === undefined){
@@ -240,7 +241,7 @@ export default class FeaturePipeline {
             const fullNodeDb = new FullNodeDatabaseSource(
                 state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
                 tile => {
-                    new RegisteringAllFromFeatureSourceActor(tile)
+                    new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                     perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                     tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
                 })
@@ -273,8 +274,8 @@ export default class FeaturePipeline {
 
 
         // Also load points/lines that are newly added. 
-        const newGeometry = new NewGeometryFromChangesFeatureSource(state.changes)
-        new RegisteringAllFromFeatureSourceActor(newGeometry)
+        const newGeometry = new NewGeometryFromChangesFeatureSource(state.changes, state.osmConnection._oauth_config.url)
+        new RegisteringAllFromFeatureSourceActor(newGeometry, state.allElements)
         // A NewGeometryFromChangesFeatureSource does not split per layer, so we do this next
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
             (perLayer) => {
@@ -386,6 +387,7 @@ export default class FeaturePipeline {
     }
 
     private initOverpassUpdater(state: {
+        allElements: ElementStorage;
         layoutToUse: LayoutConfig,
         currentBounds: UIEventSource<BBox>,
         locationControl: UIEventSource<Loc>,
@@ -434,7 +436,7 @@ export default class FeaturePipeline {
 
 
         // Register everything in the state' 'AllElements'
-        new RegisteringAllFromFeatureSourceActor(updater)
+        new RegisteringAllFromFeatureSourceActor(updater, state.allElements)
         return updater;
     }
 

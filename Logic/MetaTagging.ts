@@ -105,7 +105,7 @@ export default class MetaTagging {
     }
 
 
-    public static createFunctionsForFeature(calculatedTags: [string, string][]): ((feature: any) => void)[] {
+    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string][]): ((feature: any) => void)[] {
         const functions: ((feature: any) => void)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
@@ -139,7 +139,7 @@ export default class MetaTagging {
                             return result;
                         } catch (e) {
                             if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
-                                console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
+                                console.warn("Could not calculate a calculated tag for key "+key+" defined by " + code + " (in layer"+layerId+") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
                                 MetaTagging.errorPrintCount++;
                                 if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
                                     console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
@@ -173,7 +173,7 @@ export default class MetaTagging {
             }
 
             try {
-                const functions = MetaTagging.createFunctionsForFeature(calculatedTags)
+                const functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
 
 
                 ExtraFunctions.FullPatchFeature(params, feature);
