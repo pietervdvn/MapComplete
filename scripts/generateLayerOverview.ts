@@ -111,6 +111,10 @@ class LayerOverviewUtils {
             }
             layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
             knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed))
+            
+            if(layerFile.parsed.description === undefined){
+                throw "The layer "+layerFile.parsed.id+" does not provide a description, but this is required for builtin themes"
+            }
         }
 
         let themeErrorCount = []
