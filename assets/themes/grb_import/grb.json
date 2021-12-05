@@ -26,7 +26,7 @@
     "maxZoom": 15
   },
   "overrideAll": {
-    "minzoom": 18
+    "minzoom": 19
   },
   "layers": [
     {
@@ -47,9 +47,11 @@
             "iconSize": "5,5,center",
             "location": "point"
           }
-        ]
+        ],
+        "passAllFeatures": true
       }
     },
+
     {
       "id": "OSM-buildings",
       "name": "All OSM-buildings",
@@ -100,23 +102,6 @@
                 "then": "#0774f2"
               }
             ]
-          }
-        },
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "label": {
-            "mappings": [
-              {
-                "if": "addr:housenumber~*",
-                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
-              }
-            ]
-          },
-          "iconSize": {
-            "render": "40,40,center"
           }
         }
       ],
@@ -303,8 +288,11 @@
             }
           ]
         }
-      ]
-    },
+      ],
+      "#": "Pass all the features in order to render the address in the layer below",
+      "passAllFeatures": true
+    }, 
+    "address",
     {
       "id": "All OSM objects",
       "name": "All OSM Objects",
@@ -357,10 +345,12 @@
       "builtin": "crab_address",
       "override": {
         "calculatedTags+": [
-          "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ",
-          "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']",
+          "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ?? {}",
+          "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']+(feat.get('_embedded_in')['addr:unit'] ?? '')",
           "_embedding_street=feat.get('_embedded_in')['addr:street']",
-          "_embedding_id=feat.get('_embedded_in').id"
+          "_embedding_id=feat.get('_embedded_in').id",
+          "_closeby_addresses=feat.closestn('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
+          "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'"
         ],
         "isShown": {
           "render": "yes",
@@ -373,34 +363,51 @@
                 ]
               },
               "then": "no"
+            },
+            {
+              "if": "_has_identical_closeby_address=yes",
+              "then": "no"
             }
           ]
         },
         "tagRenderings+": [
           {
             "id": "render_embedded",
-            "render": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}",
+            "render": "Dit CRAB-adres ligt in een OSM-gebouw. Het OSM-gebouw heeft geen volledig adres",
+            "mapping": [
+              {
+                "if": {
+                  "and": [
+                    "_embedding_street~*",
+                    "_embedding_nr~*"
+                  ]
+                },
+                "then": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}"
+              }
+            ],
+            "condition": "_embedding_id~*"
+          },
+          {
+            "id": "apply-button",
+            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
+            "condition": "_embedding_id!="
+          },
+          {
+            "id": "import-button",
+            "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Voeg dit adres als een nieuw adrespunt toe,,,OSM-buildings,5)}",
             "condition": {
               "and": [
                 "_embedding_street~*",
                 "_embedding_nr~*"
               ]
             }
-          },
-          {
-            "id": "import-button",
-            "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address,,,OSM-buildings,5)}"
-          },
-          {
-            "id": "apply-button",
-            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
-            "condition": "_embedded_in!="
           }
         ]
       }
     },
     {
       "id": "GRB",
+      "description": "Geometry which comes from GRB with tools to import them",
       "source": {
         "osmTags": "HUISNR~*",
         "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
@@ -422,7 +429,8 @@
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
-        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)"
+        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
+        "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''"
       ],
       "tagRenderings": [
         {
@@ -456,7 +464,7 @@
         },
         {
           "id": "Import-button",
-          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Upload this building to OpenStreetMap)}",
+          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
               "if": "_overlaps_with!=null",
@@ -498,8 +506,7 @@
           }
         }
       ]
-    },
-    "address"
+    }
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",
