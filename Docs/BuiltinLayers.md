@@ -316,6 +316,8 @@ A facility where bicycles can be lent for longer period of times
 
 
 
+A layer showing drinking water fountains
+
 [Go to the source code](../assets/layers/drinking_water/drinking_water.json)
 
 
@@ -340,6 +342,8 @@ A facility where bicycles can be lent for longer period of times
 ### food 
 
 
+
+A layer showing restaurants and fast-food amenities (with a special rendering for friteries)
 
 [Go to the source code](../assets/layers/food/food.json)
 
@@ -572,6 +576,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
+A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.
+
 [Go to the source code](../assets/layers/bench/bench.json)
 
 
@@ -593,6 +599,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 ### bench_at_pt 
 
 
+
+A layer showing all public-transport-stops which do have a bench
 
 [Go to the source code](../assets/layers/bench_at_pt/bench_at_pt.json)
 
@@ -616,6 +624,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
+A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)
+
 [Go to the source code](../assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)
 
 
@@ -637,6 +647,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 ### bike_cafe 
 
 
+
+A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...
 
 [Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)
 
@@ -660,6 +672,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
+A layer showing facilities where one can clean their bike
+
 [Go to the source code](../assets/layers/bike_cleaning/bike_cleaning.json)
 
 
@@ -682,6 +696,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
+A layer showing where you can park your bike
+
 [Go to the source code](../assets/layers/bike_parking/bike_parking.json)
 
 
@@ -703,6 +719,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 ### bike_repair_station 
 
 
+
+A layer showing bicycle pumps and bicycle repair tool stands
 
 [Go to the source code](../assets/layers/bike_repair_station/bike_repair_station.json)
 
@@ -749,6 +767,8 @@ A shop specifically selling bicycles or related items
 ### bike_themed_object 
 
 
+
+A layer with bike-themed objects but who don't match any other layer
 
 [Go to the source code](../assets/layers/bike_themed_object/bike_themed_object.json)
 
@@ -819,6 +839,8 @@ Een vogelkijkhut
 ### cafe_pub 
 
 
+
+A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions
 
 [Go to the source code](../assets/layers/cafe_pub/cafe_pub.json)
 
@@ -891,6 +913,8 @@ Crossings for pedestrians and cyclists
 
 
 
+All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
+
 [Go to the source code](../assets/layers/cycleways_and_roads/cycleways_and_roads.json)
 
 
@@ -915,6 +939,8 @@ Crossings for pedestrians and cyclists
 ### defibrillator 
 
 
+
+A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device
 
 [Go to the source code](../assets/layers/defibrillator/defibrillator.json)
 
@@ -1059,6 +1085,8 @@ Map layer to show fire stations.
 
 
 
+A layer showing memorials for cyclists, killed in road accidents
+
 [Go to the source code](../assets/layers/ghost_bike/ghost_bike.json)
 
 
@@ -1104,6 +1132,8 @@ Map layer to show fire hydrants.
 ### information_board 
 
 
+
+A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, ...)
 
 [Go to the source code](../assets/layers/information_board/information_board.json)
 
@@ -1319,6 +1349,8 @@ A sport pitch
 
 
 
+A layer showing street lights
+
 [Go to the source code](../assets/layers/street_lamps/street_lamps.json)
 
 
@@ -1340,6 +1372,8 @@ A sport pitch
 ### surveillance_camera 
 
 
+
+This layer shows surveillance cameras and allows a contributor to update information and add new cameras
 
 [Go to the source code](../assets/layers/surveillance_camera/surveillance_camera.json)
 
@@ -1363,6 +1397,8 @@ A sport pitch
 
 
 
+A layer showing (public) toilets
+
 [Go to the source code](../assets/layers/toilet/toilet.json)
 
 
@@ -1384,6 +1420,8 @@ A sport pitch
 ### tree_node 
 
 
+
+A layer showing trees
 
 [Go to the source code](../assets/layers/tree_node/tree_node.json)
 

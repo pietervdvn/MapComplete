@@ -239,7 +239,10 @@ For example to get all objects which overlap or embed from a layer, use `_contai
 
 If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name) 
 
-
+  0. list of features or layer name or '*' to get all features
+  1. amount of features
+  2. unique tag key (optional)
+  3. maxDistanceInMeters (optional)
  
 
 ### memberships 
