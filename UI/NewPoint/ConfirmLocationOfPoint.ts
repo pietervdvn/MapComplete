@@ -98,7 +98,8 @@ export default class ConfirmLocationOfPoint extends Combine {
             ]).SetClass("flex flex-col")
         ).SetClass("font-bold break-words")
             .onClick(() => {
-                confirm(preset.tags, (preciseInput?.GetValue()?.data ?? loc), preciseInput?.snappedOnto?.data?.properties?.id);
+                console.log("The confirmLocationPanel - precise input yielded ", preciseInput?.GetValue()?.data)
+                confirm(preset.tags, preciseInput?.GetValue()?.data ?? loc, preciseInput?.snappedOnto?.data?.properties?.id);
             });
 
         if (preciseInput !== undefined) {

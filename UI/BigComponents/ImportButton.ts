@@ -34,6 +34,7 @@ import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction
 import CreateWayWithPointReuseAction from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
 import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction";
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
+import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 
 
 export interface ImportButtonState {
@@ -300,7 +301,7 @@ export default class ImportButton extends Toggle {
                                       importClicked: UIEventSource<boolean>): BaseUIElement {
 
         const confirmationMap = Minimap.createMiniMap({
-            allowMoving: true,
+            allowMoving: false,
             background: o.state.backgroundLayer
         })
         confirmationMap.SetStyle("height: 20rem; overflow: hidden").SetClass("rounded-xl")
@@ -411,18 +412,21 @@ export default class ImportButton extends Toggle {
         isImported: UIEventSource<boolean>,
         importClicked: UIEventSource<boolean>): BaseUIElement {
 
-        async function confirm() {
+        async function confirm(tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) {
+            
             if (isImported.data) {
                 return
             }
             o.originalTags.data["_imported"] = "yes"
             o.originalTags.ping() // will set isImported as per its definition
-            const geometry = o.feature.geometry
-            const lat = geometry.coordinates[1]
-            const lon = geometry.coordinates[0];
-            const newElementAction = new CreateNewNodeAction(o.newTags.data, lat, lon, {
+            let snapOnto : OsmObject = undefined
+            if(snapOntoWayId !== undefined){
+               snapOnto = await OsmObject.DownloadObjectAsync(snapOntoWayId) 
+            }
+            const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: o.state.layoutToUse.id,
-                changeType: "import"
+                changeType: "import",
+                snapOnto: <OsmWay> snapOnto
             })
 
             await o.state.changes.applyAction(newElementAction)
