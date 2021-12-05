@@ -15,9 +15,10 @@
         "point",
         "centroid"
       ],
-      "iconSize": "15,15,center",
+      "iconSize": "50,50,center",
+      "icon": "./assets/layers/crab_address/housenumber_blank.svg",
       "label": {
-        "render": "<div style='background:#faa' class='rounded-full'>{HNRLABEL}</div>"
+        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{HNRLABEL}</div>"
       }
     }
   ],
@@ -27,7 +28,6 @@
       "render": {
         "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
       }
-    },
-    "all_tags"
+    }
   ]
 }

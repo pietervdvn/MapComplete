@@ -120,8 +120,14 @@
   ],
   "mapRendering": [
     {
+      "label": {
+        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+        "condition": "addr:housenumber~*"
+      },
+      "iconSize": "50,50,center",
       "icon": {
-        "render": "./assets/themes/uk_addresses/housenumber_ok.svg",
+        "render": "./assets/layers/address/housenumber_blank.svg",
+
         "mappings": [
           {
             "if": {
@@ -139,11 +145,8 @@
           }
         ]
       },
-      "iconSize": {
-        "render": "40,40,center"
-      },
       "location": [
-        "point"
+        "point","centroid"
       ]
     },
     {
