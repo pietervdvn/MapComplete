@@ -224,6 +224,7 @@ export class UIEventSource<T> {
 
     public ping(): void {
         let toDelete = undefined
+        let startTime = new Date().getTime() / 1000;
         for (const callback of this._callbacks) {
             if (callback(this.data) === true) {
                 // This callback wants to be deleted
@@ -234,6 +235,10 @@ export class UIEventSource<T> {
                     toDelete.push(callback)
                 }
             }
+        }
+        let endTime = new Date().getTime() / 1000
+        if((endTime - startTime) > 500){
+            console.trace("Warning: a ping of ",this.tag," took more then 500ms; this is probably a performance issue")
         }
         if (toDelete !== undefined) {
             for (const toDeleteElement of toDelete) {

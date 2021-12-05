@@ -22,11 +22,20 @@
   "mapRendering": [
     {
       "color": {
+        "render": "#fff"
+      },
+      "fill": "no",
+      "width": {
+        "render": "3"
+      }
+    },
+    {
+      "color": {
         "render": "#333"
       },
       "fill": "no",
       "width": {
-        "render": "5"
+        "render": "2"
       }
     }
   ]

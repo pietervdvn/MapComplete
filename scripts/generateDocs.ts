@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 import SpecialVisualizations from "../UI/SpecialVisualizations";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import Combine from "../UI/Base/Combine";
-import {ExtraFunction} from "../Logic/ExtraFunction";
+import {ExtraFunctions} from "../Logic/ExtraFunctions";
 import ValidatedTextField from "../UI/Input/ValidatedTextField";
 import BaseUIElement from "../UI/BaseUIElement";
 import Translations from "../UI/i18n/Translations";
@@ -39,7 +39,7 @@ function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void
 }
 
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), ["UI/SpecialVisualisations.ts"])
-WriteFile("./Docs/CalculatedTags.md", new Combine([new Title("Metatags", 1), SimpleMetaTagger.HelpText(), ExtraFunction.HelpText()]).SetClass("flex-col"),
+WriteFile("./Docs/CalculatedTags.md", new Combine([new Title("Metatags", 1), SimpleMetaTagger.HelpText(), ExtraFunctions.HelpText()]).SetClass("flex-col"),
     ["SimpleMetaTagger", "ExtraFunction"])
 WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["ValidatedTextField.ts"]);
 WriteFile("./Docs/BuiltinLayers.md", AllKnownLayouts.GenLayerOverviewText(), ["AllKnownLayers.ts"])

@@ -140,6 +140,20 @@ ${Utils.Special_visualizations_tagsToApplyHelpText}
             defaultValue: "5"
         }]
 
+    getLayerDependencies(args: string[]){
+        const dependsOnLayers: string[] = []
+        
+        // The target layer
+        dependsOnLayers.push(args[0])
+        
+        const snapOntoLayers = args[5]?.trim() ?? "";
+        if(args[5] !== ""){
+            dependsOnLayers.push(...snapOntoLayers.split(";"))
+        }
+        
+        return dependsOnLayers
+    }
+    
     constr(state, tagSource, args, guiState) {
         if (!state.layoutToUse.official && !(state.featureSwitchIsTesting.data || state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url)) {
             return new Combine([new FixedUiElement("The import button is disabled for unofficial themes to prevent accidents.").SetClass("alert"),

@@ -6,6 +6,7 @@ import BaseUIElement from "../UI/BaseUIElement";
 import Combine from "../UI/Base/Combine";
 import Title from "../UI/Base/Title";
 import List from "../UI/Base/List";
+import DependencyCalculator from "../Models/ThemeConfig/DependencyCalculator";
 
 export class AllKnownLayouts {
 
@@ -69,6 +70,21 @@ export class AllKnownLayouts {
 
         const unpopularLayers = allLayers.filter(layer => themesPerLayer.get(layer.id)?.length < 2)
 
+        // Determine the cross-dependencies
+        const layerIsNeededBy : Map<string, string[]> = new Map<string, string[]>()
+
+        for (const layer of allLayers) {
+            for (const dep of DependencyCalculator.getLayerDependencies(layer)) {
+                const dependency = dep.neededLayer
+                if(!layerIsNeededBy.has(dependency)){
+                    layerIsNeededBy.set(dependency, [])
+                }
+                layerIsNeededBy.get(dependency).push(layer.id)
+            }
+            
+            
+        }
+        
         return new Combine([
             new Title("Special and other useful layers", 1),
             "MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here.",
@@ -76,15 +92,15 @@ export class AllKnownLayouts {
             new List(AllKnownLayers.priviliged_layers.map(id => "[" + id + "](#" + id + ")")),
             ...AllKnownLayers.priviliged_layers
                 .map(id => AllKnownLayers.sharedLayers.get(id))
-                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) < 0)),
+                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), layerIsNeededBy, DependencyCalculator.getLayerDependencies(l),AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) < 0)),
             new Title("Normal layers", 1),
             "The following layers are included in MapComplete",
             new Title("Frequently reused layers", 2),
             "The following layers are used by at least " + popularLayerCutoff + " mapcomplete themes and might be interesting for your custom theme too",
             new List(popuparLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),
-            ...popuparLayers.map((layer) => layer.GenerateDocumentation(themesPerLayer.get(layer.id))),
+            ...popuparLayers.map((layer) => layer.GenerateDocumentation(themesPerLayer.get(layer.id),layerIsNeededBy,DependencyCalculator.getLayerDependencies(layer))),
             new List(unpopularLayers.map(layer => "[" + layer.id + "](#" + layer.id + ")")),
-            ...unpopularLayers.map(layer => layer.GenerateDocumentation(themesPerLayer.get(layer.id))
+            ...unpopularLayers.map(layer => layer.GenerateDocumentation(themesPerLayer.get(layer.id),layerIsNeededBy,DependencyCalculator.getLayerDependencies(layer))
             )
         ])
 

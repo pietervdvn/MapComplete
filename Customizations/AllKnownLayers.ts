@@ -13,6 +13,7 @@ export default class AllKnownLayers {
         return true
     })()
 
+    public static runningGenerateScript = false;
 
     // Must be below the list...
     public static sharedLayers: Map<string, LayerConfig> = AllKnownLayers.getSharedLayers();
@@ -44,7 +45,7 @@ export default class AllKnownLayers {
         const [layerId, id] = renderingId.split(".")
         const layer = AllKnownLayers.getSharedLayersJson().get(layerId)
         if (layer === undefined) {
-            if (Utils.runningFromConsole) {
+            if (AllKnownLayers.runningGenerateScript) {
                 // Probably generating the layer overview
                 return <TagRenderingConfigJson[]>[{
                     id: "dummy"

@@ -1,5 +1,6 @@
 import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "./FixedUiElement";
+import {Utils} from "../../Utils";
 
 export default class Title extends BaseUIElement {
     public readonly title: BaseUIElement;
@@ -10,6 +11,9 @@ export default class Title extends BaseUIElement {
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
+        if(embedded === undefined){
+            throw "A title should have some content. Undefined is not allowed"
+        }
         if (typeof embedded === "string") {
             this.title = new FixedUiElement(embedded)
         } else {
@@ -23,7 +27,11 @@ export default class Title extends BaseUIElement {
         }else if(embedded instanceof FixedUiElement){
             innerText = embedded.content
         }else{
-            this.title.ConstructElement()?.innerText
+            if(Utils.runningFromConsole){
+                console.log("Not constructing an anchor for title with embedded content of "+embedded)
+            }else{
+                innerText = embedded.ConstructElement()?.innerText
+            }
         }
         
         this.id = innerText?.replace(/ /g, '-')

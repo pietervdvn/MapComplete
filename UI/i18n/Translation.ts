@@ -112,6 +112,10 @@ export class Translation extends BaseUIElement {
         }
         return langs;
     }
+    
+    public AllValues(): string[]{
+        return this.SupportedLanguages().map(lng => this.translations[lng]);
+    }
 
     public Subs(text: any): Translation {
         const newTranslations = {};

@@ -413,7 +413,11 @@ export default class LayerConfig extends WithContextLoader {
 
     }
 
-    public GenerateDocumentation(usedInThemes: string[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
+    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
+        context?: string;
+        reason: string;
+        neededLayer: string;
+    }[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
 
         if (canBeIncluded) {
@@ -441,8 +445,12 @@ export default class LayerConfig extends WithContextLoader {
             ]
         }
 
-        for (const dep of Array.from(this.getDependencies())) {
-            extraProps.push(new Combine(["This layer will automatically load ", new Link(dep, "#"+dep)," into the layout as it depends on it."]))
+        for (const dep of dependencies) {
+            extraProps.push(new Combine(["This layer will automatically load ", new Link(dep.neededLayer, "#"+dep.neededLayer)," into the layout as it depends on it: ", dep.reason, "("+dep.context+")"]))
+        }
+        
+        for(const revDep of layerIsNeededBy?.get(this.id) ?? []){
+            extraProps.push(new Combine(["This layer is needed as dependency for layer",new Link(revDep, "#"+revDep)]))
         }
 
         return new Combine([
@@ -462,6 +470,10 @@ export default class LayerConfig extends WithContextLoader {
         }
         return this.calculatedTags.map((code) => code[1]);
     }
+    
+    AllTagRenderings(): TagRenderingConfig[]{
+        return  Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title, this.isShown])
+}
 
     public ExtractImages(): Set<string> {
         const parts: Set<string>[] = [];
@@ -485,22 +497,4 @@ export default class LayerConfig extends WithContextLoader {
         return this.lineRendering.some(lr => lr.leftRightSensitive)
     }
 
-    /**
-     * Returns a set of all other layer-ids that this layer needs to function.
-     * E.g. if this layers does snap to another layer in the preset, this other layer id will be mentioned
-     */
-    public getDependencies(): Set<string>{
-        const deps = new Set<string>()
-
-        for (const preset of this.presets ?? []) {
-            if(preset.preciseInput?.snapToLayers === undefined){
-                continue
-            }
-            preset.preciseInput?.snapToLayers?.forEach(id => {
-                deps.add(id);
-            })
-        }
-        
-        return deps
-    }
 }

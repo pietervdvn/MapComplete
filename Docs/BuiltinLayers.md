@@ -69,6 +69,8 @@
       * [Themes using this layer](#themes-using-this-layer)
     + [direction](#direction)
       * [Themes using this layer](#themes-using-this-layer)
+    + [entrance](#entrance)
+      * [Themes using this layer](#themes-using-this-layer)
     + [etymology](#etymology)
       * [Themes using this layer](#themes-using-this-layer)
     + [extinguisher](#extinguisher)
@@ -318,7 +320,8 @@ A facility where bicycles can be lent for longer period of times
 
 
 
-
+  - This layer will automatically load  [drinking_water](#drinking_water)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_other_drinking_water)
+  - This layer is needed as dependency for layer [drinking_water](#drinking_water)
 
 
 
@@ -394,6 +397,9 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
+  - This layer is needed as dependency for layer [defibrillator](#defibrillator)
+  - This layer is needed as dependency for layer [entrance](#entrance)
+  - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
 
 
 
@@ -405,6 +411,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 
   - [aed](https://mapcomplete.osm.be/aed)
+  - [entrances](https://mapcomplete.osm.be/entrances)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
  
 
@@ -451,6 +458,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [cycleways_and_roads](#cycleways_and_roads)
   - [defibrillator](#defibrillator)
   - [direction](#direction)
+  - [entrance](#entrance)
   - [etymology](#etymology)
   - [extinguisher](#extinguisher)
   - [fire_station](#fire_station)
@@ -545,7 +553,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
-  - This layer will automatically load  [cycleways_and_roads](#cycleways_and_roads)  into the layout as it depends on it.
+  - This layer will automatically load  [cycleways_and_roads](#cycleways_and_roads)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+  - This layer will automatically load  [cycleways_and_roads](#cycleways_and_roads)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
 
@@ -863,7 +872,8 @@ Crossings for pedestrians and cyclists
 
 
 
-  - This layer will automatically load  [cycleways_and_roads](#cycleways_and_roads)  into the layout as it depends on it.
+  - This layer will automatically load  [cycleways_and_roads](#cycleways_and_roads)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+  - This layer will automatically load  [cycleways_and_roads](#cycleways_and_roads)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
 
@@ -885,7 +895,10 @@ Crossings for pedestrians and cyclists
 
 
 
-
+  - This layer is needed as dependency for layer [barrier](#barrier)
+  - This layer is needed as dependency for layer [barrier](#barrier)
+  - This layer is needed as dependency for layer [crossings](#crossings)
+  - This layer is needed as dependency for layer [crossings](#crossings)
 
 
 
@@ -907,7 +920,8 @@ Crossings for pedestrians and cyclists
 
 
 
-  - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it.
+  - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
+  - This layer is needed as dependency for layer [Brugge](#Brugge)
 
 
 
@@ -943,6 +957,30 @@ This layer visualizes directions
 
 
   - [surveillance](https://mapcomplete.osm.be/surveillance)
+ 
+
+### entrance 
+
+
+
+A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)
+
+[Go to the source code](../assets/layers/entrance/entrance.json)
+
+
+
+  - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [entrances](https://mapcomplete.osm.be/entrances)
  
 
 ### etymology 
@@ -1285,7 +1323,7 @@ A sport pitch
 
 
 
-
+  - This layer is needed as dependency for layer [Assen](#Assen)
 
 
 
@@ -1307,7 +1345,7 @@ A sport pitch
 
 
 
-  - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it.
+  - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
 
@@ -1493,7 +1531,7 @@ A climbing gym
 
 
 
-
+  - This layer is needed as dependency for layer [climbing](#climbing)
 
 
 
@@ -1517,7 +1555,7 @@ A climbing opportunity
 
 
 
-
+  - This layer will automatically load  [climbing_route](#climbing_route)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _contained_climbing_routes_properties)
 
 
 

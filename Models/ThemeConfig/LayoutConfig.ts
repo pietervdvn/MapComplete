@@ -6,6 +6,7 @@ import LayerConfig from "./LayerConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Constants from "../Constants";
 import TilesourceConfig from "./TilesourceConfig";
+import DependencyCalculator from "./DependencyCalculator";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -193,7 +194,6 @@ export default class LayoutConfig {
                 names = [names]
             }
             names.forEach(name => {
-
                 if (name === "type_node") {
                     // This is a very special layer which triggers special behaviour
                     exportAllNodes = true;
@@ -221,29 +221,47 @@ export default class LayoutConfig {
             const sharedLayer = AllKnownLayers.sharedLayers.get(defaultLayer)
             if (sharedLayer !== undefined) {
                 result.push(sharedLayer)
+            }else if(!AllKnownLayers.runningGenerateScript){
+                throw "SharedLayer "+defaultLayer+" not found"
             }
         }
 
-        let unmetDependencies: { dependency: string, layer: string }[] = []
+        if(AllKnownLayers.runningGenerateScript){
+            return {layers: result, extractAllNodes: exportAllNodes}
+        }
+        // Verify cross-dependencies
+        let unmetDependencies: { neededLayer: string, neededBy: string, reason: string, context?: string }[] = []
         do {
-            const dependencies: { dependency: string, layer: string }[] = [].concat(...result.map(l => Array.from(l.getDependencies()).map(d => ({
-                dependency: d,
-                layer: l.id
-            }))))
-            const loadedLayers = new Set(result.map(r => r.id))
-            unmetDependencies = dependencies.filter(dep => !loadedLayers.has(dep.dependency))
-            for (const unmetDependency of unmetDependencies) {
+            const dependencies: { neededLayer: string, reason: string, context?: string, neededBy: string }[] = []
 
-                console.log("Recursively loading unmet dependency ", unmetDependency.dependency, "(needed by " + unmetDependency.layer + ")")
-                const dep = AllKnownLayers.sharedLayers.get(unmetDependency.dependency)
+            for (const layerConfig of result) {
+                const layerDeps = DependencyCalculator.getLayerDependencies(layerConfig)
+                dependencies.push(...layerDeps)
+            }
+
+            const loadedLayers = new Set(result.map(r => r.id))
+            // During the generate script, builtin layers are verified but not loaded - so we have to add them manually here
+            // Their existance is checked elsewhere, so this is fine
+            unmetDependencies = dependencies.filter(dep => !loadedLayers.has(dep.neededLayer))
+            for (const unmetDependency of unmetDependencies) {
+                const dep = AllKnownLayers.sharedLayers.get(unmetDependency.neededLayer)
                 if (dep === undefined) {
-                    throw "The layer '" + unmetDependency.layer + "' needs '" + unmetDependency.dependency + "' to be loaded, but it could not be found as builtin layer (at " + context + ")"
+                  
+                    const message = 
+                        ["Loading a dependency failed: layer "+unmetDependency.neededLayer+" is not found, neither as layer of "+json.id+" nor as builtin layer.",
+                            "This layer is needed by "+unmetDependency.neededBy,
+                            unmetDependency.reason+" (at "+unmetDependency.context+")",
+                            "Loaded layers are: "+result.map(l => l.id).join(",")
+                        
+                    ]
+                    throw message.join("\n\t");
                 }
                 result.unshift(dep)
-                unmetDependencies = unmetDependencies.filter(d => d.dependency !== unmetDependency.dependency)
+                unmetDependencies = unmetDependencies.filter(d => d.neededLayer  !== unmetDependency.neededLayer)
             }
 
         } while (unmetDependencies.length > 0)
+        
         return {layers: result, extractAllNodes: exportAllNodes}
     }
 

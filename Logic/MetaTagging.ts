@@ -1,5 +1,5 @@
 import SimpleMetaTagger from "./SimpleMetaTagger";
-import {ExtraFuncParams, ExtraFunction} from "./ExtraFunction";
+import {ExtraFuncParams, ExtraFunctions} from "./ExtraFunctions";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import State from "../State";
 
@@ -105,7 +105,7 @@ export default class MetaTagging {
     }
 
 
-    private static createFunctionsForFeature(calculatedTags: [string, string][]): ((feature: any) => void)[] {
+    public static createFunctionsForFeature(calculatedTags: [string, string][]): ((feature: any) => void)[] {
         const functions: ((feature: any) => void)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
@@ -176,7 +176,7 @@ export default class MetaTagging {
                 const functions = MetaTagging.createFunctionsForFeature(calculatedTags)
 
 
-                ExtraFunction.FullPatchFeature(params, feature);
+                ExtraFunctions.FullPatchFeature(params, feature);
                 for (const f of functions) {
                     f(feature);
                 }

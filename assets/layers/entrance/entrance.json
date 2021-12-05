@@ -21,6 +21,7 @@
     }
   },
   "tagRenderings": [
+    "images",
     {
       "id": "Entrance type",
       "question": {
@@ -168,6 +169,67 @@
       ]
     },
     {
+      "id": "automatic_door",
+      "question": "Is this door automated?",
+      "condition": "door!=no",
+      "mappings": [
+        {
+          "if": "automatic_door=yes",
+          "then": {
+            "en": "This is an automatic door"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "automatic_door=no",
+          "then": {
+            "en": "This door is <b>not</b> automated"
+          }
+        },
+        {
+          "if": "automatic_door=motion",
+          "then": {
+            "en": "This door will open automatically when <b>motion</b> is detected"
+          }
+        },
+        {
+          "if": "automatic_door=floor",
+          "then": {
+            "en": "This door will open automatically when a <b>sensor in the floor</b> is triggered"
+          }
+        },
+        {
+          "if": "automatic_door=button",
+          "then": {
+            "en": "This door will open automatically when a <b>button is pressed</b>"
+          }
+        },
+        {
+          "if": "automatic_door=slowdown_button",
+          "then": {
+            "en": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users"
+          }
+        },
+        {
+          "if": "automatic_door=continuous",
+          "then": {
+            "en": "This door revolves automatically all the time"
+          }
+        },{
+          "if": "automatic_door=serviced_on_button_press",
+          "then": {
+            "en": "This door will be opened by staff when requested by <b>pressing a button</b"
+          }
+        },
+        {
+          "if": "automatic_door=serviced_on_request",
+          "then": {
+            "en": "This door will be opened by staff when requested"
+          }
+        }
+      ]
+    },
+    {
       "id": "width",
       "render": {
         "en": "This door has a width of {canonical(width)} meter"
@@ -188,11 +250,11 @@
         "centroid"
       ],
       "icon": {
-        "render": "./assets/layers/entrance/door.svg",
+        "render": "circle:white;./assets/layers/entrance/door.svg",
         "mappings": [
           {
             "if": "entrance=emergency",
-            "then": "./assets/layers/entrance/emergency_door.svg"
+            "then": "circle:white;./assets/layers/entrance/emergency_door.svg"
           }
         ]
       }

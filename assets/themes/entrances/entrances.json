@@ -1,0 +1,22 @@
+{
+  "id": "entrances",
+  "title": {
+    "en":"Entrances"
+  },
+  "icon": "./assets/layers/entrance/door.svg",
+  "description": {
+    "en":"A map showing all entrances, which surveys for important aspects for wheelchair users"
+  },
+  "shortDescription": {"en": 
+    "Survey entrances to help wheelchair routing"
+  },
+  "language": ["en"],
+  "version": "2021-12-04",
+  "maintainer": "MapComplete",
+  "layers": [
+    "entrance"
+  ],
+  "startZoom": 15,
+  "startLat": 51.0490,
+  "startLon": 3.7297
+}

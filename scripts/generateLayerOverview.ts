@@ -7,6 +7,7 @@ import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {Translation} from "../UI/i18n/Translation";
 import {Utils} from "../Utils";
+import AllKnownLayers from "../Customizations/AllKnownLayers";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -89,6 +90,7 @@ class LayerOverviewUtils {
 
     main(args: string[]) {
 
+        AllKnownLayers.runningGenerateScript = true;
         const layerFiles = ScriptUtils.getLayerFiles();
         const themeFiles = ScriptUtils.getThemeFiles();
 

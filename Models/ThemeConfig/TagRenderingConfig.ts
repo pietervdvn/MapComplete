@@ -58,9 +58,8 @@ export default class TagRenderingConfig {
 
 
         if (typeof json === "number") {
-            json = ""+json
+            json = "" + json
         }
-
 
 
         if (typeof json === "string") {
@@ -71,12 +70,11 @@ export default class TagRenderingConfig {
 
 
         this.id = json.id ?? "";
-        if(this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null){
-            throw "Invalid ID in "+context+": an id can only contain [a-zA-Z0-0_-] as characters. The offending id is: "+this.id
+        if (this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null) {
+            throw "Invalid ID in " + context + ": an id can only contain [a-zA-Z0-0_-] as characters. The offending id is: " + this.id
         }
-        
-        
-        
+
+
         this.group = json.group ?? "";
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
@@ -106,9 +104,9 @@ export default class TagRenderingConfig {
                 throw `Freeform.args is defined. This should probably be 'freeform.helperArgs' (at ${context})`
 
             }
-            
-            if(json.freeform.key === "questions"){
-                if(this.id !== "questions"){
+
+            if (json.freeform.key === "questions") {
+                if (this.id !== "questions") {
                     throw `If you use a freeform key 'questions', the ID must be 'questions' too to trigger the special behaviour. The current id is '${this.id}' (at ${context})`
                 }
             }
@@ -187,51 +185,50 @@ export default class TagRenderingConfig {
 
         if (this.id === "questions" && this.render !== undefined) {
             for (const ln in this.render.translations) {
-                const txt :string = this.render.translations[ln]
-                if(txt.indexOf("{questions}") >= 0){
+                const txt: string = this.render.translations[ln]
+                if (txt.indexOf("{questions}") >= 0) {
                     continue
                 }
                 throw `${context}: The rendering for language ${ln} does not contain {questions}. This is a bug, as this rendering should include exactly this to trigger those questions to be shown!`
 
             }
-            if(this.freeform?.key !== undefined && this.freeform?.key !== "questions"){
+            if (this.freeform?.key !== undefined && this.freeform?.key !== "questions") {
                 throw `${context}: If the ID is questions to trigger a question box, the only valid freeform value is 'questions' as well. Set freeform to questions or remove the freeform all together`
             }
         }
 
 
         if (this.freeform) {
-            if(this.render === undefined){
+            if (this.render === undefined) {
                 throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
             }
             for (const ln in this.render.translations) {
-                const txt :string = this.render.translations[ln]
-                if(txt === ""){
-                    throw context+" Rendering for language "+ln+" is empty"
+                const txt: string = this.render.translations[ln]
+                if (txt === "") {
+                    throw context + " Rendering for language " + ln + " is empty"
                 }
-                if(txt.indexOf("{"+this.freeform.key+"}") >= 0){
+                if (txt.indexOf("{" + this.freeform.key + "}") >= 0) {
                     continue
                 }
-                if(txt.indexOf("{"+this.freeform.key+":") >= 0){
+                if (txt.indexOf("{" + this.freeform.key + ":") >= 0) {
                     continue
                 }
-                if(txt.indexOf("{canonical("+this.freeform.key+")") >= 0){
+                if (txt.indexOf("{canonical(" + this.freeform.key + ")") >= 0) {
                     continue
                 }
-                if(this.freeform.type === "opening_hours" && txt.indexOf("{opening_hours_table(") >= 0){
+                if (this.freeform.type === "opening_hours" && txt.indexOf("{opening_hours_table(") >= 0) {
                     continue
                 }
-                if(this.freeform.type === "wikidata" && txt.indexOf("{wikipedia("+this.freeform.key) >= 0){
+                if (this.freeform.type === "wikidata" && txt.indexOf("{wikipedia(" + this.freeform.key) >= 0) {
                     continue
                 }
-                if(this.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0){
+                if (this.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0) {
                     continue
                 }
                 throw `${context}: The rendering for language ${ln} does not contain the freeform key {${this.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `
-                
+
             }
         }
-
 
 
         if (this.render && this.question && this.freeform === undefined) {
@@ -377,7 +374,7 @@ export default class TagRenderingConfig {
             }
         }
 
-        if(this.id === "questions"){
+        if (this.id === "questions") {
             return this.render
         }
 
@@ -389,6 +386,26 @@ export default class TagRenderingConfig {
             return this.render;
         }
         return defltValue;
+    }
+
+    /**
+     * Gets all translations that might be rendered in all languages
+     * USed for static analysis
+     * @constructor
+     * @private
+     */
+    EnumerateTranslations(): Translation[] {
+        const translations: Translation[] = []
+        for (const key in this) {
+            if(!this.hasOwnProperty(key)){
+                continue;
+            }
+            const o = this[key]
+            if (o instanceof Translation) {
+                translations.push(o)
+            }
+        }
+        return translations;
     }
 
     public ExtractImages(isIcon: boolean): Set<string> {

@@ -44,7 +44,8 @@ export interface SpecialVisualization {
     constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
     docs: string,
     example?: string,
-    args: { name: string, defaultValue?: string, doc: string }[]
+    args: { name: string, defaultValue?: string, doc: string }[],
+    getLayerDependencies?: (argument: string[]) => string[]
 }
 
 export default class SpecialVisualizations {
@@ -477,6 +478,7 @@ export default class SpecialVisualizations {
                 }
             },
             new ImportButtonSpecialViz(),
+            
             {
                 funcName: "multi_apply",
                 docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",
@@ -688,7 +690,7 @@ export default class SpecialVisualizations {
                             return [arg.name, defaultArg, arg.doc];
                         })
                     ) : undefined,
-                    new Title("Example usage", 4),
+                    new Title("Example usage of "+viz.funcName, 4),
                     new FixedUiElement(
                         viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
                     ).SetClass("literal-code"),
