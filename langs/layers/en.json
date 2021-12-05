@@ -238,6 +238,7 @@
         }
     },
     "bench": {
+        "description": "A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.",
         "name": "Benches",
         "presets": {
             "0": {
@@ -328,6 +329,7 @@
         }
     },
     "bench_at_pt": {
+        "description": "A layer showing all public-transport-stops which do have a bench",
         "name": "Benches at public transport stops",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -406,6 +408,7 @@
         }
     },
     "bicycle_tube_vending_machine": {
+        "description": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)",
         "name": "Bicycle tube vending machine",
         "presets": {
             "0": {
@@ -434,6 +437,7 @@
         }
     },
     "bike_cafe": {
+        "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...",
         "name": "Bike cafe",
         "presets": {
             "0": {
@@ -501,6 +505,7 @@
         }
     },
     "bike_cleaning": {
+        "description": "A layer showing facilities where one can clean their bike",
         "name": "Bike cleaning service",
         "presets": {
             "0": {
@@ -549,6 +554,7 @@
         }
     },
     "bike_parking": {
+        "description": "A layer showing where you can park your bike",
         "name": "Bike parking",
         "presets": {
             "0": {
@@ -660,6 +666,7 @@
         }
     },
     "bike_repair_station": {
+        "description": "A layer showing bicycle pumps and bicycle repair tool stands",
         "name": "Bike stations (repair, pump or both)",
         "presets": {
             "0": {
@@ -951,6 +958,7 @@
         }
     },
     "bike_themed_object": {
+        "description": "A layer with bike-themed objects but who don't match any other layer",
         "name": "Bike related object",
         "title": {
             "mappings": {
@@ -1001,6 +1009,7 @@
         }
     },
     "cafe_pub": {
+        "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
         "filter": {
             "0": {
                 "options": {
@@ -2168,6 +2177,7 @@
         }
     },
     "cycleways_and_roads": {
+        "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\"",
         "name": "Cycleways and roads",
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -2550,6 +2560,7 @@
         }
     },
     "defibrillator": {
+        "description": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device",
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -2681,6 +2692,7 @@
         "name": "Direction visualization"
     },
     "drinking_water": {
+        "description": "A layer showing drinking water fountains",
         "name": "Drinking water",
         "presets": {
             "0": {
@@ -2720,6 +2732,102 @@
         },
         "title": {
             "render": "Drinking water"
+        }
+    },
+    "entrance": {
+        "description": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)",
+        "name": "Entrance",
+        "tagRenderings": {
+            "Door_type": {
+                "mappings": {
+                    "0": {
+                        "then": "The door type is not known"
+                    },
+                    "1": {
+                        "then": "A classical, hinged door supported by joints"
+                    },
+                    "2": {
+                        "then": "A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure"
+                    },
+                    "3": {
+                        "then": "A door which rolls from overhead, typically seen for garages"
+                    },
+                    "4": {
+                        "then": "This is an entrance without a physical door"
+                    }
+                },
+                "question": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"
+            },
+            "Entrance type": {
+                "mappings": {
+                    "0": {
+                        "then": "No specific entrance type is known"
+                    },
+                    "1": {
+                        "then": "This is an indoor door, separating a room or a corridor within a single building"
+                    },
+                    "2": {
+                        "then": "This is the main entrance"
+                    },
+                    "3": {
+                        "then": "This is a secondary entrance"
+                    },
+                    "4": {
+                        "then": "This is a service entrance - normally only used for employees, delivery, ..."
+                    },
+                    "5": {
+                        "then": "This is an exit where one can not enter"
+                    },
+                    "6": {
+                        "then": "This is an entrance where one can only enter (but not exit)"
+                    },
+                    "7": {
+                        "then": "This is emergency exit"
+                    },
+                    "8": {
+                        "then": "This is the entrance to a private home"
+                    }
+                },
+                "question": "What type of entrance is this?"
+            },
+            "automatic_door": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an automatic door"
+                    },
+                    "1": {
+                        "then": "This door is <b>not</b> automated"
+                    },
+                    "2": {
+                        "then": "This door will open automatically when <b>motion</b> is detected"
+                    },
+                    "3": {
+                        "then": "This door will open automatically when a <b>sensor in the floor</b> is triggered"
+                    },
+                    "4": {
+                        "then": "This door will open automatically when a <b>button is pressed</b>"
+                    },
+                    "5": {
+                        "then": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users"
+                    },
+                    "6": {
+                        "then": "This door revolves automatically all the time"
+                    },
+                    "7": {
+                        "then": "This door will be opened by staff when requested by <b>pressing a button</b"
+                    },
+                    "8": {
+                        "then": "This door will be opened by staff when requested"
+                    }
+                }
+            },
+            "width": {
+                "question": "What is the width of this door/entrance?",
+                "render": "This door has a width of {canonical(width)} meter"
+            }
+        },
+        "title": {
+            "render": "Entrance"
         }
     },
     "etymology": {
@@ -2835,6 +2943,7 @@
         }
     },
     "food": {
+        "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
             "0": {
                 "options": {
@@ -2963,6 +3072,7 @@
         }
     },
     "ghost_bike": {
+        "description": "A layer showing memorials for cyclists, killed in road accidents",
         "name": "Ghost bikes",
         "presets": {
             "0": {
@@ -3010,6 +3120,9 @@
                 "render": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device."
             }
         }
+    },
+    "grass_in_parks": {
+        "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'\""
     },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
@@ -3077,6 +3190,7 @@
         }
     },
     "information_board": {
+        "description": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, ...)",
         "name": "Information boards",
         "presets": {
             "0": {
@@ -3569,6 +3683,7 @@
         }
     },
     "slow_roads": {
+        "description": "All carfree roads",
         "tagRenderings": {
             "slow_roads-surface": {
                 "mappings": {
@@ -3712,6 +3827,7 @@
         }
     },
     "street_lamps": {
+        "description": "A layer showing street lights",
         "name": "Street Lamps",
         "presets": {
             "0": {
@@ -3860,6 +3976,7 @@
         }
     },
     "surveillance_camera": {
+        "description": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
         "name": "Surveillance camera's",
         "presets": {
             "0": {
@@ -3974,6 +4091,7 @@
         }
     },
     "toilet": {
+        "description": "A layer showing (public) toilets",
         "filter": {
             "0": {
                 "options": {
@@ -4171,6 +4289,7 @@
         }
     },
     "tree_node": {
+        "description": "A layer showing trees",
         "name": "Tree",
         "presets": {
             "0": {
@@ -4312,6 +4431,9 @@
         "title": {
             "render": "Viewpoint"
         }
+    },
+    "village_green": {
+        "description": "A layer showing village-green (which are communal green areas, but not quite parks\""
     },
     "visitor_information_centre": {
         "description": "A visitor center offers information about a specific attraction or place of interest where it is located.",

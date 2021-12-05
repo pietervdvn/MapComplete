@@ -51,7 +51,6 @@
         "passAllFeatures": true
       }
     },
-
     {
       "id": "OSM-buildings",
       "name": "All OSM-buildings",
@@ -291,7 +290,7 @@
       ],
       "#": "Pass all the features in order to render the address in the layer below",
       "passAllFeatures": true
-    }, 
+    },
     "address",
     {
       "id": "All OSM objects",

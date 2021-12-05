@@ -127,7 +127,6 @@
       "iconSize": "50,50,center",
       "icon": {
         "render": "./assets/layers/address/housenumber_blank.svg",
-
         "mappings": [
           {
             "if": {
@@ -146,7 +145,8 @@
         ]
       },
       "location": [
-        "point","centroid"
+        "point",
+        "centroid"
       ]
     },
     {

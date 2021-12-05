@@ -215,7 +215,8 @@
           "then": {
             "en": "This door revolves automatically all the time"
           }
-        },{
+        },
+        {
           "if": "automatic_door=serviced_on_button_press",
           "then": {
             "en": "This door will be opened by staff when requested by <b>pressing a button</b"
@@ -235,7 +236,7 @@
         "en": "This door has a width of {canonical(width)} meter"
       },
       "question": {
-        "en":"What is the width of this door/entrance?"
+        "en": "What is the width of this door/entrance?"
       },
       "freeform": {
         "key": "width",
@@ -267,7 +268,9 @@
         "preferredBackground": "photo",
         "snapToLayer": "walls_and_buildings"
       },
-      "tags": ["entrance=yes"]
+      "tags": [
+        "entrance=yes"
+      ]
     }
   ]
 }

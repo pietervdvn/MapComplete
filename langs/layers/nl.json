@@ -176,6 +176,7 @@
         }
     },
     "bench": {
+        "description": "Deze laag toont zitbanken en enkele vragen over deze zitbanken",
         "name": "Zitbanken",
         "presets": {
             "0": {
@@ -2674,6 +2675,7 @@
         "name": "Richtingsvisualisatie"
     },
     "drinking_water": {
+        "description": "Deze laag toont drinkwaterpunten",
         "name": "Drinkbaar water",
         "presets": {
             "0": {
@@ -2713,6 +2715,23 @@
         },
         "title": {
             "render": "Drinkbaar water"
+        }
+    },
+    "entrance": {
+        "tagRenderings": {
+            "Door_type": {
+                "mappings": {
+                    "1": {
+                        "then": "Een gewone deur die aan scharnieren ophangt en openzwaait"
+                    },
+                    "2": {
+                        "then": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait"
+                    },
+                    "3": {
+                        "then": "Een poort die langs boven dichtrolt, typisch voor garages"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3045,6 +3064,7 @@
         }
     },
     "information_board": {
+        "description": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
         "name": "Informatieborden",
         "presets": {
             "0": {
@@ -4080,6 +4100,7 @@
         }
     },
     "toilet": {
+        "description": "Een laag die publieke toiletten toont",
         "filter": {
             "0": {
                 "options": {
