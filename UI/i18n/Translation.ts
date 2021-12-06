@@ -124,45 +124,7 @@ export class Translation extends BaseUIElement {
                 continue;
             }
             let template: string = this.translations[lang];
-            for (const k in text) {
-                if (!text.hasOwnProperty(k)) {
-                    continue
-                }
-                const combined: (string)[] = [];
-                const parts = template.split("{" + k + "}");
-                const el: string | BaseUIElement = text[k];
-                if (el === undefined) {
-                    continue;
-                }
-                let rtext: string = "";
-                if (typeof (el) === "string") {
-                    rtext = el;
-                } else if (typeof (el) === "number") {
-                    // HUH? Where did that number come from? It might be a version number or something calculated
-                    rtext = "" + el;
-                } else if (el["toISOString"] != undefined) {
-                    // This is a date, probably the timestamp of the object
-                    // @ts-ignore
-                    const date: Date = el;
-                    rtext = date.toLocaleString();
-                } else if (el.ConstructElement === undefined) {
-                    console.error("ConstructElement is not defined", el);
-                    throw "ConstructElement is not defined, you are working with a " + (typeof el) + ":" + (el.constructor.name)
-                } else if (el["textFor"] !== undefined) {
-                    // @ts-ignore
-                    rtext = el.textFor(lang)
-                } else {
-                    rtext = el.ConstructElement().innerHTML;
-
-                }
-                for (let i = 0; i < parts.length - 1; i++) {
-                    combined.push(parts[i]);
-                    combined.push(rtext)
-                }
-                combined.push(parts[parts.length - 1]);
-                template = combined.join("")
-            }
-            newTranslations[lang] = template;
+            newTranslations[lang] = Utils.SubstituteKeys(template, text);
         }
         return new Translation(newTranslations);
 

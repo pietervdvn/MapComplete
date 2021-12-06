@@ -226,6 +226,10 @@ export class TagUtils {
                     new RegExp("^" + split[1] + "$")
                 );
             }
+            if (tag.indexOf("!:=") >= 0) {
+                const split = Utils.SplitFirst(tag, "!:=");
+                return new SubstitutingTag(split[0], split[1], true);
+            }
             if (tag.indexOf(":=") >= 0) {
                 const split = Utils.SplitFirst(tag, ":=");
                 return new SubstitutingTag(split[0], split[1]);

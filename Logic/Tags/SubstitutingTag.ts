@@ -12,13 +12,14 @@ import {TagsFilter} from "./TagsFilter";
 export default class SubstitutingTag implements TagsFilter {
     private readonly _key: string;
     private readonly _value: string;
-
-    constructor(key: string, value: string) {
+private readonly _invert: boolean
+    constructor(key: string, value: string, invert = false) {
         this._key = key;
         this._value = value;
+        this._invert = invert
     }
 
-    public static substituteString(template: string, dict: any): string {
+    private static substituteString(template: string, dict: any): string {
         for (const k in dict) {
             template = template.replace(new RegExp("\\{" + k + "\\}", 'g'), dict[k])
         }
@@ -26,7 +27,7 @@ export default class SubstitutingTag implements TagsFilter {
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
-        return this._key + "=" + SubstitutingTag.substituteString(this._value, properties);
+        return this._key + (this._invert ? '!' : '') + "=" + SubstitutingTag.substituteString(this._value, properties);
     }
 
     asOverpass(): string[] {
@@ -37,11 +38,11 @@ export default class SubstitutingTag implements TagsFilter {
         if (!(other instanceof SubstitutingTag)) {
             return false;
         }
-        return other._key === this._key && other._value === this._value;
+        return other._key === this._key && other._value === this._value && other._invert === this._invert;
     }
 
     isUsableAsAnswer(): boolean {
-        return true;
+        return !this._invert;
     }
 
     matchesProperties(properties: any): boolean {
@@ -50,7 +51,7 @@ export default class SubstitutingTag implements TagsFilter {
             return false;
         }
         const expectedValue = SubstitutingTag.substituteString(this._value, properties);
-        return value === expectedValue;
+        return (value === expectedValue) !== this._invert;
     }
 
     usedKeys(): string[] {
@@ -58,6 +59,7 @@ export default class SubstitutingTag implements TagsFilter {
     }
 
     asChange(properties: any): { k: string; v: string }[] {
+    if(this._invert){throw "An inverted substituting tag can not be used to create a change"}
         const v = SubstitutingTag.substituteString(this._value, properties);
         if (v.match(/{.*}/) !== null) {
             throw "Could not calculate all the substitutions: still have " + v

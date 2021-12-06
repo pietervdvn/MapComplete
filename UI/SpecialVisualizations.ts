@@ -553,7 +553,7 @@ export default class SpecialVisualizations {
                         doc: "If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element"
                     }
                 ],
-                example: "`{tag_apply(survey_date:=$_now:date, Surveyed today!)}`",
+                example: "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)",
                 constr: (state, tags, args) => {
                     const tagsToApply = SpecialVisualizations.generateTagsToApply(args[0], tags)
                     const msg = args[1]
@@ -650,6 +650,13 @@ export default class SpecialVisualizations {
             }
             return kv
         })
+
+        for (const spec of tgsSpec) {
+            if(spec[0].endsWith(':')){
+                throw "A tag specification for import or apply ends with ':'. The theme author probably wrote key:=otherkey instead of key=$otherkey"
+            }
+        }
+        
         return tagSource.map(tags => {
             const newTags: Tag [] = []
             for (const [key, value] of tgsSpec) {

@@ -203,6 +203,19 @@ Note that these values can be prepare with javascript in the theme by using a [c
             const key = match[1]
             let v = tags[key]
             if(v !== undefined ){
+
+                if (v["toISOString"] != undefined) {
+                    // This is a date, probably the timestamp of the object
+                    // @ts-ignore
+                    const date: Date = el;
+                    v = date.toISOString()
+                }
+                
+                if(v.InnerConstructElement !== undefined){
+                    console.warn("SubstituteKeys received a BaseUIElement to substitute in - this is probably a bug and will be downcast to a string", v)
+                    v = ( <HTMLElement> v.InnerConstructElement())?.innerText
+                }
+                
                 if(typeof v !== "string"){
                     v = ""+v
                 }

@@ -80,7 +80,7 @@ export class GeoOperations {
                     continue;
                 }
 
-                const intersection = this.calculateInstersection(feature, otherFeature, featureBBox)
+                const intersection = GeoOperations.calculateInstersection(feature, otherFeature, featureBBox)
                 if (intersection === null) {
                     continue
                 }
@@ -353,7 +353,7 @@ export class GeoOperations {
      * Returns 0 if both are linestrings
      * Returns null if the features are not intersecting
      */
-    private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
+    static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
         try {
             if (feature.geometry.type === "LineString") {
 
@@ -433,7 +433,7 @@ export class GeoOperations {
             }
 
         } catch (exception) {
-            console.warn("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception);
+            console.warn("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception,"\nThe considered objects are",feature, otherFeature);
             return undefined
         }
         return undefined;

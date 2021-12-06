@@ -291,6 +291,10 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                     if (other.closebyNodes === undefined || other.closebyNodes[0] === undefined) {
                         continue
                     }
+                    
+                    if(coorInfo.closebyNodes[0] === undefined){
+                        continue
+                    }
 
                     if (other.closebyNodes[0].node === coorInfo.closebyNodes[0].node) {
                         conflictFree = false

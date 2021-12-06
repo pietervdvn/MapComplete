@@ -58,6 +58,7 @@ export default class FeaturePipeline {
     private readonly osmSourceZoomLevel
     
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
+    private readonly metataggingRecalculated = new UIEventSource<void>(undefined)
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
@@ -95,11 +96,13 @@ export default class FeaturePipeline {
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
         this.perLayerHierarchy = perLayerHierarchy
 
+        // Given a tile, wraps it and passes it on to render (handled by 'handleFeatureSource'
         function patchedHandleFeatureSource (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
                 new FilteringFeatureSource(state, src.tileIndex,
-                    new ChangeGeometryApplicator(src, state.changes)
+                    new ChangeGeometryApplicator(src, state.changes),
+                    self.metataggingRecalculated
                 )
 
             handleFeatureSource(srcFiltered)
@@ -472,6 +475,7 @@ export default class FeaturePipeline {
                 self.applyMetaTags(tile)
             })
         })
+        self.metataggingRecalculated.ping()
 
     }
 

@@ -52,12 +52,12 @@
             "confirmButton": "Voeg hier een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
             "openLayerControl": "Open de laag-instellingen",
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
-            "presetInfo": "Het nieuwe punt krijgt de attributen {tags}",
+            "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
             "disableFilters": "Zet alle filters af",
-            "hasBeenImported": "Dit punt is reeds geimporteerd",
+            "hasBeenImported": "Dit object is reeds geimporteerd",
             "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
-            "zoomInMore": "Zoom meer in om dit punt te importeren"
+            "zoomInMore": "Zoom meer in om dit object te importeren"
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",

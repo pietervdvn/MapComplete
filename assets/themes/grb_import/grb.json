@@ -349,26 +349,43 @@
           "_embedding_street=feat.get('_embedded_in')['addr:street']",
           "_embedding_id=feat.get('_embedded_in').id",
           "_closeby_addresses=feat.closestn('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
-          "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'"
+          "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'",
+          "_embedded_in_grb=feat.overlapWith('GRB')[0]?.feat?.properties ?? {}",
+          "_embedding_nr_grb=feat.get('_embedded_in_grb')['addr:housenumber']",
+          "_embedding_street_grb=feat.get('_embedded_in_grb')['addr:street']"
         ],
-        "isShown": {
-          "render": "yes",
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "_embedding_nr:={HUISNR}",
-                  "_embedding_street:={STRAATNM}"
-                ]
+        "filter": [
+          {
+            "id": "show_matched_addresses",
+            "options": [
+              {
+                "question": "Show all CRAB-addresses (including already matched ones)"
               },
-              "then": "no"
-            },
-            {
-              "if": "_has_identical_closeby_address=yes",
-              "then": "no"
-            }
-          ]
-        },
+              {
+                "question": "Only show unmatched addresses",
+                "osmTags": {
+                  "and": [
+                    "_has_identical_closeby_address!=yes",
+                    {
+                      "#": "Matches the embedding OSM object",
+                      "or": [
+                        "_embedding_nr!:={HUISNR}",
+                        "_embedding_street!:={STRAATNM}"
+                      ]
+                    },
+                    {    "#": "Matches the embedding GRB object",
+
+                      "or": [
+                        "_embedding_nr_grb!:={HUISNR}",
+                        "_embedding_street_grb!:={STRAATNM}"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
         "tagRenderings+": [
           {
             "id": "render_embedded",
@@ -388,7 +405,7 @@
           },
           {
             "id": "apply-button",
-            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
+            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Apply this address on the OSM-building,,_embedding_id)}",
             "condition": "_embedding_id!="
           },
           {
@@ -417,13 +434,15 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? null",
+        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? ''",
         "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
         "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
-        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties.building",
-        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties.id",
+        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
+        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
+        "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
+        "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
         "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
@@ -433,20 +452,85 @@
       ],
       "tagRenderings": [
         {
+          "id": "Import-button",
+          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap)}",
+          "mappings": [
+            {
+              "if": {"and":
+              [
+                "_overlaps_with!=",
+                "_osm_obj:addr:street=",
+                "_osm_obj:addr:housenumber=",
+                "addr:street~*",
+                "addr:housenumber~*"
+
+              ]
+              },
+              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,,_osm_obj:id)}"
+            },
+            {
+              "if": "_overlaps_with!=",
+              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,,_osm_obj:id)}"
+            }
+          ]
+        },
+        {
           "id": "Building info",
           "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
         },
         {
+          "id": "overlapping building address",
+          "render": "The overlapping openstreetmap-building has no address information at all",
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "_osm_obj:addr:street~*",
+                  "_osm_obj:addr:housenumber~*"
+                ]
+              },
+              "then": "The overlapping openstreetmap-building has address {_osm_obj:addr:street} {_osm_obj:addr:housenumber}"
+            },
+            {
+              "if": "_osm_obj:addr:street~*",
+              "then": "The overlapping building only has a street known: {_osm_obj:addr:street}"
+            },
+            {
+              "if": "_osm_obj:addr:housenumber~*",
+              "then": "The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}"
+            }
+          ],
+          "conditon": "_osm_obj:id~*"
+        },
+        {
+          "id": "grb_address_diff",
+          "render": "<div>The overlapping openstreetmap-building has a different address then this GRB-object: {addr:street} {addr:housenumber}<br/>{tag_apply(addr:street=$addr:street; addr:housenumber=$addr:housenumber,Copy the GRB-address onto the OSM-object,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_osm_obj:id~*",
+              "addr:street~*",
+              "addr:housenumber~*",
+              {
+                "or": [
+                  "addr:street!:={_osm_obj:addr:street}",
+                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
+                ]
+              }
+            ]
+          }
+        },
+        {
           "id": "overlapping building type",
-          "render": "<div>The overlapping openstreetmap-building is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
-          "condition": "_overlaps_with!=null"
+          "render": "<div>The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
+          "condition": "_overlaps_with!="
         },
         {
           "id": "apply-id",
           "render": "{tag_apply(source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref,Mark the OSM-building as imported,,_osm_obj:id)}",
           "condition": {
             "and": [
-              "_overlaps_with!=null"
+              "_overlaps_with!=",
+              "_imported!=yes"
             ]
           }
         },
@@ -455,23 +539,12 @@
           "render": "{tag_apply(building=$building,Use the building type from GRB,,_osm_obj:id)}",
           "condition": {
             "and": [
-              "_overlaps_with!=null",
+              "_overlaps_with!=",
               "_osm_obj:building=yes",
               "building!=yes"
             ]
           }
-        },
-        {
-          "id": "Import-button",
-          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap)}",
-          "mappings": [
-            {
-              "if": "_overlaps_with!=null",
-              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,,_osm_obj:id)}"
-            }
-          ]
-        },
-        "all_tags"
+        }
       ],
       "isShown": {
         "render": "yes",
@@ -489,9 +562,41 @@
       },
       "mapRendering": [
         {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50,center",
+          "icon": {
+            "render": "./assets/themes/grb_import/housenumber_blank.svg",
+            "mappings": [
+              {
+                "if": "addr:housenumber=",
+                "then": ""
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        { "width": {
+          "render": 5,
+          "mappings": [
+            {
+              "if": "_imported=yes",
+              "then": "1"
+            }
+          ]
+        },
           "color": {
             "render": "#00a",
             "mappings": [
+              {
+                "if": "_imported=yes",
+                "then":"#00ff00"
+              },
               {
                 "if": {
                   "and": [

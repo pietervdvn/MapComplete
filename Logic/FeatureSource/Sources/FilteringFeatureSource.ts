@@ -28,7 +28,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             allElements: ElementStorage
         },
         tileIndex,
-        upstream: FeatureSourceForLayer
+        upstream: FeatureSourceForLayer,
+        metataggingUpdated: UIEventSource<any>
     ) {
         this.name = "FilteringFeatureSource(" + upstream.name + ")"
         this.tileIndex = tileIndex
@@ -53,11 +54,15 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 self.update()
             }
         })
+        
+        metataggingUpdated.addCallback(_ => {
+            self._is_dirty.setData(true)
+        })
 
         this.update();
     }
 
-    public update() {
+    private update() {
         const self = this;
         const layer = this.upstream.layer;
         const features: { feature: any; freshness: Date }[] = this.upstream.features.data;
@@ -106,13 +111,11 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             return
         }
         this._alreadyRegistered.add(src)
-        if (layer.isShown !== undefined) {
 
             const self = this;
-            src.map(tags => layer.isShown?.GetRenderValue(tags, "yes").txt).addCallbackAndRunD(isShown => {
+            src.addCallbackAndRunD(isShown => {
                 self._is_dirty.setData(true)
             })
-        }
     }
 
 }
