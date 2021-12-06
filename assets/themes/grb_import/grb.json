@@ -17,9 +17,9 @@
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
   "version": "0",
-  "startLat": 51.2132,
-  "startLon": 3.231,
-  "startZoom": 14,
+  "startLat": 51.0249,
+  "startLon": 4.026489,
+  "startZoom": 9,
   "widenFactor": 2,
   "socialImage": "",
   "clustering": {
@@ -31,9 +31,6 @@
   "layers": [
     {
       "builtin": "type_node",
-      "isShown": {
-        "render": "no"
-      },
       "override": {
         "calculatedTags": [
           "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
@@ -344,7 +341,7 @@
       "builtin": "crab_address",
       "override": {
         "calculatedTags+": [
-          "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ?? {}",
+          "_embedded_in=feat.overlapWith('OSM-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
           "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']+(feat.get('_embedded_in')['addr:unit'] ?? '')",
           "_embedding_street=feat.get('_embedded_in')['addr:street']",
           "_embedding_id=feat.get('_embedded_in').id",
@@ -410,11 +407,11 @@
           },
           {
             "id": "import-button",
-            "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Voeg dit adres als een nieuw adrespunt toe,,,OSM-buildings,5)}",
+            "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,,OSM-buildings,5)}",
             "condition": {
-              "and": [
-                "_embedding_street~*",
-                "_embedding_nr~*"
+              "or": [
+                "_embedding_street!:={STRAATNM}",
+                "_embedding_nr!:={$_HNRLABEL}"
               ]
             }
           }
@@ -453,7 +450,7 @@
       "tagRenderings": [
         {
           "id": "Import-button",
-          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap)}",
+          "render": "{import_button(OSM-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
               "if": {"and":
