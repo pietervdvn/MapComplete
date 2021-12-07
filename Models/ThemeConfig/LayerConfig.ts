@@ -424,8 +424,14 @@ export default class LayerConfig extends WithContextLoader {
             if (addedByDefault) {
                 extraProps.push("**This layer is included automatically in every theme. This layer might contain no points**")
             }
+            if(this.shownByDefault === false){
+                extraProps.push('This layer is not visible by default and must be enabled in the filter by the user. ')
+            }
             if (this.title === undefined) {
-                extraProps.push("Not clickable by default. If you import this layer in your theme, override `title` to make this clickable")
+                extraProps.push("This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.")
+            }
+            if(this.title === undefined && this.shownByDefault === false){
+                extraProps.push("This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true")
             }
             if (this.name === undefined) {
                 extraProps.push("Not visible in the layer selection by default. If you want to make this layer toggable, override `name`")

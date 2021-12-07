@@ -9,6 +9,7 @@
   "title": {
     "render": "Your travelled path"
   },
+  "shownByDefault": false,
   "tagRenderings": [
     {
       "id": "Privacy notice",
