@@ -21,7 +21,9 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource";
 import Constants from "../Models/Constants";
 import {GeoOperations} from "../Logic/GeoOperations";
-
+import SimpleMetaTaggers from "../Logic/SimpleMetaTagger";
+import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource";
+import Loc from "../Models/Loc";
 
 ScriptUtils.fixUtils()
 
@@ -177,12 +179,15 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
  * Load all the tiles into memory from disk
  */
 function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relationsTracker: RelationsTracker, targetdir: string, pointsOnlyLayers: string[]) {
-    function handleLayer(source: FeatureSourceForLayer) {
+    const skippedLayers = new Set<string>()
+
+    async function handleLayer(source: FeatureSourceForLayer) {
         const layer = source.layer.layerDef;
         const targetZoomLevel = layer.source.geojsonZoomLevel ?? 0
 
         const layerId = layer.id
         if (layer.source.isOsmCacheLayer !== true) {
+            skippedLayers.add(layer.id)
             return;
         }
         console.log("Handling layer ", layerId, "which has", source.features.data.length, "features")
@@ -201,6 +206,13 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 includeDates: false,
                 includeNonDates: true
             });
+        
+        
+
+        while (SimpleMetaTaggers.country.runningTasks.size > 0) {
+            console.log("Still waiting for ", SimpleMetaTaggers.country.runningTasks.size," features which don't have a country yet")
+            await ScriptUtils.sleep(1)
+        }
 
         const createdTiles = []
         // At this point, we have all the features of the entire area.
@@ -210,23 +222,57 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
             maxZoomLevel: targetZoomLevel,
             maxFeatureCount: undefined,
             registerTile: tile => {
+                const tileIndex = tile.tileIndex;
                 if (tile.features.data.length === 0) {
                     return
                 }
-                for (const feature of tile.features.data) {
+               
+                const filteredTile = new FilteringFeatureSource({
+                  locationControl:  new UIEventSource<Loc>(undefined),
+                    allElements: undefined,
+                    selectedElement: new UIEventSource<any>(undefined)
+                },
+                    tileIndex,
+                    tile,
+                    new UIEventSource<any>(undefined)
+                    )
+
+                if (filteredTile.features.data.length === 0) {
+                    return
+                }
+                let strictlyCalculated = 0
+                let featureCount = 0
+                for (const feature of filteredTile.features.data) {
                     // Some cleanup
                     delete feature.feature["bbox"]
+                    
+                    if(tile.layer.layerDef.calculatedTags !== undefined){
+                        
+                    // Evaluate all the calculated tags strictly
+                    const calculatedTagKeys = tile.layer.layerDef.calculatedTags.map(ct => ct[0])
+                    featureCount++
+                    for (const calculatedTagKey of calculatedTagKeys) {
+                        const strict =  feature.feature.properties[calculatedTagKey]
+                        feature.feature.properties[calculatedTagKey] =strict
+                        strictlyCalculated ++;
+                        if(strictlyCalculated % 100 === 0){
+                            console.log("Strictly calculated ", strictlyCalculated, "values for tile",tileIndex,": now at ", featureCount,"/",filteredTile.features.data.length, "examle value: ", strict)
+                        }
+                    }
+                    }
+                    
                 }
                 // Lets save this tile!
-                const [z, x, y] = Tiles.tile_from_index(tile.tileIndex)
+                const [z, x, y] = Tiles.tile_from_index(tileIndex)
                 // console.log("Writing tile ", z, x, y, layerId)
                 const targetPath = geoJsonName(targetdir + "_" + layerId, x, y, z)
-                createdTiles.push(tile.tileIndex)
+                createdTiles.push(tileIndex)
                 // This is the geojson file containing all features for this tile
                 writeFileSync(targetPath, JSON.stringify({
                     type: "FeatureCollection",
-                    features: tile.features.data.map(f => f.feature)
+                    features: filteredTile.features.data.map(f => f.feature)
                 }, null, " "))
+                console.log("Written tile", targetPath,"with", filteredTile.features.data.length)
             }
         })
 
@@ -267,18 +313,31 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
         handleLayer,
         allFeatures
     )
+
+    const skipped = Array.from(skippedLayers)
+    if (skipped.length > 0) {
+        console.warn("Did not save any cache files for layers " + skipped.join(", ") + " as these didn't set the flag `isOsmCache` to true")
+    }
 }
 
 
 async function main(args: string[]) {
 
-    if (args.length == 0) {
-        console.error("Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...]")
+    console.log("Cache builder started with args ", args.join(", "))
+    if (args.length < 6) {
+        console.error("Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...]\n" +
+            "Note: a new directory named <theme> will be created in targetdirectory")
         return;
     }
     const themeName = args[0]
     const zoomlevel = Number(args[1])
+
     const targetdir = args[2] + "/" + themeName
+    if (!existsSync(args[2])) {
+        console.log("Directory not found")
+        throw "The directory " + args[2] + "does not exist"
+    }
+
     const lat0 = Number(args[3])
     const lon0 = Number(args[4])
     const lat1 = Number(args[5])
@@ -291,6 +350,11 @@ async function main(args: string[]) {
 
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
+
+    if (tileRange.total === 0) {
+        console.log("Tilerange has zero tiles - this is probably an error")
+        return
+    }
 
     const theme = AllKnownLayouts.allKnownLayouts.get(themeName)
     if (theme === undefined) {
@@ -321,5 +385,9 @@ async function main(args: string[]) {
 
 let args = [...process.argv]
 args.splice(0, 2)
-main(args);
+try {
+    main(args).catch(e => console.error("Error building cache:", e));
+} catch (e) {
+    console.error("Error building cache:", e)
+}
 console.log("All done!")

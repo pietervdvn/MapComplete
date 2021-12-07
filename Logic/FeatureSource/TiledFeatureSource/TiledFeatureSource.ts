@@ -86,6 +86,10 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
     }
 
     public static createHierarchy(features: FeatureSource, options?: TiledFeatureSourceOptions): TiledFeatureSource {
+        options = {
+            ...options,
+            layer: features["layer"] ?? options.layer
+        }
         const root = new TiledFeatureSource(0, 0, 0, null, options)
         features.features?.addCallbackAndRunD(feats => root.addFeatures(feats))
         return root;
@@ -200,6 +204,6 @@ export interface TiledFeatureSourceOptions {
      * Setting 'dontEnforceMinZoomLevel' will still allow bigger zoom levels for those features
      */
     readonly dontEnforceMinZoom?: boolean,
-    readonly registerTile?: (tile: TiledFeatureSource & Tiled) => void,
+    readonly registerTile?: (tile: TiledFeatureSource & FeatureSourceForLayer & Tiled) => void,
     readonly layer?: FilteredLayer
 }

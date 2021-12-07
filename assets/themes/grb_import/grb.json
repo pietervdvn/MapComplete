@@ -370,8 +370,8 @@
                         "_embedding_street!:={STRAATNM}"
                       ]
                     },
-                    {    "#": "Matches the embedding GRB object",
-
+                    {
+                      "#": "Matches the embedding GRB object",
                       "or": [
                         "_embedding_nr_grb!:={HUISNR}",
                         "_embedding_street_grb!:={STRAATNM}"
@@ -453,15 +453,14 @@
           "render": "{import_button(OSM-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
-              "if": {"and":
-              [
-                "_overlaps_with!=",
-                "_osm_obj:addr:street=",
-                "_osm_obj:addr:housenumber=",
-                "addr:street~*",
-                "addr:housenumber~*"
-
-              ]
+              "if": {
+                "and": [
+                  "_overlaps_with!=",
+                  "_osm_obj:addr:street=",
+                  "_osm_obj:addr:housenumber=",
+                  "addr:street~*",
+                  "addr:housenumber~*"
+                ]
               },
               "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,,_osm_obj:id)}"
             },
@@ -578,21 +577,22 @@
             "centroid"
           ]
         },
-        { "width": {
-          "render": 5,
-          "mappings": [
-            {
-              "if": "_imported=yes",
-              "then": "1"
-            }
-          ]
-        },
+        {
+          "width": {
+            "render": 5,
+            "mappings": [
+              {
+                "if": "_imported=yes",
+                "then": "1"
+              }
+            ]
+          },
           "color": {
             "render": "#00a",
             "mappings": [
               {
                 "if": "_imported=yes",
-                "then":"#00ff00"
+                "then": "#00ff00"
               },
               {
                 "if": {

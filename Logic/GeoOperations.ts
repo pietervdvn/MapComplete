@@ -25,8 +25,7 @@ export class GeoOperations {
     }
 
     static centerpointCoordinates(feature: any): [number, number] {
-        // @ts-ignore
-        return turf.center(feature).geometry.coordinates;
+        return <[number, number]> turf.center(feature).geometry.coordinates;
     }
 
     /**
@@ -35,7 +34,7 @@ export class GeoOperations {
      * @param lonlat1
      */
     static distanceBetween(lonlat0: [number, number], lonlat1: [number, number]) {
-        return turf.distance(lonlat0, lonlat1) * 1000
+        return turf.distance(lonlat0, lonlat1, {units: "meters"})
     }
 
     /**
@@ -196,8 +195,8 @@ export class GeoOperations {
 
     static buffer(feature: any, bufferSizeInMeter: number) {
         return turf.buffer(feature, bufferSizeInMeter / 1000, {
-            units: 'kilometers'
-        })
+            units:'kilometers'
+        } )
     }
 
     static bbox(feature: any) {

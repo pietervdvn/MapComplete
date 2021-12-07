@@ -1,4 +1,4 @@
-import SimpleMetaTagger from "./SimpleMetaTagger";
+import SimpleMetaTaggers from "./SimpleMetaTagger";
 import {ExtraFuncParams, ExtraFunctions} from "./ExtraFunctions";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import State from "../State";
@@ -33,9 +33,8 @@ export default class MetaTagging {
             return;
         }
 
-
-        const metatagsToApply: SimpleMetaTagger [] = []
-        for (const metatag of SimpleMetaTagger.metatags) {
+        const metatagsToApply: SimpleMetaTaggers[] = []
+        for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {
                 if (options.includeDates ?? true) {
                     metatagsToApply.push(metatag)
@@ -59,19 +58,23 @@ export default class MetaTagging {
             let somethingChanged = false
             for (const metatag of metatagsToApply) {
                 try {
+                    // @ts-ignore
                     if (!metatag.keys.some(key => feature.properties[key] === undefined)) {
                         // All keys are already defined, we probably already ran this one
                         continue
                     }
 
+                    // @ts-ignore
                     if (metatag.isLazy) {
                         somethingChanged = true;
 
+                        // @ts-ignore
                         metatag.applyMetaTagsOnFeature(feature, freshness, layer)
-
+                        
                     } else {
 
 
+                        // @ts-ignore
                         const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer)
                         /* Note that the expression:
                         * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
@@ -83,6 +86,7 @@ export default class MetaTagging {
                         somethingChanged = newValueAdded || somethingChanged
                     }
                 } catch (e) {
+                    // @ts-ignore
                     console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e, e.stack)
                 }
             }
@@ -117,8 +121,9 @@ export default class MetaTagging {
             const func = new Function("feat", "return " + code + ";");
 
             const f = (feature: any) => {
+                
+                
                 delete feature.properties[key]
-
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,
                     enumerable: false, // By setting this as not enumerable, the localTileSaver will _not_ calculate this
@@ -149,7 +154,6 @@ export default class MetaTagging {
 
                     }
                 })
-
             }
 
 

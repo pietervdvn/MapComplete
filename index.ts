@@ -3,8 +3,6 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import Combine from "./UI/Base/Combine";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
-import CountryCoder from "latlon2country/index";
-import SimpleMetaTagger from "./Logic/SimpleMetaTagger";
 import {Utils} from "./Utils";
 import AllThemesGui from "./UI/AllThemesGui";
 import DetermineLayout from "./Logic/DetermineLayout";
@@ -14,12 +12,10 @@ import State from "./State";
 import AvailableBaseLayersImplementation from "./Logic/Actors/AvailableBaseLayersImplementation";
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation";
 import {DefaultGuiState} from "./UI/DefaultGuiState";
-import {Browser} from "leaflet";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
 AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
-SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 

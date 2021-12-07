@@ -7,18 +7,92 @@ import BaseUIElement from "../UI/BaseUIElement";
 import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {CountryCoder} from "latlon2country"
 
 
-const cardinalDirections = {
-    N: 0, NNE: 22.5, NE: 45, ENE: 67.5,
-    E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
-    S: 180, SSW: 202.5, SW: 225, WSW: 247.5,
-    W: 270, WNW: 292.5, NW: 315, NNW: 337.5
+export class SimpleMetaTagger  {
+    public readonly keys: string[];
+    public readonly doc: string;
+    public readonly isLazy: boolean;
+    public readonly includesDates: boolean
+    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig) => boolean;
+
+    /***
+     * A function that adds some extra data to a feature
+     * @param docs: what does this extra data do?
+     * @param f: apply the changes. Returns true if something changed
+     */
+    constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean, cleanupRetagger?: boolean },
+                f: ((feature: any, freshness: Date, layer: LayerConfig) => boolean)) {
+        this.keys = docs.keys;
+        this.doc = docs.doc;
+        this.isLazy = docs.isLazy
+        this.applyMetaTagsOnFeature = f;
+        this.includesDates = docs.includesDates ?? false;
+        if (!docs.cleanupRetagger) {
+            for (const key of docs.keys) {
+                if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
+                    throw `Incorrect metakey ${key}: it should start with underscore (_)`
+                }
+            }
+        }
+    }
+
 }
 
+export class CountryTagger extends SimpleMetaTagger {
+    private static readonly coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 
-export default class SimpleMetaTagger {
-    public static coder: any;
+    public runningTasks: Set<any>;
+    
+    constructor() {
+        const runningTasks=  new Set<any>();
+        super
+        (
+            {
+                keys: ["_country"],
+                doc: "The country code of the property (with latlon2country)",
+                includesDates: false
+            },
+            ((feature, _) => {
+                let centerPoint: any = GeoOperations.centerpoint(feature);
+                const lat = centerPoint.geometry.coordinates[1];
+                const lon = centerPoint.geometry.coordinates[0];
+                runningTasks.add(feature)
+                CountryTagger.coder.GetCountryCodeAsync(lon, lat).then(
+                    countries => {
+                        runningTasks.delete(feature)
+                        try {
+                            const oldCountry = feature.properties["_country"];
+                            feature.properties["_country"] = countries[0].trim().toLowerCase();
+                            if (oldCountry !== feature.properties["_country"]) {
+                                const tagsSource = State.state?.allElements?.getEventSourceById(feature.properties.id);
+                                tagsSource?.ping();
+                            }
+                        } catch (e) {
+                            console.warn(e)
+                        }
+                    }
+                ).catch(_ => {
+                    runningTasks.delete(feature)
+                })
+                return false;
+            })
+        )
+            this.runningTasks   = runningTasks;
+    }
+}
+
+export default class SimpleMetaTaggers {
+
+    private static readonly cardinalDirections = {
+        N: 0, NNE: 22.5, NE: 45, ENE: 67.5,
+        E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
+        S: 180, SSW: 202.5, SW: 225, WSW: 247.5,
+        W: 270, WNW: 292.5, NW: 315, NNW: 337.5
+    }
+
+
     public static readonly objectMetaInfo = new SimpleMetaTagger(
         {
             keys: ["_last_edit:contributor",
@@ -92,7 +166,7 @@ export default class SimpleMetaTagger {
                 return;
             }
 
-            return SimpleMetaTagger.removeBothTagging(feature.properties)
+            return SimpleMetaTaggers.removeBothTagging(feature.properties)
         })
     )
     private static surfaceArea = new SimpleMetaTagger(
@@ -197,32 +271,7 @@ export default class SimpleMetaTagger {
             return true;
         })
     )
-    private static country = new SimpleMetaTagger(
-        {
-            keys: ["_country"],
-            doc: "The country code of the property (with latlon2country)",
-            includesDates: false
-        },
-        ((feature, _) => {
-            let centerPoint: any = GeoOperations.centerpoint(feature);
-            const lat = centerPoint.geometry.coordinates[1];
-            const lon = centerPoint.geometry.coordinates[0];
-
-            SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, (countries: string[]) => {
-                try {
-                    const oldCountry = feature.properties["_country"];
-                    feature.properties["_country"] = countries[0].trim().toLowerCase();
-                    if (oldCountry !== feature.properties["_country"]) {
-                        const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
-                        tagsSource.ping();
-                    }
-                } catch (e) {
-                    console.warn(e)
-                }
-            })
-            return false;
-        })
-    )
+    public static country = new CountryTagger()
     private static isOpen = new SimpleMetaTagger(
         {
             keys: ["_isOpen", "_isOpen:description"],
@@ -319,7 +368,7 @@ export default class SimpleMetaTagger {
             if (direction === undefined) {
                 return false;
             }
-            const n = cardinalDirections[direction] ?? Number(direction);
+            const n = SimpleMetaTaggers.cardinalDirections[direction] ?? Number(direction);
             if (isNaN(n)) {
                 return false;
             }
@@ -332,6 +381,7 @@ export default class SimpleMetaTagger {
             return true;
         })
     )
+
 
     private static currentTime = new SimpleMetaTagger(
         {
@@ -361,49 +411,24 @@ export default class SimpleMetaTagger {
             return true;
         }
     )
-    public static metatags = [
-        SimpleMetaTagger.latlon,
-        SimpleMetaTagger.layerInfo,
-        SimpleMetaTagger.surfaceArea,
-        SimpleMetaTagger.lngth,
-        SimpleMetaTagger.canonicalize,
-        SimpleMetaTagger.country,
-        SimpleMetaTagger.isOpen,
-        SimpleMetaTagger.directionSimplified,
-        SimpleMetaTagger.currentTime,
-        SimpleMetaTagger.objectMetaInfo,
-        SimpleMetaTagger.noBothButLeftRight
+    public static metatags: SimpleMetaTagger[] = [
+        SimpleMetaTaggers.latlon,
+        SimpleMetaTaggers.layerInfo,
+        SimpleMetaTaggers.surfaceArea,
+        SimpleMetaTaggers.lngth,
+        SimpleMetaTaggers.canonicalize,
+        SimpleMetaTaggers.country,
+        SimpleMetaTaggers.isOpen,
+        SimpleMetaTaggers.directionSimplified,
+        SimpleMetaTaggers.currentTime,
+        SimpleMetaTaggers.objectMetaInfo,
+        SimpleMetaTaggers.noBothButLeftRight
 
     ];
-    public readonly keys: string[];
-    public readonly doc: string;
-    public readonly isLazy: boolean;
-    public readonly includesDates: boolean
-    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig) => boolean;
 
-    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTagger.metatags.filter(tagger => tagger.isLazy)
+    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTaggers.metatags.filter(tagger => tagger.isLazy)
         .map(tagger => tagger.keys));
-    
-    /***
-     * A function that adds some extra data to a feature
-     * @param docs: what does this extra data do?
-     * @param f: apply the changes. Returns true if something changed
-     */
-    constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean, cleanupRetagger?: boolean },
-                f: ((feature: any, freshness: Date, layer: LayerConfig) => boolean)) {
-        this.keys = docs.keys;
-        this.doc = docs.doc;
-        this.isLazy = docs.isLazy
-        this.applyMetaTagsOnFeature = f;
-        this.includesDates = docs.includesDates ?? false;
-        if (!docs.cleanupRetagger) {
-            for (const key of docs.keys) {
-                if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
-                    throw `Incorrect metakey ${key}: it should start with underscore (_)`
-                }
-            }
-        }
-    }
+
 
     /**
      * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.
@@ -494,7 +519,7 @@ export default class SimpleMetaTagger {
 
         subElements.push(new Title("Metatags calculated by MapComplete", 2))
         subElements.push(new FixedUiElement("The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"))
-        for (const metatag of SimpleMetaTagger.metatags) {
+        for (const metatag of SimpleMetaTaggers.metatags) {
             subElements.push(
                 new Title(metatag.keys.join(", "), 3),
                 metatag.doc,

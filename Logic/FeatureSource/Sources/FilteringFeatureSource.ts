@@ -68,7 +68,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         const features: { feature: any; freshness: Date }[] = this.upstream.features.data;
         const newFeatures = features.filter((f) => {
 
-            self.registerCallback(f.feature, layer.layerDef)
+            self.registerCallback(f.feature)
 
             if (
                 this.state.selectedElement.data?.id === f.feature.id ||
@@ -105,15 +105,18 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         this._is_dirty.setData(false)
     }
 
-    private registerCallback(feature: any, layer: LayerConfig) {
-        const src = this.state.allElements.addOrGetElement(feature)
+    private registerCallback(feature: any) {
+        const src = this.state?.allElements?.addOrGetElement(feature)
+        if(src == undefined){
+            return
+        }
         if (this._alreadyRegistered.has(src)) {
             return
         }
         this._alreadyRegistered.add(src)
 
             const self = this;
-            src.addCallbackAndRunD(isShown => {
+            src.addCallbackAndRunD(_ => {
                 self._is_dirty.setData(true)
             })
     }

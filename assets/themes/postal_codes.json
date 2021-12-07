@@ -1,0 +1,146 @@
+{
+  "id": "postal_codes",
+  "title": {
+    "en": "Postal codes"
+  },
+  "shortDescription": {
+    "en": "Postal codes"
+  },
+  "description": {
+    "en": "Postal codes"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/bug.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "postal_codes",
+      "name": {
+        "en": "postal codes"
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "Postal code {postal_code}"
+        }
+      },
+      "description": {},
+      "tagRenderings": [
+        {
+          "id": "postal_code",
+          "render": {
+            "en": "The postal code is {postal_code}"
+          }
+        }
+      ],
+      "presets": [],
+      "source": {
+        "isOsmCache": true,
+        "geoJson": "http://127.0.0.1:8080/postal_codes_postal_codes_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 1,
+        "osmTags": {
+          "or": [
+            "boundary=postal_code",
+            {
+              "and": [
+                "bounary=administrative",
+                "postal_code~*"
+              ]
+            }
+          ]
+        }
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/svg/bug.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ],
+      "isShown": {
+        "render": "yes",
+        "mappings": [{
+          "if" :"_country!=be",
+          "then": "no"
+        }]
+      }
+    },
+    {
+      "id": "town_halls",
+      "name": {
+        "en": "town halls"
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "Town halls"
+        }
+      },
+      "calculatedTags": [
+        "_postal_code=feat.overlapWith('postal_codes')[0]?.feat?.properties?.postal_code"
+      ],
+      "description": {},
+      "tagRenderings": [
+      ],
+      "presets": [],
+      "source": {
+        "isOsmCache": true,
+        "geoJson": "http://127.0.0.1:8080/postal_codes_town_hall_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 1,
+        "osmTags": "amenity=townhall"
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "./assets/svg/bug.svg"
+          },
+          "iconSize": {
+            "render": "40,40,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f"
+          },
+          "width": {
+            "render": "8"
+          }
+        }
+      ],
+      "isShown": {
+        "render": "yes",
+        "mappings": [{
+          "if" :"_country!=be",
+          "then": "no"
+        }]
+      }
+    }
+  ]
+}
