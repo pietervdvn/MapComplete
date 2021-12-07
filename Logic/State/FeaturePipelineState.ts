@@ -8,6 +8,7 @@ import {UIEventSource} from "../UIEventSource";
 import MapState from "./MapState";
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler";
 import Hash from "../Web/Hash";
+import {BBox} from "../BBox";
 
 export default class FeaturePipelineState extends MapState {
 
@@ -29,6 +30,8 @@ export default class FeaturePipelineState extends MapState {
 
                 clusterCounter.addTile(source)
 
+                const sourceBBox = source.features.map(allFeatures => BBox.bboxAroundAll(allFeatures.map(f => BBox.get(f.feature))))
+                
                 // Do show features indicates if the 'showDataLayer' should be shown
                 const doShowFeatures = source.features.map(
                     f => {
@@ -44,7 +47,7 @@ export default class FeaturePipelineState extends MapState {
                             return false;
                         }
 
-                        if (!source.bbox.overlapsWith(bounds)) {
+                        if (!sourceBBox.data.overlapsWith(bounds)) {
                             // Not within range -> features are hidden
                             return false
                         }
@@ -81,7 +84,7 @@ export default class FeaturePipelineState extends MapState {
 
 
                         return true
-                    }, [this.currentBounds, source.layer.isDisplayed]
+                    }, [this.currentBounds, source.layer.isDisplayed, sourceBBox]
                 )
 
                 new ShowDataLayer(

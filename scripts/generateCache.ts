@@ -24,7 +24,6 @@ import {GeoOperations} from "../Logic/GeoOperations";
 import SimpleMetaTaggers from "../Logic/SimpleMetaTagger";
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource";
 import Loc from "../Models/Loc";
-
 ScriptUtils.fixUtils()
 
 
@@ -181,6 +180,23 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
 function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relationsTracker: RelationsTracker, targetdir: string, pointsOnlyLayers: string[]) {
     const skippedLayers = new Set<string>()
 
+    const indexedFeatures : Map<string, any> = new Map<string, any>()
+    let indexisBuilt = false;
+    function buildIndex(){
+        for (const ff of allFeatures.features.data) {
+            const f = ff.feature
+            indexedFeatures.set(f.properties.id, f)
+        }
+        indexisBuilt = true;
+    }
+    
+    function getFeatureById(id){
+        if(!indexisBuilt){
+            buildIndex()
+        }
+        return indexedFeatures.get(id)
+    }
+    
     async function handleLayer(source: FeatureSourceForLayer) {
         const layer = source.layer.layerDef;
         const targetZoomLevel = layer.source.geojsonZoomLevel ?? 0
@@ -199,7 +215,8 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 memberships: relationsTracker,
                 getFeaturesWithin: _ => {
                     return [allFeatures.features.data.map(f => f.feature)]
-                }
+                },
+                getFeatureById: getFeatureById
             },
             layer,
             {
@@ -237,6 +254,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                     new UIEventSource<any>(undefined)
                     )
 
+                console.log("Tile "+layer.id+"."+tileIndex+" contains "+filteredTile.features.data.length+" features after filtering ("+tile.features.data.length+") features before")
                 if (filteredTile.features.data.length === 0) {
                     return
                 }
@@ -252,7 +270,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                     const calculatedTagKeys = tile.layer.layerDef.calculatedTags.map(ct => ct[0])
                     featureCount++
                     for (const calculatedTagKey of calculatedTagKeys) {
-                        const strict =  feature.feature.properties[calculatedTagKey]
+                        const strict = feature.feature.properties[calculatedTagKey]
                         feature.feature.properties[calculatedTagKey] =strict
                         strictlyCalculated ++;
                         if(strictlyCalculated % 100 === 0){
@@ -292,7 +310,18 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
 
         // And, if needed, to create a points-only layer
         if (pointsOnlyLayers.indexOf(layer.id) >= 0) {
-            const features = source.features.data.map(f => f.feature)
+
+            const filtered = new FilteringFeatureSource({
+                    locationControl:  new UIEventSource<Loc>(undefined),
+                    allElements: undefined,
+                    selectedElement: new UIEventSource<any>(undefined)
+                },
+                Tiles.tile_index(0,0,0),
+                source,
+                new UIEventSource<any>(undefined)
+            )
+            const features = filtered.features.data.map(f => f.feature)
+            
             const points = features.map(feature => GeoOperations.centerpoint(feature))
             console.log("Writing points overview for ", layerId)
             const targetPath = targetdir + "_" + layerId + "_points.geojson"
@@ -325,7 +354,7 @@ async function main(args: string[]) {
 
     console.log("Cache builder started with args ", args.join(", "))
     if (args.length < 6) {
-        console.error("Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...]\n" +
+        console.error("Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...] [--force-zoom-level z] \n" +
             "Note: a new directory named <theme> will be created in targetdirectory")
         return;
     }
@@ -343,10 +372,7 @@ async function main(args: string[]) {
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
 
-    let generatePointLayersFor = []
-    if (args[7] == "--generate-point-overview") {
-        generatePointLayersFor = args[8].split(",")
-    }
+   
 
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
@@ -365,6 +391,32 @@ async function main(args: string[]) {
         console.error("The theme " + theme + " was not found; try one of ", keys);
         return
     }
+
+    let generatePointLayersFor = []
+    if (args[7] == "--generate-point-overview") {
+        if(args[8] === undefined){
+            throw "--generate-point-overview needs a list of layers to generate the overview for (or * for all)"
+        }else if (args[8] === '*'){
+            generatePointLayersFor = theme.layers.map(l => l.id)
+        }else{
+            generatePointLayersFor = args[8].split(",")
+        }
+        console.log("Also generating a point overview for layers ", generatePointLayersFor.join(","))
+    }
+    {
+        
+    const index = args.indexOf("--force-zoom-level")
+    if(index >= 0){
+        const forcedZoomLevel = Number(args[index + 1])
+        for (const layer of theme.layers) {
+            layer.source.geojsonSource = "https://127.0.0.1/cache_{layer}_{z}_{x}_{y}.geojson"
+            layer.source.isOsmCacheLayer = true
+            layer.source.geojsonZoomLevel = forcedZoomLevel
+        }
+    }
+    }
+    
+    
     const relationTracker = new RelationsTracker()
 
     let failed = 0;

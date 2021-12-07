@@ -14,6 +14,7 @@ export interface ExtraFuncParams {
      */
     getFeaturesWithin: (layerId: string, bbox: BBox) => any[][],
     memberships: RelationsTracker
+    getFeatureById: (id:string) => any
 }
 
 /**
@@ -79,20 +80,19 @@ class DistanceToFunc implements ExtraFunction {
             }
             if (typeof arg0 === "number") {
                 // Feature._lon and ._lat is conveniently place by one of the other metatags
-                return GeoOperations.distanceBetween([arg0, lat], [feature._lon, feature._lat]);
+                return GeoOperations.distanceBetween([arg0, lat], GeoOperations.centerpointCoordinates(feature));
             }
             if (typeof arg0 === "string") {
                 // This is an identifier
-                // TODO FIXME
-                const feature = undefined // State.state.allElements.ContainingFeatures.get(arg0);
+                const feature =  featuresPerLayer.getFeatureById(arg0)
                 if (feature === undefined) {
                     return undefined;
                 }
                 arg0 = feature;
             }
 
-            // arg0 is probably a feature
-            return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0), [feature._lon, feature._lat])
+            // arg0 is probably a geojsonfeature
+            return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0), GeoOperations.centerpointCoordinates(feature))
 
         }
     }

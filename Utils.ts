@@ -212,7 +212,7 @@ Note that these values can be prepare with javascript in the theme by using a [c
                 }
                 
                 if(v.InnerConstructElement !== undefined){
-                    console.warn("SubstituteKeys received a BaseUIElement to substitute in - this is probably a bug and will be downcast to a string", v)
+                    console.warn("SubstituteKeys received a BaseUIElement to substitute in - this is probably a bug and will be downcast to a string\nThe key is", key,"\nThe value is", v)
                     v = ( <HTMLElement> v.InnerConstructElement())?.innerText
                 }
                 

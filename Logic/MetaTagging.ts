@@ -178,8 +178,6 @@ export default class MetaTagging {
 
             try {
                 const functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
-
-
                 ExtraFunctions.FullPatchFeature(params, feature);
                 for (const f of functions) {
                     f(feature);

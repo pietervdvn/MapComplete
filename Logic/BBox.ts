@@ -10,6 +10,10 @@ export class BBox {
     readonly minLat: number;
     readonly minLon: number;
 
+    /***
+     * Coordinates should be [[lon, lat],[lon, lat]]
+     * @param coordinates
+     */
     constructor(coordinates) {
         this.maxLat = -90;
         this.maxLon = -180;
@@ -43,6 +47,21 @@ export class BBox {
             feature.bbox = new BBox([[turfBbox[0], turfBbox[1]], [turfBbox[2], turfBbox[3]]]);
         }
         return feature.bbox;
+    }
+    
+    static bboxAroundAll(bboxes: BBox[]): BBox{
+        let maxLat: number = -90;
+        let maxLon: number= -180;
+        let minLat: number= 80;
+        let minLon: number= 180;
+
+        for (const bbox of bboxes) {
+            maxLat = Math.max(maxLat, bbox.maxLat)
+            maxLon = Math.max(maxLon, bbox.maxLon)
+            minLat = Math.min(minLat, bbox.minLat)
+            minLon = Math.min(minLon, bbox.minLon)
+        }
+        return new BBox([[maxLon, maxLat],[minLon,minLat]])
     }
 
     static fromTile(z: number, x: number, y: number): BBox {

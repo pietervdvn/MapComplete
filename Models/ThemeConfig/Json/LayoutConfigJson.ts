@@ -219,7 +219,7 @@ export interface LayoutConfigJson {
          * If clustering is defined, defaults to 25
          */
         minNeededElements?: number
-    },
+    } | false,
 
     /**
      * The URL of a custom CSS stylesheet to modify the layout

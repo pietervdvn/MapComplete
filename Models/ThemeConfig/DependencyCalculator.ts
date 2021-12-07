@@ -71,6 +71,7 @@ export default class DependencyCalculator {
             let currentKey = undefined
             let currentLine = undefined
             const params: ExtraFuncParams = {
+                getFeatureById: _ => undefined,
                 getFeaturesWithin: (layerId, _) => {
 
                     if(layerId === '*'){

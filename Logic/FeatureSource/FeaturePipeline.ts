@@ -448,11 +448,12 @@ export default class FeaturePipeline {
         window.setTimeout(
             () => {
                 const layerDef = src.layer.layerDef;
-                const somethingChanged = MetaTagging.addMetatags(
+                MetaTagging.addMetatags(
                     src.features.data,
                     {
                         memberships: this.relationTracker,
-                        getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox)
+                        getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox),
+                        getFeatureById: (id:string) => self.state.allElements.ContainingFeatures.get(id)
                     },
                     layerDef,
                     {

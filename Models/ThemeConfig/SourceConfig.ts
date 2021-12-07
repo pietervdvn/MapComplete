@@ -5,9 +5,9 @@ export default class SourceConfig {
 
     public readonly osmTags?: TagsFilter;
     public readonly overpassScript?: string;
-    public readonly geojsonSource?: string;
-    public readonly geojsonZoomLevel?: number;
-    public readonly isOsmCacheLayer: boolean;
+    public geojsonSource?: string;
+    public geojsonZoomLevel?: number;
+    public isOsmCacheLayer: boolean;
     public readonly mercatorCrs: boolean;
 
     constructor(params: {
