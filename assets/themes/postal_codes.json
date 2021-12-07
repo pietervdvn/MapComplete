@@ -20,6 +20,7 @@
   "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "postal_codes",
