@@ -7,5 +7,6 @@
     "#": "Cache is disabled here as these points are kept seperately",
     "maxCacheAge": 0
   },
-  "mapRendering": null
+  "mapRendering": null,
+  "shownByDefault": false
 }
