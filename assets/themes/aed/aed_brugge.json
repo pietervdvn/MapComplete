@@ -80,7 +80,8 @@
           },
           "iconSize": "20,20,center",
           "location": [
-            "point","centroid"
+            "point",
+            "centroid"
           ]
         }
       ]
