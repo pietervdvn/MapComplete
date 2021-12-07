@@ -386,8 +386,12 @@
         "tagRenderings+": [
           {
             "id": "render_embedded",
-            "render": "Dit CRAB-adres ligt in een OSM-gebouw. Het OSM-gebouw heeft geen volledig adres",
-            "mapping": [
+            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>"
+          },
+          {
+            "id": "embedded_address",
+            "render": "Het omliggende OSM-gebouw heeft geen volledig address",
+            "mappings": [
               {
                 "if": {
                   "and": [
@@ -403,15 +407,30 @@
           {
             "id": "apply-button",
             "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Apply this address on the OSM-building,,_embedding_id)}",
-            "condition": "_embedding_id!="
+            "condition": {
+              "and": [
+                "_embedding_id!=",
+                {
+                  "or": [
+                    "_embedding_street!:={STRAATNM}",
+                    "_embedding_nr!:={_HNRLABEL}"
+                  ]
+                }
+              ]
+            }
           },
           {
             "id": "import-button",
             "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,,OSM-buildings,5)}",
             "condition": {
-              "or": [
-                "_embedding_street!:={STRAATNM}",
-                "_embedding_nr!:={$_HNRLABEL}"
+              "and": [
+                "_embedding_id!=",
+                {
+                  "or": [
+                    "_embedding_street!:={STRAATNM}",
+                    "_embedding_nr!:={_HNRLABEL}"
+                  ]
+                }
               ]
             }
           }
