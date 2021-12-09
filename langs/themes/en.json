@@ -1045,6 +1045,12 @@
                 "title": {
                     "render": "Postal code {postal_code}"
                 }
+            },
+            "2": {
+                "name": "town halls",
+                "title": {
+                    "render": "Town hall {name}"
+                }
             }
         },
         "shortDescription": "Postal codes",

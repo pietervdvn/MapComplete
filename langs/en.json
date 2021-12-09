@@ -108,10 +108,15 @@
       "confirmButton": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>",
       "openLayerControl": "Open the layer control box",
       "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
-      "hasBeenImported": "This point has already been imported",
-      "importTags": "The element will receive {tags}",
-      "zoomInMore": "Zoom in more to import this feature",
-      "wrongType": "This element is not a point or a way and can not be imported"
+      "import": {
+        "officialThemesOnly": "The import button is disabled for unofficial themes to prevent accidents",
+        "howToTest": "To test, add <b>test=true</b> or <b>backend=osm-test</b> to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.",
+        "hasBeenImported": "This object has been imported",
+        "importTags": "The element will receive {tags}",
+        "zoomInMore": "Zoom in more to import this feature",
+        "wrongType": "This element is not a point or a way and can not be imported"
+        
+      }
     },
     "pickLanguage": "Choose a language: ",
     "about": "Easily edit and add OpenStreetMap for a certain theme",

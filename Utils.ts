@@ -21,6 +21,53 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
+
+    public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
+
+If you want to import a dataset, make sure that:
+
+1. The dataset to import has a suitable license
+2. The community has been informed of the import
+3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
+
+There are also some technicalities in your theme to keep in mind:
+
+1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
+    This means that there should be a layer which will match the new tags and which will display it.
+2. The original feature from your geojson layer will gain the tag '_imported=yes'.
+    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+3. There should be a way for the theme to detect previously imported points, even after reloading.
+    A reference number to the original dataset is an excellent way to do this
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
+    
+#### Disabled in unofficial themes
+
+The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md). 
+The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
+In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org`
+
+
+    /**
+     * Parses the arguments for special visualisations
+     */
+    public static ParseVisArgs(specs: { name: string, defaultValue?: string }[], args: string[]): any {
+        const parsed = {};
+        if(args.length> specs.length){
+            throw "To much arguments for special visualization: got "+args.join(",")+" but expected only "+args.length+" arguments"
+        }
+        for (let i = 0; i < specs.length; i++){
+            const spec = specs[i];
+            let arg = args[i]?.trim();
+            if(arg === undefined || arg === ""){
+                arg = spec.defaultValue
+            }
+            parsed[spec.name] =  arg
+        }
+
+        return parsed;
+    }
+
+
     private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
     private static injectedDownloads = {}

@@ -421,7 +421,7 @@
           },
           {
             "id": "import-button",
-            "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,,OSM-buildings,5)}",
+            "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,OSM-buildings,5)}",
             "condition": {
               "and": [
                 "_embedding_id!=",
@@ -481,11 +481,11 @@
                   "addr:housenumber~*"
                 ]
               },
-              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,,_osm_obj:id)}"
+              "then": "{conflate_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
             },
             {
               "if": "_overlaps_with!=",
-              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,,_osm_obj:id)}"
+              "then": "{conflate_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
             }
           ]
         },

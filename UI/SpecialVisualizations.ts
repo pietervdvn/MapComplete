@@ -38,10 +38,11 @@ import Toggle from "./Input/Toggle";
 import {DefaultGuiState} from "./DefaultGuiState";
 import {GeoOperations} from "../Logic/GeoOperations";
 import Hash from "../Logic/Web/Hash";
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 
 export interface SpecialVisualization {
     funcName: string,
-    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
+    constr: ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
     docs: string,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[],
@@ -640,6 +641,7 @@ export default class SpecialVisualizations {
                 }
             }
         ]
+
 
     static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
 

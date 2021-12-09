@@ -2754,6 +2754,9 @@
                     },
                     "4": {
                         "then": "This is an entrance without a physical door"
+                    },
+                    "5": {
+                        "then": "This is an entrance without a physical door"
                     }
                 },
                 "question": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"
@@ -3345,6 +3348,10 @@
         "title": {
             "render": "Car parking"
         }
+    },
+    "pedestrian_path": {
+        "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
+        "name": "Pedestrain paths"
     },
     "picnic_table": {
         "description": "The layer showing picnic tables",
