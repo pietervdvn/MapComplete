@@ -2728,6 +2728,9 @@
                         "then": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait"
                     },
                     "3": {
+                        "then": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt"
+                    },
+                    "4": {
                         "then": "Een poort die langs boven dichtrolt, typisch voor garages"
                     }
                 }
