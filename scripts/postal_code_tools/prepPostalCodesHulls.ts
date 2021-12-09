@@ -1,6 +1,5 @@
 import * as fs from "fs";
-import ScriptUtils from "./ScriptUtils";
-import {post} from "jquery";
+import ScriptUtils from "../ScriptUtils";
 import {writeFileSync} from "fs";
 
 function handleFile(file: string, postalCode: number) {

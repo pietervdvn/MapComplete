@@ -1,11 +1,7 @@
 import * as fs from "fs";
-import * as readline from "readline";
-import ScriptUtils from "./ScriptUtils";
 import {existsSync, writeFileSync} from "fs";
-import {GeoOperations} from "../Logic/GeoOperations";
-import {Utils} from "../Utils";
-import {post} from "jquery";
-import {createECDH} from "crypto";
+import * as readline from "readline";
+import ScriptUtils from "../ScriptUtils";
 
 /**
  * Converts an open-address CSV file into a big geojson file
@@ -35,7 +31,9 @@ async function main(args: string[]) {
     let failed = 0
     
     let createdFiles : string [] = []
-    fs.writeFileSync(outputFile, "")
+    if(!perPostalCode){
+        fs.writeFileSync(outputFile, "")
+    }
     // @ts-ignore
     for await (const line of rl) {
         i++;
@@ -65,6 +63,12 @@ async function main(args: string[]) {
 
         let targetFile = outputFile
         if (perPostalCode) {
+            if(parsed["postcode"] === ""){
+                continue
+            }
+            if(isNaN(Number(parsed["postcode"]))){
+                continue;
+            }
             targetFile = outputFile + "-" + parsed["postcode"] + ".geojson"
             let isFirst = false
             if(!existsSync(targetFile)){
