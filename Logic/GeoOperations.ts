@@ -37,6 +37,10 @@ export class GeoOperations {
         return turf.distance(lonlat0, lonlat1, {units: "meters"})
     }
 
+    static convexHull(featureCollection, options: {concavity?: number}){
+        return turf.convex(featureCollection, options)
+    }
+    
     /**
      * Calculates the overlap of 'feature' with every other specified feature.
      * The features with which 'feature' overlaps, are returned together with their overlap area in m²
