@@ -85,6 +85,21 @@
       }
     },
     {
+      "id": "wrong_postal_code",
+      "source": {
+        "osmTags": {
+          "and": ["boundary~*","addr:postcode~*"]
+        }
+      },
+      "title": "Boundary relation with addr:postcode={addr:postcode}",
+      "mapRendering": [
+        {
+          "color": "#f00",
+          "width": 1
+        }
+      ]
+    },
+    {
       "id": "town_hall",
       "name": {
         "en": "town halls"

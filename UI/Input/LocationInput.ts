@@ -192,6 +192,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             if (this._snapTo !== undefined) {
 
                 // Show the lines to snap to
+                console.log("Constructing the snap-to layer", this._snapTo)
                 new ShowDataMultiLayer({
                         features: new StaticFeatureSource(this._snapTo, true),
                         enablePopups: false,

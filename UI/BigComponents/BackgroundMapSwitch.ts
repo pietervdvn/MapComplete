@@ -186,7 +186,8 @@ export default class BackgroundMapSwitch extends Combine {
                     currentBackground: currentBackground,
                     notAvailable: activatePrevious
                 })
-            activatePrevious = button.activate
+            // Fall back to the first option: OSM
+            activatePrevious = activatePrevious ?? button.activate
             if (category === preferredCategory) {
                 button.activate()
             }
