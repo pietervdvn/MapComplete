@@ -4,6 +4,11 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import * as readline from "readline";
 import ScriptUtils from "./ScriptUtils";
 
+/**
+ * This script slices a big newline-delimeted geojson file into tiled geojson 
+ * It was used to convert the CRAB-data into geojson tiles
+ */
+
 async function readFeaturesFromLineDelimitedJsonFile(inputFile: string): Promise<any[]> {
     const fileStream = fs.createReadStream(inputFile);
 
