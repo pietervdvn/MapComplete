@@ -51,7 +51,7 @@ Minimap.createMiniMap = _ => {
 
 const dummyLayout = new LayoutConfig({
     language: ["en"],
-    id: "<theme>",
+    id: "&gt;theme&lt;",
     maintainer: "pietervdvn",
     version: "0",
     title: "<theme>",
@@ -63,7 +63,7 @@ const dummyLayout = new LayoutConfig({
     layers: [
         {
             name: "<layer>",
-            id: "<layer>",
+            id: "&lt;layer&gt;",
             source: {
                 osmTags: "id~*"
             },
@@ -75,7 +75,7 @@ const dummyLayout = new LayoutConfig({
 
 new FeatureSwitchState(dummyLayout)
 
-QueryParameters.GetQueryParameter("layer-<layer-id>", "true", "Wether or not the layer with id <layer-id> is shown")
+QueryParameters.GetQueryParameter("layer-&lt;layer-id&gt;", "true", "Wether or not the layer with id <layer-id> is shown")
 
 WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryParameterDocs(), ["QueryParameters"])
 

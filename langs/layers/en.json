@@ -2750,9 +2750,12 @@
                         "then": "A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure"
                     },
                     "3": {
-                        "then": "A door which rolls from overhead, typically seen for garages"
+                        "then": "A sliding door where the door slides sidewards, typically parallel with a wall"
                     },
                     "4": {
+                        "then": "A door which rolls from overhead, typically seen for garages"
+                    },
+                    "5": {
                         "then": "This is an entrance without a physical door"
                     },
                     "5": {

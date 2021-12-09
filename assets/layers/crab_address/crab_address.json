@@ -3,7 +3,7 @@
   "description": "Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version",
   "source": {
     "osmTags": "HUISNR~*",
-    "geoJson": "https://pietervdvn.github.io/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
+    "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
     "geoJsonZoomLevel": 18,
     "maxCacheAge": 0
   },
