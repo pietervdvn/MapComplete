@@ -62,8 +62,8 @@
                 "render": "Diese Rettungswache befindet sich in {addr:place}."
             },
             "ambulance-street": {
-                "question": " Wie lautet der Name der Straße, in der sich die Rettungswache befindet?",
-                "render": "Dieser Bahnhof liegt an der Straße {addr:street}."
+                "render": "Dieser Bahnhof liegt an der Straße {addr:street}.",
+                "question": " Wie lautet der Name der Straße, in der sich die Rettungswache befindet?"
             }
         },
         "title": {
@@ -1089,7 +1089,10 @@
         "presets": {
             "1": {
                 "title": "Ladestation für e-bikes"
-            }
+            },
+                "2": {
+                    "title": "Ladestation für Autos"
+                }
         }
     },
     "crossings": {
