@@ -122,7 +122,7 @@ function run(file, protojson) {
         // We add a second time for any amount to trigger a visualisation; but this is not an answer option
         const no_ask_json = {
             if: {
-                and:Utils.NoNull( [`${e.key}~*`, `${e.key}!=1`, ...e.extraVisualisationCondition.split(";")])
+                and:Utils.NoEmpty( [`${e.key}~*`, `${e.key}!=1`, ...e.extraVisualisationCondition.split(";")])
             },
             then: txt,
             hideInAnswer: true
