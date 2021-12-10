@@ -136,7 +136,7 @@ export interface LayerConfigJson {
     titleIcons?: (string | TagRenderingConfigJson)[];
 
 
-    mapRendering: (PointRenderingConfigJson | LineRenderingConfigJson)[]
+    mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson)[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.

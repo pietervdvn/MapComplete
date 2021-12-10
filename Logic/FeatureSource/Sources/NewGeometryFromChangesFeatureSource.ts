@@ -42,7 +42,6 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                         feature: feature,
                         freshness: now
                     })
-                    console.warn("Added a new feature: ", JSON.stringify(feature))
                 }
 
                 for (const change of changes) {

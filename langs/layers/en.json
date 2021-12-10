@@ -2757,9 +2757,6 @@
                     },
                     "5": {
                         "then": "This is an entrance without a physical door"
-                    },
-                    "5": {
-                        "then": "This is an entrance without a physical door"
                     }
                 },
                 "question": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"

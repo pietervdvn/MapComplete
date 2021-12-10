@@ -11,7 +11,7 @@ export default abstract class OsmChangeAction {
     public readonly trackStatistics: boolean;
     /**
      * The ID of the object that is the center of this change.
-     * Null if the action creates a new object
+     * Null if the action creates a new object (at initialization)
      * Undefined if such an id does not make sense
      */
     public readonly mainObjectId: string;
@@ -30,4 +30,11 @@ export default abstract class OsmChangeAction {
     }
 
     protected abstract CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]>
+}
+
+export abstract class OsmCreateAction extends OsmChangeAction{
+
+    public newElementId : string
+    public newElementIdNumber: number
+    
 }

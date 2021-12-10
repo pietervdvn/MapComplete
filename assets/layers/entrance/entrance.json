@@ -155,14 +155,14 @@
         {
           "if": "door=sliding",
           "then": {
-            "en": "A door which rolls from overhead, typically seen for garages",
-            "nl": "Een poort die langs boven dichtrolt, typisch voor garages"
+            "en": "A sliding door where the door slides sidewards, typically parallel with a wall",
+            "nl": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt"
           }
         },
         {
           "if": "door=overhead",
           "then": {
-            "en": "This is an entrance without a physical door",
+            "en": "A door which rolls from overhead, typically seen for garages",
             "nl": "Een poort die langs boven dichtrolt, typisch voor garages"
           }
         },

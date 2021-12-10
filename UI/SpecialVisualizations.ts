@@ -20,7 +20,6 @@ import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {ImportButtonSpecialViz} from "./BigComponents/ImportButton";
 import {Tag} from "../Logic/Tags/Tag";
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
@@ -39,6 +38,7 @@ import {DefaultGuiState} from "./DefaultGuiState";
 import {GeoOperations} from "../Logic/GeoOperations";
 import Hash from "../Logic/Web/Hash";
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
+import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -478,8 +478,9 @@ export default class SpecialVisualizations {
                     )
                 }
             },
-            new ImportButtonSpecialViz(),
-            
+            new ImportPointButton(),
+            new ImportWayButton(),
+            new ConflateButton(),
             {
                 funcName: "multi_apply",
                 docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",

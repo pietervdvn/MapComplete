@@ -46,6 +46,9 @@ export class Tag extends TagsFilter {
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25);
         }
+        if(v === "" || v === undefined){
+            return "<span class='line-through'>"+this.key+"</span>"
+        }
         if (linkToWiki) {
             return `<a href='https://wiki.openstreetmap.org/wiki/Key:${this.key}' target='_blank'>${this.key}</a>` +
                 `=` +

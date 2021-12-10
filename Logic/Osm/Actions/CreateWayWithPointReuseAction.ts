@@ -1,4 +1,4 @@
-import OsmChangeAction from "./OsmChangeAction";
+import OsmChangeAction, {OsmCreateAction} from "./OsmChangeAction";
 import {Tag} from "../../Tags/Tag";
 import {Changes} from "../Changes";
 import {ChangeDescription} from "./ChangeDescription";
@@ -31,7 +31,7 @@ interface CoordinateInfo {
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
-export default class CreateWayWithPointReuseAction extends OsmChangeAction {
+export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     private readonly _tags: Tag[];
     /**
      * lngLat-coordinates
@@ -40,6 +40,9 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
     private _coordinateInfo: CoordinateInfo[];
     private _state: FeaturePipelineState;
     private _config: MergePointConfig[];
+    
+    public newElementId: string = undefined;
+    public newElementIdNumber: number = undefined
 
     constructor(tags: Tag[],
                 coordinates: [number, number][],
@@ -87,7 +90,8 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                     properties: {
                         "move": "yes",
                         "osm-id": reusedPoint.node.properties.id,
-                        "id": "new-geometry-move-existing" + i
+                        "id": "new-geometry-move-existing" + i,
+                        "distance":GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
                     },
                     geometry: {
                         type: "LineString",
@@ -97,8 +101,23 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
                 features.push(moveDescription)
 
             } else {
-                // The geometry is moved
+                // The geometry is moved, the point is reused
                 geometryMoved = true
+
+                const reuseDescription = {
+                    type: "Feature",
+                    properties: {
+                        "move": "no",
+                        "osm-id": reusedPoint.node.properties.id,
+                        "id": "new-geometry-reuse-existing" + i,
+                        "distance":GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
+                    },
+                    geometry: {
+                        type: "LineString",
+                        coordinates: [coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates]
+                    }
+                }
+                features.push(reuseDescription)
             }
         }
 
@@ -138,11 +157,10 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
             features.push(newGeometry)
 
         }
-        console.log("Preview:", features)
         return new StaticFeatureSource(features, false)
     }
 
-    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         const theme = this._state.layoutToUse.id
         const allChanges: ChangeDescription[] = []
         const nodeIdsToUse: { lat: number, lon: number, nodeId?: number }[] = []
@@ -196,6 +214,8 @@ export default class CreateWayWithPointReuseAction extends OsmChangeAction {
         })
         
         allChanges.push(...(await newWay.CreateChangeDescriptions(changes)))
+        this.newElementId = newWay.newElementId
+        this.newElementIdNumber = newWay.newElementIdNumber
         return allChanges
     }
 

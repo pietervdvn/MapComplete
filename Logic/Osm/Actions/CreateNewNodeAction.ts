@@ -1,12 +1,12 @@
 import {Tag} from "../../Tags/Tag";
-import OsmChangeAction from "./OsmChangeAction";
+import OsmChangeAction, {OsmCreateAction} from "./OsmChangeAction";
 import {Changes} from "../Changes";
 import {ChangeDescription} from "./ChangeDescription";
 import {And} from "../../Tags/And";
 import {OsmWay} from "../OsmObject";
 import {GeoOperations} from "../../GeoOperations";
 
-export default class CreateNewNodeAction extends OsmChangeAction {
+export default class CreateNewNodeAction extends OsmCreateAction {
 
     /**
      * Maps previously created points onto their assigned ID, to reuse the point if uplaoded
@@ -121,7 +121,6 @@ export default class CreateNewNodeAction extends OsmChangeAction {
             reusedPointId = this._snapOnto.nodes[index + 1]
         }
         if (reusedPointId !== undefined) {
-            console.log("Reusing an existing point:", reusedPointId)
             this.setElementId(reusedPointId)
             return [{
                 tags: new And(this._basicTags).asChange(properties),
@@ -133,7 +132,6 @@ export default class CreateNewNodeAction extends OsmChangeAction {
 
         const locations = [...this._snapOnto.coordinates]
         locations.forEach(coor => coor.reverse())
-        console.log("Locations are: ", locations)
         const ids = [...this._snapOnto.nodes]
 
         locations.splice(index + 1, 0, [this._lon, this._lat])

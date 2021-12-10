@@ -1,12 +1,13 @@
 import {ChangeDescription} from "./ChangeDescription";
-import OsmChangeAction from "./OsmChangeAction";
+import {OsmCreateAction} from "./OsmChangeAction";
 import {Changes} from "../Changes";
 import {Tag} from "../../Tags/Tag";
 import CreateNewNodeAction from "./CreateNewNodeAction";
 import {And} from "../../Tags/And";
 
-export default class CreateNewWayAction extends OsmChangeAction {
+export default class CreateNewWayAction extends OsmCreateAction {
     public newElementId: string = undefined
+    public newElementIdNumber: number = undefined;
     private readonly coordinates: ({ nodeId?: number, lat: number, lon: number })[];
     private readonly tags: Tag[];
     private readonly _options: {
@@ -55,7 +56,7 @@ export default class CreateNewWayAction extends OsmChangeAction {
 
 
         const id = changes.getNewID()
-
+        this.newElementIdNumber  = id
         const newWay = <ChangeDescription>{
             id,
             type: "way",
