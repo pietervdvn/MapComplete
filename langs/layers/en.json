@@ -1113,7 +1113,7 @@
                         "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
                     },
                     "13": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
                     },
                     "14": {
                         "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
@@ -1245,10 +1245,10 @@
                         "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>"
                     },
                     "24": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</span></div>"
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</span></div>"
                     },
                     "25": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</span></div>"
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</span></div>"
                     },
                     "26": {
                         "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>"
@@ -1422,14 +1422,14 @@
             "current-12": {
                 "mappings": {
                     "0": {
-                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A"
+                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A"
                     },
                     "1": {
-                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A"
+                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A"
                     }
                 },
-                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A"
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A"
             },
             "current-13": {
                 "mappings": {
@@ -1604,8 +1604,8 @@
                 "render": "There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> available here"
             },
             "plugs-12": {
-                "question": "How much plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> are available here?",
-                "render": "There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here"
+                "question": "How much plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> are available here?",
+                "render": "There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here"
             },
             "plugs-13": {
                 "question": "How much plugs of type <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> are available here?",
@@ -1699,14 +1699,14 @@
             "power-output-12": {
                 "mappings": {
                     "0": {
-                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw"
+                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw"
                     },
                     "1": {
-                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw"
+                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw"
                     }
                 },
-                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}"
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}"
             },
             "power-output-13": {
                 "mappings": {
@@ -1882,14 +1882,14 @@
             "voltage-12": {
                 "mappings": {
                     "0": {
-                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt"
+                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt"
                     },
                     "1": {
-                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt"
+                        "then": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt"
                     }
                 },
-                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs {socket:tesla_destination:voltage} volt"
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs {socket:tesla_destination:voltage} volt"
             },
             "voltage-13": {
                 "mappings": {

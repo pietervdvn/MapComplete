@@ -271,7 +271,7 @@
             "pt_BR": "Estacionamento ao nível da superfície",
             "pt": "Estacionamento ao nível da superfície"
           },
-          "hideInAnwser": true
+          "hideInAnswer": true
         },
         {
           "if": "location=rooftop",

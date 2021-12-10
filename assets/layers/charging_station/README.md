@@ -26,13 +26,14 @@ The CSV File
 
 The columns in the CSV file are:
 
-- key: the key as described on the wiki, starts with `socket:`
-- image: The associated image (a .svg)
-- description:en A description in english
-- description:nl A description in english
-- countryWhiteList: Only show this plug type in these countries
-- countryBlackList: Don't show this plug type in these countries. NOt compatibel with the whiteList
-- commonVoltages, commonCurrents, commonOutputs: common values for these tags
-- associatedVehicleTypes and neverAssociatedWith: these work in tandem to hide options. If every associated vehicle type
+- `key`: the key as described on the wiki, starts with `socket:`
+- `image`: The associated image (a .svg)
+- `description:en` A description in english
+- `description:nl` A description in english
+- `countryWhiteList`: Only show this plug type in these countries
+- `countryBlackList`: Don't show this plug type in these countries. NOt compatibel with the whiteList
+- `commonVoltages`, `commonCurrents`, `commonOutputs`: common values for these tags
+- `associatedVehicleTypes` and `neverAssociatedWith`: these work in tandem to hide options. If every associated vehicle type
   is `no`, then the option is hidden If at least one `neverAssociatedVehicleType` is `yes` and none of the associated
   types is yes, then the option is hidden too
+- `extraVisualisationCondition`: in some exceptional cases, a socket type is branded differently. This extra condition allows tho hide these cases in the big multi-answer
