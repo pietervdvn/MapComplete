@@ -22,10 +22,12 @@
       "location": "end",
       "icon": {
         "render": "circle:#0f0",
-        "mappings":[ {
-          "if": "move=no",
-          "then": "ring:#0f0"
-        }]
+        "mappings": [
+          {
+            "if": "move=no",
+            "then": "ring:#0f0"
+          }
+        ]
       },
       "iconSize": "10,10,center"
     },
@@ -33,7 +35,7 @@
       "location": "start",
       "icon": "square:#f00",
       "iconSize": {
-        "render":"10,10,center",
+        "render": "10,10,center",
         "mappings": [
           {
             "if": "distance<0.1",
@@ -44,11 +46,13 @@
     },
     {
       "width": {
-        "render":         "3",
-        "mappings": [{
-          "if": "distance<0.2",
-          "then": "0"
-        }]
+        "render": "3",
+        "mappings": [
+          {
+            "if": "distance<0.2",
+            "then": "0"
+          }
+        ]
       },
       "color": "#00f",
       "dasharray": {

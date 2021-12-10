@@ -44,7 +44,9 @@
           {
             "icon": "square:#cc0",
             "iconSize": "5,5,center",
-            "location": ["point"]
+            "location": [
+              "point"
+            ]
           }
         ],
         "passAllFeatures": true
