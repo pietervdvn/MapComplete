@@ -152,6 +152,11 @@ export default class FeaturePipeline {
                 handlePriviligedFeatureSource(state.homeLocation)
                 continue
             }
+
+            if (id === "current_view") {
+                handlePriviligedFeatureSource(state.currentView)
+                continue
+            }
             
             const localTileSaver =  new SaveTileToLocalStorageActor(filteredLayer)
             this.localStorageSavers.set(filteredLayer.layerDef.id, localTileSaver)

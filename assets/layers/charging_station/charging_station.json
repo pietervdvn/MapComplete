@@ -180,8 +180,7 @@
           "if": {
             "and": [
               "socket:schuko~*",
-              "socket:schuko!=1",
-              ""
+              "socket:schuko!=1"
             ]
           },
           "then": {
@@ -202,8 +201,7 @@
           "if": {
             "and": [
               "socket:typee~*",
-              "socket:typee!=1",
-              ""
+              "socket:typee!=1"
             ]
           },
           "then": {
@@ -250,8 +248,7 @@
           "if": {
             "and": [
               "socket:chademo~*",
-              "socket:chademo!=1",
-              ""
+              "socket:chademo!=1"
             ]
           },
           "then": {
@@ -298,8 +295,7 @@
           "if": {
             "and": [
               "socket:type1_cable~*",
-              "socket:type1_cable!=1",
-              ""
+              "socket:type1_cable!=1"
             ]
           },
           "then": {
@@ -346,8 +342,7 @@
           "if": {
             "and": [
               "socket:type1~*",
-              "socket:type1!=1",
-              ""
+              "socket:type1!=1"
             ]
           },
           "then": {
@@ -394,8 +389,7 @@
           "if": {
             "and": [
               "socket:type1_combo~*",
-              "socket:type1_combo!=1",
-              ""
+              "socket:type1_combo!=1"
             ]
           },
           "then": {
@@ -442,8 +436,7 @@
           "if": {
             "and": [
               "socket:tesla_supercharger~*",
-              "socket:tesla_supercharger!=1",
-              ""
+              "socket:tesla_supercharger!=1"
             ]
           },
           "then": {
@@ -490,8 +483,7 @@
           "if": {
             "and": [
               "socket:type2~*",
-              "socket:type2!=1",
-              ""
+              "socket:type2!=1"
             ]
           },
           "then": {
@@ -538,8 +530,7 @@
           "if": {
             "and": [
               "socket:type2_combo~*",
-              "socket:type2_combo!=1",
-              ""
+              "socket:type2_combo!=1"
             ]
           },
           "then": {
@@ -586,8 +577,7 @@
           "if": {
             "and": [
               "socket:type2_cable~*",
-              "socket:type2_cable!=1",
-              ""
+              "socket:type2_cable!=1"
             ]
           },
           "then": {
@@ -634,8 +624,7 @@
           "if": {
             "and": [
               "socket:tesla_supercharger_ccs~*",
-              "socket:tesla_supercharger_ccs!=1",
-              ""
+              "socket:tesla_supercharger_ccs!=1"
             ]
           },
           "then": {
@@ -762,8 +751,7 @@
           "if": {
             "and": [
               "socket:USB-A~*",
-              "socket:USB-A!=1",
-              ""
+              "socket:USB-A!=1"
             ]
           },
           "then": {
@@ -806,8 +794,7 @@
           "if": {
             "and": [
               "socket:bosch_3pin~*",
-              "socket:bosch_3pin!=1",
-              ""
+              "socket:bosch_3pin!=1"
             ]
           },
           "then": {
@@ -850,8 +837,7 @@
           "if": {
             "and": [
               "socket:bosch_5pin~*",
-              "socket:bosch_5pin!=1",
-              ""
+              "socket:bosch_5pin!=1"
             ]
           },
           "then": {

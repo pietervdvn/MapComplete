@@ -45,7 +45,10 @@ export default class MapState extends UserRelatedState {
         lon: number;
     }> = new UIEventSource<{ lat: number; lon: number }>(undefined);
 
-    public currentView: FeatureSourceForLayer
+    /**
+     * The bounds of the current map view
+     */
+    public currentView: FeatureSourceForLayer & Tiled;
     /**
      * The location as delivered by the GPS
      */
@@ -174,30 +177,43 @@ export default class MapState extends UserRelatedState {
     }
     
     private initCurrentView(){
+        let currentViewLayer: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "current_view")[0]
+
+        if(currentViewLayer === undefined){
+            // This layer is not needed by the theme and thus unloaded
+            return;
+        }
+
+
+        let i = 0
         const features : UIEventSource<{ feature: any, freshness: Date }[]>= this.currentBounds.map(bounds => {
+            if(bounds === undefined){
+                return []
+            }
+            i++
             const feature = {
                 freshness: new Date(),
                 feature: {
-                    type: "Polygon",
+                    type: "Feature",
                     properties:{
-                        id:"current_view"
+                        id:"current_view-"+i,
+                        "current_view":"yes"
                     },
                     geometry:{
                         type:"Polygon",
-                        coordinates:[
+                        coordinates:[[
                             [bounds.maxLon, bounds.maxLat],
                             [bounds.minLon, bounds.maxLat],
                             [bounds.minLon, bounds.minLat],
                             [bounds.maxLon, bounds.minLat],
                             [bounds.maxLon, bounds.maxLat],
-                        ]
+                        ]]
                     }
                 }
             }
             return [feature]
         })
-        let currentViewLayer: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "current_view")[0]
-
+        
         this.currentView = new SimpleFeatureSource(currentViewLayer,0,features)
     }
 

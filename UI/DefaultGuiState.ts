@@ -9,6 +9,7 @@ export class DefaultGuiState {
     public readonly downloadControlIsOpened: UIEventSource<boolean>;
     public readonly filterViewIsOpened: UIEventSource<boolean>;
     public readonly copyrightViewIsOpened: UIEventSource<boolean>;
+    public readonly currentViewControlIsOpened: UIEventSource<boolean>;
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
     public readonly allFullScreenStates: UIEventSource<boolean>[] = []
 
@@ -40,6 +41,11 @@ export class DefaultGuiState {
             "false",
             "Whether or not the copyright view is shown"
         )
+        this.currentViewControlIsOpened = QueryParameters.GetBooleanQueryParameter(
+            "currentview-toggle",
+            "false",
+            "Whether or not the current view box is shown"
+        )
         if (Hash.hash.data === "download") {
             this.downloadControlIsOpened.setData(true)
         }
@@ -48,12 +54,14 @@ export class DefaultGuiState {
         }
         if (Hash.hash.data === "copyright") {
             this.copyrightViewIsOpened.setData(true)
+        }if (Hash.hash.data === "currentview") {
+            this.currentViewControlIsOpened.setData(true)
         }
         if (Hash.hash.data === "" || Hash.hash.data === undefined || Hash.hash.data === "welcome") {
             this.welcomeMessageIsOpened.setData(true)
         }
 
-        this.allFullScreenStates.push(this.downloadControlIsOpened, this.filterViewIsOpened, this.copyrightViewIsOpened, this.welcomeMessageIsOpened)
+        this.allFullScreenStates.push(this.downloadControlIsOpened, this.filterViewIsOpened, this.copyrightViewIsOpened, this.welcomeMessageIsOpened, this.currentViewControlIsOpened)
 
         for (let i = 0; i < this.allFullScreenStates.length; i++) {
             const fullScreenState = this.allFullScreenStates[i];

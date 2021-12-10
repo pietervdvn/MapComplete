@@ -1,9 +1,10 @@
 {
   "id": "current_view",
-  "description": "A meta-layer which contains one single feature, namely the BBOX of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen",
+  "description": "A meta-layer which contains one single feature, namely the BBOX of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'.",
   "source": {
-    "osmTags": "id=currentView"
+    "osmTags": "current_view=yes"
   },
+  "shownByDefault": false,
   "title": "Current View",
   "tagRenderings": [],
   "mapRendering": [
