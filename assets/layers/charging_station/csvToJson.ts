@@ -3,7 +3,6 @@ import {Utils} from "../../../Utils";
 import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
-import {TagsFilter} from "../../../Logic/Tags/TagsFilter";
 
 
 function colonSplit(value: string): string[] {
