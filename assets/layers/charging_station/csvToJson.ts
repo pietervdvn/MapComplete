@@ -3,6 +3,7 @@ import {Utils} from "../../../Utils";
 import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
+import {TagsFilter} from "../../../Logic/Tags/TagsFilter";
 
 
 function colonSplit(value: string): string[] {
@@ -19,7 +20,8 @@ function loadCsv(file): {
     commonCurrents?: number[],
     commonOutputs?: string[],
     associatedVehicleTypes?: string[],
-    neverAssociatedWith?: string[]
+    neverAssociatedWith?: string[],
+    extraVisualisationCondition: string
 }[] {
     const entries: string[] = Utils.NoNull(readFileSync(file, "utf8").split("\n").map(str => str.trim()))
     const header = entries.shift().split(",")
@@ -120,7 +122,7 @@ function run(file, protojson) {
         // We add a second time for any amount to trigger a visualisation; but this is not an answer option
         const no_ask_json = {
             if: {
-                and: [`${e.key}~*`, `${e.key}!=1`]
+                and:Utils.NoNull( [`${e.key}~*`, `${e.key}!=1`, ...e.extraVisualisationCondition.split(";")])
             },
             then: txt,
             hideInAnswer: true
