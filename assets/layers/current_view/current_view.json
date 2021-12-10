@@ -1,3 +1,14 @@
 {
-
+  "id": "current_view",
+  "description": "A meta-layer which contains one single feature, namely the BBOX of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen",
+  "source": {
+    "osmTags": "id=currentView"
+  },
+  "title": "Current View",
+  "tagRenderings": [],
+  "mapRendering": [
+    {
+      "color": "#cccc0088"
+    }
+  ]
 }

@@ -17,6 +17,7 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
+import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
 
 /**
  * Contains all the leaflet-map related state
@@ -44,11 +45,12 @@ export default class MapState extends UserRelatedState {
         lon: number;
     }> = new UIEventSource<{ lat: number; lon: number }>(undefined);
 
+    public currentView: FeatureSourceForLayer
     /**
      * The location as delivered by the GPS
      */
     public currentUserLocation: FeatureSourceForLayer & Tiled;
-
+    
     /**
      * All previously visited points
      */
@@ -125,6 +127,7 @@ export default class MapState extends UserRelatedState {
         this.initHomeLocation()
         this.initGpsLocation()
         this.initUserLocationTrail()
+        this.initCurrentView()
     }
 
     public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
@@ -168,6 +171,34 @@ export default class MapState extends UserRelatedState {
                 map.setMinZoom(layout.startZoom);
             })
         }
+    }
+    
+    private initCurrentView(){
+        const features : UIEventSource<{ feature: any, freshness: Date }[]>= this.currentBounds.map(bounds => {
+            const feature = {
+                freshness: new Date(),
+                feature: {
+                    type: "Polygon",
+                    properties:{
+                        id:"current_view"
+                    },
+                    geometry:{
+                        type:"Polygon",
+                        coordinates:[
+                            [bounds.maxLon, bounds.maxLat],
+                            [bounds.minLon, bounds.maxLat],
+                            [bounds.minLon, bounds.minLat],
+                            [bounds.maxLon, bounds.minLat],
+                            [bounds.maxLon, bounds.maxLat],
+                        ]
+                    }
+                }
+            }
+            return [feature]
+        })
+        let currentViewLayer: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "current_view")[0]
+
+        this.currentView = new SimpleFeatureSource(currentViewLayer,0,features)
     }
 
     private initGpsLocation() {
