@@ -465,5 +465,17 @@
     "hydrant": {
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
+    },
+    "address": {
+        "description": "地址",
+        "name": "OSM 上已知的地址",
+        "tagRenderings": {
+            "fixme": {
+                "question": "這裡需要修什麼？請直接解釋"
+            }
+        }
+    },
+    "cafe_pub": {
+        "name": "咖啡廳與酒吧"
     }
 }
