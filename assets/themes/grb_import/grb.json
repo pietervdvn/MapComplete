@@ -43,7 +43,7 @@
         ],
         "calculatedTags": [
           "_x='y'",
-          "_embedded_crab_addresses=feat.overlapWith('crab_address').length"
+          "_embedded_crab_addresses=undefined // feat.overlapWith('crab_address').length"
         ],
         "tagRenderings": [
           {
