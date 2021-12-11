@@ -30,6 +30,37 @@
   },
   "layers": [
     {
+      "builtin": "current_view",
+      "override": {
+        "+mapRendering": [
+          {
+            "location": ["point"],
+            "icon": {
+              "render": "./assets/themes/grb_import/robot.svg"
+            },
+            "iconSize": "15,15,center"
+          }
+        ],
+        "calculatedTags": [
+          "_x='y'",
+          "_embedded_crab_addresses=feat.overlapWith('crab_address').length"
+        ],
+        "tagRenderings": [
+          {
+            "id": "hw",
+            "render": "There are {_embedded_crab_addresses} adresses in view",
+            "mappings": [{
+              "if": "_embedded_crab_addresses=",
+              "then": "Loading..."
+            },{
+              "if": "_embedded_crab_addresses=0",
+              "then": "No CRAB addresses in view. Zoom in more to see them"
+            }]
+          }
+        ]
+      }
+    },
+    {
       "builtin": "type_node",
       "override": {
         "calculatedTags": [

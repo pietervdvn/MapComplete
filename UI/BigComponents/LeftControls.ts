@@ -57,14 +57,15 @@ export default class LeftControls extends Combine {
                         return defaultIcon;
                     }
                     const tags = {...feature.properties, button: "yes"}
-                    const elem = currentViewFL.layerDef.mapRendering[0]?.GenerateLeafletStyle(tags, false, {
+                    const elem = currentViewFL.layerDef.mapRendering[0]?.GenerateLeafletStyle(new UIEventSource(tags), false, {
                         noSize: true
                     })?.html
+                    console.log("Elem is ", elem, "for", tags)
                     if(elem === undefined){
                         return defaultIcon
                     }
                     return elem
-                }))
+                })).SetClass("inline-block w-full h-full")
                 
                 const featureBox = new VariableUiElement(feature.map(feature => {
                     if(feature === undefined){return undefined}
@@ -81,7 +82,7 @@ export default class LeftControls extends Combine {
                     guiState.currentViewControlIsOpened
                 )
 
-            }).SetClass("inline-block w-full").onClick(() => {
+            }).onClick(() => {
                 guiState.currentViewControlIsOpened.setData(true)
             }),
 

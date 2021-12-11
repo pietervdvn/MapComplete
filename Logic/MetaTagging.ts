@@ -70,7 +70,7 @@ export default class MetaTagging {
 
                         // @ts-ignore
                         metatag.applyMetaTagsOnFeature(feature, freshness, layer)
-                        
+
                     } else {
 
 
@@ -121,8 +121,8 @@ export default class MetaTagging {
             const func = new Function("feat", "return " + code + ";");
 
             const f = (feature: any) => {
-                
-                
+
+
                 delete feature.properties[key]
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,
@@ -144,7 +144,7 @@ export default class MetaTagging {
                             return result;
                         } catch (e) {
                             if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
-                                console.warn("Could not calculate a calculated tag for key "+key+" defined by " + code + " (in layer"+layerId+") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
+                                console.warn("Could not calculate a calculated tag for key " + key + " defined by " + code + " (in layer" + layerId + ") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
                                 MetaTagging.errorPrintCount++;
                                 if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
                                     console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
@@ -162,6 +162,8 @@ export default class MetaTagging {
         return functions;
     }
 
+    private static retaggingFuncCache = new Map<string, ((feature: any) => void)[]>()
+
     private static createRetaggingFunc(layer: LayerConfig):
         ((params: ExtraFuncParams, feature: any) => void) {
 
@@ -170,6 +172,13 @@ export default class MetaTagging {
             return undefined;
         }
 
+        let functions = MetaTagging.retaggingFuncCache.get(layer.id);
+        if (functions === undefined) {
+            functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
+            MetaTagging.retaggingFuncCache.set(layer.id, functions)
+        }
+
+
         return (params: ExtraFuncParams, feature) => {
             const tags = feature.properties
             if (tags === undefined) {
@@ -177,7 +186,6 @@ export default class MetaTagging {
             }
 
             try {
-                const functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
                 ExtraFunctions.FullPatchFeature(params, feature);
                 for (const f of functions) {
                     f(feature);

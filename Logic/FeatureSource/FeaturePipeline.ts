@@ -56,7 +56,7 @@ export default class FeaturePipeline {
 
     private readonly oldestAllowedDate: Date;
     private readonly osmSourceZoomLevel
-    
+
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
     private readonly metataggingRecalculated = new UIEventSource<void>(undefined)
 
@@ -97,7 +97,7 @@ export default class FeaturePipeline {
         this.perLayerHierarchy = perLayerHierarchy
 
         // Given a tile, wraps it and passes it on to render (handled by 'handleFeatureSource'
-        function patchedHandleFeatureSource (src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
+        function patchedHandleFeatureSource(src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const srcFiltered =
                 new FilteringFeatureSource(state, src.tileIndex,
@@ -110,14 +110,14 @@ export default class FeaturePipeline {
             // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
         }
 
-        function handlePriviligedFeatureSource(src: FeatureSourceForLayer & Tiled){
+        function handlePriviligedFeatureSource(src: FeatureSourceForLayer & Tiled) {
             // Passthrough to passed function, except that it registers as well
             handleFeatureSource(src)
             src.features.addCallbackAndRunD(fs => {
-              fs.forEach(ff => state.allElements.addOrGetElement(ff.feature))
+                fs.forEach(ff => state.allElements.addOrGetElement(ff.feature))
             })
         }
-        
+
 
         for (const filteredLayer of state.filteredLayers.data) {
             const id = filteredLayer.layerDef.id
@@ -155,10 +155,11 @@ export default class FeaturePipeline {
 
             if (id === "current_view") {
                 handlePriviligedFeatureSource(state.currentView)
+                state.currentView.features.map(ffs => ffs[0]?.feature?.properties?.id).withEqualityStabilized((x,y) => x === y).addCallbackAndRunD(_ => self.applyMetaTags(state.currentView))
                 continue
             }
-            
-            const localTileSaver =  new SaveTileToLocalStorageActor(filteredLayer)
+
+            const localTileSaver = new SaveTileToLocalStorageActor(filteredLayer)
             this.localStorageSavers.set(filteredLayer.layerDef.id, localTileSaver)
 
             if (source.geojsonSource === undefined) {
@@ -220,8 +221,8 @@ export default class FeaturePipeline {
                 new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                 if (tile.layer.layerDef.maxAgeOfCache > 0) {
                     const saver = self.localStorageSavers.get(tile.layer.layerDef.id)
-                    if(saver === undefined){
-                        console.error("No localStorageSaver found for layer ",tile.layer.layerDef.id)
+                    if (saver === undefined) {
+                        console.error("No localStorageSaver found for layer ", tile.layer.layerDef.id)
                     }
                     saver?.addTile(tile)
                 }
@@ -234,12 +235,12 @@ export default class FeaturePipeline {
                 state.filteredLayers.data.forEach(flayer => {
                     const layer = flayer.layerDef
                     if (layer.maxAgeOfCache > 0) {
-                       const saver = self.localStorageSavers.get(layer.id)
-                           if(saver === undefined){
-                               console.error("No local storage saver found for ", layer.id)
-                           }else{
-                                saver.MarkVisited(tileId, new Date())
-                           }
+                        const saver = self.localStorageSavers.get(layer.id)
+                        if (saver === undefined) {
+                            console.error("No local storage saver found for ", layer.id)
+                        } else {
+                            saver.MarkVisited(tileId, new Date())
+                        }
                     }
                     self.freshnesses.get(layer.id).addTileLoad(tileId, new Date())
                 })
@@ -458,7 +459,7 @@ export default class FeaturePipeline {
                     {
                         memberships: this.relationTracker,
                         getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox),
-                        getFeatureById: (id:string) => self.state.allElements.ContainingFeatures.get(id)
+                        getFeatureById: (id: string) => self.state.allElements.ContainingFeatures.get(id)
                     },
                     layerDef,
                     {
@@ -481,6 +482,7 @@ export default class FeaturePipeline {
                 self.applyMetaTags(tile)
             })
         })
+        this.applyMetaTags(this.state.currentView)
         self.metataggingRecalculated.ping()
 
     }
