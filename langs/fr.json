@@ -9,7 +9,7 @@
         "ccbs": "sous la license CC-BY-SA",
         "ccb": "sous la license CC-BY",
         "uploadFailed": "L'ajout de la photo a échoué. Avez-vous accès à Internet ? Les API tierces sont-elles autorisées ? Le navigateur Brave ou UMatrix peuvent les bloquer.",
-        "respectPrivacy": "Merci de respecter la vie privée. Ne publiez pas les plaques d'immatriculation.",
+        "respectPrivacy": "Ne photographiez ni les personnes ni les plaques d'immatriculation. Ne téléversez rien issu de Google Maps, Google Streetview ou d'autre sources soumises à des droits d'auteurs.",
         "uploadDone": "Votre photo est ajoutée. Merci beaucoup !",
         "dontDelete": "Annuler",
         "doDelete": "Supprimer l'image",
@@ -26,7 +26,7 @@
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
         "title": "Bienvenue sur MapComplete",
-        "intro": "MapComplete est une application qui permet de voir des informations d'OpenStreetMap sur un thème spécifique et de les éditer.",
+        "intro": "MapComplete est un visio-éditeur d'OpenStreetMap qui affiche des informations sur un thème défini et permet de les éditer.",
         "pickTheme": "Choisissez un thème ci-dessous pour commencer.",
         "featuredThemeTitle": "Thème de la semaine"
     },
@@ -194,6 +194,7 @@
         "isntAPoint": "Seul les points peuvent être supprimés, l'objet sélectionné est une ligne, un polygone ou une relation.",
         "onlyEditedByLoggedInUser": "Ce point a été édité seulement par vous et peut donc être supprimé.",
         "cannotBeDeleted": "Cet objet ne peut être supprimé",
-        "partOfOthers": "Ce point faire partie d'un autre objet et ne peut être supprimé directement."
+        "partOfOthers": "Ce point faire partie d'un autre objet et ne peut être supprimé directement.",
+        "whyDelete": "Pourquoi ce point devrait-il être supprimé ?"
     }
 }
