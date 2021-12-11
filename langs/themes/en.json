@@ -839,7 +839,7 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
-            "1": {
+            "2": {
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
