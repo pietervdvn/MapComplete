@@ -32,6 +32,10 @@
       * [Example usage of canonical](#example-usage-of-canonical)
     + [import_button](#import_button)
       * [Example usage of import_button](#example-usage-of-import_button)
+    + [import_way_button](#import_way_button)
+      * [Example usage of import_way_button](#example-usage-of-import_way_button)
+    + [conflate_button](#conflate_button)
+      * [Example usage of conflate_button](#example-usage-of-conflate_button)
     + [multi_apply](#multi_apply)
       * [Example usage of multi_apply](#example-usage-of-multi_apply)
     + [tag_apply](#tag_apply)
@@ -206,8 +210,26 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
 ### import_button 
 
- This button will copy the data from an external dataset into OpenStreetMap. It is only functional in official themes but can be tested in unofficial themes.
+ This button will copy the point from an external dataset into OpenStreetMap
 
+Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
+It is only functional in official themes, but can be tested in unoffical themes.
+
+#### Specifying which tags to copy or add
+
+The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. `ref=$source:geometry:type/$source:geometry:ref`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with `[a-zA-Z0-9_:]*`). Sadly, delimiting with `{}` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+ 
 #### Importing a dataset into OpenStreetMap: requirements
 
 If you want to import a dataset, make sure that:
@@ -231,7 +253,28 @@ There are also some technicalities in your theme to keep in mind:
 The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
+ 
 
+name | default | description
+------ | --------- | -------------
+targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
+tags | _undefined_ | The tags to add onto the new object - see specification above
+text | Import this data into OpenStreetMap | The text to show on the button
+icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
+snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
+max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
+ 
+
+#### Example usage of import_button 
+
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5)}` 
+
+### import_way_button 
+
+ This button will copy the data from an external dataset into OpenStreetMap
+
+Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
+It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
@@ -248,8 +291,29 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  
+#### Importing a dataset into OpenStreetMap: requirements
 
-  
+If you want to import a dataset, make sure that:
+
+1. The dataset to import has a suitable license
+2. The community has been informed of the import
+3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
+
+There are also some technicalities in your theme to keep in mind:
+
+1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
+    This means that there should be a layer which will match the new tags and which will display it.
+2. The original feature from your geojson layer will gain the tag '_imported=yes'.
+    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+3. There should be a way for the theme to detect previously imported points, even after reloading.
+    A reference number to the original dataset is an excellent way to do this
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
+    
+#### Disabled in unofficial themes
+
+The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
+The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
+In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
  
 
 name | default | description
@@ -258,15 +322,77 @@ targetLayer | _undefined_ | The id of the layer where this point should end up. 
 tags | _undefined_ | The tags to add onto the new object - see specification above
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
-minzoom | 18 | How far the contributor must zoom in before being able to import the point
-Snap onto layer(s)/replace geometry with this other way | _undefined_ |  - If the value corresponding with this key starts with 'way/' and the feature is a LineString or Polygon, the original OSM-way geometry will be changed to match the new geometry
- - If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
-snap max distance | 5 | The maximum distance that this point will move to snap onto a layer (in meters)
+snap_to_point_if | _undefined_ | Points with the given tags will be snapped to or moved
+max_snap_distance | 5 | If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way
+move_osm_point_if | _undefined_ | Moves the OSM-point to the newly imported point if these conditions are met
+max_move_distance | 1 | If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m
+snap_onto_layers | _undefined_ | If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead
+snap_to_layer_max_distance | 0.1 | Distance to distort the geometry to snap to this layer
  
 
-#### Example usage of import_button 
+#### Example usage of import_way_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,18,,5)}` 
+ `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,1,,0.1)}` 
+
+### conflate_button 
+
+ This button will modify the geometry of an existing OSM way to match the specified geometry. This can conflate OSM-ways with LineStrings and Polygons (only simple polygons with one single ring). An attempt is made to move points with special values to a decent new location (e.g. entrances)
+
+Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
+It is only functional in official themes, but can be tested in unoffical themes.
+
+#### Specifying which tags to copy or add
+
+The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. `ref=$source:geometry:type/$source:geometry:ref`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with `[a-zA-Z0-9_:]*`). Sadly, delimiting with `{}` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+ 
+#### Importing a dataset into OpenStreetMap: requirements
+
+If you want to import a dataset, make sure that:
+
+1. The dataset to import has a suitable license
+2. The community has been informed of the import
+3. All other requirements of the [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines) have been followed
+
+There are also some technicalities in your theme to keep in mind:
+
+1. The new feature will be added and will flow through the program as any other new point as if it came from OSM.
+    This means that there should be a layer which will match the new tags and which will display it.
+2. The original feature from your geojson layer will gain the tag '_imported=yes'.
+    This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
+3. There should be a way for the theme to detect previously imported points, even after reloading.
+    A reference number to the original dataset is an excellent way to do this
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
+    
+#### Disabled in unofficial themes
+
+The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
+The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
+In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
+ 
+
+name | default | description
+------ | --------- | -------------
+targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
+tags | _undefined_ | The tags to add onto the new object - see specification above
+text | Import this data into OpenStreetMap | The text to show on the button
+icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
+way_to_conflate | _undefined_ | The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag
+ 
+
+#### Example usage of conflate_button 
+
+ `{conflate_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,)}` 
 
 ### multi_apply 
 
@@ -312,7 +438,7 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 #### Example usage of tag_apply 
 
- `{tag_apply(survey_date:=$_now:date, Surveyed today!)}` 
+ `{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id) 
 
 ### export_as_gpx 
 

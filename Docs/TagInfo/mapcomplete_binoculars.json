@@ -37,12 +37,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Binoculars' shows fee=no&charge= with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars')",
+      "description": "Layer 'Binoculars' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Binoculars' shows fee=no&charge= with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars') Picking this answer will delete the key charge.",
+      "description": "Layer 'Binoculars' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Binoculars') Picking this answer will delete the key charge.",
       "value": ""
     },
     {

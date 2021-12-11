@@ -37,7 +37,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows <span class='line-through'>operational_status</span> with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
@@ -83,17 +83,17 @@
     },
     {
       "key": "shelter",
-      "description": "Layer 'Vogelkijkhutten' shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Vogelkijkhutten' shows shelter=no&<span class='line-through'>building</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "no"
     },
     {
       "key": "building",
-      "description": "Layer 'Vogelkijkhutten' shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key building.",
+      "description": "Layer 'Vogelkijkhutten' shows shelter=no&<span class='line-through'>building</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key building.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Vogelkijkhutten' shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Vogelkijkhutten' shows shelter=no&<span class='line-through'>building</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
@@ -202,12 +202,12 @@
     },
     {
       "key": "map_source",
-      "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap&<span class='line-through'>not:map_source</span> with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "OpenStreetMap"
     },
     {
       "key": "not:map_source",
-      "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key not:map_source.",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap&<span class='line-through'>not:map_source</span> with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key not:map_source.",
       "value": ""
     },
     {
@@ -288,52 +288,52 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows access=yes&<span class='line-through'>fee</span> with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
+      "description": "Layer 'Natuurgebied' shows access=yes&<span class='line-through'>fee</span> with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows access=no&<span class='line-through'>fee</span> with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "no"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
+      "description": "Layer 'Natuurgebied' shows access=no&<span class='line-through'>fee</span> with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows access=private&<span class='line-through'>fee</span> with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "private"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
+      "description": "Layer 'Natuurgebied' shows access=private&<span class='line-through'>fee</span> with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows access=permissive&<span class='line-through'>fee</span> with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "permissive"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
+      "description": "Layer 'Natuurgebied' shows access=permissive&<span class='line-through'>fee</span> with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows access=guided&<span class='line-through'>fee</span> with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "guided"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
+      "description": "Layer 'Natuurgebied' shows access=guided&<span class='line-through'>fee</span> with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
@@ -374,12 +374,12 @@
     },
     {
       "key": "noname",
-      "description": "Layer 'Natuurgebied' shows noname=yes&name= with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows noname=yes&<span class='line-through'>name</span> with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Natuurgebied' shows noname=yes&name= with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key name.",
+      "description": "Layer 'Natuurgebied' shows noname=yes&<span class='line-through'>name</span> with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key name.",
       "value": ""
     },
     {
@@ -427,7 +427,7 @@
     },
     {
       "key": "wikidata",
-      "description": "Layer 'Natuurgebied' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key wikidata.",
+      "description": "Layer 'Natuurgebied' shows <span class='line-through'>wikidata</span> with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key wikidata.",
       "value": ""
     },
     {

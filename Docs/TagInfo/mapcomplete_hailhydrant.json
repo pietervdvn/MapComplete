@@ -21,7 +21,7 @@
     },
     {
       "key": "colour",
-      "description": "Layer 'Map of hydrants' shows colour= with a fixed text, namely 'The hydrant color is unknown.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key colour.",
+      "description": "Layer 'Map of hydrants' shows <span class='line-through'>colour</span> with a fixed text, namely 'The hydrant color is unknown.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key colour.",
       "value": ""
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows fire_hydrant:type= with a fixed text, namely 'The hydrant type is unknown.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key fire_hydrant:type.",
+      "description": "Layer 'Map of hydrants' shows <span class='line-through'>fire_hydrant:type</span> with a fixed text, namely 'The hydrant type is unknown.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key fire_hydrant:type.",
       "value": ""
     },
     {
@@ -70,22 +70,22 @@
     },
     {
       "key": "disused:emergency",
-      "description": "Layer 'Map of hydrants' shows disused:emergency=fire_hydrant&emergency= with a fixed text, namely 'The hydrant is unavailable' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
+      "description": "Layer 'Map of hydrants' shows disused:emergency=fire_hydrant&<span class='line-through'>emergency</span> with a fixed text, namely 'The hydrant is unavailable' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
       "value": "fire_hydrant"
     },
     {
       "key": "emergency",
-      "description": "Layer 'Map of hydrants' shows disused:emergency=fire_hydrant&emergency= with a fixed text, namely 'The hydrant is unavailable' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key emergency.",
+      "description": "Layer 'Map of hydrants' shows disused:emergency=fire_hydrant&<span class='line-through'>emergency</span> with a fixed text, namely 'The hydrant is unavailable' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key emergency.",
       "value": ""
     },
     {
       "key": "removed:emergency",
-      "description": "Layer 'Map of hydrants' shows removed:emergency=fire_hydrant&emergency= with a fixed text, namely 'The hydrant has been removed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
+      "description": "Layer 'Map of hydrants' shows removed:emergency=fire_hydrant&<span class='line-through'>emergency</span> with a fixed text, namely 'The hydrant has been removed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
       "value": "fire_hydrant"
     },
     {
       "key": "emergency",
-      "description": "Layer 'Map of hydrants' shows removed:emergency=fire_hydrant&emergency= with a fixed text, namely 'The hydrant has been removed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key emergency.",
+      "description": "Layer 'Map of hydrants' shows removed:emergency=fire_hydrant&<span class='line-through'>emergency</span> with a fixed text, namely 'The hydrant has been removed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.') Picking this answer will delete the key emergency.",
       "value": ""
     },
     {

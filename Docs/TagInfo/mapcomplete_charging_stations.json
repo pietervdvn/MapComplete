@@ -210,16 +210,16 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!~^1$ with a fixed text, namely '<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&_country=us with a fixed text, namely '<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination=1 with a fixed text, namely '<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</span></div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination=1 with a fixed text, namely '<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</span></div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "1"
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!~^1$ with a fixed text, namely '<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</span></div>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&_country!~^us$ with a fixed text, namely '<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</span></div>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:USB-A",
@@ -782,12 +782,12 @@
     },
     {
       "key": "socket:socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=230 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "230 V"
     },
     {
       "key": "socket:socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=400 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:voltage=400 V with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "400 V"
     },
     {
@@ -796,12 +796,12 @@
     },
     {
       "key": "socket:socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=16 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "16 A"
     },
     {
       "key": "socket:socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:current=32 A with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "32 A"
     },
     {
@@ -810,12 +810,12 @@
     },
     {
       "key": "socket:socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=11 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=11 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "11 kw"
     },
     {
       "key": "socket:socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=22 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows socket:socket:tesla_destination:output=22 kw with a fixed text, namely '<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "22 kw"
     },
     {
@@ -895,42 +895,42 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "no"
     },
     {
       "key": "fee:conditional",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
       "value": ""
     },
     {
       "key": "charge",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key charge.",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
       "key": "authentication:none",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "no"
     },
     {
       "key": "fee:conditional",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
       "value": ""
     },
     {
       "key": "charge",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key charge.",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
       "key": "authentication:none",
-      "description": "Layer 'Charging stations' shows fee=no&fee:conditional=&charge=&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows fee=no&<span class='line-through'>fee:conditional</span>&<span class='line-through'>charge</span>&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "no"
     },
     {
@@ -945,12 +945,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional= with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows fee=yes&<span class='line-through'>fee:conditional</span> with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
     },
     {
       "key": "fee:conditional",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional= with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
+      "description": "Layer 'Charging stations' shows fee=yes&<span class='line-through'>fee:conditional</span> with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
       "value": ""
     },
     {
@@ -1111,7 +1111,7 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Charging stations' shows level= with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key level.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>level</span> with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key level.",
       "value": ""
     },
     {
@@ -1125,127 +1125,127 @@
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "broken"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&operational_status=broken&amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&construction:amenity=&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station&<span class='line-through'>construction:amenity</span>&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&construction:amenity=charging_station&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&construction:amenity=charging_station&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&construction:amenity=charging_station&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&construction:amenity=charging_station&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=charging_station&disused:amenity=&operational_status=&amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&construction:amenity=charging_station&<span class='line-through'>disused:amenity</span>&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "planned:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&disused:amenity=charging_station&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
       "value": ""
     },
     {
       "key": "construction:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&disused:amenity=charging_station&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
       "value": ""
     },
     {
       "key": "disused:amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&disused:amenity=charging_station&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "charging_station"
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&disused:amenity=charging_station&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Charging stations' shows planned:amenity=&construction:amenity=&disused:amenity=charging_station&operational_status=&amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Charging stations' shows <span class='line-through'>planned:amenity</span>&<span class='line-through'>construction:amenity</span>&disused:amenity=charging_station&<span class='line-through'>operational_status</span>&<span class='line-through'>amenity</span> with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {

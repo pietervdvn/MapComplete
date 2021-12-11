@@ -22,7 +22,7 @@
     },
     {
       "key": "hackerspace",
-      "description": "Layer 'Hackerspace' shows hackerspace= with a fixed text, namely 'This is a traditional (software oriented) hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces') Picking this answer will delete the key hackerspace.",
+      "description": "Layer 'Hackerspace' shows <span class='line-through'>hackerspace</span> with a fixed text, namely 'This is a traditional (software oriented) hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces') Picking this answer will delete the key hackerspace.",
       "value": ""
     },
     {

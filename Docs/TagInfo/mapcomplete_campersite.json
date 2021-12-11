@@ -42,12 +42,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Camper sites' shows fee=no&charge= with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Camper sites' shows fee=no&charge= with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') Picking this answer will delete the key charge.",
+      "description": "Layer 'Camper sites' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') Picking this answer will delete the key charge.",
       "value": ""
     },
     {

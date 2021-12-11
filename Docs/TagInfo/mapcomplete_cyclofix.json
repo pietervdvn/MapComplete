@@ -361,12 +361,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bicycle library' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key charge.",
+      "description": "Layer 'Bicycle library' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
@@ -477,7 +477,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours= with a fixed text, namely 'Always open' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows <span class='line-through'>opening_hours</span> with a fixed text, namely 'Always open' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key opening_hours.",
       "value": ""
     },
     {
@@ -507,7 +507,7 @@
     },
     {
       "key": "service:bicycle:pump:operational_status",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:pump:operational_status= with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key service:bicycle:pump:operational_status.",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows <span class='line-through'>service:bicycle:pump:operational_status</span> with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key service:bicycle:pump:operational_status.",
       "value": ""
     },
     {
@@ -570,7 +570,7 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows level= with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key level.",
+      "description": "Layer 'Bike stations (repair, pump or both)' shows <span class='line-through'>level</span> with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key level.",
       "value": ""
     },
     {
@@ -609,7 +609,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Bicycle tube vending machine' shows operational_status= with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Bicycle tube vending machine' shows <span class='line-through'>operational_status</span> with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
@@ -721,7 +721,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows <span class='line-through'>operational_status</span> with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
@@ -976,7 +976,7 @@
     },
     {
       "key": "location",
-      "description": "Layer 'Bike parking' shows location= with a fixed text, namely 'Surface level parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key location.",
+      "description": "Layer 'Bike parking' shows <span class='line-through'>location</span> with a fixed text, namely 'Surface level parking' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key location.",
       "value": ""
     },
     {

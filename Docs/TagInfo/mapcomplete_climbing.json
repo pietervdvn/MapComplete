@@ -361,12 +361,12 @@
     },
     {
       "key": "noname",
-      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows noname=yes&<span class='line-through'>name</span> with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
+      "description": "Layer 'Climbing routes' shows noname=yes&<span class='line-through'>name</span> with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
       "value": ""
     },
     {
@@ -542,12 +542,12 @@
     },
     {
       "key": "noname",
-      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows noname=yes&<span class='line-through'>name</span> with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
+      "description": "Layer 'Climbing opportunities' shows noname=yes&<span class='line-through'>name</span> with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
       "value": ""
     },
     {

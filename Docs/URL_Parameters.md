@@ -29,7 +29,7 @@
   - [overpassMaxZoom](#overpassmaxzoom)
   - [osmApiTileSize](#osmapitilesize)
   - [background](#background)
-  - [layer-<layer-id>](#layer-<layer-id>)
+  - [layer-&lt;layer-id&gt;](#layer-&ltlayer-id&gt;)
 
  This document gives an overview of which URL-parameters can be used to influence MapComplete. 
 
@@ -154,8 +154,8 @@
 
  The id of the background layer to start with The default value is _osm_ 
 
- layer-<layer-id> 
-------------------
+ layer-&lt;layer-id&gt; 
+------------------------
 
  Wether or not the layer with id <layer-id> is shown The default value is _true_ 
 

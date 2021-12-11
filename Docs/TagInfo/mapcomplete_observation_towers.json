@@ -58,12 +58,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Observation towers' shows fee=no&charge= with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "description": "Layer 'Observation towers' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Observation towers' shows fee=no&charge= with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key charge.",
+      "description": "Layer 'Observation towers' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "key": "wikidata",
-      "description": "Layer 'Observation towers' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key wikidata.",
+      "description": "Layer 'Observation towers' shows <span class='line-through'>wikidata</span> with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key wikidata.",
       "value": ""
     },
     {

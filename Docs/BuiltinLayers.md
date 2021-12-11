@@ -15,6 +15,7 @@
     + [conflation](#conflation)
     + [left_right_style](#left_right_style)
     + [split_point](#split_point)
+    + [current_view](#current_view)
 1. [Normal layers](#normal-layers)
   - [Frequently reused layers](#frequently-reused-layers)
     + [bicycle_library](#bicycle_library)
@@ -89,6 +90,8 @@
       * [Themes using this layer](#themes-using-this-layer)
     + [parking](#parking)
       * [Themes using this layer](#themes-using-this-layer)
+    + [pedestrian_path](#pedestrian_path)
+      * [Themes using this layer](#themes-using-this-layer)
     + [picnic_table](#picnic_table)
       * [Themes using this layer](#themes-using-this-layer)
     + [playground](#playground)
@@ -155,6 +158,7 @@
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
+  - [current_view](#current_view)
  
 
 ### gps_location 
@@ -168,7 +172,7 @@ Meta layer showing the current location of the user. Add this to your theme and 
 
 
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - Not clickable by default. If you import this layer in your theme, override `title` to make this clickable
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
  
 
@@ -183,7 +187,7 @@ Meta layer which contains the previous locations of the user as single points. T
 
 
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - Not clickable by default. If you import this layer in your theme, override `title` to make this clickable
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
  
@@ -199,7 +203,7 @@ Meta layer showing the home location of the user. The home location can be set i
 
 
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - Not clickable by default. If you import this layer in your theme, override `title` to make this clickable
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
  
 
@@ -214,6 +218,7 @@ Meta layer showing the previous locations of the user as single line. Add this t
 
 
   - **This layer is included automatically in every theme. This layer might contain no points**
+  - This layer is not visible by default and must be enabled in the filter by the user. 
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
  
 
@@ -228,13 +233,14 @@ This is a priviliged meta_layer which exports _every_ point in OSM. This only wo
 
 
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
+  - This layer is needed as dependency for layer [GRB](#GRB)
  
 
 ### conflation 
 
 
 
-If the import-button is set to conflate two ways, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.
+If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme.
 
 [Go to the source code](../assets/layers/conflation/conflation.json)
 
@@ -263,6 +269,21 @@ Special meta-style which will show one single line, either on the left or on the
 Layer rendering the little scissors for the minimap in the 'splitRoadWizard'
 
 [Go to the source code](../assets/layers/split_point/split_point.json)
+
+
+
+  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
+ 
+
+### current_view 
+
+
+
+A meta-layer which contains one single feature, namely the BBOX of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.
+
+The icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'.
+
+[Go to the source code](../assets/layers/current_view/current_view.json)
 
 
 
@@ -399,6 +420,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 
 
+  - This layer is not visible by default and must be enabled in the filter by the user. 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
   - This layer is needed as dependency for layer [defibrillator](#defibrillator)
@@ -472,6 +494,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [nature_reserve](#nature_reserve)
   - [observation_tower](#observation_tower)
   - [parking](#parking)
+  - [pedestrian_path](#pedestrian_path)
   - [picnic_table](#picnic_table)
   - [playground](#playground)
   - [public_bookcase](#public_bookcase)
@@ -971,7 +994,7 @@ This layer visualizes directions
 
 
 
-  - Not clickable by default. If you import this layer in your theme, override `title` to make this clickable
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
 
 
 
@@ -996,6 +1019,7 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 
   - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+  - This layer will automatically load  [pedestrian_path](#pedestrian_path)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
 
 
 
@@ -1223,6 +1247,30 @@ A layer showing car parkings
 
 
   - [parkings](https://mapcomplete.osm.be/parkings)
+ 
+
+### pedestrian_path 
+
+
+
+Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer
+
+[Go to the source code](../assets/layers/pedestrian_path/pedestrian_path.json)
+
+
+
+  - This layer is needed as dependency for layer [entrance](#entrance)
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [entrances](https://mapcomplete.osm.be/entrances)
  
 
 ### picnic_table 

@@ -132,7 +132,7 @@
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Cycleways and roads' shows cyclestreet= with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key cyclestreet.",
+      "description": "Layer 'Cycleways and roads' shows <span class='line-through'>cyclestreet</span> with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key cyclestreet.",
       "value": ""
     },
     {
@@ -661,7 +661,7 @@
     },
     {
       "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key crossing_ref.",
+      "description": "Layer 'Crossings' shows <span class='line-through'>crossing_ref</span> with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key crossing_ref.",
       "value": ""
     },
     {

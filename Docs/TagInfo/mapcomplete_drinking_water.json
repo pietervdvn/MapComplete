@@ -37,7 +37,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows <span class='line-through'>operational_status</span> with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
