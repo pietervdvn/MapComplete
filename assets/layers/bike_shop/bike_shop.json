@@ -12,6 +12,7 @@
     "pt": "Reparo/loja de bicicletas"
   },
   "minzoom": 13,
+  "allowMove": true,
   "source": {
     "osmTags": {
       "#": "We select all bicycle shops, sport shops (but we try to weed out non-bicycle related shops), and any shop with a bicycle related tag",
