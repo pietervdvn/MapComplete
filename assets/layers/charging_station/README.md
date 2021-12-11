@@ -36,4 +36,4 @@ The columns in the CSV file are:
 - `associatedVehicleTypes` and `neverAssociatedWith`: these work in tandem to hide options. If every associated vehicle type
   is `no`, then the option is hidden If at least one `neverAssociatedVehicleType` is `yes` and none of the associated
   types is yes, then the option is hidden too
-- `extraVisualisationCondition`: in some exceptional cases, a socket type is branded differently. This extra condition allows tho hide these cases in the big multi-answer
+- `extraVisualisationCondition`: in some exceptional cases, a socket type is branded differently. This extra condition allows to hide these cases in the big multi-answer
