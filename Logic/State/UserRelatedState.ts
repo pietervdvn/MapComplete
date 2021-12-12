@@ -9,9 +9,6 @@ import {Utils} from "../../Utils";
 import Locale from "../../UI/i18n/Locale";
 import ElementsState from "./ElementsState";
 import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater";
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
-import FeatureSource from "../FeatureSource/FeatureSource";
-import {Feature} from "@turf/turf";
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,

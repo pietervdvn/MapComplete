@@ -1,13 +1,13 @@
 {
   "id": "missing_streets",
   "title": {
-    "nl": "GRB import helper"
+    "nl": "Fix ontbrekende straten"
   },
   "shortDescription": {
-    "nl": "Grb import helper tool"
+    "nl": "Voegt ontbrekende straten toe aan gebouwen met huisnumer adhv CRAB"
   },
   "description": {
-    "nl": "Dit thema voegt semi-automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres."
+    "nl": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres."
   },
   "language": [
     "nl"
@@ -36,7 +36,7 @@
               "point"
             ],
             "icon": {
-              "render": "./assets/themes/grb_import/robot.svg"
+              "render": "./assets/svg/robot.svg"
             },
             "iconSize": "15,15,center"
           }

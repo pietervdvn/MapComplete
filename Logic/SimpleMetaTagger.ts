@@ -1,5 +1,4 @@
 import {GeoOperations} from "./GeoOperations";
-import State from "../State";
 import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
 import Combine from "../UI/Base/Combine";
@@ -15,7 +14,7 @@ export class SimpleMetaTagger  {
     public readonly doc: string;
     public readonly isLazy: boolean;
     public readonly includesDates: boolean
-    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig) => boolean;
+    public readonly applyMetaTagsOnFeature: (feature: any, freshness: Date, layer: LayerConfig, state) => boolean;
 
     /***
      * A function that adds some extra data to a feature
@@ -23,7 +22,7 @@ export class SimpleMetaTagger  {
      * @param f: apply the changes. Returns true if something changed
      */
     constructor(docs: { keys: string[], doc: string, includesDates?: boolean, isLazy?: boolean, cleanupRetagger?: boolean },
-                f: ((feature: any, freshness: Date, layer: LayerConfig) => boolean)) {
+                f: ((feature: any, freshness: Date, layer: LayerConfig, state) => boolean)) {
         this.keys = docs.keys;
         this.doc = docs.doc;
         this.isLazy = docs.isLazy
@@ -54,7 +53,7 @@ export class CountryTagger extends SimpleMetaTagger {
                 doc: "The country code of the property (with latlon2country)",
                 includesDates: false
             },
-            ((feature, _) => {
+            ((feature, _, __, state) => {
                 let centerPoint: any = GeoOperations.centerpoint(feature);
                 const lat = centerPoint.geometry.coordinates[1];
                 const lon = centerPoint.geometry.coordinates[0];
@@ -66,7 +65,7 @@ export class CountryTagger extends SimpleMetaTagger {
                             const oldCountry = feature.properties["_country"];
                             feature.properties["_country"] = countries[0].trim().toLowerCase();
                             if (oldCountry !== feature.properties["_country"]) {
-                                const tagsSource = State.state?.allElements?.getEventSourceById(feature.properties.id);
+                                const tagsSource = state?.allElements?.getEventSourceById(feature.properties.id);
                                 tagsSource?.ping();
                             }
                         } catch (e) {
@@ -210,8 +209,8 @@ export default class SimpleMetaTaggers {
             keys: ["Theme-defined keys"],
 
         },
-        (feature => {
-            const units = Utils.NoNull([].concat(...State.state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
+        ((feature, _, __, state) => {
+            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
             if (units.length == 0) {
                 return;
             }
@@ -279,7 +278,7 @@ export default class SimpleMetaTaggers {
             includesDates: true,
             isLazy: true
         },
-        (feature => {
+        ((feature, _, __ ,state) => {
             if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
@@ -292,7 +291,7 @@ export default class SimpleMetaTaggers {
                 get: () => {
                     delete feature.properties._isOpen
                     feature.properties._isOpen = undefined
-                    const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
+                    const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
                     tagsSource.addCallbackAndRunD(tags => {
                         if (tags.opening_hours === undefined || tags._country === undefined) {
                             return;

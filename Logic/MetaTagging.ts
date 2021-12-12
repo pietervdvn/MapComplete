@@ -1,7 +1,6 @@
-import SimpleMetaTaggers from "./SimpleMetaTagger";
+import SimpleMetaTaggers, {SimpleMetaTagger} from "./SimpleMetaTagger";
 import {ExtraFuncParams, ExtraFunctions} from "./ExtraFunctions";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import State from "../State";
 
 
 /**
@@ -24,6 +23,7 @@ export default class MetaTagging {
     public static addMetatags(features: { feature: any; freshness: Date }[],
                               params: ExtraFuncParams,
                               layer: LayerConfig,
+                              state,
                               options?: {
                                   includeDates?: true | boolean,
                                   includeNonDates?: true | boolean
@@ -33,7 +33,7 @@ export default class MetaTagging {
             return;
         }
 
-        const metatagsToApply: SimpleMetaTaggers[] = []
+        const metatagsToApply: SimpleMetaTagger[] = []
         for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {
                 if (options.includeDates ?? true) {
@@ -47,7 +47,7 @@ export default class MetaTagging {
         }
 
         // The calculated functions - per layer - which add the new keys
-        const layerFuncs = this.createRetaggingFunc(layer)
+        const layerFuncs = this.createRetaggingFunc(layer, state)
 
         let atLeastOneFeatureChanged = false;
 
@@ -58,24 +58,17 @@ export default class MetaTagging {
             let somethingChanged = false
             for (const metatag of metatagsToApply) {
                 try {
-                    // @ts-ignore
                     if (!metatag.keys.some(key => feature.properties[key] === undefined)) {
                         // All keys are already defined, we probably already ran this one
                         continue
                     }
 
-                    // @ts-ignore
                     if (metatag.isLazy) {
                         somethingChanged = true;
 
-                        // @ts-ignore
-                        metatag.applyMetaTagsOnFeature(feature, freshness, layer)
-
+                        metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
                     } else {
-
-
-                        // @ts-ignore
-                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer)
+                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
                         /* Note that the expression:
                         * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
                         * Is WRONG
@@ -86,7 +79,6 @@ export default class MetaTagging {
                         somethingChanged = newValueAdded || somethingChanged
                     }
                 } catch (e) {
-                    // @ts-ignore
                     console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e, e.stack)
                 }
             }
@@ -101,7 +93,7 @@ export default class MetaTagging {
             }
 
             if (somethingChanged) {
-                State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
+                state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
                 atLeastOneFeatureChanged = true
             }
         }
@@ -170,7 +162,7 @@ export default class MetaTagging {
 
     private static retaggingFuncCache = new Map<string, ((feature: any) => void)[]>()
 
-    private static createRetaggingFunc(layer: LayerConfig):
+    private static createRetaggingFunc(layer: LayerConfig, state):
         ((params: ExtraFuncParams, feature: any) => void) {
 
         const calculatedTags: [string, string, boolean][] = layer.calculatedTags;
@@ -196,7 +188,7 @@ export default class MetaTagging {
                 for (const f of functions) {
                     f(feature);
                 }
-                State.state?.allElements?.getEventSourceById(feature.properties.id)?.ping();
+                state?.allElements?.getEventSourceById(feature.properties.id)?.ping();
             } catch (e) {
                 console.error("Invalid syntax in calculated tags or some other error: ", e)
             }

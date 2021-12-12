@@ -7,7 +7,6 @@ import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 
-
 export default class DeleteImage extends Toggle {
 
     constructor(key: string, tags: UIEventSource<any>) {

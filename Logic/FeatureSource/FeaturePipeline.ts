@@ -155,7 +155,8 @@ export default class FeaturePipeline {
 
             if (id === "current_view") {
                 handlePriviligedFeatureSource(state.currentView)
-                state.currentView.features.map(ffs => ffs[0]?.feature?.properties?.id).withEqualityStabilized((x,y) => x === y).addCallbackAndRunD(_ => self.applyMetaTags(state.currentView))
+                state.currentView.features.map(ffs => ffs[0]?.feature?.properties?.id).withEqualityStabilized((x,y) => x === y)
+                    .addCallbackAndRunD(_ => self.applyMetaTags(state.currentView, state))
                 continue
             }
 
@@ -291,7 +292,8 @@ export default class FeaturePipeline {
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
-                perLayer.features.addCallbackAndRunD(_ => self.applyMetaTags(perLayer))
+                // @ts-ignore
+                perLayer.features.addCallbackAndRunD(_ => self.applyMetaTags(perLayer, state))
                 perLayer.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(perLayer))
 
             },
@@ -449,8 +451,11 @@ export default class FeaturePipeline {
         return updater;
     }
 
-    private applyMetaTags(src: FeatureSourceForLayer) {
+    private applyMetaTags(src: FeatureSourceForLayer, state: any) {
         const self = this
+        if(src === undefined){
+            throw "Src is undefined"
+        }
         window.setTimeout(
             () => {
                 const layerDef = src.layer.layerDef;
@@ -462,6 +467,7 @@ export default class FeaturePipeline {
                         getFeatureById: (id: string) => self.state.allElements.ContainingFeatures.get(id)
                     },
                     layerDef,
+                    state,
                     {
                         includeDates: true,
                         // We assume that the non-dated metatags are already set by the cache generator
@@ -479,10 +485,10 @@ export default class FeaturePipeline {
         console.debug("Updating the meta tagging of all tiles as new data got loaded")
         this.perLayerHierarchy.forEach(hierarchy => {
             hierarchy.loadedTiles.forEach(tile => {
-                self.applyMetaTags(tile)
+                self.applyMetaTags(tile, <any> this.state)
             })
         })
-        this.applyMetaTags(this.state.currentView)
+        this.applyMetaTags(this.state.currentView, <any> this.state)
         self.metataggingRecalculated.ping()
 
     }

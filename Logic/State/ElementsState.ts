@@ -11,7 +11,6 @@ import {Utils} from "../../Utils";
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
 import PendingChangesUploader from "../Actors/PendingChangesUploader";
 import TitleHandler from "../Actors/TitleHandler";
-import FeatureSource from "../FeatureSource/FeatureSource";
 
 /**
  * The part of the state keeping track of where the elements, loading them, configuring the feature pipeline etc

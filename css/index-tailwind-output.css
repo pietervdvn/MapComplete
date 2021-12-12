@@ -1052,6 +1052,10 @@ video {
   width: 100%;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
