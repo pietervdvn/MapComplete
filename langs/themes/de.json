@@ -374,7 +374,7 @@
                         "render": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
                     },
                     "Contained routes length hist": {
-                        "render": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}"
+                        "render": "<h3>Längenübersicht</h3>{histogram(_length_hist)}"
                     },
                     "Contained_climbing_routes": {
                         "render": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>"

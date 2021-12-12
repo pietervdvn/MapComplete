@@ -58,7 +58,7 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -84,7 +84,7 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,
@@ -107,7 +107,7 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_points.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_points.geojson",
           "isOsmCache": true
         },
         "minzoom": 1,
@@ -129,7 +129,7 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -158,7 +158,7 @@
       "override": {
         "minzoom": "15",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -186,7 +186,7 @@
       "override": {
         "minzoom": 12,
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -205,7 +205,7 @@
       "override": {
         "minzoom": "16",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -223,7 +223,7 @@
       "override": {
         "minzoom": "16",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -268,7 +268,7 @@
       "override": {
         "minzoom": "16",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -286,7 +286,7 @@
       "override": {
         "minzoom": "18",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -304,7 +304,7 @@
       "override": {
         "minzoom": "18",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
