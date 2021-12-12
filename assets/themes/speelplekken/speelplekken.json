@@ -46,7 +46,7 @@
       "builtin": "play_forest",
       "override": {
         "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -65,7 +65,7 @@
         "minzoom": 14,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -82,7 +82,7 @@
         "minzoom": 14,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -99,7 +99,7 @@
         "minzoom": 14,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -115,7 +115,7 @@
         "minzoom": 15,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -134,7 +134,7 @@
         ],
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         }
@@ -154,7 +154,7 @@
             "operator~[pP]rovincie Antwerpen"
           ]
         },
-        "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken",
         "geoJsonZoomLevel": 14,
         "isOsmCache": true
       },
