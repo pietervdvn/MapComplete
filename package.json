@@ -47,7 +47,7 @@
     "deploy:production": "cd ~/git/mapcomplete.github.io/ && git pull && cd - && rm -rf ./assets/generated && npm run prepare-deploy && npm run optimize-images && rm -rf ~/git/mapcomplete.github.io/* && cp -r dist/* ~/git/mapcomplete.github.io/ && cd ~/git/mapcomplete.github.io/ && echo \"mapcomplete.osm.be\" > CNAME  && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean && npm run gittag",
     "gittag": "ts-node scripts/printVersion.ts | bash",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\).html\" | xargs rm) && rm *.webmanifest",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\).html\" | xargs rm) && rm *.webmanifest",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot test/TestAll.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot"
   },
   "keywords": [
