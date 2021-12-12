@@ -34,8 +34,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly doNotDownload: boolean;
     public readonly  passAllFeatures: boolean;
     public readonly isShown: TagRenderingConfig;
-    public readonly  minzoom: number;
-    public readonly  minzoomVisible: number;
+    public minzoom: number;
+    public minzoomVisible: number;
     public readonly  maxzoom: number;
     public readonly title?: TagRenderingConfig;
     public readonly titleIcons: TagRenderingConfig[];
