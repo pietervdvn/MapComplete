@@ -126,7 +126,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
 
                 eventSource.setData(eventSource.data.concat(newFeatures))
 
-            }).catch(msg => console.error("Could not load geojon layer", url, "due to", msg))
+            }).catch(msg => console.error("Could not load geojson layer", url, "due to", msg))
     }
 
 }
