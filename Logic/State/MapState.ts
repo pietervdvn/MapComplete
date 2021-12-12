@@ -17,7 +17,6 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
 
 /**
  * Contains all the leaflet-map related state
@@ -186,6 +185,7 @@ export default class MapState extends UserRelatedState {
 
 
         let i = 0
+        const self = this;
         const features : UIEventSource<{ feature: any, freshness: Date }[]>= this.currentBounds.map(bounds => {
             if(bounds === undefined){
                 return []
@@ -197,7 +197,8 @@ export default class MapState extends UserRelatedState {
                     type: "Feature",
                     properties:{
                         id:"current_view-"+i,
-                        "current_view":"yes"
+                        "current_view":"yes",
+                        "zoom": ""+self.locationControl.data.zoom
                     },
                     geometry:{
                         type:"Polygon",

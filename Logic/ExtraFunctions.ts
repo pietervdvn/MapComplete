@@ -134,6 +134,7 @@ class ClosestNObjectFunc implements ExtraFunction {
         "If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name)"
     _args =  ["list of features or layer name or '*' to get all features", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
 
+    
     /**
      * Gets the closes N features, sorted by ascending distance.
      *
@@ -164,8 +165,11 @@ class ClosestNObjectFunc implements ExtraFunction {
 
         const selfCenter = GeoOperations.centerpointCoordinates(feature)
         let closestFeatures: { feat: any, distance: number }[] = [];
+        
         for (const featureList of features) {
+            // Features is provided by 'getFeaturesWithin' which returns a list of lists of features, hence the double loop here
             for (const otherFeature of featureList) {
+                
                 if (otherFeature === feature || otherFeature.properties.id === feature.properties.id) {
                     continue; // We ignore self
                 }
@@ -187,12 +191,14 @@ class ClosestNObjectFunc implements ExtraFunction {
                 }
 
                 if (closestFeatures.length === 0) {
+                    // This is the first matching feature we find - always add it
                     closestFeatures.push({
                         feat: otherFeature,
                         distance: distance
                     })
                     continue;
                 }
+
 
                 if (closestFeatures.length >= maxFeatures && closestFeatures[maxFeatures - 1].distance < distance) {
                     // The last feature of the list (and thus the furthest away is still closer
@@ -257,6 +263,8 @@ class ClosestNObjectFunc implements ExtraFunction {
                     }
 
                 }
+
+
             }
         }
         return closestFeatures;

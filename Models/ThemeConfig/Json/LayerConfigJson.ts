@@ -82,6 +82,15 @@ export interface LayerConfigJson {
      *  "_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area
      * ]
      *
+     * The specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),
+     * the expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.
+     * 
+     * If a tag has to be evaluated strictly, use ':=' instead:
+     * 
+     * [
+     * "_some_key:=some_javascript_expression"
+     * ]
+     * 
      */
     calculatedTags?: string[];
 

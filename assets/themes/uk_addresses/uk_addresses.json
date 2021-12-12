@@ -326,28 +326,7 @@
         }
       ]
     },
-    {
-      "id": "named_streets",
-      "minzoom": 18,
-      "source": {
-        "osmTags": {
-          "and": [
-            "highway~*",
-            "name~*"
-          ]
-        }
-      },
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#ccc"
-          },
-          "width": {
-            "render": "0"
-          }
-        }
-      ]
-    }
+"named_streets"
   ],
   "enableShareScreen": false,
   "enableMoreQuests": false

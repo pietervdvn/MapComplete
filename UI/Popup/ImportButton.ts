@@ -34,6 +34,7 @@ import {And} from "../../Logic/Tags/And";
 import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction";
 import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
 import {Tag} from "../../Logic/Tags/Tag";
+import TagApplyButton from "./TagApplyButton";
 
 
 abstract class AbstractImportButton implements SpecialVisualizations {
@@ -131,7 +132,7 @@ ${Utils.special_visualizations_importRequirementDocs}
 
 
         // Explanation of the tags that will be applied onto the imported/conflated object
-        const newTags = SpecialVisualizations.generateTagsToApply(args.tags, tagSource)
+        const newTags = TagApplyButton.generateTagsToApply(args.tags, tagSource)
         const appliedTags = new Toggle(
             new VariableUiElement(
                 newTags.map(tgs => {
@@ -198,7 +199,7 @@ ${Utils.special_visualizations_importRequirementDocs}
     private parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
         const baseArgs = Utils.ParseVisArgs(this.args, argsRaw)
         if (originalFeatureTags !== undefined) {
-            baseArgs["newTags"] = SpecialVisualizations.generateTagsToApply(baseArgs.tags, originalFeatureTags)
+            baseArgs["newTags"] = TagApplyButton.generateTagsToApply(baseArgs.tags, originalFeatureTags)
         }
         return baseArgs
     }

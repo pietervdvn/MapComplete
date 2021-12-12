@@ -98,7 +98,7 @@ export class Changes {
      * Uploads all the pending changes in one go.
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
-    public flushChanges(flushreason: string = undefined) {
+    public async flushChanges(flushreason: string = undefined) : Promise<void>{
         if (this.pendingChanges.data.length === 0) {
             return;
         }
@@ -108,16 +108,14 @@ export class Changes {
         }
         console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
-
-        this.flushChangesAsync()
-            .then(_ => {
-                this.isUploading.setData(false)
-                console.log("Changes flushed!");
-            })
-            .catch(e => {
-                this.isUploading.setData(false)
-                console.error("Flushing changes failed due to", e);
-            })
+        try {
+            const csNumber = await this.flushChangesAsync()
+            this.isUploading.setData(false)
+            console.log("Changes flushed!");
+        } catch (e) {
+            this.isUploading.setData(false)
+            console.error("Flushing changes failed due to", e);
+        }
     }
 
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {

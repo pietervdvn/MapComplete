@@ -1032,6 +1032,10 @@ video {
   height: 0.75rem;
 }
 
+.h-48 {
+  height: 12rem;
+}
+
 .max-h-20vh {
   max-height: 20vh;
 }
@@ -1609,6 +1613,10 @@ video {
 
 .underline {
   text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
 }
 
 .opacity-50 {
@@ -2221,6 +2229,11 @@ li::marker {
 .leaflet-div-icon {
   background-color: unset !important;
   border: unset !important;
+}
+
+.floating-element-width {
+  max-width: calc(100vw - 5em);
+  width: 40em;
 }
 
 .leaflet-div-icon svg {

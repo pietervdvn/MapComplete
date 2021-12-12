@@ -1,0 +1,154 @@
+{
+  "id": "missing_streets",
+  "title": {
+    "nl": "GRB import helper"
+  },
+  "shortDescription": {
+    "nl": "Grb import helper tool"
+  },
+  "description": {
+    "nl": "Dit thema voegt semi-automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres."
+  },
+  "language": [
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/robot.svg",
+  "version": "0",
+  "startLat": 51.0249,
+  "startLon": 4.026489,
+  "startZoom": 9,
+  "widenFactor": 2,
+  "socialImage": "",
+  "clustering": {
+    "maxZoom": 15
+  },
+  "overrideAll": {
+    "minzoom": 14
+  },
+  "layers": [
+    {
+      "builtin": "current_view",
+      "override": {
+        "+mapRendering": [
+          {
+            "location": [
+              "point"
+            ],
+            "icon": {
+              "render": "./assets/themes/grb_import/robot.svg"
+            },
+            "iconSize": "15,15,center"
+          }
+        ],
+        "calculatedTags": [
+          "_overlapping=Number(feat.properties.zoom) >= 14 ? feat.overlapWith('OSM-buildings').map(ff => ff.feat.properties) : undefined",
+          "_applicable=feat.get('_overlapping').filter(p => (p._spelling_is_correct === 'true') && (p._singular_import === 'true')).map(p => p.id)",
+          "_applicable_count=feat.get('_applicable')?.length"
+        ],
+        "tagRenderings": [
+          {
+            "id": "hw",
+            "render": "There are {_applicable_count} applicable elements in view",
+            "mappings": [
+              {
+                "if": "zoom<14",
+                "then": "Zoom in more to see the automatic action"
+              },
+              {
+                "if": "_applicable_count=",
+                "then": "Loading..."
+              },
+              {
+                "if": "_applicable_count=0",
+                "then": "No buildings with missing street names in view"
+              }
+            ]
+          },
+          {
+            "id": "autoapply",
+            "render": "{auto_apply(OSM-buildings, _applicable, apply_streetname, Automatically add all missing streetnames on buildings in view)}"
+          }
+        ]
+      }
+    },
+    "named_streets",
+    {
+      "builtin": "crab_address",
+      "override": {
+        "mapRendering": [
+          {
+            "iconSize": "5,5,center",
+            "icon": "circle:black;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "OSM-buildings",
+      "name": "Alle OSM-gebouwen met een huisnummer en zonder straat",
+      "source": {
+        "osmTags": {
+          "and": [
+            "building~*",
+            "addr:housenumber~*",
+            "addr:street="
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "calculatedTags": [
+        "_embedded_crab_addresses:=Array.from(new Set(feat.overlapWith('crab_address').map(ff => ff.feat.properties).filter(p => p._HNRLABEL.toLowerCase() === (feat.properties['addr:housenumber'] + (feat.properties['addr:unit']??'')).toLowerCase()).map(p => p.STRAATNM)))",
+        "_singular_import:=feat.get('_embedded_crab_addresses')?.length == 1",
+        "_name_to_apply:=feat.get('_embedded_crab_addresses')[0]",
+        "_nearby_street_names:=feat.closestn('named_streets',5,'name', 500).map(ff => ff.feat.properties.name)",
+        "_spelling_is_correct:= feat.get('_nearby_street_names').indexOf(feat.properties['_name_to_apply']) >= 0"
+      ],
+      "mapRendering": [
+        {
+          "width": {
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "_spelling_is_correct=false",
+                "then": "#ff00ff"
+              },
+              {
+                "if": "_singular_import=ffalse",
+                "then": "#f00"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "OSM-gebouw",
+      "tagRenderings": [
+        {
+          "id": "apply_streetname",
+          "render": "{tag_apply(addr:street=$_name_to_apply ,Apply the CRAB-street onto this building)}",
+          "mappings": [
+            {
+              "if": "_spelling_is_correct=false",
+              "then": "No nearby street has the same name. The CRAB-name is {_name_to_apply}"
+            },
+            {
+              "if": "_singular_import=false",
+              "then": "There are multiple streetnames applicable here"
+            }
+          ]
+        }
+      ],
+      "passAllFeatures": true
+    }
+  ],
+  "hideFromOverview": true
+}

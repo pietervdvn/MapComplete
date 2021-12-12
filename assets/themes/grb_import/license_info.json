@@ -6,15 +6,5 @@
       "Pieter Vander Vennet"
     ],
     "sources": []
-  },
-  {
-    "path": "robot.svg",
-    "license": "CC-BY 4.0 International",
-    "authors": [
-      "Font Awesome"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_robot.svg"
-    ]
   }
 ]

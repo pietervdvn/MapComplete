@@ -42,14 +42,19 @@
           }
         ],
         "calculatedTags": [
-          "_x='y'",
-          "_embedded_crab_addresses=undefined // feat.overlapWith('crab_address').length"
+          "_embedded_crab_addresses= Number(feat.properties.zoom) >= 18 ? feat.overlapWith('crab_address').length : undefined"
         ],
+        "minZoom": 18,
         "tagRenderings": [
           {
             "id": "hw",
             "render": "There are {_embedded_crab_addresses} adresses in view",
-            "mappings": [{
+            "mappings": [
+              {
+                "if": "zoom<18",
+                "then": "Zoom in more..."
+              },
+              {
               "if": "_embedded_crab_addresses=",
               "then": "Loading..."
             },{

@@ -72,6 +72,7 @@ export default class LeftControls extends Combine {
                     return new Lazy(() => {
                       const tagsSource=  state.allElements.getEventSourceById(feature.properties.id)
                         return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, "currentview", guiState.currentViewControlIsOpened)
+                            .SetClass("md:floating-element-width")
                     })
                 }))
                 
@@ -94,7 +95,7 @@ export default class LeftControls extends Combine {
         const toggledDownload = new Toggle(
             new AllDownloads(
                 guiState.downloadControlIsOpened
-            ).SetClass("block p-1 rounded-full"),
+            ).SetClass("block p-1 rounded-full md:floating-element-width"),
             new MapControlButton(Svg.download_svg())
                 .onClick(() => guiState.downloadControlIsOpened.setData(true)),
             guiState.downloadControlIsOpened
@@ -116,7 +117,7 @@ export default class LeftControls extends Combine {
                     ),
                 "filters",
                 guiState.filterViewIsOpened
-            ).SetClass("rounded-lg"),
+            ).SetClass("rounded-lg md:floating-element-width"),
             new MapControlButton(Svg.filter_svg())
                 .onClick(() => guiState.filterViewIsOpened.setData(true)),
             guiState.filterViewIsOpened

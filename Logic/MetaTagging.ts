@@ -107,51 +107,57 @@ export default class MetaTagging {
         }
         return atLeastOneFeatureChanged
     }
-
-
-    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string][]): ((feature: any) => void)[] {
+    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
         const functions: ((feature: any) => void)[] = [];
+        
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
+            const isStrict = entry[2]
             if (code === undefined) {
                 continue;
             }
 
-            const func = new Function("feat", "return " + code + ";");
+            const calculateAndAssign = (feat) => {
 
+
+                try {
+                    let result = new Function("feat", "return " + code + ";")(feat);
+                    if (result === "") {
+                        result === undefined
+                    }
+                    if (result !== undefined && typeof result !== "string") {
+                        // Make sure it is a string!
+                        result = JSON.stringify(result);
+                    }
+                    delete feat.properties[key]
+                    feat.properties[key] = result;
+                    return result;
+                }catch(e){
+                    if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
+                        console.warn("Could not calculate a " + (isStrict ? "strict " : "") + " calculated tag for key " + key + " defined by " + code + " (in layer" + layerId + ") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
+                        MetaTagging.errorPrintCount++;
+                        if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
+                            console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
+                        }
+                    }
+                }
+            } 
+                
+            
+            if(isStrict){
+                functions.push(calculateAndAssign)
+                continue
+            }
+
+            // Lazy function
             const f = (feature: any) => {
-
-
                 delete feature.properties[key]
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,
                     enumerable: false, // By setting this as not enumerable, the localTileSaver will _not_ calculate this
                     get: function () {
-                        try {
-                            // Lazyness for the win!
-                            let result = func(feature);
-
-                            if (result === "") {
-                                result === undefined
-                            }
-                            if (result !== undefined && typeof result !== "string") {
-                                // Make sure it is a string!
-                                result = JSON.stringify(result);
-                            }
-                            delete feature.properties[key]
-                            feature.properties[key] = result;
-                            return result;
-                        } catch (e) {
-                            if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
-                                console.warn("Could not calculate a calculated tag for key " + key + " defined by " + code + " (in layer" + layerId + ") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
-                                MetaTagging.errorPrintCount++;
-                                if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
-                                    console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
-                                }
-                            }
-                        }
-
+                        return calculateAndAssign(feature)
                     }
                 })
             }
@@ -167,7 +173,7 @@ export default class MetaTagging {
     private static createRetaggingFunc(layer: LayerConfig):
         ((params: ExtraFuncParams, feature: any) => void) {
 
-        const calculatedTags: [string, string][] = layer.calculatedTags;
+        const calculatedTags: [string, string, boolean][] = layer.calculatedTags;
         if (calculatedTags === undefined || calculatedTags.length === 0) {
             return undefined;
         }

@@ -30,7 +30,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly name: Translation;
     public readonly description: Translation;
     public readonly source: SourceConfig;
-    public readonly calculatedTags: [string, string][];
+    public readonly calculatedTags: [string, string, boolean][];
     public readonly doNotDownload: boolean;
     public readonly  passAllFeatures: boolean;
     public readonly isShown: TagRenderingConfig;
@@ -130,7 +130,11 @@ export default class LayerConfig extends WithContextLoader {
             this.calculatedTags = [];
             for (const kv of json.calculatedTags) {
                 const index = kv.indexOf("=");
-                const key = kv.substring(0, index);
+                let key = kv.substring(0, index);
+                const isStrict = key.endsWith(':')
+                if(isStrict){
+                    key = key.substr(0, key.length - 1)
+                }
                 const code = kv.substring(index + 1);
 
                 try {
@@ -140,7 +144,7 @@ export default class LayerConfig extends WithContextLoader {
                 }
 
 
-                this.calculatedTags.push([key, code]);
+                this.calculatedTags.push([key, code, isStrict]);
             }
         }
 

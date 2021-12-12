@@ -439,6 +439,10 @@ li::marker {
     border: unset !important;
 }
 
+.floating-element-width {
+    max-width: calc(100vw - 5em);
+    width: 40em;
+}
 
 .leaflet-div-icon svg {
     width: calc(100%);
