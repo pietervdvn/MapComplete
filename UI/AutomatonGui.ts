@@ -26,40 +26,81 @@ import List from "./Base/List";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
 import {AutoAction} from "./Popup/AutoApplyButton";
+import DynamicGeoJsonTileSource from "../Logic/FeatureSource/TiledFeatureSource/DynamicGeoJsonTileSource";
 
-class AutomatonGui extends Combine {
 
-    constructor() {
+class AutomationPanel extends Combine{
+    
+    constructor(layoutToUse: LayoutConfig, indices: number[], extraCommentText: UIEventSource<string>, tagRenderingToAutomate: { layer: LayerConfig, tagRendering: TagRenderingConfig }) {
+        const layerId = tagRenderingToAutomate.layer.id
+        const trId = tagRenderingToAutomate.tagRendering.id
+        const tileState = LocalStorageSource.GetParsed("automation-tile_state-" + layerId + "-" + trId, {})
+        const logMessages = new UIEventSource<string[]>([])
+        if (indices === undefined) {
+           throw ("No tiles loaded - can not automate")
+        }
 
-        const osmConnection = new OsmConnection({
-            allElements: undefined,
-            changes: undefined,
-            layoutName: "automaton",
-            singlePage: false,
-            oauth_token: QueryParameters.GetQueryParameter("oauth_token", "OAuth token")
-        });
 
-        super([
-            new Combine([Svg.robot_svg().SetClass("w-24 h-24 p-4 rounded-full subtle-background"),
-                new Combine([new Title("MapComplete Automaton", 1),
-                    "This page helps to automate certain tasks for a theme. Expert use only."
-                ]).SetClass("flex flex-col m-4")
-            ]).SetClass("flex"),
-            new Toggle(
-                AutomatonGui.GenerateMainPanel(),
-                new SubtleButton(Svg.osm_logo_svg(), "Login to get started").onClick(() => osmConnection.AttemptLogin()),
-                osmConnection.isLoggedIn
-            )])
+        const nextTileToHandle = tileState.map(handledTiles => {
+            for (const index of indices) {
+                if (handledTiles[index] !== undefined) {
+                    // Already handled
+                    continue
+                }
+                return index
+            }
+            return undefined
+        })
+        nextTileToHandle.addCallback(t => console.warn("Next tile to handle is", t))
+
+        const neededTimes = new UIEventSource<number[]>([])
+        const automaton = new VariableUiElement(nextTileToHandle.map(tileIndex => {
+            if (tileIndex === undefined) {
+                return new FixedUiElement("All done!").SetClass("thanks")
+            }
+            console.warn("Triggered map on nextTileToHandle",tileIndex)
+            const start = new Date()
+            return AutomationPanel.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,(result, logMessage) => {
+                const end = new Date()
+                const timeNeeded = (end.getTime() - start.getTime()) / 1000;
+                neededTimes.data.push(timeNeeded)
+                neededTimes.ping()
+                tileState.data[tileIndex] = result
+                tileState.ping();
+                if(logMessage !== undefined){
+                    logMessages.data.push(logMessage)
+                    logMessages.ping();
+                }
+            });
+        }))
+
+
+        const statistics = new VariableUiElement(tileState.map(states => {
+            let total = 0
+            const perResult = new Map<string, number>()
+            for (const key in states) {
+                total++
+                const result = states[key]
+                perResult.set(result, (perResult.get(result) ?? 0) + 1)
+            }
+
+            let sum = 0
+            neededTimes.data.forEach(v => {
+                sum = sum + v
+            })
+            let timePerTile = sum / neededTimes.data.length
+
+            return new Combine(["Handled " + total + "/" + indices.length + " tiles: ",
+                new List(Array.from(perResult.keys()).map(key => key + ": " + perResult.get(key))),
+                "Handling one tile needs " + (Math.floor(timePerTile * 100) / 100) + "s on average. Estimated time left: " + Math.floor((indices.length - total) * timePerTile) + "s"
+            ]).SetClass("flex flex-col")
+        }))
+
+       super([statistics, automaton, new VariableUiElement(logMessages.map(logMessages => new List(logMessages)))])
+       this.SetClass("flex flex-col")
     }
 
-    private static startedTiles = new Set<number>()
-
-    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, whenDone: ((result: string) => void)): BaseUIElement {
-
-        if (AutomatonGui.startedTiles.has(tileIndex)) {
-            throw "Already started tile " + tileIndex
-        }
-        AutomatonGui.startedTiles.add(tileIndex)
+    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, whenDone: ((result: string, logMessage?: string) => void)): BaseUIElement {
 
         const state = new MapState(layoutToUse, {attemptLogin: false})
         extraCommentText.syncWith( state.changes.extraComment)
@@ -107,6 +148,7 @@ class AutomatonGui extends Combine {
 
                 let handled = 0
                 let inspected = 0
+                let log = []
                 for (const targetTile of targetTiles.data) {
 
                     for (const ffs of targetTile.features.data) {
@@ -115,7 +157,9 @@ class AutomatonGui extends Combine {
                             stateToShow.setData("Inspected " + inspected + " features, updated " + handled + " features")
                         }
                         const feature = ffs.feature
-                        const rendering = targetAction.GetRenderValue(feature.properties).txt
+                        const renderingTr = targetAction.GetRenderValue(feature.properties)
+                        const rendering = renderingTr.txt
+                        log.push("<a href='https://openstreetmap.org/"+feature.properties.id+"' target='_blank'>"+feature.properties.id+"</a>: "+new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties)).ConstructElement().innerText)
                         const actions = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
                             .map(obj => obj.special))
                         for (const action of actions) {
@@ -136,15 +180,16 @@ class AutomatonGui extends Combine {
 
                 if (inspected === 0) {
                     whenDone("empty")
-                    return;
+                    return true;
                 }
 
                 if (handled === 0) {
-                    window.setTimeout(() => whenDone("no-action"), 1000)
+                    whenDone("no-action","Inspected "+inspected+" elements: "+log.join("; "))
                 }else{
                     state.changes.flushChanges("handled tile automatically, time to flush!")
-                    whenDone("fixed")
+                    whenDone("fixed", "Updated " + handled+" elements, inspected "+inspected+": "+log.join("; "))
                 }
+                return true;
 
             }, [targetTiles])
 
@@ -153,69 +198,38 @@ class AutomatonGui extends Combine {
             new VariableUiElement(stateToShow)]).SetClass("flex flex-col")
     }
 
-    private static AutomationPanel(layoutToUse: LayoutConfig, indices: number[], extraCommentText: UIEventSource<string>, tagRenderingToAutomate: { layer: LayerConfig, tagRendering: TagRenderingConfig }): BaseUIElement {
-        const layerId = tagRenderingToAutomate.layer.id
-        const trId = tagRenderingToAutomate.tagRendering.id
-        const tileState = LocalStorageSource.GetParsed("automation-tile_state-" + layerId + "-" + trId, {})
-
-        if (indices === undefined) {
-            return new FixedUiElement("No tiles loaded - can not automate")
-        }
 
 
-        const nextTileToHandle = tileState.map(handledTiles => {
-            for (const index of indices) {
-                if (handledTiles[index] !== undefined) {
-                    // Already handled
-                    continue
-                }
-                return index
-            }
-            return undefined
-        })
-        nextTileToHandle.addCallback(t => console.warn("Next tile to handle is", t))
-
-        const neededTimes = new UIEventSource<number[]>([])
-        const automaton = new VariableUiElement(nextTileToHandle.map(tileIndex => {
-            if (tileIndex === undefined) {
-                return new FixedUiElement("All done!").SetClass("thanks")
-            }
-            console.warn("Triggered map on nextTileToHandle",tileIndex)
-            const start = new Date()
-            return AutomatonGui.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,(result) => {
-                const end = new Date()
-                const timeNeeded = (end.getTime() - start.getTime()) / 1000;
-                neededTimes.data.push(timeNeeded)
-                neededTimes.ping()
-                tileState.data[tileIndex] = result
-                tileState.ping();
-            });
-        }))
+}
 
 
-        const statistics = new VariableUiElement(tileState.map(states => {
-            let total = 0
-            const perResult = new Map<string, number>()
-            for (const key in states) {
-                total++
-                const result = states[key]
-                perResult.set(result, (perResult.get(result) ?? 0) + 1)
-            }
 
-            let sum = 0
-            neededTimes.data.forEach(v => {
-                sum = sum + v
-            })
-            let timePerTile = sum / neededTimes.data.length
+class AutomatonGui {
 
-            return new Combine(["Handled " + total + "/" + indices.length + " tiles: ",
-                new List(Array.from(perResult.keys()).map(key => key + ": " + perResult.get(key))),
-                "Handling one tile needs " + (Math.floor(timePerTile * 100) / 100) + "s on average. Estimated time left: " + Math.floor((indices.length - total) * timePerTile) + "s"
-            ]).SetClass("flex flex-col")
-        }))
+    constructor() {
 
-        return new Combine([statistics, automaton]).SetClass("flex flex-col")
+        const osmConnection = new OsmConnection({
+            allElements: undefined,
+            changes: undefined,
+            layoutName: "automaton",
+            singlePage: false,
+            oauth_token: QueryParameters.GetQueryParameter("oauth_token", "OAuth token")
+        });
+
+        new Combine([
+            new Combine([Svg.robot_svg().SetClass("w-24 h-24 p-4 rounded-full subtle-background"),
+                new Combine([new Title("MapComplete Automaton", 1),
+                    "This page helps to automate certain tasks for a theme. Expert use only."
+                ]).SetClass("flex flex-col m-4")
+            ]).SetClass("flex"),
+            new Toggle(
+                AutomatonGui.GenerateMainPanel(),
+                new SubtleButton(Svg.osm_logo_svg(), "Login to get started").onClick(() => osmConnection.AttemptLogin()),
+                osmConnection.isLoggedIn
+            )]) .SetClass("block p-4")
+            .AttachTo("main")
     }
+
 
     private static GenerateMainPanel(): BaseUIElement {
 
@@ -249,6 +263,7 @@ class AutomatonGui extends Combine {
             }
             let indexes : number[] = [];
             const tilesS = tiles["success"]
+            DynamicGeoJsonTileSource.RegisterWhitelist(tilepath.GetValue().data , tilesS)
             const z = Number(tilesS["zoom"])
             for (const key in tilesS) {
                 if (key === "zoom") {
@@ -282,7 +297,9 @@ class AutomatonGui extends Combine {
             themeSelect,
             "Specify the path to a tile overview. This is a hosted .json of the format {x : [y0, y1, y2], x1: [y0, ...]} where x is a string and y are numbers",
             tilepath,
+            "Add an extra comment:",
             extraComment,
+            new VariableUiElement(extraComment.GetValue().map(c => "Your comment is "+c.length+"/200 characters long")).SetClass("subtle"),
             new VariableUiElement(tilesToRunOver.map(t => {
                 if (t === undefined) {
                     return "No path given or still loading..."
@@ -331,7 +348,7 @@ class AutomatonGui extends Combine {
 
                 return new Combine([
                     pickAuto,
-                    new VariableUiElement(pickAuto.GetValue().map(auto => auto === undefined ? undefined : AutomatonGui.AutomationPanel(layoutToUse, tilesPerIndex.data, extraComment.GetValue(), auto)))])
+                    new VariableUiElement(pickAuto.GetValue().map(auto => auto === undefined ? undefined : new AutomationPanel(layoutToUse, tilesPerIndex.data, extraComment.GetValue(), auto)))])
 
             }, [tilesPerIndex])).SetClass("flex flex-col")
 
@@ -347,5 +364,4 @@ class AutomatonGui extends Combine {
 MinimapImplementation.initialize()
 
 new AutomatonGui()
-    .SetClass("block p-4")
-    .AttachTo("main")
+   

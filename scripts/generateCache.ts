@@ -219,6 +219,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 getFeatureById: getFeatureById
             },
             layer,
+            {},
             {
                 includeDates: false,
                 includeNonDates: true
