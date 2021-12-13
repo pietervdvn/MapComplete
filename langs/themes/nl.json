@@ -835,6 +835,11 @@
         "shortDescription": "Een kaart met alle kaarten die OpenStreetMap kent",
         "title": "Een kaart met Kaarten"
     },
+    "missing_streets": {
+        "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
+        "shortDescription": "Voegt ontbrekende straten toe aan gebouwen met huisnumer adhv CRAB",
+        "title": "Fix ontbrekende straten"
+    },
     "nature": {
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
         "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",

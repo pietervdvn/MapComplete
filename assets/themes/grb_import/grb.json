@@ -34,7 +34,9 @@
       "override": {
         "+mapRendering": [
           {
-            "location": ["point"],
+            "location": [
+              "point"
+            ],
             "icon": {
               "render": "./assets/themes/grb_import/robot.svg"
             },
@@ -55,12 +57,14 @@
                 "then": "Zoom in more..."
               },
               {
-              "if": "_embedded_crab_addresses=",
-              "then": "Loading..."
-            },{
-              "if": "_embedded_crab_addresses=0",
-              "then": "No CRAB addresses in view. Zoom in more to see them"
-            }]
+                "if": "_embedded_crab_addresses=",
+                "then": "Loading..."
+              },
+              {
+                "if": "_embedded_crab_addresses=0",
+                "then": "No CRAB addresses in view. Zoom in more to see them"
+              }
+            ]
           }
         ]
       }
