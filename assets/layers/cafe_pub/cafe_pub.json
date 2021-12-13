@@ -4,7 +4,8 @@
     "nl": "Cafés",
     "en": "Cafés and pubs",
     "de": "Cafés und Kneipen",
-    "fr": "Cafés et pubs"
+    "fr": "Cafés et pubs",
+    "zh_Hant": "咖啡廳與酒吧"
   },
   "source": {
     "osmTags": {

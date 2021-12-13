@@ -567,9 +567,24 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         .keyToDate()
         .asLine({
         compare: (a, b) => a.getTime() - b.getTime(),
-        name: "Running weekly average" + appliedFilterDescription
+        name: "Rolling 7 day average" + appliedFilterDescription
     })
-    createGraph("Changesets per day (line)" + appliedFilterDescription, perDayLine, perDayAvg)
+    
+    const perDayAvgMonth = csPerDay.asRunningAverages(key => {
+        const keys = []
+        for (let i = 0; i < 31; i++) {
+            const otherDay = new Date(new Date(key).getTime() - i * 1000 * 60 * 60 * 24)
+            keys.push(otherDay.toISOString().substr(0, 10))
+        }
+        return keys
+    })
+        .keyToDate()
+        .asLine({
+        compare: (a, b) => a.getTime() - b.getTime(),
+        name: "Rolling 31 day average" + appliedFilterDescription
+    })
+    
+    createGraph("Changesets per day (line)" + appliedFilterDescription, perDayLine, perDayAvg, perDayAvgMonth)
 
     new Histogram<string>(allFeatures.map(f => f.properties.metadata.host))
         .asPie({

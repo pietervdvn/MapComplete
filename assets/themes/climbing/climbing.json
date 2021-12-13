@@ -692,7 +692,7 @@
           "render": {
             "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
             "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}",
-            "de": "<h3>Längenübersicht</h3>{histogramm(_length_hist)}",
+            "de": "<h3>Längenübersicht</h3>{histogram(_length_hist)}",
             "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}"
           },
           "condition": "_length_hist!~\\[\\]",
