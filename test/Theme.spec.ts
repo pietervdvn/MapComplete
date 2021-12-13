@@ -4,8 +4,6 @@ import * as assert from "assert";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
-Utils.runningFromConsole = true;
-
 export default class ThemeSpec extends T {
     constructor() {
         super("theme",

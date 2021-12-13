@@ -26,7 +26,6 @@ import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeat
 import Loc from "../Models/Loc";
 ScriptUtils.fixUtils()
 
-
 function createOverpassObject(theme: LayoutConfig, relationTracker: RelationsTracker, backend: string) {
     let filters: TagsFilter[] = [];
     let extraScripts: string[] = [];
@@ -167,6 +166,7 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
 
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm);
+            console.log(" which as",geojson.features.length, "features")
 
             allFeatures.push(...geojson.features)
         }
@@ -203,6 +203,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
 
         const layerId = layer.id
         if (layer.source.isOsmCacheLayer !== true) {
+            console.log("Skipping layer ", layerId, ": not a caching layer")
             skippedLayers.add(layer.id)
             return;
         }
@@ -241,6 +242,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
             maxFeatureCount: undefined,
             registerTile: tile => {
                 const tileIndex = tile.tileIndex;
+                console.log("Got tile:", tileIndex, tile.layer.layerDef.id)
                 if (tile.features.data.length === 0) {
                     return
                 }
@@ -365,7 +367,7 @@ async function main(args: string[]) {
     const targetdir = args[2] + "/" + themeName
     if (!existsSync(args[2])) {
         console.log("Directory not found")
-        throw "The directory " + args[2] + "does not exist"
+        throw `The directory ${args[2]} does not exist`
     }
 
     const lat0 = Number(args[3])

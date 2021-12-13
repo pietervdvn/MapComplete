@@ -10,9 +10,6 @@ import {And} from "../Logic/Tags/And";
 import {TagUtils} from "../Logic/Tags/TagUtils";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
-
-Utils.runningFromConsole = true;
-
 export default class TagSpec extends T {
 
     constructor() {

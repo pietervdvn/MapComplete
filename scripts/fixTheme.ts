@@ -9,9 +9,6 @@ import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
-Utils.runningFromConsole = true;
-
-
 ScriptUtils.fixUtils()
 
 if (process.argv.length == 2) {

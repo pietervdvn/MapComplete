@@ -1,9 +1,6 @@
-import {Utils} from "../Utils";
 import {existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
-
-Utils.runningFromConsole = true;
 
 /**
  * Sweeps the entire 'assets/' (except assets/generated) directory for image files and any 'license_info.json'-file.

@@ -1,4 +1,3 @@
-import {Utils} from "../Utils";
 import SpecialVisualizations from "../UI/SpecialVisualizations";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import Combine from "../UI/Base/Combine";
@@ -15,9 +14,6 @@ import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import TableOfContents from "../UI/Base/TableOfContents";
 import Title from "../UI/Base/Title";
 import QueryParameterDocumentation from "../UI/QueryParameterDocumentation";
-
-Utils.runningFromConsole = true;
-
 
 function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void {
 

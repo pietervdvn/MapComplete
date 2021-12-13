@@ -5,8 +5,6 @@ import * as https from "https";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 
-Utils.runningFromConsole = true
-
 export default class ScriptUtils {
 
 
@@ -53,7 +51,7 @@ export default class ScriptUtils {
             try {
                 headers = headers ?? {}
                 headers.accept = "application/json"
-                console.log("ScriptUtils.DownloadJson(", url.substring(0, 40), url.length > 40 ? "..." : "", ")")
+                console.log(" > ScriptUtils.DownloadJson(", url, ")")
                 const urlObj = new URL(url)
                 https.get({
                     host: urlObj.host,

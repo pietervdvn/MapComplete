@@ -1,11 +1,8 @@
-import {Utils} from "../Utils";
 import {equal} from "assert";
 import T from "./TestHelper";
 import {Translation} from "../UI/i18n/Translation";
 import * as bike_repair_station from "../assets/layers/bike_repair_station/bike_repair_station.json"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-
-Utils.runningFromConsole = true;
 
 export default class ImageAttributionSpec extends T {
     constructor() {

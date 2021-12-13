@@ -1,11 +1,7 @@
-import {Utils} from "../Utils";
 import {writeFile} from "fs";
 import Translations from "../UI/i18n/Translations";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-
-Utils.runningFromConsole = true;
-
 
 function generateWikiEntry(layout: LayoutConfig) {
     if (layout.hideFromOverview) {
