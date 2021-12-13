@@ -1,4 +1,13 @@
 {
+    "address": {
+        "description": "地址",
+        "name": "OSM 上已知的地址",
+        "tagRenderings": {
+            "fixme": {
+                "question": "這裡需要修什麼？請直接解釋"
+            }
+        }
+    },
     "artwork": {
         "description": "不同類型的藝術品",
         "name": "藝術品",
@@ -448,6 +457,9 @@
             "render": "單車停車場"
         }
     },
+    "cafe_pub": {
+        "name": "咖啡廳與酒吧"
+    },
     "extinguisher": {
         "description": "顯示消防栓的地圖圖層。"
     },
@@ -465,17 +477,5 @@
     "hydrant": {
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
-    },
-    "address": {
-        "description": "地址",
-        "name": "OSM 上已知的地址",
-        "tagRenderings": {
-            "fixme": {
-                "question": "這裡需要修什麼？請直接解釋"
-            }
-        }
-    },
-    "cafe_pub": {
-        "name": "咖啡廳與酒吧"
     }
 }

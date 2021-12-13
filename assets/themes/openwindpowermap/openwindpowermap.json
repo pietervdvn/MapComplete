@@ -5,7 +5,8 @@
     "fr": "OpenWindPowerMap",
     "de": "Freie Windenergie-Karte",
     "it": "OpenWindPowerMap",
-    "ru": "Открытая карта ветроэнергетики"
+    "ru": "Открытая карта ветроэнергетики",
+    "zh_Hant": "開放風力地圖"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
@@ -13,7 +14,8 @@
     "en": "A map for showing and editing wind turbines.",
     "fr": "Une carte indiquant les éoliennes et permettant leur édition.",
     "de": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
-    "it": "Una cartina per la visione e la modifica delle turbine eoliche."
+    "it": "Una cartina per la visione e la modifica delle turbine eoliche.",
+    "zh_Hant": "顯示與編輯風機的地圖。"
   },
   "language": [
     "en",
@@ -21,6 +23,7 @@
     "de",
     "it",
     "ru",
+    "zh_Hant",
     "nl",
     "eo",
     "nb_NO"
@@ -40,7 +43,8 @@
         "nl": "windturbine",
         "fr": "Éolienne",
         "de": "Windrad",
-        "it": "pala eolica"
+        "it": "pala eolica",
+        "zh_Hant": "風機"
       },
       "source": {
         "osmTags": "generator:source=wind"
@@ -52,7 +56,8 @@
           "nl": "windturbine",
           "fr": "éolienne",
           "de": "Windrad",
-          "it": "pala eolica"
+          "it": "pala eolica",
+          "zh_Hant": "風機"
         },
         "mappings": [
           {
@@ -62,7 +67,8 @@
               "fr": "{name}",
               "eo": "{name}",
               "it": "{name}",
-              "ru": "{name}"
+              "ru": "{name}",
+              "zh_Hant": "{name}"
             }
           }
         ]
@@ -73,12 +79,14 @@
           "render": {
             "en": "The power output of this wind turbine is {generator:output:electricity}.",
             "fr": "La puissance générée par cette éolienne est de {generator:output:electricity}.",
-            "it": "La potenza generata da questa pala eolica è {generator:output:electricity}."
+            "it": "La potenza generata da questa pala eolica è {generator:output:electricity}.",
+            "zh_Hant": "這個風機的電力輸出是 {generator:output:electricity}。"
           },
           "question": {
             "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
             "fr": "Quel est la puissance générée par cette éolienne ?",
-            "it": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)"
+            "it": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
+            "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)"
           },
           "freeform": {
             "key": "generator:output:electricity",
@@ -90,12 +98,14 @@
           "render": {
             "en": "This wind turbine is operated by {operator}.",
             "fr": "Cette éolienne est opérée par {operator}.",
-            "it": "Questa pala eolica è gestita da {operator}."
+            "it": "Questa pala eolica è gestita da {operator}.",
+            "zh_Hant": "這個風機營業商是 {operator}。"
           },
           "question": {
             "en": "Who operates this wind turbine?",
             "fr": "Qui est l’exploitant de cette éolienne ?",
-            "it": "Chi gestisce questa pala eolica?"
+            "it": "Chi gestisce questa pala eolica?",
+            "zh_Hant": "這個風機營業商是？"
           },
           "freeform": {
             "key": "operator"
@@ -106,12 +116,14 @@
           "render": {
             "en": "The total height (including rotor radius) of this wind turbine is {height} metres.",
             "fr": "La hauteur totale, incluant les pales, est de {height} mètres.",
-            "it": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri."
+            "it": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri.",
+            "zh_Hant": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。"
           },
           "question": {
             "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
             "fr": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
-            "it": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?"
+            "it": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
+            "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？"
           },
           "freeform": {
             "key": "height",
@@ -123,12 +135,14 @@
           "render": {
             "en": "The rotor diameter of this wind turbine is {rotor:diameter} metres.",
             "fr": "Le diamètre du rotor est de {rotor:diameter} mètres.",
-            "it": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri."
+            "it": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri.",
+            "zh_Hant": "這個風力渦輪機的風葉直徑是 {rotor:diameter} 公尺。"
           },
           "question": {
             "en": "What is the rotor diameter of this wind turbine, in metres?",
             "fr": "Quel est le diamètre du rotor en mètres ?",
-            "it": "Qual è il diametro (in metri) del rotore di questa pala eolica?"
+            "it": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
+            "zh_Hant": "這個風力渦輪機的風葉直徑是多少公尺？"
           },
           "freeform": {
             "key": "rotor:diameter",
@@ -140,12 +154,14 @@
           "render": {
             "en": "This wind turbine went into operation on/in {start_date}.",
             "fr": "L’éolienne est active depuis {start_date}.",
-            "it": "Questa pala eolica è entrata in funzione in data {start_date}."
+            "it": "Questa pala eolica è entrata in funzione in data {start_date}.",
+            "zh_Hant": "這個風機從 {start_date} 開始運轉。"
           },
           "question": {
             "en": "When did this wind turbine go into operation?",
             "fr": "Depuis quand l’éolienne est-elle en fonctionnement ?",
-            "it": "Quando è entrata in funzione questa pala eolica?"
+            "it": "Quando è entrata in funzione questa pala eolica?",
+            "zh_Hant": "這個風機何時開始營運？"
           },
           "freeform": {
             "key": "start_date",
@@ -165,7 +181,8 @@
             "nl": "windturbine",
             "fr": "Éolienne",
             "de": "Windrad",
-            "it": "pala eolica"
+            "it": "pala eolica",
+            "zh_Hant": "風機"
           }
         }
       ],
@@ -188,7 +205,8 @@
                 "de": " Megawatt",
                 "eo": " megavatoj",
                 "it": " megawatt",
-                "ru": " мегаватт"
+                "ru": " мегаватт",
+                "zh_Hant": " 百萬瓦"
               }
             },
             {
@@ -205,7 +223,8 @@
                 "eo": " kilovatoj",
                 "it": " kilowatt",
                 "nb_NO": " kilowatt",
-                "ru": " киловатт"
+                "ru": " киловатт",
+                "zh_Hant": " 千瓦"
               }
             },
             {
@@ -221,7 +240,8 @@
                 "de": " Watt",
                 "eo": " vatoj",
                 "it": " watt",
-                "ru": " ватт"
+                "ru": " ватт",
+                "zh_Hant": " 瓦"
               }
             },
             {
@@ -237,7 +257,8 @@
                 "de": " Gigawatt",
                 "eo": " gigavatoj",
                 "it": " gigawatt",
-                "ru": " гигаватт"
+                "ru": " гигаватт",
+                "zh_Hant": " 千兆瓦"
               }
             }
           ],
@@ -261,7 +282,8 @@
                 "de": " Meter",
                 "eo": " metro",
                 "it": " metri",
-                "ru": " метр"
+                "ru": " метр",
+                "zh_Hant": " 公尺"
               }
             }
           ]

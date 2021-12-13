@@ -14,13 +14,15 @@
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
     "de": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
-    "it": "Su questa cartina è possibile vedere gli hackerspace, aggiungerne di nuovi o aggiornare le informazioni tutto in maniera pratica"
+    "it": "Su questa cartina è possibile vedere gli hackerspace, aggiungerne di nuovi o aggiornare le informazioni tutto in maniera pratica",
+    "zh_Hant": "在這份地圖上你可以看到駭客空間，新增或直接更新資料"
   },
   "language": [
     "en",
     "de",
     "it",
-    "ru"
+    "ru",
+    "zh_Hant"
   ],
   "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",
@@ -36,7 +38,8 @@
       "name": {
         "en": "Hackerspace",
         "de": "Hackerspace",
-        "ru": "Хакерспейс"
+        "ru": "Хакерспейс",
+        "zh_Hant": "駭客空間"
       },
       "minzoom": 8,
       "title": {
@@ -63,7 +66,8 @@
       "description": {
         "en": "Hackerspace",
         "de": "Hackerspace",
-        "ru": "Хакерспейс"
+        "ru": "Хакерспейс",
+        "zh_Hant": "駭客空間"
       },
       "tagRenderings": [
         {
@@ -192,11 +196,13 @@
           "title": {
             "en": "Hackerspace",
             "de": "Hackerspace",
-            "ru": "Хакерспейс"
+            "ru": "Хакерспейс",
+            "zh_Hant": "駭客空間"
           },
           "description": {
             "en": "A hackerspace is an area where people interested in software gather",
-            "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren"
+            "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
+            "zh_Hant": "駭客空間是對軟體有興趣的人聚集的地方"
           }
         },
         {

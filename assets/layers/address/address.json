@@ -2,7 +2,8 @@
   "id": "address",
   "name": {
     "en": "Known addresses in OSM",
-    "de": "Bekannte Adressen in OSM"
+    "de": "Bekannte Adressen in OSM",
+    "zh_Hant": "OSM 上已知的地址"
   },
   "minzoom": 18,
   "source": {
@@ -30,7 +31,8 @@
     "en": "Addresses",
     "nl": "Adressen",
     "de": "Adressen",
-    "ru": "Адреса"
+    "ru": "Адреса",
+    "zh_Hant": "地址"
   },
   "tagRenderings": [
     {
@@ -105,7 +107,8 @@
       "id": "fixme",
       "render": "<b>Fixme description</b>{fixme}",
       "question": {
-        "en": "What should be fixed here? Please explain"
+        "en": "What should be fixed here? Please explain",
+        "zh_Hant": "這裡需要修什麼？請直接解釋"
       },
       "freeform": {
         "key": "fixme"
