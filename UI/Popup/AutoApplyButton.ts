@@ -17,11 +17,16 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import Loading from "../Base/Loading";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Translations from "../i18n/Translations";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "../../Logic/Osm/Changes";
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean
 
-    applyActionOn(state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[]): Promise<void>
+    applyActionOn(state: {
+        layoutToUse: LayoutConfig,
+        changes: Changes
+    }, tagSource: UIEventSource<any>, argument: string[]): Promise<void>
 }
 
 export default class AutoApplyButton implements SpecialVisualization {

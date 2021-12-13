@@ -171,6 +171,7 @@ export default class FeaturePipeline {
                     state.currentBounds, state.locationControl,
                     (tileIndex, freshness) => self.freshnesses.get(id).addTileLoad(tileIndex, freshness),
                     (tile) => {
+                        console.debug("Loaded tile ", id, tile.tileIndex, "from local cache")
                         new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                         hierarchy.registerTile(tile);
                         tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
@@ -247,6 +248,7 @@ export default class FeaturePipeline {
                 })
         })
 
+        
         if (state.layoutToUse.trackAllNodes) {
             const fullNodeDb = new FullNodeDatabaseSource(
                 state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
@@ -289,6 +291,10 @@ export default class FeaturePipeline {
         // A NewGeometryFromChangesFeatureSource does not split per layer, so we do this next
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
             (perLayer) => {
+                if(perLayer.features.data.length === 0){
+                    return
+                }
+            
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
@@ -309,7 +315,7 @@ export default class FeaturePipeline {
 
         this.runningQuery = updater.runningQuery.map(
             overpass => {
-                console.log("FeaturePipeline: runningQuery state changed. Overpass", overpass ? "is querying," : "is idle,",
+                console.log("FeaturePipeline: runningQuery state changed: Overpass", overpass ? "is querying," : "is idle,",
                     "osmFeatureSource is", osmFeatureSource.isRunning ? "is running and needs " + neededTilesFromOsm.data?.length + " tiles (already got " + osmFeatureSource.downloadedTiles.size + " tiles )" : "is idle")
                 return overpass || osmFeatureSource.isRunning.data;
             }, [osmFeatureSource.isRunning]
@@ -355,7 +361,15 @@ export default class FeaturePipeline {
             if (this.state.locationControl.data.zoom < flayer.layerDef.minzoom) {
                 continue;
             }
-            const freshness = this.freshnesses.get(flayer.layerDef.id).freshnessFor(z, x, y)
+            if(flayer.layerDef.maxAgeOfCache === 0){
+                return undefined;
+            }
+            const freshnessCalc = this.freshnesses.get(flayer.layerDef.id)
+            if(freshnessCalc === undefined){
+                console.warn("No freshness tracker found for ", flayer.layerDef.id)
+                return undefined
+            }
+            const freshness = freshnessCalc.freshnessFor(z, x, y)
             if (freshness === undefined) {
                 // SOmething is undefined --> we return undefined as we have to download
                 return undefined
@@ -409,11 +423,13 @@ export default class FeaturePipeline {
         const minzoom = Math.min(...state.layoutToUse.layers.map(layer => layer.minzoom))
         const overpassIsActive = state.currentBounds.map(bbox => {
             if (bbox === undefined) {
+                console.debug("Disabling overpass source: no bbox")
                 return false
             }
             let zoom = state.locationControl.data.zoom
             if (zoom < minzoom) {
                 // We are zoomed out over the zoomlevel of any layer
+                console.debug("Disabling overpass source: zoom < minzoom")
                 return false;
             }
 
@@ -456,31 +472,26 @@ export default class FeaturePipeline {
         if(src === undefined){
             throw "Src is undefined"
         }
-        window.setTimeout(
-            () => {
-                const layerDef = src.layer.layerDef;
-                MetaTagging.addMetatags(
-                    src.features.data,
-                    {
-                        memberships: this.relationTracker,
-                        getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox),
-                        getFeatureById: (id: string) => self.state.allElements.ContainingFeatures.get(id)
-                    },
-                    layerDef,
-                    state,
-                    {
-                        includeDates: true,
-                        // We assume that the non-dated metatags are already set by the cache generator
-                        includeNonDates: layerDef.source.geojsonSource === undefined || !layerDef.source.isOsmCacheLayer
-                    }
-                )
+        const layerDef = src.layer.layerDef;
+        MetaTagging.addMetatags(
+            src.features.data,
+            {
+                memberships: this.relationTracker,
+                getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox),
+                getFeatureById: (id: string) => self.state.allElements.ContainingFeatures.get(id)
             },
-            15
+            layerDef,
+            state,
+            {
+                includeDates: true,
+                // We assume that the non-dated metatags are already set by the cache generator
+                includeNonDates: layerDef.source.geojsonSource === undefined || !layerDef.source.isOsmCacheLayer
+            }
         )
 
     }
 
-    private updateAllMetaTagging() {
+    public updateAllMetaTagging() {
         const self = this;
         console.debug("Updating the meta tagging of all tiles as new data got loaded")
         this.perLayerHierarchy.forEach(hierarchy => {

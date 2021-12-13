@@ -1,5 +1,4 @@
 import {OsmNode, OsmObject, OsmRelation, OsmWay} from "./OsmObject";
-import State from "../../State";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
 import OsmChangeAction from "./Actions/OsmChangeAction";
@@ -13,6 +12,7 @@ import {ElementStorage} from "../ElementStorage";
 import {GeoLocationPointProperties} from "../Actors/GeoLocationHandler";
 import {GeoOperations} from "../GeoOperations";
 import {ChangesetTag} from "./ChangesetHandler";
+import {OsmConnection} from "./OsmConnection";
 
 /**
  * Handles all changes made to OSM.
@@ -33,14 +33,23 @@ export class Changes {
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
 
-    private _state: { allElements: ElementStorage; historicalUserLocations: FeatureSource }
+    public readonly state: { allElements: ElementStorage; historicalUserLocations: FeatureSource; osmConnection: OsmConnection }
+    
+    public readonly extraComment:UIEventSource<string> = new UIEventSource(undefined)
 
-    constructor(leftRightSensitive: boolean = false) {
+    constructor(
+        state?: {
+            allElements: ElementStorage,
+            historicalUserLocations: FeatureSource,
+            osmConnection: OsmConnection
+        },
+        leftRightSensitive: boolean = false) {
         this._leftRightSensitive = leftRightSensitive;
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
+        this.state = state;
 
         // Note: a changeset might be reused which was opened just before and might have already used some ids
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
@@ -120,7 +129,7 @@ export class Changes {
 
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
 
-        if (this._state === undefined) {
+        if (this.state === undefined) {
             // No state loaded -> we can't calculate...
             return;
         }
@@ -129,7 +138,7 @@ export class Changes {
             return;
         }
         const now = new Date()
-        const recentLocationPoints = this._state.historicalUserLocations.features.data.map(ff => ff.feature)
+        const recentLocationPoints = this.state.historicalUserLocations.features.data.map(ff => ff.feature)
             .filter(feat => feat.geometry.type === "Point")
             .filter(feat => {
                 const visitTime = new Date((<GeoLocationPointProperties>feat.properties).date)
@@ -149,7 +158,7 @@ export class Changes {
 
         const changedObjectCoordinates: [number, number][] = []
 
-        const feature = this._state.allElements.ContainingFeatures.get(change.mainObjectId)
+        const feature = this.state.allElements.ContainingFeatures.get(change.mainObjectId)
         if (feature !== undefined) {
             changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
         }
@@ -189,12 +198,6 @@ export class Changes {
         this.allChanges.ping()
     }
 
-    public useLocationHistory(state: {
-        allElements: ElementStorage,
-        historicalUserLocations: FeatureSource
-    }) {
-        this._state = state
-    }
 
     public registerIdRewrites(mappings: Map<string, string>): void {
         CreateNewNodeAction.registerIdRewrites(mappings)
@@ -281,9 +284,14 @@ export class Changes {
 
         // This method is only called with changedescriptions for this theme
         const theme = pending[0].meta.theme
+        let comment = "Adding data with #MapComplete for theme #" + theme
+        if(this.extraComment.data !== undefined){
+            comment+="\n\n"+this.extraComment.data
+        }
+        
         const metatags: ChangesetTag[] = [{
             key: "comment",
-            value: "Adding data with #MapComplete for theme #" + theme
+            value: comment
         },
             {
                 key: "theme",
@@ -294,7 +302,7 @@ export class Changes {
             ...perBinMessage
         ]
 
-        await State.state.osmConnection.changesetHandler.UploadChangeset(
+        await this.state.osmConnection.changesetHandler.UploadChangeset(
             (csId) => Changes.createChangesetFor("" + csId, changes),
             metatags
         )

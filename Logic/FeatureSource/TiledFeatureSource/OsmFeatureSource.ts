@@ -63,10 +63,10 @@ export default class OsmFeatureSource {
             try {
 
                 for (const neededTile of neededTiles) {
-                    console.log("Tile download", Tiles.tile_from_index(neededTile).join("/"), "started")
+                    console.log("Tile download from OSM", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
                     self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
-                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
+                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded from OSM")
                     })
                 }
             } catch (e) {

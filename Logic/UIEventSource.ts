@@ -289,6 +289,7 @@ export class UIEventSource<T> {
 
         const stack = new Error().stack.split("\n");
         const callee = stack[1]
+        
         const newSource = new UIEventSource<J>(
             f(this.data),
             "map(" + this.tag + ")@"+callee
@@ -298,7 +299,7 @@ export class UIEventSource<T> {
             newSource.setData(f(self.data));
         }
 
-        this.addCallbackAndRun(update);
+        this.addCallback(update);
         for (const extraSource of extraSources) {
             extraSource?.addCallback(update);
         }

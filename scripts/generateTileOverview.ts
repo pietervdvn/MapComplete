@@ -2,7 +2,6 @@
  * Generates an overview for which tiles exist and which don't
  */
 import ScriptUtils from "./ScriptUtils";
-import {Tiles} from "../Models/TileRange";
 import {writeFileSync} from "fs";
 
 function main(args: string[]) {
@@ -28,10 +27,10 @@ function main(args: string[]) {
         
         const x = match[2]
         const y = match[3]
-        if(!indices[x] !== undefined){
+        if(indices[x] === undefined){
             indices[x] = []
         }
-        indices[x] .push(Number(y))
+        indices[x].push(Number(y))
     }
     indices["zoom"] = zoomLevel;
     const match = files[0].match("\(.*\)_\([0-9]*\)_\([0-9]*\)_\([0-9]*\).geojson")

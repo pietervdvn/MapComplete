@@ -82,8 +82,8 @@ export default class MapState extends UserRelatedState {
     public overlayToggles: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]
 
 
-    constructor(layoutToUse: LayoutConfig) {
-        super(layoutToUse);
+    constructor(layoutToUse: LayoutConfig, options?: {attemptLogin: true | boolean}) {
+        super(layoutToUse, options);
 
         this.availableBackgroundLayers = AvailableBaseLayers.AvailableLayersAt(this.locationControl);
 
@@ -265,7 +265,6 @@ export default class MapState extends UserRelatedState {
 
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
         this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
-        this.changes.useLocationHistory(this)
 
 
         const asLine = features.map(allPoints => {

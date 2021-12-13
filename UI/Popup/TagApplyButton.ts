@@ -12,6 +12,8 @@ import Toggle from "../Input/Toggle";
 import {Utils} from "../../Utils";
 import {Tag} from "../../Logic/Tags/Tag";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "../../Logic/Osm/Changes";
 
 export default class TagApplyButton implements AutoAction {
     public readonly funcName = "tag_apply";
@@ -79,7 +81,10 @@ export default class TagApplyButton implements AutoAction {
 
     public readonly example = "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)";
 
-    async applyActionOn(state: FeaturePipelineState, tags: UIEventSource<any>, args: string[]) : Promise<void>{
+    async applyActionOn(state: {
+        layoutToUse: LayoutConfig,
+        changes: Changes
+    }, tags: UIEventSource<any>, args: string[]) : Promise<void>{
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const targetIdKey = args[3]
 

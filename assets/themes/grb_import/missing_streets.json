@@ -76,6 +76,10 @@
     {
       "builtin": "crab_address",
       "override": {
+        "source": {
+          "geoJson": "http://127.0.0.1:8080/tile_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 18
+        },
         "mapRendering": [
           {
             "iconSize": "5,5,center",
@@ -101,8 +105,8 @@
         "_embedded_crab_addresses:=Array.from(new Set(feat.overlapWith('crab_address').map(ff => ff.feat.properties).filter(p => p._HNRLABEL.toLowerCase() === (feat.properties['addr:housenumber'] + (feat.properties['addr:unit']??'')).toLowerCase()).map(p => p.STRAATNM)))",
         "_singular_import:=feat.get('_embedded_crab_addresses')?.length == 1",
         "_name_to_apply:=feat.get('_embedded_crab_addresses')[0]",
-        "_nearby_street_names:=feat.closestn('named_streets',5,'name', 500).map(ff => ff.feat.properties.name)",
-        "_spelling_is_correct:= feat.get('_nearby_street_names').indexOf(feat.properties['_name_to_apply']) >= 0"
+        "_nearby_street_names:=feat.closestn('named_streets',5,'name', 1000).map(ff => [ff.feat.properties.name, ff.feat.properties['alt_name'], ff.feat.properties['name:nl']])",
+        "_spelling_is_correct:= [].concat(...feat.get('_nearby_street_names')).indexOf(feat.properties['_name_to_apply']) >= 0"
       ],
       "mapRendering": [
         {
@@ -134,6 +138,7 @@
       "tagRenderings": [
         {
           "id": "apply_streetname",
+          "group": "auto",
           "render": "{tag_apply(addr:street=$_name_to_apply ,Apply the CRAB-street onto this building)}",
           "mappings": [
             {
@@ -146,8 +151,7 @@
             }
           ]
         }
-      ],
-      "passAllFeatures": true
+      ]
     }
   ],
   "hideFromOverview": true

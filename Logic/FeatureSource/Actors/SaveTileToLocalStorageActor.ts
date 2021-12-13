@@ -119,7 +119,11 @@ export default class SaveTileToLocalStorageActor {
     }
 
     private SetIdb(tileIndex, data) {
-        IdbLocalStorage.SetDirectly(this._layer.id + "_" + tileIndex, data)
+        try{
+            IdbLocalStorage.SetDirectly(this._layer.id + "_" + tileIndex, data)
+        }catch(e){
+            console.error("Could not save tile to indexed-db: ", e, "tileIndex is:", tileIndex, "for layer", this._layer.id)
+        }
     }
 
     private GetIdb(tileIndex) {

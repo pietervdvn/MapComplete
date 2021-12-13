@@ -5,7 +5,6 @@ import Title from "./Base/Title";
 import Toggle from "./Input/Toggle";
 import {SubtleButton} from "./Base/SubtleButton";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-import UserRelatedState from "../Logic/State/UserRelatedState";
 import ValidatedTextField from "./Input/ValidatedTextField";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
@@ -16,11 +15,19 @@ import {LocalStorageSource} from "../Logic/Web/LocalStorageSource";
 import {DropDown} from "./Input/DropDown";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import MinimapImplementation from "./Base/MinimapImplementation";
-import State from "../State";
 import {OsmConnection} from "../Logic/Osm/OsmConnection";
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
+import {BBox} from "../Logic/BBox";
+import MapState from "../Logic/State/MapState";
+import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import FeatureSource from "../Logic/FeatureSource/FeatureSource";
+import List from "./Base/List";
+import {QueryParameters} from "../Logic/Web/QueryParameters";
+import {SubstitutedTranslation} from "./SubstitutedTranslation";
+import {AutoAction} from "./Popup/AutoApplyButton";
 
-export default class AutomatonGui extends Combine {
+class AutomatonGui extends Combine {
 
     constructor() {
 
@@ -28,7 +35,8 @@ export default class AutomatonGui extends Combine {
             allElements: undefined,
             changes: undefined,
             layoutName: "automaton",
-            singlePage: true
+            singlePage: false,
+            oauth_token: QueryParameters.GetQueryParameter("oauth_token", "OAuth token")
         });
 
         super([
@@ -39,35 +47,174 @@ export default class AutomatonGui extends Combine {
             ]).SetClass("flex"),
             new Toggle(
                 AutomatonGui.GenerateMainPanel(),
-                new SubtleButton(Svg.osm_logo_svg(), "Login to get started"),
+                new SubtleButton(Svg.osm_logo_svg(), "Login to get started").onClick(() => osmConnection.AttemptLogin()),
                 osmConnection.isLoggedIn
             )])
     }
 
-    private static AutomationPanel(layoutToUse: LayoutConfig, tiles: UIEventSource<number[]>): BaseUIElement {
-        const handledTiles = new UIEventSource(0)
+    private static startedTiles = new Set<number>()
 
-        const state = new FeaturePipelineState(layoutToUse)
+    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, whenDone: ((result: string) => void)): BaseUIElement {
 
+        if (AutomatonGui.startedTiles.has(tileIndex)) {
+            throw "Already started tile " + tileIndex
+        }
+        AutomatonGui.startedTiles.add(tileIndex)
 
-        const nextTile = tiles.map(indices => {
-            if (indices === undefined) {
-                return "No tiles loaded - can not automate";
+        const state = new MapState(layoutToUse, {attemptLogin: false})
+        extraCommentText.syncWith( state.changes.extraComment)
+        const [z, x, y] = Tiles.tile_from_index(tileIndex)
+        state.locationControl.setData({
+            zoom: z,
+            lon: x,
+            lat: y
+        })
+        state.currentBounds.setData(
+            BBox.fromTileIndex(tileIndex)
+        )
+
+        let targetTiles: UIEventSource<FeatureSource[]> = new UIEventSource<FeatureSource[]>([])
+        const pipeline = new FeaturePipeline((tile => {
+            const layerId = tile.layer.layerDef.id
+            if (layerId === targetLayer) {
+                targetTiles.data.push(tile)
+                targetTiles.ping()
             }
-            const currentTile = handledTiles.data
-            const tileIndex = indices[currentTile]
-            if (tileIndex === undefined) {
-                return "All done!";
-            }
+        }), state)
 
+        state.locationControl.ping();
+        state.currentBounds.ping();
+        const stateToShow = new UIEventSource("")
 
-            return "" + tileIndex
-        }, [handledTiles])
+        pipeline.runningQuery.map(
+            async isRunning => {
+                if (targetTiles.data.length === 0) {
+                    stateToShow.setData("No data loaded yet...")
+                    return;
+                }
+                if (isRunning) {
+                    stateToShow.setData("Waiting for all layers to be loaded... Has " + targetTiles.data.length + " tiles already")
+                    return;
+                }
+                if (targetTiles.data.length === 0) {
+                    stateToShow.setData("No features found to apply the action")
+                    whenDone("empty")
+                    return true;
+                }
+                stateToShow.setData("Applying metatags")
+                pipeline.updateAllMetaTagging()
+                stateToShow.setData("Gathering applicable elements")
+
+                let handled = 0
+                let inspected = 0
+                for (const targetTile of targetTiles.data) {
+
+                    for (const ffs of targetTile.features.data) {
+                        inspected++
+                        if (inspected % 10 === 0) {
+                            stateToShow.setData("Inspected " + inspected + " features, updated " + handled + " features")
+                        }
+                        const feature = ffs.feature
+                        const rendering = targetAction.GetRenderValue(feature.properties).txt
+                        const actions = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
+                            .map(obj => obj.special))
+                        for (const action of actions) {
+                            const auto = <AutoAction>action.func
+                            if (auto.supportsAutoAction !== true) {
+                                continue
+                            }
+
+                            await auto.applyActionOn({
+                                layoutToUse: state.layoutToUse,
+                                changes: state.changes
+                            }, state.allElements.getEventSourceById(feature.properties.id), action.args)
+                            handled++
+                        }
+                    }
+                }
+                stateToShow.setData("Done! Inspected " + inspected + " features, updated " + handled + " features")
+
+                if (inspected === 0) {
+                    whenDone("empty")
+                    return;
+                }
+
+                if (handled === 0) {
+                    window.setTimeout(() => whenDone("no-action"), 1000)
+                }else{
+                    state.changes.flushChanges("handled tile automatically, time to flush!")
+                    whenDone("fixed")
+                }
+
+            }, [targetTiles])
 
         return new Combine([
-            new VariableUiElement(handledTiles.map(i => "" + i)),
-            new VariableUiElement(nextTile)
-        ])
+            new Title("Performing action for tile " + tileIndex, 1),
+            new VariableUiElement(stateToShow)]).SetClass("flex flex-col")
+    }
+
+    private static AutomationPanel(layoutToUse: LayoutConfig, indices: number[], extraCommentText: UIEventSource<string>, tagRenderingToAutomate: { layer: LayerConfig, tagRendering: TagRenderingConfig }): BaseUIElement {
+        const layerId = tagRenderingToAutomate.layer.id
+        const trId = tagRenderingToAutomate.tagRendering.id
+        const tileState = LocalStorageSource.GetParsed("automation-tile_state-" + layerId + "-" + trId, {})
+
+        if (indices === undefined) {
+            return new FixedUiElement("No tiles loaded - can not automate")
+        }
+
+
+        const nextTileToHandle = tileState.map(handledTiles => {
+            for (const index of indices) {
+                if (handledTiles[index] !== undefined) {
+                    // Already handled
+                    continue
+                }
+                return index
+            }
+            return undefined
+        })
+        nextTileToHandle.addCallback(t => console.warn("Next tile to handle is", t))
+
+        const neededTimes = new UIEventSource<number[]>([])
+        const automaton = new VariableUiElement(nextTileToHandle.map(tileIndex => {
+            if (tileIndex === undefined) {
+                return new FixedUiElement("All done!").SetClass("thanks")
+            }
+            console.warn("Triggered map on nextTileToHandle",tileIndex)
+            const start = new Date()
+            return AutomatonGui.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,(result) => {
+                const end = new Date()
+                const timeNeeded = (end.getTime() - start.getTime()) / 1000;
+                neededTimes.data.push(timeNeeded)
+                neededTimes.ping()
+                tileState.data[tileIndex] = result
+                tileState.ping();
+            });
+        }))
+
+
+        const statistics = new VariableUiElement(tileState.map(states => {
+            let total = 0
+            const perResult = new Map<string, number>()
+            for (const key in states) {
+                total++
+                const result = states[key]
+                perResult.set(result, (perResult.get(result) ?? 0) + 1)
+            }
+
+            let sum = 0
+            neededTimes.data.forEach(v => {
+                sum = sum + v
+            })
+            let timePerTile = sum / neededTimes.data.length
+
+            return new Combine(["Handled " + total + "/" + indices.length + " tiles: ",
+                new List(Array.from(perResult.keys()).map(key => key + ": " + perResult.get(key))),
+                "Handling one tile needs " + (Math.floor(timePerTile * 100) / 100) + "s on average. Estimated time left: " + Math.floor((indices.length - total) * timePerTile) + "s"
+            ]).SetClass("flex flex-col")
+        }))
+
+        return new Combine([statistics, automaton]).SetClass("flex flex-col")
     }
 
     private static GenerateMainPanel(): BaseUIElement {
@@ -85,18 +232,22 @@ export default class AutomatonGui extends Combine {
         tilepath.SetClass("w-full")
         LocalStorageSource.Get("automation-tile_path").syncWith(tilepath.GetValue(), true)
 
-        const tilesToRunOver = tilepath.GetValue().bind(path => {
+        
+        let tilesToRunOver = tilepath.GetValue().bind(path => {
             if (path === undefined) {
                 return undefined
             }
-            return UIEventSource.FromPromiseWithErr(Utils.downloadJson(path))
+            return UIEventSource.FromPromiseWithErr(Utils.downloadJsonCached(path,1000*60*60))
         })
+        
+        const targetZoom = 14
 
         const tilesPerIndex = tilesToRunOver.map(tiles => {
+            
             if (tiles === undefined || tiles["error"] !== undefined) {
                 return undefined
             }
-            let indexes = [];
+            let indexes : number[] = [];
             const tilesS = tiles["success"]
             const z = Number(tilesS["zoom"])
             for (const key in tilesS) {
@@ -107,13 +258,31 @@ export default class AutomatonGui extends Combine {
                 const ys = tilesS[key]
                 indexes.push(...ys.map(y => Tiles.tile_index(z, x, y)))
             }
-            return indexes
+
+            console.log("Got ", indexes.length, "indexes")
+            let rezoomed = new Set<number>()
+            for (const index of indexes) {
+                let [z, x, y] = Tiles.tile_from_index(index)
+                while (z > targetZoom) {
+                    z--
+                    x = Math.floor(x / 2)
+                    y = Math.floor(y / 2)
+                }
+                rezoomed.add(Tiles.tile_index(z, x, y))
+            }
+
+
+            return Array.from(rezoomed)
         })
+
+        const extraComment = ValidatedTextField.InputForType("text")
+        LocalStorageSource.Get("automaton-extra-comment").syncWith(extraComment.GetValue())
 
         return new Combine([
             themeSelect,
             "Specify the path to a tile overview. This is a hosted .json of the format {x : [y0, y1, y2], x1: [y0, ...]} where x is a string and y are numbers",
             tilepath,
+            extraComment,
             new VariableUiElement(tilesToRunOver.map(t => {
                 if (t === undefined) {
                     return "No path given or still loading..."
@@ -128,10 +297,43 @@ export default class AutomatonGui extends Combine {
                 if (layoutToUse === undefined) {
                     return new FixedUiElement("Select a valid layout")
                 }
+                if (tilesPerIndex.data === undefined || tilesPerIndex.data.length === 0) {
+                    return "No tiles given"
+                }
 
-                return AutomatonGui.AutomationPanel(layoutToUse, tilesPerIndex)
+                const automatableTagRenderings: { layer: LayerConfig, tagRendering: TagRenderingConfig }[] = []
+                for (const layer of layoutToUse.layers) {
+                    for (const tagRendering of layer.tagRenderings) {
+                        if (tagRendering.group === "auto") {
+                            automatableTagRenderings.push({layer, tagRendering: tagRendering})
+                        }
+                    }
+                }
+                console.log("Automatable tag renderings:", automatableTagRenderings)
+                if (automatableTagRenderings.length === 0) {
+                    return new FixedUiElement('This theme does not have any tagRendering with "group": "auto" set').SetClass("alert")
+                }
+                const pickAuto = new DropDown("Pick the action to automate",
+                    [
+                        {
+                            value: undefined,
+                            shown: "Pick an option"
+                        },
+                        ...automatableTagRenderings.map(config => (
+                            {
+                                shown: config.layer.id + " - " + config.tagRendering.id,
+                                value: config
+                            }
+                        ))
+                    ]
+                )
 
-            }))
+
+                return new Combine([
+                    pickAuto,
+                    new VariableUiElement(pickAuto.GetValue().map(auto => auto === undefined ? undefined : AutomatonGui.AutomationPanel(layoutToUse, tilesPerIndex.data, extraComment.GetValue(), auto)))])
+
+            }, [tilesPerIndex])).SetClass("flex flex-col")
 
 
         ]).SetClass("flex flex-col")

@@ -1,9 +1,7 @@
 import escapeHtml from "escape-html";
-// @ts-ignore
-import {OsmConnection, UserDetails} from "./OsmConnection";
+import UserDetails, {OsmConnection} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
-import State from "../../State";
 import Locale from "../../UI/i18n/Locale";
 import Constants from "../../Models/Constants";
 import {Changes} from "./Changes";
@@ -287,8 +285,8 @@ export class ChangesetHandler {
                 ["language", Locale.language.data],
                 ["host", window.location.host],
                 ["path", path],
-                ["source", State.state.currentUserLocation.features.data.length > 0 ? "survey" : undefined],
-                ["imagery", State.state.backgroundLayer.data.id],
+                ["source", self.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],
+                ["imagery", self.changes.state["backgroundLayer"]?.data?.id],
                 ...changesetTags.map(cstag => [cstag.key, cstag.value])
             ]
                 .filter(kv => (kv[1] ?? "") !== "")

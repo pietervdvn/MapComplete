@@ -5,13 +5,14 @@ import Loc from "../../../Models/Loc";
 import DynamicTileSource from "./DynamicTileSource";
 import {Utils} from "../../../Utils";
 import GeoJsonSource from "../Sources/GeoJsonSource";
+import {BBox} from "../../BBox";
 
 export default class DynamicGeoJsonTileSource extends DynamicTileSource {
     constructor(layer: FilteredLayer,
                 registerLayer: (layer: FeatureSourceForLayer & Tiled) => void,
                 state: {
                     locationControl: UIEventSource<Loc>
-                    leafletMap: any
+                    currentBounds: UIEventSource<BBox>
                 }) {
         const source = layer.layerDef.source
         if (source.geojsonZoomLevel === undefined) {
@@ -29,7 +30,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                 .replace("{x}_{y}.geojson", "overview.json")
                 .replace("{layer}", layer.layerDef.id)
 
-            Utils.downloadJson(whitelistUrl).then(
+            Utils.downloadJsonCached(whitelistUrl, 1000*60*60).then(
                 json => {
                     const data = new Map<number, Set<number>>();
                     for (const x in json) {

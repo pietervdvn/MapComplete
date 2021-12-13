@@ -9,6 +9,7 @@ import MapState from "./MapState";
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler";
 import Hash from "../Web/Hash";
 import {BBox} from "../BBox";
+import {FeatureSourceForLayer} from "../FeatureSource/FeatureSource";
 
 export default class FeaturePipelineState extends MapState {
 

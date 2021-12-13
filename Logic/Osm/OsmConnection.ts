@@ -70,7 +70,8 @@ export class OsmConnection {
                     // Used to keep multiple changesets open and to write to the correct changeset
                     layoutName: string,
                     singlePage?: boolean,
-                    osmConfiguration?: "osm" | "osm-test"
+                    osmConfiguration?: "osm" | "osm-test",
+                    attemptLogin?: true | boolean
                 }
     ) {
         this.fakeUser = options.fakeUser ?? false;
@@ -117,7 +118,7 @@ export class OsmConnection {
             options.oauth_token.setData(undefined);
 
         }
-        if (this.auth.authenticated()) {
+        if (this.auth.authenticated() && (options.attemptLogin !== false)) {
             this.AttemptLogin(); // Also updates the user badge
         } else {
             console.log("Not authenticated");

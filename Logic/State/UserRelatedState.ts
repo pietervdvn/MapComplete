@@ -36,7 +36,7 @@ export default class UserRelatedState extends ElementsState {
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
 
-    constructor(layoutToUse: LayoutConfig) {
+    constructor(layoutToUse: LayoutConfig, options:{attemptLogin : true | boolean}) {
         super(layoutToUse);
 
         this.osmConnection = new OsmConnection({
@@ -50,7 +50,8 @@ export default class UserRelatedState extends ElementsState {
                 "Used to complete the login"
             ),
             layoutName: layoutToUse?.id,
-            osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data
+            osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
+            attemptLogin: options?.attemptLogin
         })
 
         this.mangroveIdentity = new MangroveIdentity(
