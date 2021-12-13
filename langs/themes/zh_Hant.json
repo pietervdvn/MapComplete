@@ -326,6 +326,14 @@
                     "turbine-height": {
                         "render": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。",
                         "question": "這個風機的總高度是多少 (包括風葉大小) 公尺？"
+                    },
+                    "turbine-output": {
+                        "question": "這個風機的電力輸出是多少？(例如 2.3 MW)",
+                        "render": "這個風機的電力輸出是 {generator:output:electricity。"
+                    },
+                    "turbine-start-date": {
+                        "render": "這個風機從 {start_date} 開始運轉。",
+                        "question": "這個風機何時開始營運？"
                     }
                 },
                 "name": "風機",
@@ -333,10 +341,44 @@
                     "0": {
                         "title": "風機"
                     }
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "2": {
+                                "human": " 瓦"
+                            },
+                            "3": {
+                                "human": " 千兆瓦"
+                            },
+                            "0": {
+                                "human": " 百萬瓦"
+                            },
+                            "1": {
+                                "human": " 千瓦"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " 公尺"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "風機"
                 }
             }
         },
-        "description": "顯示與編輯風機的地圖。"
+        "description": "顯示與編輯風機的地圖。",
+        "title": "開放風力地圖"
     },
     "street_lighting": {
         "layers": {
@@ -454,5 +496,28 @@
         "description": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
         "shortDescription": "垃圾筒的地圖",
         "title": "垃圾筒"
+    },
+    "hackerspaces": {
+        "description": "在這份地圖上你可以看到駭客空間，新增或直接更新資料",
+        "layers": {
+            "0": {
+                "name": "駭客空間",
+                "presets": {
+                    "0": {
+                        "description": "駭客空間是對軟體有興趣的人聚集的地方",
+                        "title": "駭客空間"
+                    }
+                },
+                "description": "駭客空間"
+            }
+        }
+    },
+    "observation_towers": {
+        "description": "開放可及能觀景的高塔",
+        "shortDescription": "開發可及能觀景的高塔",
+        "title": "觀景塔"
+    },
+    "natuurpunt": {
+        "description": "在這張地圖上您可以找到 Natuurpunt 提供的所有自然保護區 "
     }
 }
