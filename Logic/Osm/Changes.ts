@@ -374,8 +374,14 @@ export class Changes {
         for (const change of changes) {
             const id = change.type + "/" + change.id
             if (!objects.has(id)) {
+                // The object hasn't been seen before, so it doesn't exist yet and is newly created by its very definition
                 if (change.id >= 0) {
+                    // Might be a failed fetch for simply this object
                     throw "Did not get an object that should be known: " + id
+                }
+                if(change.changes === undefined){
+                    // This object is a change to a newly created object. However, we have not seen the creation changedescription yet!
+                    throw "Not a creation of the object"
                 }
                 // This is a new object that should be created
                 states.set(id, "created")

@@ -36,7 +36,7 @@ export default class UserRelatedState extends ElementsState {
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
 
-    constructor(layoutToUse: LayoutConfig, options:{attemptLogin : true | boolean}) {
+    constructor(layoutToUse: LayoutConfig, options?:{attemptLogin : true | boolean}) {
         super(layoutToUse);
 
         this.osmConnection = new OsmConnection({

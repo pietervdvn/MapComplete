@@ -39,7 +39,8 @@ class AutomationPanel extends Combine{
         if (indices === undefined) {
            throw ("No tiles loaded - can not automate")
         }
-
+        const openChangeset = new UIEventSource<string>(undefined);
+        openChangeset.addCallbackAndRun(cs => console.log("Sync current open changeset to:", cs))
 
         const nextTileToHandle = tileState.map(handledTiles => {
             for (const index of indices) {
@@ -60,7 +61,9 @@ class AutomationPanel extends Combine{
             }
             console.warn("Triggered map on nextTileToHandle",tileIndex)
             const start = new Date()
-            return AutomationPanel.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,(result, logMessage) => {
+            return AutomationPanel.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,
+                openChangeset,
+                (result, logMessage) => {
                 const end = new Date()
                 const timeNeeded = (end.getTime() - start.getTime()) / 1000;
                 neededTimes.data.push(timeNeeded)
@@ -92,15 +95,28 @@ class AutomationPanel extends Combine{
 
             return new Combine(["Handled " + total + "/" + indices.length + " tiles: ",
                 new List(Array.from(perResult.keys()).map(key => key + ": " + perResult.get(key))),
-                "Handling one tile needs " + (Math.floor(timePerTile * 100) / 100) + "s on average. Estimated time left: " + Math.floor((indices.length - total) * timePerTile) + "s"
+                "Handling one tile needs " + (Math.floor(timePerTile * 100) / 100) + "s on average. Estimated time left: " + Utils.toHumanTime((indices.length - total) * timePerTile)
             ]).SetClass("flex flex-col")
         }))
 
-       super([statistics, automaton, new VariableUiElement(logMessages.map(logMessages => new List(logMessages)))])
+       super([statistics, automaton, 
+           new SubtleButton(undefined, "Clear fixed").onClick(() => {
+                const st = tileState.data
+               for (const tileIndex in st) {
+                   if(st[tileIndex] === "fixed"){
+                       delete st[tileIndex]
+                   }
+               }
+               
+               tileState.ping();
+           }),
+           new VariableUiElement(logMessages.map(logMessages => new List(logMessages)))])
        this.SetClass("flex flex-col")
     }
 
-    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, whenDone: ((result: string, logMessage?: string) => void)): BaseUIElement {
+    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, 
+                               openChangeset: UIEventSource<string>,
+                               whenDone: ((result: string, logMessage?: string) => void)): BaseUIElement {
 
         const state = new MapState(layoutToUse, {attemptLogin: false})
         extraCommentText.syncWith( state.changes.extraComment)
@@ -186,6 +202,13 @@ class AutomationPanel extends Combine{
                 if (handled === 0) {
                     whenDone("no-action","Inspected "+inspected+" elements: "+log.join("; "))
                 }else{
+                    state.osmConnection.AttemptLogin()
+                    const openCS = state.osmConnection.GetPreference("current-open-changeset-"+layoutToUse.id)
+                    openCS.addCallbackAndRun(cs => {
+                        console.log("Current open Changeset is now: ", cs)
+                        openChangeset.setData(cs)
+                    })
+                    openCS.setData(openChangeset.data)
                     state.changes.flushChanges("handled tile automatically, time to flush!")
                     whenDone("fixed", "Updated " + handled+" elements, inspected "+inspected+": "+log.join("; "))
                 }
@@ -197,8 +220,6 @@ class AutomationPanel extends Combine{
             new Title("Performing action for tile " + tileIndex, 1),
             new VariableUiElement(stateToShow)]).SetClass("flex flex-col")
     }
-
-
 
 }
 
@@ -234,10 +255,10 @@ class AutomatonGui {
     private static GenerateMainPanel(): BaseUIElement {
 
         const themeSelect = new DropDown<string>("Select a theme",
-            AllKnownLayouts.layoutsList.map(l => ({value: l.id, shown: l.id}))
+            AllKnownLayouts.layoutsList.map(l => ({value: l.id, shown: l.id})) 
         )
 
-        LocalStorageSource.Get("automation-theme-id").syncWith(themeSelect.GetValue())
+        LocalStorageSource.Get("automation-theme-id", "missing_streets").syncWith(themeSelect.GetValue())
 
 
         const tilepath = ValidatedTextField.InputForType("url", {
@@ -299,7 +320,7 @@ class AutomatonGui {
             tilepath,
             "Add an extra comment:",
             extraComment,
-            new VariableUiElement(extraComment.GetValue().map(c => "Your comment is "+c.length+"/200 characters long")).SetClass("subtle"),
+            new VariableUiElement(extraComment.GetValue().map(c => "Your comment is "+(c?.length??0)+"/200 characters long")).SetClass("subtle"),
             new VariableUiElement(tilesToRunOver.map(t => {
                 if (t === undefined) {
                     return "No path given or still loading..."
