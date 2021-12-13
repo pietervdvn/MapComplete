@@ -19,7 +19,7 @@ import {Browser} from "leaflet";
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
 AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
-SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
+SimpleMetaTagger.coder = new CountryCoder("https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country");
 ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 
