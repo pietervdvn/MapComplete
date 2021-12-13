@@ -48,7 +48,8 @@
     "gittag": "ts-node scripts/printVersion.ts | bash",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\).html\" | xargs rm) && rm *.webmanifest",
-    "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot test/TestAll.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot"
+    "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot test/TestAll.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
+    "genPostal": " ts-node ./scripts/postal_code_tools/createRoutablePoint.ts /home/pietervdvn/Downloads/postal_codes/postal_codes_town_hall_points.geojson /home/pietervdvn/Downloads/31370/Postcodes.geojson\n"
   },
   "keywords": [
     "OpenStreetMap",
@@ -77,7 +78,7 @@
     "idb-keyval": "^6.0.3",
     "jquery": "^3.6.0",
     "jspdf": "^2.3.1",
-    "latlon2country": "^1.2.5",
+    "latlon2country": "^1.2.6",
     "leaflet": "^1.7.1",
     "leaflet-polylineoffset": "^1.1.1",
     "leaflet-providers": "^1.13.0",
