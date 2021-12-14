@@ -20,10 +20,12 @@ import Lazy from "../Base/Lazy";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import FeatureSwitchState from "../../Logic/State/FeatureSwitchState";
+import CopyrightPanel from "./CopyrightPanel";
 
 export default class LeftControls extends Combine {
 
-    constructor(state: {
+    constructor(state: FeatureSwitchState & {
                     allElements: ElementStorage;
                     currentView: FeatureSourceForLayer;
                     featureSwitchBackgroundSelection: UIEventSource<boolean>;
@@ -50,7 +52,7 @@ export default class LeftControls extends Combine {
         const currentViewFL = state.currentView?.layer
         const currentViewAction = new Toggle(
             new Lazy(() => {
-               const feature : UIEventSource<any> = state.currentView.features.map(ffs => ffs[0]?.feature)
+                const feature: UIEventSource<any> = state.currentView.features.map(ffs => ffs[0]?.feature)
                 const icon = new VariableUiElement(feature.map(feature => {
                     const defaultIcon = Svg.checkbox_empty_svg()
                     if (feature === undefined) {
@@ -61,21 +63,23 @@ export default class LeftControls extends Combine {
                         noSize: true
                     })?.html
                     console.log("Elem is ", elem, "for", tags)
-                    if(elem === undefined){
+                    if (elem === undefined) {
                         return defaultIcon
                     }
                     return elem
                 })).SetClass("inline-block w-full h-full")
-                
+
                 const featureBox = new VariableUiElement(feature.map(feature => {
-                    if(feature === undefined){return undefined}
+                    if (feature === undefined) {
+                        return undefined
+                    }
                     return new Lazy(() => {
-                      const tagsSource=  state.allElements.getEventSourceById(feature.properties.id)
+                        const tagsSource = state.allElements.getEventSourceById(feature.properties.id)
                         return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, "currentview", guiState.currentViewControlIsOpened)
                             .SetClass("md:floating-element-width")
                     })
                 }))
-                
+
 
                 return new Toggle(
                     featureBox,
@@ -135,10 +139,29 @@ export default class LeftControls extends Combine {
             state.featureSwitchBackgroundSelection
         )
 
+        // If the welcomeMessage is disabled, the copyright is hidden (as that is where the copyright is located
+        const copyright = new Toggle(
+            undefined,
+            new Lazy(() =>
+                new Toggle(
+                    new ScrollableFullScreen(
+                        () => Translations.t.general.attribution.attributionTitle,
+                        () => new CopyrightPanel(state),
+                        "copyright",
+                        guiState.copyrightViewIsOpened
+                    ),
+                    new MapControlButton(Svg.copyright_svg()).onClick(() => guiState.copyrightViewIsOpened.setData(true)),
+                    guiState.copyrightViewIsOpened
+                )
+            ),
+            state.featureSwitchWelcomeMessage
+        )
+
         super([
             currentViewAction,
             filterButton,
             downloadButtonn,
+            copyright,
             mapSwitch
         ])
 

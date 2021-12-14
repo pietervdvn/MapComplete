@@ -100,7 +100,6 @@
         "maxCacheAge": 0
       },
       "calculatedTags": [
-        "_grbNumber=(feat.properties.fixme?.match(/GRB thinks that this has number ([^;]+)/ ) ?? ['','none']) [1]"
       ],
       "mapRendering": [
         {
@@ -221,33 +220,6 @@
               "then": {
                 "nl": "Geen huisnummer"
               }
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber:={_grbNumber}",
-                  "fixme="
-                ]
-              },
-              "then": "Het huisnummer is <b>{_grbNumber}</b>, wat overeenkomt met het GRB",
-              "hideInAnswer": {
-                "or": [
-                  "_grbNumber=",
-                  "_grbNumber=none",
-                  "_grbNumber=no number"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber=",
-                  "not:addr:housenumber=yes",
-                  "fixme="
-                ]
-              },
-              "then": "Dit gebouw heeft geen nummer, net zoals in het GRB",
-              "hideInAnswer": "_grbNumber!=no number"
             }
           ]
         },
@@ -328,19 +300,15 @@
             }
           ]
         }
-      ],
-      "#": "Pass all the features in order to render the address in the layer below",
-      "passAllFeatures": true
+      ]
     },
-    "address",
     {
-      "id": "All OSM objects",
+      "id": "generic_osm_object",
       "name": "All OSM Objects",
       "source": {
         "osmTags": {
           "and": [
             "id~*",
-            "landuse=",
             "place=",
             "disused:power=",
             "power=",
@@ -365,16 +333,17 @@
       "mapRendering": [
         {
           "color": {
-            "render": "#00c"
+            "render": "#ccc"
           },
           "width": {
             "render": "1"
-          }
+          },
+          "fill": "no"
         }
       ],
       "title": {
         "render": {
-          "*": "OSM-Object"
+          "*": "Other OSM-Object"
         }
       },
       "tagRenderings": [
@@ -494,7 +463,8 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? ''",
+        "_overlaps_with_buildings=feat.overlapWith('OSM-buildings')",
+        "_overlap_with=feat.get('_overlaps_with_buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? ''",
         "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
         "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
@@ -508,13 +478,19 @@
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
         "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
-        "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''"
+        "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
+        "_overlaps_with_other_features=feat.overlapWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
       ],
       "tagRenderings": [
         {
           "id": "Import-button",
           "render": "{import_way_button(OSM-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
+            {
+              "if": "_overlaps_with_other_features~*",
+              "then": "This GRB building overlaps with the following features: {_overlaps_with_other_features}.<br/>Fix the overlap and try again"
+            },
+            
             {
               "if": {
                 "and": [
