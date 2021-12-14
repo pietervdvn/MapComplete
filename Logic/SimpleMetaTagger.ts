@@ -41,7 +41,7 @@ export class SimpleMetaTagger  {
 }
 
 export class CountryTagger extends SimpleMetaTagger {
-    private static readonly coder = new CountryCoder("https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country", ScriptUtils.DownloadJSON);
+    private static readonly coder = new CountryCoder("https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country", Utils.downloadJson);
     public runningTasks: Set<any>;
     
     constructor() {

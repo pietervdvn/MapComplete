@@ -287,14 +287,14 @@ export default class FeaturePipeline {
 
         // Also load points/lines that are newly added. 
         const newGeometry = new NewGeometryFromChangesFeatureSource(state.changes, state.osmConnection._oauth_config.url)
+        newGeometry.features.addCallbackAndRun(geometries => {
+            console.debug("New geometries are:", geometries)
+        })
+        
         new RegisteringAllFromFeatureSourceActor(newGeometry, state.allElements)
         // A NewGeometryFromChangesFeatureSource does not split per layer, so we do this next
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
             (perLayer) => {
-                if(perLayer.features.data.length === 0){
-                    return
-                }
-            
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
@@ -499,7 +499,9 @@ export default class FeaturePipeline {
                 self.applyMetaTags(tile, <any> this.state)
             })
         })
-        this.applyMetaTags(this.state.currentView, <any> this.state)
+        if(this.state.currentView !== undefined){
+            this.applyMetaTags(this.state.currentView, <any> this.state)
+        }
         self.metataggingRecalculated.ping()
 
     }

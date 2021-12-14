@@ -56,7 +56,6 @@ export class DropDown<T> extends InputElement<T> {
             for (let i = 0; i < values.length; i++) {
                 const option = document.createElement("option")
                 option.value = "" + i
-                console.log(values[i].shown)
                 option.appendChild(Translations.W(values[i].shown).ConstructElement())
                 select.appendChild(option)
             }

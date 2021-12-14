@@ -63,7 +63,6 @@ export default class OsmFeatureSource {
             try {
 
                 for (const neededTile of neededTiles) {
-                    console.log("Tile download from OSM", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
                     self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
                         console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded from OSM")
@@ -72,7 +71,6 @@ export default class OsmFeatureSource {
             } catch (e) {
                 console.error(e)
             } finally {
-                console.log("Done")
                 self.isRunning.setData(false)
             }
         })
@@ -93,7 +91,6 @@ export default class OsmFeatureSource {
         const url = `${this._backend}/api/0.6/map?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
         try {
 
-            console.log("Attempting to get tile", z, x, y, "from the osm api")
             const osmJson = await Utils.downloadJson(url)
             try {
                 console.debug("Got tile", z, x, y, "from the osm api")

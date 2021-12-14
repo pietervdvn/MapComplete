@@ -238,7 +238,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return [a.substr(0, index), a.substr(index + sep.length)];
     }
 
-    public static SubstituteKeys(txt: string | undefined, tags: any): string | undefined {
+    public static SubstituteKeys(txt: string | undefined, tags: any, useLang?: string): string | undefined {
         if (txt === undefined) {
             return undefined
         }
@@ -256,6 +256,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     // @ts-ignore
                     const date: Date = el;
                     v = date.toISOString()
+                }
+                
+                if(useLang !== undefined && v?.translations !== undefined){
+                    v = v.translations[useLang] ?? v.translations["*"] ?? (v.textFor !== undefined ? v.textFor(useLang) : v);
                 }
                 
                 if(v.InnerConstructElement !== undefined){

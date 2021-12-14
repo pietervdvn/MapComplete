@@ -124,7 +124,7 @@ export class Translation extends BaseUIElement {
                 continue;
             }
             let template: string = this.translations[lang];
-            newTranslations[lang] = Utils.SubstituteKeys(template, text);
+            newTranslations[lang] = Utils.SubstituteKeys(template, text, lang);
         }
         return new Translation(newTranslations);
 
