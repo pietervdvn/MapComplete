@@ -30,7 +30,8 @@ import DynamicGeoJsonTileSource from "../Logic/FeatureSource/TiledFeatureSource/
 
 
 class AutomationPanel extends Combine{
-    
+    private static readonly openChangeset = new UIEventSource<number>(undefined);
+
     constructor(layoutToUse: LayoutConfig, indices: number[], extraCommentText: UIEventSource<string>, tagRenderingToAutomate: { layer: LayerConfig, tagRendering: TagRenderingConfig }) {
         const layerId = tagRenderingToAutomate.layer.id
         const trId = tagRenderingToAutomate.tagRendering.id
@@ -39,8 +40,9 @@ class AutomationPanel extends Combine{
         if (indices === undefined) {
            throw ("No tiles loaded - can not automate")
         }
-        const openChangeset = new UIEventSource<string>(undefined);
-        openChangeset.addCallbackAndRun(cs => console.log("Sync current open changeset to:", cs))
+        const openChangeset = AutomationPanel.openChangeset;
+      
+        openChangeset.addCallbackAndRun(cs => console.trace("Sync current open changeset to:", cs))
 
         const nextTileToHandle = tileState.map(handledTiles => {
             for (const index of indices) {
@@ -115,7 +117,7 @@ class AutomationPanel extends Combine{
     }
 
     private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, 
-                               openChangeset: UIEventSource<string>,
+                               openChangeset: UIEventSource<number>,
                                whenDone: ((result: string, logMessage?: string) => void)): BaseUIElement {
 
         const state = new MapState(layoutToUse, {attemptLogin: false})
@@ -203,13 +205,7 @@ class AutomationPanel extends Combine{
                     whenDone("no-action","Inspected "+inspected+" elements: "+log.join("; "))
                 }else{
                     state.osmConnection.AttemptLogin()
-                    const openCS = state.osmConnection.GetPreference("current-open-changeset-"+layoutToUse.id)
-                    openCS.addCallbackAndRun(cs => {
-                        console.log("Current open Changeset is now: ", cs)
-                        openChangeset.setData(cs)
-                    })
-                    openCS.setData(openChangeset.data)
-                    state.changes.flushChanges("handled tile automatically, time to flush!")
+                    state.changes.flushChanges("handled tile automatically, time to flush!", openChangeset)
                     whenDone("fixed", "Updated " + handled+" elements, inspected "+inspected+": "+log.join("; "))
                 }
                 return true;

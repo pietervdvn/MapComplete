@@ -15,7 +15,6 @@ export interface ChangesetTag {
 
 export class ChangesetHandler {
 
-    public readonly currentChangeset: UIEventSource<number>;
     private readonly allElements: ElementStorage;
     private osmConnection: OsmConnection;
     private readonly changes: Changes;
@@ -24,7 +23,8 @@ export class ChangesetHandler {
     private readonly auth: any;
     private readonly backend: string;
 
-    constructor(layoutName: string, dryRun: boolean,
+    constructor(layoutName: string,
+                dryRun: boolean,
                 osmConnection: OsmConnection,
                 allElements: ElementStorage,
                 changes: Changes,
@@ -36,19 +36,11 @@ export class ChangesetHandler {
         this.userDetails = osmConnection.userDetails;
         this.backend = osmConnection._oauth_config.url
         this.auth = auth;
-        this.currentChangeset = osmConnection.GetPreference("current-open-changeset-" + layoutName).map(
-            str => {
-                const n = Number(str);
-                if (isNaN(n)) {
-                    return undefined
-                }
-                return n
-            }, [], n => "" + n
-        );
 
         if (dryRun) {
             console.log("DRYRUN ENABLED");
         }
+
     }
 
     /**
@@ -63,12 +55,13 @@ export class ChangesetHandler {
      */
     public async UploadChangeset(
         generateChangeXML: (csid: number) => string,
-        extraMetaTags: ChangesetTag[]): Promise<void> {
+        extraMetaTags: ChangesetTag[],
+        openChangeset: UIEventSource<number>): Promise<void> {
 
         if (!extraMetaTags.some(tag => tag.key === "comment") || !extraMetaTags.some(tag => tag.key === "theme")) {
             throw "The meta tags should at least contain a `comment` and a `theme`"
         }
-
+        
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
             this.userDetails.data.csCount = 1;
@@ -81,30 +74,30 @@ export class ChangesetHandler {
             return;
         }
 
-        if (this.currentChangeset.data === undefined) {
+        if (openChangeset.data === undefined) {
             // We have to open a new changeset
             try {
                 const csId = await this.OpenChangeset(extraMetaTags)
-                this.currentChangeset.setData(csId);
+                openChangeset.setData(csId);
                 const changeset = generateChangeXML(csId);
-                console.log("Current changeset is:", changeset);
+                console.trace("Opened a new changeset (openChangeset.data is undefined):", changeset);
                 await this.AddChange(csId, changeset)
             } catch (e) {
                 console.error("Could not open/upload changeset due to ", e)
-                this.currentChangeset.setData(undefined)
+                openChangeset.setData(undefined)
             }
         } else {
             // There still exists an open changeset (or at least we hope so)
             // Let's check!
-            const csId = this.currentChangeset.data;
+            const csId = openChangeset.data;
             try {
-
                 const oldChangesetMeta = await this.GetChangesetMeta(csId)
                 if (!oldChangesetMeta.open) {
                     // Mark the CS as closed...
-                    this.currentChangeset.setData(undefined);
+                    console.log("Could not fetch the metadata from the already open changeset")
+                    openChangeset.setData(undefined);
                     // ... and try again. As the cs is closed, no recursive loop can exist  
-                    await this.UploadChangeset(generateChangeXML, extraMetaTags)
+                    await this.UploadChangeset(generateChangeXML, extraMetaTags, openChangeset)
                     return;
                 }
 
@@ -146,7 +139,7 @@ export class ChangesetHandler {
 
             } catch (e) {
                 console.warn("Could not upload, changeset is probably closed: ", e);
-                this.currentChangeset.setData(undefined);
+                openChangeset.setData(undefined);
             }
         }
     }
@@ -210,13 +203,9 @@ export class ChangesetHandler {
         const self = this
         return new Promise<void>(function (resolve, reject) {
             if (changesetId === undefined) {
-                changesetId = self.currentChangeset.data;
-            }
-            if (changesetId === undefined) {
                 return;
             }
             console.log("closing changeset", changesetId);
-            self.currentChangeset.setData(undefined);
             self.auth.xhr({
                 method: 'PUT',
                 path: '/api/0.6/changeset/' + changesetId + '/close',

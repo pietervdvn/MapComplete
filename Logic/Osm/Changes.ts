@@ -107,7 +107,7 @@ export class Changes {
      * Uploads all the pending changes in one go.
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
-    public async flushChanges(flushreason: string = undefined) : Promise<void>{
+    public async flushChanges(flushreason: string = undefined, openChangeset: UIEventSource<number>) : Promise<void>{
         if (this.pendingChanges.data.length === 0) {
             return;
         }
@@ -115,12 +115,14 @@ export class Changes {
             console.log("Is already uploading... Abort")
             return;
         }
+
+        
         console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
         try {
-            const csNumber = await this.flushChangesAsync()
+            const csNumber = await this.flushChangesAsync(openChangeset)
             this.isUploading.setData(false)
-            console.log("Changes flushed!");
+            console.log("Changes flushed. Your changeset is "+csNumber);
         } catch (e) {
             this.isUploading.setData(false)
             console.error("Flushing changes failed due to", e);
@@ -207,10 +209,8 @@ export class Changes {
     /**
      * UPload the selected changes to OSM.
      * Returns 'true' if successfull and if they can be removed
-     * @param pending
-     * @private
      */
-    private async flushSelectChanges(pending: ChangeDescription[]): Promise<boolean> {
+    private async flushSelectChanges(pending: ChangeDescription[], openChangeset: UIEventSource<number>): Promise<boolean> {
         const self = this;
         const neededIds = Changes.GetNeededIds(pending)
 
@@ -304,14 +304,15 @@ export class Changes {
 
         await this.state.osmConnection.changesetHandler.UploadChangeset(
             (csId) => Changes.createChangesetFor("" + csId, changes),
-            metatags
+            metatags,
+            openChangeset
         )
 
         console.log("Upload successfull!")
         return true;
     }
 
-    private async flushChangesAsync(): Promise<void> {
+    private async flushChangesAsync(openChangeset: UIEventSource<number>): Promise<void> {
         const self = this;
         try {
             // At last, we build the changeset and upload
@@ -326,10 +327,23 @@ export class Changes {
                 pendingPerTheme.get(theme).push(changeDescription)
             }
 
-            const successes = await Promise.all(Array.from(pendingPerTheme, ([_, value]) => value)
-                .map(async pendingChanges => {
+            const successes = await Promise.all(Array.from(pendingPerTheme, 
+               async ([theme, pendingChanges]) => {
                     try {
-                        return await self.flushSelectChanges(pendingChanges);
+                        if(openChangeset === undefined){
+                            openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).map(
+                                str => {
+                                    const n = Number(str);
+                                    if (isNaN(n)) {
+                                        return undefined
+                                    }
+                                    return n
+                                }, [], n => "" + n
+                            );
+                            console.log("Using current-open-changeset-"+theme+" from the preferences, got "+openChangeset.data)
+                        }
+                        
+                        return await self.flushSelectChanges(pendingChanges, openChangeset);
                     } catch (e) {
                         console.error("Could not upload some changes:", e)
                         return false
