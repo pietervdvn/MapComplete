@@ -107,7 +107,7 @@ export class Changes {
      * Uploads all the pending changes in one go.
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
-    public async flushChanges(flushreason: string = undefined, openChangeset: UIEventSource<number>) : Promise<void>{
+    public async flushChanges(flushreason: string = undefined, openChangeset?: UIEventSource<number>) : Promise<void>{
         if (this.pendingChanges.data.length === 0) {
             return;
         }
@@ -312,7 +312,7 @@ export class Changes {
         return true;
     }
 
-    private async flushChangesAsync(openChangeset: UIEventSource<number>): Promise<void> {
+    private async flushChangesAsync(openChangeset?: UIEventSource<number>): Promise<void> {
         const self = this;
         try {
             // At last, we build the changeset and upload
