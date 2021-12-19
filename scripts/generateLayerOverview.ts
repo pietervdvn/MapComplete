@@ -88,6 +88,7 @@ class LayerOverviewUtils {
         return errorCount
     }
 
+    
     main(args: string[]) {
 
         AllKnownLayers.runningGenerateScript = true;
@@ -211,6 +212,8 @@ class LayerOverviewUtils {
 
             // We load again from disc, as modifications were made above
             const lt = this.loadThemesAndLayers();
+            
+            
             this.writeFiles(lt);
         } else {
             const errors = layerErrorCount.concat(themeErrorCount).join("\n")

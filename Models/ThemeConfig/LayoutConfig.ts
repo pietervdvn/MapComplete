@@ -156,6 +156,9 @@ export default class LayoutConfig {
     private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): { layers: LayerConfig[], extractAllNodes: boolean } {
         const result: LayerConfig[] = []
         let exportAllNodes = false
+        if(json.layers === undefined){
+            throw "Got undefined layers for "+json.id+" at "+context
+        }
         json.layers.forEach((layer, i) => {
 
             if (typeof layer === "string") {
@@ -193,12 +196,11 @@ export default class LayoutConfig {
             if (typeof names === "string") {
                 names = [names]
             }
+            
+            // This is a very special layer which triggers special behaviour
+            exportAllNodes = names.some(name => name === "type_node");
+            
             names.forEach(name => {
-                if (name === "type_node") {
-                    // This is a very special layer which triggers special behaviour
-                    exportAllNodes = true;
-                }
-
                 const shared = AllKnownLayers.sharedLayersJson.get(name);
                 if (shared === undefined) {
                     throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;

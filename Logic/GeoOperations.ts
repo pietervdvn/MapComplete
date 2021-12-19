@@ -356,7 +356,7 @@ export class GeoOperations {
      * Returns 0 if both are linestrings
      * Returns null if the features are not intersecting
      */
-    static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
+    private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
         try {
             if (feature.geometry.type === "LineString") {
 
@@ -442,6 +442,13 @@ export class GeoOperations {
         return undefined;
     }
 
+    /**
+     * Calculates line intersection between two features.
+     */
+    public static LineIntersections(feature, otherFeature): [number,number][]{
+        return turf.lineIntersect(feature, otherFeature).features.map(p =><[number,number]> p.geometry.coordinates)
+    }
+    
     public static AsGpx(feature, generatedWithLayer?: LayerConfig){
         
         const metadata = {}

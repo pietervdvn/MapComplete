@@ -39,7 +39,7 @@ class OverlapFunc implements ExtraFunction {
         "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list\n" +
         "\n" +
         "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`"
-    _args = ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"]
+    _args = ["...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)"]
 
     _f(params, feat) {
         return (...layerIds: string[]) => {
@@ -66,6 +66,46 @@ class OverlapFunc implements ExtraFunction {
         }
     }
 }
+
+
+class IntersectionFunc implements ExtraFunction {
+
+
+    _name = "intersectionsWith";
+    _doc = "Gives the intersection points with selected features. Only works with (Multi)Polygons and LineStrings.\n\n" +
+        "Returns a `{feat: GeoJson, intersections: [number,number][]}` where `feat` is the full, original feature. This list is in random order.\n\n" +
+        "If the current feature is a point, this function will return an empty list.\n" +
+        "Points from other layers are ignored - even if the points are parts of the current linestring."
+    _args = ["...layerIds - one or more layer ids of the layer from which every feature is checked for intersection)"]
+
+    _f(params: ExtraFuncParams, feat) {
+        return (...layerIds: string[]) => {
+            const result: { feat: any, intersections: [number,number][] }[] = []
+
+            const bbox = BBox.get(feat)
+
+            for (const layerId of layerIds) {
+                const otherLayers = params.getFeaturesWithin(layerId, bbox)
+                if (otherLayers === undefined) {
+                    continue;
+                }
+                if (otherLayers.length === 0) {
+                    continue;
+                }
+                for (const tile of otherLayers) {
+                    for (const otherFeature of tile) {
+                        
+                   const intersections = GeoOperations.LineIntersections(feat, otherFeature)
+                        result.push({feat, intersections})
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+}
+
 
 class DistanceToFunc implements ExtraFunction {
 
@@ -351,6 +391,7 @@ export class ExtraFunctions {
     private static readonly allFuncs: ExtraFunction[] = [
         new DistanceToFunc(),
         new OverlapFunc(),
+        new IntersectionFunc(),
         new ClosestObjectFunc(),
         new ClosestNObjectFunc(),
         new Memberships(),

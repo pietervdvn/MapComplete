@@ -20,6 +20,7 @@
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
+    + [intersectionsWith](#intersectionswith)
     + [closest](#closest)
     + [closestn](#closestn)
     + [memberships](#memberships)
@@ -200,6 +201,7 @@ Some advanced functions are available on **feat** as well:
 
   - [distanceTo](#distanceTo)
   - [overlapWith](#overlapWith)
+  - [intersectionsWith](#intersectionsWith)
   - [closest](#closest)
   - [closestn](#closestn)
   - [memberships](#memberships)
@@ -223,7 +225,19 @@ The resulting list is sorted in descending order by overlap. The feature with th
 
 For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')` 
 
-  0. ...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)
+  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
+ 
+
+### intersectionsWith 
+
+ Gives the intersection points with selected features. Only works with (Multi)Polygons and LineStrings.
+
+Returns a `{feat: GeoJson, intersections: [number,number][]}` where `feat` is the full, original feature. This list is in random order.
+
+If the current feature is a point, this function will return an empty list.
+Points from other layers are ignored - even if the points are parts of the current linestring. 
+
+  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for intersection)
  
 
 ### closest 
