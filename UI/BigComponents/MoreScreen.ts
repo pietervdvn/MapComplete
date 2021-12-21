@@ -53,7 +53,7 @@ export default class MoreScreen extends Combine {
             icon: string,
             title: any,
             shortDescription: any
-        }, customThemeDefinition: string = undefined
+        }, isCustom: boolean = false
     ):
         BaseUIElement {
         if (layout === undefined) {
@@ -79,14 +79,12 @@ export default class MoreScreen extends Combine {
         }
 
         let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
-        let linkSuffix = ""
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
             linkPrefix = `${path}/theme.html?layout=${layout.id}&`
         }
 
-        if (customThemeDefinition) {
+        if (isCustom) {
             linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
-            linkSuffix = `#${customThemeDefinition}`
         }
 
         const linkText = currentLocation?.map(currentLocation => {
@@ -97,8 +95,8 @@ export default class MoreScreen extends Combine {
             ].filter(part => part[1] !== undefined)
                 .map(part => part[0] + "=" + part[1])
                 .join("&")
-            return `${linkPrefix}${params}${linkSuffix}`;
-        }) ?? new UIEventSource<string>(`${linkPrefix}${linkSuffix}`)
+            return `${linkPrefix}${params}`;
+        }) ?? new UIEventSource<string>(`${linkPrefix}`)
 
 
         return new SubtleButton(layout.icon,
@@ -117,7 +115,7 @@ export default class MoreScreen extends Combine {
             if (customThemes.length <= 0) {
                 return undefined;
             }
-            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
+            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme, true)?.SetClass(buttonClass))
             return new Combine([
                 Translations.t.general.customThemeIntro.Clone(),
                 new Combine(customThemeButtons).SetClass(themeListClasses)

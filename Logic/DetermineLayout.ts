@@ -14,6 +14,7 @@ import {FixLegacyTheme, PrepareTheme} from "../Models/ThemeConfig/LegacyJsonConv
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 import * as known_layers from "../assets/generated/known_layers.json"
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 
 export default class DetermineLayout {
 
@@ -62,6 +63,22 @@ export default class DetermineLayout {
         return layoutToUse
     }
 
+    private static prepCustomTheme(json: any): LayoutConfigJson{
+        const knownLayersDict = new Map<string, LayerConfigJson>()
+        for (const key in known_layers["default"]) {
+            const layer = known_layers["default"][key]
+            knownLayersDict.set(layer.id, layer)
+        }
+        const converState = {
+            tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
+            sharedLayers: knownLayersDict
+        }
+        json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
+        json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
+        console.log("The layoutconfig is ", json)
+        return json
+    }
+    
     public static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
     ): LayoutConfig | null {
@@ -102,25 +119,9 @@ export default class DetermineLayout {
                 }
             }
 
-            const knownLayersDict = new Map<string, LayerConfigJson>()
-            for (const key in known_layers["default"]) {
-               const layer = known_layers["default"][key]
-                console.log("Found shared layer "+layer.id)
-                knownLayersDict.set(layer.id, layer)
-            }
-            
-            const converState = {
-                tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-                sharedLayers: knownLayersDict
-            }
-            
-            json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
-            
-            json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
-            
-            const layoutToUse = new LayoutConfig(json, false);
+            const layoutToUse = DetermineLayout.prepCustomTheme(json)
             userLayoutParam.setData(layoutToUse.id);
-            return layoutToUse;
+            return new LayoutConfig(layoutToUse, false);
         } catch (e) {
             console.error(e)
             if (hash === undefined || hash.length < 10) {
@@ -160,9 +161,14 @@ export default class DetermineLayout {
                 tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
                 sharedLayers: new Map<string, LayerConfigJson>() // FIXME: actually add the layers
             }, parsed, "While loading a dynamic theme")
-            try {
+
+
                 parsed.id = link;
-                return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));
+
+
+            try {
+                const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
+                return new LayoutConfig(layoutToUse,false).patchImages(link, JSON.stringify(layoutToUse));
             } catch (e) {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(
