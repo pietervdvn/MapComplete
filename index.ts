@@ -1,5 +1,4 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {QueryParameters} from "./Logic/Web/QueryParameters";
 import Combine from "./UI/Base/Combine";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
@@ -20,14 +19,6 @@ ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 Utils.DisableLongPresses()
 
-// --------------------- Special actions based on the parameters -----------------
-// @ts-ignore
-if (location.href.startsWith("http://buurtnatuur.be")) {
-    // Reload the https version. This is important for the 'locate me' button
-    window.location.replace("https://buurtnatuur.be");
-}
-
-
 class Init {
     public static Init(layoutToUse: LayoutConfig, encoded: string) {
 
@@ -41,23 +32,6 @@ class Init {
             new AllThemesGui()
             return;
         }
-
-        // Workaround/legacy to keep the old paramters working as I renamed some of them
-        if (layoutToUse?.id === "cyclofix") {
-            const legacy = QueryParameters.GetQueryParameter("layer-bike_shops", "true", "Legacy - keep De Fietsambassade working");
-            const correct = QueryParameters.GetQueryParameter("layer-bike_shop", "true", "Legacy - keep De Fietsambassade working")
-            if (legacy.data !== "true") {
-                correct.setData(legacy.data)
-            }
-            console.log("layer-bike_shop toggles: legacy:", legacy.data, "new:", correct.data)
-
-            const legacyCafe = QueryParameters.GetQueryParameter("layer-bike_cafes", "true", "Legacy - keep De Fietsambassade working")
-            const correctCafe = QueryParameters.GetQueryParameter("layer-bike_cafe", "true", "Legacy - keep De Fietsambassade working")
-            if (legacyCafe.data !== "true") {
-                correctCafe.setData(legacy.data)
-            }
-        }
-
 
         const guiState = new DefaultGuiState()
         State.state = new State(layoutToUse);

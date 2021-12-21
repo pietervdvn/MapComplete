@@ -10,9 +10,10 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
-import {FixLegacyTheme} from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme, PrepareTheme} from "../Models/ThemeConfig/LegacyJsonConvert";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
+import * as known_layers from "../assets/generated/known_layers.json"
 
 export default class DetermineLayout {
 
@@ -106,10 +107,19 @@ export default class DetermineLayout {
                 }
             }
 
-            json = new FixLegacyTheme().convertStrict({
+            const knownLayersDict = new Map<string, LayerConfigJson>()
+            for (const key in known_layers["default"]) {
+                knownLayersDict.set(key, known_layers["default"][key])
+            }
+            
+            const converState = {
                 tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-                sharedLayers: new Map<string, LayerConfigJson>() // FIXME: actually add the layers
-            }, json, "While loading a dynamic theme")
+                sharedLayers: knownLayersDict
+            }
+            
+            json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
+            
+            json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
             
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);

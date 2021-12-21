@@ -26,22 +26,6 @@ interface LayersAndThemes {
 
 class LayerOverviewUtils {
 
-    loadThemesAndLayers(): LayersAndThemes {
-
-        const layerFiles = ScriptUtils.getLayerFiles();
-
-        const themeFiles: LayoutConfigJson[] = ScriptUtils.getThemeFiles().map(x => x.parsed);
-
-        console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
-        if (layerFiles.length + themeFiles.length === 0) {
-            throw "Panic: no themes and layers loaded!"
-        }
-        return {
-            layers: layerFiles,
-            themes: themeFiles
-        }
-    }
-
     writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean }[]) {
         const perId = new Map<string, any>();
         for (const theme of themes) {
@@ -191,6 +175,8 @@ class LayerOverviewUtils {
             "layers": Array.from(sharedLayers.values()),
             "themes": Array.from(sharedThemes.values())
         }))
+
+        writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
     }
 }
 

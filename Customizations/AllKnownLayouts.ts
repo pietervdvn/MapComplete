@@ -30,8 +30,6 @@ export class AllKnownLayouts {
         return sharedLayers;
     }
 
-
-
     public static allKnownLayouts: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
     public static layoutsList: LayoutConfig[] = AllKnownLayouts.GenerateOrderedList(AllKnownLayouts.allKnownLayouts);
 
