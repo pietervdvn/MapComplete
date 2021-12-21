@@ -406,7 +406,12 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         }
 
         if (config.tagRenderings !== undefined) {
+            let i =0;
             for (const tagRendering of config.tagRenderings) {
+                i++;
+                if(typeof tagRendering === "string" || tagRendering["builtin"] !== undefined){
+                    continue
+                }
                 if (tagRendering["id"] === undefined) {
 
                     if (tagRendering["#"] !== undefined) {
@@ -414,6 +419,8 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
                         delete tagRendering["#"]
                     } else if (tagRendering["freeform"]?.key !== undefined) {
                         tagRendering["id"] = config.id + "-" + tagRendering["freeform"]["key"]
+                    }else{
+                        tagRendering["id"] = "tr-"+i
                     }
                 }
             }

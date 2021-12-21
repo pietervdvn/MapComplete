@@ -47,7 +47,7 @@
     "deploy:production": "cd ~/git/mapcomplete.github.io/ && git pull && cd - && rm -rf ./assets/generated && npm run prepare-deploy && npm run optimize-images && rm -rf ~/git/mapcomplete.github.io/* && cp -r dist/* ~/git/mapcomplete.github.io/ && cd ~/git/mapcomplete.github.io/ && echo \"mapcomplete.osm.be\" > CNAME  && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean && npm run gittag",
     "gittag": "ts-node scripts/printVersion.ts | bash",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | xargs rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | xargs rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "genPostal": " ts-node ./scripts/postal_code_tools/createRoutablePoint.ts /home/pietervdvn/Downloads/postal_codes/postal_codes_town_hall_points.geojson /home/pietervdvn/Downloads/31370/Postcodes.geojson\n"
   },

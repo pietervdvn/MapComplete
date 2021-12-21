@@ -20,7 +20,7 @@ ShowOverlayLayerImplementation.Implement();
 Utils.DisableLongPresses()
 
 class Init {
-    public static Init(layoutToUse: LayoutConfig, encoded: string) {
+    public static Init(layoutToUse: LayoutConfig) {
 
         if (layoutToUse === null) {
             // Something went wrong, error message is already on screen
@@ -41,14 +41,7 @@ class Init {
         window.mapcomplete_state = State.state;
         new DefaultGUI(State.state, guiState)
 
-        if (encoded !== undefined && encoded.length > 10) {
-            // We save the layout to the user settings and local storage
-            State.state.osmConnection.OnLoggedIn(() => {
-                State.state.osmConnection
-                    .GetLongPreference("installed-theme-" + layoutToUse.id)
-                    .setData(encoded);
-            });
-        }
+       
     }
 }
 
@@ -67,7 +60,7 @@ new Combine(["Initializing... <br/>",
 // @ts-ignore
 DetermineLayout.GetLayout().then(value => {
     console.log("Got ", value)
-    Init.Init(value[0], value[1])
+    Init.Init(value)
     }).catch(err => {
         console.error("Error while initializing: ", err, err.stack)
     })
