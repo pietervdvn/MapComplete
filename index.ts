@@ -18,7 +18,6 @@ MinimapImplementation.initialize()
 AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
 ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
-
 Utils.DisableLongPresses()
 
 // --------------------- Special actions based on the parameters -----------------
@@ -66,7 +65,6 @@ class Init {
         // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
-
         new DefaultGUI(State.state, guiState)
 
         if (encoded !== undefined && encoded.length > 10) {
@@ -92,12 +90,12 @@ new Combine(["Initializing... <br/>",
         })])
     .AttachTo("centermessage"); // Add an initialization and reset button if something goes wrong
 
-
+// @ts-ignore
 DetermineLayout.GetLayout().then(value => {
     console.log("Got ", value)
     Init.Init(value[0], value[1])
-}).catch(err => {
-    console.error("Error while initializing: ", err, err.stack)
-})
+    }).catch(err => {
+        console.error("Error while initializing: ", err, err.stack)
+    })
 
 

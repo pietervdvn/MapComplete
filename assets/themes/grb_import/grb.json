@@ -38,7 +38,7 @@
               "point"
             ],
             "icon": {
-              "render": "./assets/themes/grb_import/robot.svg"
+              "render": "./assets/svg/robot.svg"
             },
             "iconSize": "15,15,center"
           }
@@ -99,8 +99,7 @@
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
-      "calculatedTags": [
-      ],
+      "calculatedTags": [],
       "mapRendering": [
         {
           "width": {
@@ -490,7 +489,6 @@
               "if": "_overlaps_with_other_features~*",
               "then": "This GRB building overlaps with the following features: {_overlaps_with_other_features}.<br/>Fix the overlap and try again"
             },
-            
             {
               "if": {
                 "and": [

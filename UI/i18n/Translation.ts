@@ -13,6 +13,9 @@ export class Translation extends BaseUIElement {
         if (translations === undefined) {
             throw `Translation without content (${context})`
         }
+        if(typeof translations === "string"){
+            translations = {"*": translations};
+        }
         let count = 0;
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {

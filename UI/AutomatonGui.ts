@@ -27,6 +27,7 @@ import {QueryParameters} from "../Logic/Web/QueryParameters";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
 import {AutoAction} from "./Popup/AutoApplyButton";
 import DynamicGeoJsonTileSource from "../Logic/FeatureSource/TiledFeatureSource/DynamicGeoJsonTileSource";
+import * as themeOverview from "../assets/generated/theme_overview.json"
 
 
 class AutomationPanel extends Combine{
@@ -177,7 +178,7 @@ class AutomationPanel extends Combine{
                         const feature = ffs.feature
                         const renderingTr = targetAction.GetRenderValue(feature.properties)
                         const rendering = renderingTr.txt
-                        log.push("<a href='https://openstreetmap.org/"+feature.properties.id+"' target='_blank'>"+feature.properties.id+"</a>: "+new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties)).ConstructElement().innerText)
+                        log.push("<a href='https://openstreetmap.org/"+feature.properties.id+"' target='_blank'>"+feature.properties.id+"</a>: "+new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), state).ConstructElement().innerText)
                         const actions = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
                             .map(obj => obj.special))
                         for (const action of actions) {
@@ -251,7 +252,7 @@ class AutomatonGui {
     private static GenerateMainPanel(): BaseUIElement {
 
         const themeSelect = new DropDown<string>("Select a theme",
-            AllKnownLayouts.layoutsList.map(l => ({value: l.id, shown: l.id})) 
+            Array.from(themeOverview).map(l => ({value: l.id, shown: l.id})) 
         )
 
         LocalStorageSource.Get("automation-theme-id", "missing_streets").syncWith(themeSelect.GetValue())

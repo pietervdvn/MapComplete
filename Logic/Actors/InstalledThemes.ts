@@ -4,9 +4,13 @@ import {Utils} from "../../Utils";
 import LZString from "lz-string";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
+/**
+ * Gives an overview of themes that are installed in the user preferences
+ */
 export default class InstalledThemes {
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
+    
     constructor(osmConnection: OsmConnection) {
         this.installedThemes = osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: LayoutConfig, definition: string }[] = [];

@@ -191,7 +191,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr;
     }
 
-    public static Dupicates(arr: string[]): string[] {
+    public static Dupiclates(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined;
         }
@@ -617,6 +617,18 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             g: parseInt(hex.substr(3, 2), 16),
             b: parseInt(hex.substr(5, 2), 16),
         }
+    }
+
+    /**
+     * Deepclone an object by serializing and deserializing it
+     * @param x
+     * @constructor
+     */
+    static Clone<T>(x: T): T {
+        if(x === undefined){
+            return undefined;
+        }
+        return JSON.parse(JSON.stringify(x));
     }
 }
 

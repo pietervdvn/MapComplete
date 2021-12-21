@@ -1,7 +1,6 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Translation} from "./i18n/Translation";
 import Locale from "./i18n/Locale";
-import State from "../State";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import SpecialVisualizations, {SpecialVisualization} from "./SpecialVisualizations";
 import {Utils} from "../Utils";
@@ -15,6 +14,7 @@ export class SubstitutedTranslation extends VariableUiElement {
     public constructor(
         translation: Translation,
         tagsSource: UIEventSource<any>,
+        state,
         mapping: Map<string, BaseUIElement> = undefined) {
 
         const extraMappings: SpecialVisualization[] = [];
@@ -50,7 +50,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                         }
                         const viz = proto.special;
                         try {
-                            return viz.func.constr(State.state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
+                            return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")

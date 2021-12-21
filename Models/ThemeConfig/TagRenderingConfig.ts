@@ -40,7 +40,6 @@ export default class TagRenderingConfig {
         readonly hideInAnswer: boolean | TagsFilter
         readonly addExtraTags: Tag[]
     }[]
-
     constructor(json: string | TagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
@@ -69,7 +68,7 @@ export default class TagRenderingConfig {
         }
 
 
-        this.id = json.id ?? "";
+        this.id = json.id ?? ""; // Some tagrenderings - especially for the map rendering - don't need an ID
         if (this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null) {
             throw "Invalid ID in " + context + ": an id can only contain [a-zA-Z0-0_-] as characters. The offending id is: " + this.id
         }

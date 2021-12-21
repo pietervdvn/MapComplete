@@ -19,7 +19,6 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import Minimap from "../Base/Minimap";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import CreateWayWithPointReuseAction, {MergePointConfig} from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
@@ -35,6 +34,8 @@ import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction
 import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
 import {Tag} from "../../Logic/Tags/Tag";
 import TagApplyButton from "./TagApplyButton";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import * as conflation_json from "../../assets/layers/conflation/conflation.json";
 
 
 abstract class AbstractImportButton implements SpecialVisualizations {
@@ -255,7 +256,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                 zoomToFeatures: false,
                 features: changePreview,
                 allElements: state.allElements,
-                layerToShow: AllKnownLayers.sharedLayers.get("conflation")
+                layerToShow: new LayerConfig(conflation_json, "all_known_layers", true)
             })
         })
 

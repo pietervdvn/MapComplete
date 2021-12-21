@@ -18,7 +18,6 @@ import {Utils} from "../../Utils";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
 import Toggle from "../Input/Toggle";
-import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -41,7 +40,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
                                     layerConfig: LayerConfig): BaseUIElement {
-        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"))
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), State.state)
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
@@ -89,7 +88,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
                     if (tr.render !== undefined) {
                         questionBox.SetClass("text-sm")
-                        const renderedQuestion = new TagRenderingAnswer(tags, tr, tr.group + " questions", "", {
+                        const renderedQuestion = new TagRenderingAnswer(tags, tr,State.state,
+                            tr.group + " questions", "", {
                             specialViz: new Map<string, BaseUIElement>([["questions", questionBox]])
                         })
                         const possiblyHidden = new Toggle(
@@ -164,7 +164,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
         const hasMinimap = layerConfig.tagRenderings.some(tr => FeatureInfoBox.hasMinimap(tr))
         if (!hasMinimap) {
-            allRenderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
+            allRenderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap"), State.state))
         }
 
         editElements.push(
@@ -178,7 +178,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                             return undefined
                         }
 
-                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"));
+                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"), State.state);
 
                     }, [State.state.featureSwitchIsDebugging, State.state.featureSwitchIsTesting])
             )

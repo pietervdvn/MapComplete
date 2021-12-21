@@ -1,9 +1,9 @@
+import UserRelatedState from "../Logic/State/UserRelatedState";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import Combine from "./Base/Combine";
 import MoreScreen from "./BigComponents/MoreScreen";
 import Translations from "./i18n/Translations";
 import Constants from "../Models/Constants";
-import UserRelatedState from "../Logic/State/UserRelatedState";
 import {Utils} from "../Utils";
 import LanguagePicker from "./LanguagePicker";
 import IndexText from "./BigComponents/IndexText";
@@ -13,7 +13,6 @@ import {SubtleButton} from "./Base/SubtleButton";
 
 export default class AllThemesGui {
     constructor() {
-
         try {
 
             new FixedUiElement("").AttachTo("centermessage")
@@ -41,6 +40,7 @@ export default class AllThemesGui {
                 .SetStyle("pointer-events: all;")
                 .AttachTo("topleft-tools");
         } catch (e) {
+            console.error(">>>> CRITICAL", e)
             new FixedUiElement("Seems like no layers are compiled - check the output of `npm run generate:layeroverview`. Is this visible online? Contact pietervdvn immediately!").SetClass("alert")
                 .AttachTo("centermessage")
         }

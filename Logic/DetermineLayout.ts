@@ -10,7 +10,9 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
-import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme} from "../Models/ThemeConfig/LegacyJsonConvert";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 
 export default class DetermineLayout {
 
@@ -43,7 +45,7 @@ export default class DetermineLayout {
 
 
         const path = window.location.pathname.split("/").slice(-1)[0];
-        if (path !== "index.html" && path !== "") {
+        if (path !== "theme.html" && path !== "") {
             layoutId = path;
             if (path.endsWith(".html")) {
                 layoutId = path.substr(0, path.length - 5);
@@ -104,7 +106,11 @@ export default class DetermineLayout {
                 }
             }
 
-            LegacyJsonConvert.fixThemeConfig(json)
+            json = new FixLegacyTheme().convertStrict({
+                tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
+                sharedLayers: new Map<string, LayerConfigJson>() // FIXME: actually add the layers
+            }, json, "While loading a dynamic theme")
+            
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
             return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
@@ -141,9 +147,12 @@ export default class DetermineLayout {
 
         try {
 
-            const parsed = await Utils.downloadJson(link)
+            let parsed = await Utils.downloadJson(link)
             console.log("Got ", parsed)
-            LegacyJsonConvert.fixThemeConfig(parsed)
+            parsed = new FixLegacyTheme().convertStrict({
+                tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
+                sharedLayers: new Map<string, LayerConfigJson>() // FIXME: actually add the layers
+            }, parsed, "While loading a dynamic theme")
             try {
                 parsed.id = link;
                 return new LayoutConfig(parsed, false).patchImages(link, JSON.stringify(parsed));

@@ -74,11 +74,11 @@
           },
           "renderings": [
             {
-              "id": "sidewalk_minimap",
+              "id": "sidewalk_minimap_left|right",
               "render": "{sided_minimap(left|right):height:8rem;border-radius:0.5rem;overflow:hidden}"
             },
             {
-              "id": "has_sidewalk",
+              "id": "has_sidewalk_left|right",
               "question": "Is there a sidewalk on this side of the road?",
               "mappings": [
                 {
@@ -92,7 +92,7 @@
               ]
             },
             {
-              "id": "sidewalk_width",
+              "id": "sidewalk_width_left|right",
               "question": "What is the width of the sidewalk on this side of the road?",
               "render": "This sidewalk is {sidewalk:left|right:width}m wide",
               "condition": "sidewalk:left|right=yes",

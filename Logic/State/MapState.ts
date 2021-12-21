@@ -17,6 +17,7 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
+import TitleHandler from "../Actors/TitleHandler";
 
 /**
  * Contains all the leaflet-map related state
@@ -130,6 +131,8 @@ export default class MapState extends UserRelatedState {
         this.initGpsLocation()
         this.initUserLocationTrail()
         this.initCurrentView()
+
+        new TitleHandler(this);
     }
 
     public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {

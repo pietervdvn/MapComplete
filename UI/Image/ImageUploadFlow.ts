@@ -1,5 +1,4 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import State from "../../State";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
@@ -13,13 +12,23 @@ import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {Changes} from "../../Logic/Osm/Changes";
 
 export class ImageUploadFlow extends Toggle {
 
 
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
 
-    constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image", text: string = undefined) {
+    constructor(tagsSource: UIEventSource<any>, 
+                state: {
+                    osmConnection: OsmConnection;
+                    layoutToUse: LayoutConfig;
+                    changes: Changes,
+                    featureSwitchUserbadge: UIEventSource<boolean>;
+                },
+                imagePrefix: string = "image", text: string = undefined) {
         const perId = ImageUploadFlow.uploadCountsPerId
         const id = tagsSource.data.id
         if (!perId.has(id)) {
@@ -41,17 +50,17 @@ export class ImageUploadFlow extends Toggle {
             console.log("Adding image:" + key, url);
             uploadedCount.data++
             uploadedCount.ping()
-            Promise.resolve(State.state.changes
+            Promise.resolve(state.changes
                 .applyAction(new ChangeTagAction(
                     tags.id, new Tag(key, url), tagsSource.data,
                     {
                         changeType: "add-image",
-                        theme: State.state.layoutToUse.id
+                        theme: state.layoutToUse.id
                     }
                 )))
         })
 
-        const licensePicker = new LicensePicker()
+        const licensePicker = new LicensePicker(state)
 
         const t = Translations.t.image;
 
@@ -90,7 +99,7 @@ export class ImageUploadFlow extends Toggle {
 
             const tags = tagsSource.data;
 
-            const layout = State.state?.layoutToUse
+            const layout = state?.layoutToUse
             let matchingLayer: LayerConfig = undefined
             for (const layer of layout?.layers ?? []) {
                 if (layer.source.osmTags.matchesProperties(tags)) {
@@ -102,7 +111,7 @@ export class ImageUploadFlow extends Toggle {
 
             const title = matchingLayer?.title?.GetRenderValue(tags)?.ConstructElement()?.innerText ?? tags.name ?? "Unknown area";
             const description = [
-                "author:" + State.state.osmConnection.userDetails.data.name,
+                "author:" + state.osmConnection.userDetails.data.name,
                 "license:" + license,
                 "osmid:" + tags.id,
             ].join("\n");
@@ -146,17 +155,17 @@ export class ImageUploadFlow extends Toggle {
 
 
         const pleaseLoginButton = t.pleaseLogin.Clone()
-            .onClick(() => State.state.osmConnection.AttemptLogin())
+            .onClick(() => state.osmConnection.AttemptLogin())
             .SetClass("login-button-friendly");
         super(
             new Toggle(
                 /*We can show the actual upload button!*/
                 uploadFlow,
                 /* User not logged in*/ pleaseLoginButton,
-                State.state?.osmConnection?.isLoggedIn
+                state?.osmConnection?.isLoggedIn
             ),
             undefined /* Nothing as the user badge is disabled*/,
-            State.state.featureSwitchUserbadge
+            state.featureSwitchUserbadge
         )
 
     }

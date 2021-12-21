@@ -36,7 +36,7 @@
   ],
   "maintainer": "MapComplete",
   "credits": "Originally created during Open Summer of Code by Pieter Fiers, Thibault Declercq, Pierre Barban, Joost Schouppe and Pieter Vander Vennet",
-  "icon": "assets/themes/cyclofix/logo.svg",
+  "icon": "./assets/themes/cyclofix/logo.svg",
   "version": "0",
   "startLat": 0,
   "defaultBackgroundId": "CartoDB.Voyager",

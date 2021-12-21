@@ -50,7 +50,6 @@
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
-        "icon": "./assets/themes/speelplekken/speelbos.svg",
         "minzoom": 12,
         "calculatedTags": [
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
@@ -61,7 +60,6 @@
     {
       "builtin": "playground",
       "override": {
-        "icon": "./assets/themes/speelplekken/speeltuin.svg",
         "minzoom": 14,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
@@ -78,7 +76,6 @@
     {
       "builtin": "village_green",
       "override": {
-        "icon": "./assets/themes/speelplekken/speelweide.svg",
         "minzoom": 14,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
@@ -95,7 +92,6 @@
     {
       "builtin": "grass_in_parks",
       "override": {
-        "icon": "./assets/themes/speelplekken/speelweide.svg",
         "minzoom": 14,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
