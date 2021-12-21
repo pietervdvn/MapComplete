@@ -6,7 +6,7 @@ import SelectedFeatureHandler from "../Logic/Actors/SelectedFeatureHandler";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {ElementStorage} from "../Logic/ElementStorage";
 import Loc from "../Models/Loc";
-import * as bookcaseJson from "../assets/themes/bookcases/bookcases.json"
+import * as bookcaseJson from "../assets/generated/themes/bookcases.json"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 export default class ActorsSpec extends T {
