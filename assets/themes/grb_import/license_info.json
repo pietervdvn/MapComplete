@@ -6,5 +6,15 @@
       "Pieter Vander Vennet"
     ],
     "sources": []
+  },
+  {
+    "path": "warning.svg",
+    "license": "CC0",
+    "authors": [
+      "penubag"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Ambox_warning_pn.svg"
+    ]
   }
 ]
