@@ -85,14 +85,14 @@ export default class MoveWizard extends Toggle {
             const reason = reasons[0]
             moveReason.setData(reason)
             moveButton = new SubtleButton(
-                reason.icon.SetStyle("height: 1.5rem; width: auto;"),
+                reason.icon.SetStyle("height: 1.5rem; width: 1.5rem;"),
                 Translations.WT(reason.invitingText)
             ).onClick(() => {
                 currentStep.setData("pick_location")
             })
         } else {
             moveButton = new SubtleButton(
-                Svg.move_ui().SetStyle("height: 1.5rem; width: auto"),
+                Svg.move_ui().SetStyle("width: 1.5rem; height: 1.5rem"),
                 t.inviteToMove.generic
             ).onClick(() => {
                 currentStep.setData("reason")

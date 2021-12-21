@@ -93,7 +93,7 @@ export default class DeleteWizard extends Toggle {
          * The button which is shown first. Opening it will trigger the check for deletions
          */
         const deleteButton = new SubtleButton(
-            Svg.delete_icon_ui().SetStyle("width: auto; height: 1.5rem;"), t.delete.Clone()).onClick(
+            Svg.delete_icon_svg().SetStyle("width: 1.5rem; height: 1.5rem;"), t.delete.Clone()).onClick(
             () => {
                 deleteAbility.CheckDeleteability(true)
                 confirm.setData(true);
