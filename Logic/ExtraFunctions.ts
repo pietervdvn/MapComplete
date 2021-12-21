@@ -14,7 +14,7 @@ export interface ExtraFuncParams {
      */
     getFeaturesWithin: (layerId: string, bbox: BBox) => any[][],
     memberships: RelationsTracker
-    getFeatureById: (id:string) => any
+    getFeatureById: (id: string) => any
 }
 
 /**
@@ -80,11 +80,12 @@ class IntersectionFunc implements ExtraFunction {
 
     _f(params: ExtraFuncParams, feat) {
         return (...layerIds: string[]) => {
-            const result: { feat: any, intersections: [number,number][] }[] = []
+            const result: { feat: any, intersections: [number, number][] }[] = []
 
             const bbox = BBox.get(feat)
 
             for (const layerId of layerIds) {
+                console.log("Calculating the intersection with layer ", layerId)
                 const otherLayers = params.getFeaturesWithin(layerId, bbox)
                 if (otherLayers === undefined) {
                     continue;
@@ -94,9 +95,12 @@ class IntersectionFunc implements ExtraFunction {
                 }
                 for (const tile of otherLayers) {
                     for (const otherFeature of tile) {
-                        
-                   const intersections = GeoOperations.LineIntersections(feat, otherFeature)
-                        result.push({feat, intersections})
+
+                        const intersections = GeoOperations.LineIntersections(feat, otherFeature)
+                        if(intersections.length === 0){
+                            continue
+                        }
+                        result.push({feat: otherFeature, intersections})
                     }
                 }
             }
@@ -124,7 +128,7 @@ class DistanceToFunc implements ExtraFunction {
             }
             if (typeof arg0 === "string") {
                 // This is an identifier
-                const feature =  featuresPerLayer.getFeatureById(arg0)
+                const feature = featuresPerLayer.getFeatureById(arg0)
                 if (feature === undefined) {
                     return undefined;
                 }
@@ -172,9 +176,9 @@ class ClosestNObjectFunc implements ExtraFunction {
     _doc = "Given either a list of geojson features or a single layer name, gives the n closest objects which are nearest to the feature (excluding the feature itself). In the case of ways/polygons, only the centerpoint is considered. " +
         "Returns a list of `{feat: geojson, distance:number}` the empty list if nothing is found (or not yet loaded)\n\n" +
         "If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name)"
-    _args =  ["list of features or layer name or '*' to get all features", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
+    _args = ["list of features or layer name or '*' to get all features", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
 
-    
+
     /**
      * Gets the closes N features, sorted by ascending distance.
      *
@@ -205,11 +209,11 @@ class ClosestNObjectFunc implements ExtraFunction {
 
         const selfCenter = GeoOperations.centerpointCoordinates(feature)
         let closestFeatures: { feat: any, distance: number }[] = [];
-        
+
         for (const featureList of features) {
             // Features is provided by 'getFeaturesWithin' which returns a list of lists of features, hence the double loop here
             for (const otherFeature of featureList) {
-                
+
                 if (otherFeature === feature || otherFeature.properties.id === feature.properties.id) {
                     continue; // We ignore self
                 }
@@ -332,6 +336,7 @@ class GetParsed implements ExtraFunction {
     _name = "get"
     _doc = "Gets the property of the feature, parses it (as JSON) and returns it. Might return 'undefined' if not defined, null, ..."
     _args = ["key"]
+
     _f(params, feat) {
         return key => {
             const value = feat.properties[key]
