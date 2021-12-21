@@ -64,7 +64,6 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             for (let j = i + 1; j < coordinates.length; j++) {
                 const d = GeoOperations.distanceBetween(coordinates[i], coordinates[j])
                 if (d < 0.1) {
-                    console.log("Identical coordinates detected: ", i, " and ", j, ": ", coordinates[i], coordinates[j], "distance is", d)
                     this.identicalTo[j] = i
                 }
             }
@@ -77,7 +76,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
     public async getPreview(): Promise<FeatureSource> {
         const {closestIds, allNodesById} = await this.GetClosestIds();
-        console.log("Generating preview, identicals are ",)
+        console.debug("Generating preview, identicals are ",)
         const preview = closestIds.map((newId, i) => {
             if (this.identicalTo[i] !== undefined) {
                 return undefined
