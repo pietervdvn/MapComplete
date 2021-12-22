@@ -19,7 +19,7 @@ cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-<<<<<<< HEAD
+parcel build --public-url "./"  --no-source-maps "index.html" "404.html" "professional.html" "automaton.html" "land.html" "customGenerator.html" "theme.html" vendor
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
