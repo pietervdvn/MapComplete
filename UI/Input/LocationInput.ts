@@ -15,20 +15,10 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "./Toggle";
-
+import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
 export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
-    private static readonly matchLayer = new LayerConfig(
-        {
-            id: "matchpoint", source: {
-                osmTags: {and: []}
-            },
-            mapRendering: [{
-                location: ["point","centroid"],
-                icon: "./assets/svg/crosshair-empty.svg"
-            }]
-        }, "matchpoint icon", true
-    )
+    private static readonly matchLayer = new LayerConfig(matchpoint, "LocationInput.matchpoint", true)
 
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)

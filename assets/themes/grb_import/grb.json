@@ -349,6 +349,7 @@
         "all_tags"
       ]
     },
+    "address",
     {
       "builtin": "crab_address",
       "override": {
@@ -463,7 +464,7 @@
       "title": "GRB outline",
       "calculatedTags": [
         "_overlaps_with_buildings=feat.overlapWith('OSM-buildings')",
-        "_overlap_with=feat.get('_overlaps_with_buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? ''",
+        "_overlaps_with=feat.get('_overlaps_with_buildings').filter(f => f.overlap > 1 /* square meter */ )[0] ?? ''",
         "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
         "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
@@ -478,16 +479,16 @@
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
         "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
         "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
-        "_overlaps_with_other_features=feat.overlapWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
+        "_intersects_with_other_features=feat.intersectionsWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
       ],
       "tagRenderings": [
         {
           "id": "Import-button",
           "render": "{import_way_button(OSM-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
-            {
-              "if": "_overlaps_with_other_features~*",
-              "then": "This GRB building overlaps with the following features: {_overlaps_with_other_features}.<br/>Fix the overlap and try again"
+            {"#": "Hide import button if intersection with other objects are detected",
+              "if": "_intersects_with_other_features~*",
+              "then": "This GRB building intersects with the following features: {_intersects_with_other_features}.<br/>Fix the overlap and try again"
             },
             {
               "if": {
@@ -532,6 +533,7 @@
               "if": "_osm_obj:addr:housenumber~*",
               "then": "The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}"
             },
+            
             {
               "if": "_osm_obj:id=",
               "then": "No overlapping OpenStreetMap-building found"
@@ -606,6 +608,10 @@
           "icon": {
             "render": "./assets/themes/grb_import/housenumber_blank.svg",
             "mappings": [
+              {
+                "if": "_intersects_with_other_features~*",
+                "then": "./assets/themes/grb_import/warning.svg"
+              },
               {
                 "if": "addr:housenumber=",
                 "then": ""

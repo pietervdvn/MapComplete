@@ -62,7 +62,6 @@ export default class LeftControls extends Combine {
                     const elem = currentViewFL.layerDef.mapRendering[0]?.GenerateLeafletStyle(new UIEventSource(tags), false, {
                         noSize: true
                     })?.html
-                    console.log("Elem is ", elem, "for", tags)
                     if (elem === undefined) {
                         return defaultIcon
                     }

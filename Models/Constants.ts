@@ -18,7 +18,7 @@ export default class Constants {
 
 
     public static readonly added_by_default: string[] = ["gps_location", "gps_location_history", "home_location", "gps_track"]
-    public static readonly no_include: string[] = ["conflation", "left_right_style", "split_point","current_view"]
+    public static readonly no_include: string[] = ["conflation", "left_right_style", "split_point","current_view","matchpoint"]
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */

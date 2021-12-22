@@ -69,7 +69,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length);
             if (Svg.All[iconKey] === undefined) {
-                throw "Builtin SVG asset not found: " + iconPath;
+                throw context+": builtin SVG asset not found: " + iconPath;
             }
         }
         this.iconSize = this.tr("iconSize", "40,40,center");
