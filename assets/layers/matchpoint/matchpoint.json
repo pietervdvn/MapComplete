@@ -3,11 +3,16 @@
   "description": "The default rendering for a locationInput which snaps onto another object",
   "source": {
     "osmTags": {
-      "and": []}
+      "and": []
+    }
   },
-  "mapRendering": [{
-    "location": ["point","centroid"],
-    "icon": "./assets/svg/crosshair-empty.svg"
-  }]
-
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/svg/crosshair-empty.svg"
+    }
+  ]
 }

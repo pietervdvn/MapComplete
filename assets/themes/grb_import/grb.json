@@ -486,7 +486,8 @@
           "id": "Import-button",
           "render": "{import_way_button(OSM-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
-            {"#": "Hide import button if intersection with other objects are detected",
+            {
+              "#": "Hide import button if intersection with other objects are detected",
               "if": "_intersects_with_other_features~*",
               "then": "This GRB building intersects with the following features: {_intersects_with_other_features}.<br/>Fix the overlap and try again"
             },
@@ -533,7 +534,6 @@
               "if": "_osm_obj:addr:housenumber~*",
               "then": "The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}"
             },
-            
             {
               "if": "_osm_obj:id=",
               "then": "No overlapping OpenStreetMap-building found"
