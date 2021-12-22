@@ -16,7 +16,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 export default class PointRenderingConfig extends WithContextLoader {
 
     private static readonly allowed_location_codes = new Set<string>(["point", "centroid", "start", "end"])
-    public readonly location: Set<"point" | "centroid" | "start" | "end">
+    public readonly location: Set<"point" | "centroid" | "start" | "end" | string>
 
     public readonly icon: TagRenderingConfig;
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[];
@@ -69,7 +69,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length);
             if (Svg.All[iconKey] === undefined) {
-                throw "Builtin SVG asset not found: " + iconPath;
+                throw context+": builtin SVG asset not found: " + iconPath;
             }
         }
         this.iconSize = this.tr("iconSize", "40,40,center");

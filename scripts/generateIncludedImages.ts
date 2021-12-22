@@ -31,10 +31,15 @@ function genImages(dryrun = false) {
             svg = "xxx"
         }
 
+        let rawName = name;
+        if(dryrun){
+            rawName = "add";
+        }
+        
         module += `    public static ${name} = "${svg}"\n`
-        module += `    public static ${name}_img = Img.AsImageElement(Svg.${name})\n`
-        module += `    public static ${name}_svg() { return new Img(Svg.${name}, true);}\n`
-        module += `    public static ${name}_ui() { return new FixedUiElement(Svg.${name}_img);}\n\n`
+        module += `    public static ${name}_img = Img.AsImageElement(Svg.${rawName})\n`
+        module += `    public static ${name}_svg() { return new Img(Svg.${rawName}, true);}\n`
+        module += `    public static ${name}_ui() { return new FixedUiElement(Svg.${rawName}_img);}\n\n`
         if (!dryrun) {
             allNames.push(`"${path}": Svg.${name}`)
         }

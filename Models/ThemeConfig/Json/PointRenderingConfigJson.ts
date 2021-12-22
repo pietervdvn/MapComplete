@@ -15,7 +15,7 @@ export default interface PointRenderingConfigJson {
      * All the locations that this point should be rendered at.
      * Using `location: ["point", "centroid"] will always render centerpoint
      */
-    location: ("point" | "centroid" | "start" | "end")[]
+    location: ("point" | "centroid" | "start" | "end" | string)[]
 
     /**
      * The icon for an element.

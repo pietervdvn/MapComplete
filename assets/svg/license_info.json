@@ -72,54 +72,6 @@
     "sources": []
   },
   {
-    "path": "arrow-download.svg",
-    "license": "CC0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-left-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-left-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-left-thin.svg",
-    "license": "CC0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-right-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-right-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
     "path": "back.svg",
     "license": "CC0",
     "authors": [
@@ -374,18 +326,6 @@
     "sources": []
   },
   {
-    "path": "direction.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "direction.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
     "path": "direction_gradient.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -395,38 +335,6 @@
     "path": "direction_gradient.svg",
     "license": "CC0; trivial",
     "authors": [],
-    "sources": []
-  },
-  {
-    "path": "direction_masked.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "direction_masked.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "direction_outline.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "direction_outline.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
     "sources": []
   },
   {
@@ -443,18 +351,6 @@
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "sources": []
-  },
-  {
-    "path": "down.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "down.svg",
-    "license": "CC0; trivial",
-    "authors": [],
     "sources": []
   },
   {
@@ -680,26 +576,6 @@
     ]
   },
   {
-    "path": "home_white_bg.svg",
-    "license": "CC-BY-SA 3.0",
-    "authors": [
-      "Timothy Miller"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
-    ]
-  },
-  {
-    "path": "home_white_bg.svg",
-    "license": "CC-BY-SA 3.0",
-    "authors": [
-      "Timothy Miller"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
-    ]
-  },
-  {
     "path": "josm_logo.svg",
     "license": "CC0",
     "authors": [
@@ -729,18 +605,6 @@
   },
   {
     "path": "layers.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "layersAdd.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "layersAdd.svg",
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
@@ -952,34 +816,6 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
-  },
-  {
-    "path": "or.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "or.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "osm-copyright.svg",
-    "license": "logo; all rights reserved",
-    "authors": [],
-    "sources": [
-      "https://www.OpenStreetMap.org"
-    ]
-  },
-  {
-    "path": "osm-copyright.svg",
-    "license": "logo; all rights reserved",
-    "authors": [],
-    "sources": [
-      "https://www.OpenStreetMap.org"
-    ]
   },
   {
     "path": "osm-logo-us.svg",
