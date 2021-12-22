@@ -1,5 +1,6 @@
 #! /bin/bash
 
+echo "Starting build.Should"
 # The build script; we build the application step by step as building everything at once takes too much RAM
 # Should be run from the repository root
 rm -rf dist/*
