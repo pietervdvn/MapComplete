@@ -36,7 +36,7 @@
     "generate:schemas": "ts2json-schema -p Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && ts-node scripts/fixSchemas.ts ",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
     "reset:layeroverview": "echo {\\\"layers\\\":[], \\\"themes\\\":[]} > ./assets/generated/known_layers_and_themes.json",
-    "generate": "mkdir -p ./assets/generated && npm run reset:layeroverview && npm run generate:images && npm run generate:charging-stations && npm run generate:translations && npm run generate:licenses",
+    "generate": "mkdir -p ./assets/generated && npm run reset:layeroverview && npm run generate:images && npm run generate:charging-stations && npm run generate:translations && npm run generate:licenses && npm run generate:layeroverview",
     "build": "npm run generate && ./scripts/build.sh",
     "generate:charging-stations": "cd ./assets/layers/charging_station && ts-node csvToJson.ts && cd -",
     "prepare-deploy": "npm run generate && npm run test && npm run generate:editor-layer-index && npm run generate:layouts && npm run build",
