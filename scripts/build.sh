@@ -19,7 +19,7 @@ cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "./"  --no-source-maps "index.html" "404.html" "professional.html" "automaton.html" "land.html" "customGenerator.html" "theme.html" vendor
+<<<<<<< HEAD
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
@@ -30,5 +30,5 @@ do
     echo -e " ------------ \n\n"
     # Builds the necessary files for just one theme, e.g. 'bookcases.html' + 'index_bookcases.ts' + supporting file
     # npm run generate && node --max_old_space_size=12000 $(which parcel)  build 
-    parcel build --public-url "./" --no-source-maps "$theme.html" 
+    parcel build --public-url './' --no-source-maps "$theme.html" 
 done
