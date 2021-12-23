@@ -16,7 +16,7 @@
     {
       "location": "point",
       "icon": {
-        "render":         "addSmall:#000",
+        "render": "addSmall:#000",
         "mappings": [
           {
             "if": "detach=yes",

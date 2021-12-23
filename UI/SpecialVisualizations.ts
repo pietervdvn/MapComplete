@@ -37,6 +37,7 @@ import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton";
 import TagApplyButton from "./Popup/TagApplyButton";
 import AutoApplyButton from "./Popup/AutoApplyButton";
+import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -543,7 +544,7 @@ export default class SpecialVisualizations {
                         const t = Translations.t.general.download;
 
                         return new SubtleButton(Svg.download_ui(),
-                            new Combine([t.downloadGpx.SetClass("font-bold text-lg"),
+                            new Combine([t.downloadFeatureAsGpx.SetClass("font-bold text-lg"),
                                 t.downloadGpxHelper.SetClass("subtle")]).SetClass("flex flex-col")
                         ).onClick(() => {
                             console.log("Exporting as GPX!")
@@ -560,6 +561,41 @@ export default class SpecialVisualizations {
                         })
                     }
                 },
+                {
+                    funcName: "export_as_geojson",
+                    docs: "Exports the selected feature as GeoJson-file",
+                    args: [],
+                    constr: (state, tagSource, args) => {
+                        const t = Translations.t.general.download;
+
+                        return new SubtleButton(Svg.download_ui(),
+                            new Combine([t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
+                                t.downloadGeoJsonHelper.SetClass("subtle")]).SetClass("flex flex-col")
+                        ).onClick(() => {
+                            console.log("Exporting as Geojson")
+                            const tags = tagSource.data
+                            const feature = state.allElements.ContainingFeatures.get(tags.id)
+                            const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
+                            const title = matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
+                            const data = JSON.stringify(feature, null, "  ");
+                            Utils.offerContentsAsDownloadableFile(data, title + "_mapcomplete_export.geojson", {
+                                mimetype: "application/vnd.geo+json"
+                            })
+
+
+                        })
+                    }
+                },
+                {
+                    funcName: "open_in_iD",
+                    docs: "Opens the current view in the iD-editor",
+                    args: [],
+                    constr: (state, feature ) => {
+                        return new OpenIdEditor(state, undefined, feature.data.id)
+                    }
+                },
+                
+                
                 {
                     funcName: "clear_location_history",
                     docs: "A button to remove the travelled track information from the device",

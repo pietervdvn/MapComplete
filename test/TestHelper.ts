@@ -56,7 +56,7 @@ export default class T {
      * Returns an empty list if successful
      * @constructor
      */
-    public Run(): ({ testsuite: string, name: string, msg: string } []) {
+    public Run(): { testsuite: string, name: string, msg: string } [] {
         const failures: { testsuite: string, name: string, msg: string } [] = []
         for (const [name, test] of this._tests) {
             try {
