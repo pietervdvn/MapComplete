@@ -559,6 +559,22 @@
                         }
                     },
                     "question": "Gibt es hier eine Speedkletter-Wand?"
+                },
+                "1": {
+                    "mappings": {
+                        "1": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
+                        },
+                        "2": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
+                        },
+                        "0": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                        },
+                        "3": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
+                        }
+                    }
                 }
             },
             "units+": {
@@ -607,7 +623,35 @@
                 },
                 "title": {
                     "render": "Knotenpunkt <strong>{rcn_ref}</strong>"
+                },
+                "name": "Knotenpunkte",
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden.",
+                        "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?"
+                    },
+                    "node-survey:date": {
+                        "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+                        "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+                    }
                 }
+            },
+            "0": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Knotenpunktverbindung <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "Knotenpunktverbindung"
+                },
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
+                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?"
+                    }
+                },
+                "name": "Knotenpunktverbindungen"
             }
         },
         "title": "Fahrrad-Knotenpunktnetzwerke"
@@ -867,7 +911,8 @@
     },
     "hailhydrant": {
         "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
-        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
+        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
+        "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
@@ -1048,5 +1093,27 @@
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            }
+        }
+    },
+    "grb": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            }
+        }
     }
 }
