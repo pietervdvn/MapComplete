@@ -63,7 +63,6 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = [];
-        this.trackAllNodes = false
 
         if (typeof json.language === "string") {
             this.language = [json.language];
@@ -101,7 +100,6 @@ export default class LayoutConfig {
         this.tileLayerSources = (json.tileLayerSources ?? []).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
         const layerInfo = LayoutConfig.ExtractLayers(json, official, context);
         this.layers = layerInfo.layers
-        this.trackAllNodes = layerInfo.extractAllNodes
 
 
         this.clustering = {

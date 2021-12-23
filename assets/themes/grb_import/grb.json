@@ -303,6 +303,25 @@
       ]
     },
     {
+      "id": "service_ways",
+      "name": "Service roads",
+      "description": "A seperate layer with service roads, as to remove them from the intersection testing",
+      "source": {
+        "osmTags": "highway=service"
+      },
+      "mapRendering": [
+        {
+          "width": 4,
+          "color": "#888888"
+        }
+      ],
+      "title": {
+        "render": "Service road"
+      },
+      "tagRenderings": []
+      
+    },
+    {
       "id": "generic_osm_object",
       "name": "All OSM Objects",
       "source": {
@@ -466,7 +485,7 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with_buildings=feat.overlapWith('OSM-buildings')",
+        "_overlaps_with_buildings=feat.overlapWith('OSM-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat.get('_overlaps_with_buildings').filter(f => f.overlap > 1 /* square meter */ )[0] ?? ''",
         "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
         "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
@@ -551,6 +570,12 @@
               "_osm_obj:id~*",
               "addr:street~*",
               "addr:housenumber~*",
+              {
+                "or": [
+                  "addr:street~*",
+                  "addr:housenumber~*"
+                ]
+              },
               {
                 "or": [
                   "addr:street!:={_osm_obj:addr:street}",

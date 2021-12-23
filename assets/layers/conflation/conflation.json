@@ -15,7 +15,15 @@
   "mapRendering": [
     {
       "location": "point",
-      "icon": "addSmall:#000",
+      "icon": {
+        "render":         "addSmall:#000",
+        "mappings": [
+          {
+            "if": "detach=yes",
+            "then": "circle:white;close:#c33"
+          }
+        ]
+      },
       "iconSize": "10,10,center"
     },
     {

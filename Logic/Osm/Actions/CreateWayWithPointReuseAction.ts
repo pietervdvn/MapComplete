@@ -1,4 +1,4 @@
-import OsmChangeAction, {OsmCreateAction} from "./OsmChangeAction";
+import {OsmCreateAction} from "./OsmChangeAction";
 import {Tag} from "../../Tags/Tag";
 import {Changes} from "../Changes";
 import {ChangeDescription} from "./ChangeDescription";
@@ -18,10 +18,34 @@ export interface MergePointConfig {
     mode: "reuse_osm_point" | "move_osm_point"
 }
 
+/**
+ * CreateWayWithPointreuse will create a 'CoordinateInfo' for _every_ point in the way to be created.
+ * 
+ * The CoordinateInfo indicates the action to take, e.g.:
+ * 
+ * - Create a new point
+ * - Reuse an existing OSM point (and don't move it)
+ * - Reuse an existing OSM point (and leave it where it is)
+ * - Reuse another Coordinate info (and don't do anything else with it)
+ * 
+ */
 interface CoordinateInfo {
+    /**
+     * The new coordinate
+     */
     lngLat: [number, number],
+    /**
+     * If set: indicates that this point is identical to an earlier point in the way and that that point should be used.
+     * This is especially needed in closed ways, where the last CoordinateInfo will have '0' as identicalTo
+     */
     identicalTo?: number,
+    /**
+     * Information about the closebyNode which might be reused
+     */
     closebyNodes?: {
+        /**
+         * Distance in meters between the target coordinate and this candidate coordinate
+         */
         d: number,
         node: any,
         config: MergePointConfig
@@ -53,6 +77,8 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
         this._tags = tags;
         this._state = state;
         this._config = config;
+        
+        // The main logic of this class: the coordinateInfo contains all the changes
         this._coordinateInfo = this.CalculateClosebyNodes(coordinates);
 
     }
@@ -219,6 +245,9 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
         return allChanges
     }
 
+    /**
+     * Calculates the main changes.
+     */
     private CalculateClosebyNodes(coordinates: [number, number][]): CoordinateInfo[] {
 
         const bbox = new BBox(coordinates)
@@ -226,6 +255,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
         const allNodes = [].concat(...state.featurePipeline.GetFeaturesWithin("type_node", bbox.pad(1.2)))
         const maxDistance = Math.max(...this._config.map(c => c.withinRangeOfM))
 
+        // Init coordianteinfo with undefined but the same length as coordinates
         const coordinateInfo: {
             lngLat: [number, number],
             identicalTo?: number,
@@ -236,6 +266,8 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
             }[]
         }[] = coordinates.map(_ => undefined)
 
+        
+        // First loop: gather all information...
         for (let i = 0; i < coordinates.length; i++) {
 
             if (coordinateInfo[i] !== undefined) {
@@ -243,8 +275,11 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 continue
             }
             const coor = coordinates[i]
-            // Check closeby (and probably identical) point further in the coordinate list, mark them as duplicate
+            // Check closeby (and probably identical) points further in the coordinate list, mark them as duplicate
             for (let j = i + 1; j < coordinates.length; j++) {
+                // We look into the 'future' of the way and mark those 'future' locations as being the same as this location
+                // The continue just above will make sure they get ignored
+                // This code is important to 'close' ways
                 if (GeoOperations.distanceBetween(coor, coordinates[j]) < 0.1) {
                     coordinateInfo[j] = {
                         lngLat: coor,
@@ -280,6 +315,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 }
             }
 
+            // Sort by distance, closest first
             closebyNodes.sort((n0, n1) => {
                 return n0.d - n1.d
             })
@@ -292,8 +328,9 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
 
         }
 
+        
+        // Second loop: figure out which point moves where without creating conflicts
         let conflictFree = true;
-
         do {
             conflictFree = true;
             for (let i = 0; i < coordinateInfo.length; i++) {

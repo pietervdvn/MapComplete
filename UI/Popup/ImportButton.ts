@@ -232,7 +232,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         onCancel: () => void): BaseUIElement {
         const self = this;
         const confirmationMap = Minimap.createMiniMap({
-            allowMoving: false,
+            allowMoving: state.featureSwitchIsDebugging.data ?? false,
             background: state.backgroundLayer
         })
         confirmationMap.SetStyle("height: 20rem; overflow: hidden").SetClass("rounded-xl")
@@ -295,6 +295,13 @@ export class ConflateButton extends AbstractImportButton {
 
     protected canBeImported(feature: any) {
         return feature.geometry.type === "LineString" || (feature.geometry.type === "Polygon" && feature.geometry.coordinates.length === 1)
+    }
+
+    getLayerDependencies(argsRaw: string[]): string[] {
+        const deps = super.getLayerDependencies(argsRaw);
+        // Force 'type_node' as dependency
+        deps.push("type_node")
+        return deps;
     }
 
     constructElement(state: FeaturePipelineState,

@@ -60,6 +60,12 @@ export default class FeaturePipeline {
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
     private readonly metataggingRecalculated = new UIEventSource<void>(undefined)
 
+    /**
+     * Keeps track of all raw OSM-nodes.
+     * Only initialized if 'type_node' is defined as layer
+     */
+    public readonly fullNodeDatabase? : FullNodeDatabaseSource
+    
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
         state: MapState) {
@@ -129,7 +135,14 @@ export default class FeaturePipeline {
             this.freshnesses.set(id, new TileFreshnessCalculator())
 
             if (id === "type_node") {
-                // Handles by the 'FullNodeDatabaseSource'
+
+                this.fullNodeDatabase = new FullNodeDatabaseSource(
+                    filteredLayer,
+                    tile => {
+                        new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
+                        perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
+                        tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                    });
                 continue;
             }
 
@@ -248,17 +261,8 @@ export default class FeaturePipeline {
                 })
         })
 
-        
-        if (state.layoutToUse.trackAllNodes) {
-            const fullNodeDb = new FullNodeDatabaseSource(
-                state.filteredLayers.data.filter(l => l.layerDef.id === "type_node")[0],
-                tile => {
-                    new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
-                    perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
-                    tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
-                })
-
-            osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => fullNodeDb.handleOsmJson(osmJson, tileId))
+        if(this.fullNodeDatabase !== undefined){
+            osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => this.fullNodeDatabase.handleOsmJson(osmJson, tileId))
         }
 
 

@@ -384,8 +384,8 @@ export class Changes {
             states.set(o.type + "/" + o.id, "unchanged")
         }
 
-        let changed = false;
         for (const change of changes) {
+            let changed = false;
             const id = change.type + "/" + change.id
             if (!objects.has(id)) {
                 // The object hasn't been seen before, so it doesn't exist yet and is newly created by its very definition
@@ -493,7 +493,7 @@ export class Changes {
 
             }
 
-            if (changed && state === "unchanged") {
+            if (changed && states.get(id) === "unchanged") {
                 states.set(id, "modified")
             }
         }
@@ -520,6 +520,7 @@ export class Changes {
 
         })
 
+        console.debug("Calculated the pending changes: ", result.newObjects.length,"new; ", result.modifiedObjects.length,"modified;",result.deletedObjects,"deleted")
         return result
     }
 }
