@@ -308,6 +308,8 @@ export class ConflateButton extends AbstractImportButton {
                      args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<Tag[]>; targetLayer: string },
                      tagSource: UIEventSource<any>, guiState: DefaultGuiState, feature: any, onCancelClicked: () => void): BaseUIElement {
 
+        return new FixedUiElement("ReplaceGeometry is currently very broken - use mapcomplete.osm.be for now").SetClass("alert")
+        
         const nodesMustMatch = args.snap_onto_layers?.split(";")?.map((tag, i) => TagUtils.Tag(tag, "TagsSpec for import button " + i))
 
         const mergeConfigs = []

@@ -13,7 +13,6 @@ import {Utils} from "../../../Utils";
 import {OsmConnection} from "../OsmConnection";
 import {GeoJSONObject} from "@turf/turf";
 import FeaturePipeline from "../../FeatureSource/FeaturePipeline";
-import DeleteAction from "./DeleteAction";
 
 export default class ReplaceGeometryAction extends OsmChangeAction {
     /**
