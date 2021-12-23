@@ -1,5 +1,4 @@
 #! /bin/bash
-: '
 echo "Starting build.Should"
 # The build script; we build the application step by step as building everything at once takes too much RAM
 # Should be run from the repository root
@@ -32,7 +31,6 @@ do
     # npm run generate && node --max_old_space_size=12000 $(which parcel)  build 
     parcel build --public-url './' --no-source-maps "$theme.html" 
 done
-'
 # At last: a workaround; parcel 1.x borks the link to social images; the public-URL (./) is setup incorrectly, so we fix those
 cd dist
 echo -e "Fixing social images..."
