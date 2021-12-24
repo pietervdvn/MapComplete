@@ -249,9 +249,10 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     }
 
     /**
-     * For 'this.feature`, gets a corresponding closest node that alreay exsists
-     * @constructor
-     * @private
+     * For 'this.feature`, gets a corresponding closest node that alreay exsists.
+     * 
+     * This method contains the main logic for this module, as it decides which node gets moved where.
+     * 
      */
     private async GetClosestIds(): Promise<{
 

@@ -309,7 +309,7 @@ export class ConflateButton extends AbstractImportButton {
                      tagSource: UIEventSource<any>, guiState: DefaultGuiState, feature: any, onCancelClicked: () => void): BaseUIElement {
 
         return new FixedUiElement("ReplaceGeometry is currently very broken - use mapcomplete.osm.be for now").SetClass("alert")
-        
+
         const nodesMustMatch = args.snap_onto_layers?.split(";")?.map((tag, i) => TagUtils.Tag(tag, "TagsSpec for import button " + i))
 
         const mergeConfigs = []
@@ -365,19 +365,19 @@ export class ImportWayButton extends AbstractImportButton {
                 {
                     name: "move_osm_point_if",
                     doc: "Moves the OSM-point to the newly imported point if these conditions are met",
-                },{
-                    name:"max_move_distance",
+                }, {
+                name: "max_move_distance",
                 doc: "If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m",
                 defaultValue: "1"
-            },{
-            name:"snap_onto_layers",
-                doc:"If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead",
-                
-            },{
-                name:"snap_to_layer_max_distance",
-            doc:"Distance to distort the geometry to snap to this layer",
-defaultValue: "0.1"
-    }],
+            }, {
+                name: "snap_onto_layers",
+                doc: "If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead",
+
+            }, {
+                name: "snap_to_layer_max_distance",
+                doc: "Distance to distort the geometry to snap to this layer",
+                defaultValue: "0.1"
+            }],
             false
         )
     }
@@ -428,14 +428,14 @@ defaultValue: "0.1"
             }
             mergeConfigs.push(mergeConfig)
         }
-        
+
 
         const moveOsmPointIfTags = args["move_osm_point_if"]?.split(";")?.map((tag, i) => TagUtils.Tag(tag, "TagsSpec for import button " + i))
 
         if (nodesMustMatch !== undefined && moveOsmPointIfTags.length > 0) {
-           const moveDistance = Math.min(20, Number(args["max_move_distance"]))
+            const moveDistance = Math.min(20, Number(args["max_move_distance"]))
             const mergeConfig: MergePointConfig = {
-                mode: "move_osm_point" ,
+                mode: "move_osm_point",
                 ifMatches: new And(moveOsmPointIfTags),
                 withinRangeOfM: moveDistance
             }
