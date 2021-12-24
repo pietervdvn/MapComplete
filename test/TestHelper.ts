@@ -1,9 +1,9 @@
 export default class T {
 
     public readonly name: string;
-    private readonly _tests: [string, (() => void)][];
+    private readonly _tests: [string, (() => (void | Promise<void>))][];
 
-    constructor(testsuite: string, tests: [string, () => void][]) {
+    constructor(testsuite: string, tests: [string, () => (Promise<void> | void)][]) {
         this.name = testsuite
         this._tests = tests;
     }
@@ -60,7 +60,14 @@ export default class T {
         const failures: { testsuite: string, name: string, msg: string } [] = []
         for (const [name, test] of this._tests) {
             try {
-                test();
+                const r = test()
+                if (r instanceof Promise) {
+                    r.catch(e => {
+                        console.log("ASYNC ERROR: ", e, e.stack)
+                        failures.push({testsuite: this.name, name: name, msg: "" + e});
+                    });
+                }
+
             } catch (e) {
                 console.log("ERROR: ", e, e.stack)
                 failures.push({testsuite: this.name, name: name, msg: "" + e});

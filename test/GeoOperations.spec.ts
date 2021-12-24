@@ -3,6 +3,7 @@ import {equal} from "assert";
 import T from "./TestHelper";
 import {GeoOperations} from "../Logic/GeoOperations";
 import {BBox} from "../Logic/BBox";
+import * as turf from "@turf/turf"
 
 export default class GeoOperationsSpec extends T {
 
@@ -187,7 +188,7 @@ export default class GeoOperationsSpec extends T {
                 ],
                 ["Regression test: intersection/overlap", () => {
 
-                    const polyGrb ={
+                    const polyGrb = {
                         "type": "Feature",
                         "properties": {
                             "osm_id": "25189153",
@@ -351,10 +352,15 @@ export default class GeoOperationsSpec extends T {
                         }
                     }
 
+                    const p0 = turf.polygon(polyGrb.geometry.coordinates)
+                    Assert.notEqual(p0, null)
+                    const p1 = turf.polygon(polyHouse.geometry.coordinates)
+                    Assert.notEqual(p1, null)
+                    
                     const overlaps = GeoOperations.calculateOverlap(polyGrb, [polyHouse])
-                    Assert.equal(overlaps.length, 1)
-                    const overlapsRev= GeoOperations.calculateOverlap(polyHouse, [polyGrb])
-                    Assert.equal(overlaps.length, 1)
+                    Assert.equal(overlaps.length, 0)
+                    const overlapsRev = GeoOperations.calculateOverlap(polyHouse, [polyGrb])
+                    Assert.equal(overlapsRev.length, 0)
 
                 }]
             ]
