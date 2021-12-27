@@ -15,6 +15,9 @@
             "street": {
                 "question": "In welcher Straße befindet sich diese Adresse?",
                 "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+            },
+            "fixme": {
+                "question": "Was sollte hier korrigiert werden? Bitte erläutern"
             }
         },
         "title": {
@@ -1089,6 +1092,120 @@
         "presets": {
             "1": {
                 "title": "Ladestation für e-bikes"
+            }
+        },
+        "tagRenderings": {
+            "Type": {
+                "mappings": {
+                    "4": {
+                        "then": "<b>Busse</b> können hier geladen werden"
+                    },
+                    "0": {
+                        "then": "<b>Fahrräder</b> können hier geladen werden"
+                    },
+                    "1": {
+                        "then": "<b>Autos</b> können hier geladen werden"
+                    },
+                    "2": {
+                        "then": "<b>Roller</b> können hier geladen werden"
+                    },
+                    "3": {
+                        "then": "<b>LKW</b> können hier geladen werden"
+                    }
+                },
+                "question": "Welche Fahrzeuge dürfen hier laden?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Eigentlich ist {operator} das Netzwerk"
+                    }
+                },
+                "render": "Diese Ladestation wird betrieben von {operator}",
+                "question": "Wer ist der Betreiber dieser Ladestation?"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "1": {
+                        "then": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten"
+                    },
+                    "0": {
+                        "then": "Keine zusätzlichen Parkkosten während des Ladens"
+                    }
+                },
+                "question": "Muss man während des Ladens eine Parkgebühr bezahlen?"
+            },
+            "Authentication": {
+                "mappings": {
+                    "1": {
+                        "then": "Authentifizierung per App"
+                    },
+                    "0": {
+                        "then": "Authentifizierung per Mitgliedskarte"
+                    },
+                    "3": {
+                        "then": "Authentifizierung per SMS ist möglich"
+                    },
+                    "2": {
+                        "then": "Authentifizierung per Anruf ist möglich"
+                    },
+                    "4": {
+                        "then": "Authentifizierung per NFC ist möglich"
+                    },
+                    "5": {
+                        "then": "Authentifizierung per Geldkarte ist möglich"
+                    },
+                    "6": {
+                        "then": "Authentifizierung per Kreditkarte ist möglich"
+                    },
+                    "7": {
+                        "then": "Das Laden ist hier (auch) ohne Authentifizierung möglich"
+                    }
+                },
+                "question": "Welche Art der Authentifizierung ist an der Ladestation möglich?"
+            },
+            "Available_charging_stations (generated)": {
+                "question": "Welche Ladeanschlüsse gibt es hier?"
+            },
+            "OH": {
+                "question": "Wann ist diese Ladestation geöffnet?",
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet (einschließlich Feiertage)"
+                    }
+                }
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird"
+                    },
+                    "1": {
+                        "then": "Nicht Teil eines größeren Netzwerks"
+                    }
+                },
+                "question": "Ist diese Ladestation Teil eines Netzwerks?",
+                "render": "Teil des Netzwerks <b>{network}</b>"
+            },
+            "Operational status": {
+                "mappings": {
+                    "1": {
+                        "then": "Diese Ladestation ist defekt"
+                    },
+                    "2": {
+                        "then": "Hier ist eine Ladestation geplant"
+                    },
+                    "0": {
+                        "then": "Diese Ladestation ist betriebsbereit"
+                    },
+                    "3": {
+                        "then": "Hier wird eine Ladestation errichtet"
+                    },
+                    "4": {
+                        "then": "Diese Ladestation wurde dauerhaft geschlossen und wird nicht mehr benutzt, ist aber noch sichtbar"
+                    }
+                },
+                "question": "Ist dieser Ladepunkt in Betrieb?"
             }
         }
     },
