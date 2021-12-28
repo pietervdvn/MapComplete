@@ -184,8 +184,30 @@
           }
         ]
       },
+      "fill":"no",
       "width": {
         "render": "8"
+      }
+    },
+    {
+      "color": {
+        "render": "#05d7fc44",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name:etymology=",
+                "name:etymology:wikidata="
+              ]
+            },
+            "then": "#fcca0544"
+          }
+        ]
+      },
+      "fill":"no",
+      "offset":-12,
+      "width": {
+        "render": "16"
       }
     }
   ]
