@@ -543,7 +543,7 @@
       "condition": "cuisine=friture"
     },
     "service:electricity",
-    "dog-access"
+    "dog-access","reviews"
   ],
   "filter": [
     {
@@ -614,7 +614,7 @@
           }
         }
       ]
-    },"reviews"
+    }
   ],
   "deletion": {
     "softDeletionTags": {
