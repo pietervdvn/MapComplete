@@ -184,30 +184,15 @@
           }
         ]
       },
-      "fill":"no",
+      "fill": "no",
       "width": {
-        "render": "8"
-      }
-    },
-    {
-      "color": {
-        "render": "#05d7fc44",
+        "render": "8",
         "mappings": [
           {
-            "if": {
-              "and": [
-                "name:etymology=",
-                "name:etymology:wikidata="
-              ]
-            },
-            "then": "#fcca0544"
+            "if": "_geometry:type=Polygon",
+            "then": "16"
           }
         ]
-      },
-      "fill":"no",
-      "offset":-12,
-      "width": {
-        "render": "16"
       }
     }
   ]
