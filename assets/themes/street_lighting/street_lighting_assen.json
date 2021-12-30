@@ -19,7 +19,7 @@
   "layers": [
     "street_lamps",
     {
-      "id": "Assen",
+      "id": "assen",
       "name": "Dataset Assen",
       "source": {
         "osmTags": "Lichtmastnummer~*",

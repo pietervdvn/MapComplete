@@ -350,8 +350,19 @@ export default class ValidatedTextField {
         ValidatedTextField.tp(
             "email",
             "An email adress",
-            (str) => EmailValidator.validate(str),
-            undefined,
+            (str) => {
+                if(str.startsWith("mailto:")){
+                    str = str.substring("mailto:".length)
+                }
+                return EmailValidator.validate(str);
+            },
+            str => {
+                if(str === undefined){return undefined}
+                if(str.startsWith("mailto:")){
+                    str = str.substring("mailto:".length)
+                }
+                return str;
+            },
             undefined,
             "email"),
         ValidatedTextField.tp(

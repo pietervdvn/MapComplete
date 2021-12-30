@@ -58,6 +58,12 @@ export default class LayoutConfig {
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
+        if(json.id.toLowerCase() !== json.id){
+            throw "The id of a theme should be lowercase: "+json.id
+        }
+        if(json.id.match(/[a-z0-9-_]/) == null){
+            throw "The id of a theme should match [a-z0-9-_]*: "+json.id
+        }
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
         this.credits = json.credits;

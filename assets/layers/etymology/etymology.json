@@ -184,8 +184,15 @@
           }
         ]
       },
+      "fill": "no",
       "width": {
-        "render": "8"
+        "render": "8",
+        "mappings": [
+          {
+            "if": "_geometry:type=Polygon",
+            "then": "16"
+          }
+        ]
       }
     }
   ]

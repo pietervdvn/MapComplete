@@ -16,6 +16,7 @@
     + [left_right_style](#left_right_style)
     + [split_point](#split_point)
     + [current_view](#current_view)
+    + [matchpoint](#matchpoint)
 1. [Normal layers](#normal-layers)
   - [Frequently reused layers](#frequently-reused-layers)
     + [bicycle_library](#bicycle_library)
@@ -159,6 +160,7 @@
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
   - [current_view](#current_view)
+  - [matchpoint](#matchpoint)
  
 
 ### gps_location 
@@ -284,6 +286,19 @@ A meta-layer which contains one single feature, namely the BBOX of the current m
 The icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'.
 
 [Go to the source code](../assets/layers/current_view/current_view.json)
+
+
+
+  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
+ 
+
+### matchpoint 
+
+
+
+The default rendering for a locationInput which snaps onto another object
+
+[Go to the source code](../assets/layers/matchpoint/matchpoint.json)
 
 
 
