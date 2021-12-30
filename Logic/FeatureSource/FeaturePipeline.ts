@@ -92,7 +92,7 @@ export default class FeaturePipeline {
                 if (location?.zoom === undefined) {
                     return false;
                 }
-                let minzoom = Math.min(...state.layoutToUse.layers.map(layer => layer.minzoom ?? 18));
+                let minzoom = Math.min(...state.filteredLayers.data.map(layer => layer.layerDef.minzoom ?? 18));
                 return location.zoom >= minzoom;
             }
         );
@@ -312,7 +312,7 @@ export default class FeaturePipeline {
 
 
         // Whenever fresh data comes in, we need to update the metatagging
-        self.newDataLoadedSignal.stabilized(250).addCallback(src => {
+        self.newDataLoadedSignal.stabilized(250).addCallback(_ => {
             self.updateAllMetaTagging()
         })
 

@@ -1,14 +1,22 @@
 import T from "./TestHelper";
 import {Utils} from "../Utils";
+import ReplaceGeometryAction from "../Logic/Osm/Actions/ReplaceGeometryAction";
+import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
+import {Tag} from "../Logic/Tags/Tag";
+import MapState from "../Logic/State/MapState";
+import * as grb from "../assets/themes/grb_import/grb.json"
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import * as Assert from "assert";
 
 export default class ReplaceGeometrySpec extends T {
     constructor() {
         super("ReplaceGeometry", [
             ["Simple house replacement", async () => {
-                const coordinates = <[number, number][]>[[
-                    3.216690793633461,
-                    51.21474084112525
-                ],
+                const coordinates = <[number, number][]>[
+                    [
+                        3.216690793633461,
+                        51.21474084112525
+                    ],
                     [
                         3.2167256623506546,
                         51.214696737309964
@@ -50,6 +58,15 @@ export default class ReplaceGeometrySpec extends T {
                         51.21474084112525
                     ]
                 ]
+
+                const targetFeature = {
+                    type: "Feature",
+                    properties: {},
+                    geometry: {
+                        type: "Polygon",
+                        coordinates
+                    }
+                }
 
                 Utils.injectJsonDownloadForTests(
                     "https://www.openstreetmap.org/api/0.6/way/160909312/full",
@@ -170,12 +187,146 @@ export default class ReplaceGeometrySpec extends T {
                     }
                 )
 
-
                 const wayId = "way/160909312"
-                const url = `https://www.openstreetmap.org/api/0.6/${wayId}/full`;
-                const rawData = await Utils.downloadJsonCached(url, 1000)
+
+                const state = new MapState(
+                    new LayoutConfig(<any>grb, true, "ReplaceGeometrySpec.grbtheme")
+                )
+                const featurePipeline = new FeaturePipeline(
+                    _ => {
+                    },
+                    state
+                )
+
+                const action = new ReplaceGeometryAction({
+                        osmConnection: undefined,
+                        featurePipeline
+                    }, targetFeature, wayId, {
+                        theme: "test"
+                    }
+                )
+                const info = await action.GetClosestIds()
+                console.log(info)
+                Assert.equal(coordinates.length, 11)
+            }],
+            ["Advanced merge case with connections and tags", async () => {
 
 
+                const osmWay = "way/323230330";
+                const grb_data = {
+                    "type": "Feature",
+                    "properties": {},
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    4.483118100000016,
+                                    51.028366499999706
+                                ],
+                                [
+                                    4.483135099999986,
+                                    51.028325800000005
+                                ],
+                                [
+                                    4.483137700000021,
+                                    51.02831960000019
+                                ],
+                                [
+                                    4.4831429000000025,
+                                    51.0283205
+                                ],
+                                [
+                                    4.483262199999987,
+                                    51.02834059999982
+                                ],
+                                [
+                                    4.483276700000019,
+                                    51.028299999999746
+                                ],
+                                [
+                                    4.483342100000037,
+                                    51.02830730000009
+                                ],
+                                [
+                                    4.483340700000012,
+                                    51.028331299999934
+                                ],
+                                [
+                                    4.483346499999953,
+                                    51.02833189999984
+                                ],
+                                [
+                                    4.483290600000001,
+                                    51.028500699999846
+                                ],
+                                [
+                                    4.4833335999999635,
+                                    51.02851150000015
+                                ],
+                                [
+                                    4.4833433000000475,
+                                    51.028513999999944
+                                ],
+                                [
+                                    4.483312899999958,
+                                    51.02857759999998
+                                ],
+                                [
+                                    4.483141100000033,
+                                    51.02851780000015
+                                ],
+                                [
+                                    4.483193100000022,
+                                    51.028409999999894
+                                ],
+                                [
+                                    4.483206100000019,
+                                    51.02838310000014
+                                ],
+                                [
+                                    4.483118100000016,
+                                    51.028366499999706
+                                ]
+                            ]
+                        ]
+                    },
+                    "id": "https://betadata.grbosm.site/grb?bbox=498980.9206456306,6626173.107985358,499133.7947022009,6626325.98204193/30",
+                    "bbox": {
+                        "maxLat": 51.02857759999998,
+                        "maxLon": 4.483346499999953,
+                        "minLat": 51.028299999999746,
+                        "minLon": 4.483118100000016
+                    },
+                    "_lon": 4.483232299999985,
+                    "_lat": 51.02843879999986
+                }
+
+                const config = new LayoutConfig(<any>grb, true, "ReplaceGeometrySpec.grbtheme")
+                const state = new MapState(
+                    config, {
+                        attemptLogin: false
+                    }
+                )
+                const featurepipeline = new FeaturePipeline(
+                    _ => {
+                    },
+                    state
+                )
+
+
+                const action = new ReplaceGeometryAction({
+                        osmConnection: undefined,
+                        featurePipeline: featurepipeline
+                    }, grb_data,
+                    osmWay,
+                    {
+                        theme: "test",
+                        newTags: [new Tag("test", "yes")]
+                    })
+
+                const info = await action.GetClosestIds()
+                console.log(info)
             }]
         ]);
     }

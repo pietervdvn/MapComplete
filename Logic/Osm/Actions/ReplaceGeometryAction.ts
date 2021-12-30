@@ -216,16 +216,16 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
             }
             for (const nodeId of detachedNodeIds) {
-                const osmNode = nodeDb.GetNode(nodeId)
-                const parentWayIds: number[] = JSON.parse(osmNode.tags["parent_way_ids"])
-                const index = parentWayIds.indexOf(osmWay.id)
+                const parentWays = nodeDb.GetParentWays(nodeId)
+                const index = parentWays.data.map(w => w.id).indexOf(osmWay.id)
                 if(index < 0){
                     console.error("ReplaceGeometryAction is trying to detach node "+nodeId+", but it isn't listed as being part of way "+osmWay.id)
                     continue;
                 }
-                parentWayIds.splice(index, 1)
-                osmNode.tags["parent_way_ids"] = JSON.stringify(parentWayIds)
-                if(parentWayIds.length == 0){
+                // We detachted this node - so we unregister
+                parentWays.data.splice(index, 1)
+                parentWays.ping();
+                if(parentWays.data.length == 0){
                     // This point has no other ways anymore - lets clean it!
                     console.log("Removing node "+nodeId, "as it isn't needed anymore by any way")
                     
@@ -254,7 +254,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
      * This method contains the main logic for this module, as it decides which node gets moved where.
      * 
      */
-    private async GetClosestIds(): Promise<{
+    public async GetClosestIds(): Promise<{
 
         // A list of the same length as targetCoordinates, containing which OSM-point to move. If undefined, a new point will be created
         closestIds: number[],
@@ -282,11 +282,33 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         const allNodes = parsed.filter(o => o.type === "node")
 
         /**
-         * For every already existing OSM-point, we calculate the distance to every target point
+         * For every already existing OSM-point, we calculate:
+         * 
+         * - the distance to every target point.
+         * - Wether this node has (other) parent ways, which might restrict movement
+         * - Wether this node has tags set
+         * 
+         * Having tags and/or being connected to another way indicate that there is some _relation_ with objects in the neighbourhood.
+         * 
+         * The Replace-geometry action should try its best to honour these. Some 'wiggling' is allowed (e.g. moving an entrance a bit), but these relations should not be broken.l
          */
-
-        const distances = new Map<number /* osmId*/, number[] /* target coordinate index --> distance (or undefined if a duplicate)*/>();
+        const distances = new Map<number /* osmId*/,
+             /** target coordinate index --> distance (or undefined if a duplicate)*/
+                number[]>();
         for (const node of allNodes) {
+            const nodesWithAllParents = this.state.featurePipeline.fullNodeDatabase
+            if (nodesWithAllParents === undefined) {
+                throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
+            }
+            
+            let parentWayIds = nodesWithAllParents.GetParentWays(node.id)
+            
+            
+            
+            
+            
+            
+            
             const nodeDistances = this.targetCoordinates.map(_ => undefined)
             for (let i = 0; i < this.targetCoordinates.length; i++) {
                 if (this.identicalTo[i] !== undefined) {
@@ -299,17 +321,18 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             distances.set(node.id, nodeDistances)
         }
 
+        const closestIds = this.targetCoordinates.map(_ => undefined)
+        const unusedIds = []
+        {
         /**
          * Then, we search the node that has to move the least distance and add this as mapping.
          * We do this until no points are left
          */
         let candidate: number;
         let moveDistance: number;
-        const closestIds = this.targetCoordinates.map(_ => undefined)
         /**
          * The list of nodes that are _not_ used anymore, typically if there are less targetCoordinates then source coordinates
          */
-        const unusedIds = []
         do {
             candidate = undefined;
             moveDistance = Infinity;
@@ -353,7 +376,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 }
             }
         } while (candidate !== undefined)
-
+    }
 
         // If there are still unused values in 'distances', they are definitively unused
         distances.forEach((_, nodeId) => {

@@ -56,16 +56,18 @@ export default class T {
      * Returns an empty list if successful
      * @constructor
      */
-    public Run(): { testsuite: string, name: string, msg: string } [] {
+    public async Run(): Promise<{ testsuite: string, name: string, msg: string } []> {
         const failures: { testsuite: string, name: string, msg: string } [] = []
         for (const [name, test] of this._tests) {
             try {
                 const r = test()
                 if (r instanceof Promise) {
-                    r.catch(e => {
+                    try {
+                        await r
+                    } catch (e) {
                         console.log("ASYNC ERROR: ", e, e.stack)
                         failures.push({testsuite: this.name, name: name, msg: "" + e});
-                    });
+                    }
                 }
 
             } catch (e) {

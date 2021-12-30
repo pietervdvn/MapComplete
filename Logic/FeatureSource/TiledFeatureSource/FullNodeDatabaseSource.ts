@@ -3,6 +3,7 @@ import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {OsmNode, OsmObject, OsmWay} from "../../Osm/OsmObject";
 import SimpleFeatureSource from "../Sources/SimpleFeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
+import {UIEventSource} from "../../UIEventSource";
 
 
 export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSource & Tiled> {
@@ -10,6 +11,7 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
     private readonly onTileLoaded: (tile: (Tiled & FeatureSourceForLayer)) => void;
     private readonly layer: FilteredLayer
     private readonly nodeByIds = new Map<number, OsmNode>();
+    private readonly parentWays = new Map<number, UIEventSource<OsmWay[]>>()
 
     constructor(
         layer: FilteredLayer,
@@ -35,7 +37,6 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
             this.nodeByIds.set(osmNode.id, osmNode)
         }
 
-        const parentWaysByNodeId = new Map<number, OsmWay[]>()
         for (const osmObj of allObjects) {
             if (osmObj.type !== "way") {
                 continue
@@ -43,16 +44,20 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
             const osmWay = <OsmWay>osmObj;
             for (const nodeId of osmWay.nodes) {
 
-                if (!parentWaysByNodeId.has(nodeId)) {
-                    parentWaysByNodeId.set(nodeId, [])
+                if (!this.parentWays.has(nodeId)) {
+                    const src =  new UIEventSource<OsmWay[]>([])
+                    this.parentWays.set(nodeId,src)
+                    src.addCallback(parentWays => {
+                        const tgs = nodesById.get(nodeId).tags
+                        tgs    ["parent_ways"] = JSON.stringify(parentWays.map(w => w.tags))
+                        tgs["parent_way_ids"] = JSON.stringify(parentWays.map(w => w.id))
+                    })
                 }
-                parentWaysByNodeId.get(nodeId).push(osmWay)
+                const src = this.parentWays.get(nodeId)
+                src.data.push(osmWay)
+                src.ping();
             }
         }
-        parentWaysByNodeId.forEach((allWays, nodeId) => {
-            nodesById.get(nodeId).tags["parent_ways"] = JSON.stringify(allWays.map(w => w.tags))
-            nodesById.get(nodeId).tags["parent_way_ids"] = JSON.stringify(allWays.map(w => w.id))
-        })
         const now = new Date()
         const asGeojsonFeatures = Array.from(nodesById.values()).map(osmNode => ({
             feature: osmNode.asGeoJson(), freshness: now
@@ -71,10 +76,18 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
      * @param id
      * @constructor
      */
-    public GetNode(id: number) : OsmNode {
+    public GetNode(id: number): OsmNode {
         return this.nodeByIds.get(id)
     }
 
+    /**
+     * Gets the parent way list
+     * @param nodeId
+     * @constructor
+     */
+    public GetParentWays(nodeId: number): UIEventSource<OsmWay[]> {
+        return this.parentWays.get(nodeId)
+    }
 
 }
 
