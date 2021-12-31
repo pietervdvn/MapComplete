@@ -1,0 +1,53 @@
+{
+  "id": "recycling",
+  "name": {
+    "en": "Recycling",
+    "nl": "Recycling"
+  },
+  "description": {
+    "en": "A layer with recycling containers and centres",
+    "nl": "Een laag met recyclagingcontainers en -centrums"
+  },
+  "source": {
+    "osmTags": "amenity=recycling"
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Recycling facility",
+      "nl": "Recyclingfaciliteit"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/recycling/recycling-14.svg"
+    }
+  ],
+  "presets": [],
+  "tagRenderings": [
+    {
+      "id": "recycling-type",
+      "mappings": [
+        {
+          "if": "recycling-type=container",
+          "then": {
+            "en": "This is a recycling container",
+            "nl": "Dit is een recyclingcontainer"
+          }
+        },
+        {
+          "if": "recycling-type=centre",
+          "then": {
+            "en": "This is a recycling centre",
+            "nl": "Dit is een recyclingcentrum"
+          }
+        }
+      ]
+    }
+  ],
+  "filter": []
+}
