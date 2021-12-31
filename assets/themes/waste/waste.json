@@ -24,6 +24,9 @@
       "override": {
         "minzoom": 12
       }
+    },
+    {
+      "builtin": "recycling"
     }
   ]
 }
