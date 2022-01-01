@@ -3688,7 +3688,7 @@
                         "then": "Dit is een ondergrondse container"
                     },
                     "1": {
-                        "then": "Deze container bevindt binnen"
+                        "then": "Deze container bevindt zich binnen"
                     },
                     "2": {
                         "then": "Deze container is buiten"

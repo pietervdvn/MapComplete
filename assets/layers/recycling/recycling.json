@@ -92,7 +92,7 @@
           "if": "location=indoor",
           "then": {
             "en": "This container is located indoors",
-            "nl": "Deze container bevindt binnen"
+            "nl": "Deze container bevindt zich binnen"
           }
         },
         {
