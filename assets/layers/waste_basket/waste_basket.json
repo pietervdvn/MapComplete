@@ -220,7 +220,8 @@
             "en": "Waste basket with dispenser for (dog) excrement bags",
             "nl": "Vuilnisbak met verdeler voor hondenpoepzakjes",
             "de": "Abfalleimer mit Spender für (Hunde-)Kotbeutel"
-          }
+          },
+          "osmTags": "vending=dog_excrement_bag"
         }
       ]
     }
