@@ -64,7 +64,7 @@ export default class ReplaceGeometrySpec extends T {
                     properties: {},
                     geometry: {
                         type: "Polygon",
-                        coordinates
+                        coordinates: [coordinates]
                     }
                 }
 

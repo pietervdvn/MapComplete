@@ -53,7 +53,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                             return viz.func.constr(State.state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
-                            return new FixedUiElement(`Could not generate special rendering for ${viz.func}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
+                            return new FixedUiElement(`Could not generate special rendering for ${viz.func.funcName}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
                         }
                     }
                 ))
