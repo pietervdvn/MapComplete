@@ -1,0 +1,12 @@
+[
+  {
+    "path": "waste_disposal.svg",
+    "license": "CC0",
+    "authors": [
+      "kocio-pl"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/waste_disposal.svg"
+    ]
+  }
+]

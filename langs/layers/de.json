@@ -3092,6 +3092,37 @@
     },
     "waste_basket": {
         "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Typen"
+                    },
+                    "1": {
+                        "question": "Mülleimer für Zigaretten"
+                    },
+                    "2": {
+                        "question": "Mülleimer für Drogen"
+                    },
+                    "3": {
+                        "question": "Mülleimer für Hundekot"
+                    },
+                    "4": {
+                        "question": "Mülleimer für allgemeinen Müll"
+                    },
+                    "5": {
+                        "question": "Mülleimer für Nadeln und andere scharfe Gegenstände"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Abfalleimer mit Spender für (Hunde-)Kotbeutel"
+                    }
+                }
+            }
+        },
         "mapRendering": {
             "0": {
                 "iconSize": {

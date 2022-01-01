@@ -74,10 +74,10 @@
       ]
     },
     {
-      "id": "container-underground",
+      "id": "container-location",
       "question": {
-        "en": "Is this container underground?",
-        "nl": "Is deze container ondergrond?"
+        "en": "Where is this container located?",
+        "nl": "Waar bevindt deze container zich?"
       },
       "condition": "recycling_type=container",
       "mappings": [
@@ -89,10 +89,17 @@
           }
         },
         {
+          "if": "location=indoor",
+          "then": {
+            "en": "This container is located indoors",
+            "nl": "Deze container bevindt binnen"
+          }
+        },
+        {
           "if": "location=",
           "then": {
-            "en": "This container is not underground",
-            "nl": "Deze container is niet ondergronds"
+            "en": "This container is located outdoors",
+            "nl": "Deze container is buiten"
           }
         }
       ]
@@ -414,7 +421,6 @@
           },
           "osmTags": "recycling:small_electrical_appliances=yes"
         }
-
       ]
     }
   ]

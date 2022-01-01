@@ -208,7 +208,7 @@
             "nl": "Vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
             "de": "Mülleimer für Nadeln und andere scharfe Gegenstände"
           },
-          "osmTags": "waste=sharps"	
+          "osmTags": "waste=sharps"
         }
       ]
     },

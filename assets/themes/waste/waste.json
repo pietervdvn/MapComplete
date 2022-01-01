@@ -27,6 +27,9 @@
     },
     {
       "builtin": "recycling"
+    },
+    {
+      "builtin": "waste_disposal"
     }
   ]
 }
