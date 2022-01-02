@@ -3777,6 +3777,14 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Recyclingcentrum"
+                },
+                "1": {
+                    "then": "Recyclingcontainer"
+                }
+            },
             "render": "Recyclingfaciliteit"
         }
     },

@@ -16,7 +16,23 @@
     "render": {
       "en": "Recycling facility",
       "nl": "Recyclingfaciliteit"
-    }
+    },
+    "mappings": [
+      {
+        "if": "recycling_type=centre",
+        "then": {
+          "en": "Recycling centre",
+          "nl": "Recyclingcentrum"
+        }
+      },
+      {
+        "if": "recycling_type=container",
+        "then": {
+          "en": "Recycling container",
+          "nl": "Recyclingcontainer"
+        }
+      }
+    ]
   },
   "mapRendering": [
     {
@@ -24,7 +40,77 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/recycling/recycling-14.svg"
+      "icon": "./assets/layers/recycling/recycling-14.svg",
+      "iconBadges": [
+        {
+          "if": "recycling:batteries=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/batteries.svg"
+        },
+        {
+          "if": "recycling:beverage_cartons=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/beverage_cartons.svg"
+        },
+        {
+          "if": "recycling:cans=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/cans.svg"
+        },
+        {
+          "if": "recycling:clothes=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/clothes.svg"
+        },
+        {
+          "if": "recycling:cooking_oil=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/cooking_oil.svg"
+        },
+        {
+          "if": "recycling:engine_oil=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/engine_oil.svg"
+        },
+        {
+          "if": "recycling:glass=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/glass.svg"
+        },
+        {
+          "if": "recycling:glass_bottles=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/glass_bottles.svg"
+        },
+        {
+          "if": "recycling:green_waste=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/garden_waste.svg"
+        },
+        {
+          "if": "recycling:newspaper=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/newspaper.svg"
+        },
+        {
+          "if": "recycling:paper=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/paper.svg"
+        },
+        {
+          "if": "recycling:plastic_bottles=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/plastic_bottles.svg"
+        },
+        {
+          "if": "recycling:plastic_packaging=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/plastic_packaging.svg"
+        },
+        {
+          "if": "recycling:plastic=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/plastic.svg"
+        },
+        {
+          "if": "recycling:scrap_metal=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/scrap_metal.svg"
+        },
+        {
+          "if": "recyling:shoes=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/shoes.svg"
+        },
+        {
+          "if": "recycling:small_electrical_appliances=yes",
+          "then": "circle:#FFFFFF;./assets/layers/recycling/small_electrical_appliances.svg"
+        }
+      ]
     }
   ],
   "presets": [
@@ -217,7 +303,7 @@
           }
         },
         {
-          "if": "recylcing:plastic=yes",
+          "if": "recycling:plastic=yes",
           "ifnot": "recycling:plastic=",
           "then": {
             "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic.svg'/> Plastic can be recycled here</div>",
