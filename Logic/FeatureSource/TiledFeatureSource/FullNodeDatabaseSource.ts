@@ -9,6 +9,7 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
     public readonly loadedTiles = new Map<number, FeatureSource & Tiled>()
     private readonly onTileLoaded: (tile: (Tiled & FeatureSourceForLayer)) => void;
     private readonly layer: FilteredLayer
+    private readonly nodeByIds = new Map<number, OsmNode>();
 
     constructor(
         layer: FilteredLayer,
@@ -31,6 +32,7 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
             }
             const osmNode = <OsmNode>osmObj;
             nodesById.set(osmNode.id, osmNode)
+            this.nodeByIds.set(osmNode.id, osmNode)
         }
 
         const parentWaysByNodeId = new Map<number, OsmWay[]>()
@@ -49,6 +51,7 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
         }
         parentWaysByNodeId.forEach((allWays, nodeId) => {
             nodesById.get(nodeId).tags["parent_ways"] = JSON.stringify(allWays.map(w => w.tags))
+            nodesById.get(nodeId).tags["parent_way_ids"] = JSON.stringify(allWays.map(w => w.id))
         })
         const now = new Date()
         const asGeojsonFeatures = Array.from(nodesById.values()).map(osmNode => ({
@@ -60,6 +63,16 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
         this.loadedTiles.set(tileId, featureSource)
         this.onTileLoaded(featureSource)
 
+    }
+
+    /**
+     * Returns the OsmNode with the corresponding id (undefined if not found)
+     * Note that this OsmNode will have a calculated tag 'parent_ways' and 'parent_way_ids', which are resp. stringified lists of parent way tags and ids
+     * @param id
+     * @constructor
+     */
+    public GetNode(id: number) : OsmNode {
+        return this.nodeByIds.get(id)
     }
 
 

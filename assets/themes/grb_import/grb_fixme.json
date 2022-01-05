@@ -31,7 +31,7 @@
   },
   "layers": [
     {
-      "id": "OSM-buildings-fixme",
+      "id": "osm-buildings-fixme",
       "name": "OSM-buildings with a fixme",
       "source": {
         "osmTags": {

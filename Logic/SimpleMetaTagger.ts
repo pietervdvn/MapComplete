@@ -7,7 +7,6 @@ import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {CountryCoder} from "latlon2country"
-import ScriptUtils from "../scripts/ScriptUtils";
 
 
 export class SimpleMetaTagger  {
@@ -409,7 +408,21 @@ export default class SimpleMetaTaggers {
             feature.properties["_loaded:datetime"] = datetime(freshness);
             return true;
         }
+    );
+    
+    public static geometryType = new SimpleMetaTagger(
+        {
+            keys:["_geometry:type"],
+            doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`",
+        },
+        (feature, _) => {
+            const changed = feature.properties["_geometry:type"] === feature.geometry.type;
+            feature.properties["_geometry:type"] = feature.geometry.type;
+            return changed
+        }
     )
+    
+    
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
@@ -421,7 +434,8 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.directionSimplified,
         SimpleMetaTaggers.currentTime,
         SimpleMetaTaggers.objectMetaInfo,
-        SimpleMetaTaggers.noBothButLeftRight
+        SimpleMetaTaggers.noBothButLeftRight,
+        SimpleMetaTaggers.geometryType
 
     ];
 

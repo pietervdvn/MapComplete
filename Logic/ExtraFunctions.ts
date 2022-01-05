@@ -85,7 +85,6 @@ class IntersectionFunc implements ExtraFunction {
             const bbox = BBox.get(feat)
 
             for (const layerId of layerIds) {
-                console.log("Calculating the intersection with layer ", layerId)
                 const otherLayers = params.getFeaturesWithin(layerId, bbox)
                 if (otherLayers === undefined) {
                     continue;

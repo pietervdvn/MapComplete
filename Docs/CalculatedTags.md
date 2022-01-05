@@ -18,6 +18,7 @@
     + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_nowdate,-_now:datetime,-_loaded:date,-_loaded:_datetime)
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
+    + [_geometry:type](#_geometrytype)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
     + [intersectionsWith](#intersectionswith)
@@ -148,6 +149,16 @@ Information about the last edit of this object.
 
 
 Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined
+
+
+
+
+
+### _geometry:type 
+
+
+
+Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`
 
  
 

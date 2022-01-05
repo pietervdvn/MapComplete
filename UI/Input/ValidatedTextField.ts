@@ -350,8 +350,19 @@ export default class ValidatedTextField {
         ValidatedTextField.tp(
             "email",
             "An email adress",
-            (str) => EmailValidator.validate(str),
-            undefined,
+            (str) => {
+                if(str.startsWith("mailto:")){
+                    str = str.substring("mailto:".length)
+                }
+                return EmailValidator.validate(str);
+            },
+            str => {
+                if(str === undefined){return undefined}
+                if(str.startsWith("mailto:")){
+                    str = str.substring("mailto:".length)
+                }
+                return str;
+            },
             undefined,
             "email"),
         ValidatedTextField.tp(
@@ -395,9 +406,17 @@ export default class ValidatedTextField {
                 if (str === undefined) {
                     return false;
                 }
+                if(str.startsWith("tel:")){
+                    str = str.substring("tel:".length)
+                }
                 return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
             },
-            (str, country: () => string) => parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational(),
+            (str, country: () => string) => {
+                if(str.startsWith("tel:")){
+                    str = str.substring("tel:".length)
+                }
+                return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
+            },
             undefined,
             "tel"
         ),

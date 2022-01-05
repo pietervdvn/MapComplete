@@ -41,12 +41,17 @@ export class Tag extends TagsFilter {
         return [`["${this.key}"="${this.value}"]`];
     }
 
-    asHumanString(linkToWiki?: boolean, shorten?: boolean) {
+    asHumanString(linkToWiki?: boolean, shorten?: boolean, currentProperties?: any) {
         let v = this.value;
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25);
         }
         if(v === "" || v === undefined){
+            // This tag will be removed if in the properties, so we indicate this with special rendering
+            if(currentProperties !== undefined && (currentProperties[this.key] ?? "") === ""){
+                // This tag is not present in the current properties, so this tag doesn't change anything
+                return ""
+            }
             return "<span class='line-through'>"+this.key+"</span>"
         }
         if (linkToWiki) {

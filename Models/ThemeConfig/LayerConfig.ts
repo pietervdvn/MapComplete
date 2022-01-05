@@ -73,7 +73,13 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.source.osmTags === undefined) {
             throw "Layer " + this.id + " does not define a osmTags in the source section - these should always be present, even for geojson layers (" + context + ")"
+        }
 
+        if(json.id.toLowerCase() !== json.id){
+            throw `${context}: The id of a layer should be lowercase: ${json.id}`
+        }
+        if(json.id.match(/[a-z0-9-_]/) == null){
+            throw `${context}: The id of a layer should match [a-z0-9-_]*: ${json.id}`
         }
 
         this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30

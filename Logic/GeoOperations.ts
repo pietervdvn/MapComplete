@@ -357,7 +357,6 @@ export class GeoOperations {
      * Returns null if the features are not intersecting
      */
     private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
-        try {
             if (feature.geometry.type === "LineString") {
 
 
@@ -427,19 +426,25 @@ export class GeoOperations {
                     return this.calculateInstersection(otherFeature, feature, otherFeatureBBox, featureBBox)
                 }
 
+                try{
+                    
                 const intersection = turf.intersect(feature, otherFeature);
                 if (intersection == null) {
                     return null;
                 }
                 return turf.area(intersection); // in m²
+                }catch(e){
+                    if(e.message === "Each LinearRing of a Polygon must have 4 or more Positions."){
+                        // WORKAROUND TIME!
+                        // See https://github.com/Turfjs/turf/pull/2238
+                        return null;
+                    }
+                    throw e;    
+                }
 
             }
+            throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
 
-        } catch (exception) {
-            console.warn("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception,"\nThe considered objects are",feature, otherFeature);
-            return undefined
-        }
-        return undefined;
     }
 
     /**

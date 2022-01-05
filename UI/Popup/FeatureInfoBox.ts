@@ -189,8 +189,13 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             new VariableUiElement(
                 State.state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
-                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, "");
-                        return new TagRenderingAnswer(tags, config, "all_tags")
+                        const config_all_tags: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, "");
+                        const config_download: TagRenderingConfig = new TagRenderingConfig({render: "{export_as_geojson()}"}, "");
+                        const config_id: TagRenderingConfig = new TagRenderingConfig({render: "{open_in_iD()}"}, "");
+
+                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, "all_tags"),
+                            new TagRenderingAnswer(tags, config_download, ""),
+                            new TagRenderingAnswer(tags, config_id, "")])
                     }
                 })
             )

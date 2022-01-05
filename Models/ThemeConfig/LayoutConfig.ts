@@ -50,17 +50,21 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
-    public readonly trackAllNodes: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
+        if(json.id.toLowerCase() !== json.id){
+            throw "The id of a theme should be lowercase: "+json.id
+        }
+        if(json.id.match(/[a-z0-9-_]/) == null){
+            throw "The id of a theme should match [a-z0-9-_]*: "+json.id
+        }
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;
         this.language = [];
-        this.trackAllNodes = false
 
         if (typeof json.language === "string") {
             this.language = [json.language];
@@ -105,7 +109,6 @@ export default class LayoutConfig {
         this.tileLayerSources = (json.tileLayerSources ?? []).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
         // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
         this.layers = json.layers.map(lyrJson => new LayerConfig(<LayerConfigJson>lyrJson, json.id + ".layers." + lyrJson["id"], official));
-        this.trackAllNodes = this.layers.some(layer => layer.id === "type_node");
 
 
         this.clustering = {

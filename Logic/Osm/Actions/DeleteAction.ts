@@ -37,7 +37,7 @@ export default class DeleteAction extends OsmChangeAction {
 
     }
 
-    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
 
         const osmObject = await OsmObject.DownloadObjectAsync(this._id)
 

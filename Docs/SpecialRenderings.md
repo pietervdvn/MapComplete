@@ -42,6 +42,10 @@
       * [Example usage of tag_apply](#example-usage-of-tag_apply)
     + [export_as_gpx](#export_as_gpx)
       * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
+    + [export_as_geojson](#export_as_geojson)
+      * [Example usage of export_as_geojson](#example-usage-of-export_as_geojson)
+    + [open_in_iD](#open_in_id)
+      * [Example usage of open_in_iD](#example-usage-of-open_in_id)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
     + [auto_apply](#auto_apply)
@@ -449,6 +453,22 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 #### Example usage of export_as_gpx 
 
  `{export_as_gpx()}` 
+
+### export_as_geojson 
+
+ Exports the selected feature as GeoJson-file 
+
+#### Example usage of export_as_geojson 
+
+ `{export_as_geojson()}` 
+
+### open_in_iD 
+
+ Opens the current view in the iD-editor 
+
+#### Example usage of open_in_iD 
+
+ `{open_in_iD()}` 
 
 ### clear_location_history 
 
