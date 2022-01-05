@@ -391,10 +391,9 @@ export class OsmWay extends OsmObject {
                 // This is probably part of a relation which hasn't been fully downloaded
                 continue;
             }
-            const cp = node.centerpoint();
-            this.coordinates.push(cp);
-            latSum += cp[0]
-            lonSum += cp[1]
+            this.coordinates.push(node.centerpoint());
+            latSum += node.lat
+            lonSum += node.lon
         }
         let count = this.coordinates.length;
         this.lat = latSum / count;
