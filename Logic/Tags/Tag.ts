@@ -48,7 +48,7 @@ export class Tag extends TagsFilter {
         }
         if(v === "" || v === undefined){
             // This tag will be removed if in the properties, so we indicate this with special rendering
-            if(currentProperties !== undefined && (currentProperties[this.key] ?? "") !== ""){
+            if(currentProperties !== undefined && (currentProperties[this.key] ?? "") === ""){
                 // This tag is not present in the current properties, so this tag doesn't change anything
                 return ""
             }

@@ -71,9 +71,17 @@
       "ca": "Quin és el telèfon de {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
+    "mappings": [
+      {
+        "if": "contact:phone~*",
+        "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+        "hideInAnswer": true
+      }
+    ],
     "freeform": {
       "key": "phone",
-      "type": "phone"
+      "type": "phone",
+      "addExtraTags": ["contact:phone="]
     }
   },
   "osmlink": {
@@ -140,9 +148,17 @@
       "hu": "Mi a(z) {name} e-mail címe?",
       "ca": "Quina és l'adreça de correu electrònic de {name}?"
     },
+    "mappings": [
+      {
+        "if": "contact:email~*",
+        "then": "<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>",
+        "hideInAnswer": true
+      }
+    ],
     "freeform": {
       "key": "email",
-      "type": "email"
+      "type": "email",
+      "addExtraTags": ["contact:email="]
     }
   },
   "website": {
@@ -168,8 +184,16 @@
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
       "key": "website",
-      "type": "url"
-    }
+      "type": "url",
+      "addExtraTags": ["contact:website="]
+    },
+    "mappings": [
+      {
+        "if": "contact:website~*",
+        "then": "<a href='{contact:website}' target='_blank'>{contact:website}</a>",
+        "hideInAnswer": true
+      }
+    ]
   },
   "wheelchair-access": {
     "question": {
