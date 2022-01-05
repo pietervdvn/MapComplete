@@ -145,7 +145,8 @@ export default class ShowDataLayer {
             pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
             onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
         });
-
+        
+        const selfLayer = this.geoLayer;
         const allFeats = this._features.features.data;
         for (const feat of allFeats) {
             if (feat === undefined) {
@@ -153,12 +154,11 @@ export default class ShowDataLayer {
             }
             try {
                 if (feat.geometry.type === "LineString") {
-                    const self = this;
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
                     let offsettedLine;
                     tagsSource
-                        .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
+                        .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags), [], undefined, true)
                         .withEqualityStabilized((a, b) => {
                             if (a === b) {
                                 return true
@@ -176,6 +176,9 @@ export default class ShowDataLayer {
                             offsettedLine = L.polyline(coords, lineStyle);
                             this.postProcessFeature(feat, offsettedLine)
                             offsettedLine.addTo(this.geoLayer)
+                            
+                            // If 'self.geoLayer' is not the same as the layer the feature is added to, we can safely remove this callback
+                            return self.geoLayer !== selfLayer
                         })
                 } else {
                     this.geoLayer.addData(feat);
@@ -186,11 +189,13 @@ export default class ShowDataLayer {
         }
 
         if (options.zoomToFeatures ?? false) {
-            try {
-                const bounds = this.geoLayer.getBounds()
-                mp.fitBounds(bounds, {animate: false})
-            } catch (e) {
-                console.debug("Invalid bounds", e)
+            if(this.geoLayer.getLayers().length > 0){
+                try {
+                    const bounds = this.geoLayer.getBounds()
+                    mp.fitBounds(bounds, {animate: false})
+                } catch (e) {
+                    console.debug("Invalid bounds", e)
+                }
             }
         }
 

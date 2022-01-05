@@ -281,10 +281,12 @@ export class UIEventSource<T> {
      * @param f: The transforming function
      * @param extraSources: also trigger the update if one of these sources change
      * @param g: a 'backfunction to let the sync run in two directions. (data of the new UIEVEntSource, currentData) => newData
+     * @param allowUnregister: if set, the update will be halted if no listeners are registered
      */
     public map<J>(f: ((t: T) => J),
                   extraSources: UIEventSource<any>[] = [],
-                  g: ((j: J, t: T) => T) = undefined): UIEventSource<J> {
+                  g: ((j: J, t: T) => T) = undefined,
+                  allowUnregister = false): UIEventSource<J> {
         const self = this;
 
         const stack = new Error().stack.split("\n");
@@ -297,6 +299,7 @@ export class UIEventSource<T> {
 
         const update = function () {
             newSource.setData(f(self.data));
+            return allowUnregister && newSource._callbacks.length === 0
         }
 
         this.addCallback(update);
