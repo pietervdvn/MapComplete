@@ -12,7 +12,8 @@
   },
   "language": [
     "nl",
-    "en"
+    "en",
+    "de"
   ],
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -136,7 +137,8 @@
           },
           "render": "The building type is <b>{building}</b>",
           "question": {
-            "en": "What kind of building is this?"
+            "en": "What kind of building is this?",
+            "de": "Was ist das für ein Gebäude?"
           },
           "mappings": [
             {

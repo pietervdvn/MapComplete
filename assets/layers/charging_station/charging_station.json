@@ -34,7 +34,8 @@
       "#": "Allowed vehicle types",
       "question": {
         "en": "Which vehicles are allowed to charge here?",
-        "nl": "Welke voertuigen kunnen hier opgeladen worden?"
+        "nl": "Welke voertuigen kunnen hier opgeladen worden?",
+        "de": "Welche Fahrzeuge dürfen hier laden?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -43,7 +44,8 @@
           "ifnot": "bicycle=no",
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
-            "nl": "<b>Fietsen</b> kunnen hier opgeladen worden"
+            "nl": "<b>Fietsen</b> kunnen hier opgeladen worden",
+            "de": "<b>Fahrräder</b> können hier geladen werden"
           }
         },
         {
@@ -51,7 +53,8 @@
           "ifnot": "motorcar=no",
           "then": {
             "en": "<b>Cars</b> can be charged here",
-            "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden",
+            "de": "<b>Autos</b> können hier geladen werden"
           }
         },
         {
@@ -59,7 +62,8 @@
           "ifnot": "scooter=no",
           "then": {
             "en": "<b>Scooters</b> can be charged here",
-            "nl": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
+            "nl": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
+            "de": "<b>Roller</b> können hier geladen werden"
           }
         },
         {
@@ -67,7 +71,8 @@
           "ifnot": "hgv=no",
           "then": {
             "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here",
-            "nl": "<b>Vrachtwagens</b> kunnen hier opgeladen worden"
+            "nl": "<b>Vrachtwagens</b> kunnen hier opgeladen worden",
+            "de": "<b>LKW</b> können hier geladen werden"
           }
         },
         {
@@ -75,7 +80,8 @@
           "ifnot": "bus=no",
           "then": {
             "en": "<b>Buses</b> can be charged here",
-            "nl": "<b>Bussen</b> kunnen hier opgeladen worden"
+            "nl": "<b>Bussen</b> kunnen hier opgeladen worden",
+            "de": "<b>Busse</b> können hier geladen werden"
           }
         }
       ]
@@ -152,7 +158,8 @@
       "id": "Available_charging_stations (generated)",
       "question": {
         "en": "Which charging connections are available here?",
-        "nl": "Welke aansluitingen zijn hier beschikbaar?"
+        "nl": "Welke aansluitingen zijn hier beschikbaar?",
+        "de": "Welche Ladeanschlüsse gibt es hier?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -2864,14 +2871,16 @@
       },
       "question": {
         "en": "When is this charging station opened?",
-        "nl": "Wanneer is dit oplaadpunt beschikbaar??"
+        "nl": "Wanneer is dit oplaadpunt beschikbaar??",
+        "de": "Wann ist diese Ladestation geöffnet?"
       },
       "mappings": [
         {
           "if": "opening_hours=24/7",
           "then": {
             "en": "24/7 opened (including holidays)",
-            "nl": "24/7 open - ook tijdens vakanties"
+            "nl": "24/7 open - ook tijdens vakanties",
+            "de": "durchgehend geöffnet (einschließlich Feiertage)"
           }
         }
       ]
@@ -3000,7 +3009,8 @@
       "question": {
         "en": "What kind of authentication is available at the charging station?",
         "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?",
-        "fr": "Quelle sorte d'authentification est disponible à cette station de charge ?"
+        "fr": "Quelle sorte d'authentification est disponible à cette station de charge ?",
+        "de": "Welche Art der Authentifizierung ist an der Ladestation möglich?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -3010,7 +3020,8 @@
           "then": {
             "en": "Authentication by a membership card",
             "nl": "Aanmelden met een lidkaart is mogelijk",
-            "fr": "Authentification par carte de membre"
+            "fr": "Authentification par carte de membre",
+            "de": "Authentifizierung per Mitgliedskarte"
           }
         },
         {
@@ -3019,7 +3030,8 @@
           "then": {
             "en": "Authentication by an app",
             "nl": "Aanmelden via een applicatie is mogelijk",
-            "fr": "Authentification par une app"
+            "fr": "Authentification par une app",
+            "de": "Authentifizierung per App"
           }
         },
         {
@@ -3028,7 +3040,8 @@
           "then": {
             "en": "Authentication via phone call is available",
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
-            "fr": "Authentification par appel téléphonique est disponible"
+            "fr": "Authentification par appel téléphonique est disponible",
+            "de": "Authentifizierung per Anruf ist möglich"
           }
         },
         {
@@ -3037,7 +3050,8 @@
           "then": {
             "en": "Authentication via SMS is available",
             "nl": "Aanmelden via SMS is mogelijk",
-            "fr": "Authentification par SMS est disponible"
+            "fr": "Authentification par SMS est disponible",
+            "de": "Authentifizierung per SMS ist möglich"
           }
         },
         {
@@ -3046,7 +3060,8 @@
           "then": {
             "en": "Authentication via NFC is available",
             "nl": "Aanmelden via NFC is mogelijk",
-            "fr": "Authentification par NFC est disponible"
+            "fr": "Authentification par NFC est disponible",
+            "de": "Authentifizierung per NFC ist möglich"
           }
         },
         {
@@ -3054,7 +3069,8 @@
           "ifnot": "authentication:money_card=no",
           "then": {
             "en": "Authentication via Money Card is available",
-            "nl": "Aanmelden met Money Card is mogelijk"
+            "nl": "Aanmelden met Money Card is mogelijk",
+            "de": "Authentifizierung per Geldkarte ist möglich"
           }
         },
         {
@@ -3063,7 +3079,8 @@
           "then": {
             "en": "Authentication via debit card is available",
             "nl": "Aanmelden met een betaalkaart is mogelijk",
-            "fr": "Authentification par carte de débit est disponible"
+            "fr": "Authentification par carte de débit est disponible",
+            "de": "Authentifizierung per Kreditkarte ist möglich"
           }
         },
         {
@@ -3072,7 +3089,8 @@
           "then": {
             "en": "Charging here is (also) possible without authentication",
             "nl": "Hier opladen is (ook) mogelijk zonder aan te melden",
-            "fr": "Charger ici est (aussi) possible sans authentification"
+            "fr": "Charger ici est (aussi) possible sans authentification",
+            "de": "Das Laden ist hier (auch) ohne Authentifizierung möglich"
           }
         }
       ],
@@ -3139,11 +3157,13 @@
       "id": "Network",
       "render": {
         "en": "Part of the network <b>{network}</b>",
-        "nl": "Maakt deel uit van het <b>{network}</b>-netwerk"
+        "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
+        "de": "Teil des Netzwerks <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
-        "nl": "Is dit oplaadpunt deel van een groter netwerk?"
+        "nl": "Is dit oplaadpunt deel van een groter netwerk?",
+        "de": "Ist diese Ladestation Teil eines Netzwerks?"
       },
       "freeform": {
         "key": "network"
@@ -3153,14 +3173,16 @@
           "if": "no:network=yes",
           "then": {
             "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
-            "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt"
+            "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt",
+            "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird"
           }
         },
         {
           "if": "network=none",
           "then": {
             "en": "Not part of a bigger network",
-            "nl": "Maakt geen deel uit van een groter netwerk"
+            "nl": "Maakt geen deel uit van een groter netwerk",
+            "de": "Nicht Teil eines größeren Netzwerks"
           },
           "hideInAnswer": true
         },
@@ -3206,11 +3228,13 @@
       "id": "Operator",
       "question": {
         "en": "Who is the operator of this charging station?",
-        "nl": "Wie beheert dit oplaadpunt?"
+        "nl": "Wie beheert dit oplaadpunt?",
+        "de": "Wer ist der Betreiber dieser Ladestation?"
       },
       "render": {
         "en": "This charging station is operated by {operator}",
-        "nl": "Wordt beheerd door {operator}"
+        "nl": "Wordt beheerd door {operator}",
+        "de": "Diese Ladestation wird betrieben von {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -3224,7 +3248,8 @@
           },
           "then": {
             "en": "Actually, {operator} is the network",
-            "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt"
+            "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt",
+            "de": "Eigentlich ist {operator} das Netzwerk"
           },
           "addExtraTags": [
             "operator="
@@ -3300,7 +3325,8 @@
       "id": "Operational status",
       "question": {
         "en": "Is this charging point in use?",
-        "nl": "Is dit oplaadpunt operationeel?"
+        "nl": "Is dit oplaadpunt operationeel?",
+        "de": "Ist dieser Ladepunkt in Betrieb?"
       },
       "mappings": [
         {
@@ -3315,7 +3341,8 @@
           },
           "then": {
             "en": "This charging station works",
-            "nl": "Dit oplaadpunt werkt"
+            "nl": "Dit oplaadpunt werkt",
+            "de": "Diese Ladestation ist betriebsbereit"
           }
         },
         {
@@ -3330,7 +3357,8 @@
           },
           "then": {
             "en": "This charging station is broken",
-            "nl": "Dit oplaadpunt is kapot"
+            "nl": "Dit oplaadpunt is kapot",
+            "de": "Diese Ladestation ist defekt"
           }
         },
         {
@@ -3345,7 +3373,8 @@
           },
           "then": {
             "en": "A charging station is planned here",
-            "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+            "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
+            "de": "Hier ist eine Ladestation geplant"
           }
         },
         {
@@ -3360,7 +3389,8 @@
           },
           "then": {
             "en": "A charging station is constructed here",
-            "nl": "Hier wordt op dit moment een oplaadpunt gebouwd"
+            "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
+            "de": "Hier wird eine Ladestation errichtet"
           }
         },
         {
@@ -3375,7 +3405,8 @@
           },
           "then": {
             "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
-            "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+            "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig",
+            "de": "Diese Ladestation wurde dauerhaft geschlossen und wird nicht mehr benutzt, ist aber noch sichtbar"
           }
         }
       ]
@@ -3384,21 +3415,24 @@
       "id": "Parking:fee",
       "question": {
         "en": "Does one have to pay a parking fee while charging?",
-        "nl": "Moet men parkeergeld betalen tijdens het opladen?"
+        "nl": "Moet men parkeergeld betalen tijdens het opladen?",
+        "de": "Muss man während des Ladens eine Parkgebühr bezahlen?"
       },
       "mappings": [
         {
           "if": "parking:fee=no",
           "then": {
             "en": "No additional parking cost while charging",
-            "nl": "Geen extra parkeerkost tijdens het opladen"
+            "nl": "Geen extra parkeerkost tijdens het opladen",
+            "de": "Keine zusätzlichen Parkkosten während des Ladens"
           }
         },
         {
           "if": "parking:fee=yes",
           "then": {
             "en": "An additional parking fee should be paid while charging",
-            "nl": "Tijdens het opladen moet er parkeergeld betaald worden"
+            "nl": "Tijdens het opladen moet er parkeergeld betaald worden",
+            "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten"
           }
         }
       ],

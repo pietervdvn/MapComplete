@@ -214,7 +214,7 @@
         "write_a_comment": "Schreibe einen Kommentar…",
         "no_rating": "Keine Bewertung vorhanden",
         "posting_as": "Angemeldet als",
-        "i_am_affiliated": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
+        "i_am_affiliated": "<span>Ich bin mit diesem Objekt vertraut</span><br><span class=\"subtle\">Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
         "saving_review": "Speichern…",
         "saved": "<span class=\"thanks\">Bewertung gespeichert. Danke fürs Teilen!</span>",
         "tos": "Mit deiner Bewertung stimmst du den <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",

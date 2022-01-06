@@ -458,6 +458,22 @@
                 "0": {
                     "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
                 },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                        },
+                        "1": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
+                        },
+                        "2": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
+                        },
+                        "3": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
+                        }
+                    }
+                },
                 "2": {
                     "mappings": {
                         "0": {
@@ -596,13 +612,41 @@
     "cyclenodes": {
         "description": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
         "layers": {
+            "0": {
+                "name": "Knotenpunktverbindungen",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Knotenpunktverbindung <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "Knotenpunktverbindung"
+                }
+            },
             "1": {
+                "name": "Knotenpunkte",
                 "presets": {
                     "0": {
                         "title": "Knotenpunkt"
                     },
                     "1": {
                         "title": "Knotenpunkt im Netzwerk Spree-Neiße"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
+                        "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
+                    },
+                    "node-survey:date": {
+                        "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+                        "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
                     }
                 },
                 "title": {
@@ -795,6 +839,28 @@
         "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
         "title": "Geisterräder"
     },
+    "grb": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            }
+        }
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            }
+        }
+    },
     "hackerspaces": {
         "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
         "layers": {
@@ -867,7 +933,8 @@
     },
     "hailhydrant": {
         "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
-        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
+        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
+        "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
