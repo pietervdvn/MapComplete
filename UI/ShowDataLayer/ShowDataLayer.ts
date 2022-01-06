@@ -153,7 +153,6 @@ export default class ShowDataLayer {
         if (mp === undefined) {
             return;
         }
-        console.trace("Updating... " + mp["_container"]?.id +" for layer "+this._layerToShow.id)
         this._cleanCount++
         // clean all the old stuff away, if any
         if (this.geoLayer !== undefined) {
