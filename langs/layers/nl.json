@@ -151,6 +151,13 @@
                 "question": "Hoe breed is de smalste opening naast de barrières?",
                 "render": "Breedte van de opening: {width:opening} m"
             },
+            "barrier_type": {
+                "mappings": {
+                    "1": {
+                        "then": "Dit zijn fietshekjes die fietsers afremmen"
+                    }
+                }
+            },
             "bicycle=yes/no": {
                 "mappings": {
                     "0": {

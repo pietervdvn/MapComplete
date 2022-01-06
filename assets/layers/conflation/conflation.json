@@ -46,7 +46,7 @@
     {
       "location": "start",
       "icon": {
-        "render":"square:#f00",
+        "render": "square:#f00",
         "mappings": [
           {
             "if": "reprojection=yes",

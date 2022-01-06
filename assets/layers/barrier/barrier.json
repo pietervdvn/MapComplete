@@ -133,7 +133,8 @@
           "then": {
             "en": "This is a single bollard in the road"
           }
-        },{
+        },
+        {
           "if": "barrier=cycle_barrier",
           "then": {
             "en": "This is a cycle barrier slowing down cyclists",

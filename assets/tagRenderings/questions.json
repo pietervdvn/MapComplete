@@ -81,7 +81,9 @@
     "freeform": {
       "key": "phone",
       "type": "phone",
-      "addExtraTags": ["contact:phone="]
+      "addExtraTags": [
+        "contact:phone="
+      ]
     }
   },
   "osmlink": {
@@ -158,7 +160,9 @@
     "freeform": {
       "key": "email",
       "type": "email",
-      "addExtraTags": ["contact:email="]
+      "addExtraTags": [
+        "contact:email="
+      ]
     }
   },
   "website": {
@@ -185,7 +189,9 @@
     "freeform": {
       "key": "website",
       "type": "url",
-      "addExtraTags": ["contact:website="]
+      "addExtraTags": [
+        "contact:website="
+      ]
     },
     "mappings": [
       {
