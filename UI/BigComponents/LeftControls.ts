@@ -121,7 +121,7 @@ export default class LeftControls extends Combine {
                 "filters",
                 guiState.filterViewIsOpened
             ).SetClass("rounded-lg md:floating-element-width"),
-            new MapControlButton(Svg.filter_svg())
+            new MapControlButton(Svg.layers_svg())
                 .onClick(() => guiState.filterViewIsOpened.setData(true)),
             guiState.filterViewIsOpened
         )

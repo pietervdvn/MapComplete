@@ -39,20 +39,6 @@ export default class SelectedFeatureHandler {
         hash.addCallback(() => self.setSelectedElementFromHash())
 
 
-        // IF the selected element changes, set the hash correctly
-        state.selectedElement.addCallback(feature => {
-            if (feature === undefined) {
-                if (!SelectedFeatureHandler._no_trigger_on.has(hash.data)) {
-                    hash.setData("")
-                }
-            }
-
-            const h = feature?.properties?.id;
-            if (h !== undefined) {
-                hash.setData(h)
-            }
-        })
-
         state.featurePipeline?.newDataLoadedSignal?.addCallbackAndRunD(_ => {
             // New data was loaded. In initial startup, the hash might be set (via the URL) but might not be selected yet
             if (hash.data === undefined || SelectedFeatureHandler._no_trigger_on.has(hash.data)) {
