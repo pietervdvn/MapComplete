@@ -1,6 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="385px" height="11px" viewBox="0 0 385 11" version="1.1">
-  <g id="surface1">
-    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 294.691406 64.351562 L 308.769531 64.351562 L 308.769531 19.46875 L 326.480469 19.46875 L 326.480469 7.148438 L 305.03125 7.148438 L 305.03125 -3.851562 L 315.261719 -3.851562 L 315.261719 -20.898438 L 305.03125 -20.898438 L 305.03125 -34.648438 L 315.261719 -34.648438 L 315.261719 -55 L 82.5 -55 L 82.5 -34.648438 L 93.5 -34.648438 L 93.5 -20.898438 L 82.5 -20.898438 L 82.5 -4.070312 L 93.5 -4.070312 L 93.5 6.929688 L 71.5 6.929688 L 71.5 19.46875 L 89.210938 19.46875 L 89.210938 64.351562 L 103.289062 64.351562 L 103.289062 19.46875 L 294.691406 19.46875 Z M 100.761719 -34.648438 L 297.21875 -34.648438 L 297.21875 -20.898438 L 100.761719 -20.898438 Z M 100.761719 7.148438 L 100.761719 -3.851562 L 297.21875 -3.851562 L 297.21875 7.148438 Z M 100.761719 7.148438 "/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="254.98047"
+   height="119.35156"
+   viewBox="0 0 254.98047 119.35156"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="bench.svg"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="4.1922078"
+     inkscape:cx="120.93866"
+     inkscape:cy="60.707869"
+     inkscape:current-layer="svg5" />
+  <g
+     id="surface1"
+     transform="translate(-71.5,55)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 294.69141,64.351562 h 14.07812 V 19.46875 h 17.71094 V 7.148438 h -21.44922 v -11 h 10.23047 v -17.046876 h -10.23047 v -13.75 h 10.23047 V -55 H 82.5 v 20.351562 h 11 v 13.75 h -11 v 16.828126 h 11 v 11 h -22 V 19.46875 H 89.210938 V 64.351562 H 103.28906 V 19.46875 h 191.40235 z m -193.92969,-99 h 196.45703 v 13.75 H 100.76172 Z m 0,41.796876 v -11 h 196.45703 v 11 z m 0,0"
+       id="path2" />
   </g>
 </svg>
