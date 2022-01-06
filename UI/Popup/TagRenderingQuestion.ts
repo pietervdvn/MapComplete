@@ -71,7 +71,7 @@ export default class TagRenderingQuestion extends Combine {
         }
         options = options ?? {}
         const applicableUnit = (options.units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
-        const question = new SubstitutedTranslation(configuration.question, tags)
+        const question = new SubstitutedTranslation(configuration.question, tags, State.state)
             .SetClass("question-text");
 
 
@@ -352,7 +352,7 @@ export default class TagRenderingQuestion extends Combine {
         }
 
         return new FixedInputElement(
-            new SubstitutedTranslation(mapping.then, tagsSource),
+            new SubstitutedTranslation(mapping.then, tagsSource, State.state),
             tagging,
             (t0, t1) => t1.isEquivalent(t0));
     }

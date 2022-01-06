@@ -1,12 +1,9 @@
 import {Translation} from "../../UI/i18n/Translation";
 import {LayoutConfigJson} from "./Json/LayoutConfigJson";
-import AllKnownLayers from "../../Customizations/AllKnownLayers";
-import {Utils} from "../../Utils";
 import LayerConfig from "./LayerConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Constants from "../Constants";
 import TilesourceConfig from "./TilesourceConfig";
-import DependencyCalculator from "./DependencyCalculator";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -15,7 +12,7 @@ export default class LayoutConfig {
     public readonly version: string;
     public readonly language: string[];
     public readonly title: Translation;
-    public readonly shortDescription?: Translation;
+    public readonly shortDescription: Translation;
     public readonly description: Translation;
     public readonly descriptionTail?: Translation;
     public readonly icon: string;
@@ -53,7 +50,6 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
-    public readonly trackAllNodes: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
@@ -75,14 +71,28 @@ export default class LayoutConfig {
         } else {
             this.language = json.language;
         }
-        if (this.language.length == 0) {
-            throw `No languages defined. Define at least one language. (${context}.languages)`
-        }
-        if (json.title === undefined) {
-            throw "Title not defined in " + this.id;
-        }
-        if (json.description === undefined) {
-            throw "Description not defined in " + this.id;
+        {
+            if (this.language.length == 0) {
+                throw `No languages defined. Define at least one language. (${context}.languages)`
+            }
+            if (json.title === undefined) {
+                throw "Title not defined in " + this.id;
+            }
+            if (json.description === undefined) {
+                throw "Description not defined in " + this.id;
+            }
+            if (json.widenFactor <= 0) {
+                throw "Widenfactor too small, shoud be > 0"
+            }
+            if (json.widenFactor > 20) {
+                throw "Widenfactor is very big, use a value between 1 and 5 (current value is " + json.widenFactor + ") at " + context
+            }
+            if (json["hideInOverview"]) {
+                throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
+            }
+            if (json.layers === undefined) {
+                throw "Got undefined layers for " + json.id + " at " + context
+            }
         }
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
@@ -93,19 +103,12 @@ export default class LayoutConfig {
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;
-        if (json.widenFactor <= 0) {
-            throw "Widenfactor too small, shoud be > 0"
-        }
-        if (json.widenFactor > 20) {
-            throw "Widenfactor is very big, use a value between 1 and 5 (current value is " + json.widenFactor + ") at " + context
-        }
-
         this.widenFactor = json.widenFactor ?? 1.5;
 
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.tileLayerSources = (json.tileLayerSources ?? []).map((config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`))
-        const layerInfo = LayoutConfig.ExtractLayers(json, official, context);
-        this.layers = layerInfo.layers
+        // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
+        this.layers = json.layers.map(lyrJson => new LayerConfig(<LayerConfigJson>lyrJson, json.id + ".layers." + lyrJson["id"], official));
 
 
         this.clustering = {
@@ -125,10 +128,6 @@ export default class LayoutConfig {
         }
 
         this.hideFromOverview = json.hideFromOverview ?? false;
-        // @ts-ignore
-        if (json.hideInOverview) {
-            throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
-        }
         this.lockLocation = <[[number, number], [number, number]]>json.lockLocation ?? undefined;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
@@ -155,120 +154,6 @@ export default class LayoutConfig {
         this.overpassMaxZoom = json.overpassMaxZoom ?? 17
         this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1
 
-    }
-
-    private static ExtractLayers(json: LayoutConfigJson, official: boolean, context: string): { layers: LayerConfig[], extractAllNodes: boolean } {
-        const result: LayerConfig[] = []
-        let exportAllNodes = false
-        if(json.layers === undefined){
-            throw "Got undefined layers for "+json.id+" at "+context
-        }
-        json.layers.forEach((layer, i) => {
-
-            if (typeof layer === "string") {
-                if (AllKnownLayers.sharedLayersJson.get(layer) !== undefined) {
-                    if (json.overrideAll !== undefined) {
-                        let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson.get(layer)));
-                        const newLayer = new LayerConfig(Utils.Merge(json.overrideAll, lyr), `${json.id}+overrideAll.layers[${i}]`, official)
-                        result.push(newLayer)
-                        return
-                    } else {
-                        const shared = AllKnownLayers.sharedLayers.get(layer)
-                        if (shared === undefined) {
-                            throw `Shared layer ${layer} not found (at ${context}.layers[${i}])`
-                        }
-                        result.push(shared)
-                        return
-                    }
-                } else {
-                    console.log("Layer ", layer, " not kown, try one of", Array.from(AllKnownLayers.sharedLayers.keys()).join(", "))
-                    throw `Unknown builtin layer ${layer} at ${context}.layers[${i}]`;
-                }
-            }
-
-            if (layer["builtin"] === undefined) {
-                if (json.overrideAll !== undefined) {
-                    layer = Utils.Merge(json.overrideAll, layer);
-                }
-                // @ts-ignore
-                result.push(new LayerConfig(layer, `${json.id}.layers[${i}]`, official))
-                return
-            }
-
-            // @ts-ignore
-            let names = layer.builtin;
-            if (typeof names === "string") {
-                names = [names]
-            }
-            
-            // This is a very special layer which triggers special behaviour
-            exportAllNodes = names.some(name => name === "type_node");
-            
-            names.forEach(name => {
-                const shared = AllKnownLayers.sharedLayersJson.get(name);
-                if (shared === undefined) {
-                    throw `Unknown shared/builtin layer ${name} at ${context}.layers[${i}]. Available layers are ${Array.from(AllKnownLayers.sharedLayersJson.keys()).join(", ")}`;
-                }
-                let newLayer: LayerConfigJson = Utils.Merge(layer["override"], JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
-                if (json.overrideAll !== undefined) {
-                    newLayer = Utils.Merge(json.overrideAll, newLayer);
-                }
-                result.push(new LayerConfig(newLayer, `${json.id}.layers[${i}]`, official))
-                return
-            })
-
-        });
-
-        // Some special layers which are always included by default
-        for (const defaultLayer of AllKnownLayers.added_by_default) {
-            if (result.some(l => l?.id === defaultLayer)) {
-                continue; // Already added
-            }
-            const sharedLayer = AllKnownLayers.sharedLayers.get(defaultLayer)
-            if (sharedLayer !== undefined) {
-                result.push(sharedLayer)
-            }else if(!AllKnownLayers.runningGenerateScript){
-                throw "SharedLayer "+defaultLayer+" not found"
-            }
-        }
-
-        if(AllKnownLayers.runningGenerateScript){
-            return {layers: result, extractAllNodes: exportAllNodes}
-        }
-        // Verify cross-dependencies
-        let unmetDependencies: { neededLayer: string, neededBy: string, reason: string, context?: string }[] = []
-        do {
-            const dependencies: { neededLayer: string, reason: string, context?: string, neededBy: string }[] = []
-
-            for (const layerConfig of result) {
-                const layerDeps = DependencyCalculator.getLayerDependencies(layerConfig)
-                dependencies.push(...layerDeps)
-            }
-
-            const loadedLayers = new Set(result.map(r => r.id))
-            // During the generate script, builtin layers are verified but not loaded - so we have to add them manually here
-            // Their existance is checked elsewhere, so this is fine
-            unmetDependencies = dependencies.filter(dep => !loadedLayers.has(dep.neededLayer))
-            for (const unmetDependency of unmetDependencies) {
-                const dep = AllKnownLayers.sharedLayers.get(unmetDependency.neededLayer)
-                if (dep === undefined) {
-                  
-                    const message = 
-                        ["Loading a dependency failed: layer "+unmetDependency.neededLayer+" is not found, neither as layer of "+json.id+" nor as builtin layer.",
-                            "This layer is needed by "+unmetDependency.neededBy,
-                            unmetDependency.reason+" (at "+unmetDependency.context+")",
-                            "Loaded layers are: "+result.map(l => l.id).join(",")
-                        
-                    ]
-                    throw message.join("\n\t");
-                }
-                result.unshift(dep)
-                unmetDependencies = unmetDependencies.filter(d => d.neededLayer  !== unmetDependency.neededLayer)
-            }
-
-        } while (unmetDependencies.length > 0)
-        
-        return {layers: result, extractAllNodes: exportAllNodes}
     }
 
     public CustomCodeSnippets(): string[] {

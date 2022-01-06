@@ -12,6 +12,7 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 export default class TagRenderingAnswer extends VariableUiElement {
 
     constructor(tagsSource: UIEventSource<any>, configuration: TagRenderingConfig,
+                state: any,
                 contentClasses: string = "", contentStyle: string = "", options?:{
                     specialViz: Map<string, BaseUIElement>
                 }) {
@@ -37,7 +38,7 @@ export default class TagRenderingAnswer extends VariableUiElement {
                 return undefined;
             }
 
-            const valuesToRender: BaseUIElement[] = trs.map(tr => new SubstitutedTranslation(tr, tagsSource, options?.specialViz))
+            const valuesToRender: BaseUIElement[] = trs.map(tr => new SubstitutedTranslation(tr, tagsSource, state, options?.specialViz))
             if (valuesToRender.length === 1) {
                 return valuesToRender[0];
             } else if (valuesToRender.length > 1) {

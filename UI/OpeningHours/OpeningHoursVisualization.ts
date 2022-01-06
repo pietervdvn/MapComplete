@@ -1,6 +1,5 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {OH} from "./OpeningHours";
 import Translations from "../i18n/Translations";
@@ -11,6 +10,7 @@ import Toggle from "../Input/Toggle";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Table from "../Base/Table";
 import {Translation} from "../i18n/Translation";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
@@ -23,7 +23,7 @@ export default class OpeningHoursVisualization extends Toggle {
         Translations.t.general.weekdays.abbreviations.sunday,
     ]
 
-    constructor(tags: UIEventSource<any>, key: string, prefix = "", postfix = "") {
+    constructor(tags: UIEventSource<any>, state:{osmConnection?: OsmConnection}, key: string, prefix = "", postfix = "") {
         const tagsDirect = tags.data;
         const ohTable = new VariableUiElement(tags
             .map(tags => {
@@ -57,7 +57,7 @@ export default class OpeningHoursVisualization extends Toggle {
                             new Toggle(
                                 new FixedUiElement(e).SetClass("subtle"),
                                 undefined,
-                                State.state?.osmConnection?.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAndWikiLinked)
+                                state?.osmConnection?.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAndWikiLinked)
                             )
                         ]);
                     }

@@ -29,8 +29,6 @@
       * [Themes using this layer](#themes-using-this-layer)
     + [walls_and_buildings](#walls_and_buildings)
       * [Themes using this layer](#themes-using-this-layer)
-    + [all_streets](#all_streets)
-      * [Themes using this layer](#themes-using-this-layer)
     + [ambulancestation](#ambulancestation)
       * [Themes using this layer](#themes-using-this-layer)
     + [artwork](#artwork)
@@ -112,36 +110,6 @@
     + [tree_node](#tree_node)
       * [Themes using this layer](#themes-using-this-layer)
     + [waste_basket](#waste_basket)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [caravansites](#caravansites)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [dumpstations](#dumpstations)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [climbing_club](#climbing_club)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [climbing_gym](#climbing_gym)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [climbing_route](#climbing_route)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [climbing](#climbing)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [maybe_climbing](#maybe_climbing)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [fietsstraat](#fietsstraat)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [toekomstige_fietsstraat](#toekomstige_fietsstraat)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [facadegardens](#facadegardens)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [hackerspaces](#hackerspaces)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [windturbine](#windturbine)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [postboxes](#postboxes)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [postoffices](#postoffices)
-      * [Themes using this layer](#themes-using-this-layer)
-    + [lit_streets](#lit_streets)
       * [Themes using this layer](#themes-using-this-layer)
 
  MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here. 
@@ -235,7 +203,6 @@ This is a priviliged meta_layer which exports _every_ point in OSM. This only wo
 
 
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-  - This layer is needed as dependency for layer [GRB](#GRB)
  
 
 ### conflation 
@@ -320,7 +287,6 @@ The default rendering for a locationInput which snaps onto another object
   - [food](#food)
   - [map](#map)
   - [walls_and_buildings](#walls_and_buildings)
-  - [all_streets](#all_streets)
  
 
 ### bicycle_library 
@@ -456,29 +422,6 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [surveillance](https://mapcomplete.osm.be/surveillance)
  
 
-### all_streets 
-
-
-
-[Go to the source code](../assets/layers/all_streets/all_streets.json)
-
-
-
-  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [cyclestreets](https://mapcomplete.osm.be/cyclestreets)
-  - [street_lighting](https://mapcomplete.osm.be/street_lighting)
- 
-
   - [ambulancestation](#ambulancestation)
   - [artwork](#artwork)
   - [barrier](#barrier)
@@ -520,21 +463,6 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [toilet](#toilet)
   - [tree_node](#tree_node)
   - [waste_basket](#waste_basket)
-  - [caravansites](#caravansites)
-  - [dumpstations](#dumpstations)
-  - [climbing_club](#climbing_club)
-  - [climbing_gym](#climbing_gym)
-  - [climbing_route](#climbing_route)
-  - [climbing](#climbing)
-  - [maybe_climbing](#maybe_climbing)
-  - [fietsstraat](#fietsstraat)
-  - [toekomstige_fietsstraat](#toekomstige_fietsstraat)
-  - [facadegardens](#facadegardens)
-  - [hackerspaces](#hackerspaces)
-  - [windturbine](#windturbine)
-  - [postboxes](#postboxes)
-  - [postoffices](#postoffices)
-  - [lit_streets](#lit_streets)
  
 
 ### ambulancestation 
@@ -985,7 +913,6 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 
 
   - This layer will automatically load  [walls_and_buildings](#walls_and_buildings)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
-  - This layer is needed as dependency for layer [Brugge](#Brugge)
 
 
 
@@ -1418,7 +1345,7 @@ A layer showing street lights
 
 
 
-  - This layer is needed as dependency for layer [Assen](#Assen)
+
 
 
 
@@ -1526,360 +1453,6 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 
   - [waste_basket](https://mapcomplete.osm.be/waste_basket)
- 
-
-### caravansites 
-
-
-
-camper sites
-
-[Go to the source code](../assets/layers/caravansites/caravansites.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [campersite](https://mapcomplete.osm.be/campersite)
- 
-
-### dumpstations 
-
-
-
-Sanitary dump stations
-
-[Go to the source code](../assets/layers/dumpstations/dumpstations.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [campersite](https://mapcomplete.osm.be/campersite)
- 
-
-### climbing_club 
-
-
-
-A climbing club or organisations
-
-[Go to the source code](../assets/layers/climbing_club/climbing_club.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [climbing](https://mapcomplete.osm.be/climbing)
- 
-
-### climbing_gym 
-
-
-
-A climbing gym
-
-[Go to the source code](../assets/layers/climbing_gym/climbing_gym.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [climbing](https://mapcomplete.osm.be/climbing)
- 
-
-### climbing_route 
-
-
-
-[Go to the source code](../assets/layers/climbing_route/climbing_route.json)
-
-
-
-  - This layer is needed as dependency for layer [climbing](#climbing)
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [climbing](https://mapcomplete.osm.be/climbing)
- 
-
-### climbing 
-
-
-
-A climbing opportunity
-
-[Go to the source code](../assets/layers/climbing/climbing.json)
-
-
-
-  - This layer will automatically load  [climbing_route](#climbing_route)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _contained_climbing_routes_properties)
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [climbing](https://mapcomplete.osm.be/climbing)
- 
-
-### maybe_climbing 
-
-
-
-A climbing opportunity?
-
-[Go to the source code](../assets/layers/maybe_climbing/maybe_climbing.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [climbing](https://mapcomplete.osm.be/climbing)
- 
-
-### fietsstraat 
-
-
-
-A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist
-
-[Go to the source code](../assets/layers/fietsstraat/fietsstraat.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [cyclestreets](https://mapcomplete.osm.be/cyclestreets)
- 
-
-### toekomstige_fietsstraat 
-
-
-
-This street will become a cyclestreet soon
-
-[Go to the source code](../assets/layers/toekomstige_fietsstraat/toekomstige_fietsstraat.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [cyclestreets](https://mapcomplete.osm.be/cyclestreets)
- 
-
-### facadegardens 
-
-
-
-Facade gardens
-
-[Go to the source code](../assets/layers/facadegardens/facadegardens.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [facadegardens](https://mapcomplete.osm.be/facadegardens)
- 
-
-### hackerspaces 
-
-
-
-Hackerspace
-
-[Go to the source code](../assets/layers/hackerspaces/hackerspaces.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [hackerspaces](https://mapcomplete.osm.be/hackerspaces)
- 
-
-### windturbine 
-
-
-
-[Go to the source code](../assets/layers/windturbine/windturbine.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [openwindpowermap](https://mapcomplete.osm.be/openwindpowermap)
- 
-
-### postboxes 
-
-
-
-The layer showing postboxes.
-
-[Go to the source code](../assets/layers/postboxes/postboxes.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [postboxes](https://mapcomplete.osm.be/postboxes)
- 
-
-### postoffices 
-
-
-
-A layer showing post offices.
-
-[Go to the source code](../assets/layers/postoffices/postoffices.json)
-
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [postboxes](https://mapcomplete.osm.be/postboxes)
- 
-
-### lit_streets 
-
-
-
-[Go to the source code](../assets/layers/lit_streets/lit_streets.json)
-
-
-
-  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [street_lighting](https://mapcomplete.osm.be/street_lighting)
  
 
 This document is autogenerated from AllKnownLayers.ts

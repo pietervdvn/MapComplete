@@ -42,7 +42,7 @@ export default class EditableTagRendering extends Toggle {
     }
 
     private static CreateRendering(tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
-        const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
+        const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration, State.state)
         answer.SetClass("w-full")
         let rendering = answer;
 

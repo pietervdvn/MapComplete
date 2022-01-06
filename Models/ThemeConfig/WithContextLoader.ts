@@ -1,20 +1,10 @@
 import TagRenderingConfig from "./TagRenderingConfig";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
-import {Utils} from "../../Utils";
 
 export default class WithContextLoader {
     protected readonly _context: string;
     private readonly _json: any;
-    
-    public static getKnownTagRenderings : ((id: string) => TagRenderingConfigJson[])=  function(id)  {
-        const found = SharedTagRenderings.SharedTagRenderingJson.get(id)
-        if(found !== undefined){
-            return [found]
-        }else{
-            return []
-        }
-}
 
     constructor(json: any, context: string) {
         this._json = json;
@@ -53,15 +43,15 @@ export default class WithContextLoader {
      * A string is interpreted as a name to call
      */
     public ParseTagRenderings(
-        tagRenderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[],
-        options?:{
+        tagRenderings: TagRenderingConfigJson[],
+        options?: {
             /**
              * Throw an error if 'question' is defined
              */
             readOnlyMode?: boolean,
             requiresId?: boolean
             prepConfig?: ((config: TagRenderingConfigJson) => TagRenderingConfigJson)
-            
+
         }
     ): TagRenderingConfig[] {
         if (tagRenderings === undefined) {
@@ -73,62 +63,17 @@ export default class WithContextLoader {
         if (options.prepConfig === undefined) {
             options.prepConfig = c => c
         }
-        const preparedConfigs : TagRenderingConfigJson[] = []
-        for (let i = 0; i < tagRenderings.length; i++) {
-            let renderingJson = tagRenderings[i]
-            if(renderingJson === "questions"){
-                renderingJson = {
-                    id: "questions"
-                }
-            }
-            if (typeof renderingJson === "string") {
-                renderingJson = {builtin: renderingJson, override: undefined}
-            }
-
-            if (renderingJson["builtin"] === undefined) {
-                const patchedConfig = options.prepConfig(<TagRenderingConfigJson>renderingJson)
-                preparedConfigs.push(patchedConfig)
-                continue
-            
-            } 
-            
-            
-            const renderingId = renderingJson["builtin"]
-            let sharedJsons = []
-            if(typeof renderingId === "string"){
-                sharedJsons = WithContextLoader.getKnownTagRenderings(renderingId)
-            }else{
-                sharedJsons = [].concat( ...(<string[]>renderingId).map(id => WithContextLoader.getKnownTagRenderings(id) ) )
-            }
-
-            if (sharedJsons.length === 0) {
-                const keys = Array.from(SharedTagRenderings.SharedTagRenderingJson.keys());
-                throw `Predefined tagRendering ${renderingId} not found in ${context}.\n    Try one of ${keys.join(
-                    ", "
-                )}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
-            }
-            for (let sharedJson of sharedJsons) {
-                if (renderingJson["override"] !== undefined) {
-                    sharedJson = Utils.Merge(renderingJson["override"], JSON.parse(JSON.stringify(sharedJson)))
-                }
-    
-                const patchedConfig = options.prepConfig(<TagRenderingConfigJson>sharedJson)
-                preparedConfigs.push(patchedConfig)
-            }
-
-        }
-
         const renderings: TagRenderingConfig[] = []
-        for (let i = 0; i < preparedConfigs.length; i++){
-            const preparedConfig = preparedConfigs[i];
+        for (let i = 0; i < tagRenderings.length; i++) {
+            const preparedConfig = tagRenderings[i];
             const tr = new TagRenderingConfig(preparedConfig, `${context}.tagrendering[${i}]`);
-            if(options.readOnlyMode && tr.question !== undefined){
-                throw "A question is defined for "+`${context}.tagrendering[${i}], but this is not allowed at this position - probably because this rendering is an icon, badge or label`
+            if (options.readOnlyMode && tr.question !== undefined) {
+                throw "A question is defined for " + `${context}.tagrendering[${i}], but this is not allowed at this position - probably because this rendering is an icon, badge or label`
             }
-            if(options.requiresId && tr.id === ""){
+            if (options.requiresId && tr.id === "") {
                 throw `${context}.tagrendering[${i}] has an invalid ID - make sure it is defined and not empty`
             }
-            
+
             renderings.push(tr)
         }
 

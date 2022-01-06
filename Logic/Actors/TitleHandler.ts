@@ -29,7 +29,7 @@ export default class TitleHandler {
                     }
                     if (layer.source.osmTags.matchesProperties(tags)) {
                         const tagsSource = state.allElements.getEventSourceById(tags.id) ?? new UIEventSource<any>(tags)
-                        const title = new TagRenderingAnswer(tagsSource, layer.title)
+                        const title = new TagRenderingAnswer(tagsSource, layer.title, {})
                         return new Combine([defaultTitle, " | ", title]).ConstructElement()?.innerText ?? defaultTitle;
                     }
                 }

@@ -1,13 +1,19 @@
 import ScriptUtils from "./ScriptUtils";
-import {writeFileSync} from "fs";
+import {existsSync, mkdirSync, writeFileSync} from "fs";
 import * as licenses from "../assets/generated/license_info.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import Constants from "../Models/Constants";
+import {
+    DesugaringContext,
+    PrepareLayer, PrepareTheme,
+    ValidateLayer,
+    ValidateThemeAndLayers
+} from "../Models/ThemeConfig/LegacyJsonConvert";
 import {Translation} from "../UI/i18n/Translation";
-import {Utils} from "../Utils";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
+import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import * as questions from "../assets/tagRenderings/questions.json";
+import * as icons from "../assets/tagRenderings/icons.json";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -20,218 +26,157 @@ interface LayersAndThemes {
 
 class LayerOverviewUtils {
 
-    loadThemesAndLayers(): LayersAndThemes {
+    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean }[]) {
+        const perId = new Map<string, any>();
+        for (const theme of themes) {
+            const data = {
+                id: theme.id,
+                title: theme.title,
+                shortDescription: theme.shortDescription,
+                icon: theme.icon,
+                hideFromOverview: theme.hideFromOverview
+            }
+            perId.set(theme.id, data);
+        }
 
+
+        const sorted = Constants.themeOrder.map(id => {
+            if (!perId.has(id)) {
+                throw "Ordered theme id " + id + " not found"
+            }
+            return perId.get(id);
+        });
+
+
+        perId.forEach((value) => {
+            if (Constants.themeOrder.indexOf(value.id) >= 0) {
+                return; // actually a continue
+            }
+            sorted.push(value)
+        })
+
+        writeFileSync("./assets/generated/theme_overview.json", JSON.stringify(sorted, null, "  "), "UTF8");
+    }
+
+    writeTheme(theme: LayoutConfigJson) {
+        if (!existsSync("./assets/generated/themes")) {
+            mkdirSync("./assets/generated/themes");
+        }
+        writeFileSync(`./assets/generated/themes/${theme.id}.json`, JSON.stringify(theme, null, "  "), "UTF8");
+    }
+
+    writeLayer(layer: LayerConfigJson) {
+        if (!existsSync("./assets/generated/layers")) {
+            mkdirSync("./assets/generated/layers");
+        }
+        writeFileSync(`./assets/generated/layers/${layer.id}.json`, JSON.stringify(layer, null, "  "), "UTF8");
+    }
+
+    getSharedTagRenderings(): Map<string, TagRenderingConfigJson> {
+        const dict = new Map<string, TagRenderingConfigJson>();
+
+        for (const key in questions["default"]) {
+            questions[key].id = key;
+            dict.set(key, <TagRenderingConfigJson>questions[key])
+        }
+        for (const key in icons["default"]) {
+            if(typeof icons[key] !== "object"){
+                continue
+            }
+            icons[key].id = key;
+            dict.set(key, <TagRenderingConfigJson>icons[key])
+        }
+
+        dict.forEach((value, key) => {
+            value.id = value.id ?? key;
+        })
+
+        return dict;
+    }
+
+
+    private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {
+        // First, we expand and validate all builtin layers. These are written to assets/generated/layers
+        // At the same time, an index of available layers is built.
+        console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
+
+        const sharedTagRenderings = this.getSharedTagRenderings();
         const layerFiles = ScriptUtils.getLayerFiles();
-
-        const themeFiles: LayoutConfigJson[] = ScriptUtils.getThemeFiles().map(x => x.parsed);
-
-        console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
-        if (layerFiles.length + themeFiles.length === 0) {
-            throw "Panic: no themes and layers loaded!"
+        const sharedLayers = new Map<string, LayerConfigJson>()
+        const prepLayer = new PrepareLayer();
+        const state: DesugaringContext = {
+            tagRenderings: sharedTagRenderings,
+            sharedLayers
         }
-        return {
-            layers: layerFiles,
-            themes: themeFiles
+        for (const sharedLayerJson of layerFiles) {
+            const context = "While building builtin layer " + sharedLayerJson.path
+            const fixed = prepLayer.convertStrict(state, sharedLayerJson.parsed, context)
+            const validator = new ValidateLayer(knownImagePaths, sharedLayerJson.path, true);
+            validator.convertStrict(state, fixed, context)
+
+            if (sharedLayers.has(fixed.id)) {
+                throw "There are multiple layers with the id " + fixed.id
+            }
+
+            sharedLayers.set(fixed.id, fixed)
+
+            this.writeLayer(fixed)
+
         }
+        return sharedLayers;
     }
 
-    writeFiles(lt: LayersAndThemes) {
-        writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
-            "layers": lt.layers.map(l => l.parsed),
-            "themes": lt.themes
-        }))
-    }
 
-    validateLayer(layerJson: LayerConfigJson, path: string, knownPaths: Set<string>, context?: string): string[] {
-        let errorCount = [];
-        if (layerJson["overpassTags"] !== undefined) {
-            errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
-        }
-        const forbiddenTopLevel = ["icon","wayHandling","roamingRenderings","roamingRendering","label","width","color","colour","iconOverlays"]
-        for (const forbiddenKey of forbiddenTopLevel) {
-            if(layerJson[forbiddenKey] !== undefined)
-            errorCount.push("Layer "+layerJson.id+" still has a forbidden key "+forbiddenKey)
-        }
-        try {
-            const layer = new LayerConfig(layerJson, "test", true)
-            const images = Array.from(layer.ExtractImages())
-            const remoteImages = images.filter(img => img.indexOf("http") == 0)
-            for (const remoteImage of remoteImages) {
-                errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it. You can use the fixTheme script to automate this")
-            }
-            const expected: string = `assets/layers/${layer.id}/${layer.id}.json`
-            if (path != undefined && path.indexOf(expected) < 0) {
-                errorCount.push("Layer is in an incorrect place. The path is " + path + ", but expected " + expected)
-            }
-            if (layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
-                errorCount.push("Layer " + layer.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
-            }
-
-
-            for (const image of images) {
-                if (image.indexOf("{") >= 0) {
-                    console.warn("Ignoring image with { in the path: ", image)
-                    continue
-                }
-
-                if (!knownPaths.has(image)) {
-                    const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
-                    errorCount.push(`Image with path ${image} not found or not attributed; it is used in ${layer.id}${ctx}`)
-                }
-            }
-
-        } catch (e) {
-            console.error(e)
-            return [`Layer ${layerJson.id}` ?? JSON.stringify(layerJson).substring(0, 50) + " is invalid: " + e]
-        }
-        return errorCount
-    }
-
-    
-    main(args: string[]) {
-
-        AllKnownLayers.runningGenerateScript = true;
-        const layerFiles = ScriptUtils.getLayerFiles();
+    private buildThemeIndex(knownImagePaths: Set<string>, sharedLayers: Map<string, LayerConfigJson>): Map<string, LayoutConfigJson> {
+        console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles();
+        const fixed = new Map<string, LayoutConfigJson>();
 
-
-        console.log("   ---------- VALIDATING ---------")
-        const licensePaths = []
-        for (const i in licenses) {
-            licensePaths.push(licenses[i].path)
+        const convertState: DesugaringContext = {
+            sharedLayers,
+            tagRenderings: this.getSharedTagRenderings()
         }
-        const knownPaths = new Set<string>(licensePaths)
-
-        let layerErrorCount = []
-        const knownLayerIds = new Map<string, LayerConfig>();
-        for (const layerFile of layerFiles) {
-
-            if (knownLayerIds.has(layerFile.parsed.id)) {
-                throw "Duplicate identifier: " + layerFile.parsed.id + " in file " + layerFile.path
-            }
-            layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
-            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed))
-            
-            if(layerFile.parsed.description === undefined){
-                throw "The layer "+layerFile.parsed.id+" does not provide a description, but this is required for builtin themes"
-            }
-        }
-
-        let themeErrorCount = []
-        // used only for the reports
-        let themeConfigs: LayoutConfig[] = []
         for (const themeInfo of themeFiles) {
-            const themeFile = themeInfo.parsed
+            let themeFile = themeInfo.parsed
             const themePath = themeInfo.path
-            if (typeof themeFile.language === "string") {
-                themeErrorCount.push("The theme " + themeFile.id + " has a string as language. Please use a list of strings")
-            }
-            if (themeFile["units"] !== undefined) {
-                themeErrorCount.push("The theme " + themeFile.id + " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ")
-            }
-            if (themeFile["roamingRenderings"] !== undefined) {
-                themeErrorCount.push("Theme " + themeFile.id + " contains an old 'roamingRenderings'. Use an 'overrideAll' instead")
-            }
-            for (const layer of themeFile.layers) {
-                if (typeof layer === "string") {
-                    if (!knownLayerIds.has(layer)) {
-                        themeErrorCount.push(`Unknown layer id: ${layer} in theme ${themeFile.id}`)
-                    }
-                } else if (layer["builtin"] !== undefined) {
-                    let names = layer["builtin"];
-                    if (typeof names === "string") {
-                        names = [names]
-                    }
-                    names.forEach(name => {
-                        if (!knownLayerIds.has(name)) {
-                            themeErrorCount.push("Unknown layer id: " + name + "(which uses inheritance)")
-                        }
-                        return
-                    })
-                } else {
-                    layerErrorCount.push(...this.validateLayer(<LayerConfigJson>layer, undefined, knownPaths, themeFile.id))
-                    if (knownLayerIds.has(layer["id"])) {
-                        throw `The theme ${themeFile.id} defines a layer with id ${layer["id"]}, which is the same as an already existing layer`
-                    }
-                }
-            }
+            
+            themeFile = new PrepareTheme().convertStrict(convertState, themeFile, themePath)
 
-            const referencedLayers = Utils.NoNull([].concat(...themeFile.layers.map(layer => {
-                if (typeof layer === "string") {
-                    return layer
-                }
-                if (layer["builtin"] !== undefined) {
-                    return layer["builtin"]
-                }
-                return undefined
-            }).map(layerName => {
-                if (typeof layerName === "string") {
-                    return [layerName]
-                }
-                return layerName
-            })))
+            new ValidateThemeAndLayers(knownImagePaths, themePath, true)
+                .convertStrict(convertState, themeFile, themePath)
 
-            themeFile.layers = themeFile.layers
-                .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
-                .filter(l => l["builtin"] === undefined)
-
-
-            try {
-                const theme = new LayoutConfig(themeFile, true, "test")
-                if (theme.id !== theme.id.toLowerCase()) {
-                    themeErrorCount.push("Theme ids should be in lowercase, but it is " + theme.id)
-                }
-                let filename = themePath.substring(themePath.lastIndexOf("/") + 1, themePath.length - 5)
-                if (theme.id !== filename) {
-                    themeErrorCount.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename " + filename + " (" + themePath + ")")
-                }
-                const neededLanguages = themeFile["mustHaveLanguage"]
-                if (neededLanguages !== undefined) {
-                    console.log("Checking language requirements for ", theme.id, "as it must have", neededLanguages.join(", "))
-                    const allTranslations = [].concat(Translation.ExtractAllTranslationsFrom(theme, theme.id),
-                        ...referencedLayers.map(layerId => Translation.ExtractAllTranslationsFrom(knownLayerIds.get(layerId), theme.id + "->" + layerId)))
-                    for (const neededLanguage of neededLanguages) {
-                        allTranslations
-                            .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
-                            .forEach(missing => {
-                                themeErrorCount.push("The theme " + theme.id + " should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context+".\n\tThe english translation is "+missing.tr.textFor('en'))
-                            })
-                    }
-
-
-                }
-                themeConfigs.push(theme)
-            } catch (e) {
-                themeErrorCount.push("Could not parse theme " + themeFile["id"] + " due to", e)
-            }
+            this.writeTheme(themeFile)
+            fixed.set(themeFile.id, themeFile)
         }
 
-        if (layerErrorCount.length + themeErrorCount.length == 0) {
-            console.log("All good!")
-
-            // We load again from disc, as modifications were made above
-            const lt = this.loadThemesAndLayers();
-            
-            
-            this.writeFiles(lt);
-        } else {
-            const errors = layerErrorCount.concat(themeErrorCount).join("\n")
-            console.log(errors)
-            const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-
-            console.log(msg)
-            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-
-            if (args.indexOf("--report") >= 0) {
-                console.log("Writing report!")
-                writeFileSync("layer_report.txt", errors)
+        this.writeSmallOverview(themeFiles.map(tf => {
+            const t = tf.parsed;
+            return {
+                ...t,
+                hideFromOverview: t.hideFromOverview ?? false,
+                shortDescription: t.shortDescription ?? new Translation(t.description).FirstSentence().translations
             }
-            if (args.indexOf("--no-fail") < 0) {
-                throw msg;
-            }
+        }));
+        return fixed;
+
+    }
+
+    main(_: string[]) {
+
+        const licensePaths = new Set<string>()
+        for (const i in licenses) {
+            licensePaths.add(licenses[i].path)
         }
+
+        const sharedLayers = this.buildLayerIndex(licensePaths);
+        const sharedThemes = this.buildThemeIndex(licensePaths, sharedLayers)
+
+        writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
+            "layers": Array.from(sharedLayers.values()),
+            "themes": Array.from(sharedThemes.values())
+        }))
+
+        writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
     }
 }
 

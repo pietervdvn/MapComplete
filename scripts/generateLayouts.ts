@@ -1,4 +1,4 @@
-import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
+import {appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
@@ -8,6 +8,8 @@ import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 const sharp = require('sharp');
+const template = readFileSync("theme.html", "utf8");
+const codeTemplate = readFileSync("index_theme.ts.template", "utf8");
 
 
 function enc(str: string): string {
@@ -107,7 +109,6 @@ async function createManifest(layout: LayoutConfig) {
     };
 }
 
-const template = readFileSync("index.html", "utf8");
 
 async function createLandingPage(layout: LayoutConfig, manifest) {
 
@@ -160,7 +161,8 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
 
     let output = template
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
-        .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific);
+        .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
+        .replace("<script src=\"./index.ts\"></script>", `<script src='./index_${layout.id}.ts'></script>`);
 
     try {
         output = output
@@ -173,12 +175,18 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
     return output;
 }
 
+async function createIndexFor(theme: LayoutConfig){
+    const filename = "index_"+theme.id+".ts"
+    writeFileSync(filename, `import * as themeConfig from "./assets/generated/themes/${theme.id}.json"\n`)
+    appendFileSync(filename, codeTemplate)
+}
+
 const generatedDir = "./assets/generated";
 if (!existsSync(generatedDir)) {
     mkdirSync(generatedDir)
 }
 
-const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
+const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom","theme"]
 // @ts-ignore
 const all: LayoutConfigJson[] = all_known_layouts.themes;
 for (const i in all) {
@@ -203,6 +211,7 @@ for (const i in all) {
         createLandingPage(layout, manifObj).then(landing => {
             writeFile(enc(layout.id) + ".html", landing, err)
         });
+        createIndexFor(layout)
     }).catch(e => console.log("Could not generate the manifest: ", e))
 
 }
@@ -225,6 +234,4 @@ createManifest(new LayoutConfig({
 })
 
 
-console.log("Counting all translations")
-Translations.CountTranslations();
 console.log("All done!");

@@ -80,6 +80,7 @@
       "builtin": "nature_reserve",
       "wayHandling": 1,
       "override": {
+        "id": "nature_reserve_centerpoints",
         "source": {
           "osmTags": {
             "+and": [

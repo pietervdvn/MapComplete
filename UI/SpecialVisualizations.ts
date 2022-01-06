@@ -27,7 +27,6 @@ import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import WikipediaBox from "./Wikipedia/WikipediaBox";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import MultiApply from "./Popup/MultiApply";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import {SubtleButton} from "./Base/SubtleButton";
 import {DefaultGuiState} from "./DefaultGuiState";
@@ -37,6 +36,7 @@ import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton";
 import TagApplyButton from "./Popup/TagApplyButton";
 import AutoApplyButton from "./Popup/AutoApplyButton";
+import * as left_right_style_json from "../assets/layers/left_right_style/left_right_style.json";
 import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
 
 export interface SpecialVisualization {
@@ -51,7 +51,6 @@ export interface SpecialVisualization {
 export default class SpecialVisualizations {
 
     public static specialVisualizations = SpecialVisualizations.init()
-
 
     private static init(){
       const  specialVisualizations: SpecialVisualization[] =
@@ -105,7 +104,7 @@ export default class SpecialVisualizations {
                         if (args.length > 0) {
                             imagePrefixes = [].concat(...args.map(a => a.split(",")));
                         }
-                        return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags, imagePrefixes);
+                        return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags, state);
                     }
                 },
                 {
@@ -121,7 +120,7 @@ export default class SpecialVisualizations {
                         defaultValue: "Add image"
                     }],
                     constr: (state: State, tags, args) => {
-                        return new ImageUploadFlow(tags, args[0], args[1])
+                        return new ImageUploadFlow(tags, state, args[0], args[1])
                     }
                 },
                 {
@@ -162,7 +161,7 @@ export default class SpecialVisualizations {
                         }
                     ],
                     example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
-                    constr: (state, tagSource, args, defaultGuiState) => {
+                    constr: (state, tagSource, args, _) => {
 
                         const keys = [...args]
                         keys.splice(0, 1)
@@ -268,7 +267,7 @@ export default class SpecialVisualizations {
                                 leafletMap: minimap["leafletMap"],
                                 enablePopups: false,
                                 zoomToFeatures: true,
-                                layerToShow: AllKnownLayers.sharedLayers.get("left_right_style"),
+                                layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
                                 features: new StaticFeatureSource([copy], false),
                                 allElements: State.state.allElements
                             }
@@ -325,7 +324,7 @@ export default class SpecialVisualizations {
                     }],
                     example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                     constr: (state: State, tagSource: UIEventSource<any>, args) => {
-                        return new OpeningHoursVisualization(tagSource, args[0], args[1], args[2])
+                        return new OpeningHoursVisualization(tagSource, state, args[0], args[1], args[2])
                     }
                 },
                 {

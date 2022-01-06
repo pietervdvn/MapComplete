@@ -22,7 +22,7 @@ import Title from "../../UI/Base/Title";
 import List from "../../UI/Base/List";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
-import * as icons from "../../assets/tagRenderings/icons.json"
+import {tag} from "@turf/turf";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -236,26 +236,14 @@ export default class LayerConfig extends WithContextLoader {
             throw "Missing ids in tagrenderings"
         }
 
-        this.tagRenderings = this.ExtractLayerTagRenderings(json, official)
-        if (official) {
-
-            const emptyIds = this.tagRenderings.filter(tr => tr.id === "");
-            if (emptyIds.length > 0) {
-                throw `Some tagrendering-ids are empty or have an emtpy string; this is not allowed (at ${context})`
-            }
-
-            const duplicateIds = Utils.Dupicates(this.tagRenderings.map(f => f.id).filter(id => id !== "questions"))
-            if (duplicateIds.length > 0) {
-                throw `Some tagRenderings have a duplicate id: ${duplicateIds} (at ${context}.tagRenderings)`
-            }
-        }
+        this.tagRenderings = (json.tagRenderings ?? []).map((tr, i) => new TagRenderingConfig(<TagRenderingConfigJson>tr, this.id + ".tagRenderings[" + i + "]"))
 
         this.filters = (json.filter ?? []).map((option, i) => {
             return new FilterConfig(option, `${context}.filter-[${i}]`)
         });
 
         {
-            const duplicateIds = Utils.Dupicates(this.filters.map(f => f.id))
+            const duplicateIds = Utils.Dupiclates(this.filters.map(f => f.id))
             if (duplicateIds.length > 0) {
                 throw `Some filters have a duplicate id: ${duplicateIds} (at ${context}.filters)`
             }
@@ -265,17 +253,8 @@ export default class LayerConfig extends WithContextLoader {
             throw "Error in " + context + ": use 'filter' instead of 'filters'"
         }
 
-        const titleIcons = [];
-        const defaultIcons = icons.defaultIcons;
-        for (const icon of json.titleIcons ?? defaultIcons) {
-            if (icon === "defaults") {
-                titleIcons.push(...defaultIcons);
-            } else {
-                titleIcons.push(icon);
-            }
-        }
 
-        this.titleIcons = this.ParseTagRenderings(titleIcons, {
+        this.titleIcons = this.ParseTagRenderings((<TagRenderingConfigJson[]> json.titleIcons), {
             readOnlyMode: true
         });
 
@@ -320,109 +299,6 @@ export default class LayerConfig extends WithContextLoader {
         const defaultTags = new UIEventSource(TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"})))
         return mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html
     }
-
-    public ExtractLayerTagRenderings(json: LayerConfigJson, official: boolean): TagRenderingConfig[] {
-
-        if (json.tagRenderings === undefined) {
-            return []
-        }
-
-        const normalTagRenderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[] = []
-
-
-        const renderingsToRewrite: ({
-            rewrite: {
-                sourceString: string,
-                into: string[]
-            }, renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
-        })[] = []
-        for (let i = 0; i < json.tagRenderings.length; i++) {
-            const tr = json.tagRenderings[i];
-            const rewriteDefined = tr["rewrite"] !== undefined
-            const renderingsDefined = tr["renderings"]
-
-            if (!rewriteDefined && !renderingsDefined) {
-                // @ts-ignore
-                normalTagRenderings.push(tr)
-                continue
-            }
-            if (rewriteDefined && renderingsDefined) {
-                // @ts-ignore
-                renderingsToRewrite.push(tr)
-                continue
-            }
-            throw `Error in ${this._context}.tagrenderings[${i}]: got a value which defines either \`rewrite\` or \`renderings\`, but not both. Either define both or move the \`renderings\`  out of this scope`
-        }
-
-        const allRenderings = this.ParseTagRenderings(normalTagRenderings,
-            {
-                requiresId: official
-            });
-
-        if (renderingsToRewrite.length === 0) {
-            return allRenderings
-        }
-
-        /* Used for left|right group creation and replacement */
-        function prepConfig(keyToRewrite: string, target: string, tr: TagRenderingConfigJson) {
-
-            function replaceRecursive(transl: string | any) {
-                if (typeof transl === "string") {
-                    return transl.replace(keyToRewrite, target)
-                }
-                if (transl.map !== undefined) {
-                    return transl.map(o => replaceRecursive(o))
-                }
-                transl = {...transl}
-                for (const key in transl) {
-                    transl[key] = replaceRecursive(transl[key])
-                }
-                return transl
-            }
-
-            const orig = tr;
-            tr = replaceRecursive(tr)
-
-            tr.id = target + "-" + orig.id
-            tr.group = target
-            return tr
-        }
-
-        const rewriteGroups: Map<string, TagRenderingConfig[]> = new Map<string, TagRenderingConfig[]>()
-        for (const rewriteGroup of renderingsToRewrite) {
-
-            const tagRenderings = rewriteGroup.renderings
-            const textToReplace = rewriteGroup.rewrite.sourceString
-            const targets = rewriteGroup.rewrite.into
-            for (const target of targets) {
-                const parsedRenderings = this.ParseTagRenderings(tagRenderings,  {
-                    prepConfig: tr => prepConfig(textToReplace, target, tr)
-                })
-
-                if (!rewriteGroups.has(target)) {
-                    rewriteGroups.set(target, [])
-                }
-                rewriteGroups.get(target).push(...parsedRenderings)
-            }
-        }
-
-
-        rewriteGroups.forEach((group, groupName) => {
-            group.push(new TagRenderingConfig({
-                id: "questions",
-                group: groupName
-            }))
-        })
-
-        rewriteGroups.forEach(group => {
-            allRenderings.push(...group)
-        })
-
-
-        return allRenderings;
-
-    }
-
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
         context?: string;
         reason: string;
@@ -512,5 +388,4 @@ export default class LayerConfig extends WithContextLoader {
     public isLeftRightSensitive(): boolean {
         return this.lineRendering.some(lr => lr.leftRightSensitive)
     }
-
 }

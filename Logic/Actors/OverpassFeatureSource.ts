@@ -10,7 +10,7 @@ import RelationsTracker from "../Osm/RelationsTracker";
 import {BBox} from "../BBox";
 import Loc from "../../Models/Loc";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import AllKnownLayers from "../../Customizations/AllKnownLayers";
+import Constants from "../../Models/Constants";
 
 
 export default class OverpassFeatureSource implements FeatureSource {
@@ -122,7 +122,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             if (typeof (layer) === "string") {
                 throw "A layer was not expanded!"
             }
-            if(AllKnownLayers.priviliged_layers.indexOf(layer.id) >= 0){
+            if(Constants.priviliged_layers.indexOf(layer.id) >= 0){
                 continue
             }
             if (this.state.locationControl.data.zoom < layer.minzoom) {

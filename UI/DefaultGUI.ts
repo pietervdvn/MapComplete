@@ -15,13 +15,14 @@ import LeftControls from "./BigComponents/LeftControls";
 import RightControls from "./BigComponents/RightControls";
 import CenterMessageBox from "./CenterMessageBox";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ScrollableFullScreen from "./Base/ScrollableFullScreen";
 import Translations from "./i18n/Translations";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler";
 import Lazy from "./Base/Lazy";
 import {DefaultGuiState} from "./DefaultGuiState";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import * as home_location_json from "../assets/layers/home_location/home_location.json";
 
 
 /**
@@ -111,7 +112,7 @@ export default class DefaultGUI {
 
         new ShowDataLayer({
             leafletMap: state.leafletMap,
-            layerToShow: AllKnownLayers.sharedLayers.get("home_location"),
+            layerToShow: new LayerConfig(home_location_json, "all_known_layers", true),
             features: state.homeLocation,
             enablePopups: false,
         })

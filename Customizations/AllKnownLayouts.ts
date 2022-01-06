@@ -1,4 +1,3 @@
-import AllKnownLayers from "./AllKnownLayers";
 import * as known_themes from "../assets/generated/known_layers_and_themes.json"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
@@ -7,9 +6,29 @@ import Combine from "../UI/Base/Combine";
 import Title from "../UI/Base/Title";
 import List from "../UI/Base/List";
 import DependencyCalculator from "../Models/ThemeConfig/DependencyCalculator";
+import Constants from "../Models/Constants";
+import {Utils} from "../Utils";
 
 export class AllKnownLayouts {
+    // Must be below the list...
+    private static sharedLayers: Map<string, LayerConfig> = AllKnownLayouts.getSharedLayers();
 
+    private static getSharedLayers(): Map<string, LayerConfig> {
+        const sharedLayers = new Map<string, LayerConfig>();
+        for (const layer of known_themes.layers) {
+            try {
+                // @ts-ignore
+                const parsed = new LayerConfig(layer, "shared_layers")
+                sharedLayers.set(layer.id, parsed);
+            } catch (e) {
+                if (!Utils.runningFromConsole) {
+                    console.error("CRITICAL: Could not parse a layer configuration!", layer.id, " due to", e)
+                }
+            }
+        }
+
+        return sharedLayers;
+    }
 
     public static allKnownLayouts: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
     public static layoutsList: LayoutConfig[] = AllKnownLayouts.GenerateOrderedList(AllKnownLayouts.allKnownLayouts);
@@ -35,14 +54,14 @@ export class AllKnownLayouts {
     }
 
     public static GenLayerOverviewText(): BaseUIElement {
-        for (const id of AllKnownLayers.priviliged_layers) {
-            if (!AllKnownLayers.sharedLayers.has(id)) {
+        for (const id of Constants.priviliged_layers) {
+            if (!AllKnownLayouts.sharedLayers.has(id)) {
                 throw "Priviliged layer definition not found: " + id
             }
         }
 
-        const allLayers: LayerConfig[] = Array.from(AllKnownLayers.sharedLayers.values())
-            .filter(layer => AllKnownLayers.priviliged_layers.indexOf(layer.id) < 0)
+        const allLayers: LayerConfig[] = Array.from(AllKnownLayouts.sharedLayers.values())
+            .filter(layer => Constants.priviliged_layers.indexOf(layer.id) < 0)
 
         const builtinLayerIds: Set<string> = new Set<string>()
         allLayers.forEach(l => builtinLayerIds.add(l.id))
@@ -89,10 +108,10 @@ export class AllKnownLayouts {
             new Title("Special and other useful layers", 1),
             "MapComplete has a few data layers available in the theme which have special properties through builtin-hooks. Furthermore, there are some normal layers (which are built from normal Theme-config files) but are so general that they get a mention here.",
             new Title("Priviliged layers", 1),
-            new List(AllKnownLayers.priviliged_layers.map(id => "[" + id + "](#" + id + ")")),
-            ...AllKnownLayers.priviliged_layers
-                .map(id => AllKnownLayers.sharedLayers.get(id))
-                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), layerIsNeededBy, DependencyCalculator.getLayerDependencies(l),AllKnownLayers.added_by_default.indexOf(l.id) >= 0, AllKnownLayers.no_include.indexOf(l.id) < 0)),
+            new List(Constants.priviliged_layers.map(id => "[" + id + "](#" + id + ")")),
+            ...Constants.priviliged_layers
+                .map(id => AllKnownLayouts.sharedLayers.get(id))
+                .map((l) => l.GenerateDocumentation(themesPerLayer.get(l.id), layerIsNeededBy, DependencyCalculator.getLayerDependencies(l),Constants.added_by_default.indexOf(l.id) >= 0, Constants.no_include.indexOf(l.id) < 0)),
             new Title("Normal layers", 1),
             "The following layers are included in MapComplete",
             new Title("Frequently reused layers", 2),
@@ -108,34 +127,11 @@ export class AllKnownLayouts {
     }
 
     private static GenerateOrderedList(allKnownLayouts: Map<string, LayoutConfig>): LayoutConfig[] {
-        const keys = ["personal", "cyclofix", "hailhydrant", "bookcases", "toilets", "aed"]
         const list = []
-        for (const key of keys) {
-            list.push(allKnownLayouts.get(key))
-        }
         allKnownLayouts.forEach((layout, key) => {
-            if (keys.indexOf(key) < 0) {
-                list.push(layout)
-            }
+            list.push(layout)
         })
         return list;
-    }
-
-    private static AddGhostBikes(layout: LayoutConfig): LayoutConfig {
-        const now = new Date();
-        const m = now.getMonth() + 1;
-        const day = new Date().getDate() + 1;
-        const date = day + "/" + m;
-        if (date === "31/10" || date === "1/11" || date === "2/11") {
-            console.log("The current date is ", date, ", which means we remember our dead")
-            // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
-            layout.layers.push(
-                AllKnownLayers.sharedLayers.get("ghost_bike")
-            );
-
-        }
-        return layout;
-
     }
 
     private static AllLayouts(): Map<string, LayoutConfig> {
@@ -143,18 +139,14 @@ export class AllKnownLayouts {
         for (const layoutConfigJson of known_themes.themes) {
             // @ts-ignore
             const layout = new LayoutConfig(layoutConfigJson, true)
-
-            if (layout.id === "cyclofix") {
-                AllKnownLayouts.AddGhostBikes(layout)
-            }
             dict.set(layout.id, layout)
 
             for (let i = 0; i < layout.layers.length; i++) {
                 let layer = layout.layers[i];
                 if (typeof (layer) === "string") {
-                    layer = layout.layers[i] = AllKnownLayers.sharedLayers.get(layer);
+                    layer = layout.layers[i] = AllKnownLayouts.sharedLayers.get(layer);
                     if (layer === undefined) {
-                        console.log("Defined layers are ", AllKnownLayers.sharedLayers.keys())
+                        console.log("Defined layers are ", AllKnownLayouts.sharedLayers.keys())
                         throw `Layer ${layer} was not found or defined - probably a type was made`
                     }
                 }
