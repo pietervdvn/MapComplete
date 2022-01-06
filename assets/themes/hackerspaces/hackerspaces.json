@@ -4,12 +4,14 @@
     "en": "Hackerspaces",
     "de": "Hackerspaces",
     "it": "Hackerspace",
-    "ru": "Хакерспейсы"
+    "ru": "Хакерспейсы",
+    "zh_Hant": "駭客空間"
   },
   "shortDescription": {
     "en": "A map of hackerspaces",
     "de": "Eine Karte von Hackerspaces",
-    "it": "Una cartina degli hackerspace"
+    "it": "Una cartina degli hackerspace",
+    "zh_Hant": "駭客空間的地圖"
   },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
@@ -46,7 +48,8 @@
         "render": {
           "en": "Hackerspace",
           "de": "Hackerspace",
-          "ru": "Хакерспейс"
+          "ru": "Хакерспейс",
+          "zh_Hant": "駭客空間"
         },
         "mappings": [
           {
@@ -58,7 +61,8 @@
             "then": {
               "en": " {name}",
               "de": " {name}",
-              "ru": " {name}"
+              "ru": " {name}",
+              "zh_Hant": " {name}"
             }
           }
         ]
@@ -74,21 +78,24 @@
           "id": "is_makerspace",
           "question": {
             "en": "Is this a hackerspace or a makerspace?",
-            "de": "Ist dies ein Hackerspace oder ein Makerspace?"
+            "de": "Ist dies ein Hackerspace oder ein Makerspace?",
+            "zh_Hant": "這邊是駭客空間還是創客空間？"
           },
           "mappings": [
             {
               "if": "hackerspace=makerspace",
               "then": {
                 "en": "This is a makerspace",
-                "de": "Dies ist ein Makerspace"
+                "de": "Dies ist ein Makerspace",
+                "zh_Hant": "這是創客空間"
               }
             },
             {
               "if": "hackerspace=",
               "then": {
                 "en": "This is a traditional (software oriented) hackerspace",
-                "de": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
+                "de": "Dies ist ein traditioneller (softwareorientierter) Hackerspace",
+                "zh_Hant": "這是傳統的 (軟體導向) 駭客空間"
               }
             }
           ]
@@ -96,11 +103,13 @@
         {
           "question": {
             "en": "What is the name of this hackerspace?",
-            "de": "Wie lautet der Name dieses Hackerspace?"
+            "de": "Wie lautet der Name dieses Hackerspace?",
+            "zh_Hant": "這個駭客空間的名稱是？"
           },
           "render": {
             "en": "This hackerspace is named <b>{name}</b>",
-            "de": "Dieser Hackerspace heißt <b>{name}</b>"
+            "de": "Dieser Hackerspace heißt <b>{name}</b>",
+            "zh_Hant": "這個駭客空間叫 <b>{name}</b>"
           },
           "freeform": {
             "key": "name"
@@ -113,7 +122,8 @@
         {
           "question": {
             "en": "When is this hackerspace opened?",
-            "de": "Wann hat dieser Hackerspace geöffnet?"
+            "de": "Wann hat dieser Hackerspace geöffnet?",
+            "zh_Hant": "這個駭客空間的營業時間？"
           },
           "freeform": {
             "key": "opening_hours",
@@ -122,7 +132,8 @@
           "render": {
             "en": "{opening_hours_table()}",
             "de": "{opening_hours_table()}",
-            "ru": "{opening_hours_table()}"
+            "ru": "{opening_hours_table()}",
+            "zh_Hant": "{opening_hours_table()}"
           },
           "mappings": [
             {
@@ -134,7 +145,8 @@
               "then": {
                 "en": "Opened 24/7",
                 "de": "durchgehend geöffnet",
-                "ru": "Открыто 24/7"
+                "ru": "Открыто 24/7",
+                "zh_Hant": "24/7 營業"
               }
             }
           ],
@@ -145,7 +157,8 @@
           "id": "hs-club-mate",
           "question": {
             "en": "Does this hackerspace serve Club Mate?",
-            "de": "Gibt es in diesem Hackerspace Club Mate?"
+            "de": "Gibt es in diesem Hackerspace Club Mate?",
+            "zh_Hant": "這個駭客空間是否服務俱樂部伙伴？"
           },
           "mappings": [
             {
@@ -156,7 +169,8 @@
               },
               "then": {
                 "en": "This hackerspace serves club mate",
-                "de": "In diesem Hackerspace gibt es Club Mate"
+                "de": "In diesem Hackerspace gibt es Club Mate",
+                "zh_Hant": "這個駭客空間服務俱樂部伙伴"
               }
             },
             {
@@ -167,7 +181,8 @@
               },
               "then": {
                 "en": "This hackerspace does not serve club mate",
-                "de": "In diesem Hackerspace gibt es kein Club Mate"
+                "de": "In diesem Hackerspace gibt es kein Club Mate",
+                "zh_Hant": "這個駭客空間沒有服務俱樂部伙伴"
               }
             }
           ]
@@ -175,11 +190,13 @@
         {
           "render": {
             "en": "This hackerspace was founded at {start_date}",
-            "de": "Dieser Hackerspace wurde gegründet am {start_date}"
+            "de": "Dieser Hackerspace wurde gegründet am {start_date}",
+            "zh_Hant": "這駭客空間是 {start_date} 成立的"
           },
           "question": {
             "en": "When was this hackerspace founded?",
-            "de": "Wann wurde dieser Hackerspace gegründet?"
+            "de": "Wann wurde dieser Hackerspace gegründet?",
+            "zh_Hant": "這個駭客空間何時成立的？"
           },
           "freeform": {
             "key": "start_date",
@@ -212,11 +229,13 @@
           ],
           "title": {
             "en": "Makerspace",
-            "de": "Makerspace"
+            "de": "Makerspace",
+            "zh_Hant": "創客空間"
           },
           "description": {
             "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
-            "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ..."
+            "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
+            "zh_Hant": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等..."
           }
         }
       ],

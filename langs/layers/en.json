@@ -213,6 +213,16 @@
                 "question": "How wide is the smallest opening next to the barriers?",
                 "render": "Width of opening: {width:opening} m"
             },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a single bollard in the road"
+                    },
+                    "1": {
+                        "then": "This is a cycle barrier slowing down cyclists"
+                    }
+                }
+            },
             "bicycle=yes/no": {
                 "mappings": {
                     "0": {

@@ -28,7 +28,8 @@
     {
       "id": "node2node",
       "name": {
-        "en": "node to node links"
+        "en": "node to node links",
+        "de": "Knotenpunktverbindungen"
       },
       "source": {
         "osmTags": {
@@ -42,13 +43,15 @@
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "node to node link"
+          "en": "node to node link",
+          "de": "Knotenpunktverbindung"
         },
         "mappings": [
           {
             "if": "ref~*",
             "then": {
-              "en": "node to node link <strong>{ref}</strong>"
+              "en": "node to node link <strong>{ref}</strong>",
+              "de": "Knotenpunktverbindung <strong>{ref}</strong>"
             }
           }
         ]
@@ -66,10 +69,12 @@
       "tagRenderings": [
         {
           "question": {
-            "en": "When was this node to node link last surveyed?"
+            "en": "When was this node to node link last surveyed?",
+            "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?"
           },
           "render": {
-            "en": "This node to node link was last surveyed on {survey:date}"
+            "en": "This node to node link was last surveyed on {survey:date}",
+            "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
           },
           "freeform": {
             "key": "survey:date",
@@ -89,7 +94,8 @@
     {
       "id": "node",
       "name": {
-        "en": "nodes"
+        "en": "nodes",
+        "de": "Knotenpunkte"
       },
       "source": {
         "osmTags": {
@@ -147,10 +153,12 @@
       "tagRenderings": [
         {
           "question": {
-            "en": "When was this cycle node last surveyed?"
+            "en": "When was this cycle node last surveyed?",
+            "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?"
           },
           "render": {
-            "en": "This cycle node was last surveyed on {survey:date}"
+            "en": "This cycle node was last surveyed on {survey:date}",
+            "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -166,10 +174,12 @@
         },
         {
           "question": {
-            "en": "How many other cycle nodes does this node link to?"
+            "en": "How many other cycle nodes does this node link to?",
+            "de": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?"
           },
           "render": {
-            "en": "This node links to {expected_rcn_route_relations} other cycle nodes."
+            "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
+            "de": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
           },
           "freeform": {
             "key": "expected_rcn_route_relations",

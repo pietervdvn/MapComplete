@@ -32,6 +32,10 @@
         "render": "circle:#0f0",
         "mappings": [
           {
+            "if": "reprojection=yes",
+            "then": "none:#f00"
+          },
+          {
             "if": "move=no",
             "then": "ring:#0f0"
           }
@@ -41,7 +45,15 @@
     },
     {
       "location": "start",
-      "icon": "square:#f00",
+      "icon": {
+        "render": "square:#f00",
+        "mappings": [
+          {
+            "if": "reprojection=yes",
+            "then": "reload:#f00"
+          }
+        ]
+      },
       "iconSize": {
         "render": "10,10,center",
         "mappings": [

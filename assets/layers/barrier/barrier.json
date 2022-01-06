@@ -80,7 +80,7 @@
         "de": "Fahrradhindernis"
       },
       "tags": [
-        "barrier=bollard"
+        "barrier=cycle_barrier"
       ],
       "description": {
         "en": "Cycle barrier, slowing down cyclists",
@@ -124,6 +124,24 @@
         }
       ],
       "id": "bicycle=yes/no"
+    },
+    {
+      "id": "barrier_type",
+      "mappings": [
+        {
+          "if": "barrier=bollard",
+          "then": {
+            "en": "This is a single bollard in the road"
+          }
+        },
+        {
+          "if": "barrier=cycle_barrier",
+          "then": {
+            "en": "This is a cycle barrier slowing down cyclists",
+            "nl": "Dit zijn fietshekjes die fietsers afremmen"
+          }
+        }
+      ]
     },
     {
       "question": {

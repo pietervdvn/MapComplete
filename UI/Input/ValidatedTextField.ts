@@ -406,9 +406,17 @@ export default class ValidatedTextField {
                 if (str === undefined) {
                     return false;
                 }
+                if(str.startsWith("tel:")){
+                    str = str.substring("tel:".length)
+                }
                 return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
             },
-            (str, country: () => string) => parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational(),
+            (str, country: () => string) => {
+                if(str.startsWith("tel:")){
+                    str = str.substring("tel:".length)
+                }
+                return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
+            },
             undefined,
             "tel"
         ),

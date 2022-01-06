@@ -25,7 +25,7 @@ export class GeoOperations {
     }
 
     static centerpointCoordinates(feature: any): [number, number] {
-        return <[number, number]> turf.center(feature).geometry.coordinates;
+        return <[number, number]>turf.center(feature).geometry.coordinates;
     }
 
     /**
@@ -37,10 +37,10 @@ export class GeoOperations {
         return turf.distance(lonlat0, lonlat1, {units: "meters"})
     }
 
-    static convexHull(featureCollection, options: {concavity?: number}){
+    static convexHull(featureCollection, options: { concavity?: number }) {
         return turf.convex(featureCollection, options)
     }
-    
+
     /**
      * Calculates the overlap of 'feature' with every other specified feature.
      * The features with which 'feature' overlaps, are returned together with their overlap area in m²
@@ -199,8 +199,8 @@ export class GeoOperations {
 
     static buffer(feature: any, bufferSizeInMeter: number) {
         return turf.buffer(feature, bufferSizeInMeter / 1000, {
-            units:'kilometers'
-        } )
+            units: 'kilometers'
+        })
     }
 
     static bbox(feature: any) {
@@ -351,262 +351,165 @@ export class GeoOperations {
     }
 
     /**
-     * Calculates the intersection between two features.
-     * Returns the length if intersecting a linestring and a (multi)polygon (in meters), returns a surface area (in m²) if intersecting two (multi)polygons
-     * Returns 0 if both are linestrings
-     * Returns null if the features are not intersecting
-     */
-    private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
-            if (feature.geometry.type === "LineString") {
-
-
-                otherFeatureBBox = otherFeatureBBox ?? BBox.get(otherFeature);
-                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
-                if (!overlaps) {
-                    return null;
-                }
-
-                // Calculate the length of the intersection
-
-
-                let intersectionPoints = turf.lineIntersect(feature, otherFeature);
-                if (intersectionPoints.features.length == 0) {
-                    // No intersections.
-                    // If one point is inside of the polygon, all points are
-
-
-                    const coors = feature.geometry.coordinates;
-                    const startCoor = coors[0]
-                    if (this.inside(startCoor, otherFeature)) {
-                        return this.lengthInMeters(feature)
-                    }
-
-                    return null;
-                }
-                let intersectionPointsArray = intersectionPoints.features.map(d => {
-                    return d.geometry.coordinates
-                });
-
-                if (otherFeature.geometry.type === "LineString") {
-                    if (intersectionPointsArray.length > 0) {
-                        return 0
-                    }
-                    return null;
-                }
-                if (intersectionPointsArray.length == 1) {
-                    // We need to add the start- or endpoint of the current feature, depending on which one is embedded
-                    const coors = feature.geometry.coordinates;
-                    const startCoor = coors[0]
-                    if (this.inside(startCoor, otherFeature)) {
-                        // The startpoint is embedded
-                        intersectionPointsArray.push(startCoor)
-                    } else {
-                        intersectionPointsArray.push(coors[coors.length - 1])
-                    }
-                }
-
-                let intersection = turf.lineSlice(turf.point(intersectionPointsArray[0]), turf.point(intersectionPointsArray[1]), feature);
-
-                if (intersection == null) {
-                    return null;
-                }
-                const intersectionSize = turf.length(intersection); // in km
-                return intersectionSize * 1000
-
-
-            }
-
-            if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
-                const otherFeatureBBox = BBox.get(otherFeature);
-                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
-                if (!overlaps) {
-                    return null;
-                }
-                if (otherFeature.geometry.type === "LineString") {
-                    return this.calculateInstersection(otherFeature, feature, otherFeatureBBox, featureBBox)
-                }
-
-                try{
-                    
-                const intersection = turf.intersect(feature, otherFeature);
-                if (intersection == null) {
-                    return null;
-                }
-                return turf.area(intersection); // in m²
-                }catch(e){
-                    if(e.message === "Each LinearRing of a Polygon must have 4 or more Positions."){
-                        // WORKAROUND TIME!
-                        // See https://github.com/Turfjs/turf/pull/2238
-                        return null;
-                    }
-                    throw e;    
-                }
-
-            }
-            throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
-
-    }
-
-    /**
      * Calculates line intersection between two features.
      */
-    public static LineIntersections(feature, otherFeature): [number,number][]{
-        return turf.lineIntersect(feature, otherFeature).features.map(p =><[number,number]> p.geometry.coordinates)
+    public static LineIntersections(feature, otherFeature): [number, number][] {
+        return turf.lineIntersect(feature, otherFeature).features.map(p => <[number, number]>p.geometry.coordinates)
     }
-    
-    public static AsGpx(feature, generatedWithLayer?: LayerConfig){
-        
+
+    public static AsGpx(feature, generatedWithLayer?: LayerConfig) {
+
         const metadata = {}
         const tags = feature.properties
-        
-        if(generatedWithLayer !== undefined){
-            
+
+        if (generatedWithLayer !== undefined) {
+
             metadata["name"] = generatedWithLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
-            metadata["desc"] = "Generated with MapComplete layer "+generatedWithLayer.id
-            if(tags._backend?.contains("openstreetmap")){
-                metadata["copyright"]= "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
+            metadata["desc"] = "Generated with MapComplete layer " + generatedWithLayer.id
+            if (tags._backend?.contains("openstreetmap")) {
+                metadata["copyright"] = "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
                 metadata["author"] = tags["_last_edit:contributor"]
-                metadata["link"]= "https://www.openstreetmap.org/"+tags.id
+                metadata["link"] = "https://www.openstreetmap.org/" + tags.id
                 metadata["time"] = tags["_last_edit:timestamp"]
-            }else{
+            } else {
                 metadata["time"] = new Date().toISOString()
             }
         }
-        
+
         return togpx(feature, {
-            creator: "MapComplete "+Constants.vNumber,
+            creator: "MapComplete " + Constants.vNumber,
             metadata
         })
     }
-    
-    public static IdentifieCommonSegments(coordinatess: [number,number][][] ): {
+
+    public static IdentifieCommonSegments(coordinatess: [number, number][][]): {
         originalIndex: number,
         segmentShardWith: number[],
         coordinates: []
-    }[]{
-        
+    }[] {
+
         // An edge. Note that the edge might be reversed to fix the sorting condition:  start[0] < end[0] && (start[0] != end[0] || start[0] < end[1])
-        type edge = {start: [number, number], end: [number, number], intermediate: [number,number][], members: {index:number, isReversed: boolean}[]}
+        type edge = { start: [number, number], end: [number, number], intermediate: [number, number][], members: { index: number, isReversed: boolean }[] }
 
         // The strategy:
         // 1. Index _all_ edges from _every_ linestring. Index them by starting key, gather which relations run over them
         // 2. Join these edges back together - as long as their membership groups are the same
         // 3. Convert to results
-        
+
         const allEdgesByKey = new Map<string, edge>()
 
-        for (let index = 0; index < coordinatess.length; index++){
+        for (let index = 0; index < coordinatess.length; index++) {
             const coordinates = coordinatess[index];
-            for (let i = 0; i < coordinates.length - 1; i++){
-                
+            for (let i = 0; i < coordinates.length - 1; i++) {
+
                 const c0 = coordinates[i];
                 const c1 = coordinates[i + 1]
                 const isReversed = (c0[0] > c1[0]) || (c0[0] == c1[0] && c0[1] > c1[1])
-                
-                let key : string
-                if(isReversed){
-                    key = ""+c1+";"+c0
-                }else{
-                    key = ""+c0+";"+c1
+
+                let key: string
+                if (isReversed) {
+                    key = "" + c1 + ";" + c0
+                } else {
+                    key = "" + c0 + ";" + c1
                 }
                 const member = {index, isReversed}
-                if(allEdgesByKey.has(key)){
+                if (allEdgesByKey.has(key)) {
                     allEdgesByKey.get(key).members.push(member)
                     continue
                 }
-                
-                let edge : edge;
-                if(!isReversed){
+
+                let edge: edge;
+                if (!isReversed) {
                     edge = {
-                        start : c0,
+                        start: c0,
                         end: c1,
                         members: [member],
                         intermediate: []
                     }
-                }else{
+                } else {
                     edge = {
-                        start : c1,
+                        start: c1,
                         end: c0,
                         members: [member],
                         intermediate: []
                     }
                 }
                 allEdgesByKey.set(key, edge)
-                
+
             }
         }
 
         // Lets merge them back together!
-        
+
         let didMergeSomething = false;
         let allMergedEdges = Array.from(allEdgesByKey.values())
         const allEdgesByStartPoint = new Map<string, edge[]>()
         for (const edge of allMergedEdges) {
-            
+
             edge.members.sort((m0, m1) => m0.index - m1.index)
-            
-            const kstart = edge.start+""
-            if(!allEdgesByStartPoint.has(kstart)){
+
+            const kstart = edge.start + ""
+            if (!allEdgesByStartPoint.has(kstart)) {
                 allEdgesByStartPoint.set(kstart, [])
             }
             allEdgesByStartPoint.get(kstart).push(edge)
         }
-        
-        
-        function membersAreCompatible(first:edge, second:edge): boolean{
+
+
+        function membersAreCompatible(first: edge, second: edge): boolean {
             // There must be an exact match between the members
-            if(first.members === second.members){
+            if (first.members === second.members) {
                 return true
             }
-            
-            if(first.members.length !== second.members.length){
+
+            if (first.members.length !== second.members.length) {
                 return false
             }
-            
+
             // Members are sorted and have the same length, so we can check quickly
             for (let i = 0; i < first.members.length; i++) {
                 const m0 = first.members[i]
                 const m1 = second.members[i]
-                if(m0.index !== m1.index || m0.isReversed !== m1.isReversed){
+                if (m0.index !== m1.index || m0.isReversed !== m1.isReversed) {
                     return false
                 }
             }
-            
+
             // Allrigth, they are the same, lets mark this permanently
             second.members = first.members
             return true
-            
+
         }
-        
-        do{
+
+        do {
             didMergeSomething = false
             // We use 'allMergedEdges' as our running list
             const consumed = new Set<edge>()
             for (const edge of allMergedEdges) {
                 // Can we make this edge longer at the end?
-                if(consumed.has(edge)){
+                if (consumed.has(edge)) {
                     continue
                 }
-                
+
                 console.log("Considering edge", edge)
-                const matchingEndEdges = allEdgesByStartPoint.get(edge.end+"") 
+                const matchingEndEdges = allEdgesByStartPoint.get(edge.end + "")
                 console.log("Matchign endpoints:", matchingEndEdges)
-                if(matchingEndEdges === undefined){
+                if (matchingEndEdges === undefined) {
                     continue
                 }
-                
-                
-                for (let i = 0; i < matchingEndEdges.length; i++){
+
+
+                for (let i = 0; i < matchingEndEdges.length; i++) {
                     const endEdge = matchingEndEdges[i];
-                    
-                    if(consumed.has(endEdge)){
+
+                    if (consumed.has(endEdge)) {
                         continue
                     }
-                    
-                    if(!membersAreCompatible(edge, endEdge)){
+
+                    if (!membersAreCompatible(edge, endEdge)) {
                         continue
                     }
-                    
+
                     // We can make the segment longer!
                     didMergeSomething = true
                     console.log("Merging ", edge, "with ", endEdge)
@@ -617,12 +520,168 @@ export class GeoOperations {
                     break;
                 }
             }
-            
+
             allMergedEdges = allMergedEdges.filter(edge => !consumed.has(edge));
-            
-        }while(didMergeSomething)
-        
+
+        } while (didMergeSomething)
+
         return []
+    }
+
+    /**
+     * Removes points that do not contribute to the geometry from linestrings and the outer ring of polygons.
+     * Returs a new copy of the feature
+     * @param feature
+     */
+    static removeOvernoding(feature: any) {
+        if (feature.geometry.type !== "LineString" && feature.geometry.type !== "Polygon") {
+            throw "Overnode removal is only supported on linestrings and polygons"
+        }
+
+        const copy = {
+            ...feature,
+            geometry: {...feature.geometry}
+        }
+        let coordinates: [number, number][]
+        if (feature.geometry.type === "LineString") {
+            coordinates = [...feature.geometry.coordinates]
+            copy.geometry.coordinates = coordinates
+        } else {
+            coordinates = [...feature.geometry.coordinates[0]]
+            copy.geometry.coordinates[0] = coordinates
+        }
+
+        // inline replacement in the coordinates list
+        for (let i = coordinates.length - 2; i >= 1; i--) {
+            const coordinate = coordinates[i];
+            const nextCoordinate = coordinates[i + 1]
+            const prevCoordinate = coordinates[i - 1]
+
+            const distP = GeoOperations.distanceBetween(coordinate, prevCoordinate)
+            if(distP < 0.1){
+                coordinates.splice(i, 1)
+                continue
+            }
+        
+            if(i == coordinates.length - 2){
+                const distN = GeoOperations.distanceBetween(coordinate, nextCoordinate)
+                if(distN < 0.1){
+                    coordinates.splice(i, 1)
+                    continue
+                }
+            }
+            
+            const bearingN = turf.bearing(coordinate, nextCoordinate)
+            const bearingP = turf.bearing(prevCoordinate, coordinate)
+            const diff = Math.abs(bearingN - bearingP)
+            if (diff < 4) {
+                // If the diff is low, this point is hardly relevant
+                coordinates.splice(i, 1)
+            } else if (360 - diff < 4) {
+                // In case that the line is going south, e.g. bearingN = 179, bearingP = -179
+                coordinates.splice(i, 1)
+            }
+
+        }
+        return copy;
+
+    }
+
+    /**
+     * Calculates the intersection between two features.
+     * Returns the length if intersecting a linestring and a (multi)polygon (in meters), returns a surface area (in m²) if intersecting two (multi)polygons
+     * Returns 0 if both are linestrings
+     * Returns null if the features are not intersecting
+     */
+    private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
+        if (feature.geometry.type === "LineString") {
+
+
+            otherFeatureBBox = otherFeatureBBox ?? BBox.get(otherFeature);
+            const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
+            if (!overlaps) {
+                return null;
+            }
+
+            // Calculate the length of the intersection
+
+
+            let intersectionPoints = turf.lineIntersect(feature, otherFeature);
+            if (intersectionPoints.features.length == 0) {
+                // No intersections.
+                // If one point is inside of the polygon, all points are
+
+
+                const coors = feature.geometry.coordinates;
+                const startCoor = coors[0]
+                if (this.inside(startCoor, otherFeature)) {
+                    return this.lengthInMeters(feature)
+                }
+
+                return null;
+            }
+            let intersectionPointsArray = intersectionPoints.features.map(d => {
+                return d.geometry.coordinates
+            });
+
+            if (otherFeature.geometry.type === "LineString") {
+                if (intersectionPointsArray.length > 0) {
+                    return 0
+                }
+                return null;
+            }
+            if (intersectionPointsArray.length == 1) {
+                // We need to add the start- or endpoint of the current feature, depending on which one is embedded
+                const coors = feature.geometry.coordinates;
+                const startCoor = coors[0]
+                if (this.inside(startCoor, otherFeature)) {
+                    // The startpoint is embedded
+                    intersectionPointsArray.push(startCoor)
+                } else {
+                    intersectionPointsArray.push(coors[coors.length - 1])
+                }
+            }
+
+            let intersection = turf.lineSlice(turf.point(intersectionPointsArray[0]), turf.point(intersectionPointsArray[1]), feature);
+
+            if (intersection == null) {
+                return null;
+            }
+            const intersectionSize = turf.length(intersection); // in km
+            return intersectionSize * 1000
+
+
+        }
+
+        if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
+            const otherFeatureBBox = BBox.get(otherFeature);
+            const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
+            if (!overlaps) {
+                return null;
+            }
+            if (otherFeature.geometry.type === "LineString") {
+                return this.calculateInstersection(otherFeature, feature, otherFeatureBBox, featureBBox)
+            }
+
+            try {
+
+                const intersection = turf.intersect(feature, otherFeature);
+                if (intersection == null) {
+                    return null;
+                }
+                return turf.area(intersection); // in m²
+            } catch (e) {
+                if (e.message === "Each LinearRing of a Polygon must have 4 or more Positions.") {
+                    // WORKAROUND TIME!
+                    // See https://github.com/Turfjs/turf/pull/2238
+                    return null;
+                }
+                throw e;
+            }
+
+        }
+        throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
+
     }
 }
 

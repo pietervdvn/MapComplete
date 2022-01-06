@@ -1142,7 +1142,8 @@
               "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}",
               "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
               "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
+              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}",
+              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
             }
           },
           {
@@ -1151,7 +1152,8 @@
               "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}",
               "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}",
               "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}"
+              "it": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}",
+              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
             }
           },
           {
@@ -1159,7 +1161,8 @@
             "then": {
               "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}",
               "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}"
+              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}",
+              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
             }
           },
           {
@@ -1167,7 +1170,8 @@
             "then": {
               "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}",
               "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}"
+              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}",
+              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
             }
           },
           {
