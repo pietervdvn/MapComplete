@@ -118,18 +118,16 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         })
 
 
-
-
-      reprojectedNodes.forEach(({newLat, newLon, nodeId}) => {
+        reprojectedNodes.forEach(({newLat, newLon, nodeId}) => {
 
             const origNode = allNodesById.get(nodeId);
-            const feature =  {
+            const feature = {
                 type: "Feature",
                 properties: {
                     "move": "yes",
-                    "reprojection":"yes",
+                    "reprojection": "yes",
                     "osm-id": nodeId,
-                    "id": "replace-geometry-reproject-" +  nodeId ,
+                    "id": "replace-geometry-reproject-" + nodeId,
                     "original-node-tags": JSON.stringify(origNode.tags)
                 },
                 geometry: {
@@ -183,6 +181,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         reprojectedNodes: Map<number, {
             /*Move the node with this ID into the way as extra node, as it has some relation with the original object*/
             projectAfterIndex: number,
+            distance: number,
             newLat: number,
             newLon: number,
             nodeId: number
@@ -204,7 +203,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             if (idN < 0 || type !== "way") {
                 throw "Invalid ID to conflate: " + this.wayToReplaceId
             }
-            const url = `${this.state.osmConnection._oauth_config.url}/api/0.6/${this.wayToReplaceId}/full`;
+            const url = `${this.state.osmConnection?._oauth_config?.url ?? "https://openstreetmap.org"}/api/0.6/${this.wayToReplaceId}/full`;
             const rawData = await Utils.downloadJsonCached(url, 1000)
             parsed = OsmObject.ParseObjects(rawData.elements);
         }
@@ -355,6 +354,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         const reprojectedNodes = new Map<number, {
             /*Move the node with this ID into the way as extra node, as it has some relation with the original object*/
             projectAfterIndex: number,
+            distance: number,
             newLat: number,
             newLon: number,
             nodeId: number
@@ -384,18 +384,17 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 const projected = GeoOperations.nearestPoint(
                     way, [node.lon, node.lat]
                 )
-                console.trace("Node "+id+" should be kept and projected to ", projected)
-                
                 reprojectedNodes.set(id, {
                     newLon: projected.geometry.coordinates[0],
                     newLat: projected.geometry.coordinates[1],
                     projectAfterIndex: projected.properties.index,
+                    distance: projected.properties.dist,
                     nodeId: id
                 })
             })
-            
+
             reprojectedNodes.forEach((_, nodeId) => unusedIds.delete(nodeId))
-            
+
         }
 
 
@@ -403,7 +402,6 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-throw "Use reprojectedNodes!" // TODO FIXME
         const nodeDb = this.state.featurePipeline.fullNodeDatabase;
         if (nodeDb === undefined) {
             throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
@@ -461,13 +459,46 @@ throw "Use reprojectedNodes!" // TODO FIXME
             allChanges.push(...await addExtraTags.CreateChangeDescriptions(changes))
         }
 
+        const newCoordinates = [...this.targetCoordinates]
+
+        {
+            // Add reprojected nodes to the way
+
+            const proj = Array.from(reprojectedNodes.values())
+            proj.sort((a, b) => {
+                // Sort descending
+                const diff = b.projectAfterIndex - a.projectAfterIndex;
+                if(diff !== 0){
+                    return diff
+                }
+                return b.distance - a.distance;
+                
+                
+            })
+
+            for (const reprojectedNode of proj) {
+                const change = <ChangeDescription>{
+                    id: reprojectedNode.nodeId,
+                    type: "node",
+                    meta: {
+                        theme: this.theme,
+                        changeType: "move"
+                    },
+                    changes: {lon: reprojectedNode.newLon, lat: reprojectedNode.newLat}
+                }
+                allChanges.push(change)
+                actualIdsToUse.splice(reprojectedNode.projectAfterIndex + 1, 0, reprojectedNode.nodeId)
+                newCoordinates.splice(reprojectedNode.projectAfterIndex + 1, 0, [reprojectedNode.newLon, reprojectedNode.newLat])
+            }
+        }
+
         // Actually change the nodes of the way!
         allChanges.push({
             type: "way",
             id: osmWay.id,
             changes: {
                 nodes: actualIdsToUse,
-                coordinates: this.targetCoordinates
+                coordinates: newCoordinates
             },
             meta: {
                 theme: this.theme,
@@ -477,8 +508,6 @@ throw "Use reprojectedNodes!" // TODO FIXME
 
 
         // Some nodes might need to be deleted
-        const detachedNodeIds = Array.from(detachedNodes.keys());
-
         if (detachedNodes.size > 0) {
             detachedNodes.forEach(({hasTags, reason}, nodeId) => {
                 const parentWays = nodeDb.GetParentWays(nodeId)

@@ -99,7 +99,9 @@
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
-      "calculatedTags": [],
+      "calculatedTags": [
+        "_surface:strict:=feat.get('_surface')"
+      ],
       "mapRendering": [
         {
           "width": {
@@ -488,14 +490,17 @@
       "calculatedTags": [
         "_overlaps_with_buildings=feat.overlapWith('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat.get('_overlaps_with_buildings').filter(f => f.overlap > 1 /* square meter */ )[0] ?? ''",
-        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
-        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
+        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
         "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
         "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
-        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
         "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
         "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
+        "_osm_obj:surface=(feat.get('_overlaps_with')?.feat?.properties ?? {})['_surface:strict']",
+
+        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
+        "_reverse_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface'))",
+        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_osm_obj:surface'))",
         "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
@@ -510,24 +515,29 @@
           "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
             {
-              "#": "Hide import button if intersection with other objects are detected",
-              "if": "_intersects_with_other_features~*",
-              "then": "This GRB building intersects with the following features: {_intersects_with_other_features}.<br/>Fix the overlap and try again"
-            },
-            {
+              "#": "Actually the same as below, except that the text shows 'add the address' too",
               "if": {
                 "and": [
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
                   "_overlaps_with!=",
                   "_osm_obj:addr:street=",
                   "_osm_obj:addr:housenumber=",
                   "addr:street~*",
-                  "addr:housenumber~*"
+                  "addr:housenumber~*",
+                  "addr:street!:={_osm_obj:addr:street}",
+                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
                 ]
               },
               "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
             },
             {
-              "if": "_overlaps_with!=",
+              "if": {
+                "and":[
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_overlaps_with!="]
+              },
               "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
             }
           ]
@@ -588,7 +598,7 @@
         },
         {
           "id": "overlapping building type",
-          "render": "<div>The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
+          "render": "<div>The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building.<br/>The GRB-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
           "condition": "_overlaps_with!="
         },
         {
