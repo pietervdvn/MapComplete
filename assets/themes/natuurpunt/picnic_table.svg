@@ -1,13 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-7 5 35 1">
-    <defs>
-        <style>.cls-1{fill:#fff;}</style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-        <g id="Layer_1-2" data-name="Layer 1">
-            <rect class="cls-1" x="4.26" width="13.55" height="1.98"/>
-            <rect class="cls-1" y="7.4" width="22.07" height="1.98"/>
-            <polygon class="cls-1" points="4.21 12.9 2 12.9 7.79 0.57 9.58 1.41 4.21 12.9"/>
-            <polygon class="cls-1" points="17.85 12.9 12.49 1.41 14.28 0.57 20.11 12.9 17.85 12.9"/>
-        </g>
-    </g>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="385px" height="11px" viewBox="0 0 385 11" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 123.308594 86.898438 L 99 86.898438 L 162.691406 -48.730469 L 182.378906 -39.488281 Z M 123.308594 86.898438 "/>
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 273.351562 86.898438 L 214.390625 -39.488281 L 234.078125 -48.730469 L 298.210938 86.898438 Z M 273.351562 86.898438 "/>
+  </g>
 </svg>

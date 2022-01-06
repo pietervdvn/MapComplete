@@ -1,14 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="256" height="256" viewBox="0 0 256 256"
-     xml:space="preserve">
-<desc>Created with Fabric.js 1.7.22</desc>
-    <defs>
-</defs>
-    <g transform="translate(128 128) scale(0.72 0.72)" style="">
-	<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-       transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)">
-	<path d="M 61.374 0 v 6.039 h 18.318 L 57.823 27.907 c -6.124 -5.16 -14.022 -8.278 -22.638 -8.278 C 15.784 19.63 0 35.414 0 54.815 C 0 74.216 15.784 90 35.185 90 s 35.185 -15.784 35.185 -35.185 c 0 -8.616 -3.118 -16.514 -8.278 -22.638 l 21.869 -21.869 v 18.318 H 90 V 0 H 61.374 z M 35.185 83.961 c -16.071 0 -29.147 -13.075 -29.147 -29.146 c 0 -16.071 13.075 -29.147 29.147 -29.147 s 29.147 13.075 29.147 29.147 C 64.332 70.886 51.257 83.961 35.185 83.961 z"
-          style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-          transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-</g>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 254.679688 2.875 L 254.679688 27.652344 L 329.832031 27.652344 L 240.109375 117.371094 C 214.984375 96.203125 182.582031 83.410156 147.230469 83.410156 C 67.632812 83.414062 2.875 148.171875 2.875 227.769531 C 2.875 307.367188 67.632812 372.125 147.230469 372.125 C 226.828125 372.125 291.585938 307.367188 291.585938 227.769531 C 291.585938 192.417969 278.792969 160.015625 257.625 134.890625 L 347.347656 45.167969 L 347.347656 120.320312 L 372.125 120.320312 L 372.125 2.875 Z M 147.230469 347.347656 C 81.296875 347.347656 27.648438 293.703125 27.648438 227.769531 C 27.648438 161.832031 81.292969 108.1875 147.230469 108.1875 C 213.171875 108.1875 266.8125 161.828125 266.8125 227.769531 C 266.8125 293.703125 213.171875 347.347656 147.230469 347.347656 Z M 147.230469 347.347656 "/>
+  </g>
 </svg>

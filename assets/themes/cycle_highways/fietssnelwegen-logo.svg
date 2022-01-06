@@ -1,66 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:cc="http://creativecommons.org/ns#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        id="Layer_1"
-        x="0px"
-        y="0px"
-        width="142.63567"
-        height="131.81705"
-        viewBox="0 0 142.63567 131.81705"
-        xml:space="preserve"
-        sodipodi:docname="fietssnelwegen-logo.svg"
-        inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"><metadata
-   id="metadata12"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-        rdf:resource="http://purl.org/dc/dcmitype/StillImage"/></cc:Work></rdf:RDF></metadata>
-    <defs
-            id="defs10"/>
-    <sodipodi:namedview
-            pagecolor="#ffffff"
-            bordercolor="#666666"
-            borderopacity="1"
-            objecttolerance="10"
-            gridtolerance="10"
-            guidetolerance="10"
-            inkscape:pageopacity="0"
-            inkscape:pageshadow="2"
-            inkscape:window-width="1920"
-            inkscape:window-height="1003"
-            id="namedview8"
-            showgrid="false"
-            inkscape:zoom="1.5225806"
-            inkscape:cx="72.117836"
-            inkscape:cy="54.317045"
-            inkscape:window-x="0"
-            inkscape:window-y="0"
-            inkscape:window-maximized="1"
-            inkscape:current-layer="Layer_1"/>
-    <style
-            type="text/css"
-            id="style2">
-	.st0{fill:#1582DE;}
-	.st1{fill:#FFFFFF;}
-</style>
-    <path
-            id="Polygon_2_copy_19"
-            class="st0"
-            d="m 71.417836,0 c -6.4,0 -12,3.1 -14.8,6.9 -10.4,14.3 -20,29.1 -28.7,44.5 -14.1,24.8 -23.4999998,43.4 -26.8999998,52.8 -1.79999998,5.3 -1.19999998,11.1 1.7,15.8 2.7,4.9 7.4999998,8.2 12.9999998,9 11.7,1.3 28,2.9 55.4,2.8 0.1,0 -0.1,0 0,0 27.4,0.2 44.000004,-1.4 55.700004,-2.7 5.5,-0.8 10.4,-4.1 13.1,-9 2.9,-4.8 3.5,-10.6 1.7,-15.9 -3.4,-9.4 -12.8,-28 -26.9,-52.8 -8.7,-15.4 -18.300004,-30.3 -28.800004,-44.6 -2.7,-3.7 -8.4,-6.8 -14.8,-6.8"
-            inkscape:connector-curvature="0"
-            style="fill:#1582de"/>
-    <path
-            id="F"
-            class="st1"
-            d="m 55.417836,105.3 c 0,4.7 3,7.3 7,7.3 4,0 7,-2.6 7,-7.3 V 85 h 14.4 c 3.5,0.2 6.5,-2.5 6.7,-6 0,-0.2 0,-0.4 0,-0.5 0.1,-3.4 -2.7,-6.3 -6.1,-6.3 -0.2,0 -0.4,0 -0.5,0 h -14.6 V 58.6 h 17.1 c 4.2,0 6.2,-3.3 6.2,-6.4 0,-3.3 -2.1,-6.4 -6.2,-6.4 h -23.8 c -3.8,-0.1 -7.1,2.9 -7.2,6.7 0,0.2 0,0.4 0,0.6 z"
-            inkscape:connector-curvature="0"
-            style="fill:#ffffff"/>
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="373px" height="345px" viewBox="0 0 373 345" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(8.235294%,50.980395%,87.058824%);fill-opacity:1;" d="M 186.761719 0 C 170.023438 0 155.382812 8.113281 148.058594 18.058594 C 120.863281 55.484375 95.757812 94.222656 73.007812 134.527344 C 36.132812 199.433594 11.554688 248.117188 2.660156 272.71875 C -2.046875 286.589844 -0.476562 301.769531 7.105469 314.070312 C 14.167969 326.894531 26.71875 335.535156 41.101562 337.628906 C 71.699219 341.03125 114.324219 345.21875 185.976562 344.957031 C 186.238281 344.957031 185.714844 344.957031 185.976562 344.957031 C 257.628906 345.480469 301.039062 341.292969 331.636719 337.890625 C 346.019531 335.796875 358.832031 327.15625 365.894531 314.332031 C 373.476562 301.769531 375.046875 286.589844 370.339844 272.71875 C 361.445312 248.117188 336.867188 199.433594 299.992188 134.527344 C 277.242188 94.222656 252.136719 55.222656 224.679688 17.796875 C 217.621094 8.113281 202.714844 0 185.976562 0 "/>
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 144.921875 275.597656 C 144.921875 287.898438 152.765625 294.703125 163.226562 294.703125 C 173.6875 294.703125 181.53125 287.898438 181.53125 275.597656 L 181.53125 222.46875 L 219.1875 222.46875 C 228.339844 222.992188 236.1875 215.925781 236.710938 206.765625 C 236.710938 206.242188 236.710938 205.71875 236.710938 205.457031 C 236.96875 196.554688 229.648438 188.964844 220.757812 188.964844 C 220.234375 188.964844 219.710938 188.964844 219.449219 188.964844 L 181.269531 188.964844 L 181.269531 153.371094 L 225.988281 153.371094 C 236.96875 153.371094 242.199219 144.734375 242.199219 136.621094 C 242.199219 127.984375 236.710938 119.871094 225.988281 119.871094 L 163.75 119.871094 C 153.8125 119.609375 145.183594 127.460938 144.921875 137.40625 C 144.921875 137.929688 144.921875 138.453125 144.921875 138.976562 Z M 144.921875 275.597656 "/>
+  </g>
 </svg>

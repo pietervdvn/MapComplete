@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-    <title>
-        move
-    </title>
-    <path d="M19 10l-4-3v2h-4V5h2l-3-4-3 4h2v4H5V7l-4 3 4 3v-2h4v4H7l3 4 3-4h-2v-4h4v2l4-3z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 356.25 187.5 L 281.25 131.25 L 281.25 168.75 L 206.25 168.75 L 206.25 93.75 L 243.75 93.75 L 187.5 18.75 L 131.25 93.75 L 168.75 93.75 L 168.75 168.75 L 93.75 168.75 L 93.75 131.25 L 18.75 187.5 L 93.75 243.75 L 93.75 206.25 L 168.75 206.25 L 168.75 281.25 L 131.25 281.25 L 187.5 356.25 L 243.75 281.25 L 206.25 281.25 L 206.25 206.25 L 281.25 206.25 L 281.25 243.75 Z M 356.25 187.5 "/>
+  </g>
 </svg>
