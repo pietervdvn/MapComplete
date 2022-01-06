@@ -89,7 +89,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
             const svg = (Svg.All[match[1] + ".svg"] as string)
             const targetColor = match[2]
-            const img = new Img(svg.replace(/#000000/g, targetColor), true)
+            const img = new Img(svg.replace(/rgb\(0%,0%,0%\)/g, targetColor), true)
                 .SetStyle(style)
             if (isBadge) {
                 img.SetClass("badge")
