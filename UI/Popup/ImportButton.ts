@@ -36,6 +36,7 @@ import {Tag} from "../../Logic/Tags/Tag";
 import TagApplyButton from "./TagApplyButton";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import * as conflation_json from "../../assets/layers/conflation/conflation.json";
+import {GeoOperations} from "../../Logic/GeoOperations";
 
 
 abstract class AbstractImportButton implements SpecialVisualizations {
@@ -309,8 +310,6 @@ export class ConflateButton extends AbstractImportButton {
                      args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<Tag[]>; targetLayer: string },
                      tagSource: UIEventSource<any>, guiState: DefaultGuiState, feature: any, onCancelClicked: () => void): BaseUIElement {
 
-        return new FixedUiElement("ReplaceGeometry is currently very broken - use mapcomplete.osm.be for now").SetClass("alert")
-
         const nodesMustMatch = args.snap_onto_layers?.split(";")?.map((tag, i) => TagUtils.Tag(tag, "TagsSpec for import button " + i))
 
         const mergeConfigs = []
@@ -326,6 +325,7 @@ export class ConflateButton extends AbstractImportButton {
 
         const key = args["way_to_conflate"]
         const wayToConflate = tagSource.data[key]
+        feature = GeoOperations.removeOvernoding(feature);
         const action = new ReplaceGeometryAction(
             state,
             feature,

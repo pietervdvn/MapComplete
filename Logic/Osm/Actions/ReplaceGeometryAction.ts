@@ -81,8 +81,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
     // noinspection JSUnusedGlobalSymbols
     public async getPreview(): Promise<FeatureSource> {
-        const {closestIds, allNodesById, detachedNodeIds} = await this.GetClosestIds();
-        console.debug("Generating preview, identicals are ",)
+        const {closestIds, allNodesById, detachedNodes, reprojectedNodes} = await this.GetClosestIds();
         const preview: GeoJSONObject[] = closestIds.map((newId, i) => {
             if (this.identicalTo[i] !== undefined) {
                 return undefined
@@ -93,7 +92,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                     type: "Feature",
                     properties: {
                         "newpoint": "yes",
-                        "id": "replace-geometry-move-" + i
+                        "id": "replace-geometry-move-" + i,
                     },
                     geometry: {
                         type: "Point",
@@ -101,49 +100,316 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                     }
                 };
             }
-            const origPoint = allNodesById.get(newId).centerpoint()
+
+            const origNode = allNodesById.get(newId);
             return {
                 type: "Feature",
                 properties: {
                     "move": "yes",
                     "osm-id": newId,
-                    "id": "replace-geometry-move-" + i
+                    "id": "replace-geometry-move-" + i,
+                    "original-node-tags": JSON.stringify(origNode.tags)
                 },
                 geometry: {
                     type: "LineString",
-                    coordinates: [[origPoint[1], origPoint[0]], this.targetCoordinates[i]]
+                    coordinates: [[origNode.lon, origNode.lat], this.targetCoordinates[i]]
                 }
             };
         })
 
-        for (const detachedNodeId of detachedNodeIds) {
-            const origPoint = allNodesById.get(detachedNodeId).centerpoint()
+
+        reprojectedNodes.forEach(({newLat, newLon, nodeId}) => {
+
+            const origNode = allNodesById.get(nodeId);
+            const feature = {
+                type: "Feature",
+                properties: {
+                    "move": "yes",
+                    "reprojection": "yes",
+                    "osm-id": nodeId,
+                    "id": "replace-geometry-reproject-" + nodeId,
+                    "original-node-tags": JSON.stringify(origNode.tags)
+                },
+                geometry: {
+                    type: "LineString",
+                    coordinates: [[origNode.lon, origNode.lat], [newLon, newLat]]
+                }
+            };
+            preview.push(feature)
+        })
+
+
+        detachedNodes.forEach(({reason}, id) => {
+            const origNode = allNodesById.get(id);
             const feature = {
                 type: "Feature",
                 properties: {
                     "detach": "yes",
-                    "id": "replace-geometry-detach-" + detachedNodeId
+                    "id": "replace-geometry-detach-" + id,
+                    "detach-reason": reason,
+                    "original-node-tags": JSON.stringify(origNode.tags)
                 },
                 geometry: {
                     type: "Point",
-                    coordinates: [origPoint[1], origPoint[0]]
+                    coordinates: [origNode.lon, origNode.lat]
                 }
             };
             preview.push(feature)
-        }
+        })
 
 
         return new StaticFeatureSource(Utils.NoNull(preview), false)
 
     }
 
-    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    /**
+     * For 'this.feature`, gets a corresponding closest node that alreay exsists.
+     *
+     * This method contains the main logic for this module, as it decides which node gets moved where.
+     *
+     */
+    public async GetClosestIds(): Promise<{
 
+        // A list of the same length as targetCoordinates, containing which OSM-point to move. If undefined, a new point will be created
+        closestIds: number[],
+        allNodesById: Map<number, OsmNode>,
+        osmWay: OsmWay,
+        detachedNodes: Map<number, {
+            reason: string,
+            hasTags: boolean
+        }>,
+        reprojectedNodes: Map<number, {
+            /*Move the node with this ID into the way as extra node, as it has some relation with the original object*/
+            projectAfterIndex: number,
+            distance: number,
+            newLat: number,
+            newLon: number,
+            nodeId: number
+        }>
+    }> {
+        // TODO FIXME: if a new point has to be created, snap to already existing ways
+
+        const nodeDb = this.state.featurePipeline.fullNodeDatabase;
+        if (nodeDb === undefined) {
+            throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
+        }
+        const self = this;
+        let parsed: OsmObject[];
+        {
+            // Gather the needed OsmObjects
+            const splitted = this.wayToReplaceId.split("/");
+            const type = splitted[0];
+            const idN = Number(splitted[1]);
+            if (idN < 0 || type !== "way") {
+                throw "Invalid ID to conflate: " + this.wayToReplaceId
+            }
+            const url = `${this.state.osmConnection?._oauth_config?.url ?? "https://openstreetmap.org"}/api/0.6/${this.wayToReplaceId}/full`;
+            const rawData = await Utils.downloadJsonCached(url, 1000)
+            parsed = OsmObject.ParseObjects(rawData.elements);
+        }
+        const allNodes = parsed.filter(o => o.type === "node")
+        const osmWay = <OsmWay>parsed[parsed.length - 1]
+        if (osmWay.type !== "way") {
+            throw "WEIRD: expected an OSM-way as last element here!"
+        }
+        const allNodesById = new Map<number, OsmNode>()
+        for (const node of allNodes) {
+            allNodesById.set(node.id, <OsmNode>node)
+        }
+        /**
+         * For every already existing OSM-point, we calculate:
+         *
+         * - the distance to every target point.
+         * - Wether this node has (other) parent ways, which might restrict movement
+         * - Wether this node has tags set
+         *
+         * Having tags and/or being connected to another way indicate that there is some _relation_ with objects in the neighbourhood.
+         *
+         * The Replace-geometry action should try its best to honour these. Some 'wiggling' is allowed (e.g. moving an entrance a bit), but these relations should not be broken.l
+         */
+        const distances = new Map<number /* osmId*/,
+            /** target coordinate index --> distance (or undefined if a duplicate)*/
+            number[]>();
+
+        const nodeInfo = new Map<number /* osmId*/, {
+            distances: number[],
+            // Part of some other way then the one that should be replaced
+            partOfWay: boolean,
+            hasTags: boolean
+        }>()
+
+        for (const node of allNodes) {
+
+            const parentWays = nodeDb.GetParentWays(node.id)
+            if (parentWays === undefined) {
+                throw "PANIC: the way to replace has a node which has no parents at all. Is it deleted in the meantime?"
+            }
+            const parentWayIds = parentWays.data.map(w => w.type + "/" + w.id)
+            const idIndex = parentWayIds.indexOf(this.wayToReplaceId)
+            if (idIndex < 0) {
+                throw "PANIC: the way to replace has a node, which is _not_ part of this was according to the node..."
+            }
+            parentWayIds.splice(idIndex, 1)
+            const partOfSomeWay = parentWayIds.length > 0
+            const hasTags = Object.keys(node.tags).length > 1;
+
+            const nodeDistances = this.targetCoordinates.map(_ => undefined)
+            for (let i = 0; i < this.targetCoordinates.length; i++) {
+                if (this.identicalTo[i] !== undefined) {
+                    continue;
+                }
+                const targetCoordinate = this.targetCoordinates[i];
+                const cp = node.centerpoint()
+                const d = GeoOperations.distanceBetween(targetCoordinate, [cp[1], cp[0]])
+                if (d > 25) {
+                    // This is too much to move
+                    continue
+                }
+                if (d < 3 || !(hasTags || partOfSomeWay)) {
+                    // If there is some relation: cap the move distance to 3m
+                    nodeDistances[i] = d;
+                }
+
+            }
+            distances.set(node.id, nodeDistances)
+            nodeInfo.set(node.id, {
+                distances: nodeDistances,
+                partOfWay: partOfSomeWay,
+                hasTags
+            })
+        }
+
+        const closestIds = this.targetCoordinates.map(_ => undefined)
+        const unusedIds = new Map<number, {
+            reason: string,
+            hasTags: boolean
+        }>();
+        {
+            // Search best merge candidate
+            /**
+             * Then, we search the node that has to move the least distance and add this as mapping.
+             * We do this until no points are left
+             */
+            let candidate: number;
+            let moveDistance: number;
+            /**
+             * The list of nodes that are _not_ used anymore, typically if there are less targetCoordinates then source coordinates
+             */
+            do {
+                candidate = undefined;
+                moveDistance = Infinity;
+                distances.forEach((distances, nodeId) => {
+                    const minDist = Math.min(...Utils.NoNull(distances))
+                    if (moveDistance > minDist) {
+                        // We have found a candidate to move
+                        candidate = nodeId
+                        moveDistance = minDist
+                    }
+                })
+
+                if (candidate !== undefined) {
+                    // We found a candidate... Search the corresponding target id:
+                    let targetId: number = undefined;
+                    let lowestDistance = Number.MAX_VALUE
+                    let nodeDistances = distances.get(candidate)
+                    for (let i = 0; i < nodeDistances.length; i++) {
+                        const d = nodeDistances[i]
+                        if (d !== undefined && d < lowestDistance) {
+                            lowestDistance = d;
+                            targetId = i;
+                        }
+                    }
+
+                    // This candidates role is done, it can be removed from the distance matrix
+                    distances.delete(candidate)
+
+                    if (targetId !== undefined) {
+                        // At this point, we have our target coordinate index: targetId!
+                        // Lets map it...
+                        closestIds[targetId] = candidate
+
+                        // To indicate that this targetCoordinate is taken, we remove them from the distances matrix
+                        distances.forEach(dists => {
+                            dists[targetId] = undefined
+                        })
+                    } else {
+                        // Seems like all the targetCoordinates have found a source point
+                        unusedIds.set(candidate, {
+                            reason: "Unused by new way",
+                            hasTags: nodeInfo.get(candidate).hasTags
+                        })
+                    }
+                }
+            } while (candidate !== undefined)
+        }
+
+        // If there are still unused values in 'distances', they are definitively unused
+        distances.forEach((_, nodeId) => {
+            unusedIds.set(nodeId, {
+                reason: "Unused by new way",
+                hasTags: nodeInfo.get(nodeId).hasTags
+            })
+        })
+
+        const reprojectedNodes = new Map<number, {
+            /*Move the node with this ID into the way as extra node, as it has some relation with the original object*/
+            projectAfterIndex: number,
+            distance: number,
+            newLat: number,
+            newLon: number,
+            nodeId: number
+        }>();
+        {
+            // Lets check the unused ids: can they be detached or do they signify some relation with the object?
+            unusedIds.forEach(({}, id) => {
+                const info = nodeInfo.get(id)
+                if (!(info.hasTags || info.partOfWay)) {
+                    // Nothing special here, we detach
+                    return
+                }
+
+                // The current node has tags and/or has an attached other building.
+                // We should project them and move them onto the building on an appropriate place
+                const node = allNodesById.get(id)
+
+                // Project the node onto the target way to calculate the new coordinates
+                const way = {
+                    type: "Feature",
+                    properties: {},
+                    geometry: {
+                        type: "LineString",
+                        coordinates: self.targetCoordinates
+                    }
+                };
+                const projected = GeoOperations.nearestPoint(
+                    way, [node.lon, node.lat]
+                )
+                reprojectedNodes.set(id, {
+                    newLon: projected.geometry.coordinates[0],
+                    newLat: projected.geometry.coordinates[1],
+                    projectAfterIndex: projected.properties.index,
+                    distance: projected.properties.dist,
+                    nodeId: id
+                })
+            })
+
+            reprojectedNodes.forEach((_, nodeId) => unusedIds.delete(nodeId))
+
+        }
+
+
+        return {closestIds, allNodesById, osmWay, detachedNodes: unusedIds, reprojectedNodes};
+    }
+
+    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+        const nodeDb = this.state.featurePipeline.fullNodeDatabase;
+        if (nodeDb === undefined) {
+            throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
+        }
+
+        const {closestIds, osmWay, detachedNodes, reprojectedNodes} = await this.GetClosestIds()
         const allChanges: ChangeDescription[] = []
         const actualIdsToUse: number[] = []
-
-        const {closestIds, osmWay, detachedNodeIds} = await this.GetClosestIds()
-
         for (let i = 0; i < closestIds.length; i++) {
             if (this.identicalTo[i] !== undefined) {
                 const j = this.identicalTo[i]
@@ -193,13 +459,46 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             allChanges.push(...await addExtraTags.CreateChangeDescriptions(changes))
         }
 
+        const newCoordinates = [...this.targetCoordinates]
+
+        {
+            // Add reprojected nodes to the way
+
+            const proj = Array.from(reprojectedNodes.values())
+            proj.sort((a, b) => {
+                // Sort descending
+                const diff = b.projectAfterIndex - a.projectAfterIndex;
+                if(diff !== 0){
+                    return diff
+                }
+                return b.distance - a.distance;
+                
+                
+            })
+
+            for (const reprojectedNode of proj) {
+                const change = <ChangeDescription>{
+                    id: reprojectedNode.nodeId,
+                    type: "node",
+                    meta: {
+                        theme: this.theme,
+                        changeType: "move"
+                    },
+                    changes: {lon: reprojectedNode.newLon, lat: reprojectedNode.newLat}
+                }
+                allChanges.push(change)
+                actualIdsToUse.splice(reprojectedNode.projectAfterIndex + 1, 0, reprojectedNode.nodeId)
+                newCoordinates.splice(reprojectedNode.projectAfterIndex + 1, 0, [reprojectedNode.newLon, reprojectedNode.newLat])
+            }
+        }
+
         // Actually change the nodes of the way!
         allChanges.push({
             type: "way",
             id: osmWay.id,
             changes: {
                 nodes: actualIdsToUse,
-                coordinates: this.targetCoordinates
+                coordinates: newCoordinates
             },
             meta: {
                 theme: this.theme,
@@ -209,169 +508,43 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
 
         // Some nodes might need to be deleted
-        if (detachedNodeIds.length > 0) {
+        if (detachedNodes.size > 0) {
+            detachedNodes.forEach(({hasTags, reason}, nodeId) => {
+                const parentWays = nodeDb.GetParentWays(nodeId)
+                const index = parentWays.data.map(w => w.id).indexOf(osmWay.id)
+                if (index < 0) {
+                    console.error("ReplaceGeometryAction is trying to detach node " + nodeId + ", but it isn't listed as being part of way " + osmWay.id)
+                    return;
+                }
+                // We detachted this node - so we unregister
+                parentWays.data.splice(index, 1)
+                parentWays.ping();
 
-            const nodeDb = this.state.featurePipeline.fullNodeDatabase;
-            if (nodeDb === undefined) {
-                throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
-            }
-            for (const nodeId of detachedNodeIds) {
-                const osmNode = nodeDb.GetNode(nodeId)
-                const parentWayIds: number[] = JSON.parse(osmNode.tags["parent_way_ids"])
-                const index = parentWayIds.indexOf(osmWay.id)
-                if(index < 0){
-                    console.error("ReplaceGeometryAction is trying to detach node "+nodeId+", but it isn't listed as being part of way "+osmWay.id)
-                    continue;
+                if (hasTags) {
+                    // Has tags: we leave this node alone
+                    return;
                 }
-                parentWayIds.splice(index, 1)
-                osmNode.tags["parent_way_ids"] = JSON.stringify(parentWayIds)
-                if(parentWayIds.length == 0){
-                    // This point has no other ways anymore - lets clean it!
-                    console.log("Removing node "+nodeId, "as it isn't needed anymore by any way")
-                    
-                    allChanges.push({
-                        meta: {
-                            theme: this.theme,
-                            changeType: "delete"
-                        },
-                        doDelete: true,
-                        type: "node",
-                        id: nodeId,
-                    })
-                    
+                if (parentWays.data.length != 0) {
+                    // Still part of other ways: we leave this node alone!
+                    return;
                 }
-            }
+
+                console.log("Removing node " + nodeId, "as it isn't needed anymore by any way")
+                allChanges.push({
+                    meta: {
+                        theme: this.theme,
+                        changeType: "delete"
+                    },
+                    doDelete: true,
+                    type: "node",
+                    id: nodeId,
+                })
+            })
 
 
         }
 
         return allChanges
-    }
-
-    /**
-     * For 'this.feature`, gets a corresponding closest node that alreay exsists.
-     * 
-     * This method contains the main logic for this module, as it decides which node gets moved where.
-     * 
-     */
-    private async GetClosestIds(): Promise<{
-
-        // A list of the same length as targetCoordinates, containing which OSM-point to move. If undefined, a new point will be created
-        closestIds: number[],
-        allNodesById: Map<number, OsmNode>,
-        osmWay: OsmWay,
-        detachedNodeIds: number[]
-    }> {
-        // TODO FIXME: cap move length on points which are embedded into other ways (ev. disconnect them)
-        // TODO FIXME: if a new point has to be created, snap to already existing ways
-
-
-        let parsed: OsmObject[];
-        {
-            // Gather the needed OsmObjects
-            const splitted = this.wayToReplaceId.split("/");
-            const type = splitted[0];
-            const idN = Number(splitted[1]);
-            if (idN < 0 || type !== "way") {
-                throw "Invalid ID to conflate: " + this.wayToReplaceId
-            }
-            const url = `${this.state.osmConnection._oauth_config.url}/api/0.6/${this.wayToReplaceId}/full`;
-            const rawData = await Utils.downloadJsonCached(url, 1000)
-            parsed = OsmObject.ParseObjects(rawData.elements);
-        }
-        const allNodes = parsed.filter(o => o.type === "node")
-
-        /**
-         * For every already existing OSM-point, we calculate the distance to every target point
-         */
-
-        const distances = new Map<number /* osmId*/, number[] /* target coordinate index --> distance (or undefined if a duplicate)*/>();
-        for (const node of allNodes) {
-            const nodeDistances = this.targetCoordinates.map(_ => undefined)
-            for (let i = 0; i < this.targetCoordinates.length; i++) {
-                if (this.identicalTo[i] !== undefined) {
-                    continue;
-                }
-                const targetCoordinate = this.targetCoordinates[i];
-                const cp = node.centerpoint()
-                nodeDistances[i] = GeoOperations.distanceBetween(targetCoordinate, [cp[1], cp[0]])
-            }
-            distances.set(node.id, nodeDistances)
-        }
-
-        /**
-         * Then, we search the node that has to move the least distance and add this as mapping.
-         * We do this until no points are left
-         */
-        let candidate: number;
-        let moveDistance: number;
-        const closestIds = this.targetCoordinates.map(_ => undefined)
-        /**
-         * The list of nodes that are _not_ used anymore, typically if there are less targetCoordinates then source coordinates
-         */
-        const unusedIds = []
-        do {
-            candidate = undefined;
-            moveDistance = Infinity;
-            distances.forEach((distances, nodeId) => {
-                const minDist = Math.min(...Utils.NoNull(distances))
-                if (moveDistance > minDist) {
-                    // We have found a candidate to move
-                    candidate = nodeId
-                    moveDistance = minDist
-                }
-            })
-
-            if (candidate !== undefined) {
-                // We found a candidate... Search the corresponding target id:
-                let targetId: number = undefined;
-                let lowestDistance = Number.MAX_VALUE
-                let nodeDistances = distances.get(candidate)
-                for (let i = 0; i < nodeDistances.length; i++) {
-                    const d = nodeDistances[i]
-                    if (d !== undefined && d < lowestDistance) {
-                        lowestDistance = d;
-                        targetId = i;
-                    }
-                }
-
-                // This candidates role is done, it can be removed from the distance matrix
-                distances.delete(candidate)
-
-                if (targetId !== undefined) {
-                    // At this point, we have our target coordinate index: targetId!
-                    // Lets map it...
-                    closestIds[targetId] = candidate
-
-                    // To indicate that this targetCoordinate is taken, we remove them from the distances matrix
-                    distances.forEach(dists => {
-                        dists[targetId] = undefined
-                    })
-                } else {
-                    // Seems like all the targetCoordinates have found a source point
-                    unusedIds.push(candidate)
-                }
-            }
-        } while (candidate !== undefined)
-
-
-        // If there are still unused values in 'distances', they are definitively unused
-        distances.forEach((_, nodeId) => {
-            unusedIds.push(nodeId)
-        })
-
-        {
-            // Some extra data is included for rendering
-            const osmWay = <OsmWay>parsed[parsed.length - 1]
-            if (osmWay.type !== "way") {
-                throw "WEIRD: expected an OSM-way as last element here!"
-            }
-            const allNodesById = new Map<number, OsmNode>()
-            for (const node of allNodes) {
-                allNodesById.set(node.id, <OsmNode>node)
-            }
-            return {closestIds, allNodesById, osmWay, detachedNodeIds: unusedIds};
-        }
     }
 
 

@@ -7,7 +7,7 @@ export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined;
 
     public readonly translations: object
-
+    
     constructor(translations: object, context?: string) {
         super()
         if (translations === undefined) {
@@ -35,6 +35,11 @@ export class Translation extends BaseUIElement {
 
     get txt(): string {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
+    }
+    
+    Destroy() {
+        super.Destroy();
+        this.isDestroyed = true;
     }
 
     static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
@@ -93,7 +98,11 @@ export class Translation extends BaseUIElement {
 
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
+        const self = this
         Locale.language.addCallbackAndRun(_ => {
+            if(self.isDestroyed){
+                return true
+            }
             el.innerHTML = this.txt
         })
         return el;

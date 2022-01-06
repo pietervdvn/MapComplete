@@ -3,6 +3,23 @@
         "description": {
             "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "允許犬隻"
+                },
+                "1": {
+                    "then": "<b>不</b>允許犬隻"
+                },
+                "2": {
+                    "then": "允許犬隻，但需要掛牽繩"
+                },
+                "3": {
+                    "then": "允許犬隻而且可以自由跑動"
+                }
+            },
+            "question": "這間商業空間是否允許犬隻？"
+        },
         "email": {
             "question": "{name} 的電子郵件地址是什麼？"
         },
@@ -28,11 +45,72 @@
             "question": "{name} 的開放時間是什麼？",
             "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
         },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "這邊接受現金"
+                },
+                "1": {
+                    "then": "這邊接受現金卡"
+                }
+            },
+            "question": "這邊接受那種付款方式？"
+        },
         "phone": {
             "question": "{name} 的電話號碼是什麼？"
         },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "這邊的客戶座位有不少個室內插座，而且可以為電器充電"
+                },
+                "1": {
+                    "then": "這邊客戶座位有一些室內插座，可以為電器充電"
+                },
+                "2": {
+                    "then": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電"
+                },
+                "3": {
+                    "then": "這裡客戶座位沒有室內插座"
+                }
+            },
+            "question": "這個便利設施有電器設備，能給客戶使用嗎？"
+        },
         "website": {
             "question": "{name} 網址是什麼？"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "這個地方有特別設計給輪椅使用者"
+                },
+                "1": {
+                    "then": "這個地方坐輪椅很容易到達"
+                },
+                "2": {
+                    "then": "這個地方可以坐輪椅到達，但並不容易"
+                },
+                "3": {
+                    "then": "輪椅無法到達這個地方"
+                }
+            },
+            "question": "這個地方可以坐輪椅到達嗎？"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "還沒有連結到維基百科頁面"
+                }
+            },
+            "question": "對應的維基資料項目是？"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "沒有連結到維基百科"
+                }
+            },
+            "question": "維基百科上對應的項目是什麼？"
         }
     }
 }

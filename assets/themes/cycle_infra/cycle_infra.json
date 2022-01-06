@@ -6,20 +6,23 @@
     "de": "Fahrradinfrastruktur",
     "it": "Infrastruttura dei velocipedi",
     "nb_NO": "Sykkelinfrastruktur",
-    "ru": "Велосипедная дорожка"
+    "ru": "Велосипедная дорожка",
+    "zh_Hant": "單車設施"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
     "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken.",
     "de": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur.",
     "it": "Una cartina dove vedere e modificare gli elementi riguardanti l’infrastruttura dei velocipedi.",
-    "nb_NO": "Alt relatert til sykkelinfrastruktur."
+    "nb_NO": "Alt relatert til sykkelinfrastruktur.",
+    "zh_Hant": "檢視與編輯單車相關設施的地圖。"
   },
   "description": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
     "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21.",
     "de": "Eine Karte zum Ansehen und Bearbeiten verschiedener Elementen der Fahrradinfrastruktur. Erstellt während #osoc21.",
-    "it": "Una cartina dove vedere e modificare gli elementi riguardanti l’infrastruttura dei velocipedi. Realizzata durante #osoc21."
+    "it": "Una cartina dove vedere e modificare gli elementi riguardanti l’infrastruttura dei velocipedi. Realizzata durante #osoc21.",
+    "zh_Hant": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。"
   },
   "language": [
     "en",
@@ -27,7 +30,8 @@
     "de",
     "it",
     "nb_NO",
-    "ru"
+    "ru",
+    "zh_Hant"
   ],
   "maintainer": "MapComplete",
   "hideFromOverview": false,

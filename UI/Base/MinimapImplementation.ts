@@ -48,7 +48,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     public static initialize() {
         Minimap.createMiniMap = options => new MinimapImplementation(options)
     }
-
+    
     public installBounds(factor: number | BBox, showRange?: boolean) {
         this.leafletMap.addCallbackD(leaflet => {
             let bounds;
@@ -105,6 +105,15 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             }
         })
     }
+    
+    Destroy() {
+        super.Destroy();
+        console.warn("Decomissioning minimap", this._id)
+        const mp = this.leafletMap.data
+        this.leafletMap.setData(null)
+        mp.off()
+        mp.remove()
+    }
 
     public async TakeScreenshot() {
         const screenshotter = new SimpleMapScreenshoter();
@@ -125,6 +134,13 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         const self = this;
         // @ts-ignore
         const resizeObserver = new ResizeObserver(_ => {
+            if(wrapper.clientHeight === 0 || wrapper.clientWidth === 0){
+                return;
+            }
+            if(wrapper.offsetParent === null || window.getComputedStyle(wrapper).display === 'none'){
+                // Not visible
+                return;
+            }
             try {
                 self.InitMap();
                 self.leafletMap?.data?.invalidateSize()

@@ -177,7 +177,7 @@
             "loginWithOpenStreetMap": "用開放街圖帳號登入"
         },
         "backgroundMap": "背景地圖",
-        "aboutMapcomplete": "<h3>關於 MapComplete</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>豐富開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需登入 OSM。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的節點</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
+        "aboutMapcomplete": "<h3>關於 MapComplete</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>新增開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需要 OSM 帳號。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的節點</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
         "customThemeIntro": "<h3>客製化主題</h3>觀看這些先前使用者創造的主題。",
         "noTagsSelected": "沒有選取標籤",
         "getStartedNewAccount": " 或是 <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">註冊新帳號</a>",
@@ -188,8 +188,10 @@
         "morescreen": {
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
             "streetcomplete": "行動裝置另有類似的應用程式 <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>。",
-            "requestATheme": "如果你有客製化要求，請到問題追踪器那邊提出要求",
-            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。"
+            "requestATheme": "如果你有客製化主題，請到問題追踪器那邊提出要求",
+            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。",
+            "previouslyHiddenTitle": "先前看過隱藏的主題",
+            "hiddenExplanation": "這些主題只能透過連結來打開，你已經發現 {total_hidden} 當中 {hidden_discovered} 的隱藏主題。"
         },
         "sharescreen": {
             "fsIncludeCurrentLocation": "包含目前位置",
@@ -202,7 +204,7 @@
             "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
             "fsSearch": "啟用搜尋列",
             "fsUserbadge": "啟用登入按鈕",
-            "editThemeDescription": "新增或改變這個地圖的問題",
+            "editThemeDescription": "新增或改變這個地圖主題的問題",
             "editThisTheme": "編輯這個主題",
             "thanksForSharing": "感謝分享！",
             "copiedToClipboard": "複製連結到簡貼簿",
@@ -221,7 +223,7 @@
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
             "attributionTitle": "署名通知"
         },
-        "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能自由使用與編輯，單一的地圖能夠儲存所有地理相關資訊？這樣不就很酷嗎？接著，所有的網站使用不同的、範圍小的，不相容的地圖 (通常也都過時了)，也就不再需要了。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>就是這樣的地圖，人人都能免費這些圖資 (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。只要遵循這些，任何人都能自由新增新資料與修正錯誤，這些網站也都使用開放街圖，資料也都來自開放街圖，你的答案與修正也會加到開放街圖上面。</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。如果你在開放街圖上變動資料，也會同時影響這些應用 - 在他們下次更新資料之後！</p>",
+        "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能使用與自由編輯，單一的地圖能夠儲存所有地理相關資訊。不同的、範圍小的，不相容甚至過時不再被需要的地圖。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>不是敵人的地圖，人人都能自由使用這些圖資， (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。任何人都能新增新資料與修正錯誤，這些網站也用開放街圖，資料也都來自開放街圖，你的答案與修正也會加被用到/p&gt;</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。</p>",
         "questions": {
             "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "{category} 的電子郵件地址是？",
@@ -244,9 +246,16 @@
             "pleaseLogin": "<a class=\"activate-osm-authentication\">請先登入來新增節點</a>",
             "intro": "您點擊處目前未有已知的資料。<br>",
             "title": "新增新的節點？",
-            "addNew": "在這裡新增新的 {category}"
+            "addNew": "在這裡新增新的 {category}",
+            "hasBeenImported": "這個點已經被匯入了",
+            "disableFilters": "關閉所有篩選器",
+            "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
+            "presetInfo": "新的興趣點有 {tags}",
+            "addNewMapLabel": "新增新項目",
+            "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
+            "zoomInMore": "再放大來匯入這一圖徵"
         },
-        "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來檢視這物件",
+        "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來瀏覽這物件",
         "number": "號碼",
         "skippedQuestions": "有些問題已經跳過了",
         "oneSkippedQuestion": "跳過一個問題",
@@ -262,7 +271,32 @@
         },
         "loginToStart": "登入之後來回答這問題",
         "welcomeBack": "你已經登入了，歡迎回來！",
-        "loginWithOpenStreetMap": "用開放街圖帳號登入"
+        "loginWithOpenStreetMap": "用開放街圖帳號登入",
+        "loginOnlyNeededToEdit": "如果你想要編輯地圖",
+        "layerSelection": {
+            "zoomInToSeeThisLayer": "放大來看看這一圖層",
+            "title": "選擇圖層"
+        },
+        "pdf": {
+            "generatedWith": "用 MapComplete.osm.be 產生的",
+            "attr": "地圖資料 @ 開放街圖貢獻者，採用 ODbL 授權可再利用",
+            "versionInfo": "v{version} - {date} 產生的",
+            "attrBackground": "背景圖層：{background}"
+        },
+        "download": {
+            "downloadCSV": "下載可視資料為 CSV",
+            "downloadGeojson": "下載可視資料為 GeoJSON",
+            "exporting": "匯出…",
+            "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
+            "title": "下載可視的資料",
+            "downloadAsPdf": "下載目前地圖的 PDF 檔",
+            "downloadAsPdfHelper": "列印當前地圖相當理想",
+            "downloadGeoJsonHelper": "與 QGIS、ArcGIS、ESRI 等相容",
+            "downloadCSVHelper": "與 LibreOffice Calc、Excel 等相容"
+        },
+        "testing": "測試 - 改變還沒有儲存",
+        "openTheMap": "開啟地圖",
+        "loading": "載入中..."
     },
     "index": {
         "pickTheme": "請挑選主題來開始。",
@@ -301,7 +335,26 @@
         "cannotBeDeleted": "這圖徵無法刪除",
         "loginToDelete": "你必須登入才能刪除點",
         "isDeleted": "這圖徵已經刪除",
-        "cancel": "取消"
+        "cancel": "取消",
+        "useSomethingElse": "請使用其他的開放街圖編輯器來刪除",
+        "explanations": {
+            "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>",
+            "selectReason": "請選擇為什麼這個圖徵該被刪除？",
+            "hardDelete": "這個點已經在開放街圖被刪除了，可以被實驗性的貢獻者恢復"
+        },
+        "loading": "調查屬性來確定是否能刪除這一圖徵。",
+        "reasons": {
+            "disused": "這個圖徵已經不使用或是被移除了",
+            "test": "這是測試點 - 並真的不存在那邊的圖徵",
+            "notFound": "找不到這個圖徵了",
+            "duplicate": "這個點與其他圖徵重覆了"
+        },
+        "readMessages": "你有未讀的訊息，請先閱讀再來刪除點 - 也許有人有回饋意見",
+        "isntAPoint": "只有點可以被刪，選取的圖徵是路徑、區域或是關聯。",
+        "onlyEditedByLoggedInUser": "這個點只有被你編輯，所以你可以安全地刪除。",
+        "whyDelete": "為什麼這個點要被刪除？",
+        "notEnoughExperience": "這個點是由其他人做的。",
+        "partOfOthers": "這個點屬於一些路徑或關聯的一部分，因此不能直接刪除。"
     },
     "split": {
         "loginToSplit": "你必須登入才能分割道路",

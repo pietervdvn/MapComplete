@@ -725,7 +725,8 @@
           "it": "Luogo di sversamento {name}",
           "fr": "Site de vidange {name}",
           "pt_BR": "Estação de despejo {nome}",
-          "de": "Entsorgungsstation {name}"
+          "de": "Entsorgungsstation {name}",
+          "zh_Hant": "{name} 垃圾站"
         },
         "mappings": [
           {
@@ -741,7 +742,8 @@
               "it": "Luogo di sversamento",
               "fr": "Site de vidange",
               "pt_BR": "Estação de despejo",
-              "de": "Entsorgungsstation"
+              "de": "Entsorgungsstation",
+              "zh_Hant": "垃圾站"
             }
           }
         ]
@@ -847,7 +849,8 @@
             "it": "Questo luogo ha un punto per l'approvvigionamento di acqua?",
             "fr": "Ce site dispose-t’il d’un point d’eau ?",
             "pt_BR": "Este lugar tem um ponto de água?",
-            "de": "Hat dieser Ort eine Wasserstelle?"
+            "de": "Hat dieser Ort eine Wasserstelle?",
+            "zh_Hant": "這個地方有取水點嗎？"
           },
           "mappings": [
             {
@@ -863,7 +866,8 @@
                 "it": "Questo luogo ha un punto per l'approvvigionamento di acqua",
                 "fr": "Ce site a un point d’eau",
                 "pt_BR": "Este lugar tem um ponto de água",
-                "de": "Dieser Ort hat eine Wasserstelle"
+                "de": "Dieser Ort hat eine Wasserstelle",
+                "zh_Hant": "這個地方有取水點"
               }
             },
             {
@@ -879,7 +883,8 @@
                 "it": "Questo luogo non ha un punto per l'approvvigionamento di acqua",
                 "fr": "Ce site n’a pas de point d’eau",
                 "pt_BR": "Este lugar não tem um ponto de água",
-                "de": "Dieser Ort hat keine Wasserstelle"
+                "de": "Dieser Ort hat keine Wasserstelle",
+                "zh_Hant": "這個地方沒有取水點"
               }
             }
           ]
@@ -892,7 +897,8 @@
             "ja": "汚水(雑排水)はこちらで処分できますか?",
             "it": "Si possono smaltire le acque grigie qui?",
             "fr": "Est-il possible d’y faire sa vidange des eaux usées ?",
-            "de": "Können Sie hier Brauch-/Grauwasser entsorgen?"
+            "de": "Können Sie hier Brauch-/Grauwasser entsorgen?",
+            "zh_Hant": "你能在這裡排放洗滌水嗎？"
           },
           "mappings": [
             {
@@ -907,7 +913,8 @@
                 "ja": "ここで汚水(雑排水)を捨てることができます",
                 "it": "Si possono smaltire le acque grigie qui",
                 "fr": "Il est possible d’y vidanger ses eaux usées",
-                "de": "Hier können Sie Brauch-/Grauwasser entsorgen"
+                "de": "Hier können Sie Brauch-/Grauwasser entsorgen",
+                "zh_Hant": "你可以在這裡排放洗滌水"
               }
             },
             {
@@ -922,7 +929,8 @@
                 "ja": "ここでは汚水(雑排水)を捨てることはできない",
                 "it": "Non si possono smaltire le acque grigie qui",
                 "fr": "Il n’est pas possible d’y vidanger ses eaux usées",
-                "de": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
+                "de": "Hier können Sie kein Brauch-/Grauwasser entsorgen",
+                "zh_Hant": "你無法在這裡排放洗滌水"
               }
             }
           ]
@@ -1057,7 +1065,8 @@
             "it": "Questo luogo è parte della rete {network}",
             "ru": "Эта станция - часть сети {network}",
             "fr": "Cette station fait parte d’un réseau {network}",
-            "de": "Diese Station gehört zum Verbund/Netzwerk {network}"
+            "de": "Diese Station gehört zum Verbund/Netzwerk {network}",
+            "zh_Hant": "這車站是屬於 {network} 網路的一部分"
           },
           "question": {
             "en": "What network is this place a part of? (skip if none)",
@@ -1065,7 +1074,8 @@
             "it": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
             "ru": "К какой сети относится эта станция? (пропустите, если неприменимо)",
             "fr": "De quel réseau fait-elle partie ? (Passer si aucun)",
-            "de": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)"
+            "de": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
+            "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)"
           },
           "freeform": {
             "key": "network"
@@ -1128,14 +1138,16 @@
           "ja": "この場所は{operator}によって運営されます",
           "it": "Questo luogo è gestito da {operator}",
           "fr": "Ce site est exploité par {operator}",
-          "de": "Dieser Ort wird betrieben von {operator}"
+          "de": "Dieser Ort wird betrieben von {operator}",
+          "zh_Hant": "這個地方由 {operator} 營運的"
         },
         "question": {
           "en": "Who operates this place?",
           "ja": "この店は誰が経営しているんですか?",
           "it": "Chi gestisce questo luogo?",
           "fr": "Qui est l’exploitant du site ?",
-          "de": "Wer betreibt diesen Ort?"
+          "de": "Wer betreibt diesen Ort?",
+          "zh_Hant": "這個地方是誰營運的？"
         },
         "freeform": {
           "key": "operator"
