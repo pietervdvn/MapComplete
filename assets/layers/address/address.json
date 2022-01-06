@@ -108,7 +108,8 @@
       "render": "<b>Fixme description</b>{fixme}",
       "question": {
         "en": "What should be fixed here? Please explain",
-        "zh_Hant": "這裡需要修什麼？請直接解釋"
+        "zh_Hant": "這裡需要修什麼？請直接解釋",
+        "de": "Was sollte hier korrigiert werden? Bitte erläutern"
       },
       "freeform": {
         "key": "fixme"

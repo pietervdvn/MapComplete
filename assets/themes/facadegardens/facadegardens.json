@@ -180,7 +180,8 @@
             "ja": "庭に水桶が設置されているのですか?",
             "fr": "Des réserves d’eau ont-elles été installées pour le jardin ?",
             "de": "Gibt es ein Wasserfass für den Garten?",
-            "it": "È stata installata una riserva d’acqua per il giardino?"
+            "it": "È stata installata una riserva d’acqua per il giardino?",
+            "zh_Hant": "花園當中有設置雨筒嗎？"
           },
           "mappings": [
             {
@@ -196,7 +197,8 @@
                 "it": "C'è un contenitore per raccogliere la pioggia",
                 "ru": "Есть бочка с дождевой водой",
                 "fr": "Il y a des réserves",
-                "de": "Es gibt eine Regentonne"
+                "de": "Es gibt eine Regentonne",
+                "zh_Hant": "這裡有個雨筒"
               }
             },
             {
@@ -212,7 +214,8 @@
                 "it": "Non c'è un contenitore per raccogliere la pioggia",
                 "ru": "Нет бочки с дождевой водой",
                 "fr": "Il n’y a pas de réserves",
-                "de": "Es gibt keine Regentonne"
+                "de": "Es gibt keine Regentonne",
+                "zh_Hant": "這裡沒有雨筒"
               }
             }
           ]

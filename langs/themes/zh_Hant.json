@@ -233,8 +233,6 @@
                 }
             }
         },
-        "shortDescription": "露營者尋找渡過夜晚的場地",
-        "title": "露營地點",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -242,7 +240,9 @@
                     "render": "這個地方由 {operator} 營運的"
                 }
             }
-        }
+        },
+        "shortDescription": "露營者尋找渡過夜晚的場地",
+        "title": "露營地點"
     },
     "charging_stations": {
         "description": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
@@ -273,6 +273,11 @@
         },
         "title": "開放攀爬地圖"
     },
+    "cycle_infra": {
+        "description": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。",
+        "shortDescription": "檢視與編輯單車相關設施的地圖。",
+        "title": "單車設施"
+    },
     "cyclestreets": {
         "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
         "layers": {
@@ -294,14 +299,28 @@
         "description": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加",
         "title": "飲用水"
     },
+    "etymology": {
+        "description": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "道路沒有詞源資訊"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "公園與森哥沒有詞源資訊"
+                }
+            }
+        },
+        "shortDescription": "地名的由來是？",
+        "title": "開放詞源地圖"
+    },
     "facadegardens": {
         "layers": {
             "0": {
                 "description": "立面花園",
                 "name": "立面花園",
-                "title": {
-                    "render": "立面花園"
-                },
                 "tagRenderings": {
                     "facadegardens-rainbarrel": {
                         "mappings": {
@@ -314,11 +333,17 @@
                         },
                         "question": "花園當中有設置雨筒嗎？"
                     }
+                },
+                "title": {
+                    "render": "立面花園"
                 }
             }
         },
         "shortDescription": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。",
         "title": "立面花園"
+    },
+    "food": {
+        "title": "餐廳與快餐店"
     },
     "ghostbikes": {
         "description": "<b>幽靈單車</b>是用來紀念死於交通事故的單車騎士，在事發地點附近放置白色單車。<br/><br/>在這份地圖上面，你可以看到所有在開放街圖已知的幽靈單車。有缺漏的幽靈單車嗎？所有人都可以在這邊新增或是更新資訊-只有你有(免費)開放街圖帳號。",
@@ -341,14 +366,22 @@
                     }
                 },
                 "tagRenderings": {
+                    "hackerspaces-name": {
+                        "question": "這個駭客空間的名稱是？",
+                        "render": "這個駭客空間叫 <b>{name}</b>"
+                    },
                     "hackerspaces-opening_hours": {
-                        "render": "{opening_hours_table()}",
                         "mappings": {
                             "0": {
                                 "then": "24/7 營業"
                             }
                         },
-                        "question": "這個駭客空間的營業時間？"
+                        "question": "這個駭客空間的營業時間？",
+                        "render": "{opening_hours_table()}"
+                    },
+                    "hackerspaces-start_date": {
+                        "question": "這個駭客空間何時成立的？",
+                        "render": "這駭客空間是 {start_date} 成立的"
                     },
                     "hs-club-mate": {
                         "mappings": {
@@ -361,38 +394,30 @@
                         },
                         "question": "這個駭客空間是否服務俱樂部伙伴？"
                     },
-                    "hackerspaces-name": {
-                        "render": "這個駭客空間叫 <b>{name}</b>",
-                        "question": "這個駭客空間的名稱是？"
-                    },
-                    "hackerspaces-start_date": {
-                        "question": "這個駭客空間何時成立的？",
-                        "render": "這駭客空間是 {start_date} 成立的"
-                    },
                     "is_makerspace": {
-                        "question": "這邊是駭客空間還是創客空間？",
                         "mappings": {
-                            "1": {
-                                "then": "這是傳統的 (軟體導向) 駭客空間"
-                            },
                             "0": {
                                 "then": "這是創客空間"
+                            },
+                            "1": {
+                                "then": "這是傳統的 (軟體導向) 駭客空間"
                             }
-                        }
+                        },
+                        "question": "這邊是駭客空間還是創客空間？"
                     }
                 },
                 "title": {
-                    "render": "駭客空間",
                     "mappings": {
                         "0": {
                             "then": " {name}"
                         }
-                    }
+                    },
+                    "render": "駭客空間"
                 }
             }
         },
-        "title": "駭客空間",
-        "shortDescription": "駭客空間的地圖"
+        "shortDescription": "駭客空間的地圖",
+        "title": "駭客空間"
     },
     "hailhydrant": {
         "description": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
@@ -629,30 +654,5 @@
         "description": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
         "shortDescription": "垃圾筒的地圖",
         "title": "垃圾筒"
-    },
-    "food": {
-        "title": "餐廳與快餐店"
-    },
-    "cycle_infra": {
-        "description": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。",
-        "shortDescription": "檢視與編輯單車相關設施的地圖。",
-        "title": "單車設施"
-    },
-    "etymology": {
-        "description": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。",
-        "layers": {
-            "1": {
-                "override": {
-                    "name": "道路沒有詞源資訊"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "公園與森哥沒有詞源資訊"
-                }
-            }
-        },
-        "shortDescription": "地名的由來是？",
-        "title": "開放詞源地圖"
     }
 }

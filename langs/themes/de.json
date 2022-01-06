@@ -458,6 +458,22 @@
                 "0": {
                     "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
                 },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                        },
+                        "1": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
+                        },
+                        "2": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
+                        },
+                        "3": {
+                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
+                        }
+                    }
+                },
                 "2": {
                     "mappings": {
                         "0": {
@@ -559,22 +575,6 @@
                         }
                     },
                     "question": "Gibt es hier eine Speedkletter-Wand?"
-                },
-                "1": {
-                    "mappings": {
-                        "1": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
-                        },
-                        "2": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
-                        },
-                        "0": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
-                        },
-                        "3": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
-                        }
-                    }
                 }
             },
             "units+": {
@@ -612,7 +612,25 @@
     "cyclenodes": {
         "description": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
         "layers": {
+            "0": {
+                "name": "Knotenpunktverbindungen",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Knotenpunktverbindung <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "Knotenpunktverbindung"
+                }
+            },
             "1": {
+                "name": "Knotenpunkte",
                 "presets": {
                     "0": {
                         "title": "Knotenpunkt"
@@ -621,37 +639,19 @@
                         "title": "Knotenpunkt im Netzwerk Spree-Neiße"
                     }
                 },
-                "title": {
-                    "render": "Knotenpunkt <strong>{rcn_ref}</strong>"
-                },
-                "name": "Knotenpunkte",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
-                        "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden.",
-                        "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?"
+                        "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
+                        "render": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden."
                     },
                     "node-survey:date": {
                         "question": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
                         "render": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
                     }
-                }
-            },
-            "0": {
+                },
                 "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Knotenpunktverbindung <strong>{ref}</strong>"
-                        }
-                    },
-                    "render": "Knotenpunktverbindung"
-                },
-                "tagRenderings": {
-                    "node2node-survey:date": {
-                        "render": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
-                        "question": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?"
-                    }
-                },
-                "name": "Knotenpunktverbindungen"
+                    "render": "Knotenpunkt <strong>{rcn_ref}</strong>"
+                }
             }
         },
         "title": "Fahrrad-Knotenpunktnetzwerke"
@@ -838,6 +838,28 @@
     "ghostbikes": {
         "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
         "title": "Geisterräder"
+    },
+    "grb": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            }
+        }
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            }
+        }
     },
     "hackerspaces": {
         "description": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
@@ -1093,27 +1115,5 @@
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Was ist das für ein Gebäude?"
-                    }
-                }
-            }
-        }
-    },
-    "grb": {
-        "layers": {
-            "1": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Was ist das für ein Gebäude?"
-                    }
-                }
-            }
-        }
     }
 }
