@@ -403,6 +403,10 @@ export class ExtraFunctions {
     ];
 
     public static FullPatchFeature(params: ExtraFuncParams, feature) {
+        if(feature._is_patched){
+            return
+        }
+        feature._is_patched = true
         for (const func of ExtraFunctions.allFuncs) {
             feature[func._name] = func._f(params, feature)
         }

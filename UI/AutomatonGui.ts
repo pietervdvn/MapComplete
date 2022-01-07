@@ -162,7 +162,7 @@ class AutomationPanel extends Combine{
                     return true;
                 }
                 stateToShow.setData("Applying metatags")
-                pipeline.updateAllMetaTagging()
+                pipeline.updateAllMetaTagging("triggered by automaton")
                 stateToShow.setData("Gathering applicable elements")
 
                 let handled = 0

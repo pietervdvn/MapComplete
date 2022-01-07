@@ -28,7 +28,6 @@ export default class MetaTagging {
                                   includeDates?: true | boolean,
                                   includeNonDates?: true | boolean
                               }): boolean {
-
         if (features === undefined || features.length === 0) {
             return;
         }
@@ -106,7 +105,6 @@ export default class MetaTagging {
     }
     public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
         const functions: ((feature: any) => any)[] = [];
-        
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
@@ -148,6 +146,7 @@ export default class MetaTagging {
 
             // Lazy function
             const f = (feature: any) => {
+                const oldValue = feature.properties[key]
                 delete feature.properties[key]
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,

@@ -12,6 +12,7 @@
   "description": "Notes from OpenStreetMap",
   "icon": "./assets/themes/notes/resolved.svg",
   "clustering": false,
+  "enableDownload": true,
   "layers": [
     {
       "id": "notes",
@@ -25,25 +26,29 @@
         "geoJsonZoomLevel": 12,
         "maxCacheAge": 0
       },
-      "minzoom": 10,
+      "minzoom": 8,
       "title": {
         "render": {
-         "en": "Note"
+          "en": "Note"
         },
-        "mappings": [{
-          "if": "closed_at~*",
-          "then": {
-            "en": "Closed note"
+        "mappings": [
+          {
+            "if": "closed_at~*",
+            "then": {
+              "en": "Closed note"
+            }
           }
-        }]
+        ]
       },
       "calculatedTags": [
-        "_first_comment:=feat.get('comments')[0].text",
-        "_conversation=feat.get('comments').map(c => {if(c.user_url == undefined) {return 'anonymous user, '+c.date;} return c.html+'<div class=\"subtle flex justify-end border-b border-gray-500\"><a href=\"'+c.user_url+'\" target=\"_blank\">'+c.user+'</a> &nbsp;'+c.date+'</div>'}).join('')"
+        "_first_comment:=feat.get('comments')[0].text.toLowerCase()",
+        "_conversation=feat.get('comments').map(c => { let user = 'anonymous user'; if(c.user_url !== undefined){user = '<a href=\"'+c.user_url+'\" target=\"_blank\">'+c.user+'</a>'}; return c.html +'<div class=\"subtle flex justify-end border-t border-gray-500\">' + user + '&nbsp;'+c.date+'</div>' }).join('')"
       ],
-      "titleIcons": [{
-        "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
-      }],
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
       "tagRenderings": [
         {
           "id": "conversation",
@@ -76,18 +81,27 @@
               }
             ]
           },
-          
           "iconSize": "40,40,bottom"
         }
       ],
-      "filter": [{
-        "id": "bookcases",
-        "options": [
-          {
-          "osmTags": "_first_comment~.*bookcase.*",
-          "question": "Should mention 'bookcase' in the first comment"
-        }]
-      }]
+      "filter": [
+        {
+          "id": "search",
+          "options": [
+            {
+              "osmTags": "_first_comment~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Should mention {search} in the first comment"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1044,6 +1044,10 @@ video {
   max-height: 1rem;
 }
 
+.max-h-8 {
+  max-height: 2rem;
+}
+
 .w-full {
   width: 100%;
 }

@@ -4,7 +4,6 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import Hash from "../../Web/Hash";
 import {BBox} from "../../BBox";
 import {ElementStorage} from "../../ElementStorage";
-import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =
@@ -71,8 +70,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             self.registerCallback(f.feature)
 
             if (
-                this.state.selectedElement.data?.id === f.feature.id ||
-                f.feature.id === Hash.hash.data) {
+                (this.state.selectedElement !== undefined && this.state.selectedElement.data?.id === f.feature.properties.id) ||
+                (Hash.hash.data !== undefined && f.feature.properties.id === Hash.hash.data)) {
                 // This is the selected object - it gets a free pass even if zoom is not sufficient or it is filtered away
                 return true;
             }
@@ -89,6 +88,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             }
 
             const tagsFilter = layer.appliedFilters.data;
+            console.log("Current filters for "+layer.layerDef.id+" are ",tagsFilter)
             for (const filter of tagsFilter ?? []) {
                 const neededTags = filter.filter.options[filter.selected].osmTags
                 if (!neededTags.matchesProperties(f.feature.properties)) {

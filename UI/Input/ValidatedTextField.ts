@@ -436,7 +436,7 @@ export default class ValidatedTextField {
     /**
      * {string (typename) --> TextFieldDef}
      */
-    public static AllTypes = ValidatedTextField.allTypesDict();
+    public static AllTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
 
     public static InputForType(type: string, options?: {
         placeholder?: string | BaseUIElement,
@@ -455,7 +455,7 @@ export default class ValidatedTextField {
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
-        const tp: TextFieldDef = ValidatedTextField.AllTypes[type]
+        const tp: TextFieldDef = ValidatedTextField.AllTypes.get(type)
         const isValidTp = tp.isValid;
         let isValid;
         options.textArea = options.textArea ?? type === "text";
@@ -615,10 +615,11 @@ export default class ValidatedTextField {
     }
 
 
-    private static allTypesDict() {
-        const types = {};
+    private static allTypesDict(): Map<string, TextFieldDef> {
+        const types = new Map<string, TextFieldDef>();
         for (const tp of ValidatedTextField.tpList) {
             types[tp.name] = tp;
+            types.set(tp.name, tp);
         }
         return types;
     }

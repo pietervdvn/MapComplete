@@ -22,7 +22,7 @@ export default class Constants {
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */
-    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", ...Constants.no_include]
+    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "notes", ...Constants.no_include]
 
 
     // The user journey states thresholds when a new feature gets unlocked

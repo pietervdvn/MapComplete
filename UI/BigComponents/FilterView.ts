@@ -14,6 +14,9 @@ import FilteredLayer from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
+import {SubstitutedTranslation} from "../SubstitutedTranslation";
+import ValidatedTextField from "../Input/ValidatedTextField";
+import {QueryParameters} from "../../Logic/Web/QueryParameters";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>, tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
@@ -144,7 +147,7 @@ export default class FilterView extends VariableUiElement {
         layer.filters.forEach((f, i) => filterIndexes.set(f.id, i))
 
         let listFilterElements: [BaseUIElement, UIEventSource<{ filter: FilterConfig, selected: number }>][] = layer.filters.map(
-            FilterView.createFilter
+            filter => FilterView.createFilter(filter)
         );
 
         listFilterElements.forEach((inputElement, i) =>
@@ -193,6 +196,71 @@ export default class FilterView extends VariableUiElement {
     }
 
     private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<{ filter: FilterConfig, selected: number }>] {
+
+        if (filterConfig.options[0].fields.length > 0) {
+
+            // Filter which uses one or more textfields
+            const filter = filterConfig.options[0]
+            const mappings = new Map<string, BaseUIElement>()
+            let allValid = new UIEventSource(true)
+            const properties = new UIEventSource<any>({})
+            for (const {name, type} of filter.fields) {
+                const value = QueryParameters.GetQueryParameter("filter-" + filterConfig.id + "-" + name, "", "Value for filter " + filterConfig.id)
+                const field = ValidatedTextField.InputForType(type, {
+                    value
+                }).SetClass("inline-block")
+                mappings.set(name, field)
+                const stable = value.stabilized(250)
+                stable.addCallbackAndRunD(v => {
+                    properties.data[name] = v.toLowerCase();
+                    properties.ping()
+                })
+                allValid = allValid.map(previous => previous && field.IsValid(stable.data) && stable.data !== "", [stable])
+            }
+            const tr = new SubstitutedTranslation(filter.question, new UIEventSource<any>({id: filterConfig.id}), State.state, mappings)
+            const neutral = {
+                filter: new FilterConfig({
+                    id: filterConfig.id,
+                    options: [
+                        {
+                            question: "--",
+                        }
+                    ]
+                }, "While dynamically constructing a filterconfig"),
+                selected: 0
+            }
+            const trigger = allValid.map(isValid => {
+                if (!isValid) {
+                    return neutral
+                }
+
+                // Replace all the field occurences in the tags...
+                const osmTags = Utils.WalkJson(filter.originalTagsSpec,
+                    v => {
+                        if (typeof v !== "string") {
+                            return v
+                        }
+                        return Utils.SubstituteKeys(v, properties.data)
+                    }
+                )
+                // ... which we use below to construct a filter!
+                return {
+                    filter: new FilterConfig({
+                        id: filterConfig.id,
+                        options: [
+                            {
+                                question: "--",
+                                osmTags
+                            }
+                        ]
+                    }, "While dynamically constructing a filterconfig"),
+                    selected: 0
+                }
+            }, [properties])
+            return [tr, trigger];
+        }
+
+
         if (filterConfig.options.length === 1) {
             let option = filterConfig.options[0];
 
