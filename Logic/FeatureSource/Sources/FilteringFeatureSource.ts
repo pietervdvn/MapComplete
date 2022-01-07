@@ -88,7 +88,6 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             }
 
             const tagsFilter = layer.appliedFilters.data;
-            console.log("Current filters for "+layer.layerDef.id+" are ",tagsFilter)
             for (const filter of tagsFilter ?? []) {
                 const neededTags = filter.filter.options[filter.selected].osmTags
                 if (!neededTags.matchesProperties(f.feature.properties)) {
