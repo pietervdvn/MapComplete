@@ -218,6 +218,24 @@ export class OsmConnection {
         });
     }
 
+    public closeNote(id: number | string): Promise<any> {
+        return new Promise((ok, error) => {
+            this.auth.xhr({
+                method: 'POST',
+                path: `/api/0.6/notes/${id}/close`
+            }, function (err, response) {
+                console.log("Closing note gave:", err, response)
+                if (err !== null) {
+                    error(err)
+                } else {
+                    ok()
+                }
+            })
+
+        })
+
+    }
+
     private updateAuthObject() {
         let pwaStandAloneMode = false;
         try {
@@ -260,6 +278,4 @@ export class OsmConnection {
         });
 
     }
-
-
 }

@@ -38,6 +38,7 @@ import TagApplyButton from "./Popup/TagApplyButton";
 import AutoApplyButton from "./Popup/AutoApplyButton";
 import * as left_right_style_json from "../assets/layers/left_right_style/left_right_style.json";
 import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
+import Toggle from "./Input/Toggle";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -606,6 +607,39 @@ export default class SpecialVisualizations {
                             state.historicalUserLocations.features.setData([])
                             Hash.hash.setData(undefined)
                         })
+                    }
+                },
+                {
+                    funcName: "close_note",
+                    docs: "Button to close a note",
+                    args:[
+                        {
+                            name:"text",
+                            doc: "Text to show on this button",
+                        },
+                        {
+                            name:"Id-key",
+                            doc: "The property name where the ID of the note to close can be found",
+                            defaultValue: "id"
+                        }
+                    ],
+                    constr: (state, tags, args, guiState) => {
+                        const t = Translations.t.notes;
+                            const closeButton = new SubtleButton( Svg.checkmark_svg(), t.closeNote)
+                        const isClosed = new UIEventSource(false);
+                        closeButton.onClick(() => {
+                            const id = tags.data[args[1] ?? "id"]
+                            if(state.featureSwitchIsTesting.data){
+                                console.log("Not actually closing note...")
+                                return;
+                            }
+                           state.osmConnection.closeNote(id).then(_ => isClosed.setData(true))
+                        })
+                        return new Toggle(
+                            t.isClosed.SetClass("thanks"),
+                            closeButton,
+                            isClosed
+                        )
                     }
                 }
             ]

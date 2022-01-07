@@ -16,7 +16,7 @@ export class Tiles {
         const result: T[] = []
         const total = tileRange.total
         if (total > 100000) {
-            throw "Tilerange too big"
+            throw "Tilerange too big (z is "+tileRange.zoomlevel+")"
         }
         for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
             for (let y = tileRange.ystart; y <= tileRange.yend; y++) {

@@ -44,7 +44,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
-                "block w-8 h-8 align-baseline box-content sm:p-0.5", "width: 2rem;")
+                "block w-8 h-8 max-h-8 align-baseline box-content sm:p-0.5", "width: 2rem;")
             ))
             .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
 
@@ -193,9 +193,9 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         const config_download: TagRenderingConfig = new TagRenderingConfig({render: "{export_as_geojson()}"}, "");
                         const config_id: TagRenderingConfig = new TagRenderingConfig({render: "{open_in_iD()}"}, "");
 
-                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, "all_tags"),
-                            new TagRenderingAnswer(tags, config_download, ""),
-                            new TagRenderingAnswer(tags, config_id, "")])
+                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, State.state),
+                            new TagRenderingAnswer(tags, config_download, State.state),
+                            new TagRenderingAnswer(tags, config_id, State.state)])
                     }
                 })
             )

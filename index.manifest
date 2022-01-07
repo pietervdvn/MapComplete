@@ -62,5 +62,9 @@
       "sizes": "513x513",
       "type": "image/svg"
     }
+  ],
+  "categories": [
+    "map",
+    "navigation"
   ]
 }

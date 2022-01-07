@@ -422,5 +422,10 @@
         }
       }
     }
+  },
+  "notes": {
+    "isClosed": "This note is resolved",
+    "closeNote": 
+      "Close this note"
   }
 }
