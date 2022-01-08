@@ -7,6 +7,8 @@ import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Constants from "../Constants";
 import TilesourceConfig from "./TilesourceConfig";
 import DependencyCalculator from "./DependencyCalculator";
+import {DomEvent} from "leaflet";
+import off = DomEvent.off;
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -58,11 +60,13 @@ export default class LayoutConfig {
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
-        if(json.id.toLowerCase() !== json.id){
-            throw "The id of a theme should be lowercase: "+json.id
-        }
-        if(json.id.match(/[a-z0-9-_]/) == null){
-            throw "The id of a theme should match [a-z0-9-_]*: "+json.id
+        if(official){
+            if(json.id.toLowerCase() !== json.id){
+                throw "The id of a theme should be lowercase: "+json.id
+            }
+            if(json.id.match(/[a-z0-9-_]/) == null){
+                throw "The id of a theme should match [a-z0-9-_]*: "+json.id
+            }
         }
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
