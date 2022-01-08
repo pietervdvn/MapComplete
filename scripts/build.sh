@@ -1,7 +1,8 @@
 #! /bin/bash
-echo "Starting build.Should"
+echo "Starting build"
 # The build script; we build the application step by step as building everything at once takes too much RAM
 # Should be run from the repository root
+# This is the main deployment script
 rm -rf dist/*
 rm -rf .cache
 mkdir dist 2> /dev/null
@@ -10,7 +11,9 @@ mkdir dist/assets 2> /dev/null
 npm run generate
 npm run test
 npm run generate:editor-layer-index 
+npm run generate:translations
 npm run generate:layouts
+
 
 # Copy the layer files, as these might contain assets (e.g. svgs)
 cp -r assets/layers/ dist/assets/layers/
