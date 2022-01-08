@@ -633,7 +633,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "circle:#FE6F32;./assets/layers/bench/bench.svg"
+        "render": "./assets/layers/bench/bench.svg"
       },
       "iconSize": {
         "render": "35,35,center"

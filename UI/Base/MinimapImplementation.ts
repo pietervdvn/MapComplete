@@ -23,9 +23,9 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     private readonly _leafletoptions: any;
     private readonly _onFullyLoaded: (leaflet: L.Map) => void
     private readonly _attribution: BaseUIElement | boolean;
-    private readonly _lastClickLocation: UIEventSource<{ lat: number; lon: number }>;
     private readonly _bounds: UIEventSource<BBox> | undefined;
     private readonly _addLayerControl: boolean;
+    private readonly _options : MinimapOptions;
 
     private constructor(options: MinimapOptions) {
         super()
@@ -39,8 +39,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         this._leafletoptions = options.leafletOptions ?? {}
         this._onFullyLoaded = options.onFullyLoaded
         this._attribution = options.attribution
-        this._lastClickLocation = options.lastClickLocation;
         this._addLayerControl = options.addLayerControl ?? false
+        this._options = options
         MinimapImplementation._nextId++
 
     }
@@ -200,6 +200,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             touchZoom: this._allowMoving,
             // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
             fadeAnimation: this._allowMoving,
+            maxZoom: 21
         }
 
         Utils.Merge(this._leafletoptions, options)
@@ -244,7 +245,6 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
                 })
             }
             map.addLayer(newLayer);
-            map.setMaxZoom(layer.max_zoom ?? map.getMaxZoom())
             if (self._attribution !== true && self._attribution !== false) {
                 self._attribution?.AttachTo('leaflet-attribution')
             }
@@ -300,8 +300,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         }
 
 
-        if (this._lastClickLocation) {
-            const lastClickLocation = this._lastClickLocation
+        if (this._options.lastClickLocation) {
+            const lastClickLocation = this._options.lastClickLocation
             map.on("click", function (e) {
                 // @ts-ignore
                 lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng})

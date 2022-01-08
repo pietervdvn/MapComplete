@@ -93,7 +93,7 @@ export default class UserRelatedState extends ElementsState {
                 return
             }
 
-            if(this.layoutToUse.id.startsWith("http")){
+            if(this.layoutToUse?.id?.startsWith("http")){
                 if(!this.installedThemes.data.some(installed => installed.id === this.layoutToUse.id)){
 
                     this.installedThemes.data.push({
