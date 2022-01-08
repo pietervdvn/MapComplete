@@ -93,7 +93,7 @@
     "number": "number",
     "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
     "add": {
-      "addNewMapLabel": "Add new item",
+      "addNewMapLabel": "Click here to add a new item",
       "disableFiltersExplanation": "Some features might be hidden by a filter",
       "disableFilters": "Disable all filters",
       "addNew": "Add a new {category} here",
@@ -108,6 +108,10 @@
       "confirmButton": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>",
       "openLayerControl": "Open the layer control box",
       "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
+      "hasBeenImported": "This point has already been imported",
+      "importTags": "The element will receive {tags}",
+      "zoomInMore": "Zoom in more to import this feature",
+      "wrongType": "This element is not a point or a way and can not be imported",
       "import": {
         "officialThemesOnly": "The import button is disabled for unofficial themes to prevent accidents",
         "howToTest": "To test, add <b>test=true</b> or <b>backend=osm-test</b> to the URL. The changeset will be printed in the console. Please open a PR to officialize this theme to actually enable the import button.",
@@ -115,7 +119,6 @@
         "importTags": "The element will receive {tags}",
         "zoomInMore": "Zoom in more to import this feature",
         "wrongType": "This element is not a point or a way and can not be imported"
-        
       }
     },
     "pickLanguage": "Choose a language: ",
@@ -198,8 +201,7 @@
       "downloadAsPdf": "Download a PDF of the current map",
       "downloadAsPdfHelper": "Ideal to print the current map",
       "downloadGeojson": "Download visible data as GeoJSON",
-      "downloadFeatureAsGpx": "Download as GPX-file",
-      "downloadFeatureAsGeojson": "Download as GeoJson-file",
+      "downloadGpx": "Download as GPX-file",
       "downloadGpxHelper": "A GPX-file can be used with most navigation devices and applications",
       "uploadGpx": "Upload your track to OpenStreetMap",
       "exporting": "Exporting…",
@@ -208,7 +210,9 @@
       "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
       "includeMetaData": "Include metadata (last editor, calculated values, …)",
       "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change must be use the license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
-      "noDataLoaded": "No data is loaded yet. Download will be available soon"
+      "noDataLoaded": "No data is loaded yet. Download will be available soon",
+      "downloadFeatureAsGpx": "Download as GPX-file",
+      "downloadFeatureAsGeojson": "Download as GeoJson-file"
     },
     "weekdays": {
       "abbreviations": {
