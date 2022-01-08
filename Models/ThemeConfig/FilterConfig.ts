@@ -42,12 +42,11 @@ export default class FilterConfig {
                 `${ctx}.question`
             );
             let osmTags = undefined;
-            if (option.osmTags !== undefined) {
+            if ((option.fields?.length ?? 0) == 0 && option.osmTags !== undefined) {
                 osmTags = TagUtils.Tag(
                     option.osmTags,
                     `${ctx}.osmTags`
                 );
-
             }
             if (question === undefined) {
                 throw `Invalid filter: no question given at ${ctx}`
@@ -67,10 +66,6 @@ export default class FilterConfig {
                 }
             })
 
-            if (fields.length > 0) {
-                // erase the tags, they aren't needed
-                osmTags = undefined
-            }
 
             return {question: question, osmTags: osmTags, fields, originalTagsSpec: option.osmTags};
         });
@@ -92,6 +87,7 @@ export default class FilterConfig {
             }
             return "" + state.state
         }
+
         const defaultValue = this.options.length > 1 ? "0" : ""
         const qp = QueryParameters.GetQueryParameter("filter-" + this.id, defaultValue, "State of filter " + this.id)
 
@@ -130,13 +126,14 @@ export default class FilterConfig {
                                 return v
                             }
                             for (const key in props) {
-                                v = (<string>v).replace("{"+key+"}", props[key])
+                                v = (<string>v).replace("{" + key + "}", props[key])
                             }
                             return v
                         }
                     )
+                    const parsed = TagUtils.Tag(rewrittenTags)
                     return <FilterState>{
-                        currentFilter: TagUtils.Tag(rewrittenTags),
+                        currentFilter: parsed,
                         state: str
                     }
                 } catch (e) {

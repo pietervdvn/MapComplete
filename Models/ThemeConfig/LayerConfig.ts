@@ -22,7 +22,6 @@ import Title from "../../UI/Base/Title";
 import List from "../../UI/Base/List";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
-import {tag} from "@turf/turf";
 
 export default class LayerConfig extends WithContextLoader {
 

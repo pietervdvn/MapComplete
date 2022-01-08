@@ -8,12 +8,16 @@ rm -rf .cache
 mkdir dist 2> /dev/null
 mkdir dist/assets 2> /dev/null
 
-npm run generate
-npm run test
+# This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index 
-npm run generate:translations
+npm run generate &&
+npm run test &&
 npm run generate:layouts
 
+if [ $? -ne 0]; then;
+    echo "ERROR"
+    exit 1
+fi
 
 # Copy the layer files, as these might contain assets (e.g. svgs)
 cp -r assets/layers/ dist/assets/layers/

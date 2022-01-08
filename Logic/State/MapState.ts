@@ -52,7 +52,7 @@ export default class MapState extends UserRelatedState {
      * The location as delivered by the GPS
      */
     public currentUserLocation: FeatureSourceForLayer & Tiled;
-    
+
     /**
      * All previously visited points
      */
@@ -82,7 +82,7 @@ export default class MapState extends UserRelatedState {
     public overlayToggles: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]
 
 
-    constructor(layoutToUse: LayoutConfig, options?: {attemptLogin: true | boolean}) {
+    constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse, options);
 
         this.availableBackgroundLayers = AvailableBaseLayers.AvailableLayersAt(this.locationControl);
@@ -97,7 +97,7 @@ export default class MapState extends UserRelatedState {
         const self = this
         this.backgroundLayer = new UIEventSource<BaseLayer>(defaultLayer)
         this.backgroundLayer.addCallbackAndRunD(layer => self.backgroundLayerId.setData(layer.id))
-        
+
         const attr = new Attribution(
             this.locationControl,
             this.osmConnection.userDetails,
@@ -176,11 +176,11 @@ export default class MapState extends UserRelatedState {
             })
         }
     }
-    
-    private initCurrentView(){
+
+    private initCurrentView() {
         let currentViewLayer: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "current_view")[0]
 
-        if(currentViewLayer === undefined){
+        if (currentViewLayer === undefined) {
             // This layer is not needed by the theme and thus unloaded
             return;
         }
@@ -188,8 +188,8 @@ export default class MapState extends UserRelatedState {
 
         let i = 0
         const self = this;
-        const features : UIEventSource<{ feature: any, freshness: Date }[]>= this.currentBounds.map(bounds => {
-            if(bounds === undefined){
+        const features: UIEventSource<{ feature: any, freshness: Date }[]> = this.currentBounds.map(bounds => {
+            if (bounds === undefined) {
                 return []
             }
             i++
@@ -197,14 +197,14 @@ export default class MapState extends UserRelatedState {
                 freshness: new Date(),
                 feature: {
                     type: "Feature",
-                    properties:{
-                        id:"current_view-"+i,
-                        "current_view":"yes",
-                        "zoom": ""+self.locationControl.data.zoom
+                    properties: {
+                        id: "current_view-" + i,
+                        "current_view": "yes",
+                        "zoom": "" + self.locationControl.data.zoom
                     },
-                    geometry:{
-                        type:"Polygon",
-                        coordinates:[[
+                    geometry: {
+                        type: "Polygon",
+                        coordinates: [[
                             [bounds.maxLon, bounds.maxLat],
                             [bounds.minLon, bounds.maxLat],
                             [bounds.minLon, bounds.minLat],
@@ -216,13 +216,16 @@ export default class MapState extends UserRelatedState {
             }
             return [feature]
         })
-        
-        this.currentView = new SimpleFeatureSource(currentViewLayer,0,features)
+
+        this.currentView = new SimpleFeatureSource(currentViewLayer, 0, features)
     }
 
     private initGpsLocation() {
         // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
+        if(gpsLayerDef === undefined){
+            return
+        }
         this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
     }
 
@@ -235,7 +238,7 @@ export default class MapState extends UserRelatedState {
         features.ping()
         const self = this;
         let i = 0
-        this.currentUserLocation.features.addCallbackAndRunD(([location]) => {
+        this.currentUserLocation?.features?.addCallbackAndRunD(([location]) => {
             if (location === undefined) {
                 return;
             }
@@ -266,7 +269,9 @@ export default class MapState extends UserRelatedState {
 
 
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
-        this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
+        if(gpsLayerDef !== undefined){
+            this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
+        }
 
 
         const asLine = features.map(allPoints => {
@@ -294,7 +299,9 @@ export default class MapState extends UserRelatedState {
             }]
         })
         let gpsLineLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
-        this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
+        if(gpsLineLayerDef !== undefined){
+            this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
+        }
     }
 
     private initHomeLocation() {
@@ -331,7 +338,9 @@ export default class MapState extends UserRelatedState {
         })
 
         const flayer = this.filteredLayers.data.filter(l => l.layerDef.id === "home_location")[0]
-        this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+        if (flayer !== undefined) {
+            this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+        }
 
     }
 
@@ -349,19 +358,19 @@ export default class MapState extends UserRelatedState {
             } else {
                 isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "layer-" + layer.id,
-                     ""+layer.shownByDefault,
+                    "" + layer.shownByDefault,
                     "Wether or not layer " + layer.id + " is shown"
                 )
             }
-            const flayer : FilteredLayer = {
+            const flayer: FilteredLayer = {
                 isDisplayed: isDisplayed,
                 layerDef: layer,
-                appliedFilters:   new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
+                appliedFilters: new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
             };
             layer.filters.forEach(filterConfig => {
                 const stateSrc = filterConfig.initState()
-                
-                stateSrc    .addCallbackAndRun(state => flayer.appliedFilters.data.set(filterConfig.id, state))
+
+                stateSrc.addCallbackAndRun(state => flayer.appliedFilters.data.set(filterConfig.id, state))
                 flayer.appliedFilters.map(dict => dict.get(filterConfig.id))
                     .addCallback(state => stateSrc.setData(state))
             })

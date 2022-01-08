@@ -206,8 +206,7 @@ export default class ValidatedTextField {
             "date",
             "A date",
             (str) => {
-                const time = Date.parse(str);
-                return !isNaN(time);
+                return !isNaN(new Date(str).getTime());
             },
             (str) => {
                 const d = new Date(str);

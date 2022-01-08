@@ -195,7 +195,7 @@ export default class FilterView extends VariableUiElement {
             }
             const props = properties.data
             // Replace all the field occurences in the tags...
-           const tagsSpec = Utils.WalkJson(filter.originalTagsSpec,
+            const tagsSpec = Utils.WalkJson(filter.originalTagsSpec,
                 v => {
                     if (typeof v !== "string") {
                         return v
