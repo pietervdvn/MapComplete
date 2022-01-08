@@ -9,7 +9,7 @@ export default class LoginButton extends SubtleButton {
     constructor(text: BaseUIElement | string, state: {
         osmConnection: OsmConnection
     }) {
-        super(Svg.osm_logo_svg(), text);
+        super(Svg.osm_logo_ui(), text);
         this.onClick(() => {
             state.osmConnection.AttemptLogin()
         })

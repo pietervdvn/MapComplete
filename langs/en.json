@@ -4,10 +4,13 @@
     "uploadingPicture": "Uploading your picture…",
     "uploadingMultiple": "Uploading {count} pictures…",
     "pleaseLogin": "Please log in to add a picture",
-    "willBePublished": "Your picture will be published: ",
+    "willBePublished": "Your picture will be published ",
     "cco": "in the public domain",
     "ccbs": "under the CC-BY-SA-license",
     "ccb": "under the CC-BY-license",
+    "ccoExplanation": "Adding a picture in the public domain implies that anyone can do anything with your picture",
+    "ccbsExplanation": "The CC-BY-SA license implies that anyone may use your picture for any purpose, but they have to attribute you and remixes of the picture have to be republished under the same license",
+    "ccbExplanation": "The CC-BY license implies that anyone may use your picture for any purpose, but they have to attribute you",
     "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them.",
     "respectPrivacy": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
     "uploadDone": "Your picture has been added. Thanks for helping out!",
@@ -115,7 +118,6 @@
         "importTags": "The element will receive {tags}",
         "zoomInMore": "Zoom in more to import this feature",
         "wrongType": "This element is not a point or a way and can not be imported"
-        
       }
     },
     "pickLanguage": "Choose a language: ",
@@ -428,12 +430,12 @@
     "addCommentPlaceholder": "Add a comment...",
     "addComment": "Add comment",
     "addCommentAndClose": "Add comment and close",
-    "closeNote":       "Close note",
+    "closeNote": "Close note",
     "reopenNote": "Reopen note",
     "reopenNoteAndComment": "Reopen note and comment",
     "anonymous": "Anonymous user",
     "loginToAddComment": "Login to add a comment",
     "loginToAddPicture": "Login to add a picture",
-    "loginToClose": "Login to close this note"
+    "loginToClose": "Login to close this note",
   }
 }

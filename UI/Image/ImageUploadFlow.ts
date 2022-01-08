@@ -61,6 +61,8 @@ export class ImageUploadFlow extends Toggle {
         })
 
         const licensePicker = new LicensePicker(state)
+        const explanations = LicensePicker.LicenseExplanations()
+        const chosenLicense = new VariableUiElement(licensePicker.GetValue().map(license => explanations.get(license)))
 
         const t = Translations.t.image;
 
@@ -150,7 +152,8 @@ export class ImageUploadFlow extends Toggle {
 
             fileSelector,
             Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
-            licensePicker
+            licensePicker,
+            chosenLicense.SetClass("subtle text-sm")
         ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
 
 

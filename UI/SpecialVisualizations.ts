@@ -829,8 +829,8 @@ export default class SpecialVisualizations {
 
                         const label = new Combine([
                             Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
-                            "Add image to node. Your image will be published in the public domain."
-                        ]).SetClass("p-2 border-4 border-black rounded-full font-bold h-full align-middle w-full flex justify-center")
+                            Translations.t.image.addPicture
+                        ]).SetClass("p-2 border-4 border-black rounded-full font-bold h-full align-center w-full flex justify-center")
 
                         const fileSelector = new FileSelectorButton(label)
                         fileSelector.GetValue().addCallback(filelist => {
@@ -838,9 +838,17 @@ export default class SpecialVisualizations {
                             uploader.uploadMany("Image for osm.org/note/" + id, "CC0", filelist)
                             
                         })
+                        const ti = Translations.t.image
+                        const uploadPanel = new Combine([
+                            fileSelector,
+                            new Combine([ti.willBePublished, ti.cco]),
+                            ti.ccoExplanation.SetClass("subtle text-sm"),
+                            ti.respectPrivacy.SetClass("text-sm")
+                        ]).SetClass("flex flex-col")
                         return new LoginToggle( new Toggle( 
                             Translations.t.image.uploadingPicture.SetClass("alert"),
-                            fileSelector, isUploading), t.loginToAddPicture, state)
+                            uploadPanel,
+                            isUploading), t.loginToAddPicture, state)
                     }
 
                 }

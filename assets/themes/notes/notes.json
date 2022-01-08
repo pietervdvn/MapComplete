@@ -66,11 +66,17 @@
           "render": "{add_note_comment()}"
         },
         {
-          "id": "Spam",
+          "id": "report-contributor",
           "render": {
             "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>"
           },
           "condition": "_opened_by_anonymous_user=false"
+        },
+        {
+          "id": "report-note",
+          "render": {
+            "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>"
+          }
         }
       ],
       "mapRendering": [
