@@ -58,6 +58,10 @@
           "render": "{visualize_note_comments()}"
         },
         {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
           "id": "comment",
           "render": "{add_note_comment()}"
         },

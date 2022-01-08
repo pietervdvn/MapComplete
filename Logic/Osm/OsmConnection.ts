@@ -220,8 +220,8 @@ export class OsmConnection {
 
     public closeNote(id: number | string, text?: string): Promise<any> {
         let textSuffix = ""
-        if((text ?? "") !== "" ){
-            textSuffix = "?text="+encodeURIComponent(text)
+        if ((text ?? "") !== "") {
+            textSuffix = "?text=" + encodeURIComponent(text)
         }
         return new Promise((ok, error) => {
             this.auth.xhr({
@@ -241,8 +241,8 @@ export class OsmConnection {
 
     public reopenNote(id: number | string, text?: string): Promise<any> {
         let textSuffix = ""
-        if((text ?? "") !== "" ){
-            textSuffix = "?text="+encodeURIComponent(text)
+        if ((text ?? "") !== "") {
+            textSuffix = "?text=" + encodeURIComponent(text)
         }
         return new Promise((ok, error) => {
             this.auth.xhr({

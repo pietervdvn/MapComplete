@@ -41,7 +41,10 @@ import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
 import Toggle from "./Input/Toggle";
 import Img from "./Base/Img";
 import ValidatedTextField from "./Input/ValidatedTextField";
-import Link from "./Base/Link";
+import NoteCommentElement from "./Popup/NoteCommentElement";
+import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
+import FileSelectorButton from "./Input/FileSelectorButton";
+import {LoginToggle} from "./Popup/LoginButton";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -693,11 +696,11 @@ export default class SpecialVisualizations {
                                 tags.ping()
                             })
                         })
-                        return new Toggle(
+                        return new LoginToggle( new Toggle(
                             t.isClosed.SetClass("thanks"),
                             closeButton,
                             isClosed
-                        )
+                        ), t.loginToClose, state)
                     }
                 },
                 {
@@ -721,24 +724,17 @@ export default class SpecialVisualizations {
                             .onClick(async () => {
                                 const id = tags.data[args[1] ?? "id"]
 
+                                if ((txt.data ?? "") == "") {
+                                    return;
+                                }
+
                                 if (isClosed.data) {
                                     await state.osmConnection.reopenNote(id, txt.data)
                                     await state.osmConnection.closeNote(id)
                                 } else {
                                     await state.osmConnection.addCommentToNode(id, txt.data)
                                 }
-                                const comments: any[] = JSON.parse(tags.data["comments"])
-                                const username = state.osmConnection.userDetails.data.name
-                                comments.push({
-                                    "date": new Date().toISOString(),
-                                    "uid": state.osmConnection.userDetails.data.uid,
-                                    "user": username,
-                                    "user_url": "https://www.openstreetmap.org/user/" + username,
-                                    "action": "commented",
-                                    "text": txt.data
-                                })
-                                tags.data["comments"] = JSON.stringify(comments)
-                                tags.ping()
+                                NoteCommentElement.addCommentTo(txt.data, tags, state)
                                 txt.setData("")
 
                             })
@@ -779,13 +775,15 @@ export default class SpecialVisualizations {
                         })
 
                         const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
-                        const stateButtons = new Toggle(reopen, close, isClosed)
+                        const stateButtons = new Toggle(new Toggle(reopen, close, isClosed), undefined, state.osmConnection.isLoggedIn)
 
-                        return new Combine([
-                            new Title("Add a comment"),
-                            textField,
-                            new Combine([addCommentButton.SetClass("mr-2"), stateButtons]).SetClass("flex justify-end")
-                        ]).SetClass("border-2 border-black rounded-xl p-4 block");
+                        return new LoginToggle(
+                            new Combine([
+                                new Title("Add a comment"),
+                                textField,
+                                new Combine([addCommentButton.SetClass("mr-2"), stateButtons]).SetClass("flex justify-end")
+                            ]).SetClass("border-2 border-black rounded-xl p-4 block"),
+                            t.loginToAddComment, state)
                     }
                 },
                 {
@@ -798,52 +796,53 @@ export default class SpecialVisualizations {
                             defaultValue: "comments"
                         }
                     ]
-                    , constr: (state, tags, args) => {
-                        const t = Translations.t.notes;
-                        return new VariableUiElement(
+                    , constr: (state, tags, args) =>
+                        new VariableUiElement(
                             tags.map(tags => tags[args[0]])
                                 .map(commentsStr => {
-                                    const comments:
-                                        {
-                                            "date": string,
-                                            "uid": number,
-                                            "user": string,
-                                            "user_url": string,
-                                            "action": "closed" | "opened" | "reopened" | "commented",
-                                            "text": string, "html": string
-                                        }[] = JSON.parse(commentsStr)
-
-
+                                    const comments: any[] = JSON.parse(commentsStr)
                                     return new Combine(comments
                                         .filter(c => c.text !== "")
-                                        .map(c => {
-                                            let actionIcon: BaseUIElement = undefined;
-                                            if (c.action === "opened" || c.action === "reopened") {
-                                                actionIcon = Svg.note_svg()
-                                            } else if (c.action === "closed") {
-                                                actionIcon = Svg.resolved_svg()
-                                            } else {
-                                                actionIcon = Svg.addSmall_svg()
-                                            }
-
-                                            let user: BaseUIElement
-                                            if (c.user === undefined) {
-                                                user = t.anonymous
-                                            } else {
-                                                user = new Link(c.user, c.user_url ?? "", true)
-                                            }
-
-                                            return new Combine([new Combine([
-                                                actionIcon.SetClass("mr-4 w-6").SetStyle("flex-shrink: 0"),
-                                                new FixedUiElement(c.html).SetClass("flex flex-col").SetStyle("margin: 0"),
-                                            ]).SetClass("flex"),
-                                                new Combine([user.SetClass("mr-2"), c.date]).SetClass("flex justify-end subtle")
-                                            ]).SetClass("flex flex-col")
-
-                                        })).SetClass("flex flex-col")
+                                        .map(c => new NoteCommentElement(c))).SetClass("flex flex-col")
                                 })
                         )
+                },
+                {
+                    funcName: "add_image_to_note",
+                    docs: "Adds an image to a node",
+                    args: [{
+                        name: "Id-key",
+                        doc: "The property name where the ID of the note to close can be found",
+                        defaultValue: "id"
+                    }],
+                    constr: (state, tags, args) => {
+                    const isUploading = new UIEventSource(false);
+                      const t = Translations.t.notes;
+                          const id = tags.data[args[0] ?? "id"]
+
+                        const uploader = new ImgurUploader(url => {
+                            isUploading.setData(false)
+                            state.osmConnection.addCommentToNode(id, url)
+                            NoteCommentElement.addCommentTo(url, tags, state)
+
+                        })
+
+                        const label = new Combine([
+                            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+                            "Add image to node. Your image will be published in the public domain."
+                        ]).SetClass("p-2 border-4 border-black rounded-full font-bold h-full align-middle w-full flex justify-center")
+
+                        const fileSelector = new FileSelectorButton(label)
+                        fileSelector.GetValue().addCallback(filelist => {
+                            isUploading.setData(true)
+                            uploader.uploadMany("Image for osm.org/note/" + id, "CC0", filelist)
+                            
+                        })
+                        return new LoginToggle( new Toggle( 
+                            Translations.t.image.uploadingPicture.SetClass("alert"),
+                            fileSelector, isUploading), t.loginToAddPicture, state)
                     }
+
                 }
             ]
 

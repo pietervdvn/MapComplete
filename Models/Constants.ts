@@ -24,7 +24,7 @@ export default class Constants {
      */
     public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "notes", ...Constants.no_include]
 
-
+ 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
