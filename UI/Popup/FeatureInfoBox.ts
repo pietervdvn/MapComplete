@@ -235,4 +235,5 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         return false;
     }
 
+
 }

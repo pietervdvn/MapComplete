@@ -1,16 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="85" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="a" x1="0" x2="0" y1="0" y2="1">
-            <stop stop-color="#aa368d" offset="0"/>
-            <stop stop-color="#a8378c" offset=".25"/>
-            <stop stop-color="#92328a" offset=".6"/>
-            <stop stop-color="#792e87" offset=".75"/>
-            <stop stop-color="#542886" offset=".9"/>
-            <stop stop-color="#3b257c" offset="1"/>
-        </linearGradient>
-    </defs>
-    <path d="m42.5 99c-75-49.5-33.62-98 0-98 33.7 0 74.5 48.5-0 98" fill="url(#a)"/>
-    <rect x="36.25" y="19.25" width="12.5" height="36.5" rx="6.25" ry="6.25" fill="#fff"/>
-    <circle cx="42.5" cy="66" r="6.75" fill="#fff"/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="318px" height="374px" viewBox="0 0 318 374" version="1.1">
+  <defs>
+    <linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(314.433594,0,0,366.523438,1.429688,3.738281)">
+      <stop offset="0" style="stop-color:rgb(66.666669%,21.176471%,55.29412%);stop-opacity:1;"/>
+      <stop offset="0.25" style="stop-color:rgb(65.882355%,21.568628%,54.901963%);stop-opacity:1;"/>
+      <stop offset="0.6" style="stop-color:rgb(57.254905%,19.607843%,54.11765%);stop-opacity:1;"/>
+      <stop offset="0.75" style="stop-color:rgb(47.450981%,18.039216%,52.941179%);stop-opacity:1;"/>
+      <stop offset="0.9" style="stop-color:rgb(32.941177%,15.686275%,52.549022%);stop-opacity:1;"/>
+      <stop offset="1" style="stop-color:rgb(23.137255%,14.509805%,48.627451%);stop-opacity:1;"/>
+    </linearGradient>
+  </defs>
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 159 370.261719 C -121.589844 185.128906 33.222656 3.738281 159 3.738281 C 285.078125 3.738281 437.71875 185.128906 159 370.261719 "/>
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 159 71.996094 C 171.914062 71.996094 182.382812 82.460938 182.382812 95.371094 L 182.382812 185.128906 C 182.382812 198.039062 171.914062 208.503906 159 208.503906 C 146.085938 208.503906 135.617188 198.039062 135.617188 185.128906 L 135.617188 95.371094 C 135.617188 82.460938 146.085938 71.996094 159 71.996094 Z M 159 71.996094 "/>
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 184.253906 246.839844 C 184.253906 260.78125 172.945312 272.085938 159 272.085938 C 145.054688 272.085938 133.746094 260.78125 133.746094 246.839844 C 133.746094 232.898438 145.054688 221.59375 159 221.59375 C 172.945312 221.59375 184.253906 232.898438 184.253906 246.839844 Z M 184.253906 246.839844 "/>
+  </g>
 </svg>

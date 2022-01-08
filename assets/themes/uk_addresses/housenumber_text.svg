@@ -1,73 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:cc="http://creativecommons.org/ns#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        viewBox="0 0 87.992996 87.883003"
-        id="svg12"
-        sodipodi:docname="housenumber_text.svg"
-        inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-        width="87.992996"
-        height="87.883003">
-    <metadata
-            id="metadata18">
-        <rdf:RDF>
-            <cc:Work
-                    rdf:about="">
-                <dc:format>image/svg+xml</dc:format>
-                <dc:type
-                        rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-            </cc:Work>
-        </rdf:RDF>
-    </metadata>
-    <defs
-            id="defs16"/>
-    <sodipodi:namedview
-            pagecolor="#ffffff"
-            bordercolor="#666666"
-            borderopacity="1"
-            objecttolerance="10"
-            gridtolerance="10"
-            guidetolerance="10"
-            inkscape:pageopacity="0"
-            inkscape:pageshadow="2"
-            inkscape:window-width="1920"
-            inkscape:window-height="999"
-            id="namedview14"
-            showgrid="false"
-            inkscape:zoom="5.2149125"
-            inkscape:cx="113.16825"
-            inkscape:cy="38.08924"
-            inkscape:window-x="0"
-            inkscape:window-y="0"
-            inkscape:window-maximized="1"
-            inkscape:current-layer="svg12"/>
-    <path
-            d="m 14.044,0 h 59.905 c 7.7801,0 14.044,6.2634 14.044,14.044 v 59.795 c 0,7.7801 -6.2634,14.044 -14.044,14.044 H 14.044 C 6.2639,87.883 0,81.6196 0,73.839 V 14.044 C 0,6.2639 6.2634,0 14.044,0 Z"
-            style="fill:#495aad;paint-order:normal"
-            id="path6"
-            inkscape:connector-curvature="0"/>
-    <path
-            d="m 8.747,22.773 v 42.233 c 7.0389,0 14.078,7.0389 14.078,14.078 h 42.233 c 0,-7.0389 7.0389,-14.078 14.078,-14.078 V 22.773 c -7.0389,0 -14.078,-7.0389 -14.078,-14.078 H 22.825 c 0,7.0389 -7.0389,14.078 -14.078,14.078 z"
-            id="path8"
-            inkscape:connector-curvature="0"
-            style="fill:none;stroke:#ffffff;stroke-width:5.01520014"/>
-    <flowRoot
-            xml:space="preserve"
-            id="flowRoot828"
-            style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-            transform="matrix(1.7191247,0,0,1.8491175,-55.867386,-63.836041)"><flowRegion
-       id="flowRegion830"><rect
-         id="rect832"
-         width="37.96804"
-         height="30.873001"
-         x="42.18671"
-         y="47.845253" /></flowRegion>
-        <flowPara
-                id="flowPara834"
-                style="font-weight:bold;fill:#ffffff;fill-opacity:1">OK</flowPara></flowRoot>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(28.627452%,35.294119%,67.843139%);fill-opacity:1;" d="M 59.851562 0.234375 L 315.148438 0.234375 C 348.304688 0.234375 375 26.925781 375 60.085938 L 375 314.914062 C 375 348.070312 348.308594 374.765625 315.148438 374.765625 L 59.851562 374.765625 C 26.695312 374.765625 0 348.074219 0 314.914062 L 0 60.085938 C 0 26.929688 26.691406 0.234375 59.851562 0.234375 Z M 59.851562 0.234375 "/>
+    <path style="fill:none;stroke-width:5.0152;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 8.747054 22.77277 L 8.747054 65.005742 C 15.785577 65.005742 22.825017 72.045181 22.825017 79.083704 L 65.057988 79.083704 C 65.057988 72.045181 72.096511 65.005742 79.135951 65.005742 L 79.135951 22.77277 C 72.097428 22.77277 65.057988 15.734247 65.057988 8.694807 L 22.825017 8.694807 C 22.825017 15.734247 15.786493 22.77277 8.747054 22.77277 Z M 8.747054 22.77277 " transform="matrix(4.261703,0,0,4.261703,-0.000000000000030279,0.234379)"/>
+  </g>
 </svg>

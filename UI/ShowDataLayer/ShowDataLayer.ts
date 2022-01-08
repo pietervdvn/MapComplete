@@ -29,6 +29,11 @@ export default class ShowDataLayer {
     // Used to generate a fresh ID when needed
     private _cleanCount = 0;
     private geoLayer = undefined;
+
+    /**
+     * A collection of functions to call when the current geolayer is unregistered
+     */
+    private unregister: (() => void)[] = [];
     private isDirty = false;
     /**
      * If the selected element triggers, this is used to lookup the correct layer and to open the popup
@@ -56,25 +61,32 @@ export default class ShowDataLayer {
         const self = this;
 
         options.leafletMap.addCallback(_ => {
-                self.update(options)
+                return self.update(options)
             }
         );
 
         this._features.features.addCallback(_ => self.update(options));
         options.doShowLayer?.addCallback(doShow => {
             const mp = options.leafletMap.data;
+            if(mp === null){
+                self.Destroy()
+                return true;
+            }
             if (mp == undefined) {
                 return;
             }
+
             if (doShow) {
                 if (self.isDirty) {
-                    self.update(options)
+                    return self.update(options)
                 } else {
                     mp.addLayer(this.geoLayer)
                 }
             } else {
                 if (this.geoLayer !== undefined) {
                     mp.removeLayer(this.geoLayer)
+                    this.unregister.forEach(f => f())
+                    this.unregister = []
                 }
             }
 
@@ -82,40 +94,50 @@ export default class ShowDataLayer {
 
 
         this._selectedElement?.addCallbackAndRunD(selected => {
-            if (self._leafletMap.data === undefined) {
-                return;
-            }
-            const v = self.leafletLayersPerId.get(selected.properties.id + selected.geometry.type)
-            if (v === undefined) {
-                return;
-            }
-            const leafletLayer = v.leafletlayer
-            const feature = v.feature
-            if (leafletLayer.getPopup().isOpen()) {
-                return;
-            }
-            if (selected.properties.id !== feature.properties.id) {
-                return;
-            }
-
-            if (feature.id !== feature.properties.id) {
-                // Probably a feature which has renamed
-                // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
-                console.log("Not opening the popup for", feature, "as probably renamed")
-                return;
-            }
-            if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-            ) {
-                console.log("Opening popup of feature", feature)
-                leafletLayer.openPopup()
-            }
+            self.openPopupOfSelectedElement(selected)
         })
 
         this.update(options)
 
     }
 
-    private update(options: ShowDataLayerOptions) {
+    private Destroy() {
+        this.unregister.forEach(f => f())
+    }
+
+    private openPopupOfSelectedElement(selected) {
+        if (selected === undefined) {
+            return
+        }
+        if (this._leafletMap.data === undefined) {
+            return;
+        }
+        const v = this.leafletLayersPerId.get(selected.properties.id + selected.geometry.type)
+        if (v === undefined) {
+            return;
+        }
+        const leafletLayer = v.leafletlayer
+        const feature = v.feature
+        if (leafletLayer.getPopup().isOpen()) {
+            return;
+        }
+        if (selected.properties.id !== feature.properties.id) {
+            return;
+        }
+
+        if (feature.id !== feature.properties.id) {
+            // Probably a feature which has renamed
+            // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
+            console.log("Not opening the popup for", feature, "as probably renamed")
+            return;
+        }
+        if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+        ) {
+            leafletLayer.openPopup()
+        }
+    }
+
+    private update(options: ShowDataLayerOptions) : boolean{
         if (this._features.features.data === undefined) {
             return;
         }
@@ -125,6 +147,9 @@ export default class ShowDataLayer {
         }
         const mp = options.leafletMap.data;
 
+        if(mp === null){
+            return true; // Unregister as the map is destroyed
+        }
         if (mp === undefined) {
             return;
         }
@@ -145,7 +170,7 @@ export default class ShowDataLayer {
             pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
             onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
         });
-        
+
         const selfLayer = this.geoLayer;
         const allFeats = this._features.features.data;
         for (const feat of allFeats) {
@@ -176,20 +201,20 @@ export default class ShowDataLayer {
                             offsettedLine = L.polyline(coords, lineStyle);
                             this.postProcessFeature(feat, offsettedLine)
                             offsettedLine.addTo(this.geoLayer)
-                            
+
                             // If 'self.geoLayer' is not the same as the layer the feature is added to, we can safely remove this callback
                             return self.geoLayer !== selfLayer
                         })
                 } else {
                     this.geoLayer.addData(feat);
-                } 
+                }
             } catch (e) {
                 console.error("Could not add ", feat, "to the geojson layer in leaflet due to", e, e.stack)
             }
         }
 
         if (options.zoomToFeatures ?? false) {
-            if(this.geoLayer.getLayers().length > 0){
+            if (this.geoLayer.getLayers().length > 0) {
                 try {
                     const bounds = this.geoLayer.getBounds()
                     mp.fitBounds(bounds, {animate: false})
@@ -203,6 +228,7 @@ export default class ShowDataLayer {
             mp.addLayer(this.geoLayer)
         }
         this.isDirty = false;
+        this.openPopupOfSelectedElement(this._selectedElement?.data)
     }
 
 
@@ -250,7 +276,7 @@ export default class ShowDataLayer {
     }
 
     /**
-     * POst processing - basically adding the popup
+     * Post processing - basically adding the popup
      * @param feature
      * @param leafletLayer
      * @private
@@ -290,6 +316,10 @@ export default class ShowDataLayer {
             }
             infobox.AttachTo(id)
             infobox.Activate();
+            this.unregister.push(() => {
+                console.log("Destroying infobox")
+                infobox.Destroy();
+            })
             if (this._selectedElement?.data?.properties?.id !== feature.properties.id) {
                 this._selectedElement?.setData(feature)
             }
@@ -302,7 +332,6 @@ export default class ShowDataLayer {
             feature: feature,
             leafletlayer: leafletLayer
         })
-
 
     }
 

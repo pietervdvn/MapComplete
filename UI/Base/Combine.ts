@@ -1,7 +1,6 @@
 import {FixedUiElement} from "./FixedUiElement";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
-import Title from "./Title";
 
 export default class Combine extends BaseUIElement {
     private readonly uiElements: BaseUIElement[];
@@ -19,6 +18,13 @@ export default class Combine extends BaseUIElement {
 
     AsMarkdown(): string {
         return this.uiElements.map(el => el.AsMarkdown()).join(this.HasClass("flex-col") ? "\n\n" : " ");
+    }
+
+    Destroy() {
+        super.Destroy();
+        for (const uiElement of this.uiElements) {
+            uiElement.Destroy()
+        }
     }
 
     protected InnerConstructElement(): HTMLElement {

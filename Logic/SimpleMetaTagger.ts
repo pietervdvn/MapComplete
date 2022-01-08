@@ -272,7 +272,7 @@ export default class SimpleMetaTaggers {
     public static country = new CountryTagger()
     private static isOpen = new SimpleMetaTagger(
         {
-            keys: ["_isOpen", "_isOpen:description"],
+            keys: ["_isOpen"],
             doc: "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
             includesDates: true,
             isLazy: true
@@ -283,7 +283,7 @@ export default class SimpleMetaTaggers {
                 // isOpen is irrelevant
                 return false
             }
-
+            
             Object.defineProperty(feature.properties, "_isOpen", {
                 enumerable: false,
                 configurable: true,
@@ -291,7 +291,8 @@ export default class SimpleMetaTaggers {
                     delete feature.properties._isOpen
                     feature.properties._isOpen = undefined
                     const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
-                    tagsSource.addCallbackAndRunD(tags => {
+                    tagsSource
+                        .addCallbackAndRunD(tags => {
                         if (tags.opening_hours === undefined || tags._country === undefined) {
                             return;
                         }
@@ -341,7 +342,6 @@ export default class SimpleMetaTaggers {
                                 }
                             }
                             updateTags();
-                            return true; // Our job is done, lets unregister!
                         } catch (e) {
                             console.warn("Error while parsing opening hours of ", tags.id, e);
                             delete tags._isOpen
@@ -352,6 +352,7 @@ export default class SimpleMetaTaggers {
                     return undefined
                 }
             })
+            return true;
 
         })
     )

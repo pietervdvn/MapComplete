@@ -1,37 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:cc="http://creativecommons.org/ns#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        width="14"
-        height="14"
-        viewBox="0 0 14 14"
-        id="svg2">
-    <metadata
-            id="metadata8">
-        <rdf:RDF>
-            <cc:Work
-                    rdf:about="">
-                <dc:format>image/svgxml</dc:format>
-                <dc:type
-                        rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                <dc:title></dc:title>
-            </cc:Work>
-        </rdf:RDF>
-    </metadata>
-    <defs
-            id="defs6"/>
-    <rect
-            width="14"
-            height="14"
-            x="0"
-            y="0"
-            id="canvas"
-            style="fill:none;stroke:none;visibility:hidden"/>
-    <path
-            id="tower_observation"
-            d="M 7 0 L 2 2 L 2 6 L 12 6 L 12 2 L 7 0 z M 3 3 L 5 3 L 5 5 L 3 5 L 3 3 z M 6 3 L 8 3 L 8 5 L 6 5 L 6 3 z M 9 3 L 11 3 L 11 5 L 9 5 L 9 3 z M 3.90625 6.625 L 3 14 L 4.5 14 L 4.6875 12.53125 L 7 11 L 9.3125 12.5625 L 9.5 14 L 11 14 L 10.09375 6.65625 L 3.90625 6.625 z M 5.34375 7.1875 L 8.65625 7.21875 L 8.84375 8.78125 L 7 10 L 5.15625 8.78125 L 5.34375 7.1875 z M 5.03125 9.6875 L 6.25 10.5 L 4.8125 11.46875 L 5.03125 9.6875 z M 8.96875 9.6875 L 9.1875 11.46875 L 7.75 10.5 L 8.96875 9.6875 z "
-            style="fill:#555555;fill-opacity:1;stroke:none"/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(33.333334%,33.333334%,33.333334%);fill-opacity:1;" d="M 187.5 0 L 53.570312 53.570312 L 53.570312 160.714844 L 321.429688 160.714844 L 321.429688 53.570312 Z M 80.355469 80.355469 L 133.929688 80.355469 L 133.929688 133.929688 L 80.355469 133.929688 Z M 160.714844 80.355469 L 214.285156 80.355469 L 214.285156 133.929688 L 160.714844 133.929688 Z M 241.070312 80.355469 L 294.644531 80.355469 L 294.644531 133.929688 L 241.070312 133.929688 Z M 104.632812 177.457031 L 80.355469 375 L 120.535156 375 L 125.558594 335.660156 L 187.5 294.644531 L 249.441406 336.496094 L 254.464844 375 L 294.644531 375 L 270.367188 178.292969 Z M 143.136719 192.523438 L 231.863281 193.359375 L 236.886719 235.210938 L 187.5 267.855469 L 138.113281 235.210938 Z M 134.765625 259.488281 L 167.410156 281.25 L 128.90625 307.199219 Z M 240.234375 259.488281 L 246.09375 307.199219 L 207.589844 281.25 Z M 240.234375 259.488281 "/>
+  </g>
 </svg>

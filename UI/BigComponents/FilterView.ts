@@ -196,8 +196,8 @@ export default class FilterView extends VariableUiElement {
         if (filterConfig.options.length === 1) {
             let option = filterConfig.options[0];
 
-            const icon = Svg.checkbox_filled_svg().SetClass("block mr-2");
-            const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2");
+            const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6");
+            const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2 w-6");
 
             const toggle = new Toggle(
                 new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),

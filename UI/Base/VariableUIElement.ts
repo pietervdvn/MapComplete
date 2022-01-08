@@ -8,10 +8,19 @@ export class VariableUiElement extends BaseUIElement {
         super();
         this._contents = contents;
     }
+    
+    Destroy() {
+        super.Destroy();
+        this.isDestroyed = true;
+    }
 
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span");
+        const self = this;
         this._contents.addCallbackAndRun((contents) => {
+            if(self.isDestroyed){
+                return true;
+            }
             while (el.firstChild) {
                 el.removeChild(el.lastChild);
             }

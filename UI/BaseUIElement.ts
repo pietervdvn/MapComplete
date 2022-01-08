@@ -11,6 +11,7 @@ export default abstract class BaseUIElement {
     private clss: Set<string> = new Set<string>();
     private style: string;
     private _onClick: () => void;
+    protected isDestroyed = false;
 
     public onClick(f: (() => void)) {
         this._onClick = f;
@@ -148,6 +149,10 @@ export default abstract class BaseUIElement {
 
     public AsMarkdown(): string {
         throw "AsMarkdown is not implemented by " + this.constructor.name+"; implement it in the subclass"
+    }
+    
+    public Destroy(){
+        this.isDestroyed = true;
     }
 
     protected abstract InnerConstructElement(): HTMLElement;

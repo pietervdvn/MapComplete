@@ -102,7 +102,8 @@ async function createManifest(layout: LayoutConfig) {
         background_color: "#fff",
         description: ogDescr,
         orientation: "portrait-primary, landscape-primary",
-        icons: icons
+        icons: icons,
+        categories: ["map","navigation"]
     };
 }
 

@@ -95,6 +95,7 @@
     "osmtogeojson": "^3.0.0-beta.4",
     "parcel": "^1.2.4",
     "prompt-sync": "^4.2.0",
+    "svg-resizer": "github:vieron/svg-resizer",
     "tailwindcss": "^2.2.15",
     "togpx": "^0.5.4",
     "tslint": "^6.1.3",
