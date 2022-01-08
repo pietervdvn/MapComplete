@@ -29,7 +29,7 @@ abstract class Conversion<TIn, TOut> {
     }
 
     public static strict<T>(fixed: { errors: string[], warnings: string[], result?: T }): T {
-        if (fixed.errors?.length > 0) {
+        if (fixed?.errors?.length > 0) {
             throw fixed.errors.join("\n");
         }
         fixed.warnings?.forEach(w => console.warn(w))

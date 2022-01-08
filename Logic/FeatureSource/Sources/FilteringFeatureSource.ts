@@ -4,6 +4,7 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import Hash from "../../Web/Hash";
 import {BBox} from "../../BBox";
 import {ElementStorage} from "../../ElementStorage";
+import {TagsFilter} from "../../Tags/TagsFilter";
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =
@@ -87,10 +88,10 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 }
             }
 
-            const tagsFilter = layer.appliedFilters.data;
+            const tagsFilter = Array.from(layer.appliedFilters.data.values());
             for (const filter of tagsFilter ?? []) {
-                const neededTags = filter.filter.options[filter.selected].osmTags
-                if (!neededTags.matchesProperties(f.feature.properties)) {
+                const neededTags : TagsFilter = filter?.currentFilter
+                if (neededTags !== undefined && !neededTags.matchesProperties(f.feature.properties)) {
                     // Hidden by the filter on the layer itself - we want to hide it no matter wat
                     return false;
                 }

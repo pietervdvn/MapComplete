@@ -4,19 +4,21 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
-import {Utils} from "../../Utils";
-import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./Json/TagConfigJson";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {FilterState} from "../FilteredLayer";
+import {QueryParameters} from "../../Logic/Web/QueryParameters";
+import {Utils} from "../../Utils";
 
 export default class FilterConfig {
     public readonly id: string
     public readonly options: {
         question: Translation;
-        osmTags: TagsFilter;
+        osmTags: TagsFilter | undefined;
         originalTagsSpec: string | AndOrTagConfigJson
         fields: { name: string, type: string }[]
     }[];
-    
+
     constructor(json: FilterConfigJson, context: string) {
         if (json.options === undefined) {
             throw `A filter without options was given at ${context}`
@@ -39,11 +41,14 @@ export default class FilterConfig {
                 option.question,
                 `${ctx}.question`
             );
-            let osmTags = TagUtils.Tag(
-                    option.osmTags ?? {and: []},
+            let osmTags = undefined;
+            if (option.osmTags !== undefined) {
+                osmTags = TagUtils.Tag(
+                    option.osmTags,
                     `${ctx}.osmTags`
                 );
 
+            }
             if (question === undefined) {
                 throw `Invalid filter: no question given at ${ctx}`
             }
@@ -61,12 +66,12 @@ export default class FilterConfig {
                     type
                 }
             })
-            
-            if(fields.length > 0){
+
+            if (fields.length > 0) {
                 // erase the tags, they aren't needed
-                osmTags = TagUtils.Tag({and:[]})
+                osmTags = undefined
             }
-            
+
             return {question: question, osmTags: osmTags, fields, originalTagsSpec: option.osmTags};
         });
 
@@ -74,9 +79,87 @@ export default class FilterConfig {
             throw `Invalid filter at ${context}: a filter with textfields should only offer a single option.`
         }
 
-        if (this.options.length > 1 && this.options[0].osmTags["and"]?.length !== 0) {
+        if (this.options.length > 1 && this.options[0].osmTags !== undefined) {
             throw "Error in " + context + "." + this.id + ": the first option of a multi-filter should always be the 'reset' option and not have any filters"
         }
     }
-    
+
+    public initState(): UIEventSource<FilterState> {
+
+        function reset(state: FilterState): string {
+            if (state === undefined) {
+                return ""
+            }
+            return "" + state.state
+        }
+        const defaultValue = this.options.length > 1 ? "0" : ""
+        const qp = QueryParameters.GetQueryParameter("filter-" + this.id, defaultValue, "State of filter " + this.id)
+
+        if (this.options.length > 1) {
+            // This is a multi-option filter; state should be a number which selects the correct entry
+            const possibleStates: FilterState [] = this.options.map((opt, i) => ({
+                currentFilter: opt.osmTags,
+                state: i
+            }))
+
+            // We map the query parameter for this case
+            return qp.map(str => {
+                const parsed = Number(str)
+                if (isNaN(parsed)) {
+                    // Nope, not a correct number!
+                    return undefined
+                }
+                return possibleStates[parsed]
+            }, [], reset)
+        }
+
+
+        const option = this.options[0]
+
+        if (option.fields.length > 0) {
+            return qp.map(str => {
+                // There are variables in play!
+                // str should encode a json-hash
+                try {
+                    const props = JSON.parse(str)
+
+                    const origTags = option.originalTagsSpec
+                    const rewrittenTags = Utils.WalkJson(origTags,
+                        v => {
+                            if (typeof v !== "string") {
+                                return v
+                            }
+                            for (const key in props) {
+                                v = (<string>v).replace("{"+key+"}", props[key])
+                            }
+                            return v
+                        }
+                    )
+                    return <FilterState>{
+                        currentFilter: TagUtils.Tag(rewrittenTags),
+                        state: str
+                    }
+                } catch (e) {
+                    return undefined
+                }
+
+            }, [], reset)
+        }
+
+        // The last case is pretty boring: it is checked or it isn't
+        const filterState: FilterState = {
+            currentFilter: option.osmTags,
+            state: "true"
+        }
+        return qp.map(
+            str => {
+                // Only a single option exists here
+                if (str === "true") {
+                    return filterState
+                }
+                return undefined
+            }, [],
+            reset
+        )
+    }
 }

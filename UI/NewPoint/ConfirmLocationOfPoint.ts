@@ -29,6 +29,7 @@ export default class ConfirmLocationOfPoint extends Combine {
         loc: { lon: number, lat: number },
         confirm: (tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) => void,
         cancel: () => void,
+        closePopup: () => void
     ) {
 
         let preciseInput: LocationInput = undefined
@@ -137,33 +138,26 @@ export default class ConfirmLocationOfPoint extends Combine {
                 ]
             ).SetClass("flex flex-col")
         ).onClick(() => {
-            preset.layerToAddTo.appliedFilters.setData([])
+            
+            const appliedFilters = preset.layerToAddTo.appliedFilters;
+            appliedFilters.data.forEach((_, k) => appliedFilters.data.set(k, undefined))
+            appliedFilters.ping()
             cancel()
+            closePopup()
         })
 
+        const hasActiveFilter = preset.layerToAddTo.appliedFilters
+            .map(appliedFilters => {
+                const activeFilters = Array.from(appliedFilters.values()).filter(f => f?.currentFilter !== undefined);
+                    return activeFilters.length === 0;
+            })
+        
+        // If at least one filter is active which _might_ hide a newly added item, this blocks the preset and requests the filter to be disabled
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
-            disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => {
-                if (filters === undefined || filters.length === 0) {
-                    return true;
-                }
-                for (const filter of filters) {
-                    if (filter.selected === 0 && filter.filter.options.length === 1) {
-                        return false;
-                    }
-                    if (filter.selected !== undefined) {
-                        const tags = filter.filter.options[filter.selected].osmTags
-                        if (tags !== undefined && tags["and"]?.length !== 0) {
-                            // This actually doesn't filter anything at all
-                            return false;
-                        }
-                    }
-                }
-                return true
-
-            })
-        )
+            disableFilter, 
+            hasActiveFilter)
+        
 
 
         const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection);

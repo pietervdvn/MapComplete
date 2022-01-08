@@ -9,8 +9,8 @@
   "startZoom": 0,
   "title": "Notes on OpenStreetMap",
   "version": "0.1",
-  "description": "Notes from OpenStreetMap",
-  "icon": "./assets/themes/notes/resolved.svg",
+  "description": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
+  "icon": "./assets/svg/resolved.svg",
   "clustering": false,
   "enableDownload": true,
   "layers": [
@@ -19,7 +19,7 @@
       "name": {
         "en": "OpenStreetMap notes"
       },
-      "description": "Notes on OpenStreetMap.org",
+      "description": "This layer shows notes on OpenStreetMap.",
       "source": {
         "osmTags": "id~*",
         "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?closed=7&bbox={x_min},{y_min},{x_max},{y_max}",
@@ -42,7 +42,10 @@
       },
       "calculatedTags": [
         "_first_comment:=feat.get('comments')[0].text.toLowerCase()",
-        "_conversation=feat.get('comments').map(c => { let user = 'anonymous user'; if(c.user_url !== undefined){user = '<a href=\"'+c.user_url+'\" target=\"_blank\">'+c.user+'</a>'}; return c.html +'<div class=\"subtle flex justify-end border-t border-gray-500\">' + user + '&nbsp;'+c.date+'</div>' }).join('')"
+        "_opened_by_anonymous_user:=feat.get('comments')[0].user === undefined",
+        "_first_user:=feat.get('comments')[0].user",
+        "_first_user_lc:=feat.get('comments')[0].user?.toLowerCase()",
+        "_first_user_id:=feat.get('comments')[0].uid"
       ],
       "titleIcons": [
         {
@@ -52,18 +55,18 @@
       "tagRenderings": [
         {
           "id": "conversation",
-          "render": "{_conversation}"
+          "render": "{visualize_note_comments()}"
         },
         {
-          "id": "date_created",
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "Spam",
           "render": {
-            "en": "Opened on {date_created}"
-          }
-        },
-        {
-          "id": "close",
-          "render": "{close_note()}",
-          "condition": "closed_at="
+            "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>"
+          },
+          "condition": "_opened_by_anonymous_user=false"
         }
       ],
       "mapRendering": [
@@ -73,11 +76,11 @@
             "centroid"
           ],
           "icon": {
-            "render": "./assets/themes/notes/note.svg",
+            "render": "./assets/svg/note.svg",
             "mappings": [
               {
                 "if": "closed_at~*",
-                "then": "./assets/themes/notes/resolved.svg"
+                "then": "./assets/svg/resolved.svg"
               }
             ]
           },
@@ -113,6 +116,49 @@
               ],
               "question": {
                 "en": "Should <b>not</b> mention {search} in the first comment"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opened_by",
+          "options": [
+            {
+              "osmTags": "_first_user_lc~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Opened by {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "not_opened_by",
+          "options": [
+            {
+              "osmTags": "_first_user_lc!~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "<b>Not</b> opened by {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "anonymous",
+          "options": [
+            {
+              "osmTags": "_opened_by_anonymous_user=true",
+              "question": {
+                "en": "Opened by anonymous user"
               }
             }
           ]

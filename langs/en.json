@@ -425,7 +425,12 @@
   },
   "notes": {
     "isClosed": "This note is resolved",
-    "closeNote": 
-      "Close this note"
+    "addCommentPlaceholder": "Add a comment...",
+    "addComment": "Add comment",
+    "addCommentAndClose": "Add comment and close",
+    "closeNote":       "Close note",
+    "reopenNote": "Reopen note",
+    "reopenNoteAndComment": "Reopen note and comment",
+    "anonymous": "Anonymous user"
   }
 }

@@ -218,13 +218,58 @@ export class OsmConnection {
         });
     }
 
-    public closeNote(id: number | string): Promise<any> {
+    public closeNote(id: number | string, text?: string): Promise<any> {
+        let textSuffix = ""
+        if((text ?? "") !== "" ){
+            textSuffix = "?text="+encodeURIComponent(text)
+        }
         return new Promise((ok, error) => {
             this.auth.xhr({
                 method: 'POST',
-                path: `/api/0.6/notes/${id}/close`
+                path: `/api/0.6/notes/${id}/close${textSuffix}`
             }, function (err, response) {
-                console.log("Closing note gave:", err, response)
+                if (err !== null) {
+                    error(err)
+                } else {
+                    ok()
+                }
+            })
+
+        })
+
+    }
+
+    public reopenNote(id: number | string, text?: string): Promise<any> {
+        let textSuffix = ""
+        if((text ?? "") !== "" ){
+            textSuffix = "?text="+encodeURIComponent(text)
+        }
+        return new Promise((ok, error) => {
+            this.auth.xhr({
+                method: 'POST',
+                path: `/api/0.6/notes/${id}/reopen${textSuffix}`
+            }, function (err, response) {
+                if (err !== null) {
+                    error(err)
+                } else {
+                    ok()
+                }
+            })
+
+        })
+
+    }
+
+    public addCommentToNode(id: number | string, text: string): Promise<any> {
+        if ((text ?? "") === "") {
+            throw "Invalid text!"
+        }
+
+        return new Promise((ok, error) => {
+            this.auth.xhr({
+                method: 'POST',
+                path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
+            }, function (err, response) {
                 if (err !== null) {
                     error(err)
                 } else {

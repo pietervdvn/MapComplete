@@ -7,11 +7,10 @@ import Attribution from "../../UI/BigComponents/Attribution";
 import Minimap, {MinimapObj} from "../../UI/Base/Minimap";
 import {Tiles} from "../../Models/TileRange";
 import BaseUIElement from "../../UI/BaseUIElement";
-import FilteredLayer from "../../Models/FilteredLayer";
+import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 import * as personal from "../../assets/themes/personal/personal.json";
-import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
@@ -339,7 +338,6 @@ export default class MapState extends UserRelatedState {
     private InitializeFilteredLayers() {
 
         const layoutToUse = this.layoutToUse;
-        const empty = []
         const flayers: FilteredLayer[] = [];
         for (const layer of layoutToUse.layers) {
             let isDisplayed: UIEventSource<boolean>
@@ -355,26 +353,18 @@ export default class MapState extends UserRelatedState {
                     "Wether or not layer " + layer.id + " is shown"
                 )
             }
-            const flayer = {
+            const flayer : FilteredLayer = {
                 isDisplayed: isDisplayed,
                 layerDef: layer,
-                appliedFilters: new UIEventSource<{ filter: FilterConfig, selected: number }[]>([]),
+                appliedFilters:   new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
             };
-
-            if (layer.filters.length > 0) {
-                const filtersPerName = new Map<string, FilterConfig>()
-                layer.filters.forEach(f => filtersPerName.set(f.id, f))
-                const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "", "Filtering state for a layer")
-                flayer.appliedFilters.map(filters => (filters ?? []).map(f => f.filter.id + "." + f.selected).join(","), [], textual => {
-                    if (textual.length === 0) {
-                        return empty
-                    }
-                    return textual.split(",").map(part => {
-                        const [filterId, selected] = part.split(".");
-                        return {filter: filtersPerName.get(filterId), selected: Number(selected)}
-                    }).filter(f => f.filter !== undefined && !isNaN(f.selected))
-                }).syncWith(qp, true)
-            }
+            layer.filters.forEach(filterConfig => {
+                const stateSrc = filterConfig.initState()
+                
+                stateSrc    .addCallbackAndRun(state => flayer.appliedFilters.data.set(filterConfig.id, state))
+                flayer.appliedFilters.map(dict => dict.get(filterConfig.id))
+                    .addCallback(state => stateSrc.setData(state))
+            })
 
             flayers.push(flayer);
         }

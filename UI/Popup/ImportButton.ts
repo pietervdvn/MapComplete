@@ -520,7 +520,8 @@ export class ImportPointButton extends AbstractImportButton {
         guiState: DefaultGuiState,
         originalFeatureTags: UIEventSource<any>,
         feature: any,
-        onCancel: () => void): BaseUIElement {
+        onCancel: () => void,
+        close: () => void): BaseUIElement {
 
         async function confirm(tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) {
 
@@ -559,7 +560,7 @@ export class ImportPointButton extends AbstractImportButton {
         return new ConfirmLocationOfPoint(state, guiState.filterViewIsOpened, presetInfo, Translations.W(args.text), {
             lon,
             lat
-        }, confirm, onCancel)
+        }, confirm, onCancel, close)
 
     }
 
@@ -567,7 +568,7 @@ export class ImportPointButton extends AbstractImportButton {
                      originalFeatureTags,
                      guiState,
                      feature,
-                     onCancel): BaseUIElement {
+                     onCancel: () => void): BaseUIElement {
 
 
         const geometry = feature.geometry
@@ -579,7 +580,11 @@ export class ImportPointButton extends AbstractImportButton {
                 guiState,
                 originalFeatureTags,
                 feature,
-                onCancel
+                onCancel,
+                () => {
+                    // Close the current popup
+                    state.selectedElement.setData(undefined)
+                }
             ))
         }
 

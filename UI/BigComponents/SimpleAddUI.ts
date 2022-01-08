@@ -111,7 +111,10 @@ export default class SimpleAddUI extends Toggle {
                         message,
                         state.LastClickLocation.data,
                         confirm,
-                        cancel)
+                        cancel,
+                        () => {
+                            isShown.setData(false)
+                        })
                 }
             ))
 
