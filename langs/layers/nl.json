@@ -8,8 +8,17 @@
                         "then": "Dit gebouw heeft geen huisnummer"
                     }
                 },
-                "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                "render": "Het huisnummer is <b>{addr:housenumber}</b>",
+                "question": "Wat is het huisnummer van dit huis?"
+            },
+            "street": {
+                "question": "In welke straat bevindt dit adres zich?",
+                "render": "Dit adres bevindt zich in de straat <b>{addr:street}</b>"
             }
+        },
+        "name": "Bekende adressen in OSM",
+        "title": {
+            "render": "Bekend adres"
         }
     },
     "artwork": {
@@ -155,6 +164,9 @@
                 "mappings": {
                     "1": {
                         "then": "Dit zijn fietshekjes die fietsers afremmen"
+                    },
+                    "0": {
+                        "then": "Dit is een enkel paaltje in de weg"
                     }
                 }
             },
@@ -280,6 +292,12 @@
                 "mappings": {
                     "1": {
                         "then": "Leunbank"
+                    },
+                    "2": {
+                        "then": "Er is hier geen bank"
+                    },
+                    "0": {
+                        "then": "Er is hier een normale zitbank"
                     }
                 },
                 "question": "Wat voor soort bank is dit?"
