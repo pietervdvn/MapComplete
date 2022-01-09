@@ -444,7 +444,7 @@
             },
             "ambulance-place": {
                 "question": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)",
-                "render": "Ez az állomás itt található: {addr:place}"
+                "render": "Ez az állomás itt található: {addr:place}."
             },
             "ambulance-street": {
                 "question": " Mi a neve annak az utcának, amelyben az állomás található?",
@@ -453,6 +453,195 @@
         },
         "title": {
             "render": "Mentőállomás"
+        }
+    },
+    "cafe_pub": {
+        "description": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
+        "name": "Kávézók és kocsmák",
+        "presets": {
+            "0": {
+                "title": "kocsma"
+            },
+            "1": {
+                "title": "bár"
+            },
+            "2": {
+                "title": "kávézó"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "render": "A kocsma neve: {name}",
+                "question": "Mi a neve ennek a kocsmának?"
+            },
+            "Classification": {
+                "question": "Milyen fajta kávézó ez?"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Most nyitva van"
+                    }
+                }
+            }
+        }
+    },
+    "drinking_water": {
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "2": {
+                        "then": "Ez az ivóvízkút el van zárva"
+                    },
+                    "0": {
+                        "then": "Ez az ivóvízkút működik"
+                    },
+                    "1": {
+                        "then": "Ez az ivóvízkút elromlott"
+                    }
+                },
+                "question": "Működik-e még ez az ivóvíznyerő hely?",
+                "render": "Működési állapota: <i>{operational_status}</i>"
+            },
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": "Könnyen lehet vizespalackot tölteni"
+                    },
+                    "1": {
+                        "then": "Lehet, hogy nem fér alá egy vizespalack"
+                    }
+                },
+                "question": "Mennyire könnyű itt vizespalackot tölteni?"
+            },
+            "render-closest-drinking-water": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>"
+            }
+        },
+        "title": {
+            "render": "Ivóvíz"
+        },
+        "description": "Ivóvizet adó kutakat megjelenítő réteg",
+        "name": "Ivóvíz",
+        "presets": {
+            "0": {
+                "title": "ivóvíz"
+            }
+        }
+    },
+    "public_bookcase": {
+        "tagRenderings": {
+            "public_bookcase-brand": {
+                "mappings": {
+                    "1": {
+                        "then": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak"
+                    },
+                    "0": {
+                        "then": "A „Little Free Library” hálózat része"
+                    }
+                },
+                "question": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?",
+                "render": "Ez a nyilvános könyvespolc a(z) {brand} része"
+            },
+            "public_bookcase-capacity": {
+                "question": "Hány könyv fér el ezen a nyilvános könyvespolcon?",
+                "render": "Ezen a könyvespolcon {capacity} könyv fér el"
+            },
+            "public_bookcase-operator": {
+                "question": "Ki tartja fenn ezt a nyilvános könyvespolcot?",
+                "render": "Üzemeltető: {operator}"
+            },
+            "public_bookcase-ref": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez a könyvespolc nem része egy nagyobb hálózatnak"
+                    }
+                },
+                "question": "Mi az azonosító száma ennek a nyilvános könyvespolcnak?",
+                "render": "A(z) {brand} márkanéven belül ennek a nyilvános könyvespolcnak az azonosító száma: {ref}"
+            },
+            "public_bookcase-start_date": {
+                "question": "Mikor állították fel ezt a nyilvános könyvespolcot?",
+                "render": "Telepítés dátuma: {start_date}"
+            },
+            "bookcase-booktypes": {
+                "mappings": {
+                    "0": {
+                        "then": "Többnyire gyermekkönyvek"
+                    },
+                    "1": {
+                        "then": "Többnyire felnőtteknek szóló könyvek"
+                    },
+                    "2": {
+                        "then": "Gyerekeknek és felnőtteknek szóló könyvek egyaránt"
+                    }
+                },
+                "question": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
+            },
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "Nyilvánosan használható"
+                    },
+                    "1": {
+                        "then": "Csak ügyfelek használhatják"
+                    }
+                },
+                "question": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?"
+            },
+            "bookcase-is-indoors": {
+                "mappings": {
+                    "2": {
+                        "then": "Ez a könyvszekrény a szabadban van"
+                    },
+                    "1": {
+                        "then": "Ez a könyvespolc a szabadban van"
+                    },
+                    "0": {
+                        "then": "Ez a könyvespolc beltérben található"
+                    }
+                },
+                "question": "A szabadban van-e ez a könyvespolc?"
+            },
+            "public_bookcase-name": {
+                "render": "Ennek a könyvespolcnak a neve: {név}",
+                "mappings": {
+                    "0": {
+                        "then": "Ennek a könyvespolcnak nincs neve"
+                    }
+                },
+                "question": "Mi a neve ennek a nyilvános könyvespolcnak?"
+            },
+            "public_bookcase-website": {
+                "question": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
+                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "A nyilvános könyvespolc neve: <i>{name}</i>"
+                }
+            },
+            "render": "Könyvespolc"
+        },
+        "description": "Egy utcai szekrény könyvekkel, amelyet bárki használhat",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Beltéri vagy kültéri"
+                    }
+                }
+            }
+        },
+        "name": "Könyvespolcok",
+        "presets": {
+            "0": {
+                "title": "Könyvespolc"
+            }
         }
     }
 }
