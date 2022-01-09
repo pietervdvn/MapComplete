@@ -650,6 +650,13 @@
                     }
                 }
             }
-        }
+        },
+        "description": ""
+    },
+    "etymology": {
+        "description": ""
+    },
+    "waste_basket": {
+        "description": ""
     }
 }
