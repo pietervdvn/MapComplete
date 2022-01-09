@@ -4798,6 +4798,24 @@
             "render": "Vuilnisbak"
         }
     },
+    "waste_disposal": {
+        "tagRenderings": {
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een ondergrondse container"
+                    },
+                    "1": {
+                        "then": "Deze container bevindt zich binnen"
+                    },
+                    "2": {
+                        "then": "Deze container is buiten"
+                    }
+                },
+                "question": "Waar bevindt deze container zich?"
+            }
+        }
+    },
     "watermill": {
         "description": "Watermolens",
         "name": "Watermolens",

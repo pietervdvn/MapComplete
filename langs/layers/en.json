@@ -4784,6 +4784,20 @@
                 },
                 "question": "Who can use this waste disposal bin?",
                 "render": "Access: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an underground container"
+                    },
+                    "1": {
+                        "then": "This container is located indoors"
+                    },
+                    "2": {
+                        "then": "This container is located outdoors"
+                    }
+                },
+                "question": "Where is this container located?"
             }
         },
         "title": {

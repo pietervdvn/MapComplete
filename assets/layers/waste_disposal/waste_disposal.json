@@ -70,6 +70,36 @@
           }
         }
       ]
+    },
+    {
+      "id": "disposal-location",
+      "question": {
+        "en": "Where is this container located?",
+        "nl": "Waar bevindt deze container zich?"
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "This is an underground container",
+            "nl": "Dit is een ondergrondse container"
+          }
+        },
+        {
+          "if": "location=indoor",
+          "then": {
+            "en": "This container is located indoors",
+            "nl": "Deze container bevindt zich binnen"
+          }
+        },
+        {
+          "if": "location=",
+          "then": {
+            "en": "This container is located outdoors",
+            "nl": "Deze container is buiten"
+          }
+        }
+      ]
     }
   ],
   "filter": [
