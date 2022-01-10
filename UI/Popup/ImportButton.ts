@@ -37,6 +37,7 @@ import TagApplyButton from "./TagApplyButton";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import * as conflation_json from "../../assets/layers/conflation/conflation.json";
 import {GeoOperations} from "../../Logic/GeoOperations";
+import {Or} from "../../Logic/Tags/Or";
 
 
 abstract class AbstractImportButton implements SpecialVisualizations {
@@ -56,7 +57,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument \`tags\` of the import button takes a \`;\`-seperated list of tags to add.
+The argument \`tags\` of the import button takes a \`;\`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 ${Utils.Special_visualizations_tagsToApplyHelpText}
 ${Utils.special_visualizations_importRequirementDocs}
@@ -68,7 +69,7 @@ ${Utils.special_visualizations_importRequirementDocs}
             },
             {
                 name: "tags",
-                doc: "The tags to add onto the new object - see specification above"
+                doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead"
             },
             {
                 name: "text",
@@ -201,7 +202,15 @@ ${Utils.special_visualizations_importRequirementDocs}
     private parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
         const baseArgs = Utils.ParseVisArgs(this.args, argsRaw)
         if (originalFeatureTags !== undefined) {
-            baseArgs["newTags"] = TagApplyButton.generateTagsToApply(baseArgs.tags, originalFeatureTags)
+            
+            const tags = baseArgs.tags
+            if(tags.indexOf(" ") < 0 && tags.indexOf(";") < 0){
+                // This might be a propertie to expand...
+                const items : string = originalFeatureTags.data[tags]
+                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
+            }else{
+                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)
+            }
         }
         return baseArgs
     }
