@@ -2169,6 +2169,9 @@
                     },
                     "2": {
                         "then": "Zebra crossing"
+                    },
+                    "3": {
+                        "then": "Crossing without crossing markings"
                     }
                 },
                 "question": "What kind of crossing is this?"
@@ -3369,11 +3372,6 @@
                 }
             },
             "render": "Note"
-        }
-    },
-    "note_import": {
-        "title": {
-            "render": "Possible feature"
         }
     },
     "observation_tower": {

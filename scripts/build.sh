@@ -14,7 +14,7 @@ npm run generate &&
 npm run test &&
 npm run generate:layouts
 
-if [ $? -ne 0]; then;
+if [ $? -ne 0 ]; then
     echo "ERROR"
     exit 1
 fi
