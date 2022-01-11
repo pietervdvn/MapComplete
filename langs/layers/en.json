@@ -3374,6 +3374,11 @@
             "render": "Note"
         }
     },
+    "note_import": {
+        "title": {
+            "render": "Possible feature"
+        }
+    },
     "observation_tower": {
         "description": "Towers with a panoramic view",
         "name": "Observation towers",
