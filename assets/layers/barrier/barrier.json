@@ -209,7 +209,7 @@
       "condition": "barrier=cycle_barrier",
       "mappings": [
         {
-          "if": "cycle_barrier:type=single",
+          "if": "cycle_barrier=single",
           "then": {
             "en": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
             "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
@@ -217,7 +217,7 @@
           }
         },
         {
-          "if": "cycle_barrier:type=double",
+          "if": "cycle_barrier=double",
           "then": {
             "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
             "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
@@ -225,7 +225,7 @@
           }
         },
         {
-          "if": "cycle_barrier:type=triple",
+          "if": "cycle_barrier=triple",
           "then": {
             "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
             "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
@@ -233,7 +233,7 @@
           }
         },
         {
-          "if": "cycle_barrier:type=squeeze",
+          "if": "cycle_barrier=squeeze",
           "then": {
             "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
             "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
@@ -257,8 +257,8 @@
       },
       "condition": {
         "and": [
-          "cycle_barrier:type!=double",
-          "cycle_barrier:type!=triple"
+          "cycle_barrier!=double",
+          "cycle_barrier!=triple"
         ]
       },
       "freeform": {
@@ -284,8 +284,8 @@
       },
       "condition": {
         "or": [
-          "cycle_barrier:type=double",
-          "cycle_barrier:type=triple"
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
         ]
       },
       "freeform": {
@@ -312,8 +312,8 @@
       },
       "condition": {
         "or": [
-          "cycle_barrier:type=double",
-          "cycle_barrier:type=triple"
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
         ]
       },
       "freeform": {
@@ -338,8 +338,8 @@
       },
       "condition": {
         "or": [
-          "cycle_barrier:type=double",
-          "cycle_barrier:type=triple"
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
         ]
       },
       "freeform": {
