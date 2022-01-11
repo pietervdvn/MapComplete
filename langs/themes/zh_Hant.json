@@ -654,5 +654,10 @@
         "description": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
         "shortDescription": "垃圾筒的地圖",
         "title": "垃圾筒"
+    },
+    "entrances": {
+        "description": "顯示所有出入口的地圖，勘查對輪椅使用者重要的資訊",
+        "shortDescription": "幫助輪椅導航來勘查出入口",
+        "title": "出入口"
     }
 }
