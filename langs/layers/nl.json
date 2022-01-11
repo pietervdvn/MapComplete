@@ -2180,6 +2180,9 @@
                     },
                     "2": {
                         "then": "Zebrapad"
+                    },
+                    "3": {
+                        "then": "Oversteekplaats zonder kruispuntmarkeringen"
                     }
                 },
                 "question": "Wat voor oversteekplaats is dit?"
