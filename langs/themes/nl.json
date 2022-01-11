@@ -223,10 +223,6 @@
                         "question": "Wat is de naam van deze plaats?",
                         "render": "Deze plaats heet {name}"
                     },
-                    "caravansites-website": {
-                        "render": "Officiële website: : <a href='{website}'>{website}</a>",
-                        "question": "Heeft deze plaats een website?"
-                    },
                     "caravansites-toilets": {
                         "mappings": {
                             "0": {
@@ -237,6 +233,10 @@
                             }
                         },
                         "question": "Heeft deze plaats toiletten?"
+                    },
+                    "caravansites-website": {
+                        "question": "Heeft deze plaats een website?",
+                        "render": "Officiële website: : <a href='{website}'>{website}</a>"
                     }
                 },
                 "title": {

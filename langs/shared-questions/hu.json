@@ -59,6 +59,23 @@
         "phone": {
             "question": "Mi a telefonszáma ennek: {name}?"
         },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+                },
+                "1": {
+                    "then": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+                },
+                "2": {
+                    "then": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
+                },
+                "3": {
+                    "then": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
+                }
+            },
+            "question": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
+        },
         "website": {
             "question": "Mi a weboldala ennek: {name}?"
         },
@@ -94,23 +111,6 @@
                 }
             },
             "question": "Mi a megfelelő szócikk a Wikipédián?"
-        },
-        "service:electricity": {
-            "mappings": {
-                "2": {
-                    "then": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
-                },
-                "0": {
-                    "then": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
-                },
-                "3": {
-                    "then": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
-                },
-                "1": {
-                    "then": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
-                }
-            },
-            "question": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
         }
     }
 }

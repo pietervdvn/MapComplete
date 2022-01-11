@@ -461,7 +461,8 @@
       "ca": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?",
       "de": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?",
       "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
-      "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？"
+      "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
+      "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
     },
     "mappings": [
       {
@@ -472,7 +473,8 @@
           "ca": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics",
           "de": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
           "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
-          "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電"
+          "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
+          "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
         },
         "if": "service:electricity=yes"
       },
@@ -484,7 +486,8 @@
           "ca": "Hi ha aslguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
           "de": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
           "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
-          "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電"
+          "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
+          "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
         },
         "if": "service:electricity=limited"
       },
@@ -497,7 +500,8 @@
           "ca": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables",
           "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
           "sv": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas",
-          "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電"
+          "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電",
+          "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
         },
         "if": "service:electricity=ask"
       },
@@ -510,7 +514,8 @@
           "ca": "No hi ha endolls disponibles per als clients",
           "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung",
           "sv": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus",
-          "zh_Hant": "這裡客戶座位沒有室內插座"
+          "zh_Hant": "這裡客戶座位沒有室內插座",
+          "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
         },
         "if": "service:electricity=no"
       }
@@ -612,7 +617,7 @@
       "sv": "Ligger på {level}:e våningen",
       "pt": "Está no {level}º andar",
       "eo": "En la {level}a etaĝo",
-      "hu": "{level}. emeleten található",
+      "hu": "A(z) {level}. emeleten",
       "it": "Si trova al piano numero {level}",
       "ca": "Situat a la planta {level}"
     },
@@ -634,7 +639,7 @@
           "sv": "Ligger under jorden",
           "pt": "Está no subsolo",
           "de": "Unterirdisch gelegen",
-          "hu": "A föld alatt található",
+          "hu": "A föld alatt",
           "it": "Si trova sotto il livello stradale",
           "nb_NO": "Under bakken",
           "ca": "Situat a planta subterrani"
@@ -655,7 +660,7 @@
           "sv": "Ligger på bottenvåningen",
           "pt": "Está ao nível do rés-do-chão",
           "eo": "En la teretaĝo",
-          "hu": "A földszinten található",
+          "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero"
@@ -676,7 +681,7 @@
           "sv": "Ligger på bottenvåningen",
           "pt": "Está ao nível do rés-do-chão",
           "eo": "En la teretaĝo",
-          "hu": "A földszinten található",
+          "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero"
@@ -697,7 +702,7 @@
           "pt": "Está no primeiro andar",
           "id": "Berlokasi di lantai pertama",
           "eo": "En la unua etaĝo",
-          "hu": "Az első emeleten található",
+          "hu": "Az első emeleten",
           "it": "Si trova al primo piano",
           "nb_NO": "I andre etasje",
           "ca": "Situat a primera planta"
