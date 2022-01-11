@@ -3,8 +3,9 @@
   "description": "Te template for note note imports.",
   "source": {
     "osmTags": {
-    "and":  ["id~*"
-    ]
+      "and": [
+        "id~*"
+      ]
     },
     "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?closed=7&bbox={x_min},{y_min},{x_max},{y_max}",
     "geoJsonZoomLevel": 12,

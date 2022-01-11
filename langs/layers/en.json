@@ -3294,6 +3294,88 @@
             }
         }
     },
+    "note": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Should mention {search} in the first comment"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Should <b>not</b> mention {search} in the first comment"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Opened by {search}"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "<b>Not</b> opened by {search}"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Opened before {search}"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Opened after {search}"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Opened by anonymous user"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Only show open notes"
+                    }
+                }
+            }
+        },
+        "name": "OpenStreetMap notes",
+        "tagRenderings": {
+            "report-contributor": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>"
+            },
+            "report-note": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Closed note"
+                }
+            },
+            "render": "Note"
+        }
+    },
+    "note_import": {
+        "title": {
+            "render": "Possible feature"
+        }
+    },
     "observation_tower": {
         "description": "Towers with a panoramic view",
         "name": "Observation towers",
