@@ -212,15 +212,31 @@
                             },
                             "1": {
                                 "then": "Er is internettoegang"
+                            },
+                            "2": {
+                                "then": "Er is geen internettoegang"
                             }
-                        }
+                        },
+                        "question": "Biedt deze plaats internettoegang?"
                     },
                     "caravansites-name": {
                         "question": "Wat is de naam van deze plaats?",
                         "render": "Deze plaats heet {name}"
                     },
                     "caravansites-website": {
-                        "render": "Officiële website: : <a href='{website}'>{website}</a>"
+                        "render": "Officiële website: : <a href='{website}'>{website}</a>",
+                        "question": "Heeft deze plaats een website?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze plaats heeft toiletten"
+                            },
+                            "1": {
+                                "then": "Deze plaats heeft geen toiletten"
+                            }
+                        },
+                        "question": "Heeft deze plaats toiletten?"
                     }
                 },
                 "title": {

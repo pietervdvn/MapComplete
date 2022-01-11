@@ -1,60 +1,102 @@
 {
-  "general": {
-    "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Nem lenne király, ha lenne egy térkép, amit mindenki szabadon használhatna és szerkeszthetne? Egyetlen hely minden geoinformáció tárolására. Hogy arra a sok weboldalra a kicsi és egymással nem kompatibilis térképekkel (amik többnyire elavultak) ne legyen szükség többé.</p><p><b>Az <a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> éppen ez. A trékép adatai ingyenesen használhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">az adatokban történő változtatások megjelölésével és publikálásával</a>) Mindezeken túl bárki szabadon hozzáadhat új helyeket és kijavíthatja a hibákat. Ez a weboldal is OpenStreetMapet használ. Minden adat onnan származik és a te válaszaid és módosításaid is oda futnak be.</p><p>Rengeteg ember és alkalmazás használja már most is az OpenStreetMapet: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de még a Facebook, Instagram, Apple és Bing által használt térképek is (részben) az OpenStreetMapet használják. Ha itt módosítasz valamit, az ezekben az alkalmazásokban is megjelenik - a legközelebbi frissítés után.</p>",
-    "questions": {
-      "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+    "general": {
+        "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Egy olyan térkép, amelyet mindenki szabadon használhat és szerkeszthet. Egyetlen hely, ahol minden térinformatikai adatot tárolni lehet. Különböző, kicsi, nem kompatibilis és elavult térképekre sehol sincs szükség.</p><p>Az <b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> nem az ellenség térképe. A térképadatok (<a href=\"https://osm.org/copyright\" target=\"_blank\">a tulajdonlással és az adatokban bekövetkezett változások feltüntetésével</a>) szabadon felhasználhatók. Mindenki adhat hozzá új térképadatokat és javíthat hibákat. Ez a weboldal az OpenStreetMapet használja. Minden adat onnan származik, és az Te válaszaid és javításaid mindenhol fel lesznek használva.</p><p>Sok ember és alkalmazás már használja az OpenStreetMapet: például az <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a> vagy az <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de a Facebook, az Instagram, az Apple és a Bing (Microsoft) térképei is (részben) az OpenStreetMap adataira támaszkodnak.</p>",
+        "questions": {
+            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "noNameCategory": "Név nélküli {category}",
+        "nameInlineQuestion": "A(z) {category} neve: $$$",
+        "pickLanguage": "Nyelv kiválasztása: ",
+        "add": {
+            "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Pont hozzáadásához engedélyezd ezt a réteget",
+            "confirmButton": "{category} hozzáadása itt.<br><div class=\"alert\">A hozzáadott objektum mindenki számára látható lesz</div>",
+            "confirmIntro": "<h3>Egy {title} hozzáadása itt?</h3>Az itt létrehozandó pont <b>mindenki által látható lesz</b>. Kérjük, csak valóban létező dolgokat adj hozzá a térképhez. Ezeket az adatokat sok alkalmazás használja.",
+            "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá.",
+            "zoomInFurther": "Pont hozzáadásához közelíts jobban.",
+            "title": "Hozzáadsz egy új pontot?",
+            "addNew": "Új {category} hozzáadása itt",
+            "disableFiltersExplanation": "Lehet, hogy a szűrő miatt egyes objektumok nem látszanak",
+            "disableFilters": "Minden szűrő kikapcsolása"
+        },
+        "number": "szám",
+        "skip": "Kérdés kihagyása",
+        "oneSkippedQuestion": "Egy kérdés ki lett hagyva",
+        "skippedQuestions": "Néhány kérdés ki lett hagyva",
+        "cancel": "Mégse",
+        "save": "Mentés",
+        "returnToTheMap": "Vissza a térképhez",
+        "search": {
+            "error": "Hiba történt…",
+            "nothing": "Nincs találat…",
+            "searching": "Keresés…",
+            "search": "Helyszín keresése"
+        },
+        "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
+        "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
+        "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal"
     },
-    "noNameCategory": "Név nélküli {category}",
-    "nameInlineQuestion": "A(z) {category} neve $$$",
-    "pickLanguage": "Válassz nyelvet: ",
-    "add": {
-      "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Pont hozzáadásához engedélyezd ezt a réteget!",
-      "confirmButton": "{category} hozzáadása itt.<br><div class=\"alert\">A módosításod mindenki által látható lesz</div>",
-      "confirmIntro": "<h3>Egy {title} hozzáadása itt?</h3>A pont, amit létrehozol <b>mindenki által látható lesz</b>. Kérjük, csak valóban létező dolgokat adj hozzá. Sok alkalmazás használja ezeket az adatokat.",
-      "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá!",
-      "zoomInFurther": "Pont hozzáadásához közelíts rá jobban!",
-      "title": "Hozzáadsz egy új pontot?",
-      "addNew": "Új {category} hozzáadása itt"
+    "index": {
+        "pickTheme": "Válassz egy témát lent a kezdéshez.",
+        "title": "Üdvözlünk a MapComplete-en",
+        "intro": "A MapComplete egy OpenStreetMap-nézegető és -szerkesztő program, amely egy adott témához tartozó térképelemekről jelenít meg információkat, és lehetővé teszi ezek frissítését.",
+        "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
+        "featuredThemeTitle": "Kiemelt ezen a héten"
     },
-    "number": "szám",
-    "skip": "Kérdés kihagyása",
-    "oneSkippedQuestion": "Egy kérdés ki lett hagyva",
-    "skippedQuestions": "Néhány kérdés ki lett hagyva",
-    "cancel": "Mégse",
-    "save": "Mentés",
-    "returnToTheMap": "Vissza a térképhez",
-    "search": {
-      "error": "Hiba történt…",
-      "nothing": "Nincs találat",
-      "searching": "Keresés…",
-      "search": "Helyszín keresése"
+    "centerMessage": {
+        "retrying": "Nem sikerült betölteni az adatokat. Újrapróbálkozás {count} másodperc múlva…",
+        "ready": "Kész!",
+        "zoomIn": "Közelíts az adatok megtekintéséhez és szerkesztéséhez",
+        "loadingData": "Adatok betöltése folyamatban…"
     },
-    "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
-    "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
-    "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével"
-  },
-  "index": {
-    "pickTheme": "Válassz egy témát lent a kezdéshez!",
-    "title": "Üdvözlünk a MapComplete-nél!"
-  },
-  "centerMessage": {
-    "retrying": "Nem sikerült betölteni az adatokat. Újrapróbálkozás {count} másodperc múlva…",
-    "ready": "Kész!",
-    "zoomIn": "Közelíts rá az adatok megtekintéséhez és szerkesztéséhez",
-    "loadingData": "Adatok betöltése folyamatban"
-  },
-  "image": {
-    "isDeleted": "Törölve",
-    "doDelete": "Kép eltávolítása",
-    "dontDelete": "Mégse",
-    "uploadDone": "<span class=\"thanks\">A kép hozzá lett adva. Köszönjük a segítséged!</span>",
-    "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról! Ne tölts fel képeket Google Mapsről, Google Streetview-ról és egyéb szerzői jog által védett forrásokból!",
-    "uploadFailed": "A kép feltöltése sikertelen. Biztosan van hálózati kapcsolatod és engedélyezve vannak a harmadik féltől származó API-k? A Brave böngésző és az UMatrix blokkolhatja ezeket.",
-    "ccb": "a CC-BY licenc szerint",
-    "ccbs": "a CC-BY-SA licenc szerint",
-    "pleaseLogin": "Kép hozzáadásához jelentkezz be",
-    "uploadingMultiple": "{count} kép feltöltése folyamatban",
-    "uploadingPicture": "Kép feltöltése folyamatban",
-    "addPicture": "Kép hozzáadása"
-  }
+    "image": {
+        "isDeleted": "Törölve",
+        "doDelete": "Kép eltávolítása",
+        "dontDelete": "Mégse",
+        "uploadDone": "A kép hozzá lett adva. Köszönjük a segítséged!",
+        "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról. Ne tölts fel képet Google Mapsről, Google Streetview-ról és egyéb szerzői jog által védett forrásokból.",
+        "uploadFailed": "Nem sikerült feltölteni a képet. Van-e internetkapcsolatod, és engedélyezted-e a harmadik féltől származó API-kat? A Brave böngésző vagy a uMatrix bővítmény blokkolhatja őket.",
+        "ccb": "CC-BY licenc szerint",
+        "ccbs": "CC-BY-SA licenc szerint",
+        "pleaseLogin": "Kép hozzáadásához be kell jelentkezni",
+        "uploadingMultiple": "{count} kép feltöltése folyamatban…",
+        "uploadingPicture": "Kép feltöltése folyamatban…",
+        "addPicture": "Kép hozzáadása",
+        "cco": "közkincsként",
+        "willBePublished": "A képed így lesz közzétéve: ",
+        "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",
+        "uploadMultipleDone": "{count} kép hozzáadva. Köszönjük a segítséget!"
+    },
+    "delete": {
+        "reasons": {
+            "disused": "Ez az objektum használaton kívüli vagy el lett távolítva",
+            "test": "Ez egy tesztpont volt: az általa jelölt objektum valójában soha nem létezett",
+            "notFound": "Ezt az objektumot nem sikerült megtalálni",
+            "duplicate": "Ez a pont egy másik objektum megkettőzése"
+        },
+        "explanations": {
+            "hardDelete": "Ez a pont törlődik az OpenStreetMapről. Csak egy tapasztalt szerkesztő tudja majd visszaállítani.",
+            "softDelete": "Ez az objektum frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>",
+            "selectReason": "Kérjük, jelöld meg, miért kellene ezt a pontot törölni"
+        },
+        "onlyEditedByLoggedInUser": "Ezt a pontot csak te magad szerkesztetted, így nyugodtan törölheted.",
+        "delete": "Törlés",
+        "isDeleted": "Ez az objektum törlődött",
+        "loginToDelete": "Egy pont törléséhez be kell jelentkezni",
+        "useSomethingElse": "A törléséhez használj egy másik OpenStreetMap-szerkesztőt",
+        "partOfOthers": "Ez a pont egy vonal vagy kapcsolat része, ezért közvetlenül nem törölhető.",
+        "loading": "Tulajdonságok megvizsgálása annak ellenőrzéséhez, hogy az objektum törölhető-e.",
+        "whyDelete": "Miért kellene törölni ezt a pontot?",
+        "cancel": "Mégse",
+        "safeDelete": "Ez a pont nyugodtan törölhető.",
+        "isntAPoint": "Csak pontot lehet törölni, a kiválasztott térképelem viszont vonal, terület vagy kapcsolat.",
+        "cannotBeDeleted": "Ez az objektum nem törölhető"
+    },
+    "split": {
+        "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva",
+        "hasBeenSplit": "Ez az út szét lett vágva",
+        "inviteToSplit": "Út szétvágása rövidebb szakaszokra. Ez lehetővé teszi, hogy az út egyes részei különböző tulajdonságokkal rendelkezzenek.",
+        "loginToSplit": "Egy út szétvágásához be kell jelentkezni",
+        "cancel": "Mégse",
+        "split": "Szétvágás"
+    }
 }
