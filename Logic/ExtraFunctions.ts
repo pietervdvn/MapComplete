@@ -44,10 +44,7 @@ class OverlapFunc implements ExtraFunction {
     _f(params, feat) {
         return (...layerIds: string[]) => {
             const result: { feat: any, overlap: number }[] = []
-
-            console.log("Calculating overlap")
             const bbox = BBox.get(feat)
-
             for (const layerId of layerIds) {
                 const otherLayers = params.getFeaturesWithin(layerId, bbox)
                 if (otherLayers === undefined) {

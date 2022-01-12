@@ -13,7 +13,7 @@
     + [_length, _length:km](#_length,-_lengthkm)
     + [Theme-defined keys](#theme-defined-keys)
     + [_country](#_country)
-    + [_isOpen, _isOpen:description](#_isopen,-_isopendescription)
+    + [_isOpen](#_isopen)
     + [_direction:numerical, _direction:leftright](#_directionnumerical,-_direction:leftright)
     + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_nowdate,-_now:datetime,-_loaded:date,-_loaded:_datetime)
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
@@ -104,7 +104,7 @@ The country code of the property (with latlon2country)
 
 
 
-### _isOpen, _isOpen:description 
+### _isOpen 
 
 
 

@@ -48,6 +48,14 @@
       * [Example usage of open_in_iD](#example-usage-of-open_in_id)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
+    + [close_note](#close_note)
+      * [Example usage of close_note](#example-usage-of-close_note)
+    + [add_note_comment](#add_note_comment)
+      * [Example usage of add_note_comment](#example-usage-of-add_note_comment)
+    + [visualize_note_comments](#visualize_note_comments)
+      * [Example usage of visualize_note_comments](#example-usage-of-visualize_note_comments)
+    + [add_image_to_note](#add_image_to_note)
+      * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -223,7 +231,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -264,16 +272,17 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 name | default | description
 ------ | --------- | -------------
 targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
-tags | _undefined_ | The tags to add onto the new object - see specification above
+tags | _undefined_ | The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
 max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
+note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'
  
 
 #### Example usage of import_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5)}` 
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,)}` 
 
 ### import_way_button 
 
@@ -284,7 +293,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -325,7 +334,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 name | default | description
 ------ | --------- | -------------
 targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
-tags | _undefined_ | The tags to add onto the new object - see specification above
+tags | _undefined_ | The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_to_point_if | _undefined_ | Points with the given tags will be snapped to or moved
@@ -349,7 +358,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -390,7 +399,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 name | default | description
 ------ | --------- | -------------
 targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
-tags | _undefined_ | The tags to add onto the new object - see specification above
+tags | _undefined_ | The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 way_to_conflate | _undefined_ | The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag
@@ -477,6 +486,62 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 #### Example usage of clear_location_history 
 
  `{clear_location_history()}` 
+
+### close_note 
+
+ Button to close a note - eventually with a prefixed text 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | Text to show on this button
+icon | checkmark.svg | Icon to show
+Id-key | id | The property name where the ID of the note to close can be found
+comment | _undefined_ | Text to add onto the note when closing
+ 
+
+#### Example usage of close_note 
+
+ `{close_note(,checkmark.svg,id,)}` 
+
+### add_note_comment 
+
+ A textfield to add a comment to a node (with the option to close the note). 
+
+name | default | description
+------ | --------- | -------------
+Id-key | id | The property name where the ID of the note to close can be found
+ 
+
+#### Example usage of add_note_comment 
+
+ `{add_note_comment(id)}` 
+
+### visualize_note_comments 
+
+ Visualises the comments for notes 
+
+name | default | description
+------ | --------- | -------------
+commentsKey | comments | The property name of the comments, which should be stringified json
+start | 0 | Drop the first 'start' comments
+ 
+
+#### Example usage of visualize_note_comments 
+
+ `{visualize_note_comments(comments,0)}` 
+
+### add_image_to_note 
+
+ Adds an image to a node 
+
+name | default | description
+------ | --------- | -------------
+Id-key | id | The property name where the ID of the note to close can be found
+ 
+
+#### Example usage of add_image_to_note 
+
+ `{add_image_to_note(id)}` 
 
 ### auto_apply 
 

@@ -45,6 +45,7 @@ import NoteCommentElement from "./Popup/NoteCommentElement";
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
 import FileSelectorButton from "./Input/FileSelectorButton";
 import {LoginToggle} from "./Popup/LoginButton";
+import {start} from "repl";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -650,7 +651,7 @@ export default class SpecialVisualizations {
                 },
                 {
                     funcName: "close_note",
-                    docs: "Button to close a note - eventually with a prefixed text",
+                    docs: "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text.",
                     args: [
                         {
                             name: "text",
@@ -675,8 +676,8 @@ export default class SpecialVisualizations {
                         const t = Translations.t.notes;
 
                         let icon = Svg.checkmark_svg()
-                        if (args[2] !== "checkmark.svg" && (args[2] ?? "") !== "") {
-                            icon = new Img(args[2])
+                        if (args[1] !== "checkmark.svg" && (args[2] ?? "") !== "") {
+                            icon = new Img(args[1])
                         }
                         let textToShow = t.closeNote;
                         if ((args[0] ?? "") !== "") {
@@ -684,14 +685,11 @@ export default class SpecialVisualizations {
                         }
 
                         const closeButton = new SubtleButton(icon, textToShow)
-                        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") === "");
+                        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
                         closeButton.onClick(() => {
-                            const id = tags.data[args[1] ?? "id"]
-                            if (state.featureSwitchIsTesting.data) {
-                                console.log("Not actually closing note...")
-                                return;
-                            }
-                            state.osmConnection.closeNote(id, args[3]).then(_ => {
+                            const id = tags.data[args[2] ?? "id"]
+                            state.osmConnection.closeNote(id, args[3])
+                                ?.then(_ => {
                                 tags.data["closed_at"] = new Date().toISOString();
                                 tags.ping()
                             })
@@ -720,7 +718,7 @@ export default class SpecialVisualizations {
                         textField.SetClass("rounded-l border border-grey")
                         const txt = textField.GetValue()
 
-                        const addCommentButton = new SubtleButton(undefined, t.addCommentPlaceholder)
+                        const addCommentButton = new SubtleButton(Svg.addSmall_svg().SetClass("max-h-7"), t.addCommentPlaceholder)
                             .onClick(async () => {
                                 const id = tags.data[args[1] ?? "id"]
 
@@ -740,7 +738,7 @@ export default class SpecialVisualizations {
                             })
 
 
-                        const close = new SubtleButton(undefined, new VariableUiElement(txt.map(txt => {
+                        const close = new SubtleButton(Svg.resolved_svg().SetClass("max-h-7"), new VariableUiElement(txt.map(txt => {
                             if (txt === undefined || txt === "") {
                                 return t.closeNote
                             }
@@ -757,7 +755,7 @@ export default class SpecialVisualizations {
                             })
                         })
 
-                        const reopen = new SubtleButton(undefined, new VariableUiElement(txt.map(txt => {
+                        const reopen = new SubtleButton(Svg.note_svg().SetClass("max-h-7"), new VariableUiElement(txt.map(txt => {
                             if (txt === undefined || txt === "") {
                                 return t.reopenNote
                             }
@@ -788,12 +786,17 @@ export default class SpecialVisualizations {
                 },
                 {
                     funcName: "visualize_note_comments",
-                    docs: "Visualises the comments for nodes",
+                    docs: "Visualises the comments for notes",
                     args: [
                         {
                             name: "commentsKey",
                             doc: "The property name of the comments, which should be stringified json",
                             defaultValue: "comments"
+                        },
+                        {
+                            name: "start",
+                            doc:"Drop the first 'start' comments",
+                            defaultValue: "0"
                         }
                     ]
                     , constr: (state, tags, args) =>
@@ -801,6 +804,10 @@ export default class SpecialVisualizations {
                             tags.map(tags => tags[args[0]])
                                 .map(commentsStr => {
                                     const comments: any[] = JSON.parse(commentsStr)
+                                    const startLoc = Number(args[1] ?? 0)
+                                    if(!isNaN(startLoc) && startLoc > 0){
+                                        comments.splice(0, startLoc)
+                                    }
                                     return new Combine(comments
                                         .filter(c => c.text !== "")
                                         .map(c => new NoteCommentElement(c))).SetClass("flex flex-col")

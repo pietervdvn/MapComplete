@@ -223,6 +223,12 @@ export class OsmConnection {
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
         }
+        if(this._dryRun){
+            console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
         return new Promise((ok, error) => {
             this.auth.xhr({
                 method: 'POST',
@@ -240,6 +246,12 @@ export class OsmConnection {
     }
 
     public reopenNote(id: number | string, text?: string): Promise<any> {
+        if(this._dryRun){
+            console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
         let textSuffix = ""
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
@@ -261,6 +273,12 @@ export class OsmConnection {
     }
 
     public addCommentToNode(id: number | string, text: string): Promise<any> {
+        if(this._dryRun){
+            console.warn("Dryrun enabled - not actually adding comment ",text, "to  note ", id)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
         if ((text ?? "") === "") {
             throw "Invalid text!"
         }

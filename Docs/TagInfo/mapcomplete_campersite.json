@@ -42,12 +42,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Camper sites' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows fee=no with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Camper sites' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') Picking this answer will delete the key charge.",
+      "description": "Layer 'Camper sites' shows fee=no with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
@@ -137,20 +137,6 @@
       "description": "Layer 'Camper sites' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Campersites')"
     },
     {
-      "key": "operator",
-      "description": "Layer 'Camper sites' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Campersites')"
-    },
-    {
-      "key": "power_supply",
-      "description": "Layer 'Camper sites' shows power_supply=yes with a fixed text, namely 'This place has a power supply' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
-      "value": "yes"
-    },
-    {
-      "key": "power_supply",
-      "description": "Layer 'Camper sites' shows power_supply=no with a fixed text, namely 'This place does not have power supply' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
-      "value": "no"
-    },
-    {
       "key": "amenity",
       "description": "The MapComplete theme Campersites has a layer Sanitary dump stations showing features with this tag",
       "value": "sanitary_dump_station"
@@ -238,20 +224,6 @@
     {
       "key": "network",
       "description": "Layer 'Sanitary dump stations' shows and asks freeform values for key 'network' (in the MapComplete.osm.be theme 'Campersites')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Sanitary dump stations' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Campersites')"
-    },
-    {
-      "key": "power_supply",
-      "description": "Layer 'Sanitary dump stations' shows power_supply=yes with a fixed text, namely 'This place has a power supply' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
-      "value": "yes"
-    },
-    {
-      "key": "power_supply",
-      "description": "Layer 'Sanitary dump stations' shows power_supply=no with a fixed text, namely 'This place does not have power supply' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
-      "value": "no"
     },
     {
       "key": "id",

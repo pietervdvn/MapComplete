@@ -12,6 +12,7 @@
     + [home_location](#home_location)
     + [gps_track](#gps_track)
     + [type_node](#type_node)
+    + [note](#note)
     + [conflation](#conflation)
     + [left_right_style](#left_right_style)
     + [split_point](#split_point)
@@ -85,6 +86,8 @@
       * [Themes using this layer](#themes-using-this-layer)
     + [nature_reserve](#nature_reserve)
       * [Themes using this layer](#themes-using-this-layer)
+    + [note_import](#note_import)
+      * [Themes using this layer](#themes-using-this-layer)
     + [observation_tower](#observation_tower)
       * [Themes using this layer](#themes-using-this-layer)
     + [parking](#parking)
@@ -124,6 +127,7 @@
   - [home_location](#home_location)
   - [gps_track](#gps_track)
   - [type_node](#type_node)
+  - [note](#note)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
@@ -203,6 +207,19 @@ This is a priviliged meta_layer which exports _every_ point in OSM. This only wo
 
 
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
+ 
+
+### note 
+
+
+
+This layer shows notes on OpenStreetMap.
+
+[Go to the source code](../assets/layers/note/note.json)
+
+
+
+
  
 
 ### conflation 
@@ -450,6 +467,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [hydrant](#hydrant)
   - [information_board](#information_board)
   - [nature_reserve](#nature_reserve)
+  - [note_import](#note_import)
   - [observation_tower](#observation_tower)
   - [parking](#parking)
   - [pedestrian_path](#pedestrian_path)
@@ -1143,6 +1161,30 @@ Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. T
   - [nature](https://mapcomplete.osm.be/nature)
  
 
+### note_import 
+
+
+
+Template for note note imports.
+
+[Go to the source code](../assets/layers/note_import/note_import.json)
+
+
+
+  - This layer will automatically load  [public_bookcase](#public_bookcase)  into the layout as it depends on it:  a tagrendering needs this layer (import)
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [bookcases](https://mapcomplete.osm.be/bookcases)
+ 
+
 ### observation_tower 
 
 
@@ -1273,7 +1315,7 @@ A streetside cabinet with books, accessible to anyone
 
 
 
-
+  - This layer is needed as dependency for layer [note_import](#note_import)
 
 
 

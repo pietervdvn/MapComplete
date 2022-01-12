@@ -37,7 +37,6 @@ import TagApplyButton from "./TagApplyButton";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import * as conflation_json from "../../assets/layers/conflation/conflation.json";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import {Or} from "../../Logic/Tags/Or";
 
 
 abstract class AbstractImportButton implements SpecialVisualizations {
@@ -93,7 +92,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                               onCancelClicked: () => void): BaseUIElement;
 
 
-    constr(state, tagSource, argsRaw, guiState) {
+    constr(state, tagSource: UIEventSource<any>, argsRaw, guiState) {
         const self = this;
         /**
          * Some generic import button pre-validation is implemented here:
@@ -135,7 +134,14 @@ ${Utils.special_visualizations_importRequirementDocs}
 
 
         // Explanation of the tags that will be applied onto the imported/conflated object
-        const newTags = TagApplyButton.generateTagsToApply(args.tags, tagSource)
+        
+        let tagSpec = args.tags;
+        if(tagSpec.indexOf(" ")< 0 && tagSpec.indexOf(";") < 0){
+            // This is probably a key
+            tagSpec = tagSource.data[args.tags]
+        }
+        
+        const newTags = TagApplyButton.generateTagsToApply(tagSpec, tagSource)
         const appliedTags = new Toggle(
             new VariableUiElement(
                 newTags.map(tgs => {
@@ -503,6 +509,9 @@ export class ImportPointButton extends AbstractImportButton {
                     name: "max_snap_distance",
                     doc: "The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete",
                     defaultValue: "5"
+                },{
+                name:"note_id",
+                    doc:"If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
                 }],
             false
         )
@@ -524,7 +533,7 @@ export class ImportPointButton extends AbstractImportButton {
     }
 
     private static createConfirmPanelForPoint(
-        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string },
+        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string },
         state: FeaturePipelineState,
         guiState: DefaultGuiState,
         originalFeatureTags: UIEventSource<any>,
@@ -550,6 +559,11 @@ export class ImportPointButton extends AbstractImportButton {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            if(args.note_id !== undefined){
+                state.osmConnection.closeNote(args.note_id, "imported")
+                originalFeatureTags.data["closed_at"] = new Date().toISOString()
+                originalFeatureTags.ping()
+            }
         }
 
         const presetInfo = <PresetInfo>{

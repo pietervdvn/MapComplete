@@ -8,13 +8,14 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
 import {DefaultGuiState} from "./DefaultGuiState";
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 
 export class SubstitutedTranslation extends VariableUiElement {
 
     public constructor(
         translation: Translation,
         tagsSource: UIEventSource<any>,
-        state,
+        state: FeaturePipelineState,
         mapping: Map<string, BaseUIElement> = undefined) {
 
         const extraMappings: SpecialVisualization[] = [];
@@ -71,7 +72,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             style: string
         }
     }[] {
-
+        
         for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
 
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'

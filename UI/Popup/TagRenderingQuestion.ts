@@ -418,7 +418,7 @@ export default class TagRenderingQuestion extends Combine {
         if (freeform.inline) {
 
             inputTagsFilter.SetClass("w-16-imp")
-            inputTagsFilter = new InputElementWrapper(inputTagsFilter, configuration.render, freeform.key, tags)
+            inputTagsFilter = new InputElementWrapper(inputTagsFilter, configuration.render, freeform.key, tags, State.state)
             inputTagsFilter.SetClass("block")
 
         }
