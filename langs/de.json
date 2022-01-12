@@ -59,7 +59,7 @@
             "confirmButton": "Fügen Sie hier eine {category} hinzu.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
-            "addNewMapLabel": "Neues Element hinzufügen",
+            "addNewMapLabel": "Hier klicken, um ein neues Element hinzuzufügen",
             "presetInfo": "Der neue POI hat {tags}",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "disableFilters": "Alle Filter deaktivieren",
