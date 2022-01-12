@@ -4,11 +4,9 @@ runs:
   using: "composite"
   steps:
     - name: Set up Node.js
-      uses: actions/setup-node@v1.2.0
+      uses: actions/setup-node@v1.4.6
       with:
         node-version: '16'
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
     - name: install deps
       run: npm ci
