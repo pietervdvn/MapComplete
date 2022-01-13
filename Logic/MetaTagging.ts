@@ -117,7 +117,6 @@ export default class MetaTagging {
 
             const calculateAndAssign: ((feat: any) => boolean) = (feat) => {
                 try {
-                    let oldValue = isStrict ? feat.properties[key] : undefined
                     let result = new Function("feat", "return " + code + ";")(feat);
                     if (result === "") {
                         result === undefined
@@ -128,7 +127,7 @@ export default class MetaTagging {
                     }
                     delete feat.properties[key]
                     feat.properties[key] = result;
-                    return result === oldValue;
+                    return result;
                 }catch(e){
                     if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                         console.warn("Could not calculate a " + (isStrict ? "strict " : "") + " calculated tag for key " + key + " defined by " + code + " (in layer" + layerId + ") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
@@ -137,7 +136,7 @@ export default class MetaTagging {
                             console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
                         }
                     }
-                    return false;
+                    return undefined;
                 }
             } 
                 
@@ -154,11 +153,10 @@ export default class MetaTagging {
                     configurable: true,
                     enumerable: false, // By setting this as not enumerable, the localTileSaver will _not_ calculate this
                     get: function () {
-                        calculateAndAssign(feature)
-                        return feature.properties[key]
+                        return calculateAndAssign(feature)
                     }
                 })
-                return true
+                return undefined
             }
 
 

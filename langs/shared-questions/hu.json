@@ -26,20 +26,20 @@
         "level": {
             "mappings": {
                 "0": {
-                    "then": "A föld alatt található"
+                    "then": "A föld alatt"
                 },
                 "1": {
-                    "then": "A földszinten található"
+                    "then": "A földszinten"
                 },
                 "2": {
-                    "then": "A földszinten található"
+                    "then": "A földszinten"
                 },
                 "3": {
-                    "then": "Az első emeleten található"
+                    "then": "Az első emeleten"
                 }
             },
             "question": "Melyik szinten található ez a létesítmény?",
-            "render": "{level}. emeleten található"
+            "render": "A(z) {level}. emeleten"
         },
         "opening_hours": {
             "question": "Mikor van nyitva ez: {name}?",
@@ -58,6 +58,23 @@
         },
         "phone": {
             "question": "Mi a telefonszáma ennek: {name}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+                },
+                "1": {
+                    "then": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+                },
+                "2": {
+                    "then": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
+                },
+                "3": {
+                    "then": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
+                }
+            },
+            "question": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
         },
         "website": {
             "question": "Mi a weboldala ennek: {name}?"

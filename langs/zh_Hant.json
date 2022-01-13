@@ -251,7 +251,7 @@
             "disableFilters": "關閉所有篩選器",
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
             "presetInfo": "新的興趣點有 {tags}",
-            "addNewMapLabel": "新增新項目",
+            "addNewMapLabel": "點這邊新增新項目",
             "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
             "zoomInMore": "再放大來匯入這一圖徵"
         },

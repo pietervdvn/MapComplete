@@ -5,7 +5,8 @@
     "en": "Cafés and pubs",
     "de": "Cafés und Kneipen",
     "fr": "Cafés et pubs",
-    "zh_Hant": "咖啡廳與酒吧"
+    "zh_Hant": "咖啡廳與酒吧",
+    "hu": "Kávézók és kocsmák"
   },
   "source": {
     "osmTags": {
@@ -26,7 +27,8 @@
         "en": "pub",
         "nl": "bruin cafe of kroeg",
         "de": "Kneipe",
-        "ru": "паб"
+        "ru": "паб",
+        "hu": "kocsma"
       },
       "description": {
         "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
@@ -43,7 +45,8 @@
         "en": "bar",
         "nl": "bar",
         "de": "Bar",
-        "ru": "бар"
+        "ru": "бар",
+        "hu": "bár"
       },
       "description": {
         "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
@@ -60,7 +63,8 @@
         "en": "cafe",
         "nl": "cafe",
         "de": "Café",
-        "ru": "кафе"
+        "ru": "кафе",
+        "hu": "kávézó"
       },
       "description": {
         "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
@@ -97,13 +101,15 @@
         "nl": "Wat is de naam van dit café?",
         "en": "What is the name of this pub?",
         "de": "Wie heißt diese Kneipe?",
-        "fr": "Quel est le nom de ce pub ?"
+        "fr": "Quel est le nom de ce pub ?",
+        "hu": "Mi a neve ennek a kocsmának?"
       },
       "render": {
         "nl": "De naam van dit café is {name}",
         "en": "This pub is named {name}",
         "de": "Diese Kneipe heißt {name}",
-        "fr": "Ce pub se nomme {name}"
+        "fr": "Ce pub se nomme {name}",
+        "hu": "A kocsma neve: {name}"
       },
       "freeform": {
         "key": "name"
@@ -114,7 +120,8 @@
       "question": {
         "en": "What kind of cafe is this",
         "nl": "Welk soort café is dit?",
-        "de": "Was ist das für ein Café"
+        "de": "Was ist das für ein Café",
+        "hu": "Milyen fajta kávézó ez?"
       },
       "mappings": [
         {
@@ -169,7 +176,8 @@
             "en": "Opened now",
             "nl": "Nu geopened",
             "de": "Jetzt geöffnet",
-            "fr": "Ouvert maintenant"
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -217,6 +225,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
+    "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
+    "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel"
   }
 }

@@ -1,11 +1,12 @@
 {
     "aed": {
-        "title": "Nyílt AED Térkép"
+        "description": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni",
+        "title": "Nyílt defibrillátor-térkép"
     },
     "artwork": {
-        "title": "Nyít Műalkotás Térkép"
+        "title": "Nyílt műalkotástérkép"
     },
     "ghostbikes": {
-        "title": "Emlékkerékpár"
+        "title": "Emlékkerékpárok"
     }
 }
