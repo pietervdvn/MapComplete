@@ -14,7 +14,7 @@ export interface DesugaringContext {
     sharedLayers: Map<string, LayerConfigJson>
 }
 
-abstract class Conversion<TIn, TOut> {
+export abstract class Conversion<TIn, TOut> {
     protected readonly doc: string;
     public readonly modifiedAttributes: string[];
 
@@ -58,7 +58,7 @@ abstract class Conversion<TIn, TOut> {
 
 }
 
-abstract class DesugaringStep<T> extends Conversion<T, T> {
+export abstract class DesugaringStep<T> extends Conversion<T, T> {
 }
 
 class OnEvery<X, T> extends DesugaringStep<T> {

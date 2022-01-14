@@ -12,7 +12,8 @@ import {TagsFilter} from "./TagsFilter";
 export default class SubstitutingTag implements TagsFilter {
     private readonly _key: string;
     private readonly _value: string;
-private readonly _invert: boolean
+    private readonly _invert: boolean
+
     constructor(key: string, value: string, invert = false) {
         this._key = key;
         this._value = value;
@@ -59,11 +60,17 @@ private readonly _invert: boolean
     }
 
     asChange(properties: any): { k: string; v: string }[] {
-    if(this._invert){throw "An inverted substituting tag can not be used to create a change"}
+        if (this._invert) {
+            throw "An inverted substituting tag can not be used to create a change"
+        }
         const v = SubstitutingTag.substituteString(this._value, properties);
         if (v.match(/{.*}/) !== null) {
             throw "Could not calculate all the substitutions: still have " + v
         }
         return [{k: this._key, v: v}];
+    }
+
+    AsJson() {
+        return this._key + (this._invert ? '!' : '') + "=" + this._value
     }
 }

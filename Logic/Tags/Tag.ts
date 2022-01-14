@@ -83,4 +83,8 @@ export class Tag extends TagsFilter {
     asChange(properties: any): { k: string; v: string }[] {
         return [{k: this.key, v: this.value}];
     }
+    
+    AsJson() {
+        return this.asHumanString(false, false)
+    }
 }

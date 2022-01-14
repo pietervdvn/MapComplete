@@ -262,7 +262,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     const date: Date = el;
                     v = date.toISOString()
                 }
-
+                
                 if (useLang !== undefined && v?.translations !== undefined) {
                     v = v.translations[useLang] ?? v.translations["*"] ?? (v.textFor !== undefined ? v.textFor(useLang) : v);
                 }

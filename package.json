@@ -22,6 +22,7 @@
     "generate:polygon-features": "cd assets/ && wget https://raw.githubusercontent.com/tyrasd/osm-polygon-features/master/polygon-features.json --output-document=polygon-features.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
     "generate:translations": "ts-node scripts/generateTranslations.ts",
+    "watch:translations": "cd langs && ls | entr npm run generate:translations",
     "reset:translations": "ts-node scripts/generateTranslations.ts --ignore-weblate",
     "generate:layouts": "ts-node scripts/generateLayouts.ts",
     "generate:docs": "ts-node scripts/generateDocs.ts && ts-node scripts/generateTaginfoProjectFiles.ts",

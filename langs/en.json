@@ -453,5 +453,10 @@
     "noteLayerHasFilters": "Some notes might be hidden by a filter",
     "disableAllNoteFilters": "Disable all filters",
     "noteLayerDoEnable": "Enable the layer showing notes"
+  },
+  "importLayer": {
+    "layerName": "Possible {title}",
+    "description": "A layer which imports entries for {title}",
+    "popupTitle": "Possible {title}"
   }
 }

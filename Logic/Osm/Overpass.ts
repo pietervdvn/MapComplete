@@ -3,7 +3,7 @@ import RelationsTracker from "./RelationsTracker";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
-import osmtogeojson from "osmtogeojson";
+import * as osmtogeojson from "osmtogeojson";
 
 /**
  * Interfaces overpass to get all the latest data
@@ -52,7 +52,8 @@ export class Overpass {
         }
 
         self._relationTracker.RegisterRelations(json)
-        const geojson = osmtogeojson.toGeoJSON(json);
+        console.warn("OSMTOGEOJSON:", osmtogeojson)
+        const geojson = osmtogeojson.default(json);
         const osmTime = new Date(json.osm3s.timestamp_osm_base);
         return [geojson, osmTime];
     }
