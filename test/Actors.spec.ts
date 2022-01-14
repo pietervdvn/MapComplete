@@ -49,7 +49,7 @@ export default class ActorsSpec extends T {
             }
         )
 
-        super("Actors", [
+        super([
             [
                 "download latest version",
                 () => {

@@ -6,7 +6,7 @@ import {Denomination} from "../Models/Denomination";
 export default class UnitsSpec extends T {
 
     constructor() {
-        super("units", [
+        super( [
             ["Simple canonicalize", () => {
 
                 const unit = new Denomination({

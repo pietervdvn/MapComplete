@@ -10,8 +10,7 @@ import Constants from "../Models/Constants";
 
 export default class ThemeSpec extends T {
     constructor() {
-        super("theme",
-            [
+        super(            [
                 ["Nested overrides work", () => {
 
                     let themeConfigJson: LayoutConfigJson = {

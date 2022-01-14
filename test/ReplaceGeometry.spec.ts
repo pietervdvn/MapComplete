@@ -324,7 +324,7 @@ export default class ReplaceGeometrySpec extends T {
     
     
     constructor() {
-        super("ReplaceGeometry", [
+        super( [
             ["House replacement with connected node", async () => {
 
                 Minimap.createMiniMap = () => undefined;

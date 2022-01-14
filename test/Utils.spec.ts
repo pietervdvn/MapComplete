@@ -39,7 +39,7 @@ export default class UtilsSpec extends T {
     }
 
     constructor() {
-        super("utils", [
+        super( [
             ["Sort object keys", () => {
                 const o = {
                     x: 'x',

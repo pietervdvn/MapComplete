@@ -141,9 +141,7 @@ export default class LegacyThemeLoaderSpec extends T {
     }
 
     constructor() {
-        super("LegacyThemeLoader",
-
-            [
+        super([
                 ["Walking_node_theme", () => {
 
                     const config = LegacyThemeLoaderSpec.walking_node_theme

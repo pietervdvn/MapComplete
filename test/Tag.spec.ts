@@ -13,7 +13,7 @@ import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 export default class TagSpec extends T {
 
     constructor() {
-        super("tag", [
+        super( [
             ["Tag replacement works in translation", () => {
                 const tr = new Translation({
                     "en": "Test {key} abc"

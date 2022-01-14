@@ -6,8 +6,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 export default class ImageAttributionSpec extends T {
     constructor() {
-        super(
-            "imageattribution", [
+        super([
                 [
                     "Should find all the images",
                     () => {
