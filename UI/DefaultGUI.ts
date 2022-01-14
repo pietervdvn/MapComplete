@@ -26,6 +26,7 @@ import * as home_location_json from "../assets/layers/home_location/home_locatio
 import NewNoteUi from "./Popup/NewNoteUi";
 import Combine from "./Base/Combine";
 import AddNewMarker from "./BigComponents/AddNewMarker";
+import FilteredLayer from "../Models/FilteredLayer";
 
 
 /**
@@ -48,9 +49,9 @@ export default class DefaultGUI {
 
         this.SetupUIElements();
         this.SetupMap()
-        
-        
-        if(state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0){
+
+
+        if (state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0) {
             Utils.LoadCustomCss(state.layoutToUse.customCss)
         }
     }
@@ -58,55 +59,63 @@ export default class DefaultGUI {
     public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
 
         const hasPresets = state.layoutToUse.layers.some(layer => layer.presets.length > 0);
-        const noteLayer=        state.filteredLayers.data.filter(l => l.layerDef.id === "note")[0]
-        let addNewNoteDialog : () => BaseUIElement = undefined;
-        if(noteLayer !== undefined){
-            addNewNoteDialog = () => new NewNoteUi(state.LastClickLocation, state)
+        const noteLayer: FilteredLayer = state.filteredLayers.data.filter(l => l.layerDef.id === "note")[0]
+        let addNewNoteDialog: (isShown: UIEventSource<boolean>) => BaseUIElement = undefined;
+        const t = Translations.t.notes
+        if (noteLayer !== undefined) {
+            addNewNoteDialog = (isShown) => new NewNoteUi(noteLayer, isShown, state)
         }
-        
-        function setup() {
 
-            console.warn("Settuping ")
-            if(!hasPresets && addNewNoteDialog === undefined){
+        function setup() {
+            if (!hasPresets && addNewNoteDialog === undefined) {
                 return; // nothing to do
             }
-            
-            
             const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
                 () => hasPresets ? Translations.t.general.add.title : Translations.t.notes.createNoteTitle,
                 () => {
-                    let addNew = undefined; 
-                    if(hasPresets){
+                    let addNew = undefined;
+                    if (hasPresets) {
                         addNew = new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state);
                     }
                     let addNote = undefined;
-                    if(noteLayer !== undefined){
-                        addNote = addNewNoteDialog()
+                    if (noteLayer !== undefined) {
+                        addNote = addNewNoteDialog(newPointDialogIsShown)
                     }
                     return new Combine([addNew, addNote]).SetClass("flex flex-col font-lg text-lg")
                 },
                 "new",
                 newPointDialogIsShown
             );
-            
+
             addNewPoint.isShown.addCallback((isShown) => {
                 if (!isShown) {
                     // Clear the 'last-click'-location when the dialog is closed - this causes the popup and the marker to be removed
                     state.LastClickLocation.setData(undefined);
                 }
             });
+            
+            let noteMarker = undefined;
+            if(!hasPresets && addNewNoteDialog !== undefined){
+                noteMarker = new Combine(
+                    [Svg.note_svg().SetClass("absolute bottom-0").SetStyle("height: 40px"), 
+                        Svg.addSmall_svg().SetClass("absolute w-6 animate-pulse")
+                            .SetStyle("right: 10px; bottom: -8px;")
+                    ])
+                    .SetClass("block relative h-full")
+                    .SetStyle("left: calc( 50% - 15px )") // This is a bit hacky, yes I know!
+            }
 
             new StrayClickHandler(
                 state,
                 addNewPoint,
-               hasPresets ? new AddNewMarker(state.filteredLayers) : new Combine([Svg.note_svg().SetStyle("height: 40px"), Svg.addSmall_svg().SetClass("absolute bottom-0 right-0 w-6 animate-pulse")]).SetClass("block relative")
+                hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
             );
         }
 
-        if(noteLayer !== undefined){
+        if (noteLayer !== undefined) {
             setup()
-        }else{
+        } else {
             state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
                 if (addNewAllowed) {
                     setup()

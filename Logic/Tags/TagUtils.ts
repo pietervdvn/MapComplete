@@ -192,7 +192,6 @@ export class TagUtils {
                     }
 
                     const f = (value: string | undefined) => {
-                        console.log("Comparing ",value,operator,val)
                         if(value === undefined){
                             return false;
                         }

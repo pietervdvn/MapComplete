@@ -10,14 +10,20 @@ import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import Toggle from "../Input/Toggle";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class NewNoteUi extends Toggle {
 
-    constructor(lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-                state: { osmConnection: OsmConnection, layoutToUse: LayoutConfig, featurePipeline: FeaturePipeline }) {
+    constructor(noteLayer: FilteredLayer,
+                isShown: UIEventSource<boolean>,
+                state: {
+                    LastClickLocation: UIEventSource<{ lat: number, lon: number }>,
+                    osmConnection: OsmConnection, layoutToUse: LayoutConfig, featurePipeline: FeaturePipeline
+                }) {
 
         const t = Translations.t.notes;
         const isCreated = new UIEventSource(false);
+        state.LastClickLocation.addCallbackAndRun(_ => isCreated.setData(false)) // Reset 'isCreated' on every click
         const text = ValidatedTextField.InputForType("text", {
             value: LocalStorageSource.Get("note-text")
         })
@@ -30,7 +36,7 @@ export default class NewNoteUi extends Toggle {
                 return;
             }
             txt += "\n\n #MapComplete #" + state?.layoutToUse?.id
-            const loc = lastClickLocation.data;
+            const loc = state.LastClickLocation.data;
             state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
             text.GetValue().setData("")
             isCreated.setData(true)
@@ -43,7 +49,7 @@ export default class NewNoteUi extends Toggle {
         ]).SetClass("flex flex-col border-2 border-black rounded-xl p-4");
 
 
-        super(
+        const newNoteUi = new Toggle(
             new Toggle(t.isCreated.SetClass("thanks"),
                 createNoteDialog,
                 isCreated
@@ -51,6 +57,35 @@ export default class NewNoteUi extends Toggle {
             undefined,
             new UIEventSource<boolean>(true)
         )
+
+        super(
+            new Toggle(
+               
+                new Combine(
+                    [
+                        t.noteLayerHasFilters.SetClass("alert"),
+                        new SubtleButton(Svg.filter_svg(), t.disableAllNoteFilters).onClick(() => {
+                            const filters = noteLayer.appliedFilters.data;
+                            for (const key of Array.from(filters.keys())) {
+                                filters.set(key, undefined)
+                            }
+                            noteLayer.appliedFilters.ping()
+                            isShown.setData(false);
+                        })
+                    ]
+                ).SetClass("flex flex-col"),
+                newNoteUi,
+                noteLayer.appliedFilters.map(filters => Array.from(filters.values()).some(v => v !== undefined))
+            ),
+            new Combine([
+                t.noteLayerNotEnabled.SetClass("alert"),
+                new SubtleButton(Svg.layers_svg(), t.noteLayerDoEnable).onClick(() => {
+                    noteLayer.isDisplayed.setData(true);
+                    isShown.setData(false);
+                })
+            ]).SetClass("flex flex-col"),
+            noteLayer.isDisplayed
+        );
     }
 
 

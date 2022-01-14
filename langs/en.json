@@ -448,6 +448,10 @@
     "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers",
     "warnAnonymous": "You are not logged in. We won't be able to contact you to resolve your issue.",
     "notesLayerMustBeEnabled": "The 'notes'-layer is disabled. Enable it to add a note",
-    "isCreated": "Your note has been created!"
+    "isCreated": "Your note has been created!",
+    "noteLayerNotEnabled": "The layer showing notes is not enabled. This layer must be enabled to add a new note",
+    "noteLayerHasFilters": "Some notes might be hidden by a filter",
+    "disableAllNoteFilters": "Disable all filters",
+    "noteLayerDoEnable": "Enable the layer showing notes"
   }
 }
