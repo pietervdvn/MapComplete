@@ -28,10 +28,12 @@
   ],
   "isShown": {
     "render": "yes",
-    "mappings": [{
-      "if": "_trigger_index=",
-      "then": "no"
-    }]
+    "mappings": [
+      {
+        "if": "_trigger_index=",
+        "then": "no"
+      }
+    ]
   },
   "titleIcons": [
     {
@@ -59,7 +61,6 @@
       "id": "close_note_mapped",
       "render": "{close_note(Already mapped, ./assets/svg/checkmark.svg, id, Already mapped)}"
     },
-  
     {
       "id": "comment",
       "render": "{add_note_comment()}"

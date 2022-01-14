@@ -23,6 +23,9 @@ import Lazy from "./Base/Lazy";
 import {DefaultGuiState} from "./DefaultGuiState";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import * as home_location_json from "../assets/layers/home_location/home_location.json";
+import NewNoteUi from "./Popup/NewNoteUi";
+import Combine from "./Base/Combine";
+import AddNewMarker from "./BigComponents/AddNewMarker";
 
 
 /**
@@ -54,45 +57,63 @@ export default class DefaultGUI {
 
     public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
 
+        const hasPresets = state.layoutToUse.layers.some(layer => layer.presets.length > 0);
+        const noteLayer=        state.filteredLayers.data.filter(l => l.layerDef.id === "note")[0]
+        let addNewNoteDialog : () => BaseUIElement = undefined;
+        if(noteLayer !== undefined){
+            addNewNoteDialog = () => new NewNoteUi(state.LastClickLocation, state)
+        }
+        
         function setup() {
-            let presetCount = 0;
-            for (const layer of state.layoutToUse.layers) {
-                for (const preset of layer.presets) {
-                    presetCount++;
-                }
-            }
-            if (presetCount == 0) {
-                return;
-            }
 
+            console.warn("Settuping ")
+            if(!hasPresets && addNewNoteDialog === undefined){
+                return; // nothing to do
+            }
+            
+            
             const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
-                () => Translations.t.general.add.title.Clone(),
-                () => new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state),
+                () => hasPresets ? Translations.t.general.add.title : Translations.t.notes.createNoteTitle,
+                () => {
+                    let addNew = undefined; 
+                    if(hasPresets){
+                        addNew = new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state);
+                    }
+                    let addNote = undefined;
+                    if(noteLayer !== undefined){
+                        addNote = addNewNoteDialog()
+                    }
+                    return new Combine([addNew, addNote]).SetClass("flex flex-col font-lg text-lg")
+                },
                 "new",
                 newPointDialogIsShown
             );
+            
             addNewPoint.isShown.addCallback((isShown) => {
                 if (!isShown) {
+                    // Clear the 'last-click'-location when the dialog is closed - this causes the popup and the marker to be removed
                     state.LastClickLocation.setData(undefined);
                 }
             });
 
             new StrayClickHandler(
-                state.LastClickLocation,
-                state.selectedElement,
-                state.filteredLayers,
-                state.leafletMap,
-                addNewPoint
+                state,
+                addNewPoint,
+               hasPresets ? new AddNewMarker(state.filteredLayers) : new Combine([Svg.note_svg().SetStyle("height: 40px"), Svg.addSmall_svg().SetClass("absolute bottom-0 right-0 w-6 animate-pulse")]).SetClass("block relative")
             );
         }
 
-        state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
-            if (addNewAllowed) {
-                setup()
-                return true;
-            }
-        })
+        if(noteLayer !== undefined){
+            setup()
+        }else{
+            state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
+                if (addNewAllowed) {
+                    setup()
+                    return true;
+                }
+            })
+        }
 
     }
 

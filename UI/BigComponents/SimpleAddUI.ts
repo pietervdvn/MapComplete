@@ -138,9 +138,6 @@ export default class SimpleAddUI extends Toggle {
             loginButton,
             state.osmConnection.isLoggedIn
         )
-
-
-        this.SetStyle("font-size:large");
     }
 
 

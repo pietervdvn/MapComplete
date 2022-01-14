@@ -7,18 +7,19 @@ import {Tag} from "../../Logic/Tags/Tag";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 import {Changes} from "../../Logic/Osm/Changes";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class DeleteImage extends Toggle {
 
-    constructor(key: string, tags: UIEventSource<any>, state: {changes?: Changes, osmConnection?: OsmConnection}) {
+    constructor(key: string, tags: UIEventSource<any>, state: {layoutToUse: LayoutConfig, changes?: Changes, osmConnection?: OsmConnection}) {
         const oldValue = tags.data[key]
         const isDeletedBadge = Translations.t.image.isDeleted.Clone()
             .SetClass("rounded-full p-1")
             .SetStyle("color:white;background:#ff8c8c")
             .onClick(async () => {
                 await state?.changes?.applyAction(new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data, {
-                    changeType: "answer",
-                    theme: "test"
+                    changeType: "delete-image",
+                    theme: state.layoutToUse.id
                 }))
             });
 

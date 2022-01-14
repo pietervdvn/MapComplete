@@ -3375,6 +3375,7 @@
         }
     },
     "note_import": {
+        "name": "Possible bookcases",
         "title": {
             "render": "Possible feature"
         }
