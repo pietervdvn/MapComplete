@@ -17,7 +17,11 @@ export default class Combine extends BaseUIElement {
     }
 
     AsMarkdown(): string {
-        return this.uiElements.map(el => el.AsMarkdown()).join(this.HasClass("flex-col") ? "\n\n" : " ");
+        let sep = " ";
+        if(this.HasClass("flex-col")){
+            sep = "\n\n"
+        }
+        return this.uiElements.map(el => el.AsMarkdown()).join(sep);
     }
 
     Destroy() {

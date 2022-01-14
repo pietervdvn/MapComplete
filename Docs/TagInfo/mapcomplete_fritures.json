@@ -64,12 +64,24 @@
       "description": "Layer 'Fries shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Fries shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Fries shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
+      "key": "contact:email",
+      "description": "Layer 'Fries shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Fries shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Fries shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
       "key": "payment:cash",
@@ -399,12 +411,24 @@
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Restaurants and fast food' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
+      "key": "contact:email",
+      "description": "Layer 'Restaurants and fast food' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Friturenkaart')"
     },
     {
       "key": "payment:cash",

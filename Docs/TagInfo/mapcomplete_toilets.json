@@ -193,7 +193,7 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Toilets' shows <span class='line-through'>level</span> with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Open Toilet Map') Picking this answer will delete the key level.",
+      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Open Toilet Map') Picking this answer will delete the key level.",
       "value": ""
     },
     {

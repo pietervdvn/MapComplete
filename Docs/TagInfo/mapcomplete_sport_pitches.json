@@ -148,7 +148,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows <span class='line-through'>opening_hours</span> with a fixed text, namely '24/7 toegankelijk' (in the MapComplete.osm.be theme 'Sport pitches') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Sport pitches' shows  with a fixed text, namely '24/7 toegankelijk' (in the MapComplete.osm.be theme 'Sport pitches') Picking this answer will delete the key opening_hours.",
       "value": ""
     },
     {

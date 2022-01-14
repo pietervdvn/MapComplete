@@ -40,12 +40,24 @@
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Bicycle libraries')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle library' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Bicycle libraries')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Bicycle libraries')"
     },
     {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle library' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Bicycle libraries')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Bicycle libraries')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle library' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Bicycle libraries')"
     },
     {
       "key": "opening_hours",
@@ -57,12 +69,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Bicycle library' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
+      "description": "Layer 'Bicycle library' shows fee=no with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Bicycle library' shows fee=no&<span class='line-through'>charge</span> with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries') Picking this answer will delete the key charge.",
+      "description": "Layer 'Bicycle library' shows fee=no with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
