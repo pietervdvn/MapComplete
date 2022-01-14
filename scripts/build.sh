@@ -23,9 +23,19 @@ fi
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
+SRC_MAPS="--no-source-maps"
+
+BRANCH=${git rev-parse --abbrev-ref HEAD}
+echo "The branch name is $BRANCH"
+if [ $BRANCH ="develop" ]
+then
+    SRC_MAPS=""
+    echo "Source maps are enabled"
+fi
+
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "./"  --no-source-maps "index.html" "404.html" "professional.html" "automaton.html" "land.html" "customGenerator.html" "theme.html" vendor
+parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "land.html" "customGenerator.html" "theme.html" vendor
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
@@ -36,7 +46,7 @@ do
     echo -e " ------------ \n\n"
     # Builds the necessary files for just one theme, e.g. 'bookcases.html' + 'index_bookcases.ts' + supporting file
     # npm run generate && node --max_old_space_size=12000 $(which parcel)  build 
-    parcel build --public-url './' --no-source-maps "$theme.html" 
+    parcel build --public-url './' $SRC_MAPS "$theme.html" 
 done
 # At last: a workaround; parcel 1.x borks the link to social images; the public-URL (./) is setup incorrectly, so we fix those
 cd dist
