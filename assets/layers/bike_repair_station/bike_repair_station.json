@@ -771,6 +771,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing bicycle pumps and bicycle repair tool stands"
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen"
   }
 }
