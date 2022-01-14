@@ -23,11 +23,11 @@ fi
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
-SRC_MAPS="--no-source-maps"
 
-BRANCH=${git rev-parse --abbrev-ref HEAD}
+SRC_MAPS="--no-source-maps"
+BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
-if [ $BRANCH ="develop" ]
+if [ $BRANCH = "develop" ]
 then
     SRC_MAPS=""
     echo "Source maps are enabled"
