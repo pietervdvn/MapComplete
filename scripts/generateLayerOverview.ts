@@ -9,7 +9,7 @@ import {
     PrepareLayer, PrepareTheme,
     ValidateLayer,
     ValidateThemeAndLayers
-} from "../Models/ThemeConfig/LegacyJsonConvert";
+} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {Translation} from "../UI/i18n/Translation";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import * as questions from "../assets/tagRenderings/questions.json";

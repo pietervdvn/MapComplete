@@ -213,7 +213,7 @@ This is a priviliged meta_layer which exports _every_ point in OSM. This only wo
 
 
 
-This layer shows notes on OpenStreetMap.
+This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)
 
 [Go to the source code](../assets/layers/note/note.json)
 

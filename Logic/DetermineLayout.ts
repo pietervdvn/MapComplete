@@ -10,7 +10,7 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
-import {FixLegacyTheme, PrepareTheme} from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme, PrepareTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 import * as known_layers from "../assets/generated/known_layers.json"

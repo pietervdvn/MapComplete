@@ -1,9 +1,9 @@
-import * as OsmToGeoJson from "osmtogeojson";
 import {TagsFilter} from "../Tags/TagsFilter";
 import RelationsTracker from "./RelationsTracker";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
+import osmtogeojson from "osmtogeojson";
 
 /**
  * Interfaces overpass to get all the latest data
@@ -52,8 +52,7 @@ export class Overpass {
         }
 
         self._relationTracker.RegisterRelations(json)
-        // @ts-ignore
-        const geojson = OsmToGeoJson.default(json);
+        const geojson = osmtogeojson(json);
         const osmTime = new Date(json.osm3s.timestamp_osm_base);
         return [geojson, osmTime];
     }

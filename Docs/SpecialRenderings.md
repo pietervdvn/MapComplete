@@ -489,7 +489,7 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 ### close_note 
 
- Button to close a note - eventually with a prefixed text 
+ Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text. 
 
 name | default | description
 ------ | --------- | -------------

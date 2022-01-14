@@ -1,13 +1,13 @@
-import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
-import LayerConfig from "./LayerConfig";
-import Constants from "../Constants";
-import {LayoutConfigJson} from "./Json/LayoutConfigJson";
-import {LayerConfigJson} from "./Json/LayerConfigJson";
-import DependencyCalculator from "./DependencyCalculator";
-import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
-import {Utils} from "../../Utils";
-import LayoutConfig from "./LayoutConfig";
-import {Translation} from "../../UI/i18n/Translation";
+import {LayoutConfigJson} from "../Json/LayoutConfigJson";
+import DependencyCalculator from "../DependencyCalculator";
+import LayerConfig from "../LayerConfig";
+import {Translation} from "../../../UI/i18n/Translation";
+import LayoutConfig from "../LayoutConfig";
+import {Utils} from "../../../Utils";
+import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
+import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
+import {LayerConfigJson} from "../Json/LayerConfigJson";
+import Constants from "../../Constants";
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>

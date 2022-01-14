@@ -1,5 +1,5 @@
 import T from "./TestHelper";
-import {FixLegacyTheme} from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
