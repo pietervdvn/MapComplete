@@ -586,6 +586,7 @@
         }
     },
     "bike_repair_station": {
+        "description": "Deze laag toont fietspompen en herstelpunten voor fietsen",
         "name": "Fietspunten (herstel, pomp of allebei)",
         "presets": {
             "0": {
