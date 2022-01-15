@@ -1042,10 +1042,10 @@
         "title": "Surveillance under Surveillance"
     },
     "toerisme_vlaanderen": {
-        "description": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken.",
-        "descriptionTail": "Met de steun van Toerisme Vlaanderen<img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />",
+        "description": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p class='mb-4'>We verzamelen 7 thematische lagen:  <ol><li>Laadpunten voor e-bikes</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijkpunten, uitkijkplatformen en uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol><p>Klik op de exacte locatie op de kaart om een van deze 7 punten toe te voegen. Of corrigeer bestaande punten door erop te klikken.</p>",
+        "descriptionTail": "<p>Met de steun van Toerisme Vlaanderen</p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaaneren.be</a><img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />",
         "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
-        "title": "Toeristisch relevante info"
+        "title": "Pin je punt"
     },
     "toilets": {
         "description": "Een kaart met openbare toiletten",

@@ -2,7 +2,7 @@
   "id": "toerisme_vlaanderen",
   "credits": "Commissioned theme for <a href='https://www.toerismevlaanderen.be/'>Toerisme Vlaandere</a>",
   "maintainer": "MapComplete",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "customCss": "./assets/themes/toerisme_vlaanderen/custom.css",
   "language": [
     "en",
@@ -12,18 +12,18 @@
     "nl"
   ],
   "title": {
-    "nl": "Toeristisch relevante info"
+    "nl": "Pin je punt"
   },
   "shortDescription": {
     "nl": "Een kaart om toeristisch relevante info op aan te duiden"
   },
   "description": {
-    "nl": "Op deze kaart kan je info zien die relevant is voor toerisme, zoals:<br/><ul><li>Eetgelegenheden</li><li>Cafés en bars</li><li>(Fiets)oplaadpunten</li><li>Fietspompen, fietserverhuur en fietswinkels</li><li>Uitkijktorens</li><li>...</li></ul> Zie je fouten op de kaart? Dan kan je zelf makkelijk aanpasingen maken, die zichtbaar zijn voor iedereen. Hiervoor dien je een gratis OpenStreetMap account voor te maken."
+    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p class='mb-4'>We verzamelen 7 thematische lagen:  <ol><li>Laadpunten voor e-bikes</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijkpunten, uitkijkplatformen en uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol><p>Klik op de exacte locatie op de kaart om een van deze 7 punten toe te voegen. Of corrigeer bestaande punten door erop te klikken.</p>"
   },
   "descriptionTail": {
-    "nl": "Met de steun van Toerisme Vlaanderen<img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
+    "nl": "<p>Met de steun van Toerisme Vlaanderen</p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaaneren.be</a><img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
-  "icon": "./assets/svg/star.svg",
+  "icon": "./assets/svg/teardrop_with_hole_green.svg",
   "startZoom": 8,
   "startLat": 50.8536,
   "startLon": 4.433,
@@ -31,13 +31,19 @@
   "layers": [
     {
       "builtin": [
-        "charging_station",
-        "toilet"
+        "toilet",
+        "bench",
+        "picnic_table",
+        "observation_tower",
+        "bike_repair_station",
+        "playground",
+        "charging_station"
       ],
       "override": {
         "minzoom": 14
       }
     }
   ],
-  "hideFromOverview": true
+  "hideFromOverview": true,
+  "enableMoreQuests": false
 }
