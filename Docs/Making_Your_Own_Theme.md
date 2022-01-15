@@ -110,7 +110,7 @@ A JSON-schema file is available in Docs/Schemas - use LayoutConfig.schema.json t
 ### MetaTags
 
 There are few tags available that are calculated for convenience - e.g. the country an object is located
-at. [An overview of all these metatags is available here](Docs/CalculatedTags.md)
+at. [An overview of all these metatags is available here](CalculatedTags.md)
 
 
 ### TagRendering groups
