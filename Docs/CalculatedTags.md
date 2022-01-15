@@ -3,7 +3,9 @@
  Metatags 
 ==========
 
- ## Table of contents
+
+
+## Table of contents
 
 1. [Metatags](#metatags)
   - [Metatags calculated by MapComplete](#metatags-calculated-by-mapcomplete)
@@ -27,7 +29,9 @@
     + [memberships](#memberships)
     + [get](#get)
 
- Metatags are extra tags available, in order to display more data or to give better questions.
+
+
+Metatags are extra tags available, in order to display more data or to give better questions.
 
 The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
 
@@ -160,7 +164,9 @@ Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' an
 
 Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`
 
- 
+
+
+
 
  Calculating tags with Javascript 
 ----------------------------------

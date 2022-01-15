@@ -22,6 +22,8 @@ import Title from "../../UI/Base/Title";
 import List from "../../UI/Base/List";
 import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
+import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import Table from "../../UI/Base/Table";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -31,11 +33,11 @@ export default class LayerConfig extends WithContextLoader {
     public readonly source: SourceConfig;
     public readonly calculatedTags: [string, string, boolean][];
     public readonly doNotDownload: boolean;
-    public readonly  passAllFeatures: boolean;
+    public readonly passAllFeatures: boolean;
     public readonly isShown: TagRenderingConfig;
     public minzoom: number;
     public minzoomVisible: number;
-    public readonly  maxzoom: number;
+    public readonly maxzoom: number;
     public readonly title?: TagRenderingConfig;
     public readonly titleIcons: TagRenderingConfig[];
 
@@ -74,10 +76,10 @@ export default class LayerConfig extends WithContextLoader {
             throw "Layer " + this.id + " does not define a osmTags in the source section - these should always be present, even for geojson layers (" + context + ")"
         }
 
-        if(json.id.toLowerCase() !== json.id){
+        if (json.id.toLowerCase() !== json.id) {
             throw `${context}: The id of a layer should be lowercase: ${json.id}`
         }
-        if(json.id.match(/[a-z0-9-_]/) == null){
+        if (json.id.match(/[a-z0-9-_]/) == null) {
             throw `${context}: The id of a layer should match [a-z0-9-_]*: ${json.id}`
         }
 
@@ -137,7 +139,7 @@ export default class LayerConfig extends WithContextLoader {
                 const index = kv.indexOf("=");
                 let key = kv.substring(0, index);
                 const isStrict = key.endsWith(':')
-                if(isStrict){
+                if (isStrict) {
                     key = key.substr(0, key.length - 1)
                 }
                 const code = kv.substring(index + 1);
@@ -173,7 +175,7 @@ export default class LayerConfig extends WithContextLoader {
                         preferredBackground: undefined
                     }
                 }
-                
+
                 let snapToLayers: string[];
                 if (typeof pr.preciseInput.snapToLayer === "string") {
                     snapToLayers = [pr.preciseInput.snapToLayer]
@@ -298,6 +300,7 @@ export default class LayerConfig extends WithContextLoader {
         const defaultTags = new UIEventSource(TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"})))
         return mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html
     }
+
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
         context?: string;
         reason: string;
@@ -309,13 +312,13 @@ export default class LayerConfig extends WithContextLoader {
             if (addedByDefault) {
                 extraProps.push("**This layer is included automatically in every theme. This layer might contain no points**")
             }
-            if(this.shownByDefault === false){
+            if (this.shownByDefault === false) {
                 extraProps.push('This layer is not visible by default and must be enabled in the filter by the user. ')
             }
             if (this.title === undefined) {
                 extraProps.push("This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.")
             }
-            if(this.title === undefined && this.shownByDefault === false){
+            if (this.title === undefined && this.shownByDefault === false) {
                 extraProps.push("This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true")
             }
             if (this.name === undefined) {
@@ -323,6 +326,10 @@ export default class LayerConfig extends WithContextLoader {
             }
             if (this.mapRendering.length === 0) {
                 extraProps.push("Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`")
+            }
+
+            if (this.source.geojsonSource !== undefined) {
+                extraProps.push("<img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `" + this.source.geojsonSource + "`")
             }
         } else {
             extraProps.push("This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.")
@@ -337,22 +344,70 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         for (const dep of dependencies) {
-            extraProps.push(new Combine(["This layer will automatically load ", new Link(dep.neededLayer, "#"+dep.neededLayer)," into the layout as it depends on it: ", dep.reason, "("+dep.context+")"]))
+            extraProps.push(new Combine(["This layer will automatically load ", new Link(dep.neededLayer, "./" + dep.neededLayer + ".md"), " into the layout as it depends on it: ", dep.reason, "(" + dep.context + ")"]))
         }
-        
-        for(const revDep of layerIsNeededBy?.get(this.id) ?? []){
-            extraProps.push(new Combine(["This layer is needed as dependency for layer",new Link(revDep, "#"+revDep)]))
+
+        for (const revDep of layerIsNeededBy?.get(this.id) ?? []) {
+            extraProps.push(new Combine(["This layer is needed as dependency for layer", new Link(revDep, "#" + revDep)]))
+        }
+
+        const icon = Array.from(this.mapRendering[0]?.icon?.ExtractImages(true) ?? [])[0]
+        let iconImg = ""
+        if (icon !== undefined) {
+            iconImg = `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
+        }
+
+        let neededTags: TagsFilter[] = [this.source.osmTags]
+        if (this.source.osmTags["and"] !== undefined) {
+            neededTags = this.source.osmTags["and"]
+        }
+
+        let tableRows = Utils.NoNull(this.tagRenderings.map(tr => tr.FreeformValues())
+            .map(values => {
+                if (values == undefined) {
+                    return undefined
+                }
+                const embedded: (Link | string)[] = values.values?.map(v => Link.OsmWiki(values.key, v, true)) ?? ["_no preset options defined, or no values in them_"]
+                return [
+                    new Combine([
+                        new Link(
+                        "<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>",
+                        "https://taginfo.openstreetmap.org/keys/"+values.key+"#values"
+                    ),Link.OsmWiki(values.key)
+                    ]),
+                    values.type === undefined ? "Multiple choice" : new Link(values.type, "../SpecialInputElements.md#" + values.type),
+                    new Combine(embedded)
+                ];
+            }))
+
+        let quickOverview: BaseUIElement = undefined;
+        if (tableRows.length > 0) {
+            quickOverview = new Combine([
+                "**Warning** This quick overview is incomplete",
+                new Table(["attribute", "type", "values which are supported by this layer"], tableRows)
+            ]).SetClass("flex-col flex")
         }
 
         return new Combine([
-            new Title(this.id, 3),
-            this.description,
+            new Combine([
+                new Title(this.id, 1),
+                iconImg,
+                this.description,
+                "\n"
+            ]).SetClass("flex flex-col"),
+            new List(extraProps),
+            ...usingLayer,
 
             new Link("Go to the source code", `../assets/layers/${this.id}/${this.id}.json`),
 
-            new List(extraProps),
-            ...usingLayer
-        ]).SetClass("flex flex-col")
+            new Title("Basic tags for this layer", 2),
+            "Elements must have the all of following tags to be shown on this layer:",
+            new List(neededTags.map(t => t.asHumanString(true, false, {}))),
+
+            new Title("Supported attributes", 2),
+            quickOverview,
+            ...this.tagRenderings.map(tr => tr.GenerateDocumentation())
+        ]).SetClass("flex-col")
     }
 
     public CustomCodeSnippets(): string[] {
@@ -361,10 +416,10 @@ export default class LayerConfig extends WithContextLoader {
         }
         return this.calculatedTags.map((code) => code[1]);
     }
-    
-    AllTagRenderings(): TagRenderingConfig[]{
-        return  Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title, this.isShown])
-}
+
+    AllTagRenderings(): TagRenderingConfig[] {
+        return Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title, this.isShown])
+    }
 
     public ExtractImages(): Set<string> {
         const parts: Set<string>[] = [];
