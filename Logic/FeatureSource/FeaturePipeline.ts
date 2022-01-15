@@ -40,18 +40,23 @@ import {ElementStorage} from "../ElementStorage";
 export default class FeaturePipeline {
 
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
-
     public readonly runningQuery: UIEventSource<boolean>;
     public readonly timeout: UIEventSource<number>;
-
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
 
+    
+    
     private readonly overpassUpdater: OverpassFeatureSource
     private state: MapState;
     private readonly relationTracker: RelationsTracker
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
 
+    /**
+     * Keeps track of the age of the loaded data.
+     * Has one freshness-Calculator for every layer
+     * @private
+     */
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
 
     private readonly oldestAllowedDate: Date;
@@ -468,6 +473,7 @@ export default class FeaturePipeline {
                 padToTiles: state.locationControl.map(l => Math.min(15, l.zoom + 1)),
                 relationTracker: this.relationTracker,
                 isActive: useOsmApi.map(b => !b && overpassIsActive.data, [overpassIsActive]),
+                freshnesses: this.freshnesses,
                 onBboxLoaded: (bbox, date, downloadedLayers, paddedToZoomLevel) => {
                     Tiles.MapRange(bbox.containingTileRange(paddedToZoomLevel), (x, y) => {
                         const tileIndex = Tiles.tile_index(paddedToZoomLevel, x, y)

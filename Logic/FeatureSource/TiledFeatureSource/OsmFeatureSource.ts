@@ -12,6 +12,9 @@ import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
 
+/**
+ * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
+ */
 export default class OsmFeatureSource {
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly downloadedTiles = new Set<number>()

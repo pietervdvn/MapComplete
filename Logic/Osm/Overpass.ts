@@ -52,7 +52,6 @@ export class Overpass {
         }
 
         self._relationTracker.RegisterRelations(json)
-        console.warn("OSMTOGEOJSON:", osmtogeojson)
         const geojson = osmtogeojson.default(json);
         const osmTime = new Date(json.osm3s.timestamp_osm_base);
         return [geojson, osmTime];

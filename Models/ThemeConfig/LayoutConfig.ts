@@ -153,7 +153,7 @@ export default class LayoutConfig {
             }
         }
         this.overpassTimeout = json.overpassTimeout ?? 30
-        this.overpassMaxZoom = json.overpassMaxZoom ?? 17
+        this.overpassMaxZoom = json.overpassMaxZoom ?? 16
         this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1
 
     }
