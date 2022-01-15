@@ -87,7 +87,7 @@
     "npm-run-all": "^4.1.5",
     "opening_hours": "^3.6.0",
     "osm-auth": "^1.0.2",
-    "osmtogeojson": "^1.0.0",
+    "osmtogeojson": "^3.0.0-beta.4",
     "parcel": "^1.2.4",
     "prompt-sync": "^4.2.0",
     "svg-resizer": "github:vieron/svg-resizer",
