@@ -84,8 +84,8 @@ Elements must have the all of following tags to be shown on this layer:
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [public](https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/defibrillator#values) [defibrillator](https://wiki.openstreetmap.org/wiki/Key:defibrillator) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3D) [manual](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual) [automatic](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/defibrillator#values) [defibrillator](https://wiki.openstreetmap.org/wiki/Key:defibrillator) | Multiple choice | [manual](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual) [automatic](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [int](../SpecialInputElements.md#int) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/defibrillator:location#values) [defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location) | [text](../SpecialInputElements.md#text) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/defibrillator:location:en#values) [defibrillator:location:en](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:en) | [text](../SpecialInputElements.md#text) | 
@@ -140,7 +140,7 @@ This is rendered with `Access is {access}`
 
 
   - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>_This option cannot be chosen as answer_
   - **Only accessible to customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
   - **Not accessible to the general public (e.g. only accesible to staff, the owners, ...)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
   - **Not accessible, possibly only for professional use** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
@@ -158,10 +158,10 @@ The question is **Is this a a regular automatic defibrillator or a manual defibr
 
 
 
-  - **There is no info about the type of device** corresponds with 
+  - **There is no info about the type of device** corresponds with _This option cannot be chosen as answer_
   - **This is a manual defibrillator for professionals** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>
   - **This is a normal automatic defibrillator** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>
-  - **This is a special type of defibrillator: {defibrillator}** corresponds with defibrillator~^..*$
+  - **This is a special type of defibrillator: {defibrillator}** corresponds with defibrillator~^..*$_This option cannot be chosen as answer_
 
 
 

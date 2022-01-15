@@ -70,8 +70,8 @@ Elements must have the all of following tags to be shown on this layer:
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/colour#values) [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:colour%3D) [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fire_hydrant:type#values) [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3D) [pillar](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar) [pipe](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe) [wall](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall) [underground](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/colour#values) [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [string](../SpecialInputElements.md#string) | [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fire_hydrant:type#values) [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) | [string](../SpecialInputElements.md#string) | [pillar](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar) [pipe](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe) [wall](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall) [underground](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/emergency#values) [emergency](https://wiki.openstreetmap.org/wiki/Key:emergency) | Multiple choice | [fire_hydrant](https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant) [](https://wiki.openstreetmap.org/wiki/Tag:emergency%3D) [](https://wiki.openstreetmap.org/wiki/Tag:emergency%3D)
 
 
@@ -88,7 +88,7 @@ This is rendered with `The hydrant color is {colour}`
 
 
 
-  - **The hydrant color is unknown.** corresponds with 
+  - **The hydrant color is unknown.** corresponds with _This option cannot be chosen as answer_
   - **The hydrant color is yellow.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
   - **The hydrant color is red.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
 
@@ -106,7 +106,7 @@ This is rendered with ` Hydrant type: {fire_hydrant:type}`
 
 
 
-  - **The hydrant type is unknown.** corresponds with 
+  - **The hydrant type is unknown.** corresponds with _This option cannot be chosen as answer_
   - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_pillar.svg" /> Pillar type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>
   - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_unknown.svg" /> Pipe type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>
   - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_unknown.svg" /> Wall type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>

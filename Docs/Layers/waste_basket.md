@@ -68,7 +68,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/waste#values) [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:waste%3D) [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/waste#values) [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/vending#values) [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | Multiple choice | [dog_excrement_bag](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D)
 
 
@@ -84,7 +84,7 @@ The question is **What kind of waste basket is this?**
 
 
 
-  - **A waste basket for general waste** corresponds with 
+  - **A waste basket for general waste** corresponds with _This option cannot be chosen as answer_
   - **A waste basket for general waste** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash' target='_blank'>trash</a>
   - **A waste basket for dog excrements** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement' target='_blank'>dog_excrement</a>
   - **A waste basket for cigarettes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes' target='_blank'>cigarettes</a>

@@ -429,9 +429,10 @@ export default class TagRenderingConfig {
         try {
 
             const key = this.freeform?.key
+            const answerMappings = this.mappings?.filter(m => m.hideInAnswer !== true)
             if (key === undefined) {
 
-                let values: { k: string, v: string }[][] = Utils.NoNull(this.mappings?.map(m => m.if.asChange({})) ?? [])
+                let values: { k: string, v: string }[][] = Utils.NoNull(answerMappings?.map(m => m.if.asChange({})) ?? [])
                 if (values.length === 0) {
                     return;
                 }
@@ -452,7 +453,7 @@ export default class TagRenderingConfig {
 
             }
 
-            let values = Utils.NoNull(this.mappings?.map(m => m.if.asChange({}).filter(item => item.k === key)[0]?.v) ?? [])
+            let values = Utils.NoNull(answerMappings?.map(m => m.if.asChange({}).filter(item => item.k === key)[0]?.v) ?? [])
             if (values.length === undefined) {
                 values = undefined
             }
@@ -482,8 +483,17 @@ export default class TagRenderingConfig {
         let mappings: BaseUIElement = undefined;
         if (this.mappings !== undefined) {
             mappings = new List(
-                this.mappings.map(m =>
-                    "**" + m.then.txt + "** corresponds with " + m.if.asHumanString(true, false, {})
+                this.mappings.map(m => {
+                        let txt = "**" + m.then.txt + "** corresponds with " + m.if.asHumanString(true, false, {});
+                        if(m.hideInAnswer === true)
+                        {
+                            txt += "_This option cannot be chosen as answer_"
+                        }
+                        if(m.ifnot !== undefined){
+                            txt += "Unselecting this answer will add "+m.ifnot.asHumanString(true, false, {})
+                        }
+                        return txt;
+                    }
                 )
             )
         }

@@ -84,14 +84,14 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [De Fietsambassade Gent](https://wiki.openstreetmap.org/wiki/Tag:operator%3DDe Fietsambassade Gent)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) [](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:chain_tool#values) [service:bicycle:chain_tool](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:stand#values) [service:bicycle:stand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump:operational_status#values) [service:bicycle:pump:operational_status](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status) | Multiple choice | [broken](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken) [](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/valves#values) [valves](https://wiki.openstreetmap.org/wiki/Key:valves) | [string](../SpecialInputElements.md#string) | [sclaverand](https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand) [dunlop](https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop) [schrader](https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/manual#values) [manual](https://wiki.openstreetmap.org/wiki/Key:manual) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:manual%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/manometer#values) [manometer](https://wiki.openstreetmap.org/wiki/Key:manometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno) [broken](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [](https://wiki.openstreetmap.org/wiki/Tag:level%3D) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1)
 
 
 
@@ -173,7 +173,7 @@ This is rendered with `{opening_hours_table()}`
 
 
   - **Always open** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-  - **Always open** corresponds with 
+  - **Always open** corresponds with _This option cannot be chosen as answer_
 
 
 
@@ -298,9 +298,9 @@ This is rendered with `Located on the {level}th floor`
 
 
 
-  - **Located underground** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - **Located underground** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>_This option cannot be chosen as answer_
   - **Located on the ground floor** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - **Located on the ground floor** corresponds with 
+  - **Located on the ground floor** corresponds with _This option cannot be chosen as answer_
   - **Located on the first floor** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  
 

@@ -76,13 +76,13 @@ Elements must have the all of following tags to be shown on this layer:
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sport#values) [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball) [basket](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/sport#values) [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surface#values) [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [public](https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic) [limited](https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reservation#values) [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D) [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 
 
 
@@ -113,7 +113,7 @@ This is rendered with `{sport} is played here`
   - **This is a pingpong table** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
   - **Tennis is played here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis' target='_blank'>tennis</a>
   - **Korfball is played here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball' target='_blank'>korfball</a>
-  - **Basketball is played here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>
+  - **Basketball is played here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>_This option cannot be chosen as answer_
 
 
 
@@ -207,7 +207,7 @@ This is rendered with `Openingsuren: {opening_hours_table()}`
 
 
 
-  - **24/7 toegankelijk** corresponds with 
+  - **24/7 toegankelijk** corresponds with _This option cannot be chosen as answer_
   - **Always accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 

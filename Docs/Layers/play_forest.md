@@ -90,7 +90,7 @@ This is rendered with `Dit gebied wordt beheerd door {operator}`
 
 
 
-  - **Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>** corresponds with operator~^[aA][nN][bB]$
+  - **Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>** corresponds with operator~^[aA][nN][bB]$_This option cannot be chosen as answer_
   - **Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
 
 

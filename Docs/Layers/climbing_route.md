@@ -163,7 +163,7 @@ This is rendered with `This route has {climbing:bolts} bolts`
 
 
 
-  - **This route is not bolted** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
+  - **This route is not bolted** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>_This option cannot be chosen as answer_
   - **This route is not bolted** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno&climbing:bolts=' target='_blank'>no&climbing:bolts=</a>
 
 
