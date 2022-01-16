@@ -3,6 +3,7 @@ import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledF
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import * as readline from "readline";
 import ScriptUtils from "./ScriptUtils";
+import {Utils} from "../Utils";
 
 /**
  * This script slices a big newline-delimeted geojson file into tiled geojson 
@@ -103,16 +104,23 @@ async function main(args: string[]) {
 
     let allFeatures: any [];
     if (inputFile.endsWith(".geojson")) {
+        console.log("Detected geojson")
         allFeatures = await readFeaturesFromGeoJson(inputFile)
     } else {
+        console.log("Loading as newline-delimited features")
         allFeatures = await readFeaturesFromLineDelimitedJsonFile(inputFile)
     }
+    allFeatures = Utils.NoNull(allFeatures)
 
 
     console.log("Loaded all", allFeatures.length, "points")
 
     const keysToRemove = ["STRAATNMID", "GEMEENTE", "POSTCODE"]
     for (const f of allFeatures) {
+        if(f.properties === null){
+            console.log("Got a feature without properties!", f)
+            continue
+        }
         for (const keyToRm of keysToRemove) {
             delete f.properties[keyToRm]
         }

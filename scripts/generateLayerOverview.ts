@@ -6,7 +6,8 @@ import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
 import {
     DesugaringContext,
-    PrepareLayer, PrepareTheme,
+    PrepareLayer,
+    PrepareTheme,
     ValidateLayer,
     ValidateThemeAndLayers
 } from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
@@ -80,7 +81,7 @@ class LayerOverviewUtils {
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
         for (const key in icons["default"]) {
-            if(typeof icons[key] !== "object"){
+            if (typeof icons[key] !== "object") {
                 continue
             }
             icons[key].id = key;
@@ -94,6 +95,32 @@ class LayerOverviewUtils {
         return dict;
     }
 
+    main(_: string[]) {
+
+        const licensePaths = new Set<string>()
+        for (const i in licenses) {
+            licensePaths.add(licenses[i].path)
+        }
+
+        const sharedLayers = this.buildLayerIndex(licensePaths);
+        const sharedThemes = this.buildThemeIndex(licensePaths, sharedLayers)
+
+        writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
+            "layers": Array.from(sharedLayers.values()),
+            "themes": Array.from(sharedThemes.values())
+        }))
+
+        writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
+
+        writeFileSync('./assets/themes/mapcomplete-changes/icons-mapping.txt', JSON.stringify(
+            Array.from(sharedThemes.values()).map(th => ({
+                if: "theme=" + th.id,
+                then: th.icon
+            }))
+        ))
+
+
+    }
 
     private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {
         // First, we expand and validate all builtin layers. These are written to assets/generated/layers
@@ -126,7 +153,6 @@ class LayerOverviewUtils {
         return sharedLayers;
     }
 
-
     private buildThemeIndex(knownImagePaths: Set<string>, sharedLayers: Map<string, LayerConfigJson>): Map<string, LayoutConfigJson> {
         console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles();
@@ -139,7 +165,7 @@ class LayerOverviewUtils {
         for (const themeInfo of themeFiles) {
             let themeFile = themeInfo.parsed
             const themePath = themeInfo.path
-            
+
             themeFile = new PrepareTheme().convertStrict(convertState, themeFile, themePath)
 
             new ValidateThemeAndLayers(knownImagePaths, themePath, true)
@@ -159,24 +185,6 @@ class LayerOverviewUtils {
         }));
         return fixed;
 
-    }
-
-    main(_: string[]) {
-
-        const licensePaths = new Set<string>()
-        for (const i in licenses) {
-            licensePaths.add(licenses[i].path)
-        }
-
-        const sharedLayers = this.buildLayerIndex(licensePaths);
-        const sharedThemes = this.buildThemeIndex(licensePaths, sharedLayers)
-
-        writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
-            "layers": Array.from(sharedLayers.values()),
-            "themes": Array.from(sharedThemes.values())
-        }))
-
-        writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
     }
 }
 
