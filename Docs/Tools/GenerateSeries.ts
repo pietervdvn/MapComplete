@@ -662,15 +662,21 @@ function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]
     }).render()
     const geojson = {
         type: "FeatureCollection",
-        features: Utils.NoNull(allFeatures.map(f => {
-            try {
-                const point = GeoOperations.centerpoint(f.geometry);
-                point.properties = f.properties
-                return point
-            } catch (e) {
-                console.error("Could not create center point: ", e, f)
-                return undefined
-            }
+        features: Utils.NoNull(allFeatures
+            .map(f => {
+                try {
+                    const point = GeoOperations.centerpoint(f.geometry);
+                    point.properties = {...f.properties, ...f.properties.metadata}
+                    delete point.properties.metadata
+                    for (const key in f.properties.metadata) {
+                        point.properties[key] = f.properties.metadata[key]
+                    }
+                    
+                    return point
+                } catch (e) {
+                    console.error("Could not create center point: ", e, f)
+                    return undefined
+                }
         }))
     }
     writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
