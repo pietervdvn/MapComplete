@@ -1,5 +1,5 @@
 import ScriptUtils from "./ScriptUtils";
-import {existsSync, mkdirSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs";
 import * as licenses from "../assets/generated/license_info.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
@@ -15,15 +15,10 @@ import {Translation} from "../UI/i18n/Translation";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import * as questions from "../assets/tagRenderings/questions.json";
 import * as icons from "../assets/tagRenderings/icons.json";
+import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
-
-interface LayersAndThemes {
-    themes: LayoutConfigJson[],
-    layers: { parsed: LayerConfigJson, path: string }[]
-}
-
 
 class LayerOverviewUtils {
 
@@ -112,15 +107,21 @@ class LayerOverviewUtils {
 
         writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
 
-        /*
-        writeFileSync('./assets/themes/mapcomplete-changes/icons-mapping.txt', JSON.stringify(
-            Array.from(sharedThemes.values()).map(th => ({
-                if: "theme=" + th.id,
-                then: th.icon
-            }))
-        )) //*/
 
+        {
+            // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
+            const iconsPerTheme =
+                Array.from(sharedThemes.values()).map(th => ({
+                    if: "theme=" + th.id,
+                    then: th.icon
+                }))
+            const proto: LayoutConfigJson = JSON.parse(readFileSync("./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json", "UTF8"));
+            const protolayer = <LayerConfigJson>(proto.layers.filter(l => l["id"] === "mapcomplete-changes")[0])
+            const rendering = (<PointRenderingConfigJson>protolayer.mapRendering[0])
+            rendering.icon["mappings"] = iconsPerTheme
+            writeFileSync('./assets/themes/mapcomplete-changes/mapcomplete-changes.json', JSON.stringify(proto, null, "  "))
 
+        }
     }
 
     private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {

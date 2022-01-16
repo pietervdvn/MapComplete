@@ -121,7 +121,7 @@ export default class ScriptUtils {
 
     public static getThemeFiles(): { parsed: LayoutConfigJson, path: string }[] {
         return ScriptUtils.readDirRecSync("./assets/themes")
-            .filter(path => path.endsWith(".json"))
+            .filter(path => path.endsWith(".json") && !path.endsWith(".proto.json"))
             .filter(path => path.indexOf("license_info.json") < 0)
             .map(path => {
                 try {

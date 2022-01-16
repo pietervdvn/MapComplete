@@ -21,7 +21,7 @@ export default class CreateNoteImportLayerSpec extends T {
                 const layer = new LayerConfig(layerPrepare.convertStrict(desugaringState, bookcases, "ImportLayerGeneratorTest:Parse bookcases"), "ImportLayerGeneratorTest: init bookcases-layer")
                 const generator = new CreateNoteImportLayer()
                 const generatedLayer = generator.convertStrict(desugaringState, layer, "ImportLayerGeneratorTest: convert")
-                fs.writeFileSync("bookcases-import-layer.generated.json", JSON.stringify(generatedLayer, null, "  "), "utf8")
+       //         fs.writeFileSync("bookcases-import-layer.generated.json", JSON.stringify(generatedLayer, null, "  "), "utf8")
 console.log(JSON.stringify(generatedLayer, null, "  "))
             }]
         ]);

@@ -934,6 +934,65 @@
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
         "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations."
     },
+    "mapcomplete-changes": {
+        "description": "This maps shows all the changes made with MapComplete",
+        "layers": {
+            "0": {
+                "description": "Shows all MapComplete changes",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themename contains {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Made by contributor {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Not</b> made by contributor {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Changeset centers",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Changeset for {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Shows changes made by MapComplete",
+        "title": "Changes made with MapComplete"
+    },
     "maps": {
         "description": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
