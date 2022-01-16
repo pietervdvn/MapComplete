@@ -79,7 +79,7 @@ export default class UserBadge extends Toggle {
                 }
 
                 const settings =
-                    new Link(Svg.gear_svg(),
+                    new Link(Svg.gear,
                         `${user.backend}/user/${encodeURIComponent(user.name)}/account`,
                         true)
 
