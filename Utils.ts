@@ -137,14 +137,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static NoNull<T>(array: T[]): T[] {
-        const ls: T[] = [];
-        for (const t of array) {
-            if (t === undefined || t === null) {
-                continue;
-            }
-            ls.push(t);
-        }
-        return ls;
+        return array.filter(o => o !== undefined && o !== null)
     }
 
     public static Hist(array: string[]): Map<string, number> {

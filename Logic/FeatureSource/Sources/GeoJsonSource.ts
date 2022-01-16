@@ -83,7 +83,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 if (self.layer.layerDef.source.mercatorCrs) {
                     json = GeoOperations.GeoJsonToWGS84(json)
                 }
-
+                
                 const time = new Date();
                 const newFeatures: { feature: any, freshness: Date } [] = []
                 let i = 0;

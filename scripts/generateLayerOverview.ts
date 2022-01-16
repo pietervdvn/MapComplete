@@ -112,12 +112,13 @@ class LayerOverviewUtils {
 
         writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
 
+        /*
         writeFileSync('./assets/themes/mapcomplete-changes/icons-mapping.txt', JSON.stringify(
             Array.from(sharedThemes.values()).map(th => ({
                 if: "theme=" + th.id,
                 then: th.icon
             }))
-        ))
+        )) //*/
 
 
     }

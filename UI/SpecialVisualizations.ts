@@ -399,12 +399,12 @@ export default class SpecialVisualizations {
                         },
                         {
                             name: "title",
-                            doc: "The text to put above the given values column",
+                            doc: "This text will be placed above the texts (in the first column of the visulasition)",
                             defaultValue: ""
                         },
                         {
                             name: "countHeader",
-                            doc: "The text to put above the counts",
+                            doc: "This text will be placed above the bars",
                             defaultValue: ""
                         },
                         {
