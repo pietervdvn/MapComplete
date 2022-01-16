@@ -84,7 +84,11 @@ class StatsDownloader {
             }
             url = result.next
         }
-        console.log(`Writing ${allFeatures.length} features to `, path, "                                                                                              ")
+        console.log(`Writing ${allFeatures.length} features to `, path, Utils.Times(_ => " ", 80))
+        allFeatures = Utils.NoNull(allFeatures)
+        allFeatures.forEach(f => {
+            f.properties.id = f.id
+        })
         writeFileSync(path, JSON.stringify({
             features: allFeatures
         }, undefined, 2))
@@ -682,20 +686,23 @@ function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]
     writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
 }
 
+async function main(): Promise<void>{
+    await new StatsDownloader("stats").DownloadStats()
+    const allPaths = readdirSync("stats")
+        .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
+    let allFeatures: ChangeSetData[] = [].concat(...allPaths
+        .map(path => JSON.parse(readFileSync("stats/" + path, "utf-8")).features
+            .map(cs => ChangesetDataTools.cleanChangesetData(cs))));
 
-new StatsDownloader("stats").DownloadStats()
-const allPaths = readdirSync("stats")
-    .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
-let allFeatures: ChangeSetData[] = [].concat(...allPaths
-    .map(path => JSON.parse(readFileSync("stats/" + path, "utf-8")).features
-        .map(cs => ChangesetDataTools.cleanChangesetData(cs))));
+    const emptyCS = allFeatures.filter(f => f.properties.metadata.theme === "EMPTY CS")
+    allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
 
-const emptyCS = allFeatures.filter(f => f.properties.metadata.theme === "EMPTY CS")
-allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
+    createMiscGraphs(allFeatures, emptyCS)
+    createGraphs(allFeatures, "")
+    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
+    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+}
 
-createMiscGraphs(allFeatures, emptyCS)
-createGraphs(allFeatures, "")
-// createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
-// createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
-createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+main().then(_ => console.log("All done!"))
 
