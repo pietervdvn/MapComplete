@@ -373,6 +373,9 @@ export default class TagRenderingConfig {
                     return mapping.then;
                 }
                 if (mapping.if.matchesProperties(tags)) {
+                    if(this.id === "uk_addresses_placename"){
+                    console.log("Matched",mapping.if,"with ",tags["addr:place"])
+                    }
                     return mapping.then;
                 }
             }

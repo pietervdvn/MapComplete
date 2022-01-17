@@ -4,7 +4,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
-import Constants from "../../Models/Constants";
 import Toggle from "../Input/Toggle";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import Loading from "../Base/Loading";
@@ -37,8 +36,12 @@ import TagApplyButton from "./TagApplyButton";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import * as conflation_json from "../../assets/layers/conflation/conflation.json";
 import {GeoOperations} from "../../Logic/GeoOperations";
+import {LoginToggle} from "./LoginButton";
 
-
+/**
+ * A helper class for the various import-flows.
+ * An import-flow always starts with a 'Import this'-button. Upon click, a custom confirmation panel is provided 
+ */
 abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly funcName: string
     public readonly docs: string
@@ -93,7 +96,6 @@ ${Utils.special_visualizations_importRequirementDocs}
 
 
     constr(state, tagSource: UIEventSource<any>, argsRaw, guiState) {
-        const self = this;
         /**
          * Some generic import button pre-validation is implemented here:
          * - Are we logged in?
@@ -136,25 +138,11 @@ ${Utils.special_visualizations_importRequirementDocs}
         // Explanation of the tags that will be applied onto the imported/conflated object
         
         let tagSpec = args.tags;
-        if(tagSpec.indexOf(" ")< 0 && tagSpec.indexOf(";") < 0){
+        if(tagSpec.indexOf(" ")< 0 && tagSpec.indexOf(";") < 0 && tagSource.data[args.tags] !== undefined){
             // This is probably a key
             tagSpec = tagSource.data[args.tags]
+            console.warn("Using tagspec tagSource.data["+args.tags+"] which is ",tagSpec)
         }
-        
-        const newTags = TagApplyButton.generateTagsToApply(tagSpec, tagSource)
-        const appliedTags = new Toggle(
-            new VariableUiElement(
-                newTags.map(tgs => {
-                    const filteredTags = tgs.filter(tg => self.showRemovedTags || (tg.value ?? "") !== "")
-                    const asText = new And(filteredTags)
-                        .asHumanString(true, true, {})
-
-                    return t0.presetInfo.Subs({tags: asText}).SetClass("subtle");
-                })),
-            undefined,
-            state.osmConnection.userDetails.map(ud => ud.csCount >= Constants.userJourney.tagsVisibleAt)
-        )
-
 
         const importClicked = new UIEventSource(false);
         inviteToImportButton.onClick(() => {
@@ -179,7 +167,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         const importFlow = new Toggle(
             new Toggle(
                 new Loading(t0.stillLoading),
-                new Combine([importGuidingPanel, appliedTags]).SetClass("flex flex-col"),
+                importGuidingPanel,
                 state.featurePipeline.runningQuery
             ),
             inviteToImportButton,
@@ -187,7 +175,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         );
 
         return new Toggle(
-            new Toggle(
+            new LoginToggle(
                 new Toggle(
                     new Toggle(
                         t.hasBeenImported,
@@ -198,7 +186,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                     state.locationControl.map(l => l.zoom >= 18)
                 ),
                 pleaseLoginButton,
-                state.osmConnection.isLoggedIn
+                state
             ),
             t.wrongType,
             new UIEventSource(this.canBeImported(feature)))
@@ -210,9 +198,10 @@ ${Utils.special_visualizations_importRequirementDocs}
         if (originalFeatureTags !== undefined) {
             
             const tags = baseArgs.tags
-            if(tags.indexOf(" ") < 0 && tags.indexOf(";") < 0){
-                // This might be a propertie to expand...
+            if(tags.indexOf(" ") < 0 && tags.indexOf(";") < 0 && originalFeatureTags.data[tags] !== undefined){
+                // This might be a property to expand...
                 const items : string = originalFeatureTags.data[tags]
+                console.warn("Using tagspec tagSource.data["+tags+"] which is ",items)
                 baseArgs["newTags"] = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
             }else{
                 baseArgs["newTags"] = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)
@@ -569,7 +558,6 @@ export class ImportPointButton extends AbstractImportButton {
         const presetInfo = <PresetInfo>{
             tags: args.newTags.data,
             icon: () => new Img(args.icon),
-            description: Translations.WT(args.text),
             layerToAddTo: state.filteredLayers.data.filter(l => l.layerDef.id === args.targetLayer)[0],
             name: args.text,
             title: Translations.WT(args.text),

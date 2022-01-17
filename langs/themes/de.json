@@ -841,7 +841,7 @@
     },
     "grb": {
         "layers": {
-            "2": {
+            "1": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Was ist das für ein Gebäude?"

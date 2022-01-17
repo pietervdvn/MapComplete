@@ -839,7 +839,7 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
-            "2": {
+            "1": {
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
@@ -1271,6 +1271,9 @@
     "uk_addresses": {
         "description": "Contribute to OpenStreetMap by filling out address information",
         "layers": {
+            "0": {
+                "name": "Inspire polygons"
+            },
             "1": {
                 "tagRenderings": {
                     "uk_addresses_embedding_outline": {
@@ -1301,6 +1304,9 @@
                     "fixme": {
                         "question": "What should be fixed here? Please explain what the address is"
                     },
+                    "preview": {
+                        "render": "To send a letter to this addres, you would write:<div style='background: #fcdf94; border: 2px solid black; border-radius: 1rem; padding: 1.5rem 0.5rem 2rem 8rem; margin: 1rem' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp.jpg' class='self-end w-16'/><div class='subtle'>Name of the inhabitant</div><div>{addr:housename}</div><div>{addr:unit} {addr:housenumber} {addr:street}</div><div>{addr:place}</div><div class='subtle'>Suburb</div><div class='subtle'>Town</div><div class='subtle'>Postal code</div></div>"
+                    },
                     "uk_addresses_explanation_osm": {
                         "render": "This address is saved in OpenStreetMap"
                     },
@@ -1313,9 +1319,21 @@
                         "question": "What is the number of this house?",
                         "render": "The housenumber is <b>{addr:housenumber}</b>"
                     },
+                    "uk_addresses_placename": {
+                        "mappings": {
+                            "0": {
+                                "then": "No extra placename is given or needed"
+                            }
+                        },
+                        "question": "What is the place or locality?<div class='subtle'>This is additional information if the streetname alone isn't enough to find this address. Typical examples are 'Technology Park', 'XYZ Terrace', ...</div>",
+                        "render": "The placename is <b>{addr:place}</b>"
+                    },
                     "uk_addresses_street": {
                         "question": "What street is this address located in?",
                         "render": "This address is in street <b>{addr:street}</b>"
+                    },
+                    "uk_addresses_unit": {
+                        "question": "What is the unit indication of this address? <div class='subtle'>This is the letter or number of the letterbox here, if multiple letterboxes share the same street and housenumber. If there are multiple at the same location, add them here with a <b>;</b> between them</div>"
                     }
                 },
                 "title": {

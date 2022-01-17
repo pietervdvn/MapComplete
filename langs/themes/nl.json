@@ -769,7 +769,7 @@
     "grb": {
         "description": "Dit thema helpt het GRB importeren.",
         "layers": {
-            "2": {
+            "1": {
                 "tagRenderings": {
                     "grb-fixme": {
                         "mappings": {

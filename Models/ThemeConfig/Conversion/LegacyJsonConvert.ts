@@ -236,7 +236,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
             }
 
             for (const key of Object.keys(tr)) {
-                if (key === "builtin" || key === "override" || key === "id") {
+                if (key === "builtin" || key === "override" || key === "id" || key.startsWith("#")) {
                     continue
                 }
                 errors.push("At " + ctx + ": an object calling a builtin can only have keys `builtin` or `override`, but a key with name `" + key + "` was found. This won't be picked up! The full object is: " + JSON.stringify(tr))
@@ -827,8 +827,8 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings;
         const errors = [];
         const warnings = [];
-        const layers: LayerConfigJson[] = <LayerConfigJson[]>theme.layers; // Layers should be expanded at this point
-
+        const layers: LayerConfigJson[] = <LayerConfigJson[]> theme.layers; // Layers should be expanded at this point
+        
         knownTagRenderings.forEach((value, key) => {
             value.id = key;
         })
@@ -954,11 +954,25 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 
     convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const errors = []
+        const warnings = []
         json.layers = [...json.layers]
 
         if (json.id === "personal") {
+            json.layers = []
+            for (const publicLayer of AllKnownLayouts.AllPublicLayers()) {
+                const id = publicLayer.id
+                const config = state.sharedLayers.get(id)
+                if(Constants.added_by_default.indexOf(id) >= 0){
+                    continue;
+                }
+                if(config === undefined){
+                    // This is a layer which is coded within a public theme, not as separate .json
+                    continue
+                }
+                json.layers.push(config)
+            }
             const publicIds = AllKnownLayouts.AllPublicLayers().map(l => l.id)
-            json.layers = publicIds.map(id => state.sharedLayers.get(id))
+            publicIds.map(id => state.sharedLayers.get(id))
         }
 
         for (const layerName of Constants.added_by_default) {
@@ -968,10 +982,11 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             }
             json.layers.push(v)
         }
+        
         return {
             result: json,
             errors,
-            warnings: []
+            warnings
         };
     }
 

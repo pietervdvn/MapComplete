@@ -66,7 +66,7 @@
       "calculatedTags": [
         "_has_address=feat.overlapWith('address').length > 0"
       ],
-      "#mapRendering": [
+      "mapRendering": [
         {
           "width": 2,
           "color": {
@@ -80,13 +80,18 @@
           }
         }
       ],
-      "mapRendering": null
+      "shownByDefault": false,
+      "name": {
+        "en": "Inspire polygons"
+      }
     },
     {
       "id": "to_import",
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json",
-        "osmTags": "inspireid~*",
+        "osmTags": {
+          "and": ["ref:GB:inspire~*","id!~node/.*"]
+        },
         "geoJsonZoomLevel": 16,
         "isOsmCache": false
       },
@@ -126,7 +131,7 @@
         },
         {
           "id": "uk_addresses_import_button",
-          "render": "{import_button(address,ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
+          "render": "{import_button(address,ref:GB:inspire=$ref:GB:inspire;ref:GB:uprn=$ref:GB:uprn$, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
         }
       ],
       "calculatedTags": [
@@ -203,7 +208,7 @@
           "or": [
             "addr:housenumber~*",
             "addr:street~*",
-            "ref:inspireid~*"
+            "ref:GB:inspire~*"
           ]
         }
       },
@@ -285,6 +290,7 @@
               "then": "This building has no housename"
             },
             {
+              "#": "By adding nohousenumber!=yes, this option will trigger when first added, but will be untriggered if a housenumber is added, resulting in the question poping up!",
               "if": {
                 "and": [
                   "addr:housename=",
@@ -298,7 +304,7 @@
         },
         {
           "id": "uk_addresses_unit",
-          "render": "The sub-part of this address is {addr:unit}",
+          "render": "The sub-part of this address is <b>{addr:unit}</b>",
           "question": {
             "en": "What is the unit indication of this address? <div class='subtle'>This is the letter or number of the letterbox here, if multiple letterboxes share the same street and housenumber. If there are multiple at the same location, add them here with a <b>;</b> between them</div>"
           },
@@ -347,6 +353,26 @@
          
         },
         {
+          "id": "uk_addresses_placename",
+          "question": {
+            "en": "What is the place or locality?<div class='subtle'>This is additional information if the streetname alone isn't enough to find this address. Typical examples are 'Technology Park', 'XYZ Terrace', ...</div>"
+          },
+          "render": {
+            "en": "The placename is <b>{addr:place}</b>"
+          },
+          "freeform": {
+            "key": "addr:place"
+          },
+          "mappings": [
+            {
+              "if": "addr:place=",
+              "then": {
+                "en": "No extra placename is given or needed"
+              }
+            }
+          ]
+        },
+        {
           "id": "fixme",
           "render": "<b>This address is complicated - therefore someone has given a description of what should be fixed:</b>{fixme}",
           "question": {
@@ -358,7 +384,7 @@
           "mappings": [
             {
               "if": "fixme=",
-              "then": "Is this address very complicated? - write something here to explain complicated cases"
+              "then": "Is this address complicated? Write something here to explain this case. An experienced mapper will have a look at it"
             }
           ]
         },
@@ -367,6 +393,12 @@
           "id": "address-sign-image",
           "render": {
             "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+          }
+        },
+        {
+          "id": "preview",
+          "render": {
+            "en": "To send a letter to this addres, you would write:<div style='background: #fcdf94; border: 2px solid black; border-radius: 1rem; padding: 1.5rem 0.5rem 2rem 8rem; margin: 1rem' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp.jpg' class='self-end w-16'/><div class='subtle'>Name of the inhabitant</div><div>{addr:housename}</div><div>{addr:unit} {addr:housenumber} {addr:street}</div><div>{addr:place}</div><div class='subtle'>Suburb</div><div class='subtle'>Town</div><div class='subtle'>Postal code</div></div>"
           }
         }
       ],

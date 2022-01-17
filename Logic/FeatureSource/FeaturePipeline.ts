@@ -304,7 +304,10 @@ export default class FeaturePipeline {
 
                 }
             }),
-            updater)
+            updater,
+            {handleLeftovers: (leftOvers) => {
+                console.warn("Overpass returned a few non-matched features:", leftOvers)
+                }})
 
 
         // Also load points/lines that are newly added. 
@@ -323,7 +326,10 @@ export default class FeaturePipeline {
                 perLayer.features.addCallbackAndRunD(_ => self.onNewDataLoaded(perLayer))
 
             },
-            newGeometry
+            newGeometry,
+            {handleLeftovers: (leftOvers) => {
+                console.warn("Got some leftovers from the filteredLayers: ", leftOvers)
+                }}
         )
 
 
