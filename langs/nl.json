@@ -4,7 +4,7 @@
         "uploadingPicture": "Bezig met een foto te uploaden…",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
-        "willBePublished": "Jouw foto wordt gepubliceerd: ",
+        "willBePublished": "Jouw foto wordt gepubliceerd ",
         "cco": "in het publiek domein",
         "ccbs": "onder de CC-BY-SA-licentie",
         "ccb": "onder de CC-BY-licentie",
@@ -15,7 +15,9 @@
         "doDelete": "Verwijder afbeelding",
         "isDeleted": "Verwijderd",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
-        "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken"
+        "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
+        "ccbsExplanation": "Als je foto met de CC-BY-SA-licentie gepubliceerd wordt, dan mag je foto gebruikt worden voor alle doeleinden, maar je naam moet vermeld worden en afgeleide werken moeten onder dezelfde licentie gepubliceerd worden",
+        "ccoExplanation": "Als je foto in het publiek domein gepubliceerd wordt, dan mag iedereen je foto voor alle doeleinden gebruiken"
     },
     "centerMessage": {
         "loadingData": "Data wordt geladen...",
@@ -41,7 +43,7 @@
             "error": "Niet gelukt..."
         },
         "add": {
-            "addNewMapLabel": "Voeg item toe",
+            "addNewMapLabel": "Klik hier om een item toe te voegen",
             "addNew": "Voeg hier een {category} toe",
             "title": "Nieuw punt toevoegen?",
             "intro": "Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",
