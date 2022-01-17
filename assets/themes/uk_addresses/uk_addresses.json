@@ -24,6 +24,8 @@
     "it",
     "id",
     "nl",
+    "zh_Hant",
+    "hu",
     "ru"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
@@ -90,7 +92,10 @@
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json",
         "osmTags": {
-          "and": ["ref:GB:inspire~*","id!~node/.*"]
+          "and": [
+            "ref:GB:inspire~*",
+            "id!~node/.*"
+          ]
         },
         "geoJsonZoomLevel": 16,
         "isOsmCache": false
@@ -311,13 +316,17 @@
           "freeform": {
             "key": "addr:unit"
           },
-          "mappings": [{
-            "if": "addr:unit=",
-            "then": "This address has no subparts. <div class='subtle'>Subparts are e.g. appartment numbers, extra letters or numbers if there are multiple letterboxes, ...</div>"
-          }
+          "mappings": [
+            {
+              "if": "addr:unit=",
+              "then": "This address has no subparts. <div class='subtle'>Subparts are e.g. appartment numbers, extra letters or numbers if there are multiple letterboxes, ...</div>"
+            }
           ],
           "condition": {
-            "or": ["addr:housenumber~*","addr:housename~*"]
+            "or": [
+              "addr:housenumber~*",
+              "addr:housename~*"
+            ]
           }
         },
         {
@@ -350,7 +359,6 @@
               "hideInAnswer": "_closest_street:2:name="
             }
           ]
-         
         },
         {
           "id": "uk_addresses_placename",
@@ -454,7 +462,7 @@
             ]
           },
           "width": {
-            "render": "8"
+            "render": "3"
           }
         }
       ]

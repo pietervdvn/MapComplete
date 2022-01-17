@@ -110,6 +110,15 @@ export default class MoreScreen extends Combine {
             ]), {url: linkText, newTab: false});
     }
 
+    private static CreateProffessionalSerivesButton() {
+        const t = Translations.t.professional.indexPage;
+        return new Combine([
+            new Title(t.hook, 4),
+            t.hookMore,
+            new SubtleButton(undefined, t.button, {url: "./professional.html"}),
+        ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
+    }
+
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
         return new VariableUiElement(state.installedThemes.map(customThemes => {
             if (customThemes.length <= 0) {
@@ -128,20 +137,20 @@ export default class MoreScreen extends Combine {
         const prefix = "mapcomplete-hidden-theme-"
         const hiddenThemes = themeOverview["default"].filter(layout => layout.hideFromOverview)
         const hiddenTotal = hiddenThemes.length
-        
+
         return new Toggle(
             new VariableUiElement(
                 state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
                     const knownThemes: Set<string> = new Set(Utils.NoNull(Object.keys(allPreferences)
                         .filter(key => key.startsWith(prefix))
                         .map(key => key.substring(prefix.length, key.length - "-enabled".length))));
-                    
-                    if(knownThemes.size === 0){
+
+                    if (knownThemes.size === 0) {
                         return undefined
                     }
-                    
-                     const knownThemeDescriptions = hiddenThemes.filter(theme => knownThemes.has(theme.id))
-                         .map(theme => MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass));
+
+                    const knownThemeDescriptions = hiddenThemes.filter(theme => knownThemes.has(theme.id))
+                        .map(theme => MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass));
 
                     const knownLayouts = new Combine(knownThemeDescriptions).SetClass(themeListStyle)
 
@@ -189,9 +198,10 @@ export default class MoreScreen extends Combine {
             }
             return button;
         })
-
-        let customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
-        buttons.splice(0, 0, customGeneratorLink);
+        
+        const professional = MoreScreen.CreateProffessionalSerivesButton();
+        const customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
+        buttons.splice(0, 0, customGeneratorLink, professional);
 
         return new Combine(buttons)
     }

@@ -333,6 +333,11 @@
   },
   "professional": {
     "backToMapcomplete": "Back to the theme overview",
+    "indexPage": {
+      "hook": "Need professional support?",
+      "hookMore": "We can help with setting up surveys, data imports and OpenStreetMap-consultancy",
+      "button": "Discover our services"
+    },
     "title": "Professional support with MapComplete",
     "intro": "The developer of MapComplete offers professional support. This document outlines some of the possibilities, common questions and the boundaries of MapComplete",
     "osmTitle": "What can OpenStreetMap and MapComplete do for your organisation?",
