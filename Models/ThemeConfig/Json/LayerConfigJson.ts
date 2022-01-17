@@ -140,9 +140,9 @@ export interface LayerConfigJson {
      * Small icons shown next to the title.
      * If not specified, the OsmLink and wikipedia links will be used by default.
      * Use an empty array to hide them.
-     * Note that "defaults" will insert all the default titleIcons
+     * Note that "defaults" will insert all the default titleIcons (which are added automatically)
      */
-    titleIcons?: (string | TagRenderingConfigJson)[];
+    titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"];
 
 
     mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson)[]

@@ -23,8 +23,8 @@ export default class EditableTagRendering extends Toggle {
     ) {
 
         // The tagrendering is hidden if:
-        // The answer is unknown. The questionbox will then show the question
-        // There is a condition hiding the answer
+        // - The answer is unknown. The questionbox will then show the question
+        // - There is a condition hiding the answer
         const renderingIsShown = tags.map(tags =>
             configuration.IsKnown(tags) &&
             (configuration?.condition?.matchesProperties(tags) ?? true))

@@ -89,6 +89,10 @@ export default class OsmFeatureSource {
         if (z > 20) {
             throw "This is an absurd high zoom level"
         }
+        
+        if( z < 14){
+            throw `Zoom ${z} is too much for OSM to handle! Use a higher zoom level!`
+        }
 
         const bbox = BBox.fromTile(z, x, y)
         const url = `${this._backend}/api/0.6/map?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`

@@ -269,6 +269,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     v = "" + v
                 }
                 v = v.replace(/\n/g, "<br/>")
+            }else{
+                // v === undefined 
+                v = ""
             }
             txt = txt.replace("{" + key + "}", v)
             match = txt.match(regex)

@@ -189,15 +189,46 @@
       "description": "Alamat"
     },
     {
-      "builtin": "address",
-      "override": {
-        "calculatedTags": [
-          "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
-          "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
-          "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
-          "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
-        ]
+      "id": "address",
+      "name": {
+        "en": "Known addresses in OSM",
+        "de": "Bekannte Adressen in OSM",
+        "zh_Hant": "OSM 上已知的地址",
+        "hu": "Ismert címek az OSM-en",
+        "nl": "Bekende adressen in OSM"
       },
+      "minzoom": 18,
+      "source": {
+        "osmTags": {
+          "or": [
+            "addr:housenumber~*",
+            "addr:street~*",
+            "ref:inspireid~*"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Known address",
+          "de": "Bekannte Adresse",
+          "hu": "Ismert cím",
+          "nl": "Bekend adres"
+        }
+      },
+      "description": {
+        "en": "Addresses",
+        "nl": "Adressen",
+        "de": "Adressen",
+        "ru": "Адреса",
+        "zh_Hant": "地址",
+        "hu": "Címek"
+      },
+      "calculatedTags": [
+        "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
+        "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+        "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+        "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+      ],
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
@@ -266,6 +297,24 @@
           ]
         },
         {
+          "id": "uk_addresses_unit",
+          "render": "The sub-part of this address is {addr:unit}",
+          "question": {
+            "en": "What is the unit indication of this address? <div class='subtle'>This is the letter or number of the letterbox here, if multiple letterboxes share the same street and housenumber. If there are multiple at the same location, add them here with a <b>;</b> between them</div>"
+          },
+          "freeform": {
+            "key": "addr:unit"
+          },
+          "mappings": [{
+            "if": "addr:unit=",
+            "then": "This address has no subparts. <div class='subtle'>Subparts are e.g. appartment numbers, extra letters or numbers if there are multiple letterboxes, ...</div>"
+          }
+          ],
+          "condition": {
+            "or": ["addr:housenumber~*","addr:housename~*"]
+          }
+        },
+        {
           "id": "uk_addresses_street",
           "render": {
             "en": "This address is in street <b>{addr:street}</b>",
@@ -281,31 +330,27 @@
           "mappings": [
             {
               "if": "addr:street:={_closest_street:0:name}",
-              "then": "Located in <b>{_closest_street:0:name}</b>",
+              "then": "This address is in street <b>{_closest_street:0:name}</b>",
               "hideInAnswer": "_closest_street:0:name="
             },
             {
               "if": "addr:street:={_closest_street:1:name}",
-              "then": "Located in <b>{_closest_street:1:name}</b>",
+              "then": "This address is in street <b>{_closest_street:1:name}</b>",
               "hideInAnswer": "_closest_street:1:name="
             },
             {
               "if": "addr:street:={_closest_street:2:name}",
-              "then": "Located in <b>{_closest_street:2:name}</b>",
+              "then": "This address is in street <b>{_closest_street:2:name}</b>",
               "hideInAnswer": "_closest_street:2:name="
             }
-          ],
-          "condition": {
-            "and": [
-              "nohousenumber!~yes"
-            ]
-          }
+          ]
+         
         },
         {
           "id": "fixme",
-          "render": "<b>Fixme description</b>{fixme}",
+          "render": "<b>This address is complicated - therefore someone has given a description of what should be fixed:</b>{fixme}",
           "question": {
-            "en": "What should be fixed here? Please explain"
+            "en": "What should be fixed here? Please explain what the address is"
           },
           "freeform": {
             "key": "fixme"
@@ -313,7 +358,7 @@
           "mappings": [
             {
               "if": "fixme=",
-              "then": "No fixme - write something here to explain complicated cases"
+              "then": "Is this address very complicated? - write something here to explain complicated cases"
             }
           ]
         },
@@ -322,6 +367,62 @@
           "id": "address-sign-image",
           "render": {
             "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50,center",
+          "icon": {
+            "render": "./assets/layers/address/housenumber_blank.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "#ff0"
+              }
+            ]
+          },
+          "width": {
+            "render": "8"
           }
         }
       ]

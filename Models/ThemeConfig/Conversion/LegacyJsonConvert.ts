@@ -8,6 +8,7 @@ import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Constants from "../../Constants";
+import {AllKnownLayouts} from "../../../Customizations/AllKnownLayouts";
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
@@ -15,17 +16,12 @@ export interface DesugaringContext {
 }
 
 export abstract class Conversion<TIn, TOut> {
-    protected readonly doc: string;
     public readonly modifiedAttributes: string[];
+    protected readonly doc: string;
 
     constructor(doc: string, modifiedAttributes: string[] = []) {
         this.modifiedAttributes = modifiedAttributes;
         this.doc = doc + "\n\nModified attributes are\n" + modifiedAttributes.join(", ");
-    }
-
-    public convertStrict(state: DesugaringContext, json: TIn, context: string): TOut {
-        const fixed = this.convert(state, json, context)
-        return DesugaringStep.strict(fixed)
     }
 
     public static strict<T>(fixed: { errors: string[], warnings: string[], result?: T }): T {
@@ -34,6 +30,11 @@ export abstract class Conversion<TIn, TOut> {
         }
         fixed.warnings?.forEach(w => console.warn(w))
         return fixed.result;
+    }
+
+    public convertStrict(state: DesugaringContext, json: TIn, context: string): TOut {
+        const fixed = this.convert(state, json, context)
+        return DesugaringStep.strict(fixed)
     }
 
     abstract convert(state: DesugaringContext, json: TIn, context: string): { result: TOut, errors: string[], warnings: string[] }
@@ -133,9 +134,9 @@ class Fuse<T> extends DesugaringStep<T> {
     convert(state: DesugaringContext, json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
-        for (let i = 0; i < this.steps.length; i++){
+        for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
-            let r = step.convert(state, json, context + "(fusion "+this.constructor.name+"."+i+")")
+            let r = step.convert(state, json, context + "(fusion " + this.constructor.name + "." + i + ")")
             errors.push(...r.errors)
             warnings.push(...r.warnings)
             json = r.result
@@ -155,6 +156,16 @@ class Fuse<T> extends DesugaringStep<T> {
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     constructor() {
         super("Converts a tagRenderingSpec into the full tagRendering", []);
+    }
+
+    convert(state: DesugaringContext, json: string | TagRenderingConfigJson | { builtin: string | string[]; override: any }, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
+        const errors = []
+        const warnings = []
+
+        return {
+            result: this.convertUntilStable(state, json, warnings, errors, context),
+            errors, warnings
+        };
     }
 
     private lookup(state: DesugaringContext, name: string): TagRenderingConfigJson[] {
@@ -223,6 +234,14 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
             if (typeof names === "string") {
                 names = [names]
             }
+
+            for (const key of Object.keys(tr)) {
+                if (key === "builtin" || key === "override" || key === "id") {
+                    continue
+                }
+                errors.push("At " + ctx + ": an object calling a builtin can only have keys `builtin` or `override`, but a key with name `" + key + "` was found. This won't be picked up! The full object is: " + JSON.stringify(tr))
+            }
+
             const trs: TagRenderingConfigJson[] = []
             for (const name of names) {
                 const lookup = this.lookup(state, name)
@@ -230,10 +249,10 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
                     errors.push(ctx + ": The tagRendering with identifier " + name + " was not found.\n\tDid you mean one of " + Array.from(state.tagRenderings.keys()).join(", ") + "?")
                     continue
                 }
-                for (let tr of lookup) {
-                    tr = Utils.Clone<any>(tr)
-                    Utils.Merge(tr["override"] ?? {}, tr)
-                    trs.push(tr)
+                for (let foundTr of lookup) {
+                    foundTr = Utils.Clone<any>(foundTr)
+                    Utils.Merge(tr["override"] ?? {}, foundTr)
+                    trs.push(foundTr)
                 }
             }
             return trs;
@@ -257,17 +276,6 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
 
         return result;
     }
-
-
-    convert(state: DesugaringContext, json: string | TagRenderingConfigJson | { builtin: string | string[]; override: any }, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
-        const errors = []
-        const warnings = []
-
-        return {
-            result: this.convertUntilStable(state, json, warnings, errors, context),
-            errors, warnings
-        };
-    }
 }
 
 class ExpandGroupRewrite extends Conversion<{
@@ -285,31 +293,6 @@ class ExpandGroupRewrite extends Conversion<{
         super(
             "Converts a rewrite config for tagRenderings into the expanded form"
         );
-    }
-
-    /* Used for left|right group creation and replacement */
-    private prepConfig(keyToRewrite: string, target: string, tr: TagRenderingConfigJson) {
-
-        function replaceRecursive(transl: string | any) {
-            if (typeof transl === "string") {
-                return transl.replace(keyToRewrite, target)
-            }
-            if (transl.map !== undefined) {
-                return transl.map(o => replaceRecursive(o))
-            }
-            transl = {...transl}
-            for (const key in transl) {
-                transl[key] = replaceRecursive(transl[key])
-            }
-            return transl
-        }
-
-        const orig = tr;
-        tr = replaceRecursive(tr)
-
-        tr.id = target + "-" + orig.id
-        tr.group = target
-        return tr
     }
 
     convert(state: DesugaringContext, json:
@@ -344,14 +327,14 @@ class ExpandGroupRewrite extends Conversion<{
                 const trs: TagRenderingConfigJson[] = []
 
                 for (const tr of subRenderings) {
-                   trs.push( this.prepConfig(source, target, tr))
+                    trs.push(this.prepConfig(source, target, tr))
                 }
-                if(rewrittenPerGroup.has(groupName)){
+                if (rewrittenPerGroup.has(groupName)) {
                     rewrittenPerGroup.get(groupName).push(...trs)
 
-                }else{
-                rewrittenPerGroup.set(groupName, trs)
-                    
+                } else {
+                    rewrittenPerGroup.set(groupName, trs)
+
                 }
             }
         }
@@ -365,9 +348,9 @@ class ExpandGroupRewrite extends Conversion<{
         })
 
 
-        rewrittenPerGroup.forEach((group, groupName) => {
+        rewrittenPerGroup.forEach((group, _) => {
             group.forEach(tr => {
-                if(tr.id === undefined || tr.id === ""){
+                if (tr.id === undefined || tr.id === "") {
                     errors.push("A tagrendering has an empty ID after expanding the tag")
                 }
             })
@@ -377,6 +360,31 @@ class ExpandGroupRewrite extends Conversion<{
             result: [].concat(...Array.from(rewrittenPerGroup.values())),
             errors, warnings
         };
+    }
+
+    /* Used for left|right group creation and replacement */
+    private prepConfig(keyToRewrite: string, target: string, tr: TagRenderingConfigJson) {
+
+        function replaceRecursive(transl: string | any) {
+            if (typeof transl === "string") {
+                return transl.replace(keyToRewrite, target)
+            }
+            if (transl.map !== undefined) {
+                return transl.map(o => replaceRecursive(o))
+            }
+            transl = {...transl}
+            for (const key in transl) {
+                transl[key] = replaceRecursive(transl[key])
+            }
+            return transl
+        }
+
+        const orig = tr;
+        tr = replaceRecursive(tr)
+
+        tr.id = target + "-" + orig.id
+        tr.group = target
+        return tr
     }
 }
 
@@ -406,10 +414,10 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         }
 
         if (config.tagRenderings !== undefined) {
-            let i =0;
+            let i = 0;
             for (const tagRendering of config.tagRenderings) {
                 i++;
-                if(typeof tagRendering === "string" || tagRendering["builtin"] !== undefined){
+                if (typeof tagRendering === "string" || tagRendering["builtin"] !== undefined) {
                     continue
                 }
                 if (tagRendering["id"] === undefined) {
@@ -419,8 +427,8 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
                         delete tagRendering["#"]
                     } else if (tagRendering["freeform"]?.key !== undefined) {
                         tagRendering["id"] = config.id + "-" + tagRendering["freeform"]["key"]
-                    }else{
-                        tagRendering["id"] = "tr-"+i
+                    } else {
+                        tagRendering["id"] = "tr-" + i
                     }
                 }
             }
@@ -618,12 +626,12 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
 
 
-            if (this._isBuiltin ) {
+            if (this._isBuiltin) {
                 if (json.tagRenderings?.some(tr => tr["id"] === "")) {
-                    const emptyIndexes : number[] = []
-                    for (let i = 0; i < json.tagRenderings.length; i++){
+                    const emptyIndexes: number[] = []
+                    for (let i = 0; i < json.tagRenderings.length; i++) {
                         const tagRendering = json.tagRenderings[i];
-                        if(tagRendering["id"] === ""){
+                        if (tagRendering["id"] === "") {
                             emptyIndexes.push(i)
                         }
                     }
@@ -634,19 +642,20 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (duplicateIds.length > 0 && !Utils.runningFromConsole) {
                     errors.push(`Some tagRenderings have a duplicate id: ${duplicateIds} (at ${context}.tagRenderings)`)
                 }
-                
-                
-                if(json.description === undefined){
-                    
-                if (Constants.priviliged_layers.indexOf(json.id) >= 0) {
-                    errors.push(
-                        context + ": A priviliged layer must have a description"
-                    )
-                } else {
-                    warnings.push(
-                        context + ": A builtin layer should have a description"
-                    )
-                }}
+
+
+                if (json.description === undefined) {
+
+                    if (Constants.priviliged_layers.indexOf(json.id) >= 0) {
+                        errors.push(
+                            context + ": A priviliged layer must have a description"
+                        )
+                    } else {
+                        warnings.push(
+                            context + ": A builtin layer should have a description"
+                        )
+                    }
+                }
             }
         } catch (e) {
             errors.push(e)
@@ -774,7 +783,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     private static CalculateDependencies(alreadyLoaded: LayerConfigJson[], allKnownLayers: Map<string, LayerConfigJson>, themeId: string): LayerConfigJson[] {
         const dependenciesToAdd: LayerConfigJson[] = []
         const loadedLayerIds: Set<string> = new Set<string>(alreadyLoaded.map(l => l.id));
-        
+
         // Verify cross-dependencies
         let unmetDependencies: { neededLayer: string, neededBy: string, reason: string, context?: string }[] = []
         do {
@@ -789,7 +798,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             // Their existance is checked elsewhere, so this is fine
             unmetDependencies = dependencies.filter(dep => !loadedLayerIds.has(dep.neededLayer))
             for (const unmetDependency of unmetDependencies) {
-                if(loadedLayerIds.has(unmetDependency.neededLayer)){
+                if (loadedLayerIds.has(unmetDependency.neededLayer)) {
                     continue
                 }
                 const dep = allKnownLayers.get(unmetDependency.neededLayer)
@@ -825,9 +834,9 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         })
 
         const dependencies = AddDependencyLayersToTheme.CalculateDependencies(layers, allKnownLayers, theme.id);
-        if(dependencies.length > 0){
-            
-            warnings.push(context+": added "+dependencies.map(d => d.id).join(", ")+" to the theme as they are needed")
+        if (dependencies.length > 0) {
+
+            warnings.push(context + ": added " + dependencies.map(d => d.id).join(", ") + " to the theme as they are needed")
         }
         layers.unshift(...dependencies);
 
@@ -842,12 +851,36 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
+class SetDefault extends DesugaringStep<LayerConfigJson> {
+    private readonly value: object;
+    private readonly key: string;
+
+    constructor(key: string, value: object) {
+        super("Sets " + key + " to a default value if undefined");
+        this.key = key;
+        this.value = value;
+    }
+
+    convert(state: DesugaringContext, json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
+        if (json[this.key] === undefined) {
+            json = {...json}
+            json[this.key] = this.value
+        }
+
+        return {
+            errors: [], warnings: [],
+            result: json
+        };
+    }
+}
+
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor() {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",
             new OnEveryConcat("tagRenderings", new ExpandGroupRewrite()),
             new OnEveryConcat("tagRenderings", new ExpandTagRendering()),
+            new SetDefault("titleIcons", ["defaults"]),
             new OnEveryConcat("titleIcons", new ExpandTagRendering())
         );
     }
@@ -888,8 +921,15 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                     errors.push(context + ": The layer with name " + json + " was not found as a builtin layer")
                     continue
                 }
-                Utils.Merge(json["override"], found);
-                layers.push(found)
+                if (json["override"]["tagRenderings"] !== undefined && (found["tagRenderings"] ?? []).length > 0) {
+                    errors.push(`At ${context}: when overriding a layer, an override is not allowed to override into tagRenderings. Use "+tagRenderings" or "tagRenderings+" instead to prepend or append some questions.`)
+                }
+                try {
+                    Utils.Merge(json["override"], found);
+                    layers.push(found)
+                } catch (e) {
+                    errors.push(`At ${context}: could not apply an override due to: ${e}.\nThe override is: ${JSON.stringify(json["override"],)}`)
+                }
             }
             return {
                 result: layers,
@@ -906,19 +946,25 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
 
 }
 
-class AddDefaultLayers extends  DesugaringStep<LayoutConfigJson>{
-    
+class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
+
     constructor() {
-        super("Adds the default layers, namely: "+Constants.added_by_default.join(", "),["layers"]);
+        super("Adds the default layers, namely: " + Constants.added_by_default.join(", "), ["layers"]);
     }
-    
+
     convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const errors = []
         json.layers = [...json.layers]
+
+        if (json.id === "personal") {
+            const publicIds = AllKnownLayouts.AllPublicLayers().map(l => l.id)
+            json.layers = publicIds.map(id => state.sharedLayers.get(id))
+        }
+
         for (const layerName of Constants.added_by_default) {
             const v = state.sharedLayers.get(layerName)
-            if(v === undefined){
-                errors.push("Default layer "+layerName+" not found")
+            if (v === undefined) {
+                errors.push("Default layer " + layerName + " not found")
             }
             json.layers.push(v)
         }
@@ -928,7 +974,7 @@ class AddDefaultLayers extends  DesugaringStep<LayoutConfigJson>{
             warnings: []
         };
     }
-    
+
 }
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
@@ -939,7 +985,6 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new AddDefaultLayers(),
             new AddDependencyLayersToTheme(),
             new OnEvery("layers", new PrepareLayer()),
-
         );
     }
 }

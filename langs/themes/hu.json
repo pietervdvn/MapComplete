@@ -8,5 +8,16 @@
     },
     "ghostbikes": {
         "title": "Emlékkerékpárok"
+    },
+    "uk_addresses": {
+        "layers": {
+            "2": {
+                "description": "Címek",
+                "name": "Ismert címek az OSM-en",
+                "title": {
+                    "render": "Ismert cím"
+                }
+            }
+        }
     }
 }

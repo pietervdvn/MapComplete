@@ -43,7 +43,6 @@
   "startZoom": 1,
   "widenFactor": 1,
   "layers": [
-    "public_bookcase",
-    "note_import"
+    "public_bookcase"
   ]
 }

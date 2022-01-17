@@ -148,11 +148,12 @@ export default class ShowDataLayer {
         const mp = options.leafletMap.data;
 
         if(mp === null){
-            return true; // Unregister as the map is destroyed
+            return true; // Unregister as the map has been destroyed
         }
         if (mp === undefined) {
             return;
         }
+       
         this._cleanCount++
         // clean all the old stuff away, if any
         if (this.geoLayer !== undefined) {

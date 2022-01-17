@@ -67,6 +67,10 @@ export default class LayerConfig extends WithContextLoader {
         context = context + "." + json.id;
         super(json, context)
         this.id = json.id;
+        
+        if(json.id === undefined){
+            throw "Not a valid layer: id is undefined: "+JSON.stringify(json)
+        }
 
         if (json.source === undefined) {
             throw "Layer " + this.id + " does not define a source section (" + context + ")"

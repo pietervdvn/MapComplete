@@ -68,10 +68,11 @@ export default class QuestionBox extends VariableUiElement {
                 if (tagRendering.IsKnown(tags)) {
                     continue;
                 }
-                if (tagRendering.condition &&
-                    !tagRendering.condition.matchesProperties(tags)) {
-                    // Filtered away by the condition, so it is kindof known
-                    continue;
+                if (tagRendering.condition) {
+                    if (!tagRendering.condition.matchesProperties(tags)) {
+                        // Filtered away by the condition, so it is kindof known
+                        continue;
+                    }
                 }
 
                 // this value is NOT known - this is the question we have to show!
@@ -79,7 +80,7 @@ export default class QuestionBox extends VariableUiElement {
             }
             return undefined; // The questions are depleted
         }, [skippedQuestions]);
-        
+
         const questionsToAsk: UIEventSource<BaseUIElement[]> = tagsSource.map(tags => {
             if (tags === undefined) {
                 return [];

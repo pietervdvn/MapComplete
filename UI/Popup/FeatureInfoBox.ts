@@ -216,7 +216,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     /**
      * Returns true if this tag rendering has a minimap in some language.
-     * Note: this might be hidden by conditions
+     * Note: this minimap can be hidden by conditions
      */
     private static hasMinimap(renderingConfig: TagRenderingConfig): boolean {
         const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);

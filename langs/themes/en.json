@@ -967,6 +967,9 @@
                     "contributor": {
                         "render": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
                     },
+                    "render_id": {
+                        "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
                     "theme": {
                         "mappings": {
                             "0": {
@@ -1289,12 +1292,14 @@
                 }
             },
             "2": {
+                "description": "Addresses",
+                "name": "Known addresses in OSM",
                 "tagRenderings": {
                     "address-sign-image": {
                         "render": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
                     },
                     "fixme": {
-                        "question": "What should be fixed here? Please explain"
+                        "question": "What should be fixed here? Please explain what the address is"
                     },
                     "uk_addresses_explanation_osm": {
                         "render": "This address is saved in OpenStreetMap"
@@ -1312,6 +1317,9 @@
                         "question": "What street is this address located in?",
                         "render": "This address is in street <b>{addr:street}</b>"
                     }
+                },
+                "title": {
+                    "render": "Known address"
                 }
             }
         },

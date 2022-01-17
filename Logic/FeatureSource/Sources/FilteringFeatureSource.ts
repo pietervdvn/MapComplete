@@ -1,7 +1,6 @@
 import {UIEventSource} from "../../UIEventSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
-import Hash from "../../Web/Hash";
 import {BBox} from "../../BBox";
 import {ElementStorage} from "../../ElementStorage";
 import {TagsFilter} from "../../Tags/TagsFilter";
@@ -20,7 +19,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     };
     private readonly _alreadyRegistered = new Set<UIEventSource<any>>();
     private readonly _is_dirty = new UIEventSource(false)
-
+    private previousFeatureSet : Set<any> = undefined;
+    
     constructor(
         state: {
             locationControl: UIEventSource<{ zoom: number }>,
@@ -65,17 +65,11 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     private update() {
         const self = this;
         const layer = this.upstream.layer;
-        const features: { feature: any; freshness: Date }[] = this.upstream.features.data;
+        const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);
+        const includedFeatureIds  = new Set<string>(); 
         const newFeatures = features.filter((f) => {
 
             self.registerCallback(f.feature)
-
-            if (
-                (this.state.selectedElement !== undefined && this.state.selectedElement.data?.id === f.feature.properties.id) ||
-                (Hash.hash.data !== undefined && f.feature.properties.id === Hash.hash.data)) {
-                // This is the selected object - it gets a free pass even if zoom is not sufficient or it is filtered away
-                return true;
-            }
 
             const isShown = layer.layerDef.isShown;
             const tags = f.feature.properties;
@@ -97,12 +91,30 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 }
             }
 
-
+            includedFeatureIds.add(f.feature.properties.id)
             return true;
         });
 
-        this.features.setData(newFeatures);
+        const previousSet = this.previousFeatureSet;
         this._is_dirty.setData(false)
+        
+        // Is there any difference between the two sets?
+        if(previousSet !== undefined && previousSet.size === includedFeatureIds.size){
+            // The size of the sets is the same - they _might_ be identical
+            const newItemFound = Array.from(includedFeatureIds).some(id => !previousSet.has(id))
+            if(!newItemFound){
+                // We know that: 
+                // - The sets have the same size
+                // - Every item from the new set has been found in the old set
+                // which means they are identical!
+                return;
+            }
+            
+        }
+        
+        // Something new has been found!
+        this.features.setData(newFeatures);
+     
     }
 
     private registerCallback(feature: any) {
@@ -115,10 +127,11 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         }
         this._alreadyRegistered.add(src)
 
-            const self = this;
-            src.addCallbackAndRunD(_ => {
-                self._is_dirty.setData(true)
-            })
+        const self = this;
+        // Add a callback as a changed tag migh change the filter
+        src.addCallbackAndRunD(_ => {
+            self._is_dirty.setData(true)
+        })
     }
 
 }

@@ -1060,6 +1060,8 @@
         "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
         "layers": {
             "2": {
+                "description": "Adressen",
+                "name": "Bekende adressen in OSM",
                 "tagRenderings": {
                     "uk_addresses_housenumber": {
                         "mappings": {
@@ -1069,6 +1071,9 @@
                         },
                         "render": "Het huisnummer is <b>{addr:housenumber}</b>"
                     }
+                },
+                "title": {
+                    "render": "Bekend adres"
                 }
             }
         }
