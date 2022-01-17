@@ -31,7 +31,7 @@
         "featuredThemeTitle": "Thème de la semaine"
     },
     "general": {
-        "loginWithOpenStreetMap": "Se connecter avec OpenStreeMap",
+        "loginWithOpenStreetMap": "Se connecter avec OpenStreetMap",
         "welcomeBack": "Vous êtes connecté. Bienvenue !",
         "loginToStart": "Connectez-vous pour répondre à cette question",
         "search": {
@@ -58,7 +58,14 @@
             "confirmIntro": "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que ce point existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "openLayerControl": "Ouvrir la panneau de contrôle",
-            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point"
+            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
+            "disableFiltersExplanation": "Certains élément peuvent être filtrés",
+            "disableFilters": "Désactiver tous les filtres",
+            "presetInfo": "Le nouveau POI aura {tags}",
+            "addNewMapLabel": "Cliquez ici pour ajouter un élément",
+            "hasBeenImported": "Ce point a déjà été importé",
+            "warnVisibleForEveryone": "Votre ajout sera visible",
+            "zoomInMore": "Zoomez pour importer cet élément"
         },
         "pickLanguage": "Choisir la langue : ",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
@@ -72,7 +79,7 @@
             "emailOf": "Quelle est l'adresse électronique de {category} ?",
             "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>"
         },
-        "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Ne serait-il pas génial d'avoir sur une carte que tout le monde pourrait éditer ouvertement ? Une seule et unique plateforme regroupant toutes les informations géographiques ? Ainsi nous n'aurons plus besoin de toutes ces cartes petites et incompatibles (souvent non mises à jour).</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> est la carte qu'il vous faut ! Toutes les données de cette carte peuvent être utilisé gratuitement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> d'attribution et de publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et de corriger les erreurs. Ce site internet utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple-maps et Bing-maps sont (en partie) supportés par OpenStreetMap. Si vous modifiez quelque chose ici, ces changements seront incorporés dans ces applications dès leurs mises à jour !</p>",
+        "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Utilisable et éditable librement. Une seule et unique plateforme regroupant toutes les informations géographiques ? Toutes ces différentes cartes isolées, incompatibles et obsolètes ne sont plus utiles.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> n’est pas un énième concurrent. Toutes les données de cette carte peuvent être utilisé librement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> attribution et publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et corriger les erreurs. Ce site utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple Maps et Bing Maps sont (en partie) alimentées par OpenStreetMap</p>",
         "attribution": {
             "attributionTitle": "Crédits",
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
@@ -86,8 +93,8 @@
         },
         "sharescreen": {
             "intro": "<h3>Partager cette carte</h3> Partagez cette carte en copiant le lien suivant et envoyez-le à vos amis :",
-            "addToHomeScreen": "<h3>Ajouter à votre page d'accueil</h3> Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le boutton 'ajouter à l'ecran d'accueil' dans la barre d'adresse pour éffectuer cette tâche.",
-            "embedIntro": "<h3>Incorporer à votre site Web</h3>Ajouter la carte à votre site Web. <br>Nous vous y encourageons – pas besoin de permission.<br> C'est gratuit et pour toujours. Plus des personnes l'utilisent, mieux c'est.",
+            "addToHomeScreen": "<h3>Ajouter à votre page d'accueil</h3>Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le bouton 'ajouter à l'écran d'accueil' dans la barre d'adresse pour effectuer cette tâche.",
+            "embedIntro": "<h3>Incorporer à votre site Web</h3>Ajouter la carte à votre site Web. <br>Nous vous y encourageons – pas besoin de permission.<br> C'est gratuit et pour toujours. Plus de personnes l'utilisent, mieux c'est.",
             "copiedToClipboard": "Lien copié dans le presse-papier",
             "thanksForSharing": "Merci d'avoir partagé !",
             "editThisTheme": "Editer ce thème",
@@ -105,9 +112,11 @@
         },
         "morescreen": {
             "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
-            "requestATheme": "Si vous voulez une autre carte thématique, demandez-la dans le suivi des problèmes",
+            "requestATheme": "Si vous souhaitez une autre carte thématique, demandez-la dans le suivi des problèmes",
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
-            "createYourOwnTheme": "Créez votre propre MapComplete carte"
+            "createYourOwnTheme": "Créez votre propre MapComplete carte",
+            "previouslyHiddenTitle": "Thèmes précédemment utilisés",
+            "hiddenExplanation": "Ces thèmes sont seulement accessibles par lien. Vous avez découvert {hidden_discovered} des {total_hidden} thèmes cachés."
         },
         "readYourMessages": "Merci de lire tous vos messages sur OpenStreetMap avant d'ajouter un nouveau point.",
         "fewChangesBefore": "Merci de répondre à quelques questions à propos de points déjà existants avant d'ajouter de nouveaux points.",
@@ -142,17 +151,54 @@
         },
         "opening_hours": {
             "error_loading": "Erreur : impossible de visualiser ces horaires d'ouverture.",
-            "open_during_ph": "Pendant les congés, ce lieu est",
+            "open_during_ph": "Pendant les congés, cet élément est",
             "opensAt": "à partir de",
             "openTill": "jusqu'à",
-            "not_all_rules_parsed": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les heures suivantes ont été ignorées :",
+            "not_all_rules_parsed": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les informations suivantes ont été ignorées :",
             "closed_until": "Fermé jusqu'au {date}",
             "closed_permanently": "Fermé",
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",
             "ph_open": "ouvert",
-            "ph_not_known": " "
-        }
+            "ph_not_known": " ",
+            "ph_open_as_usual": "Ouverture habituelle",
+            "loadingCountry": "Localisation…"
+        },
+        "pdf": {
+            "attr": "Données par © les contributeurs &amp; contributrices OpenStreetMap sous licence libre ODbL",
+            "attrBackground": "Couche d’arrière plan : {background}",
+            "versionInfo": "v{version} - générée le {date}",
+            "generatedWith": "Généré à l’aide de MapComplete.osm.be"
+        },
+        "download": {
+            "downloadGeoJsonHelper": "Compatible avec QGIS, ArcGIS, ESRI,…",
+            "downloadCSV": "Télécharger les données visibles au format CSV",
+            "includeMetaData": "Inclure les métadonnées (dernière édition, valeur calculées,…)",
+            "downloadAsPdfHelper": "Idéal pour imprimer une carte",
+            "noDataLoaded": "Pas de données chargées. Le téléchargement sera bientôt disponible",
+            "title": "Télécharger les données visibles",
+            "downloadAsPdf": "Télécharger un PDF de la vue actuelle",
+            "downloadGeojson": "Télécharger les données visibles au format GeoJSON",
+            "downloadCSVHelper": "Compatible avec LibreOffice Calc, Excel,…",
+            "licenseInfo": "<h3>Mentions légales</h3>Ces données sont fournis sous licence ODbL. Leur réutilisation est gratuite, mais <ul><li>l’attribution<b> aux © contributeurs et contributrices OpenStreetMap </b> est nécessaire</li><li>Toute modification doit utiliser la même licence</li></ul> Se reporter à la <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">version complète</a> pour plus de détails.",
+            "exporting": "Exportation…"
+        },
+        "wikipedia": {
+            "createNewWikidata": "Créer un nouvel élément Wikidata",
+            "wikipediaboxTitle": "Wikipédia",
+            "loading": "Chargement de Wikipédia…",
+            "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
+            "noResults": "Pas de résultats pour",
+            "searchWikidata": "Rechercher sur Wikidata",
+            "failed": "Le chargement de Wikipédia a échoué"
+        },
+        "histogram": {
+            "error_loading": "Erreur de chargement de l’histograme"
+        },
+        "testing": "Test - les changements ne seront pas sauvegardés",
+        "openTheMap": "Ouvrir la carte",
+        "loginOnlyNeededToEdit": "si vous souhaitez modifier la carte",
+        "loading": "Chargement…"
     },
     "favourite": {
         "panelIntro": "<h3>Votre thème personnel</h3>Activer vos couches favorites depuis les thèmes officiels",
@@ -195,6 +241,47 @@
         "onlyEditedByLoggedInUser": "Ce point a été édité seulement par vous et peut donc être supprimé.",
         "cannotBeDeleted": "Cet objet ne peut être supprimé",
         "partOfOthers": "Ce point faire partie d'un autre objet et ne peut être supprimé directement.",
-        "whyDelete": "Pourquoi ce point devrait-il être supprimé ?"
+        "whyDelete": "Pourquoi ce point devrait-il être supprimé ?",
+        "explanations": {
+            "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
+            "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
+            "softDelete": "Cet élément sera mis à jour et caché de l’application."
+        },
+        "reasons": {
+            "test": "Élément de test qui n’a jamais été ici",
+            "disused": "Cet élément n’est plus utilisé ou a été enlevé",
+            "notFound": "Cet élément n’a pas pu être trouvé",
+            "duplicate": "Ce point est un doublon"
+        },
+        "loading": "Inspection des propriétés pour vérifier si l’élément peut être supprimé.",
+        "readMessages": "Messages non-lus à lire avant de supprimer un point, certains pourraient comporter des informations importantes"
+    },
+    "move": {
+        "selectReason": "Pourquoi souhaitez vous déplacer cet objet ?",
+        "whyMove": "Pourquoi souhaitez vous déplacer ce point ?",
+        "reasons": {
+            "reasonRelocation": "Cet objet a été déplacé",
+            "reasonInaccurate": "La position de cet objet est décalée"
+        },
+        "cancel": "Annuler le déplacement",
+        "confirmMove": "Déplacer ici",
+        "pointIsMoved": "Le point a été déplacé",
+        "zoomInFurther": "Zoomez pour confirmer ce déplacement",
+        "cannotBeMoved": "Cet élément ne peut être déplacé.",
+        "isWay": "Cet élément est un chemin. Veuillez utiliser un autre éditeur OpenStreetMap pour le déplacer.",
+        "inviteToMoveAgain": "Déplacer ce point à nouveau",
+        "isRelation": "Cet élément est une relation et ne peut être déplacée",
+        "partOfAWay": "Cet élément fait partie d’un chemin. Utilisez un autre éditeur pour le déplacer.",
+        "partOfRelation": "Cet élément fait partie d’une relation. Utilisez un autre éditeur pour le déplacer.",
+        "moveTitle": "Déplacer ce point",
+        "inviteToMove": {
+            "reasonInaccurate": "Améliorer la précision de ce point",
+            "reasonRelocation": "Cet objet a été déplacé",
+            "generic": "Déplacer ce point"
+        },
+        "loginToMove": "Vous devez être connecté·e pour déplacer un point"
+    },
+    "multi_apply": {
+        "autoApply": "En changeant les attributs {attr_names}, ceux-ci seront automatiquement changés sur {count} autres éléments"
     }
 }
