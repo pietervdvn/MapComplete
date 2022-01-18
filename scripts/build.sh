@@ -15,7 +15,7 @@ npm run test &&
 npm run generate:layouts
 
 if [ $? -ne 0 ]; then
-    echo "ERROR"
+    echo "ERROR - stopping the build"
     exit 1
 fi
 
@@ -23,6 +23,8 @@ fi
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
+cp assets/*.png dist/assets/
+cp assets/*.svg dist/assets/
 
 SRC_MAPS="--no-source-maps"
 BRANCH=`git rev-parse --abbrev-ref HEAD`

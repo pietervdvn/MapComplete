@@ -9,6 +9,7 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Constants from "../../Constants";
 import {AllKnownLayouts} from "../../../Customizations/AllKnownLayouts";
+import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
@@ -151,6 +152,52 @@ class Fuse<T> extends DesugaringStep<T> {
         };
     }
 
+}
+
+class AddMiniMap extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"]);
+    }
+
+    /**
+     * Returns true if this tag rendering has a minimap in some language.
+     * Note: this minimap can be hidden by conditions
+     */
+    private static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
+        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
+        for (const translation of translations) {
+            for (const key in translation.translations) {
+                if (!translation.translations.hasOwnProperty(key)) {
+                    continue
+                }
+                const template = translation.translations[key]
+                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
+                const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
+                if (hasMiniMap) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    convert(state: DesugaringContext, layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
+        
+
+
+        const hasMinimap = layerConfig.tagRenderings?.some(tr => AddMiniMap.hasMinimap(<TagRenderingConfigJson> tr)) ?? true
+        if (!hasMinimap) {
+            layerConfig = {...layerConfig}
+            layerConfig.tagRenderings = [...layerConfig.tagRenderings]
+            layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
+        }
+        
+        return {
+            errors:[],
+            warnings: [],
+            result: layerConfig
+        };
+    }
 }
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
@@ -1000,6 +1047,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new AddDefaultLayers(),
             new AddDependencyLayersToTheme(),
             new OnEvery("layers", new PrepareLayer()),
+            new OnEvery("layers", new AddMiniMap())
         );
     }
 }

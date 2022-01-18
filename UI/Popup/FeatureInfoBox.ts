@@ -13,9 +13,7 @@ import DeleteWizard from "./DeleteWizard";
 import SplitRoadWizard from "./SplitRoadWizard";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import {Translation} from "../i18n/Translation";
 import {Utils} from "../../Utils";
-import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
 import Toggle from "../Input/Toggle";
 
@@ -162,11 +160,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
 
-        const hasMinimap = layerConfig.tagRenderings.some(tr => FeatureInfoBox.hasMinimap(tr))
-        if (!hasMinimap) {
-            allRenderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap"), State.state))
-        }
-
         editElements.push(
             new VariableUiElement(
                 State.state.osmConnection.userDetails
@@ -214,27 +207,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         return new Combine(allRenderings).SetClass("block")
     }
 
-    /**
-     * Returns true if this tag rendering has a minimap in some language.
-     * Note: this minimap can be hidden by conditions
-     */
-    private static hasMinimap(renderingConfig: TagRenderingConfig): boolean {
-        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
-        for (const translation of translations) {
-            for (const key in translation.translations) {
-                if (!translation.translations.hasOwnProperty(key)) {
-                    continue
-                }
-                const template = translation.translations[key]
-                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
-                const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
-                if (hasMiniMap) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+
 
 
 }

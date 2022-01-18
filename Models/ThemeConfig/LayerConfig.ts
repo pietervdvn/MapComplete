@@ -235,13 +235,13 @@ export default class LayerConfig extends WithContextLoader {
             }
         }
 
-        const missingIds = json.tagRenderings?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["rewrite"] === undefined) ?? [];
+        const missingIds = Utils.NoNull(json.tagRenderings)?.filter(tr => typeof tr !== "string" && tr["builtin"] === undefined && tr["id"] === undefined && tr["rewrite"] === undefined) ?? [];
         if (missingIds?.length > 0 && official) {
             console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
             throw "Missing ids in tagrenderings"
         }
 
-        this.tagRenderings = (json.tagRenderings ?? []).map((tr, i) => new TagRenderingConfig(<TagRenderingConfigJson>tr, this.id + ".tagRenderings[" + i + "]"))
+        this.tagRenderings = (Utils.NoNull(json.tagRenderings) ?? []).map((tr, i) => new TagRenderingConfig(<TagRenderingConfigJson>tr, this.id + ".tagRenderings[" + i + "]"))
 
         this.filters = (json.filter ?? []).map((option, i) => {
             return new FilterConfig(option, `${context}.filter-[${i}]`)

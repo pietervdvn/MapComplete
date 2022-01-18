@@ -137,7 +137,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static NoNull<T>(array: T[]): T[] {
-        return array.filter(o => o !== undefined && o !== null)
+        return array?.filter(o => o !== undefined && o !== null)
     }
 
     public static Hist(array: string[]): Map<string, number> {
