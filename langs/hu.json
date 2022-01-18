@@ -2,7 +2,8 @@
     "general": {
         "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Egy olyan térkép, amelyet mindenki szabadon használhat és szerkeszthet. Egyetlen hely, ahol minden térinformatikai adatot tárolni lehet. Különböző, kicsi, nem kompatibilis és elavult térképekre sehol sincs szükség.</p><p>Az <b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> nem az ellenség térképe. A térképadatok (<a href=\"https://osm.org/copyright\" target=\"_blank\">a tulajdonlással és az adatokban bekövetkezett változások feltüntetésével</a>) szabadon felhasználhatók. Mindenki adhat hozzá új térképadatokat és javíthat hibákat. Ez a weboldal az OpenStreetMapet használja. Minden adat onnan származik, és az Te válaszaid és javításaid mindenhol fel lesznek használva.</p><p>Sok ember és alkalmazás már használja az OpenStreetMapet: például az <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a> vagy az <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de a Facebook, az Instagram, az Apple és a Bing (Microsoft) térképei is (részben) az OpenStreetMap adataira támaszkodnak.</p>",
         "questions": {
-            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "phoneNumberIs": "Ezen {category} telefonszáma <a target=\"_blank\">{phone}</a>"
         },
         "noNameCategory": "Név nélküli {category}",
         "nameInlineQuestion": "A(z) {category} neve: $$$",
