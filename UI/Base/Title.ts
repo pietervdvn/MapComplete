@@ -5,13 +5,13 @@ import {Utils} from "../../Utils";
 export default class Title extends BaseUIElement {
     public readonly title: BaseUIElement;
     public readonly level: number;
-    public readonly id : string
-    
-    private static readonly defaultClassesPerLevel = ["", "text-3xl font-bold","text-2xl font-bold","text-xl font-bold", "text-lg font-bold"]
+    public readonly id: string
+
+    private static readonly defaultClassesPerLevel = ["", "text-3xl font-bold", "text-2xl font-bold", "text-xl font-bold", "text-lg font-bold"]
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
-        if(embedded === undefined){
+        if (embedded === undefined) {
             throw "A title should have some content. Undefined is not allowed"
         }
         if (typeof embedded === "string") {
@@ -20,20 +20,20 @@ export default class Title extends BaseUIElement {
             this.title = embedded
         }
         this.level = level;
-        
-        let innerText : string = undefined;
-        if(typeof embedded === "string" ) {
+
+        let innerText: string = undefined;
+        if (typeof embedded === "string") {
             innerText = embedded
-        }else if(embedded instanceof FixedUiElement){
+        } else if (embedded instanceof FixedUiElement) {
             innerText = embedded.content
-        }else{
-            if(Utils.runningFromConsole){
-                console.log("Not constructing an anchor for title with embedded content of "+embedded)
-            }else{
+        } else {
+            if (Utils.runningFromConsole) {
+                console.log("Not constructing an anchor for title with embedded content of " + embedded)
+            } else {
                 innerText = embedded.ConstructElement()?.innerText
             }
         }
-        
+
         this.id = innerText?.replace(/ /g, '-')
             ?.replace(/[?#.;:/]/, "")
             ?.toLowerCase() ?? ""

@@ -3,7 +3,6 @@ import LayerConfig from "../LayerConfig";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Translations from "../../../UI/i18n/Translations";
 import {TagsFilter} from "../../../Logic/Tags/TagsFilter";
-import {Tag} from "../../../Logic/Tags/Tag";
 import {And} from "../../../Logic/Tags/And";
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfig, LayerConfigJson> {

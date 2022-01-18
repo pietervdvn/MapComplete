@@ -1,6 +1,3 @@
-import {control} from "leaflet";
-
-
 export interface TileRange {
     xstart: number,
     ystart: number,

@@ -5,13 +5,15 @@
     "nl": "Barrières",
     "de": "Hindernisse",
     "ru": "Препятствия",
-    "hu": "Akadályok"
+    "hu": "Akadályok",
+    "fr": "Barrières"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
     "nl": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
     "de": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
-    "hu": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok"
+    "hu": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
+    "fr": "Obstacles à vélo, tels que des potelets ou des barrières"
   },
   "source": {
     "osmTags": {
@@ -27,7 +29,8 @@
       "en": "Barrier",
       "nl": "Barrière",
       "de": "Hindernis",
-      "ru": "Препятствие"
+      "ru": "Препятствие",
+      "fr": "Barrière"
     },
     "mappings": [
       {
@@ -45,7 +48,8 @@
         "then": {
           "en": "Cycling Barrier",
           "nl": "Fietshekjes",
-          "de": "Barriere für Radfahrer"
+          "de": "Barriere für Radfahrer",
+          "fr": "Barrière cyclable"
         }
       }
     ]
@@ -67,7 +71,8 @@
         "en": "A bollard in the road",
         "nl": "Een paaltje in de weg",
         "de": "Ein Poller auf der Straße",
-        "hu": "Terelőoszlop az úton"
+        "hu": "Terelőoszlop az úton",
+        "fr": "Un potelet sur le chemin"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -82,7 +87,8 @@
         "en": "Cycle barrier",
         "nl": "Fietshekjes",
         "de": "Fahrradhindernis",
-        "hu": "Kerékpárakadály"
+        "hu": "Kerékpárakadály",
+        "fr": "Barrière cyclable"
       },
       "tags": [
         "barrier=cycle_barrier"
@@ -91,7 +97,8 @@
         "en": "Cycle barrier, slowing down cyclists",
         "nl": "Fietshekjes, voor het afremmen van fietsers",
         "de": "Fahrradhindernis, das Radfahrer abbremst",
-        "hu": "A kerékpáros sebességét csökkentő kerékpárakadály"
+        "hu": "A kerékpáros sebességét csökkentő kerékpárakadály",
+        "fr": "Barrières cyclables, ralentissant les cyclistes"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -223,7 +230,8 @@
         "en": "What kind of cycling barrier is this?",
         "nl": "Wat voor fietshekjes zijn dit?",
         "de": "Um welche Art Fahrradhindernis handelt es sich?",
-        "hu": "Milyen fajta kerékpárakadály ez?"
+        "hu": "Milyen fajta kerékpárakadály ez?",
+        "fr": "Quel est ce type de barrière cyclable ?"
       },
       "condition": "barrier=cycle_barrier",
       "mappings": [
@@ -233,7 +241,8 @@
             "en": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
             "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
             "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
-            "hu": "Egyszeres: csak két korlát, közöttük térköz <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+            "hu": "Egyszeres: csak két korlát, közöttük térköz <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
+            "fr": "Simple, deux barrières côte à côte <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
           }
         },
         {
@@ -242,7 +251,8 @@
             "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
             "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
             "de": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
-            "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
+            "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
+            "fr": "Double, deux barrières successives"
           }
         },
         {
@@ -251,7 +261,8 @@
             "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
             "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
             "de": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
-            "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+            "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
+            "fr": "Triple, trois barrières successives <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
           }
         },
         {
@@ -260,7 +271,8 @@
             "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
             "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
             "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-            "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+            "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
+            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
           }
         }
       ],
@@ -278,7 +290,8 @@
         "en": "How wide is the gap left over besides the barrier?",
         "nl": "Hoe breed is de ruimte naast de barrière?",
         "de": "Welche Durchfahrtsbreite hat das Hindernis?",
-        "hu": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?"
+        "hu": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?",
+        "fr": "Quelle est la largeur du passage ?"
       },
       "condition": {
         "and": [
@@ -301,13 +314,15 @@
         "en": "Space between barriers (along the length of the road): {width:separation} m",
         "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
         "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m",
-        "hu": "A korlátok közötti távolság (az út irányában): {width:separation} m"
+        "hu": "A korlátok közötti távolság (az út irányában): {width:separation} m",
+        "fr": "Espace entre deux barrières successives : {width:separation} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
         "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
         "de": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
-        "hu": "Mekkora távolság van a korlátok között (az út irányában)?"
+        "hu": "Mekkora távolság van a korlátok között (az út irányában)?",
+        "fr": "Combien d’espace sépare deux barrières successives ?"
       },
       "condition": {
         "or": [
@@ -359,13 +374,15 @@
       "render": {
         "en": "Overlap: {overlap} m",
         "de": "Überschneidung: {overlap} m",
-        "hu": "Átfedés: {overlap} m"
+        "hu": "Átfedés: {overlap} m",
+        "fr": "Chevauchement : {overlap} m"
       },
       "question": {
         "en": "How much overlap do the barriers have?",
         "nl": "Hoeveel overlappen de barrières?",
         "de": "Wie stark überschneiden sich die Barrieren?",
-        "hu": "Mekkora a korlátok átfedése?"
+        "hu": "Mekkora a korlátok átfedése?",
+        "fr": "Quel est le chevauchement des barrières ?"
       },
       "condition": {
         "or": [

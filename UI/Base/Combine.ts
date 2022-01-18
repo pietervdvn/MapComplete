@@ -18,7 +18,7 @@ export default class Combine extends BaseUIElement {
 
     AsMarkdown(): string {
         let sep = " ";
-        if(this.HasClass("flex-col")){
+        if (this.HasClass("flex-col")) {
             sep = "\n\n"
         }
         return this.uiElements.map(el => el.AsMarkdown()).join(sep);
@@ -56,11 +56,10 @@ export default class Combine extends BaseUIElement {
 
         return el;
     }
-    
-    public getElements():  BaseUIElement[]{
+
+    public getElements(): BaseUIElement[] {
         return this.uiElements
     }
-    
 
 
 }

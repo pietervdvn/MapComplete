@@ -3,12 +3,14 @@
   "name": {
     "en": "Crossings",
     "nl": "Oversteekplaatsen",
-    "de": "Kreuzungen"
+    "de": "Kreuzungen",
+    "fr": "Traversée"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
     "nl": "Oversteekplaatsen voor voetgangers en fietsers",
-    "de": "Übergänge für Fußgänger und Radfahrer"
+    "de": "Übergänge für Fußgänger und Radfahrer",
+    "fr": "Traversée pour piétons et cyclistes"
   },
   "source": {
     "osmTags": {
@@ -23,7 +25,8 @@
     "render": {
       "en": "Crossing",
       "nl": "Oversteekplaats",
-      "de": "Kreuzung"
+      "de": "Kreuzung",
+      "fr": "Traversée"
     },
     "mappings": [
       {
@@ -32,7 +35,8 @@
           "en": "Traffic signal",
           "nl": "Verkeerslicht",
           "ru": "Светофор",
-          "de": "Ampel"
+          "de": "Ampel",
+          "fr": "Feu de signalisation"
         }
       },
       {
@@ -40,7 +44,8 @@
         "then": {
           "en": "Crossing with traffic signals",
           "nl": "Oversteektplaats met verkeerslichten",
-          "de": "Kreuzung mit Ampeln"
+          "de": "Kreuzung mit Ampeln",
+          "fr": "Traversée avec feu de signalisation"
         }
       }
     ]
@@ -50,7 +55,8 @@
       "title": {
         "en": "Crossing",
         "nl": "Oversteekplaats",
-        "de": "Kreuzung"
+        "de": "Kreuzung",
+        "fr": "Traversée"
       },
       "tags": [
         "highway=crossing"
@@ -58,7 +64,8 @@
       "description": {
         "en": "Crossing for pedestrians and/or cyclists",
         "nl": "Oversteekplaats voor voetgangers en/of fietsers",
-        "de": "Kreuzung für Fußgänger und/oder Radfahrer"
+        "de": "Kreuzung für Fußgänger und/oder Radfahrer",
+        "fr": "Traversée pour piétons et/ou cyclistes"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -73,7 +80,8 @@
         "en": "Traffic signal",
         "nl": "Verkeerslicht",
         "ru": "Светофор",
-        "de": "Ampel"
+        "de": "Ampel",
+        "fr": "Feu de signalisation"
       },
       "tags": [
         "highway=traffic_signals"
@@ -81,7 +89,8 @@
       "description": {
         "en": "Traffic signal on a road",
         "nl": "Verkeerslicht op een weg",
-        "de": "Ampel an einer Straße"
+        "de": "Ampel an einer Straße",
+        "fr": "Feu de signalisation sur la voie"
       },
       "preciseInput": {
         "preferredBackground": [

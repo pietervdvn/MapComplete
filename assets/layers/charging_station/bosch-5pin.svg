@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="379px" height="293px" viewBox="0 0 379 293" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="379px" height="293px" viewBox="0 0 379 293" version="1.1">
   <g id="surface1">
     <path style="fill:none;stroke-width:1.125885;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:0.922222;stroke-miterlimit:4;" d="M -57.142719 221.950279 C -57.142719 231.632493 -67.352694 239.48171 -79.948995 239.482675 C -92.544812 239.48364 -102.757205 231.63587 -102.759624 221.953657 C -102.762043 212.271443 -92.553519 204.420778 -79.957702 204.417883 C -67.361401 204.414989 -57.147557 212.261311 -57.142719 221.943524 " transform="matrix(-8.074977,0,0,8.09595,-456.101941,-1650.39845)"/>
     <path style="fill:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.922222;stroke-miterlimit:4;" d="M 95.928142 223.116468 L 87.13071 223.19415 L 83.996026 225.137154 L 75.906317 225.137154 " transform="matrix(8.074977,0,0,8.09595,-456.101941,-1650.39845)"/>

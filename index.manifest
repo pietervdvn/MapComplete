@@ -58,7 +58,7 @@
       "type": "image/png"
     },
     {
-      "src": "./assets/svg/mapcomplete_logo.svg",
+      "src": "assets/svg/mapcomplete_logo.svg",
       "sizes": "513x513",
       "type": "image/svg"
     }

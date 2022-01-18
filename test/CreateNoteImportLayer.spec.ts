@@ -5,7 +5,6 @@ import {DesugaringContext, PrepareLayer} from "../Models/ThemeConfig/Conversion/
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import * as fs from "fs";
 
 export default class CreateNoteImportLayerSpec extends T {
 

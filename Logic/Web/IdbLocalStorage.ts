@@ -1,7 +1,7 @@
 import {UIEventSource} from "../UIEventSource";
 import * as idb from "idb-keyval"
-import ScriptUtils from "../../scripts/ScriptUtils";
 import {Utils} from "../../Utils";
+
 /**
  * UIEventsource-wrapper around indexedDB key-value
  */

@@ -10,7 +10,6 @@ import IndexText from "./BigComponents/IndexText";
 import FeaturedMessage from "./BigComponents/FeaturedMessage";
 import Toggle from "./Input/Toggle";
 import {SubtleButton} from "./Base/SubtleButton";
-import Title from "./Base/Title";
 
 export default class AllThemesGui {
     constructor() {

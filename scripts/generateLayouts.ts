@@ -114,8 +114,8 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
 
     Locale.language.setData(layout.language[0]);
 
-    const ogTitle = Translations.WT(layout.title).txt;
-    const ogDescr = Translations.WT(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap").txt;
+    const ogTitle = Translations.WT(layout.title).txt.replace(/"/g, '\\"');
+    const ogDescr = Translations.WT(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap").txt.replace(/"/g, '\\"');
     const ogImage = layout.socialImage;
 
     let customCss = "";
@@ -130,9 +130,15 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
     }
 
     const og = `
-    <meta property="og:image" content="${ogImage ?? './assets/SocialImage.png'}">
+    <meta property="og:image" content="${ogImage ?? 'assets/SocialImage.png'}">
     <meta property="og:title" content="${ogTitle}">
-    <meta property="og:description" content="${ogDescr}">`
+    <meta property="og:description" content="${ogDescr}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mapcomplete.osm;be">
+    <meta name="twitter:creator" content="@pietervdvn">
+    <meta name="twitter:title" content="${ogTitle}">
+    <meta name="twitter:description" content="${ogDescr}">
+    <meta name="twitter:image" content="${ogImage}">`
 
     let icon = layout.icon;
     if (icon.startsWith("<?xml") || icon.startsWith("<svg")) {
@@ -154,7 +160,6 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
         `<link rel="manifest" href="${enc(layout.id)}.webmanifest">`,
         og,
         customCss,
-        `<link rel="icon" href="assets/svg/add.svg" sizes="any" type="image/svg+xml">`,
         `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`,
         ...apple_icons
     ].join("\n")
@@ -217,11 +222,12 @@ for (const i in all) {
 }
 
 createManifest(new LayoutConfig({
-    icon: "./assets/svg/mapcomplete_logo.svg",
+    icon: "assets/svg/mapcomplete_logo.svg",
     id: "index",
     language: "en",
     layers: [],
     maintainer: "Pieter Vander Vennet",
+    socialImage: "assets/SocialImage.png",
     startLat: 0,
     startLon: 0,
     startZoom: 0,

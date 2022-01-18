@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="372px" height="250px" viewBox="0 0 372 250" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="372px" height="250px" viewBox="0 0 372 250" version="1.1">
   <g id="surface1">
     <path style="fill:none;stroke-width:0.301;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:3.863;" d="M 11.947711 103.576168 L 143.44739 103.514429 C 149.707652 103.514429 154.762077 98.451843 154.762077 92.183726 L 154.822288 11.541421 C 154.822288 5.21319 149.766235 0.150604 143.509227 0.150604 L 11.466027 0.150604 C 5.207392 0.150604 0.149713 5.21319 0.149713 11.541421 L 0.149713 92.365693 C 0.149713 98.633811 5.205765 103.696396 11.4644 103.696396 Z M 11.947711 103.576168 " transform="matrix(2.400434,0,0,2.40428,0,0.161343)"/>
     <path style="fill-rule:evenodd;fill:rgb(0%,44.313726%,70.19608%);fill-opacity:1;stroke-width:0.301;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,44.313726%,70.19608%);stroke-opacity:1;stroke-miterlimit:3.863;" d="M 145.793971 94.656529 L 9.23824 94.656529 L 9.23824 9.190471 L 145.793971 9.190471 Z M 145.793971 94.656529 " transform="matrix(2.400434,0,0,2.40428,0,0.161343)"/>

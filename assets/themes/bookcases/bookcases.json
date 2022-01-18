@@ -37,7 +37,6 @@
     "it": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
-  "socialImage": null,
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

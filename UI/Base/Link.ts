@@ -13,7 +13,7 @@ export default class Link extends BaseUIElement {
         this._embeddedShow = Translations.W(embeddedShow);
         this._href = href;
         this._newTab = newTab;
-        if(this._embeddedShow === undefined){
+        if (this._embeddedShow === undefined) {
             throw "Error: got a link where embeddedShow is undefined"
         }
 
@@ -43,16 +43,16 @@ export default class Link extends BaseUIElement {
         el.appendChild(embeddedShow)
         return el;
     }
-    
-    public static OsmWiki(key: string, value?: string, hideKey = false){
-        if(value !== undefined){
+
+    public static OsmWiki(key: string, value?: string, hideKey = false) {
+        if (value !== undefined) {
             let k = "";
-            if(!hideKey){
-                k = key+"="
+            if (!hideKey) {
+                k = key + "="
             }
-            return new Link(k+value,`https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`)
+            return new Link(k + value, `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`)
         }
-        return  new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key)
+        return new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key)
     }
 
 }

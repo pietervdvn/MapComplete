@@ -10,8 +10,8 @@ import {Utils} from "../../Utils";
 
 export default class TableOfContents extends Combine {
 
-private readonly titles: Title[]
-    
+    private readonly titles: Title[]
+
     constructor(elements: Combine | Title[], options?: {
         noTopLevel: false | boolean,
         maxDepth?: number
@@ -28,9 +28,9 @@ private readonly titles: Title[]
             let content: BaseUIElement
             if (title.title instanceof Translation) {
                 content = title.title.Clone()
-            }else if(title.title instanceof  FixedUiElement){
+            } else if (title.title instanceof FixedUiElement) {
                 content = title.title
-            }else if(Utils.runningFromConsole){
+            } else if (Utils.runningFromConsole) {
                 content = new FixedUiElement(title.AsMarkdown())
             } else {
                 content = new FixedUiElement(title.title.ConstructElement().innerText)
@@ -48,12 +48,12 @@ private readonly titles: Title[]
             els.push({level: title.level, content: vis})
 
         }
-            const minLevel = Math.min(...els.map(e => e.level))
+        const minLevel = Math.min(...els.map(e => e.level))
         if (options?.noTopLevel) {
-            els = els.filter(e => e.level !== minLevel )
+            els = els.filter(e => e.level !== minLevel)
         }
-        
-        if(options?.maxDepth){
+
+        if (options?.maxDepth) {
             els = els.filter(e => e.level <= (options.maxDepth + minLevel))
         }
 
@@ -63,18 +63,18 @@ private readonly titles: Title[]
         this.titles = titles;
     }
 
-    private static getTitles(elements: BaseUIElement[]): Title[]{
+    private static getTitles(elements: BaseUIElement[]): Title[] {
         const titles = []
-        for (const uiElement of elements){
-            if(uiElement instanceof Combine){
+        for (const uiElement of elements) {
+            if (uiElement instanceof Combine) {
                 titles.push(...TableOfContents.getTitles(uiElement.getElements()))
-            }else if(uiElement instanceof Title){
+            } else if (uiElement instanceof Title) {
                 titles.push(uiElement)
             }
         }
         return titles
     }
-    
+
     private static mergeLevel(elements: { level: number, content: BaseUIElement }[]): BaseUIElement[] {
         const maxLevel = Math.max(...elements.map(e => e.level))
         const minLevel = Math.min(...elements.map(e => e.level))
@@ -108,16 +108,16 @@ private readonly titles: Title[]
     }
 
     AsMarkdown(): string {
-        const depthIcons = ["1.","  -","    +","      *"]
+        const depthIcons = ["1.", "  -", "    +", "      *"]
         const lines = ["## Table of contents\n"];
         const minLevel = Math.min(...this.titles.map(t => t.level))
         for (const title of this.titles) {
             const prefix = depthIcons[title.level - minLevel] ?? "        ~"
-            const text = title.title.AsMarkdown().replace("\n","")
+            const text = title.title.AsMarkdown().replace("\n", "")
             const link = title.id
-            lines.push(prefix + " ["+text+"](#"+link+")")
+            lines.push(prefix + " [" + text + "](#" + link + ")")
         }
-        
-        return lines.join("\n")+"\n\n"
+
+        return lines.join("\n") + "\n\n"
     }
 }

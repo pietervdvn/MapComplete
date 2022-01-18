@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
   <g id="surface1">
     <path style="fill:none;stroke-width:3.262002;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:0.266355;stroke-miterlimit:4;" d="M 22.390901 12.010996 C 22.390901 17.743283 17.744366 22.390319 12.012079 22.391069 C 6.279792 22.39157 1.632005 17.745285 1.631004 12.012998 C 1.630003 6.280711 6.275788 1.632674 12.008075 1.630922 C 17.740362 1.629421 22.388899 6.274705 22.390901 12.006992 " transform="matrix(15.610589,0,0,15.610589,0,0.00128032)"/>
     <path style="fill:none;stroke-width:3.262002;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 22.390901 12.010996 C 22.390901 14.870133 21.211564 17.602903 19.130895 19.564212 C 17.050476 21.525521 14.252896 22.541458 11.398763 22.372803 " transform="matrix(15.610589,0,0,15.610589,0,0.00128032)"/>
