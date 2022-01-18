@@ -124,7 +124,12 @@
     "barrier": {
         "presets": {
             "0": {
-                "title": "Bollard"
+                "title": "Bollard",
+                "description": "Un potelet sur le chemin"
+            },
+            "1": {
+                "description": "Barrières cyclables, ralentissant les cyclistes",
+                "title": "Barrière cyclable"
             }
         },
         "tagRenderings": {
@@ -149,7 +154,8 @@
                 "question": "Quel est le type de bollard (borne) ?"
             },
             "MaxWidth": {
-                "render": "Largeur maximale: {maxwidth:physical} m"
+                "render": "Largeur maximale: {maxwidth:physical} m",
+                "question": "Quelle est la largeur du passage ?"
             },
             "Width of opening (cyclebarrier)": {
                 "render": "Largeur de l'ouverture : {width:opening} m"
@@ -163,15 +169,46 @@
                         "then": "Un cycliste ne peut pas franchir ceci."
                     }
                 }
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Simple, deux barrières côte à côte <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                    },
+                    "2": {
+                        "then": "Triple, trois barrières successives <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                    },
+                    "3": {
+                        "then": "Poire, l’espace en hauteur est plus faible qu’au sol <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                    },
+                    "1": {
+                        "then": "Double, deux barrières successives"
+                    }
+                },
+                "question": "Quel est ce type de barrière cyclable ?"
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "Quel est le chevauchement des barrières ?",
+                "render": "Chevauchement : {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "Combien d’espace sépare deux barrières successives ?",
+                "render": "Espace entre deux barrières successives : {width:separation} m"
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Bollard"
+                },
+                "1": {
+                    "then": "Barrière cyclable"
                 }
-            }
-        }
+            },
+            "render": "Barrière"
+        },
+        "description": "Obstacles à vélo, tels que des potelets ou des barrières",
+        "name": "Barrières"
     },
     "bench": {
         "name": "Bancs",
@@ -2272,6 +2309,98 @@
         },
         "title": {
             "render": "Point de vue"
+        }
+    },
+    "cycleways_and_roads": {
+        "name": "Pistes cyclables et routes",
+        "title": {
+            "mappings": {
+                "3": {
+                    "then": "Piste cyclable séparée de la route"
+                },
+                "2": {
+                    "then": "Bande cyclable"
+                },
+                "4": {
+                    "then": "Vélorue"
+                },
+                "0": {
+                    "then": "Piste cyclable"
+                },
+                "1": {
+                    "then": "Voie partagée"
+                }
+            },
+            "render": "Pistes cyclables"
+        }
+    },
+    "watermill": {
+        "name": "Moulin à eau"
+    },
+    "crossings": {
+        "presets": {
+            "0": {
+                "description": "Traversée pour piétons et/ou cyclistes",
+                "title": "Traversée"
+            },
+            "1": {
+                "description": "Feu de signalisation sur la voie",
+                "title": "Feu de signalisation"
+            }
+        },
+        "description": "Traversée pour piétons et cyclistes",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Feu de signalisation"
+                },
+                "1": {
+                    "then": "Traversée avec feu de signalisation"
+                }
+            },
+            "render": "Traversée"
+        },
+        "name": "Traversée"
+    },
+    "visitor_information_centre": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
+    },
+    "address": {
+        "description": "Adresses",
+        "name": "Adresses connues d’OpenStreetMap",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Précisez ce qui devrait être corrigé ici"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce bâtiment n’a pas de numéro"
+                    }
+                },
+                "question": "Quel est le numéro de ce bâtiment ?",
+                "render": "Son numéro est le <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Dans quelle rue est située l’adresse ?",
+                "render": "Le nom de la voie est <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Adresse connue"
+        }
+    },
+    "trail": {
+        "name": "Sentiers",
+        "title": {
+            "render": "Sentier"
         }
     }
 }
