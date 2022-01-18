@@ -67,7 +67,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         const layer = this.upstream.layer;
         const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);
         const includedFeatureIds  = new Set<string>(); 
-        const newFeatures = features.filter((f) => {
+        const newFeatures = (features ?? []).filter((f) => {
 
             self.registerCallback(f.feature)
 
