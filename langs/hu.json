@@ -16,7 +16,8 @@
             "title": "Hozzáadsz egy új pontot?",
             "addNew": "Új {category} hozzáadása itt",
             "disableFiltersExplanation": "Lehet, hogy a szűrő miatt egyes objektumok nem látszanak",
-            "disableFilters": "Minden szűrő kikapcsolása"
+            "disableFilters": "Minden szűrő kikapcsolása",
+            "intro": "Olyan helyre kattintott, ahol még nincs ismert adat.<br>"
         },
         "number": "szám",
         "skip": "Kérdés kihagyása",
@@ -74,7 +75,7 @@
             "duplicate": "Ez a pont egy másik objektum megkettőzése"
         },
         "explanations": {
-            "hardDelete": "Ez a pont törlődik az OpenStreetMapről. Csak egy tapasztalt szerkesztő tudja majd visszaállítani.",
+            "hardDelete": "Ez a pont törlődik az OpenStreetMapről. Csak egy tapasztalt szerkesztő tudja majd visszaállítani",
             "softDelete": "Ez az objektum frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>",
             "selectReason": "Kérjük, jelöld meg, miért kellene ezt a pontot törölni"
         },
