@@ -110,7 +110,7 @@ export default class MoreScreen extends Combine {
             ]), {url: linkText, newTab: false});
     }
 
-    private static CreateProffessionalSerivesButton() {
+    public static CreateProffessionalSerivesButton() {
         const t = Translations.t.professional.indexPage;
         return new Combine([
             new Title(t.hook, 4),

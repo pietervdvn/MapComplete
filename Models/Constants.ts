@@ -40,6 +40,7 @@ export default class Constants {
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19),
 
+        importHelperUnlock: 5000
     };
     /**
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.

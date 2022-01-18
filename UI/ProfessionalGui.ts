@@ -6,9 +6,8 @@ import Toggleable, {Accordeon} from "./Base/Toggleable";
 import List from "./Base/List";
 import BaseUIElement from "./BaseUIElement";
 import LanguagePicker from "./LanguagePicker";
-import {SubtleButton} from "./Base/SubtleButton";
-import Svg from "../Svg";
 import TableOfContents from "./Base/TableOfContents";
+import BackToIndex from "./BigComponents/BackToIndex";
 
 class Snippet extends Toggleable {
     constructor(translations, ...extraContent: BaseUIElement[]) {
@@ -40,7 +39,7 @@ class SnippetContent extends Combine {
     }
 }
 
-export default class ProfessionalGui {
+class ProfessionalGui {
 
 
     constructor() {
@@ -93,16 +92,8 @@ export default class ProfessionalGui {
         ]).SetClass("flex flex-col pb-12 m-3 lg:w-3/4 lg:ml-10 link-underline")
 
 
-        const backToIndex = new Combine([new SubtleButton(
-            Svg.back_svg().SetStyle("height: 1.5rem;"),
-            t.backToMapcomplete,
-            {
-                url: "./index.html"
-            }
-        )]).SetClass("block")
-
         const leftContents: BaseUIElement[] = [
-            backToIndex,
+            new BackToIndex().SetClass("block"),
             new TableOfContents(content, {
                 noTopLevel: true,
                 maxDepth: 2
@@ -110,6 +101,7 @@ export default class ProfessionalGui {
             
             LanguagePicker.CreateLanguagePicker(Translations.t.professional.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
+        
         const leftBar = new Combine([
             new Combine(leftContents).SetClass("sticky top-4 m-4")
         ]).SetClass("block w-full md:w-2/6 lg:w-1/6")

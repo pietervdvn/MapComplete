@@ -70,6 +70,7 @@
         "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
     },
     "general": {
+        "backToMapcomplete": "Back to the theme overview",
         "loading": "Loading...",
         "pdf": {
             "generatedWith": "Generated with MapComplete.osm.be",
@@ -332,8 +333,7 @@
         "surveillance": "As you are reading the privacy policy, you probably care about privacy - so do we! We even made <a href='https://mapcomplete.osm.be/surveillance'>a theme showing surveillance cameras.</a> Feel free to map them all!"
     },
     "professional": {
-        "backToMapcomplete": "Back to the theme overview",
-        "indexPage": {
+         "indexPage": {
             "hook": "Need professional support?",
             "hookMore": "We can help with setting up surveys, data imports and OpenStreetMap-consultancy",
             "button": "Discover our services"
@@ -463,5 +463,10 @@
         "layerName": "Possible {title}",
         "description": "A layer which imports entries for {title}",
         "popupTitle": "Possible {title}"
+    },
+    "importHelper": {
+        "title": "Import helper",
+        "description": "The import helper converts an external dataset to notes",
+        "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here."
     }
 }
