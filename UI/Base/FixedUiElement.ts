@@ -21,6 +21,6 @@ export class FixedUiElement extends BaseUIElement {
         e.innerHTML = this.content
         return e;
     }
-    
+
 
 }

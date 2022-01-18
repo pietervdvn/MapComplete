@@ -21,7 +21,7 @@ export class SubtleButton extends UIElement {
     }
 
     protected InnerRender(): string | BaseUIElement {
-        const classes=  "block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline";
+        const classes = "block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline";
         const message = Translations.W(this.message);
         let img;
         if ((this.imageUrl ?? "") === "") {

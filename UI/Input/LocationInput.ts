@@ -16,6 +16,7 @@ import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "./Toggle";
 import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
+
 export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
     private static readonly matchLayer = new LayerConfig(matchpoint, "LocationInput.matchpoint", true)

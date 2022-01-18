@@ -25,7 +25,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     private readonly _attribution: BaseUIElement | boolean;
     private readonly _bounds: UIEventSource<BBox> | undefined;
     private readonly _addLayerControl: boolean;
-    private readonly _options : MinimapOptions;
+    private readonly _options: MinimapOptions;
 
     private constructor(options: MinimapOptions) {
         super()
@@ -48,7 +48,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     public static initialize() {
         Minimap.createMiniMap = options => new MinimapImplementation(options)
     }
-    
+
     public installBounds(factor: number | BBox, showRange?: boolean) {
         this.leafletMap.addCallbackD(leaflet => {
             let bounds;
@@ -105,7 +105,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             }
         })
     }
-    
+
     Destroy() {
         super.Destroy();
         console.warn("Decomissioning minimap", this._id)
@@ -134,10 +134,10 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         const self = this;
         // @ts-ignore
         const resizeObserver = new ResizeObserver(_ => {
-            if(wrapper.clientHeight === 0 || wrapper.clientWidth === 0){
+            if (wrapper.clientHeight === 0 || wrapper.clientWidth === 0) {
                 return;
             }
-            if(wrapper.offsetParent === null || window.getComputedStyle(wrapper).display === 'none'){
+            if (wrapper.offsetParent === null || window.getComputedStyle(wrapper).display === 'none') {
                 // Not visible
                 return;
             }

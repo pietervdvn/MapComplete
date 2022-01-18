@@ -76,6 +76,7 @@ export default class ScrollableFullScreen extends UIElement {
         ScrollableFullScreen._currentlyOpen = this;
         fs.classList.remove("hidden")
     }
+
     private BuildComponent(title: BaseUIElement, content: BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([

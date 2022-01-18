@@ -17,6 +17,7 @@ import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {BBox} from "../../Logic/BBox";
 import * as split_point from "../../assets/layers/split_point/split_point.json"
+
 export default class SplitRoadWizard extends Toggle {
     // @ts-ignore
     private static splitLayerStyling = new LayerConfig(split_point, "(BUILTIN) SplitRoadWizard.ts", true)

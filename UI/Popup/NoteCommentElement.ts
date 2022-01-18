@@ -6,7 +6,6 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import {Utils} from "../../Utils";
 import Img from "../Base/Img";
-import {ImageCarousel} from "../Image/ImageCarousel";
 import {SlideShow} from "../Image/SlideShow";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
