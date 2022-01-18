@@ -9,6 +9,7 @@ import DependencyCalculator from "../Models/ThemeConfig/DependencyCalculator";
 import Constants from "../Models/Constants";
 import {Utils} from "../Utils";
 import Link from "../UI/Base/Link";
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 
 export class AllKnownLayouts {
     // Must be below the list...
@@ -173,22 +174,20 @@ export class AllKnownLayouts {
     private static AllLayouts(): Map<string, LayoutConfig> {
         const dict: Map<string, LayoutConfig> = new Map();
         for (const layoutConfigJson of known_themes.themes) {
-            // @ts-ignore
-            const layout = new LayoutConfig(layoutConfigJson, true)
-            dict.set(layout.id, layout)
-
-            for (let i = 0; i < layout.layers.length; i++) {
-                let layer = layout.layers[i];
-                if (typeof (layer) === "string") {
-                    layer =  AllKnownLayouts.sharedLayers.get(layer);
-                    layout.layers[i] = layer
-                    if (layer === undefined) {
-                        console.log("Defined layers are ", AllKnownLayouts.sharedLayers.keys())
-                        throw `Layer ${layer} was not found or defined - probably a type was made`
-                    }
-                }
-
-            }
+              const layout = new LayoutConfig(<LayoutConfigJson> layoutConfigJson, true)
+              dict.set(layout.id, layout)
+              for (let i = 0; i < layout.layers.length; i++) {
+                      let layer = layout.layers[i];
+                      if (typeof (layer) === "string") {
+                          layer = AllKnownLayouts.sharedLayers.get(layer);
+                          layout.layers[i] = layer
+                          if (layer === undefined) {
+                              console.log("Defined layers are ", AllKnownLayouts.sharedLayers.keys())
+                              throw `Layer ${layer} was not found or defined - probably a type was made`
+                          }
+                      }
+    
+                  }
         }
         return dict;
     }

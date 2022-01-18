@@ -37,7 +37,6 @@
     "de": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind"
   },
   "icon": "./assets/themes/bicyclelib/logo.svg",
-  "socialImage": null,
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

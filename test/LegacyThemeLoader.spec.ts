@@ -19,6 +19,7 @@ export default class LegacyThemeLoaderSpec extends T {
         "language": [
             "en"
         ],
+        socialImage: "img.jpg",
         "version": "2021-10-02",
         "startLat": 51.1599,
         "startLon": 3.34750,

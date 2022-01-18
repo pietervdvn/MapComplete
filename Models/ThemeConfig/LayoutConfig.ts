@@ -102,6 +102,11 @@ export default class LayoutConfig {
         this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
+        if(this.socialImage === null || this.socialImage === "" || this.socialImage === undefined){
+            if(official){
+                throw "Theme "+json.id+" has no social image defined"
+            }
+        }
         this.startZoom = json.startZoom;
         this.startLat = json.startLat;
         this.startLon = json.startLon;

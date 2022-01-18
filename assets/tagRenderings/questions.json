@@ -109,7 +109,8 @@
       "nb_NO": "Hva er respektivt element på Wikipedia?",
       "ca": "Quin és l'ítem a Viquipèdia?",
       "sv": "Vad är det motsvarande objektet på Wikipedia?",
-      "zh_Hant": "維基百科上對應的項目是什麼？"
+      "zh_Hant": "維基百科上對應的項目是什麼？",
+      "fr": "Quel est l’élément Wikipédia correspondant ?"
     },
     "mappings": [
       {
@@ -462,7 +463,8 @@
       "de": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?",
       "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
       "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
-      "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
+      "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?",
+      "fr": "Des prises sont elles à disposition des client·e·s en intérieur ?"
     },
     "mappings": [
       {
@@ -474,7 +476,8 @@
           "de": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
           "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
-          "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+          "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+          "fr": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
         },
         "if": "service:electricity=yes"
       },
@@ -487,7 +490,8 @@
           "de": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
           "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
-          "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+          "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+          "fr": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
         },
         "if": "service:electricity=limited"
       },

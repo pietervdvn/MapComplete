@@ -898,18 +898,20 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class SetDefault extends DesugaringStep<LayerConfigJson> {
-    private readonly value: object;
+class SetDefault<T> extends DesugaringStep<T> {
+    private readonly value: any;
     private readonly key: string;
+    private readonly _overrideEmptyString: boolean;
 
-    constructor(key: string, value: object) {
+    constructor(key: string, value: any, overrideEmptyString = false) {
         super("Sets " + key + " to a default value if undefined");
         this.key = key;
         this.value = value;
+        this._overrideEmptyString = overrideEmptyString;
     }
 
-    convert(state: DesugaringContext, json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
-        if (json[this.key] === undefined) {
+    convert(state: DesugaringContext, json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+        if (json[this.key] === undefined || (json[this.key] === "" && this._overrideEmptyString)) {
             json = {...json}
             json[this.key] = this.value
         }
@@ -1044,6 +1046,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fully prepares and expands a theme",
             new OnEveryConcat("layers", new SubstituteLayer()),
+            new SetDefault("socialImage", "assets/SocialImage.png", true),
             new AddDefaultLayers(),
             new AddDependencyLayersToTheme(),
             new OnEvery("layers", new PrepareLayer()),

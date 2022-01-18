@@ -5,7 +5,8 @@
     "de": "Bekannte Adressen in OSM",
     "zh_Hant": "OSM 上已知的地址",
     "hu": "Ismert címek az OSM-en",
-    "nl": "Bekende adressen in OSM"
+    "nl": "Bekende adressen in OSM",
+    "fr": "Adresses connues d’OpenStreetMap"
   },
   "minzoom": 18,
   "source": {
@@ -27,7 +28,8 @@
       "en": "Known address",
       "de": "Bekannte Adresse",
       "hu": "Ismert cím",
-      "nl": "Bekend adres"
+      "nl": "Bekend adres",
+      "fr": "Adresse connue"
     }
   },
   "description": {
@@ -36,7 +38,8 @@
     "de": "Adressen",
     "ru": "Адреса",
     "zh_Hant": "地址",
-    "hu": "Címek"
+    "hu": "Címek",
+    "fr": "Adresses"
   },
   "tagRenderings": [
     {
@@ -45,13 +48,15 @@
         "en": "The housenumber is <b>{addr:housenumber}</b>",
         "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
         "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
-        "hu": "A házszám: <b>{addr:housenumber}</b>"
+        "hu": "A házszám: <b>{addr:housenumber}</b>",
+        "fr": "Son numéro est le <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
         "de": "Wie lautet die Nummer dieses Hauses?",
         "hu": "Mi ennek az épületnek a házszáma?",
-        "nl": "Wat is het huisnummer van dit huis?"
+        "nl": "Wat is het huisnummer van dit huis?",
+        "fr": "Quel est le numéro de ce bâtiment ?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -70,7 +75,8 @@
             "en": "This building has no house number",
             "nl": "Dit gebouw heeft geen huisnummer",
             "de": "Dieses Gebäude hat keine Hausnummer",
-            "hu": "Ennek az épületnek nincs házszáma"
+            "hu": "Ennek az épületnek nincs házszáma",
+            "fr": "Ce bâtiment n’a pas de numéro"
           }
         }
       ]
@@ -81,13 +87,15 @@
         "en": "This address is in street <b>{addr:street}</b>",
         "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
         "hu": "Ez a cím a következő utcában van: <b>{addr:street}</b>",
-        "nl": "Dit adres bevindt zich in de straat <b>{addr:street}</b>"
+        "nl": "Dit adres bevindt zich in de straat <b>{addr:street}</b>",
+        "fr": "Le nom de la voie est <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
         "de": "In welcher Straße befindet sich diese Adresse?",
         "hu": "Melyik utcában található ez a cím?",
-        "nl": "In welke straat bevindt dit adres zich?"
+        "nl": "In welke straat bevindt dit adres zich?",
+        "fr": "Dans quelle rue est située l’adresse ?"
       },
       "freeform": {
         "key": "addr:street"
@@ -122,7 +130,8 @@
         "en": "What should be fixed here? Please explain",
         "zh_Hant": "這裡需要修什麼？請直接解釋",
         "de": "Was sollte hier korrigiert werden? Bitte erläutern",
-        "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el"
+        "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el",
+        "fr": "Précisez ce qui devrait être corrigé ici"
       },
       "freeform": {
         "key": "fixme"

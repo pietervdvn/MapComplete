@@ -19,6 +19,7 @@ export default class ReplaceGeometrySpec extends T {
             "nl",
             "en"
         ],
+        socialImage: "img.jpg",
         "version": "0",
         "startLat": 51.0249,
         "startLon": 4.026489,

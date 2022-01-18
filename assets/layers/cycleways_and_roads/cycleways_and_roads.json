@@ -3,7 +3,8 @@
   "name": {
     "en": "Cycleways and roads",
     "nl": "Fietspaden, straten en wegen",
-    "de": "Radwege und Straßen"
+    "de": "Radwege und Straßen",
+    "fr": "Pistes cyclables et routes"
   },
   "minzoom": 16,
   "source": {
@@ -33,7 +34,8 @@
       "en": "Cycleways",
       "nl": "Fietspaden",
       "de": "Radwege",
-      "ru": "Велосипедные дорожки"
+      "ru": "Велосипедные дорожки",
+      "fr": "Pistes cyclables"
     },
     "mappings": [
       {
@@ -47,7 +49,8 @@
           "nl": "Fietsweg",
           "en": "Cycleway",
           "de": "Radweg",
-          "ru": "Велосипедная дорожка"
+          "ru": "Велосипедная дорожка",
+          "fr": "Piste cyclable"
         }
       },
       {
@@ -55,7 +58,8 @@
         "then": {
           "nl": "Fietssuggestiestrook",
           "en": "Shared lane",
-          "de": "Gemeinsame Fahrspur"
+          "de": "Gemeinsame Fahrspur",
+          "fr": "Voie partagée"
         }
       },
       {
@@ -63,7 +67,8 @@
         "then": {
           "nl": "Fietsstrook",
           "en": "Bike lane",
-          "de": "Fahrradspur"
+          "de": "Fahrradspur",
+          "fr": "Bande cyclable"
         }
       },
       {
@@ -71,7 +76,8 @@
         "then": {
           "en": "Cycleway next to the road",
           "nl": "Fietsweg naast de weg",
-          "de": "Radweg neben der Straße"
+          "de": "Radweg neben der Straße",
+          "fr": "Piste cyclable séparée de la route"
         }
       },
       {
@@ -79,7 +85,8 @@
         "then": {
           "nl": "Fietsstraat",
           "en": "Cyclestreet",
-          "de": "Fahrradstraße"
+          "de": "Fahrradstraße",
+          "fr": "Vélorue"
         }
       }
     ]
