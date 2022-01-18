@@ -55,6 +55,7 @@ cd dist
 echo -e "Fixing social images..."
 for file in $(ls *.html)
 do
+    echo "Hi!"
     # sed -i 's!<meta content="\([^"]\+\)" property="og:image">!<meta content="./\1" property="og:image">!' $file
     # sed -i 's!<meta property="og:image" content="\([^"]\+\)">!<meta content="./\1" property="og:image">!' $file
 done
