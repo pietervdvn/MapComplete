@@ -4,7 +4,8 @@
         "title": "Otwórz mapę AED"
     },
     "artwork": {
-        "title": "Otwórz mapę dzieł sztuki"
+        "title": "Otwórz mapę dzieł sztuki",
+        "description": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata"
     },
     "ghostbikes": {
         "title": "Duch roweru"
@@ -20,5 +21,8 @@
     "trees": {
         "shortDescription": "Sporządzić mapę wszystkich drzew",
         "title": "Drzewa"
+    },
+    "bicyclelib": {
+        "title": "Wypożyczalnie rowerów"
     }
 }
