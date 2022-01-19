@@ -482,3 +482,5 @@ li::marker {
     transition: max-height .5s ease-in-out;
     overflow-y: hidden;
 }
+
+.zebra-table tr:nth-child(even) {background-color: #f2f2f2;}

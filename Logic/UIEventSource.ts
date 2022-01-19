@@ -41,6 +41,12 @@ export class UIEventSource<T> {
 
         source.addCallback((latestData) => {
             sink.setData(latestData?.data);
+            latestData.addCallback(data => {
+                if(source.data !== latestData){
+                    return true;
+                }
+                sink.setData(data)
+            })
         });
 
         for (const possibleSource of possibleSources ?? []) {

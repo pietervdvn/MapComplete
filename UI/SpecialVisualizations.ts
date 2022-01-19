@@ -12,7 +12,6 @@ import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-import State from "../State";
 import BaseUIElement from "./BaseUIElement";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
@@ -100,10 +99,10 @@ export default class SpecialVisualizations {
                     funcName: "all_tags",
                     docs: "Prints all key-value pairs of the object - used for debugging",
                     args: [],
-                    constr: ((state: State, tags: UIEventSource<any>) => {
+                    constr: ((state, tags: UIEventSource<any>) => {
                         const calculatedTags = [].concat(
                             SimpleMetaTagger.lazyTags,
-                            ...state.layoutToUse.layers.map(l => l.calculatedTags?.map(c => c[0]) ?? []))
+                            ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
                         return new VariableUiElement(tags.map(tags => {
                             const parts = [];
                             for (const key in tags) {
@@ -129,7 +128,7 @@ export default class SpecialVisualizations {
                                 ["key", "value"],
                                 parts
                             )
-                        })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
+                        })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
                     })
                 },
                 {
@@ -140,7 +139,7 @@ export default class SpecialVisualizations {
                         defaultValue: AllImageProviders.defaultKeys.join(","),
                         doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
                     }],
-                    constr: (state: State, tags, args) => {
+                    constr: (state, tags, args) => {
                         let imagePrefixes: string[] = undefined;
                         if (args.length > 0) {
                             imagePrefixes = [].concat(...args.map(a => a.split(",")));
@@ -160,7 +159,7 @@ export default class SpecialVisualizations {
                         doc: "The text to show on the button",
                         defaultValue: "Add image"
                     }],
-                    constr: (state: State, tags, args) => {
+                    constr: (state, tags, args) => {
                         return new ImageUploadFlow(tags, state, args[0], args[1])
                     }
                 },
@@ -259,11 +258,10 @@ export default class SpecialVisualizations {
                         new ShowDataMultiLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                enablePopups: false,
+                                popup: undefined,
                                 zoomToFeatures: true,
-                                layers: State.state.filteredLayers,
-                                features: new StaticFeatureSource(featuresToShow, true),
-                                allElements: State.state.allElements
+                                layers: state.filteredLayers,
+                                features: new StaticFeatureSource(featuresToShow, true)
                             }
                         )
 
@@ -306,11 +304,11 @@ export default class SpecialVisualizations {
                         new ShowDataLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                enablePopups: false,
+                                popup: undefined,
                                 zoomToFeatures: true,
                                 layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
                                 features: new StaticFeatureSource([copy], false),
-                                allElements: State.state.allElements
+                                state
                             }
                         )
 
@@ -331,7 +329,7 @@ export default class SpecialVisualizations {
                         name: "fallback",
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
                     }],
-                    constr: (state: State, tags, args) => {
+                    constr: (state, tags, args) => {
                         const tgs = tags.data;
                         const key = args[0] ?? "name"
                         let subject = tgs[key] ?? args[1];
@@ -364,7 +362,7 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
                     }],
                     example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
-                    constr: (state: State, tagSource: UIEventSource<any>, args) => {
+                    constr: (state, tagSource: UIEventSource<any>, args) => {
                         return new OpeningHoursVisualization(tagSource, state, args[0], args[1], args[2])
                     }
                 },
@@ -380,7 +378,7 @@ export default class SpecialVisualizations {
                     }, {
                         name: "path", doc: "The path (or shorthand) that should be returned"
                     }],
-                    constr: (state: State, tagSource: UIEventSource<any>, args) => {
+                    constr: (state, tagSource: UIEventSource<any>, args) => {
                         const url = args[0];
                         const shorthands = args[1];
                         const neededValue = args[2];
@@ -413,7 +411,7 @@ export default class SpecialVisualizations {
 
                         }
                     ],
-                    constr: (state: State, tagSource: UIEventSource<any>, args: string[]) => {
+                    constr: (state, tagSource: UIEventSource<any>, args: string[]) => {
 
                         let assignColors = undefined;
                         if (args.length >= 3) {
@@ -461,7 +459,7 @@ export default class SpecialVisualizations {
                             doc: "The url to share (default: current URL)",
                         }
                     ],
-                    constr: (state: State, tagSource: UIEventSource<any>, args) => {
+                    constr: (state, tagSource: UIEventSource<any>, args) => {
                         if (window.navigator.share) {
 
                             const generateShareData = () => {
@@ -580,7 +578,7 @@ export default class SpecialVisualizations {
                     funcName: "export_as_gpx",
                     docs: "Exports the selected feature as GPX-file",
                     args: [],
-                    constr: (state, tagSource, args) => {
+                    constr: (state, tagSource) => {
                         const t = Translations.t.general.download;
 
                         return new SubtleButton(Svg.download_ui(),
@@ -605,7 +603,7 @@ export default class SpecialVisualizations {
                     funcName: "export_as_geojson",
                     docs: "Exports the selected feature as GeoJson-file",
                     args: [],
-                    constr: (state, tagSource, args) => {
+                    constr: (state, tagSource) => {
                         const t = Translations.t.general.download;
 
                         return new SubtleButton(Svg.download_ui(),
@@ -672,7 +670,7 @@ export default class SpecialVisualizations {
                             doc: "Text to add onto the note when closing",
                         }
                     ],
-                    constr: (state, tags, args, guiState) => {
+                    constr: (state, tags, args) => {
                         const t = Translations.t.notes;
 
                         let icon = Svg.checkmark_svg()
@@ -711,7 +709,7 @@ export default class SpecialVisualizations {
                             defaultValue: "id"
                         }
                     ],
-                    constr: (state, tags, args, guiState) => {
+                    constr: (state, tags, args) => {
 
                         const t = Translations.t.notes;
                         const textField = ValidatedTextField.InputForType("text", {placeholder: t.addCommentPlaceholder})

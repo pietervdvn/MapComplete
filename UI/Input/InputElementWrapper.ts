@@ -6,14 +6,12 @@ import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 
 export default class InputElementWrapper<T> extends InputElement<T> {
-    public readonly IsSelected: UIEventSource<boolean>;
     private readonly _inputElement: InputElement<T>;
     private readonly _renderElement: BaseUIElement
 
     constructor(inputElement: InputElement<T>, translation: Translation, key: string, tags: UIEventSource<any>, state: FeaturePipelineState) {
         super()
         this._inputElement = inputElement;
-        this.IsSelected = inputElement.IsSelected
         const mapping = new Map<string, BaseUIElement>()
 
         mapping.set(key, inputElement)

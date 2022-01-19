@@ -7,40 +7,16 @@ import Svg from "../../Svg";
 import AllDownloads from "./AllDownloads";
 import FilterView from "./FilterView";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
-import Loc from "../../Models/Loc";
-import {BBox} from "../../Logic/BBox";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import FilteredLayer from "../../Models/FilteredLayer";
-import BaseLayer from "../../Models/BaseLayer";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import BackgroundMapSwitch from "./BackgroundMapSwitch";
-import {FeatureSourceForLayer} from "../../Logic/FeatureSource/FeatureSource";
 import Lazy from "../Base/Lazy";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
-import {ElementStorage} from "../../Logic/ElementStorage";
-import FeatureSwitchState from "../../Logic/State/FeatureSwitchState";
 import CopyrightPanel from "./CopyrightPanel";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 
 export default class LeftControls extends Combine {
 
-    constructor(state: FeatureSwitchState & {
-                    allElements: ElementStorage;
-                    currentView: FeatureSourceForLayer;
-                    featureSwitchBackgroundSelection: UIEventSource<boolean>;
-                    layoutToUse: LayoutConfig,
-                    featurePipeline: FeaturePipeline,
-                    currentBounds: UIEventSource<BBox>,
-                    locationControl: UIEventSource<Loc>,
-                    overlayToggles: any,
-                    featureSwitchEnableExport: UIEventSource<boolean>,
-                    featureSwitchExportAsPdf: UIEventSource<boolean>,
-                    filteredLayers: UIEventSource<FilteredLayer[]>,
-                    featureSwitchFilter: UIEventSource<boolean>,
-                    backgroundLayer: UIEventSource<BaseLayer>,
-                    osmConnection: OsmConnection
-                },
+    constructor(state: FeaturePipelineState,
                 guiState: {
                     currentViewControlIsOpened: UIEventSource<boolean>;
                     downloadControlIsOpened: UIEventSource<boolean>,
@@ -74,7 +50,7 @@ export default class LeftControls extends Combine {
                     }
                     return new Lazy(() => {
                         const tagsSource = state.allElements.getEventSourceById(feature.properties.id)
-                        return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, "currentview", guiState.currentViewControlIsOpened)
+                        return new FeatureInfoBox(tagsSource, currentViewFL.layerDef,state, "currentview", guiState.currentViewControlIsOpened)
                             .SetClass("md:floating-element-width")
                     })
                 }))

@@ -1,8 +1,3 @@
-/***
- * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
- *
- * Technically, more an Actor then a featuresource, but it fits more neatly this ay
- */
 import FeatureSource, {Tiled} from "../FeatureSource";
 import {Tiles} from "../../../Models/TileRange";
 import {IdbLocalStorage} from "../../Web/IdbLocalStorage";
@@ -13,6 +8,11 @@ import SimpleFeatureSource from "../Sources/SimpleFeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import Loc from "../../../Models/Loc";
 
+/***
+ * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
+ *
+ * Technically, more an Actor then a featuresource, but it fits more neatly this ay
+ */
 export default class SaveTileToLocalStorageActor {
     private readonly visitedTiles: UIEventSource<Map<number, Date>>
     private readonly _layer: LayerConfig;

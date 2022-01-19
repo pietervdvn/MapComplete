@@ -61,7 +61,6 @@ export default class DefaultGUI {
         const hasPresets = state.layoutToUse.layers.some(layer => layer.presets.length > 0);
         const noteLayer: FilteredLayer = state.filteredLayers.data.filter(l => l.layerDef.id === "note")[0]
         let addNewNoteDialog: (isShown: UIEventSource<boolean>) => BaseUIElement = undefined;
-        const t = Translations.t.notes
         if (noteLayer !== undefined) {
             addNewNoteDialog = (isShown) => new NewNoteUi(noteLayer, isShown, state)
         }
@@ -144,7 +143,8 @@ export default class DefaultGUI {
             leafletMap: state.leafletMap,
             layerToShow: new LayerConfig(home_location_json, "all_known_layers", true),
             features: state.homeLocation,
-            enablePopups: false,
+            popup: undefined,
+            state
         })
 
         state.leafletMap.addCallbackAndRunD(_ => {

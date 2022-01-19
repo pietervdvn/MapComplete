@@ -4,7 +4,6 @@ import {Utils} from "../../Utils";
 
 export class RadioButton<T> extends InputElement<T> {
     private static _nextId = 0;
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<T>;
     private _elements: InputElement<T>[];
     private _selectFirstAsDefault: boolean;
@@ -74,11 +73,7 @@ export class RadioButton<T> extends InputElement<T> {
             elements[i]?.onClick(() => {
                 selectedElementIndex.setData(i);
             });
-            elements[i].IsSelected.addCallback((isSelected) => {
-                if (isSelected) {
-                    selectedElementIndex.setData(i);
-                }
-            });
+            
             elements[i].GetValue().addCallback(() => {
                 selectedElementIndex.setData(i);
             });

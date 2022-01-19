@@ -37,7 +37,7 @@ export class DropDown<T> extends InputElement<T> {
         el.id = "dropdown" + id;
 
         {
-            const labelEl = Translations.W(label).ConstructElement()
+            const labelEl = Translations.W(label)?.ConstructElement()
             if (labelEl !== undefined) {
                 const labelHtml = document.createElement("label")
                 labelHtml.appendChild(labelEl)

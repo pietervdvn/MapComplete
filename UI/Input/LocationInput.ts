@@ -38,6 +38,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     private readonly _snappedPointTags: any;
     private readonly _bounds: UIEventSource<BBox>;
     private readonly map: BaseUIElement & MinimapObj;
+    public readonly bounds;
+    public readonly location;
     private readonly clickLocation: UIEventSource<Loc>;
     private readonly _minZoom: number;
 
@@ -146,6 +148,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             }
         )
         this.leafletMap = this.map.leafletMap
+        this.bounds = this.map.bounds;
+        this.location = this.map.location;
     }
 
     GetValue(): UIEventSource<Loc> {
@@ -186,11 +190,10 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 console.log("Constructing the snap-to layer", this._snapTo)
                 new ShowDataMultiLayer({
                         features: new StaticFeatureSource(this._snapTo, true),
-                        enablePopups: false,
+                        popup: undefined,
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
-                        layers: State.state.filteredLayers,
-                        allElements: State.state.allElements
+                        layers: State.state.filteredLayers
                     }
                 )
                 // Show the central point
@@ -202,11 +205,11 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 })
                 new ShowDataLayer({
                     features: new StaticFeatureSource(matchPoint, true),
-                    enablePopups: false,
+                    popup: undefined,
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,
-                    allElements: State.state.allElements,
+                    state: State.state,
                     selectedElement: State.state.selectedElement
                 })
 

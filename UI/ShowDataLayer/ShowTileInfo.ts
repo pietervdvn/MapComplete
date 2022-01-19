@@ -6,6 +6,8 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {Tiles} from "../../Models/TileRange";
 import * as clusterstyle from "../../assets/layers/cluster_style/cluster_style.json"
+import State from "../../State";
+import FeatureInfoBox from "../Popup/FeatureInfoBox";
 
 export default class ShowTileInfo {
     public static readonly styling = new LayerConfig(clusterstyle, "ShowTileInfo", true)
@@ -53,7 +55,9 @@ export default class ShowTileInfo {
             layerToShow: ShowTileInfo.styling,
             features: new StaticFeatureSource(metaFeature, false),
             leafletMap: options.leafletMap,
-            doShowLayer: options.doShowLayer
+            doShowLayer: options.doShowLayer,
+            state: State.state,
+            popup: undefined
         })
 
     }

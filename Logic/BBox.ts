@@ -145,6 +145,15 @@ export class BBox {
             this.maxLat + latDiff]])
     }
 
+    padAbsolute(degrees: number): BBox {
+
+        return new BBox([[
+            this.minLon - degrees,
+            this.minLat - degrees
+        ], [this.maxLon + degrees,
+            this.maxLat + degrees]])
+    }
+
     toLeaflet() {
         return [[this.minLat, this.minLon], [this.maxLat, this.maxLon]]
     }

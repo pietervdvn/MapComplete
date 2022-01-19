@@ -70,6 +70,9 @@
         "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
     },
     "general": {
+        "next": "Next",
+        "confirm": "Confirm",
+        "back": "Back",
         "backToMapcomplete": "Back to the theme overview",
         "loading": "Loading...",
         "pdf": {
@@ -467,6 +470,12 @@
     "importHelper": {
         "title": "Import helper",
         "description": "The import helper converts an external dataset to notes",
-        "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here."
+        "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
+        "selectFile": "Select a .csv or .geojson file to get started",
+        "loadedFilesAre": "Currently loaded file is {file}",
+        "noFilesLoaded": "No file is currently loaded",
+        "selectLayer": "Select a layer...",
+        "selectFileTitle": "Select file",
+        "validateDataTitle": "Validate data"
     }
 }

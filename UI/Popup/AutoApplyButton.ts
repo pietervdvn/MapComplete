@@ -137,10 +137,10 @@ export default class AutoApplyButton implements SpecialVisualization {
 
             new ShowDataLayer({
                 leafletMap: previewMap.leafletMap,
-                enablePopups: false,
+                popup: undefined,
                 zoomToFeatures: true,
                 features: new StaticFeatureSource(features, false),
-                allElements: state.allElements,
+                state,
                 layerToShow: layer.layerDef,
             })
 

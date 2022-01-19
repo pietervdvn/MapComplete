@@ -50,10 +50,14 @@ export default class ScrollableFullScreen extends UIElement {
                 self.Activate();
             } else {
                 // Some cleanup...
-                ScrollableFullScreen.empty.AttachTo("fullscreen")
+                
                 const fs = document.getElementById("fullscreen");
+                if(fs !== null){
+                    ScrollableFullScreen.empty.AttachTo("fullscreen")
+                    fs.classList.add("hidden")
+                }
+                
                 ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
-                fs.classList.add("hidden")
             }
         })
 

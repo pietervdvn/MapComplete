@@ -6,16 +6,20 @@ export default class FileSelectorButton extends InputElement<FileList> {
 
     private static _nextid;
     IsSelected: UIEventSource<boolean>;
-    private readonly _value = new UIEventSource(undefined);
+    private readonly _value = new UIEventSource<FileList>(undefined);
     private readonly _label: BaseUIElement;
     private readonly _acceptType: string;
+    private readonly allowMultiple: boolean;
 
-    constructor(label: BaseUIElement, acceptType: string = "image/*") {
+    constructor(label: BaseUIElement, options?:
+        { acceptType: "image/*" | string,
+        allowMultiple: true | boolean}) {
         super();
         this._label = label;
-        this._acceptType = acceptType;
+        this._acceptType = options?.acceptType ?? "image/*";
         this.SetClass("block cursor-pointer")
         label.SetClass("cursor-pointer")
+        this.allowMultiple = options?.allowMultiple ?? true
     }
 
     GetValue(): UIEventSource<FileList> {
@@ -38,7 +42,7 @@ export default class FileSelectorButton extends InputElement<FileList> {
         actualInputElement.type = "file";
         actualInputElement.accept = this._acceptType;
         actualInputElement.name = "picField";
-        actualInputElement.multiple = true;
+        actualInputElement.multiple = this.allowMultiple;
         actualInputElement.id = "fileselector" + FileSelectorButton._nextid;
         FileSelectorButton._nextid++;
 
@@ -58,6 +62,20 @@ export default class FileSelectorButton extends InputElement<FileList> {
         })
 
         el.appendChild(actualInputElement)
+
+        el.addEventListener('dragover', (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            // Style the drag-and-drop as a "copy file" operation.
+            event.dataTransfer.dropEffect = 'copy';
+        });
+
+        el.addEventListener('drop', (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            const fileList = event.dataTransfer.files;
+            this._value.setData(fileList)
+        });
 
         return el;
     }

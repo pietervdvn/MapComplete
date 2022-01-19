@@ -19,10 +19,13 @@ export interface MinimapOptions {
 
 export interface MinimapObj {
     readonly leafletMap: UIEventSource<any>,
+    readonly location: UIEventSource<Loc>;
+    readonly bounds: UIEventSource<BBox>;
 
     installBounds(factor: number | BBox, showRange?: boolean): void
 
     TakeScreenshot(): Promise<any>;
+
 }
 
 export default class Minimap {

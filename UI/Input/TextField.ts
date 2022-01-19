@@ -5,7 +5,6 @@ import BaseUIElement from "../BaseUIElement";
 
 export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined);
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<string>;
     private _element: HTMLElement;
     private readonly _isValid: (s: string, country?: () => string) => boolean;
@@ -25,11 +24,6 @@ export class TextField extends InputElement<string> {
         options = options ?? {};
         this.value = options?.value ?? new UIEventSource<string>(undefined);
         this._isValid = options.isValid ?? (_ => true);
-
-        this.onClick(() => {
-            self.IsSelected.setData(true)
-        });
-
 
         const placeholder = Translations.W(options.placeholder ?? "").ConstructElement().innerText.replace("'", "&#39");
 
@@ -105,10 +99,6 @@ export class TextField extends InputElement<string> {
             // @ts-ignore
             TextField.SetCursorPosition(field, newCursorPos);
         };
-
-
-        field.addEventListener("focusin", () => self.IsSelected.setData(true));
-        field.addEventListener("focusout", () => self.IsSelected.setData(false));
 
 
         field.addEventListener("keyup", function (event) {

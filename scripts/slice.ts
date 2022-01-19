@@ -126,10 +126,6 @@ async function main(args: string[]) {
         }
         delete f.bbox
     }
-
-    //const knownKeys = Utils.Dedup([].concat(...allFeatures.map(f => Object.keys(f.properties))))
-    //console.log("Kept keys: ", knownKeys)
-
     TiledFeatureSource.createHierarchy(
         new StaticFeatureSource(allFeatures, false),
         {

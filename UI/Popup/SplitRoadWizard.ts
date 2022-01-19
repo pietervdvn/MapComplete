@@ -3,7 +3,6 @@ import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Minimap from "../Base/Minimap";
-import State from "../../State";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {LeafletMouseEvent} from "leaflet";
@@ -17,6 +16,12 @@ import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {BBox} from "../../Logic/BBox";
 import * as split_point from "../../assets/layers/split_point/split_point.json"
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {Changes} from "../../Logic/Osm/Changes";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {ElementStorage} from "../../Logic/ElementStorage";
+import BaseLayer from "../../Models/BaseLayer";
+import FilteredLayer from "../../Models/FilteredLayer";
 
 export default class SplitRoadWizard extends Toggle {
     // @ts-ignore
@@ -28,8 +33,19 @@ export default class SplitRoadWizard extends Toggle {
      * A UI Element used for splitting roads
      *
      * @param id: The id of the road to remove
+     * @param state: the state of the application
      */
-    constructor(id: string) {
+    constructor(id: string, state: {
+        filteredLayers: UIEventSource<FilteredLayer[]>;
+        backgroundLayer: UIEventSource<BaseLayer>;
+        featureSwitchIsTesting: UIEventSource<boolean>;
+        featureSwitchIsDebugging: UIEventSource<boolean>;
+        featureSwitchShowAllQuestions: UIEventSource<boolean>;
+        osmConnection: OsmConnection,
+        featureSwitchUserbadge: UIEventSource<boolean>,
+        changes: Changes,
+        layoutToUse: LayoutConfig,
+        allElements: ElementStorage}) {
 
         const t = Translations.t.split;
 
@@ -41,12 +57,12 @@ export default class SplitRoadWizard extends Toggle {
         // Toggle variable between show split button and map
         const splitClicked = new UIEventSource<boolean>(false);
         // Load the road with given id on the minimap
-        const roadElement = State.state.allElements.ContainingFeatures.get(id)
+        const roadElement = state.allElements.ContainingFeatures.get(id)
 
         // Minimap on which you can select the points to be splitted
         const miniMap = Minimap.createMiniMap(
             {
-                background: State.state.backgroundLayer,
+                background: state.backgroundLayer,
                 allowMoving: true,
                 leafletOptions: {
                     minZoom: 14
@@ -62,19 +78,20 @@ export default class SplitRoadWizard extends Toggle {
         // Datalayer displaying the road and the cut points (if any)
         new ShowDataMultiLayer({
             features: new StaticFeatureSource([roadElement], false),
-            layers: State.state.filteredLayers,
+            layers: state.filteredLayers,
             leafletMap: miniMap.leafletMap,
-            enablePopups: false,
+            popup: undefined,
             zoomToFeatures: true,
-            allElements: State.state.allElements,
+            state
         })
         
         new ShowDataLayer({
             features: new StaticFeatureSource(splitPoints, true),
             leafletMap: miniMap.leafletMap,
             zoomToFeatures: false,
-            enablePopups: false,
+            popup: undefined,
             layerToShow: SplitRoadWizard.splitLayerStyling,
+            state
         })
 
        
@@ -127,15 +144,15 @@ export default class SplitRoadWizard extends Toggle {
 
         // Only show the splitButton if logged in, else show login prompt
         const loginBtn = t.loginToSplit.Clone()
-            .onClick(() => State.state.osmConnection.AttemptLogin())
+            .onClick(() => state.osmConnection.AttemptLogin())
             .SetClass("login-button-friendly");
-        const splitToggle = new Toggle(splitButton, loginBtn, State.state.osmConnection.isLoggedIn)
+        const splitToggle = new Toggle(splitButton, loginBtn, state.osmConnection.isLoggedIn)
 
         // Save button
         const saveButton = new Button(t.split.Clone(), () => {
             hasBeenSplit.setData(true)
-            State.state.changes.applyAction(new SplitAction(id, splitPoints.data.map(ff => ff.feature.geometry.coordinates), {
-                theme: State.state?.layoutToUse?.id
+            state.changes.applyAction(new SplitAction(id, splitPoints.data.map(ff => ff.feature.geometry.coordinates), {
+                theme: state?.layoutToUse?.id
             }))
         })
 

@@ -11,19 +11,20 @@ import {BBox} from "../../Logic/BBox";
 import 'leaflet-polylineoffset'
 import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
+import AvailableBaseLayersImplementation from "../../Logic/Actors/AvailableBaseLayersImplementation";
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
     public readonly leafletMap: UIEventSource<Map>
     private readonly _id: string;
     private readonly _background: UIEventSource<BaseLayer>;
-    private readonly _location: UIEventSource<Loc>;
+    public readonly location: UIEventSource<Loc>;
     private _isInited = false;
     private _allowMoving: boolean;
     private readonly _leafletoptions: any;
     private readonly _onFullyLoaded: (leaflet: L.Map) => void
     private readonly _attribution: BaseUIElement | boolean;
-    private readonly _bounds: UIEventSource<BBox> | undefined;
+    public readonly bounds: UIEventSource<BBox> | undefined;
     private readonly _addLayerControl: boolean;
     private readonly _options: MinimapOptions;
 
@@ -32,8 +33,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         options = options ?? {}
         this.leafletMap = options.leafletMap ?? new UIEventSource<Map>(undefined)
         this._background = options?.background ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
-        this._location = options?.location ?? new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
-        this._bounds = options?.bounds;
+        this.location = options?.location ?? new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
+        this.bounds = options?.bounds;
         this._id = "minimap" + MinimapImplementation._nextId;
         this._allowMoving = options.allowMoving ?? true;
         this._leafletoptions = options.leafletOptions ?? {}
@@ -46,6 +47,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     }
 
     public static initialize() {
+        AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
         Minimap.createMiniMap = options => new MinimapImplementation(options)
     }
 
@@ -153,7 +155,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
         if (this._addLayerControl) {
             const switcher = new BackgroundMapSwitch({
-                    locationControl: this._location,
+                    locationControl: this.location,
                     backgroundLayer: this._background
                 },
                 this._background
@@ -180,7 +182,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             return;
         }
         this._isInited = true;
-        const location = this._location;
+        const location = this.location;
         const self = this;
         let currentLayer = this._background.data.layer()
         let latLon = <[number, number]>[location.data?.lat ?? 0, location.data?.lon ?? 0]
@@ -268,8 +270,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             isRecursing = true;
             location.ping();
 
-            if (self._bounds !== undefined) {
-                self._bounds.setData(BBox.fromLeafletBounds(map.getBounds()))
+            if (self.bounds !== undefined) {
+                self.bounds.setData(BBox.fromLeafletBounds(map.getBounds()))
             }
 
 
@@ -295,8 +297,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
                 }
             })
 
-        if (self._bounds !== undefined) {
-            self._bounds.setData(BBox.fromLeafletBounds(map.getBounds()))
+        if (self.bounds !== undefined) {
+            self.bounds.setData(BBox.fromLeafletBounds(map.getBounds()))
         }
 
 

@@ -3,7 +3,6 @@ import EditableTagRendering from "./EditableTagRendering";
 import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
-import State from "../../State";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
@@ -16,18 +15,41 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {Utils} from "../../Utils";
 import MoveWizard from "./MoveWizard";
 import Toggle from "../Input/Toggle";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {Changes} from "../../Logic/Osm/Changes";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {ElementStorage} from "../../Logic/ElementStorage";
+import FilteredLayer from "../../Models/FilteredLayer";
+import BaseLayer from "../../Models/BaseLayer";
+import Lazy from "../Base/Lazy";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
+
 
     public constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
+        state: {
+            filteredLayers: UIEventSource<FilteredLayer[]>;
+            backgroundLayer: UIEventSource<BaseLayer>;
+            featureSwitchIsTesting: UIEventSource<boolean>;
+            featureSwitchIsDebugging: UIEventSource<boolean>;
+            featureSwitchShowAllQuestions: UIEventSource<boolean>;
+            osmConnection: OsmConnection,
+            featureSwitchUserbadge: UIEventSource<boolean>,
+            changes: Changes,
+            layoutToUse: LayoutConfig,
+            allElements: ElementStorage
+        },
         hashToShow?: string,
-        isShown?: UIEventSource<boolean>
+        isShown?: UIEventSource<boolean>,
     ) {
-        super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
-            () => FeatureInfoBox.GenerateContent(tags, layerConfig),
-            hashToShow ?? tags.data.id,
+        if (state === undefined) {
+            throw "State is undefined!"
+        }
+        super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig, state),
+            () => FeatureInfoBox.GenerateContent(tags, layerConfig, state),
+            hashToShow ?? tags.data.id ?? "item",
             isShown);
 
         if (layerConfig === undefined) {
@@ -37,11 +59,12 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     }
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
-                                    layerConfig: LayerConfig): BaseUIElement {
-        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), State.state)
+                                    layerConfig: LayerConfig,
+                                    state: {}): BaseUIElement {
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), state)
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, State.state,
+            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, state,
                 "block w-8 h-8 max-h-8 align-baseline box-content sm:p-0.5 w-10",)
             ))
             .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
@@ -52,20 +75,32 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     }
 
     private static GenerateContent(tags: UIEventSource<any>,
-                                   layerConfig: LayerConfig): BaseUIElement {
+                                   layerConfig: LayerConfig,
+                                   state: {
+                                       filteredLayers: UIEventSource<FilteredLayer[]>;
+                                       backgroundLayer: UIEventSource<BaseLayer>;
+                                       featureSwitchIsTesting: UIEventSource<boolean>;
+                                       featureSwitchIsDebugging: UIEventSource<boolean>;
+                                       featureSwitchShowAllQuestions: UIEventSource<boolean>;
+                                       osmConnection: OsmConnection,
+                                       featureSwitchUserbadge: UIEventSource<boolean>,
+                                       changes: Changes,
+                                       layoutToUse: LayoutConfig,
+                                       allElements: ElementStorage
+                                   }): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>();
 
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
-        if (State.state.featureSwitchUserbadge.data) {
+        if (state?.featureSwitchUserbadge?.data ?? true) {
             const questionSpecs = layerConfig.tagRenderings.filter(tr => tr.id === "questions")
             for (const groupName of allGroupNames) {
                 const questions = layerConfig.tagRenderings.filter(tr => tr.group === groupName)
                 const questionSpec = questionSpecs.filter(tr => tr.group === groupName)[0]
-                const questionBox = new QuestionBox({
+                const questionBox = new QuestionBox(state, {
                     tagsSource: tags,
                     tagRenderings: questions,
                     units: layerConfig.units,
-                    showAllQuestionsAtOnce: questionSpec?.freeform?.helperArgs["showAllQuestions"] ?? State.state.featureSwitchShowAllQuestions
+                    showAllQuestionsAtOnce: questionSpec?.freeform?.helperArgs["showAllQuestions"] ?? state.featureSwitchShowAllQuestions
                 });
                 questionBoxes.set(groupName, questionBox)
             }
@@ -86,10 +121,10 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
                     if (tr.render !== undefined) {
                         questionBox.SetClass("text-sm")
-                        const renderedQuestion = new TagRenderingAnswer(tags, tr,State.state,
+                        const renderedQuestion = new TagRenderingAnswer(tags, tr, state,
                             tr.group + " questions", "", {
-                            specialViz: new Map<string, BaseUIElement>([["questions", questionBox]])
-                        })
+                                specialViz: new Map<string, BaseUIElement>([["questions", questionBox]])
+                            })
                         const possiblyHidden = new Toggle(
                             renderedQuestion,
                             undefined,
@@ -109,7 +144,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         classes = ""
                     }
 
-                    const etr = new EditableTagRendering(tags, tr, layerConfig.units, {
+                    const etr = new EditableTagRendering(tags, tr, layerConfig.units, state, {
                         innerElementClasses: innerClasses
                     })
                     if (isHeader) {
@@ -121,8 +156,29 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
             allRenderings.push(...renderingsForGroup)
         }
+        allRenderings.push(
+            new Toggle(
+                new Lazy(() => FeatureInfoBox.createEditElements(questionBoxes, layerConfig, tags, state)),
+                undefined,
+                state.featureSwitchUserbadge
+            ))
 
+        return new Combine(allRenderings).SetClass("block")
+    }
 
+    /**
+     * All the edit elements, together (note that the question boxes are passed though)
+     * @param questionBoxes
+     * @param layerConfig
+     * @param tags
+     * @param state
+     * @private
+     */
+    private static createEditElements(questionBoxes: Map<string, QuestionBox>,
+                                      layerConfig: LayerConfig,
+                                      tags: UIEventSource<any>,
+                                      state: { filteredLayers: UIEventSource<FilteredLayer[]>; backgroundLayer: UIEventSource<BaseLayer>; featureSwitchIsTesting: UIEventSource<boolean>; featureSwitchIsDebugging: UIEventSource<boolean>; featureSwitchShowAllQuestions: UIEventSource<boolean>; osmConnection: OsmConnection; featureSwitchUserbadge: UIEventSource<boolean>; changes: Changes; layoutToUse: LayoutConfig; allElements: ElementStorage })
+        : BaseUIElement {
         let editElements: BaseUIElement[] = []
         questionBoxes.forEach(questionBox => {
             editElements.push(questionBox);
@@ -131,10 +187,13 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (layerConfig.allowMove) {
             editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id => {
-                        const feature = State.state.allElements.ContainingFeatures.get(id)
+                        const feature = state.allElements.ContainingFeatures.get(id)
+                        if (feature === undefined) {
+                            return "This feature is not register in the state.allElements and cannot be moved"
+                        }
                         return new MoveWizard(
                             feature,
-                            State.state,
+                            state,
                             layerConfig.allowMove
                         );
                     })
@@ -147,6 +206,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 new VariableUiElement(tags.map(tags => tags.id).map(id =>
                     new DeleteWizard(
                         id,
+                        state,
                         layerConfig.deletion
                     ))
                 ).SetClass("text-base"))
@@ -155,59 +215,45 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (layerConfig.allowSplit) {
             editElements.push(
                 new VariableUiElement(tags.map(tags => tags.id).map(id =>
-                    new SplitRoadWizard(id))
+                    new SplitRoadWizard(id, state))
                 ).SetClass("text-base"))
         }
 
 
         editElements.push(
             new VariableUiElement(
-                State.state.osmConnection.userDetails
+                state.osmConnection.userDetails
                     .map(ud => ud.csCount)
                     .map(csCount => {
                         if (csCount <= Constants.userJourney.historyLinkVisible
-                            && State.state.featureSwitchIsDebugging.data == false
-                            && State.state.featureSwitchIsTesting.data === false) {
+                            && state.featureSwitchIsDebugging.data == false
+                            && state.featureSwitchIsTesting.data === false) {
                             return undefined
                         }
 
-                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"), State.state);
+                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"), state);
 
-                    }, [State.state.featureSwitchIsDebugging, State.state.featureSwitchIsTesting])
+                    }, [state.featureSwitchIsDebugging, state.featureSwitchIsTesting])
             )
         )
 
 
         editElements.push(
             new VariableUiElement(
-                State.state.featureSwitchIsDebugging.map(isDebugging => {
+                state.featureSwitchIsDebugging.map(isDebugging => {
                     if (isDebugging) {
                         const config_all_tags: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, "");
                         const config_download: TagRenderingConfig = new TagRenderingConfig({render: "{export_as_geojson()}"}, "");
                         const config_id: TagRenderingConfig = new TagRenderingConfig({render: "{open_in_iD()}"}, "");
 
-                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, State.state),
-                            new TagRenderingAnswer(tags, config_download, State.state),
-                            new TagRenderingAnswer(tags, config_id, State.state)])
+                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, state),
+                            new TagRenderingAnswer(tags, config_download, state),
+                            new TagRenderingAnswer(tags, config_id, state)])
                     }
                 })
             )
         )
 
-        const editors = new VariableUiElement(State.state.featureSwitchUserbadge.map(
-            userbadge => {
-                if (!userbadge) {
-                    return undefined
-                }
-                return new Combine(editElements).SetClass("flex flex-col")
-            }
-        ))
-        allRenderings.push(editors)
-
-        return new Combine(allRenderings).SetClass("block")
+        return new Combine(editElements).SetClass("flex flex-col")
     }
-
-
-
-
 }

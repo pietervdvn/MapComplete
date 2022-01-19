@@ -4,7 +4,6 @@ import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 
 export class FixedInputElement<T> extends InputElement<T> {
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<T>;
     private readonly _comparator: (t0: T, t1: T) => boolean;
 
@@ -21,17 +20,12 @@ export class FixedInputElement<T> extends InputElement<T> {
             this.value = new UIEventSource<T>(value);
         }
 
-        const selected = this.IsSelected;
         this._el = document.createElement("span")
-        this._el.addEventListener("mouseout", () => selected.setData(false))
         const e = Translations.W(rendering)?.ConstructElement()
         if (e) {
             this._el.appendChild(e)
         }
 
-        this.onClick(() => {
-            selected.setData(true)
-        })
     }
 
     GetValue(): UIEventSource<T> {

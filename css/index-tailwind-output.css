@@ -912,6 +912,10 @@ video {
   margin-left: 0.25rem;
 }
 
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
 .mr-0 {
   margin-right: 0px;
 }
@@ -1178,6 +1182,10 @@ video {
   flex-grow: 1;
 }
 
+.table-auto {
+  table-layout: auto;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -1270,6 +1278,12 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .self-end {
@@ -2333,6 +2347,10 @@ li::marker {
 .animate-height {
   transition: max-height .5s ease-in-out;
   overflow-y: hidden;
+}
+
+.zebra-table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 .hover\:bg-blue-200:hover {

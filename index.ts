@@ -14,7 +14,6 @@ import {DefaultGuiState} from "./UI/DefaultGuiState";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
-AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
 ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 Utils.DisableLongPresses()

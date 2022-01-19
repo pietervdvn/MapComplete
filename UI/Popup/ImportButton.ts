@@ -246,10 +246,10 @@ ${Utils.special_visualizations_importRequirementDocs}
         // SHow all relevant data - including (eventually) the way of which the geometry will be replaced
         new ShowDataMultiLayer({
             leafletMap: confirmationMap.leafletMap,
-            enablePopups: false,
+            popup: undefined,
             zoomToFeatures: true,
             features: new StaticFeatureSource([feature], false),
-            allElements: state.allElements,
+            state: state,
             layers: state.filteredLayers
         })
 
@@ -257,10 +257,10 @@ ${Utils.special_visualizations_importRequirementDocs}
         action.getPreview().then(changePreview => {
             new ShowDataLayer({
                 leafletMap: confirmationMap.leafletMap,
-                enablePopups: false,
+                popup: undefined,
                 zoomToFeatures: false,
                 features: changePreview,
-                allElements: state.allElements,
+                state,
                 layerToShow: new LayerConfig(conflation_json, "all_known_layers", true)
             })
         })

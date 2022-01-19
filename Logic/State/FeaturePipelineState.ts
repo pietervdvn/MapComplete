@@ -9,6 +9,7 @@ import MapState from "./MapState";
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler";
 import Hash from "../Web/Hash";
 import {BBox} from "../BBox";
+import FeatureInfoBox from "../../UI/Popup/FeatureInfoBox";
 
 export default class FeaturePipelineState extends MapState {
 
@@ -93,8 +94,9 @@ export default class FeaturePipelineState extends MapState {
                         leafletMap: self.leafletMap,
                         layerToShow: source.layer.layerDef,
                         doShowLayer: doShowFeatures,
-                        allElements: self.allElements,
-                        selectedElement: self.selectedElement
+                        selectedElement: self.selectedElement,
+                        state: self,
+                        popup: (tags, layer) => new FeatureInfoBox(tags, layer, self)
                     }
                 );
             }, this
@@ -112,11 +114,13 @@ export default class FeaturePipelineState extends MapState {
      */
     public AddClusteringToMap(leafletMap: UIEventSource<any>) {
         const clustering = this.layoutToUse.clustering
+        const self = this;
         new ShowDataLayer({
             features: this.featureAggregator.getCountsForZoom(clustering, this.locationControl, clustering.minNeededElements),
             leafletMap: leafletMap,
             layerToShow: ShowTileInfo.styling,
-            enablePopups: this.featureSwitchIsDebugging.data,
+            popup: this.featureSwitchIsDebugging.data ? (tags, layer) => new FeatureInfoBox(tags, layer, self) : undefined,
+            state: this
         })
     }
 

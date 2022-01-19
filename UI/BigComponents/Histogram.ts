@@ -127,7 +127,7 @@ export default class Histogram<T> extends VariableUiElement {
 
                 ]),
                 keys.map(_ => ["width: 20%"])
-            ).SetClass("w-full");
+            ).SetClass("w-full zebra-table");
         }, [sortMode]));
     }
 }
