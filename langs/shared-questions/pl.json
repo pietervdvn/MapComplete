@@ -33,6 +33,24 @@
         },
         "website": {
             "question": "Jaka jest strona internetowa {name}?"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Płatność gotówkowa jest tutaj dostępna"
+                },
+                "1": {
+                    "then": "Płatność kartą jest tutaj dostępna"
+                }
+            },
+            "question": "Jakie metody płatności są tutaj dostępne?"
+        },
+        "dog-access": {
+            "mappings": {
+                "1": {
+                    "then": "Psom wstęp wzbroniony"
+                }
+            }
         }
     }
 }
