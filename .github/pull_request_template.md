@@ -13,6 +13,5 @@ To making merging smooth, please make sure that each of the following conditions
 
 - [ ] The codebase is GPL-licensed. By opening a pull request, the new theme will be GPL too
 - [ ] All images are included in the pull request and no images are loaded from an external service (e.g. Wikipedia)
-- [ ] 
-  The [guidelines on how to make your own theme](https://github.com/pietervdvn/MapComplete/blob/master/Docs/Making_Your_Own_Theme.md)
+- [ ] The [guidelines on how to make your own theme](https://github.com/pietervdvn/MapComplete/blob/master/Docs/Making_Your_Own_Theme.md)
   are read and followed
