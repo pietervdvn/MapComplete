@@ -166,7 +166,7 @@
             "thursday": "Csütörtök"
         },
         "opening_hours": {
-            "error_loading": "Hiba: nem sikerült megjeleníteni ezt a nyitva tartási időt",
+            "error_loading": "Hiba: nem sikerült megjeleníteni ezt a nyitva tartási időt.",
             "not_all_rules_parsed": "Ez a nyitva tartás bonyolult. A beviteli elemben a következő szabályok nem vétetnek figyelembe:",
             "closed_until": "Zárva eddig: {date}",
             "closed_permanently": "Ismeretlen ideig zárva",
