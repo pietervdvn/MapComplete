@@ -1,8 +1,9 @@
 import T from "./TestHelper";
-import {AddMiniMap, FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 
 export default class LegacyThemeLoaderSpec extends T {
 
