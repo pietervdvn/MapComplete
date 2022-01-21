@@ -21,6 +21,9 @@
                         "mappings": {
                             "1": {
                                 "then": "Boleh digunakan tanpa bayaran"
+                            },
+                            "0": {
+                                "then": "Anda perlu membayar untuk menggunakannya"
                             }
                         }
                     },
@@ -39,7 +42,8 @@
                         "question": "Tempat ini berbagi akses Web?"
                     },
                     "caravansites-name": {
-                        "question": "Apakah nama tempat ini?"
+                        "question": "Apakah nama tempat ini?",
+                        "render": "Tempat ini disebut {name}"
                     },
                     "caravansites-toilets": {
                         "mappings": {
@@ -54,8 +58,28 @@
                     "caravansites-website": {
                         "question": "Tempat sini terada situs web?",
                         "render": "Situs resmi: <a href='{website}'>{website}</a>"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "question": "Apakah tempat ini memiliki tempat pembuangan sanitasi?",
+                        "mappings": {
+                            "0": {
+                                "then": "Tempat ini memiliki tempat pembuangan sanitasi"
+                            },
+                            "1": {
+                                "then": "Tempat ini tidak memiliki tempat pembuangan sampah sanitasi"
+                            }
+                        }
                     }
+                },
+                "description": "Tempat camping",
+                "name": "Tempat camping",
+                "title": {
+                    "render": "Tempat kemping {name}"
                 }
+            },
+            "1": {
+                "description": "Tempat pembuangan sanitasi",
+                "name": "Tempat pembuangan sanitasi"
             }
         },
         "overrideAll": {
@@ -128,5 +152,146 @@
             }
         },
         "title": "Alamat Inggris"
+    },
+    "openwindpowermap": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "turbine-operator": {
+                        "render": "Turbin angin ini dioperasikan oleh {operator}."
+                    },
+                    "turbine-start-date": {
+                        "render": "Turbin angin ini mulai beroperasi pada/dalam {start_date}.",
+                        "question": "Kapan turbin angin ini mulai beroperasi?"
+                    },
+                    "turbine-output": {
+                        "question": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
+                        "render": "Output daya dari turbin angin ini adalah {generator:output:electricity}."
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "turbin angin"
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megawat"
+                            },
+                            "1": {
+                                "human": " kilowat"
+                            },
+                            "2": {
+                                "human": " watt"
+                            },
+                            "3": {
+                                "human": " gigawatt"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " meter"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap"
+    },
+    "parkings": {
+        "description": "Peta ini menunjukkan tempat parkir yang berbeda",
+        "shortDescription": "Peta ini menunjukkan tempat parkir yang berbeda",
+        "title": "Tempat parkir"
+    },
+    "personal": {
+        "title": "Tema pribadi"
+    },
+    "postboxes": {
+        "layers": {
+            "0": {
+                "description": "Layer yang memperlihatkan kotak pos.",
+                "name": "Kotak pos",
+                "presets": {
+                    "0": {
+                        "title": "kotak pos"
+                    }
+                },
+                "title": {
+                    "render": "Kotak pos"
+                }
+            },
+            "1": {
+                "description": "Layer yang menunjukkan kantor pos.",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Saat ini buka"
+                            }
+                        }
+                    }
+                },
+                "name": "Kantor pos",
+                "tagRenderings": {
+                    "OH": {
+                        "render": "Jam Buka: {opening_hours_table()}",
+                        "mappings": {
+                            "0": {
+                                "then": "Buka 24 jam (termasuk hari libur)"
+                            }
+                        },
+                        "question": "Jam berapa kantor pos ini buka?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Kantor Pos"
+                    }
+                },
+                "title": {
+                    "render": "Kantor Pos"
+                }
+            }
+        }
+    },
+    "waste_basket": {
+        "title": "Keranjang Sampah"
+    },
+    "playgrounds": {
+        "description": "Di peta ini, Anda menemukan taman bermain dan dapat menambahkan lebih banyak informasi",
+        "shortDescription": "Peta dengan taman bermain",
+        "title": "Taman bermain"
+    },
+    "postal_codes": {
+        "layers": {
+            "0": {
+                "name": "kode pos",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Kode posnya adalah {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Kode pos {postal_code}"
+                }
+            },
+            "2": {
+                "name": "balai kota",
+                "title": {
+                    "render": "Balai kota {name}"
+                }
+            }
+        },
+        "shortDescription": "Kode pos",
+        "description": "Kode pos",
+        "title": "Kode pos"
     }
 }
