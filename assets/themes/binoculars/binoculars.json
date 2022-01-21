@@ -6,7 +6,8 @@
     "de": "Ferngläser",
     "it": "Binocoli",
     "nb_NO": "Kikkerter",
-    "zh_Hant": "望遠鏡"
+    "zh_Hant": "望遠鏡",
+    "hu": "Távcsövek"
   },
   "shortDescription": {
     "en": "A map with fixed binoculars",
@@ -14,14 +15,16 @@
     "de": "Eine Karte mit festinstallierten Ferngläsern",
     "it": "Una cartina dei binocoli pubblici fissi",
     "nb_NO": "Et kart over fastmonterte kikkerter",
-    "zh_Hant": "固定望遠鏡的地圖"
+    "zh_Hant": "固定望遠鏡的地圖",
+    "hu": "Rögzített távcsövek (binokulárok) térképe"
   },
   "description": {
     "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
     "nl": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
     "de": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet.",
     "it": "Una cartina dei binocoli su un palo fissi in un luogo. Si trovano tipicamente nei luoghi turistici, nei belvedere, in cima a torri panoramiche oppure occasionalmente nelle riserve naturali.",
-    "zh_Hant": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。"
+    "zh_Hant": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。",
+    "hu": "Rúdra rögzített távcsövek térképe. Jellemzően turisztikailag érdekes, panorámás helyeken, kilátótornyok tetején vagy természetvédelmi területen találhatók."
   },
   "language": [
     "en",
@@ -29,7 +32,8 @@
     "de",
     "it",
     "nb_NO",
-    "zh_Hant"
+    "zh_Hant",
+    "hu"
   ],
   "maintainer": "",
   "icon": "./assets/layers/binocular/telescope.svg",

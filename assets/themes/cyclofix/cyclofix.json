@@ -10,7 +10,8 @@
     "ja": "Cyclofix - サイクリストのためのオープンマップ",
     "zh_Hant": "單車修正 - 單車騎士的開放地圖",
     "it": "Cyclofix - una mappa libera per chi va in bici",
-    "nb_NO": "Cyclofix — et åpent kart for syklister"
+    "nb_NO": "Cyclofix — et åpent kart for syklister",
+    "hu": "Cyclofix – nyílt térkép kerékpárosoknak"
   },
   "description": {
     "en": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -20,7 +21,8 @@
     "de": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können auch interessante Orte zur Karte hinzuzufügen oder bearbeiten und weitere Daten durch Beantwortung von Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
     "ja": "このマップの目的は、サイクリストのニーズに適した施設を見つけるための使いやすいソリューションを提供することです。<br><br>正確な位置を追跡し(モバイルのみ)、左下コーナーで関連するレイヤを選択できます。このツールを使用して、マップにピン(注目点)を追加または編集したり、質問に答えることでより多くのデータを提供することもできます。<br><br>変更内容はすべてOpenStreetMapのグローバルデータベースに自動的に保存され、他のユーザーが自由に再利用できます。<br><br>cyclofixプロジェクトの詳細については、 <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> を参照してください。",
     "zh_Hant": "這份地圖的目的是為單車騎士能夠輕易顯示滿足他們需求的相關設施。<br><br>你可以追蹤你確切位置 (只有行動版)，以及在左下角選擇相關的圖層。你可以使用這工具在地圖新增或編輯釘子，以及透過回答問題來提供更多資訊。<br><br>所有你的變動都會自動存在開放街圖這全球資料圖，並且能被任何人自由取用。<br><br>你可以到 <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> 閱讀更多資訊。",
-    "it": "Questa mappa offre a chi va in bici una soluzione semplice per trovare tutte le infrastrutture di cui ha bisogno.<br><br>Puoi tracciare la tua posizione esatta (solo su mobile) e selezionare i livelli che ti interessano nell'angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare punti di interesse alla mappa e aggiungere nuove informazioni rispendendo alle domande.<br><br>Tutte le modifiche che apporterai saranno automaticamente salvate nel database mondiale di OpenStreetMap e potranno essere liberamente riutilizzate da tutti e tutte.<br><br>Per maggiori informazioni sul progetto ciclofix, visita <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
+    "it": "Questa mappa offre a chi va in bici una soluzione semplice per trovare tutte le infrastrutture di cui ha bisogno.<br><br>Puoi tracciare la tua posizione esatta (solo su mobile) e selezionare i livelli che ti interessano nell'angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare punti di interesse alla mappa e aggiungere nuove informazioni rispendendo alle domande.<br><br>Tutte le modifiche che apporterai saranno automaticamente salvate nel database mondiale di OpenStreetMap e potranno essere liberamente riutilizzate da tutti e tutte.<br><br>Per maggiori informazioni sul progetto ciclofix, visita <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+    "hu": "Ez a térkép kerékpárosoknak kíván könnyen használható megoldást nyújtani a számukra fontos infrastruktúra megtalálásához.<br><br>A bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára fontos rétegeket. Az eszköz segítségével gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a kérdések megválaszolásával pedig további adatokat szolgáltathat.<br><br>Minden módosítás automatikusan elmentődik az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják.<br><br>A cyclofix projektről további információkat a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> oldalon talál."
   },
   "language": [
     "en",
@@ -32,7 +34,8 @@
     "ja",
     "zh_Hant",
     "it",
-    "nb_NO"
+    "nb_NO",
+    "hu"
   ],
   "maintainer": "MapComplete",
   "credits": "Originally created during Open Summer of Code by Pieter Fiers, Thibault Declercq, Pierre Barban, Joost Schouppe and Pieter Vander Vennet",

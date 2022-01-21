@@ -12,7 +12,8 @@
     "zh_Hant",
     "it",
     "pt_BR",
-    "nb_NO"
+    "nb_NO",
+    "hu"
   ],
   "title": {
     "en": "Open Bookcase Map",
@@ -24,7 +25,8 @@
     "zh_Hant": "開放書架地圖",
     "it": "Mappa libera delle microbiblioteche",
     "pt_BR": "Abrir Mapa de Estantes",
-    "nb_NO": "Kart over åpne bokhyller"
+    "nb_NO": "Kart over åpne bokhyller",
+    "hu": "Könyvespolctérkép"
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
@@ -34,7 +36,8 @@
     "ru": "Общественный книжный шкаф - это небольшой уличный шкаф, коробка, старый телефонный аппарат или другие предметы, где хранятся книги. Каждый может положить или взять книгу. Цель этой карты - собрать все эти книжные шкафы. Вы можете обнаружить новые книжные шкафы поблизости и, имея бесплатный аккаунт OpenStreetMap, быстро добавить свои любимые книжные шкафы.",
     "ja": "公共の本棚とは、本が保管されている小さな街角のキャビネット、箱、古い電話のトランク、その他の物のことです。誰でも本を置いたり持ったりすることができます。このマップは、すべての公共の本棚を収集することを目的としています。近くで新しい本棚を見つけることができ、無料のOpenStreetMapアカウントを使えば、お気に入りの本棚を簡単に追加できます。",
     "zh_Hant": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
-    "it": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre."
+    "it": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre.",
+    "hu": "A nyilvános könyvespolc egy kis utcai szekrény, doboz, régi telefonfülke vagy más tárgy, ahol könyveket tárolnak. Bárki tehet rá vagy vihet el róla könyvet. Ez a térkép ezeket a könyvespolcokat kívánja összegyűjteni. Ha felfedezett egy új könyvespolcot a közelben, akkor egy ingyenes OpenStreetMap-fiókkal gyorsan fel is rajzolhatja a térképre."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
   "startLat": 0,

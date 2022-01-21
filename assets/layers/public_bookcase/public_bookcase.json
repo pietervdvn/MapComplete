@@ -434,7 +434,7 @@
         "fr": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>",
         "ru": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>",
         "it": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>",
-        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>."
+        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
       },
       "question": {
         "en": "Is there a website with more information about this public bookcase?",

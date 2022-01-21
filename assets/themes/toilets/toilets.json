@@ -10,7 +10,8 @@
     "zh_Hant": "開放廁所地圖",
     "pl": "Mapa otwartych toalet",
     "it": "Mappa libera delle toilet",
-    "nb_NO": "Åpent toalettkart"
+    "nb_NO": "Åpent toalettkart",
+    "hu": "WC-térkép"
   },
   "description": {
     "en": "A map of public toilets",
@@ -21,7 +22,8 @@
     "ja": "公衆トイレの地図",
     "zh_Hant": "公共廁所的地圖",
     "pl": "Mapa toalet publicznych",
-    "it": "Una cartina dei servizi igienici pubblici"
+    "it": "Una cartina dei servizi igienici pubblici",
+    "hu": "Nyilvános WC-k térképe"
   },
   "maintainer": "MapComplete",
   "version": "2020-08-29",
@@ -35,7 +37,8 @@
     "zh_Hant",
     "pl",
     "it",
-    "nb_NO"
+    "nb_NO",
+    "hu"
   ],
   "startZoom": 12,
   "startLat": 51.2095,
