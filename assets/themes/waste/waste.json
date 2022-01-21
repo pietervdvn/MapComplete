@@ -25,11 +25,7 @@
         "minzoom": 12
       }
     },
-    {
-      "builtin": "recycling"
-    },
-    {
-      "builtin": "waste_disposal"
-    }
+    "recycling",
+    "waste_disposal"
   ]
 }
