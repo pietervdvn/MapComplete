@@ -1001,11 +1001,6 @@
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "title": "A map of maps"
     },
-    "natuurpunt": {
-        "description": "On this map you can find all the nature reserves that Natuurpunt offers ",
-        "shortDescription": "This map shows the nature reserves of Natuurpunt",
-        "title": "The map of Natuurpunt"
-    },
     "observation_towers": {
         "description": "Publicly accessible towers to enjoy the view",
         "shortDescription": "Publicly accessible towers to enjoy the view",

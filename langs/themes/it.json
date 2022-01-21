@@ -799,11 +799,6 @@
         "shortDescription": "Questo tema mostra tutte le mappe (turistiche) conosciute da OpenStreetMap",
         "title": "Una cartina delle cartine"
     },
-    "natuurpunt": {
-        "description": "In questa cartina è possibile trovare tutte le riserve naturali offerte da Natuupunt. ",
-        "shortDescription": "Questa cartina mostra le riserve naturali di Natuurpunt",
-        "title": "Riserve naturali"
-    },
     "observation_towers": {
         "description": "Torri pubblicamente accessibili per godere della vista",
         "shortDescription": "Torri pubblicamente accessibili per godere della vista",
