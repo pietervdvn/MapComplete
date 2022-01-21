@@ -1,0 +1,176 @@
+{
+  "id": "mapcomplete-changes",
+  "title": {
+    "en": "Changes made with MapComplete"
+  },
+  "shortDescription": {
+    "en": "Shows changes made by MapComplete"
+  },
+  "description": {
+    "en": "This maps shows all the changes made with MapComplete"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/logo.svg",
+  "hideFromOverview": true,
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "clustering": false,
+  "layers": [
+    {
+      "id": "mapcomplete-changes",
+      "name": {
+        "en": "Changeset centers"
+      },
+      "minzoom": 0,
+      "source": {
+        "osmTags": "editor~*",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/mapcomplete-changes/tile_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 8,
+        "maxCacheAge": 0
+      },
+      "calculatedTags": [
+        "_last_edit:contributor:lc:=feat.properties['_last_edit:contributor'].toLowerCase()"
+      ],
+      "title": {
+        "render": {
+          "en": "Changeset for {theme}"
+        }
+      },
+      "description": {
+        "en": "Shows all MapComplete changes"
+      },
+      "tagRenderings": [
+        {
+          "id": "render_id",
+          "render": {
+            "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+          }
+        },
+        {
+          "id": "contributor",
+          "render": {
+            "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+          }
+        },
+        {
+          "id": "theme",
+          "render": {
+            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+          },
+          "mappings": [
+            {
+              "if": "theme~http.*",
+              "then": {
+                "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+              }
+            }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "icon": {
+            "render": "teardrop:#00cc00"
+          },
+          "iconSize": "30,30,center"
+        }
+      ],
+      "filter": [
+        {
+          "id": "theme-search",
+          "options": [
+            {
+              "osmTags": "theme~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Themename contains {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "created_by",
+          "options": [
+            {
+              "osmTags": "_last_edit:contributor:lc~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Made by contributor {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "not_created_by",
+          "options": [
+            {
+              "osmTags": "_last_edit:contributor:lc!~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "<b>Not</b> made by contributor {search}"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "builtin": "current_view",
+      "override": {
+        "title": "Statistics on changesets in the current view",
+        "tagRenderings": [
+          {
+            "id": "link_to_more",
+            "render": {
+              "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+            }
+          },
+          {
+            "id": "hist_themes",
+            "render": "{histogram(_embedded_cs:themes, Themename, Number of changesets)}"
+          },
+          {
+            "id": "hist_themes",
+            "render": "{histogram(_embedded_cs:users, Contributor, Number of changesets)}"
+          }
+        ],
+        "calculatedTags": [
+          "_embedded_cs=feat.overlapWith('mapcomplete-changes').map(f => f.feat.properties)",
+          "_embedded_cs:themes=feat.get('_embedded_cs').map(cs => cs.theme)",
+          "_embedded_cs:users=feat.get('_embedded_cs').map(cs => cs['_last_edit:contributor'])"
+        ],
+        "+mapRendering": [
+          {
+            "location": [
+              "point"
+            ],
+            "icon": "statistics:black",
+            "iconSize": "30,30,center"
+          }
+        ]
+      }
+    }
+  ]
+}

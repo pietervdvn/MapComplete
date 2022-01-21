@@ -3,7 +3,9 @@
  Special tag renderings 
 ========================
 
- ## Table of contents
+
+
+## Table of contents
 
 1. [Special tag renderings](#special-tag-renderings)
     + [all_tags](#all_tags)
@@ -48,10 +50,24 @@
       * [Example usage of open_in_iD](#example-usage-of-open_in_id)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
+    + [close_note](#close_note)
+      * [Example usage of close_note](#example-usage-of-close_note)
+    + [add_note_comment](#add_note_comment)
+      * [Example usage of add_note_comment](#example-usage-of-add_note_comment)
+    + [visualize_note_comments](#visualize_note_comments)
+      * [Example usage of visualize_note_comments](#example-usage-of-visualize_note_comments)
+    + [add_image_to_note](#add_image_to_note)
+      * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
- In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's. General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args 
+
+
+In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
+
+General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
+
+
 
 ### all_tags 
 
@@ -59,7 +75,9 @@
 
 #### Example usage of all_tags 
 
- `{all_tags()}` 
+ `{all_tags()}`
+
+
 
 ### image_carousel 
 
@@ -72,7 +90,9 @@ image key/prefix (multiple values allowed if comma-seperated) | image,mapillary,
 
 #### Example usage of image_carousel 
 
- `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}` 
+ `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
+
+
 
 ### image_upload 
 
@@ -86,7 +106,9 @@ label | Add image | The text to show on the button
 
 #### Example usage of image_upload 
 
- `{image_upload(image,Add image)}` 
+ `{image_upload(image,Add image)}`
+
+
 
 ### wikipedia 
 
@@ -99,7 +121,9 @@ keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show 
 
 #### Example usage of wikipedia 
 
- `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height 
+ `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
 
 ### minimap 
 
@@ -113,7 +137,9 @@ idKey | id | (Matches all resting arguments) This argument should be the key of 
 
 #### Example usage of minimap 
 
- `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}` 
+ `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`
+
+
 
 ### sided_minimap 
 
@@ -126,7 +152,9 @@ side | _undefined_ | The side to show, either `left` or `right`
 
 #### Example usage of sided_minimap 
 
- `{sided_minimap(left)}` 
+ `{sided_minimap(left)}`
+
+
 
 ### reviews 
 
@@ -140,7 +168,9 @@ fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as sp
 
 #### Example usage of reviews 
 
- `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used 
+ `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used
+
+
 
 ### opening_hours_table 
 
@@ -155,7 +185,9 @@ postfix | _empty string_ | Remove this string from the end of the value before p
 
 #### Example usage of opening_hours_table 
 
- A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}` 
+ A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`
+
+
 
 ### live 
 
@@ -170,7 +202,9 @@ path | _undefined_ | The path (or shorthand) that should be returned
 
 #### Example usage of live 
 
- {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)} 
+ {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}
+
+
 
 ### histogram 
 
@@ -186,7 +220,9 @@ colors* | _undefined_ | (Matches all resting arguments - optional) Matches a reg
 
 #### Example usage of histogram 
 
- `{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram 
+ `{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram
+
+
 
 ### share_link 
 
@@ -199,7 +235,9 @@ url | _undefined_ | The url to share (default: current URL)
 
 #### Example usage of share_link 
 
- {share_link()} to share the current page, {share_link(<some_url>)} to share the given url 
+ {share_link()} to share the current page, {share_link(<some_url>)} to share the given url
+
+
 
 ### canonical 
 
@@ -212,7 +250,9 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
 #### Example usage of canonical 
 
- {canonical(length)} will give 42 metre (in french) 
+ {canonical(length)} will give 42 metre (in french)
+
+
 
 ### import_button 
 
@@ -223,7 +263,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -264,16 +304,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 name | default | description
 ------ | --------- | -------------
 targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
-tags | _undefined_ | The tags to add onto the new object - see specification above
+tags | _undefined_ | The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
 max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
+note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'
  
 
 #### Example usage of import_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5)}` 
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,)}`
+
+
 
 ### import_way_button 
 
@@ -284,7 +327,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -325,7 +368,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 name | default | description
 ------ | --------- | -------------
 targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
-tags | _undefined_ | The tags to add onto the new object - see specification above
+tags | _undefined_ | The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_to_point_if | _undefined_ | Points with the given tags will be snapped to or moved
@@ -338,7 +381,9 @@ snap_to_layer_max_distance | 0.1 | Distance to distort the geometry to snap to t
 
 #### Example usage of import_way_button 
 
- `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,1,,0.1)}` 
+ `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,1,,0.1)}`
+
+
 
 ### conflate_button 
 
@@ -349,7 +394,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add.
+The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
@@ -390,7 +435,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 name | default | description
 ------ | --------- | -------------
 targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements
-tags | _undefined_ | The tags to add onto the new object - see specification above
+tags | _undefined_ | The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 way_to_conflate | _undefined_ | The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag
@@ -398,7 +443,9 @@ way_to_conflate | _undefined_ | The key, of which the corresponding value is the
 
 #### Example usage of conflate_button 
 
- `{conflate_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,)}` 
+ `{conflate_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,)}`
+
+
 
 ### multi_apply 
 
@@ -415,7 +462,9 @@ overwrite | _undefined_ | If set to 'true', the tags on the other objects will a
 
 #### Example usage of multi_apply 
 
- {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)} 
+ {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}
+
+
 
 ### tag_apply 
 
@@ -444,7 +493,9 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 #### Example usage of tag_apply 
 
- `{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id) 
+ `{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)
+
+
 
 ### export_as_gpx 
 
@@ -452,7 +503,9 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 #### Example usage of export_as_gpx 
 
- `{export_as_gpx()}` 
+ `{export_as_gpx()}`
+
+
 
 ### export_as_geojson 
 
@@ -460,7 +513,9 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 #### Example usage of export_as_geojson 
 
- `{export_as_geojson()}` 
+ `{export_as_geojson()}`
+
+
 
 ### open_in_iD 
 
@@ -468,7 +523,9 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 #### Example usage of open_in_iD 
 
- `{open_in_iD()}` 
+ `{open_in_iD()}`
+
+
 
 ### clear_location_history 
 
@@ -476,7 +533,73 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 #### Example usage of clear_location_history 
 
- `{clear_location_history()}` 
+ `{clear_location_history()}`
+
+
+
+### close_note 
+
+ Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text. 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | Text to show on this button
+icon | checkmark.svg | Icon to show
+Id-key | id | The property name where the ID of the note to close can be found
+comment | _undefined_ | Text to add onto the note when closing
+ 
+
+#### Example usage of close_note 
+
+ `{close_note(,checkmark.svg,id,)}`
+
+
+
+### add_note_comment 
+
+ A textfield to add a comment to a node (with the option to close the note). 
+
+name | default | description
+------ | --------- | -------------
+Id-key | id | The property name where the ID of the note to close can be found
+ 
+
+#### Example usage of add_note_comment 
+
+ `{add_note_comment(id)}`
+
+
+
+### visualize_note_comments 
+
+ Visualises the comments for notes 
+
+name | default | description
+------ | --------- | -------------
+commentsKey | comments | The property name of the comments, which should be stringified json
+start | 0 | Drop the first 'start' comments
+ 
+
+#### Example usage of visualize_note_comments 
+
+ `{visualize_note_comments(comments,0)}`
+
+
+
+### add_image_to_note 
+
+ Adds an image to a node 
+
+name | default | description
+------ | --------- | -------------
+Id-key | id | The property name where the ID of the note to close can be found
+ 
+
+#### Example usage of add_image_to_note 
+
+ `{add_image_to_note(id)}`
+
+
 
 ### auto_apply 
 

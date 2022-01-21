@@ -1,5 +1,5 @@
 import {Tag} from "../../Tags/Tag";
-import OsmChangeAction, {OsmCreateAction} from "./OsmChangeAction";
+import {OsmCreateAction} from "./OsmChangeAction";
 import {Changes} from "../Changes";
 import {ChangeDescription} from "./ChangeDescription";
 import {And} from "../../Tags/And";

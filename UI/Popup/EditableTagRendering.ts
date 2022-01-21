@@ -23,8 +23,8 @@ export default class EditableTagRendering extends Toggle {
     ) {
 
         // The tagrendering is hidden if:
-        // The answer is unknown. The questionbox will then show the question
-        // There is a condition hiding the answer
+        // - The answer is unknown. The questionbox will then show the question
+        // - There is a condition hiding the answer
         const renderingIsShown = tags.map(tags =>
             configuration.IsKnown(tags) &&
             (configuration?.condition?.matchesProperties(tags) ?? true))
@@ -42,7 +42,7 @@ export default class EditableTagRendering extends Toggle {
     }
 
     private static CreateRendering(tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
-        const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
+        const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration, State.state)
         answer.SetClass("w-full")
         let rendering = answer;
 

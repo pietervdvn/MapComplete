@@ -31,28 +31,6 @@
   },
   "layers": [
     {
-      "builtin": "current_view",
-      "override": {
-        "+mapRendering": [
-          {
-            "location": [
-              "point"
-            ],
-            "icon": {
-              "render": "./assets/svg/robot.svg"
-            },
-            "iconSize": "15,15,center"
-          }
-        ],
-        "tagRenderings": [
-          {
-            "id": "hw",
-            "render": "Beep boop! I'm a bot!"
-          }
-        ]
-      }
-    },
-    {
       "builtin": "type_node",
       "override": {
         "calculatedTags": [

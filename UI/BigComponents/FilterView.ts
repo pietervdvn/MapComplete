@@ -10,10 +10,14 @@ import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
-import FilteredLayer from "../../Models/FilteredLayer";
+import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
+import {SubstitutedTranslation} from "../SubstitutedTranslation";
+import ValidatedTextField from "../Input/ValidatedTextField";
+import {QueryParameters} from "../../Logic/Web/QueryParameters";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>, tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
@@ -139,86 +143,104 @@ export default class FilterView extends VariableUiElement {
         if (layer.filters.length === 0) {
             return undefined;
         }
+        
+        
+        const toShow : BaseUIElement [] = []
 
-        const filterIndexes = new Map<string, number>()
-        layer.filters.forEach((f, i) => filterIndexes.set(f.id, i))
-
-        let listFilterElements: [BaseUIElement, UIEventSource<{ filter: FilterConfig, selected: number }>][] = layer.filters.map(
-            FilterView.createFilter
-        );
-
-        listFilterElements.forEach((inputElement, i) =>
-            inputElement[1].addCallback((changed) => {
-                const oldValue = flayer.appliedFilters.data
-
-                if (changed === undefined) {
-                    // Lets figure out which filter should be removed
-                    // We know this inputElement corresponds with layer.filters[i]
-                    // SO, if there is a value in 'oldValue' with this filter, we have to recalculated
-                    if (!oldValue.some(f => f.filter === layer.filters[i])) {
-                        // The filter to remove is already gone, we can stop
-                        return;
-                    }
-                } else if (oldValue.some(f => f.filter === changed.filter && f.selected === changed.selected)) {
-                    // The changed value is already there
-                    return;
-                }
-                const listTagsFilters = Utils.NoNull(
-                    listFilterElements.map((input) => input[1].data)
-                );
-
-                flayer.appliedFilters.setData(listTagsFilters);
+        for (const filter of layer.filters) {
+            
+            const [ui, actualTags] = FilterView.createFilter(filter)
+            
+            ui.SetClass("mt-3")
+            toShow.push(ui)
+            actualTags.addCallback(tagsToFilterFor => {
+                flayer.appliedFilters.data.set(filter.id, tagsToFilterFor)
+                flayer.appliedFilters.ping()
             })
-        );
+            flayer.appliedFilters.map(dict => dict.get(filter.id))
+                .addCallbackAndRun(filters => actualTags.setData(filters))
+            
+            
+        }
 
-        flayer.appliedFilters.addCallbackAndRun(appliedFilters => {
-            for (let i = 0; i < layer.filters.length; i++) {
-                const filter = layer.filters[i];
-                let foundMatch = undefined
-                for (const appliedFilter of appliedFilters) {
-                    if (appliedFilter.filter === filter) {
-                        foundMatch = appliedFilter
-                        break;
-                    }
-                }
-
-                listFilterElements[i][1].setData(foundMatch)
-            }
-
-        })
-
-        return new Combine(listFilterElements.map(input => input[0].SetClass("mt-3")))
+        return new Combine(toShow)
             .SetClass("flex flex-col ml-8 bg-gray-300 rounded-xl p-2")
 
     }
+    
+    // Filter which uses one or more textfields
+    private static createFilterWithFields(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
-    private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<{ filter: FilterConfig, selected: number }>] {
-        if (filterConfig.options.length === 1) {
-            let option = filterConfig.options[0];
-
-            const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6");
-            const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2 w-6");
-
-            const toggle = new Toggle(
-                new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),
-                new Combine([iconUnselected, option.question.Clone().SetClass("block")]).SetClass("flex")
-            )
-                .ToggleOnClick()
-                .SetClass("block m-1")
-
-            const selected = {
-                filter: filterConfig,
-                selected: 0
-            }
-            return [toggle, toggle.isEnabled.map(enabled => enabled ? selected : undefined, [],
-                f => f?.filter === filterConfig && f?.selected === 0)
-            ]
+        const filter = filterConfig.options[0]
+        const mappings = new Map<string, BaseUIElement>()
+        let allValid = new UIEventSource(true)
+        const properties = new UIEventSource<any>({})
+        for (const {name, type} of filter.fields) {
+            const value = QueryParameters.GetQueryParameter("filter-" + filterConfig.id + "-" + name, "", "Value for filter " + filterConfig.id)
+            const field = ValidatedTextField.InputForType(type, {
+                value
+            }).SetClass("inline-block")
+            mappings.set(name, field)
+            const stable = value.stabilized(250)
+            stable.addCallbackAndRunD(v => {
+                properties.data[name] = v.toLowerCase();
+                properties.ping()
+            })
+            allValid = allValid.map(previous => previous && field.IsValid(stable.data) && stable.data !== "", [stable])
         }
+        const tr = new SubstitutedTranslation(filter.question, new UIEventSource<any>({id: filterConfig.id}), State.state, mappings)
+        const trigger : UIEventSource<FilterState>= allValid.map(isValid => {
+            if (!isValid) {
+                return undefined
+            }
+            const props = properties.data
+            // Replace all the field occurences in the tags...
+            const tagsSpec = Utils.WalkJson(filter.originalTagsSpec,
+                v => {
+                    if (typeof v !== "string") {
+                        return v
+                    }
+
+                    for (const key in props) {
+                        v = (<string>v).replace("{"+key+"}", props[key])
+                    }
+                    
+                    return v
+                }
+            )
+            const tagsFilter = TagUtils.Tag(tagsSpec)
+            return {
+                currentFilter: tagsFilter,
+                state: JSON.stringify(props)
+            }
+        }, [properties])
+        
+        return [tr, trigger];
+    }
+    
+    private static createCheckboxFilter(filterConfig: FilterConfig):  [BaseUIElement, UIEventSource<FilterState>] {
+        let option = filterConfig.options[0];
+
+        const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6");
+        const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2 w-6");
+
+        const toggle = new Toggle(
+            new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),
+            new Combine([iconUnselected, option.question.Clone().SetClass("block")]).SetClass("flex")
+        )
+            .ToggleOnClick()
+            .SetClass("block m-1")
+
+        return [toggle, toggle.isEnabled.map(enabled => enabled ? {currentFilter: option.osmTags, state: "true"} : undefined, [],
+            f => f !== undefined)
+        ]
+    }
+    private static createMultiFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
         let options = filterConfig.options;
 
-        const values = options.map((f, i) => ({
-            filter: filterConfig, selected: i
+        const values : FilterState[] = options.map((f, i) => ({
+            currentFilter: f.osmTags, state: i
         }))
         const radio = new RadioButton(
             options.map(
@@ -234,8 +256,25 @@ export default class FilterView extends VariableUiElement {
                 i => values[i],
                 [],
                 selected => {
-                    return selected?.selected
+                    const v = selected?.state
+                    if(v === undefined || typeof v === "string"){
+                        return undefined
+                    }
+                    return v
                 }
             )]
+    }
+    private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
+
+        if (filterConfig.options[0].fields.length > 0) {
+            return FilterView.createFilterWithFields(filterConfig)
+        }
+
+
+        if (filterConfig.options.length === 1) {
+          return FilterView.createCheckboxFilter(filterConfig)
+        }
+
+        return FilterView.createMultiFilter(filterConfig)
     }
 }

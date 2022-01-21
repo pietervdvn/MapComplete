@@ -54,7 +54,7 @@
             "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
             "es": "Respaldo: Si",
-            "hu": "Háttámla: Igen",
+            "hu": "Háttámla van",
             "id": "Sandaran: Ya",
             "it": "Schienale: Sì",
             "ru": "Со спинкой",
@@ -75,7 +75,7 @@
             "fr": "Dossier : Non",
             "nl": "Rugleuning ontbreekt",
             "es": "Respaldo: No",
-            "hu": "Háttámla: Nem",
+            "hu": "Háttámla nincs",
             "id": "Sandaran: Tidak",
             "it": "Schienale: No",
             "ru": "Без спинки",
@@ -95,7 +95,7 @@
         "fr": "Ce banc dispose-t-il d'un dossier ?",
         "nl": "Heeft deze zitbank een rugleuning?",
         "es": "¿Este banco tiene un respaldo?",
-        "hu": "Van háttámlája ennek a padnak?",
+        "hu": "Van-e háttámlája ennek a padnak?",
         "id": "Apakah bangku ini memiliki sandaran?",
         "it": "Questa panchina ha lo schienale?",
         "ru": "Есть ли у этой скамейки спинка?",
@@ -373,7 +373,7 @@
         "de": "Welche Farbe hat diese Sitzbank?",
         "fr": "Quelle est la couleur de ce banc ?",
         "nl": "Welke kleur heeft deze zitbank?",
-        "hu": "Milyen színű a pad?",
+        "hu": "Milyen színű ez a pad?",
         "it": "Di che colore è questa panchina?",
         "ru": "Какого цвета скамейка?",
         "zh_Hans": "这个长椅是什么颜色的？",
@@ -633,7 +633,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "circle:#FE6F32;./assets/layers/bench/bench.svg"
+        "render": "./assets/layers/bench/bench.svg"
       },
       "iconSize": {
         "render": "35,35,center"

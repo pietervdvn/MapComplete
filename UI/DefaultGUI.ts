@@ -15,13 +15,18 @@ import LeftControls from "./BigComponents/LeftControls";
 import RightControls from "./BigComponents/RightControls";
 import CenterMessageBox from "./CenterMessageBox";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ScrollableFullScreen from "./Base/ScrollableFullScreen";
 import Translations from "./i18n/Translations";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler";
 import Lazy from "./Base/Lazy";
 import {DefaultGuiState} from "./DefaultGuiState";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import * as home_location_json from "../assets/layers/home_location/home_location.json";
+import NewNoteUi from "./Popup/NewNoteUi";
+import Combine from "./Base/Combine";
+import AddNewMarker from "./BigComponents/AddNewMarker";
+import FilteredLayer from "../Models/FilteredLayer";
 
 
 /**
@@ -44,54 +49,80 @@ export default class DefaultGUI {
 
         this.SetupUIElements();
         this.SetupMap()
-        
-        
-        if(state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0){
+
+
+        if (state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0) {
             Utils.LoadCustomCss(state.layoutToUse.customCss)
         }
     }
 
     public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
 
-        function setup() {
-            let presetCount = 0;
-            for (const layer of state.layoutToUse.layers) {
-                for (const preset of layer.presets) {
-                    presetCount++;
-                }
-            }
-            if (presetCount == 0) {
-                return;
-            }
+        const hasPresets = state.layoutToUse.layers.some(layer => layer.presets.length > 0);
+        const noteLayer: FilteredLayer = state.filteredLayers.data.filter(l => l.layerDef.id === "note")[0]
+        let addNewNoteDialog: (isShown: UIEventSource<boolean>) => BaseUIElement = undefined;
+        const t = Translations.t.notes
+        if (noteLayer !== undefined) {
+            addNewNoteDialog = (isShown) => new NewNoteUi(noteLayer, isShown, state)
+        }
 
+        function setup() {
+            if (!hasPresets && addNewNoteDialog === undefined) {
+                return; // nothing to do
+            }
             const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
-                () => Translations.t.general.add.title.Clone(),
-                () => new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state),
+                () => hasPresets ? Translations.t.general.add.title : Translations.t.notes.createNoteTitle,
+                () => {
+                    let addNew = undefined;
+                    if (hasPresets) {
+                        addNew = new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state);
+                    }
+                    let addNote = undefined;
+                    if (noteLayer !== undefined) {
+                        addNote = addNewNoteDialog(newPointDialogIsShown)
+                    }
+                    return new Combine([addNew, addNote]).SetClass("flex flex-col font-lg text-lg")
+                },
                 "new",
                 newPointDialogIsShown
             );
+
             addNewPoint.isShown.addCallback((isShown) => {
                 if (!isShown) {
+                    // Clear the 'last-click'-location when the dialog is closed - this causes the popup and the marker to be removed
                     state.LastClickLocation.setData(undefined);
                 }
             });
+            
+            let noteMarker = undefined;
+            if(!hasPresets && addNewNoteDialog !== undefined){
+                noteMarker = new Combine(
+                    [Svg.note_svg().SetClass("absolute bottom-0").SetStyle("height: 40px"), 
+                        Svg.addSmall_svg().SetClass("absolute w-6 animate-pulse")
+                            .SetStyle("right: 10px; bottom: -8px;")
+                    ])
+                    .SetClass("block relative h-full")
+                    .SetStyle("left: calc( 50% - 15px )") // This is a bit hacky, yes I know!
+            }
 
             new StrayClickHandler(
-                state.LastClickLocation,
-                state.selectedElement,
-                state.filteredLayers,
-                state.leafletMap,
-                addNewPoint
+                state,
+                addNewPoint,
+                hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
             );
         }
 
-        state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
-            if (addNewAllowed) {
-                setup()
-                return true;
-            }
-        })
+        if (noteLayer !== undefined) {
+            setup()
+        } else {
+            state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
+                if (addNewAllowed) {
+                    setup()
+                    return true;
+                }
+            })
+        }
 
     }
 
@@ -111,7 +142,7 @@ export default class DefaultGUI {
 
         new ShowDataLayer({
             leafletMap: state.leafletMap,
-            layerToShow: AllKnownLayers.sharedLayers.get("home_location"),
+            layerToShow: new LayerConfig(home_location_json, "all_known_layers", true),
             features: state.homeLocation,
             enablePopups: false,
         })

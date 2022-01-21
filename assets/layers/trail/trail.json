@@ -4,7 +4,8 @@
     "en": "Trails",
     "nl": "Wandeltochten",
     "ru": "Тропы",
-    "de": "Wanderwege"
+    "de": "Wanderwege",
+    "fr": "Sentiers"
   },
   "minzoom": 12,
   "source": {
@@ -25,7 +26,8 @@
       "en": "Trail",
       "nl": "Wandeltocht",
       "ru": "Тропа",
-      "de": "Wanderweg"
+      "de": "Wanderweg",
+      "fr": "Sentier"
     },
     "mappings": [
       {

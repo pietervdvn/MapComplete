@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.13.1";
+    public static vNumber = "0.14.1";
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
 
@@ -17,6 +17,14 @@ export default class Constants {
     ]
 
 
+    public static readonly added_by_default: string[] = ["gps_location", "gps_location_history", "home_location", "gps_track"]
+    public static readonly no_include: string[] = ["conflation", "left_right_style", "split_point","current_view","matchpoint"]
+    /**
+     * Layer IDs of layers which have special properties through built-in hooks
+     */
+    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note", ...Constants.no_include]
+
+ 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
@@ -51,6 +59,7 @@ export default class Constants {
      * For every bin, the totals are uploaded as metadata
      */
     static distanceToChangeObjectBins = [25,50,100,500,1000,5000, Number.MAX_VALUE]
+    static themeOrder = ["personal", "cyclofix", "hailhydrant", "bookcases", "toilets", "aed"];
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

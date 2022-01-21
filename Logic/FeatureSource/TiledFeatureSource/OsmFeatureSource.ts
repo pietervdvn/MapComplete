@@ -12,6 +12,9 @@ import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
 
+/**
+ * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
+ */
 export default class OsmFeatureSource {
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly downloadedTiles = new Set<number>()
@@ -85,6 +88,10 @@ export default class OsmFeatureSource {
     private async LoadTile(z, x, y): Promise<void> {
         if (z > 20) {
             throw "This is an absurd high zoom level"
+        }
+        
+        if( z < 14){
+            throw `Zoom ${z} is too much for OSM to handle! Use a higher zoom level!`
         }
 
         const bbox = BBox.fromTile(z, x, y)

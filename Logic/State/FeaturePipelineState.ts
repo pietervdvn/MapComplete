@@ -9,7 +9,6 @@ import MapState from "./MapState";
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler";
 import Hash from "../Web/Hash";
 import {BBox} from "../BBox";
-import {FeatureSourceForLayer} from "../FeatureSource/FeatureSource";
 
 export default class FeaturePipelineState extends MapState {
 
@@ -33,7 +32,7 @@ export default class FeaturePipelineState extends MapState {
 
                 const sourceBBox = source.features.map(allFeatures => BBox.bboxAroundAll(allFeatures.map(f => BBox.get(f.feature))))
                 
-                // Do show features indicates if the 'showDataLayer' should be shown
+                // Do show features indicates if the respective 'showDataLayer' should be shown. It can be hidden by e.g. clustering
                 const doShowFeatures = source.features.map(
                     f => {
                         const z = self.locationControl.data.zoom

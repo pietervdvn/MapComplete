@@ -28,7 +28,6 @@ export default class MetaTagging {
                                   includeDates?: true | boolean,
                                   includeNonDates?: true | boolean
                               }): boolean {
-
         if (features === undefined || features.length === 0) {
             return;
         }
@@ -104,9 +103,8 @@ export default class MetaTagging {
         }
         return atLeastOneFeatureChanged
     }
-    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => boolean)[] {
-        const functions: ((feature: any) => boolean)[] = [];
-        
+    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
+        const functions: ((feature: any) => any)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
@@ -115,9 +113,8 @@ export default class MetaTagging {
                 continue;
             }
 
-            const calculateAndAssign: ((feat: any) => boolean) = (feat) => {
+            const calculateAndAssign: ((feat: any) => any) = (feat) => {
                 try {
-                    let oldValue = isStrict ? feat.properties[key] : undefined
                     let result = new Function("feat", "return " + code + ";")(feat);
                     if (result === "") {
                         result === undefined
@@ -128,7 +125,7 @@ export default class MetaTagging {
                     }
                     delete feat.properties[key]
                     feat.properties[key] = result;
-                    return result === oldValue;
+                    return result
                 }catch(e){
                     if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                         console.warn("Could not calculate a " + (isStrict ? "strict " : "") + " calculated tag for key " + key + " defined by " + code + " (in layer" + layerId + ") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
@@ -137,7 +134,7 @@ export default class MetaTagging {
                             console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
                         }
                     }
-                    return false;
+                    return undefined;
                 }
             } 
                 
@@ -149,16 +146,16 @@ export default class MetaTagging {
 
             // Lazy function
             const f = (feature: any) => {
+                const oldValue = feature.properties[key]
                 delete feature.properties[key]
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,
                     enumerable: false, // By setting this as not enumerable, the localTileSaver will _not_ calculate this
                     get: function () {
-                        calculateAndAssign(feature)
-                        return feature.properties[key]
+                        return calculateAndAssign(feature)
                     }
                 })
-                return true
+                return undefined
             }
 
 
@@ -167,7 +164,7 @@ export default class MetaTagging {
         return functions;
     }
 
-    private static retaggingFuncCache = new Map<string, ((feature: any) => boolean)[]>()
+    private static retaggingFuncCache = new Map<string, ((feature: any) => void)[]>()
 
     /**
      * Creates the function which adds all the calculated tags to a feature. Called once per layer
@@ -183,7 +180,7 @@ export default class MetaTagging {
             return undefined;
         }
 
-        let functions :((feature: any) => boolean)[] = MetaTagging.retaggingFuncCache.get(layer.id);
+        let functions :((feature: any) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id);
         if (functions === undefined) {
             functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
             MetaTagging.retaggingFuncCache.set(layer.id, functions)

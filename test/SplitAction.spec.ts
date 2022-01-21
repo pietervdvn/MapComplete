@@ -8,7 +8,7 @@ export default class SplitActionSpec extends T {
 
 
     constructor() {
-        super("splitaction", [
+        super([
             ["split 295132739",
                 () => SplitActionSpec.split().then(_ => console.log("OK"))],
             ["split 295132739 on already existing node",

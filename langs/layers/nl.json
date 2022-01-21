@@ -1,6 +1,7 @@
 {
     "address": {
         "description": "Adressen",
+        "name": "Bekende adressen in OSM",
         "tagRenderings": {
             "housenumber": {
                 "mappings": {
@@ -8,8 +9,16 @@
                         "then": "Dit gebouw heeft geen huisnummer"
                     }
                 },
+                "question": "Wat is het huisnummer van dit huis?",
                 "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "In welke straat bevindt dit adres zich?",
+                "render": "Dit adres bevindt zich in de straat <b>{addr:street}</b>"
             }
+        },
+        "title": {
+            "render": "Bekend adres"
         }
     },
     "artwork": {
@@ -153,6 +162,9 @@
             },
             "barrier_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Dit is een enkel paaltje in de weg"
+                    },
                     "1": {
                         "then": "Dit zijn fietshekjes die fietsers afremmen"
                     }
@@ -278,8 +290,14 @@
         "tagRenderings": {
             "bench_at_pt-bench_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Er is hier een normale zitbank"
+                    },
                     "1": {
                         "then": "Leunbank"
+                    },
+                    "2": {
+                        "then": "Er is hier geen bank"
                     }
                 },
                 "question": "Wat voor soort bank is dit?"
@@ -568,6 +586,7 @@
         }
     },
     "bike_repair_station": {
+        "description": "Deze laag toont fietspompen en herstelpunten voor fietsen",
         "name": "Fietspunten (herstel, pomp of allebei)",
         "presets": {
             "0": {
@@ -2180,6 +2199,9 @@
                     },
                     "2": {
                         "then": "Zebrapad"
+                    },
+                    "3": {
+                        "then": "Oversteekplaats zonder kruispuntmarkeringen"
                     }
                 },
                 "question": "Wat voor oversteekplaats is dit?"

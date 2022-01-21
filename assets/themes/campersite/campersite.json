@@ -335,7 +335,8 @@
             "fr": "Cet endroit offre-t-il un accès à Internet ?",
             "zh_Hant": "這個地方有提網路連線嗎？",
             "pt_BR": "Este lugar fornece acesso a internet?",
-            "de": "Ist an diesem Ort ein Internetzugang vorhanden?"
+            "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
+            "nl": "Biedt deze plaats internettoegang?"
           },
           "mappings": [
             {
@@ -393,7 +394,8 @@
                 "zh_Hant": "這裡沒有網路連線",
                 "fr": "Il n’y a pas d’accès internet",
                 "pt_BR": "Não há acesso à internet",
-                "de": "Kein Internetzugang vorhanden"
+                "de": "Kein Internetzugang vorhanden",
+                "nl": "Er is geen internettoegang"
               }
             }
           ]
@@ -463,7 +465,8 @@
             "nb_NO": "Har dette stedet toaletter?",
             "fr": "Y-a-t’il des toilettes sur le site ?",
             "pt_BR": "Este lugar tem banheiros?",
-            "de": "Verfügt dieser Ort über Toiletten?"
+            "de": "Verfügt dieser Ort über Toiletten?",
+            "nl": "Heeft deze plaats toiletten?"
           },
           "mappings": [
             {
@@ -482,7 +485,8 @@
                 "nb_NO": "Dette stedet har toalettfasiliteter",
                 "fr": "Ce site a des toilettes",
                 "pt_BR": "Este lugar tem banheiros",
-                "de": "Dieser Ort verfügt über Toiletten"
+                "de": "Dieser Ort verfügt über Toiletten",
+                "nl": "Deze plaats heeft toiletten"
               }
             },
             {
@@ -501,7 +505,8 @@
                 "nb_NO": "Dette stedet har ikke toalettfasiliteter",
                 "fr": "Ce site n’a pas de toilettes",
                 "pt_BR": "Este lugar não tem banheiros",
-                "de": "Dieser Ort verfügt nicht über Toiletten"
+                "de": "Dieser Ort verfügt nicht über Toiletten",
+                "nl": "Deze plaats heeft geen toiletten"
               }
             }
           ]
@@ -534,7 +539,8 @@
             "zh_Hant": "這個地方有網站嗎？",
             "fr": "Ce lieu a-t’il un site internet ?",
             "pt_BR": "Este lugar tem um website?",
-            "de": "Hat dieser Ort eine Webseite?"
+            "de": "Hat dieser Ort eine Webseite?",
+            "nl": "Heeft deze plaats een website?"
           },
           "id": "caravansites-website"
         },

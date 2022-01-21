@@ -3,7 +3,9 @@
  Metatags 
 ==========
 
- ## Table of contents
+
+
+## Table of contents
 
 1. [Metatags](#metatags)
   - [Metatags calculated by MapComplete](#metatags-calculated-by-mapcomplete)
@@ -13,7 +15,7 @@
     + [_length, _length:km](#_length,-_lengthkm)
     + [Theme-defined keys](#theme-defined-keys)
     + [_country](#_country)
-    + [_isOpen, _isOpen:description](#_isopen,-_isopendescription)
+    + [_isOpen](#_isopen)
     + [_direction:numerical, _direction:leftright](#_directionnumerical,-_direction:leftright)
     + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_nowdate,-_now:datetime,-_loaded:date,-_loaded:_datetime)
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
@@ -27,7 +29,9 @@
     + [memberships](#memberships)
     + [get](#get)
 
- Metatags are extra tags available, in order to display more data or to give better questions.
+
+
+Metatags are extra tags available, in order to display more data or to give better questions.
 
 The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
 
@@ -104,7 +108,7 @@ The country code of the property (with latlon2country)
 
 
 
-### _isOpen, _isOpen:description 
+### _isOpen 
 
 
 
@@ -160,7 +164,9 @@ Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' an
 
 Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`
 
- 
+
+
+
 
  Calculating tags with Javascript 
 ----------------------------------

@@ -7255,8 +7255,7 @@ export default class WikidataSpecTest extends T {
     }
 
     constructor() {
-        super("Wikidata",
-            [
+        super(            [
                 ["Download Lion", async () => {
 
                     Utils.injectJsonDownloadForTests(

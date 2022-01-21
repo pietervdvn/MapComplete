@@ -3,7 +3,9 @@
  Available types for text fields 
 =================================
 
- ## Table of contents
+
+
+## Table of contents
 
 1. [Available types for text fields](#available-types-for-text-fields)
     + [string](#string)
@@ -23,37 +25,51 @@
     + [opening_hours](#opening_hours)
     + [color](#color)
 
- The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them 
+
+
+The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them
+
+
 
 ### string 
 
 
 
-A basic string 
+A basic string
+
+
 
 ### text 
 
 
 
-A string, but allows input of longer strings more comfortably and supports newlines (a text area) 
+A string, but allows input of longer strings more comfortably and supports newlines (a text area)
+
+
 
 ### date 
 
 
 
-A date 
+A date
+
+
 
 ### direction 
 
 
 
-A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl) 
+A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)
+
+
 
 ### length 
 
 
 
-A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"] 
+A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
+
+
 
 ### wikidata 
 
@@ -98,55 +114,73 @@ removePostfixes | remove these snippets of text from the end of the passed strin
         }
     ]
 }
-``` 
+```
+
+
 
 ### int 
 
 
 
-A number 
+A number
+
+
 
 ### nat 
 
 
 
-A positive number or zero 
+A positive number or zero
+
+
 
 ### pnat 
 
 
 
-A strict positive number 
+A strict positive number
+
+
 
 ### float 
 
 
 
-A decimal 
+A decimal
+
+
 
 ### pfloat 
 
 
 
-A positive decimal (incl zero) 
+A positive decimal (incl zero)
+
+
 
 ### email 
 
 
 
-An email adress 
+An email adress
+
+
 
 ### url 
 
 
 
-A url 
+A url
+
+
 
 ### phone 
 
 
 
-A phone number 
+A phone number
+
+
 
 ### opening_hours 
 
@@ -187,7 +221,9 @@ postfix | Piece of text that will always be added to the end of the generated op
 }
 ```
 
-*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )` 
+*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`
+
+
 
 ### color 
 

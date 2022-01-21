@@ -1,12 +1,8 @@
 import T from "./TestHelper";
 import {Utils} from "../Utils";
 import ReplaceGeometryAction from "../Logic/Osm/Actions/ReplaceGeometryAction";
-import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
-import {Tag} from "../Logic/Tags/Tag";
-import MapState from "../Logic/State/MapState";
 import * as grb from "../assets/themes/grb_import/grb.json"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import State from "../State";
 import {BBox} from "../Logic/BBox";
 import Minimap from "../UI/Base/Minimap";
@@ -23,6 +19,7 @@ export default class ReplaceGeometrySpec extends T {
             "nl",
             "en"
         ],
+        socialImage: "img.jpg",
         "version": "0",
         "startLat": 51.0249,
         "startLon": 4.026489,
@@ -33,7 +30,11 @@ export default class ReplaceGeometrySpec extends T {
         },
         "layers": [
             {
-                "builtin": "type_node",
+                "id": "type_node",
+                source:{
+                    osmTags:"type=node"
+                },
+                mapRendering: null,
                 "override": {
                     "calculatedTags": [
                         "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
@@ -266,7 +267,6 @@ export default class ReplaceGeometrySpec extends T {
                     }
                 ]
             },
-             "address",
             {
                 "id": "grb",
                 "description": "Geometry which comes from GRB with tools to import them",
@@ -325,7 +325,7 @@ export default class ReplaceGeometrySpec extends T {
     
     
     constructor() {
-        super("ReplaceGeometry", [
+        super( [
             ["House replacement with connected node", async () => {
 
                 Minimap.createMiniMap = () => undefined;

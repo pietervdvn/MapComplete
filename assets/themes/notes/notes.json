@@ -1,0 +1,19 @@
+{
+  "id": "notes",
+  "language": [
+    "en"
+  ],
+  "maintainer": "MapComplete",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "title": "Notes on OpenStreetMap",
+  "version": "0.1",
+  "description": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
+  "icon": "./assets/svg/resolved.svg",
+  "clustering": false,
+  "enableDownload": true,
+  "layers": [
+    "note"
+  ]
+}

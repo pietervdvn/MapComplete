@@ -43,7 +43,7 @@ export default class UserBadge extends Toggle {
                     if (home === undefined) {
                         return;
                     }
-                    state.leafletMap.data.setView([home.lat, home.lon], 16);
+                    state.leafletMap.data?.setView([home.lat, home.lon], 16);
                 });
 
                 const linkStyle = "flex items-baseline"
@@ -79,7 +79,7 @@ export default class UserBadge extends Toggle {
                 }
 
                 const settings =
-                    new Link(Svg.gear_svg(),
+                    new Link(Svg.gear,
                         `${user.backend}/user/${encodeURIComponent(user.name)}/account`,
                         true)
 

@@ -27,7 +27,6 @@ import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import WikipediaBox from "./Wikipedia/WikipediaBox";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import MultiApply from "./Popup/MultiApply";
-import AllKnownLayers from "../Customizations/AllKnownLayers";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import {SubtleButton} from "./Base/SubtleButton";
 import {DefaultGuiState} from "./DefaultGuiState";
@@ -37,7 +36,16 @@ import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton";
 import TagApplyButton from "./Popup/TagApplyButton";
 import AutoApplyButton from "./Popup/AutoApplyButton";
+import * as left_right_style_json from "../assets/layers/left_right_style/left_right_style.json";
 import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
+import Toggle from "./Input/Toggle";
+import Img from "./Base/Img";
+import ValidatedTextField from "./Input/ValidatedTextField";
+import NoteCommentElement from "./Popup/NoteCommentElement";
+import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
+import FileSelectorButton from "./Input/FileSelectorButton";
+import {LoginToggle} from "./Popup/LoginButton";
+import {start} from "repl";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -52,9 +60,41 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations = SpecialVisualizations.init()
 
+    public static HelpMessage() {
 
-    private static init(){
-      const  specialVisualizations: SpecialVisualization[] =
+        const helpTexts =
+            SpecialVisualizations.specialVisualizations.map(viz => new Combine(
+                [
+                    new Title(viz.funcName, 3),
+                    viz.docs,
+                    viz.args.length > 0 ? new Table(["name", "default", "description"],
+                        viz.args.map(arg => {
+                            let defaultArg = arg.defaultValue ?? "_undefined_"
+                            if (defaultArg == "") {
+                                defaultArg = "_empty string_"
+                            }
+                            return [arg.name, defaultArg, arg.doc];
+                        })
+                    ) : undefined,
+                    new Title("Example usage of " + viz.funcName, 4),
+                    new FixedUiElement(
+                        viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
+                    ).SetClass("literal-code"),
+
+                ]
+            ));
+
+        return new Combine([
+                new Title("Special tag renderings", 1),
+                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
+                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                ...helpTexts
+            ]
+        ).SetClass("flex flex-col");
+    }
+
+    private static init() {
+        const specialVisualizations: SpecialVisualization[] =
             [
                 {
                     funcName: "all_tags",
@@ -105,7 +145,7 @@ export default class SpecialVisualizations {
                         if (args.length > 0) {
                             imagePrefixes = [].concat(...args.map(a => a.split(",")));
                         }
-                        return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags, imagePrefixes);
+                        return new ImageCarousel(AllImageProviders.LoadImagesFor(tags, imagePrefixes), tags, state);
                     }
                 },
                 {
@@ -121,7 +161,7 @@ export default class SpecialVisualizations {
                         defaultValue: "Add image"
                     }],
                     constr: (state: State, tags, args) => {
-                        return new ImageUploadFlow(tags, args[0], args[1])
+                        return new ImageUploadFlow(tags, state, args[0], args[1])
                     }
                 },
                 {
@@ -162,7 +202,7 @@ export default class SpecialVisualizations {
                         }
                     ],
                     example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
-                    constr: (state, tagSource, args, defaultGuiState) => {
+                    constr: (state, tagSource, args, _) => {
 
                         const keys = [...args]
                         keys.splice(0, 1)
@@ -268,7 +308,7 @@ export default class SpecialVisualizations {
                                 leafletMap: minimap["leafletMap"],
                                 enablePopups: false,
                                 zoomToFeatures: true,
-                                layerToShow: AllKnownLayers.sharedLayers.get("left_right_style"),
+                                layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
                                 features: new StaticFeatureSource([copy], false),
                                 allElements: State.state.allElements
                             }
@@ -325,7 +365,7 @@ export default class SpecialVisualizations {
                     }],
                     example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                     constr: (state: State, tagSource: UIEventSource<any>, args) => {
-                        return new OpeningHoursVisualization(tagSource, args[0], args[1], args[2])
+                        return new OpeningHoursVisualization(tagSource, state, args[0], args[1], args[2])
                     }
                 },
                 {
@@ -359,12 +399,12 @@ export default class SpecialVisualizations {
                         },
                         {
                             name: "title",
-                            doc: "The text to put above the given values column",
+                            doc: "This text will be placed above the texts (in the first column of the visulasition)",
                             defaultValue: ""
                         },
                         {
                             name: "countHeader",
-                            doc: "The text to put above the counts",
+                            doc: "This text will be placed above the bars",
                             defaultValue: ""
                         },
                         {
@@ -590,12 +630,12 @@ export default class SpecialVisualizations {
                     funcName: "open_in_iD",
                     docs: "Opens the current view in the iD-editor",
                     args: [],
-                    constr: (state, feature ) => {
+                    constr: (state, feature) => {
                         return new OpenIdEditor(state, undefined, feature.data.id)
                     }
                 },
-                
-                
+
+
                 {
                     funcName: "clear_location_history",
                     docs: "A button to remove the travelled track information from the device",
@@ -608,46 +648,222 @@ export default class SpecialVisualizations {
                             Hash.hash.setData(undefined)
                         })
                     }
+                },
+                {
+                    funcName: "close_note",
+                    docs: "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text.",
+                    args: [
+                        {
+                            name: "text",
+                            doc: "Text to show on this button",
+                        },
+                        {
+                            name: "icon",
+                            doc: "Icon to show",
+                            defaultValue: "checkmark.svg"
+                        },
+                        {
+                            name: "Id-key",
+                            doc: "The property name where the ID of the note to close can be found",
+                            defaultValue: "id"
+                        },
+                        {
+                            name: "comment",
+                            doc: "Text to add onto the note when closing",
+                        }
+                    ],
+                    constr: (state, tags, args, guiState) => {
+                        const t = Translations.t.notes;
+
+                        let icon = Svg.checkmark_svg()
+                        if (args[1] !== "checkmark.svg" && (args[2] ?? "") !== "") {
+                            icon = new Img(args[1])
+                        }
+                        let textToShow = t.closeNote;
+                        if ((args[0] ?? "") !== "") {
+                            textToShow = Translations.T(args[0])
+                        }
+
+                        const closeButton = new SubtleButton(icon, textToShow)
+                        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
+                        closeButton.onClick(() => {
+                            const id = tags.data[args[2] ?? "id"]
+                            state.osmConnection.closeNote(id, args[3])
+                                ?.then(_ => {
+                                tags.data["closed_at"] = new Date().toISOString();
+                                tags.ping()
+                            })
+                        })
+                        return new LoginToggle( new Toggle(
+                            t.isClosed.SetClass("thanks"),
+                            closeButton,
+                            isClosed
+                        ), t.loginToClose, state)
+                    }
+                },
+                {
+                    funcName: "add_note_comment",
+                    docs: "A textfield to add a comment to a node (with the option to close the note).",
+                    args: [
+                        {
+                            name: "Id-key",
+                            doc: "The property name where the ID of the note to close can be found",
+                            defaultValue: "id"
+                        }
+                    ],
+                    constr: (state, tags, args, guiState) => {
+
+                        const t = Translations.t.notes;
+                        const textField = ValidatedTextField.InputForType("text", {placeholder: t.addCommentPlaceholder})
+                        textField.SetClass("rounded-l border border-grey")
+                        const txt = textField.GetValue()
+
+                        const addCommentButton = new SubtleButton(Svg.addSmall_svg().SetClass("max-h-7"), t.addCommentPlaceholder)
+                            .onClick(async () => {
+                                const id = tags.data[args[1] ?? "id"]
+
+                                if ((txt.data ?? "") == "") {
+                                    return;
+                                }
+
+                                if (isClosed.data) {
+                                    await state.osmConnection.reopenNote(id, txt.data)
+                                    await state.osmConnection.closeNote(id)
+                                } else {
+                                    await state.osmConnection.addCommentToNode(id, txt.data)
+                                }
+                                NoteCommentElement.addCommentTo(txt.data, tags, state)
+                                txt.setData("")
+
+                            })
+
+
+                        const close = new SubtleButton(Svg.resolved_svg().SetClass("max-h-7"), new VariableUiElement(txt.map(txt => {
+                            if (txt === undefined || txt === "") {
+                                return t.closeNote
+                            }
+                            return t.addCommentAndClose
+                        }))).onClick(() => {
+                            const id = tags.data[args[1] ?? "id"]
+                            if (state.featureSwitchIsTesting.data) {
+                                console.log("Testmode: Not actually closing note...")
+                                return;
+                            }
+                            state.osmConnection.closeNote(id, txt.data).then(_ => {
+                                tags.data["closed_at"] = new Date().toISOString();
+                                tags.ping()
+                            })
+                        })
+
+                        const reopen = new SubtleButton(Svg.note_svg().SetClass("max-h-7"), new VariableUiElement(txt.map(txt => {
+                            if (txt === undefined || txt === "") {
+                                return t.reopenNote
+                            }
+                            return t.reopenNoteAndComment
+                        }))).onClick(() => {
+                            const id = tags.data[args[1] ?? "id"]
+                            if (state.featureSwitchIsTesting.data) {
+                                console.log("Testmode: Not actually reopening note...")
+                                return;
+                            }
+                            state.osmConnection.reopenNote(id, txt.data).then(_ => {
+                                tags.data["closed_at"] = undefined;
+                                tags.ping()
+                            })
+                        })
+
+                        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
+                        const stateButtons = new Toggle(new Toggle(reopen, close, isClosed), undefined, state.osmConnection.isLoggedIn)
+
+                        return new LoginToggle(
+                            new Combine([
+                                new Title("Add a comment"),
+                                textField,
+                                new Combine([addCommentButton.SetClass("mr-2"), stateButtons]).SetClass("flex justify-end")
+                            ]).SetClass("border-2 border-black rounded-xl p-4 block"),
+                            t.loginToAddComment, state)
+                    }
+                },
+                {
+                    funcName: "visualize_note_comments",
+                    docs: "Visualises the comments for notes",
+                    args: [
+                        {
+                            name: "commentsKey",
+                            doc: "The property name of the comments, which should be stringified json",
+                            defaultValue: "comments"
+                        },
+                        {
+                            name: "start",
+                            doc:"Drop the first 'start' comments",
+                            defaultValue: "0"
+                        }
+                    ]
+                    , constr: (state, tags, args) =>
+                        new VariableUiElement(
+                            tags.map(tags => tags[args[0]])
+                                .map(commentsStr => {
+                                    const comments: any[] = JSON.parse(commentsStr)
+                                    const startLoc = Number(args[1] ?? 0)
+                                    if(!isNaN(startLoc) && startLoc > 0){
+                                        comments.splice(0, startLoc)
+                                    }
+                                    return new Combine(comments
+                                        .filter(c => c.text !== "")
+                                        .map(c => new NoteCommentElement(c))).SetClass("flex flex-col")
+                                })
+                        )
+                },
+                {
+                    funcName: "add_image_to_note",
+                    docs: "Adds an image to a node",
+                    args: [{
+                        name: "Id-key",
+                        doc: "The property name where the ID of the note to close can be found",
+                        defaultValue: "id"
+                    }],
+                    constr: (state, tags, args) => {
+                    const isUploading = new UIEventSource(false);
+                      const t = Translations.t.notes;
+                          const id = tags.data[args[0] ?? "id"]
+
+                        const uploader = new ImgurUploader(url => {
+                            isUploading.setData(false)
+                            state.osmConnection.addCommentToNode(id, url)
+                            NoteCommentElement.addCommentTo(url, tags, state)
+
+                        })
+
+                        const label = new Combine([
+                            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+                            Translations.t.image.addPicture
+                        ]).SetClass("p-2 border-4 border-black rounded-full font-bold h-full align-center w-full flex justify-center")
+
+                        const fileSelector = new FileSelectorButton(label)
+                        fileSelector.GetValue().addCallback(filelist => {
+                            isUploading.setData(true)
+                            uploader.uploadMany("Image for osm.org/note/" + id, "CC0", filelist)
+                            
+                        })
+                        const ti = Translations.t.image
+                        const uploadPanel = new Combine([
+                            fileSelector,
+                            new Combine([ti.willBePublished, ti.cco]),
+                            ti.ccoExplanation.SetClass("subtle text-sm"),
+                            ti.respectPrivacy.SetClass("text-sm")
+                        ]).SetClass("flex flex-col")
+                        return new LoginToggle( new Toggle( 
+                            Translations.t.image.uploadingPicture.SetClass("alert"),
+                            uploadPanel,
+                            isUploading), t.loginToAddPicture, state)
+                    }
+
                 }
             ]
-        
+
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
-        
+
         return specialVisualizations;
-    }
-    
- 
-    public static HelpMessage() {
-
-        const helpTexts =
-            SpecialVisualizations.specialVisualizations.map(viz => new Combine(
-                [
-                    new Title(viz.funcName, 3),
-                    viz.docs,
-                    viz.args.length > 0 ? new Table(["name", "default", "description"],
-                        viz.args.map(arg => {
-                            let defaultArg = arg.defaultValue ?? "_undefined_"
-                            if (defaultArg == "") {
-                                defaultArg = "_empty string_"
-                            }
-                            return [arg.name, defaultArg, arg.doc];
-                        })
-                    ) : undefined,
-                    new Title("Example usage of "+viz.funcName, 4),
-                    new FixedUiElement(
-                        viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
-                    ).SetClass("literal-code"),
-
-                ]
-            ));
-
-        return new Combine([
-                new Title("Special tag renderings", 1),
-                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
-                ...helpTexts
-            ]
-        ).SetClass("flex flex-col");
     }
 
 }

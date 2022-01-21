@@ -4,7 +4,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
-import Constants from "../../Models/Constants";
 import Toggle from "../Input/Toggle";
 import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 import Loading from "../Base/Loading";
@@ -19,7 +18,6 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import Minimap from "../Base/Minimap";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import AllKnownLayers from "../../Customizations/AllKnownLayers";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import CreateWayWithPointReuseAction, {MergePointConfig} from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
@@ -35,9 +33,15 @@ import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction
 import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
 import {Tag} from "../../Logic/Tags/Tag";
 import TagApplyButton from "./TagApplyButton";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import * as conflation_json from "../../assets/layers/conflation/conflation.json";
 import {GeoOperations} from "../../Logic/GeoOperations";
+import {LoginToggle} from "./LoginButton";
 
-
+/**
+ * A helper class for the various import-flows.
+ * An import-flow always starts with a 'Import this'-button. Upon click, a custom confirmation panel is provided 
+ */
 abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly funcName: string
     public readonly docs: string
@@ -55,7 +59,7 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument \`tags\` of the import button takes a \`;\`-seperated list of tags to add.
+The argument \`tags\` of the import button takes a \`;\`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 ${Utils.Special_visualizations_tagsToApplyHelpText}
 ${Utils.special_visualizations_importRequirementDocs}
@@ -67,7 +71,7 @@ ${Utils.special_visualizations_importRequirementDocs}
             },
             {
                 name: "tags",
-                doc: "The tags to add onto the new object - see specification above"
+                doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead"
             },
             {
                 name: "text",
@@ -91,8 +95,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                               onCancelClicked: () => void): BaseUIElement;
 
 
-    constr(state, tagSource, argsRaw, guiState) {
-        const self = this;
+    constr(state, tagSource: UIEventSource<any>, argsRaw, guiState) {
         /**
          * Some generic import button pre-validation is implemented here:
          * - Are we logged in?
@@ -133,20 +136,13 @@ ${Utils.special_visualizations_importRequirementDocs}
 
 
         // Explanation of the tags that will be applied onto the imported/conflated object
-        const newTags = TagApplyButton.generateTagsToApply(args.tags, tagSource)
-        const appliedTags = new Toggle(
-            new VariableUiElement(
-                newTags.map(tgs => {
-                    const filteredTags = tgs.filter(tg => self.showRemovedTags || (tg.value ?? "") !== "")
-                    const asText = new And(filteredTags)
-                        .asHumanString(true, true, {})
-
-                    return t0.presetInfo.Subs({tags: asText}).SetClass("subtle");
-                })),
-            undefined,
-            state.osmConnection.userDetails.map(ud => ud.csCount >= Constants.userJourney.tagsVisibleAt)
-        )
-
+        
+        let tagSpec = args.tags;
+        if(tagSpec.indexOf(" ")< 0 && tagSpec.indexOf(";") < 0 && tagSource.data[args.tags] !== undefined){
+            // This is probably a key
+            tagSpec = tagSource.data[args.tags]
+            console.warn("Using tagspec tagSource.data["+args.tags+"] which is ",tagSpec)
+        }
 
         const importClicked = new UIEventSource(false);
         inviteToImportButton.onClick(() => {
@@ -171,7 +167,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         const importFlow = new Toggle(
             new Toggle(
                 new Loading(t0.stillLoading),
-                new Combine([importGuidingPanel, appliedTags]).SetClass("flex flex-col"),
+                importGuidingPanel,
                 state.featurePipeline.runningQuery
             ),
             inviteToImportButton,
@@ -179,7 +175,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         );
 
         return new Toggle(
-            new Toggle(
+            new LoginToggle(
                 new Toggle(
                     new Toggle(
                         t.hasBeenImported,
@@ -190,7 +186,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                     state.locationControl.map(l => l.zoom >= 18)
                 ),
                 pleaseLoginButton,
-                state.osmConnection.isLoggedIn
+                state
             ),
             t.wrongType,
             new UIEventSource(this.canBeImported(feature)))
@@ -200,7 +196,16 @@ ${Utils.special_visualizations_importRequirementDocs}
     private parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
         const baseArgs = Utils.ParseVisArgs(this.args, argsRaw)
         if (originalFeatureTags !== undefined) {
-            baseArgs["newTags"] = TagApplyButton.generateTagsToApply(baseArgs.tags, originalFeatureTags)
+            
+            const tags = baseArgs.tags
+            if(tags.indexOf(" ") < 0 && tags.indexOf(";") < 0 && originalFeatureTags.data[tags] !== undefined){
+                // This might be a property to expand...
+                const items : string = originalFeatureTags.data[tags]
+                console.warn("Using tagspec tagSource.data["+tags+"] which is ",items)
+                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
+            }else{
+                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)
+            }
         }
         return baseArgs
     }
@@ -256,7 +261,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                 zoomToFeatures: false,
                 features: changePreview,
                 allElements: state.allElements,
-                layerToShow: AllKnownLayers.sharedLayers.get("conflation")
+                layerToShow: new LayerConfig(conflation_json, "all_known_layers", true)
             })
         })
 
@@ -493,6 +498,9 @@ export class ImportPointButton extends AbstractImportButton {
                     name: "max_snap_distance",
                     doc: "The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete",
                     defaultValue: "5"
+                },{
+                name:"note_id",
+                    doc:"If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
                 }],
             false
         )
@@ -514,12 +522,13 @@ export class ImportPointButton extends AbstractImportButton {
     }
 
     private static createConfirmPanelForPoint(
-        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string },
+        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string },
         state: FeaturePipelineState,
         guiState: DefaultGuiState,
         originalFeatureTags: UIEventSource<any>,
         feature: any,
-        onCancel: () => void): BaseUIElement {
+        onCancel: () => void,
+        close: () => void): BaseUIElement {
 
         async function confirm(tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) {
 
@@ -539,12 +548,16 @@ export class ImportPointButton extends AbstractImportButton {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            if(args.note_id !== undefined){
+                state.osmConnection.closeNote(args.note_id, "imported")
+                originalFeatureTags.data["closed_at"] = new Date().toISOString()
+                originalFeatureTags.ping()
+            }
         }
 
         const presetInfo = <PresetInfo>{
             tags: args.newTags.data,
             icon: () => new Img(args.icon),
-            description: Translations.WT(args.text),
             layerToAddTo: state.filteredLayers.data.filter(l => l.layerDef.id === args.targetLayer)[0],
             name: args.text,
             title: Translations.WT(args.text),
@@ -558,7 +571,7 @@ export class ImportPointButton extends AbstractImportButton {
         return new ConfirmLocationOfPoint(state, guiState.filterViewIsOpened, presetInfo, Translations.W(args.text), {
             lon,
             lat
-        }, confirm, onCancel)
+        }, confirm, onCancel, close)
 
     }
 
@@ -566,7 +579,7 @@ export class ImportPointButton extends AbstractImportButton {
                      originalFeatureTags,
                      guiState,
                      feature,
-                     onCancel): BaseUIElement {
+                     onCancel: () => void): BaseUIElement {
 
 
         const geometry = feature.geometry
@@ -578,7 +591,11 @@ export class ImportPointButton extends AbstractImportButton {
                 guiState,
                 originalFeatureTags,
                 feature,
-                onCancel
+                onCancel,
+                () => {
+                    // Close the current popup
+                    state.selectedElement.setData(undefined)
+                }
             ))
         }
 

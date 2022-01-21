@@ -1,11 +1,34 @@
 {
     "aed": {
-        "title": "Nyílt AED Térkép"
+        "description": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni",
+        "title": "Defibrillátor-térkép"
     },
     "artwork": {
-        "title": "Nyít Műalkotás Térkép"
+        "description": "Isten hozott a nyílt műalkotástérképen, a világ minden táján megtalálható szobrok, mellszobrok, grafittik és más műalkotások térképén",
+        "title": "Műalkotástérkép"
     },
     "ghostbikes": {
-        "title": "Emlékkerékpár"
+        "title": "Emlékkerékpárok"
+    },
+    "trees": {
+        "description": "Térképezzünk fel minden fát!",
+        "shortDescription": "Az összes fa feltérképezése",
+        "title": "Fatérkép"
+    },
+    "uk_addresses": {
+        "layers": {
+            "2": {
+                "description": "Címek",
+                "name": "Ismert címek az OSM-en",
+                "title": {
+                    "render": "Ismert cím"
+                }
+            }
+        }
+    },
+    "waste_basket": {
+        "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
+        "shortDescription": "Szemeteskosarakat ábrázoló térkép",
+        "title": "Kukatérkép"
     }
 }

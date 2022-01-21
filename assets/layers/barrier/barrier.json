@@ -4,12 +4,16 @@
     "en": "Barriers",
     "nl": "Barrières",
     "de": "Hindernisse",
-    "ru": "Препятствия"
+    "ru": "Препятствия",
+    "hu": "Akadályok",
+    "fr": "Barrières"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
     "nl": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
-    "de": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren"
+    "de": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
+    "hu": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
+    "fr": "Obstacles à vélo, tels que des potelets ou des barrières"
   },
   "source": {
     "osmTags": {
@@ -25,7 +29,8 @@
       "en": "Barrier",
       "nl": "Barrière",
       "de": "Hindernis",
-      "ru": "Препятствие"
+      "ru": "Препятствие",
+      "fr": "Barrière"
     },
     "mappings": [
       {
@@ -43,7 +48,8 @@
         "then": {
           "en": "Cycling Barrier",
           "nl": "Fietshekjes",
-          "de": "Barriere für Radfahrer"
+          "de": "Barriere für Radfahrer",
+          "fr": "Barrière cyclable"
         }
       }
     ]
@@ -55,7 +61,8 @@
         "nl": "Paaltje",
         "de": "Poller",
         "ru": "Прикол",
-        "fr": "Bollard"
+        "fr": "Bollard",
+        "hu": "Terelőoszlop"
       },
       "tags": [
         "barrier=bollard"
@@ -63,7 +70,9 @@
       "description": {
         "en": "A bollard in the road",
         "nl": "Een paaltje in de weg",
-        "de": "Ein Poller auf der Straße"
+        "de": "Ein Poller auf der Straße",
+        "hu": "Terelőoszlop az úton",
+        "fr": "Un potelet sur le chemin"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -77,7 +86,9 @@
       "title": {
         "en": "Cycle barrier",
         "nl": "Fietshekjes",
-        "de": "Fahrradhindernis"
+        "de": "Fahrradhindernis",
+        "hu": "Kerékpárakadály",
+        "fr": "Barrière cyclable"
       },
       "tags": [
         "barrier=cycle_barrier"
@@ -85,7 +96,9 @@
       "description": {
         "en": "Cycle barrier, slowing down cyclists",
         "nl": "Fietshekjes, voor het afremmen van fietsers",
-        "de": "Fahrradhindernis, das Radfahrer abbremst"
+        "de": "Fahrradhindernis, das Radfahrer abbremst",
+        "hu": "A kerékpáros sebességét csökkentő kerékpárakadály",
+        "fr": "Barrières cyclables, ralentissant les cyclistes"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -101,7 +114,8 @@
       "question": {
         "en": "Can a bicycle go past this barrier?",
         "nl": "Kan een fietser langs deze barrière?",
-        "de": "Kann ein Radfahrer das Hindernis passieren?"
+        "de": "Kann ein Radfahrer das Hindernis passieren?",
+        "hu": "Át lehet-e menni rajta kerékpárral?"
       },
       "mappings": [
         {
@@ -110,7 +124,8 @@
             "en": "A cyclist can go past this.",
             "nl": "Een fietser kan hier langs.",
             "de": "Ein Radfahrer kann hindurchfahren.",
-            "fr": "Un cycliste peut franchir ceci."
+            "fr": "Un cycliste peut franchir ceci.",
+            "hu": "Kerékpárral át lehet hajtani."
           }
         },
         {
@@ -119,7 +134,8 @@
             "en": "A cyclist can not go past this.",
             "nl": "Een fietser kan hier niet langs.",
             "de": "Ein Radfahrer kann nicht hindurchfahren.",
-            "fr": "Un cycliste ne peut pas franchir ceci."
+            "fr": "Un cycliste ne peut pas franchir ceci.",
+            "hu": "Kerékpárral nem lehet áthajtani."
           }
         }
       ],
@@ -131,14 +147,17 @@
         {
           "if": "barrier=bollard",
           "then": {
-            "en": "This is a single bollard in the road"
+            "en": "This is a single bollard in the road",
+            "hu": "Ez egyetlen oszlop az úton",
+            "nl": "Dit is een enkel paaltje in de weg"
           }
         },
         {
           "if": "barrier=cycle_barrier",
           "then": {
             "en": "This is a cycle barrier slowing down cyclists",
-            "nl": "Dit zijn fietshekjes die fietsers afremmen"
+            "nl": "Dit zijn fietshekjes die fietsers afremmen",
+            "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat"
           }
         }
       ]
@@ -148,7 +167,8 @@
         "en": "What kind of bollard is this?",
         "nl": "Wat voor soort paal is dit?",
         "de": "Um was für einen Poller handelt es sich?",
-        "fr": "Quel est le type de bollard (borne) ?"
+        "fr": "Quel est le type de bollard (borne) ?",
+        "hu": "Milyen fajta terelőoszlop ez?"
       },
       "condition": "barrier=bollard",
       "mappings": [
@@ -158,7 +178,8 @@
             "en": "Removable bollard",
             "nl": "Verwijderbare paal",
             "de": "Entfernbarer Poller",
-            "fr": "Bollard amovible"
+            "fr": "Bollard amovible",
+            "hu": "Eltávolítható terelőoszlop"
           }
         },
         {
@@ -167,7 +188,8 @@
             "en": "Fixed bollard",
             "nl": "Vaste paal",
             "de": "Feststehender Poller",
-            "fr": "Bollard fixe"
+            "fr": "Bollard fixe",
+            "hu": "Rögzített terelőoszlop"
           }
         },
         {
@@ -176,7 +198,8 @@
             "en": "Bollard that can be folded down",
             "nl": "Paal die platgevouwen kan worden",
             "de": "Umlegbarer Poller",
-            "fr": "Bollard qui peut être couché"
+            "fr": "Bollard qui peut être couché",
+            "hu": "Lehajtható terelőoszlop"
           }
         },
         {
@@ -185,7 +208,8 @@
             "en": "Flexible bollard, usually plastic",
             "nl": "Flexibele paal, meestal plastic",
             "de": "Flexibler Poller, meist aus Kunststoff",
-            "fr": "Bollard flexible, généralement en plastique"
+            "fr": "Bollard flexible, généralement en plastique",
+            "hu": "Rugalmas (általában műanyag) terelőoszlop"
           }
         },
         {
@@ -194,7 +218,8 @@
             "en": "Rising bollard",
             "nl": "Verzonken poller",
             "de": "Ausfahrender Poller",
-            "fr": "Bollard rétractable"
+            "fr": "Bollard rétractable",
+            "hu": "Felemelkedő terelőoszlop"
           }
         }
       ],
@@ -204,40 +229,50 @@
       "question": {
         "en": "What kind of cycling barrier is this?",
         "nl": "Wat voor fietshekjes zijn dit?",
-        "de": "Um welche Art Fahrradhindernis handelt es sich?"
+        "de": "Um welche Art Fahrradhindernis handelt es sich?",
+        "hu": "Milyen fajta kerékpárakadály ez?",
+        "fr": "Quel est ce type de barrière cyclable ?"
       },
       "condition": "barrier=cycle_barrier",
       "mappings": [
         {
-          "if": "cycle_barrier:type=single",
+          "if": "cycle_barrier=single",
           "then": {
             "en": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
             "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
-            "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+            "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
+            "hu": "Egyszeres: csak két korlát, közöttük térköz <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
+            "fr": "Simple, deux barrières côte à côte <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
           }
         },
         {
-          "if": "cycle_barrier:type=double",
+          "if": "cycle_barrier=double",
           "then": {
             "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
             "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
-            "de": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
+            "de": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
+            "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
+            "fr": "Double, deux barrières successives"
           }
         },
         {
-          "if": "cycle_barrier:type=triple",
+          "if": "cycle_barrier=triple",
           "then": {
             "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
             "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
-            "de": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+            "de": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
+            "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
+            "fr": "Triple, trois barrières successives <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
           }
         },
         {
-          "if": "cycle_barrier:type=squeeze",
+          "if": "cycle_barrier=squeeze",
           "then": {
             "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
             "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-            "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+            "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
+            "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
+            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
           }
         }
       ],
@@ -248,17 +283,20 @@
         "en": "Maximum width: {maxwidth:physical} m",
         "nl": "Maximumbreedte: {maxwidth:physical} m",
         "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
-        "fr": "Largeur maximale: {maxwidth:physical} m"
+        "fr": "Largeur maximale: {maxwidth:physical} m",
+        "hu": "Legnagyobb szélesség: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",
         "nl": "Hoe breed is de ruimte naast de barrière?",
-        "de": "Welche Durchfahrtsbreite hat das Hindernis?"
+        "de": "Welche Durchfahrtsbreite hat das Hindernis?",
+        "hu": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?",
+        "fr": "Quelle est la largeur du passage ?"
       },
       "condition": {
         "and": [
-          "cycle_barrier:type!=double",
-          "cycle_barrier:type!=triple"
+          "cycle_barrier!=double",
+          "cycle_barrier!=triple"
         ]
       },
       "freeform": {
@@ -275,17 +313,21 @@
       "render": {
         "en": "Space between barriers (along the length of the road): {width:separation} m",
         "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
-        "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m"
+        "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m",
+        "hu": "A korlátok közötti távolság (az út irányában): {width:separation} m",
+        "fr": "Espace entre deux barrières successives : {width:separation} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
         "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
-        "de": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?"
+        "de": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
+        "hu": "Mekkora távolság van a korlátok között (az út irányában)?",
+        "fr": "Combien d’espace sépare deux barrières successives ?"
       },
       "condition": {
         "or": [
-          "cycle_barrier:type=double",
-          "cycle_barrier:type=triple"
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
         ]
       },
       "freeform": {
@@ -303,17 +345,19 @@
         "en": "Width of opening: {width:opening} m",
         "nl": "Breedte van de opening: {width:opening} m",
         "de": "Breite der Öffnung: {width:opening} m",
-        "fr": "Largeur de l'ouverture : {width:opening} m"
+        "fr": "Largeur de l'ouverture : {width:opening} m",
+        "hu": "Nyílás szélessége: {width:opening} m"
       },
       "question": {
         "en": "How wide is the smallest opening next to the barriers?",
         "nl": "Hoe breed is de smalste opening naast de barrières?",
-        "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?"
+        "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
+        "hu": "Milyen széles a korlátok melletti legkisebb nyílás?"
       },
       "condition": {
         "or": [
-          "cycle_barrier:type=double",
-          "cycle_barrier:type=triple"
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
         ]
       },
       "freeform": {
@@ -329,17 +373,21 @@
     {
       "render": {
         "en": "Overlap: {overlap} m",
-        "de": "Überschneidung: {overlap} m"
+        "de": "Überschneidung: {overlap} m",
+        "hu": "Átfedés: {overlap} m",
+        "fr": "Chevauchement : {overlap} m"
       },
       "question": {
         "en": "How much overlap do the barriers have?",
         "nl": "Hoeveel overlappen de barrières?",
-        "de": "Wie stark überschneiden sich die Barrieren?"
+        "de": "Wie stark überschneiden sich die Barrieren?",
+        "hu": "Mekkora a korlátok átfedése?",
+        "fr": "Quel est le chevauchement des barrières ?"
       },
       "condition": {
         "or": [
-          "cycle_barrier:type=double",
-          "cycle_barrier:type=triple"
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
         ]
       },
       "freeform": {

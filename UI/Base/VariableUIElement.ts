@@ -1,5 +1,6 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
+import Combine from "./Combine";
 
 export class VariableUiElement extends BaseUIElement {
     private readonly _contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>;
@@ -8,7 +9,7 @@ export class VariableUiElement extends BaseUIElement {
         super();
         this._contents = contents;
     }
-    
+
     Destroy() {
         super.Destroy();
         this.isDestroyed = true;
@@ -18,7 +19,7 @@ export class VariableUiElement extends BaseUIElement {
         const el = document.createElement("span");
         const self = this;
         this._contents.addCallbackAndRun((contents) => {
-            if(self.isDestroyed){
+            if (self.isDestroyed) {
                 return true;
             }
             while (el.firstChild) {
@@ -45,5 +46,16 @@ export class VariableUiElement extends BaseUIElement {
             }
         });
         return el;
+    }
+
+    AsMarkdown(): string {
+        const d = this._contents.data;
+        if (typeof d === "string") {
+            return d;
+        }
+        if (d instanceof BaseUIElement) {
+            return d.AsMarkdown()
+        }
+        return new Combine(<BaseUIElement[]>d).AsMarkdown()
     }
 }

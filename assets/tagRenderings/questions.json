@@ -37,7 +37,8 @@
           "fr": "Pas encore de lien vers une page Wikipedia",
           "ca": "No hi ha cap enllaça a Viquipèdia encara",
           "sv": "Ingen Wikipedia-sida har länkats än",
-          "zh_Hant": "還沒有連結到維基百科頁面"
+          "zh_Hant": "還沒有連結到維基百科頁面",
+          "ru": "Никакой страницы на Википедии не было прикреплено"
         },
         "hideInAnswer": true
       }
@@ -109,7 +110,8 @@
       "nb_NO": "Hva er respektivt element på Wikipedia?",
       "ca": "Quin és l'ítem a Viquipèdia?",
       "sv": "Vad är det motsvarande objektet på Wikipedia?",
-      "zh_Hant": "維基百科上對應的項目是什麼？"
+      "zh_Hant": "維基百科上對應的項目是什麼？",
+      "fr": "Quel est l’élément Wikipédia correspondant ?"
     },
     "mappings": [
       {
@@ -239,7 +241,8 @@
           "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
           "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
           "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
-          "zh_Hant": "這個地方有特別設計給輪椅使用者"
+          "zh_Hant": "這個地方有特別設計給輪椅使用者",
+          "ru": "Это место подходит для людей на инвалидной коляске"
         }
       },
       {
@@ -260,7 +263,8 @@
           "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
           "ca": "És facilment arribable amb cadira de rodes",
           "sv": "Denna plats är lätt att nå med rullstol",
-          "zh_Hant": "這個地方坐輪椅很容易到達"
+          "zh_Hant": "這個地方坐輪椅很容易到達",
+          "ru": "До этого места легко добраться на инвалидной коляске"
         }
       },
       {
@@ -281,7 +285,8 @@
           "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
           "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
           "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
-          "zh_Hant": "這個地方可以坐輪椅到達，但並不容易"
+          "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+          "ru": "До этого места можно добраться, но не просто"
         }
       },
       {
@@ -319,7 +324,8 @@
       "nb_NO": "Tillates hunder i denne forretningen?",
       "ca": "S'accepten gossos en aquest negoci?",
       "sv": "Tillåts hundar i den här affären?",
-      "zh_Hant": "這間商業空間是否允許犬隻？"
+      "zh_Hant": "這間商業空間是否允許犬隻？",
+      "ru": "Впускают ли собак в это здание?"
     },
     "mappings": [
       {
@@ -354,7 +360,9 @@
           "nb_NO": "Hunder tillates <b>ikke</b>",
           "ca": "<b>No</b> s'accepten gossos",
           "sv": "Hundar tillåts <b>inte</b>",
-          "zh_Hant": "<b>不</b>允許犬隻"
+          "zh_Hant": "<b>不</b>允許犬隻",
+          "pl": "Psom wstęp wzbroniony",
+          "ru": "С собаками <b>не</b> впускают"
         }
       },
       {
@@ -370,7 +378,8 @@
           "nb_NO": "Hunder tillates, men de må være i bånd",
           "ca": "S'accepten gossos però lligats",
           "sv": "Hundar tillåts, men de måste vara kopplade",
-          "zh_Hant": "允許犬隻，但需要掛牽繩"
+          "zh_Hant": "允許犬隻，但需要掛牽繩",
+          "ru": "Собак впускают, но на поводке"
         }
       },
       {
@@ -386,7 +395,8 @@
           "nb_NO": "Hunder tillates og kan gå fritt",
           "ca": "S'accepten gossos lliures",
           "sv": "Hundar tillåts och får springa fritt omkring",
-          "zh_Hant": "允許犬隻而且可以自由跑動"
+          "zh_Hant": "允許犬隻而且可以自由跑動",
+          "ru": "Собак свободно впускают"
         }
       }
     ]
@@ -461,7 +471,9 @@
       "ca": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?",
       "de": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?",
       "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
-      "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？"
+      "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
+      "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?",
+      "fr": "Des prises sont elles à disposition des client·e·s en intérieur ?"
     },
     "mappings": [
       {
@@ -472,7 +484,9 @@
           "ca": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics",
           "de": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
           "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
-          "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電"
+          "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
+          "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+          "fr": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
         },
         "if": "service:electricity=yes"
       },
@@ -484,7 +498,9 @@
           "ca": "Hi ha aslguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
           "de": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
           "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
-          "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電"
+          "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
+          "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+          "fr": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
         },
         "if": "service:electricity=limited"
       },
@@ -497,7 +513,8 @@
           "ca": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables",
           "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
           "sv": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas",
-          "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電"
+          "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電",
+          "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
         },
         "if": "service:electricity=ask"
       },
@@ -510,7 +527,8 @@
           "ca": "No hi ha endolls disponibles per als clients",
           "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung",
           "sv": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus",
-          "zh_Hant": "這裡客戶座位沒有室內插座"
+          "zh_Hant": "這裡客戶座位沒有室內插座",
+          "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
         },
         "if": "service:electricity=no"
       }
@@ -530,7 +548,9 @@
       "nb_NO": "Hvilke betalingsmetoder godtas her?",
       "ca": "Quins mètodes de pagament s'accepten aquí?",
       "sv": "Vilka betalningsmetoder accepteras här?",
-      "zh_Hant": "這邊接受那種付款方式？"
+      "zh_Hant": "這邊接受那種付款方式？",
+      "pl": "Jakie metody płatności są tutaj dostępne?",
+      "ru": "Какие способы оплаты здесь принимают?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -550,7 +570,9 @@
           "nb_NO": "Kontanter godtas her",
           "ca": "S'accepten diners",
           "sv": "Pengar accepteras här",
-          "zh_Hant": "這邊接受現金"
+          "zh_Hant": "這邊接受現金",
+          "pl": "Płatność gotówkowa jest tutaj dostępna",
+          "ru": "Здесь принимают наличными"
         }
       },
       {
@@ -569,7 +591,9 @@
           "nb_NO": "Betalingskort godtas her",
           "ca": "S'accepten targetes de crèdit",
           "sv": "Betalningskort accepteras här",
-          "zh_Hant": "這邊接受現金卡"
+          "zh_Hant": "這邊接受現金卡",
+          "pl": "Płatność kartą jest tutaj dostępna",
+          "ru": "Здесь принимают банковские карты"
         }
       }
     ]
@@ -612,7 +636,7 @@
       "sv": "Ligger på {level}:e våningen",
       "pt": "Está no {level}º andar",
       "eo": "En la {level}a etaĝo",
-      "hu": "{level}. emeleten található",
+      "hu": "A(z) {level}. emeleten",
       "it": "Si trova al piano numero {level}",
       "ca": "Situat a la planta {level}"
     },
@@ -634,7 +658,7 @@
           "sv": "Ligger under jorden",
           "pt": "Está no subsolo",
           "de": "Unterirdisch gelegen",
-          "hu": "A föld alatt található",
+          "hu": "A föld alatt",
           "it": "Si trova sotto il livello stradale",
           "nb_NO": "Under bakken",
           "ca": "Situat a planta subterrani"
@@ -655,7 +679,7 @@
           "sv": "Ligger på bottenvåningen",
           "pt": "Está ao nível do rés-do-chão",
           "eo": "En la teretaĝo",
-          "hu": "A földszinten található",
+          "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero"
@@ -676,7 +700,7 @@
           "sv": "Ligger på bottenvåningen",
           "pt": "Está ao nível do rés-do-chão",
           "eo": "En la teretaĝo",
-          "hu": "A földszinten található",
+          "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero"
@@ -697,7 +721,7 @@
           "pt": "Está no primeiro andar",
           "id": "Berlokasi di lantai pertama",
           "eo": "En la unua etaĝo",
-          "hu": "Az első emeleten található",
+          "hu": "Az első emeleten",
           "it": "Si trova al primo piano",
           "nb_NO": "I andre etasje",
           "ca": "Situat a primera planta"

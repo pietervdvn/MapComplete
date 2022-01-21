@@ -26,7 +26,7 @@ export default class PerLayerFeatureSourceSplitter {
             if (features === undefined) {
                 return;
             }
-            if (layers.data === undefined) {
+            if (layers.data === undefined || layers.data.length === 0) {
                 return;
             }
 

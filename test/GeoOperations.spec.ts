@@ -89,8 +89,7 @@ export default class GeoOperationsSpec extends T {
     private static outsidePolygon = [4.02099609375, 47.81315451752768]
 
     constructor() {
-        super(
-            "GeoOperationsSpec", [
+        super([
                 ["Point out of polygon", () => {
                     GeoOperationsSpec.isFalse(GeoOperations.inside([
                         3.779296875,

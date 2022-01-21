@@ -1,0 +1,206 @@
+{
+  "id": "note",
+  "name": {
+    "en": "OpenStreetMap notes"
+  },
+  "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
+  "source": {
+    "osmTags": "id~*",
+    "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?closed=7&bbox={x_min},{y_min},{x_max},{y_max}",
+    "geoJsonZoomLevel": 12,
+    "maxCacheAge": 0
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Note"
+    },
+    "mappings": [
+      {
+        "if": "closed_at~*",
+        "then": {
+          "en": "Closed note"
+        }
+      }
+    ]
+  },
+  "calculatedTags": [
+    "_first_comment:=feat.get('comments')[0].text.toLowerCase()",
+    "_opened_by_anonymous_user:=feat.get('comments')[0].user === undefined",
+    "_first_user:=feat.get('comments')[0].user",
+    "_first_user_lc:=feat.get('comments')[0].user?.toLowerCase()",
+    "_first_user_id:=feat.get('comments')[0].uid"
+  ],
+  "titleIcons": [
+    {
+      "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "conversation",
+      "render": "{visualize_note_comments()}"
+    },
+    {
+      "id": "add_image",
+      "render": "{add_image_to_note()}"
+    },
+    {
+      "id": "comment",
+      "render": "{add_note_comment()}"
+    },
+    {
+      "id": "report-contributor",
+      "render": {
+        "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>"
+      },
+      "condition": "_opened_by_anonymous_user=false"
+    },
+    {
+      "id": "report-note",
+      "render": {
+        "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/svg/note.svg",
+        "mappings": [
+          {
+            "if": "closed_at~*",
+            "then": "./assets/svg/resolved.svg"
+          }
+        ]
+      },
+      "iconSize": "40,40,bottom"
+    }
+  ],
+  "filter": [
+    {
+      "id": "search",
+      "options": [
+        {
+          "osmTags": "_first_comment~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should mention {search} in the first comment"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not",
+      "options": [
+        {
+          "osmTags": "_first_comment!~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should <b>not</b> mention {search} in the first comment"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_by",
+      "options": [
+        {
+          "osmTags": "_first_user_lc~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Opened by {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not_opened_by",
+      "options": [
+        {
+          "osmTags": "_first_user_lc!~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "<b>Not</b> opened by {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_before",
+      "options": [
+        {
+          "osmTags": "date_created<{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Opened before {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_after",
+      "options": [
+        {
+          "osmTags": "date_created>{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Opened after {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "anonymous",
+      "options": [
+        {
+          "osmTags": "_opened_by_anonymous_user=true",
+          "question": {
+            "en": "Opened by anonymous user"
+          }
+        }
+      ]
+    },
+    {
+      "id": "is_open",
+      "options": [
+        {
+          "osmTags": "closed_at=",
+          "question": {
+            "en": "Only show open notes"
+          }
+        }
+      ]
+    }
+  ]
+}

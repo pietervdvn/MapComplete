@@ -8,8 +8,7 @@ import {Tiles} from "../../Models/TileRange";
 import * as clusterstyle from "../../assets/layers/cluster_style/cluster_style.json"
 
 export default class ShowTileInfo {
-    public static readonly styling = new LayerConfig(
-        clusterstyle, "tileinfo", true)
+    public static readonly styling = new LayerConfig(clusterstyle, "ShowTileInfo", true)
 
     constructor(options: {
         source: FeatureSource & Tiled, leafletMap: UIEventSource<any>, layer?: LayerConfig,

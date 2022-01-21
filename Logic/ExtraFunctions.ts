@@ -44,9 +44,7 @@ class OverlapFunc implements ExtraFunction {
     _f(params, feat) {
         return (...layerIds: string[]) => {
             const result: { feat: any, overlap: number }[] = []
-
             const bbox = BBox.get(feat)
-
             for (const layerId of layerIds) {
                 const otherLayers = params.getFeaturesWithin(layerId, bbox)
                 if (otherLayers === undefined) {
@@ -403,6 +401,10 @@ export class ExtraFunctions {
     ];
 
     public static FullPatchFeature(params: ExtraFuncParams, feature) {
+        if(feature._is_patched){
+            return
+        }
+        feature._is_patched = true
         for (const func of ExtraFunctions.allFuncs) {
             feature[func._name] = func._f(params, feature)
         }

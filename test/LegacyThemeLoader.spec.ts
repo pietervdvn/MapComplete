@@ -1,6 +1,8 @@
 import T from "./TestHelper";
-import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -17,6 +19,7 @@ export default class LegacyThemeLoaderSpec extends T {
         "language": [
             "en"
         ],
+        socialImage: "img.jpg",
         "version": "2021-10-02",
         "startLat": 51.1599,
         "startLon": 3.34750,
@@ -139,15 +142,16 @@ export default class LegacyThemeLoaderSpec extends T {
     }
 
     constructor() {
-        super("LegacyThemeLoader",
-
-            [
+        super([
                 ["Walking_node_theme", () => {
 
                     const config = LegacyThemeLoaderSpec.walking_node_theme
-                    LegacyJsonConvert.fixThemeConfig(config)
-                    // @ts-ignore
-                    const theme = new LayoutConfig(config)
+                    const fixed = new FixLegacyTheme().convert({tagRenderings: new Map<string, TagRenderingConfigJson>(), sharedLayers: new Map<string, LayerConfigJson>()}, 
+                        // @ts-ignore
+                        config,
+                        "While testing")
+                    T.isTrue(fixed.errors.length === 0, "Could not fix the legacy theme")
+                    const theme = new LayoutConfig(fixed.result)
 
                 }]
             ]

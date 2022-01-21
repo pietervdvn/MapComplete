@@ -24,6 +24,8 @@
     "it",
     "id",
     "nl",
+    "zh_Hant",
+    "hu",
     "ru"
   ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
@@ -66,7 +68,7 @@
       "calculatedTags": [
         "_has_address=feat.overlapWith('address').length > 0"
       ],
-      "#mapRendering": [
+      "mapRendering": [
         {
           "width": 2,
           "color": {
@@ -80,13 +82,21 @@
           }
         }
       ],
-      "mapRendering": null
+      "shownByDefault": false,
+      "name": {
+        "en": "Inspire polygons"
+      }
     },
     {
       "id": "to_import",
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json",
-        "osmTags": "inspireid~*",
+        "osmTags": {
+          "and": [
+            "ref:GB:inspire~*",
+            "id!~node/.*"
+          ]
+        },
         "geoJsonZoomLevel": 16,
         "isOsmCache": false
       },
@@ -126,7 +136,7 @@
         },
         {
           "id": "uk_addresses_import_button",
-          "render": "{import_button(address,ref:inspireid=$inspireid, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
+          "render": "{import_button(address,ref:GB:inspire=$ref:GB:inspire;ref:GB:uprn=$ref:GB:uprn$, Add this address, ./assets/themes/uk_addresses/housenumber_add.svg)}"
         }
       ],
       "calculatedTags": [
@@ -189,15 +199,46 @@
       "description": "Alamat"
     },
     {
-      "builtin": "address",
-      "override": {
-        "calculatedTags": [
-          "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
-          "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
-          "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
-          "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
-        ]
+      "id": "address",
+      "name": {
+        "en": "Known addresses in OSM",
+        "de": "Bekannte Adressen in OSM",
+        "zh_Hant": "OSM 上已知的地址",
+        "hu": "Ismert címek az OSM-en",
+        "nl": "Bekende adressen in OSM"
       },
+      "minzoom": 18,
+      "source": {
+        "osmTags": {
+          "or": [
+            "addr:housenumber~*",
+            "addr:street~*",
+            "ref:GB:inspire~*"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Known address",
+          "de": "Bekannte Adresse",
+          "hu": "Ismert cím",
+          "nl": "Bekend adres"
+        }
+      },
+      "description": {
+        "en": "Addresses",
+        "nl": "Adressen",
+        "de": "Adressen",
+        "ru": "Адреса",
+        "zh_Hant": "地址",
+        "hu": "Címek"
+      },
+      "calculatedTags": [
+        "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
+        "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+        "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+        "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+      ],
       "tagRenderings": [
         {
           "id": "uk_addresses_explanation_osm",
@@ -254,6 +295,7 @@
               "then": "This building has no housename"
             },
             {
+              "#": "By adding nohousenumber!=yes, this option will trigger when first added, but will be untriggered if a housenumber is added, resulting in the question poping up!",
               "if": {
                 "and": [
                   "addr:housename=",
@@ -264,6 +306,28 @@
               "hideInAnswer": true
             }
           ]
+        },
+        {
+          "id": "uk_addresses_unit",
+          "render": "The sub-part of this address is <b>{addr:unit}</b>",
+          "question": {
+            "en": "What is the unit indication of this address? <div class='subtle'>This is the letter or number of the letterbox here, if multiple letterboxes share the same street and housenumber. If there are multiple at the same location, add them here with a <b>;</b> between them</div>"
+          },
+          "freeform": {
+            "key": "addr:unit"
+          },
+          "mappings": [
+            {
+              "if": "addr:unit=",
+              "then": "This address has no subparts. <div class='subtle'>Subparts are e.g. appartment numbers, extra letters or numbers if there are multiple letterboxes, ...</div>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "addr:housenumber~*",
+              "addr:housename~*"
+            ]
+          }
         },
         {
           "id": "uk_addresses_street",
@@ -281,31 +345,46 @@
           "mappings": [
             {
               "if": "addr:street:={_closest_street:0:name}",
-              "then": "Located in <b>{_closest_street:0:name}</b>",
+              "then": "This address is in street <b>{_closest_street:0:name}</b>",
               "hideInAnswer": "_closest_street:0:name="
             },
             {
               "if": "addr:street:={_closest_street:1:name}",
-              "then": "Located in <b>{_closest_street:1:name}</b>",
+              "then": "This address is in street <b>{_closest_street:1:name}</b>",
               "hideInAnswer": "_closest_street:1:name="
             },
             {
               "if": "addr:street:={_closest_street:2:name}",
-              "then": "Located in <b>{_closest_street:2:name}</b>",
+              "then": "This address is in street <b>{_closest_street:2:name}</b>",
               "hideInAnswer": "_closest_street:2:name="
             }
-          ],
-          "condition": {
-            "and": [
-              "nohousenumber!~yes"
-            ]
-          }
+          ]
+        },
+        {
+          "id": "uk_addresses_placename",
+          "question": {
+            "en": "What is the place or locality?<div class='subtle'>This is additional information if the streetname alone isn't enough to find this address. Typical examples are 'Technology Park', 'XYZ Terrace', ...</div>"
+          },
+          "render": {
+            "en": "The placename is <b>{addr:place}</b>"
+          },
+          "freeform": {
+            "key": "addr:place"
+          },
+          "mappings": [
+            {
+              "if": "addr:place=",
+              "then": {
+                "en": "No extra placename is given or needed"
+              }
+            }
+          ]
         },
         {
           "id": "fixme",
-          "render": "<b>Fixme description</b>{fixme}",
+          "render": "<b>This address is complicated - therefore someone has given a description of what should be fixed:</b>{fixme}",
           "question": {
-            "en": "What should be fixed here? Please explain"
+            "en": "What should be fixed here? Please explain what the address is"
           },
           "freeform": {
             "key": "fixme"
@@ -313,7 +392,7 @@
           "mappings": [
             {
               "if": "fixme=",
-              "then": "No fixme - write something here to explain complicated cases"
+              "then": "Is this address complicated? Write something here to explain this case. An experienced mapper will have a look at it"
             }
           ]
         },
@@ -322,6 +401,68 @@
           "id": "address-sign-image",
           "render": {
             "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
+          }
+        },
+        {
+          "id": "preview",
+          "render": {
+            "en": "To send a letter to this addres, you would write:<div style='background: #fcdf94; border: 2px solid black; border-radius: 1rem; padding: 1.5rem 0.5rem 2rem 8rem; margin: 1rem' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp.jpg' class='self-end w-16'/><div class='subtle'>Name of the inhabitant</div><div>{addr:housename}</div><div>{addr:unit} {addr:housenumber} {addr:street}</div><div>{addr:place}</div><div class='subtle'>Suburb</div><div class='subtle'>Town</div><div class='subtle'>Postal code</div></div>"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50,center",
+          "icon": {
+            "render": "./assets/layers/address/housenumber_blank.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "#ff0"
+              }
+            ]
+          },
+          "width": {
+            "render": "3"
           }
         }
       ]

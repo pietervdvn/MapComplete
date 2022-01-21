@@ -4,8 +4,6 @@ import MapControlButton from "../MapControlButton";
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler";
 import Svg from "../../Svg";
 import MapState from "../../Logic/State/MapState";
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import AllKnownLayers from "../../Customizations/AllKnownLayers";
 
 export default class RightControls extends Combine {
 

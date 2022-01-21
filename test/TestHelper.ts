@@ -3,8 +3,8 @@ export default class T {
     public readonly name: string;
     private readonly _tests: [string, (() => (void | Promise<void>))][];
 
-    constructor(testsuite: string, tests: [string, () => (Promise<void> | void)][]) {
-        this.name = testsuite
+    constructor(tests: [string, () => (Promise<void> | void)][]) {
+        this.name = this.constructor.name;
         this._tests = tests;
     }
 

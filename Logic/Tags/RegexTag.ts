@@ -109,4 +109,8 @@ export class RegexTag extends TagsFilter {
         console.error("Cannot export regex tag to asChange; ", this.key, this.value)
         return []
     }
+    
+    AsJson() {
+        return this.asHumanString()
+    }
 }

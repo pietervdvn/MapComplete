@@ -1,7 +1,6 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Translation} from "./i18n/Translation";
 import Locale from "./i18n/Locale";
-import State from "../State";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import SpecialVisualizations, {SpecialVisualization} from "./SpecialVisualizations";
 import {Utils} from "../Utils";
@@ -9,12 +8,14 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
 import {DefaultGuiState} from "./DefaultGuiState";
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
 
 export class SubstitutedTranslation extends VariableUiElement {
 
     public constructor(
         translation: Translation,
         tagsSource: UIEventSource<any>,
+        state: FeaturePipelineState,
         mapping: Map<string, BaseUIElement> = undefined) {
 
         const extraMappings: SpecialVisualization[] = [];
@@ -50,7 +51,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                         }
                         const viz = proto.special;
                         try {
-                            return viz.func.constr(State.state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
+                            return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func.funcName}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
@@ -71,7 +72,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             style: string
         }
     }[] {
-
+        
         for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
 
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'

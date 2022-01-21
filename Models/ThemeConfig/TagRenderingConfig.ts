@@ -7,6 +7,11 @@ import {And} from "../../Logic/Tags/And";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Utils} from "../../Utils";
 import {Tag} from "../../Logic/Tags/Tag";
+import BaseUIElement from "../../UI/BaseUIElement";
+import Combine from "../../UI/Base/Combine";
+import Title from "../../UI/Base/Title";
+import Link from "../../UI/Base/Link";
+import List from "../../UI/Base/List";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -40,7 +45,6 @@ export default class TagRenderingConfig {
         readonly hideInAnswer: boolean | TagsFilter
         readonly addExtraTags: Tag[]
     }[]
-
     constructor(json: string | TagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
@@ -69,7 +73,7 @@ export default class TagRenderingConfig {
         }
 
 
-        this.id = json.id ?? "";
+        this.id = json.id ?? ""; // Some tagrenderings - especially for the map rendering - don't need an ID
         if (this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null) {
             throw "Invalid ID in " + context + ": an id can only contain [a-zA-Z0-0_-] as characters. The offending id is: " + this.id
         }
@@ -112,7 +116,7 @@ export default class TagRenderingConfig {
             }
 
 
-            if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
+            if (!ValidatedTextField.AllTypes.has(this.freeform.type)) {
                 const knownKeys = ValidatedTextField.tpList.map(tp => tp.name).join(", ");
                 throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
             }
@@ -369,6 +373,9 @@ export default class TagRenderingConfig {
                     return mapping.then;
                 }
                 if (mapping.if.matchesProperties(tags)) {
+                    if(this.id === "uk_addresses_placename"){
+                    console.log("Matched",mapping.if,"with ",tags["addr:place"])
+                    }
                     return mapping.then;
                 }
             }
@@ -397,7 +404,7 @@ export default class TagRenderingConfig {
     EnumerateTranslations(): Translation[] {
         const translations: Translation[] = []
         for (const key in this) {
-            if(!this.hasOwnProperty(key)){
+            if (!this.hasOwnProperty(key)) {
                 continue;
             }
             const o = this[key]
@@ -420,5 +427,84 @@ export default class TagRenderingConfig {
         return usedIcons;
     }
 
+    FreeformValues(): { key: string, type?: string, values?: string [] } {
+        try {
 
+            const key = this.freeform?.key
+            const answerMappings = this.mappings?.filter(m => m.hideInAnswer !== true)
+            if (key === undefined) {
+
+                let values: { k: string, v: string }[][] = Utils.NoNull(answerMappings?.map(m => m.if.asChange({})) ?? [])
+                if (values.length === 0) {
+                    return;
+                }
+
+                const allKeys = values.map(arr => arr.map(o => o.k))
+                let common = allKeys[0];
+                for (const keyset of allKeys) {
+                    common = common.filter(item => keyset.indexOf(item) >= 0)
+                }
+                const commonKey = common[0]
+                if (commonKey === undefined) {
+                    return undefined;
+                }
+                return {
+                    key: commonKey,
+                    values: Utils.NoNull(values.map(arr => arr.filter(item => item.k === commonKey)[0]?.v))
+                }
+
+            }
+
+            let values = Utils.NoNull(answerMappings?.map(m => m.if.asChange({}).filter(item => item.k === key)[0]?.v) ?? [])
+            if (values.length === undefined) {
+                values = undefined
+            }
+            return {
+                key,
+                type: this.freeform.type,
+                values
+            }
+        } catch (e) {
+            console.error("Could not create FreeformValues for tagrendering", this.id)
+            return undefined
+        }
+    }
+
+    GenerateDocumentation(): BaseUIElement {
+
+        let withRender: (BaseUIElement | string)[] = [];
+        if (this.freeform?.key !== undefined) {
+            withRender = [
+                `This rendering asks information about the property `,
+                Link.OsmWiki(this.freeform.key),
+                `\nThis is rendered with \`${this.render.txt}\``
+
+            ]
+        }
+
+        let mappings: BaseUIElement = undefined;
+        if (this.mappings !== undefined) {
+            mappings = new List(
+                this.mappings.map(m => {
+                        let txt = "**" + m.then.txt + "** corresponds with " + m.if.asHumanString(true, false, {});
+                        if(m.hideInAnswer === true)
+                        {
+                            txt += "_This option cannot be chosen as answer_"
+                        }
+                        if(m.ifnot !== undefined){
+                            txt += "Unselecting this answer will add "+m.ifnot.asHumanString(true, false, {})
+                        }
+                        return txt;
+                    }
+                )
+            )
+        }
+
+        return new Combine([
+            new Title(this.id, 3),
+            this.question !== undefined ? "The question is **" + this.question.txt + "**" : "_This tagrendering has no question and is thus read-only_",
+            new Combine(withRender),
+            mappings
+        ]).SetClass("flex-col");
+    }
 }

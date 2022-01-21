@@ -1,6 +1,5 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
-import Constants from "../Models/Constants";
 import Hash from "../Logic/Web/Hash";
 
 export class DefaultGuiState {
@@ -46,18 +45,19 @@ export class DefaultGuiState {
             "false",
             "Whether or not the current view box is shown"
         )
-        if (Hash.hash.data === "download") {
-            this.downloadControlIsOpened.setData(true)
+        const states = {
+            download: this.downloadControlIsOpened,
+            filters: this.filterViewIsOpened,
+            copyright: this.copyrightViewIsOpened,
+            currentview: this.currentViewControlIsOpened,
+            welcome: this.welcomeMessageIsOpened
         }
-        if (Hash.hash.data === "filters") {
-            this.filterViewIsOpened.setData(true)
-        }
-        if (Hash.hash.data === "copyright") {
-            this.copyrightViewIsOpened.setData(true)
-        }if (Hash.hash.data === "currentview") {
-            this.currentViewControlIsOpened.setData(true)
-        }
-        if (Hash.hash.data === "" || Hash.hash.data === undefined || Hash.hash.data === "welcome") {
+        Hash.hash.addCallbackAndRunD(hash => {
+            hash = hash.toLowerCase()
+            states[hash]?.setData(true)
+        })
+       
+        if (Hash.hash.data === "" || Hash.hash.data === undefined) {
             this.welcomeMessageIsOpened.setData(true)
         }
 

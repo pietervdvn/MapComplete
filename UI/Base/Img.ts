@@ -53,5 +53,17 @@ export default class Img extends BaseUIElement {
         }
         return el;
     }
+
+    AsMarkdown(): string {
+        if (this._rawSvg === true) {
+            console.warn("Converting raw svgs to markdown is not supported");
+            return undefined
+        }
+        let src = this._src
+        if (this._src.startsWith("./")) {
+            src = "https://mapcomplete.osm.be/" + src
+        }
+        return "![](" + src + ")";
+    }
 }
 

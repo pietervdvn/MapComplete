@@ -128,7 +128,8 @@
           "then": {
             "en": "There is a normal, sit-down bench here",
             "fr": "Il y a un banc normal pour s'asseoir ici",
-            "de": "Hier gibt es eine normale Sitzbank"
+            "de": "Hier gibt es eine normale Sitzbank",
+            "nl": "Er is hier een normale zitbank"
           }
         },
         {
@@ -149,7 +150,8 @@
           "then": {
             "en": "There is no bench here",
             "fr": "Il n'y a pas de banc ici",
-            "de": "Hier gibt es keine Bank"
+            "de": "Hier gibt es keine Bank",
+            "nl": "Er is hier geen bank"
           }
         }
       ]

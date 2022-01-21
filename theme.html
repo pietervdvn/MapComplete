@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- WARNING: index.html serves as a template. If you want to change something, change it there -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <link href="./vendor/leaflet.css" rel="stylesheet"/>
+    <link href="./css/userbadge.css" rel="stylesheet"/>
+    <link href="./css/tabbedComponent.css" rel="stylesheet"/>
+    <link href="./css/mobile.css" rel="stylesheet"/>
+    <link href="./css/openinghourstable.css" rel="stylesheet"/>
+    <link href="./css/tagrendering.css" rel="stylesheet"/>
+    <link href="css/ReviewElement.css" rel="stylesheet"/>
+    <link href="./css/index-tailwind-output.css" rel="stylesheet"/>
+    <link href="./css/wikipedia.css" rel="stylesheet"/>
+    <meta content="website" property="og:type">
+
+    <!-- THEME-SPECIFIC -->
+    <!-- Every theme gets their own html page, this is created by a script; this part will be removed except for the index -->
+    <title>MapComplete</title>
+    <link href="./index.manifest" rel="manifest">
+    <link href="./assets/svg/add.svg" rel="icon" sizes="any" type="image/svg+xml">
+    <meta content="./assets/SocialImage.png" property="og:image">
+    <meta content="MapComplete - editable, thematic maps with OpenStreetMap" property="og:title">
+    <meta content="MapComplete is a platform to visualize OpenStreetMap on a specific topic and to easily contribute data back to it."
+          property="og:description">
+
+    <link href="./assets/generated/svg_mapcomplete_logo512.png" rel="apple-touch-icon" sizes="512x512">
+    <link href="./assets/generated/svg_mapcomplete_logo384.png" rel="apple-touch-icon" sizes="384x384">
+    <link href="./assets/generated/svg_mapcomplete_logo192.png" rel="apple-touch-icon" sizes="192x192">
+    <link href="./assets/generated/svg_mapcomplete_logo180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="./assets/generated/svg_mapcomplete_logo152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="./assets/generated/svg_mapcomplete_logo144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="./assets/generated/svg_mapcomplete_logo128.png" rel="apple-touch-icon" sizes="128x128">
+    <link href="./assets/generated/svg_mapcomplete_logo120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="./assets/generated/svg_mapcomplete_logo96.png" rel="apple-touch-icon" sizes="96x96">
+    <link href="./assets/generated/svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
+
+
+    <!-- THEME-SPECIFIC-END-->
+
+    <style>
+        #decoration-desktop img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="decoration-desktop" style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;">
+    <!-- A nice decoration while loading or on errors -->
+    <!-- DECORATION 0 START -->
+    <img src="./assets/svg/add.svg"/>
+    <!-- DECORATION 0 END -->
+</div>
+
+<div class="hidden md:hidden fixed inset-0 block z-above-controls" id="fullscreen"></div>
+<div class="z-index-above-map pointer-events-none" id="topleft-tools">
+    <div class="p-3 flex flex-col items-end sm:items-start sm:flex-row sm:flex-wrap w-full sm:justify-between">
+        <div class="shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
+             id="searchbox"></div>
+        <div class="m-1 pointer-events-auto" id="userbadge"></div>
+    </div>
+    <div class="rounded-3xl overflow-hidden ml-3" id="messagesbox"></div>
+</div>
+
+<div class="absolute bottom-3 left-3 rounded-3xl z-above-map" id="bottom-left"></div>
+<div class="absolute bottom-3 right-2 rounded-3xl z-above-map" id="bottom-right"></div>
+
+<div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
+     id="centermessage" style="z-index: 4000">
+    Loading MapComplete, hang on...
+</div>
+
+<span class="absolute" id="belowmap" style="z-index: -1">Below</span>
+<div id="leafletDiv"></div>
+
+<script src="./index.ts"></script>
+<script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

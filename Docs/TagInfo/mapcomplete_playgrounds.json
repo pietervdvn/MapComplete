@@ -99,7 +99,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows <span class='line-through'>access</span> with a fixed text, namely 'Accessible to the general public' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key access.",
+      "description": "Layer 'Playgrounds' shows  with a fixed text, namely 'Accessible to the general public' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key access.",
       "value": ""
     },
     {
@@ -161,7 +161,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Playgrounds' shows <span class='line-through'>opening_hours</span> with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Playgrounds' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key opening_hours.",
       "value": ""
     },
     {

@@ -824,6 +824,14 @@
     "sources": []
   },
   {
+    "path": "note.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "osm-logo-us.svg",
     "license": "Logo",
     "authors": [
@@ -959,6 +967,14 @@
   },
   {
     "path": "relocation.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "resolved.svg",
     "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"

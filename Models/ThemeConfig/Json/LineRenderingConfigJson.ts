@@ -18,7 +18,7 @@ export default interface LineRenderingConfigJson {
     /**
      * The stroke-width for way-elements
      */
-    width?: string | TagRenderingConfigJson;
+    width?: string | number | TagRenderingConfigJson;
 
     /**
      * A dasharray, e.g. "5 6"

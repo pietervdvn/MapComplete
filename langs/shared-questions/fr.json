@@ -61,13 +61,20 @@
         },
         "service:electricity": {
             "mappings": {
+                "0": {
+                    "then": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+                },
+                "1": {
+                    "then": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+                },
                 "2": {
                     "then": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés"
                 },
                 "3": {
                     "then": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur"
                 }
-            }
+            },
+            "question": "Des prises sont elles à disposition des client·e·s en intérieur ?"
         },
         "website": {
             "question": "Quel est le site web de {name} ?"
@@ -102,7 +109,8 @@
                 "0": {
                     "then": "Non lié avec Wikipedia"
                 }
-            }
+            },
+            "question": "Quel est l’élément Wikipédia correspondant ?"
         }
     }
 }

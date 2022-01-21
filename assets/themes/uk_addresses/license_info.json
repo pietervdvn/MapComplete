@@ -77,5 +77,15 @@
       "Pieter Vander Vennet"
     ],
     "sources": []
+  },
+  {
+    "path": "stamp.jpg",
+    "license": "CC-BY 2.0",
+    "authors": [
+      "Mark Morgan"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Queen_Elizabeth_II_Virgin_Islands_stamp.jpg"
+    ]
   }
 ]

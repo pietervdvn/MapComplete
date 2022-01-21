@@ -24,6 +24,7 @@ import {GeoOperations} from "../Logic/GeoOperations";
 import SimpleMetaTaggers from "../Logic/SimpleMetaTagger";
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource";
 import Loc from "../Models/Loc";
+
 ScriptUtils.fixUtils()
 
 function createOverpassObject(theme: LayoutConfig, relationTracker: RelationsTracker, backend: string) {
@@ -166,7 +167,7 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
 
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm);
-            console.log(" which as",geojson.features.length, "features")
+            console.log(" which as", geojson.features.length, "features")
 
             allFeatures.push(...geojson.features)
         }
@@ -180,23 +181,24 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
 function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relationsTracker: RelationsTracker, targetdir: string, pointsOnlyLayers: string[]) {
     const skippedLayers = new Set<string>()
 
-    const indexedFeatures : Map<string, any> = new Map<string, any>()
+    const indexedFeatures: Map<string, any> = new Map<string, any>()
     let indexisBuilt = false;
-    function buildIndex(){
+
+    function buildIndex() {
         for (const ff of allFeatures.features.data) {
             const f = ff.feature
             indexedFeatures.set(f.properties.id, f)
         }
         indexisBuilt = true;
     }
-    
-    function getFeatureById(id){
-        if(!indexisBuilt){
+
+    function getFeatureById(id) {
+        if (!indexisBuilt) {
             buildIndex()
         }
         return indexedFeatures.get(id)
     }
-    
+
     async function handleLayer(source: FeatureSourceForLayer) {
         const layer = source.layer.layerDef;
         const targetZoomLevel = layer.source.geojsonZoomLevel ?? 0
@@ -225,11 +227,10 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 includeDates: false,
                 includeNonDates: true
             });
-        
-        
+
 
         while (SimpleMetaTaggers.country.runningTasks.size > 0) {
-            console.log("Still waiting for ", SimpleMetaTaggers.country.runningTasks.size," features which don't have a country yet")
+            console.log("Still waiting for ", SimpleMetaTaggers.country.runningTasks.size, " features which don't have a country yet")
             await ScriptUtils.sleep(1)
         }
 
@@ -246,18 +247,18 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 if (tile.features.data.length === 0) {
                     return
                 }
-               
+
                 const filteredTile = new FilteringFeatureSource({
-                  locationControl:  new UIEventSource<Loc>(undefined),
-                    allElements: undefined,
-                    selectedElement: new UIEventSource<any>(undefined)
-                },
+                        locationControl: new UIEventSource<Loc>(undefined),
+                        allElements: undefined,
+                        selectedElement: new UIEventSource<any>(undefined)
+                    },
                     tileIndex,
                     tile,
                     new UIEventSource<any>(undefined)
-                    )
+                )
 
-                console.log("Tile "+layer.id+"."+tileIndex+" contains "+filteredTile.features.data.length+" features after filtering ("+tile.features.data.length+") features before")
+                console.log("Tile " + layer.id + "." + tileIndex + " contains " + filteredTile.features.data.length + " features after filtering (" + tile.features.data.length + ") features before")
                 if (filteredTile.features.data.length === 0) {
                     return
                 }
@@ -266,22 +267,22 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 for (const feature of filteredTile.features.data) {
                     // Some cleanup
                     delete feature.feature["bbox"]
-                    
-                    if(tile.layer.layerDef.calculatedTags !== undefined){
-                        
-                    // Evaluate all the calculated tags strictly
-                    const calculatedTagKeys = tile.layer.layerDef.calculatedTags.map(ct => ct[0])
-                    featureCount++
-                    for (const calculatedTagKey of calculatedTagKeys) {
-                        const strict = feature.feature.properties[calculatedTagKey]
-                        feature.feature.properties[calculatedTagKey] =strict
-                        strictlyCalculated ++;
-                        if(strictlyCalculated % 100 === 0){
-                            console.log("Strictly calculated ", strictlyCalculated, "values for tile",tileIndex,": now at ", featureCount,"/",filteredTile.features.data.length, "examle value: ", strict)
+
+                    if (tile.layer.layerDef.calculatedTags !== undefined) {
+
+                        // Evaluate all the calculated tags strictly
+                        const calculatedTagKeys = tile.layer.layerDef.calculatedTags.map(ct => ct[0])
+                        featureCount++
+                        for (const calculatedTagKey of calculatedTagKeys) {
+                            const strict = feature.feature.properties[calculatedTagKey]
+                            feature.feature.properties[calculatedTagKey] = strict
+                            strictlyCalculated++;
+                            if (strictlyCalculated % 100 === 0) {
+                                console.log("Strictly calculated ", strictlyCalculated, "values for tile", tileIndex, ": now at ", featureCount, "/", filteredTile.features.data.length, "examle value: ", strict)
+                            }
                         }
                     }
-                    }
-                    
+
                 }
                 // Lets save this tile!
                 const [z, x, y] = Tiles.tile_from_index(tileIndex)
@@ -293,7 +294,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                     type: "FeatureCollection",
                     features: filteredTile.features.data.map(f => f.feature)
                 }, null, " "))
-                console.log("Written tile", targetPath,"with", filteredTile.features.data.length)
+                console.log("Written tile", targetPath, "with", filteredTile.features.data.length)
             }
         })
 
@@ -315,16 +316,16 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
         if (pointsOnlyLayers.indexOf(layer.id) >= 0) {
 
             const filtered = new FilteringFeatureSource({
-                    locationControl:  new UIEventSource<Loc>(undefined),
+                    locationControl: new UIEventSource<Loc>(undefined),
                     allElements: undefined,
                     selectedElement: new UIEventSource<any>(undefined)
                 },
-                Tiles.tile_index(0,0,0),
+                Tiles.tile_index(0, 0, 0),
                 source,
                 new UIEventSource<any>(undefined)
             )
             const features = filtered.features.data.map(f => f.feature)
-            
+
             const points = features.map(feature => GeoOperations.centerpoint(feature))
             console.log("Writing points overview for ", layerId)
             const targetPath = targetdir + "_" + layerId + "_points.geojson"
@@ -375,8 +376,6 @@ async function main(args: string[]) {
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
 
-   
-
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
 
@@ -397,29 +396,29 @@ async function main(args: string[]) {
 
     let generatePointLayersFor = []
     if (args[7] == "--generate-point-overview") {
-        if(args[8] === undefined){
+        if (args[8] === undefined) {
             throw "--generate-point-overview needs a list of layers to generate the overview for (or * for all)"
-        }else if (args[8] === '*'){
+        } else if (args[8] === '*') {
             generatePointLayersFor = theme.layers.map(l => l.id)
-        }else{
+        } else {
             generatePointLayersFor = args[8].split(",")
         }
         console.log("Also generating a point overview for layers ", generatePointLayersFor.join(","))
     }
     {
-        
-    const index = args.indexOf("--force-zoom-level")
-    if(index >= 0){
-        const forcedZoomLevel = Number(args[index + 1])
-        for (const layer of theme.layers) {
-            layer.source.geojsonSource = "https://127.0.0.1/cache_{layer}_{z}_{x}_{y}.geojson"
-            layer.source.isOsmCacheLayer = true
-            layer.source.geojsonZoomLevel = forcedZoomLevel
+
+        const index = args.indexOf("--force-zoom-level")
+        if (index >= 0) {
+            const forcedZoomLevel = Number(args[index + 1])
+            for (const layer of theme.layers) {
+                layer.source.geojsonSource = "https://127.0.0.1/cache_{layer}_{z}_{x}_{y}.geojson"
+                layer.source.isOsmCacheLayer = true
+                layer.source.geojsonZoomLevel = forcedZoomLevel
+            }
         }
     }
-    }
-    
-    
+
+
     const relationTracker = new RelationsTracker()
 
     let failed = 0;

@@ -72,7 +72,7 @@
     },
     {
       "key": "defibrillator",
-      "description": "Layer 'Defibrillators' shows <span class='line-through'>defibrillator</span> with a fixed text, namely 'There is no info about the type of device' (in the MapComplete.osm.be theme 'Open AED Map') Picking this answer will delete the key defibrillator.",
+      "description": "Layer 'Defibrillators' shows  with a fixed text, namely 'There is no info about the type of device' (in the MapComplete.osm.be theme 'Open AED Map') Picking this answer will delete the key defibrillator.",
       "value": ""
     },
     {

@@ -3,15 +3,18 @@
   "name": {
     "en": "Known addresses in OSM",
     "de": "Bekannte Adressen in OSM",
-    "zh_Hant": "OSM 上已知的地址"
+    "zh_Hant": "OSM 上已知的地址",
+    "hu": "Ismert címek az OSM-en",
+    "nl": "Bekende adressen in OSM",
+    "fr": "Adresses connues d’OpenStreetMap",
+    "ru": "Известные адреса в OSM"
   },
   "minzoom": 18,
   "source": {
     "osmTags": {
       "or": [
         "addr:housenumber~*",
-        "addr:street~*",
-        "ref:inspireid~*"
+        "addr:street~*"
       ]
     }
   },
@@ -24,7 +27,12 @@
   "title": {
     "render": {
       "en": "Known address",
-      "de": "Bekannte Adresse"
+      "de": "Bekannte Adresse",
+      "hu": "Ismert cím",
+      "nl": "Bekend adres",
+      "fr": "Adresse connue",
+      "pl": "Znany adres",
+      "ru": "Известный адрес"
     }
   },
   "description": {
@@ -32,7 +40,10 @@
     "nl": "Adressen",
     "de": "Adressen",
     "ru": "Адреса",
-    "zh_Hant": "地址"
+    "zh_Hant": "地址",
+    "hu": "Címek",
+    "fr": "Adresses",
+    "pl": "Adresy"
   },
   "tagRenderings": [
     {
@@ -40,11 +51,20 @@
       "render": {
         "en": "The housenumber is <b>{addr:housenumber}</b>",
         "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
-        "de": "Die Hausnummer ist <b>{addr:housenumber}</b>"
+        "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
+        "hu": "A házszám: <b>{addr:housenumber}</b>",
+        "fr": "Son numéro est le <b>{addr:housenumber}</b>",
+        "pl": "Numer tego domu to <b>{addr:housenumber}</b>",
+        "ru": "Номер дома <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
-        "de": "Wie lautet die Nummer dieses Hauses?"
+        "de": "Wie lautet die Nummer dieses Hauses?",
+        "hu": "Mi ennek az épületnek a házszáma?",
+        "nl": "Wat is het huisnummer van dit huis?",
+        "fr": "Quel est le numéro de ce bâtiment ?",
+        "pl": "Jaki jest numer tego domu?",
+        "ru": "Какой номер у этого дома?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -62,7 +82,11 @@
           "then": {
             "en": "This building has no house number",
             "nl": "Dit gebouw heeft geen huisnummer",
-            "de": "Dieses Gebäude hat keine Hausnummer"
+            "de": "Dieses Gebäude hat keine Hausnummer",
+            "hu": "Ennek az épületnek nincs házszáma",
+            "fr": "Ce bâtiment n’a pas de numéro",
+            "pl": "Ten budynek nie ma numeru",
+            "ru": "У этого здания нет номера"
           }
         }
       ]
@@ -71,11 +95,20 @@
       "id": "street",
       "render": {
         "en": "This address is in street <b>{addr:street}</b>",
-        "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+        "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
+        "hu": "Ez a cím a következő utcában van: <b>{addr:street}</b>",
+        "nl": "Dit adres bevindt zich in de straat <b>{addr:street}</b>",
+        "fr": "Le nom de la voie est <b>{addr:street}</b>",
+        "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
-        "de": "In welcher Straße befindet sich diese Adresse?"
+        "de": "In welcher Straße befindet sich diese Adresse?",
+        "hu": "Melyik utcában található ez a cím?",
+        "nl": "In welke straat bevindt dit adres zich?",
+        "fr": "Dans quelle rue est située l’adresse ?",
+        "pl": "Na jakiej ulicy znajduje się ten adres?",
+        "ru": "Какая эта улица?"
       },
       "freeform": {
         "key": "addr:street"
@@ -109,7 +142,10 @@
       "question": {
         "en": "What should be fixed here? Please explain",
         "zh_Hant": "這裡需要修什麼？請直接解釋",
-        "de": "Was sollte hier korrigiert werden? Bitte erläutern"
+        "de": "Was sollte hier korrigiert werden? Bitte erläutern",
+        "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el",
+        "fr": "Précisez ce qui devrait être corrigé ici",
+        "pl": "Co wymaga naprawy? Proszę wytłumaczyć"
       },
       "freeform": {
         "key": "fixme"

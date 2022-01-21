@@ -218,6 +218,119 @@ export class OsmConnection {
         });
     }
 
+    public closeNote(id: number | string, text?: string): Promise<any> {
+        let textSuffix = ""
+        if ((text ?? "") !== "") {
+            textSuffix = "?text=" + encodeURIComponent(text)
+        }
+        if (this._dryRun) {
+            console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
+        return new Promise((ok, error) => {
+            this.auth.xhr({
+                method: 'POST',
+                path: `/api/0.6/notes/${id}/close${textSuffix}`,
+            }, function (err, response) {
+                if (err !== null) {
+                    error(err)
+                } else {
+                    ok()
+                }
+            })
+
+        })
+
+    }
+
+    public reopenNote(id: number | string, text?: string): Promise<any> {
+        if (this._dryRun) {
+            console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
+        let textSuffix = ""
+        if ((text ?? "") !== "") {
+            textSuffix = "?text=" + encodeURIComponent(text)
+        }
+        return new Promise((ok, error) => {
+            this.auth.xhr({
+                method: 'POST',
+                path: `/api/0.6/notes/${id}/reopen${textSuffix}`
+            }, function (err, response) {
+                if (err !== null) {
+                    error(err)
+                } else {
+                    ok()
+                }
+            })
+
+        })
+
+    }
+
+    public openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
+        if (this._dryRun) {
+            console.warn("Dryrun enabled - not actually opening note with text ", text)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
+        const auth = this.auth;
+        const content = {lat, lon, text}
+        return new Promise((ok, error) => {
+            auth.xhr({
+                method: 'POST',
+                path: `/api/0.6/notes.json`,
+                options: {header:
+                        {'Content-Type': 'application/json'}},
+                content: JSON.stringify(content)
+
+            }, function (err, response) {
+                if (err !== null) {
+                    error(err)
+                } else {
+                    const id = Number(response.children[0].children[0].children.item("id").innerHTML)
+                    console.log("OPENED NOTE", id)
+                    ok({id})
+                }
+            })
+
+        })
+
+    }
+
+    public addCommentToNode(id: number | string, text: string): Promise<any> {
+        if (this._dryRun) {
+            console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
+            return new Promise((ok, error) => {
+                ok()
+            });
+        }
+        if ((text ?? "") === "") {
+            throw "Invalid text!"
+        }
+
+        return new Promise((ok, error) => {
+            this.auth.xhr({
+                method: 'POST',
+                
+                path: `/api/0.6/notes.json/${id}/comment?text=${encodeURIComponent(text)}`
+            }, function (err, response) {
+                if (err !== null) {
+                    error(err)
+                } else {
+                    ok()
+                }
+            })
+
+        })
+
+    }
+
     private updateAuthObject() {
         let pwaStandAloneMode = false;
         try {
@@ -260,6 +373,4 @@ export class OsmConnection {
         });
 
     }
-
-
 }

@@ -3,6 +3,13 @@
         "description": {
             "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
         },
+        "dog-access": {
+            "mappings": {
+                "1": {
+                    "then": "Psom wstęp wzbroniony"
+                }
+            }
+        },
         "email": {
             "question": "Jaki jest adres e-mail do {name}?"
         },
@@ -27,6 +34,17 @@
         "opening_hours": {
             "question": "Jakie są godziny otwarcia {name}?",
             "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Płatność gotówkowa jest tutaj dostępna"
+                },
+                "1": {
+                    "then": "Płatność kartą jest tutaj dostępna"
+                }
+            },
+            "question": "Jakie metody płatności są tutaj dostępne?"
         },
         "phone": {
             "question": "Jaki jest numer telefonu do {name}?"

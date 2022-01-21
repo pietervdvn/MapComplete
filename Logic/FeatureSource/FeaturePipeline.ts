@@ -40,18 +40,23 @@ import {ElementStorage} from "../ElementStorage";
 export default class FeaturePipeline {
 
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
-
     public readonly runningQuery: UIEventSource<boolean>;
     public readonly timeout: UIEventSource<number>;
-
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
 
+    
+    
     private readonly overpassUpdater: OverpassFeatureSource
     private state: MapState;
     private readonly relationTracker: RelationsTracker
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
 
+    /**
+     * Keeps track of the age of the loaded data.
+     * Has one freshness-Calculator for every layer
+     * @private
+     */
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
 
     private readonly oldestAllowedDate: Date;
@@ -59,7 +64,8 @@ export default class FeaturePipeline {
 
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
     private readonly metataggingRecalculated = new UIEventSource<void>(undefined)
-
+    private readonly requestMetataggingRecalculation = new UIEventSource<Date>(undefined)
+    
     /**
      * Keeps track of all raw OSM-nodes.
      * Only initialized if 'type_node' is defined as layer
@@ -97,6 +103,10 @@ export default class FeaturePipeline {
             }
         );
 
+        this.requestMetataggingRecalculation.stabilized(500).addCallbackAndRunD(_ => {
+            self.updateAllMetaTagging("Request stabilized")
+        })
+        
         const neededTilesFromOsm = this.getNeededTilesFromOsm(this.sufficientlyZoomed)
 
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
@@ -141,7 +151,7 @@ export default class FeaturePipeline {
                     tile => {
                         new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                         perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
-                        tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                        tile.features.addCallbackAndRunD(_ => self.onNewDataLoaded(tile))
                     });
                 continue;
             }
@@ -169,7 +179,10 @@ export default class FeaturePipeline {
             if (id === "current_view") {
                 handlePriviligedFeatureSource(state.currentView)
                 state.currentView.features.map(ffs => ffs[0]?.feature?.properties?.id).withEqualityStabilized((x,y) => x === y)
-                    .addCallbackAndRunD(_ => self.applyMetaTags(state.currentView, state))
+                    .addCallbackAndRunD(_ => {
+                            self.applyMetaTags(state.currentView, <any>this.state, `currentview changed`)
+                        }
+                    )
                 continue
             }
 
@@ -187,7 +200,7 @@ export default class FeaturePipeline {
                         console.debug("Loaded tile ", id, tile.tileIndex, "from local cache")
                         new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                         hierarchy.registerTile(tile);
-                        tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                        tile.features.addCallbackAndRunD(_ => self.onNewDataLoaded(tile))
                     }
                 )
 
@@ -207,13 +220,13 @@ export default class FeaturePipeline {
                         registerTile: (tile) => {
                             new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                             perLayerHierarchy.get(id).registerTile(tile)
-                            tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                            tile.features.addCallbackAndRunD(_ => self.onNewDataLoaded(tile))
                         }
                     })
                 } else {
                     new RegisteringAllFromFeatureSourceActor(src, state.allElements)
                     perLayerHierarchy.get(id).registerTile(src)
-                    src.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(src))
+                    src.features.addCallbackAndRunD(_ => self.onNewDataLoaded(src))
                 }
             } else {
                 new DynamicGeoJsonTileSource(
@@ -221,7 +234,7 @@ export default class FeaturePipeline {
                     tile => {
                         new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                         perLayerHierarchy.get(id).registerTile(tile)
-                        tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                        tile.features.addCallbackAndRunD(_ => self.onNewDataLoaded(tile))
                     },
                     state
                 )
@@ -242,7 +255,7 @@ export default class FeaturePipeline {
                     saver?.addTile(tile)
                 }
                 perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
-                tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                tile.features.addCallbackAndRunD(_ => self.onNewDataLoaded(tile))
 
             },
             state: state,
@@ -282,11 +295,19 @@ export default class FeaturePipeline {
                     // We save the tile data for the given layer to local storage - data sourced from overpass
                     self.localStorageSavers.get(tile.layer.layerDef.id)?.addTile(tile)
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
-                    tile.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(tile))
+                    tile.features.addCallbackAndRunD(f => {
+                        if(f.length === 0){
+                            return
+                        }
+                        self.onNewDataLoaded(tile)
+                    })
 
                 }
             }),
-            updater)
+            updater,
+            {handleLeftovers: (leftOvers) => {
+                console.warn("Overpass returned a few non-matched features:", leftOvers)
+                }})
 
 
         // Also load points/lines that are newly added. 
@@ -302,18 +323,19 @@ export default class FeaturePipeline {
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
-                // @ts-ignore
-                perLayer.features.addCallbackAndRunD(_ => self.applyMetaTags(perLayer, state))
-                perLayer.features.addCallbackAndRunD(_ => self.newDataLoadedSignal.setData(perLayer))
+                perLayer.features.addCallbackAndRunD(_ => self.onNewDataLoaded(perLayer))
 
             },
-            newGeometry
+            newGeometry,
+            {handleLeftovers: (leftOvers) => {
+                console.warn("Got some leftovers from the filteredLayers: ", leftOvers)
+                }}
         )
 
 
         // Whenever fresh data comes in, we need to update the metatagging
-        self.newDataLoadedSignal.stabilized(250).addCallback(_ => {
-            self.updateAllMetaTagging()
+        self.newDataLoadedSignal.stabilized(250).addCallback(src => {
+            self.updateAllMetaTagging(`New data loaded by ${src.name} (and stabilized)`)
         })
 
 
@@ -325,9 +347,13 @@ export default class FeaturePipeline {
             }, [osmFeatureSource.isRunning]
         )
 
-
     }
 
+    private onNewDataLoaded(src: FeatureSource){
+        this.newDataLoadedSignal.setData(src)
+        this.requestMetataggingRecalculation.setData(new Date())
+    }
+    
     public GetAllFeaturesWithin(bbox: BBox): any[][] {
         const self = this
         const tiles = []
@@ -453,6 +479,7 @@ export default class FeaturePipeline {
                 padToTiles: state.locationControl.map(l => Math.min(15, l.zoom + 1)),
                 relationTracker: this.relationTracker,
                 isActive: useOsmApi.map(b => !b && overpassIsActive.data, [overpassIsActive]),
+                freshnesses: this.freshnesses,
                 onBboxLoaded: (bbox, date, downloadedLayers, paddedToZoomLevel) => {
                     Tiles.MapRange(bbox.containingTileRange(paddedToZoomLevel), (x, y) => {
                         const tileIndex = Tiles.tile_index(paddedToZoomLevel, x, y)
@@ -471,12 +498,16 @@ export default class FeaturePipeline {
         return updater;
     }
 
-    private applyMetaTags(src: FeatureSourceForLayer, state: any) {
+    private applyMetaTags(src: FeatureSourceForLayer, state: any, reason: string) {
         const self = this
         if(src === undefined){
             throw "Src is undefined"
         }
         const layerDef = src.layer.layerDef;
+        console.debug(`Applying metatags onto ${src.name} due to ${reason} which has ${src.features.data?.length} features`)
+        if(src.features.data.length == 0){
+            return
+        }
         MetaTagging.addMetatags(
             src.features.data,
             {
@@ -494,18 +525,15 @@ export default class FeaturePipeline {
         )
 
     }
+    
 
-    public updateAllMetaTagging() {
+    public updateAllMetaTagging(reason: string) {
         const self = this;
-        console.debug("Updating the meta tagging of all tiles as new data got loaded")
         this.perLayerHierarchy.forEach(hierarchy => {
             hierarchy.loadedTiles.forEach(tile => {
-                self.applyMetaTags(tile, <any> this.state)
+                self.applyMetaTags(tile, <any> this.state, `${reason} (tile ${tile.tileIndex})`)
             })
         })
-        if(this.state.currentView !== undefined){
-            this.applyMetaTags(this.state.currentView, <any> this.state)
-        }
         self.metataggingRecalculated.ping()
 
     }

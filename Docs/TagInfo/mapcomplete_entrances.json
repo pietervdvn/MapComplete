@@ -62,82 +62,82 @@
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>entrance</span>&indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key entrance.",
+      "description": "Layer 'Entrance' shows indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key entrance.",
       "value": ""
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>entrance</span>&indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "door"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "main"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "secondary"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "service"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "exit"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "entrance"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "emergency"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows <span class='line-through'>indoor</span>&entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "home"
     },
     {

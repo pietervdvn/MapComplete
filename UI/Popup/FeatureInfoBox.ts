@@ -13,9 +13,7 @@ import DeleteWizard from "./DeleteWizard";
 import SplitRoadWizard from "./SplitRoadWizard";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import {Translation} from "../i18n/Translation";
 import {Utils} from "../../Utils";
-import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import MoveWizard from "./MoveWizard";
 import Toggle from "../Input/Toggle";
 
@@ -40,11 +38,11 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
                                     layerConfig: LayerConfig): BaseUIElement {
-        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"))
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), State.state)
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
-                "block w-8 h-8 align-baseline box-content sm:p-0.5", "width: 2rem;")
+            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, State.state,
+                "block w-8 h-8 max-h-8 align-baseline box-content sm:p-0.5 w-10",)
             ))
             .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
 
@@ -88,7 +86,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
                     if (tr.render !== undefined) {
                         questionBox.SetClass("text-sm")
-                        const renderedQuestion = new TagRenderingAnswer(tags, tr, tr.group + " questions", "", {
+                        const renderedQuestion = new TagRenderingAnswer(tags, tr,State.state,
+                            tr.group + " questions", "", {
                             specialViz: new Map<string, BaseUIElement>([["questions", questionBox]])
                         })
                         const possiblyHidden = new Toggle(
@@ -161,11 +160,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
 
-        const hasMinimap = layerConfig.tagRenderings.some(tr => FeatureInfoBox.hasMinimap(tr))
-        if (!hasMinimap) {
-            allRenderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
-        }
-
         editElements.push(
             new VariableUiElement(
                 State.state.osmConnection.userDetails
@@ -177,7 +171,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                             return undefined
                         }
 
-                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"));
+                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"), State.state);
 
                     }, [State.state.featureSwitchIsDebugging, State.state.featureSwitchIsTesting])
             )
@@ -192,9 +186,9 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         const config_download: TagRenderingConfig = new TagRenderingConfig({render: "{export_as_geojson()}"}, "");
                         const config_id: TagRenderingConfig = new TagRenderingConfig({render: "{open_in_iD()}"}, "");
 
-                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, "all_tags"),
-                            new TagRenderingAnswer(tags, config_download, ""),
-                            new TagRenderingAnswer(tags, config_id, "")])
+                        return new Combine([new TagRenderingAnswer(tags, config_all_tags, State.state),
+                            new TagRenderingAnswer(tags, config_download, State.state),
+                            new TagRenderingAnswer(tags, config_id, State.state)])
                     }
                 })
             )
@@ -213,27 +207,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         return new Combine(allRenderings).SetClass("block")
     }
 
-    /**
-     * Returns true if this tag rendering has a minimap in some language.
-     * Note: this might be hidden by conditions
-     */
-    private static hasMinimap(renderingConfig: TagRenderingConfig): boolean {
-        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
-        for (const translation of translations) {
-            for (const key in translation.translations) {
-                if (!translation.translations.hasOwnProperty(key)) {
-                    continue
-                }
-                const template = translation.translations[key]
-                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
-                const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
-                if (hasMiniMap) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+
 
 
 }

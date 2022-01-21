@@ -22,12 +22,18 @@ import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import Table from "../Base/Table";
 import Combine from "../Base/Combine";
 import Title from "../Base/Title";
+import InputElementMap from "./InputElementMap";
 
 interface TextFieldDef {
     name: string,
     explanation: string,
     isValid: ((s: string, country?: () => string) => boolean),
     reformat?: ((s: string, country?: () => string) => string),
+    /**
+     * Modification to make before the string is uploaded to OSM
+     */
+    postprocess?: (s: string) => string;
+    undoPostprocess?: (s: string) => string;
     inputHelper?: (value: UIEventSource<string>, options?: {
         location: [number, number],
         mapBackgroundLayer?: UIEventSource<any>,
@@ -187,10 +193,89 @@ class OpeningHoursTextField implements TextFieldDef {
         return new OpeningHoursInput(value, prefix, postfix)
     }
 }
+
+class UrlTextfieldDef implements TextFieldDef {
+
+    name = "url"
+    explanation = "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user"
+    inputmode: "url"
+
+    postprocess(str: string) {
+        if (str === undefined) {
+            return undefined
+        }
+        if (!str.startsWith("http://") || !str.startsWith("https://")) {
+            return "https://" + str
+        }
+        return str;
+    }
+
+    undoPostprocess(str: string) {
+        if (str === undefined) {
+            return undefined
+        }
+        if (str.startsWith("http://")) {
+            return str.substr("http://".length)
+        }
+        if (str.startsWith("https://")) {
+            return str.substr("https://".length)
+        }
+        return str;
+    }
+
+    reformat(str: string): string {
+        try {
+            let url: URL
+            str = str.toLowerCase()
+            if (!str.startsWith("http://") && !str.startsWith("https://") && !str.startsWith("http:")) {
+                url = new URL("https://" + str)
+            } else {
+                url = new URL(str);
+            }
+            const blacklistedTrackingParams = [
+                "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
+                "gclid",
+                "cmpid", "agid", "utm", "utm_source", "utm_medium",
+                "campaignid","campaign","AdGroupId","AdGroup","TargetId","msclkid"]
+            for (const dontLike of blacklistedTrackingParams) {
+                url.searchParams.delete(dontLike.toLowerCase()  )
+            }
+            let cleaned = url.toString();
+            if (cleaned.endsWith("/") && !str.endsWith("/")) {
+                // Do not add a trailing '/' if it wasn't typed originally
+                cleaned = cleaned.substr(0, cleaned.length - 1)
+            }
+
+            if (cleaned.startsWith("https://")) {
+                cleaned = cleaned.substr("https://".length)
+            }
+
+            return cleaned;
+        } catch (e) {
+            console.error(e)
+            return undefined;
+        }
+    }
+
+    isValid(str: string): boolean {
+        try {
+            if (!str.startsWith("http://") && !str.startsWith("https://") &&
+                !str.startsWith("http:")) {
+                str = "https://" + str
+            }
+            const url = new URL(str);
+            const dotIndex = url.host.indexOf(".")
+            return dotIndex > 0 && url.host[url.host.length - 1 ] !== ".";
+        } catch (e) {
+            return false;
+        }
+    }
+}
+
 export default class ValidatedTextField {
 
     public static tpList: TextFieldDef[] = [
-        
+
         ValidatedTextField.tp(
             "string",
             "A basic string"),
@@ -206,8 +291,7 @@ export default class ValidatedTextField {
             "date",
             "A date",
             (str) => {
-                const time = Date.parse(str);
-                return !isNaN(time);
+                return !isNaN(new Date(str).getTime());
             },
             (str) => {
                 const d = new Date(str);
@@ -351,54 +435,23 @@ export default class ValidatedTextField {
             "email",
             "An email adress",
             (str) => {
-                if(str.startsWith("mailto:")){
+                if (str.startsWith("mailto:")) {
                     str = str.substring("mailto:".length)
                 }
                 return EmailValidator.validate(str);
             },
             str => {
-                if(str === undefined){return undefined}
-                if(str.startsWith("mailto:")){
+                if (str === undefined) {
+                    return undefined
+                }
+                if (str.startsWith("mailto:")) {
                     str = str.substring("mailto:".length)
                 }
                 return str;
             },
             undefined,
             "email"),
-        ValidatedTextField.tp(
-            "url",
-            "A url",
-            (str) => {
-                try {
-                    new URL(str);
-                    return true;
-                } catch (e) {
-                    return false;
-                }
-            },
-            (str) => {
-                try {
-                    const url = new URL(str);
-                    const blacklistedTrackingParams = [
-                        "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
-                        "gclid",
-                        "cmpid", "agid", "utm", "utm_source", "utm_medium"]
-                    for (const dontLike of blacklistedTrackingParams) {
-                        url.searchParams.delete(dontLike)
-                    }
-                    let cleaned = url.toString();
-                    if (cleaned.endsWith("/") && !str.endsWith("/")) {
-                        // Do not add a trailing '/' if it wasn't typed originally
-                        cleaned = cleaned.substr(0, cleaned.length - 1)
-                    }
-                    return cleaned;
-                } catch (e) {
-                    console.error(e)
-                    return undefined;
-                }
-            },
-            undefined,
-            "url"),
+        new UrlTextfieldDef(),
         ValidatedTextField.tp(
             "phone",
             "A phone number",
@@ -406,13 +459,13 @@ export default class ValidatedTextField {
                 if (str === undefined) {
                     return false;
                 }
-                if(str.startsWith("tel:")){
+                if (str.startsWith("tel:")) {
                     str = str.substring("tel:".length)
                 }
                 return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
             },
             (str, country: () => string) => {
-                if(str.startsWith("tel:")){
+                if (str.startsWith("tel:")) {
                     str = str.substring("tel:".length)
                 }
                 return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
@@ -436,7 +489,7 @@ export default class ValidatedTextField {
     /**
      * {string (typename) --> TextFieldDef}
      */
-    public static AllTypes = ValidatedTextField.allTypesDict();
+    public static AllTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
 
     public static InputForType(type: string, options?: {
         placeholder?: string | BaseUIElement,
@@ -455,7 +508,7 @@ export default class ValidatedTextField {
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
-        const tp: TextFieldDef = ValidatedTextField.AllTypes[type]
+        const tp: TextFieldDef = ValidatedTextField.AllTypes.get(type)
         const isValidTp = tp.isValid;
         let isValid;
         options.textArea = options.textArea ?? type === "text";
@@ -492,7 +545,7 @@ export default class ValidatedTextField {
 
 
         options.inputMode = tp.inputmode;
-        if(tp.inputmode === "text") {
+        if (tp.inputmode === "text") {
             options.htmlType = "area"
         }
 
@@ -569,13 +622,21 @@ export default class ValidatedTextField {
                 a => [a, a]
             ).SetClass("block w-full");
         }
+        if (tp.postprocess !== undefined) {
+            input = new InputElementMap<string, string>(input,
+                (a, b) => a === b,
+                tp.postprocess,
+                tp.undoPostprocess
+            )
+        }
+
         return input;
     }
 
     public static HelpText(): BaseUIElement {
-        const explanations : BaseUIElement[]= 
+        const explanations: BaseUIElement[] =
             ValidatedTextField.tpList.map(type =>
-                new Combine([new Title(type.name,3), type.explanation]).SetClass("flex flex-col"))
+                new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col"))
         return new Combine([
             new Title("Available types for text fields", 1),
             "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
@@ -615,10 +676,11 @@ export default class ValidatedTextField {
     }
 
 
-    private static allTypesDict() {
-        const types = {};
+    private static allTypesDict(): Map<string, TextFieldDef> {
+        const types = new Map<string, TextFieldDef>();
         for (const tp of ValidatedTextField.tpList) {
             types[tp.name] = tp;
+            types.set(tp.name, tp);
         }
         return types;
     }

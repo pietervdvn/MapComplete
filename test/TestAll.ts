@@ -15,12 +15,14 @@ import ImageProviderSpec from "./ImageProvider.spec";
 import ActorsSpec from "./Actors.spec";
 import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
+import T from "./TestHelper";
+import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
 
 
 async function main() {
 
     ScriptUtils.fixUtils()
-    const allTests = [
+    const allTests : T[] = [
         new OsmObjectSpec(),
         new TagSpec(),
         new ImageAttributionSpec(),
@@ -35,7 +37,8 @@ async function main() {
         new ImageProviderSpec(),
         new ActorsSpec(),
         new ReplaceGeometrySpec(),
-        new LegacyThemeLoaderSpec()
+        new LegacyThemeLoaderSpec(),
+        new CreateNoteImportLayerSpec()
     ]
 
     Utils.externalDownloadFunction = async (url) => {
@@ -54,12 +57,20 @@ async function main() {
     const allFailures: { testsuite: string, name: string, msg: string } [] = []
     let testsToRun = allTests
     if (args.length > 0) {
-        args = args.map(a => a.toLowerCase())
+        args = args.map(a => a.toLowerCase()).map(a => {
+            if(!a.endsWith("spec")){
+                return a + "spec"
+            }else{
+                return a;
+            }
+        })
         testsToRun = allTests.filter(t => args.indexOf(t.name.toLowerCase()) >= 0)
     }
 
     if (testsToRun.length == 0) {
-        throw "No tests found. Try one of " + allTests.map(t => t.name).join(", ")
+        const available = allTests.map(t => t.name)
+        available.sort()
+        throw "No tests found. Try one of " + available.join(", ")
     }
 
     for (let i = 0; i < testsToRun.length; i++) {

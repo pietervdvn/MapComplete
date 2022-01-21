@@ -15,7 +15,7 @@ export class Accordeon extends Combine {
                 }
             }))
         }
-        
+
         super(toggles);
     }
 
@@ -33,24 +33,24 @@ export default class Toggleable extends Combine {
         this.onClick(() => self.isVisible.setData(!self.isVisible.data))
         const contentElement = content.ConstructElement()
 
-        if(title instanceof Title){
+        if (title instanceof Title) {
             Hash.hash.addCallbackAndRun(h => {
-                if(h === title.id){
+                if (h === title.id) {
                     self.isVisible.setData(true)
                     content.RemoveClass("border-gray-300")
                     content.SetClass("border-red-300")
-                }else{
+                } else {
                     content.SetClass("border-gray-300")
                     content.RemoveClass("border-red-300")
                 }
             })
             this.isVisible.addCallbackAndRun(isVis => {
-                if(isVis){
+                if (isVis) {
                     Hash.hash.setData(title.id)
                 }
             })
         }
-        
+
         this.isVisible.addCallbackAndRun(isVisible => {
             if (isVisible) {
                 contentElement.style.maxHeight = "100vh"

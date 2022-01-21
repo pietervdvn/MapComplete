@@ -97,7 +97,7 @@ export default class ProfessionalGui {
             Svg.back_svg().SetStyle("height: 1.5rem;"),
             t.backToMapcomplete,
             {
-                url: window.location.host + "/index.html"
+                url: "./index.html"
             }
         )]).SetClass("block")
 

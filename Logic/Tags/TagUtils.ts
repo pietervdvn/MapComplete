@@ -56,9 +56,6 @@ export class TagUtils {
 
     /***
      * Creates a hash {key --> [values : string | Regex ]}, with all the values present in the tagsfilter
-     *
-     * @param tagsFilters
-     * @constructor
      */
     static SplitKeys(tagsFilters: TagsFilter[], allowRegex = false) {
         const keyValues = {} // Map string -> string[]
@@ -189,15 +186,24 @@ export class TagUtils {
                 if (tag.indexOf(operator) >= 0) {
                     const split = Utils.SplitFirst(tag, operator);
 
-                    const val = Number(split[1].trim())
+                    let val = Number(split[1].trim())
                     if (isNaN(val)) {
-                        throw `Error: not a valid value for a comparison: ${split[1]}, make sure it is a number and nothing more (at ${context})`
+                        val = new Date(split[1].trim()).getTime()
                     }
 
                     const f = (value: string | undefined) => {
-                        const b = Number(value?.replace(/[^\d.]/g, ''))
-                        if (isNaN(b)) {
+                        if(value === undefined){
                             return false;
+                        }
+                        let b = Number(value?.trim() )
+                        if (isNaN(b)) {
+                            if(value.endsWith(" UTC")) {
+                                value = value.replace(" UTC", "+00")
+                            }
+                            b = new Date(value).getTime()
+                            if(isNaN(b)){
+                                return false
+                            }
                         }
                         return comparator(b, val)
                     }
@@ -259,8 +265,8 @@ export class TagUtils {
             }
             if (tag.indexOf("~") >= 0) {
                 const split = Utils.SplitFirst(tag, "~");
-                if(split[1] === "") {
-                    throw "Detected a regextag with an empty regex; this is not allowed. Use '"+split[0]+"='instead (at "+context+")"
+                if (split[1] === "") {
+                    throw "Detected a regextag with an empty regex; this is not allowed. Use '" + split[0] + "='instead (at " + context + ")"
                 }
                 if (split[1] === "*") {
                     split[1] = "..*"

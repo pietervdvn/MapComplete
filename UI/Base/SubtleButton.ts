@@ -8,32 +8,35 @@ import {UIElement} from "../UIElement";
 
 
 export class SubtleButton extends UIElement {
+    private readonly imageUrl: string | BaseUIElement;
+    private readonly message: string | BaseUIElement;
+    private readonly linkTo: { url: string | UIEventSource<string>; newTab?: boolean };
 
-    private readonly _element: BaseUIElement
 
     constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined) {
         super();
-        this._element = SubtleButton.generateContent(imageUrl, message, linkTo)
-        this.SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline")
-
+        this.imageUrl = imageUrl;
+        this.message = message;
+        this.linkTo = linkTo;
     }
 
-    private static generateContent(imageUrl: string | BaseUIElement, messageT: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined): BaseUIElement {
-        const message = Translations.W(messageT);
-        message
+    protected InnerRender(): string | BaseUIElement {
+        const classes = "block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline";
+        const message = Translations.W(this.message);
         let img;
-        if ((imageUrl ?? "") === "") {
+        if ((this.imageUrl ?? "") === "") {
             img = undefined;
-        } else if (typeof (imageUrl) === "string") {
-            img = new Img(imageUrl)
+        } else if (typeof (this.imageUrl) === "string") {
+            img = new Img(this.imageUrl)
         } else {
-            img = imageUrl;
+            img = this.imageUrl;
         }
         img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")
         const image = new Combine([img])
             .SetClass("flex-shrink-0");
 
-        if (linkTo == undefined) {
+        if (this.linkTo == undefined) {
+            this.SetClass(classes)
             return new Combine([
                 image,
                 message?.SetClass("block overflow-ellipsis"),
@@ -46,13 +49,10 @@ export class SubtleButton extends UIElement {
                 image,
                 message?.SetClass("block overflow-ellipsis")
             ]).SetClass("flex group w-full"),
-            linkTo.url,
-            linkTo.newTab ?? false
-        )
-    }
+            this.linkTo.url,
+            this.linkTo.newTab ?? false
+        ).SetClass(classes)
 
-    protected InnerRender(): string | BaseUIElement {
-        return this._element;
     }
 
 

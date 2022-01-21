@@ -111,7 +111,10 @@ export default class SimpleAddUI extends Toggle {
                         message,
                         state.LastClickLocation.data,
                         confirm,
-                        cancel)
+                        cancel,
+                        () => {
+                            isShown.setData(false)
+                        })
                 }
             ))
 
@@ -135,9 +138,6 @@ export default class SimpleAddUI extends Toggle {
             loginButton,
             state.osmConnection.isLoggedIn
         )
-
-
-        this.SetStyle("font-size:large");
     }
 
 

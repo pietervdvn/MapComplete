@@ -22,7 +22,7 @@
         "title": "Binoculars"
     },
     "bookcases": {
-        "description": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
+        "description": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
         "title": "Open Bookcase Map"
     },
     "cafes_and_pubs": {
@@ -839,7 +839,7 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
-            "2": {
+            "1": {
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
@@ -933,6 +933,68 @@
         "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
         "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations."
+    },
+    "mapcomplete-changes": {
+        "description": "This maps shows all the changes made with MapComplete",
+        "layers": {
+            "0": {
+                "description": "Shows all MapComplete changes",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themename contains {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Made by contributor {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Not</b> made by contributor {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Changeset centers",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Changeset for {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Shows changes made by MapComplete",
+        "title": "Changes made with MapComplete"
     },
     "maps": {
         "description": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
@@ -1209,6 +1271,9 @@
     "uk_addresses": {
         "description": "Contribute to OpenStreetMap by filling out address information",
         "layers": {
+            "0": {
+                "name": "Inspire polygons"
+            },
             "1": {
                 "tagRenderings": {
                     "uk_addresses_embedding_outline": {
@@ -1230,12 +1295,17 @@
                 }
             },
             "2": {
+                "description": "Addresses",
+                "name": "Known addresses in OSM",
                 "tagRenderings": {
                     "address-sign-image": {
                         "render": "{image_carousel(image:address)}<br/>{image_upload(image:address, Add image of the address)}"
                     },
                     "fixme": {
-                        "question": "What should be fixed here? Please explain"
+                        "question": "What should be fixed here? Please explain what the address is"
+                    },
+                    "preview": {
+                        "render": "To send a letter to this addres, you would write:<div style='background: #fcdf94; border: 2px solid black; border-radius: 1rem; padding: 1.5rem 0.5rem 2rem 8rem; margin: 1rem' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp.jpg' class='self-end w-16'/><div class='subtle'>Name of the inhabitant</div><div>{addr:housename}</div><div>{addr:unit} {addr:housenumber} {addr:street}</div><div>{addr:place}</div><div class='subtle'>Suburb</div><div class='subtle'>Town</div><div class='subtle'>Postal code</div></div>"
                     },
                     "uk_addresses_explanation_osm": {
                         "render": "This address is saved in OpenStreetMap"
@@ -1249,10 +1319,25 @@
                         "question": "What is the number of this house?",
                         "render": "The housenumber is <b>{addr:housenumber}</b>"
                     },
+                    "uk_addresses_placename": {
+                        "mappings": {
+                            "0": {
+                                "then": "No extra placename is given or needed"
+                            }
+                        },
+                        "question": "What is the place or locality?<div class='subtle'>This is additional information if the streetname alone isn't enough to find this address. Typical examples are 'Technology Park', 'XYZ Terrace', ...</div>",
+                        "render": "The placename is <b>{addr:place}</b>"
+                    },
                     "uk_addresses_street": {
                         "question": "What street is this address located in?",
                         "render": "This address is in street <b>{addr:street}</b>"
+                    },
+                    "uk_addresses_unit": {
+                        "question": "What is the unit indication of this address? <div class='subtle'>This is the letter or number of the letterbox here, if multiple letterboxes share the same street and housenumber. If there are multiple at the same location, add them here with a <b>;</b> between them</div>"
                     }
+                },
+                "title": {
+                    "render": "Known address"
                 }
             }
         },

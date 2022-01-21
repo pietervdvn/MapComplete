@@ -10,7 +10,6 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {Utils} from "../../Utils";
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
 import PendingChangesUploader from "../Actors/PendingChangesUploader";
-import TitleHandler from "../Actors/TitleHandler";
 
 /**
  * The part of the state keeping track of where the elements, loading them, configuring the feature pipeline etc
@@ -90,7 +89,6 @@ export default class ElementsState extends FeatureSwitchState {
 
         new ChangeToElementsActor(this.changes, this.allElements)
         new PendingChangesUploader(this.changes, this.selectedElement);
-        new TitleHandler(this);
 
     }
 }
