@@ -63,7 +63,6 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     }
 
     private update() {
-        console.log("FIltering", this.upstream.name)
         const self = this;
         const layer = this.upstream.layer;
         const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);

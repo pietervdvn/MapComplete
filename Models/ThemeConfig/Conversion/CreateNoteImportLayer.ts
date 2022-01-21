@@ -153,8 +153,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             "mapRendering": [
                 {
                     "location": [
-                        "point",
-                        "centroid"
+                        "point"
                     ],
                     "icon": {
                         "render": "circle:white;help:black",

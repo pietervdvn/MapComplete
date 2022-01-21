@@ -1,8 +1,9 @@
 import {Changes} from "../../Osm/Changes";
-import {OsmNode, OsmRelation, OsmWay} from "../../Osm/OsmObject";
+import {OsmNode, OsmObject, OsmRelation, OsmWay} from "../../Osm/OsmObject";
 import FeatureSource from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import {ChangeDescription} from "../../Osm/Actions/ChangeDescription";
+import {ElementStorage} from "../../ElementStorage";
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
@@ -13,79 +14,115 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name: string = "newFeatures";
 
-    constructor(changes: Changes, backendUrl: string) {
+    constructor(changes: Changes, allElementStorage: ElementStorage, backendUrl: string) {
 
         const seenChanges = new Set<ChangeDescription>();
         const features = this.features.data;
         const self = this;
 
-        changes.pendingChanges
-            .map(changes => changes.filter(ch =>
-                // only new objects allowed
-                ch.id < 0 &&
-                // The change is an update to the object (e.g. tags or geometry) - not the actual create
-                ch.changes !== undefined &&
-                // If tags is undefined, this is probably a new point that is part of a split road
-                ch.tags !== undefined &&
-                // Already handled
-                !seenChanges.has(ch)))
-            .addCallbackAndRunD(changes => {
-                if (changes.length === 0) {
-                    return;
+        changes.pendingChanges.addCallbackAndRunD(changes => {
+            if (changes.length === 0) {
+                return;
+            }
+
+            const now = new Date();
+            let somethingChanged = false;
+
+            function add(feature) {
+                feature.id = feature.properties.id
+                features.push({
+                    feature: feature,
+                    freshness: now
+                })
+                somethingChanged = true;
+            }
+
+            for (const change of changes) {
+                if (seenChanges.has(change)) {
+                    // Already handled
+                    continue;
+                }
+                seenChanges.add(change)
+
+                if (change.tags === undefined) {
+                    // If tags is undefined, this is probably a new point that is part of a split road
+                    continue
                 }
 
-                const now = new Date();
-
-                function add(feature) {
-                    feature.id = feature.properties.id
-                    features.push({
-                        feature: feature,
-                        freshness: now
-                    })
-                }
-
-                for (const change of changes) {
-                    seenChanges.add(change)
-                    try {
-                        const tags = {}
-                        for (const kv of change.tags) {
-                            tags[kv.k] = kv.v
-                        }
-                        tags["id"] = change.type + "/" + change.id
-
-                        tags["_backend"] = backendUrl
-
-                        switch (change.type) {
-                            case "node":
-                                const n = new OsmNode(change.id)
-                                n.tags = tags
-                                n.lat = change.changes["lat"]
-                                n.lon = change.changes["lon"]
-                                const geojson = n.asGeoJson()
-                                add(geojson)
-                                break;
-                            case "way":
-                                const w = new OsmWay(change.id)
-                                w.tags = tags
-                                w.nodes = change.changes["nodes"]
-                                w.coordinates = change.changes["coordinates"].map(coor => [coor[1], coor[0]])
-                                add(w.asGeoJson())
-                                break;
-                            case "relation":
-                                const r = new OsmRelation(change.id)
-                                r.tags = tags
-                                r.members = change.changes["members"]
-                                add(r.asGeoJson())
-                                break;
-                        }
-                    } catch (e) {
-                        console.error("Could not generate a new geometry to render on screen for:", e)
+                if (change.id > 0) {
+                    // This is an already existing object
+                    // In _most_ of the cases, this means that this _isn't_ a new object
+                    // However, when a point is snapped to an already existing point, we have to create a representation for this point!
+                    // For this, we introspect the change
+                    if (allElementStorage.has(change.id)) {
+                        // const currentTags = allElementStorage.getEventSourceById(change.id).data
+                        continue;
                     }
+                    console.debug("Detected a reused point")
+                    // The 'allElementsStore' does _not_ have this point yet, so we have to create it
+                    OsmObject.DownloadObjectAsync(change.type + "/" + change.id).then(feat => {
+                        console.log("Got the reused point:", feat)
+                        for (const kv of change.tags) {
+                            feat.tags[kv.k] = kv.v
+                        }
+                        const geojson=  feat.asGeoJson();
+                        allElementStorage.addOrGetElement(geojson)
+                        self.features.data.push({feature: geojson, freshness: new Date()})
+                        self.features.ping()
+                    })
+                    continue
 
+
+                } else if (change.id < 0 && change.changes === undefined) {
+                    // The geometry is not described - not a new point
+                    if (change.id < 0) {
+                        console.error("WARNING: got a new point without geometry!")
+                    }
+                    continue;
                 }
 
+               
+                try {
+                    const tags = {}
+                    for (const kv of change.tags) {
+                        tags[kv.k] = kv.v
+                    }
+                    tags["id"] = change.type + "/" + change.id
+
+                    tags["_backend"] = backendUrl
+
+                    switch (change.type) {
+                        case "node":
+                            const n = new OsmNode(change.id)
+                            n.tags = tags
+                            n.lat = change.changes["lat"]
+                            n.lon = change.changes["lon"]
+                            const geojson = n.asGeoJson()
+                            add(geojson)
+                            break;
+                        case "way":
+                            const w = new OsmWay(change.id)
+                            w.tags = tags
+                            w.nodes = change.changes["nodes"]
+                            w.coordinates = change.changes["coordinates"].map(coor => [coor[1], coor[0]])
+                            add(w.asGeoJson())
+                            break;
+                        case "relation":
+                            const r = new OsmRelation(change.id)
+                            r.tags = tags
+                            r.members = change.changes["members"]
+                            add(r.asGeoJson())
+                            break;
+                    }
+                } catch (e) {
+                    console.error("Could not generate a new geometry to render on screen for:", e)
+                }
+
+            }
+            if (somethingChanged) {
                 self.features.ping()
-            })
+            }
+        })
     }
 
 }

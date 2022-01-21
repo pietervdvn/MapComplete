@@ -230,7 +230,7 @@ export default class LayerConfig extends WithContextLoader {
             if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
                 console.log(json.mapRendering)
                 throw("The layer " + this.id + " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'")
-            } else if (!hasCenterRendering && this.lineRendering.length === 0) {
+            } else if (!hasCenterRendering && this.lineRendering.length === 0 && !this.source.geojsonSource?.startsWith("https://api.openstreetmap.org/api/0.6/notes.json")) {
                 throw "The layer " + this.id + " might not render ways. This might result in dropped information"
             }
         }
