@@ -1,8 +1,85 @@
 {
+    "address": {
+        "description": "Adresy",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Co wymaga naprawy? Proszę wytłumaczyć"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Ten budynek nie ma numeru"
+                    }
+                },
+                "question": "Jaki jest numer tego domu?",
+                "render": "Numer tego domu to <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Na jakiej ulicy znajduje się ten adres?",
+                "render": "Ten adres znajduje się na ulicy <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Znany adres"
+        }
+    },
     "artwork": {
+        "name": "Dzieła sztuki",
         "presets": {
             "0": {
                 "title": "Dzieło sztuki"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Który artysta to stworzył?",
+                "render": "Stworzone przez {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Architektura"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "2": {
+                        "then": "Obraz"
+                    },
+                    "3": {
+                        "then": "Rzeźba"
+                    },
+                    "4": {
+                        "then": "Posąg"
+                    },
+                    "5": {
+                        "then": "Popiersie"
+                    },
+                    "6": {
+                        "then": "Skała"
+                    },
+                    "7": {
+                        "then": "Instalacja artystyczna"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Płaskorzeźba"
+                    },
+                    "10": {
+                        "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
+                    },
+                    "11": {
+                        "then": "Płyta ceramiczna (fliza)"
+                    }
+                },
+                "question": "Jakiego rodzaju jest to dzieło sztuki?",
+                "render": "Jest to {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
+                "render": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>"
             }
         },
         "title": {

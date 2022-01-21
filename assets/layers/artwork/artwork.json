@@ -13,7 +13,8 @@
     "zh_Hant": "藝術品",
     "nb_NO": "Kunstverk",
     "pt": "Obras de arte",
-    "hu": "Műalkotások"
+    "hu": "Műalkotások",
+    "pl": "Dzieła sztuki"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -123,7 +124,8 @@
         "nb_NO": "Dette er et kunstverk av typen {artwork_type}",
         "id": "Ini adalah {artwork_type}",
         "pt": "Isto é um(a) {artwork_type}",
-        "hu": "Ez egy {artwork_type}"
+        "hu": "Ez egy {artwork_type}",
+        "pl": "Jest to {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -138,7 +140,8 @@
         "nb_NO": "Hvilken type kunstverk er dette?",
         "id": "Apa jenis karya seni ini?",
         "pt": "Qual é o tipo desta obra de arte?",
-        "hu": "Milyen fajta műalkotás ez?"
+        "hu": "Milyen fajta műalkotás ez?",
+        "pl": "Jakiego rodzaju jest to dzieło sztuki?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -161,7 +164,8 @@
             "nb_NO": "Arkitektur",
             "id": "Arsitektur",
             "pt": "Arquitetura",
-            "hu": "Építészet"
+            "hu": "Építészet",
+            "pl": "Architektura"
           }
         },
         {
@@ -178,7 +182,8 @@
             "nb_NO": "Veggmaleri",
             "id": "Mural",
             "pt": "Mural",
-            "hu": "Falfestmény"
+            "hu": "Falfestmény",
+            "pl": "Mural"
           }
         },
         {
@@ -195,7 +200,8 @@
             "nb_NO": "Maleri",
             "id": "Lukisan",
             "pt": "Pintura",
-            "hu": "Festmény"
+            "hu": "Festmény",
+            "pl": "Obraz"
           }
         },
         {
@@ -212,7 +218,8 @@
             "nb_NO": "Skulptur",
             "id": "Patung",
             "pt": "Escultura",
-            "hu": "Absztrakt szobor"
+            "hu": "Absztrakt szobor",
+            "pl": "Rzeźba"
           }
         },
         {
@@ -228,7 +235,8 @@
             "zh_Hant": "雕像",
             "nb_NO": "Statue",
             "pt": "Estátua",
-            "hu": "Szobor"
+            "hu": "Szobor",
+            "pl": "Posąg"
           }
         },
         {
@@ -244,7 +252,8 @@
             "zh_Hant": "半身像",
             "nb_NO": "Byste",
             "pt": "Busto",
-            "hu": "Mellszobor"
+            "hu": "Mellszobor",
+            "pl": "Popiersie"
           }
         },
         {
@@ -261,7 +270,8 @@
             "nb_NO": "Stein",
             "id": "Batu",
             "pt": "Pedra",
-            "hu": "Kő"
+            "hu": "Kő",
+            "pl": "Skała"
           }
         },
         {
@@ -278,7 +288,8 @@
             "nb_NO": "Installasjon",
             "id": "Instalasi",
             "pt": "Instalação",
-            "hu": "Installáció"
+            "hu": "Installáció",
+            "pl": "Instalacja artystyczna"
           }
         },
         {
@@ -295,7 +306,8 @@
             "nb_NO": "Graffiti",
             "id": "Graffiti",
             "pt": "Graffiti",
-            "hu": "Graffiti"
+            "hu": "Graffiti",
+            "pl": "Graffiti"
           }
         },
         {
@@ -312,7 +324,8 @@
             "nb_NO": "Relieff",
             "id": "Relief",
             "pt": "Relevo",
-            "hu": "Dombormű"
+            "hu": "Dombormű",
+            "pl": "Płaskorzeźba"
           }
         },
         {
@@ -329,7 +342,8 @@
             "nb_NO": "Azulejo (Spansk dekorativt flisverk)",
             "id": "Azulejo (ubin dekoratif Spanyol)",
             "pt": "Azulejo (azulejo decorativo espanhol e português)",
-            "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)"
+            "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
+            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)"
           }
         },
         {
@@ -345,7 +359,8 @@
             "zh_Hant": "瓷磚",
             "nb_NO": "Flisarbeid",
             "pt": "Ladrilhos",
-            "hu": "Csempe"
+            "hu": "Csempe",
+            "pl": "Płyta ceramiczna (fliza)"
           }
         }
       ],
@@ -364,7 +379,8 @@
         "nb_NO": "Hvilken artist lagde dette?",
         "id": "Seniman mana yang menciptakan ini?",
         "pt": "Que artista criou isto?",
-        "hu": "Melyik művész alkotása ezt?"
+        "hu": "Melyik művész alkotása ezt?",
+        "pl": "Który artysta to stworzył?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -378,7 +394,8 @@
         "nb_NO": "Laget av {artist_name}",
         "id": "Dibuat oleh {artist_name}",
         "pt": "Criado por {artist_name}",
-        "hu": "Alkotó: {artist_name}"
+        "hu": "Alkotó: {artist_name}",
+        "pl": "Stworzone przez {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -398,7 +415,8 @@
         "nb_NO": "Finnes det en nettside med mer info om dette kunstverket?",
         "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
         "pt": "Existe um site com mais informações sobre esta obra de arte?",
-        "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?"
+        "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
+        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -412,7 +430,8 @@
         "zh_Hant": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊",
         "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>",
         "pt": "Mais informações <a href='{website}' target='_blank'>neste site</a>",
-        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
+        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>",
+        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>"
       },
       "freeform": {
         "key": "website",
