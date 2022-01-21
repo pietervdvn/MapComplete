@@ -621,7 +621,7 @@
             },
             "public_bookcase-website": {
                 "question": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
-                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>."
+                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
             }
         },
         "title": {
