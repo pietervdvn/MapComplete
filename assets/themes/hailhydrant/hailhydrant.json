@@ -8,7 +8,8 @@
     "fr": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
     "it": "Idranti, estintori, caserme dei vigili del fuoco e stazioni delle ambulanze.",
     "nb_NO": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner.",
-    "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
+    "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
+    "hu": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások."
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
@@ -17,7 +18,8 @@
     "ru": "Карта пожарных гидрантов, огнетушителей, пожарных станций и станций скорой помощи.",
     "fr": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
     "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
-    "it": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze."
+    "it": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze.",
+    "hu": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez."
   },
   "description": {
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
@@ -25,7 +27,8 @@
     "zh_Hant": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
     "fr": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
     "de": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
-    "it": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.\n\nPuoi seguire la tua posizione precisa (solo su cellulare) e selezionare i livelli che ti interessano nell’angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare i PDI sulla mappa e fornire ulteriori dettagli rispondendo alle domande.\n\nTutte le modifiche che farai verranno automaticamente salvate nel database globale di OpenStreetMap e potranno essere riutilizzate liberamente da tutti."
+    "it": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.\n\nPuoi seguire la tua posizione precisa (solo su cellulare) e selezionare i livelli che ti interessano nell’angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare i PDI sulla mappa e fornire ulteriori dettagli rispondendo alle domande.\n\nTutte le modifiche che farai verranno automaticamente salvate nel database globale di OpenStreetMap e potranno essere riutilizzate liberamente da tutti.",
+    "hu": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltóállomásokat találhat és szerkeszthet kedvenc városrészeiben (vagy másutt).\n\nA bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára releváns rétegeket. Ezzel az eszközzel gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a rendelkezésre álló kérdések megválaszolásával pedig további részleteket adhat meg.\n\nAz Ön által elvégzett módosítások automatikusan elmentődnek az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják azokat."
   },
   "language": [
     "en",
@@ -36,8 +39,7 @@
     "it",
     "nb_NO",
     "de",
-    "id",
-    "eo"
+    "hu"
   ],
   "maintainer": "Erwin Olario",
   "icon": "./assets/themes/hailhydrant/logo.svg",

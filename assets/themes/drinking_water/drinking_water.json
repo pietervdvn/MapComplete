@@ -20,7 +20,8 @@
     "it": "Questa mappa mostra tutti i luoghi in cui è disponibile acqua potabile ed è possibile aggiungerne di nuovi",
     "ru": "На этой карте показываются и могут быть легко добавлены общедоступные точки питьевой воды",
     "de": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
-    "nb_NO": "Offentlig tilgjengelig drikkevannssteder"
+    "nb_NO": "Offentlig tilgjengelig drikkevannssteder",
+    "hu": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén"
   },
   "language": [
     "en",
@@ -31,7 +32,8 @@
     "zh_Hant",
     "it",
     "de",
-    "nb_NO"
+    "nb_NO",
+    "hu"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/drinking_water/logo.svg",

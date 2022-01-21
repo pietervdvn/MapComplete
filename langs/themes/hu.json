@@ -4,11 +4,100 @@
         "title": "Defibrillátor-térkép"
     },
     "artwork": {
-        "description": "Isten hozott a nyílt műalkotástérképen, a világ minden táján megtalálható szobrok, mellszobrok, grafittik és más műalkotások térképén",
+        "description": "Isten hozta a nyílt műalkotástérképen, a világ minden táján megtalálható szobrok, mellszobrok, graffitik és más műalkotások gyűjtőhelyén",
         "title": "Műalkotástérkép"
+    },
+    "benches": {
+        "description": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit.",
+        "shortDescription": "Padtérkép",
+        "title": "Padok"
+    },
+    "bicyclelib": {
+        "description": "A kerékpárkönyvtárak olyan helyek, ahol kerékpárokat lehet kölcsönözni, gyakran egy kis éves díj ellenében. Figyelemre méltó felhasználásuk a gyerekeknek szánt kerékpárkönyvtárak, amelyek segítségével nagyobb kerékpárra válthatnak, amikor jelenlegi kerékpárjukat kinőtték",
+        "title": "Kerékpárkönyvtárak"
+    },
+    "binoculars": {
+        "description": "Rúdra rögzített távcsövek térképe. Jellemzően turisztikailag érdekes, panorámás helyeken, kilátótornyok tetején vagy természetvédelmi területen találhatók.",
+        "shortDescription": "Rögzített távcsövek (binokulárok) térképe",
+        "title": "Távcsövek"
+    },
+    "bookcases": {
+        "description": "A nyilvános könyvespolc egy kis utcai szekrény, doboz, régi telefonfülke vagy más tárgy, ahol könyveket tárolnak. Bárki tehet rá vagy vihet el róla könyvet. Ez a térkép ezeket a könyvespolcokat kívánja összegyűjteni. Ha felfedezett egy új könyvespolcot a közelben, akkor egy ingyenes OpenStreetMap-fiókkal gyorsan fel is rajzolhatja a térképre.",
+        "title": "Könyvespolctérkép"
+    },
+    "cafes_and_pubs": {
+        "title": "Kávézók és kocsmák"
+    },
+    "campersite": {
+        "description": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
+        "layers": {
+            "0": {
+                "description": "Lakóautós megállóhelyek",
+                "name": "Lakóautós megállóhely",
+                "presets": {
+                    "0": {
+                        "title": "lakóautós megállóhely"
+                    }
+                },
+                "tagRenderings": {
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Itt van WC"
+                            },
+                            "1": {
+                                "then": "Itt nincs WC"
+                            }
+                        },
+                        "question": "Van-e itt WC?"
+                    }
+                }
+            },
+            "1": {
+                "presets": {
+                    "0": {
+                        "description": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is."
+                    }
+                },
+                "tagRenderings": {
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Itt ártalmatlanítható a vegyi WC hulladéka"
+                            },
+                            "1": {
+                                "then": "Itt nem ártalmatlanítható a vegyi WC hulladéka"
+                            }
+                        },
+                        "question": "Elhelyezhető-e itt a vegyi WC hulladéka?"
+                    }
+                }
+            }
+        }
+    },
+    "charging_stations": {
+        "description": "Ezen a térképen a elektromos töltőpontokról szóló információkat lehet megtalálni és megadni",
+        "shortDescription": "Elektromos töltőpontok világtérképe",
+        "title": "Elektromos töltőpontok"
+    },
+    "cyclofix": {
+        "description": "Ez a térkép kerékpárosoknak kíván könnyen használható megoldást nyújtani a számukra fontos infrastruktúra megtalálásához.<br><br>A bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára fontos rétegeket. Az eszköz segítségével gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a kérdések megválaszolásával pedig további adatokat szolgáltathat.<br><br>Minden módosítás automatikusan elmentődik az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják.<br><br>A cyclofix projektről további információkat a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> oldalon talál.",
+        "title": "Cyclofix – nyílt térkép kerékpárosoknak"
+    },
+    "drinking_water": {
+        "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén"
     },
     "ghostbikes": {
         "title": "Emlékkerékpárok"
+    },
+    "hailhydrant": {
+        "description": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltóállomásokat találhat és szerkeszthet kedvenc városrészeiben (vagy másutt).\n\nA bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára releváns rétegeket. Ezzel az eszközzel gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a rendelkezésre álló kérdések megválaszolásával pedig további részleteket adhat meg.\n\nAz Ön által elvégzett módosítások automatikusan elmentődnek az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják azokat.",
+        "shortDescription": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez.",
+        "title": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások."
+    },
+    "toilets": {
+        "description": "Nyilvános WC-k térképe",
+        "title": "WC-térkép"
     },
     "trees": {
         "description": "Térképezzünk fel minden fát!",

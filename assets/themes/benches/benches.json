@@ -11,7 +11,8 @@
     "zh_Hant": "長椅",
     "nb_NO": "Benker",
     "pt_BR": "Bancadas",
-    "id": "Bangku"
+    "id": "Bangku",
+    "hu": "Padok"
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -23,7 +24,8 @@
     "ja": "ベンチの地図",
     "zh_Hant": "長椅的地圖",
     "nb_NO": "Et benkekart",
-    "pt_BR": "Um mapa de bancadas"
+    "pt_BR": "Um mapa de bancadas",
+    "hu": "Padtérkép"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
@@ -33,7 +35,8 @@
     "it": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
     "ru": "На этой карте показаны все скамейки, записанные в OpenStreetMap: отдельные скамейки, а также скамейки, относящиеся к остановкам общественного транспорта или навесам. Имея учётную запись OpenStreetMap, вы можете наносить на карту новые скамейки или редактировать информацию о существующих скамейках.",
     "ja": "このマップには、OpenStreetMapに記録されているすべてのベンチが表示されます。個々のベンチ、および公共交通機関の停留所または避難場所に属するベンチです。OpenStreetMapアカウントを使用すると、新しいベンチをマップしたり、既存のベンチの詳細を編集したりできます。",
-    "zh_Hant": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。只要有開放街圖帳號，你可以新增長椅或是編輯既有長椅的詳細內容。"
+    "zh_Hant": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。只要有開放街圖帳號，你可以新增長椅或是編輯既有長椅的詳細內容。",
+    "hu": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit."
   },
   "language": [
     "en",
@@ -46,7 +49,8 @@
     "zh_Hant",
     "nb_NO",
     "pt_BR",
-    "id"
+    "id",
+    "hu"
   ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",

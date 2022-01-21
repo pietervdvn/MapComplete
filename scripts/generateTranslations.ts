@@ -406,7 +406,7 @@ if (!themeOverwritesWeblate) {
     console.log("Ignore weblate")
 }
 generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
-generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
+generateTranslationsObjectFrom(ScriptUtils.getThemeFiles().filter(th => th.parsed.mustHaveLanguage === undefined), "themes")
 
 
 generateTranslationsObjectFrom([{path: questionsPath, parsed: questionsParsed}], "shared-questions")

@@ -9,7 +9,8 @@
     "nl": "Oplaadpunten",
     "de": "Ladestationen",
     "nb_NO": "Ladestasjoner",
-    "ru": "Зарядные станции"
+    "ru": "Зарядные станции",
+    "hu": "Elektromos töltőpontok"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
@@ -19,7 +20,8 @@
     "nl": "Een wereldwijde kaart van oplaadpunten",
     "de": "Eine weltweite Karte mit Ladestationen",
     "nb_NO": "Et verdensomspennende kart over ladestasjoner",
-    "ru": "Карта зарядных станций по всему миру"
+    "ru": "Карта зарядных станций по всему миру",
+    "hu": "Elektromos töltőpontok világtérképe"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
@@ -27,7 +29,8 @@
     "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
     "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
     "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
-    "de": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen"
+    "de": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen",
+    "hu": "Ezen a térképen a elektromos töltőpontokról szóló információkat lehet megtalálni és megadni"
   },
   "language": [
     "en",
@@ -38,7 +41,8 @@
     "nl",
     "de",
     "nb_NO",
-    "ru"
+    "ru",
+    "hu"
   ],
   "maintainer": "",
   "icon": "./assets/themes/charging_stations/logo.svg",

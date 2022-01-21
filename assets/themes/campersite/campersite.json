@@ -30,7 +30,8 @@
     "zh_Hant": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。這是網站與網路 app，資料則是存在開放街圖，因此會永遠免費，而且可以被所有 app 再利用。",
     "nl": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
     "fr": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis. C’est un site et une application. Les données sont stockées sur OpenStreetMap, elles seront toujours gratuites et peuvent être réutilisées par n’importe quelle application.",
-    "de": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können."
+    "de": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
+    "hu": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket."
   },
   "language": [
     "en",
@@ -42,6 +43,7 @@
     "zh_Hant",
     "pt_BR",
     "de",
+    "hu",
     "id",
     "nb_NO"
   ],
@@ -65,7 +67,8 @@
         "zh_Hant": "露營地",
         "nl": "Camperplaatsen",
         "pt_BR": "Locais de acampamento",
-        "de": "Wohnmobilstellplätze"
+        "de": "Wohnmobilstellplätze",
+        "hu": "Lakóautós megállóhely"
       },
       "minzoom": 10,
       "source": {
@@ -118,7 +121,8 @@
         "zh_Hant": "露營地",
         "nl": "camperplaatsen",
         "pt_BR": "Locais de acampamento",
-        "de": "Wohnmobilstellplätze"
+        "de": "Wohnmobilstellplätze",
+        "hu": "Lakóautós megállóhelyek"
       },
       "tagRenderings": [
         "images",
@@ -466,7 +470,8 @@
             "fr": "Y-a-t’il des toilettes sur le site ?",
             "pt_BR": "Este lugar tem banheiros?",
             "de": "Verfügt dieser Ort über Toiletten?",
-            "nl": "Heeft deze plaats toiletten?"
+            "nl": "Heeft deze plaats toiletten?",
+            "hu": "Van-e itt WC?"
           },
           "mappings": [
             {
@@ -486,7 +491,8 @@
                 "fr": "Ce site a des toilettes",
                 "pt_BR": "Este lugar tem banheiros",
                 "de": "Dieser Ort verfügt über Toiletten",
-                "nl": "Deze plaats heeft toiletten"
+                "nl": "Deze plaats heeft toiletten",
+                "hu": "Itt van WC"
               }
             },
             {
@@ -506,7 +512,8 @@
                 "fr": "Ce site n’a pas de toilettes",
                 "pt_BR": "Este lugar não tem banheiros",
                 "de": "Dieser Ort verfügt nicht über Toiletten",
-                "nl": "Deze plaats heeft geen toiletten"
+                "nl": "Deze plaats heeft geen toiletten",
+                "hu": "Itt nincs WC"
               }
             }
           ]
@@ -655,7 +662,8 @@
             "fr": "Aire de camping",
             "pt_BR": "local de acampamento",
             "de": "Wohnmobilstellplatz",
-            "nl": "camperplaats"
+            "nl": "camperplaats",
+            "hu": "lakóautós megállóhely"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
@@ -950,7 +958,8 @@
             "zh_Hant": "你能在這裡丟棄廁所化學廢棄物嗎？",
             "it": "È possibile smaltire le acque del WC chimico qui?",
             "fr": "Est-il possible d’y vidanger ses toilettes chimiques ?",
-            "de": "Können Sie hier chemische Toilettenabfälle entsorgen?"
+            "de": "Können Sie hier chemische Toilettenabfälle entsorgen?",
+            "hu": "Elhelyezhető-e itt a vegyi WC hulladéka?"
           },
           "mappings": [
             {
@@ -966,7 +975,8 @@
                 "zh_Hant": "你可以在這邊丟棄廁所化學廢棄物",
                 "it": "È possibile smaltire le acque del WC chimico qui",
                 "fr": "Il est possible d’y vidanger ses toilettes chimiques",
-                "de": "Hier können Sie chemische Toilettenabfälle entsorgen"
+                "de": "Hier können Sie chemische Toilettenabfälle entsorgen",
+                "hu": "Itt ártalmatlanítható a vegyi WC hulladéka"
               }
             },
             {
@@ -982,7 +992,8 @@
                 "zh_Hant": "你不能在這邊丟棄廁所化學廢棄物",
                 "it": "Non è possibile smaltire le acque del WC chimico qui",
                 "fr": "Il n’est pas possible d’y vidanger ses toilettes chimiques",
-                "de": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
+                "de": "Hier können Sie keine chemischen Toilettenabfälle entsorgen",
+                "hu": "Itt nem ártalmatlanítható a vegyi WC hulladéka"
               }
             }
           ]
@@ -1108,7 +1119,8 @@
             "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
             "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
             "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-            "zh_Hant": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。"
+            "zh_Hant": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。",
+            "hu": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is."
           }
         }
       ],
