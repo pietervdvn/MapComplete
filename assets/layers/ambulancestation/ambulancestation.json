@@ -34,7 +34,8 @@
     "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
     "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
     "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
-    "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak."
+    "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
+    "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей."
   },
   "tagRenderings": [
     {
@@ -116,7 +117,8 @@
         "fr": "Quel est l’exploitant de la station ?",
         "it": "Quale agenzia gestisce questa stazione?",
         "de": "Welches Unternehmen betreibt diese Rettungswache?",
-        "hu": "Milyen szervezet működteti ezt az állomást?"
+        "hu": "Milyen szervezet működteti ezt az állomást?",
+        "ru": "Какая организация управляет этой станцией?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -124,7 +126,8 @@
         "fr": "Cette station est opérée par {operator}.",
         "it": "Questa stazione è gestita da {operator}.",
         "de": "Diese Rettungswache wird betrieben von {operator}.",
-        "hu": "Az állomás üzemeltetője: {operator}."
+        "hu": "Az állomás üzemeltetője: {operator}.",
+        "ru": "Эта станция управляется {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -165,7 +168,8 @@
             "fr": "La station est opérée par le gouvernement.",
             "it": "La stazione è gestita dal governo.",
             "de": "Die Rettungswache wird von einer Behörde betrieben.",
-            "hu": "A mentőállomást a kormány üzemelteti."
+            "hu": "A mentőállomást a kormány üzemelteti.",
+            "ru": "Станция управляется правительством."
           }
         },
         {
@@ -180,7 +184,8 @@
             "fr": "La station est opérée par une organisation informelle.",
             "it": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale.",
             "de": "Die Rettungswache wird von einer gemeindenahen oder informellen Organisation betrieben.",
-            "hu": "Mentőállomást egy közösségi vagy nem hivatalos szervezet működteti."
+            "hu": "Mentőállomást egy közösségi vagy nem hivatalos szervezet működteti.",
+            "ru": "Станция управляется волонтёрами или частной организацией."
           }
         },
         {

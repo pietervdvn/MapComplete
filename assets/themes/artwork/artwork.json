@@ -6,7 +6,7 @@
     "nl": "Open kunstwerken-kaart",
     "fr": "Carte ouverte des œuvres d'art",
     "de": "Freie Kunstwerk-Karte",
-    "hu": "Nyílt műalkotástérkép",
+    "hu": "Műalkotástérkép",
     "id": "Buka Peta Karya Seni",
     "it": "Mappa libera delle opere d'arte",
     "ru": "Открытая карта произведений искусства",
@@ -26,7 +26,9 @@
     "es": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
     "ja": "オープン アートワーク マップへようこそ。世界中の銅像や胸像、壁の落書きなどのアートワークの地図です",
     "zh_Hant": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品",
-    "nb_NO": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
+    "nb_NO": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
+    "hu": "Isten hozott a nyílt műalkotástérképen, a világ minden táján megtalálható szobrok, mellszobrok, grafittik és más műalkotások térképén",
+    "pl": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata"
   },
   "language": [
     "en",
