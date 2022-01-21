@@ -59,9 +59,7 @@
         "all_tags"
       ]
     },
-    {
-      "builtin": "recycling"
-    },
+    "recycling",
     {
       "id": "recycling_assen",
       "name": "Dataset Recyclingcontainers Assen",
@@ -105,9 +103,7 @@
         "all_tags"
       ]
     },
-    {
-      "builtin": "waste_disposal"
-    }
+    "waste_disposal"
   ],
   "hideFromOverview": true
 }
