@@ -1,52 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-     viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#0181C2;}
-	.st1{fill:#020203;}
-	.st2{fill:none;stroke:#000000;stroke-width:4.6057;}
-	.st3{fill:none;stroke:#000000;stroke-width:2.3029;}
-	.st4{fill:#FFFFFF;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
-	.st5{fill:#E74436;}
-	.st6{fill:#FCC407;}
-	.st7{fill:#0682C2;}
-	.st8{fill:#73B254;}
-	.st9{fill:#FFFFFF;stroke:#000000;stroke-width:7.155;stroke-miterlimit:10;}
-	.st10{fill:#FFFFFF;stroke:#000000;stroke-width:7.7355;stroke-miterlimit:10;}
-	.st11{fill:none;stroke:#010202;stroke-width:4;stroke-miterlimit:10;}
-	.st12{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
-</style>
-    <g id="Laag_1">
-	<g>
-		<path class="st2" d="M133.7,168.1h15h13.9h19.3l19.3,42.8h-35.4 M124,156h7.5h7.5l-5.4,12.1 M115.4,210.9l11.8-28.6l4.3-8.8
-			l2.1-5.5 M150,194.4l-6.1-9.9l-10.2-16.5 M150,194.4l4.1,6.6 M178.7,169.2l6.4-13.2l-21.4,48.3l10.7-24.2 M150,194.4l7.3,12.1"/>
-        <path class="st3" d="M160.6,202.5c3.5,0,6.4,2.9,6.4,6.5c0,3.6-2.9,6.5-6.4,6.5c-3.5,0-6.4-2.9-6.4-6.5
-			C154.3,205.4,157.1,202.5,160.6,202.5z"/>
-        <path class="st2" d="M201.4,181.7c13.5,0,24.5,11.2,24.5,25.2c0,13.9-11,25.2-24.5,25.2c-13.5,0-24.5-11.2-24.5-25.2
-			C176.9,192.9,187.9,181.7,201.4,181.7z"/>
-	</g>
-        <g>
-		<circle class="st2" cx="117.6" cy="209" r="25.3"/>
-	</g>
-        <g>
-		<path class="st2" d="M149.8,80.7h15h13.9H198l19.3,42.8h-35.4 M140.1,68.6h7.5h7.5l-5.4,12.1 M131.5,123.5L143.3,95l4.3-8.8
-			l2.1-5.5 M166.1,107.1l-6.1-9.9l-10.2-16.5 M166.1,107.1l4.1,6.6 M194.8,81.8l6.4-13.2L179.8,117l10.7-24.2 M166.1,107.1l7.3,12.1
-			"/>
-            <path class="st3" d="M176.7,115.1c3.5,0,6.4,2.9,6.4,6.5c0,3.6-2.9,6.5-6.4,6.5c-3.5,0-6.4-2.9-6.4-6.5
-			C170.4,118,173.3,115.1,176.7,115.1z"/>
-            <path class="st2" d="M217.5,94.3c13.5,0,24.5,11.2,24.5,25.2c0,13.9-11,25.2-24.5,25.2c-13.5,0-24.5-11.2-24.5-25.2
-			C193,105.5,204,94.3,217.5,94.3z"/>
-	</g>
-        <g>
-		<circle class="st2" cx="133.7" cy="121.6" r="25.3"/>
-	</g>
-        <path class="st4" d="M212.3,229.9c-45.9,0-91.8-0.1-137.7-0.1c10.4-26.7,20.8-53.3,31.2-80c41.4-0.2,82.7-0.5,124.1-0.7
-		c1.2-2.6,2.4-5.2,3.6-7.8c-44.9,0.1-89.7,0.2-134.6,0.3c-12.7,32.6-25.3,65.1-38,97.7c49,0,97.9,0.1,146.9,0.1
-		C209.3,236.2,210.8,233,212.3,229.9z"/>
-</g>
-    <g id="Isolatiemodus">
-</g>
-    <g id="Capa_1">
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style="fill:none;stroke-width:4.6057;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 133.7 168.1 L 181.9 168.1 L 201.2 210.9 L 165.8 210.9 M 124 156 L 139 156 L 133.6 168.1 M 115.4 210.9 L 127.2 182.3 L 131.5 173.5 L 133.6 168 M 150 194.4 L 143.9 184.5 L 133.7 168 M 150 194.4 L 154.1 201 M 178.7 169.2 L 185.1 156 L 163.7 204.3 L 174.4 180.1 M 150 194.4 L 157.3 206.5 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:2.3029;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 160.6 202.5 C 164.1 202.5 167 205.4 167 209 C 167 212.6 164.1 215.5 160.6 215.5 C 157.1 215.5 154.2 212.6 154.2 209 C 154.3 205.4 157.1 202.5 160.6 202.5 Z M 160.6 202.5 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:4.6057;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 201.4 181.7 C 214.9 181.7 225.9 192.9 225.9 206.9 C 225.9 220.8 214.9 232.1 201.4 232.1 C 187.9 232.1 176.9 220.9 176.9 206.9 C 176.9 192.9 187.9 181.7 201.4 181.7 Z M 201.4 181.7 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:4.6057;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 142.9 209 C 142.9 222.971875 131.571875 234.3 117.6 234.3 C 103.628125 234.3 92.3 222.971875 92.3 209 C 92.3 195.028125 103.628125 183.7 117.6 183.7 C 131.571875 183.7 142.9 195.028125 142.9 209 Z M 142.9 209 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:4.6057;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 149.8 80.7 L 198 80.7 L 217.3 123.5 L 181.9 123.5 M 140.1 68.6 L 155.1 68.6 L 149.7 80.7 M 131.5 123.5 L 143.3 95 L 147.6 86.2 L 149.7 80.7 M 166.1 107.1 L 160 97.2 L 149.8 80.7 M 166.1 107.1 L 170.2 113.7 M 194.8 81.8 L 201.2 68.6 L 179.8 117 L 190.5 92.8 M 166.1 107.1 L 173.4 119.2 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:2.3029;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 176.7 115.1 C 180.2 115.1 183.1 118 183.1 121.6 C 183.1 125.2 180.2 128.1 176.7 128.1 C 173.2 128.1 170.3 125.2 170.3 121.6 C 170.4 118 173.3 115.1 176.7 115.1 Z M 176.7 115.1 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:4.6057;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 217.5 94.3 C 231 94.3 242 105.5 242 119.5 C 242 133.4 231 144.7 217.5 144.7 C 204 144.7 193 133.5 193 119.5 C 193 105.5 204 94.3 217.5 94.3 Z M 217.5 94.3 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill:none;stroke-width:4.6057;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 159 121.6 C 159 135.571875 147.671875 146.9 133.7 146.9 C 119.728125 146.9 108.4 135.571875 108.4 121.6 C 108.4 107.628125 119.728125 96.3 133.7 96.3 C 147.671875 96.3 159 107.628125 159 121.6 Z M 159 121.6 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+    <path style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 212.3 229.9 C 166.4 229.9 120.5 229.8 74.6 229.8 C 85 203.1 95.4 176.5 105.8 149.8 C 147.2 149.6 188.5 149.3 229.9 149.1 C 231.1 146.5 232.3 143.9 233.5 141.3 C 188.6 141.4 143.8 141.5 98.9 141.6 C 86.2 174.2 73.6 206.7 60.9 239.3 C 109.9 239.3 158.8 239.4 207.8 239.4 C 209.3 236.2 210.8 233 212.3 229.9 Z M 212.3 229.9 " transform="matrix(1.25,0,0,1.25,0,0)"/>
+  </g>
 </svg>

@@ -1,25 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:cc="http://creativecommons.org/ns#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        width="12"
-        height="12"
-        viewBox="0 0 12 12"
-        id="svg2">
-    <metadata id="metadata8">
-        <rdf:RDF>
-            <cc:Work rdf:about="">
-                <dc:format>image/svg+xml</dc:format>
-                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                <dc:title/>
-            </cc:Work>
-        </rdf:RDF>
-    </metadata>
-    <defs id="defs6"/>
-    <rect width="12" height="12" x="0" y="0" id="canvas" style="fill:none;stroke:none;visibility:hidden"/>
-    <path d="M 4,2 3,2 2,3 8,3 7,2 6,2 5,1 z M 2,4 3,9 7,9 8,4 z"
-          id="waste-basket" style="fill:#666666;fill-opacity:1" transform="translate(1,1)"/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(40.000001%,40.000001%,40.000001%);fill-opacity:1;" d="M 156.25 93.75 L 125 93.75 L 93.75 125 L 281.25 125 L 250 93.75 L 218.75 93.75 L 187.5 62.5 Z M 93.75 156.25 L 125 312.5 L 250 312.5 L 281.25 156.25 Z M 93.75 156.25 "/>
+  </g>
 </svg>

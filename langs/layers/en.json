@@ -3692,6 +3692,9 @@
                     },
                     "16": {
                         "question": "Recycling of small electrical appliances"
+                    },
+                    "17": {
+                        "question": "Recycling of residual waste"
                     }
                 }
             }
@@ -3784,6 +3787,9 @@
                     },
                     "16": {
                         "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/small_electrical_appliances.svg'/> Small electrical appliances can be recycled here</div>"
+                    },
+                    "17": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Residual waste can be recycled here</div>"
                     }
                 },
                 "question": "What can be recycled here?"
@@ -4778,6 +4784,20 @@
                 },
                 "question": "Who can use this waste disposal bin?",
                 "render": "Access: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an underground container"
+                    },
+                    "1": {
+                        "then": "This container is located indoors"
+                    },
+                    "2": {
+                        "then": "This container is located outdoors"
+                    }
+                },
+                "question": "Where is this container located?"
             }
         },
         "title": {

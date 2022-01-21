@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000"
-     enable-background="new 0 0 1000 1000" xml:space="preserve">
-<metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
-    <g><g><path d="M485,379.5l130.6,130.6l245.8-245.8l126.9,126.9l0.2-379L607.1,10l123.8,123.7L485,379.5L485,379.5z M986.4,546.3l-94.1-95.4l1.7,441.3l-784.7,0.4l0.8-782.7l438.9-2l-98-98H108C53.9,10,10,54,10,108v784c0,54.1,43.9,98,98,98h784c54.1,0,98-43.9,98-98L986.4,546.3z"/></g></g>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 181.875 142.3125 L 230.851562 191.289062 L 323.023438 99.113281 L 370.613281 146.699219 L 370.6875 4.574219 L 227.664062 3.75 L 274.085938 50.136719 Z M 369.898438 204.863281 L 334.613281 169.085938 L 335.25 334.574219 L 40.988281 334.726562 L 41.289062 41.210938 L 205.875 40.460938 L 169.125 3.710938 L 40.5 3.710938 C 20.210938 3.75 3.75 20.25 3.75 40.5 L 3.75 334.5 C 3.75 354.789062 20.210938 371.25 40.5 371.25 L 334.5 371.25 C 354.789062 371.25 371.25 354.789062 371.25 334.5 Z M 369.898438 204.863281 "/>
+  </g>
 </svg>
