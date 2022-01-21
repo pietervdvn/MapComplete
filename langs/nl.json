@@ -314,5 +314,12 @@
     },
     "multi_apply": {
         "autoApply": "Wijzigingen aan eigenschappen {attr_names} zullen ook worden uitgevoerd op {count} andere objecten."
+    },
+    "importLayer": {
+        "layerName": "Hier is misschien een {title}",
+        "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
+        "popupTitle": "Mogelijkse {title}",
+        "importButton": "import_button({layerId}, _tags, Hier is een {title}, voeg toe...,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>"
     }
 }

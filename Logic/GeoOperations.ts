@@ -683,6 +683,8 @@ export class GeoOperations {
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
 
     }
+    
+    
 }
 
 

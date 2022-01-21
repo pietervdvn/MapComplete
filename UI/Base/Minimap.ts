@@ -37,7 +37,7 @@ export default class Minimap {
     /**
      * Construct a minimap
      */
-    public static createMiniMap: (options: MinimapOptions) => (BaseUIElement & MinimapObj) = (_) => {
+    public static createMiniMap: (options?: MinimapOptions) => (BaseUIElement & MinimapObj) = (_) => {
         throw "CreateMinimap hasn't been initialized yet. Please call MinimapImplementation.initialize()"
     }
 

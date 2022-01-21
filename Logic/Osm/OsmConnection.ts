@@ -19,7 +19,6 @@ export default class UserDetails {
     public img: string;
     public unreadMessages = 0;
     public totalMessages = 0;
-    public dryRun: boolean;
     home: { lon: number; lat: number };
     public backend: string;
 
@@ -47,7 +46,6 @@ export class OsmConnection {
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     public isLoggedIn: UIEventSource<boolean>
-    _dryRun: boolean;
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
     public readonly _oauth_config: {
@@ -55,6 +53,7 @@ export class OsmConnection {
         oauth_secret: string,
         url: string
     };
+    private readonly _dryRun: UIEventSource<boolean>;
     private fakeUser: boolean;
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
     private readonly _iframeMode: Boolean | boolean;
@@ -62,7 +61,7 @@ export class OsmConnection {
     private isChecking = false;
 
     constructor(options: {
-                    dryRun?: false | boolean,
+                    dryRun?: UIEventSource<boolean>,
                     fakeUser?: false | boolean,
                     allElements: ElementStorage,
                     changes: Changes,
@@ -82,7 +81,6 @@ export class OsmConnection {
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
-        this.userDetails.data.dryRun = (options.dryRun ?? false) || (options.fakeUser ?? false);
         if (options.fakeUser) {
             const ud = this.userDetails.data;
             ud.csCount = 5678
@@ -99,13 +97,13 @@ export class OsmConnection {
                 self.AttemptLogin()
             }
         });
-        this._dryRun = options.dryRun;
+        this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false);
 
         this.updateAuthObject();
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
-        this.changesetHandler = new ChangesetHandler(options.layoutName, options.dryRun, this, options.allElements, options.changes, this.auth);
+        this.changesetHandler = new ChangesetHandler(options.layoutName, this._dryRun, this, options.allElements, options.changes, this.auth);
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
             const self = this;
@@ -223,7 +221,7 @@ export class OsmConnection {
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
         }
-        if (this._dryRun) {
+        if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
             return new Promise((ok, error) => {
                 ok()
@@ -246,7 +244,7 @@ export class OsmConnection {
     }
 
     public reopenNote(id: number | string, text?: string): Promise<any> {
-        if (this._dryRun) {
+        if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
             return new Promise((ok, error) => {
                 ok()
@@ -273,10 +271,10 @@ export class OsmConnection {
     }
 
     public openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
-        if (this._dryRun) {
+        if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
-            return new Promise((ok, error) => {
-                ok()
+            return new Promise<{ id: number }>((ok, error) => {
+                window.setTimeout(() => ok({id: Math.floor(Math.random() * 1000)}), Math.random() * 5000)
             });
         }
         const auth = this.auth;
@@ -285,15 +283,18 @@ export class OsmConnection {
             auth.xhr({
                 method: 'POST',
                 path: `/api/0.6/notes.json`,
-                options: {header:
-                        {'Content-Type': 'application/json'}},
+                options: {
+                    header:
+                        {'Content-Type': 'application/json'}
+                },
                 content: JSON.stringify(content)
 
             }, function (err, response) {
                 if (err !== null) {
                     error(err)
                 } else {
-                    const id = Number(response.children[0].children[0].children.item("id").innerHTML)
+
+                    const id = response.properties.id
                     console.log("OPENED NOTE", id)
                     ok({id})
                 }
@@ -304,7 +305,7 @@ export class OsmConnection {
     }
 
     public addCommentToNode(id: number | string, text: string): Promise<any> {
-        if (this._dryRun) {
+        if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
             return new Promise((ok, error) => {
                 ok()
@@ -317,7 +318,7 @@ export class OsmConnection {
         return new Promise((ok, error) => {
             this.auth.xhr({
                 method: 'POST',
-                
+
                 path: `/api/0.6/notes.json/${id}/comment?text=${encodeURIComponent(text)}`
             }, function (err, response) {
                 if (err !== null) {

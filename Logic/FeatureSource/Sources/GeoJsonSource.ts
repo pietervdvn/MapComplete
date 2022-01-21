@@ -28,7 +28,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     private readonly featureIdBlacklist?: UIEventSource<Set<string>>
 
     public constructor(flayer: FilteredLayer,
-                       zxy?: [number, number, number],
+                       zxy?: [number, number, number] | BBox,
                        options?: {
                            featureIdBlacklist?: UIEventSource<Set<string>>
                        }) {
@@ -41,23 +41,32 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         this.featureIdBlacklist = options?.featureIdBlacklist
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         if (zxy !== undefined) {
-            const [z, x, y] = zxy;
-            let tile_bbox = BBox.fromTile(z, x, y)
+            let tile_bbox: BBox;
+            if (zxy instanceof BBox) {
+                tile_bbox = zxy;
+            } else {
+                const [z, x, y] = zxy;
+                tile_bbox = BBox.fromTile(z, x, y);
+
+                this.tileIndex = Tiles.tile_index(z, x, y)
+                this.bbox = BBox.fromTile(z, x, y)
+                url = url
+                    .replace('{z}', "" + z)
+                    .replace('{x}', "" + x)
+                    .replace('{y}', "" + y)
+            }
             let bounds: { minLat: number, maxLat: number, minLon: number, maxLon: number } = tile_bbox
             if (this.layer.layerDef.source.mercatorCrs) {
                 bounds = tile_bbox.toMercator()
             }
+
             url = url
-                .replace('{z}', "" + z)
-                .replace('{x}', "" + x)
-                .replace('{y}', "" + y)
                 .replace('{y_min}', "" + bounds.minLat)
                 .replace('{y_max}', "" + bounds.maxLat)
                 .replace('{x_min}', "" + bounds.minLon)
                 .replace('{x_max}', "" + bounds.maxLon)
 
-            this.tileIndex = Tiles.tile_index(z, x, y)
-            this.bbox = BBox.fromTile(z, x, y)
+
         } else {
             this.tileIndex = Tiles.tile_index(0, 0, 0)
             this.bbox = BBox.global;
@@ -83,7 +92,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 if (self.layer.layerDef.source.mercatorCrs) {
                     json = GeoOperations.GeoJsonToWGS84(json)
                 }
-                
+
                 const time = new Date();
                 const newFeatures: { feature: any, freshness: Date } [] = []
                 let i = 0;

@@ -3354,6 +3354,13 @@
                         "question": "Only show open notes"
                     }
                 }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Hide import notes"
+                    }
+                }
             }
         },
         "name": "OpenStreetMap notes",

@@ -43,6 +43,7 @@ export default class SimpleAddUI extends Toggle {
     constructor(isShown: UIEventSource<boolean>,
                 filterViewIsOpened: UIEventSource<boolean>,
                 state: {
+                    featureSwitchIsTesting: UIEventSource<boolean>,
                     layoutToUse: LayoutConfig,
                     osmConnection: OsmConnection,
                     changes: Changes,
@@ -155,6 +156,7 @@ export default class SimpleAddUI extends Toggle {
 
     private static CreateAllPresetsPanel(selectedPreset: UIEventSource<PresetInfo>,
                                          state: {
+                                             featureSwitchIsTesting: UIEventSource<boolean>;
                                              filteredLayers: UIEventSource<FilteredLayer[]>,
                                              featureSwitchFilter: UIEventSource<boolean>,
                                              osmConnection: OsmConnection
@@ -162,10 +164,9 @@ export default class SimpleAddUI extends Toggle {
         const presetButtons = SimpleAddUI.CreatePresetButtons(state, selectedPreset)
         let intro: BaseUIElement = Translations.t.general.add.intro;
 
-        let testMode: BaseUIElement = undefined;
-        if (state.osmConnection?.userDetails?.data?.dryRun) {
-            testMode = Translations.t.general.testing.Clone().SetClass("alert")
-        }
+        let testMode: BaseUIElement = new Toggle(Translations.t.general.testing.SetClass("alert"),
+            undefined,
+            state.featureSwitchIsTesting);
 
         return new Combine([intro, testMode, presetButtons]).SetClass("flex flex-col")
 

@@ -73,10 +73,11 @@ export default class UserBadge extends Toggle {
                     ).SetClass("alert")
                 }
 
-                let dryrun = new FixedUiElement("");
-                if (user.dryRun) {
-                    dryrun = new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4");
-                }
+                let dryrun = new Toggle(
+                    new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4"),
+                    undefined,
+                    state.featureSwitchIsTesting
+                )
 
                 const settings =
                     new Link(Svg.gear,

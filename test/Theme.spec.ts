@@ -3,10 +3,10 @@ import * as assert from "assert";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import * as bookcaseLayer from "../assets/generated/layers/public_bookcase.json"
-import {PrepareTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
+import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 
 export default class ThemeSpec extends T {
     constructor() {

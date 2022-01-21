@@ -504,7 +504,8 @@ export default class ValidatedTextField {
         mapBackgroundLayer?: UIEventSource<any>,
         unit?: Unit,
         args?: (string | number | boolean)[] // Extra arguments for the inputHelper,
-        feature?: any
+        feature?: any,
+        inputStyle?: string
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;

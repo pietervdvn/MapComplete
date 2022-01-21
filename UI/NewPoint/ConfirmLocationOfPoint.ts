@@ -19,6 +19,7 @@ export default class ConfirmLocationOfPoint extends Combine {
 
     constructor(
         state: {
+            featureSwitchIsTesting: UIEventSource<boolean>;
             osmConnection: OsmConnection,
             featurePipeline: FeaturePipeline,
             backgroundLayer?: UIEventSource<BaseLayer>
@@ -167,8 +168,11 @@ export default class ConfirmLocationOfPoint extends Combine {
         ).onClick(cancel)
 
         super([
-            state.osmConnection.userDetails.data.dryRun ?
-                Translations.t.general.testing.Clone().SetClass("alert") : undefined,
+            new Toggle(
+                Translations.t.general.testing.SetClass("alert"),
+                undefined,
+                state.featureSwitchIsTesting
+            ),
             disableFiltersOrConfirm,
             cancelButton,
             preset.description,

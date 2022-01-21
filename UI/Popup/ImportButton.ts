@@ -141,7 +141,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         if(tagSpec.indexOf(" ")< 0 && tagSpec.indexOf(";") < 0 && tagSource.data[args.tags] !== undefined){
             // This is probably a key
             tagSpec = tagSource.data[args.tags]
-            console.warn("Using tagspec tagSource.data["+args.tags+"] which is ",tagSpec)
+            console.debug("The import button is using tags from properties["+args.tags+"] of this object, namely ",tagSpec)
         }
 
         const importClicked = new UIEventSource(false);
@@ -201,7 +201,7 @@ ${Utils.special_visualizations_importRequirementDocs}
             if(tags.indexOf(" ") < 0 && tags.indexOf(";") < 0 && originalFeatureTags.data[tags] !== undefined){
                 // This might be a property to expand...
                 const items : string = originalFeatureTags.data[tags]
-                console.warn("Using tagspec tagSource.data["+tags+"] which is ",items)
+                console.debug("The import button is using tags from properties["+tags+"] of this object, namely ",items)
                 baseArgs["newTags"] = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
             }else{
                 baseArgs["newTags"] = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)

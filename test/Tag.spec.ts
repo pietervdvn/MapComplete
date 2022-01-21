@@ -112,6 +112,12 @@ export default class TagSpec extends T {
                 equal(compare.matchesProperties({"key": "5"}), true);
                 equal(compare.matchesProperties({"key": "4.2"}), false);
 
+                const importMatch = TagUtils.Tag("tags~(^|.*;)amenity=public_bookcase($|;.*)")
+                equal(importMatch.matchesProperties({"tags": "amenity=public_bookcase;name=test"}), true)
+                equal(importMatch.matchesProperties({"tags": "amenity=public_bookcase"}), true)
+                equal(importMatch.matchesProperties({"tags": "name=test;amenity=public_bookcase"}), true)
+                equal(importMatch.matchesProperties({"tags": "amenity=bench"}), false)
+
             })],
             ["Is equivalent test", (() => {
 

@@ -21,7 +21,23 @@ import Table from "../Base/Table";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {FlowStep} from "./FlowStep";
-import {Layer} from "leaflet";
+import ScrollableFullScreen from "../Base/ScrollableFullScreen";
+import {AllTagsPanel} from "../SpecialVisualizations";
+import Title from "../Base/Title";
+
+class PreviewPanel extends ScrollableFullScreen {
+    
+    constructor(tags, layer) {
+        super(
+            _ => new FixedUiElement("Element to import"),
+            _ => new Combine(["The tags are:", 
+                new AllTagsPanel(tags)
+            ]).SetClass("flex flex-col"),
+            "element"
+        );
+    }
+    
+}
 
 /**
  * Shows the data to import on a map, asks for the correct layer to be selected
@@ -36,7 +52,6 @@ export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: 
         const t = Translations.t.importHelper;
 
         const propertyKeys = new Set<string>()
-        console.log("Datapanel input got ", geojson)
         for (const f of geojson.features) {
             Object.keys(f.properties).forEach(key => propertyKeys.add(key))
         }
@@ -56,6 +71,7 @@ export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: 
                 !layer.source.osmTags.matchesProperties(f.properties)
             )
             if (!mismatched) {
+                console.log("Autodected layer", layer.id)
                 layerPicker.GetValue().setData(layer);
                 layerPicker.GetValue().addCallback(_ => autodetected.setData(false))
                 autodetected.setData(true)
@@ -96,25 +112,22 @@ export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: 
         map.SetClass("w-full").SetStyle("height: 500px")
 
         new ShowDataMultiLayer({
-            layers: new UIEventSource<FilteredLayer[]>(AllKnownLayouts.AllPublicLayers().map(l => ({
+            layers: new UIEventSource<FilteredLayer[]>(AllKnownLayouts.AllPublicLayers()
+                .filter(l => l.source.geojsonSource === undefined)
+                .map(l => ({
                 layerDef: l,
                 isDisplayed: new UIEventSource<boolean>(true),
                 appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined)
             }))),
             zoomToFeatures: true,
             features: new StaticFeatureSource(matching, false),
-            state: {
-                ...state,
-                filteredLayers: new UIEventSource<FilteredLayer[]>(undefined),
-                backgroundLayer: background
-            },
             leafletMap: map.leafletMap,
-
+            popup: (tag, layer) => new PreviewPanel(tag, layer).SetClass("font-lg")
         })
         var bbox = matching.map(feats => BBox.bboxAroundAll(feats.map(f => new BBox([f.geometry.coordinates]))))
 
         super([
-            "Has " + geojson.features.length + " features",
+            new Title(geojson.features.length + " features to import"),
             layerPicker,
             new Toggle("Automatically detected layer", undefined, autodetected),
             new Table(["", "Key", "Values", "Unique values seen"],

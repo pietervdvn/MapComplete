@@ -55,6 +55,45 @@ export interface SpecialVisualization {
     getLayerDependencies?: (argument: string[]) => string[]
 }
 
+export class AllTagsPanel extends VariableUiElement {
+
+    constructor(tags: UIEventSource<any>, state?) {
+        
+        const calculatedTags = [].concat(
+            SimpleMetaTagger.lazyTags,
+            ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
+        
+        
+        super(tags.map(tags => {
+            const parts = [];
+            for (const key in tags) {
+                if (!tags.hasOwnProperty(key)) {
+                    continue
+                }
+                let v = tags[key]
+                if (v === "") {
+                    v = "<b>empty string</b>"
+                }
+                parts.push([key, v ?? "<b>undefined</b>"]);
+            }
+    
+            for (const key of calculatedTags) {
+                const value = tags[key]
+                if (value === undefined) {
+                    continue
+                }
+                parts.push(["<i>" + key + "</i>", value])
+            }
+    
+            return new Table(
+                ["key", "value"],
+                parts
+            )
+            .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
+        }))
+    }
+}
+
 export default class SpecialVisualizations {
 
     public static specialVisualizations = SpecialVisualizations.init()
@@ -99,37 +138,7 @@ export default class SpecialVisualizations {
                     funcName: "all_tags",
                     docs: "Prints all key-value pairs of the object - used for debugging",
                     args: [],
-                    constr: ((state, tags: UIEventSource<any>) => {
-                        const calculatedTags = [].concat(
-                            SimpleMetaTagger.lazyTags,
-                            ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
-                        return new VariableUiElement(tags.map(tags => {
-                            const parts = [];
-                            for (const key in tags) {
-                                if (!tags.hasOwnProperty(key)) {
-                                    continue
-                                }
-                                let v = tags[key]
-                                if (v === "") {
-                                    v = "<b>empty string</b>"
-                                }
-                                parts.push([key, v ?? "<b>undefined</b>"]);
-                            }
-
-                            for (const key of calculatedTags) {
-                                const value = tags[key]
-                                if (value === undefined) {
-                                    continue
-                                }
-                                parts.push(["<i>" + key + "</i>", value])
-                            }
-
-                            return new Table(
-                                ["key", "value"],
-                                parts
-                            )
-                        })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
-                    })
+                    constr: ((state, tags: UIEventSource<any>) => new AllTagsPanel(tags, state))
                 },
                 {
                     funcName: "image_carousel",
@@ -339,7 +348,7 @@ export default class SpecialVisualizations {
                         const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),
                             encodeURIComponent(subject),
                             state.mangroveIdentity,
-                            state.osmConnection._dryRun
+                            state.featureSwitchIsTesting.data
                         );
                         const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection);
                         return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
@@ -743,10 +752,6 @@ export default class SpecialVisualizations {
                             return t.addCommentAndClose
                         }))).onClick(() => {
                             const id = tags.data[args[1] ?? "id"]
-                            if (state.featureSwitchIsTesting.data) {
-                                console.log("Testmode: Not actually closing note...")
-                                return;
-                            }
                             state.osmConnection.closeNote(id, txt.data).then(_ => {
                                 tags.data["closed_at"] = new Date().toISOString();
                                 tags.ping()
@@ -760,10 +765,6 @@ export default class SpecialVisualizations {
                             return t.reopenNoteAndComment
                         }))).onClick(() => {
                             const id = tags.data[args[1] ?? "id"]
-                            if (state.featureSwitchIsTesting.data) {
-                                console.log("Testmode: Not actually reopening note...")
-                                return;
-                            }
                             state.osmConnection.reopenNote(id, txt.data).then(_ => {
                                 tags.data["closed_at"] = undefined;
                                 tags.ping()

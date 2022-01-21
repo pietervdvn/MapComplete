@@ -1,10 +1,11 @@
 import T from "./TestHelper";
 import CreateNoteImportLayer from "../Models/ThemeConfig/Conversion/CreateNoteImportLayer";
 import * as bookcases from "../assets/layers/public_bookcase/public_bookcase.json"
-import {DesugaringContext, PrepareLayer} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
 
 export default class CreateNoteImportLayerSpec extends T {
 
@@ -17,7 +18,7 @@ export default class CreateNoteImportLayerSpec extends T {
 
                 }
                 const layerPrepare = new PrepareLayer()
-                const layer = new LayerConfig(layerPrepare.convertStrict(desugaringState, bookcases, "ImportLayerGeneratorTest:Parse bookcases"), "ImportLayerGeneratorTest: init bookcases-layer")
+                const layer =layerPrepare.convertStrict(desugaringState, bookcases, "ImportLayerGeneratorTest:Parse bookcases")
                 const generator = new CreateNoteImportLayer()
                 const generatedLayer = generator.convertStrict(desugaringState, layer, "ImportLayerGeneratorTest: convert")
        //         fs.writeFileSync("bookcases-import-layer.generated.json", JSON.stringify(generatedLayer, null, "  "), "utf8")

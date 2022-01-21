@@ -28,7 +28,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     private readonly _addLayerControl: boolean;
     private readonly _options: MinimapOptions;
 
-    private constructor(options: MinimapOptions) {
+    private constructor(options?: MinimapOptions) {
         super()
         options = options ?? {}
         this.leafletMap = options.leafletMap ?? new UIEventSource<Map>(undefined)
@@ -290,12 +290,6 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             map.setView([loc.lat, loc.lon], loc.zoom)
         })
 
-        location.map(loc => loc.zoom)
-            .addCallback(zoom => {
-                if (Math.abs(map.getZoom() - zoom) > 0.1) {
-                    map.setZoom(zoom, {});
-                }
-            })
 
         if (self.bounds !== undefined) {
             self.bounds.setData(BBox.fromLeafletBounds(map.getBounds()))

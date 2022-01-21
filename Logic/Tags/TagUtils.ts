@@ -192,16 +192,16 @@ export class TagUtils {
                     }
 
                     const f = (value: string | undefined) => {
-                        if(value === undefined){
+                        if (value === undefined) {
                             return false;
                         }
-                        let b = Number(value?.trim() )
+                        let b = Number(value?.trim())
                         if (isNaN(b)) {
-                            if(value.endsWith(" UTC")) {
+                            if (value.endsWith(" UTC")) {
                                 value = value.replace(" UTC", "+00")
                             }
                             b = new Date(value).getTime()
-                            if(isNaN(b)){
+                            if (isNaN(b)) {
                                 return false
                             }
                         }
@@ -218,7 +218,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                    split[1],
                     true
                 );
             }
@@ -228,8 +228,8 @@ export class TagUtils {
                     split[1] = "..*"
                 }
                 return new RegexTag(
-                    new RegExp("^" + split[0] + "$"),
-                    new RegExp("^" + split[1] + "$")
+                    split[0],
+                    split[1]
                 );
             }
             if (tag.indexOf("!:=") >= 0) {
@@ -248,7 +248,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                   new RegExp("^" + split[1] + "$"),
                     true
                 );
             }
@@ -259,7 +259,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                    split[1],
                     true
                 );
             }
@@ -273,7 +273,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$")
+                    split[1]
                 );
             }
             if (tag.indexOf("=") >= 0) {

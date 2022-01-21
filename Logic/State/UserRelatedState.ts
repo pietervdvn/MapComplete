@@ -43,7 +43,7 @@ export default class UserRelatedState extends ElementsState {
 
         this.osmConnection = new OsmConnection({
             changes: this.changes,
-            dryRun: this.featureSwitchIsTesting.data,
+            dryRun: this.featureSwitchIsTesting,
             fakeUser: this.featureSwitchFakeUser.data,
             allElements: this.allElements,
             oauth_token: QueryParameters.GetQueryParameter(

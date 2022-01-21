@@ -8,7 +8,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import {UIElement} from "../UIElement";
 
-export interface FlowStep<T> extends BaseUIElement{
+export interface FlowStep<T> extends BaseUIElement {
     readonly IsValid: UIEventSource<boolean>
     readonly Value: UIEventSource<T>
 }
@@ -16,70 +16,97 @@ export interface FlowStep<T> extends BaseUIElement{
 export class FlowPanelFactory<T> {
     private _initial: FlowStep<any>;
     private _steps: ((x: any) => FlowStep<any>)[];
-    private _stepNames: string[];
-    
-    private constructor(initial: FlowStep<any>, steps: ((x:any) => FlowStep<any>)[], stepNames: string[]) {
+    private _stepNames: (string | BaseUIElement)[];
+
+    private constructor(initial: FlowStep<any>, steps: ((x: any) => FlowStep<any>)[], stepNames: (string | BaseUIElement)[]) {
         this._initial = initial;
         this._steps = steps;
         this._stepNames = stepNames;
     }
-    
-    public static start<TOut> (step: FlowStep<TOut>): FlowPanelFactory<TOut>{
-        return new FlowPanelFactory(step, [], [])
+
+    public static start<TOut>(name: string | BaseUIElement, step: FlowStep<TOut>): FlowPanelFactory<TOut> {
+        return new FlowPanelFactory(step, [], [name])
     }
-    
-    public then<TOut>(name: string, construct: ((t:T) => FlowStep<TOut>)): FlowPanelFactory<TOut>{
+
+    public then<TOut>(name: string | BaseUIElement, construct: ((t: T) => FlowStep<TOut>)): FlowPanelFactory<TOut> {
         return new FlowPanelFactory<TOut>(
             this._initial,
             this._steps.concat([construct]),
             this._stepNames.concat([name])
         )
     }
-    
-    public finish(construct: ((t: T, backButton?: BaseUIElement) => BaseUIElement)) : BaseUIElement {
+
+    public finish(name: string | BaseUIElement, construct: ((t: T, backButton?: BaseUIElement) => BaseUIElement)): {
+        flow: BaseUIElement,
+        furthestStep: UIEventSource<number>,
+        titles: (string | BaseUIElement)[]
+    } {
+        const furthestStep = new UIEventSource(0)
         // Construct all the flowpanels step by step (in reverse order)
-        const nextConstr : ((t:any, back?: UIElement) => BaseUIElement)[] = this._steps.map(_ => undefined)
+        const nextConstr: ((t: any, back?: UIElement) => BaseUIElement)[] = this._steps.map(_ => undefined)
         nextConstr.push(construct)
-        
-        for (let i = this._steps.length - 1; i >= 0; i--){
-            const createFlowStep : (value) => FlowStep<any> = this._steps[i];
+        for (let i = this._steps.length - 1; i >= 0; i--) {
+            const createFlowStep: (value) => FlowStep<any> = this._steps[i];
+            const isConfirm = i == this._steps.length - 1;
             nextConstr[i] = (value, backButton) => {
-                console.log("Creating flowSTep ", this._stepNames[i])
                 const flowStep = createFlowStep(value)
-                return new FlowPanel(flowStep, nextConstr[i + 1], backButton);
+                furthestStep.setData(i + 1);
+                const panel = new FlowPanel(flowStep, nextConstr[i + 1], backButton, isConfirm);
+                panel.isActive.addCallbackAndRun(active => {
+                    if (active) {
+                        furthestStep.setData(i + 1);
+                    }
+                })
+                return panel
             }
         }
-        
-        return new FlowPanel(this._initial, nextConstr[0],undefined)
+
+        const flow = new FlowPanel(this._initial, nextConstr[0])
+        flow.isActive.addCallbackAndRun(active => {
+            if (active) {
+                furthestStep.setData(0);
+            }
+        })
+        return {
+            flow,
+            furthestStep,
+            titles: this._stepNames
+        }
     }
-    
+
 }
 
 export class FlowPanel<T> extends Toggle {
-    
+    public isActive: UIEventSource<boolean>
+
     constructor(
         initial: (FlowStep<T>),
-        constructNextstep:  ((input: T, backButton: BaseUIElement) => BaseUIElement),
-        backbutton?: BaseUIElement
+        constructNextstep: ((input: T, backButton: BaseUIElement) => BaseUIElement),
+        backbutton?: BaseUIElement,
+        isConfirm = false
     ) {
         const t = Translations.t.general;
-        
+
         const currentStepActive = new UIEventSource(true);
 
-        let nextStep: UIEventSource<BaseUIElement>= new UIEventSource<BaseUIElement>(undefined)
+        let nextStep: UIEventSource<BaseUIElement> = new UIEventSource<BaseUIElement>(undefined)
         const backButtonForNextStep = new SubtleButton(Svg.back_svg(), t.back).onClick(() => {
             currentStepActive.setData(true)
         })
-        
-        let elements : (BaseUIElement | string)[] = []
-        if(initial !== undefined){
+
+        let elements: (BaseUIElement | string)[] = []
+        if (initial !== undefined) {
             // Startup the flow
             elements = [
                 initial,
                 new Combine([
                     backbutton,
                     new Toggle(
-                        new SubtleButton(Svg.back_svg().SetStyle("transform: rotate(180deg);"), t.next).onClick(() => {
+                        new SubtleButton(
+                            isConfirm ? Svg.checkmark_svg() :
+                                Svg.back_svg().SetStyle("transform: rotate(180deg);"),
+                            isConfirm ? t.confirm : t.next
+                        ).onClick(() => {
                             const v = initial.Value.data;
                             nextStep.setData(constructNextstep(v, backButtonForNextStep))
                             currentStepActive.setData(false)
@@ -88,18 +115,18 @@ export class FlowPanel<T> extends Toggle {
                         initial.IsValid
                     )
                 ]).SetClass("flex w-full justify-end space-x-2")
-              
+
             ]
         }
-        
-        
+
+
         super(
             new Combine(elements).SetClass("h-full flex flex-col justify-between"),
             new VariableUiElement(nextStep),
             currentStepActive
         );
+        this.isActive = currentStepActive
     }
-    
 
-    
+
 }

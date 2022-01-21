@@ -18,13 +18,13 @@ export class ChangesetHandler {
     private readonly allElements: ElementStorage;
     private osmConnection: OsmConnection;
     private readonly changes: Changes;
-    private readonly _dryRun: boolean;
+    private readonly _dryRun: UIEventSource<boolean>;
     private readonly userDetails: UIEventSource<UserDetails>;
     private readonly auth: any;
     private readonly backend: string;
 
     constructor(layoutName: string,
-                dryRun: boolean,
+                dryRun: UIEventSource<boolean>,
                 osmConnection: OsmConnection,
                 allElements: ElementStorage,
                 changes: Changes,
@@ -67,7 +67,7 @@ export class ChangesetHandler {
             this.userDetails.data.csCount = 1;
             this.userDetails.ping();
         }
-        if (this._dryRun) {
+        if (this._dryRun.data) {
             const changesetXML = generateChangeXML(123456);
             console.log("Metatags are", extraMetaTags)
             console.log(changesetXML);

@@ -29,11 +29,11 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         },
         tileIndex,
         upstream: FeatureSourceForLayer,
-        metataggingUpdated: UIEventSource<any>
+        metataggingUpdated?: UIEventSource<any>
     ) {
         this.name = "FilteringFeatureSource(" + upstream.name + ")"
         this.tileIndex = tileIndex
-        this.bbox = BBox.fromTileIndex(tileIndex)
+        this.bbox = tileIndex === undefined ? undefined : BBox.fromTileIndex(tileIndex)
         this.upstream = upstream
         this.state = state
 
@@ -55,7 +55,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             }
         })
         
-        metataggingUpdated.addCallback(_ => {
+        metataggingUpdated?.addCallback(_ => {
             self._is_dirty.setData(true)
         })
 
@@ -63,6 +63,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     }
 
     private update() {
+        console.log("FIltering", this.upstream.name)
         const self = this;
         const layer = this.upstream.layer;
         const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);

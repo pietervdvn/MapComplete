@@ -1493,6 +1493,10 @@ video {
   padding: 0.125rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }

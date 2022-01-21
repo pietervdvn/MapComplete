@@ -5,9 +5,6 @@ import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
 import {
-    DesugaringContext,
-    PrepareLayer,
-    PrepareTheme,
     ValidateLayer,
     ValidateThemeAndLayers
 } from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
@@ -16,6 +13,9 @@ import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingCon
 import * as questions from "../assets/tagRenderings/questions.json";
 import * as icons from "../assets/tagRenderings/icons.json";
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson";
+import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
+import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
+import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them

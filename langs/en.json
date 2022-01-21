@@ -465,7 +465,9 @@
     "importLayer": {
         "layerName": "Possible {title}",
         "description": "A layer which imports entries for {title}",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "Possible {title}",
+        "importButton": "import_button({layerId}, _tags, There might be a {title} here,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>"
     },
     "importHelper": {
         "title": "Import helper",
@@ -477,5 +479,5 @@
         "selectLayer": "Select a layer...",
         "selectFileTitle": "Select file",
         "validateDataTitle": "Validate data"
-    }
+     }
 }
