@@ -41,7 +41,6 @@ export default class PerLayerFeatureSourceSplitter {
             }
 
             for (const f of features) {
-                console.log("Classifying ", f.feature)
                 for (const layer of layers.data) {
                     if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         // We have found our matching layer!

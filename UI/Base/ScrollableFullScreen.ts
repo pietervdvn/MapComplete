@@ -42,6 +42,11 @@ export default class ScrollableFullScreen extends UIElement {
 
 
         const self = this;
+        Hash.hash.addCallback(h => {
+            if(h === undefined){
+                isShown.setData(false)
+            }
+        })
         isShown.addCallback(isShown => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
@@ -60,6 +65,8 @@ export default class ScrollableFullScreen extends UIElement {
                 ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
             }
         })
+        
+        
 
     }
 
