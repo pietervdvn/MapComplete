@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
         },

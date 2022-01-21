@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
         },

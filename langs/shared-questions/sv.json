@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>"
         },
