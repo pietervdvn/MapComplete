@@ -1,5 +1,5 @@
 import T from "./TestHelper";
-import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {AddMiniMap, FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
@@ -146,14 +146,62 @@ export default class LegacyThemeLoaderSpec extends T {
                 ["Walking_node_theme", () => {
 
                     const config = LegacyThemeLoaderSpec.walking_node_theme
-                    const fixed = new FixLegacyTheme().convert({tagRenderings: new Map<string, TagRenderingConfigJson>(), sharedLayers: new Map<string, LayerConfigJson>()}, 
+                    const fixed = new FixLegacyTheme().convert({
+                            tagRenderings: new Map<string, TagRenderingConfigJson>(),
+                            sharedLayers: new Map<string, LayerConfigJson>()
+                        },
                         // @ts-ignore
                         config,
                         "While testing")
                     T.isTrue(fixed.errors.length === 0, "Could not fix the legacy theme")
                     const theme = new LayoutConfig(fixed.result)
 
-                }]
+                }],
+                ["Detect minimaps", () => {
+                    function shouldHave(config: TagRenderingConfigJson) {
+                        T.equals(AddMiniMap.hasMinimap(config), true, "Did _not_ dected a minimap, even though there is one in " + JSON.stringify(config))
+                    }
+
+                    function shouldNot(config: TagRenderingConfigJson) {
+                        T.equals(AddMiniMap.hasMinimap(config), false, "Did erronously dected a minimap, even though there is none in " + JSON.stringify(config))
+                    }
+
+                    shouldHave({
+                        render: "{minimap()}"
+                    });  
+                    shouldHave({
+                        render: {en:"{minimap()}"}
+                    });
+                    shouldHave({
+                        render: {en:"{minimap()}",nl:"{minimap()}"}
+                    });
+                    shouldHave({
+                        render: {en:"{minimap()}",nl:"No map for the dutch!"}
+                    });
+                    
+                    shouldHave({
+                        render: "{minimap()}"
+                    })
+                    shouldHave({
+                        render: "{minimap(18,featurelist)}"
+                    })
+                    shouldHave({
+                        mappings: [
+                            {
+                                if: "xyz=abc",
+                                then: "{minimap(18,featurelist)}"
+                            }
+                        ]
+                    })
+                    shouldNot({
+                        render: "Some random value {key}"
+                    })
+                    shouldNot({
+                        render: "Some random value {minimap}"
+                    })
+
+                }
+                ]
             ]
         );
     }
