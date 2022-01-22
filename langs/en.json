@@ -509,5 +509,8 @@
     "inspectDataTitle": "Inspect data of {count} features to import",
     "inspectDidAutoDected": "Layer was chosen automatically",
     "inspectLooksCorrect": "These values look correct"
+  },
+  "importInspector": {
+    "title": "Inspect and manage import notes"
   }
 }

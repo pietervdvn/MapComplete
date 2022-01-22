@@ -1,6 +1,4 @@
-import ValidatedTextField from "./UI/Input/ValidatedTextField";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import ImportInspectorGui from "./UI/ImportFlow/ImportInspector";
 
-const tf = ValidatedTextField.InputForType("url")
-tf.AttachTo("maindiv")
-new VariableUiElement(tf.GetValue()).AttachTo("extradiv")
+new ImportInspectorGui().AttachTo("maindiv")
+
