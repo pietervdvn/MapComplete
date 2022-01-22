@@ -72,10 +72,16 @@ class LayerOverviewUtils {
         const dict = new Map<string, TagRenderingConfigJson>();
 
         for (const key in questions["default"]) {
+            if(key==="id"){
+                continue
+            }
             questions[key].id = key;
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
         for (const key in icons["default"]) {
+            if(key==="id"){
+                continue
+            }
             if (typeof icons[key] !== "object") {
                 continue
             }
@@ -105,7 +111,7 @@ class LayerOverviewUtils {
             "themes": Array.from(sharedThemes.values())
         }))
 
-        writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
+        writeFileSync("./assets/generated/known_layers.json", JSON.stringify({layers: Array.from(sharedLayers.values())}))
 
 
         {

@@ -44,7 +44,7 @@
     "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | xargs rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
-  "bicycle_rental": "ts-node ./scripts/extractBikeRental.ts"
+    "bicycle_rental": "ts-node ./scripts/extractBikeRental.ts"
   },
   "keywords": [
     "OpenStreetMap",
@@ -64,6 +64,7 @@
     "@types/leaflet-providers": "^1.2.0",
     "@types/leaflet.markercluster": "^1.4.3",
     "@types/lz-string": "^1.3.34",
+    "@types/papaparse": "^5.3.1",
     "@types/prompt-sync": "^4.1.0",
     "@types/wikidata-sdk": "^6.1.0",
     "country-language": "^0.1.7",
@@ -88,6 +89,7 @@
     "opening_hours": "^3.6.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
+    "papaparse": "^5.3.1",
     "parcel": "^1.2.4",
     "prompt-sync": "^4.2.0",
     "svg-resizer": "github:vieron/svg-resizer",

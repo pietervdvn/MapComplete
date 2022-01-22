@@ -455,7 +455,7 @@ export default class SpecialVisualizations {
                                     return undefined;
                                 }
                             })
-                        return new Histogram(listSource, args[1], args[2], assignColors)
+                        return new Histogram(listSource, args[1], args[2], {assignColor: assignColors})
                     }
                 },
                 {

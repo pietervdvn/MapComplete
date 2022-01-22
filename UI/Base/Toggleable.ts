@@ -62,4 +62,9 @@ export default class Toggleable extends Combine {
         })
     }
 
+    public Collapse() : Toggleable{
+        this.isVisible.setData(false)
+        return this;
+    }
+    
 }

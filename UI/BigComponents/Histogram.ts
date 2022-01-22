@@ -22,9 +22,12 @@ export default class Histogram<T> extends VariableUiElement {
     constructor(values: UIEventSource<string[]>,
                 title: string | BaseUIElement,
                 countTitle: string | BaseUIElement,
-                assignColor?: (t0: string) => string
+                options?:{
+                assignColor?: (t0: string) => string,
+                    sortMode?: "name" | "name-rev" | "count" | "count-rev"
+                }
     ) {
-        const sortMode = new UIEventSource<"name" | "name-rev" | "count" | "count-rev">("name")
+        const sortMode = new UIEventSource<"name" | "name-rev" | "count" | "count-rev">(options?.sortMode ??"name")
         const sortName = new VariableUiElement(sortMode.map(m => {
             switch (m) {
                 case "name":
@@ -107,11 +110,11 @@ export default class Histogram<T> extends VariableUiElement {
                 return Histogram.defaultPalette[index % Histogram.defaultPalette.length]
             };
             let actualAssignColor = undefined;
-            if (assignColor === undefined) {
+            if (options?.assignColor === undefined) {
                 actualAssignColor = fallbackColor;
             } else {
                 actualAssignColor = (keyValue: string) => {
-                    return assignColor(keyValue) ?? fallbackColor(keyValue)
+                    return options.assignColor(keyValue) ?? fallbackColor(keyValue)
                 }
             }
 

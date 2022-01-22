@@ -39,6 +39,9 @@ export default class SharedTagRenderings {
         }
 
         dict.forEach((value, key) => {
+            if(key === "id"){
+                return;
+            }
             value.id = value.id ?? key;
         })
 

@@ -40,7 +40,11 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             tagRenderings: new Map()
         }
 
-        const layerConfig = known_layers.filter(l => l.id === params.layer.id)[0]
+        
+        const layerConfig = known_layers.layers.filter(l => l.id === params.layer.id)[0]
+        if(layerConfig === undefined){
+            console.error("WEIRD: layer not found in the builtin layer overview")
+        }
         const importLayerJson = new CreateNoteImportLayer(365).convertStrict(convertState, <LayerConfigJson> layerConfig, "CompareToAlreadyExistingNotes")
         const importLayer = new LayerConfig(importLayerJson, "import-layer-dynamic")
         const flayer: FilteredLayer = {
@@ -48,8 +52,8 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             isDisplayed: new UIEventSource<boolean>(true),
             layerDef: importLayer
         }
-        const unfiltered = new GeoJsonSource(flayer, params.bbox.padAbsolute(0.0001))
-        unfiltered.features.map(f => MetaTagging.addMetatags(
+        const allNotesWithinBbox = new GeoJsonSource(flayer, params.bbox.padAbsolute(0.0001))
+        allNotesWithinBbox.features.map(f => MetaTagging.addMetatags(
                 f,
                 {
                     memberships: new RelationsTracker(),
@@ -65,30 +69,30 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
                 }
             )
         )
-        const data = new FilteringFeatureSource(state, undefined, unfiltered)
-        data.features.addCallbackD(features => console.log("Loaded and filtered features are", features))
+        const alreadyOpenImportNotes = new FilteringFeatureSource(state, undefined, allNotesWithinBbox)
+        alreadyOpenImportNotes.features.addCallbackD(features => console.log("Loaded and filtered features are", features))
         const map = Minimap.createMiniMap()
         map.SetClass("w-full").SetStyle("height: 500px")
 
-        const comparison = Minimap.createMiniMap({
+        const comparisonMap = Minimap.createMiniMap({
             location: map.location,
 
         })
-        comparison.SetClass("w-full").SetStyle("height: 500px")
+        comparisonMap.SetClass("w-full").SetStyle("height: 500px")
 
         new ShowDataLayer({
             layerToShow: importLayer,
             state,
             zoomToFeatures: true,
             leafletMap: map.leafletMap,
-            features: data,
+            features: alreadyOpenImportNotes,
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state)
         })
 
 
         const maxDistance = new UIEventSource<number>(5)
 
-        const partitionedImportPoints = ImportUtils.partitionFeaturesIfNearby(params.geojson, data.features
+        const partitionedImportPoints = ImportUtils.partitionFeaturesIfNearby(params.geojson, alreadyOpenImportNotes.features
             .map(ff => ({features: ff.map(ff => ff.feature)})), maxDistance)
 
 
@@ -96,27 +100,34 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             layerToShow: new LayerConfig(import_candidate),
             state,
             zoomToFeatures: true,
-            leafletMap: comparison.leafletMap,
+            leafletMap: comparisonMap.leafletMap,
             features: new StaticFeatureSource(partitionedImportPoints.map(p => p.hasNearby), false),
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state)
         })
 
         super([
             new Title("Compare with already existing 'to-import'-notes"),
-            new Toggle(
-                new Loading("Fetching notes from OSM"),
-                new Combine([
-                    map,
-                    "The following (red) elements are elements to import which are nearby a matching element that is already up for import. These won't be imported",
-                  
-                    new Toggle(
-                        new FixedUiElement("All of the proposed points have (or had) an import note already").SetClass("alert w-full block").SetStyle("padding: 0.5rem"),
-                        new VariableUiElement(partitionedImportPoints.map(({noNearby}) => noNearby.length + " elements can be imported")).SetClass("thanks p-8"),
-                        partitionedImportPoints.map(({noNearby}) => noNearby.length === 0)
-                    ).SetClass("w-full"),
-                    comparison,
-                ]).SetClass("flex flex-col"),
-                unfiltered.features.map(ff => ff === undefined || ff.length === 0)
+            new VariableUiElement(
+                alreadyOpenImportNotes.features.map(notesWithImport  => {
+                    if(allNotesWithinBbox.features.data === undefined || allNotesWithinBbox.features.data.length === 0){
+                       return  new Loading("Fetching notes from OSM")
+                    }
+                    if(notesWithImport.length === 0){
+                        return new FixedUiElement("No previous note to import found").SetClass("thanks")
+                    }
+                    return new Combine([
+                        map,
+                        "The following (red) elements are elements to import which are nearby a matching element that is already up for import. These won't be imported",
+
+                        new Toggle(
+                            new FixedUiElement("All of the proposed points have (or had) an import note already").SetClass("alert w-full block").SetStyle("padding: 0.5rem"),
+                            new VariableUiElement(partitionedImportPoints.map(({noNearby}) => noNearby.length + " elements can be imported")).SetClass("thanks p-8"),
+                            partitionedImportPoints.map(({noNearby}) => noNearby.length === 0)
+                        ).SetClass("w-full"),
+                        comparisonMap,
+                    ]).SetClass("flex flex-col")
+                    
+                }, [allNotesWithinBbox.features])
             ),
 
 
@@ -128,7 +139,18 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             layer: params.layer
         }))
 
-        this.IsValid = data.features.map(ff => ff.length > 0 && partitionedImportPoints.data.noNearby.length > 0, [partitionedImportPoints])
+        this.IsValid = alreadyOpenImportNotes.features.map(ff => {
+            if(allNotesWithinBbox.features.data.length === 0){
+                // Not yet loaded
+                return false
+            }
+            if(ff.length == 0){
+                // No import notes at all
+                return true;
+            }
+            
+            return partitionedImportPoints.data.noNearby.length > 0; // at least _something_ can be imported
+        }, [partitionedImportPoints, allNotesWithinBbox.features])
     }
 
 }

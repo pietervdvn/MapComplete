@@ -7,8 +7,10 @@ export class ImportUtils {
             if (osmData?.features === undefined) {
                 return undefined
             }
+            if(osmData.features.length === 0){
+                return {noNearby: toPartitionFeatureCollection.features, hasNearby: []}
+            }
             const maxDist = cutoffDistanceInMeters.data
-
 
             const hasNearby = []
             const noNearby = []

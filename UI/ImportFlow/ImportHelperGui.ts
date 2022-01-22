@@ -1,17 +1,14 @@
 import Combine from "../Base/Combine";
-import {LoginToggle} from "../Popup/LoginButton";
 import Toggle from "../Input/Toggle";
 import LanguagePicker from "../LanguagePicker";
 import BackToIndex from "../BigComponents/BackToIndex";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import BaseUIElement from "../BaseUIElement";
-import MoreScreen from "../BigComponents/MoreScreen";
 import MinimapImplementation from "../Base/MinimapImplementation";
 import Translations from "../i18n/Translations";
-import Constants from "../../Models/Constants";
 import {FlowPanelFactory} from "./FlowStep";
 import {RequestFile} from "./RequestFile";
-import {DataPanel} from "./DataPanel";
+import {PreviewPanel} from "./PreviewPanel";
 import ConflationChecker from "./ConflationChecker";
 import {AskMetadata} from "./AskMetadata";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
@@ -21,8 +18,11 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import List from "../Base/List";
 import {CompareToAlreadyExistingNotes} from "./CompareToAlreadyExistingNotes";
+import Introdution from "./Introdution";
+import LoginToImport from "./LoginToImport";
+import {MapPreview} from "./MapPreview";
 
-export default class ImportHelperGui extends LoginToggle {
+export default class ImportHelperGui extends Combine {
     constructor() {
         const t = Translations.t.importHelper;
 
@@ -33,8 +33,11 @@ export default class ImportHelperGui extends LoginToggle {
 
         const {flow, furthestStep, titles} =
             FlowPanelFactory
-                .start("Select file", new RequestFile())
-                .then("Inspect data", geojson => new DataPanel(state, geojson))
+                .start("Introduction", new Introdution())
+                .then("Login", _ => new LoginToImport(state))
+                .then("Select file", _ => new RequestFile())
+                .then("Inspect attributes", geojson => new PreviewPanel(state, geojson))
+                .then("Inspect data", geojson => new MapPreview(state, geojson))
                 .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
                 .then("Compare with existing data", v => new ConflationChecker(state, v))
                 .then("License and community check", v => new ConfirmProcess(v))
@@ -71,24 +74,12 @@ export default class ImportHelperGui extends LoginToggle {
 
 
 
-        super(
-            new Toggle(
+        super([
                 new Combine([
                     leftBar,
                     flow.SetClass("m-8 w-full mb-24")
-                ]).SetClass("h-full block md:flex")
+                ]).SetClass("h-full block md:flex")])
 
-                ,
-                new Combine([
-                    t.lockNotice.Subs(Constants.userJourney),
-                    MoreScreen.CreateProffessionalSerivesButton()
-                ])
-
-                ,
-                state.osmConnection.userDetails.map(ud => ud.csCount >= Constants.userJourney.importHelperUnlock)),
-
-            "Login needed...",
-            state)
     }
 
 }

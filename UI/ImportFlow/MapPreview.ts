@@ -17,13 +17,13 @@ import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import Toggle from "../Input/Toggle";
-import Table from "../Base/Table";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {FlowStep} from "./FlowStep";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {AllTagsPanel} from "../SpecialVisualizations";
 import Title from "../Base/Title";
+import CheckBoxes from "../Input/Checkboxes";
 
 class PreviewPanel extends ScrollableFullScreen {
     
@@ -42,14 +42,14 @@ class PreviewPanel extends ScrollableFullScreen {
 /**
  * Shows the data to import on a map, asks for the correct layer to be selected
  */
-export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }>{
+export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }>{
     public readonly IsValid: UIEventSource<boolean>;
     public readonly Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, geojson: any }>
     
     constructor(
         state: UserRelatedState,
         geojson: { features: { properties: any, geometry: { coordinates: [number, number] } }[] }) {
-        const t = Translations.t.importHelper;
+        const t = Translations.t.importHelper.mapPreview;
 
         const propertyKeys = new Set<string>()
         for (const f of geojson.features) {
@@ -58,7 +58,7 @@ export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: 
 
 
         const availableLayers = AllKnownLayouts.AllPublicLayers().filter(l => l.name !== undefined && Constants.priviliged_layers.indexOf(l.id) < 0)
-        const layerPicker = new DropDown("Which layer does this import match with?",
+        const layerPicker = new DropDown(t.selectLayer,
             [{shown: t.selectLayer, value: undefined}].concat(availableLayers.map(l => ({
                 shown: l.name,
                 value: l
@@ -126,29 +126,28 @@ export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: 
         })
         var bbox = matching.map(feats => BBox.bboxAroundAll(feats.map(f => new BBox([f.geometry.coordinates]))))
 
+        
+        const mismatchIndicator =   new VariableUiElement(matching.map(matching => {
+            if (matching === undefined) {
+                return undefined
+            }
+            const diff = geojson.features.length - matching.length;
+            if (diff === 0) {
+                return undefined
+            }
+            const obligatory = layerPicker.GetValue().data?.source?.osmTags?.asHumanString(false, false, {});
+            return t.mismatch.Subs({count: diff, tags: obligatory}).SetClass("alert")
+        }))
+        
+        const confirm = new CheckBoxes([t.confirm]);
         super([
-            new Title(geojson.features.length + " features to import"),
+            new Title(t.title, 1),
             layerPicker,
-            new Toggle("Automatically detected layer", undefined, autodetected),
-            new Table(["", "Key", "Values", "Unique values seen"],
-                Array.from(propertyKeys).map(key => {
-                    const uniqueValues = Utils.Dedup(Utils.NoNull(geojson.features.map(f => f.properties[key])))
-                    uniqueValues.sort()
-                    return [geojson.features.filter(f => f.properties[key] !== undefined).length + "", key, uniqueValues.join(", "), "" + uniqueValues.length]
-                })
-            ).SetClass("zebra-table table-auto"),
-            new VariableUiElement(matching.map(matching => {
-                if (matching === undefined) {
-                    return undefined
-                }
-                const diff = geojson.features.length - matching.length;
-                if (diff === 0) {
-                    return undefined
-                }
-                const obligatory = layerPicker.GetValue().data?.source?.osmTags?.asHumanString(false, false, {});
-                return new FixedUiElement(`${diff} features will _not_ match this layer. Make sure that all obligatory objects are present: ${obligatory}`).SetClass("alert");
-            })),
-            map
+            new Toggle(t.autodetected.SetClass("thank"), undefined, autodetected),
+          
+        mismatchIndicator  ,
+            map,
+            confirm
         ]);
 
         this.Value = bbox.map(bbox =>
@@ -157,13 +156,17 @@ export class DataPanel extends Combine implements FlowStep<{ bbox: BBox, layer: 
                 geojson,
                 layer: layerPicker.GetValue().data
             }), [layerPicker.GetValue()])
+        
         this.IsValid = matching.map(matching => {
             if (matching === undefined) {
                 return false
             }
+            if(confirm.GetValue().data.length !== 1){
+                return false
+            }
             const diff = geojson.features.length - matching.length;
             return diff === 0;
-        })
+        }, [confirm.GetValue()])
         
     }
 }

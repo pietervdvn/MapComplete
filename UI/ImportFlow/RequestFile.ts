@@ -9,6 +9,7 @@ import InputElementMap from "../Input/InputElementMap";
 import BaseUIElement from "../BaseUIElement";
 import FileSelectorButton from "../Input/FileSelectorButton";
 import {FlowStep} from "./FlowStep";
+import { parse } from "papaparse";
 
 class FileSelector extends InputElementMap<FileList, { name: string, contents: Promise<string> }> {
     constructor(label: BaseUIElement) {
@@ -42,8 +43,8 @@ export class RequestFile extends Combine implements FlowStep<any> {
     public readonly Value: UIEventSource<any>
 
     constructor() {
-        const t = Translations.t.importHelper;
-        const csvSelector = new FileSelector(new SubtleButton(undefined, t.selectFile))
+        const t = Translations.t.importHelper.selectFile;
+        const csvSelector = new FileSelector(new SubtleButton(undefined, t.description))
         const loadedFiles = new VariableUiElement(csvSelector.GetValue().map(file => {
             if (file === undefined) {
                 return t.noFilesLoaded.SetClass("alert")
@@ -59,39 +60,53 @@ export class RequestFile extends Combine implements FlowStep<any> {
                 return UIEventSource.FromPromise(v.contents)
             }))
 
-        const asGeoJson: UIEventSource<any | { error: string }> = text.map(src => {
+        const asGeoJson: UIEventSource<any | { error: string | BaseUIElement }> = text.map(src => {
             if (src === undefined) {
                 return undefined
             }
             try {
                 const parsed = JSON.parse(src)
                 if (parsed["type"] !== "FeatureCollection") {
-                    return {error: "The loaded JSON-file is not a geojson-featurecollection"}
+                    return {error: t.errNotFeatureCollection}
                 }
                 if (parsed.features.some(f => f.geometry.type != "Point")) {
-                    return {error: "The loaded JSON-file should only contain points"}
+                    return {error: t.errPointsOnly}
                 }
                 return parsed;
 
             } catch (e) {
                 // Loading as CSV
-                const lines = src.split("\n")
-                const header = lines[0].split(",")
+                var lines : string[][] = <any> parse(src).data;
+                const header = lines[0]
                 lines.splice(0, 1)
                 if (header.indexOf("lat") < 0 || header.indexOf("lon") < 0) {
-                    return {error: "The header does not contain `lat` or `lon`"}
+                    return {error: t.errNoLatOrLon}
                 }
+
+                if (header.some(h => h.trim() == "")) {
+                    return {error:t.errNoName}
+                }
+            
+
+                if (new Set(header).size !== header.length) {
+                    return {error:t.errDuplicate}
+                }
+            
 
                 const features = []
                 for (let i = 0; i < lines.length; i++) {
-                    const line = lines[i];
-                    if (line.trim() === "") {
+                    const attrs = lines[i];
+                    if(attrs.length == 0 || (attrs.length == 1 && attrs[0] == "")){
+                        // empty line
                         continue
                     }
-                    const attrs = line.split(",")
                     const properties = {}
                     for (let i = 0; i < header.length; i++) {
-                        properties[header[i]] = attrs[i];
+                        const v =  attrs[i]
+                        if(v === undefined || v === ""){
+                            continue
+                        }
+                        properties[header[i]] = v;
                     }
                     const coordinates = [Number(properties["lon"]), Number(properties["lat"])]
                     delete properties["lat"]
@@ -125,18 +140,21 @@ export class RequestFile extends Combine implements FlowStep<any> {
             if (v?.error === undefined) {
                 return undefined;
             }
-            return new FixedUiElement(v?.error).SetClass("alert");
+            return v.error.Clone().SetClass("alert");
         }))
 
         super([
 
             new Title(t.title, 1),
-            t.description,
+            t.fileFormatDescription,
+            t.fileFormatDescriptionCsv,
+            t.fileFormatDescriptionGeoJson,
             csvSelector,
             loadedFiles,
             errorIndicator
 
         ]);
+        this.SetClass("flex flex-col wi")
         this.IsValid = asGeoJson.map(geojson => geojson !== undefined && geojson["error"] === undefined)
         this.Value = asGeoJson
     }

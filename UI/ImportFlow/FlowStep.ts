@@ -7,6 +7,7 @@ import Translations from "../i18n/Translations";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import {UIElement} from "../UIElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export interface FlowStep<T> extends BaseUIElement {
     readonly IsValid: UIEventSource<boolean>
@@ -95,10 +96,12 @@ export class FlowPanel<T> extends Toggle {
         })
 
         let elements: (BaseUIElement | string)[] = []
+        const isError = new UIEventSource(false)
         if (initial !== undefined) {
             // Startup the flow
             elements = [
                 initial,
+      
                 new Combine([
                     backbutton,
                     new Toggle(
@@ -107,14 +110,25 @@ export class FlowPanel<T> extends Toggle {
                                 Svg.back_svg().SetStyle("transform: rotate(180deg);"),
                             isConfirm ? t.confirm : t.next
                         ).onClick(() => {
-                            const v = initial.Value.data;
-                            nextStep.setData(constructNextstep(v, backButtonForNextStep))
-                            currentStepActive.setData(false)
+                            try {
+
+                                const v = initial.Value.data;
+                                nextStep.setData(constructNextstep(v, backButtonForNextStep))
+                                currentStepActive.setData(false)
+                            } catch (e) {
+                                console.error(e)
+                                isError.setData(true)
+                            }
                         }),
                         "Select a valid value to continue",
                         initial.IsValid
-                    )
-                ]).SetClass("flex w-full justify-end space-x-2")
+                    ),
+                    new Toggle(
+                        new FixedUiElement("Something went wrong...").SetClass("alert"),
+                        undefined,
+                        isError),
+                ]).SetClass("flex w-full justify-end space-x-2"),
+
 
             ]
         }
