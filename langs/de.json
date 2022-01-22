@@ -4,7 +4,7 @@
         "uploadingPicture": "Bild wird hochgeladen…",
         "uploadingMultiple": "{count} Bilder hochladen…",
         "pleaseLogin": "Bitte einloggen, um ein Bild hinzuzufügen",
-        "willBePublished": "Ihr Bild wird veröffentlicht: ",
+        "willBePublished": "Ihr Bild wird veröffentlicht ",
         "cco": "als 'Public Domain'",
         "ccbs": "unter der 'CC-BY-SA-Lizenz'",
         "ccb": "unter der 'CC-BY-Lizenz'",
@@ -15,7 +15,8 @@
         "doDelete": "Bild entfernen",
         "isDeleted": "Gelöscht",
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
-        "toBig": "Ihr Bild ist zu groß, da es {actual_size} ist. Bitte verwenden Sie Bilder von höchstens {max_size}"
+        "toBig": "Ihr Bild ist zu groß, da es {actual_size} ist. Bitte verwenden Sie Bilder von höchstens {max_size}",
+        "ccoExplanation": "Das Hinzufügen eines gemeinfreien Bildes impliziert, dass jeder alles mit Ihrem Bild machen kann"
     },
     "centerMessage": {
         "loadingData": "Daten werden geladen…",
