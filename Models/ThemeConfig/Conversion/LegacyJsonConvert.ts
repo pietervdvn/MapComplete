@@ -1041,15 +1041,47 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 
 }
 
+export class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
+    
+    constructor() {
+        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards",["overrideAll","layers"]);
+    }
+
+    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+        
+        const overrideAll = json.overrideAll;
+        if(overrideAll === undefined){
+            return {result :json, warnings: [], errors: []}
+        }
+        
+        json = {...json}
+        
+        delete json.overrideAll
+        const newLayers = []
+        for (let layer of json.layers) {
+            layer = {...<LayerConfigJson>layer}
+            Utils.Merge(overrideAll,  layer)
+            newLayers.push(layer)
+        }
+        json.layers = newLayers
+        
+        
+        return {result :json, warnings: [], errors: []};
+    }
+    
+}
+
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
     constructor() {
         super(
             "Fully prepares and expands a theme",
             new OnEveryConcat("layers", new SubstituteLayer()),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
-            new AddDefaultLayers(),
-            new AddDependencyLayersToTheme(),
             new OnEvery("layers", new PrepareLayer()),
+            new ApplyOverrideAll(),
+            new AddDefaultLayers(),
+            
+            new AddDependencyLayersToTheme(),
             new OnEvery("layers", new AddMiniMap())
         );
     }
