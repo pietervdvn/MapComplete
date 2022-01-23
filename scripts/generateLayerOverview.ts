@@ -72,6 +72,9 @@ class LayerOverviewUtils {
         const dict = new Map<string, TagRenderingConfigJson>();
 
         for (const key in questions["default"]) {
+            if(key === "id"){
+                continue
+            }
             questions[key].id = key;
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
@@ -84,6 +87,9 @@ class LayerOverviewUtils {
         }
 
         dict.forEach((value, key) => {
+            if(key === "id"){
+                return
+            }
             value.id = value.id ?? key;
         })
 
