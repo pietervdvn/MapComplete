@@ -201,6 +201,17 @@
           }
         }
       ]
+    },
+    {
+      "id": "no_imports",
+      "options": [
+        {
+          "osmTags": "_is_import_note=",
+          "question": {
+            "en": "Hide import notes"
+          }
+        }
+      ]
     }
   ]
 }
