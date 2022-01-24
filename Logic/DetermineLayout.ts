@@ -159,7 +159,7 @@ export default class DetermineLayout {
             try {
                 parsed.id = link;
                 const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
-                return new LayoutConfig(layoutToUse,false).patchImages(link, JSON.stringify(layoutToUse));
+                return new LayoutConfig(layoutToUse,false)
             } catch (e) {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(
