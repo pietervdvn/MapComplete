@@ -180,20 +180,19 @@ class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         }
         return false;
     }
-    
+
     convert(state: DesugaringContext, layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
-        
 
 
-        const hasMinimap = layerConfig.tagRenderings?.some(tr => AddMiniMap.hasMinimap(<TagRenderingConfigJson> tr)) ?? true
+        const hasMinimap = layerConfig.tagRenderings?.some(tr => AddMiniMap.hasMinimap(<TagRenderingConfigJson>tr)) ?? true
         if (!hasMinimap) {
             layerConfig = {...layerConfig}
             layerConfig.tagRenderings = [...layerConfig.tagRenderings]
             layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
         }
-        
+
         return {
-            errors:[],
+            errors: [],
             warnings: [],
             result: layerConfig
         };
@@ -448,9 +447,13 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         if (typeof json === "string") {
             return json
         }
+        console.log("Updating legacy layer", json)
         if (json["builtin"] !== undefined) {
-            // @ts-ignore
-            return json;
+            return {
+                result: json,
+                errors: [],
+                warnings: []
+            };
         }
         let config: any = {...json};
 
@@ -572,6 +575,9 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
                 }
             }
         }
+
+        oldThemeConfig.layers = Utils.NoNull(oldThemeConfig.layers)
+
         return {
             errors: [],
             warnings: [],
@@ -874,8 +880,8 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings;
         const errors = [];
         const warnings = [];
-        const layers: LayerConfigJson[] = <LayerConfigJson[]> theme.layers; // Layers should be expanded at this point
-        
+        const layers: LayerConfigJson[] = <LayerConfigJson[]>theme.layers; // Layers should be expanded at this point
+
         knownTagRenderings.forEach((value, key) => {
             value.id = key;
         })
@@ -943,6 +949,7 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
     convert(state: DesugaringContext, json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
+        console.log("Substituting layer ", json)
         if (typeof json === "string") {
             const found = state.sharedLayers.get(json)
             if (found === undefined) {
@@ -1011,10 +1018,10 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             for (const publicLayer of AllKnownLayouts.AllPublicLayers()) {
                 const id = publicLayer.id
                 const config = state.sharedLayers.get(id)
-                if(Constants.added_by_default.indexOf(id) >= 0){
+                if (Constants.added_by_default.indexOf(id) >= 0) {
                     continue;
                 }
-                if(config === undefined){
+                if (config === undefined) {
                     // This is a layer which is coded within a public theme, not as separate .json
                     continue
                 }
@@ -1031,7 +1038,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             }
             json.layers.push(v)
         }
-        
+
         return {
             result: json,
             errors,
@@ -1042,33 +1049,33 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 }
 
 export class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
-    
+
     constructor() {
-        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards",["overrideAll","layers"]);
+        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards", ["overrideAll", "layers"]);
     }
 
     convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
-        
+
         const overrideAll = json.overrideAll;
-        if(overrideAll === undefined){
-            return {result :json, warnings: [], errors: []}
+        if (overrideAll === undefined) {
+            return {result: json, warnings: [], errors: []}
         }
-        
+
         json = {...json}
-        
+
         delete json.overrideAll
         const newLayers = []
         for (let layer of json.layers) {
             layer = {...<LayerConfigJson>layer}
-            Utils.Merge(overrideAll,  layer)
+            Utils.Merge(overrideAll, layer)
             newLayers.push(layer)
         }
         json.layers = newLayers
-        
-        
-        return {result :json, warnings: [], errors: []};
+
+
+        return {result: json, warnings: [], errors: []};
     }
-    
+
 }
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
@@ -1080,7 +1087,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new OnEvery("layers", new PrepareLayer()),
             new ApplyOverrideAll(),
             new AddDefaultLayers(),
-            
+
             new AddDependencyLayersToTheme(),
             new OnEvery("layers", new AddMiniMap())
         );

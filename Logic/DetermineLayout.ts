@@ -156,17 +156,8 @@ export default class DetermineLayout {
         try {
 
             let parsed = await Utils.downloadJson(link)
-            console.log("Got ", parsed)
-            parsed = new FixLegacyTheme().convertStrict({
-                tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-                sharedLayers: new Map<string, LayerConfigJson>() // FIXME: actually add the layers
-            }, parsed, "While loading a dynamic theme")
-
-
-                parsed.id = link;
-
-
             try {
+                parsed.id = link;
                 const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
                 return new LayoutConfig(layoutToUse,false).patchImages(link, JSON.stringify(layoutToUse));
             } catch (e) {
