@@ -32,13 +32,15 @@ export default class UserRelatedState extends ElementsState {
     /**
      * WHich other themes the user previously visited
      */
-    public installedThemes: UIEventSource<{ id: string, // The id doubles as the URL
+    public installedThemes: UIEventSource<{
+        id: string, // The id doubles as the URL
         icon: string,
         title: any,
-        shortDescription: any}[]>;
+        shortDescription: any
+    }[]>;
 
 
-    constructor(layoutToUse: LayoutConfig, options?:{attemptLogin : true | boolean}) {
+    constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
 
         this.osmConnection = new OsmConnection({
@@ -73,44 +75,51 @@ export default class UserRelatedState extends ElementsState {
 
         this.installedThemes = this.osmConnection.GetLongPreference("installed-themes").map(
             str => {
-                if(str === undefined || str === ""){
+                if (str === undefined || str === "") {
                     return []
                 }
-                try{
-                    return JSON.parse(str)
-                }catch(e){
-                    console.warn("Could not parse preference with installed themes due to ", e,"\nThe offending string is",str)
+                try {
+                    return JSON.parse(str);
+                } catch (e) {
+                    console.warn("Could not parse preference with installed themes due to ", e, "\nThe offending string is", str)
                     return []
                 }
-            }, [],(installed => JSON.stringify(installed))
+            }, [], (installed) => JSON.stringify(installed)
         )
-        
-        
+
+
         const self = this;
-        this.osmConnection.isLoggedIn.addCallbackAndRunD(loggedIn => {
-            if(!loggedIn){
-                return
-            }
 
-            if(this.layoutToUse?.id?.startsWith("http")){
-                if(!this.installedThemes.data.some(installed => installed.id === this.layoutToUse.id)){
-
-                    this.installedThemes.data.push({
-                        id: this.layoutToUse.id,
-                        icon: this.layoutToUse.icon,
-                        title: this.layoutToUse.title.translations,
-                        shortDescription: this.layoutToUse.shortDescription.translations
-                    })
+        if (this.layoutToUse?.id?.startsWith("http")) {
+            this.installedThemes.addCallbackAndRun(currentThemes => {
+                if (currentThemes === undefined) {
+                    // We wait till we are logged in
+                    return
                 }
-                this.installedThemes.ping()
-                console.log("Registered "+this.layoutToUse.id+" as installed themes")
-            }
+                
+                if(self.osmConnection.isLoggedIn.data == false){
+                    return;
+                }
+
+                if (currentThemes.some(installed => installed.id === this.layoutToUse.id)) {
+                    // Already added to the 'installed theme' list
+                    return; 
+                }
+
+                console.log("Current installed themes are", this.installedThemes.data)
+                currentThemes.push({
+                    id: self.layoutToUse.id,
+                    icon: self.layoutToUse.icon,
+                    title: self.layoutToUse.title.translations,
+                    shortDescription: self.layoutToUse.shortDescription.translations
+                })
+                self.installedThemes.ping()
+                console.log("Registered " + self.layoutToUse.id + " as installed themes")
+            
+            })
+        }
 
 
-
-
-            return true;
-        })
 
 
         // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
@@ -121,7 +130,7 @@ export default class UserRelatedState extends ElementsState {
                 [],
                 (layers) => Utils.Dedup(layers)?.join(";")
             );
-        
+
         this.InitializeLanguage();
         new SelectedElementTagsUpdater(this)
 

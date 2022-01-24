@@ -178,11 +178,39 @@ export class OsmPreferences {
             content: v
         }, function (error) {
             if (error) {
-                console.log(`Could not set preference "${k}"'`, error);
+                console.warn(`Could not set preference "${k}"'`, error);
                 return;
             }
-            console.log(`Preference ${k} written!`);
+            console.debug(`Preference ${k} written!`);
         });
+    }
+    
+    public ClearPreferences(){
+        let isRunning = false;
+        const self = this;
+        this.preferences.addCallbackAndRun(prefs => {
+            if(Object.keys(prefs).length == 0){
+                return;
+            }
+            if (isRunning) {
+                return
+            }
+            isRunning = true
+            const prefixes = ["mapcomplete-installed-theme","mapcomplete-installed-themes-","mapcomplete-current-open-changeset","mapcomplete-personal-theme-layer"]
+            for (const key in prefs) {
+                for (const prefix of prefixes) {
+                    // console.log(key)
+                    if (key.startsWith(prefix)) {
+                        console.log("Clearing ", key)
+                        self.GetPreference(key, "").setData("")
+
+                    }
+                }
+            }
+            isRunning = false;
+            return true;
+
+        })
     }
 
 
