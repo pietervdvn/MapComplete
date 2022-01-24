@@ -85,7 +85,8 @@
         "title": "Cyclofix – nyílt térkép kerékpárosoknak"
     },
     "drinking_water": {
-        "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén"
+        "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
+        "title": "Ivóvíz"
     },
     "ghostbikes": {
         "title": "Emlékkerékpárok"
@@ -119,5 +120,120 @@
         "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
         "shortDescription": "Szemeteskosarakat ábrázoló térkép",
         "title": "Kukatérkép"
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "name": "Mászóegyesület",
+                "presets": {
+                    "1": {
+                        "description": "Mászással foglalkozó civil szervezet",
+                        "title": "Mászószervezet"
+                    },
+                    "0": {
+                        "title": "Mászóegyesület",
+                        "description": "Egy mászóegyesület"
+                    }
+                },
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "question": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Mászószervezet"
+                        }
+                    }
+                },
+                "description": "Mászóegyesület vagy -szervezet"
+            }
+        },
+        "descriptionTail": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
+        "description": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben."
+    },
+    "cyclestreets": {
+        "layers": {
+            "0": {
+                "description": "A kerékpárosutca olyan utca, ahol gépjármű nem előzhet meg a kerékpárost",
+                "name": "Kerékpárosutcák"
+            },
+            "1": {
+                "name": "Jövőbeli kerékpárosutca",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} nemsokára kerékpárosutca lesz"
+                        }
+                    },
+                    "render": "Jövőbeli kerékpárosutca"
+                },
+                "description": "Ez az utca hamarosan kerékpárosutcává válik"
+            },
+            "2": {
+                "name": "Minden utca",
+                "title": {
+                    "render": "Utca"
+                },
+                "description": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez"
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}",
+                    "question": "Mikor lesz ez az utca kerékpárosutca?"
+                },
+                "0": {
+                    "mappings": {
+                        "2": {
+                            "then": "Ez az utca hamarosan kerékpárosutcává válik"
+                        },
+                        "3": {
+                            "then": "Ez az utca nem kerékpárosutca"
+                        },
+                        "0": {
+                            "then": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
+                        },
+                        "1": {
+                            "then": "Ez az utca kerékpárosutca"
+                        }
+                    },
+                    "question": "Kerékpárosutca-e <b>{name}</b>?"
+                }
+            }
+        },
+        "title": "Kerékpárosutcák",
+        "shortDescription": "Kerékpárosutcák térképe",
+        "description": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. "
+    },
+    "cycle_infra": {
+        "description": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
+        "shortDescription": "Olyan térkép, ahol a kerékpáros infrastruktúrával kapcsolatos dolgokat tekinthet meg és szerkeszthet.",
+        "title": "Kerékpáros infrastruktúra"
+    },
+    "etymology": {
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Etimológiai adat nélküli utcák"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Etimológiai adat nélküli parkok és erdők"
+                }
+            }
+        },
+        "title": "Etimológiai térkép",
+        "shortDescription": "Mi az eredete egy helynévnek?",
+        "description": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra."
+    },
+    "entrances": {
+        "shortDescription": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése",
+        "title": "Épületek bejáratai",
+        "description": "Épületek bejáratai mutató térkép, amely a kerekesszékkel közlekedőknek fontos szempontokat jeleníti meg"
     }
 }
