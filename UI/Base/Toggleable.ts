@@ -27,7 +27,7 @@ export default class Toggleable extends Combine {
 
     constructor(title: Title | BaseUIElement, content: BaseUIElement) {
         super([title, content])
-        content.SetClass("animate-height border-l-4 pl-2")
+        content.SetClass("animate-height border-l-4 pl-2 block")
         title.SetClass("background-subtle rounded-lg")
         const self = this
         this.onClick(() => self.isVisible.setData(!self.isVisible.data))
@@ -53,7 +53,8 @@ export default class Toggleable extends Combine {
 
         this.isVisible.addCallbackAndRun(isVisible => {
             if (isVisible) {
-                contentElement.style.maxHeight = "100vh"
+                contentElement.style.maxHeight = "8gs0vh"
+                contentElement.style.overflowY = "auto"
                 contentElement.style["-webkit-mask-image"] = "unset"
             } else {
                 contentElement.style["-webkit-mask-image"] = "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))"

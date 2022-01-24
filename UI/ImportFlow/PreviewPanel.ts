@@ -54,7 +54,7 @@ export class PreviewPanel extends Combine implements FlowStep<{ features: { prop
             }
 
             const uniqueCount = new Set(values).size
-            if (uniqueCount !== values.length) {
+            if (uniqueCount !== values.length && uniqueCount < 15) {
                 attributeOverview.push()
                 // There are some overlapping values: histogram time!
                 let hist: BaseUIElement =
@@ -84,7 +84,7 @@ export class PreviewPanel extends Combine implements FlowStep<{ features: { prop
                 continue
             }
 
-            // All values are different, we add a boring (but collapsable) list
+            // All values are different or too much unique values, we add a boring (but collapsable) list
             attributeOverview.push(new Toggleable(
                 new Title(key + "=*"),
                 new Combine([
