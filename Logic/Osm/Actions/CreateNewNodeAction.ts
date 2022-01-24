@@ -20,7 +20,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
     private readonly _lon: number;
     private readonly _snapOnto: OsmWay;
     private readonly _reusePointDistance: number;
-    private meta: { changeType: "create" | "import"; theme: string };
+    private meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string };
     private readonly _reusePreviouslyCreatedPoint: boolean;
 
     constructor(basicTags: Tag[],
@@ -29,7 +29,9 @@ export default class CreateNewNodeAction extends OsmCreateAction {
                     allowReuseOfPreviouslyCreatedPoints?: boolean,
                     snapOnto?: OsmWay,
                     reusePointWithinMeters?: number,
-                    theme: string, changeType: "create" | "import" | null
+                    theme: string,
+                    changeType: "create" | "import" | null,
+                    specialMotivation?: string
                 }) {
         super(null,basicTags !== undefined && basicTags.length > 0)
         this._basicTags = basicTags;
@@ -43,7 +45,8 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         this._reusePreviouslyCreatedPoint = options?.allowReuseOfPreviouslyCreatedPoints ?? (basicTags.length === 0)
         this.meta = {
             theme: options.theme,
-            changeType: options.changeType
+            changeType: options.changeType,
+            
         }
     }
 

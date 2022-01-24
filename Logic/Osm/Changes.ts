@@ -131,16 +131,18 @@ export class Changes {
 
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
 
-        if (this.state === undefined) {
-            // No state loaded -> we can't calculate...
+        const locations = this.state?.historicalUserLocations?.features?.data
+        if (locations === undefined) {
+            // No state loaded or no locations -> we can't calculate...
             return;
         }
         if (!change.trackStatistics) {
             // Probably irrelevant, such as a new helper node
             return;
         }
+        
         const now = new Date()
-        const recentLocationPoints = this.state.historicalUserLocations.features.data.map(ff => ff.feature)
+        const recentLocationPoints = locations.map(ff => ff.feature)
             .filter(feat => feat.geometry.type === "Point")
             .filter(feat => {
                 const visitTime = new Date((<GeoLocationPointProperties>feat.properties).date)

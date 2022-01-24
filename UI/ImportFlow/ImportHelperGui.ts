@@ -27,10 +27,7 @@ export default class ImportHelperGui extends LeftIndex {
     constructor() {
         const state = new UserRelatedState(undefined)
 
-        // We disable the userbadge, as various 'showData'-layers will give a read-only view in this case
-        state.featureSwitchUserbadge.setData(false)
-
-        const {flow, furthestStep, titles} =
+            const {flow, furthestStep, titles} =
             FlowPanelFactory
                 .start("Introduction", new Introdution())
                 .then("Login", _ => new LoginToImport(state))

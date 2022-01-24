@@ -538,10 +538,15 @@ export class ImportPointButton extends AbstractImportButton {
             if (snapOntoWayId !== undefined) {
                 snapOnto = await OsmObject.DownloadObjectAsync(snapOntoWayId)
             }
+            let specialMotivation = undefined
+            if(args.note_id !== undefined){
+                specialMotivation = "source: https://osm.org/note/"+args.note_id
+            }
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse.id,
                 changeType: "import",
-                snapOnto: <OsmWay>snapOnto
+                snapOnto: <OsmWay>snapOnto,
+                specialMotivation
             })
 
             await state.changes.applyAction(newElementAction)

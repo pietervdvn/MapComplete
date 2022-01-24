@@ -22,6 +22,11 @@ export class CreateNotes extends Combine {
             const src = f.properties["source"] ?? f.properties["src"] ?? v.source
             delete f.properties["source"]
             delete f.properties["src"]
+            let extraNote = ""
+            if(f.properties["note"]){
+                extraNote = f.properties["note"]+"\n"
+                delete f.properties["note"]
+            }
 
             const tags: string [] = []
             for (const key in f.properties) {
@@ -33,7 +38,7 @@ export class CreateNotes extends Combine {
             const lat = f.geometry.coordinates[1]
             const lon = f.geometry.coordinates[0]
             const text = [v.intro,
-                '',
+                extraNote,
                 "Source: " + src,
                 'More information at ' + v.wikilink,
                 '',

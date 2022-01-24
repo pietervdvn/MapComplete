@@ -99,6 +99,7 @@ export class PreviewPanel extends Combine implements FlowStep<{ features: { prop
 
         super([
             new Title(t.inspectDataTitle.Subs({count: geojson.features.length})),
+            "Extra remark: An attribute with 'source' or 'src' will be added as 'source' into the map pin; an attribute 'note' will be added into the map pin as well. These values won't be imported",
             ...attributeOverview,
             confirm
         ]);
