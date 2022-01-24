@@ -949,7 +949,6 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
     convert(state: DesugaringContext, json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
-        console.log("Substituting layer ", json)
         if (typeof json === "string") {
             const found = state.sharedLayers.get(json)
             if (found === undefined) {
