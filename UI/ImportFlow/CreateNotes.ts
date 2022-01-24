@@ -6,7 +6,8 @@ import Toggle from "../Input/Toggle";
 import Loading from "../Base/Loading";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import Link from "../Base/Link";
+import {SubtleButton} from "../Base/SubtleButton";
+import Svg from "../../Svg";
 
 export class CreateNotes extends Combine {
 
@@ -24,7 +25,7 @@ export class CreateNotes extends Combine {
 
             const tags: string [] = []
             for (const key in f.properties) {
-                if(f.properties[key] === ""){
+                if (f.properties[key] === "") {
                     continue
                 }
                 tags.push(key + "=" + f.properties[key].replace(/=/, "\\=").replace(/;/g, "\\;").replace(/\n/g, "\\n"))
@@ -56,7 +57,13 @@ export class CreateNotes extends Combine {
             "Hang on while we are importing...",
             new Toggle(
                 new Loading(new VariableUiElement(currentNote.map(count => new FixedUiElement("Imported <b>" + count + "</b> out of " + v.features.length + " notes")))),
-                new FixedUiElement("All done!"),
+                new Combine([
+                        new FixedUiElement("All done!").SetClass("thanks"),
+                        new SubtleButton(Svg.note_svg(), "Inspect the progress of your notes in the 'import_viewer'", {
+                            url: "import_viewer.html"
+                        })
+                    ]
+                ),
                 currentNote.map(count => count < v.features.length)
             ),
             new VariableUiElement(failed.map(failed => {
@@ -69,11 +76,6 @@ export class CreateNotes extends Combine {
                     ...failed
                 ]).SetClass("flex flex-col")
 
-            })),
-            new VariableUiElement(createdNotes.map(notes => {
-                const links = notes.map(n =>
-                    new Link(new FixedUiElement("https://openstreetmap.org/note/" + n), "https://openstreetmap.org/note/" + n, true));
-                return new Combine(links).SetClass("flex flex-col");
             }))
         ])
         this.SetClass("flex flex-col");

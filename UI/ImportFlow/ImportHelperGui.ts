@@ -1,7 +1,6 @@
 import Combine from "../Base/Combine";
 import Toggle from "../Input/Toggle";
 import LanguagePicker from "../LanguagePicker";
-import BackToIndex from "../BigComponents/BackToIndex";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import BaseUIElement from "../BaseUIElement";
 import MinimapImplementation from "../Base/MinimapImplementation";
@@ -21,11 +20,11 @@ import {CompareToAlreadyExistingNotes} from "./CompareToAlreadyExistingNotes";
 import Introdution from "./Introdution";
 import LoginToImport from "./LoginToImport";
 import {MapPreview} from "./MapPreview";
+import LeftIndex from "../Base/LeftIndex";
+import {SubtleButton} from "../Base/SubtleButton";
 
-export default class ImportHelperGui extends Combine {
+export default class ImportHelperGui extends LeftIndex {
     constructor() {
-        const t = Translations.t.importHelper;
-
         const state = new UserRelatedState(undefined)
 
         // We disable the userbadge, as various 'showData'-layers will give a read-only view in this case
@@ -61,24 +60,17 @@ export default class ImportHelperGui extends Combine {
             , true)
         
         const leftContents: BaseUIElement[] = [
-            new BackToIndex().SetClass("block pl-4"),
+            new SubtleButton(undefined,"Inspect your preview imports", {
+                url:"import_viewer.html"
+            }),
             toc,
             new Toggle(new FixedUiElement("Testmode - won't actually import notes").SetClass("alert"), undefined, state.featureSwitchIsTesting),
             LanguagePicker.CreateLanguagePicker(Translations.t.importHelper.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
 
-        const leftBar = new Combine([
-            new Combine(leftContents).SetClass("sticky top-4 m-4"),
-          ]).SetClass("block w-full md:w-2/6 lg:w-1/6")
-
-
-
-
-        super([
-                new Combine([
-                    leftBar,
-                    flow.SetClass("m-8 w-full mb-24")
-                ]).SetClass("h-full block md:flex")])
+        super(
+            leftContents,
+            flow)
 
     }
 

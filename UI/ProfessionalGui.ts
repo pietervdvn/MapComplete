@@ -8,6 +8,7 @@ import BaseUIElement from "./BaseUIElement";
 import LanguagePicker from "./LanguagePicker";
 import TableOfContents from "./Base/TableOfContents";
 import BackToIndex from "./BigComponents/BackToIndex";
+import LeftIndex from "./Base/LeftIndex";
 
 class Snippet extends Toggleable {
     constructor(translations, ...extraContent: BaseUIElement[]) {
@@ -39,7 +40,7 @@ class SnippetContent extends Combine {
     }
 }
 
-class ProfessionalGui {
+class ProfessionalGui extends LeftIndex{
 
 
     constructor() {
@@ -93,7 +94,6 @@ class ProfessionalGui {
 
 
         const leftContents: BaseUIElement[] = [
-            new BackToIndex().SetClass("block"),
             new TableOfContents(content, {
                 noTopLevel: true,
                 maxDepth: 2
@@ -102,10 +102,7 @@ class ProfessionalGui {
             LanguagePicker.CreateLanguagePicker(Translations.t.professional.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
         
-        const leftBar = new Combine([
-            new Combine(leftContents).SetClass("sticky top-4 m-4")
-        ]).SetClass("block w-full md:w-2/6 lg:w-1/6")
-        new Combine([leftBar, content]).SetClass("block md:flex").AttachTo("main")
+        super(leftContents, content)
 
     }
 
@@ -113,4 +110,4 @@ class ProfessionalGui {
 }
 
 new FixedUiElement("").AttachTo("decoration-desktop")
-new ProfessionalGui()
+new ProfessionalGui().AttachTo("main")

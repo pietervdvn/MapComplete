@@ -37,7 +37,7 @@ fi
 
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "land.html" "customGenerator.html" "theme.html" vendor
+parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 

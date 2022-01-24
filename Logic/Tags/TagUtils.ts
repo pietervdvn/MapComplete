@@ -197,10 +197,7 @@ export class TagUtils {
                         }
                         let b = Number(value?.trim())
                         if (isNaN(b)) {
-                            if (value.endsWith(" UTC")) {
-                                value = value.replace(" UTC", "+00")
-                            }
-                            b = new Date(value).getTime()
+                            b = Utils.ParseDate(value).getTime()
                             if (isNaN(b)) {
                                 return false
                             }

@@ -625,6 +625,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return JSON.parse(JSON.stringify(x));
     }
+    
+    public static ParseDate(str: string): Date{
+        if (str.endsWith(" UTC")) {
+            str = str.replace(" UTC", "+00")
+        }
+        return new Date(str)
+    }
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);

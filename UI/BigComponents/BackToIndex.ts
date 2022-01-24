@@ -11,7 +11,7 @@ export default class BackToIndex extends SubtleButton {
             Svg.back_svg().SetStyle("height: 1.5rem;"),
            message ?? Translations.t.general.backToMapcomplete,
             {
-                url: "./index.html"
+                url: "index.html"
             }
         )
     }

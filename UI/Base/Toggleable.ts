@@ -53,7 +53,7 @@ export default class Toggleable extends Combine {
 
         this.isVisible.addCallbackAndRun(isVisible => {
             if (isVisible) {
-                contentElement.style.maxHeight = "8gs0vh"
+                contentElement.style.maxHeight = "50vh"
                 contentElement.style.overflowY = "auto"
                 contentElement.style["-webkit-mask-image"] = "unset"
             } else {
