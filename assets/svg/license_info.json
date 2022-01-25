@@ -576,6 +576,16 @@
     ]
   },
   {
+    "path": "invalid.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
     "path": "josm_logo.svg",
     "license": "CC0",
     "authors": [
@@ -824,6 +834,16 @@
     "sources": []
   },
   {
+    "path": "not_found.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
     "path": "note.svg",
     "license": "CC0",
     "authors": [
@@ -1068,6 +1088,16 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "speech_bubble.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
   },
   {
     "path": "square.svg",

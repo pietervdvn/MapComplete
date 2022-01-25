@@ -23,6 +23,7 @@ import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 import BaseLayer from "../../Models/BaseLayer";
+import Loading from "../Base/Loading";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -35,7 +36,8 @@ import BaseLayer from "../../Models/BaseLayer";
 export interface PresetInfo extends PresetConfig {
     name: string | BaseUIElement,
     icon: () => BaseUIElement,
-    layerToAddTo: FilteredLayer
+    layerToAddTo: FilteredLayer,
+    boundsFactor?: 0.25 | number
 }
 
 export default class SimpleAddUI extends Toggle {
@@ -124,7 +126,7 @@ export default class SimpleAddUI extends Toggle {
             new Toggle(
                 new Toggle(
                     new Toggle(
-                        Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
+                        new Loading(Translations.t.general.add.stillLoading).SetClass("alert"),
                         addUi,
                         state.featurePipeline.runningQuery
                     ),

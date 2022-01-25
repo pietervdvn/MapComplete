@@ -409,7 +409,7 @@
         {
           "id": "preview",
           "render": {
-            "en": "To send a letter to this address, you would write:<div style='background: #fcdf94; border: 2px solid black; border-radius: 1rem; padding: 1.5rem 0.5rem 2rem 8rem; margin: 1rem' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp.jpg' class='self-end w-16'/><div class='subtle'>Name of the inhabitant</div><div>{addr:unit} {addr:housename}</div><div>{addr:housenumber} {addr:street}</div><div class='subtle'>Suburb</div><div class='subtle'>Town</div><div class='subtle'>Postal code</div></div>"
+            "en": "To send a letter to this addres, you would write:<div style='background: #fcdf94; border: 2px solid black; border-radius: 1rem; padding: 1.5rem 0.5rem 2rem 8rem; margin: 1rem' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp.jpg' class='self-end w-16'/><div class='subtle'>Name of the inhabitant</div><div>{addr:housename}</div><div>{addr:unit} {addr:housenumber} {addr:street}</div><div>{addr:place}</div><div class='subtle'>Suburb</div><div class='subtle'>Town</div><div class='subtle'>Postal code</div></div>"
           },
           "mappings": [
             {

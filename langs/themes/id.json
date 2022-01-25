@@ -117,16 +117,5 @@
     },
     "trees": {
         "title": "Pohon"
-    },
-    "uk_addresses": {
-        "description": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat",
-        "layers": {
-            "1": {
-                "title": {
-                    "render": "Alamat yang diketahui"
-                }
-            }
-        },
-        "title": "Alamat Inggris"
     }
 }

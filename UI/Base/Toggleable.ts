@@ -25,17 +25,36 @@ export class Accordeon extends Combine {
 export default class Toggleable extends Combine {
     public readonly isVisible = new UIEventSource(false)
 
-    constructor(title: Title | BaseUIElement, content: BaseUIElement) {
+    constructor(title: Title | Combine | BaseUIElement, content: BaseUIElement, options?: {
+        closeOnClick: true | boolean
+    }) {
         super([title, content])
         content.SetClass("animate-height border-l-4 pl-2 block")
         title.SetClass("background-subtle rounded-lg")
         const self = this
-        this.onClick(() => self.isVisible.setData(!self.isVisible.data))
+        this.onClick(() => {
+            if(self.isVisible.data){
+                if(options?.closeOnClick ?? true){
+                    self.isVisible.setData(false)
+                }
+            }else{
+                self.isVisible.setData(true)
+            }
+        })
         const contentElement = content.ConstructElement()
+        
+        if(title instanceof Combine){
+            for(const el of title.getElements()){
+                if(el instanceof Title){
+                    title = el;
+                    break;
+                }
+            }
+        }
 
         if (title instanceof Title) {
             Hash.hash.addCallbackAndRun(h => {
-                if (h === title.id) {
+                if (h === (<Title> title).id) {
                     self.isVisible.setData(true)
                     content.RemoveClass("border-gray-300")
                     content.SetClass("border-red-300")
@@ -46,14 +65,14 @@ export default class Toggleable extends Combine {
             })
             this.isVisible.addCallbackAndRun(isVis => {
                 if (isVis) {
-                    Hash.hash.setData(title.id)
+                    Hash.hash.setData((<Title>title).id)
                 }
             })
         }
 
         this.isVisible.addCallbackAndRun(isVisible => {
             if (isVisible) {
-                contentElement.style.maxHeight = "50vh"
+                contentElement.style.maxHeight = "100vh"
                 contentElement.style.overflowY = "auto"
                 contentElement.style["-webkit-mask-image"] = "unset"
             } else {

@@ -318,11 +318,11 @@
     "importLayer": {
         "layerName": "Hier is misschien een {title}",
         "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
-        "popupTitle": "Mogelijkse {title}",
+        "popupTitle": "Is hier een {title}?",
         "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>",
 
-        "notFound": "Ik kon geen {title} vinden hier - verwijder deze van de kaart",
+        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
         "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart"
     }
 }

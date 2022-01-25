@@ -916,11 +916,6 @@
         "shortDescription": "Mappa tutti gli alberi",
         "title": "Alberi"
     },
-    "uk_addresses": {
-        "description": "Contribuisci a OpenStreetMap inserendo le informazioni sull’indirizzo",
-        "shortDescription": "Aiuta a costruire un dataset libero per gli indirizzi nel Regno Unito",
-        "title": "Indirizzi UK"
-    },
     "waste_basket": {
         "description": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso",
         "shortDescription": "Una cartina dei cestini dei rifiuti",

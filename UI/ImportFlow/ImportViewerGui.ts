@@ -2,7 +2,6 @@ import Combine from "../Base/Combine";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {Utils} from "../../Utils";
-import UserDetails from "../../Logic/Osm/OsmConnection";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Title from "../Base/Title";
 import Translations from "../i18n/Translations";
@@ -21,6 +20,7 @@ import Toggleable, {Accordeon} from "../Base/Toggleable";
 import TableOfContents from "../Base/TableOfContents";
 import LoginButton from "../Popup/LoginButton";
 import BackToIndex from "../BigComponents/BackToIndex";
+import {QueryParameters} from "../../Logic/Web/QueryParameters";
 
 interface NoteProperties {
     "id": number,
@@ -32,7 +32,8 @@ interface NoteProperties {
         date: string,
         uid: number,
         user: string,
-        text: string
+        text: string,
+        html: string
     }[]
 }
 
@@ -41,7 +42,7 @@ interface NoteState {
     theme: string,
     intro: string,
     dateStr: string,
-    status: "imported" | "already_mapped" | "invalid" | "closed" | "not_found" | "open"
+    status: "imported" | "already_mapped" | "invalid" | "closed" | "not_found" | "open" | "has_comments"
 }
 
 class MassAction extends Combine {
@@ -127,16 +128,50 @@ class MassAction extends Combine {
 
 
 class BatchView extends Toggleable {
-    constructor(state: UserRelatedState, noteStates: NoteState[]) {
+
+    private static icons = {
+        open: Svg.compass_svg,
+        has_comments: Svg.speech_bubble_svg,
+        imported: Svg.addSmall_svg,
+        already_mapped: Svg.checkmark_svg,
+        invalid: Svg.invalid_svg,
+        closed: Svg.close_svg,
+        not_found: Svg.not_found_svg,
+    }
+
+    constructor(noteStates: NoteState[], state?: UserRelatedState) {
+
+        noteStates.sort((a, b) => a.props.id - b.props.id)
+
         const {theme, intro, dateStr} = noteStates[0]
-        console.log("Creating a batchview for ", noteStates)
+
+        const statusHist = new Map<string, number>()
+        for (const noteState of noteStates) {
+            const st = noteState.status
+            const c = statusHist.get(st) ?? 0
+            statusHist.set(st, c + 1)
+        }
+
+        const badges: (BaseUIElement)[] = [new FixedUiElement(dateStr).SetClass("literal-code rounded-full")]
+        statusHist.forEach((count, status) => {
+            const icon = BatchView.icons[status]().SetClass("h-6 m-1")
+            badges.push(new Combine([icon, count + " " + status])
+                .SetClass("flex ml-1 mb-1 pl-1 pr-3 items-center rounded-full border border-black"))
+        })
+
+        const typicalComment = noteStates[0].props.comments[0].html
+
+
         super(
-            new Title(theme + ": " + intro, 2),
             new Combine([
-                new FixedUiElement(dateStr),
-                new FixedUiElement("Click to expand/collapse table"),
-
-
+                new Title(theme + ": " + intro, 2),
+                new Combine(badges).SetClass("flex flex-wrap"),
+            ]),
+            new Combine([
+                new Title("Example note", 4),
+                new FixedUiElement(typicalComment).SetClass("literal-code link-underline"),
+                new Title("Mass apply an action"),
+                state !== undefined ? new MassAction(state, noteStates.map(ns => ns.props)).SetClass("block") : undefined,
                 new Table(
                     ["id", "status", "last comment"],
                     noteStates.map(ns => {
@@ -144,30 +179,39 @@ class BatchView extends Toggleable {
                             "" + ns.props.id,
                             "https://openstreetmap.org/note/" + ns.props.id, true
                         )
-                        const last_comment = ns.props.comments[ns.props.comments.length - 1].text
-                        return [link, ns.status, last_comment]
+                        let last_comment = "";
+                        if (ns.props.comments.length > 1) {
+                            last_comment = ns.props.comments[ns.props.comments.length - 1].text
+                        }
+                        const statusIcon = BatchView.icons[ns.status]().SetClass("h-4 w-4 shrink-0")
+                        return [link, new Combine([statusIcon, ns.status]).SetClass("flex"), last_comment]
                     })
-                ).SetClass("zebra-table link-underline"),
+                ).SetClass("zebra-table link-underline")
+            ]).SetClass("flex flex-col"),
+            {
+                closeOnClick: false
+            })
 
-
-                new Title("Mass apply an action"),
-                new MassAction(state, noteStates.map(ns => ns.props)).SetClass("block")]).SetClass("flex flex-col"))
     }
 }
 
 class ImportInspector extends VariableUiElement {
 
-    constructor(userDetails: UserDetails, state: UserRelatedState) {
-        const t = Translations.t.importInspector;
+    constructor(userDetails: { uid: number } | { display_name: string, search?: string }, state: UserRelatedState) {
+        let url;
+        if (userDetails["uid"] !== undefined) {
+            url = "https://api.openstreetmap.org/api/0.6/notes/search.json?user=" + userDetails["uid"] + "&limit=10000&sort=created_at&q=%23import"
+        } else {
+            url = "https://api.openstreetmap.org/api/0.6/notes/search.json?display_name=" +
+                encodeURIComponent(userDetails["display_name"]) + "&limit=10000&sort=created_at&q=" + encodeURIComponent(userDetails["search"] ?? "#import")
+        }
 
 
-        const url = "https://api.openstreetmap.org/api/0.6/notes/search.json?user=" + userDetails.uid + "&limit=10000&sort=created_at&q=%23import"
         const notes: UIEventSource<{ error: string } | { success: { features: { properties: NoteProperties }[] } }> = UIEventSource.FromPromiseWithErr(Utils.downloadJson(url))
-        notes.addCallbackAndRun(n => console.log("Notes are:", n))
         super(notes.map(notes => {
 
             if (notes === undefined) {
-                return new Loading("Loading your notes which mention '#import'")
+                return new Loading("Loading notes which mention '#import'")
             }
             if (notes["error"] !== undefined) {
                 return new FixedUiElement("Something went wrong: " + notes["error"]).SetClass("alert")
@@ -175,13 +219,18 @@ class ImportInspector extends VariableUiElement {
             // We only care about the properties here
             const props: NoteProperties[] = notes["success"].features.map(f => f.properties)
             const perBatch: NoteState[][] = Array.from(ImportInspector.SplitNotesIntoBatches(props).values());
-            const els: Toggleable[] = perBatch.map(noteStates => new BatchView(state, noteStates))
+            const els: Toggleable[] = perBatch.map(noteStates => new BatchView(noteStates, state))
 
             const accordeon = new Accordeon(els)
-            const content = new Combine([
-                new Title(Translations.t.importInspector.title, 1),
-                new SubtleButton(undefined, "Create a new batch of imports",{url:'import_helper.html'}),
-                accordeon])
+            let contents = [];
+            if (state?.osmConnection?.isLoggedIn?.data) {
+                contents =
+                    [
+                        new Title(Translations.t.importInspector.title, 1),
+                        new SubtleButton(undefined, "Create a new batch of imports", {url: 'import_helper.html'})]
+            }
+            contents.push(accordeon)
+            const content = new Combine(contents)
             return new LeftIndex(
                 [new TableOfContents(content, {noTopLevel: true, maxDepth: 1}).SetClass("subtle")],
                 content
@@ -205,12 +254,12 @@ class ImportInspector extends VariableUiElement {
             let theme = lines[trigger].substr(prefix.length)
             theme = theme.substr(0, theme.indexOf("."))
             const date = Utils.ParseDate(prop.date_created)
-            const dateStr = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate()
+            const dateStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
             const key = theme + lines[0] + dateStr
             if (!perBatch.has(key)) {
                 perBatch.set(key, [])
             }
-            let status: "open" | "closed" | "imported" | "invalid" | "already_mapped" | "not_found" = "open"
+            let status: "open" | "closed" | "imported" | "invalid" | "already_mapped" | "not_found" | "has_comments" = "open"
             if (prop.closed_at !== undefined) {
                 const lastComment = prop.comments[prop.comments.length - 1].text.toLowerCase()
                 if (lastComment.indexOf("does not exist") >= 0) {
@@ -224,6 +273,8 @@ class ImportInspector extends VariableUiElement {
                 } else {
                     status = "closed"
                 }
+            } else if (prop.comments.length > 1) {
+                status = "has_comments"
             }
 
             perBatch.get(key).push({
@@ -242,15 +293,23 @@ class ImportViewerGui extends Combine {
 
     constructor() {
         const state = new UserRelatedState(undefined)
+        const displayNameParam = QueryParameters.GetQueryParameter("user", "", "The username of the person whom you want to see the notes for");
+        const searchParam = QueryParameters.GetQueryParameter("search", "", "A text that should be included in the first comment of the note to be shown")
         super([
             new VariableUiElement(state.osmConnection.userDetails.map(ud => {
+                const display_name = displayNameParam.data;
+                const search = searchParam.data;
+                if (display_name !== "" && search !== "") {
+                    return new ImportInspector({display_name, search}, state);
+                }
+
                 if (ud === undefined || ud.loggedIn === false) {
                     return new Combine([new LoginButton("Login to inspect your import flows", state),
-                    new BackToIndex()
+                        new BackToIndex()
                     ])
                 }
                 return new ImportInspector(ud, state);
-            }))
+            }, [displayNameParam, searchParam]))
         ]);
     }
 }

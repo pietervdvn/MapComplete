@@ -63,7 +63,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 maxSnapDistance: preset.preciseInput.maxSnapDistance,
                 bounds: mapBounds
             })
-            preciseInput.installBounds(0.15, true)
+            preciseInput.installBounds(preset.boundsFactor ?? 0.25, true)
             preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
 
 
@@ -78,7 +78,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                         // return;
                     }
 
-                    bbox = bbox.pad(2);
+                    bbox = bbox.pad(Math.max(preset.boundsFactor , 2), Math.max(preset.boundsFactor , 2));
                     loadedBbox = bbox;
                     const allFeatures: { feature: any }[] = []
                     preset.preciseInput.snapToLayers.forEach(layerId => {

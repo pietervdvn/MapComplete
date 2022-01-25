@@ -55,8 +55,8 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         this.leafletMap.addCallbackD(leaflet => {
             let bounds;
             if (typeof factor === "number") {
-                bounds = leaflet.getBounds()
-                leaflet.setMaxBounds(bounds.pad(factor))
+                bounds = leaflet.getBounds().pad(factor)
+                leaflet.setMaxBounds(bounds)
             } else {
                 // @ts-ignore
                 leaflet.setMaxBounds(factor.toLeaflet())
@@ -99,9 +99,9 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
                 // @ts-ignore
                 L.geoJSON(data, {
                     style: {
-                        color: "#f00",
-                        weight: 2,
-                        opacity: 0.4
+                        color: "#f44",
+                        weight: 4,
+                        opacity: 0.7
                     }
                 }).addTo(leaflet)
             }

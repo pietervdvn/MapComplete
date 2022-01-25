@@ -40,7 +40,7 @@ import {LoginToggle} from "./LoginButton";
 
 /**
  * A helper class for the various import-flows.
- * An import-flow always starts with a 'Import this'-button. Upon click, a custom confirmation panel is provided 
+ * An import-flow always starts with a 'Import this'-button. Upon click, a custom confirmation panel is provided
  */
 abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly funcName: string
@@ -136,12 +136,12 @@ ${Utils.special_visualizations_importRequirementDocs}
 
 
         // Explanation of the tags that will be applied onto the imported/conflated object
-        
+
         let tagSpec = args.tags;
-        if(tagSpec.indexOf(" ")< 0 && tagSpec.indexOf(";") < 0 && tagSource.data[args.tags] !== undefined){
+        if (tagSpec.indexOf(" ") < 0 && tagSpec.indexOf(";") < 0 && tagSource.data[args.tags] !== undefined) {
             // This is probably a key
             tagSpec = tagSource.data[args.tags]
-            console.debug("The import button is using tags from properties["+args.tags+"] of this object, namely ",tagSpec)
+            console.debug("The import button is using tags from properties[" + args.tags + "] of this object, namely ", tagSpec)
         }
 
         const importClicked = new UIEventSource(false);
@@ -193,23 +193,6 @@ ${Utils.special_visualizations_importRequirementDocs}
 
     }
 
-    private parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
-        const baseArgs = Utils.ParseVisArgs(this.args, argsRaw)
-        if (originalFeatureTags !== undefined) {
-            
-            const tags = baseArgs.tags
-            if(tags.indexOf(" ") < 0 && tags.indexOf(";") < 0 && originalFeatureTags.data[tags] !== undefined){
-                // This might be a property to expand...
-                const items : string = originalFeatureTags.data[tags]
-                console.debug("The import button is using tags from properties["+tags+"] of this object, namely ",items)
-                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
-            }else{
-                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)
-            }
-        }
-        return baseArgs
-    }
-
     getLayerDependencies(argsRaw: string[]) {
         const args = this.parseArgs(argsRaw, undefined)
 
@@ -225,7 +208,6 @@ ${Utils.special_visualizations_importRequirementDocs}
 
         return dependsOnLayers
     }
-
 
     protected abstract canBeImported(feature: any)
 
@@ -286,6 +268,23 @@ ${Utils.special_visualizations_importRequirementDocs}
         const cancel = new SubtleButton(Svg.close_ui(), Translations.t.general.cancel).onClick(onCancel)
         return new Combine([confirmationMap, confirmButton, cancel]).SetClass("flex flex-col")
     }
+
+    private parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
+        const baseArgs = Utils.ParseVisArgs(this.args, argsRaw)
+        if (originalFeatureTags !== undefined) {
+
+            const tags = baseArgs.tags
+            if (tags.indexOf(" ") < 0 && tags.indexOf(";") < 0 && originalFeatureTags.data[tags] !== undefined) {
+                // This might be a property to expand...
+                const items: string = originalFeatureTags.data[tags]
+                console.debug("The import button is using tags from properties[" + tags + "] of this object, namely ", items)
+                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
+            } else {
+                baseArgs["newTags"] = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)
+            }
+        }
+        return baseArgs
+    }
 }
 
 export class ConflateButton extends AbstractImportButton {
@@ -297,10 +296,6 @@ export class ConflateButton extends AbstractImportButton {
                 doc: "The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag"
             }]
         );
-    }
-
-    protected canBeImported(feature: any) {
-        return feature.geometry.type === "LineString" || (feature.geometry.type === "Polygon" && feature.geometry.coordinates.length === 1)
     }
 
     getLayerDependencies(argsRaw: string[]): string[] {
@@ -348,6 +343,10 @@ export class ConflateButton extends AbstractImportButton {
             action,
             onCancelClicked
         )
+    }
+
+    protected canBeImported(feature: any) {
+        return feature.geometry.type === "LineString" || (feature.geometry.type === "Polygon" && feature.geometry.coordinates.length === 1)
     }
 
 }
@@ -498,27 +497,12 @@ export class ImportPointButton extends AbstractImportButton {
                     name: "max_snap_distance",
                     doc: "The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete",
                     defaultValue: "5"
-                },{
-                name:"note_id",
-                    doc:"If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
-                }],
+                }, {
+                name: "note_id",
+                doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
+            }],
             false
         )
-    }
-
-    canBeImported(feature: any) {
-        return feature.geometry.type === "Point"
-    }
-
-    getLayerDependencies(argsRaw: string[]): string[] {
-        const deps = super.getLayerDependencies(argsRaw);
-        const layerSnap = argsRaw["snap_onto_layers"] ?? ""
-        if (layerSnap === "") {
-            return deps
-        }
-
-        deps.push(...layerSnap.split(";"))
-        return deps
     }
 
     private static createConfirmPanelForPoint(
@@ -539,8 +523,8 @@ export class ImportPointButton extends AbstractImportButton {
                 snapOnto = await OsmObject.DownloadObjectAsync(snapOntoWayId)
             }
             let specialMotivation = undefined
-            if(args.note_id !== undefined){
-                specialMotivation = "source: https://osm.org/note/"+args.note_id
+            if (args.note_id !== undefined) {
+                specialMotivation = "source: https://osm.org/note/" + args.note_id
             }
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse.id,
@@ -553,8 +537,13 @@ export class ImportPointButton extends AbstractImportButton {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
-            if(args.note_id !== undefined){
-                state.osmConnection.closeNote(args.note_id, "imported")
+            if (args.note_id !== undefined) {
+                let note_id = args.note_id
+                if (isNaN(Number(args.note_id))) {
+                    note_id = originalFeatureTags.data[args.note_id]
+                }
+
+                state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()
             }
@@ -569,7 +558,8 @@ export class ImportPointButton extends AbstractImportButton {
             preciseInput: {
                 snapToLayers: args.snap_onto_layers?.split(";"),
                 maxSnapDistance: Number(args.max_snap_distance)
-            }
+            },
+            boundsFactor: 3
         }
 
         const [lon, lat] = feature.geometry.coordinates
@@ -578,6 +568,21 @@ export class ImportPointButton extends AbstractImportButton {
             lat
         }, confirm, onCancel, close)
 
+    }
+
+    canBeImported(feature: any) {
+        return feature.geometry.type === "Point"
+    }
+
+    getLayerDependencies(argsRaw: string[]): string[] {
+        const deps = super.getLayerDependencies(argsRaw);
+        const layerSnap = argsRaw["snap_onto_layers"] ?? ""
+        if (layerSnap === "") {
+            return deps
+        }
+
+        deps.push(...layerSnap.split(";"))
+        return deps
     }
 
     constructElement(state, args,

@@ -530,12 +530,5 @@
         "description": "Нанесите все деревья на карту!",
         "shortDescription": "Карта деревьев",
         "title": "Деревья"
-    },
-    "uk_addresses": {
-        "layers": {
-            "2": {
-                "description": "Адреса"
-            }
-        }
     }
 }

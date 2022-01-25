@@ -1045,28 +1045,6 @@
         "shortDescription": "Breng bomen in kaart",
         "title": "Bomen"
     },
-    "uk_addresses": {
-        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
-        "layers": {
-            "2": {
-                "description": "Adressen",
-                "name": "Bekende adressen in OSM",
-                "tagRenderings": {
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dit gebouw heeft geen huisnummer"
-                            }
-                        },
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Bekend adres"
-                }
-            }
-        }
-    },
     "waste_basket": {
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",

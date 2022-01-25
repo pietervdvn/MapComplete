@@ -652,14 +652,6 @@
         "shortDescription": "所有樹木的地圖",
         "title": "樹木"
     },
-    "uk_addresses": {
-        "layers": {
-            "2": {
-                "description": "地址",
-                "name": "OSM 上已知的地址"
-            }
-        }
-    },
     "waste_basket": {
         "description": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
         "shortDescription": "垃圾筒的地圖",

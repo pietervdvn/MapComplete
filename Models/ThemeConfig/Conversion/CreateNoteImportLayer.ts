@@ -3,6 +3,7 @@ import LayerConfig from "../LayerConfig";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Translations from "../../../UI/i18n/Translations";
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson";
+import {Translation} from "../../../UI/i18n/Translation";
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**
@@ -46,6 +47,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         const firstRender =  <PointRenderingConfigJson>(pointRenderings [0])
         const icon = firstRender.icon
         const iconBadges = []
+        const title = layer.presets[0].title
         if(icon !== undefined){
             iconBadges.push({
                 if: {and:[]},
@@ -59,6 +61,14 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             for (const key in translations) {
                 importButton[key] = "{"+translations[key]+"}"
             }    
+        }
+        
+        function embed(prefix, translation: Translation, postfix){
+            const result = {}
+            for (const language in translation.translations) {
+                result[language] = prefix+translation.translations[language] + postfix
+            }
+            return result
         }
         
         const result : LayerConfigJson = {
@@ -77,13 +87,13 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             },
             "minzoom": 12,
             "title": {
-                "render": t.popupTitle.Subs({title: layer.presets[0].title}).translations
+                "render": t.popupTitle.Subs({title}).translations
             },
             "calculatedTags": [
                 "_first_comment=feat.get('comments')[0].text.toLowerCase()",
                 "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.osm.be/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
                 "_comments_count=feat.get('comments').length",
-                "_intro=(() => {const lines = feat.properties['_first_comment'].split('\\n'); lines.splice(feat.get('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+                "_intro=(() => {const lines = feat.get('comments')[0].text.split('\\n'); lines.splice(feat.get('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
                 "_tags=(() => {let lines = feat.properties['_first_comment'].split('\\n').map(l => l.trim()); lines.splice(0, feat.get('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
             ],
             "isShown": {
@@ -124,12 +134,13 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 },
                 {
                     "id": "close_note_",
-                    "render": "{close_note(Does not exist<br/>, ./assets/svg/close.svg, id, This feature does not exist)}",
+                    "render": embed(
+                        "{close_note(", t.notFound.Subs({title}),", ./assets/svg/close.svg, id, This feature does not exist)}" ),
                     condition: "closed_at="
                 },
                 {
                     "id": "close_note_mapped",
-                    "render": "{close_note(Already mapped, ./assets/svg/checkmark.svg, id, Already mapped)}",
+                    "render": embed("{close_note(",t.alreadyMapped.Subs({title}), ", ./assets/svg/checkmark.svg, id, Already mapped)}"),
                     condition: "closed_at="
                 },
                 {
@@ -144,10 +155,6 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 {
                     "id": "add_image",
                     "render": "{add_image_to_note()}"
-                },
-                {
-                    id:"alltags",
-                    render:"{all_tags()}"
                 }
             ],
             "mapRendering": [

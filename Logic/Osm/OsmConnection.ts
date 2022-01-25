@@ -289,12 +289,15 @@ export class OsmConnection {
                 },
                 content: JSON.stringify(content)
 
-            }, function (err, response) {
+            }, function (
+                err,
+                response: string) {
+                console.log("RESPONSE IS", response)
                 if (err !== null) {
                     error(err)
                 } else {
-
-                    const id = response.properties.id
+                    const parsed = JSON.parse(response)
+                    const id = parsed.properties.id
                     console.log("OPENED NOTE", id)
                     ok({id})
                 }

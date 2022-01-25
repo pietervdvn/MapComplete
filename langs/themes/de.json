@@ -1074,43 +1074,6 @@
         "shortDescription": "Kartieren Sie alle Bäume",
         "title": "Bäume"
     },
-    "uk_addresses": {
-        "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
-        "layers": {
-            "2": {
-                "description": "Adressen",
-                "name": "Bekannte Adressen in OSM",
-                "tagRenderings": {
-                    "uk_addresses_explanation_osm": {
-                        "render": "Diese Adresse ist in OpenStreetMap gespeichert"
-                    },
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieses Gebäude hat keine Hausnummer"
-                            }
-                        },
-                        "question": "Wie lautet die Nummer dieses Hauses?",
-                        "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
-                    },
-                    "uk_addresses_street": {
-                        "question": "In welcher Straße befindet sich diese Adresse?",
-                        "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Bekannte Adresse"
-                }
-            }
-        },
-        "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
-        "tileLayerSources": {
-            "0": {
-                "name": "Grenzverläufe gemäß osmuk.org"
-            }
-        },
-        "title": "Adressen in Großbritannien"
-    },
     "waste_basket": {
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",

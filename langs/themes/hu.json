@@ -104,17 +104,6 @@
         "shortDescription": "Az összes fa feltérképezése",
         "title": "Fatérkép"
     },
-    "uk_addresses": {
-        "layers": {
-            "2": {
-                "description": "Címek",
-                "name": "Ismert címek az OSM-en",
-                "title": {
-                    "render": "Ismert cím"
-                }
-            }
-        }
-    },
     "waste_basket": {
         "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
         "shortDescription": "Szemeteskosarakat ábrázoló térkép",

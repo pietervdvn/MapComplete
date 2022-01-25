@@ -18,22 +18,26 @@ export default class TableOfContents extends Combine {
     }) {
         let titles: Title[]
         if (elements instanceof Combine) {
-            titles = TableOfContents.getTitles(elements.getElements())
+            titles = TableOfContents.getTitles(elements.getElements()) ?? []
         } else {
-            titles = elements
+            titles = elements ?? []
         }
-
+        
         let els: { level: number, content: BaseUIElement }[] = []
         for (const title of titles) {
             let content: BaseUIElement
+            console.log("Constructing content for ", title)
             if (title.title instanceof Translation) {
                 content = title.title.Clone()
             } else if (title.title instanceof FixedUiElement) {
-                content = title.title
+                content = new FixedUiElement(title.title.content)
             } else if (Utils.runningFromConsole) {
                 content = new FixedUiElement(title.AsMarkdown())
-            } else {
+            } else if(title["title"] !== undefined) {
                 content = new FixedUiElement(title.title.ConstructElement().innerText)
+            }else{
+                console.log("Not generating a title for ", title)
+                continue
             }
 
             const vis = new Link(content, "#" + title.id)

@@ -91,6 +91,14 @@ knownLicenses.set("na", {
     sources: []
 })
 
+knownLicenses.set("twemoji", {
+    authors: ["Twemoji"],
+    path: undefined,
+    license: "CC-BY 4.0",
+    sources: ["https://github.com/twitter/twemoji"]
+})
+
+
 
 function promptLicenseFor(path): SmallLicense {
     console.log("License abbreviations:")
