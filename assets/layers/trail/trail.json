@@ -13,9 +13,10 @@
       "and": [
         {
           "or": [
-            "route=hiking",
-            "route=bycicle",
-            "route=horse"
+            "route~.*foot.*",
+            "route~.*hiking.*",
+            "route~.*bycicle.*",
+            "route~.*horse.*"
           ]
         }
       ]

@@ -29,6 +29,7 @@
     "generate:cache:speelplekken:mini": "ts-node scripts/generateCache.ts speelplekken 14 ../MapComplete-data/speelplekken_cache_mini/ 51.181710380278176 4.423413276672363 51.193007664772495 4.444141387939452",
     "generate:cache:speelplekken": "npm run generate:layeroverview && ts-node scripts/generateCache.ts speelplekken 14 ../MapComplete-data/speelplekken_cache/ 51.20 4.35 51.09 4.56",
     "generate:cache:natuurpunt": "npm run generate:layeroverview && ts-node scripts/generateCache.ts natuurpunt 12 ../MapComplete-data/natuurpunt_cache/ 50.40 2.1 51.54 6.4 --generate-point-overview nature_reserve,visitor_information_centre",
+    "generate:cache:natuurpunt:mini": "ts-node scripts/generateCache.ts natuurpunt 12 ../../git/MapComplete-data/natuurpunt_cache_mini/ 51.00792239979105 4.497699737548828 51.0353492224462554 4.539070129394531 --generate-point-overview nature_reserve,visitor_information_centre",
     "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
     "query:licenses": "ts-node scripts/generateLicenseInfo.ts --query",

@@ -82,7 +82,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 }
             }
 
-            const tagsFilter = Array.from(layer.appliedFilters.data.values());
+            const tagsFilter = Array.from(layer.appliedFilters?.data?.values() ?? []);
             for (const filter of tagsFilter ?? []) {
                 const neededTags : TagsFilter = filter?.currentFilter
                 if (neededTags !== undefined && !neededTags.matchesProperties(f.feature.properties)) {

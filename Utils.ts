@@ -495,7 +495,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const data = await Utils.download(url, Utils.Merge({"accept": "application/json"}, headers ?? {}))
         try {
-            return JSON.parse(data)
+            if(typeof data === "string"){
+                return JSON.parse(data)
+            }
+            return data
         } catch (e) {
             console.error("Could not parse ", data, "due to", e, "\n", e.stack)
             throw e;
