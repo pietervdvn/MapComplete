@@ -89,7 +89,8 @@
         "title": "Ivóvíz"
     },
     "ghostbikes": {
-        "title": "Emlékkerékpárok"
+        "title": "Szellemkerékpárok",
+        "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá."
     },
     "hailhydrant": {
         "description": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltóállomásokat találhat és szerkeszthet kedvenc városrészeiben (vagy másutt).\n\nA bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára releváns rétegeket. Ezzel az eszközzel gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a rendelkezésre álló kérdések megválaszolásával pedig további részleteket adhat meg.\n\nAz Ön által elvégzett módosítások automatikusan elmentődnek az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják azokat.",
@@ -235,5 +236,146 @@
         "shortDescription": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése",
         "title": "Épületek bejáratai",
         "description": "Épületek bejáratai mutató térkép, amely a kerekesszékkel közlekedőknek fontos szempontokat jeleníti meg"
+    },
+    "facadegardens": {
+        "description": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "facadegardens-direction": {
+                        "question": "Milyen a kert tájolása?",
+                        "render": "Tájolás: {direction} (0=észak, 90=kelet stb.)"
+                    },
+                    "facadegardens-description": {
+                        "question": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)",
+                        "render": "További részletek: {description}"
+                    },
+                    "facadegardens-plants": {
+                        "mappings": {
+                            "0": {
+                                "then": "Van benne szőlő"
+                            },
+                            "1": {
+                                "then": "Van benne virágos növény"
+                            },
+                            "2": {
+                                "then": "Van benne cserje"
+                            },
+                            "3": {
+                                "then": "Van benne talajtakaró növény"
+                            }
+                        },
+                        "question": "Milyen jellegű növények nőnek benne?"
+                    },
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "1": {
+                                "then": "Nincs benne esővízgyűjtő hordó"
+                            },
+                            "0": {
+                                "then": "Van benne esővízgyűjtő hordó"
+                            }
+                        },
+                        "question": "Van-e a kertben vizeshordó?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Melyik évben épült a kert?",
+                        "render": "A kert építésének időpontja: {start_date}"
+                    },
+                    "facadegardens-edible": {
+                        "mappings": {
+                            "0": {
+                                "then": "Van benne ehető növény"
+                            },
+                            "1": {
+                                "then": "Nincs benne ehető növény"
+                            }
+                        },
+                        "question": "Van-e benne ehető növény?"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "2": {
+                                "then": "A kert árnyékban van"
+                            },
+                            "0": {
+                                "then": "A kert teljesen a napon van"
+                            },
+                            "1": {
+                                "then": "A kert részben árnyékban van"
+                            }
+                        },
+                        "question": "Árnyékban vagy napon van a kert?"
+                    }
+                },
+                "description": "Homlokzati kertek",
+                "name": "Homlokzati kertek",
+                "presets": {
+                    "0": {
+                        "description": "Homlokzatkert hozzáadása",
+                        "title": "homlokzatkert"
+                    }
+                },
+                "title": {
+                    "render": "Homlokzati kert"
+                }
+            }
+        },
+        "shortDescription": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről.",
+        "title": "Homlokzati kertek"
+    },
+    "hackerspaces": {
+        "layers": {
+            "0": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": " {name}"
+                        }
+                    },
+                    "render": "Hackerspace"
+                },
+                "description": "Hackerspace",
+                "name": "Hackerspace",
+                "presets": {
+                    "0": {
+                        "description": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
+                        "title": "Hackerspace"
+                    },
+                    "1": {
+                        "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips.",
+                        "title": "Makerspace"
+                    }
+                },
+                "tagRenderings": {
+                    "is_makerspace": {
+                        "question": "Ez hackerspace vagy makerspace?",
+                        "mappings": {
+                            "0": {
+                                "then": "Ez egy makerspace"
+                            },
+                            "1": {
+                                "then": "Ez egy hagyományos (szoftverekkel foglalkozó) hackerspace"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "description": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni",
+        "shortDescription": "Hackerspace-ek térképe",
+        "title": "Hackerspace-ek"
+    },
+    "food": {
+        "title": "Éttermek és büfék"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "Sültkrumplievő-hely"
+                }
+            }
+        }
     }
 }
