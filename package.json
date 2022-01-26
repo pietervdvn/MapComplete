@@ -44,8 +44,7 @@
     "gittag": "ts-node scripts/printVersion.ts | bash",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | xargs rm)",
-    "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
-    "bicycle_rental": "ts-node ./scripts/extractBikeRental.ts"
+    "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot"
   },
   "keywords": [
     "OpenStreetMap",
