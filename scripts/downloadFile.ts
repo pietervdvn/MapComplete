@@ -9,4 +9,4 @@ const DESTINATION = args[1];
 console.log(`Downloading ${FILE_URL} to ${DESTINATION}`)
 
 const file = fs.createWriteStream(DESTINATION);
-http.get(FILE_URL, response=>response.pipe(file));
+http.get(FILE_URL, response => response.pipe(file));

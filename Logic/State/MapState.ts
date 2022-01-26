@@ -223,7 +223,7 @@ export default class MapState extends UserRelatedState {
     private initGpsLocation() {
         // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
-        if(gpsLayerDef === undefined){
+        if (gpsLayerDef === undefined) {
             return
         }
         this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
@@ -269,7 +269,7 @@ export default class MapState extends UserRelatedState {
 
 
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
-        if(gpsLayerDef !== undefined){
+        if (gpsLayerDef !== undefined) {
             this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
         }
 
@@ -299,7 +299,7 @@ export default class MapState extends UserRelatedState {
             }]
         })
         let gpsLineLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
-        if(gpsLineLayerDef !== undefined){
+        if (gpsLineLayerDef !== undefined) {
             this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
         }
     }

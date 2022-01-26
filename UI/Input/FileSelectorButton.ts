@@ -12,8 +12,10 @@ export default class FileSelectorButton extends InputElement<FileList> {
     private readonly allowMultiple: boolean;
 
     constructor(label: BaseUIElement, options?:
-        { acceptType: "image/*" | string,
-        allowMultiple: true | boolean}) {
+        {
+            acceptType: "image/*" | string,
+            allowMultiple: true | boolean
+        }) {
         super();
         this._label = label;
         this._acceptType = options?.acceptType ?? "image/*";

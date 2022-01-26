@@ -19,8 +19,8 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     };
     private readonly _alreadyRegistered = new Set<UIEventSource<any>>();
     private readonly _is_dirty = new UIEventSource(false)
-    private previousFeatureSet : Set<any> = undefined;
-    
+    private previousFeatureSet: Set<any> = undefined;
+
     constructor(
         state: {
             locationControl: UIEventSource<{ zoom: number }>,
@@ -54,7 +54,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 self.update()
             }
         })
-        
+
         metataggingUpdated?.addCallback(_ => {
             self._is_dirty.setData(true)
         })
@@ -66,7 +66,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         const self = this;
         const layer = this.upstream.layer;
         const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);
-        const includedFeatureIds  = new Set<string>(); 
+        const includedFeatureIds = new Set<string>();
         const newFeatures = (features ?? []).filter((f) => {
 
             self.registerCallback(f.feature)
@@ -97,29 +97,29 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
 
         const previousSet = this.previousFeatureSet;
         this._is_dirty.setData(false)
-        
+
         // Is there any difference between the two sets?
-        if(previousSet !== undefined && previousSet.size === includedFeatureIds.size){
+        if (previousSet !== undefined && previousSet.size === includedFeatureIds.size) {
             // The size of the sets is the same - they _might_ be identical
             const newItemFound = Array.from(includedFeatureIds).some(id => !previousSet.has(id))
-            if(!newItemFound){
+            if (!newItemFound) {
                 // We know that: 
                 // - The sets have the same size
                 // - Every item from the new set has been found in the old set
                 // which means they are identical!
                 return;
             }
-            
+
         }
-        
+
         // Something new has been found!
         this.features.setData(newFeatures);
-     
+
     }
 
     private registerCallback(feature: any) {
         const src = this.state?.allElements?.addOrGetElement(feature)
-        if(src == undefined){
+        if (src == undefined) {
             return
         }
         if (this._alreadyRegistered.has(src)) {

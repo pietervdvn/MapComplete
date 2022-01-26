@@ -245,7 +245,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                   new RegExp("^" + split[1] + "$"),
+                    new RegExp("^" + split[1] + "$"),
                     true
                 );
             }

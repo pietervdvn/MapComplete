@@ -44,8 +44,8 @@ export default class ShowDataLayer {
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
     private readonly showDataLayerid: number;
-    private readonly createPopup : (tags: any, layer: LayerConfig) => ScrollableFullScreen
-    
+    private readonly createPopup: (tags: any, layer: LayerConfig) => ScrollableFullScreen
+
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
         this.showDataLayerid = ShowDataLayer.dataLayerIds;
@@ -60,7 +60,7 @@ export default class ShowDataLayer {
         this.allElements = options.state?.allElements;
         this.createPopup = undefined;
         this._enablePopups = options.popup !== undefined;
-        if(options.popup !== undefined){
+        if (options.popup !== undefined) {
             this.createPopup = options.popup
         }
         const self = this;
@@ -73,7 +73,7 @@ export default class ShowDataLayer {
         this._features.features.addCallback(_ => self.update(options));
         options.doShowLayer?.addCallback(doShow => {
             const mp = options.leafletMap.data;
-            if(mp === null){
+            if (mp === null) {
                 self.Destroy()
                 return true;
             }
@@ -142,7 +142,7 @@ export default class ShowDataLayer {
         }
     }
 
-    private update(options: ShowDataLayerOptions) : boolean{
+    private update(options: ShowDataLayerOptions): boolean {
         if (this._features.features.data === undefined) {
             return;
         }
@@ -152,13 +152,13 @@ export default class ShowDataLayer {
         }
         const mp = options.leafletMap.data;
 
-        if(mp === null){
+        if (mp === null) {
             return true; // Unregister as the map has been destroyed
         }
         if (mp === undefined) {
             return;
         }
-       
+
         this._cleanCount++
         // clean all the old stuff away, if any
         if (this.geoLayer !== undefined) {
@@ -312,7 +312,7 @@ export default class ShowDataLayer {
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {
                 const tags = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties);
-                infobox = createpopup(tags, layer );
+                infobox = createpopup(tags, layer);
 
                 infobox.isShown.addCallback(isShown => {
                     if (!isShown) {

@@ -31,21 +31,21 @@ export default class SharedTagRenderings {
 
         if (!iconsOnly) {
             for (const key in questions) {
-                if(key === "id"){
+                if (key === "id") {
                     continue
                 }
                 dict.set(key, <TagRenderingConfigJson>questions[key])
             }
         }
         for (const key in icons) {
-            if(key === "id"){
+            if (key === "id") {
                 continue
             }
             dict.set(key, <TagRenderingConfigJson>icons[key])
         }
 
         dict.forEach((value, key) => {
-            if(key === "id"){
+            if (key === "id") {
                 return
             }
             value.id = value.id ?? key;

@@ -22,12 +22,12 @@ export default class Histogram<T> extends VariableUiElement {
     constructor(values: UIEventSource<string[]>,
                 title: string | BaseUIElement,
                 countTitle: string | BaseUIElement,
-                options?:{
-                assignColor?: (t0: string) => string,
+                options?: {
+                    assignColor?: (t0: string) => string,
                     sortMode?: "name" | "name-rev" | "count" | "count-rev"
                 }
     ) {
-        const sortMode = new UIEventSource<"name" | "name-rev" | "count" | "count-rev">(options?.sortMode ??"name")
+        const sortMode = new UIEventSource<"name" | "name-rev" | "count" | "count-rev">(options?.sortMode ?? "name")
         const sortName = new VariableUiElement(sortMode.map(m => {
             switch (m) {
                 case "name":

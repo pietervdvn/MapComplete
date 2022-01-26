@@ -40,12 +40,12 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             tagRenderings: new Map()
         }
 
-        
+
         const layerConfig = known_layers.layers.filter(l => l.id === params.layer.id)[0]
-        if(layerConfig === undefined){
+        if (layerConfig === undefined) {
             console.error("WEIRD: layer not found in the builtin layer overview")
         }
-        const importLayerJson = new CreateNoteImportLayer(365).convertStrict(convertState, <LayerConfigJson> layerConfig, "CompareToAlreadyExistingNotes")
+        const importLayerJson = new CreateNoteImportLayer(365).convertStrict(convertState, <LayerConfigJson>layerConfig, "CompareToAlreadyExistingNotes")
         const importLayer = new LayerConfig(importLayerJson, "import-layer-dynamic")
         const flayer: FilteredLayer = {
             appliedFilters: new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>()),
@@ -108,11 +108,11 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
         super([
             new Title("Compare with already existing 'to-import'-notes"),
             new VariableUiElement(
-                alreadyOpenImportNotes.features.map(notesWithImport  => {
-                    if(allNotesWithinBbox.features.data === undefined || allNotesWithinBbox.features.data.length === 0){
-                       return  new Loading("Fetching notes from OSM")
+                alreadyOpenImportNotes.features.map(notesWithImport => {
+                    if (allNotesWithinBbox.features.data === undefined || allNotesWithinBbox.features.data.length === 0) {
+                        return new Loading("Fetching notes from OSM")
                     }
-                    if(notesWithImport.length === 0){
+                    if (notesWithImport.length === 0) {
                         return new FixedUiElement("No previous note to import found").SetClass("thanks")
                     }
                     return new Combine([
@@ -126,7 +126,7 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
                         ).SetClass("w-full"),
                         comparisonMap,
                     ]).SetClass("flex flex-col")
-                    
+
                 }, [allNotesWithinBbox.features])
             ),
 
@@ -140,15 +140,15 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
         }))
 
         this.IsValid = alreadyOpenImportNotes.features.map(ff => {
-            if(allNotesWithinBbox.features.data.length === 0){
+            if (allNotesWithinBbox.features.data.length === 0) {
                 // Not yet loaded
                 return false
             }
-            if(ff.length == 0){
+            if (ff.length == 0) {
                 // No import notes at all
                 return true;
             }
-            
+
             return partitionedImportPoints.data.noNearby.length > 0; // at least _something_ can be imported
         }, [partitionedImportPoints, allNotesWithinBbox.features])
     }

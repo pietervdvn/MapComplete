@@ -169,17 +169,17 @@ export default class LegacyThemeLoaderSpec extends T {
 
                     shouldHave({
                         render: "{minimap()}"
-                    });  
-                    shouldHave({
-                        render: {en:"{minimap()}"}
                     });
                     shouldHave({
-                        render: {en:"{minimap()}",nl:"{minimap()}"}
+                        render: {en: "{minimap()}"}
                     });
                     shouldHave({
-                        render: {en:"{minimap()}",nl:"No map for the dutch!"}
+                        render: {en: "{minimap()}", nl: "{minimap()}"}
                     });
-                    
+                    shouldHave({
+                        render: {en: "{minimap()}", nl: "No map for the dutch!"}
+                    });
+
                     shouldHave({
                         render: "{minimap()}"
                     })

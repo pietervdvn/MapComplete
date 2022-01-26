@@ -198,7 +198,7 @@ export default class MoreScreen extends Combine {
             }
             return button;
         })
-        
+
         const professional = MoreScreen.CreateProffessionalSerivesButton();
         const customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
         buttons.splice(0, 0, customGeneratorLink, professional);

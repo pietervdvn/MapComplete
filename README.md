@@ -21,7 +21,8 @@ sent back to directly to OpenStreetMap.
 Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `wikimedia_commons`-tag is present, it
 follows those to get these images too.
 
-**An explicit non-goal** of MapComplete is to modify geometries of ways, especially generic geometry-editing. (Splitting roads is possible and in some restricted themes is geometry-conflation possible too)
+**An explicit non-goal** of MapComplete is to modify geometries of ways, especially generic geometry-editing. (Splitting
+roads is possible and in some restricted themes is geometry-conflation possible too)
 
 **More about
 MapComplete:** [Watch Pieter's talk on the 2021 State Of The Map Conference](https://media.ccc.de/v/sotm2021-9448-introduction-and-review-of-mapcomplete) ([YouTube](https://www.youtube.com/watch?v=zTtMn6fNbYY))

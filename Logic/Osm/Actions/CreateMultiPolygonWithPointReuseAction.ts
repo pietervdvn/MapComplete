@@ -14,35 +14,36 @@ import {TagUtils} from "../../Tags/TagUtils";
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
 export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAction {
-    private readonly _tags: Tag[];
     public newElementId: string = undefined;
-    public newElementIdNumber: number  = undefined;
+    public newElementIdNumber: number = undefined;
+    private readonly _tags: Tag[];
     private readonly createOuterWay: CreateWayWithPointReuseAction
-    private readonly createInnerWays : CreateNewWayAction[]
-private readonly geojsonPreview: any;
+    private readonly createInnerWays: CreateNewWayAction[]
+    private readonly geojsonPreview: any;
     private readonly theme: string;
     private readonly changeType: "import" | "create" | string;
+
     constructor(tags: Tag[],
                 outerRingCoordinates: [number, number][],
-                innerRingsCoordinates:  [number, number][][],
+                innerRingsCoordinates: [number, number][][],
                 state: FeaturePipelineState,
                 config: MergePointConfig[],
                 changeType: "import" | "create" | string
     ) {
-        super(null,true);
-        this._tags = [...tags, new Tag("type","multipolygon")];
+        super(null, true);
+        this._tags = [...tags, new Tag("type", "multipolygon")];
         this.changeType = changeType;
         this.theme = state.layoutToUse.id
-        this. createOuterWay = new CreateWayWithPointReuseAction([], outerRingCoordinates, state, config)
-        this. createInnerWays = innerRingsCoordinates.map(ringCoordinates => 
-            new CreateNewWayAction([], 
-            ringCoordinates.map(([lon, lat] )=> ({lat, lon})), 
-            {theme: state.layoutToUse.id}))
-        
-        this.geojsonPreview =  {
+        this.createOuterWay = new CreateWayWithPointReuseAction([], outerRingCoordinates, state, config)
+        this.createInnerWays = innerRingsCoordinates.map(ringCoordinates =>
+            new CreateNewWayAction([],
+                ringCoordinates.map(([lon, lat]) => ({lat, lon})),
+                {theme: state.layoutToUse.id}))
+
+        this.geojsonPreview = {
             type: "Feature",
             properties: TagUtils.changeAsProperties(new And(this._tags).asChange({})),
-            geometry:{
+            geometry: {
                 type: "Polygon",
                 coordinates: [
                     outerRingCoordinates,
@@ -59,7 +60,7 @@ private readonly geojsonPreview: any;
             freshness: new Date(),
             feature: this.geojsonPreview
         })
-       return outerPreview
+        return outerPreview
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
@@ -72,14 +73,14 @@ private readonly geojsonPreview: any;
 
 
         this.newElementIdNumber = changes.getNewID();
-        this.newElementId = "relation/"+this.newElementIdNumber
+        this.newElementId = "relation/" + this.newElementIdNumber
         descriptions.push({
-            type:"relation",
+            type: "relation",
             id: this.newElementIdNumber,
             tags: new And(this._tags).asChange({}),
             meta: {
                 theme: this.theme,
-                changeType:this.changeType
+                changeType: this.changeType
             },
             changes: {
                 members: [
@@ -93,8 +94,8 @@ private readonly geojsonPreview: any;
                 ]
             }
         })
-        
-        
+
+
         return descriptions
     }
 

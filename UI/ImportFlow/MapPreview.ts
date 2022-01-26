@@ -26,26 +26,26 @@ import Title from "../Base/Title";
 import CheckBoxes from "../Input/Checkboxes";
 
 class PreviewPanel extends ScrollableFullScreen {
-    
+
     constructor(tags, layer) {
         super(
             _ => new FixedUiElement("Element to import"),
-            _ => new Combine(["The tags are:", 
+            _ => new Combine(["The tags are:",
                 new AllTagsPanel(tags)
             ]).SetClass("flex flex-col"),
             "element"
         );
     }
-    
+
 }
 
 /**
  * Shows the data to import on a map, asks for the correct layer to be selected
  */
-export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }>{
+export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }> {
     public readonly IsValid: UIEventSource<boolean>;
     public readonly Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, geojson: any }>
-    
+
     constructor(
         state: UserRelatedState,
         geojson: { features: { properties: any, geometry: { coordinates: [number, number] } }[] }) {
@@ -115,10 +115,10 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
             layers: new UIEventSource<FilteredLayer[]>(AllKnownLayouts.AllPublicLayers()
                 .filter(l => l.source.geojsonSource === undefined)
                 .map(l => ({
-                layerDef: l,
-                isDisplayed: new UIEventSource<boolean>(true),
-                appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined)
-            }))),
+                    layerDef: l,
+                    isDisplayed: new UIEventSource<boolean>(true),
+                    appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined)
+                }))),
             zoomToFeatures: true,
             features: new StaticFeatureSource(matching, false),
             leafletMap: map.leafletMap,
@@ -126,8 +126,8 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
         })
         var bbox = matching.map(feats => BBox.bboxAroundAll(feats.map(f => new BBox([f.geometry.coordinates]))))
 
-        
-        const mismatchIndicator =   new VariableUiElement(matching.map(matching => {
+
+        const mismatchIndicator = new VariableUiElement(matching.map(matching => {
             if (matching === undefined) {
                 return undefined
             }
@@ -138,14 +138,14 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
             const obligatory = layerPicker.GetValue().data?.source?.osmTags?.asHumanString(false, false, {});
             return t.mismatch.Subs({count: diff, tags: obligatory}).SetClass("alert")
         }))
-        
+
         const confirm = new CheckBoxes([t.confirm]);
         super([
             new Title(t.title, 1),
             layerPicker,
             new Toggle(t.autodetected.SetClass("thank"), undefined, autodetected),
-          
-        mismatchIndicator  ,
+
+            mismatchIndicator,
             map,
             confirm
         ]);
@@ -156,17 +156,17 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
                 geojson,
                 layer: layerPicker.GetValue().data
             }), [layerPicker.GetValue()])
-        
+
         this.IsValid = matching.map(matching => {
             if (matching === undefined) {
                 return false
             }
-            if(confirm.GetValue().data.length !== 1){
+            if (confirm.GetValue().data.length !== 1) {
                 return false
             }
             const diff = geojson.features.length - matching.length;
             return diff === 0;
         }, [confirm.GetValue()])
-        
+
     }
 }

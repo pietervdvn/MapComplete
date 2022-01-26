@@ -1,6 +1,4 @@
-
-
- address 
+address
 =========
 
 
@@ -9,107 +7,77 @@
 
 Addresses
 
-
-
-
 ## Table of contents
 
 1. [address](#address)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
+
+- [Basic tags for this layer](#basic-tags-for-this-layer)
+- [Supported attributes](#supported-attributes)
     + [housenumber](#housenumber)
     + [street](#street)
     + [fixme](#fixme)
 
 
-
-
-
-  - This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_3_street_names)
-
+- This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  A
+  calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _
+  closest_3_street_names)
 
 [Go to the source code](../assets/layers/address/address.json)
 
 
 
- Basic tags for this layer 
+Basic tags for this layer
 ---------------------------
 
 
 
 Elements must have the all of following tags to be shown on this layer:
 
+- addr:housenumber~^..*$|addr:street~^..*$
 
-
-  - addr:housenumber~^..*$|addr:street~^..*$
-
-
-
-
- Supported attributes 
+Supported attributes
 ----------------------
 
 
 
 **Warning** This quick overview is incomplete
 
-
-
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/addr:housenumber#values) [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/addr:housenumber#values) [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) | [string](../SpecialInputElements.md#string) |
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/addr:street#values) [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fixme#values) [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D)
 
-
-
-
-### housenumber 
-
-
+### housenumber
 
 The question is **What is the number of this house?**
 
-This rendering asks information about the property  [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) 
+This rendering asks information about the
+property  [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber)
 This is rendered with `The housenumber is <b>{addr:housenumber}</b>`
 
+- **This building has no house number** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
 
-
-  - **This building has no house number** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
-
-
-
-
-### street 
-
-
+### street
 
 The question is **What street is this address located in?**
 
-This rendering asks information about the property  [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) 
+This rendering asks information about the property  [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street)
 This is rendered with `This address is in street <b>{addr:street}</b>`
 
+- **Located in <b>{_closest_street:0:name}</b>** corresponds with addr:street=
+- **Located in <b>{_closest_street:1:name}</b>** corresponds with addr:street=
+- **Located in <b>{_closest_street:2:name}</b>** corresponds with addr:street=
 
-
-  - **Located in <b>{_closest_street:0:name}</b>** corresponds with addr:street=
-  - **Located in <b>{_closest_street:1:name}</b>** corresponds with addr:street=
-  - **Located in <b>{_closest_street:2:name}</b>** corresponds with addr:street=
-
-
-
-
-### fixme 
-
-
+### fixme
 
 The question is **What should be fixed here? Please explain**
 
-This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
+This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme)
 This is rendered with `<b>Fixme description</b>{fixme}`
 
-
-
-  - **No fixme - write something here to explain complicated cases** corresponds with 
- 
+- **No fixme - write something here to explain complicated cases** corresponds with
 
 This document is autogenerated from assets/layers/address/address.json

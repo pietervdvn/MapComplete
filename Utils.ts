@@ -21,7 +21,7 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
-    public static readonly imageExtensions = new Set(["jpg","png","svg","jpeg",".gif"])
+    public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
 
     public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
 
@@ -255,7 +255,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     const date: Date = el;
                     v = date.toISOString()
                 }
-                
+
                 if (useLang !== undefined && v?.translations !== undefined) {
                     v = v.translations[useLang] ?? v.translations["*"] ?? (v.textFor !== undefined ? v.textFor(useLang) : v);
                 }
@@ -269,7 +269,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     v = "" + v
                 }
                 v = v.replace(/\n/g, "<br/>")
-            }else{
+            } else {
                 // v === undefined 
                 v = ""
             }
@@ -344,15 +344,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any) {
-        if(json === undefined){
+        if (json === undefined) {
             return f(undefined)
         }
         const jtp = typeof json
-        if (jtp === "boolean" || jtp === "string" || jtp === "number"){
+        if (jtp === "boolean" || jtp === "string" || jtp === "number") {
             return f(json)
         }
         if (json.map !== undefined) {
-          return json.map(sub => {
+            return json.map(sub => {
                 return Utils.WalkJson(sub, f);
             })
         }
@@ -495,7 +495,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const data = await Utils.download(url, Utils.Merge({"accept": "application/json"}, headers ?? {}))
         try {
-            if(typeof data === "string"){
+            if (typeof data === "string") {
                 return JSON.parse(data)
             }
             return data
@@ -628,8 +628,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return JSON.parse(JSON.stringify(x));
     }
-    
-    public static ParseDate(str: string): Date{
+
+    public static ParseDate(str: string): Date {
         if (str.endsWith(" UTC")) {
             str = str.replace(" UTC", "+00")
         }

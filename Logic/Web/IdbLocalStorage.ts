@@ -7,24 +7,24 @@ import {Utils} from "../../Utils";
  */
 export class IdbLocalStorage {
 
-    
-    public static Get<T>(key: string, options?: { defaultValue?: T , whenLoaded?: (t: T) => void}): UIEventSource<T>{
-        const src = new UIEventSource<T>(options?.defaultValue, "idb-local-storage:"+key)
-        if(Utils.runningFromConsole){
+
+    public static Get<T>(key: string, options?: { defaultValue?: T, whenLoaded?: (t: T) => void }): UIEventSource<T> {
+        const src = new UIEventSource<T>(options?.defaultValue, "idb-local-storage:" + key)
+        if (Utils.runningFromConsole) {
             return src;
         }
         idb.get(key).then(v => {
             src.setData(v ?? options?.defaultValue);
-            if(options?.whenLoaded !== undefined){
+            if (options?.whenLoaded !== undefined) {
                 options?.whenLoaded(v)
             }
         })
         src.addCallback(v => idb.set(key, v))
         return src;
-        
+
     }
-    
-    public static SetDirectly(key: string, value){
+
+    public static SetDirectly(key: string, value) {
         idb.set(key, value)
     }
 

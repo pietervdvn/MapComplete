@@ -33,12 +33,12 @@ export default class FeaturedMessage extends Combine {
 
     public static WelcomeMessages(): { start_date: Date, end_date: Date, message: string, featured_theme?: string }[] {
         const all_messages: { start_date: Date, end_date: Date, message: string, featured_theme?: string }[] = []
-        
-        const themesById = new Map<string, {id: string, title: any, shortDescription: any}>();
+
+        const themesById = new Map<string, { id: string, title: any, shortDescription: any }>();
         for (const theme of themeOverview["default"]) {
             themesById.set(theme.id, theme);
         }
-        
+
         for (const i in welcome_messages) {
             if (isNaN(Number(i))) {
                 continue
@@ -78,9 +78,9 @@ export default class FeaturedMessage extends Combine {
         const msg = new FixedUiElement(welcome_message.message).SetClass("link-underline font-lg")
         els.push(new Combine([title, msg]).SetClass("m-4"))
         if (welcome_message.featured_theme !== undefined) {
-            
+
             const theme = themeOverview["default"].filter(th => th.id === welcome_message.featured_theme)[0];
-            
+
             els.push(MoreScreen.createLinkButton({}, theme)
                 .SetClass("m-4 self-center md:w-160")
                 .SetStyle("height: min-content;"))

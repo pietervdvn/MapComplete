@@ -99,7 +99,6 @@ knownLicenses.set("twemoji", {
 })
 
 
-
 function promptLicenseFor(path): SmallLicense {
     console.log("License abbreviations:")
     knownLicenses.forEach((value, key) => {

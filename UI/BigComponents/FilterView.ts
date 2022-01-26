@@ -145,14 +145,14 @@ export default class FilterView extends VariableUiElement {
         if (layer.filters.length === 0) {
             return undefined;
         }
-        
-        
-        const toShow : BaseUIElement [] = []
+
+
+        const toShow: BaseUIElement [] = []
 
         for (const filter of layer.filters) {
-            
+
             const [ui, actualTags] = FilterView.createFilter(filter)
-            
+
             ui.SetClass("mt-3")
             toShow.push(ui)
             actualTags.addCallback(tagsToFilterFor => {
@@ -161,15 +161,15 @@ export default class FilterView extends VariableUiElement {
             })
             flayer.appliedFilters.map(dict => dict.get(filter.id))
                 .addCallbackAndRun(filters => actualTags.setData(filters))
-            
-            
+
+
         }
 
         return new Combine(toShow)
             .SetClass("flex flex-col ml-8 bg-gray-300 rounded-xl p-2")
 
     }
-    
+
     // Filter which uses one or more textfields
     private static createFilterWithFields(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
@@ -191,7 +191,7 @@ export default class FilterView extends VariableUiElement {
             allValid = allValid.map(previous => previous && field.IsValid(stable.data) && stable.data !== "", [stable])
         }
         const tr = new SubstitutedTranslation(filter.question, new UIEventSource<any>({id: filterConfig.id}), State.state, mappings)
-        const trigger : UIEventSource<FilterState>= allValid.map(isValid => {
+        const trigger: UIEventSource<FilterState> = allValid.map(isValid => {
             if (!isValid) {
                 return undefined
             }
@@ -204,9 +204,9 @@ export default class FilterView extends VariableUiElement {
                     }
 
                     for (const key in props) {
-                        v = (<string>v).replace("{"+key+"}", props[key])
+                        v = (<string>v).replace("{" + key + "}", props[key])
                     }
-                    
+
                     return v
                 }
             )
@@ -216,11 +216,11 @@ export default class FilterView extends VariableUiElement {
                 state: JSON.stringify(props)
             }
         }, [properties])
-        
+
         return [tr, trigger];
     }
-    
-    private static createCheckboxFilter(filterConfig: FilterConfig):  [BaseUIElement, UIEventSource<FilterState>] {
+
+    private static createCheckboxFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
         let option = filterConfig.options[0];
 
         const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6");
@@ -233,21 +233,25 @@ export default class FilterView extends VariableUiElement {
             .ToggleOnClick()
             .SetClass("block m-1")
 
-        return [toggle, toggle.isEnabled.map(enabled => enabled ? {currentFilter: option.osmTags, state: "true"} : undefined, [],
+        return [toggle, toggle.isEnabled.map(enabled => enabled ? {
+                currentFilter: option.osmTags,
+                state: "true"
+            } : undefined, [],
             f => f !== undefined)
         ]
     }
+
     private static createMultiFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
         let options = filterConfig.options;
 
-        const values : FilterState[] = options.map((f, i) => ({
+        const values: FilterState[] = options.map((f, i) => ({
             currentFilter: f.osmTags, state: i
         }))
-        let filterPicker : InputElement<number>
-        
-        if(options.length <= 6){
-           filterPicker = new RadioButton(
+        let filterPicker: InputElement<number>
+
+        if (options.length <= 6) {
+            filterPicker = new RadioButton(
                 options.map(
                     (option, i) =>
                         new FixedInputElement(option.question.Clone().SetClass("block"), i)
@@ -256,25 +260,26 @@ export default class FilterView extends VariableUiElement {
                     dontStyle: true
                 }
             );
-        }else{
+        } else {
             filterPicker = new DropDown("", options.map((option, i) => ({
                 value: i, shown: option.question.Clone()
             })))
         }
-        
+
         return [filterPicker,
             filterPicker.GetValue().map(
                 i => values[i],
                 [],
                 selected => {
                     const v = selected?.state
-                    if(v === undefined || typeof v === "string"){
+                    if (v === undefined || typeof v === "string") {
                         return undefined
                     }
                     return v
                 }
             )]
     }
+
     private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
         if (filterConfig.options[0].fields.length > 0) {
@@ -283,7 +288,7 @@ export default class FilterView extends VariableUiElement {
 
 
         if (filterConfig.options.length === 1) {
-          return FilterView.createCheckboxFilter(filterConfig)
+            return FilterView.createCheckboxFilter(filterConfig)
         }
 
         return FilterView.createMultiFilter(filterConfig)

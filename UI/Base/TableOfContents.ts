@@ -22,7 +22,7 @@ export default class TableOfContents extends Combine {
         } else {
             titles = elements ?? []
         }
-        
+
         let els: { level: number, content: BaseUIElement }[] = []
         for (const title of titles) {
             let content: BaseUIElement
@@ -33,9 +33,9 @@ export default class TableOfContents extends Combine {
                 content = new FixedUiElement(title.title.content)
             } else if (Utils.runningFromConsole) {
                 content = new FixedUiElement(title.AsMarkdown())
-            } else if(title["title"] !== undefined) {
+            } else if (title["title"] !== undefined) {
                 content = new FixedUiElement(title.title.ConstructElement().innerText)
-            }else{
+            } else {
                 console.log("Not generating a title for ", title)
                 continue
             }

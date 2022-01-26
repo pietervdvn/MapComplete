@@ -45,7 +45,8 @@ export default class SplitRoadWizard extends Toggle {
         featureSwitchUserbadge: UIEventSource<boolean>,
         changes: Changes,
         layoutToUse: LayoutConfig,
-        allElements: ElementStorage}) {
+        allElements: ElementStorage
+    }) {
 
         const t = Translations.t.split;
 
@@ -84,7 +85,7 @@ export default class SplitRoadWizard extends Toggle {
             zoomToFeatures: true,
             state
         })
-        
+
         new ShowDataLayer({
             features: new StaticFeatureSource(splitPoints, true),
             leafletMap: miniMap.leafletMap,
@@ -94,7 +95,6 @@ export default class SplitRoadWizard extends Toggle {
             state
         })
 
-       
 
         /**
          * Handles a click on the overleaf map.

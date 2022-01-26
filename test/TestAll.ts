@@ -22,7 +22,7 @@ import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
 async function main() {
 
     ScriptUtils.fixUtils()
-    const allTests : T[] = [
+    const allTests: T[] = [
         new OsmObjectSpec(),
         new TagSpec(),
         new ImageAttributionSpec(),
@@ -58,9 +58,9 @@ async function main() {
     let testsToRun = allTests
     if (args.length > 0) {
         args = args.map(a => a.toLowerCase()).map(a => {
-            if(!a.endsWith("spec")){
+            if (!a.endsWith("spec")) {
                 return a + "spec"
-            }else{
+            } else {
                 return a;
             }
         })
@@ -76,7 +76,7 @@ async function main() {
     for (let i = 0; i < testsToRun.length; i++) {
         const test = testsToRun[i];
         console.log(" Running test", i, "/", testsToRun.length, test.name)
-        
+
         allFailures.push(...(await test.Run() ?? []))
         console.log("OK!")
     }

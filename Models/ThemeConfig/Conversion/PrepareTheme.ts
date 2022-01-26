@@ -8,7 +8,6 @@ import {AllKnownLayouts} from "../../../Customizations/AllKnownLayouts";
 import CreateNoteImportLayer from "./CreateNoteImportLayer";
 import LayerConfig from "../LayerConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
-import {Translation} from "../../../UI/i18n/Translation";
 import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 import DependencyCalculator from "../DependencyCalculator";
 
@@ -126,12 +125,12 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
     convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
-      
+
         json = {...json}
         const allLayers: LayerConfigJson[] = <LayerConfigJson[]>json.layers;
         json.layers = [...json.layers]
 
-      
+
         const creator = new CreateNoteImportLayer()
         for (let i1 = 0; i1 < allLayers.length; i1++) {
             const layer = allLayers[i1];
@@ -191,10 +190,10 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
         const translations: any[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
         for (let translation of translations) {
-            if(typeof translation == "string"){
+            if (typeof translation == "string") {
                 translation = {"*": translation}
             }
-            
+
             for (const key in translation) {
                 if (!translation.hasOwnProperty(key)) {
                     continue
@@ -341,7 +340,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
     constructor() {
         super(
             "Fully prepares and expands a theme",
-            
+
             new OnEveryConcat("layers", new SubstituteLayer()),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             new OnEvery("layers", new PrepareLayer()),

@@ -13,9 +13,9 @@ export default class TagRenderingAnswer extends VariableUiElement {
 
     constructor(tagsSource: UIEventSource<any>, configuration: TagRenderingConfig,
                 state: any,
-                contentClasses: string = "", contentStyle: string = "", options?:{
-                    specialViz: Map<string, BaseUIElement>
-                }) {
+                contentClasses: string = "", contentStyle: string = "", options?: {
+            specialViz: Map<string, BaseUIElement>
+        }) {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }

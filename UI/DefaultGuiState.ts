@@ -56,7 +56,7 @@ export class DefaultGuiState {
             hash = hash.toLowerCase()
             states[hash]?.setData(true)
         })
-       
+
         if (Hash.hash.data === "" || Hash.hash.data === undefined) {
             this.welcomeMessageIsOpened.setData(true)
         }

@@ -38,6 +38,7 @@ export default class TagApplyButton implements AutoAction {
             doc: "If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element"
         }
     ];
+    public readonly example = "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)";
 
     public static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
 
@@ -79,12 +80,10 @@ export default class TagApplyButton implements AutoAction {
 
     }
 
-    public readonly example = "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)";
-
     async applyActionOn(state: {
         layoutToUse: LayoutConfig,
         changes: Changes
-    }, tags: UIEventSource<any>, args: string[]) : Promise<void>{
+    }, tags: UIEventSource<any>, args: string[]): Promise<void> {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const targetIdKey = args[3]
 

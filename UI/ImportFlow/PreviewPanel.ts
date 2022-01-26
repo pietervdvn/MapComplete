@@ -36,7 +36,7 @@ export class PreviewPanel extends Combine implements FlowStep<{ features: { prop
         for (const key of Array.from(propertyKeys)) {
 
             const values = Utils.NoNull(geojson.features.map(f => f.properties[key]))
-            console.log("There are ",values.length,"features with attribute",key, "namely",values)
+            console.log("There are ", values.length, "features with attribute", key, "namely", values)
             const allSame = !values.some(v => v !== values[0])
             let countSummary: BaseUIElement
             if (values.length === n) {

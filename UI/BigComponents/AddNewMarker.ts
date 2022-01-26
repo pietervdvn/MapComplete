@@ -27,8 +27,8 @@ export default class AddNewMarker extends Combine {
                     }
                 }
             }
-            if(icons.length === 0){
-                return undefined    
+            if (icons.length === 0) {
+                return undefined
             }
             if (icons.length === 1) {
                 return icons[0]

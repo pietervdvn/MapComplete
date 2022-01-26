@@ -23,9 +23,9 @@ export default class QueryParameterDocumentation {
         ),
         "Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case."
     ])
-    
+
     public static GenerateQueryParameterDocs(): BaseUIElement {
-        const docs : (string | BaseUIElement)[] = [...QueryParameterDocumentation.QueryParamDocsIntro];
+        const docs: (string | BaseUIElement)[] = [...QueryParameterDocumentation.QueryParamDocsIntro];
         for (const key in QueryParameters.documentation) {
             const c = new Combine([
                 new Title(key, 2),

@@ -468,12 +468,12 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             proj.sort((a, b) => {
                 // Sort descending
                 const diff = b.projectAfterIndex - a.projectAfterIndex;
-                if(diff !== 0){
+                if (diff !== 0) {
                     return diff
                 }
                 return b.distance - a.distance;
-                
-                
+
+
             })
 
             for (const reprojectedNode of proj) {

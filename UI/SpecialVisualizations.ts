@@ -58,12 +58,12 @@ export interface SpecialVisualization {
 export class AllTagsPanel extends VariableUiElement {
 
     constructor(tags: UIEventSource<any>, state?) {
-        
+
         const calculatedTags = [].concat(
             SimpleMetaTagger.lazyTags,
             ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
-        
-        
+
+
         super(tags.map(tags => {
             const parts = [];
             for (const key in tags) {
@@ -76,7 +76,7 @@ export class AllTagsPanel extends VariableUiElement {
                 }
                 parts.push([key, v ?? "<b>undefined</b>"]);
             }
-    
+
             for (const key of calculatedTags) {
                 const value = tags[key]
                 if (value === undefined) {
@@ -84,12 +84,12 @@ export class AllTagsPanel extends VariableUiElement {
                 }
                 parts.push(["<i>" + key + "</i>", value])
             }
-    
+
             return new Table(
                 ["key", "value"],
                 parts
             )
-            .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
+                .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
         }))
     }
 }
@@ -697,11 +697,11 @@ export default class SpecialVisualizations {
                             const id = tags.data[args[2] ?? "id"]
                             state.osmConnection.closeNote(id, args[3])
                                 ?.then(_ => {
-                                tags.data["closed_at"] = new Date().toISOString();
-                                tags.ping()
-                            })
+                                    tags.data["closed_at"] = new Date().toISOString();
+                                    tags.ping()
+                                })
                         })
-                        return new LoginToggle( new Toggle(
+                        return new LoginToggle(new Toggle(
                             t.isClosed.SetClass("thanks"),
                             closeButton,
                             isClosed
@@ -794,7 +794,7 @@ export default class SpecialVisualizations {
                         },
                         {
                             name: "start",
-                            doc:"Drop the first 'start' comments",
+                            doc: "Drop the first 'start' comments",
                             defaultValue: "0"
                         }
                     ]
@@ -804,7 +804,7 @@ export default class SpecialVisualizations {
                                 .map(commentsStr => {
                                     const comments: any[] = JSON.parse(commentsStr)
                                     const startLoc = Number(args[1] ?? 0)
-                                    if(!isNaN(startLoc) && startLoc > 0){
+                                    if (!isNaN(startLoc) && startLoc > 0) {
                                         comments.splice(0, startLoc)
                                     }
                                     return new Combine(comments
@@ -822,9 +822,9 @@ export default class SpecialVisualizations {
                         defaultValue: "id"
                     }],
                     constr: (state, tags, args) => {
-                    const isUploading = new UIEventSource(false);
-                      const t = Translations.t.notes;
-                          const id = tags.data[args[0] ?? "id"]
+                        const isUploading = new UIEventSource(false);
+                        const t = Translations.t.notes;
+                        const id = tags.data[args[0] ?? "id"]
 
                         const uploader = new ImgurUploader(url => {
                             isUploading.setData(false)
@@ -842,7 +842,7 @@ export default class SpecialVisualizations {
                         fileSelector.GetValue().addCallback(filelist => {
                             isUploading.setData(true)
                             uploader.uploadMany("Image for osm.org/note/" + id, "CC0", filelist)
-                            
+
                         })
                         const ti = Translations.t.image
                         const uploadPanel = new Combine([
@@ -851,7 +851,7 @@ export default class SpecialVisualizations {
                             ti.ccoExplanation.SetClass("subtle text-sm"),
                             ti.respectPrivacy.SetClass("text-sm")
                         ]).SetClass("flex flex-col")
-                        return new LoginToggle( new Toggle( 
+                        return new LoginToggle(new Toggle(
                             Translations.t.image.uploadingPicture.SetClass("alert"),
                             uploadPanel,
                             isUploading), t.loginToAddPicture, state)

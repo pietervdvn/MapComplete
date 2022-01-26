@@ -40,7 +40,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                     json => {
                         const data = new Map<number, Set<number>>();
                         for (const x in json) {
-                            if(x === "zoom"){
+                            if (x === "zoom") {
                                 continue
                             }
                             data.set(Number(x), new Set(json[x]))
@@ -91,7 +91,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
     public static RegisterWhitelist(url: string, json: any) {
         const data = new Map<number, Set<number>>();
         for (const x in json) {
-            if(x === "zoom"){
+            if (x === "zoom") {
                 continue
             }
             data.set(Number(x), new Set(json[x]))

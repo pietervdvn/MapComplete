@@ -21,7 +21,7 @@ export class ImageUploadFlow extends Toggle {
 
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
 
-    constructor(tagsSource: UIEventSource<any>, 
+    constructor(tagsSource: UIEventSource<any>,
                 state: {
                     osmConnection: OsmConnection;
                     layoutToUse: LayoutConfig;

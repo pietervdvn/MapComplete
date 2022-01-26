@@ -4,10 +4,7 @@ import * as licenses from "../assets/generated/license_info.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
-import {
-    ValidateLayer,
-    ValidateThemeAndLayers
-} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {ValidateLayer, ValidateThemeAndLayers} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {Translation} from "../UI/i18n/Translation";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import * as questions from "../assets/tagRenderings/questions.json";
@@ -72,14 +69,14 @@ class LayerOverviewUtils {
         const dict = new Map<string, TagRenderingConfigJson>();
 
         for (const key in questions["default"]) {
-            if(key === "id"){
+            if (key === "id") {
                 continue
             }
             questions[key].id = key;
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
         for (const key in icons["default"]) {
-            if(key==="id"){
+            if (key === "id") {
                 continue
             }
             if (typeof icons[key] !== "object") {
@@ -90,7 +87,7 @@ class LayerOverviewUtils {
         }
 
         dict.forEach((value, key) => {
-            if(key === "id"){
+            if (key === "id") {
                 return
             }
             value.id = value.id ?? key;

@@ -65,7 +65,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                         for (const kv of change.tags) {
                             feat.tags[kv.k] = kv.v
                         }
-                        const geojson=  feat.asGeoJson();
+                        const geojson = feat.asGeoJson();
                         allElementStorage.addOrGetElement(geojson)
                         self.features.data.push({feature: geojson, freshness: new Date()})
                         self.features.ping()
@@ -81,7 +81,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     continue;
                 }
 
-               
+
                 try {
                     const tags = {}
                     for (const kv of change.tags) {

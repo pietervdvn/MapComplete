@@ -26,7 +26,7 @@ export default class DeleteAction extends OsmChangeAction {
                     specialMotivation: string
                 },
                 hardDelete: boolean) {
-        super(id,true)
+        super(id, true)
         this._id = id;
         this._hardDelete = hardDelete;
         this.meta = {...meta, changeType: "deletion"};
@@ -51,7 +51,7 @@ export default class DeleteAction extends OsmChangeAction {
             return await new ChangeTagAction(
                 this._id, this._softDeletionTags, osmObject.tags,
                 {
-                    ... this.meta,
+                    ...this.meta,
                     changeType: "soft-delete"
                 }
             ).CreateChangeDescriptions(changes)

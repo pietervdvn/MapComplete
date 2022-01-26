@@ -33,19 +33,19 @@ export default class Toggleable extends Combine {
         title.SetClass("background-subtle rounded-lg")
         const self = this
         this.onClick(() => {
-            if(self.isVisible.data){
-                if(options?.closeOnClick ?? true){
+            if (self.isVisible.data) {
+                if (options?.closeOnClick ?? true) {
                     self.isVisible.setData(false)
                 }
-            }else{
+            } else {
                 self.isVisible.setData(true)
             }
         })
         const contentElement = content.ConstructElement()
-        
-        if(title instanceof Combine){
-            for(const el of title.getElements()){
-                if(el instanceof Title){
+
+        if (title instanceof Combine) {
+            for (const el of title.getElements()) {
+                if (el instanceof Title) {
                     title = el;
                     break;
                 }
@@ -54,7 +54,7 @@ export default class Toggleable extends Combine {
 
         if (title instanceof Title) {
             Hash.hash.addCallbackAndRun(h => {
-                if (h === (<Title> title).id) {
+                if (h === (<Title>title).id) {
                     self.isVisible.setData(true)
                     content.RemoveClass("border-gray-300")
                     content.SetClass("border-red-300")
@@ -82,9 +82,9 @@ export default class Toggleable extends Combine {
         })
     }
 
-    public Collapse() : Toggleable{
+    public Collapse(): Toggleable {
         this.isVisible.setData(false)
         return this;
     }
-    
+
 }

@@ -16,15 +16,15 @@ import AvailableBaseLayersImplementation from "../../Logic/Actors/AvailableBaseL
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
     public readonly leafletMap: UIEventSource<Map>
+    public readonly location: UIEventSource<Loc>;
+    public readonly bounds: UIEventSource<BBox> | undefined;
     private readonly _id: string;
     private readonly _background: UIEventSource<BaseLayer>;
-    public readonly location: UIEventSource<Loc>;
     private _isInited = false;
     private _allowMoving: boolean;
     private readonly _leafletoptions: any;
     private readonly _onFullyLoaded: (leaflet: L.Map) => void
     private readonly _attribution: BaseUIElement | boolean;
-    public readonly bounds: UIEventSource<BBox> | undefined;
     private readonly _addLayerControl: boolean;
     private readonly _options: MinimapOptions;
 

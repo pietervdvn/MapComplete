@@ -1,6 +1,4 @@
-
-
- drinking_water 
+drinking_water
 ================
 
 
@@ -9,129 +7,92 @@
 
 A layer showing drinking water fountains
 
-
-
-
 ## Table of contents
 
 1. [drinking_water](#drinking_water)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
+    * [Themes using this layer](#themes-using-this-layer)
+
+- [Basic tags for this layer](#basic-tags-for-this-layer)
+- [Supported attributes](#supported-attributes)
     + [images](#images)
     + [Still in use?](#still-in-use)
     + [Bottle refill](#bottle-refill)
     + [render-closest-drinking-water](#render-closest-drinking-water)
 
 
+- This layer will automatically load  [drinking_water](./drinking_water.md)  into the layout as it depends on it:  A
+  calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _
+  closest_other_drinking_water)
+- This layer is needed as dependency for layer [drinking_water](#drinking_water)
 
+#### Themes using this layer
 
-
-  - This layer will automatically load  [drinking_water](./drinking_water.md)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_other_drinking_water)
-  - This layer is needed as dependency for layer [drinking_water](#drinking_water)
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [drinking_water](https://mapcomplete.osm.be/drinking_water)
-  - [nature](https://mapcomplete.osm.be/nature)
-  - [personal](https://mapcomplete.osm.be/personal)
-
+- [cyclofix](https://mapcomplete.osm.be/cyclofix)
+- [drinking_water](https://mapcomplete.osm.be/drinking_water)
+- [nature](https://mapcomplete.osm.be/nature)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/drinking_water/drinking_water.json)
 
 
 
- Basic tags for this layer 
+Basic tags for this layer
 ---------------------------
 
 
 
 Elements must have the all of following tags to be shown on this layer:
 
+- <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddrinking_water' target='_blank'>drinking_water</a>
+- access!~^permissive$
+- access!~^private$
 
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddrinking_water' target='_blank'>drinking_water</a>
-  - access!~^permissive$
-  - access!~^private$
-
-
-
-
- Supported attributes 
+Supported attributes
 ----------------------
 
 
 
 **Warning** This quick overview is incomplete
 
-
-
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operational_status#values) [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bottle#values) [bottle](https://wiki.openstreetmap.org/wiki/Key:bottle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno)
 
-
-
-
-### images 
-
-
+### images
 
 _This tagrendering has no question and is thus read-only_
 
-
-
-
-
-### Still in use? 
-
-
+### Still in use?
 
 The question is **Is this drinking water spot still operational?**
 
-This rendering asks information about the property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) 
+This rendering asks information about the
+property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status)
 This is rendered with `The operational status is <i>{operational_status}</i>`
 
+- **This drinking water works** corresponds with
+- **This drinking water is broken** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
+- **This drinking water is closed** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
 
-
-  - **This drinking water works** corresponds with 
-  - **This drinking water is broken** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
-  - **This drinking water is closed** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
-
-
-
-
-### Bottle refill 
-
-
+### Bottle refill
 
 The question is **How easy is it to fill water bottles?**
 
+- **It is easy to refill water bottles** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>
+- **Water bottles may not fit** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>
 
-
-
-
-  - **It is easy to refill water bottles** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>
-  - **Water bottles may not fit** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>
-
-
-
-
-### render-closest-drinking-water 
-
-
+### render-closest-drinking-water
 
 _This tagrendering has no question and is thus read-only_
-
- 
 
 This document is autogenerated from assets/layers/drinking_water/drinking_water.json

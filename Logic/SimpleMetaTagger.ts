@@ -125,7 +125,8 @@ export default class SimpleMetaTaggers {
             return changed
         }
     )
-
+    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTaggers.metatags.filter(tagger => tagger.isLazy)
+        .map(tagger => tagger.keys));
     private static readonly cardinalDirections = {
         N: 0, NNE: 22.5, NE: 45, ENE: 67.5,
         E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
@@ -290,27 +291,27 @@ export default class SimpleMetaTaggers {
                 // isOpen is irrelevant
                 return false
             }
-            if(feature.properties.opening_hours === "24/7"){
+            if (feature.properties.opening_hours === "24/7") {
                 feature.properties._isOpen = "yes"
                 return true;
             }
-            
+
             Object.defineProperty(feature.properties, "_isOpen", {
                 enumerable: false,
                 configurable: true,
                 get: () => {
-                    if(feature.properties.id === "node/7464543832"){
-                    console.log("Getting _isOpen for ", feature.properties.i)
+                    if (feature.properties.id === "node/7464543832") {
+                        console.log("Getting _isOpen for ", feature.properties.i)
                     }
                     delete feature.properties._isOpen
                     feature.properties._isOpen = undefined
                     const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
                     tagsSource.addCallbackAndRunD(tags => {
                         // Install a listener to the tags...
-                        if (tags.opening_hours === undefined){
+                        if (tags.opening_hours === undefined) {
                             return;
                         }
-                        if(tags._country === undefined) {
+                        if (tags._country === undefined) {
                             return;
                         }
                         try {
@@ -322,7 +323,7 @@ export default class SimpleMetaTaggers {
                                     country_code: tags._country.toLowerCase()
                                 }
                             }, {tag_key: "opening_hours"});
-                            
+
                             // AUtomatically triggered on the next change (and a bit below)
                             const updateTags = () => {
                                 const oldValueIsOpen = tags["_isOpen"];
@@ -442,8 +443,6 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.geometryType
 
     ];
-    public static readonly lazyTags: string[] = [].concat(...SimpleMetaTaggers.metatags.filter(tagger => tagger.isLazy)
-        .map(tagger => tagger.keys));
 
     /**
      * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.

@@ -93,11 +93,11 @@ export default class DefaultGUI {
                     state.LastClickLocation.setData(undefined);
                 }
             });
-            
+
             let noteMarker = undefined;
-            if(!hasPresets && addNewNoteDialog !== undefined){
+            if (!hasPresets && addNewNoteDialog !== undefined) {
                 noteMarker = new Combine(
-                    [Svg.note_svg().SetClass("absolute bottom-0").SetStyle("height: 40px"), 
+                    [Svg.note_svg().SetClass("absolute bottom-0").SetStyle("height: 40px"),
                         Svg.addSmall_svg().SetClass("absolute w-6 animate-pulse")
                             .SetStyle("right: 10px; bottom: -8px;")
                     ])

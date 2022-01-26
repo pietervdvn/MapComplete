@@ -236,9 +236,9 @@ class UrlTextfieldDef implements TextFieldDef {
                 "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
                 "gclid",
                 "cmpid", "agid", "utm", "utm_source", "utm_medium",
-                "campaignid","campaign","AdGroupId","AdGroup","TargetId","msclkid"]
+                "campaignid", "campaign", "AdGroupId", "AdGroup", "TargetId", "msclkid"]
             for (const dontLike of blacklistedTrackingParams) {
-                url.searchParams.delete(dontLike.toLowerCase()  )
+                url.searchParams.delete(dontLike.toLowerCase())
             }
             let cleaned = url.toString();
             if (cleaned.endsWith("/") && !str.endsWith("/")) {
@@ -265,7 +265,7 @@ class UrlTextfieldDef implements TextFieldDef {
             }
             const url = new URL(str);
             const dotIndex = url.host.indexOf(".")
-            return dotIndex > 0 && url.host[url.host.length - 1 ] !== ".";
+            return dotIndex > 0 && url.host[url.host.length - 1] !== ".";
         } catch (e) {
             return false;
         }

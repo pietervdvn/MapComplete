@@ -60,13 +60,24 @@ export default class AutoApplyButton implements SpecialVisualization {
         this.docs = AutoApplyButton.generateDocs(allSpecialVisualisations.filter(sv => sv["supportsAutoAction"] === true).map(sv => sv.funcName))
     }
 
+    private static generateDocs(supportedActions: string[]) {
+        return [
+            "A button to run many actions for many features at once.\n",
+            "To effectively use this button, you'll need some ingredients:\n" +
+            "- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " + supportedActions.join(", "),
+            "- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)",
+            "- Then, use a calculated tag on the host feature to determine the overlapping object ids",
+            "- At last, add this component"
+        ].join("\n")
+    }
+
     constr(state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState): BaseUIElement {
 
         if (!state.layoutToUse.official && !(state.featureSwitchIsTesting.data || state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url)) {
             const t = Translations.t.general.add.import;
             return new Combine([new FixedUiElement("The auto-apply button is only available in official themes (or in testing mode)").SetClass("alert"), t.howToTest])
         }
-        
+
         const to_parse = tagSource.data[argument[1]]
         if (to_parse === undefined) {
             return new Loading("Gathering which elements support auto-apply... ")
@@ -76,11 +87,11 @@ export default class AutoApplyButton implements SpecialVisualization {
 
             const target_layer_id = argument[0]
             const target_feature_ids = <string[]>JSON.parse(to_parse)
-            
-            if(target_feature_ids.length === 0){
+
+            if (target_feature_ids.length === 0) {
                 return new FixedUiElement("No elements found to perform action")
             }
-            
+
             const targetTagRendering = argument[2]
             const text = argument[3]
             const icon = argument[4]
@@ -93,7 +104,7 @@ export default class AutoApplyButton implements SpecialVisualization {
                 return new FixedUiElement("Target tagrendering " + targetTagRendering + " not found").SetClass("alert")
             }
 
-            const buttonState = new UIEventSource<"idle" | "running" | "done" | {error: string}>("idle")
+            const buttonState = new UIEventSource<"idle" | "running" | "done" | { error: string }>("idle")
 
             const button = new SubtleButton(
                 new Img(icon),
@@ -154,10 +165,10 @@ export default class AutoApplyButton implements SpecialVisualization {
                         return new FixedUiElement("All done!").SetClass("thanks")
                     }
                     if (st === "running") {
-                    return new Loading("Applying changes...")
+                        return new Loading("Applying changes...")
                     }
-                    const error =st.error
-                        return new Combine([new FixedUiElement("Something went wrong...").SetClass("alert"), new FixedUiElement(error).SetClass("subtle")]).SetClass("flex flex-col")
+                    const error = st.error
+                    return new Combine([new FixedUiElement("Something went wrong...").SetClass("alert"), new FixedUiElement(error).SetClass("subtle")]).SetClass("flex flex-col")
                 }
             ))
 
@@ -170,17 +181,6 @@ export default class AutoApplyButton implements SpecialVisualization {
 
     getLayerDependencies(args: string[]): string[] {
         return [args[0]]
-    }
-
-    private static generateDocs(supportedActions: string[]) {
-        return [
-            "A button to run many actions for many features at once.\n",
-            "To effectively use this button, you'll need some ingredients:\n" +
-            "- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " + supportedActions.join(", "),
-            "- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)",
-            "- Then, use a calculated tag on the host feature to determine the overlapping object ids",
-            "- At last, add this component"
-        ].join("\n")
     }
 
 

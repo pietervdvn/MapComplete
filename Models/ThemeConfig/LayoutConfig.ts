@@ -54,12 +54,12 @@ export default class LayoutConfig {
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
-        if(official){
-            if(json.id.toLowerCase() !== json.id){
-                throw "The id of a theme should be lowercase: "+json.id
+        if (official) {
+            if (json.id.toLowerCase() !== json.id) {
+                throw "The id of a theme should be lowercase: " + json.id
             }
-            if(json.id.match(/[a-z0-9-_]/) == null){
-                throw "The id of a theme should match [a-z0-9-_]*: "+json.id
+            if (json.id.match(/[a-z0-9-_]/) == null) {
+                throw "The id of a theme should match [a-z0-9-_]*: " + json.id
             }
         }
         context = (context ?? "") + "." + this.id;
@@ -102,9 +102,9 @@ export default class LayoutConfig {
         this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
-        if(this.socialImage === null || this.socialImage === "" || this.socialImage === undefined){
-            if(official){
-                throw "Theme "+json.id+" has no social image defined"
+        if (this.socialImage === null || this.socialImage === "" || this.socialImage === undefined) {
+            if (official) {
+                throw "Theme " + json.id + " has no social image defined"
             }
         }
         this.startZoom = json.startZoom;

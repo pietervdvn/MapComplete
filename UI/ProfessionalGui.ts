@@ -7,7 +7,6 @@ import List from "./Base/List";
 import BaseUIElement from "./BaseUIElement";
 import LanguagePicker from "./LanguagePicker";
 import TableOfContents from "./Base/TableOfContents";
-import BackToIndex from "./BigComponents/BackToIndex";
 import LeftIndex from "./Base/LeftIndex";
 
 class Snippet extends Toggleable {
@@ -21,26 +20,26 @@ class Snippet extends Toggleable {
 
 
 class SnippetContent extends Combine {
-    constructor(translations:any, ...extras: BaseUIElement[]) {
-           super([
-                translations.intro,
-                new List([
-                    translations.li0,
-                    translations.li1,
-                    translations.li2,
-                    translations.li3,
-                    translations.li4,
-                    translations.li5,
-                    translations.li6,
-                ]),
-                translations.outro,
-                ...extras
-            ])
-            this.SetClass("flex flex-col")
+    constructor(translations: any, ...extras: BaseUIElement[]) {
+        super([
+            translations.intro,
+            new List([
+                translations.li0,
+                translations.li1,
+                translations.li2,
+                translations.li3,
+                translations.li4,
+                translations.li5,
+                translations.li6,
+            ]),
+            translations.outro,
+            ...extras
+        ])
+        this.SetClass("flex flex-col")
     }
 }
 
-class ProfessionalGui extends LeftIndex{
+class ProfessionalGui extends LeftIndex {
 
 
     constructor() {
@@ -83,11 +82,11 @@ class ProfessionalGui extends LeftIndex{
             new Accordeon([
                 new Snippet(t.drawbacks.unsuitedData),
                 new Snippet(t.drawbacks.licenseNuances,
-                   new Title( t.drawbacks.licenseNuances.usecaseMapDifferentSources.title, 4),
+                    new Title(t.drawbacks.licenseNuances.usecaseMapDifferentSources.title, 4),
                     new SnippetContent(t.drawbacks.licenseNuances.usecaseMapDifferentSources),
-                    new Title( t.drawbacks.licenseNuances.usecaseGatheringOpenData.title, 4),
+                    new Title(t.drawbacks.licenseNuances.usecaseGatheringOpenData.title, 4),
                     new SnippetContent(t.drawbacks.licenseNuances.usecaseGatheringOpenData)
-                    )
+                )
             ]),
 
         ]).SetClass("flex flex-col pb-12 m-3 lg:w-3/4 lg:ml-10 link-underline")
@@ -98,10 +97,10 @@ class ProfessionalGui extends LeftIndex{
                 noTopLevel: true,
                 maxDepth: 2
             }).SetClass("subtle"),
-            
+
             LanguagePicker.CreateLanguagePicker(Translations.t.professional.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
-        
+
         super(leftContents, content)
 
     }

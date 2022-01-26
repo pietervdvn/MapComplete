@@ -16,10 +16,11 @@ abstract class AbstractRelationSplitHandler extends OsmChangeAction {
     protected readonly _theme: string;
 
     constructor(input: RelationSplitInput, theme: string) {
-        super("relation/"+input.relation.id, false)
+        super("relation/" + input.relation.id, false)
         this._input = input;
         this._theme = theme;
     }
+
     /**
      * Returns which node should border the member at the given index
      */

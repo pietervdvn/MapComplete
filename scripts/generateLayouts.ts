@@ -105,7 +105,7 @@ async function createManifest(layout: LayoutConfig) {
         description: ogDescr,
         orientation: "portrait-primary, landscape-primary",
         icons: icons,
-        categories: ["map","navigation"]
+        categories: ["map", "navigation"]
     };
 }
 
@@ -180,8 +180,8 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
     return output;
 }
 
-async function createIndexFor(theme: LayoutConfig){
-    const filename = "index_"+theme.id+".ts"
+async function createIndexFor(theme: LayoutConfig) {
+    const filename = "index_" + theme.id + ".ts"
     writeFileSync(filename, `import * as themeConfig from "./assets/generated/themes/${theme.id}.json"\n`)
     appendFileSync(filename, codeTemplate)
 }
@@ -191,7 +191,7 @@ if (!existsSync(generatedDir)) {
     mkdirSync(generatedDir)
 }
 
-const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom","theme"]
+const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom", "theme"]
 // @ts-ignore
 const all: LayoutConfigJson[] = all_known_layouts.themes;
 for (const i in all) {

@@ -2,15 +2,15 @@ import BaseUIElement from "../BaseUIElement";
 import Combine from "./Combine";
 import BackToIndex from "../BigComponents/BackToIndex";
 
-export default class LeftIndex extends Combine{
-    
-    
-    constructor(leftContents: BaseUIElement[], mainContent: BaseUIElement, options?:{
-        hideBackButton : false | boolean
-    } ) {
-        
-        let back : BaseUIElement = undefined;
-        if(options?.hideBackButton ?? true){
+export default class LeftIndex extends Combine {
+
+
+    constructor(leftContents: BaseUIElement[], mainContent: BaseUIElement, options?: {
+        hideBackButton: false | boolean
+    }) {
+
+        let back: BaseUIElement = undefined;
+        if (options?.hideBackButton ?? true) {
             back = new BackToIndex()
         }
         super([
@@ -21,5 +21,5 @@ export default class LeftIndex extends Combine{
         ])
         this.SetClass("h-full block md:flex")
     }
-    
+
 }

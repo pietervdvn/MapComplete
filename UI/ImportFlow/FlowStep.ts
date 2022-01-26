@@ -101,7 +101,7 @@ export class FlowPanel<T> extends Toggle {
             // Startup the flow
             elements = [
                 initial,
-      
+
                 new Combine([
                     backbutton,
                     new Toggle(

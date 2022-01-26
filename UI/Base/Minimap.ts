@@ -34,14 +34,14 @@ export default class Minimap {
      * importing leaflet crashes node-ts, which is pretty annoying considering the fact that a lot of scripts use it
      */
 
+    private constructor() {
+    }
+
     /**
      * Construct a minimap
      */
     public static createMiniMap: (options?: MinimapOptions) => (BaseUIElement & MinimapObj) = (_) => {
         throw "CreateMinimap hasn't been initialized yet. Please call MinimapImplementation.initialize()"
-    }
-
-    private constructor() {
     }
 
 

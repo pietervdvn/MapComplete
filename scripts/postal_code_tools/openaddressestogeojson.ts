@@ -29,9 +29,9 @@ async function main(args: string[]) {
 
     let i = 0;
     let failed = 0
-    
-    let createdFiles : string [] = []
-    if(!perPostalCode){
+
+    let createdFiles: string [] = []
+    if (!perPostalCode) {
         fs.writeFileSync(outputFile, "")
     }
     // @ts-ignore
@@ -63,21 +63,21 @@ async function main(args: string[]) {
 
         let targetFile = outputFile
         if (perPostalCode) {
-            if(parsed["postcode"] === ""){
+            if (parsed["postcode"] === "") {
                 continue
             }
-            if(isNaN(Number(parsed["postcode"]))){
+            if (isNaN(Number(parsed["postcode"]))) {
                 continue;
             }
             targetFile = outputFile + "-" + parsed["postcode"] + ".geojson"
             let isFirst = false
-            if(!existsSync(targetFile)){
+            if (!existsSync(targetFile)) {
                 writeFileSync(targetFile, '{ "type":"FeatureCollection", "features":[')
                 createdFiles.push(targetFile)
                 isFirst = true
             }
-            
-            if(!isFirst){
+
+            if (!isFirst) {
                 fs.appendFileSync(targetFile, ",\n")
             }
 
@@ -89,20 +89,20 @@ async function main(args: string[]) {
                     coordinates: [lon, lat]
                 }
             }))
-            
-        }else{
-            
 
-        fs.appendFileSync(outputFile, JSON.stringify({
-            type: "Feature",
-            properties: parsed,
-            geometry: {
-                type: "Point",
-                coordinates: [lon, lat]
-            }
-        }) + "\n")
+        } else {
+
+
+            fs.appendFileSync(outputFile, JSON.stringify({
+                type: "Feature",
+                properties: parsed,
+                geometry: {
+                    type: "Point",
+                    coordinates: [lon, lat]
+                }
+            }) + "\n")
         }
-        
+
 
     }
 
@@ -112,7 +112,7 @@ async function main(args: string[]) {
         ScriptUtils.erasableLog("Closing ", createdFile, "and creating convex hull")
         fs.appendFileSync(createdFile, "]}")
     }
-    
+
     console.log("Done! Converted ", i, "features (of which ", failed, "features don't have a coordinate)")
 
 }

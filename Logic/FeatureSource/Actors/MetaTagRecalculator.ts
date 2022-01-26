@@ -14,7 +14,7 @@ class MetatagUpdater {
     private source: FeatureSourceForLayer & Tiled;
     private readonly params: ExtraFuncParams
     private state: { allElements?: ElementStorage };
-    
+
     private readonly isDirty = new UIEventSource(false)
 
     constructor(source: FeatureSourceForLayer & Tiled, state: { allElements?: ElementStorage }, featurePipeline: FeaturePipeline) {
@@ -31,14 +31,14 @@ class MetatagUpdater {
                 if (oldBbox === undefined) {
                     self.neededLayerBboxes.set(layerId, bbox);
                 } else if (!bbox.isContainedIn(oldBbox)) {
-                    self.neededLayerBboxes.set(layerId,oldBbox.unionWith(bbox))
+                    self.neededLayerBboxes.set(layerId, oldBbox.unionWith(bbox))
                 }
                 return featurePipeline.GetFeaturesWithin(layerId, bbox)
             },
             memberships: featurePipeline.relationTracker
         }
         this.isDirty.stabilized(100).addCallback(dirty => {
-            if(dirty){
+            if (dirty) {
                 self.updateMetaTags()
             }
         })
@@ -46,10 +46,10 @@ class MetatagUpdater {
 
     }
 
-    public requestUpdate(){
+    public requestUpdate() {
         this.isDirty.setData(true)
     }
-    
+
     private updateMetaTags() {
         const features = this.source.features.data
 
@@ -74,7 +74,8 @@ export default class MetaTagRecalculator {
     };
     private _featurePipeline: FeaturePipeline;
     private readonly _alreadyRegistered: Set<FeatureSourceForLayer & Tiled> = new Set<FeatureSourceForLayer & Tiled>()
-private readonly _notifiers : MetatagUpdater[] = []
+    private readonly _notifiers: MetatagUpdater[] = []
+
     /**
      * The meta tag recalculator receives tiles of layers.
      * It keeps track of which sources have had their share calculated, and which should be re-updated if some other data is loaded
@@ -92,16 +93,16 @@ private readonly _notifiers : MetatagUpdater[] = []
             return;
         }
         this._alreadyRegistered.add(source)
-        this._notifiers.push(new MetatagUpdater(source,this._state,this._featurePipeline))
+        this._notifiers.push(new MetatagUpdater(source, this._state, this._featurePipeline))
         const self = this;
         source.features.addCallbackAndRunD(_ => {
             const layerName = source.layer.layerDef.id
-            for (const updater of self._notifiers ) {
+            for (const updater of self._notifiers) {
                 const neededBbox = updater.neededLayerBboxes.get(layerName)
-                if(neededBbox == undefined){
+                if (neededBbox == undefined) {
                     continue
                 }
-                if(source.bbox === undefined || neededBbox.overlapsWith(source.bbox)){
+                if (source.bbox === undefined || neededBbox.overlapsWith(source.bbox)) {
                     updater.requestUpdate()
                 }
             }

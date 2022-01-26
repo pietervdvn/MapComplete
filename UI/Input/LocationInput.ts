@@ -25,6 +25,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     public readonly _matching_layer: LayerConfig;
     public readonly leafletMap: UIEventSource<any>
+    public readonly bounds;
+    public readonly location;
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
     /**
@@ -38,8 +40,6 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     private readonly _snappedPointTags: any;
     private readonly _bounds: UIEventSource<BBox>;
     private readonly map: BaseUIElement & MinimapObj;
-    public readonly bounds;
-    public readonly location;
     private readonly clickLocation: UIEventSource<Loc>;
     private readonly _minZoom: number;
 

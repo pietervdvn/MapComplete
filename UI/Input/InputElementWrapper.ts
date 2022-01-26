@@ -17,9 +17,9 @@ export default class InputElementWrapper<T> extends InputElement<T> {
         mapping.set(key, inputElement)
 
         // Bit of a hack: the SubstitutedTranslation expects a special rendering, but those are formatted '{key()}' instead of '{key}', so we substitute it first
-        const newTranslations ={}
+        const newTranslations = {}
         for (const lang in translation.translations) {
-           newTranslations[lang] = translation.translations[lang].replace("{"+key+"}", "{"+key+"()}") 
+            newTranslations[lang] = translation.translations[lang].replace("{" + key + "}", "{" + key + "()}")
         }
         this._renderElement = new SubstitutedTranslation(new Translation(newTranslations), tags, state, mapping)
     }

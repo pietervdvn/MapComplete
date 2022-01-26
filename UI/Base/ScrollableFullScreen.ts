@@ -43,7 +43,7 @@ export default class ScrollableFullScreen extends UIElement {
 
         const self = this;
         Hash.hash.addCallback(h => {
-            if(h === undefined){
+            if (h === undefined) {
                 isShown.setData(false)
             }
         })
@@ -55,18 +55,17 @@ export default class ScrollableFullScreen extends UIElement {
                 self.Activate();
             } else {
                 // Some cleanup...
-                
+
                 const fs = document.getElementById("fullscreen");
-                if(fs !== null){
+                if (fs !== null) {
                     ScrollableFullScreen.empty.AttachTo("fullscreen")
                     fs.classList.add("hidden")
                 }
-                
+
                 ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
             }
         })
-        
-        
+
 
     }
 

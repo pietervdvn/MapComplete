@@ -19,13 +19,13 @@ export default class Constants {
 
 
     public static readonly added_by_default: string[] = ["gps_location", "gps_location_history", "home_location", "gps_track"]
-    public static readonly no_include: string[] = ["conflation", "left_right_style", "split_point","current_view","matchpoint"]
+    public static readonly no_include: string[] = ["conflation", "left_right_style", "split_point", "current_view", "matchpoint"]
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */
-    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note","import_candidate", ...Constants.no_include]
+    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note", "import_candidate", ...Constants.no_include]
 
- 
+
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
@@ -54,13 +54,13 @@ export default class Constants {
      * The point closest to the changed feature will be considered and this distance will be tracked.
      * ALl these distances are used to calculate a nearby-score
      */
-    static nearbyVisitTime: number= 30 * 60;
+    static nearbyVisitTime: number = 30 * 60;
     /**
      * If a user makes a change, the distance to the changed object is calculated.
      * If a user makes multiple changes, all these distances are put into multiple bins, depending on this distance.
      * For every bin, the totals are uploaded as metadata
      */
-    static distanceToChangeObjectBins = [25,50,100,500,1000,5000, Number.MAX_VALUE]
+    static distanceToChangeObjectBins = [25, 50, 100, 500, 1000, 5000, Number.MAX_VALUE]
     static themeOrder = ["personal", "cyclofix", "hailhydrant", "bookcases", "toilets", "aed"];
 
     private static isRetina(): boolean {

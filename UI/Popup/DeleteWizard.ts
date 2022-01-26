@@ -50,7 +50,7 @@ export default class DeleteWizard extends Toggle {
                 },
                 options: DeleteConfig) {
 
-        
+
         const deleteAbility = new DeleteabilityChecker(id, state, options.neededChangesets)
         const tagsSource = state.allElements.getEventSourceById(id)
 
@@ -293,7 +293,7 @@ class DeleteabilityChecker {
 
 
     constructor(id: string,
-                state: {osmConnection: OsmConnection},
+                state: { osmConnection: OsmConnection },
                 allowDeletionAtChangesetCount?: number) {
         this._id = id;
         this._state = state;
@@ -316,7 +316,7 @@ class DeleteabilityChecker {
         const t = Translations.t.delete;
         const id = this._id;
         const state = this.canBeDeleted
-        const self  = this;
+        const self = this;
         if (!id.startsWith("node")) {
             this.canBeDeleted.setData({
                 canBeDeleted: false,

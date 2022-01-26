@@ -64,22 +64,6 @@ export default class DetermineLayout {
         return layoutToUse
     }
 
-    private static prepCustomTheme(json: any): LayoutConfigJson{
-        const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers["default"]) {
-            const layer = known_layers["default"][key]
-            knownLayersDict.set(layer.id, layer)
-        }
-        const converState = {
-            tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-            sharedLayers: knownLayersDict
-        }
-        json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
-        json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
-        console.log("The layoutconfig is ", json)
-        return json
-    }
-    
     public static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
     ): LayoutConfig | null {
@@ -148,6 +132,22 @@ export default class DetermineLayout {
             .AttachTo("centermessage");
     }
 
+    private static prepCustomTheme(json: any): LayoutConfigJson {
+        const knownLayersDict = new Map<string, LayerConfigJson>()
+        for (const key in known_layers["default"]) {
+            const layer = known_layers["default"][key]
+            knownLayersDict.set(layer.id, layer)
+        }
+        const converState = {
+            tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
+            sharedLayers: knownLayersDict
+        }
+        json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
+        json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
+        console.log("The layoutconfig is ", json)
+        return json
+    }
+
     private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
         console.log("Downloading map theme from ", link);
 
@@ -160,7 +160,7 @@ export default class DetermineLayout {
             try {
                 parsed.id = link;
                 const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
-                return new LayoutConfig(layoutToUse,false)
+                return new LayoutConfig(layoutToUse, false)
             } catch (e) {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(

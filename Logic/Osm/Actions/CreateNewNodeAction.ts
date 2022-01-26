@@ -33,7 +33,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
                     changeType: "create" | "import" | null,
                     specialMotivation?: string
                 }) {
-        super(null,basicTags !== undefined && basicTags.length > 0)
+        super(null, basicTags !== undefined && basicTags.length > 0)
         this._basicTags = basicTags;
         this._lat = lat;
         this._lon = lon;
@@ -46,7 +46,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         this.meta = {
             theme: options.theme,
             changeType: options.changeType,
-            
+
         }
     }
 

@@ -84,13 +84,13 @@ export interface LayerConfigJson {
      *
      * The specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),
      * the expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.
-     * 
+     *
      * If a tag has to be evaluated strictly, use ':=' instead:
-     * 
+     *
      * [
      * "_some_key:=some_javascript_expression"
      * ]
-     * 
+     *
      */
     calculatedTags?: string[];
 
@@ -124,7 +124,7 @@ export interface LayerConfigJson {
      * can be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)
      */
     shownByDefault?: true | boolean;
-    
+
     /**
      * The zoom level at which point the data is hidden again
      * Default: 100 (thus: always visible

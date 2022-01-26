@@ -49,7 +49,7 @@ export default class ElementsState extends FeatureSwitchState {
         super(layoutToUse);
 
         // @ts-ignore
-        this.changes = new Changes(this,layoutToUse?.isLeftRightSensitive() ?? false)
+        this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
         {
             // -- Location control initialization
             const zoom = UIEventSource.asFloat(

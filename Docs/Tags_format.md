@@ -90,4 +90,5 @@ To mitigate this, use:
 ]
 ```
 
-One can use `key!:=prefix-{other_key}-postfix` as well, to match if `key` is _not_ the same as `prefix-{other_key}-postfix` (with other_key substituted by the value)
+One can use `key!:=prefix-{other_key}-postfix` as well, to match if `key` is _not_ the same
+as `prefix-{other_key}-postfix` (with other_key substituted by the value)

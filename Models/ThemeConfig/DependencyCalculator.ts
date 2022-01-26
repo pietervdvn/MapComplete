@@ -8,7 +8,7 @@ export default class DependencyCalculator {
 
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {
 
-        if(tr === undefined){
+        if (tr === undefined) {
             throw "Got undefined tag rendering in getTagRenderingDependencies"
         }
         const deps: string[] = []
@@ -74,11 +74,11 @@ export default class DependencyCalculator {
                 getFeatureById: _ => undefined,
                 getFeaturesWithin: (layerId, _) => {
 
-                    if(layerId === '*'){
+                    if (layerId === '*') {
                         // This is a wildcard
                         return []
                     }
-                    
+
                     // The important line: steal the dependencies!
                     deps.push({
                         neededLayer: layerId, reason: "A calculated tag loads features from this layer",

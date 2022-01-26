@@ -33,7 +33,7 @@ function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void
     ]).AsMarkdown()
 
     md.replace(/\n\n\n+/g, "\n\n");
-    
+
     writeFileSync(filename, md);
 }
 

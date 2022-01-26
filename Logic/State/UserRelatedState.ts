@@ -96,14 +96,14 @@ export default class UserRelatedState extends ElementsState {
                     // We wait till we are logged in
                     return
                 }
-                
-                if(self.osmConnection.isLoggedIn.data == false){
+
+                if (self.osmConnection.isLoggedIn.data == false) {
                     return;
                 }
 
                 if (currentThemes.some(installed => installed.id === this.layoutToUse.id)) {
                     // Already added to the 'installed theme' list
-                    return; 
+                    return;
                 }
 
                 console.log("Current installed themes are", this.installedThemes.data)
@@ -115,11 +115,9 @@ export default class UserRelatedState extends ElementsState {
                 })
                 self.installedThemes.ping()
                 console.log("Registered " + self.layoutToUse.id + " as installed themes")
-            
+
             })
         }
-
-
 
 
         // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme

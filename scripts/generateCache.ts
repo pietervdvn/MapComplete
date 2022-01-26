@@ -376,29 +376,28 @@ async function main(args: string[]) {
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
 
-    if(isNaN(lat0)){
+    if (isNaN(lat0)) {
         throw "The first number (a latitude) is not a valid number"
     }
 
-    if(isNaN(lon0)){
+    if (isNaN(lon0)) {
         throw "The second number (a longitude) is not a valid number"
     }
-    if(isNaN(lat1)){
+    if (isNaN(lat1)) {
         throw "The third number (a latitude) is not a valid number"
     }
 
-    if(isNaN(lon1)){
+    if (isNaN(lon1)) {
         throw "The first number (a longitude) is not a valid number"
     }
-    
-    
+
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
 
-    if(isNaN(tileRange.total)){
+    if (isNaN(tileRange.total)) {
         throw "Something has gone wrong: tilerange is NAN"
     }
-    
+
     if (tileRange.total === 0) {
         console.log("Tilerange has zero tiles - this is probably an error")
         return

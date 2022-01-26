@@ -13,7 +13,7 @@ import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 export default class TagSpec extends T {
 
     constructor() {
-        super( [
+        super([
             ["Tag replacement works in translation", () => {
                 const tr = new Translation({
                     "en": "Test {key} abc"
@@ -523,13 +523,13 @@ export default class TagSpec extends T {
                     T.isTrue(filter.matchesProperties(properties), "Lazy value not matched")
                 }
             ],
-        ["test date comparison",() => {
-            
-            const filter = TagUtils.Tag("date_created<2022-01-07")
-            T.isFalse(filter.matchesProperties({"date_created":"2022-01-08"}), "Date comparison: expected a match")
-            T.isTrue(filter.matchesProperties({"date_created":"2022-01-01"}), "Date comparison: didn't expect a match")
+            ["test date comparison", () => {
 
-        }]]);
+                const filter = TagUtils.Tag("date_created<2022-01-07")
+                T.isFalse(filter.matchesProperties({"date_created": "2022-01-08"}), "Date comparison: expected a match")
+                T.isTrue(filter.matchesProperties({"date_created": "2022-01-01"}), "Date comparison: didn't expect a match")
+
+            }]]);
     }
 
 }

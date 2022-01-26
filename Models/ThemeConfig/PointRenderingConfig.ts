@@ -69,7 +69,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length);
             if (Svg.All[iconKey] === undefined) {
-                throw context+": builtin SVG asset not found: " + iconPath;
+                throw context + ": builtin SVG asset not found: " + iconPath;
             }
         }
         this.iconSize = this.tr("iconSize", "40,40,center");
@@ -209,16 +209,16 @@ export default class PointRenderingConfig extends WithContextLoader {
         } else {
             iconAndBadges.SetClass("w-full h-full")
         }
-        
+
         let label = this.GetLabel(tags)
-        let htmlEl : BaseUIElement;
-        if(icon === undefined && label === undefined){
+        let htmlEl: BaseUIElement;
+        if (icon === undefined && label === undefined) {
             htmlEl = undefined
-        }else if(icon === undefined){
+        } else if (icon === undefined) {
             htmlEl = new Combine([label])
-        }else if(label === undefined){
-            htmlEl =  new Combine([iconAndBadges])
-        }else {
+        } else if (label === undefined) {
+            htmlEl = new Combine([iconAndBadges])
+        } else {
             htmlEl = new Combine([iconAndBadges, label]).SetStyle("flex flex-col")
         }
 

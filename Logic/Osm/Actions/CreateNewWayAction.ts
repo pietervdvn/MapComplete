@@ -25,7 +25,7 @@ export default class CreateNewWayAction extends OsmCreateAction {
                 options: {
                     theme: string
                 }) {
-        super(null,true)
+        super(null, true)
         this.coordinates = coordinates;
         this.tags = tags;
         this._options = options;
@@ -56,7 +56,7 @@ export default class CreateNewWayAction extends OsmCreateAction {
 
 
         const id = changes.getNewID()
-        this.newElementIdNumber  = id
+        this.newElementIdNumber = id
         const newWay = <ChangeDescription>{
             id,
             type: "way",

@@ -60,7 +60,6 @@ export default class NewNoteUi extends Toggle {
 
         super(
             new Toggle(
-               
                 new Combine(
                     [
                         t.noteLayerHasFilters.SetClass("alert"),

@@ -44,22 +44,22 @@ export class AskMetadata extends Combine implements FlowStep<{
             inputStyle: "width: 100%"
         })
 
-        let options : {value: string, shown: BaseUIElement}[]=  AllKnownLayouts.layoutsList
+        let options: { value: string, shown: BaseUIElement }[] = AllKnownLayouts.layoutsList
             .filter(th => th.layers.some(l => l.id === params.layer.id))
             .filter(th => th.id !== "personal")
             .map(th => ({
                 value: th.id,
                 shown: th.title
             }))
-        
-        options.splice(0,0, {
+
+        options.splice(0, 0, {
             shown: new FixedUiElement("Select a theme"),
-            value:  undefined
+            value: undefined
         })
-        
-        const theme = new DropDown("Which theme should be linked in the note?",options)
-            
-            ValidatedTextField.InputForType("string", {
+
+        const theme = new DropDown("Which theme should be linked in the note?", options)
+
+        ValidatedTextField.InputForType("string", {
             value: LocalStorageSource.Get("import-helper-theme-text"),
             inputStyle: "width: 100%"
         })
@@ -89,7 +89,7 @@ export class AskMetadata extends Combine implements FlowStep<{
         }, [wikilink.GetValue(), source.GetValue(), theme.GetValue()])
 
         this.IsValid = this.Value.map(obj => {
-            if(obj === undefined){
+            if (obj === undefined) {
                 return false;
             }
             return obj.theme !== undefined && obj.features !== undefined && obj.wikilink !== undefined && obj.intro !== undefined && obj.source !== undefined;

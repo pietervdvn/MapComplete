@@ -22,15 +22,15 @@ import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
 
 export class OpenIdEditor extends VariableUiElement {
-    constructor(state : {locationControl: UIEventSource<Loc>}, iconStyle? : string, objectId?: string) {
+    constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
         const t = Translations.t.general.attribution
         super(state.locationControl.map(location => {
             let elementSelect = "";
-            if(objectId !== undefined){
-               const parts = objectId.split("/")
+            if (objectId !== undefined) {
+                const parts = objectId.split("/")
                 const tp = parts[0]
-                if(parts.length === 2 && !isNaN(Number(parts[1]))  && (tp === "node" || tp === "way" || tp === "relation")){
-                    elementSelect = "&"+ tp+"="+parts[1]
+                if (parts.length === 2 && !isNaN(Number(parts[1])) && (tp === "node" || tp === "way" || tp === "relation")) {
+                    elementSelect = "&" + tp + "=" + parts[1]
                 }
             }
             const idLink = `https://www.openstreetmap.org/edit?editor=id${elementSelect}#map=${location?.zoom ?? 0}/${location?.lat ?? 0}/${location?.lon ?? 0}`
@@ -41,9 +41,9 @@ export class OpenIdEditor extends VariableUiElement {
 }
 
 export class OpenMapillary extends VariableUiElement {
-    constructor(state : {locationControl: UIEventSource<Loc>}, iconStyle? : string) {
+    constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string) {
         const t = Translations.t.general.attribution
-       super( state.locationControl.map(location => {
+        super(state.locationControl.map(location => {
             const mapillaryLink = `https://www.mapillary.com/app/?focus=map&lat=${location?.lat ?? 0}&lng=${location?.lon ?? 0}&z=${Math.max((location?.zoom ?? 2) - 1, 1)}`
             return new SubtleButton(Svg.mapillary_black_ui().SetStyle(iconStyle), t.openMapillary, {
                 url: mapillaryLink,
@@ -55,13 +55,13 @@ export class OpenMapillary extends VariableUiElement {
 
 export class OpenJosm extends Combine {
 
-    constructor(state : {osmConnection: OsmConnection, currentBounds: UIEventSource<BBox>,}, iconStyle? : string) {
-   const t = Translations.t.general.attribution
-     
+    constructor(state: { osmConnection: OsmConnection, currentBounds: UIEventSource<BBox>, }, iconStyle?: string) {
+        const t = Translations.t.general.attribution
+
         const josmState = new UIEventSource<string>(undefined)
         // Reset after 15s
         josmState.stabilized(15000).addCallbackD(_ => josmState.setData(undefined))
-        
+
         const stateIndication = new VariableUiElement(josmState.map(state => {
             if (state === undefined) {
                 return undefined
@@ -72,23 +72,23 @@ export class OpenJosm extends Combine {
             }
             return t.josmNotOpened.SetClass("alert")
         }));
-        
-        const toggle =    new Toggle(
-                new SubtleButton(Svg.josm_logo_ui().SetStyle(iconStyle), t.editJosm).onClick(() => {
-                    const bounds: any = state.currentBounds.data;
-                    if (bounds === undefined) {
-                        return undefined
-                    }
-                    const top = bounds.getNorth();
-                    const bottom = bounds.getSouth();
-                    const right = bounds.getEast();
-                    const left = bounds.getWest();
-                    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
-                    Utils.download(josmLink).then(answer => josmState.setData(answer.replace(/\n/g, '').trim())).catch(_ => josmState.setData("ERROR"))
-                }), undefined, state.osmConnection.userDetails.map(ud => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible))
+
+        const toggle = new Toggle(
+            new SubtleButton(Svg.josm_logo_ui().SetStyle(iconStyle), t.editJosm).onClick(() => {
+                const bounds: any = state.currentBounds.data;
+                if (bounds === undefined) {
+                    return undefined
+                }
+                const top = bounds.getNorth();
+                const bottom = bounds.getSouth();
+                const right = bounds.getEast();
+                const left = bounds.getWest();
+                const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
+                Utils.download(josmLink).then(answer => josmState.setData(answer.replace(/\n/g, '').trim())).catch(_ => josmState.setData("ERROR"))
+            }), undefined, state.osmConnection.userDetails.map(ud => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible))
 
         super([stateIndication, toggle]);
-        
+
     }
 
 
@@ -112,7 +112,7 @@ export default class CopyrightPanel extends Combine {
 
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
-          const iconStyle = "height: 1.5rem; width: auto"
+        const iconStyle = "height: 1.5rem; width: auto"
         const actionButtons = [
             new SubtleButton(Svg.liberapay_ui().SetStyle(iconStyle), t.donate, {
                 url: "https://liberapay.com/pietervdvn/",
@@ -139,11 +139,11 @@ export default class CopyrightPanel extends Combine {
             maintainer = Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.maintainer})
         }
 
-       const contributions = new ContributorCount(state).Contributors
-        
+        const contributions = new ContributorCount(state).Contributors
+
         super([
             Translations.t.general.attribution.attributionContent,
-            new FixedUiElement("MapComplete "+Constants.vNumber).SetClass("font-bold"),
+            new FixedUiElement("MapComplete " + Constants.vNumber).SetClass("font-bold"),
             maintainer,
             new Combine(actionButtons).SetClass("block w-full"),
             new FixedUiElement(layoutToUse.credits),

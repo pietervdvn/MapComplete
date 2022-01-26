@@ -27,7 +27,7 @@ export default class ImportHelperGui extends LeftIndex {
     constructor() {
         const state = new UserRelatedState(undefined)
 
-            const {flow, furthestStep, titles} =
+        const {flow, furthestStep, titles} =
             FlowPanelFactory
                 .start("Introduction", new Introdution())
                 .then("Login", _ => new LoginToImport(state))
@@ -37,28 +37,28 @@ export default class ImportHelperGui extends LeftIndex {
                 .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
                 .then("Compare with existing data", v => new ConflationChecker(state, v))
                 .then("License and community check", v => new ConfirmProcess(v))
-                .then("Metadata", (v:{features:any[], layer: LayerConfig}) => new AskMetadata(v))
+                .then("Metadata", (v: { features: any[], layer: LayerConfig }) => new AskMetadata(v))
                 .finish("Note creation", v => new CreateNotes(state, v));
-        
+
         const toc = new List(
             titles.map((title, i) => new VariableUiElement(furthestStep.map(currentStep => {
-                if(i > currentStep){
+                if (i > currentStep) {
                     return new Combine([title]).SetClass("subtle");
                 }
-                if(i == currentStep){
+                if (i == currentStep) {
                     return new Combine([title]).SetClass("font-bold");
                 }
-                if(i < currentStep){
+                if (i < currentStep) {
                     return title
                 }
-                
-                
+
+
             })))
             , true)
-        
+
         const leftContents: BaseUIElement[] = [
-            new SubtleButton(undefined,"Inspect your preview imports", {
-                url:"import_viewer.html"
+            new SubtleButton(undefined, "Inspect your preview imports", {
+                url: "import_viewer.html"
             }),
             toc,
             new Toggle(new FixedUiElement("Testmode - won't actually import notes").SetClass("alert"), undefined, state.featureSwitchIsTesting),

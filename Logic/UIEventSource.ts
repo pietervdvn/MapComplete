@@ -11,7 +11,7 @@ export class UIEventSource<T> {
     constructor(data: T, tag: string = "") {
         this.tag = tag;
         this.data = data;
-        if(tag === undefined || tag === ""){
+        if (tag === undefined || tag === "") {
             const callstack = new Error().stack.split("\n")
             this.tag = callstack[1]
         }
@@ -42,7 +42,7 @@ export class UIEventSource<T> {
         source.addCallback((latestData) => {
             sink.setData(latestData?.data);
             latestData.addCallback(data => {
-                if(source.data !== latestData){
+                if (source.data !== latestData) {
                     return true;
                 }
                 sink.setData(data)
@@ -243,8 +243,8 @@ export class UIEventSource<T> {
             }
         }
         let endTime = new Date().getTime() / 1000
-        if((endTime - startTime) > 500){
-            console.trace("Warning: a ping of ",this.tag," took more then 500ms; this is probably a performance issue")
+        if ((endTime - startTime) > 500) {
+            console.trace("Warning: a ping of ", this.tag, " took more then 500ms; this is probably a performance issue")
         }
         if (toDelete !== undefined) {
             for (const toDeleteElement of toDelete) {
@@ -297,10 +297,10 @@ export class UIEventSource<T> {
 
         const stack = new Error().stack.split("\n");
         const callee = stack[1]
-        
+
         const newSource = new UIEventSource<J>(
             f(this.data),
-            "map(" + this.tag + ")@"+callee
+            "map(" + this.tag + ")@" + callee
         );
 
         const update = function () {

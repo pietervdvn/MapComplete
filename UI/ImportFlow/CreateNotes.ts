@@ -23,8 +23,8 @@ export class CreateNotes extends Combine {
             delete f.properties["source"]
             delete f.properties["src"]
             let extraNote = ""
-            if(f.properties["note"]){
-                extraNote = f.properties["note"]+"\n"
+            if (f.properties["note"]) {
+                extraNote = f.properties["note"] + "\n"
                 delete f.properties["note"]
             }
 

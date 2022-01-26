@@ -67,9 +67,9 @@ export default class LayerConfig extends WithContextLoader {
         context = context + "." + json.id;
         super(json, context)
         this.id = json.id;
-        
-        if(json.id === undefined){
-            throw "Not a valid layer: id is undefined: "+JSON.stringify(json)
+
+        if (json.id === undefined) {
+            throw "Not a valid layer: id is undefined: " + JSON.stringify(json)
         }
 
         if (json.source === undefined) {
@@ -259,7 +259,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
 
-        this.titleIcons = this.ParseTagRenderings((<TagRenderingConfigJson[]> json.titleIcons), {
+        this.titleIcons = this.ParseTagRenderings((<TagRenderingConfigJson[]>json.titleIcons), {
             readOnlyMode: true
         });
 
@@ -375,9 +375,9 @@ export default class LayerConfig extends WithContextLoader {
                 return [
                     new Combine([
                         new Link(
-                        "<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>",
-                        "https://taginfo.openstreetmap.org/keys/"+values.key+"#values"
-                    ),Link.OsmWiki(values.key)
+                            "<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>",
+                            "https://taginfo.openstreetmap.org/keys/" + values.key + "#values"
+                        ), Link.OsmWiki(values.key)
                     ]),
                     values.type === undefined ? "Multiple choice" : new Link(values.type, "../SpecialInputElements.md#" + values.type),
                     new Combine(embedded)

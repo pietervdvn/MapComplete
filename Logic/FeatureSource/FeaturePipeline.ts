@@ -43,40 +43,33 @@ export default class FeaturePipeline {
     public readonly timeout: UIEventSource<number>;
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
-
-    
-    
+    public readonly relationTracker: RelationsTracker
+    /**
+     * Keeps track of all raw OSM-nodes.
+     * Only initialized if 'type_node' is defined as layer
+     */
+    public readonly fullNodeDatabase?: FullNodeDatabaseSource
     private readonly overpassUpdater: OverpassFeatureSource
     private state: MapState;
-    public readonly relationTracker: RelationsTracker
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
-
     /**
      * Keeps track of the age of the loaded data.
      * Has one freshness-Calculator for every layer
      * @private
      */
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
-
     private readonly oldestAllowedDate: Date;
     private readonly osmSourceZoomLevel
-
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
-  
-    /**
-     * Keeps track of all raw OSM-nodes.
-     * Only initialized if 'type_node' is defined as layer
-     */
-    public readonly fullNodeDatabase? : FullNodeDatabaseSource
-    
+
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
         state: MapState,
-        options? : {
+        options?: {
             /*Used for metatagging - will receive all the sources with changeGeometry applied but without filtering*/
             handleRawFeatureSource: (source: FeatureSourceForLayer) => void
         }
-       ) {
+    ) {
         this.state = state;
 
         const self = this
@@ -104,7 +97,7 @@ export default class FeaturePipeline {
                 return location.zoom >= minzoom;
             }
         );
-        
+
         const neededTilesFromOsm = this.getNeededTilesFromOsm(this.sufficientlyZoomed)
 
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
@@ -114,10 +107,10 @@ export default class FeaturePipeline {
         function patchedHandleFeatureSource(src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
             const withChanges = new ChangeGeometryApplicator(src, state.changes);
-            const srcFiltered =                new FilteringFeatureSource(state, src.tileIndex,withChanges)
+            const srcFiltered = new FilteringFeatureSource(state, src.tileIndex, withChanges)
 
             handleFeatureSource(srcFiltered)
-            if(options?.handleRawFeatureSource){
+            if (options?.handleRawFeatureSource) {
                 options.handleRawFeatureSource(withChanges)
             }
             self.somethingLoaded.setData(true)
@@ -267,7 +260,7 @@ export default class FeaturePipeline {
                 })
         })
 
-        if(this.fullNodeDatabase !== undefined){
+        if (this.fullNodeDatabase !== undefined) {
             osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => this.fullNodeDatabase.handleOsmJson(osmJson, tileId))
         }
 
@@ -289,7 +282,7 @@ export default class FeaturePipeline {
                     self.localStorageSavers.get(tile.layer.layerDef.id)?.addTile(tile)
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
                     tile.features.addCallbackAndRunD(f => {
-                        if(f.length === 0){
+                        if (f.length === 0) {
                             return
                         }
                         self.onNewDataLoaded(tile)
@@ -298,9 +291,11 @@ export default class FeaturePipeline {
                 }
             }),
             updater,
-            {handleLeftovers: (leftOvers) => {
-                console.warn("Overpass returned a few non-matched features:", leftOvers)
-                }})
+            {
+                handleLeftovers: (leftOvers) => {
+                    console.warn("Overpass returned a few non-matched features:", leftOvers)
+                }
+            })
 
 
         // Also load points/lines that are newly added. 
@@ -308,7 +303,7 @@ export default class FeaturePipeline {
         newGeometry.features.addCallbackAndRun(geometries => {
             console.debug("New geometries are:", geometries)
         })
-        
+
         new RegisteringAllFromFeatureSourceActor(newGeometry, state.allElements)
         // A NewGeometryFromChangesFeatureSource does not split per layer, so we do this next
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
@@ -322,9 +317,11 @@ export default class FeaturePipeline {
 
             },
             newGeometry,
-            {handleLeftovers: (leftOvers) => {
-                console.warn("Got some leftovers from the filteredLayers: ", leftOvers)
-                }}
+            {
+                handleLeftovers: (leftOvers) => {
+                    console.warn("Got some leftovers from the filteredLayers: ", leftOvers)
+                }
+            }
         )
 
         this.runningQuery = updater.runningQuery.map(
@@ -337,10 +334,6 @@ export default class FeaturePipeline {
 
     }
 
-    private onNewDataLoaded(src: FeatureSource){
-        this.newDataLoadedSignal.setData(src)
-    }
-    
     public GetAllFeaturesWithin(bbox: BBox): any[][] {
         const self = this
         const tiles = []
@@ -369,6 +362,10 @@ export default class FeaturePipeline {
         })
     }
 
+    private onNewDataLoaded(src: FeatureSource) {
+        this.newDataLoadedSignal.setData(src)
+    }
+
     private freshnessForVisibleLayers(z: number, x: number, y: number): Date {
         let oldestDate = undefined;
         for (const flayer of this.state.filteredLayers.data) {
@@ -378,11 +375,11 @@ export default class FeaturePipeline {
             if (this.state.locationControl.data.zoom < flayer.layerDef.minzoom) {
                 continue;
             }
-            if(flayer.layerDef.maxAgeOfCache === 0){
+            if (flayer.layerDef.maxAgeOfCache === 0) {
                 return undefined;
             }
             const freshnessCalc = this.freshnesses.get(flayer.layerDef.id)
-            if(freshnessCalc === undefined){
+            if (freshnessCalc === undefined) {
                 console.warn("No freshness tracker found for ", flayer.layerDef.id)
                 return undefined
             }

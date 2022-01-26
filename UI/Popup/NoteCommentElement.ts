@@ -70,15 +70,15 @@ export default class NoteCommentElement extends Combine {
 
     }
 
-    public static addCommentTo(txt: string, tags: UIEventSource<any>, state: {osmConnection: OsmConnection}){
+    public static addCommentTo(txt: string, tags: UIEventSource<any>, state: { osmConnection: OsmConnection }) {
         const comments: any[] = JSON.parse(tags.data["comments"])
         const username = state.osmConnection.userDetails.data.name
 
         var urlRegex = /(https?:\/\/[^\s]+)/g;
-        const html = txt.replace(urlRegex, function(url) {
+        const html = txt.replace(urlRegex, function (url) {
             return '<a href="' + url + '">' + url + '</a>';
         })
-        
+
         comments.push({
             "date": new Date().toISOString(),
             "uid": state.osmConnection.userDetails.data.uid,
@@ -91,5 +91,5 @@ export default class NoteCommentElement extends Combine {
         tags.data["comments"] = JSON.stringify(comments)
         tags.ping()
     }
-    
+
 }

@@ -78,7 +78,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                         // return;
                     }
 
-                    bbox = bbox.pad(Math.max(preset.boundsFactor , 2), Math.max(preset.boundsFactor , 2));
+                    bbox = bbox.pad(Math.max(preset.boundsFactor, 2), Math.max(preset.boundsFactor, 2));
                     loadedBbox = bbox;
                     const allFeatures: { feature: any }[] = []
                     preset.preciseInput.snapToLayers.forEach(layerId => {
@@ -139,7 +139,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 ]
             ).SetClass("flex flex-col")
         ).onClick(() => {
-            
+
             const appliedFilters = preset.layerToAddTo.appliedFilters;
             appliedFilters.data.forEach((_, k) => appliedFilters.data.set(k, undefined))
             appliedFilters.ping()
@@ -150,15 +150,14 @@ export default class ConfirmLocationOfPoint extends Combine {
         const hasActiveFilter = preset.layerToAddTo.appliedFilters
             .map(appliedFilters => {
                 const activeFilters = Array.from(appliedFilters.values()).filter(f => f?.currentFilter !== undefined);
-                    return activeFilters.length === 0;
+                return activeFilters.length === 0;
             })
-        
+
         // If at least one filter is active which _might_ hide a newly added item, this blocks the preset and requests the filter to be disabled
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
-            disableFilter, 
+            disableFilter,
             hasActiveFilter)
-        
 
 
         const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection);

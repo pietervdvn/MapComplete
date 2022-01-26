@@ -42,7 +42,7 @@ export default class EditableTagRendering extends Toggle {
         )
     }
 
-    private static CreateRendering(state: {featureSwitchUserbadge?: UIEventSource<boolean>, osmConnection: OsmConnection}, tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
+    private static CreateRendering(state: { featureSwitchUserbadge?: UIEventSource<boolean>, osmConnection: OsmConnection }, tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration, state)
         answer.SetClass("w-full")
         let rendering = answer;
@@ -60,7 +60,7 @@ export default class EditableTagRendering extends Toggle {
 
 
             const question = new Lazy(() =>
-                new TagRenderingQuestion(tags, configuration,state,
+                new TagRenderingQuestion(tags, configuration, state,
                     {
                         units: units,
                         cancelButton: Translations.t.general.cancel.Clone()

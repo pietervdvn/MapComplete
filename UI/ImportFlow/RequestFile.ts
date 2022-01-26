@@ -3,13 +3,12 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
 import {SubtleButton} from "../Base/SubtleButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Title from "../Base/Title";
 import InputElementMap from "../Input/InputElementMap";
 import BaseUIElement from "../BaseUIElement";
 import FileSelectorButton from "../Input/FileSelectorButton";
 import {FlowStep} from "./FlowStep";
-import { parse } from "papaparse";
+import {parse} from "papaparse";
 
 class FileSelector extends InputElementMap<FileList, { name: string, contents: Promise<string> }> {
     constructor(label: BaseUIElement) {
@@ -76,7 +75,7 @@ export class RequestFile extends Combine implements FlowStep<any> {
 
             } catch (e) {
                 // Loading as CSV
-                var lines : string[][] = <any> parse(src).data;
+                var lines: string[][] = <any>parse(src).data;
                 const header = lines[0]
                 lines.splice(0, 1)
                 if (header.indexOf("lat") < 0 || header.indexOf("lon") < 0) {
@@ -84,26 +83,26 @@ export class RequestFile extends Combine implements FlowStep<any> {
                 }
 
                 if (header.some(h => h.trim() == "")) {
-                    return {error:t.errNoName}
+                    return {error: t.errNoName}
                 }
-            
+
 
                 if (new Set(header).size !== header.length) {
-                    return {error:t.errDuplicate}
+                    return {error: t.errDuplicate}
                 }
-            
+
 
                 const features = []
                 for (let i = 0; i < lines.length; i++) {
                     const attrs = lines[i];
-                    if(attrs.length == 0 || (attrs.length == 1 && attrs[0] == "")){
+                    if (attrs.length == 0 || (attrs.length == 1 && attrs[0] == "")) {
                         // empty line
                         continue
                     }
                     const properties = {}
                     for (let i = 0; i < header.length; i++) {
-                        const v =  attrs[i]
-                        if(v === undefined || v === ""){
+                        const v = attrs[i]
+                        if (v === undefined || v === "") {
                             continue
                         }
                         properties[header[i]] = v;

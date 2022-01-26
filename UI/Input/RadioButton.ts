@@ -73,7 +73,7 @@ export class RadioButton<T> extends InputElement<T> {
             elements[i]?.onClick(() => {
                 selectedElementIndex.setData(i);
             });
-            
+
             elements[i].GetValue().addCallback(() => {
                 selectedElementIndex.setData(i);
             });

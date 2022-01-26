@@ -20,7 +20,8 @@ export default class FeaturePipelineState extends MapState {
      */
     public readonly featurePipeline: FeaturePipeline;
     private readonly featureAggregator: TileHierarchyAggregator;
-private readonly metatagRecalculator : MetaTagRecalculator
+    private readonly metatagRecalculator: MetaTagRecalculator
+
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
@@ -33,21 +34,21 @@ private readonly metatagRecalculator : MetaTagRecalculator
          * We are a bit in a bind:
          * There is the featurePipeline, which creates some sources during construction
          * THere is the metatagger, which needs to have these sources registered AND which takes a FeaturePipeline as argument
-         * 
+         *
          * This is a bit of a catch-22 (except that it isn't)
-         * The sources that are registered in the constructor are saved into 'registeredSources' temporary 
-         * 
+         * The sources that are registered in the constructor are saved into 'registeredSources' temporary
+         *
          */
         const sourcesToRegister = []
-        
-        function registerRaw(source: FeatureSourceForLayer & Tiled){
-            if(self.metatagRecalculator === undefined){
+
+        function registerRaw(source: FeatureSourceForLayer & Tiled) {
+            if (self.metatagRecalculator === undefined) {
                 sourcesToRegister.push(source)
-            }else{
+            } else {
                 self.metatagRecalculator.registerSource(source)
             }
         }
-        
+
         function registerSource(source: FeatureSourceForLayer & Tiled) {
 
             clusterCounter.addTile(source)
@@ -127,7 +128,7 @@ private readonly metatagRecalculator : MetaTagRecalculator
         this.metatagRecalculator.registerSource(this.currentView, true)
 
         sourcesToRegister.forEach(source => self.metatagRecalculator.registerSource(source))
-        
+
         new SelectedFeatureHandler(Hash.hash, this)
 
         this.AddClusteringToMap(this.leafletMap)

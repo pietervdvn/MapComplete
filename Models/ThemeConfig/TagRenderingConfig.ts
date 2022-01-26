@@ -45,6 +45,7 @@ export default class TagRenderingConfig {
         readonly hideInAnswer: boolean | TagsFilter
         readonly addExtraTags: Tag[]
     }[]
+
     constructor(json: string | TagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
@@ -373,8 +374,8 @@ export default class TagRenderingConfig {
                     return mapping.then;
                 }
                 if (mapping.if.matchesProperties(tags)) {
-                    if(this.id === "uk_addresses_placename"){
-                    console.log("Matched",mapping.if,"with ",tags["addr:place"])
+                    if (this.id === "uk_addresses_placename") {
+                        console.log("Matched", mapping.if, "with ", tags["addr:place"])
                     }
                     return mapping.then;
                 }
@@ -487,12 +488,11 @@ export default class TagRenderingConfig {
             mappings = new List(
                 this.mappings.map(m => {
                         let txt = "**" + m.then.txt + "** corresponds with " + m.if.asHumanString(true, false, {});
-                        if(m.hideInAnswer === true)
-                        {
+                        if (m.hideInAnswer === true) {
                             txt += "_This option cannot be chosen as answer_"
                         }
-                        if(m.ifnot !== undefined){
-                            txt += "Unselecting this answer will add "+m.ifnot.asHumanString(true, false, {})
+                        if (m.ifnot !== undefined) {
+                            txt += "Unselecting this answer will add " + m.ifnot.asHumanString(true, false, {})
                         }
                         return txt;
                     }

@@ -208,14 +208,14 @@ function compileTranslationsFromWeblate() {
     const allTranslations = new TranslationPart()
 
     for (const translationFile of translations) {
-        try{
-            
-        const contents = JSON.parse(readFileSync(translationFile, "utf-8"));
-        let language = translationFile.substring(translationFile.lastIndexOf("/") + 1)
-        language = language.substring(0, language.length - 5)
-        allTranslations.add(language, contents)
-        }catch (e) {
-            throw "Could not read file "+ translationFile+" due to "+e
+        try {
+
+            const contents = JSON.parse(readFileSync(translationFile, "utf-8"));
+            let language = translationFile.substring(translationFile.lastIndexOf("/") + 1)
+            language = language.substring(0, language.length - 5)
+            allTranslations.add(language, contents)
+        } catch (e) {
+            throw "Could not read file " + translationFile + " due to " + e
         }
     }
 

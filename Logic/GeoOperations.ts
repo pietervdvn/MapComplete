@@ -558,19 +558,19 @@ export class GeoOperations {
             const prevCoordinate = coordinates[i - 1]
 
             const distP = GeoOperations.distanceBetween(coordinate, prevCoordinate)
-            if(distP < 0.1){
+            if (distP < 0.1) {
                 coordinates.splice(i, 1)
                 continue
             }
-        
-            if(i == coordinates.length - 2){
+
+            if (i == coordinates.length - 2) {
                 const distN = GeoOperations.distanceBetween(coordinate, nextCoordinate)
-                if(distN < 0.1){
+                if (distN < 0.1) {
                     coordinates.splice(i, 1)
                     continue
                 }
             }
-            
+
             const bearingN = turf.bearing(coordinate, nextCoordinate)
             const bearingP = turf.bearing(prevCoordinate, coordinate)
             const diff = Math.abs(bearingN - bearingP)
@@ -683,8 +683,8 @@ export class GeoOperations {
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
 
     }
-    
-    
+
+
 }
 
 

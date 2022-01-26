@@ -92,7 +92,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                 )
         }
         tabs.push(copyright)
-        
+
         const privacy = {
             header: Svg.eye_svg(),
             content: new PrivacyPolicy()

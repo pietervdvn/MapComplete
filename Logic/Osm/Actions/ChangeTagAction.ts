@@ -19,7 +19,7 @@ export default class ChangeTagAction extends OsmChangeAction {
         this._currentTags = currentTags;
         this._meta = meta;
     }
-    
+
     /**
      * Doublechecks that no stupid values are added
      */

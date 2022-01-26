@@ -64,7 +64,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 console.warn("Editor layer index: name not defined on ", props)
                 continue
             }
-            
+
 
             const leafletLayer: () => TileLayer = () => AvailableBaseLayersImplementation.CreateBackgroundLayer(
                 props.id,
@@ -189,13 +189,13 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 attribution: attribution,
                 maxZoom: Math.max(21, maxZoom ?? 19),
                 maxNativeZoom: maxZoom ?? 19,
-                minZoom:  1,
+                minZoom: 1,
                 // @ts-ignore
                 wmts: isWMTS ?? false,
                 subdomains: domains
             });
     }
-    
+
     public AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
         return UIEventSource.ListStabilized(location.map(
             (currentLocation) => {
@@ -209,50 +209,50 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
     public SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
         return this.AvailableLayersAt(location)
             .map(available => {
-            // First float all 'best layers' to the top
-            available.sort((a, b) => {
-                    if (a.isBest && b.isBest) {
-                        return 0;
-                    }
-                    if (!a.isBest) {
-                        return 1
-                    }
-
-                    return -1;
-                }
-            )
-
-            if (preferedCategory.data === undefined) {
-                return available[0]
-            }
-
-            let prefered: string []
-            if (typeof preferedCategory.data === "string") {
-                prefered = [preferedCategory.data]
-            } else {
-                prefered = preferedCategory.data;
-            }
-
-            prefered.reverse();
-            for (const category of prefered) {
-                //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
+                // First float all 'best layers' to the top
                 available.sort((a, b) => {
-                        if (a.category === category && b.category === category) {
+                        if (a.isBest && b.isBest) {
                             return 0;
                         }
-                        if (a.category !== category) {
+                        if (!a.isBest) {
                             return 1
                         }
 
                         return -1;
                     }
                 )
-            }
-            return available[0]
-        }, [preferedCategory])
+
+                if (preferedCategory.data === undefined) {
+                    return available[0]
+                }
+
+                let prefered: string []
+                if (typeof preferedCategory.data === "string") {
+                    prefered = [preferedCategory.data]
+                } else {
+                    prefered = preferedCategory.data;
+                }
+
+                prefered.reverse();
+                for (const category of prefered) {
+                    //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
+                    available.sort((a, b) => {
+                            if (a.category === category && b.category === category) {
+                                return 0;
+                            }
+                            if (a.category !== category) {
+                                return 1
+                            }
+
+                            return -1;
+                        }
+                    )
+                }
+                return available[0]
+            }, [preferedCategory])
     }
 
-    
+
     private CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [this.osmCarto]
         const globalLayers = [];

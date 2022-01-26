@@ -3,7 +3,8 @@ import LayerConfig from "./ThemeConfig/LayerConfig";
 import {TagsFilter} from "../Logic/Tags/TagsFilter";
 
 export interface FilterState {
-    currentFilter: TagsFilter, state: string | number
+    currentFilter: TagsFilter,
+    state: string | number
 }
 
 export default interface FilteredLayer {

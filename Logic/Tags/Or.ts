@@ -65,7 +65,7 @@ export class Or extends TagsFilter {
         }
         return result;
     }
-    
+
     AsJson() {
         return {
             or: this.or.map(o => o.AsJson())

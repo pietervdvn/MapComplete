@@ -61,7 +61,7 @@ export class ChangesetHandler {
         if (!extraMetaTags.some(tag => tag.key === "comment") || !extraMetaTags.some(tag => tag.key === "theme")) {
             throw "The meta tags should at least contain a `comment` and a `theme`"
         }
-        
+
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
             this.userDetails.data.csCount = 1;

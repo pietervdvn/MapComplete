@@ -7,14 +7,14 @@ import Title from "../Base/Title";
 export default class Introdution extends Combine implements FlowStep<void> {
     readonly IsValid: UIEventSource<boolean> = new UIEventSource<boolean>(true);
     readonly Value: UIEventSource<void> = new UIEventSource<void>(undefined);
-    
+
     constructor() {
         super([
-          new Title(  Translations.t.importHelper.title),
+            new Title(Translations.t.importHelper.title),
             Translations.t.importHelper.description,
             Translations.t.importHelper.importFormat,
         ]);
         this.SetClass("flex flex-col")
     }
-    
+
 }

@@ -94,7 +94,7 @@ export default class SimpleAddUI extends Toggle {
                         return presetsOverview
                     }
 
-                    function confirm(tags:any[], location: {lat: number, lon:number}, snapOntoWayId?: string) {
+                    function confirm(tags: any[], location: { lat: number, lon: number }, snapOntoWayId?: string) {
                         if (snapOntoWayId === undefined) {
                             createNewPoint(tags, location, undefined)
                         } else {

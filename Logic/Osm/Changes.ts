@@ -27,15 +27,12 @@ export class Changes {
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
+    public readonly state: { allElements: ElementStorage; historicalUserLocations: FeatureSource; osmConnection: OsmConnection }
+    public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
     private _nextId: number = -1; // Newly assigned ID's are negative
     private readonly isUploading = new UIEventSource(false);
-
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
-
-    public readonly state: { allElements: ElementStorage; historicalUserLocations: FeatureSource; osmConnection: OsmConnection }
-    
-    public readonly extraComment:UIEventSource<string> = new UIEventSource(undefined)
 
     constructor(
         state?: {
@@ -107,7 +104,7 @@ export class Changes {
      * Uploads all the pending changes in one go.
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
-    public async flushChanges(flushreason: string = undefined, openChangeset?: UIEventSource<number>) : Promise<void>{
+    public async flushChanges(flushreason: string = undefined, openChangeset?: UIEventSource<number>): Promise<void> {
         if (this.pendingChanges.data.length === 0) {
             return;
         }
@@ -116,17 +113,35 @@ export class Changes {
             return;
         }
 
-        
+
         console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
         try {
             const csNumber = await this.flushChangesAsync(openChangeset)
             this.isUploading.setData(false)
-            console.log("Changes flushed. Your changeset is "+csNumber);
+            console.log("Changes flushed. Your changeset is " + csNumber);
         } catch (e) {
             this.isUploading.setData(false)
             console.error("Flushing changes failed due to", e);
         }
+    }
+
+    public async applyAction(action: OsmChangeAction): Promise<void> {
+        const changeDescriptions = await action.Perform(this)
+        changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(action, changeDescriptions)
+        this.applyChanges(changeDescriptions)
+    }
+
+    public applyChanges(changes: ChangeDescription[]) {
+        console.log("Received changes:", changes)
+        this.pendingChanges.data.push(...changes);
+        this.pendingChanges.ping();
+        this.allChanges.data.push(...changes)
+        this.allChanges.ping()
+    }
+
+    public registerIdRewrites(mappings: Map<string, string>): void {
+        CreateNewNodeAction.registerIdRewrites(mappings)
     }
 
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
@@ -140,7 +155,7 @@ export class Changes {
             // Probably irrelevant, such as a new helper node
             return;
         }
-        
+
         const now = new Date()
         const recentLocationPoints = locations.map(ff => ff.feature)
             .filter(feat => feat.geometry.type === "Point")
@@ -187,26 +202,6 @@ export class Changes {
             }))
         ))
     }
-
-    public async applyAction(action: OsmChangeAction): Promise<void> {
-        const changeDescriptions = await action.Perform(this)
-        changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(action, changeDescriptions)
-        this.applyChanges(changeDescriptions)
-    }
-
-    public applyChanges(changes: ChangeDescription[]) {
-        console.log("Received changes:", changes)
-        this.pendingChanges.data.push(...changes);
-        this.pendingChanges.ping();
-        this.allChanges.data.push(...changes)
-        this.allChanges.ping()
-    }
-
-
-    public registerIdRewrites(mappings: Map<string, string>): void {
-        CreateNewNodeAction.registerIdRewrites(mappings)
-    }
-
 
     /**
      * UPload the selected changes to OSM.
@@ -287,10 +282,10 @@ export class Changes {
         // This method is only called with changedescriptions for this theme
         const theme = pending[0].meta.theme
         let comment = "Adding data with #MapComplete for theme #" + theme
-        if(this.extraComment.data !== undefined){
-            comment+="\n\n"+this.extraComment.data
+        if (this.extraComment.data !== undefined) {
+            comment += "\n\n" + this.extraComment.data
         }
-        
+
         const metatags: ChangesetTag[] = [{
             key: "comment",
             value: comment
@@ -329,10 +324,10 @@ export class Changes {
                 pendingPerTheme.get(theme).push(changeDescription)
             }
 
-            const successes = await Promise.all(Array.from(pendingPerTheme, 
-               async ([theme, pendingChanges]) => {
+            const successes = await Promise.all(Array.from(pendingPerTheme,
+                async ([theme, pendingChanges]) => {
                     try {
-                        if(openChangeset === undefined){
+                        if (openChangeset === undefined) {
                             openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).map(
                                 str => {
                                     const n = Number(str);
@@ -342,9 +337,9 @@ export class Changes {
                                     return n
                                 }, [], n => "" + n
                             );
-                            console.log("Using current-open-changeset-"+theme+" from the preferences, got "+openChangeset.data)
+                            console.log("Using current-open-changeset-" + theme + " from the preferences, got " + openChangeset.data)
                         }
-                        
+
                         return await self.flushSelectChanges(pendingChanges, openChangeset);
                     } catch (e) {
                         console.error("Could not upload some changes:", e)
@@ -395,7 +390,7 @@ export class Changes {
                     // Might be a failed fetch for simply this object
                     throw "Did not get an object that should be known: " + id
                 }
-                if(change.changes === undefined){
+                if (change.changes === undefined) {
                     // This object is a change to a newly created object. However, we have not seen the creation changedescription yet!
                     throw "Not a creation of the object"
                 }
@@ -522,7 +517,7 @@ export class Changes {
 
         })
 
-        console.debug("Calculated the pending changes: ", result.newObjects.length,"new; ", result.modifiedObjects.length,"modified;",result.deletedObjects,"deleted")
+        console.debug("Calculated the pending changes: ", result.newObjects.length, "new; ", result.modifiedObjects.length, "modified;", result.deletedObjects, "deleted")
         return result
     }
 }

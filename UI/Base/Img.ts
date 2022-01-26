@@ -29,6 +29,18 @@ export default class Img extends BaseUIElement {
         return `<img class="${css_class}" style="${style}" alt="" src="${Img.AsData(source)}">`;
     }
 
+    AsMarkdown(): string {
+        if (this._rawSvg === true) {
+            console.warn("Converting raw svgs to markdown is not supported");
+            return undefined
+        }
+        let src = this._src
+        if (this._src.startsWith("./")) {
+            src = "https://mapcomplete.osm.be/" + src
+        }
+        return "![](" + src + ")";
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const self = this;
         if (this._rawSvg) {
@@ -52,18 +64,6 @@ export default class Img extends BaseUIElement {
             }
         }
         return el;
-    }
-
-    AsMarkdown(): string {
-        if (this._rawSvg === true) {
-            console.warn("Converting raw svgs to markdown is not supported");
-            return undefined
-        }
-        let src = this._src
-        if (this._src.startsWith("./")) {
-            src = "https://mapcomplete.osm.be/" + src
-        }
-        return "![](" + src + ")";
     }
 }
 
