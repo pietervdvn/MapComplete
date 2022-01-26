@@ -22,10 +22,11 @@ export default class CreateNoteImportLayerSpec extends T {
                 const generator = new CreateNoteImportLayer()
                 const generatedLayer: LayerConfigJson = generator.convertStrict(desugaringState, layer, "ImportLayerGeneratorTest: convert")
                 T.equals("_tags~(^|.*;)amenity=public_bookcase($|;.*)", generatedLayer.isShown.mappings[1].if["and"][1].or[0].and[0])
+                T.isTrue(generatedLayer.minzoom <= layer.minzoom, "Zoomlevel is to high")
                 let renderings = Utils.NoNull(Utils.NoNull(generatedLayer.tagRenderings
                     .map(tr => (<TagRenderingConfigJson>tr).render))
                     .map(render => render["en"]))
-                T.equals(true, renderings.some(r => r.indexOf("import_button") > 0))
+                T.isTrue(renderings.some(r => r.indexOf("import_button") > 0), "no import button found")
             }]
         ]);
     }
