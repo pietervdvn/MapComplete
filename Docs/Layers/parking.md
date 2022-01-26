@@ -36,6 +36,7 @@ A layer showing car parkings
 
 
   - [parkings](https://mapcomplete.osm.be/parkings)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/parking/parking.json)

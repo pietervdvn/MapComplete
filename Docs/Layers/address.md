@@ -41,7 +41,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - addr:housenumber~^..*$|addr:street~^..*$|ref:inspireid~^..*$
+  - addr:housenumber~^..*$|addr:street~^..*$
 
 
 

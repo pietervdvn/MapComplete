@@ -43,6 +43,7 @@ A layer showing trees
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [trees](https://mapcomplete.osm.be/trees)
 
 
@@ -107,7 +108,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-  - **Height: {height}&nbsp;m** corresponds with height~^^[0-9.]+$$
+  - **Height: {height}&nbsp;m** corresponds with height~^[0-9.]+$
 
 
 

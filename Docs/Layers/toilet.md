@@ -48,6 +48,7 @@ A layer showing (public) toilets
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [toilets](https://mapcomplete.osm.be/toilets)
 
 

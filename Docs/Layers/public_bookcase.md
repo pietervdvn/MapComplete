@@ -19,7 +19,6 @@ A streetside cabinet with books, accessible to anyone
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
-    + [minimap](#minimap)
     + [public_bookcase-name](#public_bookcase-name)
     + [public_bookcase-capacity](#public_bookcase-capacity)
     + [bookcase-booktypes](#bookcase-booktypes)
@@ -47,6 +46,7 @@ A streetside cabinet with books, accessible to anyone
 
 
   - [bookcases](https://mapcomplete.osm.be/bookcases)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/public_bookcase/public_bookcase.json)
@@ -93,16 +93,6 @@ attribute | type | values which are supported by this layer
 
 
 ### images 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### minimap 
 
 
 

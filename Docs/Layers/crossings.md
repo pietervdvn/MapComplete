@@ -44,6 +44,7 @@ Crossings for pedestrians and cyclists
 
 
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/crossings/crossings.json)

@@ -47,6 +47,7 @@ Playgrounds
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
 

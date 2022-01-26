@@ -34,6 +34,7 @@ This layer visualizes directions
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 

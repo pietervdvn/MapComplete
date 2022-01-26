@@ -49,6 +49,7 @@ Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. T
 
 
   - [nature](https://mapcomplete.osm.be/nature)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/nature_reserve/nature_reserve.json)

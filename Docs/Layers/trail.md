@@ -45,7 +45,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Dhiking' target='_blank'>hiking</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Dbycicle' target='_blank'>bycicle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse' target='_blank'>horse</a>
+  - route~^.*foot.*$|route~^.*hiking.*$|route~^.*bycicle.*$|route~^.*horse.*$
 
 
 

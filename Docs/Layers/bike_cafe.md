@@ -44,6 +44,7 @@ A bike café is a café geared towards cyclists, for example with services such 
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)
@@ -60,7 +61,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dbicycle' target='_blank'>bicycle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dbicycle' target='_blank'>bicycle</a>|^service:bicycle:.*$~~^..*$
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dbicycle' target='_blank'>bicycle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dbicycle' target='_blank'>bicycle</a>|service:bicycle:.*~^..*$
 
 
 

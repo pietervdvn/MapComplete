@@ -37,6 +37,7 @@ Map layer to show fire hydrants.
 
 
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/extinguisher/extinguisher.json)

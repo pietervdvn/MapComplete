@@ -36,6 +36,7 @@ A layer showing touristical, road side information boards (e.g. giving informati
 
 
   - [nature](https://mapcomplete.osm.be/nature)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/information_board/information_board.json)

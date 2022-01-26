@@ -41,6 +41,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
   - [aed](https://mapcomplete.osm.be/aed)
   - [entrances](https://mapcomplete.osm.be/entrances)
+  - [personal](https://mapcomplete.osm.be/personal)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 

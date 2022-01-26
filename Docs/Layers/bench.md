@@ -42,6 +42,7 @@ A bench is a wooden, metal, stone, ... surface where a human can sit. This layer
 
 
   - [benches](https://mapcomplete.osm.be/benches)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bench/bench.json)

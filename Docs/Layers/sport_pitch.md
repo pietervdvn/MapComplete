@@ -44,6 +44,7 @@ A sport pitch
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [sport_pitches](https://mapcomplete.osm.be/sport_pitches)
 
 

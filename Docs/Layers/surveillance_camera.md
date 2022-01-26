@@ -43,6 +43,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 

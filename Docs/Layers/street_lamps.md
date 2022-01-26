@@ -42,6 +42,7 @@ A layer showing street lights
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [street_lighting](https://mapcomplete.osm.be/street_lighting)
 
 

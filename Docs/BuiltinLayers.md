@@ -36,6 +36,10 @@
     + [comment](#comment)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
+1. [import_candidate](#import_candidate)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
+    + [all_tags](#all_tags)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -72,6 +76,7 @@ MapComplete has a few data layers available in the theme which have special prop
   - [gps_track](#gps_track)
   - [type_node](#type_node)
   - [note](#note)
+  - [import_candidate](#import_candidate)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
@@ -354,7 +359,7 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
 
 
 
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
+  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
 
 
 [Go to the source code](../assets/layers/note/note.json)
@@ -423,6 +428,58 @@ _This tagrendering has no question and is thus read-only_
 
 
 ### report-note 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+ import_candidate 
+==================
+
+
+
+
+
+Layer used in the importHelper
+
+
+
+
+
+
+  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
+
+
+[Go to the source code](../assets/layers/import_candidate/import_candidate.json)
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+
+
+
+
+
+ Supported attributes 
+----------------------
+
+
+
+
+
+### all_tags 
 
 
 
@@ -692,6 +749,7 @@ The following layers are included in MapComplete:
   - [grass_in_parks](./Layers/grass_in_parks.md)
   - [home_location](./Layers/home_location.md)
   - [hydrant](./Layers/hydrant.md)
+  - [import_candidate](./Layers/import_candidate.md)
   - [information_board](./Layers/information_board.md)
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)

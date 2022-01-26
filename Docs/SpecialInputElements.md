@@ -170,7 +170,7 @@ An email adress
 
 
 
-A url
+The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user
 
 
 

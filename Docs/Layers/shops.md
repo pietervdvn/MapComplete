@@ -43,6 +43,7 @@ A shop
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [shops](https://mapcomplete.osm.be/shops)
 
 

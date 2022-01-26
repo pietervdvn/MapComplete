@@ -42,6 +42,7 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)

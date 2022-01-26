@@ -51,6 +51,7 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 
 
   - [aed](https://mapcomplete.osm.be/aed)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/defibrillator/defibrillator.json)

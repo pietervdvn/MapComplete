@@ -42,6 +42,7 @@ A layer showing drinking water fountains
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [drinking_water](https://mapcomplete.osm.be/drinking_water)
   - [nature](https://mapcomplete.osm.be/nature)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/drinking_water/drinking_water.json)

@@ -36,6 +36,7 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [waste_basket](https://mapcomplete.osm.be/waste_basket)
 
 

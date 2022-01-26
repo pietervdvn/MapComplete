@@ -213,8 +213,8 @@ path | _undefined_ | The path (or shorthand) that should be returned
 name | default | description
 ------ | --------- | -------------
 key | _undefined_ | The key to be read and to generate a histogram from
-title | _empty string_ | The text to put above the given values column
-countHeader | _empty string_ | The text to put above the counts
+title | _empty string_ | This text will be placed above the texts (in the first column of the visulasition)
+countHeader | _empty string_ | This text will be placed above the bars
 colors* | _undefined_ | (Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`
  
 
