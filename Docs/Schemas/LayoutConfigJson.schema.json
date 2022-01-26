@@ -18,29 +18,15 @@
       "description": "A version number, either semantically or by date.\nShould be sortable, where the higher value is the later version",
       "type": "string"
     },
-    "language": {
-      "description": "The supported language(s).\nThis should be a two-letter, lowercase code which identifies the language, e.g. \"en\", \"nl\", ...\nIf the theme supports multiple languages, use a list: `[\"en\",\"nl\",\"fr\"]` to allow the user to pick any of them",
-      "anyOf": [
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        {
-          "type": "string"
-        }
-      ]
-    },
     "mustHaveLanguage": {
-      "description": "Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated",
+      "description": "Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.\n\nThis must be a list of two-letter, lowercase codes which identifies the language, e.g. \"en\", \"nl\", ...",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
     "title": {
-      "description": "The title, as shown in the welcome message and the more-screen"
+      "description": "The title, as shown in the welcome message and the more-screen."
     },
     "shortDescription": {
       "description": "A short description, showed as social description and in the 'more theme'-buttons.\nNote that if this one is not defined, the first sentence of 'description' is used"
@@ -273,7 +259,6 @@
     "description",
     "icon",
     "id",
-    "language",
     "layers",
     "maintainer",
     "startLat",
