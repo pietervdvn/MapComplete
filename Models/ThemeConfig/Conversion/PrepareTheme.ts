@@ -179,7 +179,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
 }
 
 
-class AddMiniMap extends DesugaringStep<LayerConfigJson> {
+export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"]);
     }
@@ -188,14 +188,18 @@ class AddMiniMap extends DesugaringStep<LayerConfigJson> {
      * Returns true if this tag rendering has a minimap in some language.
      * Note: this minimap can be hidden by conditions
      */
-    private static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
-        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
-        for (const translation of translations) {
-            for (const key in translation.translations) {
-                if (!translation.translations.hasOwnProperty(key)) {
+    static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
+        const translations: any[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
+        for (let translation of translations) {
+            if(typeof translation == "string"){
+                translation = {"*": translation}
+            }
+            
+            for (const key in translation) {
+                if (!translation.hasOwnProperty(key)) {
                     continue
                 }
-                const template = translation.translations[key]
+                const template = translation[key]
                 const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
                 const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
                 if (hasMiniMap) {
