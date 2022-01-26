@@ -243,12 +243,6 @@ export default {
                     "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
                     "type": "array",
                     "items": {
-                        "enum": [
-                            "centroid",
-                            "end",
-                            "point",
-                            "start"
-                        ],
                         "type": "string"
                     }
                 },
@@ -356,7 +350,10 @@ export default {
                             "$ref": "#/definitions/TagRenderingConfigJson"
                         },
                         {
-                            "type": "string"
+                            "type": [
+                                "string",
+                                "number"
+                            ]
                         }
                     ]
                 },
@@ -444,6 +441,23 @@ export default {
                                         "type": "string"
                                     }
                                 ]
+                            },
+                            "fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "name"
+                                    ]
+                                }
                             }
                         },
                         "required": [

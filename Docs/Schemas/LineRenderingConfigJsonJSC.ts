@@ -20,7 +20,10 @@ export default {
                     "$ref": "#/definitions/TagRenderingConfigJson"
                 },
                 {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "number"
+                    ]
                 }
             ]
         },

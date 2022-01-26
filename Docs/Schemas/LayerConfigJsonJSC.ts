@@ -96,7 +96,7 @@ export default {
             ]
         },
         "calculatedTags": {
-            "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]",
+            "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]",
             "type": "array",
             "items": {
                 "type": "string"
@@ -134,31 +134,55 @@ export default {
             ]
         },
         "titleIcons": {
-            "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons",
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/TagRenderingConfigJson"
-                    },
-                    {
-                        "type": "string"
+            "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)",
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/TagRenderingConfigJson"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
                     }
-                ]
-            }
+                },
+                {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "defaults"
+                            ]
+                        }
+                    ],
+                    "minItems": 1,
+                    "maxItems": 1
+                }
+            ]
         },
         "mapRendering": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/default_3"
-                    },
-                    {
-                        "$ref": "#/definitions/default_4"
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/default_3"
+                            },
+                            {
+                                "$ref": "#/definitions/default_4"
+                            }
+                        ]
                     }
-                ]
-            }
+                },
+                {
+                    "type": "null"
+                }
+            ]
         },
         "passAllFeatures": {
             "description": "If set, this layer will pass all the features it receives onto the next layer.\nThis is ideal for decoration, e.g. directionss on cameras",
@@ -578,12 +602,6 @@ export default {
                     "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
                     "type": "array",
                     "items": {
-                        "enum": [
-                            "centroid",
-                            "end",
-                            "point",
-                            "start"
-                        ],
                         "type": "string"
                     }
                 },
@@ -691,7 +709,10 @@ export default {
                             "$ref": "#/definitions/TagRenderingConfigJson"
                         },
                         {
-                            "type": "string"
+                            "type": [
+                                "string",
+                                "number"
+                            ]
                         }
                     ]
                 },
@@ -779,6 +800,23 @@ export default {
                                         "type": "string"
                                     }
                                 ]
+                            },
+                            "fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "name"
+                                    ]
+                                }
                             }
                         },
                         "required": [

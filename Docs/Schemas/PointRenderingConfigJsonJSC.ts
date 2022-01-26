@@ -6,12 +6,6 @@ export default {
             "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
             "type": "array",
             "items": {
-                "enum": [
-                    "centroid",
-                    "end",
-                    "point",
-                    "start"
-                ],
                 "type": "string"
             }
         },
