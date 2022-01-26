@@ -8,7 +8,6 @@ import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Constants from "../../Constants";
 import {DesugaringContext, DesugaringStep, Fuse, OnEvery} from "./Conversion";
 
-
 export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string | { builtin, override }> {
 
     constructor() {
@@ -21,9 +20,13 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         if (typeof json === "string") {
             return json
         }
+        console.log("Updating legacy layer", json)
         if (json["builtin"] !== undefined) {
-            // @ts-ignore
-            return json;
+            return {
+                result: json,
+                errors: [],
+                warnings: []
+            };
         }
         let config: any = {...json};
 
@@ -145,6 +148,9 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
                 }
             }
         }
+
+        oldThemeConfig.layers = Utils.NoNull(oldThemeConfig.layers)
+
         return {
             errors: [],
             warnings: [],

@@ -11,7 +11,6 @@ import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Translation} from "../../../UI/i18n/Translation";
 import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 import DependencyCalculator from "../DependencyCalculator";
-import Translations from "../../../UI/i18n/Translations";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
     constructor() {
@@ -179,7 +178,8 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
+
+class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"]);
     }
@@ -188,9 +188,8 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
      * Returns true if this tag rendering has a minimap in some language.
      * Note: this minimap can be hidden by conditions
      */
-    public static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
-        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)])
-            .map(Translations.T);
+    private static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
+        const translations: Translation[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);
         for (const translation of translations) {
             for (const key in translation.translations) {
                 if (!translation.translations.hasOwnProperty(key)) {
