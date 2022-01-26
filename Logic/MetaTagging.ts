@@ -1,6 +1,7 @@
 import SimpleMetaTaggers, {SimpleMetaTagger} from "./SimpleMetaTagger";
 import {ExtraFuncParams, ExtraFunctions} from "./ExtraFunctions";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {ElementStorage} from "./ElementStorage";
 
 
 /**
@@ -23,7 +24,7 @@ export default class MetaTagging {
     public static addMetatags(features: { feature: any; freshness: Date }[],
                               params: ExtraFuncParams,
                               layer: LayerConfig,
-                              state,
+                              state?: {allElements?: ElementStorage},
                               options?: {
                                   includeDates?: true | boolean,
                                   includeNonDates?: true | boolean
@@ -35,11 +36,11 @@ export default class MetaTagging {
         const metatagsToApply: SimpleMetaTagger[] = []
         for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {
-                if (options.includeDates ?? true) {
+                if (options?.includeDates ?? true) {
                     metatagsToApply.push(metatag)
                 }
             } else {
-                if (options.includeNonDates ?? true) {
+                if (options?.includeNonDates ?? true) {
                     metatagsToApply.push(metatag)
                 }
             }
@@ -103,7 +104,8 @@ export default class MetaTagging {
         }
         return atLeastOneFeatureChanged
     }
-    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
+    
+    private static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
         const functions: ((feature: any) => any)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]

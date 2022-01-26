@@ -59,7 +59,7 @@ export class GeoOperations {
             const coor = feature.geometry.coordinates;
             for (const otherFeature of otherFeatures) {
 
-                if (feature.id !== undefined && feature.id === otherFeature.id) {
+                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
                     continue;
                 }
 
@@ -79,7 +79,7 @@ export class GeoOperations {
 
             for (const otherFeature of otherFeatures) {
 
-                if (feature.id !== undefined && feature.id === otherFeature.id) {
+                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
                     continue;
                 }
 
@@ -97,7 +97,7 @@ export class GeoOperations {
 
             for (const otherFeature of otherFeatures) {
 
-                if (feature.id === otherFeature.id) {
+                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
                     continue;
                 }
 

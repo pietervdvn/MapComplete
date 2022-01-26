@@ -48,12 +48,12 @@ export class BBox {
         }
         return feature.bbox;
     }
-    
-    static bboxAroundAll(bboxes: BBox[]): BBox{
+
+    static bboxAroundAll(bboxes: BBox[]): BBox {
         let maxLat: number = -90;
-        let maxLon: number= -180;
-        let minLat: number= 80;
-        let minLon: number= 180;
+        let maxLon: number = -180;
+        let minLat: number = 80;
+        let minLon: number = 180;
 
         for (const bbox of bboxes) {
             maxLat = Math.max(maxLat, bbox.maxLat)
@@ -61,7 +61,7 @@ export class BBox {
             minLat = Math.min(minLat, bbox.minLat)
             minLon = Math.min(minLon, bbox.minLon)
         }
-        return new BBox([[maxLon, maxLat],[minLon,minLat]])
+        return new BBox([[maxLon, maxLat], [minLon, minLat]])
     }
 
     static fromTile(z: number, x: number, y: number): BBox {
@@ -73,6 +73,14 @@ export class BBox {
             return BBox.global
         }
         return BBox.fromTile(...Tiles.tile_from_index(i))
+    }
+
+    public unionWith(other: BBox) {
+        return new BBox([[
+            Math.max(this.maxLon, other.maxLon),
+            Math.max(this.maxLat, other.maxLat)],
+            [Math.min(this.minLon, other.minLon),
+                Math.min(this.minLat, other.minLat)]])
     }
 
     /**

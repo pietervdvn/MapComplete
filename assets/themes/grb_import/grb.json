@@ -658,6 +658,6 @@
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",
-  "overpassMaxZoom": 15,
+  "overpassMaxZoom": 17,
   "osmApiTileSize": 17
 }

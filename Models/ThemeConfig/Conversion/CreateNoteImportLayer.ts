@@ -85,7 +85,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 "geoJsonZoomLevel": 10,
                 "maxCacheAge": 0
             },
-            "minzoom": 12,
+            "minzoom": Math.min(12, layerJson.minzoom - 2),
             "title": {
                 "render": t.popupTitle.Subs({title}).translations
             },

@@ -214,6 +214,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         if (!hasMinimap) {
             layerConfig = {...layerConfig}
             layerConfig.tagRenderings = [...layerConfig.tagRenderings]
+            layerConfig.tagRenderings.push(state.tagRenderings.get("questions"))
             layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
         }
 

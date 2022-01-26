@@ -18,6 +18,8 @@ import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
+import {InputElement} from "../Input/InputElement";
+import {DropDown} from "../Input/DropDown";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>, tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
@@ -242,17 +244,26 @@ export default class FilterView extends VariableUiElement {
         const values : FilterState[] = options.map((f, i) => ({
             currentFilter: f.osmTags, state: i
         }))
-        const radio = new RadioButton(
-            options.map(
-                (option, i) =>
-                    new FixedInputElement(option.question.Clone().SetClass("block"), i)
-            ),
-            {
-                dontStyle: true
-            }
-        );
-        return [radio,
-            radio.GetValue().map(
+        let filterPicker : InputElement<number>
+        
+        if(options.length <= 6){
+           filterPicker = new RadioButton(
+                options.map(
+                    (option, i) =>
+                        new FixedInputElement(option.question.Clone().SetClass("block"), i)
+                ),
+                {
+                    dontStyle: true
+                }
+            );
+        }else{
+            filterPicker = new DropDown("", options.map((option, i) => ({
+                value: i, shown: option.question.Clone()
+            })))
+        }
+        
+        return [filterPicker,
+            filterPicker.GetValue().map(
                 i => values[i],
                 [],
                 selected => {
