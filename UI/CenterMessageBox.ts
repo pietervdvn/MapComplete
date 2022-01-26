@@ -27,7 +27,7 @@ export default class CenterMessageBox extends VariableUiElement {
 
         super(message.map(toShow => toShow.el))
 
-        this.SetClass("flex justify-around " +
+        this.SetClass("flex justify-center " +
             "rounded-3xl bg-white text-xl font-bold pointer-events-none p-4")
         this.SetStyle("transition: opacity 750ms linear")
 
