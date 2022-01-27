@@ -134,8 +134,8 @@ export default class DetermineLayout {
 
     private static prepCustomTheme(json: any): LayoutConfigJson {
         const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers["default"]) {
-            const layer = known_layers["default"][key]
+        for (const key in known_layers.layers) {
+            const layer = known_layers.layers[key]
             knownLayersDict.set(layer.id, layer)
         }
         const converState = {
@@ -159,6 +159,7 @@ export default class DetermineLayout {
             let parsed = await Utils.downloadJson(link)
             try {
                 parsed.id = link;
+                console.log("Loaded remote link:", link)
                 const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
                 return new LayoutConfig(layoutToUse, false)
             } catch (e) {
