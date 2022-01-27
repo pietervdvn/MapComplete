@@ -30,22 +30,6 @@
     "hu": "Isten hozta a nyílt műalkotástérképen, a világ minden táján megtalálható szobrok, mellszobrok, graffitik és más műalkotások gyűjtőhelyén",
     "pl": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata"
   },
-  "language": [
-    "en",
-    "nl",
-    "fr",
-    "de",
-    "hu",
-    "id",
-    "it",
-    "ru",
-    "ja",
-    "zh_Hant",
-    "sv",
-    "pl",
-    "es",
-    "nb_NO"
-  ],
   "icon": "./assets/themes/artwork/artwork.svg",
   "maintainer": "MapComplete",
   "startZoom": 12,

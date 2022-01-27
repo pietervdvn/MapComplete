@@ -30,18 +30,6 @@
     "de": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
     "it": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap."
   },
-  "language": [
-    "en",
-    "nl",
-    "fr",
-    "ja",
-    "zh_Hant",
-    "ru",
-    "de",
-    "eo",
-    "it",
-    "nb_NO"
-  ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/maps/logo.svg",
   "version": "0",

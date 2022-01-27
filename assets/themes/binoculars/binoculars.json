@@ -26,15 +26,6 @@
     "zh_Hant": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。",
     "hu": "Rúdra rögzített távcsövek térképe. Jellemzően turisztikailag érdekes, panorámás helyeken, kilátótornyok tetején vagy természetvédelmi területen találhatók."
   },
-  "language": [
-    "en",
-    "nl",
-    "de",
-    "it",
-    "nb_NO",
-    "zh_Hant",
-    "hu"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/binocular/telescope.svg",
   "version": "0",

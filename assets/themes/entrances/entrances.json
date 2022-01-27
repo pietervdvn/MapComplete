@@ -13,10 +13,6 @@
     "en": "Survey entrances to help wheelchair routing",
     "zh_Hant": "幫助輪椅導航來勘查出入口"
   },
-  "language": [
-    "en",
-    "zh_Hant"
-  ],
   "version": "2021-12-04",
   "maintainer": "MapComplete",
   "layers": [

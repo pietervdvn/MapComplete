@@ -17,16 +17,9 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
 
     convert(state: {}, json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
         const warnings = []
-        if (typeof json === "string") {
-            return json
-        }
-        console.log("Updating legacy layer", json)
-        if (json["builtin"] !== undefined) {
-            return {
-                result: json,
-                errors: [],
-                warnings: []
-            };
+        if (typeof json === "string" || json["builtin"] !== undefined) {
+            // Reuse of an already existing layer; return as-is
+            return {result: json, errors: [], warnings: []}
         }
         let config: any = {...json};
 
@@ -40,7 +33,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
             let i = 0;
             for (const tagRendering of config.tagRenderings) {
                 i++;
-                if (typeof tagRendering === "string" || tagRendering["builtin"] !== undefined) {
+                if (typeof tagRendering === "string" || tagRendering["builtin"] !== undefined || tagRendering["rewrite"] !== undefined) {
                     continue
                 }
                 if (tagRendering["id"] === undefined) {
@@ -150,7 +143,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         }
 
         oldThemeConfig.layers = Utils.NoNull(oldThemeConfig.layers)
-
+        delete oldThemeConfig["language"]
         return {
             errors: [],
             warnings: [],

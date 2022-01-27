@@ -38,20 +38,6 @@
     "zh_Hant": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。只要有開放街圖帳號，你可以新增長椅或是編輯既有長椅的詳細內容。",
     "hu": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit."
   },
-  "language": [
-    "en",
-    "de",
-    "fr",
-    "nl",
-    "it",
-    "ru",
-    "ja",
-    "zh_Hant",
-    "nb_NO",
-    "pt_BR",
-    "id",
-    "hu"
-  ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",
   "version": "2020-10-23",

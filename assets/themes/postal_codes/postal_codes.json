@@ -9,9 +9,6 @@
   "description": {
     "en": "Postal codes"
   },
-  "language": [
-    "en"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "version": "0",

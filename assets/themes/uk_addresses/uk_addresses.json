@@ -21,16 +21,6 @@
     "it": "Contribuisci a OpenStreetMap inserendo le informazioni sull’indirizzo",
     "id": "Berkontribusi untuk OpenStreetMap dengan mengisi informasi alamat"
   },
-  "language": [
-    "en",
-    "de",
-    "it",
-    "id",
-    "nl",
-    "zh_Hant",
-    "hu",
-    "ru"
-  ],
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
   "version": "2021-09-17",

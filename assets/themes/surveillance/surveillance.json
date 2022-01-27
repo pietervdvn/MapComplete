@@ -29,16 +29,6 @@
     "de": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
     "it": "In questa cartina puoi trovare le telecamera di sorveglianza."
   },
-  "language": [
-    "en",
-    "nl",
-    "ja",
-    "zh_Hant",
-    "fr",
-    "de",
-    "it",
-    "pl"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/surveillance/logo.svg",
   "version": "0",

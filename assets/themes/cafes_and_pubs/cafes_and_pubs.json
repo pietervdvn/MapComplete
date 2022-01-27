@@ -14,17 +14,6 @@
   "description": {
     "nl": "Cafés, kroegen en drinkgelegenheden"
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO",
-    "id",
-    "zh_Hant",
-    "ru",
-    "hu"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "version": "0",

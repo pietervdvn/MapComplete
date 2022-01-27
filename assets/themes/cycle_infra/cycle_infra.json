@@ -24,15 +24,6 @@
     "it": "Una cartina dove vedere e modificare gli elementi riguardanti l’infrastruttura dei velocipedi. Realizzata durante #osoc21.",
     "zh_Hant": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。"
   },
-  "language": [
-    "en",
-    "nl",
-    "de",
-    "it",
-    "nb_NO",
-    "ru",
-    "zh_Hant"
-  ],
   "maintainer": "MapComplete",
   "hideFromOverview": false,
   "defaultBackgroundId": "CartoDB.Voyager",

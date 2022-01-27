@@ -32,18 +32,6 @@
     "de": "Auf dieser freien Karte kann man Informationen über Ladestationen finden und hinzufügen",
     "hu": "Ezen a térképen a elektromos töltőpontokról szóló információkat lehet megtalálni és megadni"
   },
-  "language": [
-    "en",
-    "id",
-    "it",
-    "ja",
-    "zh_Hant",
-    "nl",
-    "de",
-    "nb_NO",
-    "ru",
-    "hu"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/charging_stations/logo.svg",
   "version": "0",

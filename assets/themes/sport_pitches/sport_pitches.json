@@ -29,16 +29,6 @@
     "de": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
     "it": "Una campo sportivo è un’area dove vengono praticati gli sport"
   },
-  "language": [
-    "nl",
-    "fr",
-    "en",
-    "ja",
-    "zh_Hant",
-    "ru",
-    "de",
-    "it"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",
   "version": "0",

@@ -32,17 +32,6 @@
     "de": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
     "it": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli"
   },
-  "language": [
-    "nl",
-    "en",
-    "fr",
-    "ja",
-    "zh_Hant",
-    "ru",
-    "de",
-    "it",
-    "nb_NO"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/playgrounds/playground.svg",
   "version": "0",

@@ -22,14 +22,6 @@
     "it": "Torri pubblicamente accessibili per godere della vista",
     "zh_Hant": "開放可及能觀景的高塔"
   },
-  "language": [
-    "en",
-    "nl",
-    "de",
-    "it",
-    "ru",
-    "zh_Hant"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",
   "version": "0",

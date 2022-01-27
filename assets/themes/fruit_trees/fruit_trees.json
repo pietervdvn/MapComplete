@@ -9,9 +9,6 @@
   "description": {
     "nl": "Op deze kaart vindt je boomgaarden en fruitbomen"
   },
-  "language": [
-    "nl"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/fruit_trees/fruit_tree.svg",
   "version": "0",

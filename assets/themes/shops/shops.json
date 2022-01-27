@@ -25,16 +25,6 @@
     "de": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
     "it": "In questa cartina è possibile aggiungere informazioni di base di un negozio, orari di apertura e numeri di telefono"
   },
-  "language": [
-    "en",
-    "fr",
-    "ja",
-    "zh_Hant",
-    "ru",
-    "de",
-    "it",
-    "nb_NO"
-  ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",
   "version": "0",

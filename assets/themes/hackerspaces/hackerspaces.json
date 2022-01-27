@@ -19,13 +19,6 @@
     "it": "Su questa cartina è possibile vedere gli hackerspace, aggiungerne di nuovi o aggiornare le informazioni tutto in maniera pratica",
     "zh_Hant": "在這份地圖上你可以看到駭客空間，新增或直接更新資料"
   },
-  "language": [
-    "en",
-    "de",
-    "it",
-    "ru",
-    "zh_Hant"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",
   "version": "0",

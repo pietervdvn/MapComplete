@@ -9,9 +9,6 @@
   "description": {
     "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
   },
-  "language": [
-    "nl"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/nature/logo.svg",
   "version": "0",

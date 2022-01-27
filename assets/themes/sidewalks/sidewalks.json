@@ -11,10 +11,6 @@
     "en": "Experimental theme",
     "ru": "Экспериментальная тема"
   },
-  "language": [
-    "en",
-    "ru"
-  ],
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
   "version": "0",

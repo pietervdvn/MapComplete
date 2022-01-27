@@ -24,15 +24,6 @@
     "it": "Questa cartina mostra diversi posti dove parcheggiare",
     "zh_Hant": "這地圖顯示不同的停車空間"
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO",
-    "ru",
-    "zh_Hant"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",
   "version": "0",

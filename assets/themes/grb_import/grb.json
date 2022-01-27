@@ -10,11 +10,6 @@
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import."
   },
-  "language": [
-    "nl",
-    "en",
-    "de"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/grb_import/housenumber_blank.svg",
   "version": "0",

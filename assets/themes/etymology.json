@@ -22,14 +22,6 @@
     "it": "Su questa cartina sono visibili i nomi a cui sono riferiti gli oggetti. Le strade, gli edifici, etc. provengono da OpenStreetMap che è a sua volta collegata a Wikidata. Nel popup, se esiste, verrà mostrato l’articolo Wikipedia o l'elemento Wikidata a cui si riferisce il nome di quell’oggetto. Se l’oggetto stesso ha una pagina Wikpedia, anch’essa verrà mostrata.<br/><br/><b>Anche tu puoi contribuire!</b>Ingrandisci abbastanza e <i>tutte</i> le strade appariranno. Puoi cliccare su una e apparirà un popup con la ricerca Wikidata. Con pochi clic puoi aggiungere un collegamento etimologico. Tieni presente che per farlo, hai bisogno di un account gratuito su OpenStreetMap.",
     "zh_Hant": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。"
   },
-  "language": [
-    "en",
-    "nl",
-    "de",
-    "it",
-    "ru",
-    "zh_Hant"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/etymology/logo.svg",
   "version": "0",
