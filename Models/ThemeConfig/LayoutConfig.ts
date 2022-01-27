@@ -120,7 +120,7 @@ export default class LayoutConfig {
 
         this.clustering = {
             maxZoom: 16,
-            minNeededElements: 25,
+            minNeededElements: 250,
         };
         if (json.clustering === false) {
             this.clustering = {
@@ -130,7 +130,7 @@ export default class LayoutConfig {
         } else if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 25,
+                minNeededElements: json.clustering.minNeededElements ?? 250,
             }
         }
 
