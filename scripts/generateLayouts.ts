@@ -100,6 +100,7 @@ async function createManifest(layout: LayoutConfig) {
         name: name,
         short_name: ogTitle,
         start_url: `${layout.id.toLowerCase()}.html`,
+        lang: "en",
         display: "standalone",
         background_color: "#fff",
         description: ogDescr,
@@ -224,7 +225,6 @@ for (const i in all) {
 createManifest(new LayoutConfig({
     icon: "assets/svg/mapcomplete_logo.svg",
     id: "index",
-    language: "en",
     layers: [],
     maintainer: "Pieter Vander Vennet",
     socialImage: "assets/SocialImage.png",

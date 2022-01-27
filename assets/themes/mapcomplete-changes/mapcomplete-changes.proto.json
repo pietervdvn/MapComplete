@@ -9,9 +9,6 @@
   "description": {
     "en": "This maps shows all the changes made with MapComplete"
   },
-  "language": [
-    "en"
-  ],
   "maintainer": "",
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,

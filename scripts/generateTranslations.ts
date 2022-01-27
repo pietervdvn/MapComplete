@@ -378,15 +378,8 @@ function mergeThemeTranslations() {
         const config = themeFile.parsed;
         mergeLayerTranslation(config, themeFile.path, loadTranslationFilesFrom("themes"))
 
-        const oldLanguages = config.language;
         const allTranslations = new TranslationPart();
         allTranslations.recursiveAdd(config, themeFile.path)
-        const newLanguages = allTranslations.knownLanguages()
-        const languageDiff = newLanguages.filter(l => oldLanguages.indexOf(l) < 0).join(", ")
-        if (languageDiff !== "") {
-            config.language = newLanguages;
-            console.log(" :hooray: Got a new language for theme", config.id, ":", languageDiff)
-        }
         writeFileSync(themeFile.path, JSON.stringify(config, null, "  "))
     }
 }

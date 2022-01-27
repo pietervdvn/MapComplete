@@ -1001,6 +1001,10 @@
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "title": "A map of maps"
     },
+    "notes": {
+        "description": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
+        "title": "Notes on OpenStreetMap"
+    },
     "observation_towers": {
         "description": "Publicly accessible towers to enjoy the view",
         "shortDescription": "Publicly accessible towers to enjoy the view",
