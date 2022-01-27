@@ -41,20 +41,16 @@ export interface LayoutConfigJson {
      * Should be sortable, where the higher value is the later version
      */
     version: string;
-    /**
-     * The supported language(s).
-     * This should be a two-letter, lowercase code which identifies the language, e.g. "en", "nl", ...
-     * If the theme supports multiple languages, use a list: `["en","nl","fr"]` to allow the user to pick any of them
-     */
-    language: string | string[];
 
     /**
-     * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated
+     * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.
+     * 
+     * This must be a list of two-letter, lowercase codes which identifies the language, e.g. "en", "nl", ...
      */
     mustHaveLanguage?: string[]
 
     /**
-     * The title, as shown in the welcome message and the more-screen
+     * The title, as shown in the welcome message and the more-screen.
      */
     title: string | any;
 

@@ -66,14 +66,13 @@ export default class LayoutConfig {
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;
-        this.language = [];
+        this.language = Array.from(Object.keys(json.title));
 
-        if (typeof json.language === "string") {
-            this.language = [json.language];
-        } else {
-            this.language = json.language;
-        }
         {
+            if (typeof json.title === "string") {
+                console.error("The title is not a translation, it instead is ", json.title, "("+typeof json.title+")")
+                throw `The title of a theme should always be a translation, as it sets the corresponding languages (${context}.title)`
+            }
             if (this.language.length == 0) {
                 throw `No languages defined. Define at least one language. (${context}.languages)`
             }
@@ -120,7 +119,7 @@ export default class LayoutConfig {
 
         this.clustering = {
             maxZoom: 16,
-            minNeededElements: 25,
+            minNeededElements: 250,
         };
         if (json.clustering === false) {
             this.clustering = {
@@ -130,7 +129,7 @@ export default class LayoutConfig {
         } else if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 25,
+                minNeededElements: json.clustering.minNeededElements ?? 250,
             }
         }
 

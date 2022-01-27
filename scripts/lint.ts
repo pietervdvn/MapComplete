@@ -1,6 +1,6 @@
 import ScriptUtils from "./ScriptUtils";
 import {writeFileSync} from "fs";
-import {FixLegacyTheme, UpdateLegacyLayer} from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme, UpdateLegacyLayer} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 
 /*
  * This script reads all theme and layer files and reformats them inplace

@@ -344,9 +344,6 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         {
             // Legacy format checks  
             if (this._isBuiltin) {
-                if (typeof json.language === "string") {
-                    errors.push("The theme " + json.id + " has a string as language. Please use a list of strings")
-                }
                 if (json["units"] !== undefined) {
                     errors.push("The theme " + json.id + " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ")
                 }

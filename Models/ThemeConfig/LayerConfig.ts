@@ -301,8 +301,9 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        const defaultTags = new UIEventSource(TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"})))
-        return mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html
+        const baseTags = TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
+        return mapRendering.GenerateLeafletStyle(new UIEventSource(baseTags), false, 
+            {noSize: true, includeBadges: false}).html
     }
 
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {

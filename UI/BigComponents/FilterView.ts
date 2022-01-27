@@ -22,7 +22,8 @@ import {InputElement} from "../Input/InputElement";
 import {DropDown} from "../Input/DropDown";
 
 export default class FilterView extends VariableUiElement {
-    constructor(filteredLayer: UIEventSource<FilteredLayer[]>, tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
+    constructor(filteredLayer: UIEventSource<FilteredLayer[]>, 
+                tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
         const backgroundSelector = new Toggle(
             new BackgroundSelector(),
             undefined,
@@ -30,8 +31,11 @@ export default class FilterView extends VariableUiElement {
         )
         super(
             filteredLayer.map((filteredLayers) => {
+                    // Create the views which toggle layers (and filters them) ...
                     let elements = filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l))
+                    // ... create views for non-interactive layers ...
                     elements = elements.concat(tileLayers.map(tl => FilterView.createOverlayToggle(tl)))
+                    // ... and add the dropdown to select a different background
                     return elements.concat(backgroundSelector);
                 }
             )
@@ -92,11 +96,6 @@ export default class FilterView extends VariableUiElement {
         const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(
             iconStyle
         );
-
-        if (filteredLayer.layerDef.name === undefined) {
-            return;
-        }
-
 
         const name: Translation = Translations.WT(
             filteredLayer.layerDef.name

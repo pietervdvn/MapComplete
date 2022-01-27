@@ -196,4 +196,10 @@ class LayerOverviewUtils {
     }
 }
 
+try{
 new LayerOverviewUtils().main(process.argv)
+    
+}catch(e){
+    console.error("ERROR WHILE GENERATING THE LAYERS:", e)
+    console.log("If a weird error persists, 'npm run reset:layeroverview'")
+}

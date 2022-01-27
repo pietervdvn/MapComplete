@@ -150,7 +150,8 @@ export default class PointRenderingConfig extends WithContextLoader {
         tags: UIEventSource<any>,
         clickable: boolean,
         options?: {
-            noSize: false | boolean
+            noSize: false | boolean,
+            includeBadges: true | boolean
         }
     ):
         {
@@ -201,7 +202,11 @@ export default class PointRenderingConfig extends WithContextLoader {
 
 
         const icon = this.GetSimpleIcon(tags)
-        const iconAndBadges = new Combine([icon, this.GetBadges(tags)])
+        let badges = undefined;
+        if( options?.includeBadges ?? true){
+            badges = this.GetBadges(tags)
+        }
+        const iconAndBadges = new Combine([icon,badges ])
             .SetClass("block relative")
 
         if (!options?.noSize) {

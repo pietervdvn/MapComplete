@@ -16,7 +16,6 @@ export default class ThemeSpec extends T {
                 let themeConfigJson: LayoutConfigJson = {
                     description: "Descr",
                     icon: "",
-                    language: ["en"],
                     layers: [
                         {
                             builtin: "public_bookcase",
