@@ -1,5 +1,21 @@
 {
     "shared_questions": {
+        "description": {
+            "question": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Anjing diperbolehkan"
+                },
+                "1": {
+                    "then": "Anjing <b> tidak </b> diperbolehkan"
+                },
+                "2": {
+                    "then": "Anjing diperbolehkan, tetapi mereka harus diikat"
+                }
+            }
+        },
         "email": {
             "question": "Apa alamat surel dari {name}?"
         },

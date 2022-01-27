@@ -7,7 +7,8 @@
     "zh_Hant": "立面花園",
     "it": "Giardini verticali",
     "fr": "Facade gardens",
-    "de": "Fassadengärten"
+    "de": "Fassadengärten",
+    "hu": "Homlokzati kertek"
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
@@ -16,7 +17,8 @@
     "zh_Hant": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。",
     "it": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
     "fr": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
-    "de": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen."
+    "de": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
+    "hu": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről."
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -24,7 +26,8 @@
     "ja": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>ファサード庭園</a>、都市の緑のファサードと樹木は、平和と静けさをもたらすだけでなく、より美しい都市、より大きな生物多様性、冷却効果、より良い大気質をもたらす。<br/>KlimaanのVZWとMechelenのKlimaatneutraalは、自分で庭を作りたい人や自然を愛する都市の歩行者のために、既存のファサード庭園と新しいファサード庭園のマッピングしたいと考えています。<br/>このプロジェクトに関する詳細情報は<a href='https://klimaan.be/' target=_blank>klimaan</a>にあります。",
     "fr": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "de": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-    "it": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
+    "it": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "hu": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon."
   },
   "language": [
     "nl",
@@ -34,6 +37,7 @@
     "it",
     "fr",
     "de",
+    "hu",
     "nb_NO",
     "ru",
     "eo"
@@ -56,7 +60,8 @@
         "zh_Hant": "立面花園",
         "fr": "Jardins muraux",
         "de": "Fassadengärten",
-        "it": "Giardini verticali"
+        "it": "Giardini verticali",
+        "hu": "Homlokzati kertek"
       },
       "minzoom": 12,
       "source": {
@@ -75,7 +80,8 @@
           "zh_Hant": "立面花園",
           "fr": "Jardin mural",
           "de": "Fassadengarten",
-          "it": "Giardino verticale"
+          "it": "Giardino verticale",
+          "hu": "Homlokzati kert"
         }
       },
       "description": {
@@ -85,7 +91,8 @@
         "zh_Hant": "立面花園",
         "fr": "Jardins muraux",
         "de": "Fassadengärten",
-        "it": "Giardini verticali"
+        "it": "Giardini verticali",
+        "hu": "Homlokzati kertek"
       },
       "tagRenderings": [
         "images",
@@ -96,7 +103,8 @@
             "ja": "方向: {direction} (0=N で 90=O)",
             "fr": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)",
             "de": "Ausrichtung: {direction} (wobei 0=N und 90=O)",
-            "it": "Orientamento: {direction} (0 per il Nord e 90 per l’Est)"
+            "it": "Orientamento: {direction} (0 per il Nord e 90 per l’Est)",
+            "hu": "Tájolás: {direction} (0=észak, 90=kelet stb.)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
@@ -104,7 +112,8 @@
             "ja": "庭の向きはどうなっていますか?",
             "fr": "Quelle est l’orientation du jardin ?",
             "de": "Wie ist der Garten ausgerichtet?",
-            "it": "Com’è orientato questo giardino?"
+            "it": "Com’è orientato questo giardino?",
+            "hu": "Milyen a kert tájolása?"
           },
           "freeform": {
             "type": "direction",
@@ -127,7 +136,8 @@
                 "ja": "庭は日があたっている",
                 "it": "Il giardino è completamente illuminato dal sole",
                 "fr": "Le jardin est en plein soleil",
-                "de": "Der Garten liegt in voller Sonne"
+                "de": "Der Garten liegt in voller Sonne",
+                "hu": "A kert teljesen a napon van"
               }
             },
             {
@@ -143,7 +153,8 @@
                 "nb_NO": "Denne hagen er i delvis skygge",
                 "it": "Il giardino è parzialmente in ombra",
                 "fr": "Le jardin est partiellement ensoleillé",
-                "de": "Der Garten liegt im Halbschatten"
+                "de": "Der Garten liegt im Halbschatten",
+                "hu": "A kert részben árnyékban van"
               }
             },
             {
@@ -158,7 +169,8 @@
                 "ja": "庭は日陰である",
                 "it": "Il giardino è in ombra",
                 "fr": "Le jardin est à l’ombre",
-                "de": "Der Garten liegt im Schatten"
+                "de": "Der Garten liegt im Schatten",
+                "hu": "A kert árnyékban van"
               }
             }
           ],
@@ -169,7 +181,8 @@
             "it": "Il giardino è al sole o in ombra?",
             "ru": "Сад расположен на солнечной стороне или в тени?",
             "fr": "Quel est l’ensoleillement du jardin ?",
-            "de": "Ist der Garten schattig oder sonnig?"
+            "de": "Ist der Garten schattig oder sonnig?",
+            "hu": "Árnyékban vagy napon van a kert?"
           }
         },
         {
@@ -181,7 +194,8 @@
             "fr": "Des réserves d’eau ont-elles été installées pour le jardin ?",
             "de": "Gibt es ein Wasserfass für den Garten?",
             "it": "È stata installata una riserva d’acqua per il giardino?",
-            "zh_Hant": "花園當中有設置雨筒嗎？"
+            "zh_Hant": "花園當中有設置雨筒嗎？",
+            "hu": "Van-e a kertben vizeshordó?"
           },
           "mappings": [
             {
@@ -198,7 +212,8 @@
                 "ru": "Есть бочка с дождевой водой",
                 "fr": "Il y a des réserves",
                 "de": "Es gibt eine Regentonne",
-                "zh_Hant": "這裡有個雨筒"
+                "zh_Hant": "這裡有個雨筒",
+                "hu": "Van benne esővízgyűjtő hordó"
               }
             },
             {
@@ -215,7 +230,8 @@
                 "ru": "Нет бочки с дождевой водой",
                 "fr": "Il n’y a pas de réserves",
                 "de": "Es gibt keine Regentonne",
-                "zh_Hant": "這裡沒有雨筒"
+                "zh_Hant": "這裡沒有雨筒",
+                "hu": "Nincs benne esővízgyűjtő hordó"
               }
             }
           ]
@@ -228,7 +244,8 @@
             "ja": "庭園の建設日: {start_date}",
             "it": "Data di realizzazione del giardino: {start_date}",
             "fr": "Date de construction du jardin : {start_date}",
-            "de": "Errichtungsdatum des Gartens: {start_date}"
+            "de": "Errichtungsdatum des Gartens: {start_date}",
+            "hu": "A kert építésének időpontja: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
@@ -236,7 +253,8 @@
             "ja": "その庭園はいつ造られたのですか?(建設年で十分です)",
             "it": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
             "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
-            "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)"
+            "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
+            "hu": "Melyik évben épült a kert?"
           },
           "freeform": {
             "key": "start_date",
@@ -259,7 +277,8 @@
                 "ja": "食用の植物がある",
                 "it": "Ci sono piante commestibili",
                 "fr": "Il y a des plantes comestibles",
-                "de": "Es gibt essbare Pflanzen"
+                "de": "Es gibt essbare Pflanzen",
+                "hu": "Van benne ehető növény"
               }
             },
             {
@@ -274,7 +293,8 @@
                 "ja": "食用植物は存在しない",
                 "it": "Non ci sono piante commestibili",
                 "fr": "Il n’y a pas de plantes comestibles",
-                "de": "Es gibt keine essbaren Pflanzen"
+                "de": "Es gibt keine essbaren Pflanzen",
+                "hu": "Nincs benne ehető növény"
               }
             }
           ],
@@ -284,7 +304,8 @@
             "ja": "食用の植物はありますか?",
             "it": "Ci sono piante commestibili?",
             "fr": "Y-a-t’il des plantes comestibles ?",
-            "de": "Gibt es essbare Pflanzen?"
+            "de": "Gibt es essbare Pflanzen?",
+            "hu": "Van-e benne ehető növény?"
           }
         },
         {
@@ -296,7 +317,8 @@
             "it": "Che tipi di piante sono presenti qui?",
             "ru": "Какие виды растений обитают здесь?",
             "fr": "Quel type de plantes pousse ici ?",
-            "de": "Welche Pflanzen wachsen hier?"
+            "de": "Welche Pflanzen wachsen hier?",
+            "hu": "Milyen jellegű növények nőnek benne?"
           },
           "mappings": [
             {
@@ -307,7 +329,8 @@
                 "ja": "つるがある",
                 "it": "Ci sono viti",
                 "fr": "Il y a des plantes grimpantes",
-                "de": "Es gibt Weinreben"
+                "de": "Es gibt Weinreben",
+                "hu": "Van benne szőlő"
               }
             },
             {
@@ -318,7 +341,8 @@
                 "ja": "花を咲かせる植物がある",
                 "it": "Ci sono piante da fiore",
                 "fr": "Il y a des fleurs",
-                "de": "Es gibt blühende Pflanzen"
+                "de": "Es gibt blühende Pflanzen",
+                "hu": "Van benne virágos növény"
               }
             },
             {
@@ -329,7 +353,8 @@
                 "ja": "低木がある",
                 "it": "Ci sono arbusti",
                 "fr": "Il y a des buissons",
-                "de": "Es gibt Sträucher"
+                "de": "Es gibt Sträucher",
+                "hu": "Van benne cserje"
               }
             },
             {
@@ -340,7 +365,8 @@
                 "ja": "地をはう植物がある",
                 "it": "Ci sono piante tappezzanti",
                 "fr": "Il y a des plantes couvre-sol",
-                "de": "Es gibt Bodendecker"
+                "de": "Es gibt Bodendecker",
+                "hu": "Van benne talajtakaró növény"
               }
             }
           ],
@@ -355,7 +381,8 @@
             "ru": "Подробнее: {description}",
             "fr": "Plus de détails : {description}",
             "de": "Weitere Details: {description}",
-            "eo": "Pliaj detaloj: {description}"
+            "eo": "Pliaj detaloj: {description}",
+            "hu": "További részletek: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
@@ -364,7 +391,8 @@
             "it": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
             "ru": "Дополнительная информация о саде (если требуется или еще не указана выше)",
             "fr": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
-            "de": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)"
+            "de": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
+            "hu": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)"
           },
           "freeform": {
             "key": "description",
@@ -385,7 +413,8 @@
             "ja": "ファサード庭園",
             "it": "giardino verticale",
             "fr": "jardin mural",
-            "de": "Fassadengarten"
+            "de": "Fassadengarten",
+            "hu": "homlokzatkert"
           },
           "description": {
             "nl": "Voeg geveltuintje toe",
@@ -393,7 +422,8 @@
             "ja": "ファサード庭園を追加する",
             "it": "Aggiungi un giardino verticale",
             "fr": "Ajouter un jardin mural",
-            "de": "Einen Fassadengarten hinzufügen"
+            "de": "Einen Fassadengarten hinzufügen",
+            "hu": "Homlokzatkert hozzáadása"
           }
         }
       ],

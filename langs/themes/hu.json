@@ -80,15 +80,273 @@
         "shortDescription": "Elektromos töltőpontok világtérképe",
         "title": "Elektromos töltőpontok"
     },
+    "climbing": {
+        "description": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
+        "descriptionTail": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
+        "layers": {
+            "0": {
+                "description": "Mászóegyesület vagy -szervezet",
+                "name": "Mászóegyesület",
+                "presets": {
+                    "0": {
+                        "description": "Egy mászóegyesület",
+                        "title": "Mászóegyesület"
+                    },
+                    "1": {
+                        "description": "Mászással foglalkozó civil szervezet",
+                        "title": "Mászószervezet"
+                    }
+                },
+                "tagRenderings": {
+                    "climbing_club-name": {
+                        "question": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Mászószervezet"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "cycle_infra": {
+        "description": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
+        "shortDescription": "Olyan térkép, ahol a kerékpáros infrastruktúrával kapcsolatos dolgokat tekinthet meg és szerkeszthet.",
+        "title": "Kerékpáros infrastruktúra"
+    },
+    "cyclestreets": {
+        "description": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. ",
+        "layers": {
+            "0": {
+                "description": "A kerékpárosutca olyan utca, ahol gépjármű nem előzhet meg a kerékpárost",
+                "name": "Kerékpárosutcák"
+            },
+            "1": {
+                "description": "Ez az utca hamarosan kerékpárosutcává válik",
+                "name": "Jövőbeli kerékpárosutca",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} nemsokára kerékpárosutca lesz"
+                        }
+                    },
+                    "render": "Jövőbeli kerékpárosutca"
+                }
+            },
+            "2": {
+                "description": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez",
+                "name": "Minden utca",
+                "title": {
+                    "render": "Utca"
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
+                        },
+                        "1": {
+                            "then": "Ez az utca kerékpárosutca"
+                        },
+                        "2": {
+                            "then": "Ez az utca hamarosan kerékpárosutcává válik"
+                        },
+                        "3": {
+                            "then": "Ez az utca nem kerékpárosutca"
+                        }
+                    },
+                    "question": "Kerékpárosutca-e <b>{name}</b>?"
+                },
+                "1": {
+                    "question": "Mikor lesz ez az utca kerékpárosutca?",
+                    "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
+                }
+            }
+        },
+        "shortDescription": "Kerékpárosutcák térképe",
+        "title": "Kerékpárosutcák"
+    },
     "cyclofix": {
         "description": "Ez a térkép kerékpárosoknak kíván könnyen használható megoldást nyújtani a számukra fontos infrastruktúra megtalálásához.<br><br>A bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára fontos rétegeket. Az eszköz segítségével gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a kérdések megválaszolásával pedig további adatokat szolgáltathat.<br><br>Minden módosítás automatikusan elmentődik az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják.<br><br>A cyclofix projektről további információkat a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> oldalon talál.",
         "title": "Cyclofix – nyílt térkép kerékpárosoknak"
     },
     "drinking_water": {
-        "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén"
+        "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
+        "title": "Ivóvíz"
+    },
+    "entrances": {
+        "description": "Épületek bejáratai mutató térkép, amely a kerekesszékkel közlekedőknek fontos szempontokat jeleníti meg",
+        "shortDescription": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése",
+        "title": "Épületek bejáratai"
+    },
+    "etymology": {
+        "description": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Etimológiai adat nélküli utcák"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Etimológiai adat nélküli parkok és erdők"
+                }
+            }
+        },
+        "shortDescription": "Mi az eredete egy helynévnek?",
+        "title": "Etimológiai térkép"
+    },
+    "facadegardens": {
+        "description": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
+        "layers": {
+            "0": {
+                "description": "Homlokzati kertek",
+                "name": "Homlokzati kertek",
+                "presets": {
+                    "0": {
+                        "description": "Homlokzatkert hozzáadása",
+                        "title": "homlokzatkert"
+                    }
+                },
+                "tagRenderings": {
+                    "facadegardens-description": {
+                        "question": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)",
+                        "render": "További részletek: {description}"
+                    },
+                    "facadegardens-direction": {
+                        "question": "Milyen a kert tájolása?",
+                        "render": "Tájolás: {direction} (0=észak, 90=kelet stb.)"
+                    },
+                    "facadegardens-edible": {
+                        "mappings": {
+                            "0": {
+                                "then": "Van benne ehető növény"
+                            },
+                            "1": {
+                                "then": "Nincs benne ehető növény"
+                            }
+                        },
+                        "question": "Van-e benne ehető növény?"
+                    },
+                    "facadegardens-plants": {
+                        "mappings": {
+                            "0": {
+                                "then": "Van benne szőlő"
+                            },
+                            "1": {
+                                "then": "Van benne virágos növény"
+                            },
+                            "2": {
+                                "then": "Van benne cserje"
+                            },
+                            "3": {
+                                "then": "Van benne talajtakaró növény"
+                            }
+                        },
+                        "question": "Milyen jellegű növények nőnek benne?"
+                    },
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "Van benne esővízgyűjtő hordó"
+                            },
+                            "1": {
+                                "then": "Nincs benne esővízgyűjtő hordó"
+                            }
+                        },
+                        "question": "Van-e a kertben vizeshordó?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Melyik évben épült a kert?",
+                        "render": "A kert építésének időpontja: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "A kert teljesen a napon van"
+                            },
+                            "1": {
+                                "then": "A kert részben árnyékban van"
+                            },
+                            "2": {
+                                "then": "A kert árnyékban van"
+                            }
+                        },
+                        "question": "Árnyékban vagy napon van a kert?"
+                    }
+                },
+                "title": {
+                    "render": "Homlokzati kert"
+                }
+            }
+        },
+        "shortDescription": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről.",
+        "title": "Homlokzati kertek"
+    },
+    "food": {
+        "title": "Éttermek és büfék"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "Sültkrumplievő-hely"
+                }
+            }
+        }
     },
     "ghostbikes": {
-        "title": "Emlékkerékpárok"
+        "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá.",
+        "title": "Szellemkerékpárok"
+    },
+    "hackerspaces": {
+        "description": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni",
+        "layers": {
+            "0": {
+                "description": "Hackerspace",
+                "name": "Hackerspace",
+                "presets": {
+                    "0": {
+                        "description": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
+                        "title": "Hackerspace"
+                    },
+                    "1": {
+                        "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips.",
+                        "title": "Makerspace"
+                    }
+                },
+                "tagRenderings": {
+                    "is_makerspace": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ez egy makerspace"
+                            },
+                            "1": {
+                                "then": "Ez egy hagyományos (szoftverekkel foglalkozó) hackerspace"
+                            }
+                        },
+                        "question": "Ez hackerspace vagy makerspace?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": " {name}"
+                        }
+                    },
+                    "render": "Hackerspace"
+                }
+            }
+        },
+        "shortDescription": "Hackerspace-ek térképe",
+        "title": "Hackerspace-ek"
     },
     "hailhydrant": {
         "description": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltóállomásokat találhat és szerkeszthet kedvenc városrészeiben (vagy másutt).\n\nA bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára releváns rétegeket. Ezzel az eszközzel gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a rendelkezésre álló kérdések megválaszolásával pedig további részleteket adhat meg.\n\nAz Ön által elvégzett módosítások automatikusan elmentődnek az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják azokat.",

@@ -11,7 +11,8 @@
     "ja": "個人的なテーマ",
     "zh_Hant": "個人化主題",
     "it": "Tema personalizzato",
-    "nb_NO": "Personlig tema"
+    "nb_NO": "Personlig tema",
+    "id": "Tema pribadi"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
@@ -38,6 +39,7 @@
     "zh_Hant",
     "it",
     "nb_NO",
+    "id",
     "ru"
   ],
   "maintainer": "MapComplete",

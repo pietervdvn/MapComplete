@@ -33,7 +33,7 @@
     "es": "Bicicleta blanca",
     "fi": "Haamupyörä",
     "gl": "Bicicleta pantasma",
-    "hu": "Emlékkerékpárok",
+    "hu": "Szellemkerékpárok",
     "it": "Bici fantasma",
     "pl": "Duch roweru",
     "pt_BR": "Bicicleta fantasma",
@@ -47,7 +47,8 @@
     "ja": "<b>ゴーストバイク</b>は、交通事故で死亡したサイクリストを記念するもので、事故現場の近くに恒久的に置かれた白い自転車の形をしています。<br/><br/>このマップには、OpenStreetMapで知られているゴーストバイクがすべて表示されます。ゴーストバイクは行方不明ですか?誰でもここで情報の追加や更新ができます。必要なのは(無料の)OpenStreetMapアカウントだけです。",
     "zh_Hant": "<b>幽靈單車</b>是用來紀念死於交通事故的單車騎士，在事發地點附近放置白色單車。<br/><br/>在這份地圖上面，你可以看到所有在開放街圖已知的幽靈單車。有缺漏的幽靈單車嗎？所有人都可以在這邊新增或是更新資訊-只有你有(免費)開放街圖帳號。",
     "fr": "Les <b>vélos fantômes</b> sont des mémoriaux pour les cyclistes tuées sur la route, prenant la forme de vélos blancs placés à proximité des faits.<br/><br/>Cette carte indique leur emplacement à partir d’OpenStreetMap. Il est possible de contribuer aux informations ici, sous réserve d’avoir un compte OpenStreetMap (gratuit).",
-    "it": "Una <b>bici fantasma</b> è un monumento in ricordo di un ciclista che è morto in un incidente stradale, che ha la forma di un una bicicletta bianca installata in maniera permanente ne luogo dell’incidente.<br/><br/>In questa cartina, è possibile vedere tutte le bici fantasma che sono state aggiunte su OpenStreetMap. Ne manca una? Chiunque può aggiungere o migliorare le informazioni qui presenti (è solo richiesto un account gratuito su OpenStreetMap)."
+    "it": "Una <b>bici fantasma</b> è un monumento in ricordo di un ciclista che è morto in un incidente stradale, che ha la forma di un una bicicletta bianca installata in maniera permanente ne luogo dell’incidente.<br/><br/>In questa cartina, è possibile vedere tutte le bici fantasma che sono state aggiunte su OpenStreetMap. Ne manca una? Chiunque può aggiungere o migliorare le informazioni qui presenti (è solo richiesto un account gratuito su OpenStreetMap).",
+    "hu": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá."
   },
   "icon": "./assets/themes/ghostbikes/logo.svg",
   "startZoom": 1,

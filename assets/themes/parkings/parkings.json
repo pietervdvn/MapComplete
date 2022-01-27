@@ -7,7 +7,8 @@
     "it": "Parcheggio",
     "nb_NO": "Parkering",
     "ru": "Парковка",
-    "zh_Hant": "停車場"
+    "zh_Hant": "停車場",
+    "id": "Tempat parkir"
   },
   "shortDescription": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -15,14 +16,16 @@
     "de": "Diese Karte zeigt Parkplätze",
     "it": "Questa cartina mostra diversi posti dove parcheggiare",
     "nb_NO": "Dette kartet viser forskjellige parkeringsplasser",
-    "zh_Hant": "這地圖顯示不同的停車空間"
+    "zh_Hant": "這地圖顯示不同的停車空間",
+    "id": "Peta ini menunjukkan tempat parkir yang berbeda"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
     "en": "This map shows different parking spots",
     "de": "Diese Karte zeigt Parkplätze",
     "it": "Questa cartina mostra diversi posti dove parcheggiare",
-    "zh_Hant": "這地圖顯示不同的停車空間"
+    "zh_Hant": "這地圖顯示不同的停車空間",
+    "id": "Peta ini menunjukkan tempat parkir yang berbeda"
   },
   "language": [
     "nl",
@@ -31,7 +34,8 @@
     "it",
     "nb_NO",
     "ru",
-    "zh_Hant"
+    "zh_Hant",
+    "id"
   ],
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",

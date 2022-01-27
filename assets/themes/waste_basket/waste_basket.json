@@ -6,7 +6,8 @@
     "de": "Abfalleimer",
     "it": "Cestino dei rifiuti",
     "zh_Hant": "垃圾筒",
-    "hu": "Kukatérkép"
+    "hu": "Kukatérkép",
+    "id": "Keranjang Sampah"
   },
   "shortDescription": {
     "en": "A map with waste baskets",
@@ -30,7 +31,8 @@
     "de",
     "it",
     "zh_Hant",
-    "hu"
+    "hu",
+    "id"
   ],
   "maintainer": "",
   "icon": "./assets/themes/waste_basket/waste_basket.svg",

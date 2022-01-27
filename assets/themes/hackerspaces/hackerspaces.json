@@ -5,26 +5,30 @@
     "de": "Hackerspaces",
     "it": "Hackerspace",
     "ru": "Хакерспейсы",
-    "zh_Hant": "駭客空間"
+    "zh_Hant": "駭客空間",
+    "hu": "Hackerspace-ek"
   },
   "shortDescription": {
     "en": "A map of hackerspaces",
     "de": "Eine Karte von Hackerspaces",
     "it": "Una cartina degli hackerspace",
-    "zh_Hant": "駭客空間的地圖"
+    "zh_Hant": "駭客空間的地圖",
+    "hu": "Hackerspace-ek térképe"
   },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
     "de": "Auf dieser Karte können Sie Hackerspaces sehen, einen neuen Hackerspace hinzufügen oder Daten direkt aktualisieren",
     "it": "Su questa cartina è possibile vedere gli hackerspace, aggiungerne di nuovi o aggiornare le informazioni tutto in maniera pratica",
-    "zh_Hant": "在這份地圖上你可以看到駭客空間，新增或直接更新資料"
+    "zh_Hant": "在這份地圖上你可以看到駭客空間，新增或直接更新資料",
+    "hu": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni"
   },
   "language": [
     "en",
     "de",
     "it",
     "ru",
-    "zh_Hant"
+    "zh_Hant",
+    "hu"
   ],
   "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",
@@ -41,7 +45,8 @@
         "en": "Hackerspace",
         "de": "Hackerspace",
         "ru": "Хакерспейс",
-        "zh_Hant": "駭客空間"
+        "zh_Hant": "駭客空間",
+        "hu": "Hackerspace"
       },
       "minzoom": 8,
       "title": {
@@ -49,7 +54,8 @@
           "en": "Hackerspace",
           "de": "Hackerspace",
           "ru": "Хакерспейс",
-          "zh_Hant": "駭客空間"
+          "zh_Hant": "駭客空間",
+          "hu": "Hackerspace"
         },
         "mappings": [
           {
@@ -62,7 +68,8 @@
               "en": " {name}",
               "de": " {name}",
               "ru": " {name}",
-              "zh_Hant": " {name}"
+              "zh_Hant": " {name}",
+              "hu": " {name}"
             }
           }
         ]
@@ -71,7 +78,8 @@
         "en": "Hackerspace",
         "de": "Hackerspace",
         "ru": "Хакерспейс",
-        "zh_Hant": "駭客空間"
+        "zh_Hant": "駭客空間",
+        "hu": "Hackerspace"
       },
       "tagRenderings": [
         {
@@ -79,7 +87,8 @@
           "question": {
             "en": "Is this a hackerspace or a makerspace?",
             "de": "Ist dies ein Hackerspace oder ein Makerspace?",
-            "zh_Hant": "這邊是駭客空間還是創客空間？"
+            "zh_Hant": "這邊是駭客空間還是創客空間？",
+            "hu": "Ez hackerspace vagy makerspace?"
           },
           "mappings": [
             {
@@ -87,7 +96,8 @@
               "then": {
                 "en": "This is a makerspace",
                 "de": "Dies ist ein Makerspace",
-                "zh_Hant": "這是創客空間"
+                "zh_Hant": "這是創客空間",
+                "hu": "Ez egy makerspace"
               }
             },
             {
@@ -95,7 +105,8 @@
               "then": {
                 "en": "This is a traditional (software oriented) hackerspace",
                 "de": "Dies ist ein traditioneller (softwareorientierter) Hackerspace",
-                "zh_Hant": "這是傳統的 (軟體導向) 駭客空間"
+                "zh_Hant": "這是傳統的 (軟體導向) 駭客空間",
+                "hu": "Ez egy hagyományos (szoftverekkel foglalkozó) hackerspace"
               }
             }
           ]
@@ -214,12 +225,14 @@
             "en": "Hackerspace",
             "de": "Hackerspace",
             "ru": "Хакерспейс",
-            "zh_Hant": "駭客空間"
+            "zh_Hant": "駭客空間",
+            "hu": "Hackerspace"
           },
           "description": {
             "en": "A hackerspace is an area where people interested in software gather",
             "de": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
-            "zh_Hant": "駭客空間是對軟體有興趣的人聚集的地方"
+            "zh_Hant": "駭客空間是對軟體有興趣的人聚集的地方",
+            "hu": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak"
           }
         },
         {
@@ -230,12 +243,14 @@
           "title": {
             "en": "Makerspace",
             "de": "Makerspace",
-            "zh_Hant": "創客空間"
+            "zh_Hant": "創客空間",
+            "hu": "Makerspace"
           },
           "description": {
             "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
             "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
-            "zh_Hant": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等..."
+            "zh_Hant": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等...",
+            "hu": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips."
           }
         }
       ],

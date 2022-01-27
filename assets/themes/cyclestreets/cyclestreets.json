@@ -8,7 +8,8 @@
     "zh_Hant": "單車街道",
     "de": "Fahrradstraßen",
     "it": "Strade ciclabili",
-    "nb_NO": "Sykkelgater"
+    "nb_NO": "Sykkelgater",
+    "hu": "Kerékpárosutcák"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -17,7 +18,8 @@
     "zh_Hant": "單車街道的地圖",
     "nb_NO": "Et kart over sykkelveier",
     "de": "Eine Karte von Fahrradstraßen",
-    "it": "Una cartina per le strade ciclabili"
+    "it": "Una cartina per le strade ciclabili",
+    "hu": "Kerékpárosutcák térképe"
   },
   "description": {
     "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
@@ -25,7 +27,8 @@
     "ja": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
     "zh_Hant": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
     "de": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
-    "it": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. "
+    "it": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. ",
+    "hu": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. "
   },
   "icon": "./assets/themes/cyclestreets/F111.svg",
   "language": [
@@ -36,6 +39,7 @@
     "de",
     "it",
     "nb_NO",
+    "hu",
     "ru",
     "eo"
   ],
@@ -59,7 +63,8 @@
         "it": "Strade ciclabili",
         "de": "Fahrradstraßen",
         "nb_NO": "Sykkelgater",
-        "ru": "Cyclestreets"
+        "ru": "Cyclestreets",
+        "hu": "Kerékpárosutcák"
       },
       "minzoom": 7,
       "source": {
@@ -83,7 +88,8 @@
         "en": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
         "ja": "cyclestreetとは、自動車による交通がサイクリストを追い越すことができない道路です",
         "it": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
-        "de": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf"
+        "de": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf",
+        "hu": "A kerékpárosutca olyan utca, ahol gépjármű nem előzhet meg a kerékpárost"
       },
       "title": "{name}",
       "tagRenderings": [
@@ -111,7 +117,8 @@
         "zh_Hant": "將來的單車街道",
         "nb_NO": "Fremtidig sykkelvei",
         "it": "Futura strada ciclabile",
-        "de": "Zukünftige Fahrradstraße"
+        "de": "Zukünftige Fahrradstraße",
+        "hu": "Jövőbeli kerékpárosutca"
       },
       "description": {
         "nl": "Deze straat wordt binnenkort een fietsstraat",
@@ -119,7 +126,8 @@
         "ja": "この通りはまもなくcyclestreetになります",
         "it": "Questa strada diventerà presto una strada ciclabile",
         "de": "Diese Straße wird bald eine Fahrradstraße sein",
-        "nb_NO": "Denne gaten vil bli sykkelgate snart"
+        "nb_NO": "Denne gaten vil bli sykkelgate snart",
+        "hu": "Ez az utca hamarosan kerékpárosutcává válik"
       },
       "minzoom": 9,
       "source": {
@@ -132,7 +140,8 @@
           "ja": "将来のcyclestreet",
           "nb_NO": "Fremtidig sykkelvei",
           "it": "Futura strada ciclabile",
-          "de": "Zukünftige Fahrradstraße"
+          "de": "Zukünftige Fahrradstraße",
+          "hu": "Jövőbeli kerékpárosutca"
         },
         "mappings": [
           {
@@ -142,7 +151,8 @@
               "ja": "{name}は、もうすぐcyclestreetになる",
               "it": "{name} diventerà presto una strada ciclabile",
               "de": "{name} wird bald eine Fahrradstraße werden",
-              "nb_NO": "{name} vil bli sykkelgate snart"
+              "nb_NO": "{name} vil bli sykkelgate snart",
+              "hu": "{name} nemsokára kerékpárosutca lesz"
             },
             "if": "name~*"
           }
@@ -174,7 +184,8 @@
         "it": "Tutte le strade",
         "ru": "Все улицы",
         "de": "Alle Straßen",
-        "eo": "Ĉiuj stratoj"
+        "eo": "Ĉiuj stratoj",
+        "hu": "Minden utca"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -182,7 +193,8 @@
         "ja": "任意の道路をCycle Streetとしてマークするレイヤ",
         "nb_NO": "Lag for å markere hvilken som helst gate som sykkelvei",
         "it": "Livello per contrassegnare tutte le strade come strade ciclabili",
-        "de": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße"
+        "de": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße",
+        "hu": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez"
       },
       "source": {
         "osmTags": {
@@ -203,7 +215,8 @@
           "ru": "Улица",
           "de": "Straße",
           "eo": "Strato",
-          "nb_NO": "Gate"
+          "nb_NO": "Gate",
+          "hu": "Utca"
         },
         "mappings": [
           {
@@ -252,7 +265,8 @@
           "ja": "この通りはcyclestreetですか?",
           "nb_NO": "Er denne gaten en sykkelvei?",
           "de": "Ist die Straße <b>{Name}</b> eine Fahrradstraße?",
-          "it": "È una strada ciclabile?"
+          "it": "È una strada ciclabile?",
+          "hu": "Kerékpárosutca-e <b>{name}</b>?"
         },
         "mappings": [
           {
@@ -270,7 +284,8 @@
               "ja": "cyclestreet(最高速度は30km/h)",
               "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
               "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
-              "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
+              "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)",
+              "hu": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
             }
           },
           {
@@ -286,7 +301,8 @@
               "ja": "この通りはcyclestreetだ",
               "nb_NO": "Denne gaten er en sykkelvei",
               "de": "Diese Straße ist eine Fahrradstraße",
-              "it": "Questa è una strada ciclabile"
+              "it": "Questa è una strada ciclabile",
+              "hu": "Ez az utca kerékpárosutca"
             },
             "hideInAnswer": true
           },
@@ -303,7 +319,8 @@
               "ja": "この通りはまもなくcyclstreetになるだろう",
               "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
               "de": "Diese Straße wird bald eine Fahrradstraße sein",
-              "it": "Diverrà tra poco una strada ciclabile"
+              "it": "Diverrà tra poco una strada ciclabile",
+              "hu": "Ez az utca hamarosan kerékpárosutcává válik"
             }
           },
           {
@@ -320,7 +337,8 @@
               "ja": "この通りはcyclestreetではない",
               "nb_NO": "Denne gaten er ikke en sykkelvei",
               "it": "Questa strada non è una strada ciclabile",
-              "de": "Diese Straße ist keine Fahrradstraße"
+              "de": "Diese Straße ist keine Fahrradstraße",
+              "hu": "Ez az utca nem kerékpárosutca"
             }
           }
         ]
@@ -332,14 +350,16 @@
           "en": "When will this street become a cyclestreet?",
           "ja": "この通りはいつcyclestreetになるんですか?",
           "it": "Questa strada diventerà una strada ciclabile quando?",
-          "de": "Wann wird diese Straße eine Fahrradstraße?"
+          "de": "Wann wird diese Straße eine Fahrradstraße?",
+          "hu": "Mikor lesz ez az utca kerékpárosutca?"
         },
         "render": {
           "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
           "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
           "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります",
           "it": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
-          "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+          "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße",
+          "hu": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
         },
         "condition": "proposed:cyclestreet=yes",
         "freeform": {

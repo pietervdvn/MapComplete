@@ -22,7 +22,8 @@
       "fr": "Quelle est l'entité Wikidata correspondante ?",
       "ca": "Quina és la correspondent entitat a Wikidata?",
       "sv": "Vad är den motsvarande Wikidata-enheten?",
-      "zh_Hant": "對應的維基資料項目是？"
+      "zh_Hant": "對應的維基資料項目是？",
+      "pl": "Jaki jest powiązany obiekt Wikidata?"
     },
     "mappings": [
       {
@@ -39,7 +40,8 @@
           "ca": "No hi ha cap enllaça a Viquipèdia encara",
           "sv": "Ingen Wikipedia-sida har länkats än",
           "zh_Hant": "還沒有連結到維基百科頁面",
-          "ru": "Никакой страницы на Википедии не было прикреплено"
+          "ru": "Никакой страницы на Википедии не было прикреплено",
+          "pl": "Link do strony Wikipedii nie został jeszcze określony"
         },
         "hideInAnswer": true
       }
@@ -112,7 +114,8 @@
       "ca": "Quin és l'ítem a Viquipèdia?",
       "sv": "Vad är det motsvarande objektet på Wikipedia?",
       "zh_Hant": "維基百科上對應的項目是什麼？",
-      "fr": "Quel est l’élément Wikipédia correspondant ?"
+      "fr": "Quel est l’élément Wikipédia correspondant ?",
+      "pl": "Jaki jest link do strony Wikipedii?"
     },
     "mappings": [
       {
@@ -128,7 +131,8 @@
           "fr": "Non lié avec Wikipedia",
           "ca": "No enllaçat amb Viquipèdia",
           "sv": "Inte länkad med Wikipedia",
-          "zh_Hant": "沒有連結到維基百科"
+          "zh_Hant": "沒有連結到維基百科",
+          "pl": "Brak linku do strony Wikipedii"
         }
       }
     ],
@@ -221,7 +225,8 @@
       "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
       "ca": "Aquest lloc és accessible amb cadira de rodes?",
       "sv": "Är det här stället tillgängligt med en rullstol?",
-      "zh_Hant": "這個地方可以坐輪椅到達嗎？"
+      "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+      "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?"
     },
     "mappings": [
       {
@@ -243,7 +248,8 @@
           "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
           "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
           "zh_Hant": "這個地方有特別設計給輪椅使用者",
-          "ru": "Это место подходит для людей на инвалидной коляске"
+          "ru": "Это место подходит для людей на инвалидной коляске",
+          "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich"
         }
       },
       {
@@ -265,7 +271,8 @@
           "ca": "És facilment arribable amb cadira de rodes",
           "sv": "Denna plats är lätt att nå med rullstol",
           "zh_Hant": "這個地方坐輪椅很容易到達",
-          "ru": "До этого места легко добраться на инвалидной коляске"
+          "ru": "До этого места легко добраться на инвалидной коляске",
+          "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich"
         }
       },
       {
@@ -287,7 +294,8 @@
           "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
           "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
           "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
-          "ru": "До этого места можно добраться, но не просто"
+          "ru": "До этого места можно добраться, но не просто",
+          "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami"
         }
       },
       {
@@ -308,7 +316,8 @@
           "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
           "ca": "Aquest lloc no és accessible amb cadira de rodes",
           "sv": "Den här platsen kan inte nås med en rullstol",
-          "zh_Hant": "輪椅無法到達這個地方"
+          "zh_Hant": "輪椅無法到達這個地方",
+          "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich"
         }
       }
     ]
@@ -326,7 +335,8 @@
       "ca": "S'accepten gossos en aquest negoci?",
       "sv": "Tillåts hundar i den här affären?",
       "zh_Hant": "這間商業空間是否允許犬隻？",
-      "ru": "Впускают ли собак в это здание?"
+      "ru": "Впускают ли собак в это здание?",
+      "pl": "Czy w tej firmie psy są dozwolone?"
     },
     "mappings": [
       {
@@ -344,7 +354,9 @@
           "ca": "S'accepten gossos",
           "ru": "Собаки разрешены",
           "sv": "Hundar tillåts",
-          "zh_Hant": "允許犬隻"
+          "zh_Hant": "允許犬隻",
+          "id": "Anjing diperbolehkan",
+          "pl": "Psy dozwolone"
         }
       },
       {
@@ -362,8 +374,9 @@
           "ca": "<b>No</b> s'accepten gossos",
           "sv": "Hundar tillåts <b>inte</b>",
           "zh_Hant": "<b>不</b>允許犬隻",
-          "pl": "Psom wstęp wzbroniony",
-          "ru": "С собаками <b>не</b> впускают"
+          "pl": "Psy <b>nie</b> dozwolone",
+          "ru": "С собаками <b>не</b> впускают",
+          "id": "Anjing <b> tidak </b> diperbolehkan"
         }
       },
       {
@@ -380,7 +393,9 @@
           "ca": "S'accepten gossos però lligats",
           "sv": "Hundar tillåts, men de måste vara kopplade",
           "zh_Hant": "允許犬隻，但需要掛牽繩",
-          "ru": "Собак впускают, но на поводке"
+          "ru": "Собак впускают, но на поводке",
+          "id": "Anjing diperbolehkan, tetapi mereka harus diikat",
+          "pl": "Psy dozwolone, ale muszą być na smyczy"
         }
       },
       {
@@ -397,7 +412,8 @@
           "ca": "S'accepten gossos lliures",
           "sv": "Hundar tillåts och får springa fritt omkring",
           "zh_Hant": "允許犬隻而且可以自由跑動",
-          "ru": "Собак свободно впускают"
+          "ru": "Собак свободно впускают",
+          "pl": "Psy dozwolone i mogą biegać bez ograniczeń"
         }
       }
     ]
@@ -417,7 +433,8 @@
       "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>",
       "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>",
       "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>",
-      "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>"
+      "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>",
+      "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>"
     },
     "render": "{description}",
     "freeform": {
@@ -474,7 +491,8 @@
       "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
       "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
       "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?",
-      "fr": "Des prises sont elles à disposition des client·e·s en intérieur ?"
+      "fr": "Des prises sont elles à disposition des client·e·s en intérieur ?",
+      "pl": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
     },
     "mappings": [
       {
@@ -487,7 +505,8 @@
           "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
           "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
-          "fr": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+          "fr": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils",
+          "pl": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
         },
         "if": "service:electricity=yes"
       },
@@ -501,7 +520,8 @@
           "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
           "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
-          "fr": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+          "fr": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils",
+          "pl": "W budynku znajduje się kilka gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
         },
         "if": "service:electricity=limited"
       },
@@ -515,7 +535,8 @@
           "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
           "sv": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas",
           "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電",
-          "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
+          "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni",
+          "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi"
         },
         "if": "service:electricity=ask"
       },
@@ -529,7 +550,8 @@
           "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung",
           "sv": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus",
           "zh_Hant": "這裡客戶座位沒有室內插座",
-          "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
+          "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor",
+          "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów"
         },
         "if": "service:electricity=no"
       }

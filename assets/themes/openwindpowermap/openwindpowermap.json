@@ -6,7 +6,8 @@
     "de": "Freie Windenergie-Karte",
     "it": "OpenWindPowerMap",
     "ru": "Открытая карта ветроэнергетики",
-    "zh_Hant": "開放風力地圖"
+    "zh_Hant": "開放風力地圖",
+    "id": "OpenWindPowerMap"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
@@ -24,6 +25,7 @@
     "it",
     "ru",
     "zh_Hant",
+    "id",
     "nl",
     "eo",
     "nb_NO"
@@ -57,7 +59,8 @@
           "fr": "éolienne",
           "de": "Windrad",
           "it": "pala eolica",
-          "zh_Hant": "風機"
+          "zh_Hant": "風機",
+          "id": "turbin angin"
         },
         "mappings": [
           {
@@ -68,7 +71,8 @@
               "eo": "{name}",
               "it": "{name}",
               "ru": "{name}",
-              "zh_Hant": "{name}"
+              "zh_Hant": "{name}",
+              "id": "{name}"
             }
           }
         ]
@@ -80,13 +84,15 @@
             "en": "The power output of this wind turbine is {generator:output:electricity}.",
             "fr": "La puissance générée par cette éolienne est de {generator:output:electricity}.",
             "it": "La potenza generata da questa pala eolica è {generator:output:electricity}.",
-            "zh_Hant": "這個風機的電力輸出是 {generator:output:electricity}。"
+            "zh_Hant": "這個風機的電力輸出是 {generator:output:electricity}。",
+            "id": "Output daya dari turbin angin ini adalah {generator:output:electricity}."
           },
           "question": {
             "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
             "fr": "Quel est la puissance générée par cette éolienne ?",
             "it": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
-            "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)"
+            "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)",
+            "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)"
           },
           "freeform": {
             "key": "generator:output:electricity",
@@ -99,7 +105,8 @@
             "en": "This wind turbine is operated by {operator}.",
             "fr": "Cette éolienne est opérée par {operator}.",
             "it": "Questa pala eolica è gestita da {operator}.",
-            "zh_Hant": "這個風機營業商是 {operator}。"
+            "zh_Hant": "這個風機營業商是 {operator}。",
+            "id": "Turbin angin ini dioperasikan oleh {operator}."
           },
           "question": {
             "en": "Who operates this wind turbine?",
@@ -155,13 +162,15 @@
             "en": "This wind turbine went into operation on/in {start_date}.",
             "fr": "L’éolienne est active depuis {start_date}.",
             "it": "Questa pala eolica è entrata in funzione in data {start_date}.",
-            "zh_Hant": "這個風機從 {start_date} 開始運轉。"
+            "zh_Hant": "這個風機從 {start_date} 開始運轉。",
+            "id": "Turbin angin ini mulai beroperasi pada/dalam {start_date}."
           },
           "question": {
             "en": "When did this wind turbine go into operation?",
             "fr": "Depuis quand l’éolienne est-elle en fonctionnement ?",
             "it": "Quando è entrata in funzione questa pala eolica?",
-            "zh_Hant": "這個風機何時開始營運？"
+            "zh_Hant": "這個風機何時開始營運？",
+            "id": "Kapan turbin angin ini mulai beroperasi?"
           },
           "freeform": {
             "key": "start_date",
@@ -206,7 +215,8 @@
                 "eo": " megavatoj",
                 "it": " megawatt",
                 "ru": " мегаватт",
-                "zh_Hant": " 百萬瓦"
+                "zh_Hant": " 百萬瓦",
+                "id": " megawat"
               }
             },
             {
@@ -224,7 +234,8 @@
                 "it": " kilowatt",
                 "nb_NO": " kilowatt",
                 "ru": " киловатт",
-                "zh_Hant": " 千瓦"
+                "zh_Hant": " 千瓦",
+                "id": " kilowat"
               }
             },
             {
@@ -241,7 +252,8 @@
                 "eo": " vatoj",
                 "it": " watt",
                 "ru": " ватт",
-                "zh_Hant": " 瓦"
+                "zh_Hant": " 瓦",
+                "id": " watt"
               }
             },
             {
@@ -258,7 +270,8 @@
                 "eo": " gigavatoj",
                 "it": " gigawatt",
                 "ru": " гигаватт",
-                "zh_Hant": " 千兆瓦"
+                "zh_Hant": " 千兆瓦",
+                "id": " gigawatt"
               }
             }
           ],
@@ -283,7 +296,8 @@
                 "eo": " metro",
                 "it": " metri",
                 "ru": " метр",
-                "zh_Hant": " 公尺"
+                "zh_Hant": " 公尺",
+                "id": " meter"
               }
             }
           ]

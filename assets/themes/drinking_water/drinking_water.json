@@ -9,7 +9,8 @@
     "zh_Hant": "飲用水",
     "it": "Acqua potabile",
     "de": "Trinkwasserstelle",
-    "nb_NO": "Drikkevann"
+    "nb_NO": "Drikkevann",
+    "hu": "Ivóvíz"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",

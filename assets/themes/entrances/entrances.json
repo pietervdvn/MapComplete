@@ -2,20 +2,24 @@
   "id": "entrances",
   "title": {
     "en": "Entrances",
-    "zh_Hant": "出入口"
+    "zh_Hant": "出入口",
+    "hu": "Épületek bejáratai"
   },
   "icon": "./assets/layers/entrance/door.svg",
   "description": {
     "en": "A map showing all entrances, which surveys for important aspects for wheelchair users",
-    "zh_Hant": "顯示所有出入口的地圖，勘查對輪椅使用者重要的資訊"
+    "zh_Hant": "顯示所有出入口的地圖，勘查對輪椅使用者重要的資訊",
+    "hu": "Épületek bejáratai mutató térkép, amely a kerekesszékkel közlekedőknek fontos szempontokat jeleníti meg"
   },
   "shortDescription": {
     "en": "Survey entrances to help wheelchair routing",
-    "zh_Hant": "幫助輪椅導航來勘查出入口"
+    "zh_Hant": "幫助輪椅導航來勘查出入口",
+    "hu": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése"
   },
   "language": [
     "en",
-    "zh_Hant"
+    "zh_Hant",
+    "hu"
   ],
   "version": "2021-12-04",
   "maintainer": "MapComplete",

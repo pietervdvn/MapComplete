@@ -19,7 +19,8 @@
     "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。",
     "zh_Hant": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
     "fr": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
-    "it": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali."
+    "it": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
+    "hu": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -29,7 +30,8 @@
     "ja": "登山地図はもともと <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> によって作成されたものです。フィードバックや質問がありましたら、<a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ご連絡</a>ください。</p><p>このプロジェクトでは、<a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>プロジェクトのデータを使用します。</p>",
     "zh_Hant": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
     "fr": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "it": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
+    "it": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+    "hu": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>"
   },
   "language": [
     "nl",
@@ -41,6 +43,7 @@
     "nb_NO",
     "it",
     "fr",
+    "hu",
     "ca",
     "id",
     "eo"
@@ -65,7 +68,8 @@
         "zh_Hant": "攀岩社團",
         "nb_NO": "Klatreklubb",
         "fr": "Club d’escalade",
-        "it": "Club di arrampicata"
+        "it": "Club di arrampicata",
+        "hu": "Mászóegyesület"
       },
       "minzoom": 10,
       "source": {
@@ -108,7 +112,8 @@
               "ja": "クライミングNGO",
               "zh_Hant": "攀岩 NGO",
               "fr": "Association d’escalade",
-              "it": "Associazione di arrampicata"
+              "it": "Associazione di arrampicata",
+              "hu": "Mászószervezet"
             }
           }
         ]
@@ -121,7 +126,8 @@
         "zh_Hant": "攀岩社團或組織",
         "nb_NO": "En klatreklubb eller organisasjoner",
         "fr": "Club ou association d’escalade",
-        "it": "Un club o associazione di arrampacata"
+        "it": "Un club o associazione di arrampacata",
+        "hu": "Mászóegyesület vagy -szervezet"
       },
       "tagRenderings": [
         {
@@ -135,7 +141,8 @@
             "ru": "<strong>{name}</strong>",
             "ja": "<strong>{name}</strong>",
             "zh_Hant": "<strong>{name}</strong>",
-            "it": "<strong>{name}</strong>"
+            "it": "<strong>{name}</strong>",
+            "hu": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing club or NGO?",
@@ -143,7 +150,8 @@
             "nl": "Wat is de naam van deze klimclub?",
             "ja": "この登山クラブやNGOの名前は何ですか?",
             "fr": "Quel est le nom du club ou de l’association ?",
-            "it": "Qual è il nome di questo club o associazione di arrampicata?"
+            "it": "Qual è il nome di questo club o associazione di arrampicata?",
+            "hu": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?"
           },
           "freeform": {
             "key": "name"
@@ -173,7 +181,8 @@
             "nb_NO": "Klatreklubb",
             "ru": "Клуб скалолазания",
             "fr": "Club d’escalade",
-            "it": "Club di arrampicata"
+            "it": "Club di arrampicata",
+            "hu": "Mászóegyesület"
           },
           "description": {
             "de": "Ein Kletterverein",
@@ -183,7 +192,8 @@
             "nb_NO": "En klatreklubb",
             "ru": "Клуб скалолазания",
             "fr": "Un club d’escalade",
-            "it": "Un club di arrampicata"
+            "it": "Un club di arrampicata",
+            "hu": "Egy mászóegyesület"
           }
         },
         {
@@ -197,7 +207,8 @@
             "nl": "Een klimorganisatie",
             "ja": "クライミングNGO",
             "fr": "Association d’escalade",
-            "it": "Associazione di arrampicata"
+            "it": "Associazione di arrampicata",
+            "hu": "Mászószervezet"
           },
           "description": {
             "de": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
@@ -205,7 +216,8 @@
             "en": "A NGO working around climbing",
             "ja": "登山に関わるNGO",
             "fr": "Une association d’escalade",
-            "it": "Un’associazione che ha a che fare con l’arrampicata"
+            "it": "Un’associazione che ha a che fare con l’arrampicata",
+            "hu": "Mászással foglalkozó civil szervezet"
           }
         }
       ],
