@@ -30,7 +30,6 @@ Playgrounds
 
 #### Themes using this layer
 
-- [personal](https://mapcomplete.osm.be/personal)
 - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
 [Go to the source code](../assets/layers/playground/playground.json)

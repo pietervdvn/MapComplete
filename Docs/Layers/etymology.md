@@ -27,7 +27,6 @@ All objects which have an etymology known
 #### Themes using this layer
 
 - [etymology](https://mapcomplete.osm.be/etymology)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/etymology/etymology.json)
 

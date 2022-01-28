@@ -25,7 +25,6 @@ A layer showing street lights
 
 #### Themes using this layer
 
-- [personal](https://mapcomplete.osm.be/personal)
 - [street_lighting](https://mapcomplete.osm.be/street_lighting)
 
 [Go to the source code](../assets/layers/street_lamps/street_lamps.json)

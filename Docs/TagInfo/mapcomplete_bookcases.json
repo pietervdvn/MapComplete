@@ -146,10 +146,6 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Open Bookcase Map has a layer Possible bookcases showing features with this tag"
-    },
-    {
-      "key": "id",
       "description": "The MapComplete theme Open Bookcase Map has a layer Your track showing features with this tag",
       "value": "location_track"
     }

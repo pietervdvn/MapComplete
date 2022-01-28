@@ -25,7 +25,6 @@ other medical supplies.
 #### Themes using this layer
 
 - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/ambulancestation/ambulancestation.json)
 

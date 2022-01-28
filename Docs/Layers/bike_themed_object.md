@@ -24,7 +24,6 @@ A layer with bike-themed objects but who don't match any other layer
 #### Themes using this layer
 
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bike_themed_object/bike_themed_object.json)
 

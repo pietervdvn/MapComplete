@@ -21,7 +21,6 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 #### Themes using this layer
 
 - [entrances](https://mapcomplete.osm.be/entrances)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/pedestrian_path/pedestrian_path.json)
 

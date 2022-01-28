@@ -19,7 +19,6 @@ A layer showing car parkings
 #### Themes using this layer
 
 - [parkings](https://mapcomplete.osm.be/parkings)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/parking/parking.json)
 

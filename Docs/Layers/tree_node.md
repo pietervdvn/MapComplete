@@ -26,7 +26,6 @@ A layer showing trees
 
 #### Themes using this layer
 
-- [personal](https://mapcomplete.osm.be/personal)
 - [trees](https://mapcomplete.osm.be/trees)
 
 [Go to the source code](../assets/layers/tree_node/tree_node.json)

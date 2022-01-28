@@ -28,7 +28,6 @@ A facility where bicycles can be lent for longer period of times
 
 - [bicyclelib](https://mapcomplete.osm.be/bicyclelib)
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bicycle_library/bicycle_library.json)
 

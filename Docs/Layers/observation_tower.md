@@ -27,7 +27,6 @@ Towers with a panoramic view
 #### Themes using this layer
 
 - [observation_towers](https://mapcomplete.osm.be/observation_towers)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/observation_tower/observation_tower.json)
 

@@ -24,7 +24,6 @@ Map layer to show fire stations.
 #### Themes using this layer
 
 - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/fire_station/fire_station.json)
 

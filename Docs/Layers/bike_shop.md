@@ -35,7 +35,6 @@ A shop specifically selling bicycles or related items
 #### Themes using this layer
 
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bike_shop/bike_shop.json)
 

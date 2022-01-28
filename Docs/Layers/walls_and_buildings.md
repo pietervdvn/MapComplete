@@ -29,7 +29,6 @@ default and not toggleable by the user.
 
 - [aed](https://mapcomplete.osm.be/aed)
 - [entrances](https://mapcomplete.osm.be/entrances)
-- [personal](https://mapcomplete.osm.be/personal)
 - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 [Go to the source code](../assets/layers/walls_and_buildings/walls_and_buildings.json)

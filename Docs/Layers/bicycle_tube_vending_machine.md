@@ -27,7 +27,6 @@ vending machines with bicycle tubes and optionally additional bicycle related ob
 #### Themes using this layer
 
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)
 

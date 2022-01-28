@@ -26,7 +26,6 @@ questions about them.
 #### Themes using this layer
 
 - [benches](https://mapcomplete.osm.be/benches)
-- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bench/bench.json)
 
