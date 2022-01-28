@@ -816,6 +816,16 @@
     "sources": []
   },
   {
+    "path": "nfc_card.svg",
+    "license": "CC0",
+    "authors": [
+      "Stijn Wens"
+    ],
+    "sources": [
+      "https://wens.be/free-antwerpenize-bicycle-font"
+    ]
+  },
+  {
     "path": "no_checkmark.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -885,6 +895,16 @@
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
+    ]
+  },
+  {
+    "path": "payment_card.svg",
+    "license": "CC0",
+    "authors": [
+      " \tMaxi Koichi (maxixam)"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Credit_Card_-_The_Noun_Project.svg"
     ]
   },
   {
