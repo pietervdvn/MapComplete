@@ -12,6 +12,72 @@
         "shortDescription": "A map of benches",
         "title": "Benches"
     },
+    "bicycle_rental": {
+        "description": "On this map, you'll find the many biycle rental stations as they are known by OpenStreetMap",
+        "layers": {
+            "0": {
+                "description": "Bicycle rental stations",
+                "name": "Bicycle rental",
+                "tagRenderings": {
+                    "8": {
+                        "renderings": {
+                            "0": {
+                                "question": "How much bicycle_type "
+                            }
+                        }
+                    },
+                    "bicycle-types": {
+                        "mappings": {
+                            "0": {
+                                "then": "Normal city bikes can be rented here"
+                            },
+                            "1": {
+                                "then": "Electrical bikes can be rented here"
+                            },
+                            "2": {
+                                "then": "BMX bikes can be rented here"
+                            }
+                        },
+                        "question": "What kind of bicycles and accessories are rented here?",
+                        "render": "{rental} is rented here"
+                    },
+                    "bicycle_rental_type": {
+                        "mappings": {
+                            "0": {
+                                "then": "This is a shop whose main focus is bicycle rental"
+                            },
+                            "1": {
+                                "then": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus"
+                            },
+                            "2": {
+                                "then": "This is a shop which sells or repairs bicycles, but also rents out bicycles"
+                            },
+                            "3": {
+                                "then": "This is an automated docking station, where a bicycle is mechanically locked into a structure"
+                            },
+                            "4": {
+                                "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
+                            },
+                            "5": {
+                                "then": "This is a dropoff point: a designated bicycle parking for this cycle rental"
+                            }
+                        },
+                        "question": "What kind of bicycle rental is this?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "Bicycle rental"
+                }
+            }
+        },
+        "shortDescription": "A map with biyccle rental stations and bicycle rental shops",
+        "title": "Bicycle rental"
+    },
     "bicyclelib": {
         "description": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike",
         "title": "Bicycle libraries"

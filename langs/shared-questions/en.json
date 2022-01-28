@@ -56,6 +56,18 @@
             },
             "question": "Which methods of payment are accepted here?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Payment is done using a dedicated app"
+                    },
+                    "1": {
+                        "then": "Payment is done using a membership card"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "What is the phone number of {name}?"
         },

@@ -56,6 +56,18 @@
             },
             "question": "Welke betaalmiddelen worden hier geaccepteerd?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Betalen via een app van het netwerk"
+                    },
+                    "1": {
+                        "then": "Betalen via een lidkaart van het netwerk"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "Wat is het telefoonnummer van {name}?"
         },

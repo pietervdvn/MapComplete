@@ -1604,18 +1604,6 @@
                 "question": "Hoelang mag een voertuig hier blijven staan?",
                 "render": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
             },
-            "payment-options": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Betalen via een app van het netwerk"
-                        },
-                        "1": {
-                            "then": "Betalen via een lidkaart van het netwerk"
-                        }
-                    }
-                }
-            },
             "phone": {
                 "question": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
                 "render": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
