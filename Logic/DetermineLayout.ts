@@ -16,6 +16,7 @@ import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 import * as known_layers from "../assets/generated/known_layers.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
+import {Layer} from "leaflet";
 
 export default class DetermineLayout {
 
@@ -134,9 +135,9 @@ export default class DetermineLayout {
 
     private static prepCustomTheme(json: any): LayoutConfigJson {
         const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers["default"]) {
-            const layer = known_layers["default"][key]
-            knownLayersDict.set(layer.id, layer)
+        for (const key in known_layers.layers) {
+            const layer = known_layers.layers[key]
+            knownLayersDict.set(layer.id,<LayerConfigJson> layer)
         }
         const converState = {
             tagRenderings: SharedTagRenderings.SharedTagRenderingJson,

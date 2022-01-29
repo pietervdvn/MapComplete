@@ -142,6 +142,16 @@
     ]
   },
   {
+    "path": "cash.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Online Web Fonts"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/464494"
+    ]
+  },
+  {
     "path": "checkbox-empty.svg",
     "license": "CC0",
     "authors": [
@@ -1108,6 +1118,16 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "smartphone.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "To Uyen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Smartphone_icon_-_Noun_Project_283536.svg"
+    ]
   },
   {
     "path": "speech_bubble.svg",

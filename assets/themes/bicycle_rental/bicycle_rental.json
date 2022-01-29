@@ -171,19 +171,36 @@
             {
               "if": "rental=city_bike",
               "then": {
-                "en": "Normal city bikes can be rented here"
+                "en": "Normal city bikes can be rented here",
+                "nl": "Gewone stadsfietsen kunnen hier gehuurd worden"
               }
             },
             {
               "if": "rental=ebike",
               "then": {
-                "en": "Electrical bikes can be rented here"
+                "en": "Electrical bikes can be rented here",
+                "nl": "Elektrische fietsen kunnen hier gehuurd worden"
               }
             },
             {
               "if": "rental=bmx",
               "then": {
-                "en": "BMX bikes can be rented here"
+                "en": "BMX bikes can be rented here",
+                "nl": "BMX-fietsen kunnen hier gehuurd worden"
+              }
+            },
+            {
+              "if": "rental=mtb",
+              "then": {
+                "en": "Mountainbikes can be rented here",
+                "nl": "Mountainbikes kunnen hier gehuurd worden"
+              }
+            },
+            {
+              "if": "rental=kid_bike",
+              "then": {
+                "en": "Bikes for childs can be rented here",
+                "nl": "Kinderfietsen kunnen hier gehuurd worden"
               }
             }
           ]
@@ -192,26 +209,70 @@
           "rewrite": {
             "sourceString": [
               "bicycle_type",
-              "bicycle_types"
+              "type_plural"
             ],
             "into": [
               [
                 "city_bike",
-                "city bikes"
+                {
+                  "en": "city bikes",
+                  "nl": "Stadsfietsen"
+                }
               ],
               [
                 "ebike",
-                "electrical bikes"
+                {
+                  "en": "electrical bikes",
+                  "nl": "elektrische fietsen"
+                }
               ],
-              "bmx"
+              [
+                "kid_bike",
+                {
+                  "en": "bikes for children",
+                  "nl": "Kinderfietsen"
+                }
+              ],
+              [
+                "bmx",
+                {
+                  "en": "BMX bikes",
+                  "nl": "BMX-fietsen"
+                }
+              ],
+              [
+                "mtb",
+                {
+                  "en": "mountainbike",
+                  "nl": "mountainbike"
+                }
+              ],
+              [
+                "bicycle_pannier",
+                {
+                  "en": "bicycle panniers",
+                  "nl": "Fietstassen"
+                }
+              ]
             ]
           },
           "renderings": [
             {
+              "id": "rental-capacity-bicycle-type",
+              "group": "",
               "question": {
-                "en": "How much bicycle_type ",
-                "nl": "Hoeveel "
-              }
+                "en": "How much type_plural can be rented here? ",
+                "nl": "Hoeveel type_plural kunnen hier uitgeleend worden?"
+              },
+              "render": {
+                "en": "{capacity:bicycle_type} type_plural can be rented here",
+                "nl": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
+              },
+              "freeform": {
+                "key": "capacity:bicycle_type",
+                "type": "pnat"
+              },
+              "condition": "rental~.*bicycle_type.*"
             }
           ]
         }

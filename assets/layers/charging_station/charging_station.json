@@ -2975,32 +2975,14 @@
     },
     {
       "id": "payment-options",
-      "builtin": "payment-options",
+      "builtin": "payment-options-advanced",
       "override": {
         "condition": {
           "or": [
             "fee=yes",
             "charge~*"
           ]
-        },
-        "mappings+": [
-          {
-            "if": "payment:app=yes",
-            "ifnot": "payment:app=no",
-            "then": {
-              "en": "Payment is done using a dedicated app",
-              "nl": "Betalen via een app van het netwerk"
-            }
-          },
-          {
-            "if": "payment:membership_card=yes",
-            "ifnot": "payment:membership_card=no",
-            "then": {
-              "en": "Payment is done using a membership card",
-              "nl": "Betalen via een lidkaart van het netwerk"
-            }
-          }
-        ]
+        }
       }
     },
     {

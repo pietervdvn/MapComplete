@@ -107,6 +107,10 @@ export interface TagRenderingConfigJson {
          */
         then: string | any,
         /**
+         * An icon supporting this mapping; typically shown pretty small
+         */
+        icon?: string
+        /**
          * In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).
          *
          * In the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.

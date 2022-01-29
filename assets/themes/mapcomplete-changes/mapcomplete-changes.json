@@ -96,6 +96,10 @@
                 "then": "./assets/themes/benches/bench_poi.svg"
               },
               {
+                "if": "theme=bicycle_rental",
+                "then": "./assets/themes/bicycle_rental/logo.svg"
+              },
+              {
                 "if": "theme=bicyclelib",
                 "then": "./assets/themes/bicyclelib/logo.svg"
               },

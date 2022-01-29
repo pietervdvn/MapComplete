@@ -228,7 +228,7 @@ function compileTranslationsFromWeblate() {
  * @param objects
  * @param target
  */
-function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string) {
+function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string): string[] {
     const tr = new TranslationPart();
 
     for (const layerFile of objects) {
@@ -257,6 +257,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 
         writeFileSync(`langs/${target}/${lang}.json`, json)
     }
+    return langs
 }
 
 /**
@@ -398,11 +399,14 @@ if (!themeOverwritesWeblate) {
 } else {
     console.log("Ignore weblate")
 }
-generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
-generateTranslationsObjectFrom(ScriptUtils.getThemeFiles().filter(th => th.parsed.mustHaveLanguage === undefined), "themes")
 
+const l1 = generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
+const l2 = generateTranslationsObjectFrom(ScriptUtils.getThemeFiles().filter(th => th.parsed.mustHaveLanguage === undefined), "themes")
+const l3 = generateTranslationsObjectFrom([{path: questionsPath, parsed: questionsParsed}], "shared-questions")
 
-generateTranslationsObjectFrom([{path: questionsPath, parsed: questionsParsed}], "shared-questions")
+const usedLanguages = Utils.Dedup(l1.concat(l2).concat(l3)).filter(v => v !== "*")
+usedLanguages.sort()
+fs.writeFileSync("./assets/generated/used_languages.json", JSON.stringify({languages: usedLanguages}))
 
 if (!themeOverwritesWeblate) {
 // Generates the core translations

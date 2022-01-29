@@ -225,9 +225,9 @@ export interface LayerConfigJson {
      */
     tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson | {
         rewrite: {
-            sourceString: string,
-            into: string[]
-        }[],
+            sourceString: string[],
+            into: (string | any)[][]
+        },
         renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
     }) [],
 

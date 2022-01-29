@@ -14,6 +14,8 @@ import Title from "../UI/Base/Title";
 import Minimap from "../UI/Base/Minimap";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
 import QueryParameterDocumentation from "../UI/QueryParameterDocumentation";
+import ScriptUtils from "./ScriptUtils";
+import List from "../UI/Base/List";
 
 function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void {
 
@@ -50,6 +52,53 @@ WriteFile("./Docs/CalculatedTags.md", new Combine([new Title("Metatags", 1),
 WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["ValidatedTextField.ts"]);
 WriteFile("./Docs/BuiltinLayers.md", AllKnownLayouts.GenLayerOverviewText(), ["AllKnownLayers.ts"])
 
+{
+   var layers = ScriptUtils.getLayerFiles().map(f => f.parsed)
+    var builtinsPerLayer= new Map<string, string[]>();
+    var layersUsingBuiltin = new Map<string /* Builtin */, string[]>();
+    for (const layer of layers) {
+        if(layer.tagRenderings === undefined){
+            continue
+        }
+        const usedBuiltins : string[] = []
+        for (const tagRendering of layer.tagRenderings) {
+            if(typeof tagRendering === "string"){
+                usedBuiltins.push(tagRendering)
+                continue
+            }
+            if(tagRendering["builtin"] !== undefined){
+                const builtins = tagRendering["builtin"]
+                if(typeof builtins === "string"){
+                    usedBuiltins.push(builtins)
+                }else{
+                    usedBuiltins.push(...builtins)
+                }
+            }
+        }
+        for (const usedBuiltin of usedBuiltins) {
+            var using = layersUsingBuiltin.get(usedBuiltin)
+            if(using === undefined){
+                layersUsingBuiltin.set(usedBuiltin, [layer.id])
+            }else{
+                using.push(layer.id)
+            }
+        }
+        
+        builtinsPerLayer.set(layer.id, usedBuiltins)
+    }
+    
+    const docs = new Combine([
+        new Title("Index of builtin TagRendering" ,1),
+        new Title("Existing builtin tagrenderings", 2),
+        ... Array.from(layersUsingBuiltin.entries()).map(([builtin, usedByLayers]) => 
+                new Combine([
+                    new Title(builtin),
+                    new List(usedByLayers)
+                ]).SetClass("flex flex-col")
+            )
+    ]).SetClass("flex flex-col")
+    WriteFile("./Docs/BuiltinIndex.md", docs, ["assets/layers/*.json"])
+}
 
 Minimap.createMiniMap = _ => {
     console.log("Not creating a minimap, it is disabled");
@@ -58,12 +107,12 @@ Minimap.createMiniMap = _ => {
 
 
 const dummyLayout = new LayoutConfig({
-    language: ["en"],
     id: "&gt;theme&lt;",
     maintainer: "pietervdvn",
     version: "0",
-    title: "<theme>",
+    title: {en:"<theme>"},
     description: "A theme to generate docs with",
+    socialImage: "./assets/SocialImage.png",
     startLat: 0,
     startLon: 0,
     startZoom: 0,

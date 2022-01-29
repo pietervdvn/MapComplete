@@ -26,7 +26,6 @@ export default class TableOfContents extends Combine {
         let els: { level: number, content: BaseUIElement }[] = []
         for (const title of titles) {
             let content: BaseUIElement
-            console.log("Constructing content for ", title)
             if (title.title instanceof Translation) {
                 content = title.title.Clone()
             } else if (title.title instanceof FixedUiElement) {

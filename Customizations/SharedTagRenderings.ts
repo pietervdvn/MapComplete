@@ -49,8 +49,26 @@ export default class SharedTagRenderings {
                 return
             }
             value.id = value.id ?? key;
+            if(value["builtin"] !== undefined){
+                if(value["override"] == undefined){
+                    throw "HUH? Why whould you want to reuse a builtin if one doesn't override? In questions.json/"+key
+                }
+                if(typeof value["builtin"] !== "string"){
+                    return;
+                }
+                // This is a really funny situation: we extend another tagRendering!
+                const parent = Utils.Clone(dict.get(value["builtin"]))
+                delete parent.id
+                Utils.Merge(value["override"], parent)
+                delete value["builtin"]
+                delete value["override"]
+                for (const pkey in parent) {
+                    value[pkey] = parent[pkey]
+                }
+            }
         })
 
+        
         return dict;
     }
 

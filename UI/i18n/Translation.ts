@@ -142,6 +142,33 @@ export class Translation extends BaseUIElement {
 
     }
 
+    /**
+     * 
+     * Given a translation such as `{en: "How much of bicycle_types are rented here}` (which is this translation)
+     * and a translation object `{ en: "electrical bikes" }`, plus the translation specification `bicycle_types`, will return 
+     * a new translation:
+     * `{en: "How much electrical bikes are rented here?"}`
+     * 
+     * @param translationObject
+     * @param stringToReplace
+     * @constructor
+     */
+    public Fuse(translationObject: Translation, stringToReplace: string): Translation{
+        const translations = this.translations
+        const newTranslations = {}
+        for (const lang in translations) {
+            const target = translationObject.textFor(lang)
+            if(target === undefined){
+                continue
+            }
+            if(typeof target !== "string"){
+                throw "Invalid object in Translation.fuse: translationObject['"+lang+"'] is not a string, it is: "+JSON.stringify(target)
+            }
+            newTranslations[lang] = this.translations[lang].replaceAll(stringToReplace, target)
+        }
+        return new Translation(newTranslations)
+    }
+
     public replace(a: string, b: string) {
         if (a.startsWith("{") && a.endsWith("}")) {
             a = a.substr(1, a.length - 2);

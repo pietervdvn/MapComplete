@@ -2,6 +2,8 @@ import {Conversion, DesugaringContext, Fuse, OnEveryConcat, SetDefault} from "./
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Utils} from "../../../Utils";
+import Translations from "../../../UI/i18n/Translations";
+import {Translation} from "../../../UI/i18n/Translation";
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     constructor() {
@@ -156,13 +158,36 @@ class ExpandGroupRewrite extends Conversion<{
         }
         let config = <{
             rewrite:
-                { sourceString: string; into: string[] }[];
+                { sourceString: string[]; into: (string | any)[][] };
             renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
         }>json;
 
+        {
+            const errors = []
+  
+            const expectedLength = config.rewrite.sourceString.length
+            for (let i = 0; i < config.rewrite.into.length; i++){
+                const targets = config.rewrite.into[i];
+                if(targets.length !== expectedLength){
+                    errors.push(context+".rewrite.into["+i+"]: expected "+expectedLength+" values, but got "+targets.length)
+                }
+                if(typeof targets[0] !== "string"){
+                    errors.push(context+".rewrite.into["+i+"]: expected a string as first rewrite value values, but got "+targets[0])
 
-        const subRenderingsRes = ExpandGroupRewrite.expandSubTagRenderings.convertAll(state, config.renderings, context);
-        const subRenderings: TagRenderingConfigJson[] = [].concat(subRenderingsRes.result);
+                }
+            }
+
+            if (errors.length > 0) {
+                return {
+                    errors,
+                    warnings: [],
+                    result: undefined
+                }
+            }
+        }
+
+        const subRenderingsRes = <{ result: TagRenderingConfigJson[][], errors, warnings }> ExpandGroupRewrite.expandSubTagRenderings.convertAll(state, config.renderings, context);
+        const subRenderings: TagRenderingConfigJson[] = [].concat(...subRenderingsRes.result);
         const errors = subRenderingsRes.errors;
         const warnings = subRenderingsRes.warnings;
 
@@ -170,22 +195,31 @@ class ExpandGroupRewrite extends Conversion<{
         const rewrittenPerGroup = new Map<string, TagRenderingConfigJson[]>()
 
         // The actual rewriting
-        for (const rewrite of config.rewrite) {
-            const source = rewrite.sourceString;
-            for (const target of rewrite.into) {
-                const groupName = target;
-                const trs: TagRenderingConfigJson[] = []
+        const sourceStrings = config.rewrite.sourceString;
+        for (const targets of config.rewrite.into) {
+            const groupName = targets[0];
+            if(typeof groupName !== "string"){
+                throw "The first string of 'targets' should always be a string"
+            }
+            const trs: TagRenderingConfigJson[] = []
 
-                for (const tr of subRenderings) {
-                    trs.push(this.prepConfig(source, target, tr))
+            for (const tr of subRenderings) {
+                let rewritten = tr;
+                for (let i = 0; i < sourceStrings.length; i++) {
+                    const source = sourceStrings[i]
+                    const target = targets[i] // This is a string OR a translation
+                    console.log("Replacing every "+source+" with "+JSON.stringify(target))
+                    rewritten = this.prepConfig(source, target, rewritten)
                 }
-                if (rewrittenPerGroup.has(groupName)) {
-                    rewrittenPerGroup.get(groupName).push(...trs)
+                rewritten.group = rewritten.group ?? groupName
+                trs.push(rewritten)
+            }
 
-                } else {
-                    rewrittenPerGroup.set(groupName, trs)
+            if (rewrittenPerGroup.has(groupName)) {
+                rewrittenPerGroup.get(groupName).push(...trs)
+            } else {
+                rewrittenPerGroup.set(groupName, trs)
 
-                }
             }
         }
 
@@ -201,7 +235,7 @@ class ExpandGroupRewrite extends Conversion<{
         rewrittenPerGroup.forEach((group, _) => {
             group.forEach(tr => {
                 if (tr.id === undefined || tr.id === "") {
-                    errors.push("A tagrendering has an empty ID after expanding the tag")
+                    errors.push("A tagrendering has an empty ID after expanding the tag; the tagrendering is: "+JSON.stringify(tr))
                 }
             })
         })
@@ -212,16 +246,26 @@ class ExpandGroupRewrite extends Conversion<{
         };
     }
 
-    /* Used for left|right group creation and replacement */
-    private prepConfig(keyToRewrite: string, target: string, tr: TagRenderingConfigJson) {
+    /* Used for left|right group creation and replacement.
+    * Every 'keyToRewrite' will be replaced with 'target' recursively. This substitution will happen in place in the object 'tr' */
+    private prepConfig(keyToRewrite: string, target: string | any, tr: TagRenderingConfigJson): TagRenderingConfigJson {
+
+        const isTranslation = typeof target !== "string"
 
         function replaceRecursive(transl: string | any) {
             if (typeof transl === "string") {
+                // This is a simple string - we do a simple replace
                 return transl.replace(keyToRewrite, target)
             }
             if (transl.map !== undefined) {
+                // This is a list of items
                 return transl.map(o => replaceRecursive(o))
             }
+
+            if (Translations.isProbablyATranslation(transl) && isTranslation) {
+                return Translations.T(transl).Fuse(new Translation(target), keyToRewrite).translations
+            }
+
             transl = {...transl}
             for (const key in transl) {
                 transl[key] = replaceRecursive(transl[key])
@@ -229,12 +273,7 @@ class ExpandGroupRewrite extends Conversion<{
             return transl
         }
 
-        const orig = tr;
-        tr = replaceRecursive(tr)
-
-        tr.id = target + "-" + orig.id
-        tr.group = target
-        return tr
+        return replaceRecursive(tr)
     }
 }
 

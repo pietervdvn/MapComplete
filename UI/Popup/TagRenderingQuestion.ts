@@ -26,6 +26,10 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
 import VariableInputElement from "../Input/VariableInputElement";
 import Toggle from "../Input/Toggle";
+import Img from "../Base/Img";
+import {flattenEach, tag} from "@turf/turf";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 
 /**
  * Shows the question element.
@@ -343,7 +347,8 @@ export default class TagRenderingQuestion extends Combine {
         mapping: {
             if: TagsFilter,
             then: Translation,
-            addExtraTags: Tag[]
+            addExtraTags: Tag[],
+            img?: string
         }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging: TagsFilter = mapping.if;
@@ -354,10 +359,22 @@ export default class TagRenderingQuestion extends Combine {
             tagging = new And([tagging, ...mapping.addExtraTags])
         }
 
+     
         return new FixedInputElement(
-            new SubstitutedTranslation(mapping.then, tagsSource, state),
+            TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state)  ,
             tagging,
             (t0, t1) => t1.isEquivalent(t0));
+    }
+    
+    private static GenerateMappingContent(  mapping: {
+        then: Translation,
+        icon?: string
+    }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement{
+        const text =  new SubstitutedTranslation(mapping.then, tagsSource, state)
+        if (mapping.icon === undefined) {
+            return text;
+        }
+        return new Combine([new Img(mapping.icon).SetClass("w-6 max-h-6 pr-2"), text]).SetClass("flex")
     }
 
     private static GenerateFreeform(state, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>): InputElement<TagsFilter> {

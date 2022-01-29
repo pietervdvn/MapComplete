@@ -41,7 +41,8 @@ export default class TagRenderingConfig {
     readonly mappings?: {
         readonly if: TagsFilter,
         readonly ifnot?: TagsFilter,
-        readonly then: Translation
+        readonly then: Translation,
+        readonly icon: string,
         readonly hideInAnswer: boolean | TagsFilter
         readonly addExtraTags: Tag[]
     }[]
@@ -163,11 +164,16 @@ export default class TagRenderingConfig {
                 } else if (mapping.hideInAnswer !== undefined) {
                     hideInAnswer = TagUtils.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
+                let icon = undefined;
+                if(mapping.icon !== ""){
+                    icon = mapping.icon
+                }
                 const mp = {
                     if: TagUtils.Tag(mapping.if, `${ctx}.if`),
                     ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${ctx}.ifnot`) : undefined),
                     then: Translations.T(mapping.then, `${ctx}.then`),
-                    hideInAnswer: hideInAnswer,
+                    hideInAnswer,
+                    icon,
                     addExtraTags: (mapping.addExtraTags ?? []).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`))
                 };
                 if (this.question) {
@@ -329,18 +335,18 @@ export default class TagRenderingConfig {
      * @param tags
      * @constructor
      */
-    public GetRenderValues(tags: any): Translation[] {
+    public GetRenderValues(tags: any): {then: Translation, icon?: string}[] {
         if (!this.multiAnswer) {
-            return [this.GetRenderValue(tags)]
+            return [this.GetRenderValueWithImage(tags)]
         }
 
         // A flag to check that the freeform key isn't matched multiple times 
         // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
         let freeformKeyUsed = this.freeform?.key === undefined;
         // We run over all the mappings first, to check if the mapping matches
-        const applicableMappings: Translation[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+        const applicableMappings: {then: Translation, img?: string}[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
-                return mapping.then;
+                return mapping;
             }
             if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
                 if (!freeformKeyUsed) {
@@ -349,7 +355,7 @@ export default class TagRenderingConfig {
                         freeformKeyUsed = true;
                     }
                 }
-                return mapping.then;
+                return mapping;
             }
             return undefined;
         }))
@@ -357,43 +363,42 @@ export default class TagRenderingConfig {
 
         if (!freeformKeyUsed
             && tags[this.freeform.key] !== undefined) {
-            applicableMappings.push(this.render)
+            applicableMappings.push({then: this.render})
         }
         return applicableMappings
     }
 
+    public GetRenderValue(tags: any, defltValue: any = undefined): Translation {
+        return this.GetRenderValueWithImage(tags, defltValue).then
+    }
     /**
      * Gets the correct rendering value (or undefined if not known)
      * Not compatible with multiAnswer - use GetRenderValueS instead in that case
      * @constructor
      */
-    public GetRenderValue(tags: any, defltValue: any = undefined): Translation {
+    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: Translation, icon?: string } {
         if (this.mappings !== undefined && !this.multiAnswer) {
             for (const mapping of this.mappings) {
                 if (mapping.if === undefined) {
-                    return mapping.then;
+                    return mapping;
                 }
                 if (mapping.if.matchesProperties(tags)) {
                     if (this.id === "uk_addresses_placename") {
                         console.log("Matched", mapping.if, "with ", tags["addr:place"])
                     }
-                    return mapping.then;
+                    return mapping;
                 }
             }
         }
 
-        if (this.id === "questions") {
-            return this.render
+        if (this.id === "questions" ||
+            this.freeform?.key === undefined ||
+            tags[this.freeform.key] !== undefined
+        ) {
+            return {then: this.render}
         }
 
-        if (this.freeform?.key === undefined) {
-            return this.render;
-        }
-
-        if (tags[this.freeform.key] !== undefined) {
-            return this.render;
-        }
-        return defltValue;
+        return {then: defltValue};
     }
 
     /**

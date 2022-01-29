@@ -558,6 +558,7 @@
       {
         "if": "payment:cash=yes",
         "ifnot": "payment:cash=no",
+        "icon": "./assets/svg/cash.svg",
         "then": {
           "en": "Cash is accepted here",
           "nl": "Cash geld wordt hier aanvaard",
@@ -579,6 +580,7 @@
       {
         "if": "payment:cards=yes",
         "ifnot": "payment:cards=no",
+        "icon": "./assets/svg/payment_card.svg",
         "then": {
           "en": "Payment cards are accepted here",
           "nl": "Betalen met bankkaarten kan hier",
@@ -598,6 +600,31 @@
         }
       }
     ]
+  },
+  "payment-options-advanced": {
+    "builtin": "payment-options",
+    "override": {
+      "mappings+": [
+        {
+          "if": "payment:app=yes",
+          "ifnot": "payment:app=no",
+          "icon": "./assets/svg/smartphone.svg",
+          "then": {
+            "en": "Payment is done using a dedicated app",
+            "nl": "Betalen via een app van het netwerk"
+          }
+        },
+        {
+          "if": "payment:membership_card=yes",
+          "ifnot": "payment:membership_card=no",
+          "icon": "./assets/svg/nfc_card.svg",
+          "then": {
+            "en": "Payment is done using a membership card",
+            "nl": "Betalen via een lidkaart van het netwerk"
+          }
+        }
+      ]
+    }
   },
   "last_edit": {
     "#": "Gives some metainfo about the last edit and who did edit it - rendering only",
