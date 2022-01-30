@@ -17,10 +17,11 @@
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
         "ccbsExplanation": "Als je foto met de CC-BY-SA-licentie gepubliceerd wordt, dan mag je foto gebruikt worden voor alle doeleinden, maar je naam moet vermeld worden en afgeleide werken moeten onder dezelfde licentie gepubliceerd worden",
-        "ccoExplanation": "Als je foto in het publiek domein gepubliceerd wordt, dan mag iedereen je foto voor alle doeleinden gebruiken"
+        "ccoExplanation": "Als je foto in het publiek domein gepubliceerd wordt, dan mag iedereen je foto voor alle doeleinden gebruiken",
+        "ccbExplanation": "Als je foto met de CC-BY-SA-licentie gepubliceerd wordt, dan mag je foto gebruikt worden voor alle doeleinden, maar je naam moet vermeld worden"
     },
     "centerMessage": {
-        "loadingData": "Data wordt geladen...",
+        "loadingData": "Data wordt geladen…",
         "zoomIn": "Zoom in om de data te zien en te bewerken",
         "ready": "Klaar!",
         "retrying": "Data inladen mislukt - wordt opnieuw geprobeerd over {count} seconden"
@@ -30,7 +31,8 @@
         "title": "Welkom bij MapComplete",
         "intro": "MapComplete is een OpenStreetMap-applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
         "pickTheme": "Kies hieronder een thema om te beginnen.",
-        "featuredThemeTitle": "Thema van de week"
+        "featuredThemeTitle": "Thema van de week",
+        "logIn": "Log in om andere thema's te zien waar je al in bewerkt hebt"
     },
     "general": {
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
@@ -59,7 +61,16 @@
             "disableFilters": "Zet alle filters af",
             "hasBeenImported": "Dit object is reeds geimporteerd",
             "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
-            "zoomInMore": "Zoom meer in om dit object te importeren"
+            "zoomInMore": "Zoom meer in om dit object te importeren",
+            "importTags": "Het object zal deze tags krijgen: {tags}",
+            "import": {
+                "hasBeenImported": "Dit object is geïmporteerd",
+                "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
+                "zoomInMore": "Zoom verder in om dit kaart-object te kunnen importeren",
+                "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
+                "importTags": "Het element zal deze tags krijgen: {tags}"
+            },
+            "wrongType": "Dit element is geen punt of lijn en kan daarom niet geïmporteerd worden"
         },
         "pickLanguage": "Kies je taal: ",
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
@@ -83,7 +94,15 @@
             },
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
-            "codeContributionsBy": "MapComplete is gebouwd door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andere bijdragers</a>"
+            "codeContributionsBy": "MapComplete is gebouwd door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andere bijdragers</a>",
+            "openMapillary": "Open Mapillary op deze locatie",
+            "donate": "Geef MapComplete financiële steun",
+            "editJosm": "Hier bewerken met JOSM",
+            "editId": "Hier bewerken met de OpenStreetMap online editor",
+            "openIssueTracker": "Geef een fout in de software door",
+            "josmOpened": "JOSM is geopend",
+            "josmNotOpened": "JOSM was niet bereikbaar. Controleer of het open staat en remote control is geactiveerd",
+            "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}"
         },
         "sharescreen": {
             "intro": "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
@@ -211,7 +230,12 @@
             "downloadAsPdfHelper": "Perfect om de huidige kaart af te printen",
             "downloadAsPdf": "Download een PDF van de huidig zichtbare kaart",
             "title": "Download de zichtbare data",
-            "exporting": "Aan het exporteren…"
+            "exporting": "Aan het exporteren…",
+            "uploadGpx": "Track uploaden naar OpenStreetMap",
+            "downloadGpx": "Downloaden als GPX-bestand",
+            "downloadFeatureAsGpx": "Downloaden als GPX-bestand",
+            "downloadFeatureAsGeojson": "Downloaden als GeoJson bestand",
+            "downloadGpxHelper": "De meeste navigatie toestellen en applicaties kunnen een GPX-bestand openen"
         },
         "cancel": "Annuleren",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
@@ -229,7 +253,12 @@
         "histogram": {
             "error_loading": "Kan het histogram niet laden"
         },
-        "loading": "Aan het laden..."
+        "loading": "Aan het laden...",
+        "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
+        "apply_button": {
+            "appliedOnAnotherObject": "Object {id} zal deze tags ontvangen: {tags}",
+            "isApplied": "De wijzigingen zijn doorgevoerd"
+        }
     },
     "reviews": {
         "title": "{count} beoordelingen",
@@ -321,8 +350,30 @@
         "popupTitle": "Is hier een {title}?",
         "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>",
-
         "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
         "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart"
+    },
+    "professional": {
+        "title": "Professionele ondersteuning voor MapComplete",
+        "indexPage": {
+            "button": "Ontdek onze services",
+            "hookMore": "We kunnen helpen bij het opzetten van terreinwerk, integreren van datasets en algemene OpenStreetMap-consultancy"
+        },
+        "text1": "<p>MapComplete is de editor die het gemakkelijk maakt om bij te dragen aan OpenStreetMap.</p>",
+        "aboutOsm": {
+            "aboutOsm": {
+                "title": "Wat is OpenStreetMap?"
+            }
+        },
+        "osmTitle": "Wat kunnen OpenStreetMap en MapComplete doen voor jouw organisatie?",
+        "intro": "De ontwikkelaar van MapComplete bied professionele ondersteuning aan. Dit document toont enkele mogelijkheden, frequente vragen en de grenzen van wat MapComplete kan."
+    },
+    "privacy": {
+        "geodata": "Op het moment dat MapComplete je locatie krijgt, blijft deze informatie en de geschiedenis ervan lokaal op je toestel. Je locatiedata wordt nooit automatisch doorgestuurd naar waar dan ook - behalve wanneer een bepaalde functionaliteit daar expliciet om vraagt.",
+        "tracking": "Om enig inzicht te krijgen in wie de site bezoekt, wordt er technische informatie verzameld. Dit omvat het land van waaruit je de site bezoekt, vanop welke website je doorklikte naar MapComplete, het type toestel en de schermgrootte. Een cookie wordt op he toestel geplaatst om mee te geven dat je de site eerder in de dag bezocht. De data is niet gedetailleerd genoeg om persoonlijke informatie te zijn. Er zijn enkel geaggregeerde statistieken mogelijk. Deze <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">kunnen door iedereen bekeken worden</a>.",
+        "title": "Privacyverklaring",
+        "geodataTitle": "Jouw locatie",
+        "trackingTitle": "Statistische informatie",
+        "intro": "We vinden privacy belangrijk, zowel for het individu als voor de samenleving. MapComplete probeert zo veel mogelijk te vermijden dat private gegevens worden verzameld. Daarom is er zelfs geen cookie banner nodig. Maar we geven graag informatie over welke data verzameld en gedeeld worden, onder welke omstandigheden, en waarom deze afwegingen gemaakt worden."
     }
 }

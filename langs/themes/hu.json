@@ -73,7 +73,16 @@
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "question": "Van-e itt elektromos áram?"
+                }
+            }
+        },
+        "title": "Lakóautós megállóhelyek"
     },
     "charging_stations": {
         "description": "Ezen a térképen a elektromos töltőpontokról szóló információkat lehet megtalálni és megadni",
@@ -111,7 +120,8 @@
                     }
                 }
             }
-        }
+        },
+        "title": "Mászótérkép"
     },
     "cycle_infra": {
         "description": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
