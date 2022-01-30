@@ -7,7 +7,8 @@
     "hu": "Ismert címek az OSM-en",
     "nl": "Bekende adressen in OSM",
     "fr": "Adresses connues d’OpenStreetMap",
-    "ru": "Известные адреса в OSM"
+    "ru": "Известные адреса в OSM",
+    "id": "Alamat yang dikenal di OSM"
   },
   "minzoom": 18,
   "source": {
@@ -43,7 +44,8 @@
     "zh_Hant": "地址",
     "hu": "Címek",
     "fr": "Adresses",
-    "pl": "Adresy"
+    "pl": "Adresy",
+    "id": "Alamat"
   },
   "tagRenderings": [
     {
@@ -86,7 +88,8 @@
             "hu": "Ennek az épületnek nincs házszáma",
             "fr": "Ce bâtiment n’a pas de numéro",
             "pl": "Ten budynek nie ma numeru",
-            "ru": "У этого здания нет номера"
+            "ru": "У этого здания нет номера",
+            "id": "Bangunan ini tidak memiliki nomor rumah"
           }
         }
       ]
@@ -145,7 +148,8 @@
         "de": "Was sollte hier korrigiert werden? Bitte erläutern",
         "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el",
         "fr": "Précisez ce qui devrait être corrigé ici",
-        "pl": "Co wymaga naprawy? Proszę wytłumaczyć"
+        "pl": "Co wymaga naprawy? Proszę wytłumaczyć",
+        "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan"
       },
       "freeform": {
         "key": "fixme"

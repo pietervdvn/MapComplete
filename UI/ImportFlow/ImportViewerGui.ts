@@ -300,7 +300,7 @@ class ImportViewerGui extends Combine {
                 const display_name = displayNameParam.data;
                 const search = searchParam.data;
                 if (display_name !== "" && search !== "") {
-                    return new ImportInspector({display_name, search}, state);
+                    return new ImportInspector({display_name, search}, undefined);
                 }
 
                 if (ud === undefined || ud.loggedIn === false) {

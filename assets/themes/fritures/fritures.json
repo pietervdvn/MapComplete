@@ -25,7 +25,8 @@
           "en": "Fries shop",
           "fr": "Friteries",
           "de": "Pommesbude",
-          "it": "Friggitoria"
+          "it": "Friggitoria",
+          "hu": "Sültkrumplievő-hely"
         },
         "source": {
           "osmTags": {

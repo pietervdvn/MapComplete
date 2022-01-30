@@ -42,7 +42,8 @@
       "or": [
         "service:bicycle:cleaning=yes",
         "service:bicycle:cleaning=diy",
-        "amenity=bicycle_wash"
+        "amenity=bicycle_wash",
+        "amenity=bike_wash"
       ]
     }
   },
@@ -80,7 +81,12 @@
         "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
         "de": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}"
       },
-      "condition": "amenity!=bike_wash",
+      "condition": {
+        "and": [
+          "amenity!=bike_wash",
+          "amenity!=bicycle_wash"
+        ]
+      },
       "freeform": {
         "key": "service:bicycle:cleaning:charge",
         "addExtraTags": [
@@ -105,11 +111,12 @@
           "hideInAnswer": true
         },
         {
-          "if": "service:bicycle:cleaning:fee=yes",
+          "if": "service:bicycle:cleaning:fee=yes&service:bicycle:cleaning:charge=",
           "then": {
             "en": "The cleaning service has a fee, but the amount is not known",
             "de": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
-          }
+          },
+          "hideInAnswer": true
         }
       ],
       "id": "bike_cleaning-service:bicycle:cleaning:charge"
@@ -123,7 +130,12 @@
         "en": "Using the cleaning service costs {charge}",
         "de": "Die Nutzung des Reinigungsdienstes kostet {charge}"
       },
-      "condition": "amenity=bike_wash",
+      "condition": {
+        "or": [
+          "amenity=bike_wash",
+          "amenity=bicycle_wash"
+        ]
+      },
       "freeform": {
         "key": "charge",
         "addExtraTags": [
@@ -180,7 +192,8 @@
           "if": {
             "and": [
               "service:bicycle:cleaning~*",
-              "amenity!=bike_wash"
+              "amenity!=bike_wash",
+              "amenity!=bicycle_wash"
             ]
           },
           "then": {

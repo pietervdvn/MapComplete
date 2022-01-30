@@ -9,7 +9,8 @@
     "fr": "Campings",
     "zh_Hant": "露營地點",
     "pt_BR": "Locais de acampamento",
-    "de": "Wohnmobilstellplätze"
+    "de": "Wohnmobilstellplätze",
+    "hu": "Lakóautós megállóhelyek"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -20,7 +21,8 @@
     "zh_Hant": "露營者尋找渡過夜晚的場地",
     "nl": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
     "pt_BR": "Encontre locais para passar a noite com o seu campista",
-    "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil"
+    "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
+    "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
@@ -54,7 +56,8 @@
         "nl": "Camperplaatsen",
         "pt_BR": "Locais de acampamento",
         "de": "Wohnmobilstellplätze",
-        "hu": "Lakóautós megállóhely"
+        "hu": "Lakóautós megállóhely",
+        "id": "Tempat camping"
       },
       "minzoom": 10,
       "source": {
@@ -75,7 +78,8 @@
           "zh_Hant": "露營地 {name}",
           "nl": "Camperplaats {name}",
           "pt_BR": "Local de acampamento {name}",
-          "de": "Wohnmobilstellplatz {name}"
+          "de": "Wohnmobilstellplatz {name}",
+          "id": "Tempat kemping {name}"
         },
         "mappings": [
           {
@@ -108,7 +112,8 @@
         "nl": "camperplaatsen",
         "pt_BR": "Locais de acampamento",
         "de": "Wohnmobilstellplätze",
-        "hu": "Lakóautós megállóhelyek"
+        "hu": "Lakóautós megállóhelyek",
+        "id": "Tempat camping"
       },
       "tagRenderings": [
         "images",
@@ -122,7 +127,8 @@
             "zh_Hant": "這個地方叫做 {name}",
             "nl": "Deze plaats heet {name}",
             "pt_BR": "Este lugar é chamado de {name}",
-            "de": "Dieser Ort heißt {name}"
+            "de": "Dieser Ort heißt {name}",
+            "id": "Tempat ini disebut {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -170,7 +176,8 @@
                 "nl": "Gebruik is betalend",
                 "fr": "L’utilisation est payante",
                 "pt_BR": "Você precisa pagar para usar",
-                "de": "Sie müssen für die Nutzung bezahlen"
+                "de": "Sie müssen für die Nutzung bezahlen",
+                "id": "Anda perlu membayar untuk menggunakannya"
               }
             },
             {
@@ -246,7 +253,8 @@
             "zh_Hant": "這個地方有衛生設施嗎？",
             "fr": "Ce site possède-t’il un lieu de vidange ?",
             "pt_BR": "Este local tem uma estação de aterro sanitário?",
-            "de": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
+            "de": "Hat dieser Ort eine sanitäre Entsorgungsstation?",
+            "id": "Apakah tempat ini memiliki tempat pembuangan sanitasi?"
           },
           "mappings": [
             {
@@ -263,7 +271,8 @@
                 "fr": "Cet endroit a une station de vidange sanitaire",
                 "zh_Hant": "這個地方有衛生設施",
                 "pt_BR": "Este local tem uma estação de aterro sanitário",
-                "de": "Dieser Ort hat eine sanitäre Entsorgungsstation"
+                "de": "Dieser Ort hat eine sanitäre Entsorgungsstation",
+                "id": "Tempat ini memiliki tempat pembuangan sanitasi"
               }
             },
             {
@@ -280,7 +289,8 @@
                 "zh_Hant": "這個地方沒有衛生設施",
                 "fr": "Ce site ne possède pas de lieu de vidange",
                 "pt_BR": "Este local não tem uma estação de aterro sanitário",
-                "de": "Dieser Ort hat keine sanitäre Entsorgungsstation"
+                "de": "Dieser Ort hat keine sanitäre Entsorgungsstation",
+                "id": "Tempat ini tidak memiliki tempat pembuangan sampah sanitasi"
               }
             }
           ]
@@ -706,7 +716,8 @@
         "fr": "Site de vidange",
         "pt_BR": "Estações de despejo sanitário",
         "de": "Sanitäre Entsorgungsstationen",
-        "zh_Hant": "垃圾處理站"
+        "zh_Hant": "垃圾處理站",
+        "id": "Tempat pembuangan sanitasi"
       },
       "minzoom": 10,
       "source": {
@@ -756,7 +767,8 @@
         "fr": "Site de vidange",
         "pt_BR": "Estações de despejo sanitário",
         "de": "Sanitäre Entsorgungsstationen",
-        "zh_Hant": "垃圾處理站"
+        "zh_Hant": "垃圾處理站",
+        "id": "Tempat pembuangan sanitasi"
       },
       "tagRenderings": [
         "images",
@@ -1164,7 +1176,8 @@
           "ja": "この場所に電源はありますか?",
           "it": "Questo luogo fornisce corrente elettrica?",
           "fr": "Ce site a-t’il une source d’électricité ?",
-          "de": "Hat dieser Ort eine Stromversorgung?"
+          "de": "Hat dieser Ort eine Stromversorgung?",
+          "hu": "Van-e itt elektromos áram?"
         },
         "mappings": [
           {

@@ -10,6 +10,7 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
 import Lazy from "../Base/Lazy";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class EditableTagRendering extends Toggle {
 
@@ -33,8 +34,14 @@ export default class EditableTagRendering extends Toggle {
         super(
             new Lazy(() => {
                 const editMode = options.editMode ?? new UIEventSource<boolean>(false)
-                const rendering = EditableTagRendering.CreateRendering(state, tags, configuration, units, editMode);
+                let rendering = EditableTagRendering.CreateRendering(state, tags, configuration, units, editMode);
                 rendering.SetClass(options.innerElementClasses)
+                if(state.featureSwitchIsDebugging.data){
+                    rendering = new Combine([
+                        new FixedUiElement(configuration.id).SetClass("self-end subtle"),
+                        rendering
+                    ]).SetClass("flex flex-col")
+                }
                 return rendering
             }),
             undefined,

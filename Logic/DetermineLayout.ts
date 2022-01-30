@@ -160,6 +160,7 @@ export default class DetermineLayout {
             let parsed = await Utils.downloadJson(link)
             try {
                 parsed.id = link;
+                console.log("Loaded remote link:", link)
                 const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
                 return new LayoutConfig(layoutToUse, false)
             } catch (e) {

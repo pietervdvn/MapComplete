@@ -1,4 +1,20 @@
 {
+    "address": {
+        "description": "Alamat",
+        "name": "Alamat yang dikenal di OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Apa yang harus diperbaiki di sini? Tolong jelaskan"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Bangunan ini tidak memiliki nomor rumah"
+                    }
+                }
+            }
+        }
+    },
     "artwork": {
         "description": "Beragam karya seni",
         "name": "Karya seni",

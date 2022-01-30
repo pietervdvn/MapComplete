@@ -212,7 +212,7 @@ export interface LayoutConfigJson {
         maxZoom?: number,
         /**
          * The number of elements per tile needed to start clustering
-         * If clustering is defined, defaults to 25
+         * If clustering is defined, defaults to 250
          */
         minNeededElements?: number
     } | false,
