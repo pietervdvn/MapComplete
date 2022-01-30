@@ -39,7 +39,7 @@
                 }
             },
             "question": "この機能は何階にあるのでしょうか？",
-            "render": "(level}階にあります"
+            "render": "{level}階にあります"
         },
         "opening_hours": {
             "question": "{name｝の営業時間は？",

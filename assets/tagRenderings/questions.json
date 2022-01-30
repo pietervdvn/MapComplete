@@ -691,7 +691,7 @@
       "hu": "A(z) {level}. emeleten",
       "it": "Si trova al piano numero {level}",
       "ca": "Situat a la planta {level}",
-      "ja": "(level}階にあります"
+      "ja": "{level}階にあります"
     },
     "freeform": {
       "key": "level",
