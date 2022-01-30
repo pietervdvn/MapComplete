@@ -26,7 +26,8 @@ export default interface PointRenderingConfigJson {
      * As a result, on could use a generic pin, then overlay it with a specific icon.
      * To make things even more practical, one can use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
      * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
-     *
+
+     * Type: icon
      */
     icon?: string | TagRenderingConfigJson;
 
@@ -36,7 +37,13 @@ export default interface PointRenderingConfigJson {
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
      */
-    iconBadges?: { if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson }[]
+    iconBadges?: { if: string | AndOrTagConfigJson, 
+        /**
+         * Badge to show
+         * Type: icon
+         */
+        then: string | TagRenderingConfigJson 
+    }[]
 
 
     /**

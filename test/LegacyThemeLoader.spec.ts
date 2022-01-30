@@ -4,6 +4,7 @@ import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
+import FixRemoteLinks from "../Models/ThemeConfig/Conversion/FixRemoteLinks";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -142,6 +143,215 @@ export default class LegacyThemeLoaderSpec extends T {
         ]
     }
 
+    private static readonly organic_waste_theme = {
+        "id": "recycling-organic",
+        "title": {
+            "nl": "Inzamelpunt organisch alval"
+        },
+        "shortDescription": {
+            "nl": "Inzamelpunt organisch alval"
+        },
+        "description": {
+            "nl": "Op deze kaart vindt u inzamelpunten voor organisch afval. Beheer deze naar goeddunken en vermogen."
+        },
+        "language": [
+            "nl"
+        ],
+        "maintainer": "",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/15/Compost_…able_waste_-_biodegradable_waste_-_biological_waste_icon.png",
+        "version": "0",
+        "startLat": 0,
+        "startLon": 0,
+        "startZoom": 1,
+        "widenFactor": 0.05,
+        "socialImage": "",
+        "layers": [
+            {
+                "id": "recycling-organic",
+                "name": {
+                    "nl": "Inzamelpunt organisch alval"
+                },
+                "minzoom": 12,
+                "title": {
+                    "render": {
+                        "nl": "Inzamelpunt organisch alval"
+                    },
+                    "mappings": [
+                        {
+                            "if": {
+                                "and": [
+                                    "name~*"
+                                ]
+                            },
+                            "then": {
+                                "nl": "{name}"
+                            }
+                        }
+                    ]
+                },
+                "allowMove": true,
+                "deletion": {},
+                "tagRenderings": [
+                    "images",
+                    {
+                        "freeform": {
+                            "key": "opening_hours",
+                            "type": "opening_hours",
+                            "addExtraTags": []
+                        },
+                        "question": {
+                            "nl": "Wat zijn de openingsuren?"
+                        },
+                        "render": {
+                            "nl": "{opening_hours_table()}"
+                        },
+                        "mappings": [
+                            {
+                                "if": {
+                                    "and": [
+                                        "opening_hours=\"by appointment\""
+                                    ]
+                                },
+                                "then": {
+                                    "nl": "Op afspraak"
+                                }
+                            }
+                        ],
+                        "id": "Composthoekjes-opening_hours"
+                    },
+                    {
+                        "question": {
+                            "nl": "Wat is de website voor meer informatie?"
+                        },
+                        "freeform": {
+                            "key": "website",
+                            "type": "url"
+                        },
+                        "render": {
+                            "nl": "<a href=\"{website}\">{website}</a>"
+                        },
+                        "id": "Composthoekjes-website"
+                    },
+                    {
+                        "question": {
+                            "nl": "Wat is het type inzamelpunt?"
+                        },
+                        "mappings":[
+                            {
+                                "if":"recycling_type=container",
+                                "then":"Container of vat"
+                            },
+                            {
+                                "if":"recycling_type=centre",
+                                "then":"Verwerkingsplaats of containerpark"
+                            },
+                            {
+                                "if":"recycling_type=dump",
+                                "then":"Composthoop"
+                            }
+
+                        ],
+                        "id": "Composthoekjes-type"
+                    },
+                    {
+                        "question": {
+                            "nl": "Wie mag hier organisch afval bezorgen?"
+                        },
+                        "mappings":[
+                            {
+                                "if":"access=yes",
+                                "then":"Publiek toegankelijk"
+                            },
+                            {
+                                "if":"access=no",
+                                "then":"Privaat"
+                            },
+                            {
+                                "if":"access=permessive",
+                                "then":"Mogelijks toegelaten tot nader order"
+                            },
+                            {
+                                "if":"access=",
+                                "then":"Waarschijnlijk publiek toegankelijk",
+                                "hideInAnswer":true
+                            },
+                            {
+                                "if":"access=residents",
+                                "then":"Bewoners van gemeente",
+                                "hideInAnswer":"recycling_type!=centre"
+                            }
+
+                        ],
+                        "id": "Composthoekjes-voor-wie"
+                    },
+                    {
+                        "question": {
+                            "nl": "Wat is de naam van dit compost-inzamelpunt?"
+                        },
+                        "freeform": {
+                            "key": "name",
+                            "addExtraTags": ["noname="]
+                        },
+                        "render": {
+                            "nl": "De naam van dit compost-inzamelpunt is {name}"
+                        },
+                        "mappings":[
+                            {
+                                "if":{"and":["noname=yes","name="]},
+                                "then":"Heeft geen naam"
+                            },
+                            {
+                                "if":"name=",
+                                "then":"Geen naam bekend",
+                                "hideInAnswer":true
+                            }
+                        ],
+                        "id": "Composthoekjes-name"
+                    }],
+                "presets": [
+                    {
+                        "tags": [
+                            "amenity=recycling",
+                            "recycling:organic=yes"
+                        ],
+                        "title": {
+                            "nl": "een inzamelpunt voor organisch afval"
+                        }
+                    }
+                ],
+                "source": {
+                    "osmTags": {
+                        "and": [
+                            "recycling:organic~*"
+                        ]
+                    }
+                },
+                "mapRendering": [
+                    {
+                        "icon": {
+                            "render": "circle:white;https://upload.wikimedia.org/wikipedia/commons/1/15/Compost_…able_waste_-_biodegradable_waste_-_biological_waste_icon.png"
+                        },
+                        "iconSize": {
+                            "render": "40,40,center"
+                        },
+                        "location": [
+                            "point"
+                        ]
+                    },
+                    {
+                        "color": {
+                            "render": "#00f"
+                        },
+                        "width": {
+                            "render": "8"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+
     constructor() {
         super([
                 ["Walking_node_theme", () => {
@@ -201,8 +411,7 @@ export default class LegacyThemeLoaderSpec extends T {
                         render: "Some random value {minimap}"
                     })
 
-                }
-                ]
+                }]
             ]
         );
     }

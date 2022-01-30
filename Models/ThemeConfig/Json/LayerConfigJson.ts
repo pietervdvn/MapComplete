@@ -141,6 +141,8 @@ export interface LayerConfigJson {
      * If not specified, the OsmLink and wikipedia links will be used by default.
      * Use an empty array to hide them.
      * Note that "defaults" will insert all the default titleIcons (which are added automatically)
+     * 
+     * Type: icon[]
      */
     titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"];
 

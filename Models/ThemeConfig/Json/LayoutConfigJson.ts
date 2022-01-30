@@ -32,7 +32,7 @@ export interface LayoutConfigJson {
     credits?: string;
 
     /**
-     * Who does maintian this preset?
+     * Who does maintain this preset?
      */
     maintainer: string;
 
@@ -74,13 +74,17 @@ export interface LayoutConfigJson {
      * The icon representing this theme.
      * Used as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)
+     * 
+     * Type: icon
      */
     icon: string;
 
     /**
      * Link to a 'social image' which is included as og:image-tag on official themes.
      * Useful to share the theme on social media.
-     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information
+     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information$
+     * 
+     * Type: image
      */
     socialImage?: string;
 

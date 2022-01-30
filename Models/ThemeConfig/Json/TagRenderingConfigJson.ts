@@ -108,6 +108,7 @@ export interface TagRenderingConfigJson {
         then: string | any,
         /**
          * An icon supporting this mapping; typically shown pretty small
+         * Type: icon
          */
         icon?: string
         /**
