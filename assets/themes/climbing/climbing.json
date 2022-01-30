@@ -34,21 +34,6 @@
     "it": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "hu": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>"
   },
-  "language": [
-    "nl",
-    "de",
-    "en",
-    "ru",
-    "ja",
-    "zh_Hant",
-    "nb_NO",
-    "it",
-    "fr",
-    "hu",
-    "ca",
-    "id",
-    "eo"
-  ],
   "maintainer": "Christian Neumann <christian@utopicode.de>",
   "icon": "./assets/themes/climbing/climbing_icon.svg",
   "version": "0",

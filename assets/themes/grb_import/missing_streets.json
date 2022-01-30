@@ -9,9 +9,6 @@
   "description": {
     "nl": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres."
   },
-  "language": [
-    "nl"
-  ],
   "maintainer": "",
   "icon": "./assets/svg/robot.svg",
   "version": "0",

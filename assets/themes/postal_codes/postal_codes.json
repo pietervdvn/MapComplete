@@ -12,10 +12,6 @@
     "en": "Postal codes",
     "id": "Kode pos"
   },
-  "language": [
-    "en",
-    "id"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "version": "0",

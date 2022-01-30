@@ -27,16 +27,6 @@
     "zh_Hant": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。",
     "hu": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült."
   },
-  "language": [
-    "en",
-    "nl",
-    "de",
-    "it",
-    "nb_NO",
-    "ru",
-    "zh_Hant",
-    "hu"
-  ],
   "maintainer": "MapComplete",
   "hideFromOverview": false,
   "defaultBackgroundId": "CartoDB.Voyager",

@@ -7,14 +7,6 @@
   "description": {
     "nl": "Op deze kaart vind je je favoriete frituur!"
   },
-  "language": [
-    "nl",
-    "fr",
-    "en",
-    "de",
-    "it",
-    "hu"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
   "version": "0",

@@ -8,10 +8,6 @@
     "en": "This map shows cycle node networks and allows you to add new nodes easily",
     "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen"
   },
-  "language": [
-    "en",
-    "de"
-  ],
   "maintainer": "Sebastian Kürten",
   "icon": "./assets/themes/cyclenodes/logo.svg",
   "version": "0",

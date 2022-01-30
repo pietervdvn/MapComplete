@@ -2,12 +2,6 @@
   "id": "street_lighting",
   "maintainer": "Robin van der Linde",
   "version": "2021-10-22",
-  "language": [
-    "en",
-    "nl",
-    "ru",
-    "zh_Hant"
-  ],
   "title": {
     "en": "Street Lighting",
     "nl": "Straatverlichting",

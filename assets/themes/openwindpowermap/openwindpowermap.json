@@ -18,18 +18,6 @@
     "it": "Una cartina per la visione e la modifica delle turbine eoliche.",
     "zh_Hant": "顯示與編輯風機的地圖。"
   },
-  "language": [
-    "en",
-    "fr",
-    "de",
-    "it",
-    "ru",
-    "zh_Hant",
-    "id",
-    "nl",
-    "eo",
-    "nb_NO"
-  ],
   "version": "2021-06-18",
   "startLat": 50.52,
   "startLon": 4.643,

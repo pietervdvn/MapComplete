@@ -31,18 +31,6 @@
     "hu": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. "
   },
   "icon": "./assets/themes/cyclestreets/F111.svg",
-  "language": [
-    "nl",
-    "en",
-    "ja",
-    "zh_Hant",
-    "de",
-    "it",
-    "nb_NO",
-    "hu",
-    "ru",
-    "eo"
-  ],
   "startLat": 51.2095,
   "startZoom": 14,
   "startLon": 3.2228,

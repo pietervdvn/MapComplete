@@ -12,15 +12,6 @@
   "description": {
     "nl": "Restaurants en fast food"
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO",
-    "zh_Hant",
-    "hu"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",
   "version": "0",

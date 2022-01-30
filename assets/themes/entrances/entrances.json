@@ -16,11 +16,6 @@
     "zh_Hant": "幫助輪椅導航來勘查出入口",
     "hu": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése"
   },
-  "language": [
-    "en",
-    "zh_Hant",
-    "hu"
-  ],
   "version": "2021-12-04",
   "maintainer": "MapComplete",
   "layers": [

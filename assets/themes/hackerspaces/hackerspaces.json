@@ -22,14 +22,6 @@
     "zh_Hant": "在這份地圖上你可以看到駭客空間，新增或直接更新資料",
     "hu": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni"
   },
-  "language": [
-    "en",
-    "de",
-    "it",
-    "ru",
-    "zh_Hant",
-    "hu"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",
   "version": "0",

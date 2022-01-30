@@ -27,16 +27,6 @@
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda"
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO",
-    "ru",
-    "zh_Hant",
-    "id"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",
   "version": "0",

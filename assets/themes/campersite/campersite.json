@@ -35,20 +35,6 @@
     "de": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
     "hu": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket."
   },
-  "language": [
-    "en",
-    "nl",
-    "it",
-    "ru",
-    "ja",
-    "fr",
-    "zh_Hant",
-    "pt_BR",
-    "de",
-    "hu",
-    "id",
-    "nb_NO"
-  ],
   "maintainer": "joost schouppe",
   "icon": "./assets/themes/campersite/caravan.svg",
   "version": "0",

@@ -25,15 +25,6 @@
     "zh_Hant": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
     "hu": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod"
   },
-  "language": [
-    "en",
-    "nl",
-    "de",
-    "it",
-    "zh_Hant",
-    "hu",
-    "id"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/waste_basket/waste_basket.svg",
   "version": "2021-07-07",

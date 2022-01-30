@@ -35,18 +35,6 @@
     "it": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
     "id": "Di peta ini, Anda menemukan taman bermain dan dapat menambahkan lebih banyak informasi"
   },
-  "language": [
-    "nl",
-    "en",
-    "fr",
-    "ja",
-    "zh_Hant",
-    "ru",
-    "de",
-    "it",
-    "nb_NO",
-    "id"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/playgrounds/playground.svg",
   "version": "0",
