@@ -9,7 +9,8 @@
     "fr": "Campings",
     "zh_Hant": "露營地點",
     "pt_BR": "Locais de acampamento",
-    "de": "Wohnmobilstellplätze"
+    "de": "Wohnmobilstellplätze",
+    "hu": "Lakóautós megállóhelyek"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -20,7 +21,8 @@
     "zh_Hant": "露營者尋找渡過夜晚的場地",
     "nl": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
     "pt_BR": "Encontre locais para passar a noite com o seu campista",
-    "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil"
+    "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
+    "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
@@ -1188,7 +1190,8 @@
           "ja": "この場所に電源はありますか?",
           "it": "Questo luogo fornisce corrente elettrica?",
           "fr": "Ce site a-t’il une source d’électricité ?",
-          "de": "Hat dieser Ort eine Stromversorgung?"
+          "de": "Hat dieser Ort eine Stromversorgung?",
+          "hu": "Van-e itt elektromos áram?"
         },
         "mappings": [
           {

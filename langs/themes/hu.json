@@ -74,7 +74,6 @@
                 }
             }
         },
-        "shortDescription": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
         "overrideAll": {
             "tagRenderings+": {
                 "1": {
@@ -82,6 +81,7 @@
                 }
             }
         },
+        "shortDescription": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
         "title": "Lakóautós megállóhelyek"
     },
     "charging_stations": {
