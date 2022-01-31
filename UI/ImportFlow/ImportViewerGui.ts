@@ -199,11 +199,12 @@ class ImportInspector extends VariableUiElement {
 
     constructor(userDetails: { uid: number } | { display_name: string, search?: string }, state: UserRelatedState) {
         let url;
+        
         if (userDetails["uid"] !== undefined) {
-            url = "https://api.openstreetmap.org/api/0.6/notes/search.json?user=" + userDetails["uid"] + "&limit=10000&sort=created_at&q=%23import"
+            url = "https://api.openstreetmap.org/api/0.6/notes/search.json?user=" + userDetails["uid"] + "&closed=730&limit=10000&sort=created_at&q=%23import"
         } else {
             url = "https://api.openstreetmap.org/api/0.6/notes/search.json?display_name=" +
-                encodeURIComponent(userDetails["display_name"]) + "&limit=10000&sort=created_at&q=" + encodeURIComponent(userDetails["search"] ?? "#import")
+                encodeURIComponent(userDetails["display_name"]) + "&limit=10000&closed=730&sort=created_at&q=" + encodeURIComponent(userDetails["search"] ?? "#import")
         }
 
 

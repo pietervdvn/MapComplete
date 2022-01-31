@@ -1100,6 +1100,10 @@ video {
   max-height: 2rem;
 }
 
+.max-h-6 {
+  max-height: 1.5rem;
+}
+
 .w-full {
   width: 100%;
 }

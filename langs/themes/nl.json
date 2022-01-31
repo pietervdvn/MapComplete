@@ -26,11 +26,51 @@
                     "8": {
                         "renderings": {
                             "0": {
-                                "question": "Hoeveel "
+                                "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
+                                "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
+                            }
+                        },
+                        "rewrite": {
+                            "into": {
+                                "0": {
+                                    "1": "Stadsfietsen"
+                                },
+                                "1": {
+                                    "1": "elektrische fietsen"
+                                },
+                                "2": {
+                                    "1": "Kinderfietsen"
+                                },
+                                "3": {
+                                    "1": "BMX-fietsen"
+                                },
+                                "4": {
+                                    "1": "mountainbike"
+                                },
+                                "5": {
+                                    "1": "Fietstassen"
+                                }
                             }
                         }
                     },
                     "bicycle-types": {
+                        "mappings": {
+                            "0": {
+                                "then": "Gewone stadsfietsen kunnen hier gehuurd worden"
+                            },
+                            "1": {
+                                "then": "Elektrische fietsen kunnen hier gehuurd worden"
+                            },
+                            "2": {
+                                "then": "BMX-fietsen kunnen hier gehuurd worden"
+                            },
+                            "3": {
+                                "then": "Mountainbikes kunnen hier gehuurd worden"
+                            },
+                            "4": {
+                                "then": "Kinderfietsen kunnen hier gehuurd worden"
+                            }
+                        },
                         "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?"
                     },
                     "bicycle_rental_type": {

@@ -3066,6 +3066,7 @@
         }
     },
     "gps_track": {
+        "name": "Jouw afgelegde route",
         "tagRenderings": {
             "Privacy notice": {
                 "render": "Dit is waar je was sinds je deze website hebt geopened. Dit is enkel zichtbaar voor jou en niemand anders, je locatie wordt niet verstuurd"

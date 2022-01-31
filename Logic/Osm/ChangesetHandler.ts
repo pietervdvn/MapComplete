@@ -271,7 +271,7 @@ export class ChangesetHandler {
             path = path.substr(1, path.lastIndexOf("/"));
             const metadata = [
                 ["created_by", `MapComplete ${Constants.vNumber}`],
-                ["language", Locale.language.data],
+                ["locale", Locale.language.data],
                 ["host", window.location.host],
                 ["path", path],
                 ["source", self.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],

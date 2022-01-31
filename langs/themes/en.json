@@ -22,7 +22,30 @@
                     "8": {
                         "renderings": {
                             "0": {
-                                "question": "How much bicycle_type "
+                                "question": "How much type_plural can be rented here? ",
+                                "render": "{capacity:bicycle_type} type_plural can be rented here"
+                            }
+                        },
+                        "rewrite": {
+                            "into": {
+                                "0": {
+                                    "1": "city bikes"
+                                },
+                                "1": {
+                                    "1": "electrical bikes"
+                                },
+                                "2": {
+                                    "1": "bikes for children"
+                                },
+                                "3": {
+                                    "1": "BMX bikes"
+                                },
+                                "4": {
+                                    "1": "mountainbike"
+                                },
+                                "5": {
+                                    "1": "bicycle panniers"
+                                }
                             }
                         }
                     },
@@ -36,6 +59,12 @@
                             },
                             "2": {
                                 "then": "BMX bikes can be rented here"
+                            },
+                            "3": {
+                                "then": "Mountainbikes can be rented here"
+                            },
+                            "4": {
+                                "then": "Bikes for childs can be rented here"
                             }
                         },
                         "question": "What kind of bicycles and accessories are rented here?",

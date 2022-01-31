@@ -274,7 +274,8 @@
               "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
               "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)",
               "hu": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
-            }
+            },
+            "hideInAnswer": "_country!=be"
           },
           {
             "if": {
@@ -292,7 +293,7 @@
               "it": "Questa è una strada ciclabile",
               "hu": "Ez az utca kerékpárosutca"
             },
-            "hideInAnswer": true
+            "hideInAnswer": "_country=be"
           },
           {
             "if": {
