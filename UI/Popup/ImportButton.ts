@@ -523,26 +523,25 @@ export class ImportPointButton extends AbstractImportButton {
                 snapOnto = await OsmObject.DownloadObjectAsync(snapOntoWayId)
             }
             let specialMotivation = undefined
-            if (args.note_id !== undefined) {
-                specialMotivation = "source: https://osm.org/note/" + args.note_id
+
+            let note_id = args.note_id
+            if (args.note_id !== undefined &&  isNaN(Number(args.note_id))) {
+                note_id = originalFeatureTags.data[args.note_id]
+                specialMotivation = "source: https://osm.org/note/" + note_id
             }
+            
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse.id,
                 changeType: "import",
                 snapOnto: <OsmWay>snapOnto,
-                specialMotivation
+                specialMotivation: specialMotivation
             })
 
             await state.changes.applyAction(newElementAction)
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
-            if (args.note_id !== undefined) {
-                let note_id = args.note_id
-                if (isNaN(Number(args.note_id))) {
-                    note_id = originalFeatureTags.data[args.note_id]
-                }
-
+            if (note_id !== undefined) {
                 state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()

@@ -23,6 +23,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
     private meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string };
     private readonly _reusePreviouslyCreatedPoint: boolean;
 
+    
     constructor(basicTags: Tag[],
                 lat: number, lon: number,
                 options: {
@@ -46,7 +47,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         this.meta = {
             theme: options.theme,
             changeType: options.changeType,
-
+            specialMotivation: options.specialMotivation
         }
     }
 
@@ -67,6 +68,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+
         if (this._reusePreviouslyCreatedPoint) {
 
             const key = this._lat + "," + this._lon
@@ -139,7 +141,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
 
         locations.splice(index + 1, 0, [this._lon, this._lat])
         ids.splice(index + 1, 0, id)
-
+        
         // Allright, we have to insert a new point in the way
         return [
             newPointChange,

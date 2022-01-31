@@ -117,7 +117,7 @@ export default class FilterView extends VariableUiElement {
 
         const style =
             "display:flex;align-items:center;padding:0.5rem 0;";
-        const layerIcon = layer.defaultIcon()?.SetClass("w-8 h-8 ml-2")
+        const layerIcon = layer.defaultIcon()?.SetClass("w-8 h-8 ml-2 shrink-0")
         const layerIconUnchecked = layer.defaultIcon()?.SetClass("opacity-50  w-8 h-8 ml-2")
 
         const layerChecked = new Combine([icon, layerIcon, styledNameChecked, zoomStatus])
