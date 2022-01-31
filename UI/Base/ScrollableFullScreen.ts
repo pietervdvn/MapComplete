@@ -101,7 +101,7 @@ export default class ScrollableFullScreen extends UIElement {
             Hash.hash.setData(undefined)
         })
 
-        title.SetClass("block text-l sm:text-xl md:text-2xl w-full font-bold p-0 max-h-20vh overflow-y-auto")
+        title.SetClass("block text-l sm:text-xl md:text-2xl w-full font-bold p-0 max-h-20vh overflow-y-auto self-center")
         return new Combine([
             new Combine([
                 new Combine([returnToTheMap, title])
