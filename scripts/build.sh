@@ -47,7 +47,6 @@ do
     echo -e "\n\n  $theme"
     echo -e " ------------ \n\n"
     # Builds the necessary files for just one theme, e.g. 'bookcases.html' + 'index_bookcases.ts' + supporting file
-    # npm run generate && node --max_old_space_size=12000 $(which parcel)  build 
     parcel build --public-url './' $SRC_MAPS "$theme.html" 
 done
 # At last: a workaround; parcel 1.x borks the link to social images; the public-URL (./) is setup incorrectly, so we fix those

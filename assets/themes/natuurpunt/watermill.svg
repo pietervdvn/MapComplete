@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-        viewBox="-10 8 15.18 19.74"
-        version="1.1"
-        id="svg1054"
-        sodipodi:docname="watermill.svg"
-        width="15.18"
-        height="19.74"
-        inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
-        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-        xmlns="http://www.w3.org/2000/svg"
->
+   viewBox="-10 8 15.18 19.74"
+   version="1.1"
+   id="svg1054"
+   sodipodi:docname="watermill.svg"
+   width="15.18"
+   height="19.74"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview1056"
      pagecolor="#505050"
@@ -20,9 +20,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="46.114286"
-     inkscape:cx="7.5030979"
-     inkscape:cy="8.5114622"
+     inkscape:zoom="6.0407534"
+     inkscape:cx="-31.949657"
+     inkscape:cy="10.594705"
      inkscape:current-layer="svg1054" />
   <defs
      id="defs1048">
@@ -32,7 +32,7 @@
   <g
      id="Layer_2"
      data-name="Layer 2"
-     transform="translate(-10,8)">
+     transform="matrix(0.58392824,0,0,0.58392824,-6.8420153,12.106628)">
     <g
        id="Layer_1-2"
        data-name="Layer 1">

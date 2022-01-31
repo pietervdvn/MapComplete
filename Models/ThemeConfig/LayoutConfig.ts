@@ -73,6 +73,7 @@ export default class LayoutConfig {
         } else {
             this.language = json.language;
         }
+        this.language = json.mustHaveLanguage ?? this.language
         {
             if (this.language.length == 0) {
                 throw `No languages defined. Define at least one language. (${context}.languages)`

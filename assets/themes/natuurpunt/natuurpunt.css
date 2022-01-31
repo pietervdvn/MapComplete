@@ -15,3 +15,32 @@
 
     --image-carousel-height: 350px;
 }
+
+@font-face{
+    font-family:"Open Sans Regular";
+    src:url("./assets/themes/natuurpunt/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face{
+    font-family:"Amaranth";
+    src:url("./assets/themes/natuurpunt/fonts/Amaranth-Regular.otf");
+}
+
+body {
+    --non-active-tab-svg: #556c5c;
+	font-family: 'Open Sans Regular', sans-serif;
+}
+
+h1 h2 h3 h4 {
+    font-family: 'Amaranth', sans-serif;
+}
+
+.tab-non-active svg {
+    fill: white !important;
+    stroke: white !important;
+}
+
+.tab-non-active svg path {
+    fill: white !important;
+    stroke: white !important;
+}

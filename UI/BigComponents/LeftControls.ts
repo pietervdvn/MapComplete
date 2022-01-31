@@ -89,7 +89,7 @@ export default class LeftControls extends Combine {
 
         const toggledFilter = new Toggle(
             new ScrollableFullScreen(
-                () => Translations.t.general.layerSelection.title.Clone(),
+                () => Translations.t.general.layerSelection.title.Clone().SetClass("self-center"),
                 () =>
                     new FilterView(state.filteredLayers, state.overlayToggles).SetClass(
                         "block p-1"

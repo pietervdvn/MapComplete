@@ -10,10 +10,12 @@ export interface DesugaringContext {
 export abstract class Conversion<TIn, TOut> {
     public readonly modifiedAttributes: string[];
     protected readonly doc: string;
-
-    constructor(doc: string, modifiedAttributes: string[] = []) {
+    public readonly name: string
+    
+    constructor(doc: string, modifiedAttributes: string[] = [], name?: string) {
         this.modifiedAttributes = modifiedAttributes;
         this.doc = doc + "\n\nModified attributes are\n" + modifiedAttributes.join(", ");
+        this.name = name ?? this.constructor.name
     }
 
     public static strict<T>(fixed: { errors: string[], warnings: string[], result?: T }): T {
@@ -83,7 +85,8 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
     private readonly step: Conversion<X, X[]>;
 
     constructor(key: string, step: Conversion<X, X[]>) {
-        super(`Applies ${step.constructor.name} onto every object of the list \`${key}\`. The results are concatenated and used as new list`, [key]);
+        super(`Applies ${step.constructor.name} onto every object of the list \`${key}\`. The results are concatenated and used as new list`, [key], 
+            "OnEveryConcat("+step.name+")");
         this.step = step;
         this.key = key;
     }
@@ -128,7 +131,7 @@ export class Fuse<T> extends DesugaringStep<T> {
         const warnings = []
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
-            let r = step.convert(state, json, context + "(fusion " + this.constructor.name + "." + i + ")")
+            let r = step.convert(state, json, "While running step " +step.name + ": " + context)
             errors.push(...r.errors)
             warnings.push(...r.warnings)
             json = r.result

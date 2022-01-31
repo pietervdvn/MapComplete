@@ -319,11 +319,18 @@
           }
         ]
       }
+    },
+    {
+      "builtin": "gps_location_history",
+      "override": {
+        "name": null
+      }
     }
   ],
   "enableMoreQuests": false,
   "enableShareScreen": false,
   "enableIframePopout": false,
-  "enableBackgroundLayerSelection": false
+  "enableBackgroundLayerSelection": false,
+  "enableNoteImports": false
   
 }

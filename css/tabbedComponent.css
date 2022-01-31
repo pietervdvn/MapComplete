@@ -64,11 +64,11 @@
 }
 
 .tab-non-active svg {
-    fill: var(--foreground-color) !important;
-    stroke: var(--foreground-color) !important;
+    fill: var(--non-active-tab-svg) !important;
+    stroke: var(--non-active-tab-svg) !important;
 }
 
 .tab-non-active svg path {
-    fill: var(--foreground-color) !important;
-    stroke: var(--foreground-color) !important;
+    fill: var(--non-active-tab-svg) !important;
+    stroke: var(--non-active-tab-svg) !important;
 }

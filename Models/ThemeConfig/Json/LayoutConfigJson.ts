@@ -249,6 +249,7 @@ export interface LayoutConfigJson {
     enableDownload?: boolean;
     enablePdfDownload?: boolean;
     enableIframePopout?: true | boolean;
+    enableNoteImports?: true | boolean;
 
     /**
      * Set one or more overpass URLs to use for this theme..

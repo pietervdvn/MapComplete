@@ -25,7 +25,10 @@
       "render": "{clear_location_history()}"
     }
   ],
-  "name": "Your track",
+  "name": {
+    "en":"Your travelled track",
+    "nl": "Jouw afgelegde route"
+  },
   "mapRendering": [
     {
       "width": 3,
