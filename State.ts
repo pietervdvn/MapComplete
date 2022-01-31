@@ -12,7 +12,6 @@ export default class State extends FeaturePipelineState {
 
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse)
-        window["mapcomplete_state"]= this;
     }
 
 
