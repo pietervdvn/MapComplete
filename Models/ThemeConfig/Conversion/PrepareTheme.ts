@@ -43,7 +43,7 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
             for (const name of names) {
                 const found = Utils.Clone(state.sharedLayers.get(name))
                 if (found === undefined) {
-                    errors.push(context + ": The layer with name " + json + " was not found as a builtin layer")
+                    errors.push(context + ": The layer with name " + JSON.stringify(json) + " was not found as a builtin layer. Known builtin layers are "+Array.from(state.sharedLayers.keys()).join(",")+"\n    For more information, see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md" )
                     continue
                 }
                 if (json["override"]["tagRenderings"] !== undefined && (found["tagRenderings"] ?? []).length > 0) {
@@ -81,6 +81,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         const errors = []
         const warnings = []
         json.layers = [...json.layers]
+        const alreadyLoaded = new Set(json.layers.map(l => l["id"]))
 
         if (json.id === "personal") {
             json.layers = []
@@ -104,6 +105,10 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             const v = state.sharedLayers.get(layerName)
             if (v === undefined) {
                 errors.push("Default layer " + layerName + " not found")
+            }
+            if(alreadyLoaded.has(v.id)){
+                warnings.push("Layout "+context+" already has a layer with name "+v.id+"; skipping inclusion of this builtin layer")
+                continue
             }
             json.layers.push(v)
         }
@@ -131,43 +136,44 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         json.layers = [...json.layers]
 
 
-        const creator = new CreateNoteImportLayer()
-        for (let i1 = 0; i1 < allLayers.length; i1++) {
-            const layer = allLayers[i1];
-            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
-                // Priviliged layers are skipped
-                continue
-            }
-
-            if (layer.source["geoJson"] !== undefined) {
-                // Layer which don't get their data from OSM are skipped
-                continue
-            }
-
-            if (layer.title === undefined || layer.name === undefined) {
-                // Anonymous layers and layers without popup are skipped
-                continue
-            }
-
-            if (layer.presets === undefined || layer.presets.length == 0) {
-                // A preset is needed to be able to generate a new point
-                continue;
-            }
-
-            try {
-
-                const importLayerResult = creator.convert(state, layer, context + ".(noteimportlayer)[" + i1 + "]")
-                errors.push(...importLayerResult.errors)
-                warnings.push(...importLayerResult.warnings)
-                if (importLayerResult.result !== undefined) {
-                    warnings.push("Added an import layer to theme " + json.id + ", namely " + importLayerResult.result.id)
-                    json.layers.push(importLayerResult.result)
+        if(json.enableNoteImports ?? true) {
+            const creator = new CreateNoteImportLayer()
+            for (let i1 = 0; i1 < allLayers.length; i1++) {
+                const layer = allLayers[i1];
+                if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+                    // Priviliged layers are skipped
+                    continue
                 }
-            } catch (e) {
-                errors.push("Could not generate an import-layer for " + layer.id + " due to " + e)
+
+                if (layer.source["geoJson"] !== undefined) {
+                    // Layer which don't get their data from OSM are skipped
+                    continue
+                }
+
+                if (layer.title === undefined || layer.name === undefined) {
+                    // Anonymous layers and layers without popup are skipped
+                    continue
+                }
+
+                if (layer.presets === undefined || layer.presets.length == 0) {
+                    // A preset is needed to be able to generate a new point
+                    continue;
+                }
+
+                try {
+
+                    const importLayerResult = creator.convert(state, layer, context + ".(noteimportlayer)[" + i1 + "]")
+                    errors.push(...importLayerResult.errors)
+                    warnings.push(...importLayerResult.warnings)
+                    if (importLayerResult.result !== undefined) {
+                        warnings.push("Added an import layer to theme " + json.id + ", namely " + importLayerResult.result.id)
+                        json.layers.push(importLayerResult.result)
+                    }
+                } catch (e) {
+                    errors.push("Could not generate an import-layer for " + layer.id + " due to " + e)
+                }
             }
         }
-
 
         return {
             errors,

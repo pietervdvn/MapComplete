@@ -165,7 +165,7 @@ export default class FilterView extends VariableUiElement {
         }
 
         return new Combine(toShow)
-            .SetClass("flex flex-col ml-8 bg-gray-300 rounded-xl p-2")
+            .SetClass("flex flex-col p-2 ml-0 pl-12 bg-gray-200 pt-0 border-b-2 border-detail mb-4")
 
     }
 
@@ -290,6 +290,8 @@ export default class FilterView extends VariableUiElement {
             return FilterView.createCheckboxFilter(filterConfig)
         }
 
-        return FilterView.createMultiFilter(filterConfig)
+        const filter = FilterView.createMultiFilter(filterConfig)
+        filter[0].SetClass("pl-2")
+        return filter
     }
 }

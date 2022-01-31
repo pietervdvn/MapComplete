@@ -62,6 +62,7 @@
     --background-color: white;
     --foreground-color: black;
     --popup-border: white;
+    --non-active-tab-svg: var(--foreground-color);
     --shadow-color: #00000066;
     --variable-title-height: 0px; /* Set by javascript */
     --return-to-the-map-height: 2em;
@@ -136,6 +137,11 @@ btn {
 
 .h-min {
     height: min-content;
+}
+
+
+.border-detail {
+    border-color: var(--foreground-color);
 }
 
 .w-min {

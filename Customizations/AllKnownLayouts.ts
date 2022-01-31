@@ -171,7 +171,7 @@ export class AllKnownLayouts {
     private static AllLayouts(): Map<string, LayoutConfig> {
         const dict: Map<string, LayoutConfig> = new Map();
         for (const layoutConfigJson of known_themes.themes) {
-            const layout = new LayoutConfig(<LayoutConfigJson>layoutConfigJson, true)
+            const layout = new LayoutConfig(<LayoutConfigJson> layoutConfigJson, true)
             dict.set(layout.id, layout)
             for (let i = 0; i < layout.layers.length; i++) {
                 let layer = layout.layers[i];

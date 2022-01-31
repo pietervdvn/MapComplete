@@ -322,7 +322,7 @@ export class OsmConnection {
             this.auth.xhr({
                 method: 'POST',
 
-                path: `/api/0.6/notesThis /${id}/comment?text=${encodeURIComponent(text)}`
+                path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
             }, function (err, response) {
                 if (err !== null) {
                     error(err)

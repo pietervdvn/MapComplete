@@ -67,7 +67,7 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = Array.from(Object.keys(json.title));
-
+        
         {
             if (typeof json.title === "string") {
                 console.error("The title is not a translation, it instead is ", json.title, "("+typeof json.title+")")
