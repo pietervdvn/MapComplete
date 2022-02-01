@@ -143,10 +143,10 @@ export class RadioButton<T> extends InputElement<T> {
                 block.classList.add(
                     "m-1",
                     "border",
-                    "rounded-3xl",
-                    "border-gray-400",
+                    "border-gray-400"
                 )
             }
+            block.style.borderRadius = "1.5rem"
             wrappers.push(block);
 
             form.appendChild(block);
@@ -161,10 +161,10 @@ export class RadioButton<T> extends InputElement<T> {
 
                 if (input.checked) {
                     wrappers[i].classList.remove("border-gray-400");
-                    wrappers[i].classList.add("border-black");
+                    wrappers[i].classList.add("border-attention");
                 } else {
                     wrappers[i].classList.add("border-gray-400");
-                    wrappers[i].classList.remove("border-black");
+                    wrappers[i].classList.remove("border-attention");
                 }
             }
         });

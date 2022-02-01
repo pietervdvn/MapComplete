@@ -34,7 +34,7 @@ export default class UserBadge extends Toggle {
                 const homeButton = new VariableUiElement(
                     userDetails.map((userinfo) => {
                         if (userinfo.home) {
-                            return Svg.home_ui();
+                            return Svg.home_svg();
                         }
                         return " ";
                     })

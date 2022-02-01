@@ -139,6 +139,44 @@
       },
       "id": "Payment methods"
     },
+    {
+      "id": "step_count",
+      "question": {
+        "en": "How much individual steps does one have to climb to reach the top of this tower?",
+        "nl": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?"
+      },
+      "freeform": {
+        "key": "step_count",
+        "type": "pnat"
+      },
+      "render": {
+        "en": "This tower has {step_count} steps to reach the top",
+        "nl": "Deze toren heeft {step_count} traptredes"
+      }
+    },
+    {
+      "id": "elevator",
+      "question": {
+        "en": "Does this tower have an elevator?",
+        "nl": "Heeft deze toren een lift?"
+      },
+      "mappings": [
+        {
+          "if": "elevator=yes",
+          "then": {
+            "en": "This tower has an elevator which takes visitors to the top",
+            "nl": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt"
+          }
+        },
+        {
+          "if": "elevator=no",
+          "then": {
+            "en": "This tower does not have an elevator",
+            "nl": "Deze toren heeft geen lift"
+          }
+        }
+      ]
+    },
     "wheelchair-access",
     "wikipedia"
   ],

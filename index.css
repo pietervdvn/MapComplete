@@ -102,6 +102,26 @@ svg, img {
     height: 100%;
 }
 
+.svg-catch svg path {
+    fill: var(--catch-detail-color) !important;
+    stroke: var(--catch-detail-color) !important;
+}
+
+.svg-unsubtle svg path {
+    fill: var(--unsubtle-detail-color) !important;
+    stroke: var(--unsubtle-detail-color) !important;
+}
+
+.svg-subtle svg path {
+    fill: var(--subtle-detail-color) !important;
+    stroke: var(--subtle-detail-color) !important;
+}
+
+.svg-foreground svg path {
+    fill: var(--foreground-color) !important;
+    stroke: var(--foreground-color) !important;
+}
+
 .no-images img {
     display: none;
 }
@@ -451,7 +471,6 @@ li::marker {
     width: 40em;
     max-height: calc(100vh - 15em);
     overflow-y: auto;
-    border-radius: 1em;
     background-color: var(--background-color);
     color: var(--foreground-color);
 }

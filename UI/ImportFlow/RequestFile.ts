@@ -9,6 +9,7 @@ import BaseUIElement from "../BaseUIElement";
 import FileSelectorButton from "../Input/FileSelectorButton";
 import {FlowStep} from "./FlowStep";
 import {parse} from "papaparse";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 class FileSelector extends InputElementMap<FileList, { name: string, contents: Promise<string> }> {
     constructor(label: BaseUIElement) {
@@ -139,7 +140,15 @@ export class RequestFile extends Combine implements FlowStep<any> {
             if (v?.error === undefined) {
                 return undefined;
             }
-            return v.error.Clone().SetClass("alert");
+            let err: BaseUIElement;
+            if(typeof v.error === "string"){
+                err = new FixedUiElement(v.error)
+            }else if(v.error.Clone !== undefined){
+                err = v.error.Clone()
+            }else{
+                err = v.error
+            }
+            return err.SetClass("alert");
         }))
 
         super([

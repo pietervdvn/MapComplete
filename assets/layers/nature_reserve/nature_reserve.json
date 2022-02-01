@@ -391,14 +391,7 @@
         "fr": "Superficie : {_surface:ha}&nbsp;ha",
         "de": "Grundfläche: {_surface:ha}ha"
       },
-      "mappings": [
-        {
-          "if": "_surface:ha=0",
-          "then": {
-            "*": ""
-          }
-        }
-      ],
+      "condition": "_surface:ha!=0",
       "id": "Surface area"
     },
     "wikipedia"

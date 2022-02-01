@@ -60,3 +60,15 @@ h1, h2, h3, h4 {
     fill: white !important;
     stroke: white !important;
 }
+
+.md\:rounded-xl {
+    border-radius: unset !important;
+}
+
+.rounded-lg {
+     border-radius: unset !important;
+}
+
+.rounded-3xl {
+    border-radius: unset !important;
+}

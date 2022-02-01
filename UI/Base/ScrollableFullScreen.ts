@@ -91,10 +91,8 @@ export default class ScrollableFullScreen extends UIElement {
     private BuildComponent(title: BaseUIElement, content: BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([
-                new Img(Svg.back.replace(/#000000/g, "#cccccc"), true)
-                    .SetClass("block md:hidden w-12 h-12 p-2"),
-                new Img(Svg.close.replace(/#000000/g, "#cccccc"), true)
-                    .SetClass("hidden md:block  w-12 h-12  p-3")
+                Svg.back_svg().SetClass("block md:hidden w-12 h-12 p-2 svg-foreground"),
+                Svg.close_svg()                    .SetClass("hidden md:block  w-12 h-12  p-3 svg-foreground")
             ]).SetClass("rounded-full p-0 flex-shrink-0 self-center")
 
         returnToTheMap.onClick(() => {
