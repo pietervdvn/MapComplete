@@ -3,6 +3,7 @@ import {Utils} from "../../../Utils";
 import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
+import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
 
 
 function colonSplit(value: string): string[] {
@@ -265,6 +266,10 @@ function run(file, protojson) {
 
     protoString = protoString.replace(/{[ \t\n]*"id"[ \t\n]*:[ \t\n]*"\$\$\$"[ \t\n]*}/, stringified.join(",\n"))
     const proto = <LayerConfigJson>JSON.parse(protoString)
+    if(typeof proto.filter === "string"){
+        throw "Filters of a the protojson should be a list of FilterConfigJsons"
+    }
+    proto.filter = <FilterConfigJson[]> proto.filter;
     proto.tagRenderings.forEach(tr => {
         if (typeof tr === "string") {
             return;
@@ -275,7 +280,7 @@ function run(file, protojson) {
         }
     })
 
-    proto["filter"].push({
+    proto.filter.push({
         id: "connection_type",
         options: filterOptions
     })
