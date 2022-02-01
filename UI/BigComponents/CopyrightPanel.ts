@@ -185,7 +185,7 @@ export default class CopyrightPanel extends Combine {
             ...iconAttributions
         ].map(e => e?.SetClass("mt-4")));
         this.SetClass("flex flex-col link-underline overflow-hidden")
-        this.SetStyle("max-width: calc(100vw - 3em); width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
+        this.SetStyle("max-width:100%; width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
     }
 
     private static CodeContributors(): BaseUIElement {

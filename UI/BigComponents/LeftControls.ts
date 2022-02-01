@@ -35,9 +35,7 @@ export default class LeftControls extends Combine {
                         return defaultIcon;
                     }
                     const tags = {...feature.properties, button: "yes"}
-                    const elem = currentViewFL.layerDef.mapRendering[0]?.GenerateLeafletStyle(new UIEventSource(tags), false, {
-                        noSize: true
-                    })?.html
+                    const elem = currentViewFL.layerDef.mapRendering[0]?.GetSimpleIcon(new UIEventSource(tags));
                     if (elem === undefined) {
                         return defaultIcon
                     }

@@ -53,14 +53,15 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
     public installBounds(factor: number | BBox, showRange?: boolean) {
         this.leafletMap.addCallbackD(leaflet => {
-            let bounds;
+            let bounds : {getEast(), getNorth(), getWest(), getSouth()};
             if (typeof factor === "number") {
-                bounds = leaflet.getBounds().pad(factor)
-                leaflet.setMaxBounds(bounds)
+                const lbounds = leaflet.getBounds().pad(factor)
+                leaflet.setMaxBounds(lbounds)
+                bounds = lbounds;
             } else {
                 // @ts-ignore
                 leaflet.setMaxBounds(factor.toLeaflet())
-                bounds = leaflet.getBounds()
+                bounds = factor
             }
 
             if (showRange) {

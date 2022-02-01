@@ -3240,13 +3240,13 @@
             "Operator tag": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                        "then": "Dit gebied wordt beheerd door Natuurpunt"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                        "then": "Dit gebied wordt beheerd door {operator}"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/layers/nature_reserve/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                        "then": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
                     }
                 },
                 "question": "Wie beheert dit gebied?",

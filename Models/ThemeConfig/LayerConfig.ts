@@ -24,6 +24,7 @@ import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import Table from "../../UI/Base/Table";
+import FilterConfigJson from "./Json/FilterConfigJson";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -58,7 +59,8 @@ export default class LayerConfig extends WithContextLoader {
 
     public readonly tagRenderings: TagRenderingConfig[];
     public readonly filters: FilterConfig[];
-
+    public readonly filterIsSameAs: string;
+    
     constructor(
         json: LayerConfigJson,
         context?: string,
@@ -243,9 +245,14 @@ export default class LayerConfig extends WithContextLoader {
 
         this.tagRenderings = (Utils.NoNull(json.tagRenderings) ?? []).map((tr, i) => new TagRenderingConfig(<TagRenderingConfigJson>tr, this.id + ".tagRenderings[" + i + "]"))
 
-        this.filters = (json.filter ?? []).map((option, i) => {
-            return new FilterConfig(option, `${context}.filter-[${i}]`)
-        });
+        if(json.filter !== undefined && json.filter !== null && json.filter["sameAs"] !== undefined){
+            this.filterIsSameAs = json.filter["sameAs"]
+            this.filters = []
+        }else{
+            this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
+                return new FilterConfig(option, `${context}.filter-[${i}]`)
+            });
+        }
 
         {
             const duplicateIds = Utils.Dupiclates(this.filters.map(f => f.id))
@@ -302,8 +309,7 @@ export default class LayerConfig extends WithContextLoader {
             return undefined
         }
         const baseTags = TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
-        return mapRendering.GenerateLeafletStyle(new UIEventSource(baseTags), false, 
-            {noSize: true, includeBadges: false}).html
+        return mapRendering.GetSimpleIcon(new UIEventSource(baseTags))
     }
 
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {

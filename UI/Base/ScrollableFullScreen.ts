@@ -6,6 +6,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Hash from "../../Logic/Web/Hash";
 import BaseUIElement from "../BaseUIElement";
 import Img from "./Img";
+import Title from "./Title";
 
 /**
  *
@@ -101,7 +102,8 @@ export default class ScrollableFullScreen extends UIElement {
             Hash.hash.setData(undefined)
         })
 
-        title.SetClass("block text-l sm:text-xl md:text-2xl w-full font-bold p-0 max-h-20vh overflow-y-auto self-center")
+        title = new Title(title, 2)
+        title.SetClass("text-l sm:text-xl md:text-2xl w-full p-0 max-h-20vh overflow-y-auto self-center")
         return new Combine([
             new Combine([
                 new Combine([returnToTheMap, title])

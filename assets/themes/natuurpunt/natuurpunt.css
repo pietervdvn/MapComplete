@@ -1,9 +1,11 @@
 :root {
     --subtle-detail-color: #007759;
     --subtle-detail-color-contrast: #ffffff;
-    --subtle-detail-color-light-contrast: lightgrey;
+    --subtle-detail-color-light-contrast: white;
 
-    --catch-detail-color: #0fff00;
+    --unsubtle-detail-color: #b34f26;
+    --unsubtle-detail-color-contrast: #ffffff;
+    --catch-detail-color: #FE6F32;
     --catch-detail-color-contrast: #ffffff;
     --alert-color: #fee4d1;
     --background-color: white;
@@ -31,7 +33,21 @@ body {
 	font-family: 'Open Sans Regular', sans-serif;
 }
 
-h1 h2 h3 h4 {
+.layer-toggle .alert {
+    background: unset !important;
+    padding: 0 !important;
+}
+
+.layer-toggle svg path {
+    fill: var(--foreground-color) !important;
+}
+
+.layer-toggle .alert::before {
+    content: " - "
+}
+
+
+h1, h2, h3, h4 {
     font-family: 'Amaranth', sans-serif;
 }
 

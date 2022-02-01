@@ -237,7 +237,7 @@ export interface LayerConfigJson {
     /**
      * All the extra questions for filtering
      */
-    filter?: (FilterConfigJson) [],
+    filter?: (FilterConfigJson) [] | {sameAs: string},
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.

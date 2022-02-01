@@ -36,7 +36,7 @@ export class SubstitutedTranslation extends VariableUiElement {
 
         super(
             Locale.language.map(language => {
-                let txt = translation.textFor(language);
+                let txt = translation?.textFor(language);
                 if (txt === undefined) {
                     return undefined
                 }

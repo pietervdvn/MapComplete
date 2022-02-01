@@ -150,8 +150,8 @@ export default class PointRenderingConfig extends WithContextLoader {
         tags: UIEventSource<any>,
         clickable: boolean,
         options?: {
-            noSize: false | boolean,
-            includeBadges: true | boolean
+            noSize?: false | boolean,
+            includeBadges?: true | boolean
         }
     ):
         {

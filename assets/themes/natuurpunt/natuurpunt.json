@@ -30,6 +30,7 @@
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 15,
+  "lockLocation": [[2.1,50.40],[ 6.4,51.54]],
   "widenFactor": 2,
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
@@ -64,7 +65,10 @@
               "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
             }
           }
-        ]
+        ],
+        "=filter": {
+          "sameAs": "nature_reserve_centerpoints"
+        }
       }
     },
     {
@@ -183,7 +187,12 @@
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
-          "isOsmCache": true
+          "isOsmCache": true,
+              "osmTags": {
+                "+and": [
+                  "operator~.*[nN]atuurpunt.*"
+                ]
+              }
         },
         "mapRendering": [
           {
@@ -313,7 +322,7 @@
       }
     },
     {
-      "builtin": "gps_location_history",
+      "builtin": "gps_track",
       "override": {
         "name": null
       }

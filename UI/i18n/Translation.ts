@@ -35,7 +35,7 @@ export class Translation extends BaseUIElement {
 
     get txt(): string {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
-    }
+    }   
 
     static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
         const allTranslations: { context: string, tr: Translation }[] = []

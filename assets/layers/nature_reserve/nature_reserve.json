@@ -151,8 +151,9 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
-          }
+            "nl": "Dit gebied wordt beheerd door Natuurpunt"
+          },
+          "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
         },
         {
           "if": {
@@ -161,8 +162,9 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+            "nl": "Dit gebied wordt beheerd door {operator}"
           },
+          "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg",
           "hideInAnswer": true
         },
         {
@@ -172,8 +174,9 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/layers/nature_reserve/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-          }
+            "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+          },
+          "icon": "./assets/layers/nature_reserve/ANB.jpg"
         }
       ],
       "id": "Operator tag"

@@ -62,7 +62,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                                     layerConfig: LayerConfig,
                                     state: {}): BaseUIElement {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), state)
-            .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
+            .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2 text-2xl");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, state,
                 "block w-8 h-8 max-h-8 align-baseline box-content sm:p-0.5 w-10",)

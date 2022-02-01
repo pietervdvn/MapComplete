@@ -17,6 +17,7 @@ import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
 import TitleHandler from "../Actors/TitleHandler";
+import {BBox} from "../BBox";
 
 /**
  * Contains all the leaflet-map related state
@@ -73,7 +74,7 @@ export default class MapState extends UserRelatedState {
 
 
     /**
-     * WHich layers are enabled in the current theme
+     * Which layers are enabled in the current theme and what filters are applied onto them
      */
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
     /**
@@ -169,11 +170,10 @@ export default class MapState extends UserRelatedState {
                 ];
             }
             console.warn("Locking the bounds to ", layout.lockLocation);
-            this.leafletMap.addCallbackAndRunD(map => {
-                // @ts-ignore
-                map.setMaxBounds(layout.lockLocation);
-                map.setMinZoom(layout.startZoom);
-            })
+            this.mainMapObject.installBounds(
+                new BBox(layout.lockLocation),
+                this.featureSwitchIsTesting.data
+            )
         }
     }
 
@@ -377,6 +377,24 @@ export default class MapState extends UserRelatedState {
 
             flayers.push(flayer);
         }
+
+        for (const layer of layoutToUse.layers) {
+            if(layer.filterIsSameAs === undefined){
+                continue
+            }
+            const toReuse = flayers.find(l => l.layerDef.id === layer.filterIsSameAs)
+            if(toReuse === undefined){
+                throw "Error in layer "+layer.id+": it defines that it should be use the filters of "+layer.filterIsSameAs+", but this layer was not loaded"
+            }
+            console.warn("Linking filter and isDisplayed-states of "+layer.id+" and "+layer.filterIsSameAs)
+            const selfLayer = flayers.findIndex(l => l.layerDef.id === layer.id)
+            flayers[selfLayer] = {
+                isDisplayed: toReuse.isDisplayed,
+                layerDef: layer,
+                appliedFilters: toReuse.appliedFilters
+            };
+        }
+        
         return new UIEventSource<FilteredLayer[]>(flayers);
     }
 

@@ -66,7 +66,7 @@ export default class LayoutConfig {
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;
-        this.language = Array.from(Object.keys(json.title));
+        this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title));
         
         {
             if (typeof json.title === "string") {

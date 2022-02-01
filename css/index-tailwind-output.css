@@ -896,12 +896,12 @@ video {
   margin-left: 0.5rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
+.ml-12 {
+  margin-left: 3rem;
 }
 
-.ml-0 {
-  margin-left: 0px;
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mb-10 {
@@ -1437,11 +1437,6 @@ video {
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
 
-.bg-blue-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(219, 234, 254, var(--tw-bg-opacity));
-}
-
 .bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
@@ -1452,14 +1447,14 @@ video {
   background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -1514,6 +1509,11 @@ video {
   padding: 2rem;
 }
 
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1546,8 +1546,8 @@ video {
   padding-right: 0.25rem;
 }
 
-.pl-12 {
-  padding-left: 3rem;
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pt-0 {
@@ -1588,10 +1588,6 @@ video {
 
 .pl-6 {
   padding-left: 1.5rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
 }
 
 .text-center {
@@ -1783,6 +1779,12 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1805,101 +1807,17 @@ video {
   z-index: 10001
 }
 
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-width: 1px;
-  border-color: transparent;
-  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  border-radius: 1.5rem;
-  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(191, 219, 254, var(--tw-ring-opacity));
-}
-
-.btn:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(147, 197, 253, var(--tw-ring-opacity));
-}
-
-.btn {
-  margin-top: 0.25rem;
-  margin-right: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
-}
-
-.btn:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
-}
-
-.btn:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(29, 78, 216, var(--tw-ring-opacity));
-}
-
-.btn-secondary {
-  --tw-bg-opacity: 1;
-  background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
-}
-
-.btn-secondary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
-}
-
-.btn-disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
-}
-
-.btn-disabled:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
-}
-
-.btn-disabled {
-  --tw-text-opacity: 1;
-  color: rgba(209, 213, 219, var(--tw-text-opacity));
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(229, 231, 235, var(--tw-ring-opacity));
-}
-
-.btn-disabled:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(229, 231, 235, var(--tw-ring-opacity));
-}
-
-.btn-disabled:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(229, 231, 235, var(--tw-ring-opacity));
-}
-
-.btn-disabled {
-  cursor: default;
+.bg-subtle {
+  background-color: var(--subtle-detail-color);
+  color: var(--subtle-detail-color-contrast);
 }
 
 :root {
-  --subtle-detail-color: #e5f5ff;
+  --subtle-detail-color: #DBEAFE;
   --subtle-detail-color-contrast: black;
   --subtle-detail-color-light-contrast: lightgrey;
+  --unsubtle-detail-color: #BFDBFE;
+  --unsubtle-detail-color-contrast: black;
   --catch-detail-color: #3a3aeb;
   --catch-detail-color-contrast: white;
   --alert-color: #fee4d1;
@@ -1967,16 +1885,45 @@ a {
   color: var(--foreground-color);
 }
 
-btn {
-  margin-top: 0.25rem;
-  margin-right: 0.25rem;
-  font-size: 0.875rem;
+.btn {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
   line-height: 1.25rem;
-  font-weight: 500;
   --tw-text-opacity: 1;
   color: var(--catch-detail-color-contrast);
   --tw-bg-opacity: 1;
   background-color: var(--catch-detail-color);
+  display: inline-flex;
+  border-radius: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-size: large;
+  font-weight: bold;
+  /*-- invisible border: rendered on hover*/
+  border: 3px solid var(--unsubtle-detail-color);
+}
+
+.btn:hover {
+  border: 3px solid var(--catch-detail-color);
+}
+
+.btn-secondary {
+  background-color: var(--unsubtle-detail-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--catch-detail-color);
+}
+
+.btn-disabled {
+  filter: saturate(0.3);
+  cursor: default;
+}
+
+.btn-disabled:hover {
+  border: 3px solid var(--unsubtle-detail-color);
 }
 
 .h-min {
@@ -2000,9 +1947,8 @@ btn {
 }
 
 .link-underline a {
-  -webkit-text-decoration: underline 1px #0078a855;
-          text-decoration: underline 1px #0078a855;
-  color: #0078A8;
+  -webkit-text-decoration: underline 1px var(--foreground-color);
+          text-decoration: underline 1px var(--foreground-color);
 }
 
 .link-no-underline a {
@@ -2083,6 +2029,7 @@ li::marker {
 }
 
 .leaflet-container {
+  font: unset !important;
   background-color: var(--background-color) !important;
 }
 
@@ -2134,6 +2081,7 @@ li::marker {
 
 .alert {
   background-color: var(--alert-color);
+  color: var(--foreground-color);
   font-weight: bold;
   border-radius: 1em;
   margin: 0.25em;
@@ -2326,6 +2274,10 @@ li::marker {
 
 /***************** Info box (box containing features and questions ******************/
 
+input {
+  color: var(--foreground-color)
+}
+
 .leaflet-popup-content {
   width: 45em !important;
   margin: 0.25rem !important;
@@ -2383,11 +2335,6 @@ li::marker {
   background-color: #f2f2f2;
 }
 
-.hover\:bg-blue-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
-}
-
 .hover\:bg-indigo-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(199, 210, 254, var(--tw-bg-opacity));
@@ -2405,6 +2352,11 @@ li::marker {
 .hover\:shadow-xl:hover {
   --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:bg-unsubtle:hover {
+  background-color: var(--unsubtle-detail-color);
+  color: var(--unsubtle-detail-color-contrast);
 }
 
 .group:hover .group-hover\:text-blue-800 {

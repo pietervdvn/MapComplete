@@ -305,6 +305,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (!source.hasOwnProperty(key)) {
                 continue
             }
+            if (key.startsWith("=")) {
+                const trimmedKey = key.substr(1);
+                target[trimmedKey] = source[key]
+                continue
+            }
+
             if (key.startsWith("+") || key.endsWith("+")) {
                 const trimmedKey = key.replace("+", "");
                 const sourceV = source[key];

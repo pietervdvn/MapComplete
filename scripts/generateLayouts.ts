@@ -195,8 +195,16 @@ if (!existsSync(generatedDir)) {
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom", "theme"]
 // @ts-ignore
 const all: LayoutConfigJson[] = all_known_layouts.themes;
+const args = process.argv
+const theme = args[2]
+if(theme !== undefined){
+    console.warn("Only generating layout "+theme)
+}
 for (const i in all) {
     const layoutConfigJson: LayoutConfigJson = all[i]
+    if(theme !== undefined && layoutConfigJson.id !== theme){
+        continue
+    }
     const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
     const layoutName = layout.id
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {

@@ -115,17 +115,16 @@ export default class FilterView extends VariableUiElement {
             )
 
 
-        const style =
-            "display:flex;align-items:center;padding:0.5rem 0;";
-        const layerIcon = layer.defaultIcon()?.SetClass("w-8 h-8 ml-2 shrink-0")
-        const layerIconUnchecked = layer.defaultIcon()?.SetClass("opacity-50  w-8 h-8 ml-2")
+        const toggleClasses = "layer-toggle flex flex-wrap items-center pt-2 pb-1 px-0";
+        const layerIcon = layer.defaultIcon()?.SetClass("flex-shrink-0 w-8 h-8 ml-2")
+        const layerIconUnchecked = layer.defaultIcon()?.SetClass("flex-shrink-0 opacity-50  w-8 h-8 ml-2")
 
         const layerChecked = new Combine([icon, layerIcon, styledNameChecked, zoomStatus])
-            .SetStyle(style)
+            .SetClass(toggleClasses)
             .onClick(() => filteredLayer.isDisplayed.setData(false));
 
         const layerNotChecked = new Combine([iconUnselected, layerIconUnchecked, styledNameUnChecked])
-            .SetStyle(style)
+            .SetClass(toggleClasses)
             .onClick(() => filteredLayer.isDisplayed.setData(true));
 
 
@@ -152,7 +151,7 @@ export default class FilterView extends VariableUiElement {
 
             const [ui, actualTags] = FilterView.createFilter(filter)
 
-            ui.SetClass("mt-3")
+            ui.SetClass("mt-1")
             toShow.push(ui)
             actualTags.addCallback(tagsToFilterFor => {
                 flayer.appliedFilters.data.set(filter.id, tagsToFilterFor)
@@ -165,7 +164,7 @@ export default class FilterView extends VariableUiElement {
         }
 
         return new Combine(toShow)
-            .SetClass("flex flex-col p-2 ml-0 pl-12 bg-gray-200 pt-0 border-b-2 border-detail mb-4")
+            .SetClass("flex flex-col p-2 ml-12 pl-1 pt-0 border-b-2 border-detail mb-4")
 
     }
 

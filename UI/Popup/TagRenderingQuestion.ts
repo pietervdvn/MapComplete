@@ -111,9 +111,8 @@ export default class TagRenderingQuestion extends Combine {
 
         const saveButton = new Combine([
             options.saveButtonConstr(inputElement.GetValue()),
-            new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
         ])
-
+     
         let bottomTags: BaseUIElement;
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
@@ -142,7 +141,9 @@ export default class TagRenderingQuestion extends Combine {
             inputElement,
             options.cancelButton,
             saveButton,
-            bottomTags])
+            bottomTags,
+            new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
+            ])
 
 
         this.SetClass("question disable-links")
