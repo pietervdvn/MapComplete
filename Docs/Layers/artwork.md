@@ -23,6 +23,7 @@ Diverse pieces of artwork
 #### Themes using this layer
 
 - [artwork](https://mapcomplete.osm.be/artwork)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/artwork/artwork.json)
 

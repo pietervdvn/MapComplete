@@ -21,6 +21,7 @@ Binoculas
 #### Themes using this layer
 
 - [binoculars](https://mapcomplete.osm.be/binoculars)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/binocular/binocular.json)
 

@@ -112,8 +112,6 @@ the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/Geol
 browser.
 
 - **This layer is included automatically in every theme. This layer might contain no points**
-- This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this
-  toggleable.
 - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 [Go to the source code](../assets/layers/gps_location/gps_location.json)

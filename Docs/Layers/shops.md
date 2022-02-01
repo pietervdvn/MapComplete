@@ -26,6 +26,7 @@ A shop
 
 #### Themes using this layer
 
+- [personal](https://mapcomplete.osm.be/personal)
 - [shops](https://mapcomplete.osm.be/shops)
 
 [Go to the source code](../assets/layers/shops/shops.json)

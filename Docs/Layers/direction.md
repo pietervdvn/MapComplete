@@ -21,6 +21,7 @@ This layer visualizes directions
 
 #### Themes using this layer
 
+- [personal](https://mapcomplete.osm.be/personal)
 - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 [Go to the source code](../assets/layers/direction/direction.json)

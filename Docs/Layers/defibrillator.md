@@ -39,6 +39,7 @@ defibrillators which might need staff to fetch the actual device
 #### Themes using this layer
 
 - [aed](https://mapcomplete.osm.be/aed)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/defibrillator/defibrillator.json)
 

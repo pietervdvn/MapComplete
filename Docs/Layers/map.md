@@ -22,6 +22,7 @@ A map, meant for tourists which is permanently installed in the public space
 
 - [maps](https://mapcomplete.osm.be/maps)
 - [nature](https://mapcomplete.osm.be/nature)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/map/map.json)
 

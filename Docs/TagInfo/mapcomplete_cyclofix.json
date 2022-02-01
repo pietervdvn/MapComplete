@@ -315,8 +315,8 @@
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee, but the amount is not known' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-      "value": "yes"
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service has a fee, but the amount is not known' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes&service:bicycle:cleaning:charge="
     },
     {
       "key": "amenity",
@@ -869,6 +869,11 @@
       "value": "bicycle_wash"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+      "value": "bike_wash"
+    },
+    {
       "key": "image",
       "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -900,8 +905,8 @@
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee, but the amount is not known' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-      "value": "yes"
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service has a fee, but the amount is not known' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes&service:bicycle:cleaning:charge="
     },
     {
       "key": "charge",
@@ -1066,7 +1071,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

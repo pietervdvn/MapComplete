@@ -21,6 +21,7 @@ A layer showing facilities where one can clean their bike
 #### Themes using this layer
 
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bike_cleaning/bike_cleaning.json)
 
@@ -39,6 +40,8 @@ Elements must have the all of following tags to be shown on this layer:
   cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
   |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>
   =<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
+  |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbike_wash' target='_blank'>bike_wash</a>
 
 Supported attributes
 ----------------------
@@ -75,8 +78,9 @@ This is rendered with `Using the cleaning service costs {service:bicycle:cleanin
   no</a>_This option cannot be chosen as answer_
 - **The cleaning service has a fee, but the amount is not known** corresponds
   with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:
-  cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>
-  yes</a>
+  cleaning:fee</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes&service:bicycle:cleaning:charge=' target='_blank'>
+  yes&service:bicycle:cleaning:charge=</a>_This option cannot be chosen as answer_
 
 ### bike_cleaning-charge
 

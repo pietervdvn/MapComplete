@@ -24,6 +24,7 @@ A layer showing memorials for cyclists, killed in road accidents
 #### Themes using this layer
 
 - [ghostbikes](https://mapcomplete.osm.be/ghostbikes)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/ghost_bike/ghost_bike.json)
 

@@ -77,7 +77,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme A map of maps has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme A map of maps has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

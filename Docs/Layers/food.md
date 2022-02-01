@@ -40,6 +40,7 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
 
 - [food](https://mapcomplete.osm.be/food)
 - [fritures](https://mapcomplete.osm.be/fritures)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/food/food.json)
 

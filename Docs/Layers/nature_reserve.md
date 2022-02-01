@@ -33,6 +33,7 @@ Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.
 #### Themes using this layer
 
 - [nature](https://mapcomplete.osm.be/nature)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/nature_reserve/nature_reserve.json)
 
@@ -111,15 +112,15 @@ The question is **Wie beheert dit gebied?**
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator)
 This is rendered with `Beheer door {operator}`
 
-- **<img src="./assets/layers/nature_reserve/Natuurpunt.jpg" style="width:1.5em">Dit gebied wordt beheerd door
-  Natuurpunt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>
+- **Dit gebied wordt beheerd door Natuurpunt** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>
   =<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-- **<img src="./assets/layers/nature_reserve/Natuurpunt.jpg" style="width:1.5em">Dit gebied wordt beheerd door
-  {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen as answer_
-- **<img src="./assets/layers/nature_reserve/ANB.jpg" style="width:1.5em">Dit gebied wordt beheerd door het Agentschap
-  Natuur en Bos** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>
-  operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>
-  Agentschap Natuur en Bos</a>
+- **Dit gebied wordt beheerd door {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen
+  as answer_
+- **Dit gebied wordt beheerd door het Agentschap Natuur en Bos** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap
+  Natuur en Bos</a>
 
 ### Name:nl-tag
 

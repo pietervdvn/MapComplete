@@ -26,6 +26,7 @@ A layer showing where you can park your bike
 #### Themes using this layer
 
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bike_parking/bike_parking.json)
 

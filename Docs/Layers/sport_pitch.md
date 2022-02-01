@@ -27,6 +27,7 @@ A sport pitch
 
 #### Themes using this layer
 
+- [personal](https://mapcomplete.osm.be/personal)
 - [sport_pitches](https://mapcomplete.osm.be/sport_pitches)
 
 [Go to the source code](../assets/layers/sport_pitch/sport_pitch.json)

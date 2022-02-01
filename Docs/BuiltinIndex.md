@@ -18,6 +18,7 @@ Index of builtin TagRendering
     + [wheelchair-access](#wheelchair-access)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
+    + [payment-options-advanced](#payment-options-advanced)
     + [all_tags](#all_tags)
     + [questions](#questions)
     + [reviews](#reviews)
@@ -60,6 +61,7 @@ Existing builtin tagrenderings
 - nature_reserve
 - observation_tower
 - parking
+- picnic_table
 - play_forest
 - playground
 - public_bookcase
@@ -123,7 +125,6 @@ Existing builtin tagrenderings
 ### payment-options
 
 - cafe_pub
-- charging_station
 - food
 - observation_tower
 - toilet
@@ -144,6 +145,10 @@ Existing builtin tagrenderings
 
 - cafe_pub
 - food
+
+### payment-options-advanced
+
+- charging_station
 
 ### all_tags
 

@@ -28,6 +28,7 @@ decoration, ...
 #### Themes using this layer
 
 - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)
 

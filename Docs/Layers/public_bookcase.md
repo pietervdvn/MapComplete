@@ -32,6 +32,7 @@ A streetside cabinet with books, accessible to anyone
 #### Themes using this layer
 
 - [bookcases](https://mapcomplete.osm.be/bookcases)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/public_bookcase/public_bookcase.json)
 

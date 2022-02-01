@@ -86,7 +86,7 @@ A charging station
     + [OH](#oh)
     + [fee](#fee)
     + [charge](#charge)
-    + [payment-options](#payment-options)
+    + [payment-options-advanced](#payment-options-advanced)
     + [Authentication](#authentication)
     + [Auth phone](#auth-phone)
     + [maxstay](#maxstay)
@@ -105,6 +105,7 @@ A charging station
 #### Themes using this layer
 
 - [charging_stations](https://mapcomplete.osm.be/charging_stations)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/charging_station/charging_station.json)
 
@@ -1712,7 +1713,7 @@ The question is **How much does one have to pay to use this charging station?**
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge)
 This is rendered with `Using this charging station costs <b>{charge}</b>`
 
-### payment-options
+### payment-options-advanced
 
 The question is **Which methods of payment are accepted here?**
 

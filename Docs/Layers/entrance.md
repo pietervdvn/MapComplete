@@ -30,6 +30,7 @@ users (but also bicycle users, people who want to deliver, ...)
 #### Themes using this layer
 
 - [entrances](https://mapcomplete.osm.be/entrances)
+- [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/entrance/entrance.json)
 

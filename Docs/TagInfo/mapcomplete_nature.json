@@ -352,16 +352,16 @@
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows operator=Natuurpunt with a fixed text, namely '<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows operator=Natuurpunt with a fixed text, namely 'Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "Natuurpunt"
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely '<img src=\"./assets/layers/nature_reserve/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'De Natuur in')"
+      "description": "Layer 'Natuurgebied' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'De Natuur in')"
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows operator=Agentschap Natuur en Bos with a fixed text, namely '<img src=\"./assets/layers/nature_reserve/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
+      "description": "Layer 'Natuurgebied' shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Dit gebied wordt beheerd door het Agentschap Natuur en Bos' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
       "value": "Agentschap Natuur en Bos"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme De Natuur in has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme De Natuur in has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

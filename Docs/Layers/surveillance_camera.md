@@ -30,6 +30,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 #### Themes using this layer
 
+- [personal](https://mapcomplete.osm.be/personal)
 - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 [Go to the source code](../assets/layers/surveillance_camera/surveillance_camera.json)
