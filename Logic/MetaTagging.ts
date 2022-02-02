@@ -28,7 +28,8 @@ export default class MetaTagging {
                               state?: { allElements?: ElementStorage },
                               options?: {
                                   includeDates?: true | boolean,
-                                  includeNonDates?: true | boolean
+                                  includeNonDates?: true | boolean,
+                                  evaluateStrict?: false | boolean
                               }): boolean {
         if (features === undefined || features.length === 0) {
             return;
@@ -72,6 +73,11 @@ export default class MetaTagging {
                         }
                         somethingChanged = true;
                         metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
+                        if(options?.evaluateStrict){
+                            for (const key of metatag.keys) {
+                                feature.properties[key]
+                            }
+                        }
                     } else {
                         const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
                         /* Note that the expression:

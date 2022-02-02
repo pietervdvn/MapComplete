@@ -225,7 +225,8 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
             {},
             {
                 includeDates: false,
-                includeNonDates: true
+                includeNonDates: true,
+                evaluateStrict: true
             });
 
 
