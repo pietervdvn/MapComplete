@@ -27,9 +27,8 @@ import {Unit} from "../../Models/Unit";
 import VariableInputElement from "../Input/VariableInputElement";
 import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
-import {flattenEach, tag} from "@turf/turf";
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
+import Title from "../Base/Title";
 
 /**
  * Shows the question element.
@@ -75,8 +74,8 @@ export default class TagRenderingQuestion extends Combine {
         }
         options = options ?? {}
         const applicableUnit = (options.units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
-        const question = new SubstitutedTranslation(configuration.question, tags, state)
-            .SetClass("question-text");
+        const question = new Title(new SubstitutedTranslation(configuration.question, tags, state)
+            .SetClass("question-text"), 3);
 
 
         const inputElement: InputElement<TagsFilter> =

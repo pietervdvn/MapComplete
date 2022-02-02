@@ -88,6 +88,8 @@ h1, h2, h3, h4 {
 
 .layer-toggle {
     /* The checkbox that toggles a single layer */
+    border-top: unset;
+    margin-top: unset;
 }
 
 .filter-panel {
