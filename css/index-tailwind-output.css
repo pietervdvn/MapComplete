@@ -1394,10 +1394,6 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgba(107, 114, 128, var(--tw-border-opacity));
@@ -1550,6 +1546,10 @@ video {
   padding-top: 0.5rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pt-0 {
   padding-top: 0px;
 }
@@ -1576,10 +1576,6 @@ video {
 
 .pt-0\.5 {
   padding-top: 0.125rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .pr-2 {
@@ -1930,7 +1926,8 @@ a {
 }
 
 .btn-secondary {
-  background-color: var(--unsubtle-detail-color);
+  background-color: var(--catch-detail-color);
+  filter: saturate(0.8);
 }
 
 .btn-secondary:hover {
@@ -2354,6 +2351,25 @@ input {
   background-color: #f2f2f2;
 }
 
+.layer-toggle {
+  /* The checkbox that toggles a single layer */
+}
+
+.layer-filters {
+  /* If needed, the panel which contains the extra filters for a layer */
+  margin-bottom: 1rem;
+}
+
+.filter-panel {
+  /* The panel for a single layer, containing both the toggle and the filters (if any) */
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 0.5rem;
+}
+
+.first-filter-panel {
+  /* Additional class on the first layer filter */
+}
+
 .hover\:bg-indigo-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(199, 210, 254, var(--tw-bg-opacity));
@@ -2645,3 +2661,4 @@ input {
     display: inline;
   }
 }
+

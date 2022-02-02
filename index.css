@@ -163,7 +163,8 @@ a {
 }
 
 .btn-secondary {
-    background-color: var(--unsubtle-detail-color);
+    background-color: var(--catch-detail-color);
+    filter: saturate(0.8);
 }
 
 .btn-secondary:hover {
@@ -540,3 +541,23 @@ input {
 .zebra-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+.layer-toggle {
+    /* The checkbox that toggles a single layer */
+}
+
+.layer-filters {
+    /* If needed, the panel which contains the extra filters for a layer */
+    margin-bottom: 1rem;
+}
+
+.filter-panel {
+    /* The panel for a single layer, containing both the toggle and the filters (if any) */
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 0.5rem;
+}
+
+.first-filter-panel {
+    /* Additional class on the first layer filter */
+}
+

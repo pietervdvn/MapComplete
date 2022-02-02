@@ -32,7 +32,11 @@ export default class FilterView extends VariableUiElement {
         super(
             filteredLayer.map((filteredLayers) => {
                     // Create the views which toggle layers (and filters them) ...
-                    let elements = filteredLayers?.map(l => FilterView.createOneFilteredLayerElement(l))
+                    let elements = filteredLayers
+                        ?.map(l => FilterView.createOneFilteredLayerElement(l)?.SetClass("filter-panel"))
+                        ?.filter(l => l !== undefined)
+                    elements[0].SetClass("first-filter-panel")
+                
                     // ... create views for non-interactive layers ...
                     elements = elements.concat(tileLayers.map(tl => FilterView.createOverlayToggle(tl)))
                     // ... and add the dropdown to select a different background
@@ -115,7 +119,7 @@ export default class FilterView extends VariableUiElement {
             )
 
 
-        const toggleClasses = "layer-toggle flex flex-wrap items-center pt-2 pb-1 px-0";
+        const toggleClasses = "layer-toggle flex flex-wrap items-center pt-2 pb-2 px-0";
         const layerIcon = layer.defaultIcon()?.SetClass("flex-shrink-0 w-8 h-8 ml-2")
         const layerIconUnchecked = layer.defaultIcon()?.SetClass("flex-shrink-0 opacity-50  w-8 h-8 ml-2")
 
@@ -164,7 +168,7 @@ export default class FilterView extends VariableUiElement {
         }
 
         return new Combine(toShow)
-            .SetClass("flex flex-col p-2 ml-12 pl-1 pt-0 border-b-2 border-detail mb-4")
+            .SetClass("flex flex-col p-2 ml-12 pl-1 pt-0 layer-filters")
 
     }
 

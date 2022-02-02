@@ -61,6 +61,19 @@ h1, h2, h3, h4 {
     stroke: white !important;
 }
 
+.btn-secondary {
+    background-color: var(--unsubtle-detail-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--catch-detail-color);
+}
+
+.layer-toggle {
+    border-top: 2px solid var(--foreground-color);
+    margin-top: 0.25rem;
+}
+
 .md\:rounded-xl {
     border-radius: unset !important;
 }
@@ -71,4 +84,27 @@ h1, h2, h3, h4 {
 
 .rounded-3xl {
     border-radius: unset !important;
+}
+
+.layer-toggle {
+    /* The checkbox that toggles a single layer */
+}
+
+.filter-panel {
+    /* The panel for a single layer, containing both the toggle and the filters (if any) */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 2px solid var(--foreground-color);
+    display: block;
+    border-bottom: unset;
+    margin-bottom: unset;
+}
+
+.layer-filters {
+    /* If needed, the panel which contains the extra filters for a layer */
+}
+
+.first-filter-panel {
+    /* Additional class on the first layer filter */
+    border-top: unset !important;
 }
