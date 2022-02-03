@@ -71,7 +71,7 @@ export default class EditableTagRendering extends Toggle {
                     {
                         units: units,
                         cancelButton: Translations.t.general.cancel.Clone()
-                            .SetClass("btn btn-secondary mr-3")
+                            .SetClass("btn btn-secondary")
                             .onClick(() => {
                                 editMode.setData(false)
                             }),

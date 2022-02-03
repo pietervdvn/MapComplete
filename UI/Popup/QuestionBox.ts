@@ -42,7 +42,7 @@ export default class QuestionBox extends VariableUiElement {
                             skippedQuestions.ping();
                         },
                         cancelButton: Translations.t.general.skip.Clone()
-                            .SetClass("btn btn-secondary mr-3")
+                            .SetClass("btn btn-secondary")
                             .onClick(() => {
                                 skippedQuestions.data.push(i);
                                 skippedQuestions.ping();

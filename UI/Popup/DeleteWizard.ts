@@ -90,7 +90,7 @@ export default class DeleteWizard extends Toggle {
                 config,
                 state,
                 {
-                    cancelButton: cancelButton,
+                    cancelButton,
                     /*Using a custom save button constructor erases all logic to actually save, so we have to listen for the click!*/
                     saveButtonConstr: (v) => DeleteWizard.constructConfirmButton(v).onClick(() => {
                         doDelete(v.data)

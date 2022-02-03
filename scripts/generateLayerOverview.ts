@@ -4,7 +4,7 @@ import * as licenses from "../assets/generated/license_info.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
-import {ValidateLayer, ValidateThemeAndLayers} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {PrevalidateTheme, ValidateLayer, ValidateThemeAndLayers} from "../Models/ThemeConfig/Conversion/Validation";
 import {Translation} from "../UI/i18n/Translation";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import * as questions from "../assets/tagRenderings/questions.json";
@@ -174,6 +174,7 @@ class LayerOverviewUtils {
             let themeFile = themeInfo.parsed
             const themePath = themeInfo.path
 
+            new PrevalidateTheme().convertStrict(convertState, themeFile, themePath)
             themeFile = new PrepareTheme().convertStrict(convertState, themeFile, themePath)
 
             new ValidateThemeAndLayers(knownImagePaths, themePath, true)
@@ -196,10 +197,4 @@ class LayerOverviewUtils {
     }
 }
 
-try{
 new LayerOverviewUtils().main(process.argv)
-    
-}catch(e){
-    console.error("ERROR WHILE GENERATING THE LAYERS:", e)
-    console.log("If a weird error persists, 'npm run reset:layeroverview'")
-}

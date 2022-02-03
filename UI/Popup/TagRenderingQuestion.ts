@@ -138,8 +138,8 @@ export default class TagRenderingQuestion extends Combine {
         super([
             question,
             inputElement,
-            options.cancelButton,
-            saveButton,
+            new Combine([options.cancelButton,
+            saveButton]).SetClass("flex w-full justify-end flex-wrap-reverse"),
             bottomTags,
             new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
             ])

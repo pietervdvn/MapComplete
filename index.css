@@ -45,24 +45,49 @@
 
 
 :root {
+    /* The main colour scheme of mapcomplete is configured here.
+     * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
+     */
+
+    /* Main color of the application: the background and text colours */
+    --background-color: white;
+    /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
+    --foreground-color: black;
+    
+    /* A colour to indicate an error or warning */
+    --alert-color: #fee4d1;
+    
+    /**
+     * Base colour of interactive elements, mainly the 'subtle button'
+     * 
+     */
     --subtle-detail-color: #DBEAFE;
     --subtle-detail-color-contrast: black;
     --subtle-detail-color-light-contrast: lightgrey;
 
+    /**
+     * A stronger variant of the 'subtle-detail-colour'
+     * Used as subtle button hover
+     */
     --unsubtle-detail-color: #BFDBFE;
     --unsubtle-detail-color-contrast: black;
+    
+    
     --catch-detail-color: #3a3aeb;
     --catch-detail-color-contrast: white;
-    --alert-color: #fee4d1;
-    --background-color: white;
-    --foreground-color: black;
-    --popup-border: white;
+
+    
     --non-active-tab-svg: var(--foreground-color);
     --shadow-color: #00000066;
-    --variable-title-height: 0px; /* Set by javascript */
+    
     --return-to-the-map-height: 2em;
-
     --image-carousel-height: 350px;
+
+    /* The border colour of the leaflet popup */
+    --popup-border: white;
+
+    /* Technical variable to make some dynamic behaviour possible; set by javascript. */
+    --variable-title-height: 0px; 
 }
 
 html, body {
@@ -139,8 +164,6 @@ a {
 }
 
 .btn {
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
     line-height: 1.25rem;
     --tw-text-opacity: 1;
     color: var(--catch-detail-color-contrast);
@@ -154,6 +177,7 @@ a {
     padding-right: 1.25rem;
     font-size: large;
     font-weight: bold;
+    transition: 100ms;
     /*-- invisible border: rendered on hover*/
     border: 3px solid var(--unsubtle-detail-color);
 }
@@ -164,11 +188,13 @@ a {
 
 .btn-secondary {
     background-color: var(--catch-detail-color);
-    filter: saturate(0.8);
+    filter: saturate(0.5);
+    
 }
 
 .btn-secondary:hover {
     background-color: var(--catch-detail-color);
+    filter: unset;
 }
 
 .btn-disabled {
@@ -549,6 +575,7 @@ input {
 .layer-filters {
     /* If needed, the panel which contains the extra filters for a layer */
     margin-bottom: 1rem;
+    border-bottom: 2px solid var(--foreground-color);
 }
 
 .filter-panel {

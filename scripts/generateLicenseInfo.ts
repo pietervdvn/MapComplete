@@ -91,6 +91,14 @@ knownLicenses.set("na", {
     sources: []
 })
 
+knownLicenses.set("tv", {
+    authors: ["Toerisme Vlaanderen"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://toerismevlaanderen.be/pinjepunt","https://mapcomplete.osm.be/toerisme_vlaanderenn"]
+})
+
+
 knownLicenses.set("twemoji", {
     authors: ["Twemoji"],
     path: undefined,
@@ -223,18 +231,29 @@ function createFullLicenseOverview(licensePaths) {
 }
 
 console.log("Checking and compiling license info")
-const contents = ScriptUtils.readDirRecSync("./assets")
-    .filter(entry => entry.indexOf("./assets/generated") != 0)
-const licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
-const licenseInfos = generateLicenseInfos(licensePaths);
 
 if (!existsSync("./assets/generated")) {
     mkdirSync("./assets/generated")
 }
 
 
+let contents = ScriptUtils.readDirRecSync("./assets")
+    .filter(entry => entry.indexOf("./assets/generated") != 0)
+let licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
+let licenseInfos = generateLicenseInfos(licensePaths);
+
+
+
 const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
+if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
+    queryMissingLicenses(missingLicenses)
+    contents = ScriptUtils.readDirRecSync("./assets")
+        .filter(entry => entry.indexOf("./assets/generated") != 0)
+    licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
+    licenseInfos = generateLicenseInfos(licensePaths);
+}
+
 const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
 for (const licenseInfo of licenseInfos) {
     for (const source of licenseInfo.sources) {
@@ -248,9 +267,7 @@ for (const licenseInfo of licenseInfos) {
         }
     }
 }
-if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
-    queryMissingLicenses(missingLicenses)
-}
+
 if (missingLicenses.length > 0) {
     const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
     console.log(missingLicenses.concat(invalidLicenses).join("\n"))
