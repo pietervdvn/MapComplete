@@ -1,12 +1,15 @@
 {
   "id": "nature",
   "title": {
+    "en": "Into nature",
     "nl": "De Natuur in"
   },
   "shortDescription": {
+    "en": "A map for nature lovers, with interesting POI's",
     "nl": "Deze kaart bevat informatie voor natuurliefhebbers"
   },
   "description": {
+    "en": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
     "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
   },
   "maintainer": "",
@@ -20,8 +23,18 @@
   "layers": [
     "drinking_water",
     "birdhide",
-    "map",
-    "information_board",
-    "nature_reserve"
+    "nature_reserve",
+    {
+      "builtin": [
+        "map",
+        "information_board",
+        "bench",
+        "picnic_table",
+        "toilet"
+      ],
+      "override": {
+        "minzoom": 16
+      }
+    }
   ]
 }

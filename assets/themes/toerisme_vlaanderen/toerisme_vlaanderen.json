@@ -4,6 +4,7 @@
   "maintainer": "MapComplete",
   "version": "0.0.2",
   "customCss": "./assets/themes/toerisme_vlaanderen/custom.css",
+  "defaultBackgroundId": "CartoDB.Voyager",
   "mustHaveLanguage": [
     "nl"
   ],
@@ -26,17 +27,135 @@
   "widenFactor": 1.5,
   "layers": [
     {
+      "builtin": "toilet",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/toilets.svg",
+              "=mappings": [
+                {
+                  "if": "wheelchair=yes",
+                  "then": "./assets/themes/toerisme_vlaanderen/toilets_wheelchair.svg"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "bench",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/bench.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "picnic_table",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/picnic_table.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "observation_tower",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/observation_tower.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "playground",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/playground.svg"
+            }
+          }
+        ]
+      }
+    },
+    "bicycle_rental",
+    {
+      "builtin": "bike_repair_station",
+      "override": {
+        "minzoom": 14,
+        "=mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg"
+            },
+            "badges": [
+              {
+                "if": "service:bicycle:pump:operational_status=broken",
+                "then": "close:red"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "builtin": [
-        "toilet",
-        "bench",
-        "picnic_table",
-        "observation_tower",
-        "bike_repair_station",
-        "playground",
         "charging_station"
       ],
       "override": {
-        "minzoom": 14
+        "id": "charging_station_ebikes",
+        "minzoom": 14,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle=yes"
+            ]
+          }
+        },
+        "=filter": null,
+        "=mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": "./assets/themes/toerisme_vlaanderen/charging_station_ebike.svg"
+          }
+        ]
+      }
+    },
+    {
+      "#": "All charging stations at a high zoom level, to avoid duplicates",
+      "builtin": "charging_station",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "charging_station_ebike"
+        },
+        "minzoom": 18
       }
     }
   ],

@@ -29,7 +29,7 @@
           "hu": "Sültkrumplievő-hely"
         },
         "source": {
-          "osmTags": {
+          "=osmTags": {
             "and": [
               "cuisine=friture",
               {

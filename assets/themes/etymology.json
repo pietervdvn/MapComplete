@@ -53,7 +53,7 @@
         },
         "minzoom": 18,
         "source": {
-          "osmTags": {
+          "=osmTags": {
             "and": [
               "name~*",
               "highway~*",

@@ -1,0 +1,279 @@
+{
+  "id": "bicycle_rental",
+  "name": {
+    "en": "Bicycle rental",
+    "nl": "Fietsverhuur"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=bicycle_rental",
+        "bicycle_rental~*",
+        "service:bicycle:rental=yes",
+        "rental~.*bicycle.*"
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Bicycle rental",
+      "nl": "Fietsverhuur"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "{name}",
+          "nl": "{name}"
+        }
+      }
+    ]
+  },
+  "description": {
+    "en": "Bicycle rental stations",
+    "nl": "Fietsverhuustations"
+  },
+  "tagRenderings": [
+    {
+      "id": "bicycle_rental_type",
+      "question": {
+        "en": "What kind of bicycle rental is this?",
+        "nl": "Wat voor fietsverhuur is dit?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "shop=bicycle_rental",
+              "bicycle_rental=shop"
+            ]
+          },
+          "then": {
+            "en": "This is a shop whose main focus is bicycle rental",
+            "nl": "Dit is een zaak die focust op fietsverhuur"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "shop=rental"
+            ]
+          },
+          "then": {
+            "en": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
+            "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:rental=yes",
+              "shop=bicycle"
+            ]
+          },
+          "then": {
+            "en": "This is a shop which sells or repairs bicycles, but also rents out bicycles",
+            "nl": "Dit is een fietsenmaker of fietswinkel die ook fietsen veruurt"
+          }
+        },
+        {
+          "if": "bicycle_rental=docking_station",
+          "then": {
+            "en": "This is an automated docking station, where a bicycle is mechanically locked into a structure",
+            "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt"
+          }
+        },
+        {
+          "if": "bicycle_rental=key_dispensing_machine",
+          "then": {
+            "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
+            "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd"
+          }
+        },
+        {
+          "if": "bicycle_rental=dropoff_point",
+          "then": {
+            "en": "This is a dropoff point: a designated bicycle parking for this cycle rental",
+            "nl": "Dit is een afzetpunt: een parking met duidelijke signalisatie waar (enkel) fietsen van deze fietsverhuur gezet worden"
+          }
+        }
+      ]
+    },
+    "website",
+    "email",
+    "phone",
+    {
+      "builtin": "opening_hours",
+      "override": {
+        "condition": {
+          "or": [
+            "shop~*",
+            "opening_hours~*"
+          ]
+        }
+      }
+    },
+    {
+      "builtin": "payment-options",
+      "override": {
+        "condition": "shop~*"
+      }
+    },
+    {
+      "builtin": "payment-options-advanced",
+      "override": {
+        "condition": "shop="
+      }
+    },
+    {
+      "id": "bicycle-types",
+      "question": {
+        "en": "What kind of bicycles and accessories are rented here?",
+        "nl": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?"
+      },
+      "render": {
+        "en": "{rental} is rented here",
+        "nl": "{rental} wordt hier uitgeleend"
+      },
+      "freeform": {
+        "key": "rental"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "rental=city_bike",
+          "then": {
+            "en": "Normal city bikes can be rented here",
+            "nl": "Gewone stadsfietsen kunnen hier gehuurd worden"
+          }
+        },
+        {
+          "if": "rental=ebike",
+          "then": {
+            "en": "Electrical bikes can be rented here",
+            "nl": "Elektrische fietsen kunnen hier gehuurd worden"
+          }
+        },
+        {
+          "if": "rental=bmx",
+          "then": {
+            "en": "BMX bikes can be rented here",
+            "nl": "BMX-fietsen kunnen hier gehuurd worden"
+          }
+        },
+        {
+          "if": "rental=mtb",
+          "then": {
+            "en": "Mountainbikes can be rented here",
+            "nl": "Mountainbikes kunnen hier gehuurd worden"
+          }
+        },
+        {
+          "if": "rental=kid_bike",
+          "then": {
+            "en": "Bikes for childs can be rented here",
+            "nl": "Kinderfietsen kunnen hier gehuurd worden"
+          }
+        }
+      ]
+    },
+    {
+      "rewrite": {
+        "sourceString": [
+          "bicycle_type",
+          "type_plural"
+        ],
+        "into": [
+          [
+            "city_bike",
+            {
+              "en": "city bikes",
+              "nl": "Stadsfietsen"
+            }
+          ],
+          [
+            "ebike",
+            {
+              "en": "electrical bikes",
+              "nl": "elektrische fietsen"
+            }
+          ],
+          [
+            "kid_bike",
+            {
+              "en": "bikes for children",
+              "nl": "Kinderfietsen"
+            }
+          ],
+          [
+            "bmx",
+            {
+              "en": "BMX bikes",
+              "nl": "BMX-fietsen"
+            }
+          ],
+          [
+            "mtb",
+            {
+              "en": "mountainbike",
+              "nl": "mountainbike"
+            }
+          ],
+          [
+            "bicycle_pannier",
+            {
+              "en": "bicycle panniers",
+              "nl": "Fietstassen"
+            }
+          ]
+        ]
+      },
+      "renderings": [
+        {
+          "id": "rental-capacity-bicycle-type",
+          "group": "",
+          "question": {
+            "en": "How much type_plural can be rented here? ",
+            "nl": "Hoeveel type_plural kunnen hier uitgeleend worden?"
+          },
+          "render": {
+            "en": "{capacity:bicycle_type} type_plural can be rented here",
+            "nl": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
+          },
+          "freeform": {
+            "key": "capacity:bicycle_type",
+            "type": "pnat"
+          },
+          "condition": "rental~.*bicycle_type.*"
+        }
+      ]
+    }
+  ],
+  "presets": [],
+  "mapRendering": [
+    {
+      "icon": "./assets/themes/bicycle_rental/logo.svg",
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#3333aa88"
+      },
+      "width": {
+        "render": "2"
+      }
+    }
+  ]
+}

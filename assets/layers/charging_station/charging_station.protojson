@@ -7,11 +7,15 @@
   "minzoom": 10,
   "source": {
     "osmTags": {
-      "or": [
-        "amenity=charging_station",
-        "disused:amenity=charging_station",
-        "planned:amenity=charging_station",
-        "construction:amenity=charging_station"
+      "and": [
+        {
+          "or": [
+            "amenity=charging_station",
+            "disused:amenity=charging_station",
+            "planned:amenity=charging_station",
+            "construction:amenity=charging_station"
+          ]
+        }
       ]
     }
   },

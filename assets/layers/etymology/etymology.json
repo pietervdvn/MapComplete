@@ -9,9 +9,13 @@
   "minzoom": 12,
   "source": {
     "osmTags": {
-      "or": [
-        "name:etymology:wikidata~*",
-        "name:etymology~*"
+      "and": [
+        {
+          "or": [
+            "name:etymology:wikidata~*",
+            "name:etymology~*"
+          ]
+        }
       ]
     }
   },
