@@ -4,6 +4,7 @@ import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
+import {DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -235,18 +236,18 @@ export default class LegacyThemeLoaderSpec extends T {
                         "question": {
                             "nl": "Wat is het type inzamelpunt?"
                         },
-                        "mappings":[
+                        "mappings": [
                             {
-                                "if":"recycling_type=container",
-                                "then":"Container of vat"
+                                "if": "recycling_type=container",
+                                "then": "Container of vat"
                             },
                             {
-                                "if":"recycling_type=centre",
-                                "then":"Verwerkingsplaats of containerpark"
+                                "if": "recycling_type=centre",
+                                "then": "Verwerkingsplaats of containerpark"
                             },
                             {
-                                "if":"recycling_type=dump",
-                                "then":"Composthoop"
+                                "if": "recycling_type=dump",
+                                "then": "Composthoop"
                             }
 
                         ],
@@ -256,28 +257,28 @@ export default class LegacyThemeLoaderSpec extends T {
                         "question": {
                             "nl": "Wie mag hier organisch afval bezorgen?"
                         },
-                        "mappings":[
+                        "mappings": [
                             {
-                                "if":"access=yes",
-                                "then":"Publiek toegankelijk"
+                                "if": "access=yes",
+                                "then": "Publiek toegankelijk"
                             },
                             {
-                                "if":"access=no",
-                                "then":"Privaat"
+                                "if": "access=no",
+                                "then": "Privaat"
                             },
                             {
-                                "if":"access=permessive",
-                                "then":"Mogelijks toegelaten tot nader order"
+                                "if": "access=permessive",
+                                "then": "Mogelijks toegelaten tot nader order"
                             },
                             {
-                                "if":"access=",
-                                "then":"Waarschijnlijk publiek toegankelijk",
-                                "hideInAnswer":true
+                                "if": "access=",
+                                "then": "Waarschijnlijk publiek toegankelijk",
+                                "hideInAnswer": true
                             },
                             {
-                                "if":"access=residents",
-                                "then":"Bewoners van gemeente",
-                                "hideInAnswer":"recycling_type!=centre"
+                                "if": "access=residents",
+                                "then": "Bewoners van gemeente",
+                                "hideInAnswer": "recycling_type!=centre"
                             }
 
                         ],
@@ -294,15 +295,15 @@ export default class LegacyThemeLoaderSpec extends T {
                         "render": {
                             "nl": "De naam van dit compost-inzamelpunt is {name}"
                         },
-                        "mappings":[
+                        "mappings": [
                             {
-                                "if":{"and":["noname=yes","name="]},
-                                "then":"Heeft geen naam"
+                                "if": {"and": ["noname=yes", "name="]},
+                                "then": "Heeft geen naam"
                             },
                             {
-                                "if":"name=",
-                                "then":"Geen naam bekend",
-                                "hideInAnswer":true
+                                "if": "name=",
+                                "then": "Geen naam bekend",
+                                "hideInAnswer": true
                             }
                         ],
                         "id": "Composthoekjes-name"
@@ -410,7 +411,39 @@ export default class LegacyThemeLoaderSpec extends T {
                         render: "Some random value {minimap}"
                     })
 
-                }]
+                }],
+                ["Shadowed mappings are detected",
+                    () => {
+                        const r = new DetectShadowedMappings().convert(undefined, {
+                            mappings: [
+                                {
+                                    if: {or: ["key=value", "x=y"]},
+                                    then: "Case A"
+                                },
+                                {
+                                    if: "key=value",
+                                    then: "Shadowed"
+                                }
+                            ]
+                        }, "test");
+                    T.isTrue(r.errors.length > 0, "Failing case is not detected")
+
+                        const r0 = new DetectShadowedMappings().convert(undefined, {
+                            mappings: [
+                                {
+                                    if: {or: ["key=value", "x=y"]},
+                                    then: "Case A"
+                                },
+                                {
+                                    if: {and: ["key=value", "x=y"]},
+                                    then: "Shadowed"
+                                }
+                            ]
+                        }, "test");
+                        T.isTrue(r0.errors.length > 0, "Failing case is not detected")
+                    }
+
+                ]
             ]
         );
     }

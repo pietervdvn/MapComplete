@@ -18,9 +18,9 @@ export abstract class Conversion<TIn, TOut> {
         this.name = name ?? this.constructor.name
     }
 
-    public static strict<T>(fixed: { errors: string[], warnings: string[], result?: T }): T {
-        if (fixed?.errors?.length > 0) {
-            throw fixed.errors.join("\n");
+    public static strict<T>(fixed: { errors?: string[], warnings?: string[], result?: T }): T {
+        if (fixed?.errors !== undefined &&  fixed?.errors?.length > 0) {
+            throw fixed.errors.join("\n\n");
         }
         fixed.warnings?.forEach(w => console.warn(w))
         return fixed.result;
@@ -31,9 +31,12 @@ export abstract class Conversion<TIn, TOut> {
         return DesugaringStep.strict(fixed)
     }
 
-    abstract convert(state: DesugaringContext, json: TIn, context: string): { result: TOut, errors: string[], warnings: string[] }
+    abstract convert(state: DesugaringContext, json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[] }
 
     public convertAll(state: DesugaringContext, jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[] } {
+        if(jsons === undefined){
+            throw "convertAll received undefined - don't do this (at "+context+")"
+        }
         const result = []
         const errors = []
         const warnings = []
@@ -41,8 +44,8 @@ export abstract class Conversion<TIn, TOut> {
             const json = jsons[i];
             const r = this.convert(state, json, context + "[" + i + "]")
             result.push(r.result)
-            errors.push(...r.errors)
-            warnings.push(...r.warnings)
+            errors.push(...r.errors ?? [])
+            warnings.push(...r.warnings ?? [])
         }
         return {
             result,
@@ -66,7 +69,7 @@ export class OnEvery<X, T> extends DesugaringStep<T> {
         this.key = key;
     }
 
-    convert(state: DesugaringContext, json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(state: DesugaringContext, json: T, context: string): { result: T; errors?: string[]; warnings?: string[] } {
         json = {...json}
         const step = this.step
         const key = this.key;
@@ -132,8 +135,8 @@ export class Fuse<T> extends DesugaringStep<T> {
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
             let r = step.convert(state, json, "While running step " +step.name + ": " + context)
-            errors.push(...r.errors)
-            warnings.push(...r.warnings)
+            errors.push(...r.errors ?? [])
+            warnings.push(...r.warnings ?? [])
             json = r.result
             if (errors.length > 0) {
                 break;

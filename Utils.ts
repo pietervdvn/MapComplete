@@ -301,6 +301,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @return the second parameter as is
      */
     static Merge(source: any, target: any) {
+        if (target === null) {
+            return source
+        }
+        
         for (const key in source) {
             if (!source.hasOwnProperty(key)) {
                 continue
@@ -327,10 +331,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 continue;
             }
 
-            const sourceV = source[key];
-            if (target === null) {
-                return source
-            }
+            const sourceV = source[key]
             const targetV = target[key]
             if (typeof sourceV === "object") {
                 if (sourceV === null) {
@@ -667,6 +668,28 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             g: parseInt(hex.substr(3, 2), 16),
             b: parseInt(hex.substr(5, 2), 16),
         }
+    }
+
+    public static levenshteinDistance (str1: string, str2: string) {
+        const track = Array(str2.length + 1).fill(null).map(() =>
+            Array(str1.length + 1).fill(null));
+        for (let i = 0; i <= str1.length; i += 1) {
+            track[0][i] = i;
+        }
+        for (let j = 0; j <= str2.length; j += 1) {
+            track[j][0] = j;
+        }
+        for (let j = 1; j <= str2.length; j += 1) {
+            for (let i = 1; i <= str1.length; i += 1) {
+                const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                track[j][i] = Math.min(
+                    track[j][i - 1] + 1, // deletion
+                    track[j - 1][i] + 1, // insertion
+                    track[j - 1][i - 1] + indicator, // substitution
+                );
+            }
+        }
+        return track[str2.length][str1.length];
     }
 }
 

@@ -45,6 +45,9 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
 
         const pointRenderings = (layerJson.mapRendering ?? []).filter(r => r !== null && r["location"] !== undefined);
         const firstRender = <PointRenderingConfigJson>(pointRenderings [0])
+        if(firstRender === undefined){
+            throw `Layer ${layerJson.id} does not have a pointRendering: `+context
+        }
         const icon = firstRender.icon
         const iconBadges = []
         const title = layer.presets[0].title

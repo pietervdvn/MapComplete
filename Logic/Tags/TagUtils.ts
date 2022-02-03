@@ -285,6 +285,10 @@ export class TagUtils {
             throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
 
         }
+        
+        if(json.and !== undefined && json.or !== undefined){
+            throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`}
+        
         if (json.and !== undefined) {
             return new And(json.and.map(t => TagUtils.Tag(t, context)));
         }

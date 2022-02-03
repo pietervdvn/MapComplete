@@ -10,21 +10,35 @@ import LayerConfig from "../LayerConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 import DependencyCalculator from "../DependencyCalculator";
+import {ValidateThemeAndLayers} from "./Validation";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
     constructor() {
         super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", []);
     }
-
+    
     convert(state: DesugaringContext, json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
+        
+        function reportNotFound(name: string){
+            const knownLayers = Array.from(state.sharedLayers.keys())
+            const withDistance = knownLayers.map(lname => [lname,  Utils.levenshteinDistance(name, lname)])
+            withDistance.sort((a, b) => a[1] - b[1])
+            const ids = withDistance.map(n => n[0])
+           // Known builtin layers are "+.join(",")+"\n    For more information, see "
+            errors.push(`${context}: The layer with name ${name} was not found as a builtin layer. Perhaps you meant ${ids[0]}, ${ids[1]} or ${ids[2]}?
+ For an overview of all available layers, refer to https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md`)
+        }
+        
+        
         if (typeof json === "string") {
             const found = state.sharedLayers.get(json)
             if (found === undefined) {
+                reportNotFound(json)
                 return {
                     result: null,
-                    errors: [context + ": The layer with name " + json + " was not found as a builtin layer"],
+                    errors,
                     warnings
                 }
             }
@@ -43,7 +57,7 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
             for (const name of names) {
                 const found = Utils.Clone(state.sharedLayers.get(name))
                 if (found === undefined) {
-                    errors.push(context + ": The layer with name " + JSON.stringify(json) + " was not found as a builtin layer. Known builtin layers are "+Array.from(state.sharedLayers.keys()).join(",")+"\n    For more information, see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md" )
+                    reportNotFound(name)
                     continue
                 }
                 if (json["override"]["tagRenderings"] !== undefined && (found["tagRenderings"] ?? []).length > 0) {
