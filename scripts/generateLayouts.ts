@@ -6,6 +6,8 @@ import Constants from "../Models/Constants";
 import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import xml2js from 'xml2js';
+import {exec} from "child_process";
 
 const sharp = require('sharp');
 const template = readFileSync("theme.html", "utf8");
@@ -35,7 +37,7 @@ async function createIcon(iconPath: string, size: number) {
         readFileSync(newname);
         return newname; // File already exists - nothing to do
     } catch (e) {
-        // Errors are normal here if this file exists
+        // Errors are normal here if this file does not exists
     }
 
     try {
@@ -60,8 +62,29 @@ async function createManifest(layout: LayoutConfig) {
 
     let icon = layout.icon;
     if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
-        // This is an svg. Lets create the needed pngs!
+        // This is an svg. Lets create the needed pngs and do some checkes!
 
+        {
+            const svgResult = await xml2js.parseStringPromise(readFileSync(icon, "UTF8"))
+            const svg = svgResult.svg
+            const width: string = svg.$.width;
+            const height: string = svg.$.height;
+            if(width !== height){
+                console.warn("WARNING: the icon for theme "+layout.id+" is not square. Please square the icon at "+icon+"\n   Width = "+width, "height =", height)
+               /* const process = exec("inkscape " + icon, ((error, stdout, stderr) => {
+                    console.log("Inkscape: ", stdout)
+                    if (error !== null) {
+                        console.error(error)
+                    }
+                    if (stderr !== "") {
+                        console.error(stderr)
+                    }
+                }))//*/
+        
+            }
+ 
+        }
+        
         let path = layout.icon;
         if (layout.icon.startsWith("<")) {
             // THis is already the svg
