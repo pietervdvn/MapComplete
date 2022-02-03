@@ -3302,6 +3302,17 @@
                 "question": "Wie onderhoudt deze toren?",
                 "render": "Wordt onderhouden door <b>{operator}</b>"
             },
+            "elevator": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt"
+                    },
+                    "1": {
+                        "then": "Deze toren heeft geen lift"
+                    }
+                },
+                "question": "Heeft deze toren een lift?"
+            },
             "name": {
                 "mappings": {
                     "0": {
@@ -3310,6 +3321,10 @@
                 },
                 "question": "Heeft deze toren een naam?",
                 "render": "Deze toren heet <b>{name}</b>"
+            },
+            "step_count": {
+                "question": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?",
+                "render": "Deze toren heeft {step_count} traptredes"
             }
         },
         "title": {

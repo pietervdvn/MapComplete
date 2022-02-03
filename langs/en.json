@@ -453,6 +453,7 @@
         "loginToClose": "Login to close this note",
         "createNoteTitle": "Create a new note here",
         "createNote": "Create a new note",
+        "textNeeded": "Enter a descriptive text to create a note",
         "noteIsPublic": "This will be visible to everyone",
         "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers",
         "warnAnonymous": "You are not logged in. We won't be able to contact you to resolve your issue.",

@@ -23,6 +23,7 @@ import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 import MapState from "../State/MapState";
 import {ElementStorage} from "../ElementStorage";
+import MetaTagging from "../MetaTagging";
 
 
 /**
@@ -61,6 +62,8 @@ export default class FeaturePipeline {
     private readonly oldestAllowedDate: Date;
     private readonly osmSourceZoomLevel
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
+    
+    private readonly newGeometryHandler : NewGeometryFromChangesFeatureSource;
 
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
@@ -300,6 +303,7 @@ export default class FeaturePipeline {
 
         // Also load points/lines that are newly added. 
         const newGeometry = new NewGeometryFromChangesFeatureSource(state.changes, state.allElements, state.osmConnection._oauth_config.url)
+        this.newGeometryHandler = newGeometry;
         newGeometry.features.addCallbackAndRun(geometries => {
             console.debug("New geometries are:", geometries)
         })
@@ -482,4 +486,14 @@ export default class FeaturePipeline {
         return updater;
     }
 
+    /**
+    * Inject a new point
+     */
+    InjectNewPoint(geojson) {
+        this.newGeometryHandler.features.data.push({
+            feature: geojson,
+            freshness: new Date()
+        })
+        this.newGeometryHandler.features.ping();
+    }
 }
