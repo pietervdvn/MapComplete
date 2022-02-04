@@ -77,22 +77,28 @@
       "id": "Height"
     },
     {
+      "id": "access",
       "question": {
-        "en": "Who maintains this tower?",
-        "nl": "Wie onderhoudt deze toren?",
-        "de": "Wer betreibt diesen Turm?"
+        "en": "Can this tower be visited?",
+        "nl": "Is deze toren publiek toegankelijk?"
       },
-      "render": {
-        "nl": "Wordt onderhouden door <b>{operator}</b>",
-        "en": "Maintained by <b>{operator}</b>",
-        "de": "Betrieben von <b>{operator}</b>"
-      },
-      "freeform": {
-        "key": "operator"
-      },
-      "id": "Operator"
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "This tower is publicly accessible",
+            "nl": "Deze toren is publiek toegankelijk"
+          }
+        },
+        {
+          "if": "access=guided",
+          "then": {
+            "en": "This tower can only be visited with a guide",
+            "nl": "Deze toren can enkel bezocht worden met een gids"
+          }
+        }
+      ]
     },
-    "website",
     {
       "question": {
         "en": "How much does one have to pay to enter this tower?",
@@ -125,7 +131,13 @@
           }
         }
       ],
-      "id": "Fee"
+      "id": "Fee",
+      "condition": {
+        "or": [
+          "access=yes",
+          "access=guided"
+        ]
+      }
     },
     {
       "builtin": "payment-options",
@@ -139,6 +151,7 @@
       },
       "id": "Payment methods"
     },
+    "website",
     {
       "id": "step_count",
       "question": {
@@ -152,6 +165,12 @@
       "render": {
         "en": "This tower has {step_count} steps to reach the top",
         "nl": "Deze toren heeft {step_count} traptredes"
+      },
+      "condition": {
+            "or": [
+              "access=yes",
+              "access=guided"
+            ]
       }
     },
     {
@@ -175,27 +194,47 @@
             "nl": "Deze toren heeft geen lift"
           }
         }
-      ]
-    },
-    "wheelchair-access",
-    "wikipedia"
-  ],
-  "presets": [
-    {
-      "tags": [
-        "man_made=tower",
-        "tower:type=observation"
       ],
-      "title": {
-        "en": "observation tower",
-        "nl": "Uitkijktoren",
-        "ru": "смотровая башня",
-        "de": "Beobachtungsturm"
-      },
-      "description": {
-        "nl": "Een publiek toegankelijke uitkijktoren"
+      "condition": {
+        "or": [
+          "access=yes",
+          "access=guided"
+        ]
       }
-    }
+    },
+    {
+      "question": {
+        "en": "Who maintains this tower?",
+        "nl": "Wie onderhoudt deze toren?",
+        "de": "Wer betreibt diesen Turm?"
+      },
+      "render": {
+        "nl": "Wordt onderhouden door <b>{operator}</b>",
+        "en": "Maintained by <b>{operator}</b>",
+        "de": "Betrieben von <b>{operator}</b>"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "id": "Operator"
+    },
+    {
+      "builtin": "wheelchair-access",
+      "override": {
+        "condition": {
+          "and": [
+            "elevator=yes",
+            {
+              "or": [
+                "access=yes",
+                "access=guided"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "wikipedia"
   ],
   "source": {
     "osmTags": {

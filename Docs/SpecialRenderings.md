@@ -165,6 +165,7 @@ name | default | description
 ------ | --------- | -------------
 key | opening_hours | The tagkey from which the table is constructed.
 prefix | _empty string_ | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to
+
 indicate `(` if needed__
 postfix | _empty string_ | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to
 indicate `)` if needed__
@@ -492,7 +493,9 @@ tags_to_apply | _undefined_ | A specification of the tags to apply
 message | _undefined_ | The text to show to the contributor
 image | _undefined_ | An image to show to the contributor on the button
 id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _
-another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _
+
+another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags
+are still calculated based on the tags of the _
 selected_ element
 
 #### Example usage of tag_apply
