@@ -105,7 +105,6 @@
     "dependency-cruiser": "^10.4.0",
     "fs": "0.0.1-security",
     "git-json-merge": "^0.4.5",
-    "marked": "^2.0.0",
     "read-file": "^0.2.0",
     "sharp": "^0.28.3",
     "ts-node": "^9.0.0",
