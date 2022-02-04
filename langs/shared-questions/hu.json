@@ -111,6 +111,18 @@
                 }
             },
             "question": "Mi a megfelelő szócikk a Wikipédián?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "Fizetési tagsági kártyával"
+                    },
+                    "0": {
+                        "then": "Fizetés erre a célra szolgáló alkalmazással"
+                    }
+                }
+            }
         }
     }
 }
