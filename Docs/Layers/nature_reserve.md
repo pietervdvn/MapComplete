@@ -71,7 +71,6 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description:0#values) [description:0](https://wiki.openstreetmap.org/wiki/Key:description:0) | [string](../SpecialInputElements.md#string) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_surface:ha#values) [_surface:ha](https://wiki.openstreetmap.org/wiki/Key:_surface:ha) | Multiple choice | [0](https://wiki.openstreetmap.org/wiki/Tag:_surface:ha%3D0)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |
 
 ### images
@@ -202,9 +201,6 @@ This is rendered with `Extra info: <i>{description:0}</i>`
 ### Surface area
 
 _This tagrendering has no question and is thus read-only_
-
-- **** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_surface:ha' target='_blank'>_surface:ha</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:_surface:ha%3D0' target='_blank'>0</a>
 
 ### wikipedia
 

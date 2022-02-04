@@ -31,6 +31,7 @@ A layer showing (public) toilets
 
 #### Themes using this layer
 
+- [nature](https://mapcomplete.osm.be/nature)
 - [personal](https://mapcomplete.osm.be/personal)
 - [toilets](https://mapcomplete.osm.be/toilets)
 

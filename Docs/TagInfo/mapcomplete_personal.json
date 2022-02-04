@@ -478,6 +478,175 @@
     },
     {
       "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle rental showing features with this tag",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle rental showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=bicycle_rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows shop=bicycle_rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "shop"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rental"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bicycle"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked into a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "docking_station"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "key_dispensing_machine"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point: a designated bicycle parking for this cycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "dropoff_point"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle rental' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle rental' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle rental' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'rental' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for childs can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "kid_bike"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:city_bike' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:ebike' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:kid_bike' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bmx' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:mtb' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Bicycle library showing features with this tag",
       "value": "bicycle_library"
     },
@@ -4951,27 +5120,6 @@
       "value": "Agentschap Natuur en Bos"
     },
     {
-      "key": "information",
-      "description": "The MapComplete theme Personal theme has a layer Information boards showing features with this tag",
-      "value": "board"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Natuurgebied showing features with this tag",
       "value": "nature_reserve"
@@ -5146,6 +5294,222 @@
       "value": ""
     },
     {
+      "key": "information",
+      "description": "The MapComplete theme Personal theme has a layer Information boards showing features with this tag",
+      "value": "board"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Toilets showing features with this tag",
+      "value": "toilets"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "public"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "24/7"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "seated"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "urinal"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "squat"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "seated;urinal"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Toilets' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Toilets' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "female_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "male_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "dedicated_room"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "id",
       "description": "The MapComplete theme Personal theme has a layer OpenStreetMap notes showing features with this tag"
     },
@@ -5218,6 +5582,20 @@
       "key": "payment:cards",
       "description": "Layer 'Observation towers' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
+    },
+    {
+      "key": "step_count",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'step_count' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "elevator",
+      "description": "Layer 'Observation towers' shows elevator=yes with a fixed text, namely 'This tower has an elevator which takes visitors to the top' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "elevator",
+      "description": "Layer 'Observation towers' shows elevator=no with a fixed text, namely 'This tower does not have an elevator' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
     },
     {
       "key": "wheelchair",
@@ -5501,6 +5879,16 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Shop' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
     },
     {
       "key": "leisure",
@@ -5981,201 +6369,6 @@
       "key": "camera:mount",
       "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "ceiling"
-    },
-    {
-      "key": "amenity",
-      "description": "The MapComplete theme Personal theme has a layer Toilets showing features with this tag",
-      "value": "toilets"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "key"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "public"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "charge",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "payment:cash",
-      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:cards",
-      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "24/7"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Toilets' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "toilets:position",
-      "description": "Layer 'Toilets' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "seated"
-    },
-    {
-      "key": "toilets:position",
-      "description": "Layer 'Toilets' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "urinal"
-    },
-    {
-      "key": "toilets:position",
-      "description": "Layer 'Toilets' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "squat"
-    },
-    {
-      "key": "toilets:position",
-      "description": "Layer 'Toilets' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "seated;urinal"
-    },
-    {
-      "key": "changing_table",
-      "description": "Layer 'Toilets' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "changing_table",
-      "description": "Layer 'Toilets' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "female_toilet"
-    },
-    {
-      "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "male_toilet"
-    },
-    {
-      "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "wheelchair_toilet"
-    },
-    {
-      "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "dedicated_room"
-    },
-    {
-      "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'This toilets have a sink to wash your hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "toilets:handwashing",
-      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'This toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "underground"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "0"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
-      "value": ""
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "1"
-    },
-    {
-      "key": "description",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "natural",

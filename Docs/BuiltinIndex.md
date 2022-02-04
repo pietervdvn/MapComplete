@@ -12,13 +12,13 @@ Index of builtin TagRendering
     + [email](#email)
     + [opening_hours](#opening_hours)
     + [description](#description)
+    + [payment-options](#payment-options)
+    + [payment-options-advanced](#payment-options-advanced)
     + [level](#level)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
-    + [payment-options](#payment-options)
     + [wheelchair-access](#wheelchair-access)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
-    + [payment-options-advanced](#payment-options-advanced)
     + [all_tags](#all_tags)
     + [questions](#questions)
     + [reviews](#reviews)
@@ -79,6 +79,7 @@ Existing builtin tagrenderings
 ### website
 
 - bicycle_library
+- bicycle_rental
 - bike_themed_object
 - cafe_pub
 - food
@@ -87,6 +88,7 @@ Existing builtin tagrenderings
 ### phone
 
 - bicycle_library
+- bicycle_rental
 - bike_themed_object
 - cafe_pub
 - food
@@ -94,6 +96,7 @@ Existing builtin tagrenderings
 ### email
 
 - bicycle_library
+- bicycle_rental
 - bike_themed_object
 - cafe_pub
 - food
@@ -101,6 +104,7 @@ Existing builtin tagrenderings
 ### opening_hours
 
 - bicycle_library
+- bicycle_rental
 - bike_themed_object
 - cafe_pub
 - food
@@ -112,6 +116,20 @@ Existing builtin tagrenderings
 - bike_themed_object
 - toilet
 
+### payment-options
+
+- bicycle_rental
+- cafe_pub
+- food
+- observation_tower
+- shops
+- toilet
+
+### payment-options-advanced
+
+- bicycle_rental
+- charging_station
+
 ### level
 
 - bike_repair_station
@@ -121,13 +139,6 @@ Existing builtin tagrenderings
 ### bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge
 
 - bike_shop
-
-### payment-options
-
-- cafe_pub
-- food
-- observation_tower
-- toilet
 
 ### wheelchair-access
 
@@ -145,10 +156,6 @@ Existing builtin tagrenderings
 
 - cafe_pub
 - food
-
-### payment-options-advanced
-
-- charging_station
 
 ### all_tags
 

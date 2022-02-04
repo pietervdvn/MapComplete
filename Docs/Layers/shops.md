@@ -21,6 +21,7 @@ A shop
     + [shops-website](#shops-website)
     + [shops-email](#shops-email)
     + [shops-opening_hours](#shops-opening_hours)
+    + [payment-options](#payment-options)
     + [questions](#questions)
     + [reviews](#reviews)
 
@@ -119,6 +120,21 @@ The question is **What are the opening hours of this shop?**
 This rendering asks information about the
 property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 This is rendered with `{opening_hours_table(opening_hours)}`
+
+### payment-options
+
+The question is **Which methods of payment are accepted here?**
+
+- **Cash is accepted here** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>Unselecting this answer
+  will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+- **Payment cards are accepted here** corresponds
+  with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>Unselecting this answer
+  will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>
+  =<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 ### questions
 

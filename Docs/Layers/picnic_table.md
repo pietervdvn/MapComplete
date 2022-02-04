@@ -20,6 +20,7 @@ The layer showing picnic tables
 #### Themes using this layer
 
 - [benches](https://mapcomplete.osm.be/benches)
+- [nature](https://mapcomplete.osm.be/nature)
 - [personal](https://mapcomplete.osm.be/personal)
 
 [Go to the source code](../assets/layers/picnic_table/picnic_table.json)

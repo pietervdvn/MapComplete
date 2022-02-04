@@ -81,6 +81,20 @@
       "value": "yes"
     },
     {
+      "key": "step_count",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'step_count' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "elevator",
+      "description": "Layer 'Observation towers' shows elevator=yes with a fixed text, namely 'This tower has an elevator which takes visitors to the top' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "elevator",
+      "description": "Layer 'Observation towers' shows elevator=no with a fixed text, namely 'This tower does not have an elevator' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "no"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Observation towers' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
       "value": "designated"
