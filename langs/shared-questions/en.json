@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Located on the first floor"
+                },
+                "4": {
+                    "then": "Located on the first basement level"
                 }
             },
             "question": "On what level is this feature located?",

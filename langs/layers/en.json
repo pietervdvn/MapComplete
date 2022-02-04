@@ -765,7 +765,7 @@
     },
     "bike_repair_station": {
         "description": "A layer showing bicycle pumps and bicycle repair tool stands",
-        "name": "Bike stations (repair, pump or both)",
+        "name": "Bicycle pump and repair",
         "presets": {
             "0": {
                 "description": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
@@ -806,7 +806,7 @@
                         "then": "There are both tools and a pump present"
                     }
                 },
-                "question": "Which services are available at this bike station?"
+                "question": "Which services are available at this location?"
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
@@ -861,9 +861,6 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Always open"
-                    },
-                    "1": {
                         "then": "Always open"
                     }
                 },

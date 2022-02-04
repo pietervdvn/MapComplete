@@ -812,6 +812,13 @@
           "ca": "Situat a primera planta",
           "ja": "1階にあります"
         }
+      },
+      {
+        "if": "level=-1",
+        "then": {
+          "en": "Located on the first basement level",
+          "nl": "Bevindt zich in de eerste kelderverdieping"
+        }
       }
     ]
   }

@@ -102,7 +102,9 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                     feature: null,
                     id: id,
                     name: name,
-                    layer: () => L.tileLayer.provider(id, undefined),
+                    layer: () => L.tileLayer.provider(id, {
+                        maxNativeZoom: layer.opttions.maxZoom
+                    }),
                     min_zoom: 1,
                     max_zoom: layer.options.maxZoom,
                     category: "osmbasedmap",
