@@ -143,8 +143,8 @@ export default class DetermineLayout {
             tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
             sharedLayers: knownLayersDict
         }
-        json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
-        json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
+        json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
+        json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
         console.log("The layoutconfig is ", json)
         return json
     }
