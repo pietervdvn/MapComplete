@@ -3467,11 +3467,6 @@
     "observation_tower": {
         "description": "Towers with a panoramic view",
         "name": "Observation towers",
-        "presets": {
-            "0": {
-                "title": "observation tower"
-            }
-        },
         "tagRenderings": {
             "Fee": {
                 "mappings": {

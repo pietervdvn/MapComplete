@@ -3366,12 +3366,6 @@
     "observation_tower": {
         "description": "Torens om van het uitzicht te genieten",
         "name": "Uitkijktorens",
-        "presets": {
-            "0": {
-                "description": "Een publiek toegankelijke uitkijktoren",
-                "title": "Uitkijktoren"
-            }
-        },
         "tagRenderings": {
             "Fee": {
                 "mappings": {

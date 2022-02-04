@@ -661,7 +661,8 @@
           "icon": "./assets/svg/smartphone.svg",
           "then": {
             "en": "Payment is done using a dedicated app",
-            "nl": "Betalen via een app van het netwerk"
+            "nl": "Betalen via een app van het netwerk",
+            "hu": "Fizetés erre a célra szolgáló alkalmazással"
           }
         },
         {
@@ -670,7 +671,8 @@
           "icon": "./assets/svg/nfc_card.svg",
           "then": {
             "en": "Payment is done using a membership card",
-            "nl": "Betalen via een lidkaart van het netwerk"
+            "nl": "Betalen via een lidkaart van het netwerk",
+            "hu": "Fizetési tagsági kártyával"
           }
         }
       ]

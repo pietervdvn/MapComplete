@@ -167,10 +167,10 @@
         "nl": "Deze toren heeft {step_count} traptredes"
       },
       "condition": {
-            "or": [
-              "access=yes",
-              "access=guided"
-            ]
+        "or": [
+          "access=yes",
+          "access=guided"
+        ]
       }
     },
     {
