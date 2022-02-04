@@ -596,9 +596,6 @@
                 "mappings": {
                     "0": {
                         "then": "Sempre aperto"
-                    },
-                    "1": {
-                        "then": "Sempre aperto"
                     }
                 },
                 "question": "Quando è aperto questo punto riparazione bici?"

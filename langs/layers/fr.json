@@ -719,9 +719,6 @@
                 "mappings": {
                     "0": {
                         "then": "Ouvert en permanence"
-                    },
-                    "1": {
-                        "then": "Ouvert en permanence"
                     }
                 },
                 "question": "Quand ce point de réparation de vélo est-il ouvert ?"

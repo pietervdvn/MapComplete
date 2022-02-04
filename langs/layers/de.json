@@ -757,9 +757,6 @@
                 "mappings": {
                     "0": {
                         "then": "Immer geöffnet"
-                    },
-                    "1": {
-                        "then": "Immer geöffnet"
                     }
                 },
                 "question": "Wann ist diese Fahrradreparaturstelle geöffnet?"

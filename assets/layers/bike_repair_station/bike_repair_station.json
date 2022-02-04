@@ -1,8 +1,8 @@
 {
   "id": "bike_repair_station",
   "name": {
-    "en": "Bike stations (repair, pump or both)",
-    "nl": "Fietspunten (herstel, pomp of allebei)",
+    "en": "Bicycle pump and repair",
+    "nl": "Fietspomp and fietsherstel",
     "fr": "Station velo (réparation, pompe à vélo)",
     "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
     "de": "Fahrradstationen (Reparatur, Pumpe oder beides)",
@@ -138,8 +138,8 @@
     {
       "id": "bike_repair_station-available-services",
       "question": {
-        "en": "Which services are available at this bike station?",
-        "nl": "Welke functies biedt dit fietspunt?",
+        "en": "Which services are available at this location?",
+        "nl": "Welke functies biedt locatie?",
         "fr": "Quels services sont valables à cette station vélo ?",
         "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
         "de": "Welche Einrichtungen stehen an dieser Fahrradstation zur Verfügung?",
@@ -206,6 +206,81 @@
     },
     {
       "question": {
+        "en": "Is the bike pump still operational?",
+        "nl": "Werkt de fietspomp nog?",
+        "fr": "La pompe à vélo fonctionne-t-elle toujours ?",
+        "gl": "Segue a funcionar a bomba de ar?",
+        "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
+        "it": "La pompa per bici è sempre funzionante?",
+        "ru": "Велосипедный насос все еще работает?",
+        "pl": "Czy pompka rowerowa jest nadal sprawna?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:pump:operational_status=broken",
+          "then": {
+            "en": "The bike pump is broken",
+            "nl": "De fietspomp is kapot",
+            "fr": "La pompe à vélo est cassée",
+            "gl": "A bomba de ar está estragada",
+            "de": "Die Fahrradpumpe ist kaputt",
+            "it": "La pompa per bici è guasta",
+            "ru": "Велосипедный насос сломан",
+            "pl": "Pompka rowerowa jest zepsuta"
+          }
+        },
+        {
+          "if": "service:bicycle:pump:operational_status=operational",
+          "then": {
+            "en": "The bike pump is operational",
+            "nl": "De fietspomp werkt nog",
+            "fr": "La pompe est opérationnelle",
+            "gl": "A bomba de ar está operativa",
+            "de": "Die Fahrradpumpe ist betriebsbereit",
+            "it": "La pompa per bici funziona",
+            "ru": "Велосипедный насос работает",
+            "pl": "Pompka rowerowa jest sprawna"
+          }
+        }
+      ],
+      "id": "Operational status"
+    },
+    {
+      "question": {
+        "nl": "Wanneer is dit fietsherstelpunt open?",
+        "en": "When is this bicycle repair point open?",
+        "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
+        "it": "Quando è aperto questo punto riparazione bici?",
+        "de": "Wann ist diese Fahrradreparaturstelle geöffnet?",
+        "ru": "Когда работает эта точка обслуживания велосипедов?"
+      },
+      "render": "{opening_hours_table()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "nl": "Dag en nacht open",
+            "en": "Always open",
+            "fr": "Ouvert en permanence",
+            "it": "Sempre aperto",
+            "de": "Immer geöffnet",
+            "ru": "Всегда открыто",
+            "pt_BR": "Sempre aberto",
+            "pt": "Sempre aberto"
+          }
+        }
+      ],
+      "id": "bike_repair_station-opening_hours"
+    },
+
+
+    {
+      "question": {
         "en": "Who maintains this cycle pump?",
         "nl": "Wie beheert deze fietspomp?",
         "fr": "Qui maintient cette pompe à vélo ?",
@@ -226,13 +301,6 @@
       "freeform": {
         "key": "operator"
       },
-      "mappings": [
-        {
-          "if": "operator=De Fietsambassade Gent",
-          "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>",
-          "hideInAnswer": "_country!=be"
-        }
-      ],
       "id": "bike_repair_station-operator"
     },
     {
@@ -263,50 +331,7 @@
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "id": "bike_repair_station-phone"
     },
-    {
-      "question": {
-        "nl": "Wanneer is dit fietsherstelpunt open?",
-        "en": "When is this bicycle repair point open?",
-        "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
-        "it": "Quando è aperto questo punto riparazione bici?",
-        "de": "Wann ist diese Fahrradreparaturstelle geöffnet?",
-        "ru": "Когда работает эта точка обслуживания велосипедов?"
-      },
-      "render": "{opening_hours_table()}",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "nl": "Dag en nacht open",
-            "en": "Always open",
-            "fr": "Ouvert en permanence",
-            "it": "Sempre aperto",
-            "de": "Immer geöffnet",
-            "ru": "Всегда открыто",
-            "pt_BR": "Sempre aberto",
-            "pt": "Sempre aberto"
-          }
-        },
-        {
-          "if": "opening_hours=",
-          "then": {
-            "nl": "Dag en nacht open",
-            "en": "Always open",
-            "fr": "Ouvert en permanence",
-            "it": "Sempre aperto",
-            "de": "Immer geöffnet",
-            "pt_BR": "Sempre aberto",
-            "pt": "Sempre aberto"
-          },
-          "hideInAnswer": true
-        }
-      ],
-      "id": "bike_repair_station-opening_hours"
-    },
+    
     {
       "id": "bike_repair_station-bike-chain-tool",
       "question": {
@@ -386,48 +411,6 @@
           }
         }
       ]
-    },
-    {
-      "question": {
-        "en": "Is the bike pump still operational?",
-        "nl": "Werkt de fietspomp nog?",
-        "fr": "La pompe à vélo fonctionne-t-elle toujours ?",
-        "gl": "Segue a funcionar a bomba de ar?",
-        "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
-        "it": "La pompa per bici è sempre funzionante?",
-        "ru": "Велосипедный насос все еще работает?",
-        "pl": "Czy pompka rowerowa jest nadal sprawna?"
-      },
-      "condition": "service:bicycle:pump=yes",
-      "mappings": [
-        {
-          "if": "service:bicycle:pump:operational_status=broken",
-          "then": {
-            "en": "The bike pump is broken",
-            "nl": "De fietspomp is kapot",
-            "fr": "La pompe à vélo est cassée",
-            "gl": "A bomba de ar está estragada",
-            "de": "Die Fahrradpumpe ist kaputt",
-            "it": "La pompa per bici è guasta",
-            "ru": "Велосипедный насос сломан",
-            "pl": "Pompka rowerowa jest zepsuta"
-          }
-        },
-        {
-          "if": "service:bicycle:pump:operational_status=",
-          "then": {
-            "en": "The bike pump is operational",
-            "nl": "De fietspomp werkt nog",
-            "fr": "La pompe est opérationnelle",
-            "gl": "A bomba de ar está operativa",
-            "de": "Die Fahrradpumpe ist betriebsbereit",
-            "it": "La pompa per bici funziona",
-            "ru": "Велосипедный насос работает",
-            "pl": "Pompka rowerowa jest sprawna"
-          }
-        }
-      ],
-      "id": "Operational status"
     },
     {
       "condition": {
@@ -513,7 +496,7 @@
       "id": "bike_repair_station-electrical_pump",
       "question": {
         "en": "Is this an electric bike pump?",
-        "nl": "Is dit een electrische fietspomp?",
+        "nl": "Is dit een elektrische fietspomp?",
         "fr": "Est-ce que cette pompe est électrique ?",
         "gl": "Esta é unha bomba de ar eléctrica?",
         "de": "Ist dies eine elektrische Fahrradpumpe?",
@@ -542,7 +525,7 @@
           "if": "manual=no",
           "then": {
             "en": "Electrical pump",
-            "nl": "Electrische pomp",
+            "nl": "Elektrische pomp",
             "fr": "Pompe électrique",
             "gl": "Bomba de ar eléctrica",
             "de": "Elektrische Pumpe",

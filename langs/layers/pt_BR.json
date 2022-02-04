@@ -421,9 +421,6 @@
                 "mappings": {
                     "0": {
                         "then": "Sempre aberto"
-                    },
-                    "1": {
-                        "then": "Sempre aberto"
                     }
                 }
             },

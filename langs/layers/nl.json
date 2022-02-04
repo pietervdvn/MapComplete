@@ -675,7 +675,7 @@
     },
     "bike_repair_station": {
         "description": "Deze laag toont fietspompen en herstelpunten voor fietsen",
-        "name": "Fietspunten (herstel, pomp of allebei)",
+        "name": "Fietspomp and fietsherstel",
         "presets": {
             "0": {
                 "description": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
@@ -716,7 +716,7 @@
                         "then": "Er is zowel een pomp als gereedschap aanwezig"
                     }
                 },
-                "question": "Welke functies biedt dit fietspunt?"
+                "question": "Welke functies biedt locatie?"
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
@@ -746,10 +746,10 @@
                         "then": "Manuele pomp"
                     },
                     "1": {
-                        "then": "Electrische pomp"
+                        "then": "Elektrische pomp"
                     }
                 },
-                "question": "Is dit een electrische fietspomp?"
+                "question": "Is dit een elektrische fietspomp?"
             },
             "bike_repair_station-email": {
                 "question": "Wat is het email-adres van de beheerder?"
@@ -771,9 +771,6 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Dag en nacht open"
-                    },
-                    "1": {
                         "then": "Dag en nacht open"
                     }
                 },
@@ -4263,11 +4260,11 @@
         "name": "Toiletten",
         "presets": {
             "0": {
-                "title": "publieke toilet"
+                "title": "publiek toilet"
             },
             "1": {
                 "description": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC",
-                "title": "rolstoeltoegankelijke, publieke toilet"
+                "title": "rolstoeltoegankelijke, publiek toilet"
             }
         },
         "tagRenderings": {

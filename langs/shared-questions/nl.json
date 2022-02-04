@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Bevindt zich op de eerste verdieping"
+                },
+                "4": {
+                    "then": "Bevindt zich in de eerste kelderverdieping"
                 }
             },
             "question": "Op welke verdieping bevindt dit punt zich?",
