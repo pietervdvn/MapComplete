@@ -120,14 +120,42 @@ export default class MoreScreen extends Combine {
     }
 
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
-        return new VariableUiElement(state.installedThemes.map(customThemes => {
-            if (customThemes.length <= 0) {
+        const prefix = "mapcomplete-unofficial-theme-";
+        return new VariableUiElement(state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
+            console.log("All preferences are ", allPreferences)
+            const allThemes: BaseUIElement[] = []
+            for (const key in allPreferences) {
+                if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
+                    const id = key.substring(0, key.length - "-length".length)
+                    const length = Number(allPreferences[key])
+
+                    let str = "";
+                    for (let i = 0; i < length; i++) {
+                        str += allPreferences[id + "-" + i]
+                    }
+                    console.log("Theme " + id + " has settings ", str)
+                    try {
+                        const value: {
+                            id: string
+                            icon: string,
+                            title: any,
+                            shortDescription: any
+                        } = JSON.parse(str)
+
+                        const link = MoreScreen.createLinkButton(state, value, true).SetClass(buttonClass)
+                        allThemes.push(link)
+                    } catch (e) {
+                        console.error("Could not parse unofficial theme information for " + id, e)
+                    }
+                }
+            }
+
+            if (allThemes.length <= 0) {
                 return undefined;
             }
-            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme, true)?.SetClass(buttonClass))
             return new Combine([
                 Translations.t.general.customThemeIntro.Clone(),
-                new Combine(customThemeButtons).SetClass(themeListClasses)
+                new Combine(allThemes).SetClass(themeListClasses)
             ]);
         }));
     }

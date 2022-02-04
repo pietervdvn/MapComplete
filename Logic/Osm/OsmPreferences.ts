@@ -5,7 +5,7 @@ import {Utils} from "../../Utils";
 export class OsmPreferences {
 
     public preferences = new UIEventSource<any>({}, "all-osm-preferences");
-    public preferenceSources: any = {}
+    private readonly preferenceSources = new Map<string, UIEventSource<string>>()
     private auth: any;
     private userDetails: UIEventSource<UserDetails>;
     private longPreferences = {};
@@ -29,12 +29,17 @@ export class OsmPreferences {
             return this.longPreferences[prefix + key];
         }
 
+
         const source = new UIEventSource<string>(undefined, "long-osm-preference:" + prefix + key);
         this.longPreferences[prefix + key] = source;
 
         const allStartWith = prefix + key + "-combined";
         // Gives the number of combined preferences
         const length = this.GetPreference(allStartWith + "-length", "");
+
+       if( (allStartWith + "-length").length > 255){
+           throw "This preference key is too long, it has "+key.length+" characters, but at most "+(255 - "-length".length - "-combined".length - prefix.length)+" characters are allowed"
+       }
 
         const self = this;
         source.addCallback(str => {
@@ -101,24 +106,21 @@ export class OsmPreferences {
         if (key.length >= 255) {
             throw "Preferences: key length to big";
         }
-        if (this.preferenceSources[key] !== undefined) {
-            return this.preferenceSources[key];
+        const cached = this.preferenceSources.get(key)
+        if (cached !== undefined) {
+            return cached;
         }
         if (this.userDetails.data.loggedIn && this.preferences.data[key] === undefined) {
             this.UpdatePreferences();
         }
+                
         const pref = new UIEventSource<string>(this.preferences.data[key], "osm-preference:" + key);
         pref.addCallback((v) => {
-            this.SetPreference(key, v);
+            this.UploadPreference(key, v);
         });
 
-        this.preferences.addCallback((prefs) => {
-            if (prefs[key] !== undefined) {
-                pref.setData(prefs[key]);
-            }
-        });
-
-        this.preferenceSources[key] = pref;
+        
+        this.preferenceSources.set(key, pref)
         return pref;
     }
 
@@ -167,11 +169,25 @@ export class OsmPreferences {
                 const v = pref.getAttribute("v");
                 self.preferences.data[k] = v;
             }
+            
+            // We merge all the preferences: new keys are uploaded
+            // For differing values, the server overrides local changes
+            self.preferenceSources.forEach((preference, key) => {
+                const osmValue = self.preferences[key]
+                if(osmValue === undefined){
+                    // OSM doesn't know this value yet
+                    self.UploadPreference(key, preference.data)
+                } else {
+                    // OSM does have a value - set it
+                    preference.setData(osmValue)
+                }
+            })
+            
             self.preferences.ping();
         });
     }
 
-    private SetPreference(k: string, v: string) {
+    private UploadPreference(k: string, v: string) {
         if (!this.userDetails.data.loggedIn) {
             console.debug(`Not saving preference ${k}: user not logged in`);
             return;

@@ -103,7 +103,8 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                     id: id,
                     name: name,
                     layer: () => L.tileLayer.provider(id, {
-                        maxNativeZoom: layer.options?.maxZoom
+                        maxNativeZoom: layer.options?.maxZoom,
+                       maxZoom: Math.max(layer.options?.maxZoom ?? 19, 21)
                     }),
                     min_zoom: 1,
                     max_zoom: layer.options.maxZoom,

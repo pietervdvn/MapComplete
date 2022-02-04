@@ -29,17 +29,6 @@ export default class UserRelatedState extends ElementsState {
      */
     public favouriteLayers: UIEventSource<string[]>;
 
-    /**
-     * WHich other themes the user previously visited
-     */
-    public installedThemes: UIEventSource<{
-        id: string, // The id doubles as the URL
-        icon: string,
-        title: any,
-        shortDescription: any
-    }[]>;
-
-
     constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
 
@@ -73,50 +62,15 @@ export default class UserRelatedState extends ElementsState {
             })
         }
 
-        this.installedThemes = this.osmConnection.GetLongPreference("installed-themes").map(
-            str => {
-                if (str === undefined || str === "") {
-                    return []
-                }
-                try {
-                    return JSON.parse(str);
-                } catch (e) {
-                    console.warn("Could not parse preference with installed themes due to ", e, "\nThe offending string is", str)
-                    return []
-                }
-            }, [], (installed) => JSON.stringify(installed)
-        )
-
-
-        const self = this;
-
-        if (this.layoutToUse?.id?.startsWith("http")) {
-            this.installedThemes.addCallbackAndRun(currentThemes => {
-                if (currentThemes === undefined) {
-                    // We wait till we are logged in
-                    return
-                }
-
-                if (self.osmConnection.isLoggedIn.data == false) {
-                    return;
-                }
-
-                if (currentThemes.some(installed => installed.id === this.layoutToUse.id)) {
-                    // Already added to the 'installed theme' list
-                    return;
-                }
-
-                console.log("Current installed themes are", this.installedThemes.data)
-                currentThemes.push({
-                    id: self.layoutToUse.id,
-                    icon: self.layoutToUse.icon,
-                    title: self.layoutToUse.title.translations,
-                    shortDescription: self.layoutToUse.shortDescription.translations
-                })
-                self.installedThemes.ping()
-                console.log("Registered " + self.layoutToUse.id + " as installed themes")
-
-            })
+        if (this.layoutToUse !== undefined && !this.layoutToUse.official) {
+            console.log("Marking unofficial theme as visited")
+            this.osmConnection.GetLongPreference("unofficial-theme-" + this.layoutToUse.id)
+                .setData(JSON.stringify({
+                    id: this.layoutToUse.id,
+                    icon: this.layoutToUse.icon,
+                    title: this.layoutToUse.title.translations,
+                    shortDescription: this.layoutToUse.shortDescription.translations
+                }))
         }
 
 
