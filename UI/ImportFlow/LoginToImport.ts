@@ -17,9 +17,11 @@ export default class LoginToImport extends Combine implements FlowStep<UserRelat
     readonly IsValid: UIEventSource<boolean>;
     readonly Value: UIEventSource<UserRelatedState>;
 
+    private static readonly whitelist = [15015689];
+    
     constructor(state: UserRelatedState) {
         const t = Translations.t.importHelper
-        const isValid = state.osmConnection.userDetails.map(ud => ud.csCount >= Constants.userJourney.importHelperUnlock)
+        const isValid = state.osmConnection.userDetails.map(ud => LoginToImport.whitelist.indexOf(ud.uid) >= 0 || ud.csCount >= Constants.userJourney.importHelperUnlock)
         super([
             new Title(t.userAccountTitle),
             new LoginToggle(
