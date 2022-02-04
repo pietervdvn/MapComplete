@@ -1,10 +1,10 @@
 import T from "./TestHelper";
-import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {FixImages, FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
+import * as Assert from "assert";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -143,213 +143,201 @@ export default class LegacyThemeLoaderSpec extends T {
         ]
     }
 
-    private static readonly organic_waste_theme = {
-        "id": "recycling-organic",
+    private static readonly verkeerde_borden ={
+        "id": "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/VerkeerdeBordenDatabank.json",
         "title": {
-            "nl": "Inzamelpunt organisch alval"
+            "nl": "VerkeerdeBordenDatabank",
+            "en": "Erratic Signs Database"
         },
-        "shortDescription": {
-            "nl": "Inzamelpunt organisch alval"
-        },
+        "maintainer": "Seppe Santens",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Belgian_traffic_sign_A51.svg",
         "description": {
-            "nl": "Op deze kaart vindt u inzamelpunten voor organisch afval. Beheer deze naar goeddunken en vermogen."
+            "nl": "Een kaart om verkeerde of ontbrekende verkeersborden te tonen en te editeren.",
+            "en": "A map to show and edit incorrect or missing traffic signs."
         },
-        "language": [
-            "nl"
-        ],
-        "maintainer": "",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/15/Compost_…able_waste_-_biodegradable_waste_-_biological_waste_icon.png",
-        "version": "0",
-        "startLat": 0,
-        "startLon": 0,
-        "startZoom": 1,
-        "widenFactor": 0.05,
-        "socialImage": "",
+        "version": "2021-09-16",
+        "startLat": 51.08881,
+        "startLon": 3.447282,
+        "startZoom": 15,
+        "clustering": {
+            "maxZoom": 8
+        },
         "layers": [
             {
-                "id": "recycling-organic",
+                "id": "trafficsign",
                 "name": {
-                    "nl": "Inzamelpunt organisch alval"
+                    "nl": "verkeersbord",
+                    "en": "traffic sign"
                 },
-                "minzoom": 12,
-                "title": {
-                    "render": {
-                        "nl": "Inzamelpunt organisch alval"
-                    },
-                    "mappings": [
-                        {
-                            "if": {
-                                "and": [
-                                    "name~*"
-                                ]
-                            },
-                            "then": {
-                                "nl": "{name}"
-                            }
-                        }
-                    ]
-                },
-                "allowMove": true,
-                "deletion": {},
-                "tagRenderings": [
-                    "images",
-                    {
-                        "freeform": {
-                            "key": "opening_hours",
-                            "type": "opening_hours",
-                            "addExtraTags": []
-                        },
-                        "question": {
-                            "nl": "Wat zijn de openingsuren?"
-                        },
-                        "render": {
-                            "nl": "{opening_hours_table()}"
-                        },
-                        "mappings": [
-                            {
-                                "if": {
-                                    "and": [
-                                        "opening_hours=\"by appointment\""
-                                    ]
-                                },
-                                "then": {
-                                    "nl": "Op afspraak"
-                                }
-                            }
-                        ],
-                        "id": "Composthoekjes-opening_hours"
-                    },
-                    {
-                        "question": {
-                            "nl": "Wat is de website voor meer informatie?"
-                        },
-                        "freeform": {
-                            "key": "website",
-                            "type": "url"
-                        },
-                        "render": {
-                            "nl": "<a href=\"{website}\">{website}</a>"
-                        },
-                        "id": "Composthoekjes-website"
-                    },
-                    {
-                        "question": {
-                            "nl": "Wat is het type inzamelpunt?"
-                        },
-                        "mappings": [
-                            {
-                                "if": "recycling_type=container",
-                                "then": "Container of vat"
-                            },
-                            {
-                                "if": "recycling_type=centre",
-                                "then": "Verwerkingsplaats of containerpark"
-                            },
-                            {
-                                "if": "recycling_type=dump",
-                                "then": "Composthoop"
-                            }
-
-                        ],
-                        "id": "Composthoekjes-type"
-                    },
-                    {
-                        "question": {
-                            "nl": "Wie mag hier organisch afval bezorgen?"
-                        },
-                        "mappings": [
-                            {
-                                "if": "access=yes",
-                                "then": "Publiek toegankelijk"
-                            },
-                            {
-                                "if": "access=no",
-                                "then": "Privaat"
-                            },
-                            {
-                                "if": "access=permessive",
-                                "then": "Mogelijks toegelaten tot nader order"
-                            },
-                            {
-                                "if": "access=",
-                                "then": "Waarschijnlijk publiek toegankelijk",
-                                "hideInAnswer": true
-                            },
-                            {
-                                "if": "access=residents",
-                                "then": "Bewoners van gemeente",
-                                "hideInAnswer": "recycling_type!=centre"
-                            }
-
-                        ],
-                        "id": "Composthoekjes-voor-wie"
-                    },
-                    {
-                        "question": {
-                            "nl": "Wat is de naam van dit compost-inzamelpunt?"
-                        },
-                        "freeform": {
-                            "key": "name",
-                            "addExtraTags": ["noname="]
-                        },
-                        "render": {
-                            "nl": "De naam van dit compost-inzamelpunt is {name}"
-                        },
-                        "mappings": [
-                            {
-                                "if": {"and": ["noname=yes", "name="]},
-                                "then": "Heeft geen naam"
-                            },
-                            {
-                                "if": "name=",
-                                "then": "Geen naam bekend",
-                                "hideInAnswer": true
-                            }
-                        ],
-                        "id": "Composthoekjes-name"
-                    }],
-                "presets": [
-                    {
-                        "tags": [
-                            "amenity=recycling",
-                            "recycling:organic=yes"
-                        ],
-                        "title": {
-                            "nl": "een inzamelpunt voor organisch afval"
-                        }
-                    }
-                ],
                 "source": {
                     "osmTags": {
                         "and": [
-                            "recycling:organic~*"
+                            "traffic_sign~*",
+                            "traffic_sign:issue~*"
                         ]
                     }
                 },
-                "mapRendering": [
+                "minzoom": 10,
+                "title": {
+                    "render": {
+                        "nl": "verkeersbord",
+                        "en": "traffic sign"
+                    }
+                },
+                "tagRenderings": [
+                    "images",
                     {
-                        "icon": {
-                            "render": "circle:white;https://upload.wikimedia.org/wikipedia/commons/1/15/Compost_…able_waste_-_biodegradable_waste_-_biological_waste_icon.png"
+                        "render": {
+                            "nl": "ID verkeersbord: {traffic_sign}",
+                            "en": "traffic sign ID: {traffic_sign}"
                         },
-                        "iconSize": {
-                            "render": "40,40,center"
+                        "question": {
+                            "nl": "Wat is het ID voor dit verkeersbord?",
+                            "en": "What is ID for this traffic sign?"
                         },
-                        "location": [
-                            "point"
-                        ]
+                        "freeform": {
+                            "key": "traffic_sign"
+                        },
+                        "id": "trafficsign-traffic_sign"
                     },
                     {
-                        "color": {
-                            "render": "#00f"
+                        "render": {
+                            "nl": "Probleem bij dit verkeersbord: {traffic_sign:issue}",
+                            "en": "Issue with this traffic sign: {traffic_sign:issue}"
                         },
-                        "width": {
-                            "render": "8"
-                        }
+                        "question": {
+                            "nl": "Wat is het probleem met dit verkeersbord?",
+                            "en": "What is the issue with this traffic sign?"
+                        },
+                        "freeform": {
+                            "key": "traffic_sign:issue"
+                        },
+                        "id": "trafficsign-traffic_sign:issue"
+                    },
+                    {
+                        "question": {
+                            "nl": "Wanneer werd dit verkeersbord laatst gesurveyed?",
+                            "en": "When was this traffic sign last surveyed?"
+                        },
+                        "render": {
+                            "nl": "Dit verkeersbord werd laatst gesurveyed op {survey:date}",
+                            "en": "This traffic sign was last surveyed on {survey:date}"
+                        },
+                        "freeform": {
+                            "key": "survey:date",
+                            "type": "date"
+                        },
+                        "mappings": [
+                            {
+                                "if": "survey:date:={_now:date}",
+                                "then": "Vandaag gesurveyed!"
+                            }
+                        ],
+                        "id": "trafficsign-survey:date"
+                    }
+                ],
+                "mapRendering": [
+                    {
+                        "icon": "./TS_bolt.svg",
+                        "location": [
+                            "point",
+                            "centroid"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "notrafficsign",
+                "name": {
+                    "nl": "geen verkeersbord",
+                    "en": "no traffic sign"
+                },
+                "source": {
+                    "osmTags": {
+                        "and": [
+                            {
+                                "or": [
+                                    "no:traffic_sign~*",
+                                    "not:traffic_sign~*"
+                                ]
+                            },
+                            "traffic_sign:issue~*"
+                        ]
+                    }
+                },
+                "minzoom": 10,
+                "title": {
+                    "render": {
+                        "nl": "ontbrekend verkeersbord",
+                        "en": "missing traffic sign"
+                    }
+                },
+                "tagRenderings": [
+                    "images",
+                    {
+                        "render": {
+                            "nl": "ID ontbrekend verkeersbord: {no:traffic_sign}",
+                            "en": "missing traffic sign ID: {no:traffic_sign}"
+                        },
+                        "question": {
+                            "nl": "Wat is het ID voor het ontbrekende verkeersbord?",
+                            "en": "What is ID for the missing traffic sign?"
+                        },
+                        "freeform": {
+                            "key": "no:traffic_sign"
+                        },
+                        "id": "notrafficsign-no:traffic_sign"
+                    },
+                    {
+                        "render": {
+                            "nl": "Probleem bij deze situatie: {traffic_sign:issue}",
+                            "en": "Issue with this situation: {traffic_sign:issue}"
+                        },
+                        "question": {
+                            "nl": "Wat is er mis met deze situatie?",
+                            "en": "What is the issue with this situation?"
+                        },
+                        "freeform": {
+                            "key": "traffic_sign:issue"
+                        },
+                        "id": "notrafficsign-traffic_sign:issue"
+                    },
+                    {
+                        "question": {
+                            "nl": "Wanneer werd deze situatie laatst gesurveyed?",
+                            "en": "When was this situation last surveyed?"
+                        },
+                        "render": {
+                            "nl": "Deze situatie werd laatst gesurveyed op {survey:date}",
+                            "en": "This situation was last surveyed on {survey:date}"
+                        },
+                        "freeform": {
+                            "key": "survey:date",
+                            "type": "date"
+                        },
+                        "mappings": [
+                            {
+                                "if": "survey:date:={_now:date}",
+                                "then": "Vandaag gesurveyed!"
+                            }
+                        ],
+                        "id": "notrafficsign-survey:date"
+                    }
+                ],
+                "mapRendering": [
+                    {
+                        "icon": "./TS_questionmark.svg",
+                        "location": [
+                            "point",
+                            "centroid"
+                        ]
                     }
                 ]
             }
-        ]
+        ],
+        "defaultBackgroundId": "Stamen.TonerLite"
     }
+
 
 
     constructor() {
@@ -439,8 +427,13 @@ export default class LegacyThemeLoaderSpec extends T {
                         }, "test");
                         T.isTrue(r0.errors.length > 0, "Failing case is not detected")
                     }
-
-                ]
+                ],
+            ["Images are rewritten", () => {
+                const fixed =   new FixImages(new Set<string>()).convertStrict(LegacyThemeLoaderSpec.verkeerde_borden, "test")
+                const fixedValue = fixed.layers[0]["mapRendering"][0].icon
+                Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg",
+                    fixedValue)
+            } ]
             ]
         );
     }

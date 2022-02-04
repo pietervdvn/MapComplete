@@ -37,7 +37,8 @@ export default interface PointRenderingConfigJson {
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
      */
-    iconBadges?: { if: string | AndOrTagConfigJson, 
+    iconBadges?: { 
+        if: string | AndOrTagConfigJson, 
         /**
          * Badge to show
          * Type: icon

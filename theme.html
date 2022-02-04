@@ -37,14 +37,7 @@
     <link href="./assets/generated/svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
 
     <!-- THEME-SPECIFIC-END-->
-
-    <style>
-        #decoration-desktop img {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
+    
 </head>
 <body>
 
@@ -70,12 +63,14 @@
 
 <div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
      id="centermessage" style="z-index: 4000">
-    <h2>Loading MapComplete, hang on...</h2>
-    <p>Powered by OpenStreetMap</p>
+    <h1>Loading MapComplete, hang on...</h1>
+    <p class="subtle">Powered by OpenStreetMap</p>
 </div>
 
 <span class="absolute" id="belowmap" style="z-index: -1">Below</span>
 <div id="leafletDiv"></div>
+
+
 
 <script src="./index.ts"></script>
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>

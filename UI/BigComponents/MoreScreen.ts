@@ -119,45 +119,64 @@ export default class MoreScreen extends Combine {
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
 
+    private static createButtonFor(state: UserRelatedState, id: string): BaseUIElement {
+        const allPreferences = state.osmConnection.preferencesHandler.preferences.data;
+        const length = Number(allPreferences[id + "-combined-length"])
+        let str = "";
+        for (let i = 0; i < length; i++) {
+            str += allPreferences[id + "-" + i]
+        }
+        try {
+            const value: {
+                id: string
+                icon: string,
+                title: any,
+                shortDescription: any
+            } = JSON.parse(str)
+
+            return MoreScreen.createLinkButton(state, value, true)
+        } catch (e) {
+            console.debug("Could not parse unofficial theme information for " + id, e)
+            return undefined
+        }
+    }
+
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
         const prefix = "mapcomplete-unofficial-theme-";
-        return new VariableUiElement(state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
-            console.log("All preferences are ", allPreferences)
-            const allThemes: BaseUIElement[] = []
-            for (const key in allPreferences) {
-                if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
-                    const id = key.substring(0, key.length - "-length".length)
-                    const length = Number(allPreferences[key])
 
-                    let str = "";
-                    for (let i = 0; i < length; i++) {
-                        str += allPreferences[id + "-" + i]
-                    }
-                    console.log("Theme " + id + " has settings ", str)
-                    try {
-                        const value: {
-                            id: string
-                            icon: string,
-                            title: any,
-                            shortDescription: any
-                        } = JSON.parse(str)
+        var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
+            .map(allPreferences => {
+                const ids: string[] = []
 
-                        const link = MoreScreen.createLinkButton(state, value, true).SetClass(buttonClass)
-                        allThemes.push(link)
-                    } catch (e) {
-                        console.error("Could not parse unofficial theme information for " + id, e)
+                for (const key in allPreferences) {
+                    if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
+                        const id = key.substring(0, key.length - "-length".length)
+                        ids.push(id)
                     }
                 }
-            }
 
-            if (allThemes.length <= 0) {
-                return undefined;
-            }
-            return new Combine([
-                Translations.t.general.customThemeIntro.Clone(),
-                new Combine(allThemes).SetClass(themeListClasses)
-            ]);
-        }));
+                return ids
+            });
+        var stableIds = UIEventSource.ListStabilized<string>(currentIds)
+
+        return new VariableUiElement(
+            stableIds.map(ids => {
+                const allThemes: BaseUIElement[] = []
+                for (const id of ids) {
+                    const link = this.createButtonFor(state, id)
+                    if (link !== undefined) {
+                        allThemes.push(link.SetClass(buttonClass))
+                    }
+                }
+
+                if (allThemes.length <= 0) {
+                    return undefined;
+                }
+                return new Combine([
+                    Translations.t.general.customThemeIntro.Clone(),
+                    new Combine(allThemes).SetClass(themeListClasses)
+                ]);
+            }));
     }
 
     private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {

@@ -10,16 +10,17 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
-import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {FixImages, FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 import * as known_layers from "../assets/generated/known_layers.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
-import {Layer} from "leaflet";
-
+import * as licenses from "../assets/generated/license_info.json"
 export default class DetermineLayout {
 
+    private static readonly _knownImages =new Set( Array.from(licenses).map(l => l.path))
+    
     /**
      * Gets the correct layout for this website
      */
@@ -144,6 +145,7 @@ export default class DetermineLayout {
             sharedLayers: knownLayersDict
         }
         json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
+        json = new FixImages(DetermineLayout._knownImages).convertStrict(json, "While fixing the images")
         json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
         console.log("The layoutconfig is ", json)
         return json

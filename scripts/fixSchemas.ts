@@ -134,7 +134,7 @@ function main() {
         return {typeHint: type.substr("type: ".length), type: schemePart.type ?? schemePart.anyOf}
     }, themeSchema)
     
-   // writeFileSync("./assets/layoutconfigmeta.json",JSON.stringify(withTypes.map(({path, t}) => ({path, ...t})), null, "  "))
+    writeFileSync("./assets/layoutconfigmeta.json",JSON.stringify(withTypes.map(({path, t}) => ({path, ...t})), null, "  "))
 
 }
 
