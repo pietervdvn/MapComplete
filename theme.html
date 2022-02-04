@@ -63,9 +63,19 @@
 
 <div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
      id="centermessage" style="z-index: 4000">
-    <h1>Loading MapComplete, hang on...</h1>
-    <p class="subtle">Powered by OpenStreetMap</p>
+    <div style="height: max-content">
+    <div style="margin-top: -3rem">
+    <h1 style="font-weight: bold; font-size: xx-large; padding-bottom: 1rem">Loading MapComplete, hang on...</h1>
+    <p class="subtle" style="padding-bottom: 1rem">Powered by OpenStreetMap</p>
+    <div style="background: #ffffffaa; padding-bottom: 1rem; border-radius: 0.25rem">
+    <!-- DESCRIPTION START -->
+    MapComplete is an easy to use map viewer and map editor
+    <!-- DESCRIPTION END -->
+    </div>
+    </div>
+    </div>
 </div>
+
 
 <span class="absolute" id="belowmap" style="z-index: -1">Below</span>
 <div id="leafletDiv"></div>

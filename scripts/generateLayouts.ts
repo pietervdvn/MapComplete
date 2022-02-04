@@ -191,6 +191,7 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
     let output = template
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
+        .replace(/<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s, layout.shortDescription.textFor("en"))
         .replace("<script src=\"./index.ts\"></script>", `<script src='./index_${layout.id}.ts'></script>`);
 
     try {

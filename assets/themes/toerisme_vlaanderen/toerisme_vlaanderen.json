@@ -12,7 +12,7 @@
     "nl": "Pin je punt"
   },
   "shortDescription": {
-    "nl": "Een kaart om toeristisch relevante info op aan te duiden"
+    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p>Met de steun van Toerisme Vlaanderen</p><img style='max-height:10rem; float: right; margin-top: 4rem; background: white; width: auto; padding: 0.5rem' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
   "description": {
     "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p class='mb-4'>We verzamelen 7 thematische lagen:  <ol><li>Laadpunten voor e-bikes</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijkpunten, uitkijkplatformen en uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol><p>Klik op de exacte locatie op de kaart om een van deze 7 punten toe te voegen. Of corrigeer bestaande punten door erop te klikken.</p>"
