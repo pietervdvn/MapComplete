@@ -151,7 +151,7 @@
       "type": "boolean"
     },
     "lockLocation": {
-      "description": "If set to true, the basemap will not scroll outside of the area visible on initial zoom.\nIf set to [[lat0, lon0], [lat1, lon1]], the map will not scroll outside of those bounds.\nOff by default, which will enable panning to the entire world",
+      "description": "If set to true, the basemap will not scroll outside of the area visible on initial zoom.\nIf set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.\nOff by default, which will enable panning to the entire world",
       "anyOf": [
         {
           "type": "array",
@@ -234,6 +234,9 @@
       "type": "boolean"
     },
     "enableIframePopout": {
+      "type": "boolean"
+    },
+    "enableNoteImports": {
       "type": "boolean"
     },
     "overpassUrl": {
@@ -429,7 +432,7 @@
                 "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
               },
               "icon": {
-                "description": "An icon supporting this mapping; typically shown pretty small",
+                "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",
                 "type": "string"
               },
               "hideInAnswer": {
@@ -513,7 +516,7 @@
                 ]
               },
               "then": {
-                "description": "Badge to show\nType: icon[]",
+                "description": "Badge to show\nType: icon",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1206,10 +1209,25 @@
         },
         "filter": {
           "description": "All the extra questions for filtering",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/default"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/default"
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "sameAs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sameAs"
+              ]
+            }
+          ]
         },
         "deletion": {
           "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n The delete dialog\n =================\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n#### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.",

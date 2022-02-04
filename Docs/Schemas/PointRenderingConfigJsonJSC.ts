@@ -37,7 +37,7 @@ export default {
                         ]
                     },
                     "then": {
-                        "description": "Badge to show\nType: icon[]",
+                        "description": "Badge to show\nType: icon",
                         "anyOf": [
                             {
                                 "$ref": "#/definitions/TagRenderingConfigJson"
@@ -251,7 +251,7 @@ export default {
                                 "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
                             },
                             "icon": {
-                                "description": "An icon supporting this mapping; typically shown pretty small",
+                                "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",
                                 "type": "string"
                             },
                             "hideInAnswer": {
