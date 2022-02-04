@@ -44,16 +44,6 @@
     ]
   },
   {
-    "path": "logo.png",
-    "license": "Logo (all rights reserved)",
-    "authors": [
-      "Toerisme Vlaanderen"
-    ],
-    "sources": [
-      "https://www.toerismevlaanderen.be/"
-    ]
-  },
-  {
     "path": "observation_platform.svg",
     "license": "CC0",
     "authors": [

@@ -17,10 +17,10 @@ export default class CreateNoteImportLayerSpec extends T {
                     tagRenderings: new Map<string, TagRenderingConfigJson>()
 
                 }
-                const layerPrepare = new PrepareLayer()
-                const layer = layerPrepare.convertStrict(desugaringState, bookcases, "ImportLayerGeneratorTest:Parse bookcases")
+                const layerPrepare = new PrepareLayer(desugaringState)
+                const layer = layerPrepare.convertStrict(bookcases, "ImportLayerGeneratorTest:Parse bookcases")
                 const generator = new CreateNoteImportLayer()
-                const generatedLayer: LayerConfigJson = generator.convertStrict(desugaringState, layer, "ImportLayerGeneratorTest: convert")
+                const generatedLayer: LayerConfigJson = generator.convertStrict(layer, "ImportLayerGeneratorTest: convert")
                 T.equals("_tags~(^|.*;)amenity=public_bookcase($|;.*)", generatedLayer.isShown.mappings[1].if["and"][1].or[0].and[0])
                 T.isTrue(generatedLayer.minzoom <= layer.minzoom, "Zoomlevel is to high")
                 let renderings = Utils.NoNull(Utils.NoNull(generatedLayer.tagRenderings
