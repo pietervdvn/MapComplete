@@ -241,7 +241,7 @@
             "it": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
             "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
             "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
-            "hu": "Melyik évben épült a kert?"
+            "hu": "Mikor épült a kert? (Év megadása is elegendő)"
           },
           "freeform": {
             "key": "start_date",

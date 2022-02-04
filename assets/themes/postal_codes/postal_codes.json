@@ -2,15 +2,18 @@
   "id": "postal_codes",
   "title": {
     "en": "Postal codes",
-    "id": "Kode pos"
+    "id": "Kode pos",
+    "hu": "Irányítószámok"
   },
   "shortDescription": {
     "en": "Postal codes",
-    "id": "Kode pos"
+    "id": "Kode pos",
+    "hu": "Irányítószámok"
   },
   "description": {
     "en": "Postal codes",
-    "id": "Kode pos"
+    "id": "Kode pos",
+    "hu": "Irányítószámok"
   },
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
@@ -28,13 +31,15 @@
       "id": "postal_code_boundary",
       "name": {
         "en": "postal codes",
-        "id": "kode pos"
+        "id": "kode pos",
+        "hu": "irányítószámok"
       },
       "minzoom": 8,
       "title": {
         "render": {
           "en": "Postal code {postal_code}",
-          "id": "Kode pos {postal_code}"
+          "id": "Kode pos {postal_code}",
+          "hu": "Irányítószám: {postal_code}"
         }
       },
       "description": {},
@@ -43,7 +48,8 @@
           "id": "postal_code",
           "render": {
             "en": "The postal code is {postal_code}",
-            "id": "Kode posnya adalah {postal_code}"
+            "id": "Kode posnya adalah {postal_code}",
+            "hu": "Irányítószám: {postal_code}"
           }
         }
       ],
@@ -111,13 +117,15 @@
       "id": "town_hall",
       "name": {
         "en": "town halls",
-        "id": "balai kota"
+        "id": "balai kota",
+        "hu": "polgármesteri hivatalok"
       },
       "minzoom": 12,
       "title": {
         "render": {
           "en": "Town hall {name}",
-          "id": "Balai kota {name}"
+          "id": "Balai kota {name}",
+          "hu": "{name} városháza"
         }
       },
       "calculatedTags": [

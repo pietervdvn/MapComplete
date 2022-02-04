@@ -358,6 +358,17 @@
             }
         }
     },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "bicycle_rental_type": {
+                "mappings": {
+                    "5": {
+                        "then": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
+                    }
+                }
+            }
+        }
+    },
     "bicycle_tube_vending_machine": {
         "tagRenderings": {
             "Still in use?": {

@@ -8,7 +8,8 @@
   },
   "description": {
     "nl": "Dit thema helpt het GRB importeren.",
-    "en": "This theme is an attempt to help automating the GRB import."
+    "en": "This theme is an attempt to help automating the GRB import.",
+    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
   },
   "maintainer": "",
   "icon": "./assets/themes/grb_import/housenumber_blank.svg",

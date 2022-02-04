@@ -3384,6 +3384,17 @@
                 "question": "Wie onderhoudt deze toren?",
                 "render": "Wordt onderhouden door <b>{operator}</b>"
             },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze toren is publiek toegankelijk"
+                    },
+                    "1": {
+                        "then": "Deze toren can enkel bezocht worden met een gids"
+                    }
+                },
+                "question": "Is deze toren publiek toegankelijk?"
+            },
             "elevator": {
                 "mappings": {
                     "0": {
