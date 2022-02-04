@@ -653,6 +653,13 @@
                     }
                 }
             }
-        }
+        },
+        "description": "Egy bolt"
+    },
+    "etymology": {
+        "description": "Minden olyan objektum, amelynek ismert az etimológiája"
+    },
+    "waste_basket": {
+        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
     }
 }
