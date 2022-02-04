@@ -1,5 +1,15 @@
 [
   {
+    "path": "avatar.png",
+    "license": "Logo",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/"
+    ]
+  },
+  {
     "path": "bench.svg",
     "license": "CC0",
     "authors": [
