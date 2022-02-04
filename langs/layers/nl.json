@@ -363,6 +363,94 @@
             "render": "Fietsbibliotheek"
         }
     },
+    "bicycle_rental": {
+        "description": "Fietsverhuustations",
+        "name": "Fietsverhuur",
+        "tagRenderings": {
+            "8": {
+                "renderings": {
+                    "0": {
+                        "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
+                        "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "Stadsfietsen"
+                        },
+                        "1": {
+                            "1": "elektrische fietsen"
+                        },
+                        "2": {
+                            "1": "Kinderfietsen"
+                        },
+                        "3": {
+                            "1": "BMX-fietsen"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "Fietstassen"
+                        }
+                    }
+                }
+            },
+            "bicycle-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Gewone stadsfietsen kunnen hier gehuurd worden"
+                    },
+                    "1": {
+                        "then": "Elektrische fietsen kunnen hier gehuurd worden"
+                    },
+                    "2": {
+                        "then": "BMX-fietsen kunnen hier gehuurd worden"
+                    },
+                    "3": {
+                        "then": "Mountainbikes kunnen hier gehuurd worden"
+                    },
+                    "4": {
+                        "then": "Kinderfietsen kunnen hier gehuurd worden"
+                    }
+                },
+                "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?",
+                "render": "{rental} wordt hier uitgeleend"
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een zaak die focust op fietsverhuur"
+                    },
+                    "1": {
+                        "then": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus"
+                    },
+                    "2": {
+                        "then": "Dit is een fietsenmaker of fietswinkel die ook fietsen veruurt"
+                    },
+                    "3": {
+                        "then": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt"
+                    },
+                    "4": {
+                        "then": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd"
+                    },
+                    "5": {
+                        "then": "Dit is een afzetpunt: een parking met duidelijke signalisatie waar (enkel) fietsen van deze fietsverhuur gezet worden"
+                    }
+                },
+                "question": "Wat voor fietsverhuur is dit?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Fietsverhuur"
+        }
+    },
     "bicycle_tube_vending_machine": {
         "name": "Fietsbanden-verkoopsautomaat",
         "presets": {
