@@ -26,14 +26,14 @@ export abstract class Conversion<TIn, TOut> {
         return fixed.result;
     }
 
-    public convertStrict(state: DesugaringContext, json: TIn, context: string): TOut {
-        const fixed = this.convert(state, json, context)
+    public convertStrict(json: TIn, context: string): TOut {
+        const fixed = this.convert(json, context)
         return DesugaringStep.strict(fixed)
     }
 
-    abstract convert(state: DesugaringContext, json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[] }
+    abstract convert(json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[] }
 
-    public convertAll(state: DesugaringContext, jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[] } {
+    public convertAll(jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[] } {
         if(jsons === undefined){
             throw "convertAll received undefined - don't do this (at "+context+")"
         }
@@ -42,7 +42,7 @@ export abstract class Conversion<TIn, TOut> {
         const warnings = []
         for (let i = 0; i < jsons.length; i++) {
             const json = jsons[i];
-            const r = this.convert(state, json, context + "[" + i + "]")
+            const r = this.convert(json, context + "[" + i + "]")
             result.push(r.result)
             errors.push(...r.errors ?? [])
             warnings.push(...r.warnings ?? [])
@@ -69,11 +69,11 @@ export class OnEvery<X, T> extends DesugaringStep<T> {
         this.key = key;
     }
 
-    convert(state: DesugaringContext, json: T, context: string): { result: T; errors?: string[]; warnings?: string[] } {
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[] } {
         json = {...json}
         const step = this.step
         const key = this.key;
-        const r = step.convertAll(state, (<X[]>json[key]), context + "." + key)
+        const r = step.convertAll((<X[]>json[key]), context + "." + key)
         json[key] = r.result
         return {
             result: json,
@@ -94,7 +94,7 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
         this.key = key;
     }
 
-    convert(state: DesugaringContext, json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
         json = {...json}
         const step = this.step
         const key = this.key;
@@ -107,7 +107,7 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
                 warnings: []
             }
         }
-        const r = step.convertAll(state, (<X[]>values), context + "." + key)
+        const r = step.convertAll((<X[]>values), context + "." + key)
         const vals: X[][] = r.result
         json[key] = [].concat(...vals)
         return {
@@ -129,12 +129,12 @@ export class Fuse<T> extends DesugaringStep<T> {
         this.steps = steps;
     }
 
-    convert(state: DesugaringContext, json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
-            let r = step.convert(state, json, "While running step " +step.name + ": " + context)
+            let r = step.convert(json, "While running step " +step.name + ": " + context)
             errors.push(...r.errors ?? [])
             warnings.push(...r.warnings ?? [])
             json = r.result
@@ -163,7 +163,7 @@ export class SetDefault<T> extends DesugaringStep<T> {
         this._overrideEmptyString = overrideEmptyString;
     }
 
-    convert(state: DesugaringContext, json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
         if (json[this.key] === undefined || (json[this.key] === "" && this._overrideEmptyString)) {
             json = {...json}
             json[this.key] = this.value

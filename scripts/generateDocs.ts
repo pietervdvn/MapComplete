@@ -53,6 +53,7 @@ WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["Val
 WriteFile("./Docs/BuiltinLayers.md", AllKnownLayouts.GenLayerOverviewText(), ["AllKnownLayers.ts"])
 
 {
+    // Generate the builtinIndex which shows interlayer dependencies
    var layers = ScriptUtils.getLayerFiles().map(f => f.parsed)
     var builtinsPerLayer= new Map<string, string[]>();
     var layersUsingBuiltin = new Map<string /* Builtin */, string[]>();

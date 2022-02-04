@@ -40,10 +40,10 @@ export default class ThemeSpec extends T {
                 Constants.added_by_default.splice(0, Constants.added_by_default.length)
                 const sharedLayers = new Map<string, LayerConfigJson>()
                 sharedLayers.set("public_bookcase", bookcaseLayer["default"])
-                themeConfigJson = new PrepareTheme().convertStrict({
+                themeConfigJson = new PrepareTheme({
                     tagRenderings: new Map<string, TagRenderingConfigJson>(),
                     sharedLayers: sharedLayers
-                }, themeConfigJson, "test")
+                }).convertStrict( themeConfigJson, "test")
                 const themeConfig = new LayoutConfig(themeConfigJson);
                 assert.equal("xyz", themeConfig.layers[0].source.geojsonSource)
 

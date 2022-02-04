@@ -13,14 +13,17 @@ import DependencyCalculator from "../DependencyCalculator";
 import {ValidateThemeAndLayers} from "./Validation";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
-    constructor() {
+    private readonly _state: DesugaringContext;
+    constructor(
+        state: DesugaringContext,
+    ) {
         super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", []);
+        this._state = state;
     }
     
-    convert(state: DesugaringContext, json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[]; warnings: string[] } {
+    convert(json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[] } {
         const errors = []
-        const warnings = []
-        
+        const state= this._state
         function reportNotFound(name: string){
             const knownLayers = Array.from(state.sharedLayers.keys())
             const withDistance = knownLayers.map(lname => [lname,  Utils.levenshteinDistance(name, lname)])
@@ -39,12 +42,11 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                 return {
                     result: null,
                     errors,
-                    warnings
                 }
             }
             return {
                 result: [found],
-                errors, warnings
+                errors
             }
         }
 
@@ -72,28 +74,31 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
             }
             return {
                 result: layers,
-                errors, warnings
+                errors
             }
 
         }
 
         return {
             result: [json],
-            errors, warnings
+            errors
         };
     }
 
 }
 
 class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
+    private _state: DesugaringContext;
 
-    constructor() {
+    constructor(state: DesugaringContext) {
         super("Adds the default layers, namely: " + Constants.added_by_default.join(", "), ["layers"]);
+        this._state = state;
     }
 
-    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
+        const state = this._state
         json.layers = [...json.layers]
         const alreadyLoaded = new Set(json.layers.map(l => l["id"]))
 
@@ -141,7 +146,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"]);
     }
 
-    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
 
@@ -176,11 +181,10 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
 
                 try {
 
-                    const importLayerResult = creator.convert(state, layer, context + ".(noteimportlayer)[" + i1 + "]")
+                    const importLayerResult = creator.convert(layer, context + ".(noteimportlayer)[" + i1 + "]")
                     errors.push(...importLayerResult.errors)
                     warnings.push(...importLayerResult.warnings)
                     if (importLayerResult.result !== undefined) {
-                        warnings.push("Added an import layer to theme " + json.id + ", namely " + importLayerResult.result.id)
                         json.layers.push(importLayerResult.result)
                     }
                 } catch (e) {
@@ -199,8 +203,10 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
 
 
 export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
-    constructor() {
+    private readonly _state: DesugaringContext;
+    constructor(state: DesugaringContext, ) {
         super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"]);
+        this._state = state;
     }
 
     /**
@@ -229,9 +235,9 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         return false;
     }
 
-    convert(state: DesugaringContext, layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
+    convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
 
-
+        const state = this._state;
         const hasMinimap = layerConfig.tagRenderings?.some(tr => AddMiniMap.hasMinimap(<TagRenderingConfigJson>tr)) ?? true
         if (!hasMinimap) {
             layerConfig = {...layerConfig}
@@ -255,7 +261,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards", ["overrideAll", "layers"]);
     }
 
-    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
 
         const overrideAll = json.overrideAll;
         if (overrideAll === undefined) {
@@ -280,8 +286,10 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 }
 
 class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
-    constructor() {
+    private readonly _state: DesugaringContext;
+    constructor(state: DesugaringContext, ) {
         super("If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)", ["layers"]);
+        this._state = state;
     }
 
     private static CalculateDependencies(alreadyLoaded: LayerConfigJson[], allKnownLayers: Map<string, LayerConfigJson>, themeId: string): LayerConfigJson[] {
@@ -326,7 +334,8 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         return dependenciesToAdd;
     }
 
-    convert(state: DesugaringContext, theme: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(theme: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+        const state = this._state
         const allKnownLayers: Map<string, LayerConfigJson> = state.sharedLayers;
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings;
         const errors = [];
@@ -357,18 +366,18 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
 
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
-    constructor() {
+    constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a theme",
 
-            new OnEveryConcat("layers", new SubstituteLayer()),
+            new OnEveryConcat("layers", new SubstituteLayer(state)),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
-            new OnEvery("layers", new PrepareLayer()),
+            new OnEvery("layers", new PrepareLayer(state)),
             new ApplyOverrideAll(),
-            new AddDefaultLayers(),
-            new AddDependencyLayersToTheme(),
+            new AddDefaultLayers(state),
+            new AddDependencyLayersToTheme(state),
             new AddImportLayers(),
-            new OnEvery("layers", new AddMiniMap())
+            new OnEvery("layers", new AddMiniMap(state))
         );
     }
 }

@@ -1,4 +1,4 @@
-import {Conversion, DesugaringContext} from "./Conversion";
+import {Conversion} from "./Conversion";
 import LayerConfig from "../LayerConfig";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Translations from "../../../UI/i18n/Translations";
@@ -20,7 +20,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         this._includeClosedNotesDays = includeClosedNotesDays;
     }
 
-    convert(state: DesugaringContext, layerJson: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
+    convert(layerJson: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
         const t = Translations.t.importLayer;

@@ -6,21 +6,24 @@ import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
-    constructor() {
+    private readonly _state: DesugaringContext;
+    constructor(state: DesugaringContext) {
         super("Converts a tagRenderingSpec into the full tagRendering", []);
+        this._state = state;
     }
 
-    convert(state: DesugaringContext, json: string | TagRenderingConfigJson | { builtin: string | string[]; override: any }, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
+    convert(json: string | TagRenderingConfigJson | { builtin: string | string[]; override: any }, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
         const errors = []
         const warnings = []
 
         return {
-            result: this.convertUntilStable(state, json, warnings, errors, context),
+            result: this.convertUntilStable(json, warnings, errors, context),
             errors, warnings
         };
     }
 
-    private lookup(state: DesugaringContext, name: string): TagRenderingConfigJson[] {
+    private lookup(name: string): TagRenderingConfigJson[] {
+        const state = this._state;
         if (state.tagRenderings.has(name)) {
             return [state.tagRenderings.get(name)]
         }
@@ -61,7 +64,8 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
         return undefined;
     }
 
-    private convertOnce(state: DesugaringContext, tr: string | any, warnings: string[], errors: string[], ctx: string): TagRenderingConfigJson[] {
+    private convertOnce(tr: string | any, warnings: string[], errors: string[], ctx: string): TagRenderingConfigJson[] {
+        const state = this._state
         if (tr === "questions") {
             return [{
                 id: "questions"
@@ -70,7 +74,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
 
 
         if (typeof tr === "string") {
-            const lookup = this.lookup(state, tr);
+            const lookup = this.lookup(tr);
             if (lookup !== undefined) {
                 return lookup
             }
@@ -96,7 +100,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
 
             const trs: TagRenderingConfigJson[] = []
             for (const name of names) {
-                const lookup = this.lookup(state, name)
+                const lookup = this.lookup(name)
                 if (lookup === undefined) {
                     errors.push(ctx + ": The tagRendering with identifier " + name + " was not found.\n\tDid you mean one of " + Array.from(state.tagRenderings.keys()).join(", ") + "?")
                     continue
@@ -113,13 +117,13 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
         return [tr]
     }
 
-    private convertUntilStable(state: DesugaringContext, spec: string | any, warnings: string[], errors: string[], ctx: string): TagRenderingConfigJson[] {
-        const trs = this.convertOnce(state, spec, warnings, errors, ctx);
+    private convertUntilStable(spec: string | any, warnings: string[], errors: string[], ctx: string): TagRenderingConfigJson[] {
+        const trs = this.convertOnce(spec, warnings, errors, ctx);
 
         const result = []
         for (const tr of trs) {
             if (tr["builtin"] !== undefined) {
-                const stable = this.convertUntilStable(state, tr, warnings, errors, ctx + "(RECURSIVE RESOLVE)")
+                const stable = this.convertUntilStable(tr, warnings, errors, ctx + "(RECURSIVE RESOLVE)")
                 result.push(...stable)
             } else {
                 result.push(tr)
@@ -139,15 +143,16 @@ class ExpandGroupRewrite extends Conversion<{
 } | TagRenderingConfigJson, TagRenderingConfigJson[]> {
 
 
-    private static expandSubTagRenderings = new ExpandTagRendering()
+    private _expandSubTagRenderings;
 
-    constructor() {
+    constructor(state: DesugaringContext) {
         super(
             "Converts a rewrite config for tagRenderings into the expanded form"
         );
+        this._expandSubTagRenderings = new ExpandTagRendering(state)
     }
 
-    convert(state: DesugaringContext, json:
+    convert( json:
         {
             rewrite:
                 { sourceString: string; into: string[] }[]; renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
@@ -186,7 +191,7 @@ class ExpandGroupRewrite extends Conversion<{
             }
         }
 
-        const subRenderingsRes = <{ result: TagRenderingConfigJson[][], errors, warnings }> ExpandGroupRewrite.expandSubTagRenderings.convertAll(state, config.renderings, context);
+        const subRenderingsRes = <{ result: TagRenderingConfigJson[][], errors, warnings }> this._expandSubTagRenderings.convertAll(config.renderings, context);
         const subRenderings: TagRenderingConfigJson[] = [].concat(...subRenderingsRes.result);
         const errors = subRenderingsRes.errors;
         const warnings = subRenderingsRes.warnings;
@@ -279,13 +284,13 @@ class ExpandGroupRewrite extends Conversion<{
 
 
 export class PrepareLayer extends Fuse<LayerConfigJson> {
-    constructor() {
+    constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",
-            new OnEveryConcat("tagRenderings", new ExpandGroupRewrite()),
-            new OnEveryConcat("tagRenderings", new ExpandTagRendering()),
+            new OnEveryConcat("tagRenderings", new ExpandGroupRewrite(state)),
+            new OnEveryConcat("tagRenderings", new ExpandTagRendering(state)),
             new SetDefault("titleIcons", ["defaults"]),
-            new OnEveryConcat("titleIcons", new ExpandTagRendering())
+            new OnEveryConcat("titleIcons", new ExpandTagRendering(state))
         );
     }
 }

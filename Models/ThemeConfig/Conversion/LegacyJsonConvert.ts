@@ -11,7 +11,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
             ["overpassTags", "source.osmtags", "tagRenderings[*].id", "mapRendering"]);
     }
 
-    convert(state: {}, json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
         const warnings = []
         if (typeof json === "string" || json["builtin"] !== undefined) {
             // Reuse of an already existing layer; return as-is
@@ -123,7 +123,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         super("Small fixes in the theme config", ["roamingRenderings"]);
     }
 
-    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const oldThemeConfig = {...json}
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
 

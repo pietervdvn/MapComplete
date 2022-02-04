@@ -1,4 +1,4 @@
-import {DesugaringContext, DesugaringStep, Fuse, OnEvery} from "./Conversion";
+import {DesugaringStep, Fuse, OnEvery} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import LayerConfig from "../LayerConfig";
 import {Utils} from "../../../Utils";
@@ -8,7 +8,6 @@ import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import LayoutConfig from "../LayoutConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
-import {parseString} from "xml2js";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -19,7 +18,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         this._languages = languages;
     }
 
-    convert(state: DesugaringContext, obj: any, context: string): { result: LayerConfig; errors: string[]; warnings: string[] } {
+    convert(obj: any, context: string): { result: LayerConfig; errors: string[] } {
         const errors = []
         const translations = Translation.ExtractAllTranslationsFrom(
             obj
@@ -34,7 +33,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
 
         return {
             result: obj,
-            warnings: [], errors
+            errors
         };
     }
 }
@@ -55,9 +54,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         this._isBuiltin = isBuiltin;
     }
 
-    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[] } {
         const errors = []
-        const warnings = []
         {
             // Legacy format checks  
             if (this._isBuiltin) {
@@ -89,9 +87,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
             if (json["mustHaveLanguage"] !== undefined) {
                 const checked = new ValidateLanguageCompleteness(...json["mustHaveLanguage"])
-                    .convert(state, theme, theme.id)
+                    .convert(theme, theme.id)
                 errors.push(...checked.errors)
-                warnings.push(...checked.warnings)
             }
 
         } catch (e) {
@@ -100,8 +97,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
         return {
             result: json,
-            errors,
-            warnings
+            errors
         };
     }
 }
@@ -122,7 +118,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson>{
         super("Checks that an 'overrideAll' does not override a single override");
     }
 
-    convert(state: DesugaringContext, json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
         
         const overrideAll = json.overrideAll;
         if(overrideAll === undefined){
@@ -144,19 +140,16 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson>{
         return  {result: json, errors}
     }
     
-    
-    
 }
 
 export class PrevalidateTheme extends Fuse<LayoutConfigJson>{
-
+    
     constructor() {
         super("Various consistency checks on the raw JSON",
             new OverrideShadowingCheck()
             );
         
     }
-
 
 }
 
@@ -165,7 +158,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
         super("Checks that the mappings don't shadow each other");
     }
     
-    convert(state: DesugaringContext, json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
         if(json.mappings === undefined || json.mappings.length === 0){
             return {result: json}
@@ -218,7 +211,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         this._isBuiltin = isBuiltin;
     }
 
-    convert(state: DesugaringContext, json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings?: string[] } {
+    convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings?: string[] } {
         const errors = []
         const warnings = []
 
@@ -315,7 +308,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             if(json.tagRenderings !== undefined){
-            new DetectShadowedMappings().convertAll(state, <TagRenderingConfigJson[]> json.tagRenderings, context+".tagRenderings")
+                new DetectShadowedMappings().convertAll(<TagRenderingConfigJson[]> json.tagRenderings, context+".tagRenderings")
             }
             
         } catch (e) {

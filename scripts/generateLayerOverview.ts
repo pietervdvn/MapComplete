@@ -138,16 +138,16 @@ class LayerOverviewUtils {
         const sharedTagRenderings = this.getSharedTagRenderings();
         const layerFiles = ScriptUtils.getLayerFiles();
         const sharedLayers = new Map<string, LayerConfigJson>()
-        const prepLayer = new PrepareLayer();
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
             sharedLayers
         }
+        const prepLayer = new PrepareLayer(state);
         for (const sharedLayerJson of layerFiles) {
             const context = "While building builtin layer " + sharedLayerJson.path
-            const fixed = prepLayer.convertStrict(state, sharedLayerJson.parsed, context)
+            const fixed = prepLayer.convertStrict(sharedLayerJson.parsed, context)
             const validator = new ValidateLayer(knownImagePaths, sharedLayerJson.path, true);
-            validator.convertStrict(state, fixed, context)
+            validator.convertStrict(fixed, context)
 
             if (sharedLayers.has(fixed.id)) {
                 throw "There are multiple layers with the id " + fixed.id
@@ -174,11 +174,11 @@ class LayerOverviewUtils {
             let themeFile = themeInfo.parsed
             const themePath = themeInfo.path
 
-            new PrevalidateTheme().convertStrict(convertState, themeFile, themePath)
-            themeFile = new PrepareTheme().convertStrict(convertState, themeFile, themePath)
+            new PrevalidateTheme().convertStrict(themeFile, themePath)
+            themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
             new ValidateThemeAndLayers(knownImagePaths, themePath, true)
-                .convertStrict(convertState, themeFile, themePath)
+                .convertStrict(themeFile, themePath)
 
             this.writeTheme(themeFile)
             fixed.set(themeFile.id, themeFile)

@@ -357,10 +357,7 @@ export default class LegacyThemeLoaderSpec extends T {
                 ["Walking_node_theme", () => {
 
                     const config = LegacyThemeLoaderSpec.walking_node_theme
-                    const fixed = new FixLegacyTheme().convert({
-                            tagRenderings: new Map<string, TagRenderingConfigJson>(),
-                            sharedLayers: new Map<string, LayerConfigJson>()
-                        },
+                    const fixed = new FixLegacyTheme().convert(
                         // @ts-ignore
                         config,
                         "While testing")
@@ -414,7 +411,7 @@ export default class LegacyThemeLoaderSpec extends T {
                 }],
                 ["Shadowed mappings are detected",
                     () => {
-                        const r = new DetectShadowedMappings().convert(undefined, {
+                        const r = new DetectShadowedMappings().convert({
                             mappings: [
                                 {
                                     if: {or: ["key=value", "x=y"]},
@@ -428,7 +425,7 @@ export default class LegacyThemeLoaderSpec extends T {
                         }, "test");
                     T.isTrue(r.errors.length > 0, "Failing case is not detected")
 
-                        const r0 = new DetectShadowedMappings().convert(undefined, {
+                        const r0 = new DetectShadowedMappings().convert( {
                             mappings: [
                                 {
                                     if: {or: ["key=value", "x=y"]},
