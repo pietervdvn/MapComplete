@@ -5,18 +5,21 @@
     "de": "Karte mit Briefkästen und Poststellen",
     "nb_NO": "Postboks og postkontor-kart",
     "it": "Buche delle lettere e uffici postali",
-    "zh_Hant": "郵筒與郵局地圖"
+    "zh_Hant": "郵筒與郵局地圖",
+    "hu": "Posta- és postaládatérkép"
   },
   "shortDescription": {
     "en": "A map showing postboxes and post offices",
     "de": "Eine Karte die Briefkästen und Poststellen anzeigt",
     "it": "Una cartina che mostra le buche delle lettere e gli uffici postali",
-    "zh_Hant": "顯示郵筒與郵局的地圖"
+    "zh_Hant": "顯示郵筒與郵局的地圖",
+    "hu": "Posták és postaládák térképe"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
     "it": "In questa cartina puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa cartina per trovare dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap. ",
-    "zh_Hant": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。 "
+    "zh_Hant": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。 ",
+    "hu": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. "
   },
   "maintainer": "nicolelaine",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -38,7 +41,8 @@
         "de": "Brieflästen",
         "ru": "Почтовые ящики",
         "zh_Hant": "郵筒",
-        "id": "Kotak pos"
+        "id": "Kotak pos",
+        "hu": "Postaládák"
       },
       "minzoom": 12,
       "source": {
@@ -50,14 +54,16 @@
           "de": "Briefkasten",
           "ru": "Почтовый ящик",
           "zh_Hant": "郵筒",
-          "id": "Kotak pos"
+          "id": "Kotak pos",
+          "hu": "Postaláda"
         }
       },
       "description": {
         "en": "The layer showing postboxes.",
         "de": "Die Ebene zeigt Briefkästen.",
         "zh_Hant": "這圖層顯示郵筒。",
-        "id": "Layer yang memperlihatkan kotak pos."
+        "id": "Layer yang memperlihatkan kotak pos.",
+        "hu": "A postaládákat megjelenítő réteg."
       },
       "tagRenderings": [
         "images",
@@ -76,7 +82,8 @@
             "de": "Briefkasten",
             "ru": "почтовый ящик",
             "zh_Hant": "郵筒",
-            "id": "kotak pos"
+            "id": "kotak pos",
+            "hu": "postaláda"
           }
         }
       ],
@@ -118,7 +125,8 @@
         "de": "Poststellen",
         "ru": "Почтовые отделения",
         "zh_Hant": "郵局",
-        "id": "Kantor pos"
+        "id": "Kantor pos",
+        "hu": "Posták"
       },
       "minzoom": 12,
       "source": {
@@ -130,14 +138,16 @@
           "de": "Poststelle",
           "ru": "Почтовое отделение",
           "zh_Hant": "郵局",
-          "id": "Kantor Pos"
+          "id": "Kantor Pos",
+          "hu": "Posta"
         }
       },
       "description": {
         "en": "A layer showing post offices.",
         "de": "Eine Ebene mit Postämtern.",
         "zh_Hant": "圖層顯示郵局。",
-        "id": "Layer yang menunjukkan kantor pos."
+        "id": "Layer yang menunjukkan kantor pos.",
+        "hu": "Postákat megjelenítő réteg."
       },
       "tagRenderings": [
         "images",
@@ -150,7 +160,8 @@
             "en": "Opening Hours: {opening_hours_table()}",
             "ru": "Часы работы: {opening_hours_table()}",
             "zh_Hant": "開放時間：{opening_hours_table()}",
-            "id": "Jam Buka: {opening_hours_table()}"
+            "id": "Jam Buka: {opening_hours_table()}",
+            "hu": "Nyitva tartás: {opening_hours_table()}"
           },
           "freeform": {
             "key": "opening_hours",
@@ -159,7 +170,8 @@
           "question": {
             "en": "What are the opening hours for this post office?",
             "zh_Hant": "這間郵局的開放時間是？",
-            "id": "Jam berapa kantor pos ini buka?"
+            "id": "Jam berapa kantor pos ini buka?",
+            "hu": "Mikor van nyitva ez a posta?"
           },
           "mappings": [
             {
@@ -168,7 +180,8 @@
                 "en": "24/7 opened (including holidays)",
                 "de": "durchgehend geöffnet (auch an Feiertagen)",
                 "zh_Hant": "24/7 開放 (包括假日)",
-                "id": "Buka 24 jam (termasuk hari libur)"
+                "id": "Buka 24 jam (termasuk hari libur)",
+                "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)"
               }
             }
           ],
@@ -185,7 +198,8 @@
             "de": "Poststelle",
             "ru": "Почтовое отделение",
             "zh_Hant": "郵局",
-            "id": "Kantor Pos"
+            "id": "Kantor Pos",
+            "hu": "Posta"
           }
         }
       ],
@@ -198,7 +212,8 @@
                 "en": "Currently open",
                 "de": "Aktuell geöffnet",
                 "zh_Hant": "目前開放",
-                "id": "Saat ini buka"
+                "id": "Saat ini buka",
+                "hu": "Most nyitva"
               },
               "osmTags": "_isOpen=yes"
             }

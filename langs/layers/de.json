@@ -2252,11 +2252,6 @@
     "observation_tower": {
         "description": "Türme zur Aussicht auf die umgebende Landschaft",
         "name": "Aussichtstürme",
-        "presets": {
-            "0": {
-                "title": "Beobachtungsturm"
-            }
-        },
         "tagRenderings": {
             "Fee": {
                 "mappings": {

@@ -3467,11 +3467,6 @@
     "observation_tower": {
         "description": "Towers with a panoramic view",
         "name": "Observation towers",
-        "presets": {
-            "0": {
-                "title": "observation tower"
-            }
-        },
         "tagRenderings": {
             "Fee": {
                 "mappings": {
@@ -3489,6 +3484,17 @@
             "Operator": {
                 "question": "Who maintains this tower?",
                 "render": "Maintained by <b>{operator}</b>"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "This tower is publicly accessible"
+                    },
+                    "1": {
+                        "then": "This tower can only be visited with a guide"
+                    }
+                },
+                "question": "Can this tower be visited?"
             },
             "elevator": {
                 "mappings": {

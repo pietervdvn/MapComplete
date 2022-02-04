@@ -1015,11 +1015,6 @@
     },
     "observation_tower": {
         "name": "Смотровые башни",
-        "presets": {
-            "0": {
-                "title": "смотровая башня"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {

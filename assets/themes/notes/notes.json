@@ -5,11 +5,13 @@
   "startLon": 0,
   "startZoom": 0,
   "title": {
-    "en": "Notes on OpenStreetMap"
+    "en": "Notes on OpenStreetMap",
+    "hu": "Jegyzetek az OpenStreetMapen"
   },
   "version": "0.1",
   "description": {
-    "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text."
+    "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
+    "hu": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>."
   },
   "icon": "./assets/svg/resolved.svg",
   "clustering": false,

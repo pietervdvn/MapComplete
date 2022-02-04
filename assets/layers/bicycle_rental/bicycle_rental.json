@@ -100,7 +100,8 @@
           "if": "bicycle_rental=dropoff_point",
           "then": {
             "en": "This is a dropoff point: a designated bicycle parking for this cycle rental",
-            "nl": "Dit is een afzetpunt: een parking met duidelijke signalisatie waar (enkel) fietsen van deze fietsverhuur gezet worden"
+            "nl": "Dit is een afzetpunt: een parking met duidelijke signalisatie waar (enkel) fietsen van deze fietsverhuur gezet worden",
+            "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
           }
         }
       ]

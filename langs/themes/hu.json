@@ -36,6 +36,7 @@
                 "name": "Lakóautós megállóhely",
                 "presets": {
                     "0": {
+                        "description": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
                         "title": "lakóautós megállóhely"
                     }
                 },
@@ -116,6 +117,20 @@
                     "mappings": {
                         "0": {
                             "then": "Mászószervezet"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "9": {
+                    "mappings": {
+                        "0": {
+                            "then": "Itt lehetőség van sportmászásra"
+                        },
+                        "1": {
+                            "then": "Itt nincs lehetőség sportmászásra"
                         }
                     }
                 }
@@ -274,7 +289,7 @@
                         "question": "Van-e a kertben vizeshordó?"
                     },
                     "facadegardens-start_date": {
-                        "question": "Melyik évben épült a kert?",
+                        "question": "Mikor épült a kert? (Év megadása is elegendő)",
                         "render": "A kert építésének időpontja: {start_date}"
                     },
                     "facadegardens-sunshine": {
@@ -315,6 +330,9 @@
     "ghostbikes": {
         "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá.",
         "title": "Szellemkerékpárok"
+    },
+    "grb": {
+        "description": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
     },
     "hackerspaces": {
         "description": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni",
@@ -362,6 +380,235 @@
         "description": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltóállomásokat találhat és szerkeszthet kedvenc városrészeiben (vagy másutt).\n\nA bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára releváns rétegeket. Ezzel az eszközzel gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a rendelkezésre álló kérdések megválaszolásával pedig további részleteket adhat meg.\n\nAz Ön által elvégzett módosítások automatikusan elmentődnek az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják azokat.",
         "shortDescription": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez.",
         "title": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások."
+    },
+    "notes": {
+        "description": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>.",
+        "title": "Jegyzetek az OpenStreetMapen"
+    },
+    "observation_towers": {
+        "description": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
+        "shortDescription": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
+        "title": "Kilátótornyok"
+    },
+    "openwindpowermap": {
+        "description": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
+        "layers": {
+            "0": {
+                "name": "Szélerőmű",
+                "presets": {
+                    "0": {
+                        "title": "Szélerőmű"
+                    }
+                },
+                "tagRenderings": {
+                    "turbine-diameter": {
+                        "question": "Hány méter a rotorátmérője ennek a szélturbinának?",
+                        "render": "A szélturbina rotorátmérője: {rotor:diameter} méter."
+                    },
+                    "turbine-height": {
+                        "question": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
+                        "render": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter."
+                    },
+                    "turbine-operator": {
+                        "question": "Ki üzemelteti ezt a szélturbinát?",
+                        "render": "Ennek a szélerőműnek az üzemeltetője: {operator}."
+                    },
+                    "turbine-output": {
+                        "question": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
+                        "render": "A szélerőmű teljesítménye: {generator:output:electricity}."
+                    },
+                    "turbine-start-date": {
+                        "question": "Mikor helyezték üzembe ezt a szélerőművet?",
+                        "render": "A szélerőmű üzembe helyezése: {start_date}."
+                    }
+                },
+                "title": {
+                    "render": "szélerőmű"
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megawatt"
+                            },
+                            "1": {
+                                "human": " kilowatt"
+                            },
+                            "2": {
+                                "human": " watt"
+                            },
+                            "3": {
+                                "human": " gigawatt"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " méter"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap"
+    },
+    "parkings": {
+        "description": "Ez a térkép különböző parkolókat jelenít meg",
+        "shortDescription": "Ez a térkép különböző parkolókat jelenít meg",
+        "title": "Parkolás"
+    },
+    "playgrounds": {
+        "description": "Ezen a térképen játszótereket találsz, és további információkat adhatsz hozzájuk",
+        "shortDescription": "Egy térkép játszóterekkel",
+        "title": "Játszóterek"
+    },
+    "postal_codes": {
+        "description": "Irányítószámok",
+        "layers": {
+            "0": {
+                "name": "irányítószámok",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Irányítószám: {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Irányítószám: {postal_code}"
+                }
+            },
+            "2": {
+                "name": "polgármesteri hivatalok",
+                "title": {
+                    "render": "{name} városháza"
+                }
+            }
+        },
+        "shortDescription": "Irányítószámok",
+        "title": "Irányítószámok"
+    },
+    "postboxes": {
+        "description": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
+        "layers": {
+            "0": {
+                "description": "A postaládákat megjelenítő réteg.",
+                "name": "Postaládák",
+                "presets": {
+                    "0": {
+                        "title": "postaláda"
+                    }
+                },
+                "title": {
+                    "render": "Postaláda"
+                }
+            },
+            "1": {
+                "description": "Postákat megjelenítő réteg.",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Most nyitva"
+                            }
+                        }
+                    }
+                },
+                "name": "Posták",
+                "presets": {
+                    "0": {
+                        "title": "Posta"
+                    }
+                },
+                "tagRenderings": {
+                    "OH": {
+                        "mappings": {
+                            "0": {
+                                "then": "Éjjel-nappal nyitva (munkaszüneti napokon is)"
+                            }
+                        },
+                        "question": "Mikor van nyitva ez a posta?",
+                        "render": "Nyitva tartás: {opening_hours_table()}"
+                    }
+                },
+                "title": {
+                    "render": "Posta"
+                }
+            }
+        },
+        "shortDescription": "Posták és postaládák térképe",
+        "title": "Posta- és postaládatérkép"
+    },
+    "shops": {
+        "description": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat.",
+        "shortDescription": "Szerkeszthető térkép üzletek alapvető adataival",
+        "title": "Bolttérkép"
+    },
+    "sport_pitches": {
+        "description": "A sportpálya egy olyan terület, amelyen valamilyen sportot űznek",
+        "shortDescription": "Sportpályatérkép",
+        "title": "Sportpályák"
+    },
+    "street_lighting": {
+        "description": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
+        "layers": {
+            "1": {
+                "name": "Kivilágított utcák",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ezen az utcán van közvilágítás"
+                            },
+                            "1": {
+                                "then": "Ezen az utcán nincs közvilágítás"
+                            },
+                            "2": {
+                                "then": "Ez az utca éjszaka ki van világítva"
+                            },
+                            "3": {
+                                "then": "Ez az utca éjjel-nappal ki van világítva"
+                            }
+                        },
+                        "question": "Ki van-e világítva ez az utca?"
+                    }
+                },
+                "title": {
+                    "render": "Kivilágított utca"
+                }
+            },
+            "2": {
+                "name": "Minden utca",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ez az utca ki van világítva"
+                            },
+                            "1": {
+                                "then": "Ez az utca nincs kivilágítva"
+                            },
+                            "2": {
+                                "then": "Ez az utca éjjel ki van világítva"
+                            },
+                            "3": {
+                                "then": "Ez az utca éjjel-nappal ki van világítva"
+                            }
+                        },
+                        "question": "Ki van-e világítva ez az utca?"
+                    }
+                },
+                "title": {
+                    "render": "Utca"
+                }
+            }
+        },
+        "title": "Közvilágítás"
+    },
+    "surveillance": {
+        "description": "Ezen a térképen térfigyelő kamerák láthatók.",
+        "shortDescription": "Térfigyelő kamerák és más figyelőeszközök",
+        "title": "Megfigyelt térfigyelés"
     },
     "toilets": {
         "description": "Nyilvános WC-k térképe",

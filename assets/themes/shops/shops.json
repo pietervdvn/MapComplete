@@ -8,14 +8,16 @@
     "ru": "Открыть карту магазинов",
     "de": "Freie Geschäftskarte",
     "it": "Mappa dei negozi",
-    "nb_NO": "Kart over åpne butikker"
+    "nb_NO": "Kart over åpne butikker",
+    "hu": "Bolttérkép"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
     "fr": "Carte modifiable affichant les informations de base des magasins",
     "ja": "基本的なショップ情報を含む編集可能なマップ",
     "de": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
-    "it": "Una cartina modificabile con informazioni di base dei negozi"
+    "it": "Una cartina modificabile con informazioni di base dei negozi",
+    "hu": "Szerkeszthető térkép üzletek alapvető adataival"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
@@ -23,7 +25,8 @@
     "ja": "この地図には店の基本情報を記入したり営業時間や電話番号を追加することができます",
     "zh_Hant": "這份地圖上，你可以標記商家基本資訊，新增營業時間以及聯絡電話",
     "de": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
-    "it": "In questa cartina è possibile aggiungere informazioni di base di un negozio, orari di apertura e numeri di telefono"
+    "it": "In questa cartina è possibile aggiungere informazioni di base di un negozio, orari di apertura e numeri di telefono",
+    "hu": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat."
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",

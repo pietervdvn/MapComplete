@@ -8,7 +8,8 @@
     "zh_Hant": "運動場地",
     "ru": "Спортивные площадки",
     "de": "Sportplätze",
-    "it": "Campi sportivi"
+    "it": "Campi sportivi",
+    "hu": "Sportpályák"
   },
   "shortDescription": {
     "nl": "Deze kaart toont sportvelden",
@@ -18,7 +19,8 @@
     "zh_Hant": "顯示運動場地的地圖",
     "ru": "Карта, отображающая спортивные площадки",
     "de": "Eine Karte mit Sportplätzen",
-    "it": "Una cartina che mostra i campi sportivi"
+    "it": "Una cartina che mostra i campi sportivi",
+    "hu": "Sportpályatérkép"
   },
   "description": {
     "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -27,7 +29,8 @@
     "ja": "スポーツ競技場は、スポーツが行われる場所です",
     "zh_Hant": "運動場地是進行運動的地方",
     "de": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
-    "it": "Una campo sportivo è un’area dove vengono praticati gli sport"
+    "it": "Una campo sportivo è un’area dove vengono praticati gli sport",
+    "hu": "A sportpálya egy olyan terület, amelyen valamilyen sportot űznek"
   },
   "maintainer": "",
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",

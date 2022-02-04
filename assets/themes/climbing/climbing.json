@@ -1516,7 +1516,8 @@
               "nl": "Sportklimmen/voorklimmen kan hier",
               "ru": "Здесь можно заняться спортивным скалолазанием",
               "ja": "ここでスポーツクライミングができます",
-              "it": "L’arrampicata sportiva è possibile qua"
+              "it": "L’arrampicata sportiva è possibile qua",
+              "hu": "Itt lehetőség van sportmászásra"
             }
           },
           {
@@ -1527,7 +1528,8 @@
               "nl": "Sportklimmen/voorklimmen kan hier niet",
               "ru": "Спортивное скалолазание здесь невозможно",
               "ja": "ここではスポーツクライミングはできません",
-              "it": "L’arrampicata sportiva non è possibile qua"
+              "it": "L’arrampicata sportiva non è possibile qua",
+              "hu": "Itt nincs lehetőség sportmászásra"
             }
           },
           {

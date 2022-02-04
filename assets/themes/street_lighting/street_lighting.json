@@ -6,12 +6,14 @@
     "en": "Street Lighting",
     "nl": "Straatverlichting",
     "ru": "Уличное освещение",
-    "zh_Hant": "道路照明"
+    "zh_Hant": "道路照明",
+    "hu": "Közvilágítás"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
     "nl": "Op deze kaart vind je alles over straatlantaarns",
-    "zh_Hant": "在這份地圖你可以找到任何有關路燈的事情"
+    "zh_Hant": "在這份地圖你可以找到任何有關路燈的事情",
+    "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -24,7 +26,8 @@
       "name": {
         "en": "Lit streets",
         "nl": "Verlichte straten",
-        "zh_Hant": "有照明的道路"
+        "zh_Hant": "有照明的道路",
+        "hu": "Kivilágított utcák"
       },
       "source": {
         "osmTags": {
@@ -41,7 +44,8 @@
         "render": {
           "en": "Lit street",
           "nl": "Verlichte straat",
-          "zh_Hant": "照明道路"
+          "zh_Hant": "照明道路",
+          "hu": "Kivilágított utca"
         },
         "mappings": [
           {
@@ -61,7 +65,8 @@
           "question": {
             "en": "Is this street lit?",
             "nl": "Is deze straat verlicht?",
-            "zh_Hant": "這道路有路燈嗎？"
+            "zh_Hant": "這道路有路燈嗎？",
+            "hu": "Ki van-e világítva ez az utca?"
           },
           "mappings": [
             {
@@ -69,7 +74,8 @@
               "then": {
                 "en": "This street is lit",
                 "nl": "Deze straat is verlicht",
-                "zh_Hant": "這個道路有照明"
+                "zh_Hant": "這個道路有照明",
+                "hu": "Ezen az utcán van közvilágítás"
               }
             },
             {
@@ -77,7 +83,8 @@
               "then": {
                 "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht",
-                "zh_Hant": "這個道路沒有照明"
+                "zh_Hant": "這個道路沒有照明",
+                "hu": "Ezen az utcán nincs közvilágítás"
               }
             },
             {
@@ -85,7 +92,8 @@
               "then": {
                 "en": "This street is lit at night",
                 "nl": "Deze straat is 's nachts verlicht",
-                "zh_Hant": "這個道路晚上有照明"
+                "zh_Hant": "這個道路晚上有照明",
+                "hu": "Ez az utca éjszaka ki van világítva"
               },
               "hideInAnswer": true
             },
@@ -94,7 +102,8 @@
               "then": {
                 "en": "This street is lit 24/7",
                 "nl": "Deze straat is 24/7 verlicht",
-                "zh_Hant": "這個道路 24/7 有照明"
+                "zh_Hant": "這個道路 24/7 有照明",
+                "hu": "Ez az utca éjjel-nappal ki van világítva"
               }
             }
           ]
@@ -108,7 +117,8 @@
         "en": "All streets",
         "nl": "Alle straten",
         "ru": "Все улицы",
-        "zh_Hant": "所有道路"
+        "zh_Hant": "所有道路",
+        "hu": "Minden utca"
       },
       "source": {
         "osmTags": {
@@ -125,7 +135,8 @@
           "en": "Street",
           "nl": "Straat",
           "ru": "Улица",
-          "zh_Hant": "照明"
+          "zh_Hant": "照明",
+          "hu": "Utca"
         },
         "mappings": [
           {
@@ -153,7 +164,8 @@
           "question": {
             "en": "Is this street lit?",
             "nl": "Is deze straat verlicht?",
-            "zh_Hant": "這道路有照明嗎？"
+            "zh_Hant": "這道路有照明嗎？",
+            "hu": "Ki van-e világítva ez az utca?"
           },
           "mappings": [
             {
@@ -161,7 +173,8 @@
               "then": {
                 "en": "This street is lit",
                 "nl": "Deze straat is verlicht",
-                "zh_Hant": "這道路有照明"
+                "zh_Hant": "這道路有照明",
+                "hu": "Ez az utca ki van világítva"
               }
             },
             {
@@ -169,7 +182,8 @@
               "then": {
                 "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht",
-                "zh_Hant": "這道路沒有照明"
+                "zh_Hant": "這道路沒有照明",
+                "hu": "Ez az utca nincs kivilágítva"
               }
             },
             {
@@ -177,7 +191,8 @@
               "then": {
                 "en": "This street is lit at night",
                 "nl": "Deze straat is 's nachts verlicht",
-                "zh_Hant": "這道路晚上有照明"
+                "zh_Hant": "這道路晚上有照明",
+                "hu": "Ez az utca éjjel ki van világítva"
               },
               "hideInAnswer": true
             },
@@ -186,7 +201,8 @@
               "then": {
                 "en": "This street is lit 24/7",
                 "nl": "Deze straat is 24/7 verlicht",
-                "zh_Hant": "這道路 24/7 有照明"
+                "zh_Hant": "這道路 24/7 有照明",
+                "hu": "Ez az utca éjjel-nappal ki van világítva"
               }
             }
           ]
