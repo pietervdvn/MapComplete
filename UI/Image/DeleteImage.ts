@@ -30,7 +30,7 @@ export default class DeleteImage extends Toggle {
                 await state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data, {
                         changeType: "answer",
-                        theme: "test"
+                        theme: state.layoutToUse.id
                     })
                 )
             });
