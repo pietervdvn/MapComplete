@@ -1,0 +1,235 @@
+[
+  {
+    "path": [
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "socialImage"
+    ],
+    "typeHint": "image",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons"
+    ],
+    "typeHint": "icon[]",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      {
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "enum": [
+              "defaults"
+            ]
+          }
+        ],
+        "minItems": 1,
+        "maxItems": 1
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  }
+]
