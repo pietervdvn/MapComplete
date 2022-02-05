@@ -16,7 +16,9 @@
         "isDeleted": "Gelöscht",
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
         "toBig": "Ihr Bild ist zu groß, da es {actual_size} ist. Bitte verwenden Sie Bilder von höchstens {max_size}",
-        "ccoExplanation": "Das Hinzufügen eines gemeinfreien Bildes impliziert, dass jeder alles mit Ihrem Bild machen kann"
+        "ccoExplanation": "Das Hinzufügen eines gemeinfreien Bildes impliziert, dass jeder alles mit Ihrem Bild machen kann",
+        "ccbsExplanation": "Die CC-BY-SA-Lizenz bedeutet, dass jeder Ihr Bild für jeden Zweck verwenden darf, aber Sie müssen genannt werden, und Remixe des Bildes müssen unter derselben Lizenz veröffentlicht werden",
+        "ccbExplanation": "Die CC-BY-Lizenz besagt, dass jeder Ihr Bild für jeden Zweck verwenden darf, aber Sie müssen als Urheber genannt werden"
     },
     "centerMessage": {
         "loadingData": "Daten werden geladen…",
@@ -29,7 +31,8 @@
         "title": "Willkommen bei MapComplete",
         "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu Objekten eines bestimmten Themas angezeigt und angepasst werden können.",
         "pickTheme": "Wähle unten ein Thema, um zu starten.",
-        "featuredThemeTitle": "Diese Woche im Blickpunkt"
+        "featuredThemeTitle": "Diese Woche im Blickpunkt",
+        "logIn": "Melden Sie sich an, um Themen anzuzeigen, die Sie zuvor besucht haben"
     },
     "general": {
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
@@ -66,7 +69,9 @@
             "disableFilters": "Alle Filter deaktivieren",
             "hasBeenImported": "Dieser Punkt wurde bereits importiert",
             "zoomInMore": "Vergrößern Sie die Ansicht, um dieses Element zu importieren",
-            "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein"
+            "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
+            "importTags": "Das Element erhält {tags}",
+            "wrongType": "Dieses Element ist weder ein Punkt noch ein Weg und kann nicht importiert werden"
         },
         "pickLanguage": "Sprache wählen: ",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
