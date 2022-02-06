@@ -35,9 +35,16 @@ then
     echo "Source maps are enabled"
 fi
 
+if [ $BRANCH = "master" ]
+then
+    PUBLIC_URL="./"
+else
+    PUBLIC_URL="./mc/$BRANCH"
+fi
+
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
+parcel build --public-url "$PUBLIC_URL" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"
     exit 1

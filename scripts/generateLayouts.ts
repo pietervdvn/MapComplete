@@ -179,7 +179,11 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
         if (icon.type !== "image/png") {
             continue;
         }
-        apple_icons.push(`<link rel="apple-touch-icon" sizes="${icon.sizes}" href="./assets/generated/generated_theme_${layout.id}_white_background${icon.sizes.substr(icon.sizes.indexOf("x")+ 1)}.png">`)
+        const whiteBgPath = `./assets/generated/generated_theme_${layout.id}_white_background${icon.sizes.substr(icon.sizes.indexOf("x")+ 1)}.png`
+        if(!existsSync(whiteBgPath)){
+            continue
+        }
+        apple_icons.push(`<link rel="apple-touch-icon" sizes="${icon.sizes}" href="${whiteBgPath}">`)
     }
 
     let themeSpecific = [
