@@ -38,6 +38,10 @@ fi
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
 parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
+if [ $? -ne 0 ]; then
+    echo "ERROR - stopping the build"
+    exit 1
+fi
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
@@ -47,7 +51,11 @@ do
     echo -e "\n\n  $theme"
     echo -e " ------------ \n\n"
     # Builds the necessary files for just one theme, e.g. 'bookcases.html' + 'index_bookcases.ts' + supporting file
-    parcel build --public-url './' $SRC_MAPS "$theme.html" 
+    parcel build --public-url './' $SRC_MAPS "$theme.html"
+    if [ $? -ne 0 ]; then
+        echo "ERROR - stopping the build"
+        exit 1
+    fi
 done
 # At last: a workaround; parcel 1.x borks the link to social images; the public-URL (./) is setup incorrectly, so we fix those
 cd dist
