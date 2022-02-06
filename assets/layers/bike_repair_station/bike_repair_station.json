@@ -277,8 +277,6 @@
       ],
       "id": "bike_repair_station-opening_hours"
     },
-
-
     {
       "question": {
         "en": "Who maintains this cycle pump?",
@@ -331,7 +329,6 @@
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "id": "bike_repair_station-phone"
     },
-    
     {
       "id": "bike_repair_station-bike-chain-tool",
       "question": {

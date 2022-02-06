@@ -7,7 +7,6 @@ import * as all_known_layouts from "../assets/generated/known_layers_and_themes.
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import xml2js from 'xml2js';
-import {exec} from "child_process";
 
 const sharp = require('sharp');
 const template = readFileSync("theme.html", "utf8");
@@ -18,9 +17,7 @@ function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
 }
 
-const alreadyWritten = []
-
-async function createIcon(iconPath: string, size: number) {
+async function createIcon(iconPath: string, size: number, alreadyWritten: string[]) {
     let name = iconPath.split(".").slice(0, -1).join(".");
     if (name.startsWith("./")) {
         name = name.substr(2)
@@ -53,7 +50,7 @@ async function createIcon(iconPath: string, size: number) {
     return newname;
 }
 
-async function createManifest(layout: LayoutConfig) {
+async function createManifest(layout: LayoutConfig, alreadyWritten: string[]) {
     const name = layout.id;
 
     Translation.forcedLanguage = "en"
@@ -64,6 +61,7 @@ async function createManifest(layout: LayoutConfig) {
     if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
         // This is an svg. Lets create the needed pngs and do some checkes!
 
+        const whiteBackgroundPath = "./assets/generated/theme_"+layout.id+"_white_background.svg"
         {
             const svgResult = await xml2js.parseStringPromise(readFileSync(icon, "UTF8"))
             const svg = svgResult.svg
@@ -82,7 +80,11 @@ async function createManifest(layout: LayoutConfig) {
                 }))//*/
         
             }
- 
+
+            const builder = new xml2js.Builder();
+            const withRect = {rect: {"$":{width, height, style: "fill:#ffffff;"}}, ...svg}
+            const xml = builder.buildObject({svg: withRect});
+            writeFileSync(whiteBackgroundPath, xml)
         }
         
         let path = layout.icon;
@@ -94,9 +96,10 @@ async function createManifest(layout: LayoutConfig) {
 
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
-            const name = await createIcon(path, size);
+            const name = await createIcon(path, size, alreadyWritten);
+            createIcon(whiteBackgroundPath, size, alreadyWritten)
             icons.push({
-                src: name,
+                src: "./"+name,
                 sizes: size + "x" + size,
                 type: "image/png"
             })
@@ -132,7 +135,6 @@ async function createManifest(layout: LayoutConfig) {
         categories: ["map", "navigation"]
     };
 }
-
 
 async function createLandingPage(layout: LayoutConfig, manifest) {
 
@@ -176,7 +178,7 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
         if (icon.type !== "image/png") {
             continue;
         }
-        apple_icons.push(`<link rel="apple-touch-icon" sizes="${icon.sizes}" href="${icon.src}">`)
+        apple_icons.push(`<link rel="apple-touch-icon" sizes="${icon.sizes}" href="./assets/generated/generated_theme_${layout.id}_white_background${icon.sizes.substr(icon.sizes.indexOf("x")+ 1)}.png">`)
     }
 
     let themeSpecific = [
@@ -211,65 +213,78 @@ async function createIndexFor(theme: LayoutConfig) {
     appendFileSync(filename, codeTemplate)
 }
 
-const generatedDir = "./assets/generated";
-if (!existsSync(generatedDir)) {
-    mkdirSync(generatedDir)
+function createDir(path){
+    if (!existsSync(path)) {
+        mkdirSync(path)
+    }
 }
 
-const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom", "theme"]
-// @ts-ignore
-const all: LayoutConfigJson[] = all_known_layouts.themes;
-const args = process.argv
-const theme = args[2]
-if(theme !== undefined){
-    console.warn("Only generating layout "+theme)
-}
-for (const i in all) {
-    const layoutConfigJson: LayoutConfigJson = all[i]
-    if(theme !== undefined && layoutConfigJson.id !== theme){
-        continue
+async function main(): Promise<void>{
+    
+
+    const alreadyWritten = []
+    createDir("./assets/generated")
+    createDir("./assets/generated/layers")
+    createDir("./assets/generated/themes")
+    createDir("./assets/generated/white_background")
+
+    const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom", "theme"]
+    // @ts-ignore
+    const all: LayoutConfigJson[] = all_known_layouts.themes;
+    const args = process.argv
+    const theme = args[2]
+    if(theme !== undefined){
+        console.warn("Only generating layout "+theme)
     }
-    const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
-    const layoutName = layout.id
-    if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
-        console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
-        continue;
-    }
-    const err = err => {
-        if (err !== null) {
-            console.log("Could not write manifest for ", layoutName, " because ", err)
+    for (const i in all) {
+        const layoutConfigJson: LayoutConfigJson = all[i]
+        if(theme !== undefined && layoutConfigJson.id !== theme){
+            continue
         }
-    };
-    createManifest(layout).then(manifObj => {
+        const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
+        const layoutName = layout.id
+        if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
+            console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
+            continue;
+        }
+        const err = err => {
+            if (err !== null) {
+                console.log("Could not write manifest for ", layoutName, " because ", err)
+            }
+        };
+        await createManifest(layout, alreadyWritten).then(manifObj => {
+            const manif = JSON.stringify(manifObj, undefined, 2);
+            const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
+            writeFile(manifestLocation, manif, err);
+    
+            // Create a landing page for the given theme
+            createLandingPage(layout, manifObj).then(landing => {
+                writeFile(enc(layout.id) + ".html", landing, err)
+            });
+            createIndexFor(layout)
+        }).catch(e => console.log("Could not generate the manifest: ", e))
+    
+    }
+    
+    await createManifest(new LayoutConfig({
+        icon: "assets/svg/mapcomplete_logo.svg",
+        id: "index",
+        layers: [],
+        maintainer: "Pieter Vander Vennet",
+        socialImage: "assets/SocialImage.png",
+        startLat: 0,
+        startLon: 0,
+        startZoom: 0,
+        title: {en: "MapComplete"},
+        version: Constants.vNumber,
+        description: {en: "A thematic map viewer and editor based on OpenStreetMap"}
+    }), alreadyWritten).then(manifObj => {
         const manif = JSON.stringify(manifObj, undefined, 2);
-        const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
-        writeFile(manifestLocation, manif, err);
-
-        // Create a landing page for the given theme
-        createLandingPage(layout, manifObj).then(landing => {
-            writeFile(enc(layout.id) + ".html", landing, err)
-        });
-        createIndexFor(layout)
-    }).catch(e => console.log("Could not generate the manifest: ", e))
+        writeFileSync("index.manifest", manif)
+    })
 
 }
 
-createManifest(new LayoutConfig({
-    icon: "assets/svg/mapcomplete_logo.svg",
-    id: "index",
-    layers: [],
-    maintainer: "Pieter Vander Vennet",
-    socialImage: "assets/SocialImage.png",
-    startLat: 0,
-    startLon: 0,
-    startZoom: 0,
-    title: {en: "MapComplete"},
-    version: Constants.vNumber,
-    description: {en: "A thematic map viewer and editor based on OpenStreetMap"}
-})).then(manifObj => {
-    const manif = JSON.stringify(manifObj, undefined, 2);
-    writeFileSync("index.manifest", manif)
+main().then(() => {
+    console.log("All done!")
 })
-
-
-console.log("All done!");
