@@ -98,9 +98,9 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]) {
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
             const name = await createIcon(path, size, alreadyWritten);
-            createIcon(whiteBackgroundPath, size, alreadyWritten)
+            await createIcon(whiteBackgroundPath, size, alreadyWritten)
             icons.push({
-                src: "./"+name,
+                src: name,
                 sizes: size + "x" + size,
                 type: "image/png"
             })
@@ -140,9 +140,9 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]) {
 async function createLandingPage(layout: LayoutConfig, manifest) {
 
     Locale.language.setData(layout.language[0]);
-
-    const ogTitle = Translations.WT(layout.title).txt.replace(/"/g, '\\"');
-    const ogDescr = Translations.WT(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap").txt.replace(/"/g, '\\"');
+    const targetLanguage = layout.language[0]
+    const ogTitle = Translations.WT(layout.title).textFor(targetLanguage).replace(/"/g, '\\"');
+    const ogDescr = Translations.WT(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap").textFor(targetLanguage).replace(/"/g, '\\"');
     const ogImage = layout.socialImage;
 
     let customCss = "";
@@ -191,10 +191,12 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
         ...apple_icons
     ].join("\n")
 
+    const loadingText = Translations.t.general.loadingTheme.Subs({theme: ogTitle});
     let output = template
-        .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
+        .replace("Loading MapComplete, hang on...", loadingText.textFor(targetLanguage))
+        .replace("Powered by OpenStreetMap", Translations.t.general.poweredByOsm.textFor(targetLanguage))
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
-        .replace(/<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s, layout.shortDescription.textFor("en"))
+        .replace(/<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s, layout.shortDescription.textFor(targetLanguage))
         .replace("<script src=\"./index.ts\"></script>", `<script src='./index_${layout.id}.ts'></script>`);
 
     try {
@@ -227,7 +229,6 @@ async function main(): Promise<void>{
     createDir("./assets/generated")
     createDir("./assets/generated/layers")
     createDir("./assets/generated/themes")
-    createDir("./assets/generated/white_background")
 
     const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom", "theme"]
     // @ts-ignore
@@ -268,7 +269,7 @@ async function main(): Promise<void>{
     }
     
     await createManifest(new LayoutConfig({
-        icon: "assets/svg/mapcomplete_logo.svg",
+        icon: "./assets/svg/mapcomplete_logo.svg",
         id: "index",
         layers: [],
         maintainer: "Pieter Vander Vennet",

@@ -294,83 +294,43 @@ export default class SimpleMetaTaggers {
                 return true;
             }
 
+            // _isOpen is calculated dynamically on every call
             Object.defineProperty(feature.properties, "_isOpen", {
                 enumerable: false,
                 configurable: true,
                 get: () => {
-                    if (feature.properties.id === "node/7464543832") {
-                        console.log("Getting _isOpen for ", feature.properties.i)
+                    const tags = feature.properties
+                    if (tags.opening_hours === undefined) {
+                        return;
                     }
-                    delete feature.properties._isOpen
-                    feature.properties._isOpen = undefined
-                    const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
-                    tagsSource.addCallbackAndRunD(tags => {
-                        // Install a listener to the tags...
-                        if (tags.opening_hours === undefined) {
-                            return;
-                        }
-                        if (tags._country === undefined) {
-                            return;
-                        }
-                        try {
-                            const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                            const oh = new opening_hours(tags["opening_hours"], {
-                                lat: lat,
-                                lon: lon,
-                                address: {
-                                    country_code: tags._country.toLowerCase()
-                                }
-                            }, {tag_key: "opening_hours"});
+                    if (tags._country === undefined) {
+                        return;
+                    }
 
-                            // AUtomatically triggered on the next change (and a bit below)
-                            const updateTags = () => {
-                                const oldValueIsOpen = tags["_isOpen"];
-                                const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
-
-                                if (oldNextChange > (new Date()).getTime() &&
-                                    tags["_isOpen:oldvalue"] === tags["opening_hours"] // Check that changes have to be made
-                                    && tags["_isOpen"] !== undefined) {
-                                    // Already calculated and should not yet be triggered
-                                    return false;
-                                }
-
-                                // Recalculate!
-                                tags["_isOpen"] = oh.getState() ? "yes" : "no";
-                                const comment = oh.getComment();
-                                if (comment) {
-                                    tags["_isOpen:description"] = comment;
-                                }
-
-                                if (oldValueIsOpen !== tags._isOpen) {
-                                    tagsSource.ping();
-                                }
-
-                                const nextChange = oh.getNextChange();
-                                if (nextChange !== undefined) {
-                                    const timeout = nextChange.getTime() - (new Date()).getTime();
-                                    tags["_isOpen:nextTrigger"] = nextChange.getTime();
-                                    tags["_isOpen:oldvalue"] = tags.opening_hours
-                                    window.setTimeout(
-                                        () => {
-                                            console.log("Updating the _isOpen tag for ", tags.id, ", it's timer expired after", timeout);
-                                            updateTags();
-                                        },
-                                        timeout
-                                    )
-                                }
+                    try {
+                        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                        const oh = new opening_hours(tags["opening_hours"], {
+                            lat: lat,
+                            lon: lon,
+                            address: {
+                                country_code: tags._country.toLowerCase()
                             }
-                            updateTags();
-                        } catch (e) {
-                            console.warn("Error while parsing opening hours of ", tags.id, e);
-                            delete tags._isOpen
-                            tags["_isOpen"] = "parse_error";
-                        }
+                        }, {tag_key: "opening_hours"});
 
-                    })
-                    return undefined
-                }
-            })
-            return true;
+                        // Recalculate!
+                        return oh.getState() ? "yes" : "no";
+
+                    } catch (e) {
+                        console.warn("Error while parsing opening hours of ", tags.id, e);
+                        delete tags._isOpen
+                        tags["_isOpen"] = "parse_error";
+                    }
+                }});
+            
+            
+            const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
+                  
+                    
 
         })
     )

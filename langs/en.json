@@ -271,7 +271,9 @@
         "apply_button": {
             "isApplied": "The changes are applied",
             "appliedOnAnotherObject": "The object {id} will receive {tags}"
-        }
+        },
+        "loadingTheme": "Loading {theme}...",
+        "poweredByOsm": "Powered by OpenStreetMap"
     },
     "favourite": {
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",

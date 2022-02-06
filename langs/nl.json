@@ -35,6 +35,8 @@
         "logIn": "Log in om andere thema's te zien waar je al in bewerkt hebt"
     },
     "general": {
+        "loadingTheme": "{theme} wordt geladen...",
+        "poweredByOsm": "Gebouwd met OpenStreetMap",
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
