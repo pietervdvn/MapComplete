@@ -98,6 +98,14 @@ knownLicenses.set("tv", {
     sources: ["https://toerismevlaanderen.be/pinjepunt","https://mapcomplete.osm.be/toerisme_vlaanderenn"]
 })
 
+knownLicenses.set("tvf", {
+    authors: ["Jo De Baerdemaeker "],
+    path: undefined,
+    license: "All rights reserved",
+    sources: ["https://www.studiotype.be/fonts/flandersart"]
+})
+
+
 
 knownLicenses.set("twemoji", {
     authors: ["Twemoji"],
@@ -244,7 +252,7 @@ let licenseInfos = generateLicenseInfos(licensePaths);
 
 
 
-const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
+const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
     queryMissingLicenses(missingLicenses)
