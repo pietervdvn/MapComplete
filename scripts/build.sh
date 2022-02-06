@@ -35,16 +35,9 @@ then
     echo "Source maps are enabled"
 fi
 
-if [ $BRANCH = "master" ]
-then
-    PUBLIC_URL="./"
-else
-    PUBLIC_URL="./mc/$BRANCH"
-fi
-
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "$PUBLIC_URL" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
+parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"
     exit 1
@@ -63,13 +56,4 @@ do
         echo "ERROR - stopping the build"
         exit 1
     fi
-done
-# At last: a workaround; parcel 1.x borks the link to social images; the public-URL (./) is setup incorrectly, so we fix those
-cd dist
-echo -e "Fixing social images..."
-for file in $(ls *.html)
-do
-    echo "Hi!"
-    # sed -i 's!<meta content="\([^"]\+\)" property="og:image">!<meta content="./\1" property="og:image">!' $file
-    # sed -i 's!<meta property="og:image" content="\([^"]\+\)">!<meta content="./\1" property="og:image">!' $file
 done
