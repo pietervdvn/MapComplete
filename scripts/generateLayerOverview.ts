@@ -96,6 +96,26 @@ class LayerOverviewUtils {
         return dict;
     }
 
+    checkAllSvgs(){
+        const allSvgs = ScriptUtils.readDirRecSync("./assets")
+            .filter(path => path.endsWith(".svg"))
+            .filter(path => !path.startsWith("./assets/generated"))
+        let errCount = 0;
+        for (const path of allSvgs) {
+            const contents = readFileSync(path, "UTF8")
+            if (contents.indexOf("data:image/png;") < 0) {
+                continue;
+            }
+            console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
+            errCount++;
+            if(path.startsWith("./assets/svg")){
+                throw "A core SVG is actually a PNG. Don't do this!"
+            }
+        }
+        console.log("There are "+errCount+" fake svgs")
+    }
+
+
     main(_: string[]) {
 
         const licensePaths = new Set<string>()
@@ -126,8 +146,9 @@ class LayerOverviewUtils {
             const rendering = (<PointRenderingConfigJson>protolayer.mapRendering[0])
             rendering.icon["mappings"] = iconsPerTheme
             writeFileSync('./assets/themes/mapcomplete-changes/mapcomplete-changes.json', JSON.stringify(proto, null, "  "))
-
         }
+        
+        this.checkAllSvgs()
     }
 
     private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {

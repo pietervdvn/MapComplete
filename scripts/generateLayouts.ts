@@ -7,6 +7,7 @@ import * as all_known_layouts from "../assets/generated/known_layers_and_themes.
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import xml2js from 'xml2js';
+import ScriptUtils from "./ScriptUtils";
 
 const sharp = require('sharp');
 const template = readFileSync("theme.html", "utf8");
@@ -282,7 +283,6 @@ async function main(): Promise<void>{
         const manif = JSON.stringify(manifObj, undefined, 2);
         writeFileSync("index.manifest", manif)
     })
-
 }
 
 main().then(() => {
