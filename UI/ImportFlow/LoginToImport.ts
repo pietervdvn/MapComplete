@@ -36,16 +36,13 @@ export default class LoginToImport extends Combine implements FlowStep<UserRelat
                             .onClick(() => state.osmConnection.LogOut())
                     ]);
                 })),
-                new Combine([t.loginRequired,
-                    MoreScreen.CreateProffessionalSerivesButton()
-                ]),
+                t.loginRequired,
                 state
             ),
             new Toggle(undefined,
                 new Combine(
                     [t.lockNotice.Subs(Constants.userJourney).SetClass("alert"),
                         MoreScreen.CreateProffessionalSerivesButton()])
-
                 , isValid)
         ])
         this.Value = new UIEventSource<UserRelatedState>(state)
