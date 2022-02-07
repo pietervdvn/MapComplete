@@ -682,7 +682,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_repair_station/repair_station.svg",
+        "render": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg",
         "mappings": [
           {
             "if": {
@@ -691,7 +691,7 @@
                 "service:bicycle:pump:operational_status=broken"
               ]
             },
-            "then": "./assets/layers/bike_repair_station/repair_station.svg"
+            "then": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg"
           },
           {
             "if": {
@@ -700,7 +700,7 @@
                 "service:bicycle:tools=yes"
               ]
             },
-            "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+            "then": "pin:#30abf0;./assets/layers/bike_repair_station/repair_station_pump.svg"
           },
           {
             "if": {
@@ -709,7 +709,7 @@
                 "service:bicycle:tools=no"
               ]
             },
-            "then": "./assets/layers/bike_repair_station/broken_pump_2.svg"
+            "then": "pin:black;./assets/layers/bike_repair_station/broken_pump.svg"
           },
           {
             "if": {
@@ -723,7 +723,7 @@
                 }
               ]
             },
-            "then": "./assets/layers/bike_repair_station/pump.svg"
+            "then": "pin:#e1783a;./assets/layers/bike_repair_station/pump.svg"
           }
         ]
       },
