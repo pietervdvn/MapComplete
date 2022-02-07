@@ -78,7 +78,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                         // return;
                     }
 
-                    bbox = bbox.pad(Math.max(preset.boundsFactor, 2), Math.max(preset.boundsFactor, 2));
+                    bbox = bbox.pad(Math.max(preset.boundsFactor ?? 0.25, 2), Math.max(preset.boundsFactor ?? 0.25, 2));
                     loadedBbox = bbox;
                     const allFeatures: { feature: any }[] = []
                     preset.preciseInput.snapToLayers.forEach(layerId => {

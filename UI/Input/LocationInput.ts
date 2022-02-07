@@ -148,7 +148,6 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             }
         )
         this.leafletMap = this.map.leafletMap
-        this.bounds = this.map.bounds;
         this.location = this.map.location;
     }
 
