@@ -30,6 +30,7 @@ export default class TagRenderingConfig {
     readonly freeform?: {
         readonly key: string,
         readonly type: string,
+        readonly placeholder: Translation,
         readonly addExtraTags: TagsFilter[];
         readonly inline: boolean,
         readonly default?: string,
@@ -93,6 +94,7 @@ export default class TagRenderingConfig {
             this.freeform = {
                 key: json.freeform.key,
                 type: json.freeform.type ?? "string",
+                placeholder: Translations.T(json.freeform.placeholder ?? (json.freeform.key + "(" + (json.freeform.type ?? "string") + ")")),
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     TagUtils.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
                 inline: json.freeform.inline ?? false,

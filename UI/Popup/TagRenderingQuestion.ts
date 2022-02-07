@@ -425,7 +425,8 @@ export default class TagRenderingQuestion extends Combine {
             mapBackgroundLayer: state.backgroundLayer,
             unit: applicableUnit,
             args: configuration.freeform.helperArgs,
-            feature: feature
+            feature: feature,
+            placeholder: configuration.freeform.placeholder
         });
 
         input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
