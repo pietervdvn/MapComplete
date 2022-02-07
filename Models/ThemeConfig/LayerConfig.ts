@@ -60,6 +60,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly tagRenderings: TagRenderingConfig[];
     public readonly filters: FilterConfig[];
     public readonly filterIsSameAs: string;
+    public readonly forceLoad: boolean;
     
     constructor(
         json: LayerConfigJson,
@@ -166,6 +167,7 @@ export default class LayerConfig extends WithContextLoader {
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.shownByDefault = json.shownByDefault ?? true;
+        this.forceLoad = json.forceLoad ?? false;
         if (json.presets !== undefined && json.presets?.map === undefined) {
             throw "Presets should be a list of items (at " + context + ")"
         }

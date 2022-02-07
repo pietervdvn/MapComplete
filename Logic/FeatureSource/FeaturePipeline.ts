@@ -23,7 +23,6 @@ import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 import MapState from "../State/MapState";
 import {ElementStorage} from "../ElementStorage";
-import MetaTagging from "../MetaTagging";
 
 
 /**
@@ -373,7 +372,7 @@ export default class FeaturePipeline {
     private freshnessForVisibleLayers(z: number, x: number, y: number): Date {
         let oldestDate = undefined;
         for (const flayer of this.state.filteredLayers.data) {
-            if (!flayer.isDisplayed.data) {
+            if (!flayer.isDisplayed.data && !flayer.layerDef.forceLoad) {
                 continue
             }
             if (this.state.locationControl.data.zoom < flayer.layerDef.minzoom) {
@@ -399,6 +398,9 @@ export default class FeaturePipeline {
         return oldestDate
     }
 
+    /*
+    * Gives an UIEventSource containing the tileIndexes of the tiles that should be loaded from OSM
+    * */
     private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {

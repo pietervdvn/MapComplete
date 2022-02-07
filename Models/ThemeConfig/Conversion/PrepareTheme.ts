@@ -10,7 +10,6 @@ import LayerConfig from "../LayerConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 import DependencyCalculator from "../DependencyCalculator";
-import {ValidateThemeAndLayers} from "./Validation";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -306,6 +305,13 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 dependencies.push(...layerDeps)
             }
 
+            for (const dependency of dependencies) {
+                if(loadedLayerIds.has(dependency.neededLayer)){
+                    // We mark the needed layer as 'mustLoad'
+                    alreadyLoaded.find(l => l.id === dependency.neededLayer).forceLoad = true
+                }
+            }
+
             // During the generate script, builtin layers are verified but not loaded - so we have to add them manually here
             // Their existance is checked elsewhere, so this is fine
             unmetDependencies = dependencies.filter(dep => !loadedLayerIds.has(dep.neededLayer))
@@ -330,8 +336,12 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             }
 
         } while (unmetDependencies.length > 0)
-
-        return dependenciesToAdd;
+        
+        return dependenciesToAdd.map(dep => {
+            dep = Utils.Clone(dep);
+            dep.forceLoad = true
+            return dep
+        });
     }
 
     convert(theme: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {

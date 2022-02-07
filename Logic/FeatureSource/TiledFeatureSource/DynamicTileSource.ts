@@ -27,7 +27,7 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
         this.loadedTiles = new Map<number, FeatureSourceForLayer & Tiled>()
         const neededTiles = state.locationControl.map(
             location => {
-                if (!layer.isDisplayed.data) {
+                if (!layer.isDisplayed.data && !layer.layerDef.forceLoad) {
                     // No need to download! - the layer is disabled
                     return undefined;
                 }

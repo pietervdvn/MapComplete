@@ -111,6 +111,13 @@ export interface LayerConfigJson {
      */
     isShown?: TagRenderingConfigJson;
 
+    /**
+     * Advanced option - might be set by the theme compiler
+     * 
+     * If true, this data will _always_ be loaded, even if the theme is disabled
+     */
+    forceLoad?: false | boolean
+
 
     /**
      * The minimum needed zoomlevel required before loading of the data start
