@@ -36,8 +36,8 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             const layer = features[i];
             const props = layer.properties;
 
-            if (props.id === "Bing") {
-                // Doesnt work
+            if (props.type === "bing") {
+                // A lot of work to implement - see https://github.com/pietervdvn/MapComplete/issues/648
                 continue;
             }
 
