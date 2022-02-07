@@ -64,7 +64,7 @@ export class OnEvery<X, T> extends DesugaringStep<T> {
     private readonly step: DesugaringStep<X>;
 
     constructor(key: string, step: DesugaringStep<X>) {
-        super("Applies " + step.constructor.name + " onto every object of the list `key`", [key]);
+        super("Applies " + step.name + " onto every object of the list `key`", [key], "OnEvery("+step.name+")");
         this.step = step;
         this.key = key;
     }

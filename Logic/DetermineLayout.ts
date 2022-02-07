@@ -17,6 +17,8 @@ import * as known_layers from "../assets/generated/known_layers.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import * as licenses from "../assets/generated/license_info.json"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+
 export default class DetermineLayout {
 
     private static readonly _knownImages =new Set( Array.from(licenses).map(l => l.path))
@@ -135,6 +137,23 @@ export default class DetermineLayout {
     }
 
     private static prepCustomTheme(json: any): LayoutConfigJson {
+        
+        if(json.layers === undefined && json.tagRenderings !== undefined){
+            const iconTr = json.mapRendering.map(mr => mr.icon).find(icon => icon !== undefined)
+            const icon = new TagRenderingConfig(iconTr).render.txt
+            json = {
+                id: json.id,
+                description: json.description,
+                descriptionTail: {
+                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer."
+                },
+                icon,
+                title: json.name,
+                layers: [json],
+            }
+        }
+        
+        
         const knownLayersDict = new Map<string, LayerConfigJson>()
         for (const key in known_layers.layers) {
             const layer = known_layers.layers[key]
