@@ -59,7 +59,7 @@ export interface TagRenderingConfigJson {
         /**
          * A (translated) text that is shown (as gray text) within the textfield
          */
-        placeholder: string | any
+        placeholder?: string | any
         
         /**
          * Extra parameters to initialize the input helper arguments.
