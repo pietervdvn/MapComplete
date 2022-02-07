@@ -14,7 +14,7 @@ export default class ImageAttributionSpec extends T {
                     const images = pumps.ExtractImages();
                     const expectedValues = ['./assets/layers/bike_repair_station/repair_station.svg',
                         './assets/layers/bike_repair_station/repair_station_pump.svg',
-                        './assets/layers/bike_repair_station/broken_pump_2.svg',
+                        './assets/layers/bike_repair_station/broken_pump.svg',
                         './assets/layers/bike_repair_station/pump.svg',
                         './assets/themes/cyclofix/fietsambassade_gent_logo_small.svg',
                         './assets/layers/bike_repair_station/pump_example_manual.jpg',
