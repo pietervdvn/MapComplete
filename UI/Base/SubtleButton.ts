@@ -21,7 +21,7 @@ export class SubtleButton extends UIElement {
     }
 
     protected InnerRender(): string | BaseUIElement {
-        const classes = "no-images block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
+        const classes = "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
         const message = Translations.W(this.message);
         let img;
         if ((this.imageUrl ?? "") === "") {
@@ -31,24 +31,24 @@ export class SubtleButton extends UIElement {
         } else {
             img = this.imageUrl;
         }
-        img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")
-        const image = new Combine([img])
+        const image = new Combine([img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")])
             .SetClass("flex-shrink-0");
+
+        message?.SetClass("block overflow-ellipsis no-images")
+
+        const button = new Combine([
+            image,
+            message
+        ]).SetClass("flex group w-full")
 
         if (this.linkTo == undefined) {
             this.SetClass(classes)
-            return new Combine([
-                image,
-                message?.SetClass("block overflow-ellipsis"),
-            ]).SetClass("flex group w-full");
+            return button
         }
 
 
         return new Link(
-            new Combine([
-                image,
-                message?.SetClass("block overflow-ellipsis")
-            ]).SetClass("flex group w-full"),
+            button,
             this.linkTo.url,
             this.linkTo.newTab ?? false
         ).SetClass(classes)
