@@ -72,10 +72,10 @@ export default class DefaultGUI {
             const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
                 () => hasPresets ? Translations.t.general.add.title : Translations.t.notes.createNoteTitle,
-                () => {
+                ({resetScrollSignal}) => {
                     let addNew = undefined;
                     if (hasPresets) {
-                        addNew = new SimpleAddUI(newPointDialogIsShown, filterViewIsOpened, state);
+                        addNew = new SimpleAddUI(newPointDialogIsShown, resetScrollSignal, filterViewIsOpened, state);
                     }
                     let addNote = undefined;
                     if (noteLayer !== undefined) {

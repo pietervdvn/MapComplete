@@ -43,6 +43,7 @@ export interface PresetInfo extends PresetConfig {
 export default class SimpleAddUI extends Toggle {
 
     constructor(isShown: UIEventSource<boolean>,
+                resetScrollSignal: UIEventSource<void>,
                 filterViewIsOpened: UIEventSource<boolean>,
                 state: {
                     featureSwitchIsTesting: UIEventSource<boolean>,
@@ -68,6 +69,11 @@ export default class SimpleAddUI extends Toggle {
 
 
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
+        selectedPreset.addCallback(_ => {
+            resetScrollSignal.ping();
+        })
+        
+        
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
         state.LastClickLocation.addCallback(_ => selectedPreset.setData(undefined))
 
@@ -183,8 +189,7 @@ export default class SimpleAddUI extends Toggle {
                 Translations.t.general.add.addNew.Subs({
                     category: preset.name
                 }).SetClass("font-bold"),
-                Translations.WT(preset.description)?.FirstSentence(),
-                tagInfo?.SetClass("subtle")
+                Translations.WT(preset.description)?.FirstSentence()
             ]).SetClass("flex flex-col")
         )
     }

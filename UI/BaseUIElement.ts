@@ -39,6 +39,10 @@ export default abstract class BaseUIElement {
 
         return this;
     }
+    
+    public ScrollToTop(){
+        this._constructedHtmlElement?.scrollTo(0,0)
+    }
 
     /**
      * Adds all the relevant classes, space separated

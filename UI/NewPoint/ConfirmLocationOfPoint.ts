@@ -64,7 +64,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 bounds: mapBounds
             })
             preciseInput.installBounds(preset.boundsFactor ?? 0.25, true)
-            preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
+            preciseInput.SetClass("h-40 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
 
 
             if (preset.preciseInput.snapToLayers && preset.preciseInput.snapToLayers.length > 0) {
