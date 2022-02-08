@@ -109,16 +109,22 @@
             ],
             "icon": {
               "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg",
-              "mappings":[
+              "mappings": [
                 {
-                  "if": {"and": 
-                    ["service:bicycle:tools=yes","service:bicycle:pump=yes"]
+                  "if": {
+                    "and": [
+                      "service:bicycle:tools=yes",
+                      "service:bicycle:pump=yes"
+                    ]
                   },
                   "then": "./assets/themes/toerisme_vlaanderen/cycle_repair_and_pump.svg"
                 },
                 {
-                  "if": {"and":
-                  ["service:bicycle:tools=yes","service:bicycle:pump=no"]
+                  "if": {
+                    "and": [
+                      "service:bicycle:tools=yes",
+                      "service:bicycle:pump=no"
+                    ]
                   },
                   "then": "./assets/themes/toerisme_vlaanderen/cycle_repair.svg"
                 }
@@ -133,7 +139,10 @@
           }
         ]
       },
-      "hideTagRenderingsWithLabels": ["operator-info","bike_repair_station-valves"]
+      "hideTagRenderingsWithLabels": [
+        "operator-info",
+        "bike_repair_station-valves"
+      ]
     },
     {
       "builtin": [
@@ -168,7 +177,7 @@
               "socket:typee=1"
             ],
             "title": {
-              "nl": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+              "nl": "laadpunt voor elektrische fietsen met gewone stekkers"
             },
             "preciseInput": {
               "preferredBackground": "map"
