@@ -365,10 +365,10 @@
           },
           "freeform": {
             "key": "addr:substreet",
-              "addExtraTags": [
-                "addr:parentstreet:={addr:street}",
-                "addr:street="
-              ]  
+            "addExtraTags": [
+              "addr:parentstreet:={addr:street}",
+              "addr:street="
+            ]
           },
           "mappings": [
             {
@@ -397,9 +397,9 @@
           },
           "freeform": {
             "key": "addr:substreet",
-              "addExtraTags": [
-                "addr:street="
-              ]  
+            "addExtraTags": [
+              "addr:street="
+            ]
           },
           "mappings": [
             {
@@ -461,10 +461,10 @@
             }
           ],
           "condition": {
-                  "or": [
-                    "addr:street~*",
-                    "addr:substreet="
-                  ]
+            "or": [
+              "addr:street~*",
+              "addr:substreet="
+            ]
           }
         },
         {
@@ -505,10 +505,10 @@
             }
           ],
           "condition": {
-                  "or": [
-                    "addr:parentstreet~*",
-                    "addr:substreet~*"
-                  ]
+            "or": [
+              "addr:parentstreet~*",
+              "addr:substreet~*"
+            ]
           }
         },
         {
