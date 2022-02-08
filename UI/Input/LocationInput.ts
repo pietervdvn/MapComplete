@@ -221,7 +221,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
 
                 leaflet.setMaxZoom(layer.max_zoom)
                 leaflet.setMinZoom(self._minZoom ?? layer.max_zoom - 2)
-                leaflet.setZoom(layer.max_zoom)
+                leaflet.setZoom(layer.max_zoom - 1)
 
             }, [this.map.leafletMap])
 
