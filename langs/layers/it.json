@@ -1295,15 +1295,12 @@
                         "then": "Accessibile pubblicamente"
                     },
                     "1": {
-                        "then": "Accessibile pubblicamente"
-                    },
-                    "2": {
                         "then": "Accessibile solamente ai clienti dell’attività che lo gestisce"
                     },
-                    "3": {
+                    "2": {
                         "then": "Accessibile solamente agli studenti della scuola"
                     },
-                    "4": {
+                    "3": {
                         "then": "Non accessibile"
                     }
                 },
@@ -1338,9 +1335,6 @@
                         "then": "Si può accedere dall'alba al tramonto"
                     },
                     "1": {
-                        "then": "Si può sempre accedere"
-                    },
-                    "2": {
                         "then": "Si può sempre accedere"
                     }
                 },

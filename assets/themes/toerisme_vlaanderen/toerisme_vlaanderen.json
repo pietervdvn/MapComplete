@@ -94,7 +94,8 @@
             }
           }
         ]
-      }
+      },
+      "hideTagRenderingsWithLabels": ["extra"]
     },
     "bicycle_rental",
     {

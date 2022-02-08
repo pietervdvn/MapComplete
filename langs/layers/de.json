@@ -2350,15 +2350,12 @@
                         "then": "Zugänglich für die Allgemeinheit"
                     },
                     "1": {
-                        "then": "Zugänglich für die Allgemeinheit"
-                    },
-                    "2": {
                         "then": "Nur für Kunden des Betreibers zugänglich"
                     },
-                    "3": {
+                    "2": {
                         "then": "Nur für Schüler der Schule zugänglich"
                     },
-                    "4": {
+                    "3": {
                         "then": "Nicht zugänglich"
                     }
                 },
@@ -2393,9 +2390,6 @@
                         "then": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
                     },
                     "1": {
-                        "then": "Immer zugänglich"
-                    },
-                    "2": {
                         "then": "Immer zugänglich"
                     }
                 },

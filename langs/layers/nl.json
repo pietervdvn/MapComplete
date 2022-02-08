@@ -3517,15 +3517,12 @@
                         "then": "Vrij toegankelijk voor het publiek"
                     },
                     "1": {
-                        "then": "Vrij toegankelijk voor het publiek"
-                    },
-                    "2": {
                         "then": "Enkel toegankelijk voor klanten van de bijhorende zaak"
                     },
-                    "3": {
-                        "then": "Vrij toegankelijk voor scholieren van de school"
+                    "2": {
+                        "then": "Enkel toegankelijk voor scholieren van de bijhorende school"
                     },
-                    "4": {
+                    "3": {
                         "then": "Niet vrij toegankelijk"
                     }
                 },
@@ -3560,9 +3557,6 @@
                         "then": "Van zonsopgang tot zonsondergang"
                     },
                     "1": {
-                        "then": "Dag en nacht toegankelijk"
-                    },
-                    "2": {
                         "then": "Dag en nacht toegankelijk"
                     }
                 },

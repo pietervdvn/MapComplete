@@ -3606,15 +3606,12 @@
                         "then": "Accessible to the general public"
                     },
                     "1": {
-                        "then": "Accessible to the general public"
-                    },
-                    "2": {
                         "then": "Only accessible for clients of the operating business"
                     },
-                    "3": {
+                    "2": {
                         "then": "Only accessible to students of the school"
                     },
-                    "4": {
+                    "3": {
                         "then": "Not accessible"
                     }
                 },
@@ -3649,9 +3646,6 @@
                         "then": "Accessible from sunrise till sunset"
                     },
                     "1": {
-                        "then": "Always accessible"
-                    },
-                    "2": {
                         "then": "Always accessible"
                     }
                 },

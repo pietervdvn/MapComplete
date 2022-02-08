@@ -1607,15 +1607,12 @@
                         "then": "Accessible au public"
                     },
                     "1": {
-                        "then": "Accessible au public"
-                    },
-                    "2": {
                         "then": "Réservée aux clients"
                     },
-                    "3": {
+                    "2": {
                         "then": "Réservée aux élèves de l’école"
                     },
-                    "4": {
+                    "3": {
                         "then": "Non accessible"
                     }
                 },
@@ -1650,9 +1647,6 @@
                         "then": "Accessible du lever au coucher du soleil"
                     },
                     "1": {
-                        "then": "Toujours accessible"
-                    },
-                    "2": {
                         "then": "Toujours accessible"
                     }
                 },
