@@ -13,8 +13,8 @@
         "title": "Benches"
     },
     "bicycle_rental": {
-        "description": "On this map, you'll find the many biycle rental stations as they are known by OpenStreetMap",
-        "shortDescription": "A map with biyccle rental stations and bicycle rental shops",
+        "description": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
+        "shortDescription": "A map with bicycle rental stations and bicycle rental shops",
         "title": "Bicycle rental"
     },
     "bicyclelib": {

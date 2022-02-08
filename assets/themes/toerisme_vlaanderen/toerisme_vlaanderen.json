@@ -2,9 +2,8 @@
   "id": "toerisme_vlaanderen",
   "credits": "Commissioned theme for <a href='https://www.toerismevlaanderen.be/'>Toerisme Vlaandere</a>",
   "maintainer": "MapComplete",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "customCss": "./assets/themes/toerisme_vlaanderen/custom.css",
-  "defaultBackgroundId": "CartoDB.Voyager",
   "mustHaveLanguage": [
     "nl"
   ],
@@ -109,7 +108,21 @@
               "centroid"
             ],
             "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg"
+              "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg",
+              "mappings":[
+                {
+                  "if": {"and": 
+                    ["service:bicycle:tools=yes","service:bicycle:pump=yes"]
+                  },
+                  "then": "./assets/themes/toerisme_vlaanderen/cycle_repair_and_pump.svg"
+                },
+                {
+                  "if": {"and":
+                  ["service:bicycle:tools=yes","service:bicycle:pump=no"]
+                  },
+                  "then": "./assets/themes/toerisme_vlaanderen/cycle_repair.svg"
+                }
+              ]
             },
             "badges": [
               {

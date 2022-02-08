@@ -3448,29 +3448,29 @@
         }
     },
     "picnic_table": {
-        "description": "Deze laag toont picknicktafels",
-        "name": "Picknicktafels",
+        "description": "Deze laag toont picnictafels",
+        "name": "Picnictafels",
         "presets": {
             "0": {
-                "title": "picknicktafel"
+                "title": "picnic-tafel"
             }
         },
         "tagRenderings": {
             "picnic_table-material": {
                 "mappings": {
                     "0": {
-                        "then": "Deze picknicktafel is gemaakt uit hout"
+                        "then": "Deze picnictafel is gemaakt uit hout"
                     },
                     "1": {
-                        "then": "Deze picknicktafel is gemaakt uit beton"
+                        "then": "Deze picnictafel is gemaakt uit beton"
                     }
                 },
-                "question": "Van welk materiaal is deze picknicktafel gemaakt?",
-                "render": "Deze picknicktafel is gemaakt van {material}"
+                "question": "Van welk materiaal is deze picnictafel gemaakt?",
+                "render": "Deze picnictafel is gemaakt van {material}"
             }
         },
         "title": {
-            "render": "Picknicktafel"
+            "render": "Picnictafel"
         }
     },
     "play_forest": {

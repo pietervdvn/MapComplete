@@ -119,9 +119,9 @@ export default class MoreScreen extends Combine {
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
 
-    private static createButtonFor(state: UserRelatedState, id: string): BaseUIElement {
+    private static createUnofficialButtonFor(state: UserRelatedState, id: string): BaseUIElement {
         const allPreferences = state.osmConnection.preferencesHandler.preferences.data;
-        const length = Number(allPreferences[id + "-combined-length"])
+        const length = Number(allPreferences[id + "-length"])
         let str = "";
         for (let i = 0; i < length; i++) {
             str += allPreferences[id + "-" + i]
@@ -136,7 +136,7 @@ export default class MoreScreen extends Combine {
 
             return MoreScreen.createLinkButton(state, value, true)
         } catch (e) {
-            console.debug("Could not parse unofficial theme information for " + id, e)
+            console.debug("Could not parse unofficial theme information for " + id, "The json is: ", str, e)
             return undefined
         }
     }
@@ -157,13 +157,18 @@ export default class MoreScreen extends Combine {
 
                 return ids
             });
+        currentIds.addCallback(ids => {
+        console.log("Current special ids are:", ids)
+        })
         var stableIds = UIEventSource.ListStabilized<string>(currentIds)
-
+        currentIds.addCallback(ids => {
+            console.log("Stabilized special ids are:", ids)
+        })
         return new VariableUiElement(
             stableIds.map(ids => {
                 const allThemes: BaseUIElement[] = []
                 for (const id of ids) {
-                    const link = this.createButtonFor(state, id)
+                    const link = this.createUnofficialButtonFor(state, id)
                     if (link !== undefined) {
                         allThemes.push(link.SetClass(buttonClass))
                     }

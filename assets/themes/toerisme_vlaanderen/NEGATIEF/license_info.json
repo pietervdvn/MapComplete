@@ -7,7 +7,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -18,7 +18,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -29,7 +29,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -40,7 +40,29 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "cycle_repair.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "cycle_repair_and_pump.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -51,7 +73,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -62,7 +84,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -73,7 +95,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -84,7 +106,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -95,7 +117,7 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   },
   {
@@ -106,7 +128,18 @@
     ],
     "sources": [
       "https://toerismevlaanderen.be/pinjepunt",
-      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "toilets_wheelchair.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   }
 ]

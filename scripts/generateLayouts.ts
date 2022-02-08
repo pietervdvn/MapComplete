@@ -70,16 +70,6 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]) {
             const height: string = svg.$.height;
             if(width !== height){
                 console.warn("WARNING: the icon for theme "+layout.id+" is not square. Please square the icon at "+icon+"\n   Width = "+width, "height =", height)
-               /* const process = exec("inkscape " + icon, ((error, stdout, stderr) => {
-                    console.log("Inkscape: ", stdout)
-                    if (error !== null) {
-                        console.error(error)
-                    }
-                    if (stderr !== "") {
-                        console.error(stderr)
-                    }
-                }))//*/
-        
             }
 
             const builder = new xml2js.Builder();
