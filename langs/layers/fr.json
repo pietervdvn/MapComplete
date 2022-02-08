@@ -628,15 +628,15 @@
         "name": "Station velo (réparation, pompe à vélo)",
         "presets": {
             "0": {
-                "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-                "title": "Pompe à vélo"
+                "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; flex-wrap: wrap; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "title": "pompe à vélo"
             },
             "1": {
-                "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.<h3>Exemple</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-                "title": "Point de réparation vélo avec pompe"
+                "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.<h3>Exemple</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='15rem'/>",
+                "title": "point de réparation vélo avec pompe"
             },
             "2": {
-                "title": "Point de réparation vélo sans pompe"
+                "title": "point de réparation vélo sans pompe"
             }
         },
         "tagRenderings": {
@@ -1583,7 +1583,7 @@
         "name": "Aire de jeu",
         "presets": {
             "0": {
-                "title": "Terrain de jeux"
+                "title": "terrain de jeux"
             }
         },
         "tagRenderings": {

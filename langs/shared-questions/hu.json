@@ -36,9 +36,6 @@
                 },
                 "3": {
                     "then": "Az első emeleten"
-                },
-                "4": {
-                    "then": "Az első alagsori szinten"
                 }
             },
             "question": "Melyik szinten található ez a létesítmény?",
