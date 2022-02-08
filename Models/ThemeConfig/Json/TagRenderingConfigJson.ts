@@ -21,13 +21,18 @@ export interface TagRenderingConfigJson {
     group?: string
 
     /**
+     * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
+     */
+    labels?: string[]
+
+    /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
      *
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
      */
     render?: string | any,
-
+    
     /**
      * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
      * If undefined, the question is never asked and this tagrendering is read-only

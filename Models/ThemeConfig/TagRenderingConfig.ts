@@ -19,15 +19,15 @@ import List from "../../UI/Base/List";
  */
 export default class TagRenderingConfig {
 
-    readonly id: string;
-    readonly group: string;
-    readonly render?: Translation;
-    readonly question?: Translation;
-    readonly condition?: TagsFilter;
+  public  readonly id: string;
+    public   readonly group: string;
+    public   readonly render?: Translation;
+    public   readonly question?: Translation;
+    public  readonly condition?: TagsFilter;
 
-    readonly configuration_warnings: string[] = []
+    public  readonly configuration_warnings: string[] = []
 
-    readonly freeform?: {
+    public  readonly freeform?: {
         readonly key: string,
         readonly type: string,
         readonly placeholder: Translation,
@@ -37,9 +37,9 @@ export default class TagRenderingConfig {
         readonly helperArgs?: (string | number | boolean)[]
     };
 
-    readonly multiAnswer: boolean;
+    public readonly multiAnswer: boolean;
 
-    readonly mappings?: {
+    public readonly mappings?: {
         readonly if: TagsFilter,
         readonly ifnot?: TagsFilter,
         readonly then: Translation,
@@ -47,6 +47,7 @@ export default class TagRenderingConfig {
         readonly hideInAnswer: boolean | TagsFilter
         readonly addExtraTags: Tag[]
     }[]
+    public readonly labels: string[]
 
     constructor(json: string | TagRenderingConfigJson, context?: string) {
         if (json === undefined) {
@@ -83,6 +84,7 @@ export default class TagRenderingConfig {
 
 
         this.group = json.group ?? "";
+        this.labels = json.labels ?? []
         this.render = Translations.T(json.render, context + ".render");
         this.question = Translations.T(json.question, context + ".question");
         this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);

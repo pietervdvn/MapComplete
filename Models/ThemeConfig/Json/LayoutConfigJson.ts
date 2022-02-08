@@ -202,7 +202,14 @@ export interface LayoutConfigJson {
      * }
      *```
      */
-    layers: (LayerConfigJson | string | { builtin: string | string[], override: any })[],
+    layers: (LayerConfigJson | string | 
+        { builtin: string | string[], 
+            override: any,
+            /**
+             * TagRenderings with any of these labels will be removed from the layer.
+             * Note that the 'id' and 'group' are considered labels too
+             */
+            hideTagRenderingsWithLabels?: string[]})[],
 
     /**
      * If defined, data will be clustered.

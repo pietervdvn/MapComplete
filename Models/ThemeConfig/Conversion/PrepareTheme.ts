@@ -20,9 +20,9 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
         this._state = state;
     }
     
-    convert(json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[] } {
+    convert(json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[], warnings?: string[] } {
         const errors = []
-        const state= this._state
+         const state= this._state
         function reportNotFound(name: string){
             const knownLayers = Array.from(state.sharedLayers.keys())
             const withDistance = knownLayers.map(lname => [lname,  Utils.levenshteinDistance(name, lname)])
@@ -55,6 +55,8 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                 names = [names]
             }
             const layers = []
+            const warnings = []
+
             for (const name of names) {
                 const found = Utils.Clone(state.sharedLayers.get(name))
                 if (found === undefined) {
@@ -70,10 +72,48 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                 } catch (e) {
                     errors.push(`At ${context}: could not apply an override due to: ${e}.\nThe override is: ${JSON.stringify(json["override"],)}`)
                 }
+                
+                if(json["hideTagRenderingsWithLabels"]){
+                    const hideLabels: Set<string> = new Set(json["hideTagRenderingsWithLabels"])
+                    // These labels caused at least one deletion
+                    const usedLabels : Set<string> = new Set<string>();
+                    const filtered = []
+                    for (const tr of found.tagRenderings) {
+                        const labels = tr["labels"]
+                        if(labels !== undefined){
+                            const forbiddenLabel = labels.findIndex(l => hideLabels.has(l))
+                            if(forbiddenLabel >= 0){
+                                usedLabels.add(labels[forbiddenLabel])
+                                warnings.push(context+": Dropping tagRendering "+tr["id"]+" as it has a forbidden label: "+labels[forbiddenLabel])
+                                continue
+                            }
+                        }
+                        
+                        if(hideLabels.has(tr["id"])){
+                            usedLabels.add(tr["id"])
+                            warnings.push(context+": Dropping tagRendering "+tr["id"]+" as its id is a forbidden label")
+                            continue
+                        }
+
+                        if(hideLabels.has(tr["group"])){
+                            usedLabels.add(tr["group"])
+                            warnings.push(context+": Dropping tagRendering "+tr["id"]+" as its group `"+tr["group"]+"` is a forbidden label")
+                            continue
+                        }
+
+                        filtered.push(tr)
+                    }
+                    const unused = Array.from(hideLabels).filter(l => !usedLabels.has(l))
+                    if(unused.length > 0){
+                        errors.push("This theme specifies that certain tagrenderings have to be removed based on forbidden layers. One or more of these layers did not match any tagRenderings and caused no deletions: "+unused.join(", ")+"\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore")
+                    }
+                    found.tagRenderings = filtered
+                }
             }
             return {
                 result: layers,
-                errors
+                errors,
+                warnings
             }
 
         }
