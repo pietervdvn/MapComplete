@@ -119,7 +119,8 @@
             ]
           }
         ]
-      }
+      },
+      "hideTagRenderingsWithLabels": ["operator-info","bike_repair_station-valves"]
     },
     {
       "builtin": [

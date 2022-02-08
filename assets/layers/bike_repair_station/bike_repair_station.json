@@ -278,6 +278,7 @@
       "id": "bike_repair_station-opening_hours"
     },
     {
+      "labels": ["operator-info"],
       "question": {
         "en": "Who maintains this cycle pump?",
         "nl": "Wie beheert deze fietspomp?",
@@ -302,6 +303,7 @@
       "id": "bike_repair_station-operator"
     },
     {
+      "labels": ["operator-info"],
       "question": {
         "en": "What is the email address of the maintainer?",
         "nl": "Wat is het email-adres van de beheerder?",
@@ -316,6 +318,7 @@
       "id": "bike_repair_station-email"
     },
     {
+      "labels": ["operator-info"],
       "question": {
         "en": "What is the phone number of the maintainer?",
         "nl": "Wat is het telefoonnummer van de beheerder?",
