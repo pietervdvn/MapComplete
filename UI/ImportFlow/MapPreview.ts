@@ -87,7 +87,7 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
 
         const matching: UIEventSource<{ properties: any, geometry: { coordinates: [number, number] } }[]> = layerPicker.GetValue().map((layer: LayerConfig) => {
             if (layer === undefined) {
-                return undefined;
+                return [];
             }
             const matching: { properties: any, geometry: { coordinates: [number, number] } }[] = []
 

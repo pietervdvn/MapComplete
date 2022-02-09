@@ -22,9 +22,7 @@ export class PreviewPanel extends Combine implements FlowStep<{ features: { prop
         state: UserRelatedState,
         geojson: { features: { properties: any, geometry: { coordinates: [number, number] } }[] }) {
         const t = Translations.t.importHelper;
-        console.log("Datapanel received", geojson)
-
-
+        
         const propertyKeys = new Set<string>()
         for (const f of geojson.features) {
             Object.keys(f.properties).forEach(key => propertyKeys.add(key))
@@ -36,7 +34,6 @@ export class PreviewPanel extends Combine implements FlowStep<{ features: { prop
         for (const key of Array.from(propertyKeys)) {
 
             const values = Utils.NoNull(geojson.features.map(f => f.properties[key]))
-            console.log("There are ", values.length, "features with attribute", key, "namely", values)
             const allSame = !values.some(v => v !== values[0])
             let countSummary: BaseUIElement
             if (values.length === n) {
