@@ -663,11 +663,11 @@
         "name": "Fahrradstationen (Reparatur, Pumpe oder beides)",
         "presets": {
             "0": {
-                "description": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.<h3>Beispiele für Fahrradpumpen</h3><div style='width: 100%; display: flex; flex-wrap: wrap; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "description": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
                 "title": "fahrradpumpe"
             },
             "1": {
-                "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.<h3>Beispiel</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='15rem'/>",
+                "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
                 "title": "fahrrad-Reparaturstation und Pumpe"
             },
             "2": {

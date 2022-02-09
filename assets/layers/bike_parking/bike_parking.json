@@ -551,7 +551,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_parking/parking.svg"
+        "render": "pin:#5473de;./assets/layers/bike_parking/parking.svg"
       },
       "iconSize": "40,40,bottom",
       "location": [

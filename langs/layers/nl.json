@@ -678,14 +678,15 @@
         "name": "Fietspomp and fietsherstel",
         "presets": {
             "0": {
-                "description": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden van fietspompen</h3><div style='width: 100%; display: flex; flex-wrap: wrap; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "description": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
                 "title": "fietspomp"
             },
             "1": {
-                "description": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='15rem'/>",
+                "description": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
                 "title": "herstelpunt en pomp"
             },
             "2": {
+                "description": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
                 "title": "herstelpunt zonder pomp"
             }
         },

@@ -13,6 +13,8 @@ import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import SimpleAddUI, {PresetInfo} from "../BigComponents/SimpleAddUI";
 import BaseLayer from "../../Models/BaseLayer";
+import Img from "../Base/Img";
+import Title from "../Base/Title";
 
 export default class ConfirmLocationOfPoint extends Combine {
 
@@ -35,6 +37,9 @@ export default class ConfirmLocationOfPoint extends Combine {
 
         let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
+            // Create location input
+            
+            
             // We uncouple the event source
             const zloc = {...loc, zoom: 19}
             const locationSrc = new UIEventSource(zloc);
@@ -166,6 +171,16 @@ export default class ConfirmLocationOfPoint extends Combine {
             Translations.t.general.cancel
         ).onClick(cancel)
 
+        
+        let examples : BaseUIElement = undefined;
+        if(preset.exampleImages !== undefined && preset.exampleImages.length > 0){
+            examples = new Combine([
+             new Title( preset.exampleImages.length == 1 ?  Translations.t.general.example :  Translations.t.general.examples),
+                new Combine(preset.exampleImages.map(img => new Img(img).SetClass("h-64 m-1 w-auto"))).SetClass("flex flex-wrap items-stretch")
+            ])
+            
+        }
+        
         super([
             new Toggle(
                 Translations.t.general.testing.SetClass("alert"),
@@ -175,6 +190,7 @@ export default class ConfirmLocationOfPoint extends Combine {
             disableFiltersOrConfirm,
             cancelButton,
             preset.description,
+            examples,
             tagInfo
 
         ])

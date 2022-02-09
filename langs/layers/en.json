@@ -768,14 +768,15 @@
         "name": "Bicycle pump and repair",
         "presets": {
             "0": {
-                "description": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; flex-wrap: wrap; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+                "description": "A device to inflate your tires on a fixed location in the public space.",
                 "title": "bike pump"
             },
             "1": {
-                "description": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='15rem'/>",
+                "description": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
                 "title": "bike repair station and pump"
             },
             "2": {
+                "description": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
                 "title": "bike repair station without pump"
             }
         },

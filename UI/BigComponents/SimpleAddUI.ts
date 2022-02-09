@@ -180,9 +180,8 @@ export default class SimpleAddUI extends Toggle {
 
     }
 
-    private static CreatePresetSelectButton(preset: PresetInfo, osmConnection: OsmConnection) {
+    private static CreatePresetSelectButton(preset: PresetInfo) {
 
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, osmConnection, false);
         return new SubtleButton(
             preset.icon(),
             new Combine([
@@ -223,16 +222,15 @@ export default class SimpleAddUI extends Toggle {
                 let icon: () => BaseUIElement = () => layer.layerDef.mapRendering[0].GenerateLeafletStyle(new UIEventSource<any>(tags), false).html
                     .SetClass("w-12 h-12 block relative");
                 const presetInfo: PresetInfo = {
-                    tags: preset.tags,
                     layerToAddTo: layer,
                     name: preset.title,
                     title: preset.title,
-                    description: preset.description,
                     icon: icon,
-                    preciseInput: preset.preciseInput
+                    preciseInput: preset.preciseInput,
+                    ...preset
                 }
 
-                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo, state.osmConnection);
+                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo);
                 button.onClick(() => {
                     selectedPreset.setData(presetInfo)
                 })

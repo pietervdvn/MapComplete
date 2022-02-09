@@ -273,7 +273,9 @@
             "appliedOnAnotherObject": "The object {id} will receive {tags}"
         },
         "loadingTheme": "Loading {theme}...",
-        "poweredByOsm": "Powered by OpenStreetMap"
+        "poweredByOsm": "Powered by OpenStreetMap",
+        "example": "Example",
+        "examples": "Examples"
     },
     "favourite": {
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",

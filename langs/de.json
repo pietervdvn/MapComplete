@@ -35,6 +35,7 @@
         "logIn": "Melden Sie sich an, um Themen anzuzeigen, die Sie zuvor besucht haben"
     },
     "general": {
+        "example": "Beispiel",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "welcomeBack": "Sie sind eingeloggt, willkommen zurück!",
         "loginToStart": "Anmelden, um diese Frage zu beantworten",

@@ -95,6 +95,26 @@
     ]
   },
   {
+    "path": "repair_station_example_2.jpg",
+    "license": "CC-BY-SA 4.0 International",
+    "authors": [
+      "MOs810"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Bike_repair_station,_Poznan_Kaponiera.jpg"
+    ]
+  },
+  {
+    "path": "repair_station_example_3.jpg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "or \tThelmadatter"
+    ],
+    "sources": [
+      "\u001b[3~https://wiki.openstreetmap.org/wiki/File:BikeRepairMonterrey.JPG"
+    ]
+  },
+  {
     "path": "repair_station_pump.svg",
     "license": "CC-BY-SA",
     "authors": [

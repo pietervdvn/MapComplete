@@ -209,6 +209,7 @@ export default class LayerConfig extends WithContextLoader {
                 tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
                 description: Translations.T(pr.description, `${context}.presets[${i}].description`),
                 preciseInput: preciseInput,
+                exampleImages: pr.exampleImages
             }
             return config;
         });

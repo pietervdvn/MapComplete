@@ -193,6 +193,13 @@ export interface LayerConfigJson {
         description?: string | any,
 
         /**
+         * Example images, which show real-life pictures of what such a feature might look like
+         * 
+         * Type: image[]
+         */
+        exampleImages?: string[]
+
+        /**
          * If set, the user will prompted to confirm the location before actually adding the data.
          * This will be with a 'drag crosshair'-method.
          *
