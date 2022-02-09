@@ -26,6 +26,59 @@
   "widenFactor": 1.5,
   "layers": [
     {
+      "builtin": [
+        "charging_station"
+      ],
+      "override": {
+        "id": "charging_station_ebikes",
+        "minzoom": 14,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle=yes"
+            ]
+          }
+        },
+        "=filter": null,
+        "=mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": "./assets/themes/toerisme_vlaanderen/charging_station_ebike.svg"
+          }
+        ],
+        "=presets": [
+          {
+            "tags": [
+              "amenity=charging_station",
+              "motorcar=no",
+              "bicycle=yes",
+              "socket:typee=1"
+            ],
+            "title": {
+              "nl": "laadpunt voor elektrische fietsen"
+            },
+            "preciseInput": {
+              "preferredBackground": "map"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "#": "All charging stations at a high zoom level, to avoid duplicates",
+      "builtin": "charging_station",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "charging_station_ebike"
+        },
+        "minzoom": 18
+      }
+    },
+    {
       "builtin": "toilet",
       "override": {
         "minzoom": 14,
@@ -84,21 +137,6 @@
       }
     },
     {
-      "builtin": "playground",
-      "override": {
-        "minzoom": 14,
-        "mapRendering": [
-          {
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/playground.svg"
-            }
-          }
-        ]
-      },
-      "hideTagRenderingsWithLabels": ["extra"]
-    },
-    "bicycle_rental",
-    {
       "builtin": "bike_repair_station",
       "override": {
         "minzoom": 14,
@@ -145,59 +183,23 @@
         "bike_repair_station-valves"
       ]
     },
+
+    "bicycle_rental",
     {
-      "builtin": [
-        "charging_station"
-      ],
+      "builtin": "playground",
       "override": {
-        "id": "charging_station_ebikes",
         "minzoom": 14,
-        "source": {
-          "osmTags": {
-            "and+": [
-              "bicycle=yes"
-            ]
-          }
-        },
-        "=filter": null,
-        "=mapRendering": [
+        "mapRendering": [
           {
-            "location": [
-              "point",
-              "centroid"
-            ],
-            "icon": "./assets/themes/toerisme_vlaanderen/charging_station_ebike.svg"
-          }
-        ],
-        "=presets": [
-          {
-            "tags": [
-              "amenity=charging_station",
-              "motorcar=no",
-              "bicycle=yes",
-              "socket:typee=1"
-            ],
-            "title": {
-              "nl": "laadpunt voor elektrische fietsen met gewone stekkers"
-            },
-            "preciseInput": {
-              "preferredBackground": "map"
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/playground.svg"
             }
           }
         ]
-      }
-    },
-    {
-      "#": "All charging stations at a high zoom level, to avoid duplicates",
-      "builtin": "charging_station",
-      "override": {
-        "name": null,
-        "filter": {
-          "sameAs": "charging_station_ebike"
-        },
-        "minzoom": 18
-      }
+      },
+      "hideTagRenderingsWithLabels": ["extra"]
     }
+   
   ],
   "hideFromOverview": true,
   "enableMoreQuests": false,
