@@ -2087,6 +2087,14 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Charging station for ebikes"
+                },
+                "1": {
+                    "then": "Charging station for cars"
+                }
+            },
             "render": "Charging station"
         },
         "units": {

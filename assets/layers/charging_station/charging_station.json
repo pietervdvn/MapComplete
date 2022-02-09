@@ -23,8 +23,44 @@
   "title": {
     "render": {
       "en": "Charging station",
-      "nl": "Oplaadpunten"
-    }
+      "nl": "Oplaadpunt"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "bicycle=yes",
+            {
+              "or": [
+                "motorcar=",
+                "motorcar=no"
+              ]
+            }
+          ]
+        },
+        "then": {
+          "en": "Charging station for ebikes",
+          "nl": "Oplaadpunt voor elektrische fietsen"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "motorcar=yes",
+            {
+              "or": [
+                "bicycle=",
+                "bicycle=no"
+              ]
+            }
+          ]
+        },
+        "then": {
+          "en": "Charging station for cars",
+          "nl": "Oplaadpunt voor elektrische auto's"
+        }
+      }
+    ]
   },
   "description": {
     "en": "A charging station",
@@ -48,7 +84,7 @@
           "ifnot": "bicycle=no",
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
-            "nl": "<b>Fietsen</b> kunnen hier opgeladen worden",
+            "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden",
             "de": "<b>Fahrräder</b> können hier geladen werden"
           }
         },

@@ -81,7 +81,7 @@
           "ifnot": "bicycle=no",
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
-            "nl": "<b>Fietsen</b> kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden"
           }
         },
         {

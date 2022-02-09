@@ -1452,7 +1452,7 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Fietsen</b> kunnen hier opgeladen worden"
+                        "then": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden"
                     },
                     "1": {
                         "then": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
@@ -2110,7 +2110,15 @@
             }
         },
         "title": {
-            "render": "Oplaadpunten"
+            "mappings": {
+                "0": {
+                    "then": "Oplaadpunt voor elektrische fietsen"
+                },
+                "1": {
+                    "then": "Oplaadpunt voor elektrische auto's"
+                }
+            },
+            "render": "Oplaadpunt"
         },
         "units": {
             "0": {
