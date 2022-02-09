@@ -3,20 +3,22 @@
     "path": "logo.svg",
     "license": "CC0",
     "authors": [
-      "Stijn Wens"
+      "Toerisme Vlaanderen"
     ],
     "sources": [
-      "https://wens.be/free-antwerpenize-bicycle-font"
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
     ]
   },
   {
     "path": "rental.svg",
     "license": "CC0",
     "authors": [
-      "Stijn Wens"
+      "Toerisme Vlaanderen"
     ],
     "sources": [
-      "https://wens.be/free-antwerpenize-bicycle-font"
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderenn"
     ]
   }
 ]

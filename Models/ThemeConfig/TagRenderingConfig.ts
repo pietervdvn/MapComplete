@@ -425,18 +425,6 @@ export default class TagRenderingConfig {
         return translations;
     }
 
-    public ExtractImages(isIcon: boolean): Set<string> {
-
-        const usedIcons = new Set<string>()
-        this.render?.ExtractImages(isIcon)?.forEach(usedIcons.add, usedIcons)
-
-        for (const mapping of this.mappings ?? []) {
-            mapping.then.ExtractImages(isIcon).forEach(usedIcons.add, usedIcons)
-        }
-
-        return usedIcons;
-    }
-
     FreeformValues(): { key: string, type?: string, values?: string [] } {
         try {
 

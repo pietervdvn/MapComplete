@@ -176,7 +176,7 @@ export default class ConfirmLocationOfPoint extends Combine {
         if(preset.exampleImages !== undefined && preset.exampleImages.length > 0){
             examples = new Combine([
              new Title( preset.exampleImages.length == 1 ?  Translations.t.general.example :  Translations.t.general.examples),
-                new Combine(preset.exampleImages.map(img => new Img(img).SetClass("h-64 m-1 w-auto"))).SetClass("flex flex-wrap items-stretch")
+                new Combine(preset.exampleImages.map(img => new Img(img).SetClass("h-64 m-1 w-auto rounded-lg"))).SetClass("flex flex-wrap items-stretch")
             ])
             
         }

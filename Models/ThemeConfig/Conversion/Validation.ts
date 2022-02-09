@@ -8,6 +8,7 @@ import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import LayoutConfig from "../LayoutConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
+import {ExtractImages} from "./FixImages";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -54,8 +55,9 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         this._isBuiltin = isBuiltin;
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[] } {
         const errors = []
+        const warnings = []
         {
             // Legacy format checks  
             if (this._isBuiltin) {
@@ -67,7 +69,34 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 }
             }
         }
+        {
+            // Check for remote images
+            const images = new ExtractImages().convertStrict(json, "validation")
+            const remoteImages = images.filter(img => img.indexOf("http") == 0)
+            for (const remoteImage of remoteImages) {
+                errors.push("Found a remote image: " + remoteImage + " in theme " + json.id + ", please download it.")
+            }
+            for (const image of images) {
+                if (image.indexOf("{") >= 0) {
+                    warnings.push("Ignoring image with { in the path: ", image)
+                    continue
+                }
+                
+                if(image === "assets/SocialImage.png"){
+                    continue
+                }
+                if(image.match(/[a-z]*/)){
+                    // This is a builtin img, e.g. 'checkmark' or 'crosshair'
+                    continue;
+                }
 
+                if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
+                    const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
+                    errors.push(`Image with path ${image} not found or not attributed; it is used in ${json.id}${ctx}`)
+                }
+            }
+
+        }
         try {
             const theme = new LayoutConfig(json, true, "test")
             if (theme.id !== theme.id.toLowerCase()) {
@@ -97,7 +126,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
         return {
             result: json,
-            errors
+            errors,
+            warnings
         };
     }
 }
@@ -246,27 +276,6 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                     errors.push(context + ": layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
                 }
-            }
-            {
-                // Check for remote images
-                const layer = new LayerConfig(json, "test", true)
-                const images = Array.from(layer.ExtractImages())
-                const remoteImages = images.filter(img => img.indexOf("http") == 0)
-                for (const remoteImage of remoteImages) {
-                    errors.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it. You can use the fixTheme script to automate this")
-                }
-                for (const image of images) {
-                    if (image.indexOf("{") >= 0) {
-                        warnings.push("Ignoring image with { in the path: ", image)
-                        continue
-                    }
-
-                    if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
-                        const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
-                        errors.push(`Image with path ${image} not found or not attributed; it is used in ${layer.id}${ctx}`)
-                    }
-                }
-
             }
             {
                 // CHeck location of layer file

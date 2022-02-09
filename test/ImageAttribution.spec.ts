@@ -1,8 +1,8 @@
 import {equal} from "assert";
 import T from "./TestHelper";
 import {Translation} from "../UI/i18n/Translation";
-import * as bike_repair_station from "../assets/layers/bike_repair_station/bike_repair_station.json"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import * as cyclofix from "../assets/generated/themes/cyclofix.json"
+import {ExtractImages} from "../Models/ThemeConfig/Conversion/FixImages";
 
 export default class ImageAttributionSpec extends T {
     constructor() {
@@ -10,9 +10,9 @@ export default class ImageAttributionSpec extends T {
             [
                 "Should find all the images",
                 () => {
-                    const pumps: LayerConfig = new LayerConfig(bike_repair_station)
-                    const images = pumps.ExtractImages();
-                    const expectedValues = ['./assets/layers/bike_repair_station/repair_station.svg',
+                    const images = new Set(new ExtractImages().convertStrict(cyclofix, "test"))
+                    const expectedValues = [
+                        './assets/layers/bike_repair_station/repair_station.svg',
                         './assets/layers/bike_repair_station/repair_station_pump.svg',
                         './assets/layers/bike_repair_station/broken_pump.svg',
                         './assets/layers/bike_repair_station/pump.svg',
@@ -20,7 +20,8 @@ export default class ImageAttributionSpec extends T {
                         './assets/layers/bike_repair_station/pump_example_manual.jpg',
                         './assets/layers/bike_repair_station/pump_example.png',
                         './assets/layers/bike_repair_station/pump_example_round.jpg',
-                        './assets/layers/bike_repair_station/repair_station_example_2.jpg']
+                        './assets/layers/bike_repair_station/repair_station_example_2.jpg',
+                        'close']
                     for (const expected of expectedValues) {
                         T.isTrue(images.has(expected), expected + " not found")
                     }

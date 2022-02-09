@@ -1,10 +1,11 @@
 import T from "./TestHelper";
-import {FixImages, FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
 import * as Assert from "assert";
+import {FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -239,6 +240,17 @@ export default class LegacyThemeLoaderSpec extends T {
                 "mapRendering": [
                     {
                         "icon": "./TS_bolt.svg",
+                        iconBadges: [{
+                            if: "id=yes",
+                            then:{
+                                mappings: [
+                                    {
+                                        if: "id=yes",
+                                        then: "./Something.svg"
+                                    }
+                                ]
+                            }
+                        }],
                         "location": [
                             "point",
                             "centroid"
@@ -433,6 +445,10 @@ export default class LegacyThemeLoaderSpec extends T {
                 const fixedValue = fixed.layers[0]["mapRendering"][0].icon
                 Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg",
                     fixedValue)
+
+                const fixedMapping = fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then
+                Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg",
+                    fixedMapping)
             } ]
             ]
         );

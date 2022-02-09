@@ -3,7 +3,6 @@ import {Utils} from "../../../Utils";
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {DesugaringStep, Fuse, OnEvery} from "./Conversion";
-import * as metapaths from "../../../assets/layoutconfigmeta.json"
 
 export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string | { builtin, override }> {
 
@@ -160,101 +159,3 @@ export class FixLegacyTheme extends Fuse<LayoutConfigJson> {
 }
 
 
-export class FixImages extends DesugaringStep<LayoutConfigJson> {
-    private readonly _knownImages: Set<string>;
-
-    constructor(knownImages: Set<string>) {
-        super("Walks over the entire theme and replaces images to the relative URL. Only works if the ID of the theme is an URL");
-        this._knownImages = knownImages;
-    }
-
-    /**
-     * Walks the path into the object till the end.
-     *
-     * If a list is encountered, this is tranparently walked recursively on every object.
-     *
-     * The leaf objects are replaced
-     */
-    private static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any) => any)) {
-        const head = path[0]
-        if (path.length === 1) {
-            // We have reached the leaf
-            const leaf = object[head];
-            if (leaf !== undefined) {
-                object[head] = replaceLeaf(leaf)
-            }
-            return
-
-        }
-        const sub = object[head]
-        if (sub === undefined) {
-            return;
-        }
-        if (typeof sub !== "object") {
-            return;
-        }
-        if (sub["forEach"] !== undefined) {
-            sub.forEach(el => FixImages.WalkPath(path.slice(1), el, replaceLeaf))
-            return;
-        }
-        FixImages.WalkPath(path.slice(1), sub, replaceLeaf)
-
-    }
-
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
-        let url: URL;
-        console.log("Fixing images!")
-        try {
-            url = new URL(json.id)
-        } catch (e) {
-            // Not a URL, we don't rewrite
-            return {result: json}
-        }
-
-        const absolute =  url.protocol +"//"+url.host
-        let relative = url.protocol +"//"+ url.host + url.pathname 
-        relative = relative.substring(0, relative.lastIndexOf("/"))
-        const self = this;
-
-        function replaceString(leaf: string) {
-            if (self._knownImages.has(leaf)) {
-                return leaf;
-            }
-            if (leaf.startsWith("./")) {
-                return relative + leaf.substring(1)
-            }
-            if (leaf.startsWith("/")) {
-                return absolute + leaf
-            }
-            return leaf;
-        }
-
-        json = Utils.Clone(json)
-
-        let paths = metapaths["default"] ?? metapaths
-
-        for (const metapath of paths) {
-            if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
-                continue
-            }
-            FixImages.WalkPath(metapath.path, json, leaf => {
-                console.log("Detected leaf: ", leaf)
-                if (typeof leaf === "string") {
-                    return replaceString(leaf)
-                }
-
-                if (metapath.type["some"] !== undefined && (<any[]>metapath.type).some(t => t["$ref"] == "\"#/definitions/TagRenderingConfigJson\"")) {
-                    console.log("Possibly found a tagrendering")
-                    
-                }
-
-                return leaf;
-            })
-        }
-
-
-        return {
-            result: json
-        };
-    }
-}

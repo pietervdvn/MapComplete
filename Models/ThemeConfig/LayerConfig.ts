@@ -311,8 +311,11 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        const baseTags = TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
-        return mapRendering.GetSimpleIcon(new UIEventSource(baseTags))
+        return mapRendering.GetBaseIcon(this.GetBaseTags())
+    }
+    
+    public GetBaseTags(): any{
+        return TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
     }
 
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
@@ -365,12 +368,6 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push(new Combine(["This layer is needed as dependency for layer", new Link(revDep, "#" + revDep)]))
         }
 
-        const icon = Array.from(this.mapRendering[0]?.icon?.ExtractImages(true) ?? [])[0]
-        let iconImg = ""
-        if (icon !== undefined) {
-            iconImg = `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
-        }
-
         let neededTags: TagsFilter[] = [this.source.osmTags]
         if (this.source.osmTags["and"] !== undefined) {
             neededTags = this.source.osmTags["and"]
@@ -400,6 +397,16 @@ export default class LayerConfig extends WithContextLoader {
                 "**Warning** This quick overview is incomplete",
                 new Table(["attribute", "type", "values which are supported by this layer"], tableRows)
             ]).SetClass("flex-col flex")
+        }
+
+        const icon =  this.mapRendering
+            .filter(mr => mr.location.has("point"))
+            .map(mr => mr.icon.render.txt)
+            .find(i => i !== undefined)
+        let iconImg = ""
+        if (icon !== undefined) {
+            // This is for the documentation, so we have to use raw HTML
+            iconImg = `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
         }
 
         return new Combine([
@@ -433,25 +440,6 @@ export default class LayerConfig extends WithContextLoader {
 
     AllTagRenderings(): TagRenderingConfig[] {
         return Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title, this.isShown])
-    }
-
-    public ExtractImages(): Set<string> {
-        const parts: Set<string>[] = [];
-        parts.push(...this.tagRenderings?.map((tr) => tr.ExtractImages(false)));
-        parts.push(...this.titleIcons?.map((tr) => tr.ExtractImages(true)));
-        for (const preset of this.presets) {
-            parts.push(new Set<string>(preset.description?.ExtractImages(false)));
-            parts.push(new Set(preset.exampleImages ?? []))
-        }
-        for (const pointRenderingConfig of this.mapRendering) {
-            parts.push(pointRenderingConfig.ExtractImages())
-        }
-        const allIcons = new Set<string>();
-        for (const part of parts) {
-            part?.forEach(allIcons.add, allIcons);
-        }
-
-        return allIcons;
     }
 
     public isLeftRightSensitive(): boolean {

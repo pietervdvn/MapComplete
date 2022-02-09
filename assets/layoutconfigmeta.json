@@ -1,5 +1,59 @@
 [
   {
+    "path": [],
+    "type": "object"
+  },
+  {
+    "path": [
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "credits"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "maintainer"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "version"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "mustHaveLanguage"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "path": [
+      "shortDescription"
+    ]
+  },
+  {
+    "path": [
+      "description"
+    ]
+  },
+  {
+    "path": [
+      "descriptionTail"
+    ]
+  },
+  {
     "path": [
       "icon"
     ],
@@ -15,6 +69,397 @@
   },
   {
     "path": [
+      "startZoom"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "widenFactor"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "overpassMaxZoom"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "osmApiTileSize"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "overrideAll"
+    ]
+  },
+  {
+    "path": [
+      "defaultBackgroundId"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "tileLayerSources"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "tileLayerSources"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "source"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "isOverlay"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "name"
+    ]
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "minZoom"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "maxZoom"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "tileLayerSources",
+      "defaultState"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "name"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "description"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "source"
+    ],
+    "type": [
+      {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "osmTags": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/AndOrTagConfigJson"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "overpassScript": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "osmTags"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "maxCacheAge": {
+                "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                "type": "number"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "osmTags": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/AndOrTagConfigJson"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "geoJson": {
+                "type": "string"
+              },
+              "geoJsonZoomLevel": {
+                "type": "number"
+              },
+              "isOsmCache": {
+                "type": "boolean"
+              },
+              "mercatorCrs": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "geoJson",
+              "osmTags"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "maxCacheAge": {
+                "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                "type": "number"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "calculatedTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "doNotDownload"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
       "layers",
       "isShown",
       "mappings",
@@ -26,12 +471,307 @@
   {
     "path": [
       "layers",
+      "isShown",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "forceLoad"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "minzoom"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "layers",
+      "shownByDefault"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "minzoomVisible"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "layers",
+      "title"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
       "title",
       "mappings",
       "icon"
     ],
     "typeHint": "icon",
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
   },
   {
     "path": [
@@ -71,6 +811,240 @@
   {
     "path": [
       "layers",
+      "titleIcons"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "location"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
       "mapRendering",
       "icon"
     ],
@@ -83,6 +1057,255 @@
         "type": "string"
       }
     ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges"
+    ],
+    "type": "array"
   },
   {
     "path": [
@@ -105,12 +1328,718 @@
     "path": [
       "layers",
       "mapRendering",
+      "iconBadges",
+      "then"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
       "iconSize",
       "mappings",
       "icon"
     ],
     "typeHint": "icon",
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
   },
   {
     "path": [
@@ -127,12 +2056,509 @@
     "path": [
       "layers",
       "mapRendering",
+      "rotation",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
       "label",
       "mappings",
       "icon"
     ],
     "typeHint": "icon",
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
   },
   {
     "path": [
@@ -149,12 +2575,505 @@
     "path": [
       "layers",
       "mapRendering",
+      "color",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "number"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
       "width",
       "mappings",
       "icon"
     ],
     "typeHint": "icon",
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
   },
   {
     "path": [
@@ -171,12 +3090,506 @@
     "path": [
       "layers",
       "mapRendering",
+      "dashArray",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
       "lineCap",
       "mappings",
       "icon"
     ],
     "typeHint": "icon",
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
   },
   {
     "path": [
@@ -193,12 +3606,502 @@
     "path": [
       "layers",
       "mapRendering",
+      "fill",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
       "fillColor",
       "mappings",
       "icon"
     ],
     "typeHint": "icon",
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
   },
   {
     "path": [
@@ -214,16 +4117,611 @@
   {
     "path": [
       "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "passAllFeatures"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "presets"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "title"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "tags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "description"
+    ]
+  },
+  {
+    "path": [
+      "layers",
       "presets",
       "exampleImages"
     ],
-    "typeHint": "image[]",
+    "typeHint": "image",
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "preciseInput"
+    ],
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "preferredBackground": {
+            "description": "The type of background picture",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "snapToLayer": {
+            "description": "If specified, these layers will be shown to and the new point will be snapped towards it",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "maxSnapDistance": {
+            "description": "If specified, a new point will only be snapped if it is within this range.\nDistance in meter\n\nDefault: 10",
+            "type": "number"
+          }
+        },
+        "required": [
+          "preferredBackground"
+        ]
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "preciseInput",
+      "preferredBackground"
+    ],
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "preciseInput",
+      "snapToLayer"
+    ],
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "presets",
+      "preciseInput",
+      "maxSnapDistance"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "labels"
+    ],
     "type": "array"
   },
   {
     "path": [
       "layers",
       "tagRenderings",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "question"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
       "mappings",
       "icon"
     ],
@@ -236,9 +4734,418 @@
       "tagRenderings",
       "renderings",
       "mappings",
-      "icon"
+      "hideInAnswer"
     ],
-    "typeHint": "icon",
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "filter"
+    ],
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/default"
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "sameAs": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sameAs"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "filter",
+      "id"
+    ],
     "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "filter",
+      "options"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "deletion"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/DeleteConfigJson"
+      },
+      {
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "deletion",
+      "extraDeleteReasons"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "deletion",
+      "extraDeleteReasons",
+      "explanation"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "deletion",
+      "extraDeleteReasons",
+      "changesetMessage"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "deletion",
+      "nonDeleteMappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "deletion",
+      "softDeletionTags"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "deletion",
+      "neededChangesets"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "layers",
+      "allowMove"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/default_2"
+      },
+      {
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "allowMove",
+      "enableImproveAccuracy"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "allowMove",
+      "enableRelocation"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "allowSplit"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "units"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "appliesToKey"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "eraseInvalidValues"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "canonicalDenomination"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "canonicalDenominationSingular"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "alternativeDenomination"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "human"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "humanSingular"
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "prefix"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "units",
+      "applicableUnits",
+      "default"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "hideTagRenderingsWithLabels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "clustering"
+    ],
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "maxZoom": {
+            "description": "All zoom levels above 'maxzoom' are not clustered anymore.\nDefaults to 18",
+            "type": "number"
+          },
+          "minNeededElements": {
+            "description": "The number of elements per tile needed to start clustering\nIf clustering is defined, defaults to 250",
+            "type": "number"
+          }
+        }
+      },
+      {
+        "enum": [
+          false
+        ],
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "path": [
+      "clustering",
+      "maxZoom"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "clustering",
+      "minNeededElements"
+    ],
+    "type": "number"
+  },
+  {
+    "path": [
+      "customCss"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "hideFromOverview"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "lockLocation"
+    ],
+    "type": [
+      {
+        "type": "array",
+        "items": [
+          {
+            "type": "array",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          {
+            "type": "array",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        ],
+        "minItems": 2,
+        "maxItems": 2
+      },
+      {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      {
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "path": [
+      "overpassUrl"
+    ],
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "overpassTimeout"
+    ],
+    "type": "number"
   }
 ]

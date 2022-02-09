@@ -195,7 +195,7 @@ export interface LayerConfigJson {
         /**
          * Example images, which show real-life pictures of what such a feature might look like
          * 
-         * Type: image[]
+         * Type: image
          */
         exampleImages?: string[]
 
