@@ -76,7 +76,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -435,7 +435,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -614,7 +614,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -779,7 +779,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
