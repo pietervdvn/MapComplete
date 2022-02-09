@@ -105,7 +105,14 @@
                   }
                 ]
               },
-              "override": {}
+              "override": {},
+              "hideTagRenderingsWithLabels": {
+                "description": "TagRenderings with any of these labels will be removed from the layer.\nNote that the 'id' and 'group' are considered labels too",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             },
             "required": [
               "builtin",
@@ -353,6 +360,13 @@
           "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
           "type": "string"
         },
+        "labels": {
+          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "render": {
           "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`"
         },
@@ -381,6 +395,9 @@
             "type": {
               "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
               "type": "string"
+            },
+            "placeholder": {
+              "description": "A (translated) text that is shown (as gray text) within the textfield"
             },
             "helperArgs": {
               "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -968,6 +985,10 @@
           "description": "This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.\nThis is useful to hide certain features from view.\n\nImportant: hiding features does not work dynamically, but is only calculated when the data is first renders.\nThis implies that it is not possible to hide a feature after a tagging change\n\nThe default value is 'yes'",
           "$ref": "#/definitions/TagRenderingConfigJson"
         },
+        "forceLoad": {
+          "description": "Advanced option - might be set by the theme compiler\n\nIf true, this data will _always_ be loaded, even if the theme is disabled",
+          "type": "boolean"
+        },
         "minzoom": {
           "description": "The minimum needed zoomlevel required before loading of the data start\nDefault: 0",
           "type": "number"
@@ -1064,6 +1085,13 @@
               },
               "description": {
                 "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)"
+              },
+              "exampleImages": {
+                "description": "Example images, which show real-life pictures of what such a feature might look like\n\nType: image[]",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "preciseInput": {
                 "description": "If set, the user will prompted to confirm the location before actually adding the data.\nThis will be with a 'drag crosshair'-method.\n\nIf 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.",

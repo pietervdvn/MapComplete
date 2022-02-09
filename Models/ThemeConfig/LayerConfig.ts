@@ -441,6 +441,7 @@ export default class LayerConfig extends WithContextLoader {
         parts.push(...this.titleIcons?.map((tr) => tr.ExtractImages(true)));
         for (const preset of this.presets) {
             parts.push(new Set<string>(preset.description?.ExtractImages(false)));
+            parts.push(new Set(preset.exampleImages ?? []))
         }
         for (const pointRenderingConfig of this.mapRendering) {
             parts.push(pointRenderingConfig.ExtractImages())

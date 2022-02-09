@@ -214,6 +214,15 @@
   {
     "path": [
       "layers",
+      "presets",
+      "exampleImages"
+    ],
+    "typeHint": "image[]",
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
       "tagRenderings",
       "mappings",
       "icon"

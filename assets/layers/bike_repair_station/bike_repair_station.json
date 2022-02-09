@@ -635,7 +635,11 @@
         "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público",
         "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público"
       },
-      "exampleImages": ["./assets/layers/bike_repair_station/pump_example_round.jpg","./assets/layers/bike_repair_station/pump_example.png","./assets/layers/bike_repair_station/pump_example_manual.jpg"]
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/pump_example_round.jpg",
+        "./assets/layers/bike_repair_station/pump_example.png",
+        "./assets/layers/bike_repair_station/pump_example_manual.jpg"
+      ]
     },
     {
       "title": {
@@ -659,7 +663,10 @@
         "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
         "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert."
       },
-      "exampleImages": ["./assets/layers/bike_repair_station/repair_station_example_2.jpg","./assets/layers/bike_repair_station/repair_station_example_3.jpg"]
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
+        "./assets/layers/bike_repair_station/repair_station_example_3.jpg"
+      ]
     },
     {
       "title": {

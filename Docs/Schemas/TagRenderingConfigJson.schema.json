@@ -10,6 +10,13 @@
       "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
       "type": "string"
     },
+    "labels": {
+      "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "render": {
       "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`"
     },
@@ -38,6 +45,9 @@
         "type": {
           "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
           "type": "string"
+        },
+        "placeholder": {
+          "description": "A (translated) text that is shown (as gray text) within the textfield"
         },
         "helperArgs": {
           "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",

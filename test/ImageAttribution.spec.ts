@@ -20,7 +20,7 @@ export default class ImageAttributionSpec extends T {
                         './assets/layers/bike_repair_station/pump_example_manual.jpg',
                         './assets/layers/bike_repair_station/pump_example.png',
                         './assets/layers/bike_repair_station/pump_example_round.jpg',
-                        './assets/layers/bike_repair_station/repair_station_example.jpg']
+                        './assets/layers/bike_repair_station/repair_station_example_2.jpg']
                     for (const expected of expectedValues) {
                         T.isTrue(images.has(expected), expected + " not found")
                     }
