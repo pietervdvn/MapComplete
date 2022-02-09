@@ -164,8 +164,10 @@
       ],
       "id": "playground-surface"
     },
-    {   "labels": ["extra"],
-
+    {
+      "labels": [
+        "extra"
+      ],
       "id": "playground-lit",
       "question": {
         "nl": "Is deze speeltuin 's nachts verlicht?",
@@ -201,7 +203,9 @@
       ]
     },
     {
-      "labels": ["extra"],
+      "labels": [
+        "extra"
+      ],
       "render": {
         "nl": "Toegankelijk vanaf {min_age} jaar oud",
         "en": "Accessible to kids older than {min_age} years",
@@ -224,8 +228,10 @@
       },
       "id": "playground-min_age"
     },
-    {   "labels": ["extra"],
-
+    {
+      "labels": [
+        "extra"
+      ],
       "render": {
         "nl": "Toegankelijk tot {max_age}",
         "en": "Accessible to kids of at most {max_age}",

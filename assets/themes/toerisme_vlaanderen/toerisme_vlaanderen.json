@@ -183,7 +183,6 @@
         "bike_repair_station-valves"
       ]
     },
-
     "bicycle_rental",
     {
       "builtin": "playground",
@@ -197,9 +196,10 @@
           }
         ]
       },
-      "hideTagRenderingsWithLabels": ["extra"]
+      "hideTagRenderingsWithLabels": [
+        "extra"
+      ]
     }
-   
   ],
   "hideFromOverview": true,
   "enableMoreQuests": false,
