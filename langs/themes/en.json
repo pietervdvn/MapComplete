@@ -488,7 +488,7 @@
                             "then": "You need a permit to access here"
                         },
                         "2": {
-                            "then": "Only custumers"
+                            "then": "Only customers"
                         },
                         "3": {
                             "then": "Only club members"

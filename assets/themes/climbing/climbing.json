@@ -1209,7 +1209,7 @@
           {
             "if": "access=customers",
             "then": {
-              "en": "Only custumers",
+              "en": "Only customers",
               "fr": "Réservé aux clients",
               "de": "Nur für Kunden",
               "it": "Riservato ai clienti"
