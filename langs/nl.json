@@ -50,7 +50,7 @@
             "addNewMapLabel": "Klik hier om een item toe te voegen",
             "addNew": "Voeg hier een {category} toe",
             "title": "Nieuw punt toevoegen?",
-            "intro": "Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",
+            "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
             "pleaseLogin": "<a class='activate-osm-authentication'>Gelieve je aan te melden om een punt to te voegen</a>",
             "zoomInFurther": "Gelieve verder in te zoomen om een punt toe te voegen.",
             "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
