@@ -18,5 +18,15 @@
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_F113_nl.svg"
     ]
+  },
+  {
+    "path": "logo.svg",
+    "license": "CC0",
+    "authors": [
+      "The RedBurn"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_F111_nl.svg"
+    ]
   }
 ]

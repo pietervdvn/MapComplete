@@ -1,5 +1,15 @@
 [
   {
+    "path": "logo.svg",
+    "license": "CC0",
+    "authors": [
+      "Iconathon"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Wind_Turbine_(2076)_-_The_Noun_Project.svg"
+    ]
+  },
+  {
     "path": "wind_turbine.svg",
     "license": "CC0",
     "authors": [

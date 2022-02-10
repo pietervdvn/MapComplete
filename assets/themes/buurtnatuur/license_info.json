@@ -40,6 +40,16 @@
     ]
   },
   {
+    "path": "logo.svg",
+    "license": "Logo; All rights reserved",
+    "authors": [
+      "Groen"
+    ],
+    "sources": [
+      "https://www.groen.be/"
+    ]
+  },
+  {
     "path": "nature_reserve.svg",
     "license": "CC-BY 3.0",
     "authors": [

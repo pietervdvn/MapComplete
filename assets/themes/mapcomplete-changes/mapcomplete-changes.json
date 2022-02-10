@@ -113,7 +113,7 @@
               },
               {
                 "if": "theme=buurtnatuur",
-                "then": "./assets/themes/buurtnatuur/groen_logo.svg"
+                "then": "./assets/themes/buurtnatuur/logo.svg"
               },
               {
                 "if": "theme=cafes_and_pubs",
@@ -145,7 +145,7 @@
               },
               {
                 "if": "theme=cyclestreets",
-                "then": "./assets/themes/cyclestreets/F111.svg"
+                "then": "./assets/themes/cyclestreets/logo.svg"
               },
               {
                 "if": "theme=cyclofix",
@@ -185,7 +185,7 @@
               },
               {
                 "if": "theme=grb",
-                "then": "./assets/themes/grb_import/housenumber_blank.svg"
+                "then": "./assets/themes/grb_import/logo.svg"
               },
               {
                 "if": "theme=grb_fixme",
@@ -229,7 +229,7 @@
               },
               {
                 "if": "theme=openwindpowermap",
-                "then": "./assets/themes/openwindpowermap/wind_turbine.svg"
+                "then": "./assets/themes/openwindpowermap/logo.svg"
               },
               {
                 "if": "theme=parkings",
