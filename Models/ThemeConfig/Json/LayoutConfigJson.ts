@@ -242,7 +242,7 @@ export interface LayoutConfigJson {
      * If set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.
      * Off by default, which will enable panning to the entire world
      */
-    lockLocation?: boolean | [[number, number], [number, number]] | number[][];
+    lockLocation?: [[number, number], [number, number]] | number[][];
 
     enableUserBadge?: boolean;
     enableShareScreen?: boolean;
