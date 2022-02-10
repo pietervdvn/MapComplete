@@ -9,6 +9,7 @@ import LayoutConfig from "../LayoutConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
 import {ExtractImages} from "./FixImages";
+import ScriptUtils from "../../../scripts/ScriptUtils";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -55,9 +56,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         this._isBuiltin = isBuiltin;
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[], information: string[] } {
         const errors = []
         const warnings = []
+        const information = []
         {
             // Legacy format checks  
             if (this._isBuiltin) {
@@ -70,7 +72,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
         }
         {
-            // Check for remote images
+            // Check images: are they local, are the licenses there, is the theme icon square, ...
             const images = new ExtractImages().convertStrict(json, "validation")
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
@@ -78,14 +80,14 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
             for (const image of images) {
                 if (image.indexOf("{") >= 0) {
-                    warnings.push("Ignoring image with { in the path: ", image)
+                    information.push("Ignoring image with { in the path: " + image)
                     continue
                 }
-                
-                if(image === "assets/SocialImage.png"){
+
+                if (image === "assets/SocialImage.png") {
                     continue
                 }
-                if(image.match(/[a-z]*/)){
+                if (image.match(/[a-z]*/)) {
                     // This is a builtin img, e.g. 'checkmark' or 'crosshair'
                     continue;
                 }
@@ -93,6 +95,22 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
                     const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
                     errors.push(`Image with path ${image} not found or not attributed; it is used in ${json.id}${ctx}`)
+                }
+            }
+
+            if (json.icon.endsWith(".svg")) {
+                try {
+                    ScriptUtils.ReadSvgSync(json.icon, svg => {
+                        const width: string = svg.$.width;
+                        const height: string = svg.$.height;
+                        if (width !== height) {
+                            const e = `the icon for theme ${json.id} is not square. Please square the icon at ${json.icon}` + 
+                                ` Width = ${width} height = ${height}`;
+                            (json.hideFromOverview ? warnings : errors).push(e)
+                        }
+                    })
+                } catch (e) {
+                    console.error("Could not read " + json.icon + " due to " + e)
                 }
             }
 
@@ -127,7 +145,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         return {
             result: json,
             errors,
-            warnings
+            warnings,
+            information
         };
     }
 }
@@ -142,60 +161,60 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
 }
 
 
-class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson>{
-    
+class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
+
     constructor() {
         super("Checks that an 'overrideAll' does not override a single override");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
-        
+
         const overrideAll = json.overrideAll;
-        if(overrideAll === undefined){
+        if (overrideAll === undefined) {
             return {result: json}
         }
-        
+
         const errors = []
-        const withOverride = json.layers.filter(l =>  l["override"] !== undefined)
+        const withOverride = json.layers.filter(l => l["override"] !== undefined)
 
         for (const layer of withOverride) {
             for (const key in overrideAll) {
-               if(layer["override"][key] !== undefined || layer["override"]["="+key] !== undefined){
-                  const w = "The override of layer "+JSON.stringify(layer["builtin"])+" has a shadowed property: "+key+" is overriden by overrideAll of the theme";
-                errors.push(w)
-               } 
+                if (layer["override"][key] !== undefined || layer["override"]["=" + key] !== undefined) {
+                    const w = "The override of layer " + JSON.stringify(layer["builtin"]) + " has a shadowed property: " + key + " is overriden by overrideAll of the theme";
+                    errors.push(w)
+                }
             }
         }
-        
-        return  {result: json, errors}
+
+        return {result: json, errors}
     }
-    
+
 }
 
-export class PrevalidateTheme extends Fuse<LayoutConfigJson>{
-    
+export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
+
     constructor() {
         super("Various consistency checks on the raw JSON",
             new OverrideShadowingCheck()
-            );
-        
+        );
+
     }
 
 }
 
-export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson>{
+export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
         super("Checks that the mappings don't shadow each other");
     }
-    
+
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
-        if(json.mappings === undefined || json.mappings.length === 0){
+        if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
         const parsedConditions = json.mappings.map(m => TagUtils.Tag(m.if))
-        for (let i = 0; i < json.mappings.length; i++){
-            if(!parsedConditions[i].isUsableAsAnswer()){
+        for (let i = 0; i < json.mappings.length; i++) {
+            if (!parsedConditions[i].isUsableAsAnswer()) {
                 continue
             }
             const keyValues = parsedConditions[i].asChange({});
@@ -203,12 +222,12 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             keyValues.forEach(({k, v}) => {
                 properties[k] = v
             })
-            for (let j = 0; j < i; j++){
+            for (let j = 0; j < i; j++) {
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
-                if(doesMatch){
+                if (doesMatch) {
                     // The current mapping is shadowed!
                     errors.push(`Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
-    The mapping ${parsedConditions[i].asHumanString(false,false, {})} is fully matched by a previous mapping, which matches:
+    The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping, which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
     Move the mapping up to fix this problem
@@ -217,7 +236,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             }
 
         }
-         
+
         return {
             errors,
             result: json
@@ -316,17 +335,15 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     }
                 }
             }
-            if(json.tagRenderings !== undefined){
-                new DetectShadowedMappings().convertAll(<TagRenderingConfigJson[]> json.tagRenderings, context+".tagRenderings")
+            if (json.tagRenderings !== undefined) {
+                new DetectShadowedMappings().convertAll(<TagRenderingConfigJson[]>json.tagRenderings, context + ".tagRenderings")
             }
-            
+
         } catch (e) {
             errors.push(e)
         }
-        
-        
-        
-        
+
+
         return {
             result: json,
             errors,

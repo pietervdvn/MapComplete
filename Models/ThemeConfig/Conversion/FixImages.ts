@@ -59,7 +59,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         this._knownImages = knownImages;
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson } {
         let url: URL;
         try {
             url = new URL(json.id)

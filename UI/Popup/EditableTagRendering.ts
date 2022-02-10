@@ -36,7 +36,7 @@ export default class EditableTagRendering extends Toggle {
                 const editMode = options.editMode ?? new UIEventSource<boolean>(false)
                 let rendering = EditableTagRendering.CreateRendering(state, tags, configuration, units, editMode);
                 rendering.SetClass(options.innerElementClasses)
-                if(state.featureSwitchIsDebugging.data){
+                if(state.featureSwitchIsDebugging.data || state.featureSwitchIsTesting.data){
                     rendering = new Combine([
                         new FixedUiElement(configuration.id).SetClass("self-end subtle"),
                         rendering

@@ -18,11 +18,15 @@ export abstract class Conversion<TIn, TOut> {
         this.name = name ?? this.constructor.name
     }
 
-    public static strict<T>(fixed: { errors?: string[], warnings?: string[], result?: T }): T {
+    public static strict<T>(fixed: { errors?: string[], warnings?: string[], information?: string[], result?: T }): T {
         if (fixed?.errors !== undefined &&  fixed?.errors?.length > 0) {
             throw fixed.errors.join("\n\n");
         }
-        fixed.warnings?.forEach(w => console.warn(w))
+        fixed.information?.forEach(i => console.log("    ", i))
+        const    yellow = (s) => "\x1b[33m"+s+"\x1b[0m"
+        const red = s => '\x1b[31m'+s+'\x1b[0m'
+        
+        fixed.warnings?.forEach(w => console.warn(red(`<!> `), yellow (w)))
         return fixed.result;
     }
 
@@ -31,26 +35,29 @@ export abstract class Conversion<TIn, TOut> {
         return DesugaringStep.strict(fixed)
     }
 
-    abstract convert(json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[] }
+    abstract convert(json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[], information?: string[] }
 
-    public convertAll(jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[] } {
+    public convertAll(jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[], information?: string[] } {
         if(jsons === undefined){
             throw "convertAll received undefined - don't do this (at "+context+")"
         }
         const result = []
         const errors = []
         const warnings = []
+        const information = []
         for (let i = 0; i < jsons.length; i++) {
             const json = jsons[i];
             const r = this.convert(json, context + "[" + i + "]")
             result.push(r.result)
             errors.push(...r.errors ?? [])
             warnings.push(...r.warnings ?? [])
+            information.push(...r.information ?? [])
         }
         return {
             result,
             errors,
-            warnings
+            warnings,
+            information
         }
     }
 
@@ -69,16 +76,15 @@ export class OnEvery<X, T> extends DesugaringStep<T> {
         this.key = key;
     }
 
-    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[] } {
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[], information?: string[] } {
         json = {...json}
         const step = this.step
         const key = this.key;
         const r = step.convertAll((<X[]>json[key]), context + "." + key)
         json[key] = r.result
         return {
+            ...r,
             result: json,
-            errors: r.errors,
-            warnings: r.warnings
         };
     }
 }
@@ -94,7 +100,7 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
         this.key = key;
     }
 
-    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[], information?: string[] } {
         json = {...json}
         const step = this.step
         const key = this.key;
@@ -103,17 +109,14 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
             // Move on - nothing to see here!
             return {
                 result: json,
-                errors: [],
-                warnings: []
             }
         }
         const r = step.convertAll((<X[]>values), context + "." + key)
         const vals: X[][] = r.result
         json[key] = [].concat(...vals)
         return {
+            ...r,
             result: json,
-            errors: r.errors,
-            warnings: r.warnings
         };
 
     }
@@ -129,14 +132,16 @@ export class Fuse<T> extends DesugaringStep<T> {
         this.steps = steps;
     }
 
-    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[], information: string[] } {
         const errors = []
         const warnings = []
+        const information = []
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
             let r = step.convert(json, "While running step " +step.name + ": " + context)
             errors.push(...r.errors ?? [])
             warnings.push(...r.warnings ?? [])
+            information.push(...r.information ?? [])
             json = r.result
             if (errors.length > 0) {
                 break;
@@ -145,7 +150,8 @@ export class Fuse<T> extends DesugaringStep<T> {
         return {
             result: json,
             errors,
-            warnings
+            warnings,
+            information
         };
     }
 
@@ -163,14 +169,13 @@ export class SetDefault<T> extends DesugaringStep<T> {
         this._overrideEmptyString = overrideEmptyString;
     }
 
-    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[] } {
+    convert(json: T, context: string): { result: T } {
         if (json[this.key] === undefined || (json[this.key] === "" && this._overrideEmptyString)) {
             json = {...json}
             json[this.key] = this.value
         }
 
         return {
-            errors: [], warnings: [],
             result: json
         };
     }

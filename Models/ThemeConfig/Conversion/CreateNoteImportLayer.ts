@@ -20,9 +20,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         this._includeClosedNotesDays = includeClosedNotesDays;
     }
 
-    convert(layerJson: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
-        const errors = []
-        const warnings = []
+    convert(layerJson: LayerConfigJson, context: string): { result: LayerConfigJson } {
         const t = Translations.t.importLayer;
 
         /**
@@ -182,8 +180,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
 
 
         return {
-            result,
-            errors, warnings
+            result
         };
     }
 
