@@ -757,11 +757,12 @@
           {
             "if": {
               "and": [
-                "service:bicycle:pump=no",
+                "service:bicycle:pump=yes",
+                "service:bicycle:tools=yes",
                 "service:bicycle:pump:operational_status=broken"
               ]
             },
-            "then": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg"
+            "then": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
           },
           {
             "if": {
