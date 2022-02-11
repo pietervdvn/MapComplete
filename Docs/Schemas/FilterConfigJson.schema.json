@@ -22,6 +22,9 @@
               }
             ]
           },
+          "default": {
+            "type": "boolean"
+          },
           "fields": {
             "type": "array",
             "items": {

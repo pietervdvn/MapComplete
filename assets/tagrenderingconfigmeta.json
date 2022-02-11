@@ -23,9 +23,14 @@
   },
   {
     "path": [
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "question"
+    ]
   },
   {
     "path": [

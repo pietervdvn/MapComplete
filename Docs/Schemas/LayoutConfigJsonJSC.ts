@@ -201,9 +201,6 @@ export default {
               "type": "number"
             }
           }
-        },
-        {
-          "type": "boolean"
         }
       ]
     },
@@ -365,8 +362,11 @@ export default {
             "type": "string"
           }
         },
+        "render": {
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+        },
         "question": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered\n/\nrender?: string | any,\n\n/**\nIf it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
         },
         "condition": {
           "description": "Only show this question if the object also matches the following tags.\n\nThis is useful to ask a follow-up question. E.g. if there is a diaper table, then ask a follow-up question on diaper tables...",
@@ -696,6 +696,9 @@ export default {
                   }
                 ]
               },
+              "default": {
+                "type": "boolean"
+              },
               "fields": {
                 "type": "array",
                 "items": {
@@ -875,7 +878,7 @@ export default {
           "description": "A description for this layer.\nShown in the layer selections and in the personel theme"
         },
         "source": {
-          "description": "This determines where the data for the layer is fetched.\nThere are some options:\n\n# Query OSM directly\nsource: {osmTags: \"key=value\"}\n will fetch all objects with given tags from OSM.\n Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API\n\n# Query OSM Via the overpass API with a custom script\nsource: {overpassScript: \"<custom overpass tags>\"} when you want to do special things. _This should be really rare_.\n     This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query\n     However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...\n\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\nSome API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nNote that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too\n\n\nNOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: \"key=value\"}\n While still supported, this is considered deprecated",
+          "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.",
           "anyOf": [
             {
               "allOf": [
@@ -883,6 +886,7 @@ export default {
                   "type": "object",
                   "properties": {
                     "osmTags": {
+                      "description": "Every source must set which tags have to be present in order to load the given layer.",
                       "anyOf": [
                         {
                           "$ref": "#/definitions/AndOrTagConfigJson"
@@ -892,8 +896,9 @@ export default {
                         }
                       ]
                     },
-                    "overpassScript": {
-                      "type": "string"
+                    "maxCacheAge": {
+                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                      "type": "number"
                     }
                   },
                   "required": [
@@ -903,9 +908,8 @@ export default {
                 {
                   "type": "object",
                   "properties": {
-                    "maxCacheAge": {
-                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
-                      "type": "number"
+                    "overpassScript": {
+                      "type": "string"
                     }
                   }
                 }
@@ -917,6 +921,7 @@ export default {
                   "type": "object",
                   "properties": {
                     "osmTags": {
+                      "description": "Every source must set which tags have to be present in order to load the given layer.",
                       "anyOf": [
                         {
                           "$ref": "#/definitions/AndOrTagConfigJson"
@@ -926,32 +931,42 @@ export default {
                         }
                       ]
                     },
-                    "geoJson": {
-                      "type": "string"
-                    },
-                    "geoJsonZoomLevel": {
+                    "maxCacheAge": {
+                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
                       "type": "number"
-                    },
-                    "isOsmCache": {
-                      "type": "boolean"
-                    },
-                    "mercatorCrs": {
-                      "type": "boolean"
                     }
                   },
                   "required": [
-                    "geoJson",
                     "osmTags"
                   ]
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "maxCacheAge": {
-                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                    "geoJson": {
+                      "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+                      "type": "string"
+                    },
+                    "geoJsonZoomLevel": {
+                      "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
                       "type": "number"
+                    },
+                    "isOsmCache": {
+                      "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+                      "type": "boolean"
+                    },
+                    "mercatorCrs": {
+                      "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+                      "type": "boolean"
+                    },
+                    "idKey": {
+                      "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+                      "type": "string"
                     }
-                  }
+                  },
+                  "required": [
+                    "geoJson"
+                  ]
                 }
               ]
             }

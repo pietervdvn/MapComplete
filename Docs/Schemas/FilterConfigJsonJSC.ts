@@ -22,6 +22,9 @@ export default {
               }
             ]
           },
+          "default": {
+            "type": "boolean"
+          },
           "fields": {
             "type": "array",
             "items": {
