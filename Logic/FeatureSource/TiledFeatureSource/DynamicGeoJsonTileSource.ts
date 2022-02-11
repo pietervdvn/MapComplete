@@ -55,8 +55,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
             }
         }
 
-        const seenIds = new Set<string>();
-        const blackList = new UIEventSource(seenIds)
+        const blackList = (new Set<string>())
         super(
             layer,
             source.geojsonZoomLevel,
@@ -76,10 +75,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                         featureIdBlacklist: blackList
                     }
                 )
-                src.features.addCallbackAndRunD(feats => {
-                    feats.forEach(feat => seenIds.add(feat.feature.properties.id))
-                    blackList.ping();
-                })
+     
                 registerLayer(src)
                 return src
             },

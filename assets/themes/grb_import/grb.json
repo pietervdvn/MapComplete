@@ -369,7 +369,8 @@
                       ]
                     }
                   ]
-                }
+                },
+                "default": true
               }
             ]
           }
@@ -441,7 +442,8 @@
         "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
         "geoJsonZoomLevel": 18,
         "mercatorCrs": true,
-        "maxCacheAge": 0
+        "maxCacheAge": 0,
+        "idKey": "osm_id"
       },
       "name": "GRB geometries",
       "title": "GRB outline",

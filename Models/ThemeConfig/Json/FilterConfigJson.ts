@@ -14,6 +14,7 @@ export default interface FilterConfigJson {
     options: {
         question: string | any;
         osmTags?: AndOrTagConfigJson | string,
+        default?: boolean,
         fields?: {
             name: string,
             type?: string | "string"

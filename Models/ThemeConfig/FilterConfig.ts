@@ -18,6 +18,7 @@ export default class FilterConfig {
         originalTagsSpec: string | AndOrTagConfigJson
         fields: { name: string, type: string }[]
     }[];
+    public readonly defaultSelection : number
 
     constructor(json: FilterConfigJson, context: string) {
         if (json.options === undefined) {
@@ -35,6 +36,7 @@ export default class FilterConfig {
             throw `A filter was given where the options aren't a list at ${context}`
         }
         this.id = json.id;
+        let defaultSelection : number = undefined
         this.options = json.options.map((option, i) => {
             const ctx = `${context}.options[${i}]`;
             const question = Translations.T(
@@ -66,9 +68,18 @@ export default class FilterConfig {
                 }
             })
 
+            if(option.default){
+                if(defaultSelection === undefined){
+                    defaultSelection = i;
+                }else{
+                    throw `Invalid filter: multiple filters are set as default, namely ${i} and ${defaultSelection} at ${context}`
+                }
+            }
 
             return {question: question, osmTags: osmTags, fields, originalTagsSpec: option.osmTags};
         });
+        
+        this.defaultSelection = defaultSelection ?? 0
 
         if (this.options.some(o => o.fields.length > 0) && this.options.length > 1) {
             throw `Invalid filter at ${context}: a filter with textfields should only offer a single option.`
@@ -77,6 +88,8 @@ export default class FilterConfig {
         if (this.options.length > 1 && this.options[0].osmTags !== undefined) {
             throw "Error in " + context + "." + this.id + ": the first option of a multi-filter should always be the 'reset' option and not have any filters"
         }
+        
+        
     }
 
     public initState(): UIEventSource<FilterState> {
@@ -88,7 +101,14 @@ export default class FilterConfig {
             return "" + state.state
         }
 
-        const defaultValue = this.options.length > 1 ? "0" : ""
+        let defaultValue = ""
+        if(this.options.length > 1){
+            defaultValue = ""+this.defaultSelection 
+        }else{
+            if(this.defaultSelection > 0){
+                defaultValue = ""+this.defaultSelection
+            }
+        }
         const qp = QueryParameters.GetQueryParameter("filter-" + this.id, defaultValue, "State of filter " + this.id)
 
         if (this.options.length > 1) {

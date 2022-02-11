@@ -18,19 +18,13 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     public readonly layer: FilteredLayer;
     public readonly tileIndex
     public readonly bbox;
-    private readonly seenids: Set<string> = new Set<string>()
-    /**
-     * Only used if the actual source is a tiled geojson.
-     * A big feature might be contained in multiple tiles.
-     * However, we only want to load them once. The blacklist thus contains all ids of all features previously seen
-     * @private
-     */
-    private readonly featureIdBlacklist?: UIEventSource<Set<string>>
+    private readonly seenids: Set<string>;
+    private readonly idKey ?: string;
 
     public constructor(flayer: FilteredLayer,
                        zxy?: [number, number, number] | BBox,
                        options?: {
-                           featureIdBlacklist?: UIEventSource<Set<string>>
+                           featureIdBlacklist?: Set<string>
                        }) {
 
         if (flayer.layerDef.source.geojsonZoomLevel !== undefined && zxy === undefined) {
@@ -38,7 +32,8 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         }
 
         this.layer = flayer;
-        this.featureIdBlacklist = options?.featureIdBlacklist
+        this.idKey = flayer.layerDef.source.idKey
+        this.seenids = options?.featureIdBlacklist ?? new Set<string>()
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         if (zxy !== undefined) {
             let tile_bbox: BBox;
@@ -106,6 +101,10 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                         }
                     }
 
+                    if(self.idKey !== undefined){
+                        props.id = props[self.idKey]
+                    }
+                    
                     if (props.id === undefined) {
                         props.id = url + "/" + i;
                         feature.id = url + "/" + i;
@@ -116,10 +115,6 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                         continue;
                     }
                     self.seenids.add(props.id)
-
-                    if (self.featureIdBlacklist?.data?.has(props.id)) {
-                        continue;
-                    }
 
                     let freshness: Date = time;
                     if (feature.properties["_last_edit:timestamp"] !== undefined) {

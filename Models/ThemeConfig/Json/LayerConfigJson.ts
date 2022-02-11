@@ -33,44 +33,65 @@ export interface LayerConfigJson {
 
 
     /**
-     * This determines where the data for the layer is fetched.
-     * There are some options:
+     * This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.
      *
-     * # Query OSM directly
-     * source: {osmTags: "key=value"}
-     *  will fetch all objects with given tags from OSM.
-     *  Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
+     * If no 'geojson' is defined, data will be fetched from overpass and the OSM-API.
      *
-     * # Query OSM Via the overpass API with a custom script
-     * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
-     *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
-     *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
+     * Every source _must_ define which tags _must_ be present in order to be picked up.
      *
-     *
-     * # A single geojson-file
-     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
-     *  fetches a geojson from a third party source
-     *
-     * # A tiled geojson source
-     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
-     *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
-     *
-     * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
-     * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
-     *
-     * Note that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too
-     *
-     *
-     * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
-     *  While still supported, this is considered deprecated
      */
-    source: ({ osmTags: AndOrTagConfigJson | string, overpassScript?: string } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean, mercatorCrs?: boolean }) & ({
-        /**
-         * The maximum amount of seconds that a tile is allowed to linger in the cache
-         */
-        maxCacheAge?: number
-    })
+    source: 
+        ({
+            /**
+             * Every source must set which tags have to be present in order to load the given layer.
+             */
+            osmTags: AndOrTagConfigJson | string
+            /**
+             * The maximum amount of seconds that a tile is allowed to linger in the cache
+             */
+            maxCacheAge?: number
+        }) &
+        ({      /* # Query OSM Via the overpass API with a custom script
+            * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
+            *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
+            *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
+            */
+            overpassScript?: string
+        } |
+        {
+            /**
+             * The actual source of the data to load, if loaded via geojson.
+             *
+             * # A single geojson-file
+             * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
+             *  fetches a geojson from a third party source
+             *
+             * # A tiled geojson source
+             * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
+             *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
+             *
+             * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+             */
+            geoJson: string,
+            /**
+             * To load a tiled geojson layer, set the zoomlevel of the tiles
+             */
+            geoJsonZoomLevel?: number,
+            /**
+             * Indicates that the upstream geojson data is OSM-derived.
+             * Useful for e.g. merging or for scripts generating this cache
+             */
+            isOsmCache?: boolean,
+            /**
+             * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
+             */
+            mercatorCrs?: boolean,
+            /**
+             * Some API's have an id-field, but give it a different name.
+             * Setting this key will rename this field into 'id'
+             */
+            idKey?: string
+        })
 
     /**
      *
@@ -113,7 +134,7 @@ export interface LayerConfigJson {
 
     /**
      * Advanced option - might be set by the theme compiler
-     * 
+     *
      * If true, this data will _always_ be loaded, even if the theme is disabled
      */
     forceLoad?: false | boolean
@@ -148,7 +169,7 @@ export interface LayerConfigJson {
      * If not specified, the OsmLink and wikipedia links will be used by default.
      * Use an empty array to hide them.
      * Note that "defaults" will insert all the default titleIcons (which are added automatically)
-     * 
+     *
      * Type: icon[]
      */
     titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"];
@@ -194,7 +215,7 @@ export interface LayerConfigJson {
 
         /**
          * Example images, which show real-life pictures of what such a feature might look like
-         * 
+         *
          * Type: image
          */
         exampleImages?: string[]
@@ -251,7 +272,7 @@ export interface LayerConfigJson {
     /**
      * All the extra questions for filtering
      */
-    filter?: (FilterConfigJson) [] | {sameAs: string},
+    filter?: (FilterConfigJson) [] | { sameAs: string },
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.

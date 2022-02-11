@@ -20,7 +20,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
         const features = this.features.data;
         const self = this;
 
-        changes.pendingChanges.addCallbackAndRunD(changes => {
+        changes.pendingChanges.stabilized(100).addCallbackAndRunD(changes => {
             if (changes.length === 0) {
                 return;
             }
