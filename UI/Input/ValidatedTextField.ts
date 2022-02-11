@@ -24,30 +24,73 @@ import Combine from "../Base/Combine";
 import Title from "../Base/Title";
 import InputElementMap from "./InputElementMap";
 import Translations from "../i18n/Translations";
+import {Translation} from "../i18n/Translation";
 
-interface TextFieldDef {
-    name: string,
-    explanation: string,
-    isValid: ((s: string, country?: () => string) => boolean),
-    reformat?: ((s: string, country?: () => string) => string),
+class SimpleTextFieldDef {
+
+    public readonly name: string;
+    /*
+    * An explanation for the theme builder.
+    * This can indicate which special input element is used, ...
+    * */
+    public readonly explanation: string;
+    public inputmode?: string = undefined
+
+    constructor(explanation: string | BaseUIElement, name?: string) {
+        this.name = name ?? this.constructor.name.toLowerCase();
+        if (this.name.endsWith("textfield")) {
+            this.name = this.name.substr(0, this.name.length - "TextField".length)
+        }
+        if (this.name.endsWith("textfielddef")) {
+            this.name = this.name.substr(0, this.name.length - "TextFieldDef".length)
+        }
+        if (typeof explanation === "string") {
+
+            this.explanation = explanation
+        } else {
+            this.explanation = explanation.AsMarkdown();
+        }
+    }
+
+    public reformat(s: string, country?: () => string): string {
+        return s;
+    }
+
     /**
      * Modification to make before the string is uploaded to OSM
      */
-    postprocess?: (s: string) => string;
-    undoPostprocess?: (s: string) => string;
-    inputHelper?: (value: UIEventSource<string>, options?: {
+    public postprocess(s: string): string {
+        return s
+    }
+
+    public undoPostprocess(s: string): string {
+        return s;
+    }
+
+    public inputHelper(value: UIEventSource<string>, options?: {
         location: [number, number],
         mapBackgroundLayer?: UIEventSource<any>,
         args: (string | number | boolean | any)[]
         feature?: any
-    }) => InputElement<string>,
-    inputmode?: string
+    }): InputElement<string> {
+        return undefined
+    }
+
+    isValid(s: string, country: (() => string) | undefined): boolean {
+        return true;
+    }
+    
+    getFeedback(s: string) : Translation {
+        return undefined
+    }
+
+
 }
 
-class WikidataTextField implements TextFieldDef {
-    name = "wikidata"
-    explanation =
-        new Combine([
+class WikidataTextField extends SimpleTextFieldDef {
+
+    constructor() {
+        super(new Combine([
             "A wikidata identifier, e.g. Q42.",
             new Title("Helper arguments"),
             new Table(["name", "doc"],
@@ -82,10 +125,11 @@ class WikidataTextField implements TextFieldDef {
     ]
 }
 \`\`\``
-        ]).AsMarkdown()
+        ]));
+    }
 
 
-    public isValid(str) : boolean{
+    public isValid(str): boolean {
 
         if (str === undefined) {
             return false;
@@ -140,27 +184,27 @@ class WikidataTextField implements TextFieldDef {
     }
 }
 
-class OpeningHoursTextField implements TextFieldDef {
-    name = "opening_hours"
-    explanation =
-        new Combine([
-            "Has extra elements to easily input when a POI is opened.",
-            new Title("Helper arguments"),
-            new Table(["name", "doc"],
-                [
-                    ["options", new Combine([
-                        "A JSON-object of type `{ prefix: string, postfix: string }`. ",
-                        new Table(["subarg", "doc"],
-                            [
-                                ["prefix", "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse"],
-                                ["postfix", "Piece of text that will always be added to the end of the generated opening hours"],
-                            ])
+class OpeningHoursTextField extends SimpleTextFieldDef {
 
-                    ])
-                    ]
-                ]),
-            new Title("Example usage"),
-            "To add a conditional (based on time) access restriction:\n\n```\n" + `
+    constructor() {
+        super(new Combine([
+                "Has extra elements to easily input when a POI is opened.",
+                new Title("Helper arguments"),
+                new Table(["name", "doc"],
+                    [
+                        ["options", new Combine([
+                            "A JSON-object of type `{ prefix: string, postfix: string }`. ",
+                            new Table(["subarg", "doc"],
+                                [
+                                    ["prefix", "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse"],
+                                    ["postfix", "Piece of text that will always be added to the end of the generated opening hours"],
+                                ])
+
+                        ])
+                        ]
+                    ]),
+                new Title("Example usage"),
+                "To add a conditional (based on time) access restriction:\n\n```\n" + `
 "freeform": {
     "key": "access:conditional",
     "type": "opening_hours",
@@ -170,8 +214,9 @@ class OpeningHoursTextField implements TextFieldDef {
           "postfix":")"
         }
     ]
-}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]).AsMarkdown()
-
+}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]),
+            "opening_hours");
+    }
 
     isValid() {
         return true
@@ -195,11 +240,13 @@ class OpeningHoursTextField implements TextFieldDef {
     }
 }
 
-class UrlTextfieldDef implements TextFieldDef {
+class UrlTextfieldDef extends SimpleTextFieldDef {
 
-    name = "url"
-    explanation = "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user"
     inputmode: "url"
+
+    constructor() {
+        super("The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user")
+    }
 
     postprocess(str: string) {
         if (str === undefined) {
@@ -273,225 +320,289 @@ class UrlTextfieldDef implements TextFieldDef {
     }
 }
 
+class StringTextField extends SimpleTextFieldDef {
+    constructor() {
+        super("A simple piece of text");
+    }
+}
+
+class TextTextField extends SimpleTextFieldDef {
+    inputmode: "text"
+
+    constructor() {
+        super("A longer piece of text");
+    }
+}
+
+class DateTextField extends SimpleTextFieldDef {
+    constructor() {
+        super("A date with date picker");
+    }
+
+    isValid = (str) => {
+        return !isNaN(new Date(str).getTime());
+    }
+
+    reformat(str) {
+        const d = new Date(str);
+        let month = '' + (d.getMonth() + 1);
+        let day = '' + d.getDate();
+        const year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+    inputHelper(value) {
+        return new SimpleDatePicker(value)
+    }
+}
+
+class DirectionTextField extends SimpleTextFieldDef {
+    inputMode = "numeric"
+
+    constructor() {
+        super("A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)");
+    }
+
+    isValid = (str) => {
+        str = "" + str;
+        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
+    }
+
+    inputHelper = (value, options) => {
+        const args = options.args ?? []
+        let zoom = 19
+        if (args[0]) {
+            zoom = Number(args[0])
+            if (isNaN(zoom)) {
+                throw "Invalid zoom level for argument at 'length'-input"
+            }
+        }
+        const location = new UIEventSource<Loc>({
+            lat: options.location[0],
+            lon: options.location[1],
+            zoom: zoom
+        })
+        if (args[1]) {
+            // We have a prefered map!
+            options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
+                location, new UIEventSource<string[]>(args[1].split(","))
+            )
+        }
+        const di = new DirectionInput(options.mapBackgroundLayer, location, value)
+        di.SetStyle("max-width: 25rem;");
+
+        return di;
+    }
+}
+
+class LengthTextField extends SimpleTextFieldDef {
+    inputMode: "decimal"
+
+    constructor() {
+        super(
+            "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
+        )
+    }
+
+    isValid = (str) => {
+        const t = Number(str)
+        return !isNaN(t)
+    }
+
+    inputHelper = (value, options) => {
+        const args = options.args ?? []
+        let zoom = 19
+        if (args[0]) {
+            zoom = Number(args[0])
+            if (isNaN(zoom)) {
+                console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ", args[0], " (using 19 instead)")
+                zoom = 19
+            }
+        }
+
+        // Bit of a hack: we project the centerpoint to the closes point on the road - if available
+        if (options.feature !== undefined && options.feature.geometry.type !== "Point") {
+            const lonlat = <[number, number]>[...options.location]
+            lonlat.reverse()
+            options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+            options.location.reverse()
+        }
+
+        const location = new UIEventSource<Loc>({
+            lat: options.location[0],
+            lon: options.location[1],
+            zoom: zoom
+        })
+        if (args[1]) {
+            // We have a prefered map!
+            options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
+                location, new UIEventSource<string[]>(args[1].split(","))
+            )
+        }
+        const li = new LengthInput(options.mapBackgroundLayer, location, value)
+        li.SetStyle("height: 20rem;")
+        return li;
+    }
+}
+
+class IntTextField extends SimpleTextFieldDef {
+    inputMode = "numeric"
+
+    constructor() {
+        super("A number");
+    }
+
+    isValid = (str) => {
+        str = "" + str;
+        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
+    }
+
+    reformat = str => "" + Number(str)
+}
+
+class NatTextField extends SimpleTextFieldDef {
+    inputMode = "numeric"
+
+    constructor() {
+        super("A positive number or zero");
+    }
+
+    isValid = (str) => {
+        str = "" + str;
+        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
+    }
+
+    reformat = str => "" + Number(str)
+}
+
+class PNatTextField extends SimpleTextFieldDef {
+    inputmode = "numeric"
+
+    constructor() {
+        super("A strict positive number");
+    }
+
+    isValid = (str) => {
+        str = "" + str;
+        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0
+    }
+
+    reformat = str => "" + Number(str)
+}
+
+class FloatTextField extends SimpleTextFieldDef {
+    inputmode = "decimal"
+
+    constructor() {
+        super("A decimal");
+    }
+
+    isValid = (str) => !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(",")
+
+    reformat = str => "" + Number(str)
+}
+
+class PFloatTextField extends SimpleTextFieldDef {
+    inputmode = "decimal"
+
+    constructor() {
+        super("A positive decimal (inclusive zero)");
+    }
+
+    isValid = (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(",")
+
+    reformat = str => "" + Number(str)
+}
+
+class EmailTextField extends SimpleTextFieldDef {
+    inputmode = "email"
+
+    constructor() {
+        super("An email adress");
+    }
+
+    isValid = (str) => {
+        if (str.startsWith("mailto:")) {
+            str = str.substring("mailto:".length)
+        }
+        return EmailValidator.validate(str);
+    }
+
+    reformat = str => {
+        if (str === undefined) {
+            return undefined
+        }
+        if (str.startsWith("mailto:")) {
+            str = str.substring("mailto:".length)
+        }
+        return str;
+    }
+}
+
+class PhoneTextField extends SimpleTextFieldDef {
+    inputmode = "tel"
+
+    constructor() {
+        super("A phone number");
+    }
+
+    isValid = (str, country: () => string) => {
+        if (str === undefined) {
+            return false;
+        }
+        if (str.startsWith("tel:")) {
+            str = str.substring("tel:".length)
+        }
+        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
+    }
+
+    reformat = (str, country: () => string) => {
+        if (str.startsWith("tel:")) {
+            str = str.substring("tel:".length)
+        }
+        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
+    }
+}
+
+class ColorTextField extends SimpleTextFieldDef {
+    constructor() {
+        super("Shows a color picker");
+    }
+
+    inputHelper = (value) => {
+        return new ColorPicker(value.map(color => {
+            return Utils.ColourNameToHex(color ?? "");
+        }, [], str => Utils.HexToColourName(str)))
+    }
+}
+
 export default class ValidatedTextField {
 
-    public static tpList: TextFieldDef[] = [
-
-        ValidatedTextField.tp(
-            "string",
-            "A basic string"),
-        ValidatedTextField.tp(
-            "text",
-            "A string, but allows input of longer strings more comfortably and supports newlines (a text area)",
-            undefined,
-            undefined,
-            undefined,
-            "text"),
-
-        ValidatedTextField.tp(
-            "date",
-            "A date",
-            (str) => {
-                return !isNaN(new Date(str).getTime());
-            },
-            (str) => {
-                const d = new Date(str);
-                let month = '' + (d.getMonth() + 1);
-                let day = '' + d.getDate();
-                const year = d.getFullYear();
-
-                if (month.length < 2)
-                    month = '0' + month;
-                if (day.length < 2)
-                    day = '0' + day;
-
-                return [year, month, day].join('-');
-            },
-            (value) => new SimpleDatePicker(value)),
-        ValidatedTextField.tp(
-            "direction",
-            "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)",
-            (str) => {
-                str = "" + str;
-                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
-            }, str => str,
-            (value, options) => {
-                const args = options.args ?? []
-                let zoom = 19
-                if (args[0]) {
-                    zoom = Number(args[0])
-                    if (isNaN(zoom)) {
-                        throw "Invalid zoom level for argument at 'length'-input"
-                    }
-                }
-                const location = new UIEventSource<Loc>({
-                    lat: options.location[0],
-                    lon: options.location[1],
-                    zoom: zoom
-                })
-                if (args[1]) {
-                    // We have a prefered map!
-                    options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                        location, new UIEventSource<string[]>(args[1].split(","))
-                    )
-                }
-                const di = new DirectionInput(options.mapBackgroundLayer, location, value)
-                di.SetStyle("max-width: 25rem;");
-
-                return di;
-            },
-            "numeric"
-        ),
-        ValidatedTextField.tp(
-            "length",
-            "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]",
-            (str) => {
-                const t = Number(str)
-                return !isNaN(t)
-            },
-            str => str,
-            (value, options) => {
-                const args = options.args ?? []
-                let zoom = 19
-                if (args[0]) {
-                    zoom = Number(args[0])
-                    if (isNaN(zoom)) {
-                        console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ", args[0], " (using 19 instead)")
-                        zoom = 19
-                    }
-                }
-
-                // Bit of a hack: we project the centerpoint to the closes point on the road - if available
-                if (options.feature !== undefined && options.feature.geometry.type !== "Point") {
-                    const lonlat: [number, number] = [...options.location]
-                    lonlat.reverse()
-                    options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
-                    options.location.reverse()
-                }
-
-                const location = new UIEventSource<Loc>({
-                    lat: options.location[0],
-                    lon: options.location[1],
-                    zoom: zoom
-                })
-                if (args[1]) {
-                    // We have a prefered map!
-                    options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                        location, new UIEventSource<string[]>(args[1].split(","))
-                    )
-                }
-                const li = new LengthInput(options.mapBackgroundLayer, location, value)
-                li.SetStyle("height: 20rem;")
-                return li;
-            },
-            "decimal"
-        ),
+    private static allTextfieldDefs: SimpleTextFieldDef[] = [
+        new StringTextField(),
+        new TextTextField(),
+        new DateTextField(),
+        new NatTextField(),
+        new IntTextField(),
+        new LengthTextField(),
+        new DirectionTextField(),
         new WikidataTextField(),
-
-        ValidatedTextField.tp(
-            "int",
-            "A number",
-            (str) => {
-                str = "" + str;
-                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
-            },
-            str => "" + Number(str),
-            undefined,
-            "numeric"),
-        ValidatedTextField.tp(
-            "nat",
-            "A positive number or zero",
-            (str) => {
-                str = "" + str;
-                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
-            },
-            str => "" + Number(str),
-            undefined,
-            "numeric"),
-        ValidatedTextField.tp(
-            "pnat",
-            "A strict positive number",
-            (str) => {
-                str = "" + str;
-                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0
-            },
-            str => "" + Number(str),
-            undefined,
-            "numeric"),
-        ValidatedTextField.tp(
-            "float",
-            "A decimal",
-            (str) => !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(","),
-            str => "" + Number(str),
-            undefined,
-            "decimal"),
-        ValidatedTextField.tp(
-            "pfloat",
-            "A positive decimal (incl zero)",
-            (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(","),
-            str => "" + Number(str),
-            undefined,
-            "decimal"),
-        ValidatedTextField.tp(
-            "email",
-            "An email adress",
-            (str) => {
-                if (str.startsWith("mailto:")) {
-                    str = str.substring("mailto:".length)
-                }
-                return EmailValidator.validate(str);
-            },
-            str => {
-                if (str === undefined) {
-                    return undefined
-                }
-                if (str.startsWith("mailto:")) {
-                    str = str.substring("mailto:".length)
-                }
-                return str;
-            },
-            undefined,
-            "email"),
+        new PNatTextField(),
+        new FloatTextField(),
+        new PFloatTextField(),
+        new EmailTextField(),
         new UrlTextfieldDef(),
-        ValidatedTextField.tp(
-            "phone",
-            "A phone number",
-            (str, country: () => string) => {
-                if (str === undefined) {
-                    return false;
-                }
-                if (str.startsWith("tel:")) {
-                    str = str.substring("tel:".length)
-                }
-                return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
-            },
-            (str, country: () => string) => {
-                if (str.startsWith("tel:")) {
-                    str = str.substring("tel:".length)
-                }
-                return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
-            },
-            undefined,
-            "tel"
-        ),
+        new PhoneTextField(),
         new OpeningHoursTextField(),
-        ValidatedTextField.tp(
-            "color",
-            "Shows a color picker",
-            () => true,
-            str => str,
-            (value) => {
-                return new ColorPicker(value.map(color => {
-                    return Utils.ColourNameToHex(color ?? "");
-                }, [], str => Utils.HexToColourName(str)))
-            }
-        )
+        new ColorTextField()
     ]
-    /**
-     * {string (typename) --> TextFieldDef}
-     */
-    public static AllTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
-    private static Tranlations: string | BaseUIElement;
+    public static AllTypes: Map<string, SimpleTextFieldDef> = ValidatedTextField.allTypesDict();
 
     public static InputForType(type: string, options?: {
         placeholder?: string | BaseUIElement,
@@ -510,10 +621,10 @@ export default class ValidatedTextField {
         inputStyle?: string
     }): InputElement<string> {
         options = options ?? {};
-        if(options.placeholder === undefined) {
-            options.placeholder = Translations.t.validation[type]?.description  ?? type
+        if (options.placeholder === undefined) {
+            options.placeholder = Translations.t.validation[type]?.description ?? type
         }
-        const tp: TextFieldDef = ValidatedTextField.AllTypes.get(type)
+        const tp: SimpleTextFieldDef = ValidatedTextField.AllTypes.get(type)
         const isValidTp = tp.isValid;
         let isValid;
         options.textArea = options.textArea ?? type === "text";
@@ -615,13 +726,13 @@ export default class ValidatedTextField {
                 }
             ).SetClass("flex")
         }
-        if (tp.inputHelper) {
-            const helper = tp.inputHelper(input.GetValue(), {
-                location: options.location,
-                mapBackgroundLayer: options.mapBackgroundLayer,
-                args: options.args,
-                feature: options.feature
-            }).SetClass("block")
+        const helper = tp.inputHelper(input.GetValue(), {
+            location: options.location,
+            mapBackgroundLayer: options.mapBackgroundLayer,
+            args: options.args,
+            feature: options.feature
+        })?.SetClass("block")
+        if (helper !== undefined) {
             input = new CombinedInputElement(input, helper,
                 (a, _) => a, // We can ignore b, as they are linked earlier
                 a => [a, a]
@@ -640,7 +751,7 @@ export default class ValidatedTextField {
 
     public static HelpText(): BaseUIElement {
         const explanations: BaseUIElement[] =
-            ValidatedTextField.tpList.map(type =>
+            ValidatedTextField.allTextfieldDefs.map(type =>
                 new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col"))
         return new Combine([
             new Title("Available types for text fields", 1),
@@ -649,41 +760,13 @@ export default class ValidatedTextField {
         ]).SetClass("flex flex-col")
     }
 
-    private static tp(name: string,
-                      explanation: string,
-                      isValid?: ((s: string, country?: () => string) => boolean),
-                      reformat?: ((s: string, country?: () => string) => string),
-                      inputHelper?: (value: UIEventSource<string>, options?: {
-                          location: [number, number],
-                          mapBackgroundLayer: UIEventSource<any>,
-                          args: string[],
-                          feature: any
-                      }) => InputElement<string>,
-                      inputmode?: string): TextFieldDef {
-
-        if (isValid === undefined) {
-            isValid = () => true;
-        }
-
-        if (reformat === undefined) {
-            reformat = (str, _) => str;
-        }
-
-
-        return {
-            name: name,
-            explanation: explanation,
-            isValid: isValid,
-            reformat: reformat,
-            inputHelper: inputHelper,
-            inputmode: inputmode
-        }
+    public static AvailableTypes(): string[] {
+        return ValidatedTextField.allTextfieldDefs.map(tp => tp.name)
     }
 
-
-    private static allTypesDict(): Map<string, TextFieldDef> {
-        const types = new Map<string, TextFieldDef>();
-        for (const tp of ValidatedTextField.tpList) {
+    private static allTypesDict(): Map<string, SimpleTextFieldDef> {
+        const types = new Map<string, SimpleTextFieldDef>();
+        for (const tp of ValidatedTextField.allTextfieldDefs) {
             types[tp.name] = tp;
             types.set(tp.name, tp);
         }

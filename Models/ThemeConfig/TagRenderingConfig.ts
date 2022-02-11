@@ -100,7 +100,6 @@ export default class TagRenderingConfig {
                 const typeDescription = Translations.t.validation[type]?.description
                 placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 if(typeDescription !== undefined){
-                    console.log(typeDescription)
                     placeholder = placeholder.Fuse(typeDescription, type)
                 }
             }
@@ -135,7 +134,7 @@ export default class TagRenderingConfig {
 
 
             if (!ValidatedTextField.AllTypes.has(this.freeform.type)) {
-                const knownKeys = ValidatedTextField.tpList.map(tp => tp.name).join(", ");
+                const knownKeys = ValidatedTextField.AvailableTypes().join(", ");
                 throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
             }
             if (this.freeform.addExtraTags) {
