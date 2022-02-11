@@ -204,7 +204,7 @@ export default class FeaturePipeline {
                     TiledFeatureSource.createHierarchy(src, {
                         layer: src.layer,
                         minZoomLevel: this.osmSourceZoomLevel,
-                        dontEnforceMinZoom: true,
+                        noDuplicates: true,
                         registerTile: (tile) => {
                             new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                             perLayerHierarchy.get(id).registerTile(tile)
@@ -276,7 +276,7 @@ export default class FeaturePipeline {
             (source) => TiledFeatureSource.createHierarchy(source, {
                 layer: source.layer,
                 minZoomLevel: source.layer.layerDef.minzoom,
-                dontEnforceMinZoom: true,
+                noDuplicates: true,
                 maxFeatureCount: state.layoutToUse.clustering.minNeededElements,
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {

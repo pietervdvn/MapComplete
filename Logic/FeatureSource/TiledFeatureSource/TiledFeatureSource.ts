@@ -146,7 +146,10 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         for (const feature of features) {
             const bbox = BBox.get(feature.feature)
 
-            if (this.options.dontEnforceMinZoom) {
+            // There are a few strategies to deal with features that cross tile boundaries
+            
+            if (this.options.noDuplicates) {
+                // Strategy 1: We put the feature into a somewhat matching tile
                 if (bbox.overlapsWith(this.upper_left.bbox)) {
                     ulf.push(feature)
                 } else if (bbox.overlapsWith(this.upper_right.bbox)) {
@@ -159,6 +162,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
                     overlapsboundary.push(feature)
                 }
             } else if (this.options.minZoomLevel === undefined) {
+                // Strategy 2: put it into a strictly matching tile (or in this tile, which is slightly too big)
                 if (bbox.isContainedIn(this.upper_left.bbox)) {
                     ulf.push(feature)
                 } else if (bbox.isContainedIn(this.upper_right.bbox)) {
@@ -171,7 +175,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
                     overlapsboundary.push(feature)
                 }
             } else {
-                // We duplicate a feature on a boundary into every tile as we need to get to the minZoomLevel
+                // Strategy 3: We duplicate a feature on a boundary into every tile as we need to get to the minZoomLevel
                 if (bbox.overlapsWith(this.upper_left.bbox)) {
                     ulf.push(feature)
                 }
@@ -201,10 +205,9 @@ export interface TiledFeatureSourceOptions {
     readonly minZoomLevel?: number,
     /**
      * IF minZoomLevel is set, and if a feature runs through a tile boundary, it would normally be duplicated.
-     * Setting 'dontEnforceMinZoomLevel' will still allow bigger zoom levels for those features.
-     * If 'pick_first' is set, the feature will not be duplicated but set to some tile
+     * Setting 'dontEnforceMinZoomLevel' will assign to feature to some matching subtile.
      */
-    readonly dontEnforceMinZoom?: boolean | "pick_first",
+    readonly noDuplicates?: boolean,
     readonly registerTile?: (tile: TiledFeatureSource & FeatureSourceForLayer & Tiled) => void,
     readonly layer?: FilteredLayer
 }

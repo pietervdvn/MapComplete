@@ -15,7 +15,6 @@ import LineRenderingConfig from "./LineRenderingConfig";
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
 import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
-import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Combine from "../../UI/Base/Combine";
 import Title from "../../UI/Base/Title";
@@ -108,11 +107,13 @@ export default class LayerConfig extends WithContextLoader {
         this.source = new SourceConfig(
             {
                 osmTags: osmTags,
-                geojsonSource: json.source["geoJson"],
-                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
+                            geojsonSource: json.source["geoJson"],
+               geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                 overpassScript: json.source["overpassScript"],
                 isOsmCache: json.source["isOsmCache"],
-                mercatorCrs: json.source["mercatorCrs"]
+                mercatorCrs: json.source["mercatorCrs"],
+                idKey: json.source["idKey"]
+
             },
             json.id
         );
@@ -236,7 +237,7 @@ export default class LayerConfig extends WithContextLoader {
                 console.log(json.mapRendering)
                 throw("The layer " + this.id + " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'")
             } else if (!hasCenterRendering && this.lineRendering.length === 0 && !this.source.geojsonSource?.startsWith("https://api.openstreetmap.org/api/0.6/notes.json")) {
-                throw "The layer " + this.id + " might not render ways. This might result in dropped information"
+                throw "The layer " + this.id + " might not render ways. This might result in dropped information (at "+context+")"
             }
         }
 

@@ -58,38 +58,8 @@ class ApplyButton extends UIElement {
         this.text = options.text
         this.icon = options.icon
         this.layer = this.state.filteredLayers.data.find(l => l.layerDef.id === this.target_layer_id)
-        this. tagRenderingConfig = this.layer.layerDef.tagRenderings.find(tr => tr.id === this.targetTagRendering)
+        this.tagRenderingConfig = this.layer.layerDef.tagRenderings.find(tr => tr.id === this.targetTagRendering)
 
-    }
-    
-    private async Run() {
-            this.buttonState.setData("running")
-            try {
-                console.log("Applying auto-action on " + this.target_feature_ids.length + " features")
-
-                for (const targetFeatureId of this.target_feature_ids) {
-                    const featureTags = this.state.allElements.getEventSourceById(targetFeatureId)
-                    const rendering = this.tagRenderingConfig.GetRenderValue(featureTags.data).txt
-                    const specialRenderings = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
-                        .map(x => x.special))
-                        .filter(v => v.func["supportsAutoAction"] === true)
-
-                    if(specialRenderings.length == 0){
-                        console.warn("AutoApply: feature "+targetFeatureId+" got a rendering without supported auto actions:", rendering)
-                    }
-                    
-                    for (const specialRendering of specialRenderings) {
-                        const action = <AutoAction>specialRendering.func
-                        await action.applyActionOn(this.state, featureTags, specialRendering.args)
-                    }
-                }
-                console.log("Flushing changes...")
-                await this.state.changes.flushChanges("Auto button")
-                this.buttonState.setData("done")
-            } catch (e) {
-                console.error("Error while running autoApply: ", e)
-             this.   buttonState.setData({error: e})
-            }
     }
 
     protected InnerRender(): string | BaseUIElement {
@@ -105,7 +75,13 @@ class ApplyButton extends UIElement {
         const button = new SubtleButton(
             new Img(this.icon),
             this.text
-        ).onClick(() => self.Run());
+        ).onClick(() => {
+            this.buttonState.setData("running")
+            window.setTimeout(() => {
+
+            self.Run();
+            }, 50)
+        });
 
         const explanation = new Combine(["The following objects will be updated: ",
             ...this.target_feature_ids.map(id => new Combine([new Link(id, "https:/  /openstreetmap.org/" + id, true), ", "]))]).SetClass("subtle")
@@ -124,7 +100,7 @@ class ApplyButton extends UIElement {
             zoomToFeatures: true,
             features: new StaticFeatureSource(features, false),
             state: this.state,
-            layerToShow:this. layer.layerDef,
+            layerToShow: this.layer.layerDef,
         })
 
 
@@ -143,6 +119,37 @@ class ApplyButton extends UIElement {
                 return new Combine([new FixedUiElement("Something went wrong...").SetClass("alert"), new FixedUiElement(error).SetClass("subtle")]).SetClass("flex flex-col")
             }
         ))
+    }
+
+    private async Run() {
+
+        
+        try {
+            console.log("Applying auto-action on " + this.target_feature_ids.length + " features")
+
+            for (const targetFeatureId of this.target_feature_ids) {
+                const featureTags = this.state.allElements.getEventSourceById(targetFeatureId)
+                const rendering = this.tagRenderingConfig.GetRenderValue(featureTags.data).txt
+                const specialRenderings = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
+                    .map(x => x.special))
+                    .filter(v => v.func["supportsAutoAction"] === true)
+
+                if (specialRenderings.length == 0) {
+                    console.warn("AutoApply: feature " + targetFeatureId + " got a rendering without supported auto actions:", rendering)
+                }
+
+                for (const specialRendering of specialRenderings) {
+                    const action = <AutoAction>specialRendering.func
+                    await action.applyActionOn(this.state, featureTags, specialRendering.args)
+                }
+            }
+            console.log("Flushing changes...")
+            await this.state.changes.flushChanges("Auto button")
+            this.buttonState.setData("done")
+        } catch (e) {
+            console.error("Error while running autoApply: ", e)
+            this.buttonState.setData({error: e})
+        }
     }
 
 }
@@ -210,21 +217,18 @@ export default class AutoApplyButton implements SpecialVisualization {
                 // Very ugly hack: read the value every 500ms
                 UIEventSource.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
                     const applicable = tagSource.data[argument[1]]
-                    console.log("Current applicable value is: ", applicable)
                     to_parse.setData(applicable)
                 })
 
                 const loading = new Loading("Gathering which elements support auto-apply... ");
                 return new VariableUiElement(to_parse.map(ids => {
-                    if(ids === undefined){
+                    if (ids === undefined) {
                         return loading
                     }
 
                     return new ApplyButton(state, JSON.parse(ids), options);
                 }))
             })
-            
-
 
 
         } catch (e) {

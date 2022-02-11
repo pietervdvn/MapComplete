@@ -26,7 +26,22 @@ export default class CreateNewWayAction extends OsmCreateAction {
                     theme: string
                 }) {
         super(null, true)
-        this.coordinates = coordinates;
+        this.coordinates = [];
+
+        for (const coordinate of coordinates) {
+            /* The 'PointReuseAction' is a bit buggy and might generate duplicate ids.
+                We filter those here, as the CreateWayWithPointReuseAction delegates the actual creation to here.
+                Filtering here also prevents similar bugs in other actions
+             */
+            if(this.coordinates.length > 0 && this.coordinates[this.coordinates.length - 1].nodeId === coordinate.nodeId){
+                // This is a duplicate id
+                console.warn("Skipping a node in createWay to avoid a duplicate node:", coordinate,"\nThe previous coordinates are: ", this.coordinates)
+                continue
+            }
+            
+            this.coordinates.push(coordinate)
+        }
+        
         this.tags = tags;
         this._options = options;
     }
