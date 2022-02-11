@@ -9,8 +9,34 @@
         },
         "tagRenderings": {
             "artwork-artwork_type": {
-                "question": "Cuál es el tipo de esta obra de arte?",
-                "render": "Esta es un {artwork_type}"
+                "question": "¿Qué tipo de obra es esta pieza?",
+                "render": "Esta es un {artwork_type}",
+                "mappings": {
+                    "0": {
+                        "then": "Arquitectura"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "2": {
+                        "then": "Pintura"
+                    },
+                    "3": {
+                        "then": "Escultura"
+                    },
+                    "4": {
+                        "then": "Estatua"
+                    },
+                    "5": {
+                        "then": "Busto"
+                    },
+                    "7": {
+                        "then": "Instalación"
+                    },
+                    "8": {
+                        "then": "Grafiti"
+                    }
+                }
             }
         },
         "title": {
@@ -33,13 +59,13 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Respaldo: Si"
+                        "then": "Respaldo: sí"
                     },
                     "1": {
-                        "then": "Respaldo: No"
+                        "then": "Respaldo: no"
                     }
                 },
-                "question": "¿Este banco tiene un respaldo?"
+                "question": "¿Este banco tiene respaldo?"
             },
             "bench-material": {
                 "mappings": {
@@ -67,6 +93,36 @@
             "bench-seats": {
                 "question": "¿Cuántos asientos tiene este banco?",
                 "render": "{seats} asientos"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "7": {
+                        "then": "Color: amarillo"
+                    },
+                    "1": {
+                        "then": "Color: verde"
+                    },
+                    "2": {
+                        "then": "Color: gris"
+                    },
+                    "3": {
+                        "then": "Color: blanco"
+                    },
+                    "4": {
+                        "then": "Color: rojo"
+                    },
+                    "5": {
+                        "then": "Color: negro"
+                    },
+                    "6": {
+                        "then": "Color: azul"
+                    }
+                },
+                "question": "¿De qué color es este banco?",
+                "render": "Color: {colour}"
+            },
+            "bench-direction": {
+                "question": "¿En qué dirección se mira al sentarse en el banco?"
             }
         },
         "title": {
@@ -77,7 +133,16 @@
         "name": "Bancos en una parada de transporte público",
         "title": {
             "render": "Banco"
-        }
+        },
+        "tagRenderings": {
+            "bench_at_pt-name": {
+                "render": "{name}"
+            },
+            "bench_at_pt-bench_type": {
+                "question": "¿Qué tipo de banco es este?"
+            }
+        },
+        "description": "Una capa que muestra todas las paradas de transporte público que tienen bancos"
     },
     "defibrillator": {
         "name": "Desfibriladores",
@@ -143,6 +208,129 @@
         },
         "title": {
             "render": "Bicicleta blanca"
+        }
+    },
+    "bike_cafe": {
+        "tagRenderings": {
+            "bike_cafe-repair-tools": {
+                "question": "¿Hay herramientas para reparar su propia bicicleta?"
+            }
+        }
+    },
+    "charging_station": {
+        "tagRenderings": {
+            "Network": {
+                "question": "¿Esta estación de carga forma parte de una red?",
+                "render": "Parte de la red <b>{network}</b>",
+                "mappings": {
+                    "1": {
+                        "then": "No forma parte de una red mayor"
+                    }
+                }
+            },
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Autenticación mediante tarjeta de membresía"
+                    },
+                    "2": {
+                        "then": "Autenticación mediante llamada telefónica disponible"
+                    },
+                    "4": {
+                        "then": "Autenticación mediante NFC disponible"
+                    },
+                    "6": {
+                        "then": "Autenticación mediante tarjeta de débito disponible"
+                    },
+                    "1": {
+                        "then": "Autenticación mediante aplicación"
+                    },
+                    "5": {
+                        "then": "Autenticación mediante Money Card disponible"
+                    },
+                    "3": {
+                        "then": "Autenticación mediante SMS disponible"
+                    }
+                }
+            },
+            "Type": {
+                "question": "¿A qué vehículos se permite la carga aquí?"
+            },
+            "OH": {
+                "question": "¿Cuándo abre esta estación de carga?",
+                "mappings": {
+                    "0": {
+                        "then": "Abre 24/7 (incluidos días festivos)"
+                    }
+                }
+            }
+        }
+    },
+    "barrier": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bolardo"
+                }
+            },
+            "render": "Barrera"
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "question": "¿Qué tipo de bolardo es este?",
+                "mappings": {
+                    "1": {
+                        "then": "Bolardo fijo"
+                    },
+                    "4": {
+                        "then": "Bolardo levadizo"
+                    },
+                    "3": {
+                        "then": "Bolardo flexible, normalmente plástico"
+                    }
+                }
+            }
+        },
+        "name": "Barreras",
+        "presets": {
+            "0": {
+                "title": "Bolardo"
+            }
+        }
+    },
+    "address": {
+        "description": "Direcciones",
+        "name": "Direcciones conocidas en OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "¿Qué debe corregirse aquí? Expóngalo"
+            },
+            "street": {
+                "question": "¿En qué calle se encuentra esta dirección?"
+            },
+            "housenumber": {
+                "question": "¿Cuál es el número de esta casa?",
+                "mappings": {
+                    "0": {
+                        "then": "Esta edificación no tiene número"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Domicilio conocido"
+        }
+    },
+    "observation_tower": {
+        "tagRenderings": {
+            "access": {
+                "question": "¿Se puede visitar esta torre?"
+            }
+        }
+    },
+    "bicycle_rental": {
+        "title": {
+            "render": "Alquiler de bicicletas"
         }
     }
 }

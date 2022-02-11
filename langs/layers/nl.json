@@ -15,6 +15,9 @@
             "street": {
                 "question": "In welke straat bevindt dit adres zich?",
                 "render": "Dit adres bevindt zich in de straat <b>{addr:street}</b>"
+            },
+            "fixme": {
+                "question": "Wat moet hier gecorrigeerd worden? Leg het uit"
             }
         },
         "title": {
@@ -150,7 +153,8 @@
                 "render": "Maximumbreedte: {maxwidth:physical} m"
             },
             "Overlap (cyclebarrier)": {
-                "question": "Hoeveel overlappen de barrières?"
+                "question": "Hoeveel overlappen de barrières?",
+                "render": "Overlap: {overlap} m"
             },
             "Space between barrier (cyclebarrier)": {
                 "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
@@ -316,7 +320,8 @@
                 }
             },
             "render": "Zitbank"
-        }
+        },
+        "description": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is"
     },
     "bicycle_library": {
         "description": "Een plaats waar men voor langere tijd een fiets kan lenen",
@@ -477,7 +482,8 @@
         },
         "title": {
             "render": "Fietsbanden-verkoopsautomaat"
-        }
+        },
+        "description": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)"
     },
     "bike_cafe": {
         "name": "Fietscafé",
@@ -544,7 +550,8 @@
                 }
             },
             "render": "Fietscafé"
-        }
+        },
+        "description": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts."
     },
     "bike_cleaning": {
         "name": "Fietsschoonmaakpunt",
@@ -560,6 +567,39 @@
                 }
             },
             "render": "Fietsschoonmaakpunt"
+        },
+        "description": "Een laag die plaatsen toont waar je je fiets kunt wassen",
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
+                "render": "Het gebruik van het fietsschoonmaakpunt kost {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "Gratis fietsschoonmaakpunt"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "2": {
+                        "then": "Je moet betalen voor het fietsschoonmaakpunt"
+                    }
+                }
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Het fietsschoonmaakpunt is gratis"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "2": {
+                        "then": "Het fietsschoonmaakpunt is betalend, maar de prijs is onbekend"
+                    }
+                },
+                "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
+                "render": "Het gebruik van het fietsschoonmaakpunt kost {charge}"
+            }
         }
     },
     "bike_parking": {
@@ -671,7 +711,8 @@
         },
         "title": {
             "render": "Fietsparking"
-        }
+        },
+        "description": "Een laag die toont waar je je fiets kunt parkeren"
     },
     "bike_repair_station": {
         "description": "Deze laag toont fietspompen en herstelpunten voor fietsen",
@@ -4769,6 +4810,55 @@
                 }
             },
             "render": "Watermolens"
+        }
+    },
+    "ambulancestation": {
+        "tagRenderings": {
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit station wordt beheerd door de overheid."
+                    },
+                    "1": {
+                        "then": "Dit station wordt beheerd door een informele of community organisatie."
+                    },
+                    "2": {
+                        "then": "Dit station wordt beheerd door een formele groep vrijwilligers."
+                    },
+                    "3": {
+                        "then": "Dit station wordt beheerd door een privé-organisatie."
+                    }
+                },
+                "question": "Wat voor een organisatie is de beheerder van dit station?",
+                "render": "De beheerder is van het type {operator:type}."
+            },
+            "ambulance-agency": {
+                "question": "Welke organisatie beheert dit station?",
+                "render": "Dit station wordt beheerd door {operator}."
+            },
+            "ambulance-name": {
+                "question": "Hoe heet dit ambulancestation?",
+                "render": "Dit station heet {name}."
+            },
+            "ambulance-place": {
+                "question": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)",
+                "render": "Dit station ligt in {addr:place}."
+            },
+            "ambulance-street": {
+                "question": " In welke straat ligt dit station?",
+                "render": "Straat waar dit station ligt: {addr:street}"
+            }
+        },
+        "title": {
+            "render": "Ambulancestation"
+        },
+        "description": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
+        "name": "Kaart van ambulancestations",
+        "presets": {
+            "0": {
+                "description": "Voeg een ambulancestation toe aan de kaart",
+                "title": "Ambulancestation"
+            }
         }
     }
 }
