@@ -126,6 +126,9 @@ export default class MoreScreen extends Combine {
         for (let i = 0; i < length; i++) {
             str += allPreferences[id + "-" + i]
         }
+        if(str === undefined || str === "undefined"){
+            return undefined
+        }
         try {
             const value: {
                 id: string
@@ -157,13 +160,9 @@ export default class MoreScreen extends Combine {
 
                 return ids
             });
-        currentIds.addCallback(ids => {
-        console.log("Current special ids are:", ids)
-        })
+
         var stableIds = UIEventSource.ListStabilized<string>(currentIds)
-        currentIds.addCallback(ids => {
-            console.log("Stabilized special ids are:", ids)
-        })
+
         return new VariableUiElement(
             stableIds.map(ids => {
                 const allThemes: BaseUIElement[] = []

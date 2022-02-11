@@ -254,9 +254,9 @@ class AutomatonGui {
 
         LocalStorageSource.Get("automation-theme-id", "missing_streets").syncWith(themeSelect.GetValue())
 
-
         const tilepath = ValidatedTextField.InputForType("url", {
             placeholder: "Specifiy the path of the overview",
+            inputStyle: "width: 100%"
         })
         tilepath.SetClass("w-full")
         LocalStorageSource.Get("automation-tile_path").syncWith(tilepath.GetValue(), true)

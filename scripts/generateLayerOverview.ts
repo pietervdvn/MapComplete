@@ -96,7 +96,7 @@ class LayerOverviewUtils {
         return dict;
     }
 
-    checkAllSvgs(){
+    checkAllSvgs() {
         const allSvgs = ScriptUtils.readDirRecSync("./assets")
             .filter(path => path.endsWith(".svg"))
             .filter(path => !path.startsWith("./assets/generated"))
@@ -108,11 +108,13 @@ class LayerOverviewUtils {
             }
             console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
             errCount++;
-            if(path.startsWith("./assets/svg")){
+            if (path.startsWith("./assets/svg")) {
                 throw "A core SVG is actually a PNG. Don't do this!"
             }
         }
-        console.log("There are "+errCount+" fake svgs")
+        if (errCount > 0) {
+            throw `There are ${errCount} fake svgs`
+        }
     }
 
 
@@ -147,7 +149,7 @@ class LayerOverviewUtils {
             rendering.icon["mappings"] = iconsPerTheme
             writeFileSync('./assets/themes/mapcomplete-changes/mapcomplete-changes.json', JSON.stringify(proto, null, "  "))
         }
-        
+
         this.checkAllSvgs()
     }
 

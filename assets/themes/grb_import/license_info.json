@@ -8,6 +8,14 @@
     "sources": []
   },
   {
+    "path": "logo.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "warning.svg",
     "license": "CC0",
     "authors": [

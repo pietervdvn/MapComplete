@@ -74,7 +74,7 @@
       "builtin": "crab_address",
       "override": {
         "source": {
-          "geoJson": "http://127.0.0.1:8080/tile_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 18
         },
         "mapRendering": [
@@ -135,7 +135,6 @@
       "tagRenderings": [
         {
           "id": "apply_streetname",
-          "group": "auto",
           "render": "{tag_apply(addr:street=$_name_to_apply ,Apply the CRAB-street onto this building)}",
           "mappings": [
             {

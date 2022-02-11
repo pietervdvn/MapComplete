@@ -14,10 +14,10 @@
     "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p>Met de steun van Toerisme Vlaanderen</p><img style='max-height:10rem; float: right; margin-top: 4rem; background: white; width: auto; padding: 0.5rem' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
   "description": {
-    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige info verzamelen voor andere wandelaars en fietsers.<b>Klik op de exacte locatie op de kaart</b>om een punt toe te voegen of op een bestaand punt om het te wijzigen. We verzamelen:<ol><li>Laadpunten voor e-bikes</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol></p>"
+    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige info verzamelen voor andere wandelaars en fietsers.</p><p><b>Klik op de exacte locatie op de kaart</b> om een punt toe te voegen of op een bestaand punt om het te wijzigen. <br/> We verzamelen:<ol><li>Laadpunten voor elektrische fietsen</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol></p>"
   },
   "descriptionTail": {
-    "nl": "<p>Een initiatief van de 5 provinciale toeristische organisaties en Toerisme Vlaanderen</p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaaneren.be</a><img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
+    "nl": "<p>Een initiatief van de 5 provinciale toeristische organisaties en Toerisme Vlaanderen</p><p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaanderen.be</a></p><img style='height:5rem; width: auto; margin-top: 1.25rem; margin-bottom: 0.5rem; margin-left: 1.5rem;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
   "icon": "./assets/svg/teardrop_with_hole_green.svg",
   "startZoom": 8,

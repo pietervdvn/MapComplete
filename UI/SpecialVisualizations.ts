@@ -534,7 +534,7 @@ export default class SpecialVisualizations {
                     funcName: "multi_apply",
                     docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",
                     args: [
-                        {name: "feature_ids", doc: "A JSOn-serialized list of IDs of features to apply the tagging on"},
+                        {name: "feature_ids", doc: "A JSON-serialized list of IDs of features to apply the tagging on"},
                         {
                             name: "keys",
                             doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."
@@ -725,7 +725,7 @@ export default class SpecialVisualizations {
                         textField.SetClass("rounded-l border border-grey")
                         const txt = textField.GetValue()
 
-                        const addCommentButton = new SubtleButton(Svg.addSmall_svg().SetClass("max-h-7"), t.addCommentPlaceholder)
+                        const addCommentButton = new SubtleButton(Svg.speech_bubble_svg().SetClass("max-h-7"), t.addCommentPlaceholder)
                             .onClick(async () => {
                                 const id = tags.data[args[1] ?? "id"]
 
@@ -778,7 +778,9 @@ export default class SpecialVisualizations {
                             new Combine([
                                 new Title("Add a comment"),
                                 textField,
-                                new Combine([addCommentButton.SetClass("mr-2"), stateButtons]).SetClass("flex justify-end")
+                                new Combine([
+                                    new Toggle(addCommentButton, undefined, textField.GetValue().map(t => t !==undefined && t.length > 1)).SetClass("mr-2")
+                                    , stateButtons]).SetClass("flex justify-end")
                             ]).SetClass("border-2 border-black rounded-xl p-4 block"),
                             t.loginToAddComment, state)
                     }

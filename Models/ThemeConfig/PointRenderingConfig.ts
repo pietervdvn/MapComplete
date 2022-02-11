@@ -116,35 +116,23 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     }
 
-    public ExtractImages(): Set<string> {
-        const parts: Set<string>[] = [];
-        parts.push(this.icon?.ExtractImages(true));
-        parts.push(
-            ...this.iconBadges?.map((overlay) => overlay.then.ExtractImages(true))
-        );
-
-        const allIcons = new Set<string>();
-        for (const part of parts) {
-            part?.forEach(allIcons.add, allIcons);
+    public GetBaseIcon(tags?: any): BaseUIElement {
+        tags = tags ?? {id: "node/-1"}
+        const rotation = Utils.SubstituteKeys(this.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
+        const htmlDefs = Utils.SubstituteKeys(this.icon.GetRenderValue(tags)?.txt, tags)
+        let defaultPin: BaseUIElement = undefined
+        if (this.label === undefined) {
+            defaultPin = Svg.teardrop_with_hole_green_svg()
         }
-        return allIcons;
+        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
     }
-
+    
     public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
         const self = this;
         if (this.icon === undefined) {
             return undefined;
         }
-        return new VariableUiElement(tags.map(tags => {
-            const rotation = Utils.SubstituteKeys(self.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
-
-            const htmlDefs = Utils.SubstituteKeys(self.icon.GetRenderValue(tags)?.txt, tags)
-            let defaultPin: BaseUIElement = undefined
-            if (self.label === undefined) {
-                defaultPin = Svg.teardrop_with_hole_green_svg()
-            }
-            return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
-        })).SetClass("w-full h-full block")
+        return new VariableUiElement(tags.map(tags => self.GetBaseIcon(tags))).SetClass("w-full h-full block")
     }
 
     public GenerateLeafletStyle(

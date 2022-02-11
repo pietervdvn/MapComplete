@@ -50,7 +50,7 @@ class MetatagUpdater {
         this.isDirty.setData(true)
     }
 
-    private updateMetaTags() {
+    public updateMetaTags() {
         const features = this.source.features.data
 
         if (features.length === 0) {
@@ -77,12 +77,23 @@ export default class MetaTagRecalculator {
     private readonly _notifiers: MetatagUpdater[] = []
 
     /**
-     * The meta tag recalculator receives tiles of layers.
+     * The meta tag recalculator receives tiles of layers via the 'registerSource'-function.
      * It keeps track of which sources have had their share calculated, and which should be re-updated if some other data is loaded
      */
-    constructor(state: { allElements?: ElementStorage }, featurePipeline: FeaturePipeline) {
+    constructor(state: { allElements?: ElementStorage, currentView: FeatureSourceForLayer & Tiled }, featurePipeline: FeaturePipeline) {
         this._featurePipeline = featurePipeline;
         this._state = state;
+        
+        if(state.currentView !== undefined){
+        const currentViewUpdater = new MetatagUpdater(state.currentView, this._state, this._featurePipeline)
+        this._alreadyRegistered.add(state.currentView)
+        this._notifiers.push(currentViewUpdater)
+        state.currentView.features.addCallback(_ => {
+            console.debug("Requesting an update for currentView")
+            currentViewUpdater.updateMetaTags();
+        })
+        }
+
     }
 
     public registerSource(source: FeatureSourceForLayer & Tiled, recalculateOnEveryChange = false) {

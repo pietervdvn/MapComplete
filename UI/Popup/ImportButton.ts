@@ -21,7 +21,7 @@ import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
 import CreateWayWithPointReuseAction, {MergePointConfig} from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
-import OsmChangeAction, {OsmCreateAction} from "../../Logic/Osm/Actions/OsmChangeAction";
+import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction";
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
 import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
@@ -37,12 +37,17 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import * as conflation_json from "../../assets/layers/conflation/conflation.json";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {LoginToggle} from "./LoginButton";
+import {AutoAction} from "./AutoApplyButton";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "../../Logic/Osm/Changes";
+import {ElementStorage} from "../../Logic/ElementStorage";
 
 /**
  * A helper class for the various import-flows.
  * An import-flow always starts with a 'Import this'-button. Upon click, a custom confirmation panel is provided
  */
 abstract class AbstractImportButton implements SpecialVisualizations {
+    protected static importedIds = new Set<string>()
     public readonly funcName: string
     public readonly docs: string
     public readonly args: { name: string, defaultValue?: string, doc: string }[]
@@ -157,7 +162,10 @@ ${Utils.special_visualizations_importRequirementDocs}
             state.featureSwitchUserbadge)
 
 
-        const isImported = tagSource.map(tags => tags._imported === "yes")
+        const isImported = tagSource.map(tags => {
+            AbstractImportButton.importedIds.add(tags.id)
+            return tags._imported === "yes";
+        })
 
 
         /**** THe actual panel showing the import guiding map ****/
@@ -269,7 +277,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         return new Combine([confirmationMap, confirmButton, cancel]).SetClass("flex flex-col")
     }
 
-    private parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
+    protected parseArgs(argsRaw: string[], originalFeatureTags: UIEventSource<any>): { minzoom: string, max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, tags: string, targetLayer: string, newTags: UIEventSource<Tag[]> } {
         const baseArgs = Utils.ParseVisArgs(this.args, argsRaw)
         if (originalFeatureTags !== undefined) {
 
@@ -351,7 +359,8 @@ export class ConflateButton extends AbstractImportButton {
 
 }
 
-export class ImportWayButton extends AbstractImportButton {
+export class ImportWayButton extends AbstractImportButton implements AutoAction {
+    public readonly supportsAutoAction = true;
 
     constructor() {
         super("import_way_button",
@@ -384,6 +393,39 @@ export class ImportWayButton extends AbstractImportButton {
             }],
             false
         )
+    }
+
+    async applyActionOn(state: { layoutToUse: LayoutConfig; changes: Changes, allElements: ElementStorage },
+                        originalFeatureTags: UIEventSource<any>,
+                        argument: string[]): Promise<void> {
+        const id = originalFeatureTags.data.id;
+        if (AbstractImportButton.importedIds.has(originalFeatureTags.data.id)
+        ) {
+            return;
+        }
+        AbstractImportButton.importedIds.add(originalFeatureTags.data.id)
+        const args = this.parseArgs(argument, originalFeatureTags)
+        const feature = state.allElements.ContainingFeatures.get(id)
+        console.log("Geometry to auto-import is:", feature)
+        const geom = feature.geometry
+        let coordinates: [number, number][]
+        if (geom.type === "LineString") {
+            coordinates = geom.coordinates
+        } else if (geom.type === "Polygon") {
+            coordinates = geom.coordinates[0]
+        }
+
+
+        const mergeConfigs = this.GetMergeConfig(args);
+
+        const action = this.CreateAction(
+            feature,
+            args,
+            <FeaturePipelineState>state,
+            mergeConfigs,
+            coordinates
+        )
+        await state.changes.applyAction(action)
     }
 
     canBeImported(feature: any) {
@@ -420,7 +462,24 @@ export class ImportWayButton extends AbstractImportButton {
         } else if (geom.type === "Polygon") {
             coordinates = geom.coordinates[0]
         }
+        const mergeConfigs = this.GetMergeConfig(args);
 
+
+        let action = this.CreateAction(feature, args, state, mergeConfigs, coordinates);
+
+        return this.createConfirmPanelForWay(
+            state,
+            args,
+            feature,
+            originalFeatureTags,
+            action,
+            onCancel
+        )
+
+    }
+
+    private GetMergeConfig(args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string })
+        : MergePointConfig[] {
         const nodesMustMatch = args["snap_to_point_if"]?.split(";")?.map((tag, i) => TagUtils.Tag(tag, "TagsSpec for import button " + i))
 
         const mergeConfigs = []
@@ -446,14 +505,21 @@ export class ImportWayButton extends AbstractImportButton {
             mergeConfigs.push(mergeConfig)
         }
 
-        let action: OsmCreateAction & { getPreview(): Promise<FeatureSource> };
+        return mergeConfigs;
+    }
+
+    private CreateAction(feature,
+                         args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string },
+                         state: FeaturePipelineState,
+                         mergeConfigs: any[],
+                         coordinates: [number, number][]) {
 
         const coors = feature.geometry.coordinates
         if (feature.geometry.type === "Polygon" && coors.length > 1) {
             const outer = coors[0]
             const inner = [...coors]
             inner.splice(0, 1)
-            action = new CreateMultiPolygonWithPointReuseAction(
+            return new CreateMultiPolygonWithPointReuseAction(
                 args.newTags.data,
                 outer,
                 inner,
@@ -463,24 +529,13 @@ export class ImportWayButton extends AbstractImportButton {
             )
         } else {
 
-            action = new CreateWayWithPointReuseAction(
+            return new CreateWayWithPointReuseAction(
                 args.newTags.data,
                 coordinates,
                 state,
                 mergeConfigs
             )
         }
-
-
-        return this.createConfirmPanelForWay(
-            state,
-            args,
-            feature,
-            originalFeatureTags,
-            action,
-            onCancel
-        )
-
     }
 }
 
@@ -525,11 +580,11 @@ export class ImportPointButton extends AbstractImportButton {
             let specialMotivation = undefined
 
             let note_id = args.note_id
-            if (args.note_id !== undefined &&  isNaN(Number(args.note_id))) {
+            if (args.note_id !== undefined && isNaN(Number(args.note_id))) {
                 note_id = originalFeatureTags.data[args.note_id]
                 specialMotivation = "source: https://osm.org/note/" + note_id
             }
-            
+
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse.id,
                 changeType: "import",

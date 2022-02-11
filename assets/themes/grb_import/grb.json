@@ -12,7 +12,7 @@
     "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
   },
   "maintainer": "",
-  "icon": "./assets/themes/grb_import/housenumber_blank.svg",
+  "icon": "./assets/themes/grb_import/logo.svg",
   "version": "0",
   "startLat": 51.0249,
   "startLon": 4.026489,
@@ -447,7 +447,7 @@
       "title": "GRB outline",
       "calculatedTags": [
         "_overlaps_with_buildings=feat.overlapWith('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
-        "_overlaps_with=feat.get('_overlaps_with_buildings').filter(f => f.overlap > 1 /* square meter */ )[0] ?? ''",
+        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
         "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
@@ -650,6 +650,57 @@
           }
         }
       ]
+    },
+    {
+      "builtin": "current_view",
+      "override": {
+        "calculatedTags": [
+          "_overlapping=Number(feat.properties.zoom) >= 16 ? feat.overlapWith('grb').map(ff => ff.feat.properties) : undefined",
+          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found !== 'true' && p._intersects_with_other_features === ''))?.map(p => p.id)",
+          "_applicable_count=feat.get('_applicable')?.length"
+        ],
+        "tagRenderings": [
+          {
+            "id": "hw",
+            "render": "There are {_applicable_count} applicable elements in view",
+            "mappings": [
+              {
+                "if": "zoom<14",
+                "then": "Zoom in more to see the automatic action"
+              },
+              {
+                "if": "_applicable_count=",
+                "then": "Loading..."
+              },
+              {
+                "if": "_applicable_count=0",
+                "then": "No importable buildins in view"
+              }
+            ]
+          },
+          {
+            "id": "autoapply",
+            "render": "{auto_apply(grb, _applicable, Import-button, Import or conflate all non-conflicting buildings in view)}",
+            "mappings": [
+              {
+                "if": "zoom<16",
+                "then": "Zoom in more to import"
+              }
+            ]
+          }
+        ],
+        "+mapRendering": [
+          {
+            "location": [
+              "point"
+            ],
+            "icon": {
+              "render": "./assets/svg/robot.svg"
+            },
+            "iconSize": "15,15,center"
+          }
+        ]
+      }
     }
   ],
   "hideFromOverview": true,

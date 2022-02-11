@@ -11,7 +11,7 @@
     "hu": "OpenWindPowerMap"
   },
   "maintainer": "Seppe Santens",
-  "icon": "./assets/themes/openwindpowermap/wind_turbine.svg",
+  "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {
     "en": "A map for showing and editing wind turbines.",
     "fr": "Une carte indiquant les éoliennes et permettant leur édition.",

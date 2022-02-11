@@ -35,17 +35,11 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
 
     constructor(state, params: { bbox: BBox, layer: LayerConfig, geojson: { features: any[] } }) {
 
-        const convertState: DesugaringContext = {
-            sharedLayers: new Map(),
-            tagRenderings: new Map()
-        }
-
-
         const layerConfig = known_layers.layers.filter(l => l.id === params.layer.id)[0]
         if (layerConfig === undefined) {
             console.error("WEIRD: layer not found in the builtin layer overview")
         }
-        const importLayerJson = new CreateNoteImportLayer(365).convertStrict(convertState, <LayerConfigJson>layerConfig, "CompareToAlreadyExistingNotes")
+        const importLayerJson = new CreateNoteImportLayer(365).convertStrict(<LayerConfigJson>layerConfig, "CompareToAlreadyExistingNotes")
         const importLayer = new LayerConfig(importLayerJson, "import-layer-dynamic")
         const flayer: FilteredLayer = {
             appliedFilters: new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>()),

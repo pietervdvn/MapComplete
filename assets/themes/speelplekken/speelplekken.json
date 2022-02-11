@@ -13,7 +13,16 @@
   "maintainer": "MapComplete",
   "icon": "./assets/themes/speelplekken/logo.svg",
   "hideFromOverview": true,
-  "lockLocation": true,
+  "lockLocation": [
+    [
+      4.291534423828125,
+      51.061249423389796
+    ],
+    [
+      4.604301452636719,
+      51.23978120350654
+    ]
+  ],
   "version": "0",
   "startLat": 51.17174,
   "startLon": 4.449462,

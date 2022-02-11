@@ -30,7 +30,7 @@
     "it": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. ",
     "hu": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. "
   },
-  "icon": "./assets/themes/cyclestreets/F111.svg",
+  "icon": "./assets/themes/cyclestreets/logo.svg",
   "startLat": 51.2095,
   "startZoom": 14,
   "startLon": 3.2228,

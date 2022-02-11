@@ -20,8 +20,9 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
         this._state = state;
     }
     
-    convert(json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[], warnings?: string[] } {
+    convert(json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[], information?: string[] } {
         const errors = []
+        const information = []
          const state= this._state
         function reportNotFound(name: string){
             const knownLayers = Array.from(state.sharedLayers.keys())
@@ -55,7 +56,6 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                 names = [names]
             }
             const layers = []
-            const warnings = []
 
             for (const name of names) {
                 const found = Utils.Clone(state.sharedLayers.get(name))
@@ -84,20 +84,20 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                             const forbiddenLabel = labels.findIndex(l => hideLabels.has(l))
                             if(forbiddenLabel >= 0){
                                 usedLabels.add(labels[forbiddenLabel])
-                                warnings.push(context+": Dropping tagRendering "+tr["id"]+" as it has a forbidden label: "+labels[forbiddenLabel])
+                                information.push(context+": Dropping tagRendering "+tr["id"]+" as it has a forbidden label: "+labels[forbiddenLabel])
                                 continue
                             }
                         }
                         
                         if(hideLabels.has(tr["id"])){
                             usedLabels.add(tr["id"])
-                            warnings.push(context+": Dropping tagRendering "+tr["id"]+" as its id is a forbidden label")
+                            information.push(context+": Dropping tagRendering "+tr["id"]+" as its id is a forbidden label")
                             continue
                         }
 
                         if(hideLabels.has(tr["group"])){
                             usedLabels.add(tr["group"])
-                            warnings.push(context+": Dropping tagRendering "+tr["id"]+" as its group `"+tr["group"]+"` is a forbidden label")
+                            information.push(context+": Dropping tagRendering "+tr["id"]+" as its group `"+tr["group"]+"` is a forbidden label")
                             continue
                         }
 
@@ -113,7 +113,7 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
             return {
                 result: layers,
                 errors,
-                warnings
+                information
             }
 
         }
@@ -185,9 +185,8 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"]);
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[] } {
         const errors = []
-        const warnings = []
 
         json = {...json}
         const allLayers: LayerConfigJson[] = <LayerConfigJson[]>json.layers;
@@ -221,8 +220,6 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
                 try {
 
                     const importLayerResult = creator.convert(layer, context + ".(noteimportlayer)[" + i1 + "]")
-                    errors.push(...importLayerResult.errors)
-                    warnings.push(...importLayerResult.warnings)
                     if (importLayerResult.result !== undefined) {
                         json.layers.push(importLayerResult.result)
                     }
@@ -234,7 +231,6 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
 
         return {
             errors,
-            warnings,
             result: json
         };
     }
@@ -274,7 +270,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         return false;
     }
 
-    convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
+    convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {
 
         const state = this._state;
         const hasMinimap = layerConfig.tagRenderings?.some(tr => AddMiniMap.hasMinimap(<TagRenderingConfigJson>tr)) ?? true
@@ -286,8 +282,6 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         }
 
         return {
-            errors: [],
-            warnings: [],
             result: layerConfig
         };
     }
@@ -384,12 +378,11 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         });
     }
 
-    convert(theme: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
+    convert(theme: LayoutConfigJson, context: string): { result: LayoutConfigJson; information: string[] } {
         const state = this._state
         const allKnownLayers: Map<string, LayerConfigJson> = state.sharedLayers;
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings;
-        const errors = [];
-        const warnings = [];
+        const information = [];
         const layers: LayerConfigJson[] = <LayerConfigJson[]>theme.layers; // Layers should be expanded at this point
 
         knownTagRenderings.forEach((value, key) => {
@@ -399,7 +392,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         const dependencies = AddDependencyLayersToTheme.CalculateDependencies(layers, allKnownLayers, theme.id);
         if (dependencies.length > 0) {
 
-            warnings.push(context + ": added " + dependencies.map(d => d.id).join(", ") + " to the theme as they are needed")
+            information.push(context + ": added " + dependencies.map(d => d.id).join(", ") + " to the theme as they are needed")
         }
         layers.unshift(...dependencies);
 
@@ -408,8 +401,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 ...theme,
                 layers: layers
             },
-            errors,
-            warnings
+            information
         };
     }
 }

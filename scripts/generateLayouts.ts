@@ -64,13 +64,9 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]) {
 
         const whiteBackgroundPath = "./assets/generated/theme_"+layout.id+"_white_background.svg"
         {
-            const svgResult = await xml2js.parseStringPromise(readFileSync(icon, "UTF8"))
-            const svg = svgResult.svg
+            const svg = await ScriptUtils.ReadSvg(icon)
             const width: string = svg.$.width;
             const height: string = svg.$.height;
-            if(width !== height){
-                console.warn("WARNING: the icon for theme "+layout.id+" is not square. Please square the icon at "+icon+"\n   Width = "+width, "height =", height)
-            }
 
             const builder = new xml2js.Builder();
             const withRect = {rect: {"$":{width, height, style: "fill:#ffffff;"}}, ...svg}

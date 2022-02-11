@@ -29,7 +29,7 @@ export default class NoteCommentElement extends Combine {
         } else if (comment.action === "closed") {
             actionIcon = Svg.resolved_svg()
         } else {
-            actionIcon = Svg.addSmall_svg()
+            actionIcon = Svg.speech_bubble_svg()
         }
 
         let user: BaseUIElement

@@ -1,4 +1,6 @@
-bench_at_pt
+
+
+ bench_at_pt 
 =============
 
 
@@ -7,71 +9,106 @@ bench_at_pt
 
 A layer showing all public-transport-stops which do have a bench
 
+
+
+
 ## Table of contents
 
 1. [bench_at_pt](#bench_at_pt)
-    * [Themes using this layer](#themes-using-this-layer)
-
-- [Basic tags for this layer](#basic-tags-for-this-layer)
-- [Supported attributes](#supported-attributes)
+      * [Themes using this layer](#themes-using-this-layer)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
     + [images](#images)
     + [bench_at_pt-name](#bench_at_pt-name)
     + [bench_at_pt-bench_type](#bench_at_pt-bench_type)
 
-#### Themes using this layer
 
-- [benches](https://mapcomplete.osm.be/benches)
-- [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [benches](https://mapcomplete.osm.be/benches)
+
 
 [Go to the source code](../assets/layers/bench_at_pt/bench_at_pt.json)
 
 
 
-Basic tags for this layer
+ Basic tags for this layer 
 ---------------------------
 
 
 
 Elements must have the all of following tags to be shown on this layer:
 
-- <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
-  |<a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench' target='_blank'>stand_up_bench</a>
 
-Supported attributes
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench' target='_blank'>stand_up_bench</a>
+
+
+
+
+ Supported attributes 
 ----------------------
 
 
 
 **Warning** This quick overview is incomplete
 
+
+
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bench#values) [bench](https://wiki.openstreetmap.org/wiki/Key:bench) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes) [stand_up_bench](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench) [no](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno)
 
-### images
+
+
+
+### images 
+
+
 
 _This tagrendering has no question and is thus read-only_
 
-### bench_at_pt-name
+
+
+
+
+### bench_at_pt-name 
+
+
 
 _This tagrendering has no question and is thus read-only_
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name)
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 This is rendered with `{name}`
 
-### bench_at_pt-bench_type
+
+
+### bench_at_pt-bench_type 
+
+
 
 The question is **What kind of bench is this?**
 
-- **There is a normal, sit-down bench here** corresponds
-  with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
-- **Stand up bench** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench' target='_blank'>stand_up_bench</a>
-- **There is no bench here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>
-  bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
+
+
+
+
+  - **There is a normal, sit-down bench here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
+  - **Stand up bench** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench' target='_blank'>stand_up_bench</a>
+  - **There is no bench here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
+ 
 
 This document is autogenerated from assets/layers/bench_at_pt/bench_at_pt.json

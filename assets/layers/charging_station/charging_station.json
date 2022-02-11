@@ -102,7 +102,7 @@
           "ifnot": "scooter=no",
           "then": {
             "en": "<b>Scooters</b> can be charged here",
-            "nl": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
+            "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
             "de": "<b>Roller</b> können hier geladen werden"
           }
         },
@@ -3553,7 +3553,7 @@
       ],
       "title": {
         "en": "charging station with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
-        "nl": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+        "nl": "laadpunt voor elektrische fietsen met gewone stekker(s)"
       },
       "preciseInput": {
         "preferredBackground": "map"

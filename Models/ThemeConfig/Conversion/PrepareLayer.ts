@@ -213,7 +213,6 @@ class ExpandGroupRewrite extends Conversion<{
                 for (let i = 0; i < sourceStrings.length; i++) {
                     const source = sourceStrings[i]
                     const target = targets[i] // This is a string OR a translation
-                    console.log("Replacing every "+source+" with "+JSON.stringify(target))
                     rewritten = this.prepConfig(source, target, rewritten)
                 }
                 rewritten.group = rewritten.group ?? groupName

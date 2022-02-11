@@ -30,6 +30,7 @@ export interface TagRenderingConfigJson {
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
      *
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
+     * type: rendered
      */
     render?: string | any,
     
@@ -114,6 +115,7 @@ export interface TagRenderingConfigJson {
         /**
          * If the condition `if` is met, the text `then` will be rendered.
          * If not known yet, the user will be presented with `then` as an option
+         * type: rendered
          */
         then: string | any,
         /**

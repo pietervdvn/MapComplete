@@ -356,7 +356,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_cafe/bike_cafe.svg"
+        "render": "pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg"
       },
       "iconSize": {
         "render": "50,50,bottom"

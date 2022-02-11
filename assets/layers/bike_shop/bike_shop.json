@@ -686,7 +686,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_shop/repair_shop.svg",
+        "render": "pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg",
         "mappings": [
           {
             "if": "operator=De Fietsambassade Gent",
@@ -694,7 +694,7 @@
           },
           {
             "if": "service:bicycle:retail=yes",
-            "then": "./assets/layers/bike_shop/shop.svg"
+            "then": "pin:#353d57;./assets/layers/bike_shop/shop.svg"
           }
         ]
       },

@@ -350,6 +350,88 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return target;
     }
 
+
+    /**
+     * Walks the specified path into the object till the end.
+     *
+     * If a list is encountered, this is tranparently walked recursively on every object.
+     *
+     * The leaf objects are replaced by the function
+     */
+    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any) => any)) {
+        const head = path[0]
+        if (path.length === 1) {
+            // We have reached the leaf
+            const leaf = object[head];
+            if (leaf !== undefined) {
+                if(Array.isArray(leaf)){
+                    object[head] = leaf.map(replaceLeaf)
+                }else{
+                    object[head] = replaceLeaf(leaf)
+                }
+            }
+            return
+
+        }
+        const sub = object[head]
+        if (sub === undefined) {
+            return;
+        }
+        if (typeof sub !== "object") {
+            return;
+        }
+        if (Array.isArray(sub)) {
+            sub.forEach(el => Utils.WalkPath(path.slice(1), el, replaceLeaf))
+            return;
+        }
+        Utils.WalkPath(path.slice(1), sub, replaceLeaf)
+    }
+
+    /**
+     * Walks the specified path into the object till the end.
+     * If a list is encountered, this is tranparently walked recursively on every object.
+     *
+     * The leaf objects are collected in the list
+     */
+    public static CollectPath(path: string[], object: any, collectedList = []): any[] {
+        if (object === undefined || object === null) {
+            return collectedList;
+        }
+        const head = path[0]
+        if (path.length === 1) {
+            // We have reached the leaf
+            const leaf = object[head];
+            if (leaf === undefined || leaf === null) {
+                return collectedList
+            } 
+                if (Array.isArray(leaf)) {
+                    collectedList.push(...leaf)
+                } else {
+                    collectedList.push(leaf)
+                }
+            return collectedList
+        }
+        const sub = object[head]
+        if (sub === undefined || sub === null) {
+            return collectedList;
+        }
+
+        if (Array.isArray(sub)) {
+            sub.forEach(el => Utils.CollectPath(path.slice(1), el, collectedList))
+            return collectedList;
+        }
+        if (typeof sub !== "object") {
+            return collectedList;
+        }
+        return Utils.CollectPath(path.slice(1), sub, collectedList)
+    }
+
+    /**
+     * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON
+     * @param json
+     * @param f
+     * @constructor
+     */
     static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any) {
         if (json === undefined) {
             return f(undefined)

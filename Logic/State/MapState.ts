@@ -18,6 +18,7 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
 import TitleHandler from "../Actors/TitleHandler";
 import {BBox} from "../BBox";
+import MetaTagging from "../MetaTagging";
 
 /**
  * Contains all the leaflet-map related state

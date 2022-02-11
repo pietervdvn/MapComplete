@@ -4,6 +4,7 @@ import LayerConfig from "./LayerConfig";
 import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Constants from "../Constants";
 import TilesourceConfig from "./TilesourceConfig";
+import {ExtractImages} from "./Conversion/FixImages";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -50,6 +51,8 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
+    
+    public readonly usedImages : string[]
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
@@ -67,7 +70,7 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title));
-        
+        this.usedImages =Array.from( new ExtractImages().convertStrict(json, "while extracting the images")).sort()
         {
             if (typeof json.title === "string") {
                 throw `The title of a theme should always be a translation, as it sets the corresponding languages (${context}.title). The themenID is ${this.id}; the offending object is ${JSON.stringify(json.title)} which is a ${typeof json.title})`
@@ -175,63 +178,6 @@ export default class LayoutConfig {
         }
         custom.splice(0, 0, msg);
         return custom;
-    }
-
-    public ExtractImages(): Set<string> {
-        const icons = new Set<string>()
-        for (const layer of this.layers) {
-            layer.ExtractImages().forEach(icons.add, icons)
-        }
-        icons.add(this.icon)
-        icons.add(this.socialImage)
-        return icons
-    }
-
-    /**
-     * Replaces all the relative image-urls with a fixed image url
-     * This is to fix loading from external sources
-     *
-     * It should be passed the location where the original theme file is hosted.
-     *
-     * If no images are rewritten, the same object is returned, otherwise a new copy is returned
-     */
-    public patchImages(originalURL: string, originalJson: string): LayoutConfig {
-        const allImages = Array.from(this.ExtractImages())
-        const rewriting = new Map<string, string>()
-
-        // Needed for absolute urls: note that it doesn't contain a trailing slash
-        const origin = new URL(originalURL).origin
-        let path = new URL(originalURL).href
-        path = path.substring(0, path.lastIndexOf("/"))
-        for (const image of allImages) {
-            if (image == "" || image == undefined) {
-                continue
-            }
-            if (image.startsWith("http://") || image.startsWith("https://")) {
-                continue
-            }
-            if (image.startsWith("/")) {
-                // This is an absolute path
-                rewriting.set(image, origin + image)
-            } else if (image.startsWith("./assets/themes")) {
-                // Legacy workaround
-                rewriting.set(image, path + image.substring(image.lastIndexOf("/")))
-            } else if (image.startsWith("./")) {
-                // This is a relative url
-                rewriting.set(image, path + image.substring(1))
-            } else {
-                // This is a relative URL with only the path
-                rewriting.set(image, path + image)
-            }
-        }
-        if (rewriting.size == 0) {
-            return this;
-        }
-        rewriting.forEach((value, key) => {
-            console.log("Rewriting", key, "==>", value)
-            originalJson = originalJson.replace(new RegExp(key, "g"), value)
-        })
-        return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")
     }
 
     public isLeftRightSensitive() {

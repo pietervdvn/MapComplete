@@ -20,6 +20,8 @@ import Toggle from "../Input/Toggle";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
+import {icon} from "leaflet";
+import Img from "../Base/Img";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
@@ -131,8 +133,7 @@ export default class CopyrightPanel extends Combine {
             new OpenJosm(state, iconStyle)
         ]
 
-        const iconAttributions = Utils.NoNull(Array.from(layoutToUse.ExtractImages()))
-            .map(CopyrightPanel.IconAttribution)
+        const iconAttributions = layoutToUse.usedImages.map(CopyrightPanel.IconAttribution)
 
         let maintainer: BaseUIElement = undefined
         if (layoutToUse.maintainer !== undefined && layoutToUse.maintainer !== "" && layoutToUse.maintainer.toLowerCase() !== "mapcomplete") {
@@ -224,23 +225,19 @@ export default class CopyrightPanel extends Combine {
         const sources = Utils.NoNull(Utils.NoEmpty(license.sources))
 
         return new Combine([
-            `<img src='${iconPath}' style="width: 50px; height: 50px; min-width: 50px; min-height: 50px;  margin-right: 0.5em;">`,
+            new Img(iconPath).SetClass("w-12 min-h-12 mr-2 mb-2"),
             new Combine([
                 new FixedUiElement(license.authors.join("; ")).SetClass("font-bold"),
-                new Combine([license.license,
-                        sources.length > 0 ? " - " : "",
-                        ...sources.map(lnk => {
+                    license.license,
+                    new Combine([    ...sources.map(lnk => {
                             let sourceLinkContent = lnk;
                             try {
                                 sourceLinkContent = new URL(lnk).hostname
                             } catch {
                                 console.error("Not a valid URL:", lnk)
                             }
-                            return new Link(sourceLinkContent, lnk, true);
-                        })
-                    ]
-                ).SetClass("block m-2")
-
+                            return new Link(sourceLinkContent, lnk, true).SetClass("mr-2 mb-2");
+                        })]).SetClass("flex flex-wrap")
             ]).SetClass("flex flex-col").SetStyle("width: calc(100% - 50px - 0.5em); min-width: 12rem;")
         ]).SetClass("flex flex-wrap border-b border-gray-300 m-2 border-box")
     }

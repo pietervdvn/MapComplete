@@ -2,6 +2,10 @@ import {existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync} from "fs
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
+
+function validateLicenseInfo(l : SmallLicense){
+   l.sources.map(s => new URL(s))
+}
 /**
  * Sweeps the entire 'assets/' (except assets/generated) directory for image files and any 'license_info.json'-file.
  * Checks that the license info is included for each of them and generates a compiles license_info.json for those
@@ -11,8 +15,6 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
     for (const path of paths) {
         try {
-
-
             const parsed = JSON.parse(readFileSync(path, "UTF-8"))
             if (Array.isArray(parsed)) {
                 const l: SmallLicense[] = parsed
@@ -22,12 +24,6 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
                 licenses.push(...l)
             } else {
                 const smallLicens: SmallLicense = parsed;
-                /*if(parsed.license === "CC-BY"){
-                    console.log("Rewriting ", path)
-                    parsed.license === "CC-BY 4.0"
-                    writeFileSync(path, JSON.stringify(smallLicens, null, "  "))
-                }*/
-
                 smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
                 licenses.push(smallLicens)
             }
@@ -229,6 +225,7 @@ function createFullLicenseOverview(licensePaths) {
     for (const licensePath of licensePaths) {
         const licenses = <SmallLicense[]>JSON.parse(readFileSync(licensePath, "UTF-8"))
         for (const license of licenses) {
+            validateLicenseInfo(license)
             const dir = licensePath.substring(0, licensePath.length - "license_info.json".length)
             license.path = dir + license.path
             allLicenses.push(license)

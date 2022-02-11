@@ -51,7 +51,7 @@ export default class LeftControls extends Combine {
                         return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, "currentview", guiState.currentViewControlIsOpened)
                             .SetClass("md:floating-element-width")
                     })
-                }))
+                })).SetStyle("width: 40rem").SetClass("block")
 
 
                 return new Toggle(

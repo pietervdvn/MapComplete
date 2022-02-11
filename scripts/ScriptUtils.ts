@@ -4,7 +4,7 @@ import {Utils} from "../Utils";
 import * as https from "https";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-
+import xml2js from 'xml2js';
 export default class ScriptUtils {
 
 
@@ -146,4 +146,18 @@ export default class ScriptUtils {
         return ScriptUtils.DownloadJSON(url)
     }
 
+    public static async ReadSvg(path: string): Promise<any>{
+        const root =  await xml2js.parseStringPromise(readFileSync(path, "UTF8"))
+        return root.svg
+    }
+
+    public static async ReadSvgSync(path: string, callback: ((svg: any) => void)): Promise<any>{
+         xml2js.parseString(readFileSync(path, "UTF8"),{async: false} , (err, root) => {
+             if(err){
+                 throw err
+             }
+             callback(root["svg"]);
+         })
+    }
+    
 }
