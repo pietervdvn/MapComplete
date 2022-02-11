@@ -8,12 +8,13 @@
         "cco": "en dominio público",
         "ccbs": "bajo licencia CC-BY-SA",
         "ccb": "bajo licencia CC-BY",
-        "uploadFailed": "No se pudo cargar la imagen. ¿Tienes Internet y se permiten API de terceros? El navegador Brave o UMatrix podría bloquearlas.",
-        "respectPrivacy": "No fotografíes personas o matrículas. No subas datos de Google Maps, Google Streetview u otras fuentes protegidas por derechos de autor.",
-        "uploadDone": "<span class=\"thanks\">Tu imagen ha sido añadida. Gracias por ayudar.</span>",
+        "uploadFailed": "No se pudo cargar la imagen. ¿Tiene Internet y se permiten las API de terceros? El navegador Brave o uMatrix podría bloquearlas.",
+        "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
+        "uploadDone": "Se ha añadido la imagen. Gracias por ayudar.",
         "dontDelete": "Cancelar",
         "doDelete": "Borrar imagen",
-        "isDeleted": "Borrada"
+        "isDeleted": "Borrada",
+        "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar."
     },
     "centerMessage": {
         "loadingData": "Cargando datos…",
@@ -25,10 +26,11 @@
         "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "pickTheme": "Elige un tema de abajo para empezar.",
         "intro": "MapComplete a un visor y editor de OpenStreetMap, que te muestra información sobre un tema específico.",
-        "title": "Bienvenido a MapComplete"
+        "title": "Le damos la bienvenida a MapComplete",
+        "featuredThemeTitle": "Esta semana destacamos"
     },
     "general": {
-        "loginWithOpenStreetMap": "Entra en OpenStreetMap",
+        "loginWithOpenStreetMap": "Acceder con OpenStreetMap",
         "welcomeBack": "Has entrado, bienvenido.",
         "loginToStart": "Entra para contestar esta pregunta",
         "search": {
@@ -146,7 +148,12 @@
             "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
             "attributionTitle": "Aviso de atribución"
         },
-        "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente."
+        "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
+        "loading": "Cargando…",
+        "pdf": {
+            "attr": "Datos cartográficos © colaboradores de OpenStreetMap, reutilizables en virtud de la ODbL",
+            "attrBackground": "Capa de fondo: {background}"
+        }
     },
     "favourite": {
         "panelIntro": "<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales",
@@ -163,5 +170,13 @@
         "write_a_comment": "Deja una reseña…",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
         "plz_login": "Inicia sesión para dejar una reseña"
+    },
+    "delete": {
+        "delete": "Eliminar",
+        "cancel": "Cancelar"
+    },
+    "split": {
+        "cancel": "Cancelar",
+        "split": "Dividir"
     }
 }
