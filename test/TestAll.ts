@@ -17,6 +17,8 @@ import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 import T from "./TestHelper";
 import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
+import ValidatedTextFieldTranslations from "./ValidatedTextFieldTranslations.spec";
+import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations.spec";
 
 
 async function main() {
@@ -38,7 +40,8 @@ async function main() {
         new ActorsSpec(),
         new ReplaceGeometrySpec(),
         new LegacyThemeLoaderSpec(),
-        new CreateNoteImportLayerSpec()
+        new CreateNoteImportLayerSpec(),
+        new ValidatedTextFieldTranslationsSpec()
     ]
 
     Utils.externalDownloadFunction = async (url) => {

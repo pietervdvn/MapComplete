@@ -23,6 +23,7 @@ import Table from "../Base/Table";
 import Combine from "../Base/Combine";
 import Title from "../Base/Title";
 import InputElementMap from "./InputElementMap";
+import Translations from "../i18n/Translations";
 
 interface TextFieldDef {
     name: string,
@@ -84,7 +85,7 @@ class WikidataTextField implements TextFieldDef {
         ]).AsMarkdown()
 
 
-    public isValid(str) {
+    public isValid(str) : boolean{
 
         if (str === undefined) {
             return false;
@@ -490,6 +491,7 @@ export default class ValidatedTextField {
      * {string (typename) --> TextFieldDef}
      */
     public static AllTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
+    private static Tranlations: string | BaseUIElement;
 
     public static InputForType(type: string, options?: {
         placeholder?: string | BaseUIElement,
@@ -508,7 +510,9 @@ export default class ValidatedTextField {
         inputStyle?: string
     }): InputElement<string> {
         options = options ?? {};
-        options.placeholder = options.placeholder ?? type;
+        if(options.placeholder === undefined) {
+            options.placeholder = Translations.t.validation[type]?.description  ?? type
+        }
         const tp: TextFieldDef = ValidatedTextField.AllTypes.get(type)
         const isValidTp = tp.isValid;
         let isValid;
