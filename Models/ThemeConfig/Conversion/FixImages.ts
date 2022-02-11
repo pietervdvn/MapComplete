@@ -9,10 +9,11 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
         super("Extract all images from a layoutConfig using the meta paths");
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[] } {
         const paths = metapaths["default"] ?? metapaths
         const trpaths = tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
         const allFoundImages = []
+        const errors = []
         for (const metapath of paths) {
             if (metapath.typeHint === undefined) {
                 continue
@@ -34,7 +35,13 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             if (trpath.typeHint !== "rendered") {
                                 continue
                             }
-                            Utils.CollectPath(trpath.path, foundImage, allFoundImages)
+                            const fromPath = Utils.CollectPath(trpath.path, foundImage)
+                            for (const img of fromPath) {
+                                if (typeof img !== "string") {
+                                    errors.push("Found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
+                                }
+                            }
+                            allFoundImages.push(...fromPath.filter(i => typeof i === "string"))
                         }
 
                     }
@@ -44,9 +51,9 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
             }
         }
 
-        const splitParts = [].concat(...allFoundImages.map(img => img.split(";")))
+        const splitParts = [].concat(...Utils.NoNull(allFoundImages).map(img => img.split(";")))
             .map(img => img.split(":")[0])
-        return {result: Utils.Dedup(splitParts)};
+        return {result: Utils.Dedup(splitParts), errors};
     }
 
 }

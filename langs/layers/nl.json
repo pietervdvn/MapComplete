@@ -1040,13 +1040,6 @@
                 }
             }
         },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/birdhide/birdhide.svg"
-                }
-            }
-        },
         "name": "Vogelkijkhutten",
         "presets": {
             "0": {

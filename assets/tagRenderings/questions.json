@@ -370,7 +370,8 @@
           "zh_Hant": "允許犬隻",
           "id": "Anjing diperbolehkan",
           "pl": "Psy dozwolone",
-          "ja": "ペット同伴可能"
+          "ja": "ペット同伴可能",
+          "es": "Se permiten perros"
         }
       },
       {
@@ -391,7 +392,8 @@
           "pl": "Psy <b>nie</b> dozwolone",
           "ru": "С собаками <b>не</b> впускают",
           "id": "Anjing <b> tidak </b> diperbolehkan",
-          "ja": "ペット同伴<b>不可</b>"
+          "ja": "ペット同伴<b>不可</b>",
+          "es": "<b>No</b> se permiten perros"
         }
       },
       {
@@ -452,7 +454,8 @@
       "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>",
       "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>",
       "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>",
-      "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>"
+      "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>",
+      "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
     },
     "render": "{description}",
     "freeform": {

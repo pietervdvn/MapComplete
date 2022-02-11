@@ -70,7 +70,7 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title));
-        this.usedImages =Array.from( new ExtractImages().convertStrict(json, "while extracting the images")).sort()
+        this.usedImages =Array.from( new ExtractImages().convertStrict(json, "while extracting the images of "+json.id+" "+context??"")).sort()
         {
             if (typeof json.title === "string") {
                 throw `The title of a theme should always be a translation, as it sets the corresponding languages (${context}.title). The themenID is ${this.id}; the offending object is ${JSON.stringify(json.title)} which is a ${typeof json.title})`
