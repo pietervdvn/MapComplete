@@ -705,6 +705,26 @@
                 },
                 "question": "Werkt de fietspomp nog?"
             },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Publiek toegankelijk"
+                    },
+                    "1": {
+                        "then": "Publiek toegankelijk"
+                    },
+                    "2": {
+                        "then": "Enkel voor klanten van de bijhorende zaak"
+                    },
+                    "3": {
+                        "then": "Niet publiek toegankelijk"
+                    },
+                    "4": {
+                        "then": "Niet publiek toegankelijk"
+                    }
+                },
+                "question": "Wie kan dit herstelpunt gebruiken?"
+            },
             "bike_repair_station-available-services": {
                 "mappings": {
                     "0": {

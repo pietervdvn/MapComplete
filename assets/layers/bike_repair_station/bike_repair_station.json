@@ -804,11 +804,13 @@
         },
         {
           "if": {
-            "or": ["access=no","access=private"]
+            "or": [
+              "access=no",
+              "access=private"
+            ]
           },
           "then": "invalid"
         }
-        
       ],
       "iconSize": {
         "render": "50,50,bottom"
