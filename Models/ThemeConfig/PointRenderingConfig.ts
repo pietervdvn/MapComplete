@@ -96,6 +96,14 @@ export default class PointRenderingConfig extends WithContextLoader {
                 img.SetClass("badge")
             }
             return img
+        } else if (Svg.All[htmlSpec + ".svg"] !== undefined) {
+            const svg = (Svg.All[htmlSpec  + ".svg"] as string)
+            const img = new Img(svg, true)
+                .SetStyle(style)
+            if (isBadge) {
+                img.SetClass("badge")
+            }
+            return img
         } else {
             return new FixedUiElement(`<img src="${htmlSpec}" style="${style}" />`);
         }
@@ -126,7 +134,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
     }
-    
+
     public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
         const self = this;
         if (this.icon === undefined) {
@@ -192,10 +200,10 @@ export default class PointRenderingConfig extends WithContextLoader {
 
         const icon = this.GetSimpleIcon(tags)
         let badges = undefined;
-        if( options?.includeBadges ?? true){
+        if (options?.includeBadges ?? true) {
             badges = this.GetBadges(tags)
         }
-        const iconAndBadges = new Combine([icon,badges ])
+        const iconAndBadges = new Combine([icon, badges])
             .SetClass("block relative")
 
         if (!options?.noSize) {

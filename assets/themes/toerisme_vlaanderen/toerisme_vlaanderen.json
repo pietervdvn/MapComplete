@@ -169,10 +169,16 @@
                 }
               ]
             },
-            "badges": [
+            "iconBadges": [
               {
                 "if": "service:bicycle:pump:operational_status=broken",
                 "then": "close:red"
+              },
+              {
+                "if": {
+                  "or": ["access=no","access=private"]
+                },
+                "then": "invalid"
               }
             ]
           }
