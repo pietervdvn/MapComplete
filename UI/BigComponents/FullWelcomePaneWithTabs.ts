@@ -56,10 +56,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                                      isShown: UIEventSource<boolean>):
         { header: string | BaseUIElement; content: BaseUIElement }[] {
 
-        let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
-
         const tabs: { header: string | BaseUIElement, content: BaseUIElement }[] = [
-            {header: `<img src='${state.layoutToUse.icon}'>`, content: welcome},
+            {header: `<img src='${state.layoutToUse.icon}'>`, content: new ThemeIntroductionPanel(isShown)},
         ]
 
 

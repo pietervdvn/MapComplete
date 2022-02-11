@@ -43,6 +43,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         this._addLayerControl = options.addLayerControl ?? false
         this._options = options
         MinimapImplementation._nextId++
+        this.SetClass("relative")
 
     }
 

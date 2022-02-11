@@ -1249,7 +1249,7 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+                "title": "laadpunt voor elektrische fietsen met gewone stekker(s)"
             },
             "1": {
                 "title": "oplaadstation voor elektrische auto's"
@@ -1459,7 +1459,7 @@
                         "then": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
                     },
                     "2": {
-                        "then": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
+                        "then": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
                     },
                     "3": {
                         "then": "<b>Vrachtwagens</b> kunnen hier opgeladen worden"
