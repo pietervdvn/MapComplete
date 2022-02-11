@@ -76,7 +76,20 @@ class MassAction extends Combine {
                     }
                 },
                 shown: "Add comment to every open note"
-            }
+            },
+            /*
+            {
+               // This was a one-off for one of the first imports 
+                value:{
+                    predicate: p => p.status === "open" && p.comments[0].text.split("\n").find(l => l.startsWith("note=")) !== undefined,
+                    action: async p => {
+                        const note = p.comments[0].text.split("\n").find(l => l.startsWith("note=")).substr("note=".length)
+                        state.osmConnection.addCommentToNode(p.id, note)
+                    }
+                },
+                shown:"On every open note, read the 'note='-tag and and this note as comment. (This action ignores the textfield)"
+            },//*/
+            
         ])
 
         const handledNotesCounter = new UIEventSource<number>(undefined)
@@ -114,7 +127,7 @@ class MassAction extends Combine {
                     handledNotesCounter.map(s => s === undefined)
                 )
 
-                , undefined,
+                , new VariableUiElement(textField.GetValue().map(txt => "Type a text of at least 15 characters to apply the action. Currently, there are "+(txt?.length ?? 0)+" characters")).SetClass("alert"),
                 actions.GetValue().map(v => v !== undefined && textField.GetValue()?.data?.length > 15, [textField.GetValue()])
             ),
             new Toggle(
