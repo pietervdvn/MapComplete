@@ -210,7 +210,6 @@ export default class AutoApplyButton implements SpecialVisualization {
                 // Very ugly hack: read the value every 500ms
                 UIEventSource.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
                     const applicable = tagSource.data[argument[1]]
-                    console.log("Current applicable value is: ", applicable)
                     to_parse.setData(applicable)
                 })
 
