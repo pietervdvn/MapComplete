@@ -29,17 +29,17 @@ export class AskMetadata extends Combine implements FlowStep<{
 
     constructor(params: ({ features: any[], layer: LayerConfig })) {
 
-        const introduction = ValidatedTextField.InputForType("text", {
+        const introduction = ValidatedTextField.ForType("text").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-introduction-text"),
             inputStyle: "width: 100%"
         })
 
-        const wikilink = ValidatedTextField.InputForType("string", {
+        const wikilink = ValidatedTextField.ForType("string").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-wikilink-text"),
             inputStyle: "width: 100%"
         })
 
-        const source = ValidatedTextField.InputForType("string", {
+        const source = ValidatedTextField.ForType("string").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-source-text"),
             inputStyle: "width: 100%"
         })
@@ -59,7 +59,7 @@ export class AskMetadata extends Combine implements FlowStep<{
 
         const theme = new DropDown("Which theme should be linked in the note?", options)
 
-        ValidatedTextField.InputForType("string", {
+        ValidatedTextField.ForType("string").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-theme-text"),
             inputStyle: "width: 100%"
         })

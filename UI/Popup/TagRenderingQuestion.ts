@@ -78,10 +78,12 @@ export default class TagRenderingQuestion extends Combine {
             .SetClass("question-text"), 3);
 
 
+        const feedback = new UIEventSource<Translation>(undefined)
         const inputElement: InputElement<TagsFilter> =
             new VariableInputElement(applicableMappingsSrc.map(applicableMappings =>
-                TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags)
+                TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
             ))
+     
 
 
         const save = () => {
@@ -111,7 +113,7 @@ export default class TagRenderingQuestion extends Combine {
         const saveButton = new Combine([
             options.saveButtonConstr(inputElement.GetValue()),
         ])
-     
+
         let bottomTags: BaseUIElement;
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
@@ -138,11 +140,17 @@ export default class TagRenderingQuestion extends Combine {
         super([
             question,
             inputElement,
-            new Combine([options.cancelButton,
-            saveButton]).SetClass("flex w-full justify-end flex-wrap-reverse"),
+            new Combine([
+                new VariableUiElement(feedback.map(t => t?.SetClass("alert") ?? "")).SetClass("grid justify-items-center"),
+                new Combine([
+                    new Combine([options.cancelButton]),
+                    saveButton]).SetClass("flex justify-end flex-wrap-reverse")
+
+            ]).SetClass("flex mt-2 justify-between")
+            ,
             bottomTags,
             new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
-            ])
+        ])
 
 
         this.SetClass("question disable-links")
@@ -154,13 +162,14 @@ export default class TagRenderingQuestion extends Combine {
         configuration: TagRenderingConfig,
         applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
         applicableUnit: Unit,
-        tagsSource: UIEventSource<any>)
-        : InputElement<TagsFilter> {
+        tagsSource: UIEventSource<any>,
+        feedback: UIEventSource<Translation>
+    ): InputElement<TagsFilter> {
 
         // FreeForm input will be undefined if not present; will already contain a special input element if applicable
-        const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource);
+        const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
-
+       
         const hasImages = applicableMappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
         let inputEls: InputElement<TagsFilter>[];
 
@@ -359,25 +368,26 @@ export default class TagRenderingQuestion extends Combine {
             tagging = new And([tagging, ...mapping.addExtraTags])
         }
 
-     
+
         return new FixedInputElement(
-            TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state)  ,
+            TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state),
             tagging,
             (t0, t1) => t1.isEquivalent(t0));
     }
-    
-    private static GenerateMappingContent(  mapping: {
+
+    private static GenerateMappingContent(mapping: {
         then: Translation,
         icon?: string
-    }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement{
-        const text =  new SubstitutedTranslation(mapping.then, tagsSource, state)
+    }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement {
+        const text = new SubstitutedTranslation(mapping.then, tagsSource, state)
         if (mapping.icon === undefined) {
             return text;
         }
         return new Combine([new Img(mapping.icon).SetClass("w-6 max-h-6 pr-2"), text]).SetClass("flex")
     }
 
-    private static GenerateFreeform(state, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>): InputElement<TagsFilter> {
+    private static GenerateFreeform(state, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)
+        : InputElement<TagsFilter> {
         const freeform = configuration.freeform;
         if (freeform === undefined) {
             return undefined;
@@ -387,6 +397,9 @@ export default class TagRenderingQuestion extends Combine {
             (string: any) => {
                 if (string === "" || string === undefined) {
                     return undefined;
+                }
+                if (string.length >= 255) {
+                    return undefined
                 }
 
                 const tag = new Tag(freeform.key, string);
@@ -418,18 +431,24 @@ export default class TagRenderingQuestion extends Combine {
 
         const tagsData = tags.data;
         const feature = state.allElements.ContainingFeatures.get(tagsData.id)
-        const input: InputElement<string> = ValidatedTextField.InputForType(configuration.freeform.type, {
-            isValid: (str) => (str.length <= 255),
+        const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type).ConstructInputElement({
             country: () => tagsData._country,
             location: [tagsData._lat, tagsData._lon],
             mapBackgroundLayer: state.backgroundLayer,
             unit: applicableUnit,
             args: configuration.freeform.helperArgs,
-            feature: feature,
-            placeholder: configuration.freeform.placeholder
+            feature,
+            placeholder: configuration.freeform.placeholder,
+            feedback
         });
-
+        
         input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
+        
+        input.GetValue().addCallbackD(v => {
+            if(v.length >= 255){
+                feedback.setData(Translations.t.validation.tooLong.Subs({count: v.length}))
+            }
+        })
 
         let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
             input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),

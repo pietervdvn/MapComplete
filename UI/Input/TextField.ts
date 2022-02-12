@@ -8,7 +8,8 @@ export class TextField extends InputElement<string> {
     private readonly value: UIEventSource<string>;
     private _element: HTMLElement;
     private readonly _isValid: (s: string, country?: () => string) => boolean;
-
+    private _rawValue: UIEventSource<string> 
+    
     constructor(options?: {
         placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
@@ -23,6 +24,7 @@ export class TextField extends InputElement<string> {
         const self = this;
         options = options ?? {};
         this.value = options?.value ?? new UIEventSource<string>(undefined);
+        this._rawValue = new UIEventSource<string>("")
         this._isValid = options.isValid ?? (_ => true);
 
         const placeholder = Translations.W(options.placeholder ?? "").ConstructElement().innerText.replace("'", "&#39");
@@ -77,6 +79,7 @@ export class TextField extends InputElement<string> {
             const endDistance = field.value.substring(field.selectionEnd).replace(/ /g, '').length;
             // @ts-ignore
             let val: string = field.value;
+            self._rawValue.setData(val)
             if (!self.IsValid(val)) {
                 self.value.setData(undefined);
             } else {
@@ -128,7 +131,11 @@ export class TextField extends InputElement<string> {
     GetValue(): UIEventSource<string> {
         return this.value;
     }
-
+    
+    GetRawValue(): UIEventSource<string>{
+        return this._rawValue
+    }
+    
     IsValid(t: string): boolean {
         if (t === undefined || t === null) {
             return false

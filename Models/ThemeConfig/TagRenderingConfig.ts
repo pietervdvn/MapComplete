@@ -133,7 +133,7 @@ export default class TagRenderingConfig {
             }
 
 
-            if (!ValidatedTextField.AllTypes.has(this.freeform.type)) {
+            if (!ValidatedTextField.ForType(this.freeform.key) === undefined) {
                 const knownKeys = ValidatedTextField.AvailableTypes().join(", ");
                 throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
             }

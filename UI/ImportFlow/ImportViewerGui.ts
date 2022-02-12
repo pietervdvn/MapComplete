@@ -47,7 +47,7 @@ interface NoteState {
 
 class MassAction extends Combine {
     constructor(state: UserRelatedState, props: NoteProperties[]) {
-        const textField = ValidatedTextField.InputForType("text")
+        const textField = ValidatedTextField.ForType("text").ConstructInputElement()
 
         const actions = new DropDown<{
             predicate: (p: NoteProperties) => boolean,

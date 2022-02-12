@@ -92,7 +92,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
         const background = new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
         const location = new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
         const currentBounds = new UIEventSource<BBox>(undefined)
-        const zoomLevel = ValidatedTextField.InputForType("pnat")
+        const zoomLevel = ValidatedTextField.ForType("pnat").ConstructInputElement()
         zoomLevel.SetClass("ml-1 border border-black")
         zoomLevel.GetValue().syncWith(LocalStorageSource.Get("importer-zoom-level", "14"), true)
         const osmLiveData = Minimap.createMiniMap({
@@ -146,7 +146,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             features: new StaticFeatureSource(toImport.features, false)
         })
 
-        const nearbyCutoff = ValidatedTextField.InputForType("pnat")
+        const nearbyCutoff = ValidatedTextField.ForType("pnat").ConstructInputElement()
         nearbyCutoff.SetClass("ml-1 border border-black")
         nearbyCutoff.GetValue().syncWith(LocalStorageSource.Get("importer-cutoff", "25"), true)
 

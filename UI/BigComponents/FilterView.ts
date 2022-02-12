@@ -181,7 +181,7 @@ export default class FilterView extends VariableUiElement {
         const properties = new UIEventSource<any>({})
         for (const {name, type} of filter.fields) {
             const value = QueryParameters.GetQueryParameter("filter-" + filterConfig.id + "-" + name, "", "Value for filter " + filterConfig.id)
-            const field = ValidatedTextField.InputForType(type, {
+            const field = ValidatedTextField.ForType(type).ConstructInputElement({
                 value
             }).SetClass("inline-block")
             mappings.set(name, field)

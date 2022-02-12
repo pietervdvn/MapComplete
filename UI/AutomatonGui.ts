@@ -254,7 +254,7 @@ class AutomatonGui {
 
         LocalStorageSource.Get("automation-theme-id", "missing_streets").syncWith(themeSelect.GetValue())
 
-        const tilepath = ValidatedTextField.InputForType("url", {
+        const tilepath = ValidatedTextField.ForType("url").ConstructInputElement({
             placeholder: "Specifiy the path of the overview",
             inputStyle: "width: 100%"
         })
@@ -305,7 +305,7 @@ class AutomatonGui {
             return Array.from(rezoomed)
         })
 
-        const extraComment = ValidatedTextField.InputForType("text")
+        const extraComment = ValidatedTextField.ForType("text").ConstructInputElement()
         LocalStorageSource.Get("automaton-extra-comment").syncWith(extraComment.GetValue())
 
         return new Combine([

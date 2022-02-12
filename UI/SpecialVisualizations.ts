@@ -721,7 +721,7 @@ export default class SpecialVisualizations {
                     constr: (state, tags, args) => {
 
                         const t = Translations.t.notes;
-                        const textField = ValidatedTextField.InputForType("text", {placeholder: t.addCommentPlaceholder})
+                        const textField = ValidatedTextField.ForType("text").ConstructInputElement({placeholder: t.addCommentPlaceholder})
                         textField.SetClass("rounded-l border border-grey")
                         const txt = textField.GetValue()
 

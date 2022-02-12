@@ -522,11 +522,26 @@
     "string": {
       "description": "a piece of text"
     },
+    "email": {
+      "feedback": "This is not a valid email address",
+      "noAt": "An email address should contain an @"
+},
+    "phone": {
+      "feedback": "This is not a valid phone number"
+    },
+    "url": {
+      "feedback": "This is not a valid web address"
+    },
     "pnat": {
-      "description": "a positive number"
+      "description": "a positive number",
+      "noZero": "Zero is not allowed"
     },
     "nat": {
-      "description": "a positive number or zero"
-    }
+      "description": "a positive number or zero",
+      "mustBePositive": "This number should be positive",
+      "notANumber": "Enter a number",
+      "mustBeWhole": "Only whole numbers are allowed"
+    },
+    "tooLong": "Text is to long, at most 255 characters are allowed. You do have {count} characters now"
   }
 }

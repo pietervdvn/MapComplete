@@ -56,8 +56,8 @@ export default class FilterConfig {
 
             const fields: { name: string, type: string }[] = ((option.fields) ?? []).map((f, i) => {
                 const type = f.type ?? "string"
-                if (!ValidatedTextField.AllTypes.has(type)) {
-                    throw `Invalid filter: ${type} is not a valid validated textfield type (at ${ctx}.fields[${i}])\n\tTry one of ${Array.from(ValidatedTextField.AllTypes.keys()).join(",")}`
+                if (!ValidatedTextField.ForType(type) === undefined) {
+                      throw `Invalid filter: ${type} is not a valid validated textfield type (at ${ctx}.fields[${i}])\n\tTry one of ${Array.from(ValidatedTextField.AvailableTypes()).join(",")}`
                 }
                 if (f.name === undefined || f.name === "" || f.name.match(/[a-z0-9_-]+/) == null) {
                     throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`

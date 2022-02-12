@@ -27,7 +27,7 @@ export default class NewNoteUi extends Toggle {
         const t = Translations.t.notes;
         const isCreated = new UIEventSource(false);
         state.LastClickLocation.addCallbackAndRun(_ => isCreated.setData(false)) // Reset 'isCreated' on every click
-        const text = ValidatedTextField.InputForType("text", {
+        const text = ValidatedTextField.ForType("text").ConstructInputElement({
             value: LocalStorageSource.Get("note-text")
         })
         text.SetClass("border rounded-sm border-grey-500")

@@ -25,8 +25,9 @@ import Title from "../Base/Title";
 import InputElementMap from "./InputElementMap";
 import Translations from "../i18n/Translations";
 import {Translation} from "../i18n/Translation";
+import {NOTFOUND} from "dns";
 
-class SimpleTextFieldDef {
+export class TextFieldDef {
 
     public readonly name: string;
     /*
@@ -34,10 +35,11 @@ class SimpleTextFieldDef {
     * This can indicate which special input element is used, ...
     * */
     public readonly explanation: string;
-    public inputmode?: string = undefined
+    protected inputmode?: string = undefined
 
-    constructor(explanation: string | BaseUIElement, name?: string) {
-        this.name = name ?? this.constructor.name.toLowerCase();
+    constructor(name: string,
+                explanation: string | BaseUIElement) {
+        this.name = name;
         if (this.name.endsWith("textfield")) {
             this.name = this.name.substr(0, this.name.length - "TextField".length)
         }
@@ -52,22 +54,174 @@ class SimpleTextFieldDef {
         }
     }
 
-    public reformat(s: string, country?: () => string): string {
+    protectedisValid(s: string, _: (() => string) | undefined): boolean {
+        return true;
+    }
+
+    public getFeedback(s: string): Translation {
+        const tr = Translations.t.validation[this.name]
+        if(tr !== undefined){
+            return tr["feedback"]
+        }
+    }
+
+    public ConstructInputElement(options: {
+        value?: UIEventSource<string>,
+        inputStyle?: string,
+        feedback?: UIEventSource<Translation>
+        placeholder?: string | BaseUIElement,
+        country?: () => string,
+        location?: [number /*lat*/, number /*lon*/],
+        mapBackgroundLayer?: UIEventSource<any>,
+        unit?: Unit,
+        args?: (string | number | boolean)[] // Extra arguments for the inputHelper,
+        feature?: any,
+    } = {}): InputElement<string> {
+
+        if (options.placeholder === undefined) {
+            options.placeholder = Translations.t.validation[this.name]?.description ?? this.name
+        }
+
+        options["textArea"] = this.name === "text";
+
+        const self = this;
+
+        if (options.unit !== undefined) {
+            // Reformatting is handled by the unit in this case
+            options["isValid"] = str => {
+                const denom = options.unit.findDenomination(str);
+                if (denom === undefined) {
+                    return false;
+                }
+                const stripped = denom[0]
+                return self.isValid(stripped, options.country)
+            }
+        } else {
+            options["isValid"] = self.isValid;
+        }
+
+
+        options["inputMode"] = this.inputmode;
+        if (this.inputmode === "text") {
+            options["htmlType"] = "area"
+        }
+
+
+        const textfield = new TextField(options);
+        let input: InputElement<string> = textfield
+        if (options.feedback) {
+            textfield.GetRawValue().addCallback(v => {
+                if(self.isValid(v, options.country)){
+                    options.feedback.setData(undefined)
+                }else{
+                options.feedback.setData(self.getFeedback(v))
+                }
+            })
+        }
+
+
+        if (this.reformat && options.unit === undefined) {
+            input.GetValue().addCallbackAndRun(str => {
+                if (!options["isValid"](str, options.country)) {
+                    return;
+                }
+                const formatted = this.reformat(str, options.country);
+                input.GetValue().setData(formatted);
+            })
+        }
+
+        if (options.unit) {
+            // We need to apply a unit.
+            // This implies:
+            // We have to create a dropdown with applicable denominations, and fuse those values
+            const unit = options.unit
+
+
+            const isSingular = input.GetValue().map(str => str?.trim() === "1")
+
+            const unitDropDown =
+                unit.denominations.length === 1 ?
+                    new FixedInputElement(unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
+                    : new DropDown("",
+                        unit.denominations.map(denom => {
+                            return {
+                                shown: denom.getToggledHuman(isSingular),
+                                value: denom
+                            }
+                        })
+                    )
+            unitDropDown.GetValue().setData(unit.defaultDenom)
+            unitDropDown.SetClass("w-min")
+
+            const fixedDenom = unit.denominations.length === 1 ? unit.denominations[0] : undefined
+            input = new CombinedInputElement(
+                input,
+                unitDropDown,
+                // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
+                (text, denom) => {
+                    if (denom === undefined) {
+                        return text
+                    }
+                    return denom?.canonicalValue(text, true)
+                },
+                (valueWithDenom: string) => {
+                    // Take the value from OSM and feed it into the textfield and the dropdown
+                    const withDenom = unit.findDenomination(valueWithDenom);
+                    if (withDenom === undefined) {
+                        // Not a valid value at all - we give it undefined and leave the details up to the other elements (but we keep the previous denomination)
+                        return [undefined, fixedDenom]
+                    }
+                    const [strippedText, denom] = withDenom
+                    if (strippedText === undefined) {
+                        return [undefined, fixedDenom]
+                    }
+                    return [strippedText, denom]
+                }
+            ).SetClass("flex")
+        }
+        const helper = this.inputHelper(input.GetValue(), {
+            location: options.location,
+            mapBackgroundLayer: options.mapBackgroundLayer,
+            args: options.args,
+            feature: options.feature
+        })?.SetClass("block")
+        if (helper !== undefined) {
+            input = new CombinedInputElement(input, helper,
+                (a, _) => a, // We can ignore b, as they are linked earlier
+                a => [a, a]
+            ).SetClass("block w-full");
+        }
+        if (this.postprocess !== undefined) {
+            input = new InputElementMap<string, string>(input,
+                (a, b) => a === b,
+                this.postprocess,
+                this.undoPostprocess
+            )
+        }
+
+        return input;
+    }
+
+    protected isValid(string: string, requestCountry: () => string): boolean {
+        return true;
+    }
+
+    protected reformat(s: string, country?: () => string): string {
         return s;
     }
 
     /**
      * Modification to make before the string is uploaded to OSM
      */
-    public postprocess(s: string): string {
+    protected postprocess(s: string): string {
         return s
     }
 
-    public undoPostprocess(s: string): string {
+    protected undoPostprocess(s: string): string {
         return s;
     }
 
-    public inputHelper(value: UIEventSource<string>, options?: {
+    protected inputHelper(value: UIEventSource<string>, options?: {
         location: [number, number],
         mapBackgroundLayer?: UIEventSource<any>,
         args: (string | number | boolean | any)[]
@@ -76,36 +230,30 @@ class SimpleTextFieldDef {
         return undefined
     }
 
-    isValid(s: string, country: (() => string) | undefined): boolean {
-        return true;
-    }
-    
-    getFeedback(s: string) : Translation {
-        return undefined
-    }
-
 
 }
 
-class WikidataTextField extends SimpleTextFieldDef {
+class WikidataTextField extends TextFieldDef {
 
     constructor() {
-        super(new Combine([
-            "A wikidata identifier, e.g. Q42.",
-            new Title("Helper arguments"),
-            new Table(["name", "doc"],
-                [
-                    ["key", "the value of this tag will initialize search (default: name)"],
-                    ["options", new Combine(["A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
-                        new Table(
-                            ["subarg", "doc"],
-                            [["removePrefixes", "remove these snippets of text from the start of the passed string to search"],
-                                ["removePostfixes", "remove these snippets of text from the end of the passed string to search"],
-                            ]
-                        )])
-                    ]]),
-            new Title("Example usage"),
-            `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
+        super(
+            "wikidata",
+            new Combine([
+                "A wikidata identifier, e.g. Q42.",
+                new Title("Helper arguments"),
+                new Table(["name", "doc"],
+                    [
+                        ["key", "the value of this tag will initialize search (default: name)"],
+                        ["options", new Combine(["A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
+                            new Table(
+                                ["subarg", "doc"],
+                                [["removePrefixes", "remove these snippets of text from the start of the passed string to search"],
+                                    ["removePostfixes", "remove these snippets of text from the end of the passed string to search"],
+                                ]
+                            )])
+                        ]]),
+                new Title("Example usage"),
+                `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
 \`\`\`
 "freeform": {
@@ -125,7 +273,7 @@ class WikidataTextField extends SimpleTextFieldDef {
     ]
 }
 \`\`\``
-        ]));
+            ]));
     }
 
 
@@ -184,10 +332,12 @@ class WikidataTextField extends SimpleTextFieldDef {
     }
 }
 
-class OpeningHoursTextField extends SimpleTextFieldDef {
+class OpeningHoursTextField extends TextFieldDef {
 
     constructor() {
-        super(new Combine([
+        super(
+            "opening_hours",
+            new Combine([
                 "Has extra elements to easily input when a POI is opened.",
                 new Title("Helper arguments"),
                 new Table(["name", "doc"],
@@ -214,8 +364,7 @@ class OpeningHoursTextField extends SimpleTextFieldDef {
           "postfix":")"
         }
     ]
-}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]),
-            "opening_hours");
+}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]),);
     }
 
     isValid() {
@@ -240,12 +389,12 @@ class OpeningHoursTextField extends SimpleTextFieldDef {
     }
 }
 
-class UrlTextfieldDef extends SimpleTextFieldDef {
+class UrlTextfieldDef extends TextFieldDef {
 
     inputmode: "url"
 
     constructor() {
-        super("The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user")
+        super("url", "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user")
     }
 
     postprocess(str: string) {
@@ -320,23 +469,23 @@ class UrlTextfieldDef extends SimpleTextFieldDef {
     }
 }
 
-class StringTextField extends SimpleTextFieldDef {
+class StringTextField extends TextFieldDef {
     constructor() {
-        super("A simple piece of text");
+        super("string", "A simple piece of text");
     }
 }
 
-class TextTextField extends SimpleTextFieldDef {
+class TextTextField extends TextFieldDef {
     inputmode: "text"
 
     constructor() {
-        super("A longer piece of text");
+        super("text", "A longer piece of text");
     }
 }
 
-class DateTextField extends SimpleTextFieldDef {
+class DateTextField extends TextFieldDef {
     constructor() {
-        super("A date with date picker");
+        super("date", "A date with date picker");
     }
 
     isValid = (str) => {
@@ -362,20 +511,279 @@ class DateTextField extends SimpleTextFieldDef {
     }
 }
 
-class DirectionTextField extends SimpleTextFieldDef {
-    inputMode = "numeric"
+
+class LengthTextField extends TextFieldDef {
+    inputMode: "decimal"
 
     constructor() {
-        super("A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)");
+        super(
+            "decimal", "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
+        )
     }
 
     isValid = (str) => {
-        str = "" + str;
-        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
+        const t = Number(str)
+        return !isNaN(t)
     }
 
     inputHelper = (value, options) => {
+        options = options ?? {}
+        options.location = options.location ?? [0, 0]
+
         const args = options.args ?? []
+        let zoom = 19
+        if (args[0]) {
+            zoom = Number(args[0])
+            if (isNaN(zoom)) {
+                console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ", args[0], " (using 19 instead)")
+                zoom = 19
+            }
+        }
+
+        // Bit of a hack: we project the centerpoint to the closes point on the road - if available
+        if (options?.feature !== undefined && options.feature.geometry.type !== "Point") {
+            const lonlat = <[number, number]>[...options.location]
+            lonlat.reverse()
+            options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+            options.location.reverse()
+        }
+
+
+        const location = new UIEventSource<Loc>({
+            lat: options.location[0],
+            lon: options.location[1],
+            zoom: zoom
+        })
+        if (args[1]) {
+            // We have a prefered map!
+            options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
+                location, new UIEventSource<string[]>(args[1].split(","))
+            )
+        }
+        const li = new LengthInput(options?.mapBackgroundLayer, location, value)
+        li.SetStyle("height: 20rem;")
+        return li;
+    }
+}
+
+class FloatTextField extends TextFieldDef {
+    inputmode = "decimal"
+
+    constructor(name?: string, explanation?: string) {
+        super(name ?? "float", explanation ?? "A decimal");
+    }
+
+    isValid(str) {
+        return !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(",")
+    }
+
+    reformat( str): string {
+        return "" + Number(str);
+    }
+
+    getFeedback(s: string): Translation {
+        if (isNaN(Number(s))) {
+            return Translations.t.validation.nat.notANumber
+        }
+
+        return undefined
+    }
+}
+
+class IntTextField extends FloatTextField {
+    inputMode = "numeric"
+
+    constructor(name?: string, explanation?: string) {
+        super(name ?? "int", explanation ?? "A number");
+    }
+
+    isValid(str): boolean {
+        str = "" + str;
+        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
+    }
+
+    getFeedback(s: string): Translation {
+        const n = Number(s)
+        if (isNaN(n)) {
+            return Translations.t.validation.nat.notANumber
+        }
+        if (Math.floor(n) !== n) {
+            return Translations.t.validation.nat.mustBeWhole
+        }
+        return undefined
+    }
+
+}
+
+class NatTextField extends IntTextField {
+    inputMode = "numeric"
+
+    constructor(name?: string, explanation?: string) {
+        super(name ?? "nat", explanation ?? "A positive number or zero");
+    }
+
+    isValid(str): boolean {
+        if (str === undefined) {
+            return false;
+        }
+        str = "" + str;
+
+        return str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
+    }
+
+
+    getFeedback(s: string): Translation {
+        const spr = super.getFeedback(s)
+        if (spr !== undefined) {
+            return spr
+        }
+        const n = Number(s)
+        if (n < 0) {
+            return Translations.t.validation.nat.mustBePositive
+        }
+        return undefined
+    }
+}
+
+class PNatTextField extends NatTextField {
+    inputmode = "numeric"
+
+    constructor() {
+        super("pnat", "A strict positive number");
+    }
+
+    getFeedback(s: string): Translation {
+        const spr = super.getFeedback(s);
+        if (spr !== undefined) {
+            return spr
+        }
+        if (Number(s) === 0) {
+            return Translations.t.validation.pnat.noZero
+        }
+        return undefined
+    }
+
+    isValid = (str) => {
+        if (!super.isValid(str)) {
+            return false
+        }
+        return Number(str) > 0
+    }
+
+}
+
+class PFloatTextField extends FloatTextField {
+    inputmode = "decimal"
+
+    constructor() {
+        super("pfloat", "A positive decimal (inclusive zero)");
+    }
+
+    isValid = (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(",")
+
+    getFeedback(s: string): Translation {
+        const spr = super.getFeedback(s);
+        if (spr !== undefined) {
+            return spr
+        }
+        if (Number(s) < 0) {
+            return Translations.t.validation.nat.mustBePositive
+        }
+        return undefined;
+    }
+}
+
+class EmailTextField extends TextFieldDef {
+    inputmode = "email"
+
+    constructor() {
+        super("email", "An email adress");
+    }
+
+    isValid = (str) => {
+        if (str === undefined) {
+            return false
+        }
+        if (str.startsWith("mailto:")) {
+            str = str.substring("mailto:".length)
+        }
+        return EmailValidator.validate(str);
+    }
+
+    reformat = str => {
+        if (str === undefined) {
+            return undefined
+        }
+        if (str.startsWith("mailto:")) {
+            str = str.substring("mailto:".length)
+        }
+        return str;
+    }
+    
+    getFeedback(s: string): Translation {
+        if(s.indexOf('@') < 0){return Translations.t.validation.email.noAt}
+        
+        return super.getFeedback(s);
+    }
+}
+
+class PhoneTextField extends TextFieldDef {
+    inputmode = "tel"
+
+    constructor() {
+        super("phone", "A phone number");
+    }
+
+    isValid(str, country: () => string): boolean {
+        if (str === undefined) {
+            return false;
+        }
+        if (str.startsWith("tel:")) {
+            str = str.substring("tel:".length)
+        }
+        let countryCode = undefined
+        if(country !== undefined){
+            countryCode = (country())?.toUpperCase()
+        }
+        return parsePhoneNumberFromString(str, countryCode)?.isValid() ?? false
+    }
+
+    reformat = (str, country: () => string) => {
+        if (str.startsWith("tel:")) {
+            str = str.substring("tel:".length)
+        }
+        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
+    }
+}
+
+class ColorTextField extends TextFieldDef {
+    constructor() {
+        super("color", "Shows a color picker");
+    }
+
+    inputHelper = (value) => {
+        return new ColorPicker(value.map(color => {
+            return Utils.ColourNameToHex(color ?? "");
+        }, [], str => Utils.HexToColourName(str)))
+    }
+}
+
+class DirectionTextField extends IntTextField {
+    inputMode = "numeric"
+
+    constructor() {
+        super("direction", "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)");
+    }
+    
+    reformat(str): string {
+        const n = (Number(str) % 360) 
+        return ""+n
+    }
+
+  
+    inputHelper = (value, options) => {
+        const args = options.args ?? []
+        options.location = options.location ?? [0, 0]
         let zoom = 19
         if (args[0]) {
             zoom = Number(args[0])
@@ -401,190 +809,10 @@ class DirectionTextField extends SimpleTextFieldDef {
     }
 }
 
-class LengthTextField extends SimpleTextFieldDef {
-    inputMode: "decimal"
-
-    constructor() {
-        super(
-            "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
-        )
-    }
-
-    isValid = (str) => {
-        const t = Number(str)
-        return !isNaN(t)
-    }
-
-    inputHelper = (value, options) => {
-        const args = options.args ?? []
-        let zoom = 19
-        if (args[0]) {
-            zoom = Number(args[0])
-            if (isNaN(zoom)) {
-                console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ", args[0], " (using 19 instead)")
-                zoom = 19
-            }
-        }
-
-        // Bit of a hack: we project the centerpoint to the closes point on the road - if available
-        if (options.feature !== undefined && options.feature.geometry.type !== "Point") {
-            const lonlat = <[number, number]>[...options.location]
-            lonlat.reverse()
-            options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
-            options.location.reverse()
-        }
-
-        const location = new UIEventSource<Loc>({
-            lat: options.location[0],
-            lon: options.location[1],
-            zoom: zoom
-        })
-        if (args[1]) {
-            // We have a prefered map!
-            options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                location, new UIEventSource<string[]>(args[1].split(","))
-            )
-        }
-        const li = new LengthInput(options.mapBackgroundLayer, location, value)
-        li.SetStyle("height: 20rem;")
-        return li;
-    }
-}
-
-class IntTextField extends SimpleTextFieldDef {
-    inputMode = "numeric"
-
-    constructor() {
-        super("A number");
-    }
-
-    isValid = (str) => {
-        str = "" + str;
-        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
-    }
-
-    reformat = str => "" + Number(str)
-}
-
-class NatTextField extends SimpleTextFieldDef {
-    inputMode = "numeric"
-
-    constructor() {
-        super("A positive number or zero");
-    }
-
-    isValid = (str) => {
-        str = "" + str;
-        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
-    }
-
-    reformat = str => "" + Number(str)
-}
-
-class PNatTextField extends SimpleTextFieldDef {
-    inputmode = "numeric"
-
-    constructor() {
-        super("A strict positive number");
-    }
-
-    isValid = (str) => {
-        str = "" + str;
-        return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0
-    }
-
-    reformat = str => "" + Number(str)
-}
-
-class FloatTextField extends SimpleTextFieldDef {
-    inputmode = "decimal"
-
-    constructor() {
-        super("A decimal");
-    }
-
-    isValid = (str) => !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(",")
-
-    reformat = str => "" + Number(str)
-}
-
-class PFloatTextField extends SimpleTextFieldDef {
-    inputmode = "decimal"
-
-    constructor() {
-        super("A positive decimal (inclusive zero)");
-    }
-
-    isValid = (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(",")
-
-    reformat = str => "" + Number(str)
-}
-
-class EmailTextField extends SimpleTextFieldDef {
-    inputmode = "email"
-
-    constructor() {
-        super("An email adress");
-    }
-
-    isValid = (str) => {
-        if (str.startsWith("mailto:")) {
-            str = str.substring("mailto:".length)
-        }
-        return EmailValidator.validate(str);
-    }
-
-    reformat = str => {
-        if (str === undefined) {
-            return undefined
-        }
-        if (str.startsWith("mailto:")) {
-            str = str.substring("mailto:".length)
-        }
-        return str;
-    }
-}
-
-class PhoneTextField extends SimpleTextFieldDef {
-    inputmode = "tel"
-
-    constructor() {
-        super("A phone number");
-    }
-
-    isValid = (str, country: () => string) => {
-        if (str === undefined) {
-            return false;
-        }
-        if (str.startsWith("tel:")) {
-            str = str.substring("tel:".length)
-        }
-        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
-    }
-
-    reformat = (str, country: () => string) => {
-        if (str.startsWith("tel:")) {
-            str = str.substring("tel:".length)
-        }
-        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
-    }
-}
-
-class ColorTextField extends SimpleTextFieldDef {
-    constructor() {
-        super("Shows a color picker");
-    }
-
-    inputHelper = (value) => {
-        return new ColorPicker(value.map(color => {
-            return Utils.ColourNameToHex(color ?? "");
-        }, [], str => Utils.HexToColourName(str)))
-    }
-}
 
 export default class ValidatedTextField {
 
-    private static allTextfieldDefs: SimpleTextFieldDef[] = [
+    private static AllTextfieldDefs: TextFieldDef[] = [
         new StringTextField(),
         new TextTextField(),
         new DateTextField(),
@@ -602,156 +830,14 @@ export default class ValidatedTextField {
         new OpeningHoursTextField(),
         new ColorTextField()
     ]
-    public static AllTypes: Map<string, SimpleTextFieldDef> = ValidatedTextField.allTypesDict();
-
-    public static InputForType(type: string, options?: {
-        placeholder?: string | BaseUIElement,
-        value?: UIEventSource<string>,
-        htmlType?: string,
-        textArea?: boolean,
-        inputMode?: string,
-        textAreaRows?: number,
-        isValid?: ((s: string, country: () => string) => boolean),
-        country?: () => string,
-        location?: [number /*lat*/, number /*lon*/],
-        mapBackgroundLayer?: UIEventSource<any>,
-        unit?: Unit,
-        args?: (string | number | boolean)[] // Extra arguments for the inputHelper,
-        feature?: any,
-        inputStyle?: string
-    }): InputElement<string> {
-        options = options ?? {};
-        if (options.placeholder === undefined) {
-            options.placeholder = Translations.t.validation[type]?.description ?? type
-        }
-        const tp: SimpleTextFieldDef = ValidatedTextField.AllTypes.get(type)
-        const isValidTp = tp.isValid;
-        let isValid;
-        options.textArea = options.textArea ?? type === "text";
-        if (options.isValid) {
-            const optValid = options.isValid;
-            isValid = (str, country) => {
-                if (str === undefined) {
-                    return false;
-                }
-                if (options.unit) {
-                    str = options.unit.stripUnitParts(str)
-                }
-                return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
-            }
-        } else {
-            isValid = isValidTp;
-        }
-
-        if (options.unit !== undefined && isValid !== undefined) {
-            // Reformatting is handled by the unit in this case
-            options.isValid = str => {
-                const denom = options.unit.findDenomination(str);
-                if (denom === undefined) {
-                    return false;
-                }
-                const stripped = denom[0]
-                console.log("Is valid? ", str, "stripped: ", stripped, "isValid:", isValid(stripped))
-                return isValid(stripped)
-            }
-        } else {
-            options.isValid = isValid;
-
-        }
-
-
-        options.inputMode = tp.inputmode;
-        if (tp.inputmode === "text") {
-            options.htmlType = "area"
-        }
-
-
-        let input: InputElement<string> = new TextField(options);
-        if (tp.reformat && options.unit === undefined) {
-            input.GetValue().addCallbackAndRun(str => {
-                if (!options.isValid(str, options.country)) {
-                    return;
-                }
-                const formatted = tp.reformat(str, options.country);
-                input.GetValue().setData(formatted);
-            })
-        }
-
-        if (options.unit) {
-            // We need to apply a unit.
-            // This implies:
-            // We have to create a dropdown with applicable denominations, and fuse those values
-            const unit = options.unit
-
-
-            const isSingular = input.GetValue().map(str => str?.trim() === "1")
-
-            const unitDropDown =
-                unit.denominations.length === 1 ?
-                    new FixedInputElement(unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
-                    : new DropDown("",
-                        unit.denominations.map(denom => {
-                            return {
-                                shown: denom.getToggledHuman(isSingular),
-                                value: denom
-                            }
-                        })
-                    )
-            unitDropDown.GetValue().setData(unit.defaultDenom)
-            unitDropDown.SetClass("w-min")
-
-            const fixedDenom = unit.denominations.length === 1 ? unit.denominations[0] : undefined
-            input = new CombinedInputElement(
-                input,
-                unitDropDown,
-                // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
-                (text, denom) => {
-                    if (denom === undefined) {
-                        return text
-                    }
-                    return denom?.canonicalValue(text, true)
-                },
-                (valueWithDenom: string) => {
-                    // Take the value from OSM and feed it into the textfield and the dropdown
-                    const withDenom = unit.findDenomination(valueWithDenom);
-                    if (withDenom === undefined) {
-                        // Not a valid value at all - we give it undefined and leave the details up to the other elements (but we keep the previous denomination)
-                        return [undefined, fixedDenom]
-                    }
-                    const [strippedText, denom] = withDenom
-                    if (strippedText === undefined) {
-                        return [undefined, fixedDenom]
-                    }
-                    return [strippedText, denom]
-                }
-            ).SetClass("flex")
-        }
-        const helper = tp.inputHelper(input.GetValue(), {
-            location: options.location,
-            mapBackgroundLayer: options.mapBackgroundLayer,
-            args: options.args,
-            feature: options.feature
-        })?.SetClass("block")
-        if (helper !== undefined) {
-            input = new CombinedInputElement(input, helper,
-                (a, _) => a, // We can ignore b, as they are linked earlier
-                a => [a, a]
-            ).SetClass("block w-full");
-        }
-        if (tp.postprocess !== undefined) {
-            input = new InputElementMap<string, string>(input,
-                (a, b) => a === b,
-                tp.postprocess,
-                tp.undoPostprocess
-            )
-        }
-
-        return input;
+    public static allTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
+    public static ForType(type: string = "string"): TextFieldDef {
+        return ValidatedTextField.allTypes.get(type)
     }
 
     public static HelpText(): BaseUIElement {
         const explanations: BaseUIElement[] =
-            ValidatedTextField.allTextfieldDefs.map(type =>
+            ValidatedTextField.AllTextfieldDefs.map(type =>
                 new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col"))
         return new Combine([
             new Title("Available types for text fields", 1),
@@ -761,12 +847,12 @@ export default class ValidatedTextField {
     }
 
     public static AvailableTypes(): string[] {
-        return ValidatedTextField.allTextfieldDefs.map(tp => tp.name)
+        return ValidatedTextField.AllTextfieldDefs.map(tp => tp.name)
     }
 
-    private static allTypesDict(): Map<string, SimpleTextFieldDef> {
-        const types = new Map<string, SimpleTextFieldDef>();
-        for (const tp of ValidatedTextField.allTextfieldDefs) {
+    private static allTypesDict(): Map<string, TextFieldDef> {
+        const types = new Map<string, TextFieldDef>();
+        for (const tp of ValidatedTextField.AllTextfieldDefs) {
             types[tp.name] = tp;
             types.set(tp.name, tp);
         }
