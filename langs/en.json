@@ -355,7 +355,7 @@
             "aboutOsm": {
                 "title": "What is OpenStreetMap?",
                 "intro": "OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as <b>it can be verified on the ground</b>.<br/> OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:",
-                "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run over theme",
+                "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run there, …",
                 "li1": "Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, …",
                 "li2": "Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, …",
                 "li3": "and much, much more…"
