@@ -565,6 +565,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing where you can park your bike"
+    "en": "A layer showing where you can park your bike",
+    "nl": "Een laag die toont waar je je fiets kunt parkeren"
   }
 }
