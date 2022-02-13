@@ -639,7 +639,7 @@
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
-                "render": "Het gebruik van het fietsschoonmaakpunt kost {charge}"
+                "render": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}"
             }
         },
         "title": {

@@ -76,7 +76,7 @@
       "render": {
         "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
         "de": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}",
-        "nl": "Het gebruik van het fietsschoonmaakpunt kost {charge}"
+        "nl": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}"
       },
       "condition": {
         "and": [
