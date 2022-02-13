@@ -6,7 +6,8 @@
     "de": "Hindernisse",
     "ru": "Препятствия",
     "hu": "Akadályok",
-    "fr": "Barrières"
+    "fr": "Barrières",
+    "es": "Barreras"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
@@ -30,7 +31,8 @@
       "nl": "Barrière",
       "de": "Hindernis",
       "ru": "Препятствие",
-      "fr": "Barrière"
+      "fr": "Barrière",
+      "es": "Barrera"
     },
     "mappings": [
       {
@@ -40,7 +42,8 @@
           "nl": "Paaltje",
           "de": "Poller",
           "ru": "Прикол",
-          "fr": "Bollard"
+          "fr": "Bollard",
+          "es": "Bolardo"
         }
       },
       {
@@ -62,7 +65,8 @@
         "de": "Poller",
         "ru": "Прикол",
         "fr": "Bollard",
-        "hu": "Terelőoszlop"
+        "hu": "Terelőoszlop",
+        "es": "Bolardo"
       },
       "tags": [
         "barrier=bollard"
@@ -168,7 +172,8 @@
         "nl": "Wat voor soort paal is dit?",
         "de": "Um was für einen Poller handelt es sich?",
         "fr": "Quel est le type de bollard (borne) ?",
-        "hu": "Milyen fajta terelőoszlop ez?"
+        "hu": "Milyen fajta terelőoszlop ez?",
+        "es": "¿Qué tipo de bolardo es este?"
       },
       "condition": "barrier=bollard",
       "mappings": [
@@ -189,7 +194,8 @@
             "nl": "Vaste paal",
             "de": "Feststehender Poller",
             "fr": "Bollard fixe",
-            "hu": "Rögzített terelőoszlop"
+            "hu": "Rögzített terelőoszlop",
+            "es": "Bolardo fijo"
           }
         },
         {
@@ -209,7 +215,8 @@
             "nl": "Flexibele paal, meestal plastic",
             "de": "Flexibler Poller, meist aus Kunststoff",
             "fr": "Bollard flexible, généralement en plastique",
-            "hu": "Rugalmas (általában műanyag) terelőoszlop"
+            "hu": "Rugalmas (általában műanyag) terelőoszlop",
+            "es": "Bolardo flexible, normalmente plástico"
           }
         },
         {
@@ -219,7 +226,8 @@
             "nl": "Verzonken poller",
             "de": "Ausfahrender Poller",
             "fr": "Bollard rétractable",
-            "hu": "Felemelkedő terelőoszlop"
+            "hu": "Felemelkedő terelőoszlop",
+            "es": "Bolardo levadizo"
           }
         }
       ],
@@ -375,7 +383,8 @@
         "en": "Overlap: {overlap} m",
         "de": "Überschneidung: {overlap} m",
         "hu": "Átfedés: {overlap} m",
-        "fr": "Chevauchement : {overlap} m"
+        "fr": "Chevauchement : {overlap} m",
+        "nl": "Overlap: {overlap} m"
       },
       "question": {
         "en": "How much overlap do the barriers have?",

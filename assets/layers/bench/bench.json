@@ -53,7 +53,7 @@
             "de": "Rückenlehne: Ja",
             "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
-            "es": "Respaldo: Si",
+            "es": "Respaldo: sí",
             "hu": "Háttámla van",
             "id": "Sandaran: Ya",
             "it": "Schienale: Sì",
@@ -74,7 +74,7 @@
             "de": "Rückenlehne: Nein",
             "fr": "Dossier : Non",
             "nl": "Rugleuning ontbreekt",
-            "es": "Respaldo: No",
+            "es": "Respaldo: no",
             "hu": "Háttámla nincs",
             "id": "Sandaran: Tidak",
             "it": "Schienale: No",
@@ -94,7 +94,7 @@
         "de": "Hat diese Bank eine Rückenlehne?",
         "fr": "Ce banc dispose-t-il d'un dossier ?",
         "nl": "Heeft deze zitbank een rugleuning?",
-        "es": "¿Este banco tiene un respaldo?",
+        "es": "¿Este banco tiene respaldo?",
         "hu": "Van-e háttámlája ennek a padnak?",
         "id": "Apakah bangku ini memiliki sandaran?",
         "it": "Questa panchina ha lo schienale?",
@@ -327,7 +327,8 @@
         "zh_Hant": "坐在長椅時是面對那個方向？",
         "pt_BR": "Em que direção você olha quando está sentado no banco?",
         "pl": "W jakim kierunku patrzysz siedząc na ławce?",
-        "pt": "Em que direção olha quando está sentado no banco?"
+        "pt": "Em que direção olha quando está sentado no banco?",
+        "es": "¿En qué dirección se mira al sentarse en el banco?"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -366,7 +367,8 @@
         "fi": "Väri: {colour}",
         "pl": "Kolor: {colour}",
         "pt": "Cor: {colour}",
-        "eo": "Koloro: {colour}"
+        "eo": "Koloro: {colour}",
+        "es": "Color: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -380,7 +382,8 @@
         "zh_Hant": "這個長椅是什麼顏色的？",
         "pt_BR": "Qual a cor dessa bancada?",
         "pl": "Jaki kolor ma ta ławka?",
-        "pt": "Qual a cor dessa bancada?"
+        "pt": "Qual a cor dessa bancada?",
+        "es": "¿De qué color es este banco?"
       },
       "freeform": {
         "key": "colour",
@@ -424,7 +427,8 @@
             "fi": "Väri: vihreä",
             "pl": "Kolor: zielony",
             "pt": "Cor: verde",
-            "eo": "Koloro: verda"
+            "eo": "Koloro: verda",
+            "es": "Color: verde"
           }
         },
         {
@@ -444,7 +448,8 @@
             "fi": "Väri: harmaa",
             "pl": "Kolor: szary",
             "pt": "Cor: cinzento",
-            "eo": "Koloro: griza"
+            "eo": "Koloro: griza",
+            "es": "Color: gris"
           }
         },
         {
@@ -464,7 +469,8 @@
             "fi": "Väri: valkoinen",
             "pl": "Kolor: biały",
             "pt": "Cor: branco",
-            "eo": "Koloro: blanka"
+            "eo": "Koloro: blanka",
+            "es": "Color: blanco"
           }
         },
         {
@@ -484,7 +490,8 @@
             "fi": "Väri: punainen",
             "pl": "Kolor: czerwony",
             "pt": "Cor: vermelho",
-            "eo": "Koloro: ruĝa"
+            "eo": "Koloro: ruĝa",
+            "es": "Color: rojo"
           }
         },
         {
@@ -504,7 +511,8 @@
             "fi": "Väri: musta",
             "pl": "Kolor: czarny",
             "pt": "Cor: preto",
-            "eo": "Koloro: nigra"
+            "eo": "Koloro: nigra",
+            "es": "Color: negro"
           }
         },
         {
@@ -524,7 +532,8 @@
             "fi": "Väri: sininen",
             "pl": "Kolor: niebieski",
             "pt": "Cor: azul",
-            "eo": "Koloro: blua"
+            "eo": "Koloro: blua",
+            "es": "Color: azul"
           }
         },
         {
@@ -544,7 +553,8 @@
             "fi": "Väri: keltainen",
             "pl": "Kolor: żółty",
             "pt": "Cor: amarelo",
-            "eo": "Koloro: flava"
+            "eo": "Koloro: flava",
+            "es": "Color: amarillo"
           }
         }
       ],

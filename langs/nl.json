@@ -72,7 +72,8 @@
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "zoomInMore": "Zoom verder in om dit kaart-object te kunnen importeren",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "importTags": "Het element zal deze tags krijgen: {tags}"
+                "importTags": "Het element zal deze tags krijgen: {tags}",
+                "howToTest": "Voor testmode, voeg <b>test=true</b> of <b>backend=osm-test</b> to aan de URL. De wijzigingenset zal in de console geprint worden. Gelieve een PR te openen om dit thema als officieel thema toe te voegen en zo de import-knop te activeren."
             },
             "wrongType": "Dit element is geen punt of lijn en kan daarom niet geïmporteerd worden"
         },
@@ -366,11 +367,25 @@
         "text1": "<p>MapComplete is de editor die het gemakkelijk maakt om bij te dragen aan OpenStreetMap.</p>",
         "aboutOsm": {
             "aboutOsm": {
-                "title": "Wat is OpenStreetMap?"
+                "title": "Wat is OpenStreetMap?",
+                "li1": "Sommige winkels hebben attibuten met openingsuren, telefoonnumer, een website, welke betaalmiddelen er geaccepteerd worden, wat ze verkopen, welke diensten ze aanbieden, …",
+                "li3": "en nog veel meer…",
+                "li2": "Toiletten hebben mogelijks informatie over rolstoeltoegankelijkheid, luiertafel, hoeveel een toiletbezoek kost, …",
+                "intro": "OpenStreetMap is een gedeelde, globale databank; gebouwd door vrijwilligers. Alle geodata is er welkom, als deze <b>ter plaatse geverifieerd</b> kan worden.<br>OpenStreetMap is zo uitgegroeid tot een uitgebreide databank: het bevat gegevens over miljoenen objecten binnen duizenden categorieën. Elk individueel object kan ook weer verschillende attributen hebben, waardoor veel nuance ontstaat:",
+                "li0": "Straten hebben een geometrie, maar kunnen ook informatie bevatten over de maximale toegestane snelheid, de wegbedekking, ofdat ze 's nachts verlicht zijn, een link naar Wikipedia, een link naar wat ze vernoemd zijn, welke wandel-, fiets- en busroutes er lopen, …"
+            },
+            "benefits": {
+                "li1": "Je data heeft een groter bereik dan ooit tevoren door de vele hergebruikers zoals Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, de meeste fietsrouteplanners, …"
+            },
+            "vandalism": {
+                "li1": "een kleine, foutieve wijziging heeft weinig impact en brengt dus weinig op voor een vandaal",
+                "intro": "Omdat iedereen de data kan aanpassen, is het inderdaad mogelijk dat iemand opzettelijk een foute aanpassing maakt. Dit gebeurt in de praktijk echter nooit, want:",
+                "li0": "de technische drempel om een wijziging te maken is hoog"
             }
         },
         "osmTitle": "Wat kunnen OpenStreetMap en MapComplete doen voor jouw organisatie?",
-        "intro": "De ontwikkelaar van MapComplete bied professionele ondersteuning aan. Dit document toont enkele mogelijkheden, frequente vragen en de grenzen van wat MapComplete kan."
+        "intro": "De ontwikkelaar van MapComplete bied professionele ondersteuning aan. Dit document toont enkele mogelijkheden, frequente vragen en de grenzen van wat MapComplete kan.",
+        "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>"
     },
     "privacy": {
         "geodata": "Op het moment dat MapComplete je locatie krijgt, blijft deze informatie en de geschiedenis ervan lokaal op je toestel. Je locatiedata wordt nooit automatisch doorgestuurd naar waar dan ook - behalve wanneer een bepaalde functionaliteit daar expliciet om vraagt.",

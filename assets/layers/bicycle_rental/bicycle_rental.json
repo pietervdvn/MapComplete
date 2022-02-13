@@ -18,7 +18,8 @@
   "title": {
     "render": {
       "en": "Bicycle rental",
-      "nl": "Fietsverhuur"
+      "nl": "Fietsverhuur",
+      "es": "Alquiler de bicicletas"
     },
     "mappings": [
       {

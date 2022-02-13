@@ -8,7 +8,8 @@
     "nl": "Bekende adressen in OSM",
     "fr": "Adresses connues d’OpenStreetMap",
     "ru": "Известные адреса в OSM",
-    "id": "Alamat yang dikenal di OSM"
+    "id": "Alamat yang dikenal di OSM",
+    "es": "Direcciones conocidas en OSM"
   },
   "minzoom": 18,
   "source": {
@@ -33,7 +34,8 @@
       "nl": "Bekend adres",
       "fr": "Adresse connue",
       "pl": "Znany adres",
-      "ru": "Известный адрес"
+      "ru": "Известный адрес",
+      "es": "Domicilio conocido"
     }
   },
   "description": {
@@ -45,7 +47,8 @@
     "hu": "Címek",
     "fr": "Adresses",
     "pl": "Adresy",
-    "id": "Alamat"
+    "id": "Alamat",
+    "es": "Direcciones"
   },
   "tagRenderings": [
     {
@@ -66,7 +69,8 @@
         "nl": "Wat is het huisnummer van dit huis?",
         "fr": "Quel est le numéro de ce bâtiment ?",
         "pl": "Jaki jest numer tego domu?",
-        "ru": "Какой номер у этого дома?"
+        "ru": "Какой номер у этого дома?",
+        "es": "¿Cuál es el número de esta casa?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -89,7 +93,8 @@
             "fr": "Ce bâtiment n’a pas de numéro",
             "pl": "Ten budynek nie ma numeru",
             "ru": "У этого здания нет номера",
-            "id": "Bangunan ini tidak memiliki nomor rumah"
+            "id": "Bangunan ini tidak memiliki nomor rumah",
+            "es": "Esta edificación no tiene número"
           }
         }
       ]
@@ -111,7 +116,8 @@
         "nl": "In welke straat bevindt dit adres zich?",
         "fr": "Dans quelle rue est située l’adresse ?",
         "pl": "Na jakiej ulicy znajduje się ten adres?",
-        "ru": "Какая эта улица?"
+        "ru": "Какая эта улица?",
+        "es": "¿En qué calle se encuentra esta dirección?"
       },
       "freeform": {
         "key": "addr:street"
@@ -149,7 +155,9 @@
         "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el",
         "fr": "Précisez ce qui devrait être corrigé ici",
         "pl": "Co wymaga naprawy? Proszę wytłumaczyć",
-        "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan"
+        "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan",
+        "es": "¿Qué debe corregirse aquí? Expóngalo",
+        "nl": "Wat moet hier gecorrigeerd worden? Leg het uit"
       },
       "freeform": {
         "key": "fixme"

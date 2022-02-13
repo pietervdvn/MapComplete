@@ -7,7 +7,8 @@
     "fr": "Couche des ambulances",
     "de": "Karte der Rettungswachen",
     "it": "Carta delle stazioni delle ambulanze",
-    "hu": "Mentőállomás-térkép"
+    "hu": "Mentőállomás-térkép",
+    "nl": "Kaart van ambulancestations"
   },
   "minzoom": 12,
   "source": {
@@ -25,7 +26,8 @@
       "fr": "Station d’ambulances",
       "de": "Rettungswache",
       "it": "Stazione delle ambulanze",
-      "hu": "Mentőállomás"
+      "hu": "Mentőállomás",
+      "nl": "Ambulancestation"
     }
   },
   "description": {
@@ -35,7 +37,8 @@
     "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
     "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
     "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
-    "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей."
+    "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей.",
+    "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard."
   },
   "tagRenderings": [
     {
@@ -50,7 +53,8 @@
         "fr": "Quel est le nom de cette station ?",
         "it": "Qual è il nome di questa stazione delle ambulanze?",
         "de": "Wie heißt diese Rettungswache?",
-        "hu": "Mi a neve ennek a menőtállomásnak?"
+        "hu": "Mi a neve ennek a menőtállomásnak?",
+        "nl": "Hoe heet dit ambulancestation?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -59,7 +63,8 @@
         "fr": "Cette station s’appelle {name}.",
         "it": "Questa stazione è chiamata {name}.",
         "de": "Diese Rettungswache heißt {name}.",
-        "hu": "A mentőállomás neve: {name}."
+        "hu": "A mentőállomás neve: {name}.",
+        "nl": "Dit station heet {name}."
       }
     },
     {
@@ -74,7 +79,8 @@
         "fr": " Quel est le nom de la rue où la station se situe ?",
         "it": " Come si chiama la strada in cui si trova questa stazione?",
         "de": " Wie lautet der Name der Straße, in der sich die Rettungswache befindet?",
-        "hu": " Mi a neve annak az utcának, amelyben az állomás található?"
+        "hu": " Mi a neve annak az utcának, amelyben az állomás található?",
+        "nl": " In welke straat ligt dit station?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -83,7 +89,8 @@
         "fr": "La station fait partie de {addr:street}.",
         "it": "Questa stazione si trova in {addr:street}.",
         "de": "Dieser Bahnhof liegt an der Straße {addr:street}.",
-        "hu": "Ez az állomás a következő utcában van: {addr:street}."
+        "hu": "Ez az állomás a következő utcában van: {addr:street}.",
+        "nl": "Straat waar dit station ligt: {addr:street}"
       }
     },
     {
@@ -95,7 +102,8 @@
         "fr": "Dans quelle localité la station est-elle située ?",
         "it": "Dove si trova la stazione? (ad es. quartiere, paese o città)",
         "de": "Wo befindet sich die Rettungswache? (z. B. Name von Stadtviertel, Dorf oder Stadt)",
-        "hu": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)"
+        "hu": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)",
+        "nl": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)"
       },
       "freeform": {
         "key": "addr:place"
@@ -106,7 +114,8 @@
         "fr": "La station fait partie de {addr:place}.",
         "it": "La stazione si trova a {addr:place}.",
         "de": "Diese Rettungswache befindet sich in {addr:place}.",
-        "hu": "Ez az állomás itt található: {addr:place}."
+        "hu": "Ez az állomás itt található: {addr:place}.",
+        "nl": "Dit station ligt in {addr:place}."
       }
     },
     {
@@ -118,7 +127,8 @@
         "it": "Quale agenzia gestisce questa stazione?",
         "de": "Welches Unternehmen betreibt diese Rettungswache?",
         "hu": "Milyen szervezet működteti ezt az állomást?",
-        "ru": "Какая организация управляет этой станцией?"
+        "ru": "Какая организация управляет этой станцией?",
+        "nl": "Welke organisatie beheert dit station?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -127,7 +137,8 @@
         "it": "Questa stazione è gestita da {operator}.",
         "de": "Diese Rettungswache wird betrieben von {operator}.",
         "hu": "Az állomás üzemeltetője: {operator}.",
-        "ru": "Эта станция управляется {operator}."
+        "ru": "Эта станция управляется {operator}.",
+        "nl": "Dit station wordt beheerd door {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -142,7 +153,8 @@
         "fr": "Quel est le type d’exploitant ?",
         "it": "Com’è classificato il gestore della stazione?",
         "de": "Wie kann der Betreiber der Rettungswache eingestuft werden?",
-        "hu": "Hogyan sorolható be az állomás üzemeltetője?"
+        "hu": "Hogyan sorolható be az állomás üzemeltetője?",
+        "nl": "Wat voor een organisatie is de beheerder van dit station?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -150,7 +162,8 @@
         "fr": "L’exploitant est de type {operator:type}.",
         "it": "L’operatore è un ente {operator:type}.",
         "de": "Der Betreiber ist eine {operator:type}.",
-        "hu": "Az üzemeltető egy {operator:type} jellegű szervezet."
+        "hu": "Az üzemeltető egy {operator:type} jellegű szervezet.",
+        "nl": "De beheerder is van het type {operator:type}."
       },
       "freeform": {
         "key": "operator:type"
@@ -169,7 +182,8 @@
             "it": "La stazione è gestita dal governo.",
             "de": "Die Rettungswache wird von einer Behörde betrieben.",
             "hu": "A mentőállomást a kormány üzemelteti.",
-            "ru": "Станция управляется правительством."
+            "ru": "Станция управляется правительством.",
+            "nl": "Dit station wordt beheerd door de overheid."
           }
         },
         {
@@ -185,7 +199,8 @@
             "it": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale.",
             "de": "Die Rettungswache wird von einer gemeindenahen oder informellen Organisation betrieben.",
             "hu": "Mentőállomást egy közösségi vagy nem hivatalos szervezet működteti.",
-            "ru": "Станция управляется волонтёрами или частной организацией."
+            "ru": "Станция управляется волонтёрами или частной организацией.",
+            "nl": "Dit station wordt beheerd door een informele of community organisatie."
           }
         },
         {
@@ -200,7 +215,8 @@
             "fr": "La station est opérée par un groupe officiel de bénévoles.",
             "it": "La stazione è gestita da un gruppo ufficiale di volontari.",
             "de": "Die Rettungswache wird von einer Freiwilligenorganisation betrieben.",
-            "hu": "A mentőállomást egy önkéntesekből álló hivatalos csoport működteti."
+            "hu": "A mentőállomást egy önkéntesekből álló hivatalos csoport működteti.",
+            "nl": "Dit station wordt beheerd door een formele groep vrijwilligers."
           }
         },
         {
@@ -215,7 +231,8 @@
             "fr": "La station est opérée par un groupe privé.",
             "it": "La stazione è gestita da un privato.",
             "de": "Die Rettungswache wird von einer privaten Organisation betrieben.",
-            "hu": "Az állomást egy magánkézben lévő szervezet működteti."
+            "hu": "Az állomást egy magánkézben lévő szervezet működteti.",
+            "nl": "Dit station wordt beheerd door een privé-organisatie."
           }
         }
       ]
@@ -234,7 +251,8 @@
         "fr": "Station d’ambulances",
         "de": "Rettungswache",
         "it": "Stazione delle ambulanze",
-        "hu": "Mentőállomás"
+        "hu": "Mentőállomás",
+        "nl": "Ambulancestation"
       },
       "description": {
         "en": "Add an ambulance station to the map",
@@ -243,7 +261,8 @@
         "fr": "Ajouter une station d’ambulances à la carte",
         "de": "Eine Rettungsstation der Karte hinzufügen",
         "it": "Aggiungi una stazione delle ambulanza alla mappa",
-        "hu": "Mentőállomás hozzáadása a térképhez"
+        "hu": "Mentőállomás hozzáadása a térképhez",
+        "nl": "Voeg een ambulancestation toe aan de kaart"
       }
     }
   ],
