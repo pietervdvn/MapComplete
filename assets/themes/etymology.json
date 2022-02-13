@@ -96,7 +96,7 @@
       "override": {
         "id": "education_institutions_without_etymology",
         "name": {
-          "en": "Education institutions without etymology information",
+          "en": "Education institutions without etymology information"
         },
         "minzoom": 18,
         "source": {
