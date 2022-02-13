@@ -90,6 +90,31 @@
           }
         }
       }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "education_institutions_without_etymology",
+        "name": {
+          "en": "Education institutions without etymology information"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "amenity=school",
+                  "amenity=kindergarten",
+                  "amenity=university",
+                  "amenity=college"
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
   ],
   "hideFromOverview": false
