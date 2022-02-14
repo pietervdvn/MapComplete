@@ -11,11 +11,11 @@
     + [string](#string)
     + [text](#text)
     + [date](#date)
-    + [direction](#direction)
-    + [length](#length)
-    + [wikidata](#wikidata)
-    + [int](#int)
     + [nat](#nat)
+    + [int](#int)
+    + [decimal](#decimal)
+    + [direction](#direction)
+    + [wikidata](#wikidata)
     + [pnat](#pnat)
     + [float](#float)
     + [pfloat](#pfloat)
@@ -35,7 +35,7 @@ The listed types here trigger a special input element. Use them in `tagrendering
 
 
 
-A basic string
+A simple piece of text
 
 
 
@@ -43,7 +43,7 @@ A basic string
 
 
 
-A string, but allows input of longer strings more comfortably and supports newlines (a text area)
+A longer piece of text
 
 
 
@@ -51,7 +51,31 @@ A string, but allows input of longer strings more comfortably and supports newli
 
 
 
-A date
+A date with date picker
+
+
+
+### nat 
+
+
+
+A positive number or zero
+
+
+
+### int 
+
+
+
+A number
+
+
+
+### decimal 
+
+
+
+A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
 
 
 
@@ -60,14 +84,6 @@ A date
 
 
 A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)
-
-
-
-### length 
-
-
-
-A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
 
 
 
@@ -118,22 +134,6 @@ removePostfixes | remove these snippets of text from the end of the passed strin
 
 
 
-### int 
-
-
-
-A number
-
-
-
-### nat 
-
-
-
-A positive number or zero
-
-
-
 ### pnat 
 
 
@@ -154,7 +154,7 @@ A decimal
 
 
 
-A positive decimal (incl zero)
+A positive decimal (inclusive zero)
 
 
 
