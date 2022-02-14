@@ -10,7 +10,6 @@ import BaseUIElement from "../../UI/BaseUIElement";
 import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
 import {QueryParameters} from "../Web/QueryParameters";
-import * as personal from "../../assets/themes/personal/personal.json";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
@@ -18,7 +17,7 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
 import TitleHandler from "../Actors/TitleHandler";
 import {BBox} from "../BBox";
-import MetaTagging from "../MetaTagging";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 /**
  * Contains all the leaflet-map related state
@@ -120,7 +119,7 @@ export default class MapState extends UserRelatedState {
 
         this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
             config: c,
-            isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, "" + c.defaultState, "Wether or not the overlay " + c.id + " is shown")
+            isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, c.defaultState, "Wether or not the overlay " + c.id + " is shown")
         }))
         this.filteredLayers = this.InitializeFilteredLayers()
 
@@ -345,24 +344,41 @@ export default class MapState extends UserRelatedState {
 
     }
 
+    private getPref(key: string, layer: LayerConfig): UIEventSource<boolean> {
+      const pref = this.osmConnection
+            .GetPreference(key)
+            .map(v => {
+                if(v === undefined){
+                    return undefined
+                }
+                return v === "true";
+            }, [], b => {
+                if(b === undefined){
+                    return undefined
+                }
+                return "" + b;
+            })
+        pref.setData(layer.shownByDefault)
+        return pref
+    }
+
     private InitializeFilteredLayers() {
 
         const layoutToUse = this.layoutToUse;
         const flayers: FilteredLayer[] = [];
         for (const layer of layoutToUse.layers) {
             let isDisplayed: UIEventSource<boolean>
-            if (layoutToUse.id === personal.id) {
-                isDisplayed = this.osmConnection.GetPreference("personal-theme-layer-" + layer.id + "-enabled")
-                    .map(value => value === "yes", [], enabled => {
-                        return enabled ? "yes" : "";
-                    })
+            if (layer.syncSelection === "local") {
+                isDisplayed = LocalStorageSource.GetParsed(layoutToUse.id + "-layer-" + layer.id + "-enabled", layer.shownByDefault)
+            } else if (layer.syncSelection === "theme-only") {
+                isDisplayed = this.getPref(layoutToUse.id+ "-layer-" + layer.id + "-enabled", layer)
+            } else if (layer.syncSelection === "global") {
+                isDisplayed = this.getPref("layer-" + layer.id + "-enabled", layer)
             } else {
-                isDisplayed = QueryParameters.GetBooleanQueryParameter(
-                    "layer-" + layer.id,
-                    "" + layer.shownByDefault,
-                    "Wether or not layer " + layer.id + " is shown"
-                )
+                isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id + "-enabled",layer.shownByDefault, "Wether or not layer "+layer.id+" is shown")
             }
+
+
             const flayer: FilteredLayer = {
                 isDisplayed: isDisplayed,
                 layerDef: layer,
@@ -380,14 +396,14 @@ export default class MapState extends UserRelatedState {
         }
 
         for (const layer of layoutToUse.layers) {
-            if(layer.filterIsSameAs === undefined){
+            if (layer.filterIsSameAs === undefined) {
                 continue
             }
             const toReuse = flayers.find(l => l.layerDef.id === layer.filterIsSameAs)
-            if(toReuse === undefined){
-                throw "Error in layer "+layer.id+": it defines that it should be use the filters of "+layer.filterIsSameAs+", but this layer was not loaded"
+            if (toReuse === undefined) {
+                throw "Error in layer " + layer.id + ": it defines that it should be use the filters of " + layer.filterIsSameAs + ", but this layer was not loaded"
             }
-            console.warn("Linking filter and isDisplayed-states of "+layer.id+" and "+layer.filterIsSameAs)
+            console.warn("Linking filter and isDisplayed-states of " + layer.id + " and " + layer.filterIsSameAs)
             const selfLayer = flayers.findIndex(l => l.layerDef.id === layer.id)
             flayers[selfLayer] = {
                 isDisplayed: toReuse.isDisplayed,
@@ -395,7 +411,7 @@ export default class MapState extends UserRelatedState {
                 appliedFilters: toReuse.appliedFilters
             };
         }
-        
+
         return new UIEventSource<FilteredLayer[]>(flayers);
     }
 

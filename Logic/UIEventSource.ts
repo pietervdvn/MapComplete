@@ -326,8 +326,10 @@ export class UIEventSource<T> {
         this.addCallback((latest) => otherSource.setData(latest));
         const self = this;
         otherSource.addCallback((latest) => self.setData(latest));
-        if (reverseOverride && otherSource.data !== undefined) {
-            this.setData(otherSource.data);
+        if (reverseOverride) {
+            if(otherSource.data !== undefined){
+                this.setData(otherSource.data);
+            }
         } else if (this.data === undefined) {
             this.setData(otherSource.data);
         } else {

@@ -138,7 +138,6 @@ export class OsmPreferences {
             const prefixes = ["mapcomplete-installed-theme", "mapcomplete-installed-themes-", "mapcomplete-current-open-changeset", "mapcomplete-personal-theme-layer"]
             for (const key in prefs) {
                 for (const prefix of prefixes) {
-                    // console.log(key)
                     if (key.startsWith(prefix)) {
                         console.log("Clearing ", key)
                         self.GetPreference(key, "").setData("")
@@ -173,8 +172,9 @@ export class OsmPreferences {
             // We merge all the preferences: new keys are uploaded
             // For differing values, the server overrides local changes
             self.preferenceSources.forEach((preference, key) => {
-                const osmValue = self.preferences[key]
-                if(osmValue === undefined){
+                const osmValue = self.preferences.data[key]
+                    console.log("Sending value to osm:", key," osm has: ", osmValue, " local has: ", preference.data)
+                if(osmValue === undefined && preference.data !== undefined){
                     // OSM doesn't know this value yet
                     self.UploadPreference(key, preference.data)
                 } else {

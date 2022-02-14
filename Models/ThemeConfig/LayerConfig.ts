@@ -61,6 +61,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly filterIsSameAs: string;
     public readonly forceLoad: boolean;
     
+    public readonly syncSelection:  "no" | "local" | "theme-only" | "global"
+    
     constructor(
         json: LayerConfigJson,
         context?: string,
@@ -90,7 +92,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-
+        this.syncSelection = json.syncSelection;
         const osmTags = TagUtils.Tag(
             json.source.osmTags,
             context + "source.osmTags"
