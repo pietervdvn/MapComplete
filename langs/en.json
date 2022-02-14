@@ -395,7 +395,7 @@
             },
             "survey": {
                 "title": "Survey possibilities",
-                "intro": "<p>MapComplete is an easy to use <i>survey</i> tool. It is ideal to collect the necessary in a few clicks, both on desktop and on mobile. This data is contributed directly into OpenStreetMap.</p><p>We can setup a <b>custom survey tool</b>, asking precisely the data you need in a future-proof way.</p><p>Do you have a dataset that has to be (re)surveyed? This is the perfect moment to make the switch to OpenStreetMap.MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.</p>\n"
+                "intro": "<p>MapComplete is an easy to use <i>survey</i> tool. It is ideal to collect the necessary in a few clicks, both on desktop and on mobile. This data is contributed directly into OpenStreetMap.</p><p>We can setup a <b>custom survey tool</b>, asking precisely the data you need in a future-proof way.</p><p>Do you have a dataset that has to be (re)surveyed? This is the perfect moment to make the switch to OpenStreetMap. MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.</p>\n"
             },
             "internalUse": {
                 "title": "Using the data in internal processes",
@@ -432,13 +432,13 @@
                 "usecaseMapDifferentSources": {
                     "title": "Creating a map from different sources",
                     "intro": "<p>For example, one could make a map with all benches in some city, based on the benches known by OpenStreetMap. This printed map needs a clear statement that the map data is based on OpenStreetMap. Selling these maps is permitted.If the mapmaker notices that the benches are missing in some area and adds them on the printed map, the data on the missing benches are automatically open data too. This means that an OpenStreetMap-contributor is allowed to take the paper map and use it to add the missing benches back into OpenStreetMap.</p><p>This contributor also has the right to ask for the dataset of the missing benches, which should be provided too.</p><p>If the mapmaker notices that the benches are missing in some area and adds them on the printed map, the data on the missing benches are automatically open data too. This means that an OpenStreetMap-contributor is allowed to take the paper map and use it to add the missing benches back into OpenStreetMap. This contributor also has the right to ask for the dataset of the missing benches, which should be provided too.</p><p>Of course, a map with only benches can be boring. The mapmaker might also decide to add in a layer with shops, possibly sourced from another geodata provider under another license. This is permitted to, if the map clearly states that the benches are sourced from OSM (under ODBL) and the shops have a different source (eventually with an all rights reserved).</p><p>However, mixing two datasets into one undistinguishible layer might not be permitted. For example, the mapmaker migth find that OSM has excellent data on benches in one part of the city and the closed-source provider might have excellent data on benches in another part of the city, merging these datasets into one could be problematic: </p>",
-                    "li0": "the open license would require the modifications to be openly republished...",
-                    "li1": "...whereas the all-rights-reserved license would prohibit this.",
+                    "li0": "the open license would require the modifications to be openly republished…",
+                    "li1": "…whereas the all-rights-reserved license would prohibit this.",
                     "outro": "As a result, this kind of mixing is not allowed"
                 },
                 "usecaseGatheringOpenData": {
                     "title": "Gathering open data",
-                    "intro": "MapComplete is an excellent way to create Open Data, also for governments. By default, this data will be freely redistributable under the ODbL. However, if there is a requirement to publish the gathered data under a <i>public domain</i>-license (where <b>all</b> rights are granted to the public and no attribution is required), the ODbL is too restrictive. In this case, one can ask the contributors to add data as Public Domain (e.g. by informing them in the mapcomplete theme).  "
+                    "intro": "MapComplete is an excellent way to create Open Data, also for governments. By default, this data will be freely redistributable under the ODbL. However, if there is a requirement to publish the gathered data under a <i>public domain</i>-license (where <b>all</b> rights are granted to the public and no attribution is required), the ODbL is too restrictive. In this case, one can ask the contributors to add data as Public Domain (e.g. by informing them in the mapcomplete theme)."
                 }
             }
         }
