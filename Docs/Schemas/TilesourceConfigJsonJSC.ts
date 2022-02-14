@@ -249,7 +249,7 @@ export default {
         }
       }
     },
-    "default_3": {
+    "default_4": {
       "description": "The PointRenderingConfig gives all details onto how to render a single point of a feature.\n\nThis can be used if:\n\n- The feature is a point\n- To render something at the centroid of an area, or at the start, end or projected centroid of a way",
       "type": "object",
       "properties": {
@@ -343,7 +343,7 @@ export default {
         "location"
       ]
     },
-    "default_4": {
+    "default_5": {
       "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
       "type": "object",
       "properties": {
@@ -433,7 +433,7 @@ export default {
         }
       }
     },
-    "default": {
+    "default_1": {
       "type": "object",
       "properties": {
         "id": {
@@ -546,7 +546,7 @@ export default {
         }
       }
     },
-    "default_2": {
+    "default_3": {
       "type": "object",
       "properties": {
         "enableImproveAccuracy": {
@@ -559,7 +559,7 @@ export default {
         }
       }
     },
-    "default_1": {
+    "default_2": {
       "type": "object",
       "properties": {
         "appliesToKey": {

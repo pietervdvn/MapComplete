@@ -187,10 +187,10 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "#/definitions/default_3"
+                "$ref": "#/definitions/default_4"
               },
               {
-                "$ref": "#/definitions/default_4"
+                "$ref": "#/definitions/default_5"
               }
             ]
           }
@@ -378,7 +378,7 @@
         {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/default"
+            "$ref": "#/definitions/default_1"
           }
         },
         {
@@ -409,7 +409,7 @@
       "description": "Indicates if a point can be moved and configures the modalities.\n\nA feature can be moved by MapComplete if:\n\n- It is a point\n- The point is _not_ part of a way or a a relation.\n\nOff by default. Can be enabled by setting this flag or by configuring.",
       "anyOf": [
         {
-          "$ref": "#/definitions/default_2"
+          "$ref": "#/definitions/default_3"
         },
         {
           "type": "boolean"
@@ -424,7 +424,7 @@
       "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/default_1"
+        "$ref": "#/definitions/default_2"
       }
     }
   },
@@ -650,7 +650,7 @@
       },
       "additionalProperties": false
     },
-    "default_3": {
+    "default_4": {
       "description": "The PointRenderingConfig gives all details onto how to render a single point of a feature.\n\nThis can be used if:\n\n- The feature is a point\n- To render something at the centroid of an area, or at the start, end or projected centroid of a way",
       "type": "object",
       "properties": {
@@ -745,7 +745,7 @@
       ],
       "additionalProperties": false
     },
-    "default_4": {
+    "default_5": {
       "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
       "type": "object",
       "properties": {
@@ -836,7 +836,7 @@
       },
       "additionalProperties": false
     },
-    "default": {
+    "default_1": {
       "type": "object",
       "properties": {
         "id": {
@@ -951,7 +951,7 @@
       },
       "additionalProperties": false
     },
-    "default_2": {
+    "default_3": {
       "type": "object",
       "properties": {
         "enableImproveAccuracy": {
@@ -965,7 +965,7 @@
       },
       "additionalProperties": false
     },
-    "default_1": {
+    "default_2": {
       "type": "object",
       "properties": {
         "appliesToKey": {

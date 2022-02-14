@@ -19,7 +19,7 @@ export default class FeatureSwitchState {
     public readonly featureSwitchBackgroundSelection: UIEventSource<boolean>;
     public readonly featureSwitchAddNew: UIEventSource<boolean>;
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>;
-    public readonly featureSwitchIframePopoutEnabled: UIEventSource<boolean>;
+    public readonly featureSwitchExtraLinkEnabled: UIEventSource<boolean>;
     public readonly featureSwitchMoreQuests: UIEventSource<boolean>;
     public readonly featureSwitchShareScreen: UIEventSource<boolean>;
     public readonly featureSwitchGeolocation: UIEventSource<boolean>;
@@ -81,7 +81,7 @@ export default class FeatureSwitchState {
         this.featureSwitchFilter = featSw(
             "fs-filter",
             (layoutToUse) => layoutToUse?.enableLayers ?? true,
-            "Disables/Enables the filter"
+            "Disables/Enables the filter view"
         );
         this.featureSwitchAddNew = featSw(
             "fs-add-new",
@@ -93,10 +93,10 @@ export default class FeatureSwitchState {
             () => true,
             "Disables/enables the help menu or welcome message"
         );
-        this.featureSwitchIframePopoutEnabled = featSw(
+        this.featureSwitchExtraLinkEnabled = featSw(
             "fs-iframe-popout",
-            (layoutToUse) => layoutToUse?.enableIframePopout,
-            "Disables/Enables the iframe-popout button. If in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch)"
+            _ => true,
+            "Disables/Enables the extraLink button. By default, if in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch or another extraLink button is enabled)"
         );
         this.featureSwitchMoreQuests = featSw(
             "fs-more-quests",

@@ -78,7 +78,7 @@ export default {
       "description": "Define some (overlay) slippy map tilesources",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/default_5"
+        "$ref": "#/definitions/default_6"
       }
     },
     "layers": {
@@ -204,43 +204,56 @@ export default {
         }
       ]
     },
+    "extraLink": {
+      "description": "Adds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\n\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced\n\nDefault: {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},",
+      "$ref": "#/definitions/default"
+    },
     "enableUserBadge": {
+      "description": "If set to false, disables logging in.\nThe userbadge will be hidden, all login-buttons will be hidden and editing will be disabled",
       "type": "boolean"
     },
     "enableShareScreen": {
+      "description": "If false, hides the tab 'share'-tab in the welcomeMessage",
       "type": "boolean"
     },
     "enableMoreQuests": {
+      "description": "Hides the tab with more themes in the welcomeMessage",
       "type": "boolean"
     },
     "enableLayers": {
+      "description": "If false, the layer selection/filter view will be hidden\nThe corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'",
       "type": "boolean"
     },
     "enableSearch": {
+      "description": "If set to false, hides the search bar",
       "type": "boolean"
     },
     "enableAddNewPoints": {
+      "description": "If set to false, the ability to add new points or nodes will be disabled.\nEditing already existing features will still be possible",
       "type": "boolean"
     },
     "enableGeolocation": {
+      "description": "If set to false, the 'geolocation'-button will be hidden.",
       "type": "boolean"
     },
     "enableBackgroundLayerSelection": {
+      "description": "Enable switching the backgroundlayer.\nIf false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well",
       "type": "boolean"
     },
     "enableShowAllQuestions": {
+      "description": "If set to true, will show _all_ unanswered questions in a popup instead of just the next one",
       "type": "boolean"
     },
     "enableDownload": {
+      "description": "If set to true, download button for the data will be shown (offers downloading as geojson and csv)",
       "type": "boolean"
     },
     "enablePdfDownload": {
-      "type": "boolean"
-    },
-    "enableIframePopout": {
+      "description": "If set to true, exporting a pdf is enabled",
       "type": "boolean"
     },
     "enableNoteImports": {
+      "description": "If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),\nthese notes will be shown if a relevant layer is present.",
       "type": "boolean"
     },
     "overpassUrl": {
@@ -488,7 +501,7 @@ export default {
         }
       }
     },
-    "default_3": {
+    "default_4": {
       "description": "The PointRenderingConfig gives all details onto how to render a single point of a feature.\n\nThis can be used if:\n\n- The feature is a point\n- To render something at the centroid of an area, or at the start, end or projected centroid of a way",
       "type": "object",
       "properties": {
@@ -582,7 +595,7 @@ export default {
         "location"
       ]
     },
-    "default_4": {
+    "default_5": {
       "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
       "type": "object",
       "properties": {
@@ -672,7 +685,7 @@ export default {
         }
       }
     },
-    "default": {
+    "default_1": {
       "type": "object",
       "properties": {
         "id": {
@@ -785,7 +798,7 @@ export default {
         }
       }
     },
-    "default_2": {
+    "default_3": {
       "type": "object",
       "properties": {
         "enableImproveAccuracy": {
@@ -798,7 +811,7 @@ export default {
         }
       }
     },
-    "default_1": {
+    "default_2": {
       "type": "object",
       "properties": {
         "appliesToKey": {
@@ -825,7 +838,7 @@ export default {
         "appliesToKey"
       ]
     },
-    "default_5": {
+    "default_6": {
       "description": "Configuration for a tilesource config",
       "type": "object",
       "properties": {
@@ -1052,10 +1065,10 @@ export default {
               "items": {
                 "anyOf": [
                   {
-                    "$ref": "#/definitions/default_3"
+                    "$ref": "#/definitions/default_4"
                   },
                   {
-                    "$ref": "#/definitions/default_4"
+                    "$ref": "#/definitions/default_5"
                   }
                 ]
               }
@@ -1243,7 +1256,7 @@ export default {
             {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/default"
+                "$ref": "#/definitions/default_1"
               }
             },
             {
@@ -1274,7 +1287,7 @@ export default {
           "description": "Indicates if a point can be moved and configures the modalities.\n\nA feature can be moved by MapComplete if:\n\n- It is a point\n- The point is _not_ part of a way or a a relation.\n\nOff by default. Can be enabled by setting this flag or by configuring.",
           "anyOf": [
             {
-              "$ref": "#/definitions/default_2"
+              "$ref": "#/definitions/default_3"
             },
             {
               "type": "boolean"
@@ -1289,7 +1302,7 @@ export default {
           "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/default_1"
+            "$ref": "#/definitions/default_2"
           }
         }
       },
@@ -1297,6 +1310,36 @@ export default {
         "id",
         "mapRendering",
         "source"
+      ]
+    },
+    "default": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string"
+        },
+        "text": {},
+        "href": {
+          "type": "string"
+        },
+        "newTab": {
+          "type": "boolean"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "iframe",
+              "no-iframe",
+              "no-welcome-message",
+              "welcome-message"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "href"
       ]
     }
   },

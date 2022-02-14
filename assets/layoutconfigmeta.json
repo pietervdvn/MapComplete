@@ -4929,7 +4929,7 @@
       {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/default_1"
         }
       },
       {
@@ -5038,7 +5038,7 @@
     ],
     "type": [
       {
-        "$ref": "#/definitions/default_2"
+        "$ref": "#/definitions/default_3"
       },
       {
         "type": "boolean"
@@ -5267,6 +5267,78 @@
         }
       }
     ]
+  },
+  {
+    "path": [
+      "enableUserBadge"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableShareScreen"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableMoreQuests"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableLayers"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableSearch"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableAddNewPoints"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableGeolocation"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableBackgroundLayerSelection"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableShowAllQuestions"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableDownload"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enablePdfDownload"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableNoteImports"
+    ],
+    "type": "boolean"
   },
   {
     "path": [
