@@ -733,6 +733,11 @@
                 "override": {
                     "name": "Parks and forests without etymology information"
                 }
+            },
+            "3": {
+                "override": {
+                    "name": "Education institutions without etymology information"
+                }
             }
         },
         "shortDescription": "What is the origin of a toponym?",

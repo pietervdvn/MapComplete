@@ -631,14 +631,6 @@
             },
             "1": {
                 "name": "Knotenpunkte",
-                "presets": {
-                    "0": {
-                        "title": "Knotenpunkt"
-                    },
-                    "1": {
-                        "title": "Knotenpunkt im Netzwerk Spree-Neiße"
-                    }
-                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",

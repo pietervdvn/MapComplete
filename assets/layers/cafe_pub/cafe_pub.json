@@ -226,6 +226,7 @@
   ],
   "description": {
     "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
-    "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel"
+    "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
+    "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen"
   }
 }

@@ -241,7 +241,8 @@
         {
           "if": "defibrillator~*",
           "then": {
-            "en": "This is a special type of defibrillator: {defibrillator}"
+            "en": "This is a special type of defibrillator: {defibrillator}",
+            "nl": "Dit is een speciaal type defibrillator: {defibrillator}"
           },
           "hideInAnswer": true
         }
@@ -581,6 +582,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
+    "en": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device",
+    "nl": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden"
   }
 }

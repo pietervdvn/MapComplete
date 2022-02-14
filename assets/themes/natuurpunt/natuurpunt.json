@@ -106,7 +106,9 @@
           }
         ],
         "presets": [
-          {"tags+": "operator=Natuurpunt"}
+          {
+            "tags+": "operator=Natuurpunt"
+          }
         ]
       }
     },
@@ -198,8 +200,12 @@
       "override": {
         "minzoom": 14,
         "presets": [
-          {"tags+": "operator=Natuurpunt"},
-          {"tags+": "operator=Natuurpunt"}
+          {
+            "tags+": "operator=Natuurpunt"
+          },
+          {
+            "tags+": "operator=Natuurpunt"
+          }
         ],
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",

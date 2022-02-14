@@ -480,7 +480,7 @@
           "if": "cargo_bike=designated",
           "then": {
             "en": "This parking has designated (official) spots for cargo bikes.",
-            "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen",
+            "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen.",
             "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga.",
             "de": "Dieser Parkplatz verfügt über ausgewiesene (offizielle) Plätze für Lastenfahrräder.",
             "fr": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo.",
@@ -519,7 +519,7 @@
       },
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
-        "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen",
+        "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} bakfietsen",
         "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport",
         "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
         "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder",

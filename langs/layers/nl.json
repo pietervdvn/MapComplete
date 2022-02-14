@@ -1074,6 +1074,7 @@
         }
     },
     "bike_themed_object": {
+        "description": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden",
         "name": "Fietsgerelateerd object",
         "title": {
             "mappings": {
@@ -1082,8 +1083,7 @@
                 }
             },
             "render": "Fietsgerelateerd object"
-        },
-        "description": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden"
+        }
     },
     "binocular": {
         "description": "Verrekijkers",
@@ -1212,6 +1212,7 @@
         }
     },
     "cafe_pub": {
+        "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
         "filter": {
             "0": {
                 "options": {
@@ -1269,8 +1270,7 @@
                 }
             },
             "render": "Café"
-        },
-        "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen"
+        }
     },
     "charging_station": {
         "description": "Oplaadpunten",
@@ -2407,6 +2407,7 @@
         }
     },
     "cycleways_and_roads": {
+        "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -2587,10 +2588,12 @@
                 "render": "Deze weg is gemaakt van {surface}"
             },
             "Surface of the street": {
-                "question": "Wat is de kwaliteit van deze straat?",
                 "mappings": {
-                    "7": {
-                        "then": "Onmogelijk om met een voertuig met wielen te passeren"
+                    "0": {
+                        "then": "Bruikbaar voor kleine, harde wielen: rollerblade, skateboard"
+                    },
+                    "1": {
+                        "then": "Bruikbaar voor smalle wielen: racefiets"
                     },
                     "2": {
                         "then": "Bruikbaar voor normale wielen: stadsfiets, rolwagen, step"
@@ -2607,13 +2610,11 @@
                     "6": {
                         "then": "Bruikbaar voor uitzonderlijke terreinvoertuigen: tractor, ATV"
                     },
-                    "1": {
-                        "then": "Bruikbaar voor smalle wielen: racefiets"
-                    },
-                    "0": {
-                        "then": "Bruikbaar voor kleine, harde wielen: rollerblade, skateboard"
+                    "7": {
+                        "then": "Onmogelijk om met een voertuig met wielen te passeren"
                     }
-                }
+                },
+                "question": "Wat is de kwaliteit van deze straat?"
             },
             "cyclelan-segregation": {
                 "mappings": {
@@ -2786,10 +2787,10 @@
                 }
             },
             "render": "Fietspaden"
-        },
-        "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur"
+        }
     },
     "defibrillator": {
+        "description": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -2914,8 +2915,7 @@
         },
         "title": {
             "render": "Defibrillator"
-        },
-        "description": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden"
+        }
     },
     "direction": {
         "description": "Deze laag toont de oriëntatie van een object",
@@ -2965,9 +2965,14 @@
         }
     },
     "entrance": {
+        "description": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)",
+        "name": "Toegang",
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Het type deur is onbekend"
+                    },
                     "1": {
                         "then": "Een gewone deur die aan scharnieren ophangt en openzwaait"
                     },
@@ -2982,9 +2987,6 @@
                     },
                     "5": {
                         "then": "Er is een toegang zonder een deur"
-                    },
-                    "0": {
-                        "then": "Het type deur is onbekend"
                     }
                 },
                 "question": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
@@ -2996,9 +2998,7 @@
                     }
                 }
             }
-        },
-        "name": "Toegang",
-        "description": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)"
+        }
     },
     "etymology": {
         "description": "Alle lagen met een gelinkt etymology",

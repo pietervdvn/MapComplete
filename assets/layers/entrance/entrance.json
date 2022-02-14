@@ -1,10 +1,12 @@
 {
   "id": "entrance",
   "name": {
-    "en": "Entrance"
+    "en": "Entrance",
+    "nl": "Toegang"
   },
   "description": {
-    "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)"
+    "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)",
+    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)"
   },
   "source": {
     "osmTags": {
@@ -31,7 +33,8 @@
         {
           "if": "entrance=yes",
           "then": {
-            "en": "No specific entrance type is known"
+            "en": "No specific entrance type is known",
+            "nl": "Het specifieke type ingang is onbekend"
           },
           "hideInAnswer": true
         },
@@ -128,13 +131,15 @@
     {
       "id": "Door_type",
       "question": {
-        "en": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"
+        "en": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>",
+        "nl": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
       },
       "mappings": [
         {
           "if": "door=yes",
           "then": {
-            "en": "The door type is not known"
+            "en": "The door type is not known",
+            "nl": "Het type deur is onbekend"
           },
           "hideInAnswer": true
         },
@@ -169,7 +174,8 @@
         {
           "if": "door=no",
           "then": {
-            "en": "This is an entrance without a physical door"
+            "en": "This is an entrance without a physical door",
+            "nl": "Er is een toegang zonder een deur"
           },
           "hideInAnswer": "entrance="
         }
