@@ -7,7 +7,6 @@ import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import xml2js from 'xml2js';
 export default class ScriptUtils {
 
-
     public static fixUtils() {
         Utils.externalDownloadFunction = ScriptUtils.DownloadJSON
     }
@@ -46,7 +45,7 @@ export default class ScriptUtils {
         })
     }
 
-    public static DownloadJSON(url, headers?: any): Promise<any> {
+    private static DownloadJSON(url, headers?: any): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}

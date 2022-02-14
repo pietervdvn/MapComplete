@@ -103,7 +103,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
 
             try {
 
-                const json = await ScriptUtils.DownloadJSON(url)
+                const json = await Utils.downloadJson(url)
                 if ((<string>json.remark ?? "").startsWith("runtime error")) {
                     console.error("Got a runtime error: ", json.remark)
                     failed++;
@@ -142,7 +142,7 @@ async function downloadExtraData(theme: LayoutConfig)/* : any[] */ {
             continue;
         }
         console.log("Downloading extra data: ", source)
-        await ScriptUtils.DownloadJSON(source).then(json => allFeatures.push(...json.features))
+        await Utils.downloadJson(source).then(json => allFeatures.push(...json.features))
     }
     return allFeatures;
 }
@@ -355,7 +355,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
 }
 
 
-async function main(args: string[]) {
+export async function main(args: string[]) {
 
     console.log("Cache builder started with args ", args.join(", "))
     if (args.length < 6) {
@@ -389,7 +389,7 @@ async function main(args: string[]) {
     }
 
     if (isNaN(lon1)) {
-        throw "The first number (a longitude) is not a valid number"
+        throw "The fourth number (a longitude) is not a valid number"
     }
 
 

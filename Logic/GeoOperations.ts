@@ -171,7 +171,7 @@ export class GeoOperations {
             return GeoOperations.pointInPolygonCoordinates(x, y, feature.geometry.coordinates)
         }
 
-        throw "GeoOperations.inside: unsupported geometry type"
+        throw "GeoOperations.inside: unsupported geometry type "+feature.geometry.type
 
 
     }

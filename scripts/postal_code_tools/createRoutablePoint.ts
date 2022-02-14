@@ -5,7 +5,7 @@ import {Utils} from "../../Utils";
 
 
 async function main(args: string[]) {
-
+ScriptUtils.fixUtils()
     const pointCandidates = JSON.parse(readFileSync(args[0], "utf8"))
     const postcodes = JSON.parse(readFileSync(args[1], "utf8"))
     const output = args[2] ?? "centralCoordinates.csv"
@@ -61,7 +61,7 @@ async function main(args: string[]) {
         const depPoints: [number, number][] = Utils.NoNull(await Promise.all(candidates.map(async candidate => {
             try {
 
-                const result = await ScriptUtils.DownloadJSON(url + "&loc=" + candidate.join("%2C") + "&loc=3.22000%2C51.21577&profile=car.short")
+                const result = await Utils.downloadJson(url + "&loc=" + candidate.join("%2C") + "&loc=3.22000%2C51.21577&profile=car.short")
                 const depPoint = result.features.filter(f => f.geometry.type === "LineString")[0].geometry.coordinates[0]
                 return <[number, number]>[depPoint[0], depPoint[1]] // Drop elevation
             } catch (e) {

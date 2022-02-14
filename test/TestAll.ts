@@ -17,11 +17,11 @@ import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 import T from "./TestHelper";
 import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
+import CreateCacheSpec from "./CreateCache.spec";
 
 
 async function main() {
 
-    ScriptUtils.fixUtils()
     const allTests: T[] = [
         new OsmObjectSpec(),
         new TagSpec(),
@@ -38,12 +38,15 @@ async function main() {
         new ActorsSpec(),
         new ReplaceGeometrySpec(),
         new LegacyThemeLoaderSpec(),
-        new CreateNoteImportLayerSpec()
+        new CreateNoteImportLayerSpec(),
+        new CreateCacheSpec()
     ]
+    ScriptUtils.fixUtils();
+    const realDownloadFunc = Utils.externalDownloadFunction;
 
     Utils.externalDownloadFunction = async (url) => {
         console.error("Fetching ", url, "blocked in tests, use Utils.injectJsonDownloadForTests")
-        const data = await ScriptUtils.DownloadJSON(url)
+        const data = await realDownloadFunc(url)
         console.log("\n\n ----------- \nBLOCKED DATA\n Utils.injectJsonDownloadForTests(\n" +
             "       ", JSON.stringify(url), ", \n",
             "       ", JSON.stringify(data), "\n    )\n------------------\n\n")
