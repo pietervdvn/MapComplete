@@ -10,6 +10,7 @@ import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
 import {ExtractImages} from "./FixImages";
 import ScriptUtils from "../../../scripts/ScriptUtils";
+import {And} from "../../../Logic/Tags/And";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -337,6 +338,24 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
             if (json.tagRenderings !== undefined) {
                 new DetectShadowedMappings().convertAll(<TagRenderingConfigJson[]>json.tagRenderings, context + ".tagRenderings")
+            }
+
+            if(json.presets !== undefined){
+                
+                // Check that a preset will be picked up by the layer itself
+                const baseTags = TagUtils.Tag( json.source.osmTags)
+                for (let i = 0; i < json.presets.length; i++){
+                    const preset = json.presets[i];
+                    const tags : {k: string,v: string}[]= new And(preset.tags.map(t => TagUtils.Tag(t))).asChange({id:"node/-1"})
+                    const properties = {}
+                    for (const tag of tags) {
+                        properties[tag.k] = tag.v
+                    }
+                    const doMatch = baseTags.matchesProperties(properties)
+                    if(!doMatch){
+                        errors.push(context+".presets["+i+"]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: "+JSON.stringify(properties)+"\n    The required tags are: "+baseTags.asHumanString(false, false, {}))
+                    }
+                }
             }
 
         } catch (e) {

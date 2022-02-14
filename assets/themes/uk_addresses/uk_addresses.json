@@ -139,8 +139,8 @@
           "id": "to_handle",
           "options": [
             {
-              "question": "Only show non-matched objects",
               "default": true,
+              "question": "Only show non-matched objects",
               "osmTags": {
                 "and": [
                   "_imported=",

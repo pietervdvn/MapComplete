@@ -127,25 +127,6 @@
           "de": "Knotenpunkt <strong>{rcn_ref}</strong>"
         }
       },
-      "presets": [
-        {
-          "title": {
-            "de": "Knotenpunkt"
-          },
-          "tags": [
-            "network:type=node_network"
-          ]
-        },
-        {
-          "title": {
-            "de": "Knotenpunkt im Netzwerk Spree-Neiße"
-          },
-          "tags": [
-            "network:type=node_network",
-            "cycle_network=Knotenpunktwegweisung Spree-Neiße"
-          ]
-        }
-      ],
       "tagRenderings": [
         {
           "question": {

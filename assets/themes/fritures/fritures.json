@@ -28,6 +28,7 @@
           "it": "Friggitoria",
           "hu": "Sültkrumplievő-hely"
         },
+        "=presets": [],
         "source": {
           "=osmTags": {
             "and": [
@@ -47,7 +48,8 @@
       "builtin": "food",
       "override": {
         "minzoom": 19,
-        "filter": null
+        "filter": null,
+        "name": null
       }
     }
   ]
