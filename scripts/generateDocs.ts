@@ -16,6 +16,7 @@ import {QueryParameters} from "../Logic/Web/QueryParameters";
 import QueryParameterDocumentation from "../UI/QueryParameterDocumentation";
 import ScriptUtils from "./ScriptUtils";
 import List from "../UI/Base/List";
+import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 
 function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void {
 
@@ -51,6 +52,7 @@ WriteFile("./Docs/CalculatedTags.md", new Combine([new Title("Metatags", 1),
     ["SimpleMetaTagger", "ExtraFunction"])
 WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["ValidatedTextField.ts"]);
 WriteFile("./Docs/BuiltinLayers.md", AllKnownLayouts.GenLayerOverviewText(), ["AllKnownLayers.ts"])
+WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), ["SharedTagRendings.ts","assets/tagRenderings/questions.json"])
 
 {
     // Generate the builtinIndex which shows interlayer dependencies

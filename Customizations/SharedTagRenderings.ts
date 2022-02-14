@@ -3,6 +3,11 @@ import * as icons from "../assets/tagRenderings/icons.json";
 import {Utils} from "../Utils";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import BaseUIElement from "../UI/BaseUIElement";
+import Combine from "../UI/Base/Combine";
+import Title from "../UI/Base/Title";
+import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import List from "../UI/Base/List";
 
 export default class SharedTagRenderings {
 
@@ -72,5 +77,32 @@ export default class SharedTagRenderings {
         return dict;
     }
 
+
+    public static HelpText(): BaseUIElement {
+        return new Combine([
+            new Combine([
+
+                new Title("Builtin questions",1),
+
+                "The following items can be easily reused in your layers"
+            ]).SetClass("flex flex-col"),
+
+            ... Array.from( SharedTagRenderings.SharedTagRendering.keys()).map(key => {
+                const tr = SharedTagRenderings.SharedTagRendering.get(key)
+                let mappings: BaseUIElement = undefined
+                if(tr.mappings?.length > 0){
+                    mappings = new List(tr.mappings.map(m => m.then.textFor("en")))
+                }
+                return new Combine([
+                    new Title(key),
+                    tr.render?.textFor("en"),
+                    tr.question?.textFor("en") ?? new FixedUiElement("Read-only tagrendering").SetClass("font-bold"),
+                    mappings
+                ]).SetClass("flex flex-col")
+
+            })
+
+        ]).SetClass("flex flex-col")
+    }
 
 }

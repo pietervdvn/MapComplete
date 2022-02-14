@@ -41,7 +41,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
                             for (const img of fromPath) {
                                 if (typeof img !== "string") {
-                                    (this._isOfficial ?   errors: warnings).push("Found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
+                                    (this._isOfficial ?   errors: warnings).push(context+": found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
                                 }
                             }
                             allFoundImages.push(...fromPath.filter(i => typeof i === "string"))
