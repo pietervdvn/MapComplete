@@ -269,10 +269,6 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             const layer = layerOverviewItem;
             const bbox = BBox.get(layer.feature)
             
-            if(layer.name === "AIV Flanders GRB"){
-                console.log("Y U NO LOAD?")
-            }
-            
             if(!bbox.contains(lonlat)){
                 continue
             }
