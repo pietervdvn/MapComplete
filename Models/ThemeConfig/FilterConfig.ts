@@ -105,8 +105,9 @@ export default class FilterConfig {
         if(this.options.length > 1){
             defaultValue = ""+this.defaultSelection 
         }else{
+            // Only a single option
             if(this.defaultSelection > 0){
-                defaultValue = ""+this.defaultSelection
+                defaultValue = "true"
             }
         }
         const qp = QueryParameters.GetQueryParameter("filter-" + this.id, defaultValue, "State of filter " + this.id)

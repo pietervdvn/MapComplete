@@ -68,7 +68,8 @@ export default class UserRelatedState extends ElementsState {
                     id: this.layoutToUse.id,
                     icon: this.layoutToUse.icon,
                     title: this.layoutToUse.title.translations,
-                    shortDescription: this.layoutToUse.shortDescription.translations
+                    shortDescription: this.layoutToUse.shortDescription.translations,
+                    definition: this.layoutToUse["definition"]
                 }))
         }
 

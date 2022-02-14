@@ -72,7 +72,7 @@ export default class DetermineLayout {
 
     public static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
-    ): LayoutConfig | null {
+    ): (LayoutConfig & {definition: LayoutConfigJson}) | null {
         let hash = location.hash.substr(1);
         let json: any;
 
@@ -113,7 +113,9 @@ export default class DetermineLayout {
 
             const layoutToUse = DetermineLayout.prepCustomTheme(json)
             userLayoutParam.setData(layoutToUse.id);
-            return new LayoutConfig(layoutToUse, false);
+            const config = new LayoutConfig(layoutToUse, false);
+            config["definition"] = json
+            return <any> config
         } catch (e) {
             console.error(e)
             if (hash === undefined || hash.length < 10) {

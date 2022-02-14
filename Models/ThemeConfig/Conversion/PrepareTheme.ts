@@ -406,12 +406,31 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
+class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
+    private readonly _state: DesugaringContext;
+    constructor(state: DesugaringContext) {
+        super("Adds every public layer to the personal theme",["layers"],"PreparePersonalTheme");
+        this._state = state;
+    }
+
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if(json.id !== "personal"){
+            return {result: json}
+        }
+        
+        json.layers = Array.from(this._state.sharedLayers.keys())
+        
+        
+        return {result: json};
+    }
+    
+}
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a theme",
-
+            new PreparePersonalTheme(state),
             new OnEveryConcat("layers", new SubstituteLayer(state)),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             new OnEvery("layers", new PrepareLayer(state)),
