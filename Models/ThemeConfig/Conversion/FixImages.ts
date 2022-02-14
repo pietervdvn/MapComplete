@@ -5,15 +5,18 @@ import * as metapaths from "../../../assets/layoutconfigmeta.json";
 import * as tagrenderingmetapaths from "../../../assets/tagrenderingconfigmeta.json";
 
 export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
-    constructor() {
+    private _isOfficial: boolean;
+    constructor(isOfficial: boolean) {
         super("Extract all images from a layoutConfig using the meta paths",[],"ExctractImages");
+        this._isOfficial = isOfficial;
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
         const paths = metapaths["default"] ?? metapaths
         const trpaths = tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
         const allFoundImages = []
         const errors = []
+        const warnings = []
         for (const metapath of paths) {
             if (metapath.typeHint === undefined) {
                 continue
@@ -38,7 +41,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
                             for (const img of fromPath) {
                                 if (typeof img !== "string") {
-                                    errors.push("Found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
+                                    (this._isOfficial ?   errors: warnings).push("Found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
                                 }
                             }
                             allFoundImages.push(...fromPath.filter(i => typeof i === "string"))
@@ -53,7 +56,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
 
         const splitParts = [].concat(...Utils.NoNull(allFoundImages).map(img => img.split(";")))
             .map(img => img.split(":")[0])
-        return {result: Utils.Dedup(splitParts), errors};
+        return {result: Utils.Dedup(splitParts), errors, warnings};
     }
 
 }

@@ -74,7 +74,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
         {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
-            const images = new ExtractImages().convertStrict(json, "validation")
+            const images = new ExtractImages(this._isBuiltin).convertStrict(json, "validation")
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
                 errors.push("Found a remote image: " + remoteImage + " in theme " + json.id + ", please download it.")
