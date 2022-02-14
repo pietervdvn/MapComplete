@@ -95,6 +95,11 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 for (const feature of json.features) {
                     const props = feature.properties
                     for (const key in props) {
+                        
+                        if(props[key] === null){
+                            delete props[key]
+                        }
+                        
                         if (typeof props[key] !== "string") {
                             // Make sure all the values are string, it crashes stuff otherwise
                             props[key] = JSON.stringify(props[key])

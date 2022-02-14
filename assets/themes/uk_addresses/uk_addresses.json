@@ -90,7 +90,7 @@
         "isOsmCache": false
       },
       "name": "Addresses to check",
-      "minzoom": 14,
+      "minzoom": 18,
       "title": {
         "render": {
           "en": "This address needs adding"
@@ -140,6 +140,7 @@
           "options": [
             {
               "question": "Only show non-matched objects",
+              "default": true,
               "osmTags": {
                 "and": [
                   "_imported=",
