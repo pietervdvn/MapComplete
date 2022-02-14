@@ -1,7 +1,7 @@
 import Combine from "../UI/Base/Combine";
 import BaseUIElement from "../UI/BaseUIElement";
 import Translations from "../UI/i18n/Translations";
-import {writeFileSync} from "fs";
+import {existsSync, writeFileSync} from "fs";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import TableOfContents from "../UI/Base/TableOfContents";
 import SimpleMetaTaggers, {SimpleMetaTagger} from "../Logic/SimpleMetaTagger";
@@ -20,6 +20,16 @@ import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 
 function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void {
 
+
+    for (const source of autogenSource) {
+        if(source.indexOf("*") > 0){
+            continue
+        }
+        if(!existsSync(source)){
+           throw "While creating a documentation file and checking that the generation sources are properly linked: source file "+source+" was not found. Typo?"
+        }
+    }
+    
     if (html instanceof Combine) {
         const toc = new TableOfContents(html);
         const els = html.getElements();
@@ -46,13 +56,13 @@ AllKnownLayouts.GenOverviewsForSingleLayer((layer, element) => {
     WriteFile("./Docs/Layers/" + layer.id + ".md", element, [`assets/layers/${layer.id}/${layer.id}.json`])
 
 })
-WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), ["UI/SpecialVisualisations.ts"])
+WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), ["UI/SpecialVisualizations.ts"])
 WriteFile("./Docs/CalculatedTags.md", new Combine([new Title("Metatags", 1),
         SimpleMetaTaggers.HelpText(), ExtraFunctions.HelpText()]).SetClass("flex-col"),
-    ["SimpleMetaTagger", "ExtraFunction"])
-WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["ValidatedTextField.ts"]);
-WriteFile("./Docs/BuiltinLayers.md", AllKnownLayouts.GenLayerOverviewText(), ["AllKnownLayers.ts"])
-WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), ["SharedTagRendings.ts","assets/tagRenderings/questions.json"])
+    ["Logic/SimpleMetaTagger.ts", "Logic/ExtraFunctions.ts"])
+WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), ["UI/Input/ValidatedTextField.ts"]);
+WriteFile("./Docs/BuiltinLayers.md", AllKnownLayouts.GenLayerOverviewText(), ["Customizations/AllKnownLayouts.ts"])
+WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), ["Customizations/SharedTagRenderings.ts","assets/tagRenderings/questions.json"])
 
 {
     // Generate the builtinIndex which shows interlayer dependencies
@@ -137,7 +147,7 @@ new FeatureSwitchState(dummyLayout)
 
 QueryParameters.GetQueryParameter("layer-&lt;layer-id&gt;", "true", "Wether or not the layer with id <layer-id> is shown")
 
-WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryParameterDocs(), ["QueryParameters"])
+WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryParameterDocs(), ["Logic/Web/QueryParameters.ts", "UI/QueryParameterDocumentation.ts"])
 
 console.log("Generated docs")
 
