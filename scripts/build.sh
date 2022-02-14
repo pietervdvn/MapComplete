@@ -25,7 +25,8 @@ cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
-cp assets/generated/*.png dist/assts/generated/
+cp assets/generated/*.png dist/assets/generated/
+cp assets/generated/*.svg dist/assets/generated/
 
 SRC_MAPS="--no-source-maps"
 BRANCH=`git rev-parse --abbrev-ref HEAD`
