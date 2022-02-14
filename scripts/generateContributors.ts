@@ -1,13 +1,14 @@
 import {exec} from "child_process";
 import {writeFile, writeFileSync} from "fs";
 
-function asList(hist: Map<string, number>):{contributor: string, commits: number}[]{
+function asList(hist: Map<string, number>): {contributors: { contributor: string, commits: number }[]
+}{
     const ls = []
     hist.forEach((commits, contributor) => {
         ls.push({commits, contributor})
     })
     ls.sort((a, b) => (b.commits - a.commits))
-    return ls
+    return {contributors: ls}
 }
 
 function main() {
@@ -19,6 +20,9 @@ function main() {
         for (const entry of entries) {
             console.log(entry)
             let [author, message] = entry.split("%!%").map(s => s.trim())
+            if(author === "Weblate"){
+                continue
+            }
             if (author === "pietervdvn") {
                 author = "Pieter Vander Vennet"
             }
