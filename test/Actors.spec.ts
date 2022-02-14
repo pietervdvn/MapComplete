@@ -53,7 +53,7 @@ export default class ActorsSpec extends T {
             [
                 "download latest version",
                 () => {
-                    const state = new UserRelatedState(new LayoutConfig(bookcaseJson, true, "tests"))
+                    const state = new UserRelatedState(new LayoutConfig(<any> bookcaseJson, true, "tests"))
                     const feature = {
                         "type": "Feature",
                         "id": "node/5568693115",
