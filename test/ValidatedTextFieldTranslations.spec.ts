@@ -8,7 +8,7 @@ export default class ValidatedTextFieldTranslationsSpec extends T {
             ["Test all", () => {
                 const ts = Translations.t.validation;
                 console.log("Hello world!")
-                const allErrors = Array.from(ValidatedTextField.AllTypes.keys()).map(key => {
+                const allErrors = Array.from(ValidatedTextField.allTypes.keys()).map(key => {
                     const errors = []
                     const t = ts[key]
                     if (t === undefined) {
