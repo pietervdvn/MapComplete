@@ -146,7 +146,7 @@ export default class TagRenderingQuestion extends Combine {
                     new Combine([options.cancelButton]),
                     saveButton]).SetClass("flex justify-end flex-wrap-reverse")
 
-            ]).SetClass("flex mt-2 justify-between"),Them
+            ]).SetClass("flex mt-2 justify-between"),
             new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
         ])
 
