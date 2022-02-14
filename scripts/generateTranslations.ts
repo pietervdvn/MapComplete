@@ -181,6 +181,11 @@ function transformTranslation(obj: any, depth = 1) {
 
 }
 
+function formatFile(path) {
+    const contents = JSON.parse(readFileSync(path, "utf8"))
+    writeFileSync(path, JSON.stringify(contents, null, "    "))
+}
+
 /**
  * Generates the big compiledTranslations file
  */
@@ -193,7 +198,6 @@ function genTranslations() {
     module += "}"
 
     fs.writeFileSync("./assets/generated/CompiledTranslations.ts", module);
-
 
 }
 
@@ -413,3 +417,4 @@ if (!themeOverwritesWeblate) {
     compileTranslationsFromWeblate();
 }
 genTranslations()
+formatFile("./langs/en.json")
