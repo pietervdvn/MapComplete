@@ -10,7 +10,6 @@ export default class CodeQualitySpec extends T {
                 const excludedDirs = [".git", "node_modules", "dist", ".cache", ".parcel-cache", "assets"]
 
                 exec("grep \"constructor.name\" -r . " + excludedDirs.map(d => "--exclude-dir=" + d).join(" "), ((error, stdout, stderr) => {
-                    console.log("Grep gave: ", stdout)
                     if (error?.message?.startsWith("Command failed: grep")) {
                         return;
                     }
