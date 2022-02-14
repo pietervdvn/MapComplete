@@ -6615,11 +6615,6 @@
       "key": "vending",
       "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key vending.",
       "value": ""
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Personal theme has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }
