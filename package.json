@@ -31,7 +31,7 @@
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
     "query:licenses": "ts-node scripts/generateLicenseInfo.ts --query",
     "generate:report": "cd Docs/Tools && ./compileStats.sh && git commit . -m 'New statistics ands graphs' && git push",
-    "generate:contributor-list": "git log --pretty='%aN' | sort | uniq -c | sort -hr | sed 's/ *\\([0-9]*\\) \\(.*\\)$/{\"contributor\":\"\\2\", \"commits\":\\1}/' | tr '\\n' ',' | sed 's/^/{\"contributors\":[/' | sed 's/,$/]}/' | jq > assets/contributors.json",
+    "generate:contributor-list": "ts-node scripts/generateContributors.ts",
     "generate:schemas": "ts2json-schema -p Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && ts-node scripts/fixSchemas.ts ",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
     "reset:layeroverview": "echo {\\\"layers\\\":[], \\\"themes\\\":[]} > ./assets/generated/known_layers_and_themes.json && echo {\\\"layers\\\": []} > ./assets/generated/known_layers.json",
