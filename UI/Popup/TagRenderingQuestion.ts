@@ -141,14 +141,12 @@ export default class TagRenderingQuestion extends Combine {
             question,
             inputElement,
             new Combine([
-                new VariableUiElement(feedback.map(t => t?.SetClass("alert") ?? "")).SetClass("grid justify-items-center"),
+                new VariableUiElement(feedback.map(t => t?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")?.SetClass("alert flex") ?? bottomTags)),
                 new Combine([
                     new Combine([options.cancelButton]),
                     saveButton]).SetClass("flex justify-end flex-wrap-reverse")
 
-            ]).SetClass("flex mt-2 justify-between")
-            ,
-            bottomTags,
+            ]).SetClass("flex mt-2 justify-between"),Them
             new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
         ])
 

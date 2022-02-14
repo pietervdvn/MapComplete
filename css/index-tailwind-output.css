@@ -1148,10 +1148,6 @@ video {
   width: 2.75rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
 .w-4 {
   width: 1rem;
 }
@@ -1306,10 +1302,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-items-center {
-  justify-items: center;
 }
 
 .gap-4 {

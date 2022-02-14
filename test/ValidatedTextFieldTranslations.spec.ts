@@ -19,7 +19,7 @@ export default class ValidatedTextFieldTranslationsSpec extends T {
                 const errs = [].concat(...allErrors)
                 if (errs.length > 0) {
                     errs.forEach(e => console.log(e))
-                   // throw errs.join("\n")
+                  //  throw errs.join("\n")
                 }
             }]
         ]);
