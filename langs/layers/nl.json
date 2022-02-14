@@ -420,6 +420,15 @@
     "bicycle_rental": {
         "description": "Fietsverhuustations",
         "name": "Fietsverhuur",
+        "presets": {
+            "0": {
+                "description": "Een bemande winkel die focust op fietsverhuur",
+                "title": "fietsverhuurzaak"
+            },
+            "1": {
+                "title": "fietsverhuur"
+            }
+        },
         "tagRenderings": {
             "8": {
                 "renderings": {

@@ -420,6 +420,15 @@
     "bicycle_rental": {
         "description": "Bicycle rental stations",
         "name": "Bicycle rental",
+        "presets": {
+            "0": {
+                "description": "A manned shop which focuses on bicycle rental",
+                "title": "bicycle rental shop"
+            },
+            "1": {
+                "title": "bicycle rental"
+            }
+        },
         "tagRenderings": {
             "8": {
                 "renderings": {

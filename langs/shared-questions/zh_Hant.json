@@ -59,6 +59,18 @@
             },
             "question": "這邊接受那種付款方式？"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "使用專用應用程式付款"
+                    },
+                    "1": {
+                        "then": "使用會員卡付款"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "{name} 的電話號碼是什麼？"
         },
@@ -114,18 +126,6 @@
                 }
             },
             "question": "維基百科上對應的項目是什麼？"
-        },
-        "payment-options-advanced": {
-            "override": {
-                "mappings+": {
-                    "0": {
-                        "then": "使用專用應用程式付款"
-                    },
-                    "1": {
-                        "then": "使用會員卡付款"
-                    }
-                }
-            }
         }
     }
 }
