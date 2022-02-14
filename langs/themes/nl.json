@@ -603,12 +603,12 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Straten zonder etymologische informatie"
+                    "=name": "Straten zonder etymologische informatie"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parken en bossen zonder etymologische informatie"
+                    "=name": "Parken en bossen zonder etymologische informatie"
                 }
             }
         },

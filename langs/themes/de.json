@@ -716,12 +716,12 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Straßen ohne Informationen zur Namensherkunft"
+                    "=name": "Straßen ohne Informationen zur Namensherkunft"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
+                    "=name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
                 }
             }
         },

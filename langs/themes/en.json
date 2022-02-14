@@ -726,17 +726,17 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Streets without etymology information"
+                    "=name": "Streets without etymology information"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parks and forests without etymology information"
+                    "=name": "Parks and forests without etymology information"
                 }
             },
             "3": {
                 "override": {
-                    "name": "Education institutions without etymology information"
+                    "=name": "Education institutions without etymology information"
                 }
             }
         },
