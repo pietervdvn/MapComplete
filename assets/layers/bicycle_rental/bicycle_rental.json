@@ -257,7 +257,31 @@
       ]
     }
   ],
-  "presets": [],
+  "presets": [
+    {
+      "title": {
+        "en": "bicycle rental shop",
+        "nl": "fietsverhuurzaak"
+      },
+      "tags": [
+        "amenity=bicycle_rental",
+        "bicycle_rental=shop"
+      ],
+      "description": {
+        "en": "A manned shop which focuses on bicycle rental",
+        "nl": "Een bemande winkel die focust op fietsverhuur"
+      }
+    },
+    {
+      "title": {
+        "en": "bicycle rental",
+        "nl": "fietsverhuur"
+      },
+      "tags": [
+        "amenity=bicycle_rental"
+      ]
+    }
+  ],
   "mapRendering": [
     {
       "icon": "./assets/themes/bicycle_rental/logo.svg",
