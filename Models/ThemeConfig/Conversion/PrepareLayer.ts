@@ -8,7 +8,7 @@ import {Translation} from "../../../UI/i18n/Translation";
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
     constructor(state: DesugaringContext) {
-        super("Converts a tagRenderingSpec into the full tagRendering", []);
+        super("Converts a tagRenderingSpec into the full tagRendering", [],"ExpandTagRendering");
         this._state = state;
     }
 
@@ -147,7 +147,8 @@ class ExpandGroupRewrite extends Conversion<{
 
     constructor(state: DesugaringContext) {
         super(
-            "Converts a rewrite config for tagRenderings into the expanded form"
+            "Converts a rewrite config for tagRenderings into the expanded form",[],
+            "ExpandGroupRewrite"
         );
         this._expandSubTagRenderings = new ExpandTagRendering(state)
     }

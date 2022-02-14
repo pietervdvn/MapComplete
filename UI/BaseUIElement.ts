@@ -102,11 +102,6 @@ export default abstract class BaseUIElement {
             return this._constructedHtmlElement
         }
 
-        if (this.InnerConstructElement === undefined) {
-            throw "ERROR! This is not a correct baseUIElement: " + this.constructor.name
-        }
-
-
         try {
             const el = this.InnerConstructElement();
 
@@ -152,7 +147,7 @@ export default abstract class BaseUIElement {
     }
 
     public AsMarkdown(): string {
-        throw "AsMarkdown is not implemented by " + this.constructor.name + "; implement it in the subclass"
+        throw "AsMarkdown is not implemented; implement it in the subclass"
     }
 
     public Destroy() {

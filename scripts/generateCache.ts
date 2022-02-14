@@ -458,11 +458,13 @@ export async function main(args: string[]) {
 
 
 let args = [...process.argv]
-args.splice(0, 2)
-try {
-    main(args)
-        .then(() => console.log("All done!"))
-        .catch(e => console.error("Error building cache:", e));
-} catch (e) {
-    console.error("Error building cache:", e)
+if (!args[1]?.endsWith("test/TestAll.ts")) {
+    args.splice(0, 2)
+    try {
+        main(args)
+            .then(() => console.log("All done!"))
+            .catch(e => console.error("Error building cache:", e));
+    } catch (e) {
+        console.error("Error building cache:", e)
+    }
 }

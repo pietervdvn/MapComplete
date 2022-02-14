@@ -8,7 +8,8 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
 
     constructor() {
         super("Updates various attributes from the old data format to the new to provide backwards compatibility with the formats",
-            ["overpassTags", "source.osmtags", "tagRenderings[*].id", "mapRendering"]);
+            ["overpassTags", "source.osmtags", "tagRenderings[*].id", "mapRendering"],
+            "UpdateLegacyLayer");
     }
 
     convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings: string[] } {
@@ -120,7 +121,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
 
 class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
     constructor() {
-        super("Small fixes in the theme config", ["roamingRenderings"]);
+        super("Small fixes in the theme config", ["roamingRenderings"],"UpdateLegacyTheme");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {

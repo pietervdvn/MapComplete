@@ -18,6 +18,7 @@ import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 import T from "./TestHelper";
 import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
 import CreateCacheSpec from "./CreateCache.spec";
+import CodeQualitySpec from "./CodeQuality.spec";
 
 
 async function main() {
@@ -39,7 +40,8 @@ async function main() {
         new ReplaceGeometrySpec(),
         new LegacyThemeLoaderSpec(),
         new CreateNoteImportLayerSpec(),
-        new CreateCacheSpec()
+        new CreateCacheSpec(),
+        new CodeQualitySpec()
     ]
     ScriptUtils.fixUtils();
     const realDownloadFunc = Utils.externalDownloadFunction;

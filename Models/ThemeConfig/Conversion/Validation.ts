@@ -16,7 +16,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[];
 
     constructor(...languages: string[]) {
-        super("Checks that the given object is fully translated in the specified languages", []);
+        super("Checks that the given object is fully translated in the specified languages", [], "ValidateLanguageCompleteness");
         this._languages = languages;
     }
 
@@ -25,7 +25,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         const translations = Translation.ExtractAllTranslationsFrom(
             obj
         )
-        for (const neededLanguage of this._languages) {
+        for (const neededLanguage of this._languages ?? ["en"]) {
             translations
                 .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                 .forEach(missing => {
@@ -50,7 +50,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _isBuiltin: boolean;
 
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
-        super("Doesn't change anything, but emits warnings and errors", []);
+        super("Doesn't change anything, but emits warnings and errors", [],"ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
@@ -164,7 +164,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
 class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
     constructor() {
-        super("Checks that an 'overrideAll' does not override a single override");
+        super("Checks that an 'overrideAll' does not override a single override",[],"OverrideShadowingCheck");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
@@ -204,7 +204,7 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
 export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("Checks that the mappings don't shadow each other");
+        super("Checks that the mappings don't shadow each other",[],"DetectShadowedMappings");
     }
 
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
@@ -254,7 +254,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
     private readonly _isBuiltin: boolean;
 
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
-        super("Doesn't change anything, but emits warnings and errors", []);
+        super("Doesn't change anything, but emits warnings and errors", [],"ValidateLayer");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;

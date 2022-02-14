@@ -413,7 +413,6 @@ export class ExtraFunctions {
 
         const elems = []
         for (const func of ExtraFunctions.allFuncs) {
-            console.log("Generating ", func.constructor.name)
             elems.push(new Title(func._name, 3),
                 func._doc,
                 new List(func._args ?? [], true))

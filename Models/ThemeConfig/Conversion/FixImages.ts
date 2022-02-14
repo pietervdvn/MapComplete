@@ -6,7 +6,7 @@ import * as tagrenderingmetapaths from "../../../assets/tagrenderingconfigmeta.j
 
 export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     constructor() {
-        super("Extract all images from a layoutConfig using the meta paths");
+        super("Extract all images from a layoutConfig using the meta paths",[],"ExctractImages");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[] } {
@@ -62,7 +62,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
     private readonly _knownImages: Set<string>;
 
     constructor(knownImages: Set<string>) {
-        super("Walks over the entire theme and replaces images to the relative URL. Only works if the ID of the theme is an URL");
+        super("Walks over the entire theme and replaces images to the relative URL. Only works if the ID of the theme is an URL",[],"fixImages");
         this._knownImages = knownImages;
     }
 

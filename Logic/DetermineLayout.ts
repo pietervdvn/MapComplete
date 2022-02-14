@@ -19,6 +19,7 @@ import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import * as licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 import {FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
+import Svg from "../Svg";
 
 export default class DetermineLayout {
 
@@ -73,6 +74,8 @@ export default class DetermineLayout {
         userLayoutParam: UIEventSource<string>
     ): LayoutConfig | null {
         let hash = location.hash.substr(1);
+        let json: any;
+
         try {
             // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
             const dedicatedHashFromLocalStorage = LocalStorageSource.Get(
@@ -95,7 +98,6 @@ export default class DetermineLayout {
                 dedicatedHashFromLocalStorage.setData(hash);
             }
 
-            let json: any;
             try {
                 json = JSON.parse(atob(hash));
             } catch (e) {
@@ -115,23 +117,26 @@ export default class DetermineLayout {
         } catch (e) {
             console.error(e)
             if (hash === undefined || hash.length < 10) {
-                DetermineLayout.ShowErrorOnCustomTheme("Could not load a theme from the hash", new FixedUiElement("Hash does not contain data"))
+                DetermineLayout.ShowErrorOnCustomTheme("Could not load a theme from the hash", new FixedUiElement("Hash does not contain data"), json)
             }
-            this.ShowErrorOnCustomTheme("Could not parse the hash", new FixedUiElement(e))
+            this.ShowErrorOnCustomTheme("Could not parse the hash", new FixedUiElement(e), json)
             return null;
         }
     }
 
     public static ShowErrorOnCustomTheme(
         intro: string = "Error: could not parse the custom layout:",
-        error: BaseUIElement) {
+        error: BaseUIElement,
+        json?: any) {
         new Combine([
             intro,
             error.SetClass("alert"),
-            new SubtleButton("./assets/svg/mapcomplete_logo.svg",
+            new SubtleButton(Svg.back_svg(),
                 "Go back to the theme overview",
-                {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false})
-
+                {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false}),
+            json !== undefined ? new SubtleButton(Svg.download_svg(),"Download the JSON file").onClick(() => {
+                Utils.offerContentsAsDownloadableFile(JSON.stringify(json, null, "  "), "theme_definition.json")
+            }) : undefined
         ])
             .SetClass("flex flex-col clickable")
             .AttachTo("centermessage");
@@ -189,7 +194,8 @@ export default class DetermineLayout {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(
                     `<a href="${link}">${link}</a> is invalid:`,
-                    new FixedUiElement(e)
+                    new FixedUiElement(e),
+                    parsed
                 )
                 return null;
             }
