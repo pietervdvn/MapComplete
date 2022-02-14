@@ -67,7 +67,6 @@ export class OsmConnection {
                     changes: Changes,
                     oauth_token?: UIEventSource<string>,
                     // Used to keep multiple changesets open and to write to the correct changeset
-                    layoutName: string,
                     singlePage?: boolean,
                     osmConfiguration?: "osm" | "osm-test",
                     attemptLogin?: true | boolean
@@ -103,7 +102,7 @@ export class OsmConnection {
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
-        this.changesetHandler = new ChangesetHandler(options.layoutName, this._dryRun, this, options.allElements, options.changes, this.auth);
+        this.changesetHandler = new ChangesetHandler(this._dryRun, this, options.allElements, options.changes, this.auth);
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
             const self = this;

@@ -42,7 +42,6 @@ export default class UserRelatedState extends ElementsState {
                 undefined,
                 "Used to complete the login"
             ),
-            layoutName: layoutToUse?.id,
             osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin
         })
