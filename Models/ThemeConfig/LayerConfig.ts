@@ -402,7 +402,7 @@ export default class LayerConfig extends WithContextLoader {
 
         const icon =  this.mapRendering
             .filter(mr => mr.location.has("point"))
-            .map(mr => mr.icon.render.txt)
+            .map(mr => mr.icon?.render?.txt)
             .find(i => i !== undefined)
         let iconImg = ""
         if (icon !== undefined) {
