@@ -497,7 +497,6 @@ li::marker {
     max-width: calc(100vw - 5em);
     width: 40em;
     max-height: calc(100vh - 15em);
-    overflow-y: auto;
     background-color: var(--background-color);
     color: var(--foreground-color);
 }
