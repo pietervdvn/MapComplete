@@ -159,24 +159,25 @@ export default class DefaultGUI {
         const guiState = this._guiState;
 
         const self = this
-        Toggle.If(state.featureSwitchUserbadge,
-            () => new UserBadge(state)
-        ).AttachTo("userbadge")
+        new Combine([
+            Toggle.If(state.featureSwitchUserbadge,
+                () => new UserBadge(state)
+            ),
+            Toggle.If(state.featureSwitchExtraLinkEnabled,
+                () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
+            )
+        ]).SetClass("flex flex-col")
+            .AttachTo("userbadge")
 
         Toggle.If(state.featureSwitchSearch,
             () => new SearchAndGo(state))
             .AttachTo("searchbox");
 
-        new Combine([
-            Toggle.If(state.featureSwitchExtraLinkEnabled,
-                () => new ExtraLinkButton(state, state.layoutToUse.extraLink).SetClass("pointer-events-auto")
-                )
-            ,
-            Toggle.If(
-                state.featureSwitchWelcomeMessage,
-                () => self.InitWelcomeMessage()
-            )])
-            .SetClass("flex flex-col")
+
+        Toggle.If(
+            state.featureSwitchWelcomeMessage,
+            () => self.InitWelcomeMessage()
+        )
             .AttachTo("messagesbox");
 
 

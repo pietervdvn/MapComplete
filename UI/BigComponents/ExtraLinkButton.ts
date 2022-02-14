@@ -64,7 +64,7 @@ export default class ExtraLinkButton extends UIElement{
             
             link = new SubtleButton(img,c.text, {url:
                 href,
-                newTab: c.newTab}).SetClass("w-64 block")
+                newTab: c.newTab})
         }
         
         if(c.requirements.has("no-welcome-message")){
