@@ -263,7 +263,12 @@
         "apply_button": {
             "appliedOnAnotherObject": "Object {id} zal deze tags ontvangen: {tags}",
             "isApplied": "De wijzigingen zijn doorgevoerd"
-        }
+        },
+        "logout": "Afmelden",
+        "confirm": "Bevestigen",
+        "back": "Vorige",
+        "next": "Volgende",
+        "backToMapcomplete": "Terug naar het themaoverzicht"
     },
     "reviews": {
         "title": "{count} beoordelingen",
@@ -362,7 +367,8 @@
         "title": "Professionele ondersteuning voor MapComplete",
         "indexPage": {
             "button": "Ontdek onze services",
-            "hookMore": "We kunnen helpen bij het opzetten van terreinwerk, integreren van datasets en algemene OpenStreetMap-consultancy"
+            "hookMore": "We kunnen helpen bij het opzetten van terreinwerk, integreren van datasets en algemene OpenStreetMap-consultancy",
+            "hook": "Professionele ondersteuning nodig?"
         },
         "text1": "<p>MapComplete is de editor die het gemakkelijk maakt om bij te dragen aan OpenStreetMap.</p>",
         "aboutOsm": {
@@ -375,17 +381,49 @@
                 "li0": "Straten hebben een geometrie, maar kunnen ook informatie bevatten over de maximale toegestane snelheid, de wegbedekking, ofdat ze 's nachts verlicht zijn, een link naar Wikipedia, een link naar wat ze vernoemd zijn, welke wandel-, fiets- en busroutes er lopen, …"
             },
             "benefits": {
-                "li1": "Je data heeft een groter bereik dan ooit tevoren door de vele hergebruikers zoals Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, de meeste fietsrouteplanners, …"
+                "li1": "Je data heeft een groter bereik dan ooit tevoren door de vele hergebruikers zoals Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, de meeste fietsrouteplanners, …",
+                "intro": "Het kan erg moeilijk zijn om een eigen dataset achter te laten, want het opbouwen ervan kostte vaak veel tijd en moeite.<br>Echter, de voordelen om over te schakelen naar OpenStreetMap zijn enorm:",
+                "title": "Voordelen van het OpenStreetMap-ecosysteem",
+                "li0": "Je bent niet langer alleen om deze data te verzamelen en te onderhouden - een hele community helpt je",
+                "li2": "Veel overheidsorganisaties en gemeentes gebruiken OpenStreetMap op hun website"
             },
             "vandalism": {
                 "li1": "een kleine, foutieve wijziging heeft weinig impact en brengt dus weinig op voor een vandaal",
                 "intro": "Omdat iedereen de data kan aanpassen, is het inderdaad mogelijk dat iemand opzettelijk een foute aanpassing maakt. Dit gebeurt in de praktijk echter nooit, want:",
-                "li0": "de technische drempel om een wijziging te maken is hoog"
+                "li0": "de technische drempel om een wijziging te maken is hoog",
+                "li2": "een wijziging met een grote impact wordt snel opgemerkt omdat er zoveel datagebruikers zijn",
+                "title": "Is vandalisme een probleem?",
+                "li3": "alle wijzigingen worden bijgehouden en gelinkt aan de bijdrager die ze maakt. Een gebruiker die veelvuldig en opzettelijk de data kapot maakt, wordt verbannen",
+                "li4": "In België en verschillende andere landen wordt elke eerste wijziging van een nieuwe bijdrager systematisch gecontroleerd en gecorrigeerd."
+            },
+            "license": {
+                "title": "De licentie",
+                "li0": "Een product dat OpenStreetMap gebruikt moet de OpenStreetMap vermelden.",
+                "outro": "De licentie heeft enkele gevolgen - deze worden hieronder toegelicht.",
+                "intro": "OpenStreetMap wordt gepubliceerd onder de Open Database License. De <a href=\"https://osm.org/copyright\" target=\"_blank\">volledige licentie</a> kan als volgt worden samengevat:",
+                "li1": "OpenStreetMap-data moet <i>open</i> blijven. Dit betekent dat een kaart met OpenStreetMap-data opnieuw gekopieerd mag worden."
             }
         },
         "osmTitle": "Wat kunnen OpenStreetMap en MapComplete doen voor jouw organisatie?",
         "intro": "De ontwikkelaar van MapComplete bied professionele ondersteuning aan. Dit document toont enkele mogelijkheden, frequente vragen en de grenzen van wat MapComplete kan.",
-        "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>"
+        "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>",
+        "aboutMc": {
+            "title": "MapComplete gebruiken in je eigen organisatie",
+            "text0": "Als je een bestaand MapComplete-thema wilt gebruiken of in je website wilt embedden, dan mag je dit gratis doen. Dit is gratis en zal dat altijd zijn.",
+            "survey": {
+                "title": "Mogelijkheden om data te verzamelen",
+                "intro": "<p>MapComplete is een makkelijk te gebruiken hulpmiddel om ter plaatste met een smartphone of vanop afstand met een PC data te verzamelen. Met enkele klikken kan de nodige data toegevoegd worden aan OpenStreetMap.</p>\n<p>Wij kunnen voor jou een <b>op maat gemaakte verzameltool</b> maken die precies de data vraagt die nodig is.</p>\n<p>Heb je een dataset die (opnieuw) opgemeten moet worden? Dat is het perfecte moment om de stap naar OpenStreetMap te maken. MapComplete kan je eigen dataset en OpenStreetMap samen tonen, wat het makkelijk maakt om zowel de eigen locaties als de bijdragen van de community na te kijken.</p>\n"
+            },
+            "internalUse": {
+                "title": "Data hergebruiken"
+            },
+            "text2": "Twijfel je nog? We sommen de mogelijkheden hieronder op en beantwoorden enkele veelvoorkomende vragen",
+            "text1": "Wil je andere data visualiseren, maar bestaat er nog geen geschikte kaart voor? De MapComplete-ontwikkelaars kunnen dit <b>op maat bouwen</b> voor een schappelijk budget. Stuur je vraag via <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> of <a>een bericht op osm.org</a>",
+            "layers": {
+                "intro": "<p>MapComplete heeft een krachtig templatesysteem om snel een kaart op te zetten die precies toont wat je nodig hebt</p>\n<p>Deze data kan opgehaald van <b>OpenStreetMap</b> of van <b>externe datasets</b> komen - bijvoorbeeld om datasets met elkaar te vergelijken of om data te tonen die niet in OpenStreetMap thuishoort (bijvoorbeeld evenementen, statistieken, ...)</p>",
+                "title": "Welke data kan getoond worden met MapComplete?"
+            }
+        }
     },
     "privacy": {
         "geodata": "Op het moment dat MapComplete je locatie krijgt, blijft deze informatie en de geschiedenis ervan lokaal op je toestel. Je locatiedata wordt nooit automatisch doorgestuurd naar waar dan ook - behalve wanneer een bepaalde functionaliteit daar expliciet om vraagt.",
@@ -393,6 +431,12 @@
         "title": "Privacyverklaring",
         "geodataTitle": "Jouw locatie",
         "trackingTitle": "Statistische informatie",
-        "intro": "We vinden privacy belangrijk, zowel for het individu als voor de samenleving. MapComplete probeert zo veel mogelijk te vermijden dat private gegevens worden verzameld. Daarom is er zelfs geen cookie banner nodig. Maar we geven graag informatie over welke data verzameld en gedeeld worden, onder welke omstandigheden, en waarom deze afwegingen gemaakt worden."
+        "intro": "We vinden privacy belangrijk, zowel for het individu als voor de samenleving. MapComplete probeert zo veel mogelijk te vermijden dat private gegevens worden verzameld. Daarom is er zelfs geen cookie banner nodig. Maar we geven graag informatie over welke data verzameld en gedeeld worden, onder welke omstandigheden, en waarom deze afwegingen gemaakt worden.",
+        "editingTitle": "Wanneer je wijzigingen maakt",
+        "miscCookiesTitle": "Andere cookies",
+        "miscCookies": "MapComplete integreert met verschillende andere services, in het bijzonder om afbeeldingen van kaart-objecten te tonen. Deze afbeeldingen zijn opgeslaan bij diverse websites, die elk cookies kunnen instellen.",
+        "whileYoureHere": "Vind je privacy belangrijk?",
+        "surveillance": "Gezien je de privacy-policy leest, vind je privacy waarschijnlijk belangrijk - wij ook! We hebben zelfs <a href=\"https://mapcomplete.osm.be/surveillance\">een kaart met bewakingcamera's</a> gemaakt. Voeg er zeker toe!",
+        "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert."
     }
 }
