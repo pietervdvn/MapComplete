@@ -41,6 +41,7 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
 
 
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/ambulancestation/ambulancestation.json)

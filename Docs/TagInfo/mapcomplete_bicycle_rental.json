@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Bicycle rental",
-    "description": "A map with biyccle rental stations and bicycle rental shops",
+    "description": "A map with bicycle rental stations and bicycle rental shops",
     "project_url": "https://mapcomplete.osm.be/bicycle_rental",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/bicycle_rental/logo.svg",

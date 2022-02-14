@@ -22,6 +22,7 @@ A layer showing bicycle pumps and bicycle repair tool stands
     + [bike_repair_station-available-services](#bike_repair_station-available-services)
     + [Operational status](#operational-status)
     + [bike_repair_station-opening_hours](#bike_repair_station-opening_hours)
+    + [access](#access)
     + [bike_repair_station-operator](#bike_repair_station-operator)
     + [bike_repair_station-email](#bike_repair_station-email)
     + [bike_repair_station-phone](#bike_repair_station-phone)
@@ -49,6 +50,7 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bike_repair_station/bike_repair_station.json)
@@ -83,6 +85,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:tools#values) [service:bicycle:tools](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump:operational_status#values) [service:bicycle:pump:operational_status](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status) | Multiple choice | [broken](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken) [operational](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
@@ -151,6 +154,25 @@ This is rendered with `{opening_hours_table()}`
 
 
   - **Always open** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+
+
+
+
+### access 
+
+
+
+The question is **Who is allowed to use this repair station?**
+
+
+
+
+
+  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>_This option cannot be chosen as answer_
+  - **Only for customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - **Not accessible to the general public** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+  - **Not accessible to the general public** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>_This option cannot be chosen as answer_
 
 
 

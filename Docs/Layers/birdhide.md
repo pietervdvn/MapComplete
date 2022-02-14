@@ -39,6 +39,7 @@ Een vogelkijkhut
 
 
   - [nature](https://mapcomplete.osm.be/nature)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/birdhide/birdhide.json)

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/bike_cafe/bike_cafe.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg' height="100px"> 
 
 A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...
 
@@ -44,6 +44,7 @@ A bike café is a café geared towards cyclists, for example with services such 
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)

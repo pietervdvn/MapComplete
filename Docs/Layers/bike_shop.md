@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/bike_shop/repair_shop.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/pin:#f04c4c;./assets/layers/bike_shop/repair_shop.svg' height="100px"> 
 
 A shop specifically selling bicycles or related items
 
@@ -52,6 +52,7 @@ A shop specifically selling bicycles or related items
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bike_shop/bike_shop.json)
