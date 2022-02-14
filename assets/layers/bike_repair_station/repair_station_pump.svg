@@ -9,9 +9,10 @@
    inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs19" />
   <sodipodi:namedview
      id="namedview23"
      pagecolor="#505050"
@@ -22,12 +23,12 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="1.2141956"
-     inkscape:cx="91.418547"
-     inkscape:cy="230.60534"
+     inkscape:cx="91.418549"
+     inkscape:cy="230.60535"
      inkscape:current-layer="svg21" />
   <g
      id="g871"
-     transform="matrix(0.87199308,0,0,0.87199308,-36.147464,-1.6646541)">
+     transform="matrix(0.73612812,0,0,0.73612812,-7.5123741,22.302095)">
     <path
        style="fill:#feffff;fill-opacity:1;stroke:none;stroke-width:2.1658px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 70.90581,68.082104 94.314902,90.852655 109.07678,75.593612 87.262888,52.05427 c 0,0 54.566912,-15.909703 48.705622,38.294946 -0.0402,0.371932 76.93003,78.003994 76.93003,78.003994 52.37378,-8.79363 39.23297,49.80659 39.23297,49.80659 l -24.84486,-23.07285 -14.43716,16.0013 23.10432,21.89484 c 0,0 -54.25512,16.21415 -51.34724,-41.36193 0.0301,-0.596 -75.70086,-74.12786 -75.70086,-74.12786 -53.153663,4.0943 -37.9999,-49.411196 -37.9999,-49.411196 z"
@@ -64,7 +65,7 @@
   </g>
   <g
      id="surface1"
-     transform="matrix(0.7124434,0,0,0.71120743,87.69932,46.844896)">
+     transform="matrix(0.60143782,0,0,0.60039443,97.037882,63.253387)">
     <path
        style="fill:#fffaff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3.509;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
        d="M 47.663415,21.641872 H 71.627478 V 25.63231 H 47.663415 Z m 0,0"

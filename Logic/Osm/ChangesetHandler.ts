@@ -23,8 +23,7 @@ export class ChangesetHandler {
     private readonly auth: any;
     private readonly backend: string;
 
-    constructor(layoutName: string,
-                dryRun: UIEventSource<boolean>,
+    constructor(dryRun: UIEventSource<boolean>,
                 osmConnection: OsmConnection,
                 allElements: ElementStorage,
                 changes: Changes,

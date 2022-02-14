@@ -20,7 +20,6 @@ import Toggle from "../Input/Toggle";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
-import {icon} from "leaflet";
 import Img from "../Base/Img";
 
 export class OpenIdEditor extends VariableUiElement {
@@ -211,7 +210,11 @@ export default class CopyrightPanel extends Combine {
 
     private static IconAttribution(iconPath: string): BaseUIElement {
         if (iconPath.startsWith("http")) {
+            try{
             iconPath = "." + new URL(iconPath).pathname;
+            }catch(e){
+                console.error(e)
+            }
         }
 
         const license: SmallLicense = CopyrightPanel.LicenseObject[iconPath]

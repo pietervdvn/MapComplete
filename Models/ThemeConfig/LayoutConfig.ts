@@ -5,6 +5,7 @@ import {LayerConfigJson} from "./Json/LayerConfigJson";
 import Constants from "../Constants";
 import TilesourceConfig from "./TilesourceConfig";
 import {ExtractImages} from "./Conversion/FixImages";
+import ExtraLinkConfig from "./ExtraLinkConfig";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -42,7 +43,6 @@ export default class LayoutConfig {
     public readonly enableShowAllQuestions: boolean;
     public readonly enableExportButton: boolean;
     public readonly enablePdfDownload: boolean;
-    public readonly enableIframePopout: boolean;
 
     public readonly customCss?: string;
 
@@ -51,8 +51,9 @@ export default class LayoutConfig {
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean;
-    
-    public readonly usedImages : string[]
+
+    public readonly usedImages: string[]
+    public readonly extraLink?: ExtraLinkConfig
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
@@ -70,7 +71,7 @@ export default class LayoutConfig {
         this.credits = json.credits;
         this.version = json.version;
         this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title));
-        this.usedImages =Array.from( new ExtractImages().convertStrict(json, "while extracting the images")).sort()
+        this.usedImages = Array.from(new ExtractImages().convertStrict(json, "while extracting the images of " + json.id + " " + context ?? "")).sort()
         {
             if (typeof json.title === "string") {
                 throw `The title of a theme should always be a translation, as it sets the corresponding languages (${context}.title). The themenID is ${this.id}; the offending object is ${JSON.stringify(json.title)} which is a ${typeof json.title})`
@@ -118,6 +119,13 @@ export default class LayoutConfig {
         // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
         this.layers = json.layers.map(lyrJson => new LayerConfig(<LayerConfigJson>lyrJson, json.id + ".layers." + lyrJson["id"], official));
 
+        this.extraLink =  new ExtraLinkConfig(json.extraLink ?? {
+            icon: "./assets/svg/pop-out.svg",
+            href: "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
+            newTab: true,
+            requirements: ["iframe","no-welcome-message"]
+        }, context)
+    
 
         this.clustering = {
             maxZoom: 16,
@@ -148,7 +156,6 @@ export default class LayoutConfig {
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false;
         this.enableExportButton = json.enableDownload ?? false;
         this.enablePdfDownload = json.enablePdfDownload ?? false;
-        this.enableIframePopout = json.enableIframePopout ?? true
         this.customCss = json.customCss;
         this.overpassUrl = Constants.defaultOverpassUrls
         if (json.overpassUrl !== undefined) {

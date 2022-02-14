@@ -285,7 +285,7 @@
               },
               {
                 "if": "theme=toerisme_vlaanderen",
-                "then": "./assets/svg/teardrop_with_hole_green.svg"
+                "then": "./assets/themes/toerisme_vlaanderen/logo.svg"
               },
               {
                 "if": "theme=toilets",

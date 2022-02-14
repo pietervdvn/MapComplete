@@ -19,7 +19,18 @@
   "descriptionTail": {
     "nl": "<p>Een initiatief van de 5 provinciale toeristische organisaties en Toerisme Vlaanderen</p><p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaanderen.be</a></p><img style='height:5rem; width: auto; margin-top: 1.25rem; margin-bottom: 0.5rem; margin-left: 1.5rem;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
-  "icon": "./assets/svg/teardrop_with_hole_green.svg",
+  "extraLink": {
+    "icon": "./assets/svg/pop-out.svg",
+    "href": "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
+    "newTab": true,
+    "requirements": [
+      "iframe"
+    ],
+    "text": {
+      "nl": "Open in volledig scherm"
+    }
+  },
+  "icon": "./assets/themes/toerisme_vlaanderen/logo.svg",
   "startZoom": 8,
   "startLat": 50.8536,
   "startLon": 4.433,
@@ -169,10 +180,19 @@
                 }
               ]
             },
-            "badges": [
+            "iconBadges": [
               {
                 "if": "service:bicycle:pump:operational_status=broken",
                 "then": "close:red"
+              },
+              {
+                "if": {
+                  "or": [
+                    "access=no",
+                    "access=private"
+                  ]
+                },
+                "then": "invalid"
               }
             ]
           }

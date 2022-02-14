@@ -1,5 +1,6 @@
 import {LayerConfigJson} from "./LayerConfigJson";
 import TilesourceConfigJson from "./TilesourceConfigJson";
+import ExtraLinkConfigJson from "./ExtraLinkConfigJson";
 
 /**
  * Defines the entire theme.
@@ -244,18 +245,70 @@ export interface LayoutConfigJson {
      */
     lockLocation?: [[number, number], [number, number]] | number[][];
 
-    enableUserBadge?: boolean;
-    enableShareScreen?: boolean;
-    enableMoreQuests?: boolean;
-    enableLayers?: boolean;
-    enableSearch?: boolean;
-    enableAddNewPoints?: boolean;
-    enableGeolocation?: boolean;
-    enableBackgroundLayerSelection?: boolean;
-    enableShowAllQuestions?: boolean;
-    enableDownload?: boolean;
-    enablePdfDownload?: boolean;
-    enableIframePopout?: true | boolean;
+    /**
+     * Adds an additional button on the top-left of the application.
+     * This can link to an arbitrary location.
+     * 
+     * Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced
+     * 
+     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]}, 
+     * 
+     */
+    extraLink?: ExtraLinkConfigJson
+    
+    /**
+     * If set to false, disables logging in.
+     * The userbadge will be hidden, all login-buttons will be hidden and editing will be disabled
+     */
+    enableUserBadge?: true | boolean;
+    /**
+     * If false, hides the tab 'share'-tab in the welcomeMessage
+     */
+    enableShareScreen?: true | boolean;
+    /**
+     * Hides the tab with more themes in the welcomeMessage
+     */
+    enableMoreQuests?: true | boolean;
+    /**
+     * If false, the layer selection/filter view will be hidden
+     * The corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'
+     */
+    enableLayers?: true | boolean;
+    /**
+     * If set to false, hides the search bar
+     */
+    enableSearch?: true | boolean;
+    /**
+     * If set to false, the ability to add new points or nodes will be disabled.
+     * Editing already existing features will still be possible
+     */
+    enableAddNewPoints?: true | boolean;
+    /**
+     * If set to false, the 'geolocation'-button will be hidden.
+     */
+    enableGeolocation?: true | boolean;
+    /**
+     * Enable switching the backgroundlayer.
+     * If false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well 
+     */
+    enableBackgroundLayerSelection?: true | boolean;
+    /**
+     * If set to true, will show _all_ unanswered questions in a popup instead of just the next one
+     */
+    enableShowAllQuestions?: false | boolean;
+    /**
+     * If set to true, download button for the data will be shown (offers downloading as geojson and csv)
+     */
+    enableDownload?: false | boolean;
+    /**
+     * If set to true, exporting a pdf is enabled
+     */
+    enablePdfDownload?: false | boolean;
+
+    /**
+     * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
+     * these notes will be shown if a relevant layer is present.
+     */
     enableNoteImports?: true | boolean;
 
     /**

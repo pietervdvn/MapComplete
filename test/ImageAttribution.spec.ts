@@ -10,7 +10,7 @@ export default class ImageAttributionSpec extends T {
             [
                 "Should find all the images",
                 () => {
-                    const images = new Set(new ExtractImages().convertStrict(cyclofix, "test"))
+                    const images = new Set(new ExtractImages().convertStrict(<any> cyclofix, "test"))
                     const expectedValues = [
                         './assets/layers/bike_repair_station/repair_station.svg',
                         './assets/layers/bike_repair_station/repair_station_pump.svg',

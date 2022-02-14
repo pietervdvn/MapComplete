@@ -270,7 +270,7 @@
         "descriptionTail": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
         "layers": {
             "0": {
-                "description": "A climbing club or organisations",
+                "description": "A climbing club or organisation",
                 "name": "Climbing club",
                 "presets": {
                     "0": {
@@ -278,7 +278,7 @@
                         "title": "Climbing club"
                     },
                     "1": {
-                        "description": "A NGO working around climbing",
+                        "description": "An NGO working around climbing",
                         "title": "Climbing NGO"
                     }
                 },
@@ -332,12 +332,12 @@
                                 "then": "This route is not bolted"
                             }
                         },
-                        "question": "How much bolts does this route have before reaching the moulinette?",
+                        "question": "How many bolts does this route have before reaching the anchor?",
                         "render": "This route has {climbing:bolts} bolts"
                     },
                     "Difficulty": {
-                        "question": "What is the difficulty of this climbing route according to the french/belgian system?",
-                        "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
+                        "question": "What is the grade of this climbing route according to the french/belgian system?",
+                        "render": "The grade is {climbing:grade:french} according to the french/belgian system"
                     },
                     "Length": {
                         "question": "How long is this climbing route (in meters)?",
@@ -376,7 +376,7 @@
                 },
                 "tagRenderings": {
                     "Contained routes hist": {
-                        "render": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
+                        "render": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}"
                     },
                     "Contained routes length hist": {
                         "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
@@ -501,12 +501,12 @@
                     "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
                 },
                 "5": {
-                    "question": "What is the level of the easiest route here, accoring to the french classification system?",
-                    "render": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system"
+                    "question": "What is the grade of the easiest route here, according to the french classification system?",
+                    "render": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system"
                 },
                 "6": {
-                    "question": "What is the level of the most difficult route here, accoring to the french classification system?",
-                    "render": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system"
+                    "question": "What is the highest grade route here, according to the french classification system?",
+                    "render": "The highest grade is {climbing:grade:french:max} according to the french/belgian system"
                 },
                 "7": {
                     "mappings": {
@@ -726,12 +726,17 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Streets without etymology information"
+                    "=name": "Streets without etymology information"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parks and forests without etymology information"
+                    "=name": "Parks and forests without etymology information"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Education institutions without etymology information"
                 }
             }
         },

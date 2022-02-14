@@ -16,7 +16,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         super([
             "Advanced conversion which deducts a layer showing all notes that are 'importable' (i.e. a note that contains a link to some MapComplete theme, with hash '#import').",
             "The import buttons and matches will be based on the presets of the given theme",
-        ].join("\n\n"), [])
+        ].join("\n\n"), [],"CreateNoteImportLayer")
         this._includeClosedNotesDays = includeClosedNotesDays;
     }
 

@@ -1120,6 +1120,11 @@
       "value": "1"
     },
     {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "-1"
+    },
+    {
       "key": "ref",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Charging stations')"
     },

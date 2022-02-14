@@ -122,6 +122,7 @@ A charging station
 
 
   - [charging_stations](https://mapcomplete.osm.be/charging_stations)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/charging_station/charging_station.json)

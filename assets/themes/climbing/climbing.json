@@ -107,7 +107,7 @@
       "description": {
         "de": "Ein Kletterverein oder eine Organisation",
         "nl": "Een klimclub of organisatie",
-        "en": "A climbing club or organisations",
+        "en": "A climbing club or organisation",
         "ja": "クライミングクラブや団体",
         "zh_Hant": "攀岩社團或組織",
         "nb_NO": "En klatreklubb eller organisasjoner",
@@ -199,7 +199,7 @@
           "description": {
             "de": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
             "nl": "Een VZW die werkt rond klimmen",
-            "en": "A NGO working around climbing",
+            "en": "An NGO working around climbing",
             "ja": "登山に関わるNGO",
             "fr": "Une association d’escalade",
             "it": "Un’associazione che ha a che fare con l’arrampicata",
@@ -459,7 +459,7 @@
         },
         {
           "question": {
-            "en": "What is the difficulty of this climbing route according to the french/belgian system?",
+            "en": "What is the grade of this climbing route according to the french/belgian system?",
             "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
             "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
             "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
@@ -467,7 +467,7 @@
           },
           "render": {
             "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
-            "en": "The difficulty is {climbing:grade:french} according to the french/belgian system",
+            "en": "The grade is {climbing:grade:french} according to the french/belgian system",
             "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
             "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です",
             "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga",
@@ -480,7 +480,7 @@
         },
         {
           "question": {
-            "en": "How much bolts does this route have before reaching the moulinette?",
+            "en": "How many bolts does this route have before reaching the anchor?",
             "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
             "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
             "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?"
@@ -698,7 +698,7 @@
         },
         {
           "render": {
-            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}",
+            "en": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}",
             "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}",
             "de": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}",
             "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}"
@@ -1300,7 +1300,7 @@
         "id": "Difficulty-min",
         "question": {
           "de": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-          "en": "What is the level of the easiest route here, accoring to the french classification system?",
+          "en": "What is the grade of the easiest route here, according to the french classification system?",
           "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
           "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
           "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
@@ -1308,7 +1308,7 @@
         },
         "render": {
           "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
-          "en": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system",
+          "en": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system",
           "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
           "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です",
           "fr": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge",
@@ -1335,7 +1335,7 @@
         "id": "Difficulty-max",
         "question": {
           "de": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-          "en": "What is the level of the most difficult route here, accoring to the french classification system?",
+          "en": "What is the highest grade route here, according to the french classification system?",
           "nl": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
           "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
           "fr": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
@@ -1343,7 +1343,7 @@
         },
         "render": {
           "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:max} (französisch/belgisches System)",
-          "en": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system",
+          "en": "The highest grade is {climbing:grade:french:max} according to the french/belgian system",
           "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
           "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",
           "fr": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge",

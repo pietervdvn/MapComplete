@@ -216,12 +216,12 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Etimológiai adat nélküli utcák"
+                    "=name": "Etimológiai adat nélküli utcák"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Etimológiai adat nélküli parkok és erdők"
+                    "=name": "Etimológiai adat nélküli parkok és erdők"
                 }
             }
         },

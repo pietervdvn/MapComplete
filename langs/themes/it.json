@@ -669,12 +669,12 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Strade senza informazioni etimologiche"
+                    "=name": "Strade senza informazioni etimologiche"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parchi e foreste senza informazioni etimologiche"
+                    "=name": "Parchi e foreste senza informazioni etimologiche"
                 }
             }
         },

@@ -10,13 +10,14 @@ import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
 import {ExtractImages} from "./FixImages";
 import ScriptUtils from "../../../scripts/ScriptUtils";
+import {And} from "../../../Logic/Tags/And";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[];
 
     constructor(...languages: string[]) {
-        super("Checks that the given object is fully translated in the specified languages", []);
+        super("Checks that the given object is fully translated in the specified languages", [], "ValidateLanguageCompleteness");
         this._languages = languages;
     }
 
@@ -25,7 +26,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         const translations = Translation.ExtractAllTranslationsFrom(
             obj
         )
-        for (const neededLanguage of this._languages) {
+        for (const neededLanguage of this._languages ?? ["en"]) {
             translations
                 .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                 .forEach(missing => {
@@ -50,7 +51,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _isBuiltin: boolean;
 
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
-        super("Doesn't change anything, but emits warnings and errors", []);
+        super("Doesn't change anything, but emits warnings and errors", [],"ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
@@ -164,7 +165,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
 class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
     constructor() {
-        super("Checks that an 'overrideAll' does not override a single override");
+        super("Checks that an 'overrideAll' does not override a single override",[],"OverrideShadowingCheck");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
@@ -204,7 +205,7 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
 export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("Checks that the mappings don't shadow each other");
+        super("Checks that the mappings don't shadow each other",[],"DetectShadowedMappings");
     }
 
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
@@ -254,7 +255,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
     private readonly _isBuiltin: boolean;
 
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
-        super("Doesn't change anything, but emits warnings and errors", []);
+        super("Doesn't change anything, but emits warnings and errors", [],"ValidateLayer");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
@@ -337,6 +338,24 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
             if (json.tagRenderings !== undefined) {
                 new DetectShadowedMappings().convertAll(<TagRenderingConfigJson[]>json.tagRenderings, context + ".tagRenderings")
+            }
+
+            if(json.presets !== undefined){
+                
+                // Check that a preset will be picked up by the layer itself
+                const baseTags = TagUtils.Tag( json.source.osmTags)
+                for (let i = 0; i < json.presets.length; i++){
+                    const preset = json.presets[i];
+                    const tags : {k: string,v: string}[]= new And(preset.tags.map(t => TagUtils.Tag(t))).asChange({id:"node/-1"})
+                    const properties = {}
+                    for (const tag of tags) {
+                        properties[tag.k] = tag.v
+                    }
+                    const doMatch = baseTags.matchesProperties(properties)
+                    if(!doMatch){
+                        errors.push(context+".presets["+i+"]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: "+JSON.stringify(properties)+"\n    The required tags are: "+baseTags.asHumanString(false, false, {}))
+                    }
+                }
             }
 
         } catch (e) {

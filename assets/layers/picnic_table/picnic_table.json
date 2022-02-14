@@ -2,7 +2,7 @@
   "id": "picnic_table",
   "name": {
     "en": "Picnic tables",
-    "nl": "Picnictafels",
+    "nl": "Picknicktafels",
     "it": "Tavoli da picnic",
     "ru": "Столы для пикника",
     "fr": "Tables de pique-nique",
@@ -15,7 +15,7 @@
   "title": {
     "render": {
       "en": "Picnic table",
-      "nl": "Picnictafel",
+      "nl": "Picknicktafel",
       "it": "Tavolo da picnic",
       "ru": "Стол для пикника",
       "fr": "Table de pique-nique",
@@ -24,7 +24,7 @@
   },
   "description": {
     "en": "The layer showing picnic tables",
-    "nl": "Deze laag toont picnictafels",
+    "nl": "Deze laag toont picknicktafels",
     "it": "Il livello che mostra i tavoli da picnic",
     "fr": "La couche montrant les tables de pique-nique",
     "ru": "Слой, отображающий столы для пикника",
@@ -35,7 +35,7 @@
     {
       "question": {
         "en": "What material is this picnic table made of?",
-        "nl": "Van welk materiaal is deze picnictafel gemaakt?",
+        "nl": "Van welk materiaal is deze picknicktafel gemaakt?",
         "it": "Di che materiale è fatto questo tavolo da picnic?",
         "de": "Aus welchem Material besteht dieser Picknicktisch?",
         "ru": "Из чего изготовлен этот стол для пикника?",
@@ -43,7 +43,7 @@
       },
       "render": {
         "en": "This picnic table is made of {material}",
-        "nl": "Deze picnictafel is gemaakt van {material}",
+        "nl": "Deze picknicktafel is gemaakt van {material}",
         "it": "Questo tavolo da picnic è fatto di {material}",
         "de": "Dieser Picknicktisch besteht aus {material}",
         "ru": "Этот стол для пикника сделан из {material}",
@@ -57,7 +57,7 @@
           "if": "material=wood",
           "then": {
             "en": "This is a wooden picnic table",
-            "nl": "Deze picnictafel is gemaakt uit hout",
+            "nl": "Deze picknicktafel is gemaakt uit hout",
             "it": "È un tavolo da picnic in legno",
             "ru": "Это деревянный стол для пикника",
             "de": "Dies ist ein Picknicktisch aus Holz",
@@ -68,7 +68,7 @@
           "if": "material=concrete",
           "then": {
             "en": "This is a concrete picnic table",
-            "nl": "Deze picnictafel is gemaakt uit beton",
+            "nl": "Deze picknicktafel is gemaakt uit beton",
             "it": "È un tavolo da picnic in cemento",
             "ru": "Это бетонный стол для пикника",
             "de": "Dies ist ein Picknicktisch aus Beton",

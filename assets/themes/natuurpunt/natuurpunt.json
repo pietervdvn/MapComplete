@@ -77,7 +77,8 @@
         ],
         "=filter": {
           "sameAs": "nature_reserve_centerpoints"
-        }
+        },
+        "=presets": []
       }
     },
     {
@@ -102,6 +103,11 @@
               "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
             },
             "presets": []
+          }
+        ],
+        "presets": [
+          {
+            "tags+": "operator=Natuurpunt"
           }
         ]
       }
@@ -193,6 +199,14 @@
       "builtin": "birdhide",
       "override": {
         "minzoom": 14,
+        "presets": [
+          {
+            "tags+": "operator=Natuurpunt"
+          },
+          {
+            "tags+": "operator=Natuurpunt"
+          }
+        ],
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,

@@ -43,7 +43,7 @@
       "builtin": "etymology",
       "override": {
         "id": "streets_without_etymology",
-        "name": {
+        "=name": {
           "en": "Streets without etymology information",
           "nl": "Straten zonder etymologische informatie",
           "de": "Straßen ohne Informationen zur Namensherkunft",
@@ -67,7 +67,7 @@
       "builtin": "etymology",
       "override": {
         "id": "parks_and_forests_without_etymology",
-        "name": {
+        "=name": {
           "en": "Parks and forests without etymology information",
           "nl": "Parken en bossen zonder etymologische informatie",
           "de": "Parks und Waldflächen ohne Informationen zur Namensherkunft",
@@ -84,6 +84,31 @@
                 "or": [
                   "leisure=park",
                   "landuse=forest"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "education_institutions_without_etymology",
+        "=name": {
+          "en": "Education institutions without etymology information"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "amenity=school",
+                  "amenity=kindergarten",
+                  "amenity=university",
+                  "amenity=college"
                 ]
               }
             ]

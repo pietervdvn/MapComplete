@@ -1,1 +1,17 @@
-{}
+{
+    "shared_questions": {
+        "description": {
+            "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Se permiten perros"
+                },
+                "1": {
+                    "then": "<b>No</b> se permiten perros"
+                }
+            }
+        }
+    }
+}

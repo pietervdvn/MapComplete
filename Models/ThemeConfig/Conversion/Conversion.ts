@@ -12,10 +12,10 @@ export abstract class Conversion<TIn, TOut> {
     protected readonly doc: string;
     public readonly name: string
     
-    constructor(doc: string, modifiedAttributes: string[] = [], name?: string) {
+    constructor(doc: string, modifiedAttributes: string[] = [], name: string) {
         this.modifiedAttributes = modifiedAttributes;
         this.doc = doc + "\n\nModified attributes are\n" + modifiedAttributes.join(", ");
-        this.name = name ?? this.constructor.name
+        this.name = name 
     }
 
     public static strict<T>(fixed: { errors?: string[], warnings?: string[], information?: string[], result?: T }): T {
@@ -94,8 +94,8 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
     private readonly step: Conversion<X, X[]>;
 
     constructor(key: string, step: Conversion<X, X[]>) {
-        super(`Applies ${step.constructor.name} onto every object of the list \`${key}\`. The results are concatenated and used as new list`, [key], 
-            "OnEveryConcat("+step.name+")");
+        super(`Applies ${step.name} onto every object of the list \`${key}\`. The results are concatenated and used as new list`, [key], 
+            "OnEvery("+key+").Concat("+step.name+")");
         this.step = step;
         this.key = key;
     }
@@ -126,8 +126,9 @@ export class Fuse<T> extends DesugaringStep<T> {
     private readonly steps: DesugaringStep<T>[];
 
     constructor(doc: string, ...steps: DesugaringStep<T>[]) {
-        super((doc ?? "") + "This fused pipeline of the following steps: " + steps.map(s => s.constructor.name).join(", "),
-            Utils.Dedup([].concat(...steps.map(step => step.modifiedAttributes)))
+        super((doc ?? "") + "This fused pipeline of the following steps: " + steps.map(s => s.name).join(", "),
+            Utils.Dedup([].concat(...steps.map(step => step.modifiedAttributes))),
+            "Fuse of "+steps.map(s => s.name).join(", ")
         );
         this.steps = steps;
     }
@@ -163,7 +164,7 @@ export class SetDefault<T> extends DesugaringStep<T> {
     private readonly _overrideEmptyString: boolean;
 
     constructor(key: string, value: any, overrideEmptyString = false) {
-        super("Sets " + key + " to a default value if undefined");
+        super("Sets " + key + " to a default value if undefined", [], "SetDefault of "+key);
         this.key = key;
         this.value = value;
         this._overrideEmptyString = overrideEmptyString;

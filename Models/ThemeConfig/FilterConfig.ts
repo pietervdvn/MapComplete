@@ -18,7 +18,7 @@ export default class FilterConfig {
         originalTagsSpec: string | AndOrTagConfigJson
         fields: { name: string, type: string }[]
     }[];
-    public readonly defaultSelection : number
+    public readonly defaultSelection? : number
 
     constructor(json: FilterConfigJson, context: string) {
         if (json.options === undefined) {
@@ -79,7 +79,7 @@ export default class FilterConfig {
             return {question: question, osmTags: osmTags, fields, originalTagsSpec: option.osmTags};
         });
         
-        this.defaultSelection = defaultSelection ?? 0
+        this.defaultSelection = defaultSelection 
 
         if (this.options.some(o => o.fields.length > 0) && this.options.length > 1) {
             throw `Invalid filter at ${context}: a filter with textfields should only offer a single option.`
@@ -103,10 +103,11 @@ export default class FilterConfig {
 
         let defaultValue = ""
         if(this.options.length > 1){
-            defaultValue = ""+this.defaultSelection 
+            defaultValue = ""+(this.defaultSelection ?? 0)
         }else{
-            if(this.defaultSelection > 0){
-                defaultValue = ""+this.defaultSelection
+            // Only a single option
+            if(this.defaultSelection === 0){
+                defaultValue = "true"
             }
         }
         const qp = QueryParameters.GetQueryParameter("filter-" + this.id, defaultValue, "State of filter " + this.id)

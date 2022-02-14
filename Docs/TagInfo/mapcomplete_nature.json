@@ -783,6 +783,11 @@
       "value": "1"
     },
     {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "-1"
+    },
+    {
       "key": "description",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Into nature')"
     },

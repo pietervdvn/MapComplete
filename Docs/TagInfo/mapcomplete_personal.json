@@ -2187,6 +2187,11 @@
       "value": "1"
     },
     {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
       "key": "ref",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -3379,183 +3384,203 @@
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Personal theme has a layer Bike stations (repair, pump or both) showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle pump and repair showing features with this tag",
       "value": "bicycle_repair_station"
     },
     {
       "key": "image",
-      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike stations (repair, pump or both) allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "service:bicycle:tools",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "service:bicycle:pump",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=no&service:bicycle:pump=yes with a fixed text, namely 'There is only a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "service:bicycle:tools",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "service:bicycle:pump",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "service:bicycle:tools",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "service:bicycle:pump",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=yes with a fixed text, namely 'There are both tools and a pump present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows operator=De Fietsambassade Gent with a fixed text, namely '<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "De Fietsambassade Gent"
-    },
-    {
-      "key": "email",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours=24/7 with a fixed text, namely 'Always open' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "24/7"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows  with a fixed text, namely 'Always open' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
-      "value": ""
-    },
-    {
-      "key": "service:bicycle:chain_tool",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:chain_tool=yes with a fixed text, namely 'There is a chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "service:bicycle:chain_tool",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:chain_tool=no with a fixed text, namely 'There is no chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "service:bicycle:stand",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:stand=yes with a fixed text, namely 'There is a hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "service:bicycle:stand",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:stand=no with a fixed text, namely 'There is no hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
     },
     {
       "key": "service:bicycle:pump:operational_status",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows service:bicycle:pump:operational_status=broken with a fixed text, namely 'The bike pump is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:pump:operational_status=broken with a fixed text, namely 'The bike pump is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "broken"
     },
     {
       "key": "service:bicycle:pump:operational_status",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows  with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key service:bicycle:pump:operational_status.",
-      "value": ""
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:pump:operational_status=operational with a fixed text, namely 'The bike pump is operational' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "operational"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle pump and repair' shows opening_hours=24/7 with a fixed text, namely 'Always open' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "24/7"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=public with a fixed text, namely 'Publicly accessible' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "public"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=customers with a fixed text, namely 'Only for customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=private with a fixed text, namely 'Not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Bicycle pump and repair' shows access=no with a fixed text, namely 'Not accessible to the general public' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "service:bicycle:chain_tool",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:chain_tool=yes with a fixed text, namely 'There is a chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:chain_tool",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:chain_tool=no with a fixed text, namely 'There is no chain tool' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:stand",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:stand=yes with a fixed text, namely 'There is a hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:stand",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:stand=no with a fixed text, namely 'There is no hook or stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
     },
     {
       "key": "valves",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'valves' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'valves' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "valves",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows valves=sclaverand with a fixed text, namely 'Sclaverand (also known as Presta)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=sclaverand with a fixed text, namely 'Sclaverand (also known as Presta)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "sclaverand"
     },
     {
       "key": "valves",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows valves=dunlop with a fixed text, namely 'Dunlop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=dunlop with a fixed text, namely 'Dunlop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "dunlop"
     },
     {
       "key": "valves",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows valves=schrader with a fixed text, namely 'Schrader (cars)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=schrader with a fixed text, namely 'Schrader (cars)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "schrader"
     },
     {
       "key": "manual",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows manual=yes with a fixed text, namely 'Manual pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows manual=yes with a fixed text, namely 'Manual pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "manual",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows manual=no with a fixed text, namely 'Electrical pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows manual=no with a fixed text, namely 'Electrical pump' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "manometer",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=yes with a fixed text, namely 'There is a manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows manometer=yes with a fixed text, namely 'There is a manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "manometer",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=no with a fixed text, namely 'There is no manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows manometer=no with a fixed text, namely 'There is no manometer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "manometer",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows manometer=broken with a fixed text, namely 'There is manometer but it is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows manometer=broken with a fixed text, namely 'There is manometer but it is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "broken"
     },
     {
       "key": "level",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle pump and repair' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "location",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
+      "description": "Layer 'Bicycle pump and repair' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Bike stations (repair, pump or both)' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Bicycle pump and repair' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "-1"
     },
     {
       "key": "amenity",
@@ -5506,6 +5531,11 @@
       "value": "1"
     },
     {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
       "key": "description",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -5548,16 +5578,14 @@
       "description": "Layer 'Observation towers' shows and asks freeform values for key 'height' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "operator",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "access",
+      "description": "Layer 'Observation towers' shows access=yes with a fixed text, namely 'This tower is publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
     },
     {
-      "key": "website",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "contact:website",
-      "description": "Layer 'Observation towers' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "access",
+      "description": "Layer 'Observation towers' shows access=guided with a fixed text, namely 'This tower can only be visited with a guide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "guided"
     },
     {
       "key": "charge",
@@ -5584,6 +5612,14 @@
       "value": "yes"
     },
     {
+      "key": "website",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Observation towers' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "step_count",
       "description": "Layer 'Observation towers' shows and asks freeform values for key 'step_count' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -5596,6 +5632,10 @@
       "key": "elevator",
       "description": "Layer 'Observation towers' shows elevator=no with a fixed text, namely 'This tower does not have an elevator' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "wheelchair",
@@ -5736,11 +5776,6 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows  with a fixed text, namely 'Accessible to the general public' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key access.",
-      "value": ""
-    },
-    {
-      "key": "access",
       "description": "Layer 'Playgrounds' shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
@@ -5751,7 +5786,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "students"
     },
     {
@@ -5795,11 +5830,6 @@
       "key": "opening_hours",
       "description": "Layer 'Playgrounds' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "24/7"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Playgrounds' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
-      "value": ""
     },
     {
       "key": "shop",
@@ -6585,11 +6615,6 @@
       "key": "vending",
       "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key vending.",
       "value": ""
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Personal theme has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

@@ -38,6 +38,7 @@ A layer showing facilities where one can clean their bike
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/bike_cleaning/bike_cleaning.json)

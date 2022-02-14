@@ -3,6 +3,9 @@
         "description": "Adressen",
         "name": "Bekende adressen in OSM",
         "tagRenderings": {
+            "fixme": {
+                "question": "Wat moet hier gecorrigeerd worden? Leg het uit"
+            },
             "housenumber": {
                 "mappings": {
                     "0": {
@@ -19,6 +22,55 @@
         },
         "title": {
             "render": "Bekend adres"
+        }
+    },
+    "ambulancestation": {
+        "description": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
+        "name": "Kaart van ambulancestations",
+        "presets": {
+            "0": {
+                "description": "Voeg een ambulancestation toe aan de kaart",
+                "title": "Ambulancestation"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Welke organisatie beheert dit station?",
+                "render": "Dit station wordt beheerd door {operator}."
+            },
+            "ambulance-name": {
+                "question": "Hoe heet dit ambulancestation?",
+                "render": "Dit station heet {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit station wordt beheerd door de overheid."
+                    },
+                    "1": {
+                        "then": "Dit station wordt beheerd door een informele of community organisatie."
+                    },
+                    "2": {
+                        "then": "Dit station wordt beheerd door een formele groep vrijwilligers."
+                    },
+                    "3": {
+                        "then": "Dit station wordt beheerd door een privé-organisatie."
+                    }
+                },
+                "question": "Wat voor een organisatie is de beheerder van dit station?",
+                "render": "De beheerder is van het type {operator:type}."
+            },
+            "ambulance-place": {
+                "question": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)",
+                "render": "Dit station ligt in {addr:place}."
+            },
+            "ambulance-street": {
+                "question": " In welke straat ligt dit station?",
+                "render": "Straat waar dit station ligt: {addr:street}"
+            }
+        },
+        "title": {
+            "render": "Ambulancestation"
         }
     },
     "artwork": {
@@ -150,7 +202,8 @@
                 "render": "Maximumbreedte: {maxwidth:physical} m"
             },
             "Overlap (cyclebarrier)": {
-                "question": "Hoeveel overlappen de barrières?"
+                "question": "Hoeveel overlappen de barrières?",
+                "render": "Overlap: {overlap} m"
             },
             "Space between barrier (cyclebarrier)": {
                 "question": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
@@ -286,6 +339,7 @@
         }
     },
     "bench_at_pt": {
+        "description": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
         "name": "Zitbanken aan bushaltes",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -366,6 +420,15 @@
     "bicycle_rental": {
         "description": "Fietsverhuustations",
         "name": "Fietsverhuur",
+        "presets": {
+            "0": {
+                "description": "Een bemande winkel die focust op fietsverhuur",
+                "title": "fietsverhuurzaak"
+            },
+            "1": {
+                "title": "fietsverhuur"
+            }
+        },
         "tagRenderings": {
             "8": {
                 "renderings": {
@@ -452,6 +515,7 @@
         }
     },
     "bicycle_tube_vending_machine": {
+        "description": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
         "name": "Fietsbanden-verkoopsautomaat",
         "presets": {
             "0": {
@@ -480,6 +544,7 @@
         }
     },
     "bike_cafe": {
+        "description": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
         "name": "Fietscafé",
         "presets": {
             "0": {
@@ -547,10 +612,43 @@
         }
     },
     "bike_cleaning": {
+        "description": "Een laag die plaatsen toont waar je je fiets kunt wassen",
         "name": "Fietsschoonmaakpunt",
         "presets": {
             "0": {
                 "title": "Fietsschoonmaakpunt"
+            }
+        },
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis fietsschoonmaakpunt"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "2": {
+                        "then": "Je moet betalen voor het fietsschoonmaakpunt"
+                    }
+                },
+                "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
+                "render": "Het gebruik van het fietsschoonmaakpunt kost {charge}"
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Het fietsschoonmaakpunt is gratis"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "2": {
+                        "then": "Het fietsschoonmaakpunt is betalend, maar de prijs is onbekend"
+                    }
+                },
+                "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
+                "render": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}"
             }
         },
         "title": {
@@ -563,6 +661,7 @@
         }
     },
     "bike_parking": {
+        "description": "Een laag die toont waar je je fiets kunt parkeren",
         "name": "Fietsparking",
         "presets": {
             "0": {
@@ -621,7 +720,7 @@
             },
             "Cargo bike capacity?": {
                 "question": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
-                "render": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen"
+                "render": "Deze parking heeft plaats voor {capacity:cargo_bike} bakfietsen"
             },
             "Cargo bike spaces?": {
                 "mappings": {
@@ -629,7 +728,7 @@
                         "then": "Deze parking heeft plaats voor bakfietsen"
                     },
                     "1": {
-                        "then": "Er zijn speciale plaatsen voorzien voor bakfietsen"
+                        "then": "Er zijn speciale plaatsen voorzien voor bakfietsen."
                     },
                     "2": {
                         "then": "Je mag hier geen bakfietsen parkeren"
@@ -704,6 +803,26 @@
                     }
                 },
                 "question": "Werkt de fietspomp nog?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Publiek toegankelijk"
+                    },
+                    "1": {
+                        "then": "Publiek toegankelijk"
+                    },
+                    "2": {
+                        "then": "Enkel voor klanten van de bijhorende zaak"
+                    },
+                    "3": {
+                        "then": "Niet publiek toegankelijk"
+                    },
+                    "4": {
+                        "then": "Niet publiek toegankelijk"
+                    }
+                },
+                "question": "Wie kan dit herstelpunt gebruiken?"
             },
             "bike_repair_station-available-services": {
                 "mappings": {
@@ -964,6 +1083,7 @@
         }
     },
     "bike_themed_object": {
+        "description": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden",
         "name": "Fietsgerelateerd object",
         "title": {
             "mappings": {
@@ -1017,13 +1137,6 @@
                     "0": {
                         "question": "Enkel overdekte kijkhutten"
                     }
-                }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "icon": {
-                    "render": "./assets/layers/birdhide/birdhide.svg"
                 }
             }
         },
@@ -1108,6 +1221,7 @@
         }
     },
     "cafe_pub": {
+        "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
         "filter": {
             "0": {
                 "options": {
@@ -2302,6 +2416,7 @@
         }
     },
     "cycleways_and_roads": {
+        "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -2482,6 +2597,32 @@
                 "render": "Deze weg is gemaakt van {surface}"
             },
             "Surface of the street": {
+                "mappings": {
+                    "0": {
+                        "then": "Bruikbaar voor kleine, harde wielen: rollerblade, skateboard"
+                    },
+                    "1": {
+                        "then": "Bruikbaar voor smalle wielen: racefiets"
+                    },
+                    "2": {
+                        "then": "Bruikbaar voor normale wielen: stadsfiets, rolwagen, step"
+                    },
+                    "3": {
+                        "then": "Bruikbaar voor robuuste wielen: trekking fiets, auto, rickshaw"
+                    },
+                    "4": {
+                        "then": "Bruikbaar voor terreinvoertuigen: 4x4 personenwagens"
+                    },
+                    "5": {
+                        "then": "Bruikbaar voor terreinvoertuigen: zware 4x4 voertuigen"
+                    },
+                    "6": {
+                        "then": "Bruikbaar voor uitzonderlijke terreinvoertuigen: tractor, ATV"
+                    },
+                    "7": {
+                        "then": "Onmogelijk om met een voertuig met wielen te passeren"
+                    }
+                },
                 "question": "Wat is de kwaliteit van deze straat?"
             },
             "cyclelan-segregation": {
@@ -2658,6 +2799,7 @@
         }
     },
     "defibrillator": {
+        "description": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -2699,6 +2841,9 @@
                     },
                     "2": {
                         "then": "Dit is een gewone automatische defibrillator"
+                    },
+                    "3": {
+                        "then": "Dit is een speciaal type defibrillator: {defibrillator}"
                     }
                 },
                 "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?"
@@ -2829,9 +2974,14 @@
         }
     },
     "entrance": {
+        "description": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)",
+        "name": "Toegang",
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Het type deur is onbekend"
+                    },
                     "1": {
                         "then": "Een gewone deur die aan scharnieren ophangt en openzwaait"
                     },
@@ -2843,6 +2993,17 @@
                     },
                     "4": {
                         "then": "Een poort die langs boven dichtrolt, typisch voor garages"
+                    },
+                    "5": {
+                        "then": "Er is een toegang zonder een deur"
+                    }
+                },
+                "question": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
+            },
+            "Entrance type": {
+                "mappings": {
+                    "0": {
+                        "then": "Het specifieke type ingang is onbekend"
                     }
                 }
             }
@@ -3457,8 +3618,8 @@
         }
     },
     "picnic_table": {
-        "description": "Deze laag toont picnictafels",
-        "name": "Picnictafels",
+        "description": "Deze laag toont picknicktafels",
+        "name": "Picknicktafels",
         "presets": {
             "0": {
                 "title": "picnic-tafel"
@@ -3468,18 +3629,18 @@
             "picnic_table-material": {
                 "mappings": {
                     "0": {
-                        "then": "Deze picnictafel is gemaakt uit hout"
+                        "then": "Deze picknicktafel is gemaakt uit hout"
                     },
                     "1": {
-                        "then": "Deze picnictafel is gemaakt uit beton"
+                        "then": "Deze picknicktafel is gemaakt uit beton"
                     }
                 },
-                "question": "Van welk materiaal is deze picnictafel gemaakt?",
-                "render": "Deze picnictafel is gemaakt van {material}"
+                "question": "Van welk materiaal is deze picknicktafel gemaakt?",
+                "render": "Deze picknicktafel is gemaakt van {material}"
             }
         },
         "title": {
-            "render": "Picnictafel"
+            "render": "Picknicktafel"
         }
     },
     "play_forest": {

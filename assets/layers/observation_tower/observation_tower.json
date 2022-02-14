@@ -80,7 +80,8 @@
       "id": "access",
       "question": {
         "en": "Can this tower be visited?",
-        "nl": "Is deze toren publiek toegankelijk?"
+        "nl": "Is deze toren publiek toegankelijk?",
+        "es": "¿Se puede visitar esta torre?"
       },
       "mappings": [
         {

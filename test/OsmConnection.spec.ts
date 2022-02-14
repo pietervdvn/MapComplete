@@ -19,7 +19,6 @@ export default class OsmConnectionSpec extends T {
                 () => {
                     const osmConn = new OsmConnection({
                             osmConfiguration: "osm-test",
-                            layoutName: "Unit test",
                             allElements: new ElementStorage(),
                             changes: new Changes(),
                             oauth_token: new UIEventSource<string>(OsmConnectionSpec._osm_token)

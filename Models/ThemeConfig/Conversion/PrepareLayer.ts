@@ -8,7 +8,7 @@ import {Translation} from "../../../UI/i18n/Translation";
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
     constructor(state: DesugaringContext) {
-        super("Converts a tagRenderingSpec into the full tagRendering", []);
+        super("Converts a tagRenderingSpec into the full tagRendering", [],"ExpandTagRendering");
         this._state = state;
     }
 
@@ -147,7 +147,8 @@ class ExpandGroupRewrite extends Conversion<{
 
     constructor(state: DesugaringContext) {
         super(
-            "Converts a rewrite config for tagRenderings into the expanded form"
+            "Converts a rewrite config for tagRenderings into the expanded form",[],
+            "ExpandGroupRewrite"
         );
         this._expandSubTagRenderings = new ExpandTagRendering(state)
     }
@@ -156,7 +157,7 @@ class ExpandGroupRewrite extends Conversion<{
         {
             rewrite:
                 { sourceString: string; into: string[] }[]; renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
-        } | TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
+        } | TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings?: string[] } {
 
         if (json["rewrite"] === undefined) {
             return {result: [<TagRenderingConfigJson>json], errors: [], warnings: []}
@@ -166,19 +167,32 @@ class ExpandGroupRewrite extends Conversion<{
                 { sourceString: string[]; into: (string | any)[][] };
             renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
         }>json;
+       
 
         {
             const errors = []
-  
+
+            if(!Array.isArray(config.rewrite.sourceString)){
+                let extra = "";
+                if(typeof config.rewrite.sourceString === "string"){
+                    extra=`<br/>Try <span class='literal-code'>"sourceString": [ "${config.rewrite.sourceString}" ] </span> instead (note the [ and ])`
+                }
+                const msg = context+"<br/>Invalid format: a rewrite block is defined, but the 'sourceString' should be an array of strings, but it is a "+typeof  config.rewrite.sourceString + extra
+                errors.push(msg)
+            }
+
+
             const expectedLength = config.rewrite.sourceString.length
             for (let i = 0; i < config.rewrite.into.length; i++){
                 const targets = config.rewrite.into[i];
-                if(targets.length !== expectedLength){
-                    errors.push(context+".rewrite.into["+i+"]: expected "+expectedLength+" values, but got "+targets.length)
-                }
+                if(!Array.isArray(targets)){
+                    errors.push(`${context}.rewrite.into[${i}] should be an array of values, but it is a `+typeof targets)
+                } else                if(targets.length !== expectedLength){
+                    errors.push(`${context}.rewrite.into[${i}]:<br/>The rewrite specified ${config.rewrite.sourceString} as sourcestring, which consists of ${expectedLength} values. The target ${JSON.stringify(targets)} has ${targets.length} items`)
                 if(typeof targets[0] !== "string"){
                     errors.push(context+".rewrite.into["+i+"]: expected a string as first rewrite value values, but got "+targets[0])
 
+                }
                 }
             }
 

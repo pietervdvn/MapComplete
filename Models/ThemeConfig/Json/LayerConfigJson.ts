@@ -399,4 +399,13 @@ export interface LayerConfigJson {
      */
     units?: UnitConfigJson[]
 
+    /**
+     * If set, synchronizes wether or not this layer is selected.
+     * 
+     * no: Do not sync at all, always revert to default
+     * local: keep selection on local storage
+     * theme-only: sync via OSM, but this layer will only be toggled in this theme
+     * global: all layers with this ID will be synced accross all themes
+     */
+    syncSelection?: "no" | "local" | "theme-only" | "global"
 }

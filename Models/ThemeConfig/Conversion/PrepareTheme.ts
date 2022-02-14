@@ -16,7 +16,7 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
     constructor(
         state: DesugaringContext,
     ) {
-        super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", []);
+        super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", [],"SubstuteLayers");
         this._state = state;
     }
     
@@ -130,7 +130,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
     private _state: DesugaringContext;
 
     constructor(state: DesugaringContext) {
-        super("Adds the default layers, namely: " + Constants.added_by_default.join(", "), ["layers"]);
+        super("Adds the default layers, namely: " + Constants.added_by_default.join(", "), ["layers"],"AddDefaultLayers");
         this._state = state;
     }
 
@@ -182,7 +182,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 
 class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
     constructor() {
-        super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"]);
+        super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"],"AddImportLayers");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[] } {
@@ -240,7 +240,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
 export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     private readonly _state: DesugaringContext;
     constructor(state: DesugaringContext, ) {
-        super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"]);
+        super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"],"AddMiniMap");
         this._state = state;
     }
 
@@ -291,7 +291,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
 class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 
     constructor() {
-        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards", ["overrideAll", "layers"]);
+        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards", ["overrideAll", "layers"],"ApplyOverrideAll");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
@@ -321,7 +321,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _state: DesugaringContext;
     constructor(state: DesugaringContext, ) {
-        super("If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)", ["layers"]);
+        super("If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)", ["layers"],"AddDependencyLayersToTheme");
         this._state = state;
     }
 
@@ -406,12 +406,31 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
+class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
+    private readonly _state: DesugaringContext;
+    constructor(state: DesugaringContext) {
+        super("Adds every public layer to the personal theme",["layers"],"PreparePersonalTheme");
+        this._state = state;
+    }
+
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if(json.id !== "personal"){
+            return {result: json}
+        }
+        
+        json.layers = Array.from(this._state.sharedLayers.keys())
+        
+        
+        return {result: json};
+    }
+    
+}
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a theme",
-
+            new PreparePersonalTheme(state),
             new OnEveryConcat("layers", new SubstituteLayer(state)),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             new OnEvery("layers", new PrepareLayer(state)),

@@ -9,7 +9,7 @@ import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Toggle from "../Input/Toggle";
 import {Utils} from "../../Utils";
@@ -52,7 +52,8 @@ export default class MoreScreen extends Combine {
             id: string,
             icon: string,
             title: any,
-            shortDescription: any
+            shortDescription: any,
+            definition?: any
         }, isCustom: boolean = false
     ):
         BaseUIElement {
@@ -87,6 +88,11 @@ export default class MoreScreen extends Combine {
             linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
         }
 
+        let hash = ""
+        if(layout.definition !== undefined){
+            hash = "#"+btoa(JSON.stringify(layout.definition))
+        }
+        
         const linkText = currentLocation?.map(currentLocation => {
             const params = [
                 ["z", currentLocation?.zoom],
@@ -95,8 +101,9 @@ export default class MoreScreen extends Combine {
             ].filter(part => part[1] !== undefined)
                 .map(part => part[0] + "=" + part[1])
                 .join("&")
-            return `${linkPrefix}${params}`;
+            return `${linkPrefix}${params}${hash}`;
         }) ?? new UIEventSource<string>(`${linkPrefix}`)
+
 
 
         return new SubtleButton(layout.icon,
@@ -134,7 +141,8 @@ export default class MoreScreen extends Combine {
                 id: string
                 icon: string,
                 title: any,
-                shortDescription: any
+                shortDescription: any,
+                definition?: any
             } = JSON.parse(str)
 
             return MoreScreen.createLinkButton(state, value, true)

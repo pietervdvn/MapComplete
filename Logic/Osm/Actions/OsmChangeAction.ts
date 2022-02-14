@@ -23,7 +23,7 @@ export default abstract class OsmChangeAction {
 
     public Perform(changes: Changes) {
         if (this.isUsed) {
-            throw "This ChangeAction is already used: " + this.constructor.name
+            throw "This ChangeAction is already used"
         }
         this.isUsed = true;
         return this.CreateChangeDescriptions(changes)

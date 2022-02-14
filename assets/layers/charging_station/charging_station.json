@@ -75,7 +75,8 @@
       "question": {
         "en": "Which vehicles are allowed to charge here?",
         "nl": "Welke voertuigen kunnen hier opgeladen worden?",
-        "de": "Welche Fahrzeuge dürfen hier laden?"
+        "de": "Welche Fahrzeuge dürfen hier laden?",
+        "es": "¿A qué vehículos se permite la carga aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -2912,7 +2913,8 @@
       "question": {
         "en": "When is this charging station opened?",
         "nl": "Wanneer is dit oplaadpunt beschikbaar??",
-        "de": "Wann ist diese Ladestation geöffnet?"
+        "de": "Wann ist diese Ladestation geöffnet?",
+        "es": "¿Cuándo abre esta estación de carga?"
       },
       "mappings": [
         {
@@ -2920,7 +2922,8 @@
           "then": {
             "en": "24/7 opened (including holidays)",
             "nl": "24/7 open - ook tijdens vakanties",
-            "de": "durchgehend geöffnet (einschließlich Feiertage)"
+            "de": "durchgehend geöffnet (einschließlich Feiertage)",
+            "es": "Abre 24/7 (incluidos días festivos)"
           }
         }
       ]
@@ -3043,6 +3046,7 @@
             "en": "Authentication by a membership card",
             "nl": "Aanmelden met een lidkaart is mogelijk",
             "de": "Authentifizierung per Mitgliedskarte",
+            "es": "Autenticación mediante tarjeta de membresía",
             "fr": "Authentification par carte de membre"
           }
         },
@@ -3053,6 +3057,7 @@
             "en": "Authentication by an app",
             "nl": "Aanmelden via een applicatie is mogelijk",
             "de": "Authentifizierung per App",
+            "es": "Autenticación mediante aplicación",
             "fr": "Authentification par une app"
           }
         },
@@ -3063,6 +3068,7 @@
             "en": "Authentication via phone call is available",
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
             "de": "Authentifizierung per Anruf ist möglich",
+            "es": "Autenticación mediante llamada telefónica disponible",
             "fr": "Authentification par appel téléphonique est disponible"
           }
         },
@@ -3073,6 +3079,7 @@
             "en": "Authentication via SMS is available",
             "nl": "Aanmelden via SMS is mogelijk",
             "de": "Authentifizierung per SMS ist möglich",
+            "es": "Autenticación mediante SMS disponible",
             "fr": "Authentification par SMS est disponible"
           }
         },
@@ -3083,6 +3090,7 @@
             "en": "Authentication via NFC is available",
             "nl": "Aanmelden via NFC is mogelijk",
             "de": "Authentifizierung per NFC ist möglich",
+            "es": "Autenticación mediante NFC disponible",
             "fr": "Authentification par NFC est disponible"
           }
         },
@@ -3092,7 +3100,8 @@
           "then": {
             "en": "Authentication via Money Card is available",
             "nl": "Aanmelden met Money Card is mogelijk",
-            "de": "Authentifizierung per Geldkarte ist möglich"
+            "de": "Authentifizierung per Geldkarte ist möglich",
+            "es": "Autenticación mediante Money Card disponible"
           }
         },
         {
@@ -3102,6 +3111,7 @@
             "en": "Authentication via debit card is available",
             "nl": "Aanmelden met een betaalkaart is mogelijk",
             "de": "Authentifizierung per Kreditkarte ist möglich",
+            "es": "Autenticación mediante tarjeta de débito disponible",
             "fr": "Authentification par carte de débit est disponible"
           }
         },
@@ -3180,12 +3190,14 @@
       "render": {
         "en": "Part of the network <b>{network}</b>",
         "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
-        "de": "Teil des Netzwerks <b>{network}</b>"
+        "de": "Teil des Netzwerks <b>{network}</b>",
+        "es": "Parte de la red <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
         "nl": "Is dit oplaadpunt deel van een groter netwerk?",
-        "de": "Ist diese Ladestation Teil eines Netzwerks?"
+        "de": "Ist diese Ladestation Teil eines Netzwerks?",
+        "es": "¿Esta estación de carga forma parte de una red?"
       },
       "freeform": {
         "key": "network"
@@ -3204,7 +3216,8 @@
           "then": {
             "en": "Not part of a bigger network",
             "nl": "Maakt geen deel uit van een groter netwerk",
-            "de": "Nicht Teil eines größeren Netzwerks"
+            "de": "Nicht Teil eines größeren Netzwerks",
+            "es": "No forma parte de una red mayor"
           },
           "hideInAnswer": true
         },

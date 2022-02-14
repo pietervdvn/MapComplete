@@ -104,7 +104,7 @@ export class Changes {
      * Uploads all the pending changes in one go.
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
-    public async flushChanges(flushreason: string = undefined, openChangeset?: UIEventSource<number>): Promise<void> {
+    public async flushChanges(flushreason: string = undefined): Promise<void> {
         if (this.pendingChanges.data.length === 0) {
             return;
         }
@@ -117,7 +117,7 @@ export class Changes {
         console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
         try {
-            const csNumber = await this.flushChangesAsync(openChangeset)
+            const csNumber = await this.flushChangesAsync()
             this.isUploading.setData(false)
             console.log("Changes flushed. Your changeset is " + csNumber);
         } catch (e) {
@@ -213,7 +213,7 @@ export class Changes {
 
         const osmObjects = Utils.NoNull(await Promise.all(neededIds.map(async id =>
             OsmObject.DownloadObjectAsync(id).catch(e => {
-                console.error("Could not download OSM-object", id, " dropping it from the changes")
+                console.error("Could not download OSM-object", id, " dropping it from the changes ("+e+")")
                 pending = pending.filter(ch => ch.type + "/" + ch.id !== id)
                 return undefined;
             }))));
@@ -309,7 +309,7 @@ export class Changes {
         return true;
     }
 
-    private async flushChangesAsync(openChangeset?: UIEventSource<number>): Promise<void> {
+    private async flushChangesAsync(): Promise<void> {
         const self = this;
         try {
             // At last, we build the changeset and upload
@@ -327,18 +327,16 @@ export class Changes {
             const successes = await Promise.all(Array.from(pendingPerTheme,
                 async ([theme, pendingChanges]) => {
                     try {
-                        if (openChangeset === undefined) {
-                            openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).map(
-                                str => {
-                                    const n = Number(str);
-                                    if (isNaN(n)) {
-                                        return undefined
-                                    }
-                                    return n
-                                }, [], n => "" + n
-                            );
-                            console.log("Using current-open-changeset-" + theme + " from the preferences, got " + openChangeset.data)
-                        }
+                        const openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).map(
+                            str => {
+                                const n = Number(str);
+                                if (isNaN(n)) {
+                                    return undefined
+                                }
+                                return n
+                            }, [], n => "" + n
+                        );
+                        console.log("Using current-open-changeset-" + theme + " from the preferences, got " + openChangeset.data)
 
                         return await self.flushSelectChanges(pendingChanges, openChangeset);
                     } catch (e) {

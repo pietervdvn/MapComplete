@@ -134,7 +134,7 @@
         "de": "Was ist die Art dieses Kunstwerks?",
         "it": "Che tipo di opera d’arte è questo?",
         "ru": "К какому типу относится эта работа?",
-        "es": "Cuál es el tipo de esta obra de arte?",
+        "es": "¿Qué tipo de obra es esta pieza?",
         "ja": "この作品の種類は何ですか?",
         "zh_Hant": "這是什麼類型的藝術品？",
         "nb_NO": "Hvilken type kunstverk er dette?",
@@ -165,7 +165,8 @@
             "id": "Arsitektur",
             "pt": "Arquitetura",
             "hu": "Építészet",
-            "pl": "Architektura"
+            "pl": "Architektura",
+            "es": "Arquitectura"
           }
         },
         {
@@ -183,7 +184,8 @@
             "id": "Mural",
             "pt": "Mural",
             "hu": "Falfestmény",
-            "pl": "Mural"
+            "pl": "Mural",
+            "es": "Mural"
           }
         },
         {
@@ -201,7 +203,8 @@
             "id": "Lukisan",
             "pt": "Pintura",
             "hu": "Festmény",
-            "pl": "Obraz"
+            "pl": "Obraz",
+            "es": "Pintura"
           }
         },
         {
@@ -219,7 +222,8 @@
             "id": "Patung",
             "pt": "Escultura",
             "hu": "Absztrakt szobor",
-            "pl": "Rzeźba"
+            "pl": "Rzeźba",
+            "es": "Escultura"
           }
         },
         {
@@ -236,7 +240,8 @@
             "nb_NO": "Statue",
             "pt": "Estátua",
             "hu": "Szobor",
-            "pl": "Posąg"
+            "pl": "Posąg",
+            "es": "Estatua"
           }
         },
         {
@@ -253,7 +258,8 @@
             "nb_NO": "Byste",
             "pt": "Busto",
             "hu": "Mellszobor",
-            "pl": "Popiersie"
+            "pl": "Popiersie",
+            "es": "Busto"
           }
         },
         {
@@ -289,7 +295,8 @@
             "id": "Instalasi",
             "pt": "Instalação",
             "hu": "Installáció",
-            "pl": "Instalacja artystyczna"
+            "pl": "Instalacja artystyczna",
+            "es": "Instalación"
           }
         },
         {
@@ -307,7 +314,8 @@
             "id": "Graffiti",
             "pt": "Graffiti",
             "hu": "Graffiti",
-            "pl": "Graffiti"
+            "pl": "Graffiti",
+            "es": "Grafiti"
           }
         },
         {

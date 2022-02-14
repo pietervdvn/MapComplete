@@ -8,6 +8,7 @@ import {TileLayer} from "leaflet";
 import * as X from "leaflet-providers";
 import {Utils} from "../../Utils";
 import {AvailableBaseLayersObj} from "./AvailableBaseLayers";
+import {BBox} from "../BBox";
 
 export default class AvailableBaseLayersImplementation implements AvailableBaseLayersObj {
 
@@ -26,7 +27,9 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             category: "osmbasedmap"
         }
 
-    public layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(AvailableBaseLayersImplementation.LoadProviderIndex());
+    public readonly layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(AvailableBaseLayersImplementation.LoadProviderIndex());
+    public readonly globalLayers = this.layerOverview.filter(layer => layer.feature?.geometry === undefined || layer.feature?.geometry === null)
+    public readonly localLayers = this.layerOverview.filter(layer => layer.feature?.geometry !== undefined && layer.featuer?.geometry !== null)
 
     private static LoadRasterIndex(): BaseLayer[] {
         const layers: BaseLayer[] = []
@@ -258,24 +261,23 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
 
     private CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [this.osmCarto]
-        const globalLayers = [];
-        for (const layerOverviewItem of this.layerOverview) {
+        if (lon === undefined || lat === undefined) {
+            return availableLayers.concat(this.globalLayers);
+        }
+        const lonlat = [lon, lat];
+        for (const layerOverviewItem of this.localLayers) {
             const layer = layerOverviewItem;
-
-            if (layer.feature?.geometry === undefined || layer.feature?.geometry === null) {
-                globalLayers.push(layer);
-                continue;
+            const bbox = BBox.get(layer.feature)
+            
+            if(!bbox.contains(lonlat)){
+                continue
             }
 
-            if (lon === undefined || lat === undefined) {
-                continue;
-            }
-
-            if (GeoOperations.inside([lon, lat], layer.feature)) {
+            if (GeoOperations.inside(lonlat, layer.feature)) {
                 availableLayers.push(layer);
             }
         }
 
-        return availableLayers.concat(globalLayers);
+        return availableLayers.concat(this.globalLayers);
     }
 }

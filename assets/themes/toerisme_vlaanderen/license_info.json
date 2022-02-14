@@ -106,6 +106,12 @@
     ]
   },
   {
+    "path": "logo.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": []
+  },
+  {
     "path": "observation_platform.svg",
     "license": "CC0",
     "authors": [

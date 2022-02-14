@@ -205,6 +205,7 @@
             "type": "object",
             "properties": {
               "osmTags": {
+                "description": "Every source must set which tags have to be present in order to load the given layer.",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/AndOrTagConfigJson"
@@ -214,8 +215,9 @@
                   }
                 ]
               },
-              "overpassScript": {
-                "type": "string"
+              "maxCacheAge": {
+                "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                "type": "number"
               }
             },
             "required": [
@@ -225,9 +227,8 @@
           {
             "type": "object",
             "properties": {
-              "maxCacheAge": {
-                "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
-                "type": "number"
+              "overpassScript": {
+                "type": "string"
               }
             }
           }
@@ -239,6 +240,7 @@
             "type": "object",
             "properties": {
               "osmTags": {
+                "description": "Every source must set which tags have to be present in order to load the given layer.",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/AndOrTagConfigJson"
@@ -248,32 +250,42 @@
                   }
                 ]
               },
-              "geoJson": {
-                "type": "string"
-              },
-              "geoJsonZoomLevel": {
+              "maxCacheAge": {
+                "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
                 "type": "number"
-              },
-              "isOsmCache": {
-                "type": "boolean"
-              },
-              "mercatorCrs": {
-                "type": "boolean"
               }
             },
             "required": [
-              "geoJson",
               "osmTags"
             ]
           },
           {
             "type": "object",
             "properties": {
-              "maxCacheAge": {
-                "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+              "geoJson": {
+                "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+                "type": "string"
+              },
+              "geoJsonZoomLevel": {
+                "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
                 "type": "number"
+              },
+              "isOsmCache": {
+                "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+                "type": "boolean"
+              },
+              "mercatorCrs": {
+                "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+                "type": "boolean"
+              },
+              "idKey": {
+                "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+                "type": "string"
               }
-            }
+            },
+            "required": [
+              "geoJson"
+            ]
           }
         ]
       }
@@ -328,9 +340,16 @@
     "path": [
       "layers",
       "isShown",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "question"
+    ]
   },
   {
     "path": [
@@ -589,9 +608,16 @@
     "path": [
       "layers",
       "title",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "question"
+    ]
   },
   {
     "path": [
@@ -843,9 +869,16 @@
     "path": [
       "layers",
       "titleIcons",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "question"
+    ]
   },
   {
     "path": [
@@ -1098,9 +1131,17 @@
       "layers",
       "mapRendering",
       "icon",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "question"
+    ]
   },
   {
     "path": [
@@ -1369,9 +1410,18 @@
       "mapRendering",
       "iconBadges",
       "then",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "question"
+    ]
   },
   {
     "path": [
@@ -1642,9 +1692,17 @@
       "layers",
       "mapRendering",
       "iconSize",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "question"
+    ]
   },
   {
     "path": [
@@ -1898,9 +1956,17 @@
       "layers",
       "mapRendering",
       "rotation",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "question"
+    ]
   },
   {
     "path": [
@@ -2154,9 +2220,17 @@
       "layers",
       "mapRendering",
       "label",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "question"
+    ]
   },
   {
     "path": [
@@ -2417,9 +2491,17 @@
       "layers",
       "mapRendering",
       "color",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "question"
+    ]
   },
   {
     "path": [
@@ -2676,9 +2758,17 @@
       "layers",
       "mapRendering",
       "width",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "question"
+    ]
   },
   {
     "path": [
@@ -2932,9 +3022,17 @@
       "layers",
       "mapRendering",
       "dashArray",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "question"
+    ]
   },
   {
     "path": [
@@ -3188,9 +3286,17 @@
       "layers",
       "mapRendering",
       "lineCap",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "question"
+    ]
   },
   {
     "path": [
@@ -3448,9 +3554,17 @@
       "layers",
       "mapRendering",
       "fill",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "question"
+    ]
   },
   {
     "path": [
@@ -3704,9 +3818,17 @@
       "layers",
       "mapRendering",
       "fillColor",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "question"
+    ]
   },
   {
     "path": [
@@ -3960,9 +4082,17 @@
       "layers",
       "mapRendering",
       "offset",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "question"
+    ]
   },
   {
     "path": [
@@ -4350,9 +4480,16 @@
     "path": [
       "layers",
       "tagRenderings",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "question"
+    ]
   },
   {
     "path": [
@@ -4574,9 +4711,17 @@
       "layers",
       "tagRenderings",
       "renderings",
-      "question"
+      "render"
     ],
     "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "question"
+    ]
   },
   {
     "path": [
@@ -4784,7 +4929,7 @@
       {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/default_1"
         }
       },
       {
@@ -4893,7 +5038,7 @@
     ],
     "type": [
       {
-        "$ref": "#/definitions/default_2"
+        "$ref": "#/definitions/default_3"
       },
       {
         "type": "boolean"
@@ -5120,11 +5265,80 @@
             "type": "number"
           }
         }
-      },
-      {
-        "type": "boolean"
       }
     ]
+  },
+  {
+    "path": [
+      "enableUserBadge"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableShareScreen"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableMoreQuests"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableLayers"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableSearch"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableAddNewPoints"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableGeolocation"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableBackgroundLayerSelection"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableShowAllQuestions"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableDownload"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enablePdfDownload"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "enableNoteImports"
+    ],
+    "type": "boolean"
   },
   {
     "path": [

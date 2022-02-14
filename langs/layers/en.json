@@ -420,6 +420,15 @@
     "bicycle_rental": {
         "description": "Bicycle rental stations",
         "name": "Bicycle rental",
+        "presets": {
+            "0": {
+                "description": "A manned shop which focuses on bicycle rental",
+                "title": "bicycle rental shop"
+            },
+            "1": {
+                "title": "bicycle rental"
+            }
+        },
         "tagRenderings": {
             "8": {
                 "renderings": {
@@ -794,6 +803,26 @@
                     }
                 },
                 "question": "Is the bike pump still operational?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible"
+                    },
+                    "1": {
+                        "then": "Publicly accessible"
+                    },
+                    "2": {
+                        "then": "Only for customers"
+                    },
+                    "3": {
+                        "then": "Not accessible to the general public"
+                    },
+                    "4": {
+                        "then": "Not accessible to the general public"
+                    }
+                },
+                "question": "Who is allowed to use this repair station?"
             },
             "bike_repair_station-available-services": {
                 "mappings": {

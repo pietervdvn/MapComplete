@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "位於 2 樓"
+                },
+                "4": {
+                    "then": "位於地下一樓"
                 }
             },
             "question": "此圖徽位於哪個樓層／層級？",
@@ -55,6 +58,18 @@
                 }
             },
             "question": "這邊接受那種付款方式？"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "使用專用應用程式付款"
+                    },
+                    "1": {
+                        "then": "使用會員卡付款"
+                    }
+                }
+            }
         },
         "phone": {
             "question": "{name} 的電話號碼是什麼？"

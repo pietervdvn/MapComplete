@@ -291,9 +291,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": {
-          "nl": "./assets/layers/birdhide/birdhide.svg"
-        },
+        "render": "./assets/layers/birdhide/birdhide.svg",
         "mappings": [
           {
             "if": {
