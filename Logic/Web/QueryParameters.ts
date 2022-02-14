@@ -71,7 +71,7 @@ export class QueryParameters {
                 QueryParameters.knownSources[key] = source;
             }
         }
-
+        
     }
 
     private static Serialize() {
