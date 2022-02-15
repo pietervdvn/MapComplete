@@ -340,7 +340,7 @@ export class GeoOperations {
         return turf.lineIntersect(feature, otherFeature).features.map(p => <[number, number]>p.geometry.coordinates)
     }
 
-    public static AsGpx(feature, generatedWithLayer?: LayerConfig) {
+    public static AsGpx(feature, generatedWithLayer?: LayerConfig) : string{
 
         const metadata = {}
         const tags = feature.properties

@@ -28,7 +28,6 @@ export class LoginToggle extends VariableUiElement {
         const login = new LoginButton(text, state)
         super(
             state.osmConnection.loadingStatus.map(osmConnectionState => {
-                console.trace("Current osm state is ", osmConnectionState)
                 if(osmConnectionState === "loading"){
                     return loading
                 }
