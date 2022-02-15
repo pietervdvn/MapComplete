@@ -11,7 +11,7 @@ import FeatureSource from "../FeatureSource/FeatureSource";
 import {ElementStorage} from "../ElementStorage";
 import {GeoLocationPointProperties} from "../Actors/GeoLocationHandler";
 import {GeoOperations} from "../GeoOperations";
-import {ChangesetTag} from "./ChangesetHandler";
+import {ChangesetHandler, ChangesetTag} from "./ChangesetHandler";
 import {OsmConnection} from "./OsmConnection";
 
 /**
@@ -33,6 +33,7 @@ export class Changes {
     private readonly isUploading = new UIEventSource(false);
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
+    private _changesetHandler: ChangesetHandler;
 
     constructor(
         state?: {
@@ -47,6 +48,7 @@ export class Changes {
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
         this.state = state;
+        this._changesetHandler = state.osmConnection.CreateChangesetHandler(state.allElements, this)
 
         // Note: a changeset might be reused which was opened just before and might have already used some ids
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
@@ -299,7 +301,7 @@ export class Changes {
             ...perBinMessage
         ]
 
-        await this.state.osmConnection.changesetHandler.UploadChangeset(
+        await this._changesetHandler.UploadChangeset(
             (csId) => Changes.createChangesetFor("" + csId, changes),
             metatags,
             openChangeset

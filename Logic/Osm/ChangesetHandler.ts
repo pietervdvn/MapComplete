@@ -23,6 +23,14 @@ export class ChangesetHandler {
     private readonly auth: any;
     private readonly backend: string;
 
+    /**
+     * Use 'osmConnection.CreateChangesetHandler' instead
+     * @param dryRun
+     * @param osmConnection
+     * @param allElements
+     * @param changes
+     * @param auth
+     */
     constructor(dryRun: UIEventSource<boolean>,
                 osmConnection: OsmConnection,
                 allElements: ElementStorage,
