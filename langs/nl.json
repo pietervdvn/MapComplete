@@ -415,7 +415,8 @@
                 "intro": "<p>MapComplete is een makkelijk te gebruiken hulpmiddel om ter plaatste met een smartphone of vanop afstand met een PC data te verzamelen. Met enkele klikken kan de nodige data toegevoegd worden aan OpenStreetMap.</p>\n<p>Wij kunnen voor jou een <b>op maat gemaakte verzameltool</b> maken die precies de data vraagt die nodig is.</p>\n<p>Heb je een dataset die (opnieuw) opgemeten moet worden? Dat is het perfecte moment om de stap naar OpenStreetMap te maken. MapComplete kan je eigen dataset en OpenStreetMap samen tonen, wat het makkelijk maakt om zowel de eigen locaties als de bijdragen van de community na te kijken.</p>\n"
             },
             "internalUse": {
-                "title": "Data hergebruiken"
+                "title": "Data hergebruiken",
+                "intro": "<p>Wanneer de data in OpenStreetMap zit, zal je deze data waarschijnlijk ook willen gebruiken. Je MapComplete-kaart kan een handige <i>download</i>-knop krijgen waarmee je de data in open formaten kunt downloaden om ermee aan de slag te gaan in QGis, ArcGis, Excel, LibreOffice Calc, …</p><p>Iemand die met een spreadsheet kan werken, kan dus eenvoudig grafieken maken; maar ook de GIS-experten binnen je organisatie kunnen gemakkelijk aan de slag met de data in hun favoriete applicatie.</p><p>Ook voor automatische processen is er een gratis API beschikbaar, beheerd door de community</p>"
             },
             "text2": "Twijfel je nog? We sommen de mogelijkheden hieronder op en beantwoorden enkele veelvoorkomende vragen",
             "text1": "Wil je andere data visualiseren, maar bestaat er nog geen geschikte kaart voor? De MapComplete-ontwikkelaars kunnen dit <b>op maat bouwen</b> voor een schappelijk budget. Stuur je vraag via <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> of <a>een bericht op osm.org</a>",
@@ -423,6 +424,13 @@
                 "intro": "<p>MapComplete heeft een krachtig templatesysteem om snel een kaart op te zetten die precies toont wat je nodig hebt</p>\n<p>Deze data kan opgehaald van <b>OpenStreetMap</b> of van <b>externe datasets</b> komen - bijvoorbeeld om datasets met elkaar te vergelijken of om data te tonen die niet in OpenStreetMap thuishoort (bijvoorbeeld evenementen, statistieken, ...)</p>",
                 "title": "Welke data kan getoond worden met MapComplete?"
             }
+        },
+        "services": {
+            "intro": "De ontwikkelaar van MapComplete kan je verderhelpen met de volgende diensten:",
+            "title": "Diensten met MapComplete",
+            "li2": "Vormingen hoe data bijgedragen kan worden met MapComplete",
+            "li0": "Het opzetten van een kaart, aangepast voor jou noden",
+            "li1": "Hulp bij het opzetten van interne dataflows om OpenStreetMap te integreren"
         }
     },
     "privacy": {
