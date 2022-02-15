@@ -85,6 +85,7 @@
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "welcomeBack": "You are logged in, welcome back!",
         "loginToStart": "Log in to answer this question",
+        "loginFailed": "Logging in into OpenStreetMap failed",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "search": {
             "search": "Search a location",
