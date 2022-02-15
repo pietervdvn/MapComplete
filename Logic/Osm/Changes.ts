@@ -48,7 +48,7 @@ export class Changes {
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
         this.state = state;
-        this._changesetHandler = state.osmConnection.CreateChangesetHandler(state.allElements, this)
+        this._changesetHandler = state?.osmConnection?.CreateChangesetHandler(state.allElements, this)
 
         // Note: a changeset might be reused which was opened just before and might have already used some ids
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
