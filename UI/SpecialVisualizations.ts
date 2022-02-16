@@ -859,6 +859,20 @@ export default class SpecialVisualizations {
                             isUploading), t.loginToAddPicture, state)
                     }
 
+                },
+                {
+                    funcName:"title",
+                    args: [],
+                    docs:"Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
+                    example:"`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
+                    constr: (state, tags, args, guistate) =>
+                        new VariableUiElement(tags.map(tags => {
+                            const layer = state.layoutToUse.getMatchingLayer(tags)
+                            console.log("Layer for tags", tags,"is", layer.id)
+                            const title = layer?.title?.GetRenderValue(tags)
+                            console.log("Title became: ", title)
+                            return title
+                        }))
                 }
             ]
 
