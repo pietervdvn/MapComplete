@@ -48,7 +48,6 @@ export class OsmConnection {
     public isLoggedIn: UIEventSource<boolean>
     public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">("not-attempted")
     public preferencesHandler: OsmPreferences;
-    public changesetHandler: ChangesetHandler;
     public readonly _oauth_config: {
         oauth_consumer_key: string,
         oauth_secret: string,
@@ -64,8 +63,6 @@ export class OsmConnection {
     constructor(options: {
                     dryRun?: UIEventSource<boolean>,
                     fakeUser?: false | boolean,
-                    allElements: ElementStorage,
-                    changes: Changes,
                     oauth_token?: UIEventSource<string>,
                     // Used to keep multiple changesets open and to write to the correct changeset
                     singlePage?: boolean,
@@ -103,7 +100,6 @@ export class OsmConnection {
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
-        this.changesetHandler = new ChangesetHandler(this._dryRun, this, options.allElements, options.changes, this.auth);
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
             const self = this;
@@ -121,6 +117,10 @@ export class OsmConnection {
         } else {
             console.log("Not authenticated");
         }
+    }
+    
+    public CreateChangesetHandler(allElements: ElementStorage, changes: Changes){
+        return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

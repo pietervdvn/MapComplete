@@ -2,8 +2,6 @@ import T from "./TestHelper";
 import UserDetails, {OsmConnection} from "../Logic/Osm/OsmConnection";
 import {UIEventSource} from "../Logic/UIEventSource";
 import ScriptUtils from "../scripts/ScriptUtils";
-import {ElementStorage} from "../Logic/ElementStorage";
-import {Changes} from "../Logic/Osm/Changes";
 
 
 export default class OsmConnectionSpec extends T {
@@ -19,8 +17,6 @@ export default class OsmConnectionSpec extends T {
                 () => {
                     const osmConn = new OsmConnection({
                             osmConfiguration: "osm-test",
-                            allElements: new ElementStorage(),
-                            changes: new Changes(),
                             oauth_token: new UIEventSource<string>(OsmConnectionSpec._osm_token)
                         }
                     );

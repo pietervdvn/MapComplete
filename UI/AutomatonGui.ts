@@ -224,8 +224,6 @@ class AutomatonGui {
     constructor() {
 
         const osmConnection = new OsmConnection({
-            allElements: undefined,
-            changes: undefined,
             singlePage: false,
             oauth_token: QueryParameters.GetQueryParameter("oauth_token", "OAuth token")
         });

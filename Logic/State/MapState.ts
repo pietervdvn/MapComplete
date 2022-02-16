@@ -375,7 +375,7 @@ export default class MapState extends UserRelatedState {
             } else if (layer.syncSelection === "global") {
                 isDisplayed = this.getPref("layer-" + layer.id + "-enabled", layer)
             } else {
-                isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id + "-enabled",layer.shownByDefault, "Wether or not layer "+layer.id+" is shown")
+                isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id, layer.shownByDefault, "Wether or not layer "+layer.id+" is shown")
             }
 
 
