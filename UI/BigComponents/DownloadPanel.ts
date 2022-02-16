@@ -13,15 +13,16 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import SimpleMetaTagger from "../../Logic/SimpleMetaTagger";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {BBox} from "../../Logic/BBox";
+import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 
 export class DownloadPanel extends Toggle {
 
-    constructor() {
-        const state: {
-            featurePipeline: FeaturePipeline,
-            layoutToUse: LayoutConfig,
-            currentBounds: UIEventSource<BBox>
-        } = State.state
+    constructor(state: {
+        filteredLayers: UIEventSource<FilteredLayer[]>
+        featurePipeline: FeaturePipeline,
+        layoutToUse: LayoutConfig,
+        currentBounds: UIEventSource<BBox>
+    }) {
 
 
         const t = Translations.t.general.download
@@ -34,7 +35,7 @@ export class DownloadPanel extends Toggle {
         const buttonGeoJson = new SubtleButton(Svg.floppy_ui(),
             new Combine([t.downloadGeojson.Clone().SetClass("font-bold"),
                 t.downloadGeoJsonHelper.Clone()]).SetClass("flex flex-col"))
-            .onClick(() => {
+            .OnClickWithLoading(t.exporting,async () => {
                 const geojson = DownloadPanel.getCleanGeoJson(state, metaisIncluded.data)
                 Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson, null, "  "),
                     `MapComplete_${name}_export_${new Date().toISOString().substr(0, 19)}.geojson`, {
@@ -46,7 +47,7 @@ export class DownloadPanel extends Toggle {
         const buttonCSV = new SubtleButton(Svg.floppy_ui(), new Combine(
             [t.downloadCSV.Clone().SetClass("font-bold"),
                 t.downloadCSVHelper.Clone()]).SetClass("flex flex-col"))
-            .onClick(() => {
+            .OnClickWithLoading(t.exporting, async () => {
                 const geojson = DownloadPanel.getCleanGeoJson(state, metaisIncluded.data)
                 const csv = GeoOperations.toCSV(geojson.features)
 
@@ -72,13 +73,41 @@ export class DownloadPanel extends Toggle {
 
     private static getCleanGeoJson(state: {
         featurePipeline: FeaturePipeline,
-        currentBounds: UIEventSource<BBox>
+        currentBounds: UIEventSource<BBox>,
+        filteredLayers: UIEventSource<FilteredLayer[]>
     }, includeMetaData: boolean) {
 
         const resultFeatures = []
-        const featureList = state.featurePipeline.GetAllFeaturesWithin(state.currentBounds.data);
+        const neededLayers = state.filteredLayers.data.map(l => l.layerDef.id)
+        const bbox = state.currentBounds.data
+        const featureList = state.featurePipeline.GetAllFeaturesAndMetaWithin(bbox, new Set(neededLayers));
         for (const tile of featureList) {
-            for (const feature of tile) {
+            const layer = state.filteredLayers.data.find(fl => fl.layerDef.id === tile.layer)
+            const filters = layer.appliedFilters.data
+            for (const feature of tile.features) {
+                
+                if(!bbox.overlapsWith(BBox.get(feature))){
+                    continue
+                }
+                
+
+                if (filters !== undefined) {
+                    let featureDoesMatchAllFilters = true;
+                    for (let key of Array.from(filters.keys())) {
+                        const filter: FilterState = filters.get(key)
+                        if(filter?.currentFilter === undefined){
+                            continue
+                        }
+                        if (!filter.currentFilter.matchesProperties(feature.properties)) {
+                            featureDoesMatchAllFilters = false;
+                            break
+                        }
+                    }
+                    if(!featureDoesMatchAllFilters){
+                        continue; // the outer loop
+                    }
+                }
+
                 const cleaned = {
                     type: feature.type,
                     geometry: feature.geometry,

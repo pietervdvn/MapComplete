@@ -71,7 +71,8 @@ export default class LeftControls extends Combine {
 
         const toggledDownload = new Toggle(
             new AllDownloads(
-                guiState.downloadControlIsOpened
+                guiState.downloadControlIsOpened,
+                state
             ).SetClass("block p-1 rounded-full md:floating-element-width"),
             new MapControlButton(Svg.download_svg())
                 .onClick(() => guiState.downloadControlIsOpened.setData(true)),

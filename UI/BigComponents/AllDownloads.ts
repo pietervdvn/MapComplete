@@ -1,4 +1,3 @@
-import State from "../../State";
 import Combine from "../Base/Combine";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
@@ -9,11 +8,39 @@ import {DownloadPanel} from "./DownloadPanel";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import ExportPDF from "../ExportPDF";
+import FilteredLayer from "../../Models/FilteredLayer";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {BBox} from "../../Logic/BBox";
+import BaseLayer from "../../Models/BaseLayer";
+import Loc from "../../Models/Loc";
+
+interface DownloadState  {
+    filteredLayers: UIEventSource<FilteredLayer[]>
+    featurePipeline: FeaturePipeline,
+    layoutToUse: LayoutConfig,
+    currentBounds: UIEventSource<BBox>,
+    backgroundLayer:UIEventSource<BaseLayer>,
+    locationControl: UIEventSource<Loc>,
+    featureSwitchExportAsPdf: UIEventSource<boolean>,
+    featureSwitchEnableExport: UIEventSource<boolean>,
+}
+    
+
 
 export default class AllDownloads extends ScrollableFullScreen {
 
-    constructor(isShown: UIEventSource<boolean>) {
-        super(AllDownloads.GenTitle, AllDownloads.GeneratePanel, "downloads", isShown);
+    constructor(isShown: UIEventSource<boolean>,state: {
+        filteredLayers: UIEventSource<FilteredLayer[]>
+        featurePipeline: FeaturePipeline,
+        layoutToUse: LayoutConfig,
+        currentBounds: UIEventSource<BBox>,
+        backgroundLayer:UIEventSource<BaseLayer>,
+        locationControl: UIEventSource<Loc>,
+        featureSwitchExportAsPdf: UIEventSource<boolean>,
+        featureSwitchEnableExport: UIEventSource<boolean>,
+    }) {
+        super(AllDownloads.GenTitle, () => AllDownloads.GeneratePanel(state), "downloads", isShown);
     }
 
     private static GenTitle(): BaseUIElement {
@@ -22,17 +49,18 @@ export default class AllDownloads extends ScrollableFullScreen {
             .SetClass("text-2xl break-words font-bold p-2");
     }
 
-    private static GeneratePanel(): BaseUIElement {
+    private static GeneratePanel(state: DownloadState): BaseUIElement {
+        
         const isExporting = new UIEventSource(false, "Pdf-is-exporting")
         const generatePdf = () => {
             isExporting.setData(true)
             new ExportPDF(
                 {
                     freeDivId: "belowmap",
-                    background: State.state.backgroundLayer,
-                    location: State.state.locationControl,
-                    features: State.state.featurePipeline,
-                    layout: State.state.layoutToUse,
+                    background: state.backgroundLayer,
+                    location: state.locationControl,
+                    features: state.featurePipeline,
+                    layout: state.layoutToUse,
                 }).isRunning.addCallbackAndRun(isRunning => isExporting.setData(isRunning))
         }
 
@@ -57,13 +85,13 @@ export default class AllDownloads extends ScrollableFullScreen {
                 text),
             undefined,
 
-            State.state.featureSwitchExportAsPdf
+            state.featureSwitchExportAsPdf
         )
 
         const exportPanel = new Toggle(
-            new DownloadPanel(),
+            new DownloadPanel(state),
             undefined,
-            State.state.featureSwitchEnableExport
+            state.featureSwitchEnableExport
         )
 
         return new Combine([pdf, exportPanel]).SetClass("flex flex-col");

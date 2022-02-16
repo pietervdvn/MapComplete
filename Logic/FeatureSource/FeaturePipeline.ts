@@ -345,6 +345,22 @@ export default class FeaturePipeline {
         return tiles;
     }
 
+    public GetAllFeaturesAndMetaWithin(bbox: BBox, layerIdWhitelist?: Set<string>): {features: any[], layer: string}[] {
+        const self = this
+        const tiles :{features: any[], layer: string}[]= []
+        Array.from(this.perLayerHierarchy.keys())
+            .forEach(key => {
+                if(layerIdWhitelist !== undefined && !layerIdWhitelist.has(key)){
+                    return;
+                }
+                return tiles.push({
+                    layer: key,
+                    features: [].concat(...self.GetFeaturesWithin(key, bbox))
+                });
+            })
+        return tiles;
+    }
+
     public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
         if (layerId === "*") {
             return this.GetAllFeaturesWithin(bbox)
