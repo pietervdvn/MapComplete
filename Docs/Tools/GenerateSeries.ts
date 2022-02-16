@@ -617,6 +617,18 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         f => f.properties.editor.substr("MapComplete ".length, 6).replace(/[a-zA-Z-/]/g, ''),
         1
     )
+    
+    Group.createStackedBarChartPerDay(
+        "Changesets per minor version number" + appliedFilterDescription,
+        allFeatures,
+        f => {
+        	const base = f.properties.editor.substr("MapComplete ".length).replace(/[a-zA-Z-/]/g, '')
+        	const [major, minor, patch] = base.split(".")
+        	return major+"."+minor
+        
+        },
+        1
+    )
 
     Group.createStackedBarChartPerDay(
         "Deletion-changesets per theme" + appliedFilterDescription,
@@ -701,8 +713,8 @@ async function main(): Promise<void>{
 
     createMiscGraphs(allFeatures, emptyCS)
     createGraphs(allFeatures, "")
-    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
-    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
+    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
     createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
 }
 
