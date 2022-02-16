@@ -524,24 +524,37 @@
             "description": "a piece of text"
         },
         "email": {
+            "description": "email-adres",
             "feedback": "This is not a valid email address",
             "noAt": "An email address should contain an @"
         },
         "phone": {
+            "description": "a phone number",
             "feedback": "This is not a valid phone number"
         },
         "url": {
+            "description": "link to a website",
             "feedback": "This is not a valid web address"
         },
         "pnat": {
-            "description": "a positive number",
+            "description": "a positive, whone number",
             "noZero": "Zero is not allowed"
         },
         "nat": {
-            "description": "a positive number or zero",
+            "description": "a positive, whole number or zero",
             "mustBePositive": "This number should be positive",
             "notANumber": "Enter a number",
             "mustBeWhole": "Only whole numbers are allowed"
+        },
+        "int": {
+            "description": "a whole number"
+        },
+        "float": {
+            "description": "a number",
+            "feedback": "This is not a number"
+        },
+        "pfloat": {
+            "description": "a positive number"
         },
         "tooLong": "Text is to long, at most 255 characters are allowed. You do have {count} characters now"
     }

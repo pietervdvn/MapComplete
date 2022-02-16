@@ -438,5 +438,45 @@
         "whileYoureHere": "Vind je privacy belangrijk?",
         "surveillance": "Gezien je de privacy-policy leest, vind je privacy waarschijnlijk belangrijk - wij ook! We hebben zelfs <a href=\"https://mapcomplete.osm.be/surveillance\">een kaart met bewakingcamera's</a> gemaakt. Voeg er zeker toe!",
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert."
+    },
+    "validation": {
+        "string": {
+            "description": "een stukje tekst"
+        },
+        "email": {
+            "description": "email-adres",
+            "feedback": "Dit is geen geldig email-adres",
+            "noAt": "Een email-adres moet een @ hebben"
+        },
+        "phone": {
+            "description": "telefoonnummer",
+            "feedback": "Dit is geen geldig telefoonnummer"
+        },
+        "url": {
+            "description": "een link naar een webpagina",
+            "feedback": "Dit is geen geldige link"
+        },
+        "pnat": {
+            "description": "een positief, geheel getal",
+            "noZero": "Nul is niet toegelaten"
+        },
+        "nat": {
+            "description": "een positief, geheel getal of nul",
+            "mustBePositive": "Dit getal moet positief zijn",
+            "notANumber": "Dit is geen getal",
+            "mustBeWhole": "Enkele gehele getallen zijn toegelaten"
+        },
+        "int": {
+            "description": "een geheel getal"
+        },
+        "float": {
+            "description": "een getal",
+            "feedback": "dit is geen getal"
+        },
+        "pfloat": {
+            "description": "een positief getal"
+        },
+        "tooLong": "Deze tekst is te lang. De tekst heeft {count} lettertekens, er mogen maximaal 255 letters zijn"
     }
+
 }

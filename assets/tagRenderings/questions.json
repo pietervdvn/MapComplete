@@ -9,6 +9,9 @@
   "export_as_gpx": {
     "render": "{export_as_gpx()}"
   },
+  "export_as_geojson": {
+    "render": "{export_as_geojson()}"
+  },
   "wikipedia": {
     "render": "{wikipedia():max-height:25rem}",
     "question": {
