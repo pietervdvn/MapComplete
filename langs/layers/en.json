@@ -2941,7 +2941,7 @@
                         "then": "This door revolves automatically all the time"
                     },
                     "7": {
-                        "then": "This door will be opened by staff when requested by <b>pressing a button</b"
+                        "then": "This door will be opened by staff when requested by <b>pressing a button</b>"
                     },
                     "8": {
                         "then": "This door will be opened by staff when requested"
