@@ -713,8 +713,8 @@ async function main(): Promise<void>{
 
     createMiscGraphs(allFeatures, emptyCS)
     createGraphs(allFeatures, "")
-    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
-    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
+    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
     createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
 }
 
