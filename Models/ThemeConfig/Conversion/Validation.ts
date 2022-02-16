@@ -30,7 +30,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
             translations
                 .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                 .forEach(missing => {
-                    errors.push(context + "A theme should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context + ".\n\tThe english translation is " + missing.tr.textFor('en'))
+                    errors.push(context + "A theme should be translation-complete for " + neededLanguage + ", but it lacks a translation for " + missing.context + ".\n\tThe known translation is " + missing.tr.textFor('en'))
                 })
         }
 
@@ -138,10 +138,11 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     .convert(theme, theme.id)
                 errors.push(...checked.errors)
             }
-            if(!json.hideFromOverview){
+            if(!json.hideFromOverview && theme.id !== "personal"){
+                // Official, public themes must have a full english translation
                 const checked = new ValidateLanguageCompleteness("en")
                     .convert(theme, theme.id)
-                warnings.push(...checked.errors)
+                errors.push(...checked.errors)
             }
 
         } catch (e) {

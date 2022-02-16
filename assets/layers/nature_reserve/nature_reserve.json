@@ -1,6 +1,7 @@
 {
   "id": "nature_reserve",
   "name": {
+    "en": "Nature reserve",
     "nl": "Natuurgebied"
   },
   "minzoom": 12,
@@ -34,7 +35,7 @@
           ]
         },
         "then": {
-          "nl": "{name}"
+          "*": "{name}"
         }
       }
     ]
