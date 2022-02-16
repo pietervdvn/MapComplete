@@ -5,6 +5,9 @@ import Link from "./Link";
 import Img from "./Img";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
+import {VariableUiElement} from "./VariableUIElement";
+import Lazy from "./Lazy";
+import Loading from "./Loading";
 
 
 export class SubtleButton extends UIElement {
@@ -55,5 +58,31 @@ export class SubtleButton extends UIElement {
 
     }
 
+    public OnClickWithLoading(
+        loadingText: BaseUIElement | string,
+        action: () => Promise<void> ) : BaseUIElement{
+        const state = new UIEventSource<"idle" | "running">("idle")
+        const button = this;
+        
+        button.onClick(async() => {
+            state.setData("running")
+            try{    
+               await action()
+            }catch(e){
+                console.error(e)
+            }finally {
+                state.setData("idle")
+            }
+            
+        })
+        const loading = new Lazy(() => new Loading(loadingText) )
+        return new VariableUiElement(state.map(st => {
+            console.log("State is: ", st)
+            if(st === "idle"){
+                return button
+            }
+            return loading
+        }))
+    }
 
 }
