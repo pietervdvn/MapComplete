@@ -2,9 +2,11 @@
   "id": "fritures",
   "title": {
     "nl": "Friturenkaart",
+    "en": "Fries shops",
     "fr": "Carte des friteries"
   },
   "description": {
+    "en": "On this map, you'll find your favourite fries shop!",
     "nl": "Op deze kaart vind je je favoriete frituur!"
   },
   "maintainer": "",

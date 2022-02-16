@@ -10,7 +10,8 @@
     "hu": "Éttermek és büfék"
   },
   "description": {
-    "nl": "Restaurants en fast food"
+    "nl": "Restaurants en fast food",
+    "en": "Restaurants and fast food"
   },
   "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",

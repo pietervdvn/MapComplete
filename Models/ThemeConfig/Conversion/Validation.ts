@@ -138,6 +138,11 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     .convert(theme, theme.id)
                 errors.push(...checked.errors)
             }
+            if(!json.hideFromOverview){
+                const checked = new ValidateLanguageCompleteness("en")
+                    .convert(theme, theme.id)
+                warnings.push(...checked.errors)
+            }
 
         } catch (e) {
             errors.push(e)

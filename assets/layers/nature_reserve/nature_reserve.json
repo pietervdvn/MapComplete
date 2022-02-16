@@ -23,7 +23,8 @@
   },
   "title": {
     "render": {
-      "nl": "Natuurgebied"
+      "nl": "Natuurgebied",
+      "en": "Nature reserve"
     },
     "mappings": [
       {
@@ -33,7 +34,8 @@
           ]
         },
         "then": {
-          "nl": "{name:nl}"
+          "nl": "{name:nl}",
+          "en": "{name}"
         }
       },
       {
@@ -49,15 +51,18 @@
     ]
   },
   "description": {
+    "en": "A nature reserve is an area where nature can take its course",
     "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid."
   },
   "tagRenderings": [
     "images",
     {
       "render": {
+        "en": "Accessin this nature reserve: {access:description}",
         "nl": "De toegankelijkheid van dit gebied is: {access:description}"
       },
       "question": {
+        "en": "Is this nature reserve accessible to the public?",
         "nl": "Is dit gebied toegankelijk?"
       },
       "freeform": {
@@ -72,6 +77,7 @@
             ]
           },
           "then": {
+            "en": "Publicly accessible",
             "nl": "Vrij toegankelijk"
           }
         },
@@ -83,6 +89,7 @@
             ]
           },
           "then": {
+            "en": "Not accessible",
             "nl": "Niet toegankelijk"
           }
         },
@@ -94,6 +101,7 @@
             ]
           },
           "then": {
+            "en": "Not accessible as this is a private area",
             "nl": "Niet toegankelijk, want privégebied"
           }
         },
@@ -105,6 +113,7 @@
             ]
           },
           "then": {
+            "en": "Accessible despite being a privately owned area",
             "nl": "Toegankelijk, ondanks dat het privegebied is"
           }
         },
@@ -116,6 +125,7 @@
             ]
           },
           "then": {
+            "en": "Only accessible with a guide or during organised activities",
             "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
           }
         },
@@ -127,6 +137,7 @@
             ]
           },
           "then": {
+            "en": "Accessible with fee",
             "nl": "Toegankelijk mits betaling"
           }
         }
@@ -135,9 +146,11 @@
     },
     {
       "render": {
+        "en": "Operated by {operator}",
         "nl": "Beheer door {operator}"
       },
       "question": {
+        "en": "Who operates this area?",
         "nl": "Wie beheert dit gebied?"
       },
       "freeform": {
@@ -151,6 +164,7 @@
             ]
           },
           "then": {
+            "en": "Operated by Natuurpunt",
             "nl": "Dit gebied wordt beheerd door Natuurpunt"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
@@ -162,6 +176,7 @@
             ]
           },
           "then": {
+            "en": "Operated by {operator}",
             "nl": "Dit gebied wordt beheerd door {operator}"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg",
@@ -174,6 +189,7 @@
             ]
           },
           "then": {
+            "en": "Operated by <i>Agentschap Natuur en Bos</i>",
             "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
           },
           "icon": "./assets/layers/nature_reserve/ANB.jpg"
@@ -183,27 +199,12 @@
     },
     {
       "render": {
-        "nl": "Dit gebied heet {name:nl}"
+        "nl": "Dit gebied heet {name}",
+        "en": "This area is named {name}"
       },
       "question": {
-        "nl": "Wat is de Nederlandstalige naam van dit gebied?"
-      },
-      "freeform": {
-        "key": "name:nl"
-      },
-      "condition": {
-        "and": [
-          "name:nl~*"
-        ]
-      },
-      "id": "Name:nl-tag"
-    },
-    {
-      "render": {
-        "nl": "Dit gebied heet {name}"
-      },
-      "question": {
-        "nl": "Wat is de naam van dit gebied?"
+        "nl": "Wat is de naam van dit gebied?",
+        "en": "What is the name of this area?"
       },
       "freeform": {
         "key": "name",
@@ -225,6 +226,7 @@
             ]
           },
           "then": {
+            "en": "This area doesn't have a name",
             "nl": "Dit gebied heeft geen naam"
           }
         }
@@ -280,21 +282,7 @@
       ],
       "id": "Dogs?"
     },
-    {
-      "question": {
-        "en": "On which webpage can one find more information about this nature reserve?",
-        "nl": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?",
-        "it": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?",
-        "fr": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?",
-        "de": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
-      },
-      "render": "<a href='{website}'target='_blank'>{website}</a>",
-      "freeform": {
-        "key": "website",
-        "type": "url"
-      },
-      "id": "Website"
-    },
+   "website",
     {
       "question": {
         "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
@@ -349,14 +337,7 @@
         "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
       },
       "render": {
-        "nl": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "en": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "ca": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "de": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "fr": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "it": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "ru": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "id": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+        "*": "<a href='tel:{phone}' target='_blank'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",

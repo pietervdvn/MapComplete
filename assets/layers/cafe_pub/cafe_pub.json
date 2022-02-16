@@ -31,6 +31,7 @@
         "hu": "kocsma"
       },
       "description": {
+        "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
         "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
       },
       "preciseInput": {
@@ -49,6 +50,7 @@
         "hu": "bár"
       },
       "description": {
+        "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
         "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
       },
       "preciseInput": {
@@ -67,6 +69,7 @@
         "hu": "kávézó"
       },
       "description": {
+        "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
         "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
       },
       "preciseInput": {
@@ -76,6 +79,7 @@
   ],
   "title": {
     "render": {
+      "en": "Pub",
       "nl": "Café"
     },
     "mappings": [
@@ -127,30 +131,35 @@
         {
           "if": "amenity=pub",
           "then": {
+            "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
             "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
           }
         },
         {
           "if": "amenity=bar",
           "then": {
+            "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
             "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
           }
         },
         {
           "if": "amenity=cafe",
           "then": {
+            "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
             "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
           }
         },
         {
           "if": "amenity=restaurant",
           "then": {
+            "en": "A <b>restuarant</b> where one can get a proper meal",
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt"
           }
         },
         {
           "if": "amenity=biergarten",
           "then": {
+            "en": "An open space where beer is served, typically seen in Germany",
             "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland"
           },
           "hideInAnswer": "_country!=de"
