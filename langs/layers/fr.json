@@ -1543,12 +1543,8 @@
             "Surface area": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
             },
-            "Website": {
-                "question": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?"
-            },
             "phone": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             }
         }
     },

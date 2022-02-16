@@ -21,7 +21,7 @@
             "question": "Are dogs allowed in this business?"
         },
         "email": {
-            "question": "What is the email address of {name}?"
+            "question": "What is the email address of {title()}?"
         },
         "level": {
             "mappings": {
@@ -45,7 +45,7 @@
             "render": "Located on the {level}th floor"
         },
         "opening_hours": {
-            "question": "What are the opening hours of {name}?",
+            "question": "What are the opening hours of {title()}?",
             "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -72,7 +72,7 @@
             }
         },
         "phone": {
-            "question": "What is the phone number of {name}?"
+            "question": "What is the phone number of {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -92,7 +92,7 @@
             "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
         },
         "website": {
-            "question": "What is the website of {name}?"
+            "question": "What is the website of {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

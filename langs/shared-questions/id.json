@@ -17,7 +17,7 @@
             }
         },
         "email": {
-            "question": "Apa alamat surel dari {name}?"
+            "question": "Apa alamat surel dari {title()}?"
         },
         "level": {
             "mappings": {
@@ -39,10 +39,10 @@
             "question": "Metode pembayaran manakah yang di terima disini?"
         },
         "phone": {
-            "question": "Nomor telepon dari {name|?"
+            "question": "Nomor telepon dari {title()}?"
         },
         "website": {
-            "question": "Apa situs web dari {name}?"
+            "question": "Apa situs web dari {title()}?"
         }
     }
 }

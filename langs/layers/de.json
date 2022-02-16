@@ -2044,6 +2044,9 @@
                 },
                 "1": {
                     "then": "Schnellrestaurant<i>{name}</i>"
+                },
+                "2": {
+                    "then": "Schnellrestaurant"
                 }
             }
         }
@@ -2237,12 +2240,8 @@
             "Surface area": {
                 "render": "Grundfläche: {_surface:ha}ha"
             },
-            "Website": {
-                "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
-            },
             "phone": {
-                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
             }
         }
     },

@@ -11,7 +11,7 @@
             }
         },
         "email": {
-            "question": "Kio estas la retpoŝta adreso de {name}?"
+            "question": "Kio estas la retpoŝta adreso de {title()}?"
         },
         "level": {
             "mappings": {
@@ -31,10 +31,10 @@
             "render": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}"
         },
         "phone": {
-            "question": "Kio estas la telefonnumero de {name}?"
+            "question": "Kio estas la telefonnumero de {title()}?"
         },
         "website": {
-            "question": "Kie estas la retejo de {name}?"
+            "question": "Kie estas la retejo de {title()}?"
         }
     }
 }

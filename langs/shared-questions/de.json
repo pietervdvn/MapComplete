@@ -21,7 +21,7 @@
             "question": "Sind Hunde in diesem Geschäft erlaubt?"
         },
         "email": {
-            "question": "Was ist die Mail-Adresse von {name}?"
+            "question": "Was ist die Mail-Adresse von {title()}?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "Befindet sich im {level}ten Stock"
         },
         "opening_hours": {
-            "question": "Was sind die Öffnungszeiten von {name}?",
+            "question": "Was sind die Öffnungszeiten von {title()}?",
             "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -57,7 +57,7 @@
             "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
         },
         "phone": {
-            "question": "Was ist die Telefonnummer von {name}?"
+            "question": "Was ist die Telefonnummer von {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +77,7 @@
             "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
         },
         "website": {
-            "question": "Was ist die Website von {name}?"
+            "question": "Was ist die Website von {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

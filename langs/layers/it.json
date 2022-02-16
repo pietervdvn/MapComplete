@@ -1231,12 +1231,8 @@
             "Surface area": {
                 "render": "Area: {_surface:ha} ha"
             },
-            "Website": {
-                "question": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?"
-            },
             "phone": {
-                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)"
             }
         }
     },

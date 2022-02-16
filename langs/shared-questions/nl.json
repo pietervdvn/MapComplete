@@ -21,7 +21,7 @@
             "question": "Zijn honden toegelaten in deze zaak?"
         },
         "email": {
-            "question": "Wat is het e-mailadres van {name}?"
+            "question": "Wat is het e-mailadres van {title()}?"
         },
         "level": {
             "mappings": {
@@ -45,7 +45,7 @@
             "render": "Bevindt zich op de {level}de verdieping"
         },
         "opening_hours": {
-            "question": "Wat zijn de openingstijden van {name}?",
+            "question": "Wat zijn de openingstijden van {title()}?",
             "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -72,7 +72,7 @@
             }
         },
         "phone": {
-            "question": "Wat is het telefoonnummer van {name}?"
+            "question": "Wat is het telefoonnummer van {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -92,7 +92,7 @@
             "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
         },
         "website": {
-            "question": "Wat is de website van {name}?"
+            "question": "Wat is de website van {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

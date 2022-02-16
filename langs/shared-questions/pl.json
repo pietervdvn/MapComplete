@@ -21,7 +21,7 @@
             "question": "Czy w tej firmie psy są dozwolone?"
         },
         "email": {
-            "question": "Jaki jest adres e-mail do {name}?"
+            "question": "Jaki jest adres e-mail do {title()}?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "Znajduje się na {level} piętrze"
         },
         "opening_hours": {
-            "question": "Jakie są godziny otwarcia {name}?",
+            "question": "Jakie są godziny otwarcia {title()}?",
             "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -57,7 +57,7 @@
             "question": "Jakie metody płatności są tutaj dostępne?"
         },
         "phone": {
-            "question": "Jaki jest numer telefonu do {name}?"
+            "question": "Jaki jest numer telefonu do {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +77,7 @@
             "question": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
         },
         "website": {
-            "question": "Jaka jest strona internetowa {name}?"
+            "question": "Jaka jest strona internetowa {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

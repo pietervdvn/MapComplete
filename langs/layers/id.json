@@ -314,9 +314,6 @@
         "tagRenderings": {
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "phone": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
             }
         }
     },

@@ -1,7 +1,7 @@
 {
     "shared_questions": {
         "website": {
-            "question": "Cal é a páxina web de {name}?"
+            "question": "Cal é a páxina web de {title()}?"
         }
     }
 }

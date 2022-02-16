@@ -21,7 +21,7 @@
             "question": "Be lehet-e vinni kutyát ebbe az üzletbe?"
         },
         "email": {
-            "question": "Mi a(z) {name} e-mail címe?"
+            "question": "Mi a(z) {title()} e-mail címe?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "A(z) {level}. emeleten"
         },
         "opening_hours": {
-            "question": "Mikor van nyitva ez: {name}?",
+            "question": "Mikor van nyitva ez: {title()}?",
             "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -69,7 +69,7 @@
             }
         },
         "phone": {
-            "question": "Mi a telefonszáma ennek: {name}?"
+            "question": "Mi a telefonszáma ennek: {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -89,7 +89,7 @@
             "question": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
         },
         "website": {
-            "question": "Mi a weboldala ennek: {name}?"
+            "question": "Mi a weboldala ennek: {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

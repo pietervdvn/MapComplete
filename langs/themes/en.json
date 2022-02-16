@@ -31,6 +31,7 @@
         "title": "Open Bookcase Map"
     },
     "cafes_and_pubs": {
+        "description": "Pubs and bars",
         "title": "Cafés and pubs"
     },
     "campersite": {
@@ -831,16 +832,19 @@
         "title": "Facade gardens"
     },
     "food": {
+        "description": "Restaurants and fast food",
         "title": "Restaurants and fast food"
     },
     "fritures": {
+        "description": "On this map, you'll find your favourite fries shop!",
         "layers": {
             "0": {
                 "override": {
                     "name": "Fries shop"
                 }
             }
-        }
+        },
+        "title": "Fries shops"
     },
     "ghostbikes": {
         "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.",

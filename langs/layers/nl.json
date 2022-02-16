@@ -3198,7 +3198,7 @@
             "friture-oil": {
                 "mappings": {
                     "0": {
-                        "then": "Plantaardige olie"
+                        "then": "Bakt in plantaardige olie"
                     },
                     "1": {
                         "then": "Dierlijk vet"
@@ -3273,6 +3273,9 @@
                 },
                 "1": {
                     "then": "Fastfood-zaak <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fastfood-zaak"
                 }
             },
             "render": "Eetgelegenheid"
@@ -3485,10 +3488,6 @@
                 "question": "Wat is de naam van dit gebied?",
                 "render": "Dit gebied heet {name}"
             },
-            "Name:nl-tag": {
-                "question": "Wat is de Nederlandstalige naam van dit gebied?",
-                "render": "Dit gebied heet {name:nl}"
-            },
             "Non-editable description": {
                 "render": "Extra info: <i>{description}</i>"
             },
@@ -3510,12 +3509,8 @@
             "Surface area": {
                 "render": "Totale oppervlakte: {_surface:ha}Ha"
             },
-            "Website": {
-                "question": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?"
-            },
             "phone": {
-                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd"
             }
         },
         "title": {

@@ -21,7 +21,7 @@
             "question": "這間商業空間是否允許犬隻？"
         },
         "email": {
-            "question": "{name} 的電子郵件地址是什麼？"
+            "question": "{title()} 的電子郵件地址是什麼？"
         },
         "level": {
             "mappings": {
@@ -45,7 +45,7 @@
             "render": "位於 {level} 樓"
         },
         "opening_hours": {
-            "question": "{name} 的開放時間是什麼？",
+            "question": "{title()} 的開放時間是什麼？",
             "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -72,7 +72,7 @@
             }
         },
         "phone": {
-            "question": "{name} 的電話號碼是什麼？"
+            "question": "{title()} 的電話號碼是什麼？"
         },
         "service:electricity": {
             "mappings": {
@@ -92,7 +92,7 @@
             "question": "這個便利設施有電器設備，能給客戶使用嗎？"
         },
         "website": {
-            "question": "{name} 網址是什麼？"
+            "question": "{title()} 網址是什麼？"
         },
         "wheelchair-access": {
             "mappings": {
