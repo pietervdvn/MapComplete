@@ -271,6 +271,7 @@ export default class MapState extends UserRelatedState {
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
         if (gpsLayerDef !== undefined) {
             this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
+            this.changes.setHistoricalUserLocations(this.historicalUserLocations)
         }
 
 

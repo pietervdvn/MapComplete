@@ -27,8 +27,10 @@ export class Changes {
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
-    public readonly state: { allElements: ElementStorage; historicalUserLocations: FeatureSource; osmConnection: OsmConnection }
+    public readonly state: { allElements: ElementStorage; osmConnection: OsmConnection }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
+    
+    private historicalUserLocations: FeatureSource
     private _nextId: number = -1; // Newly assigned ID's are negative
     private readonly isUploading = new UIEventSource(false);
     private readonly previouslyCreated: OsmObject[] = []
@@ -38,7 +40,6 @@ export class Changes {
     constructor(
         state?: {
             allElements: ElementStorage,
-            historicalUserLocations: FeatureSource,
             osmConnection: OsmConnection
         },
         leftRightSensitive: boolean = false) {
@@ -148,7 +149,7 @@ export class Changes {
 
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
 
-        const locations = this.state?.historicalUserLocations?.features?.data
+        const locations = this.historicalUserLocations?.features?.data
         if (locations === undefined) {
             // No state loaded or no locations -> we can't calculate...
             return;
@@ -519,5 +520,9 @@ export class Changes {
 
         console.debug("Calculated the pending changes: ", result.newObjects.length, "new; ", result.modifiedObjects.length, "modified;", result.deletedObjects, "deleted")
         return result
+    }
+    
+    public setHistoricalUserLocations(locations: FeatureSource ){
+        this.historicalUserLocations = locations
     }
 }

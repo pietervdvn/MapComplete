@@ -20,11 +20,7 @@ export default class ElementsState extends FeatureSwitchState {
      The mapping from id -> UIEventSource<properties>
      */
     public allElements: ElementStorage = new ElementStorage();
-    /**
-     THe change handler
-     */
-    public changes: Changes;
-
+ 
     /**
      The latest element that was selected
      */
@@ -48,9 +44,6 @@ export default class ElementsState extends FeatureSwitchState {
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
-        // @ts-ignore
-        this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
-        {
             // -- Location control initialization
             const zoom = UIEventSource.asFloat(
                 QueryParameters.GetQueryParameter(
@@ -85,10 +78,7 @@ export default class ElementsState extends FeatureSwitchState {
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);
             });
-        }
 
-        new ChangeToElementsActor(this.changes, this.allElements)
-        new PendingChangesUploader(this.changes, this.selectedElement);
-
+      
     }
 }

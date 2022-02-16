@@ -8,6 +8,9 @@ import {Utils} from "../../Utils";
 import Locale from "../../UI/i18n/Locale";
 import ElementsState from "./ElementsState";
 import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater";
+import {Changes} from "../Osm/Changes";
+import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
+import PendingChangesUploader from "../Actors/PendingChangesUploader";
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -20,6 +23,10 @@ export default class UserRelatedState extends ElementsState {
      The user credentials
      */
     public osmConnection: OsmConnection;
+    /**
+     THe change handler
+     */
+    public changes: Changes;
     /**
      * The key for mangrove
      */
@@ -43,6 +50,13 @@ export default class UserRelatedState extends ElementsState {
             osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin
         })
+
+
+        this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
+
+
+        new ChangeToElementsActor(this.changes, this.allElements)
+        new PendingChangesUploader(this.changes, this.selectedElement);
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
