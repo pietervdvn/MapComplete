@@ -418,8 +418,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
             return {result: json}
         }
         
-        json.layers = Array.from(this._state.sharedLayers.keys())
-        
+        json.layers = Array.from(this._state.sharedLayers.keys()).filter(l => Constants.priviliged_layers.indexOf(l) < 0)
         
         return {result: json};
     }
