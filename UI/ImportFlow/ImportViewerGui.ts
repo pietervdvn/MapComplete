@@ -18,8 +18,7 @@ import Table from "../Base/Table";
 import LeftIndex from "../Base/LeftIndex";
 import Toggleable, {Accordeon} from "../Base/Toggleable";
 import TableOfContents from "../Base/TableOfContents";
-import LoginButton from "../Popup/LoginButton";
-import BackToIndex from "../BigComponents/BackToIndex";
+import {LoginToggle} from "../Popup/LoginButton";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
 
 interface NoteProperties {
@@ -89,7 +88,7 @@ class MassAction extends Combine {
                 },
                 shown:"On every open note, read the 'note='-tag and and this note as comment. (This action ignores the textfield)"
             },//*/
-            
+
         ])
 
         const handledNotesCounter = new UIEventSource<number>(undefined)
@@ -127,7 +126,7 @@ class MassAction extends Combine {
                     handledNotesCounter.map(s => s === undefined)
                 )
 
-                , new VariableUiElement(textField.GetValue().map(txt => "Type a text of at least 15 characters to apply the action. Currently, there are "+(txt?.length ?? 0)+" characters")).SetClass("alert"),
+                , new VariableUiElement(textField.GetValue().map(txt => "Type a text of at least 15 characters to apply the action. Currently, there are " + (txt?.length ?? 0) + " characters")).SetClass("alert"),
                 actions.GetValue().map(v => v !== undefined && textField.GetValue()?.data?.length > 15, [textField.GetValue()])
             ),
             new Toggle(
@@ -212,7 +211,7 @@ class ImportInspector extends VariableUiElement {
 
     constructor(userDetails: { uid: number } | { display_name: string, search?: string }, state: UserRelatedState) {
         let url;
-        
+
         if (userDetails["uid"] !== undefined) {
             url = "https://api.openstreetmap.org/api/0.6/notes/search.json?user=" + userDetails["uid"] + "&closed=730&limit=10000&sort=created_at&q=%23import"
         } else {
@@ -303,28 +302,23 @@ class ImportInspector extends VariableUiElement {
     }
 }
 
-class ImportViewerGui extends Combine {
+class ImportViewerGui extends LoginToggle {
 
     constructor() {
         const state = new UserRelatedState(undefined)
         const displayNameParam = QueryParameters.GetQueryParameter("user", "", "The username of the person whom you want to see the notes for");
         const searchParam = QueryParameters.GetQueryParameter("search", "", "A text that should be included in the first comment of the note to be shown")
-        super([
+        super(
             new VariableUiElement(state.osmConnection.userDetails.map(ud => {
                 const display_name = displayNameParam.data;
                 const search = searchParam.data;
                 if (display_name !== "" && search !== "") {
                     return new ImportInspector({display_name, search}, undefined);
                 }
-
-                if (ud === undefined || ud.loggedIn === false) {
-                    return new Combine([new LoginButton("Login to inspect your import flows", state),
-                        new BackToIndex()
-                    ])
-                }
                 return new ImportInspector(ud, state);
-            }, [displayNameParam, searchParam]))
-        ]);
+            }, [displayNameParam, searchParam])),
+            "Login to inspect your import flows", state
+        )
     }
 }
 

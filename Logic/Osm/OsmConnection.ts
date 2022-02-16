@@ -46,6 +46,7 @@ export class OsmConnection {
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     public isLoggedIn: UIEventSource<boolean>
+    public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">("not-attempted")
     public preferencesHandler: OsmPreferences;
     public readonly _oauth_config: {
         oauth_consumer_key: string,
@@ -141,10 +142,13 @@ export class OsmConnection {
         this.userDetails.data.name = "";
         this.userDetails.ping();
         console.log("Logged out")
+        this.loadingStatus.setData("not-attempted")
     }
 
     public AttemptLogin() {
+        this.loadingStatus.setData("loading")
         if (this.fakeUser) {
+            this.loadingStatus.setData("logged-in")
             console.log("AttemptLogin called, but ignored as fakeUser is set")
             return;
         }
@@ -157,6 +161,7 @@ export class OsmConnection {
         }, function (err, details) {
             if (err != null) {
                 console.log(err);
+                self.loadingStatus.setData("error")
                 if (err.status == 401) {
                     console.log("Clearing tokens...")
                     // Not authorized - our token probably got revoked
@@ -171,6 +176,7 @@ export class OsmConnection {
             }
 
             if (details == null) {
+                self.loadingStatus.setData("error")
                 return;
             }
 
@@ -202,6 +208,7 @@ export class OsmConnection {
                 data.home = {lat: lat, lon: lon};
             }
 
+            self.loadingStatus.setData("logged-in")
             const messages = userInfo.getElementsByTagName("messages")[0].getElementsByTagName("received")[0];
             data.unreadMessages = parseInt(messages.getAttribute("unread"));
             data.totalMessages = parseInt(messages.getAttribute("count"));
@@ -305,7 +312,7 @@ export class OsmConnection {
         })
 
     }
-
+    
     public addCommentToNode(id: number | string, text: string): Promise<any> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)

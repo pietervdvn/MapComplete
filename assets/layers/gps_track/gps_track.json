@@ -19,6 +19,7 @@
       }
     },
     "export_as_gpx",
+    "export_as_geojson",
     "minimap",
     {
       "id": "delete",

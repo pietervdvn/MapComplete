@@ -3,13 +3,16 @@ import BaseUIElement from "../BaseUIElement";
 import Svg from "../../Svg";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Toggle from "../Input/Toggle";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Loading from "../Base/Loading";
+import Translations from "../i18n/Translations";
 
-export default class LoginButton extends SubtleButton {
+class LoginButton extends SubtleButton {
 
     constructor(text: BaseUIElement | string, state: {
         osmConnection: OsmConnection
-    }) {
-        super(Svg.osm_logo_ui(), text);
+    }, icon?: BaseUIElement | string) {
+        super(icon ?? Svg.osm_logo_ui(), text);
         this.onClick(() => {
             state.osmConnection.AttemptLogin()
         })
@@ -17,10 +20,28 @@ export default class LoginButton extends SubtleButton {
 
 }
 
-export class LoginToggle extends Toggle {
+export class LoginToggle extends VariableUiElement {
     constructor(el, text: BaseUIElement | string, state: {
         osmConnection: OsmConnection
     }) {
-        super(el, new LoginButton(text, state), state.osmConnection.isLoggedIn)
+        const loading = new Loading("Trying to log in...")
+        const login = new LoginButton(text, state)
+        super(
+            state.osmConnection.loadingStatus.map(osmConnectionState => {
+                console.trace("Current osm state is ", osmConnectionState)
+                if(osmConnectionState === "loading"){
+                    return loading
+                }
+                if(osmConnectionState === "not-attempted"){
+                    return login
+                }
+                if(osmConnectionState === "logged-in"){
+                   return el
+                }
+                
+                // Error!
+                return new LoginButton(Translations.t.general.loginFailed, state, Svg.invalid_svg())
+            })
+            )
     }
 }
