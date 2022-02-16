@@ -30,17 +30,6 @@
       {
         "if": {
           "and": [
-            "name:nl~*"
-          ]
-        },
-        "then": {
-          "nl": "{name:nl}",
-          "en": "{name}"
-        }
-      },
-      {
-        "if": {
-          "and": [
             "name~*"
           ]
         },
@@ -282,7 +271,7 @@
       ],
       "id": "Dogs?"
     },
-   "website",
+    "website",
     {
       "question": {
         "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",

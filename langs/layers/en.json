@@ -3594,11 +3594,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
             "render": "Nature reserve"
         }
     },

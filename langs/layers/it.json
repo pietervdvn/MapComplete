@@ -771,7 +771,7 @@
                     "then": "Noleggio di biciclette <i>{name}</i>"
                 },
                 "3": {
-                    "then": "Riparazione biciclette <i>{name</i>"
+                    "then": "Riparazione biciclette <i>{name}</i>"
                 },
                 "4": {
                     "then": "Negozio di biciclette <i>{name}</i>"

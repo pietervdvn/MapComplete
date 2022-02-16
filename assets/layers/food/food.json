@@ -282,7 +282,6 @@
           "if": "cuisine=turkish",
           "then": {
             "en": "Turkish dishes are served here",
-
             "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
           }
         },
@@ -290,7 +289,6 @@
           "if": "cuisine=thai",
           "then": {
             "en": "Thai dishes are served here",
-
             "nl": "Dit is een Thaïs restaurant"
           }
         }

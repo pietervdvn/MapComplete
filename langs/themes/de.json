@@ -692,7 +692,7 @@
                             "then": "Diese Straße ist keine Fahrradstraße"
                         }
                     },
-                    "question": "Ist die Straße <b>{Name}</b> eine Fahrradstraße?"
+                    "question": "Ist die Straße <b>{name}</b> eine Fahrradstraße?"
                 },
                 "1": {
                     "question": "Wann wird diese Straße eine Fahrradstraße?",

@@ -645,7 +645,7 @@
                             "then": "Questa strada non è una strada ciclabile"
                         }
                     },
-                    "question": "È una strada ciclabile?"
+                    "question": "È <b>{name}</b> una strada ciclabile?"
                 },
                 "1": {
                     "question": "Questa strada diventerà una strada ciclabile quando?",

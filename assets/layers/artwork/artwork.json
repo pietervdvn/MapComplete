@@ -51,7 +51,7 @@
           "id": "Karya Seni <i>{name}</i>",
           "it": "Opera <i>{name}</i>",
           "ru": "Художественная работа <i>{name}</i>",
-          "es": "Obra de arte <i>{nombre}</i>",
+          "es": "Obra de arte <i>{name}</i>",
           "ja": "アートワーク <i>{name}</i>",
           "zh_Hant": "藝術品<i>{name}</i>",
           "fi": "Taideteos <i>{name}</i>",

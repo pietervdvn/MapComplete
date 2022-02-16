@@ -9,6 +9,11 @@ class TranslationPart {
 
     contents: Map<string, TranslationPart | string> = new Map<string, TranslationPart | string>()
 
+    /**
+     * Add a leaf object
+     * @param language
+     * @param obj
+     */
     add(language: string, obj: any) {
         for (const key in obj) {
             const v = obj[key]
@@ -135,6 +140,94 @@ class TranslationPart {
         }
         return `{${parts.join(",")}}`;
     }
+
+    /**
+     * Recursively adds a translation object, the inverse of 'toJson'
+     * @param language
+     * @param object
+     * @private
+     */
+    private addTranslation(language: string, object: any){
+        for (const key in object) {
+            const v = object[key]
+            let subpart = <TranslationPart>this.contents.get(key)
+            if(subpart === undefined){
+               subpart = new TranslationPart()
+               this.contents.set(key, subpart) 
+            }
+            if(typeof v === "string"){
+                subpart.contents.set(language, v)
+            }else{
+                subpart.addTranslation(language, v)
+            }
+        }
+        
+    }
+    
+    static fromDirectory(path): TranslationPart{
+        const files = ScriptUtils.readDirRecSync(path, 1).filter(file => file.endsWith(".json"))
+        const rootTranslation = new TranslationPart()
+        for (const file of files) {
+            const content = JSON.parse(readFileSync(file, "UTF8"))
+            rootTranslation.addTranslation(file.substr(0, file.length - ".json".length), content)
+        }
+        return rootTranslation
+    }
+
+    validateStrict(ctx?:string): void {
+        const errors = this.validate() 
+        for (const err of errors) {
+            console.error("ERROR in "+(ctx ?? "")+ " " +err.path.join(".")+"\n   "+err.error)
+        }
+        if(errors.length > 0){
+            throw ctx+" has "+errors.length+" inconsistencies in the translation"
+        }
+    }
+    
+    /**
+     * Checks the leaf objects: special values must be present and identical in every leaf
+     */
+    validate(path = []): {error: string, path: string[]} [] {
+        const errors : {error: string, path: string[]} []= []
+        const neededSubparts = new Set<string>()
+        let isLeaf : boolean = undefined
+        this.contents.forEach((value, key) => {
+            if(typeof value === "string"){
+                if(isLeaf === undefined){
+                    isLeaf = true
+                }else if(!isLeaf){
+                    errors.push({error:"Mixed node: non-leaf node has translation strings", path: path})
+                }
+                
+                let subparts: string[] = value.match(/{[^}]*}/g)
+                if(subparts === null){
+                    if(neededSubparts.size > 0){
+                        errors.push({error:"The translation for "+key+" does not have any subparts, but expected "+Array.from(neededSubparts).join(",")+" . The full translation is "+value, path: path})
+                    }
+                    return
+                }
+                
+                subparts = subparts.map(p => p.split(/\(.*\)/)[0])
+                
+                neededSubparts.forEach(part => {
+                    if(subparts.indexOf(part) < 0){
+                        errors.push({error:"The translation for "+key+" does not have the required subpart "+part+". The full translation is "+value, path: path})
+                    }
+                })
+                
+                for (const subpart of subparts) {
+                    neededSubparts.add(subpart)
+                }
+                
+            }else{
+              const recErrors =  value.validate([...path, key])
+                errors.push(...recErrors)
+            }
+        })
+        
+        return errors
+    }
+    
 }
 
 /**
@@ -181,6 +274,9 @@ function transformTranslation(obj: any, depth = 1) {
 
 }
 
+/**
+ * Formats the specified file, helps to prevent merge conflicts
+ * */
 function formatFile(path) {
     const contents = JSON.parse(readFileSync(path, "utf8"))
     writeFileSync(path, JSON.stringify(contents, null, "    "))
@@ -210,7 +306,10 @@ function compileTranslationsFromWeblate() {
         .filter(path => path.indexOf(".json") > 0)
 
     const allTranslations = new TranslationPart()
-
+    
+     allTranslations.validateStrict()
+       
+    
     for (const translationFile of translations) {
         try {
 
@@ -418,3 +517,9 @@ if (!themeOverwritesWeblate) {
 }
 genTranslations()
 formatFile("./langs/en.json")
+
+// SOme validation
+TranslationPart.fromDirectory("./langs").validateStrict("./langs")
+TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
+TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
+TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")

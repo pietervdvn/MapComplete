@@ -35,7 +35,7 @@
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt.",
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "title": "Czy dodać nowy punkt?",
-            "addNew": "Dodaj nową {kategorię} tutaj",
+            "addNew": "Dodaj nową {category} tutaj",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>",
             "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
@@ -78,7 +78,7 @@
                 "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt.",
                 "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
                 "title": "Czy dodać nowy punkt?",
-                "addNew": "Dodaj nową {kategorię} tutaj",
+                "addNew": "Dodaj nową {category} tutaj",
                 "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>",
                 "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
                 "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
@@ -120,7 +120,7 @@
                 "friday": "Piątek",
                 "thursday": "Czwartek"
             },
-            "aboutMapcomplete": "<h3>O MapComplete</h3><p>Dzięki MapComplete możesz wzbogacić OpenStreetMap o informacje na <b>pojedynczy temat.</b> Odpowiedz na kilka pytań, a w ciągu kilku minut Twój wkład będzie dostępny na całym świecie! Opiekun <b>tematu</b> definiuje elementy, pytania i języki dla tematu.</p><h3>Dowiedz się więcej</h3><p>MapComplete zawsze <b>oferuje następny krok</b>, by dowiedzieć się więcej o OpenStreetMap.</p><ul><li>Po osadzeniu na stronie internetowej, element iframe łączy się z pełnoekranowym MapComplete</li><li>Wersja pełnoekranowa oferuje informacje o OpenStreetMap</li><li>Przeglądanie działa bez logowania, ale edycja wymaga loginu OSM.</li><li>Jeżeli nie jesteś zalogowany, zostaniesz poproszony o zalogowanie się</li><li>Po udzieleniu odpowiedzi na jedno pytanie, możesz dodać nowe punkty do mapy</li><li>Po chwili wyświetlane są rzeczywiste tagi OSM, które później linkują do wiki</li></ul><p></p><br><p>Zauważyłeś <b>problem</b>? Czy masz <b>prośbę o dodanie jakiejś funkcji</b>? Chcesz <b>pomóc w tłumaczeniu</b>? Udaj się do <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kodu źródłowego</a> lub <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue trackera.</a> </p><p> Chcesz zobaczyć <b>swoje postępy</b>? Śledź liczbę edycji na <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
+            "aboutMapcomplete": "<h3>O MapComplete</h3><p>Dzięki MapComplete możesz wzbogacić OpenStreetMap o informacje na <b>pojedynczy temat.</b> Odpowiedz na kilka pytań, a w ciągu kilku minut Twój wkład będzie dostępny na całym świecie! Opiekun <b>tematu</b> definiuje elementy, pytania i języki dla tematu.</p><h3>Dowiedz się więcej</h3><p>MapComplete zawsze <b>oferuje następny krok</b>, by dowiedzieć się więcej o OpenStreetMap.</p><ul><li>Po osadzeniu na stronie internetowej, element iframe łączy się z pełnoekranowym MapComplete</li><li>Wersja pełnoekranowa oferuje informacje o OpenStreetMap</li><li>Przeglądanie działa bez logowania, ale edycja wymaga loginu OSM.</li><li>Jeżeli nie jesteś zalogowany, zostaniesz poproszony o zalogowanie się</li><li>Po udzieleniu odpowiedzi na jedno pytanie, możesz dodać nowe punkty do mapy</li><li>Po chwili wyświetlane są rzeczywiste tagi OSM, które później linkują do wiki</li></ul><p></p><br><p>Zauważyłeś <b>problem</b>? Czy masz <b>prośbę o dodanie jakiejś funkcji</b>? Chcesz <b>pomóc w tłumaczeniu</b>? Udaj się do <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kodu źródłowego</a> lub <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue trackera.</a> </p><p> Chcesz zobaczyć <b>swoje postępy</b>? Śledź liczbę edycji na <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
             "noNameCategory": "{category} bez nazwy",
             "nameInlineQuestion": "Nazwa tej {category} to $$$",
             "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji",
@@ -189,7 +189,7 @@
             "friday": "Piątek",
             "thursday": "Czwartek"
         },
-        "aboutMapcomplete": "<h3>O MapComplete</h3><p>Dzięki MapComplete możesz wzbogacić OpenStreetMap o informacje na <b>pojedynczy temat.</b> Odpowiedz na kilka pytań, a w ciągu kilku minut Twój wkład będzie dostępny na całym świecie! Opiekun <b>motywu</b> definiuje elementy, pytania i języki dla tematu.</p><h3>Dowiedz się więcej</h3><p>MapComplete zawsze <b>oferuje następny krok</b>, by dowiedzieć się więcej o OpenStreetMap.</p><ul><li>Po osadzeniu na stronie internetowej, iframe łączy się z pełnoekranowym MapComplete</li><li>Wersja pełnoekranowa oferuje informacje o OpenStreetMap</li><li>Przeglądanie działa bez logowania, ale edycja wymaga loginu OSM.</li><li>Jeżeli nie jesteś zalogowany, zostaniesz poproszony o zalogowanie się</li><li>Po udzieleniu odpowiedzi na jedno pytanie, możesz dodać nowe punkty do mapy</li><li>Po chwili wyświetlane są rzeczywiste tagi OSM, które później linkują do wiki</li></ul><p></p><br><p>Zauważyłeś <b>problem</b>? Czy masz <b>prośbę o dodanie jakiejś funkcji</b>? Chcesz <b>pomóc w tłumaczeniu</b>? Udaj się do <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kodu źródłowego</a> lub <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue trackera.</a> </p><p> Chcesz zobaczyć <b>swoje postępy</b>? Śledź liczbę edycji na <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>.",
+        "aboutMapcomplete": "<h3>O MapComplete</h3><p>Dzięki MapComplete możesz wzbogacić OpenStreetMap o informacje na <b>pojedynczy temat.</b> Odpowiedz na kilka pytań, a w ciągu kilku minut Twój wkład będzie dostępny na całym świecie! Opiekun <b>motywu</b> definiuje elementy, pytania i języki dla tematu.</p><h3>Dowiedz się więcej</h3><p>MapComplete zawsze <b>oferuje następny krok</b>, by dowiedzieć się więcej o OpenStreetMap.</p><ul><li>Po osadzeniu na stronie internetowej, iframe łączy się z pełnoekranowym MapComplete</li><li>Wersja pełnoekranowa oferuje informacje o OpenStreetMap</li><li>Przeglądanie działa bez logowania, ale edycja wymaga loginu OSM.</li><li>Jeżeli nie jesteś zalogowany, zostaniesz poproszony o zalogowanie się</li><li>Po udzieleniu odpowiedzi na jedno pytanie, możesz dodać nowe punkty do mapy</li><li>Po chwili wyświetlane są rzeczywiste tagi OSM, które później linkują do wiki</li></ul><p></p><br><p>Zauważyłeś <b>problem</b>? Czy masz <b>prośbę o dodanie jakiejś funkcji</b>? Chcesz <b>pomóc w tłumaczeniu</b>? Udaj się do <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kodu źródłowego</a> lub <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue trackera.</a> </p><p> Chcesz zobaczyć <b>swoje postępy</b>? Śledź liczbę edycji na <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>.",
         "noNameCategory": "{category} bez nazwy",
         "nameInlineQuestion": "Nazwa tej {category} to $$$",
         "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji",
@@ -244,7 +244,7 @@
         "loadingData": "Ładowanie danych…",
         "ready": "Zrobione!",
         "zoomIn": "Przybliż żeby zobaczyć lub edytować",
-        "retrying": "Ładowanie danych nie powiodło się. Spróbujemy ponownie za {liczba} sekund…"
+        "retrying": "Ładowanie danych nie powiodło się. Spróbujemy ponownie za {count} sekund…"
     },
     "reviews": {
         "plz_login": "Zaloguj się, aby zostawić opinię",

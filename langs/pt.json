@@ -73,7 +73,7 @@
             "zoomInFurther": "Amplie mais para adicionar um ponto.",
             "openLayerControl": "Abra a caixa de controlo da camada",
             "disableFilters": "Desativar todos os filtros",
-            "addNew": "Adicionar uma nova {categoria} aqui",
+            "addNew": "Adicionar uma nova {category} aqui",
             "intro": "Clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "addNewMapLabel": "Adicionar novo item",
             "presetInfo": "O novo POI terá {tags}",
@@ -90,8 +90,8 @@
         },
         "questions": {
             "websiteOf": "Qual é o site de {category}?",
-            "emailOf": "Qual é o endereço de e-mail de {categoria}?",
-            "emailIs": "O endereço de e-mail de {categoria} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "Qual é o endereço de e-mail de {category}?",
+            "emailIs": "O endereço de e-mail de {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "websiteIs": "Site: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "phoneNumberIs": "O número de telefone de {category} é <a target=\"_blank\">{phone}</a>",
             "phoneNumberOf": "Qual é o número de telefone de {category}?"
@@ -184,7 +184,7 @@
             "editThisTheme": "Editar este tema"
         },
         "attribution": {
-            "themeBy": "Tema gerido por {autor}",
+            "themeBy": "Tema gerido por {author}",
             "iconAttribution": {
                 "title": "Ícones usados"
             },
@@ -211,7 +211,7 @@
             "streetcomplete": "Outra aplicação semelhante é o <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
             "createYourOwnTheme": "Crie o seu próprio tema MapComplete a partir do zero",
             "previouslyHiddenTitle": "Temas ocultos visitados anteriormente",
-            "hiddenExplanation": "Estes temas só são acessíveis a quem tem a hiperligação. Você descobriu {substituído} de {total_substituído} temas ocultos.",
+            "hiddenExplanation": "Estes temas só são acessíveis a quem tem a hiperligação. Você descobriu {hidden_discovered} de {total_hidden} temas ocultos.",
             "intro": "<h3>Mais mapas temáticos?</h3>Gosta de colecionar dados geográficos? <br>Tem mais temas disponíveis."
         },
         "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",

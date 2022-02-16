@@ -518,8 +518,7 @@
                         "3": {
                             "then": "この通りはcyclestreetではない"
                         }
-                    },
-                    "question": "この通りはcyclestreetですか?"
+                    }
                 },
                 "1": {
                     "question": "この通りはいつcyclestreetになるんですか?",

@@ -250,10 +250,8 @@
         "question": {
           "nl": "Is de straat <b>{name}</b> een fietsstraat?",
           "en": "Is the street <b>{name}</b> a cyclestreet?",
-          "ja": "この通りはcyclestreetですか?",
-          "nb_NO": "Er denne gaten en sykkelvei?",
-          "de": "Ist die Straße <b>{Name}</b> eine Fahrradstraße?",
-          "it": "È una strada ciclabile?",
+          "de": "Ist die Straße <b>{name}</b> eine Fahrradstraße?",
+          "it": "È <b>{name}</b> una strada ciclabile?",
           "hu": "Kerékpárosutca-e <b>{name}</b>?"
         },
         "mappings": [
