@@ -44,6 +44,7 @@ export default class TagRenderingConfig {
         readonly ifnot?: TagsFilter,
         readonly then: Translation,
         readonly icon: string,
+        readonly iconClass: string
         readonly hideInAnswer: boolean | TagsFilter
         readonly addExtraTags: Tag[]
     }[]
@@ -180,8 +181,14 @@ export default class TagRenderingConfig {
                     hideInAnswer = TagUtils.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
                 let icon = undefined;
-                if (mapping.icon !== "") {
-                    icon = mapping.icon
+                let iconClass = "small"
+                if(mapping.icon !== undefined){
+                    if (typeof mapping.icon === "string" && mapping.icon !== "") {
+                        icon = mapping.icon
+                    }else{
+                        icon = mapping.icon["path"]
+                        iconClass = mapping.icon["class"] ?? iconClass
+                    }
                 }
                 const mp = {
                     if: TagUtils.Tag(mapping.if, `${ctx}.if`),
@@ -189,6 +196,7 @@ export default class TagRenderingConfig {
                     then: Translations.T(mapping.then, `${ctx}.then`),
                     hideInAnswer,
                     icon,
+                    iconClass,
                     addExtraTags: (mapping.addExtraTags ?? []).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`))
                 };
                 if (this.question) {
@@ -350,7 +358,7 @@ export default class TagRenderingConfig {
      * @param tags
      * @constructor
      */
-    public GetRenderValues(tags: any): { then: Translation, icon?: string }[] {
+    public GetRenderValues(tags: any): { then: Translation, icon?: string, iconClass?: string }[] {
         if (!this.multiAnswer) {
             return [this.GetRenderValueWithImage(tags)]
         }
@@ -399,9 +407,6 @@ export default class TagRenderingConfig {
                     return mapping;
                 }
                 if (mapping.if.matchesProperties(tags)) {
-                    if (this.id === "uk_addresses_placename") {
-                        console.log("Matched", mapping.if, "with ", tags["addr:place"])
-                    }
                     return mapping;
                 }
             }

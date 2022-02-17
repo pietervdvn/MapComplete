@@ -851,11 +851,6 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1176,10 +1171,6 @@ video {
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
-}
-
-.min-w-\[20em\] {
-  min-width: 20em;
 }
 
 .max-w-full {
@@ -1779,6 +1770,10 @@ video {
 
 .filter {
   filter: var(--tw-filter);
+}
+
+.\!filter {
+  filter: var(--tw-filter) !important;
 }
 
 .transition {
@@ -2405,6 +2400,31 @@ input {
   /* Additional class on the first layer filter */
 }
 
+.mapping-icon-small {
+  /* A mapping icon type */
+  width: 1.5rem;
+  max-height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.mapping-icon-medium {
+  /* A mapping icon type */
+  width: 3rem;
+  max-height: 3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.mapping-icon-large{
+  /* A mapping icon type */
+  width: 6rem;
+  max-height: 5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
 .hover\:bg-indigo-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(199, 210, 254, var(--tw-bg-opacity));
@@ -2696,4 +2716,3 @@ input {
     display: inline;
   }
 }
-

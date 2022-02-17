@@ -130,7 +130,7 @@ export class Fuse<T> extends DesugaringStep<T> {
             Utils.Dedup([].concat(...steps.map(step => step.modifiedAttributes))),
             "Fuse of "+steps.map(s => s.name).join(", ")
         );
-        this.steps = steps;
+        this.steps = Utils.NoNull(steps);
     }
 
     convert(json: T, context: string): { result: T; errors: string[]; warnings: string[], information: string[] } {
