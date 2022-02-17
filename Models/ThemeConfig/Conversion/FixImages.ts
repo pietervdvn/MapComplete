@@ -32,7 +32,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                 for (const foundImage of found) {
                     if (typeof foundImage === "string") {
                         allFoundImages.push(foundImage)
-                    } else {
+                    } else{
                         // This is a tagRendering where every rendered value might be an icon!
                         for (const trpath of trpaths) {
                             if (trpath.typeHint !== "rendered") {
@@ -54,7 +54,9 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
             }
         }
 
-        const splitParts = [].concat(...Utils.NoNull(allFoundImages).map(img => img.split(";")))
+        const splitParts = [].concat(...Utils.NoNull(allFoundImages)
+            .map(img => img["path"] ?? img)
+            .map(img => img.split(";")))
             .map(img => img.split(":")[0])
         return {result: Utils.Dedup(splitParts), errors, warnings};
     }

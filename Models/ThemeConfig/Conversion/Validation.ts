@@ -11,6 +11,7 @@ import {TagUtils} from "../../../Logic/Tags/TagUtils";
 import {ExtractImages} from "./FixImages";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {And} from "../../../Logic/Tags/And";
+import Translations from "../../../UI/i18n/Translations";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -51,7 +52,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _isBuiltin: boolean;
 
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
-        super("Doesn't change anything, but emits warnings and errors", [],"ValidateTheme");
+        super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
@@ -61,6 +62,9 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         const errors = []
         const warnings = []
         const information = []
+
+        const theme = new LayoutConfig(json, true, "test")
+
         {
             // Legacy format checks  
             if (this._isBuiltin) {
@@ -105,7 +109,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                         const width: string = svg.$.width;
                         const height: string = svg.$.height;
                         if (width !== height) {
-                            const e = `the icon for theme ${json.id} is not square. Please square the icon at ${json.icon}` + 
+                            const e = `the icon for theme ${json.id} is not square. Please square the icon at ${json.icon}` +
                                 ` Width = ${width} height = ${height}`;
                             (json.hideFromOverview ? warnings : errors).push(e)
                         }
@@ -116,8 +120,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
 
         }
+
         try {
-            const theme = new LayoutConfig(json, true, "test")
             if (theme.id !== theme.id.toLowerCase()) {
                 errors.push("Theme ids should be in lowercase, but it is " + theme.id)
             }
@@ -138,7 +142,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     .convert(theme, theme.id)
                 errors.push(...checked.errors)
             }
-            if(!json.hideFromOverview && theme.id !== "personal"){
+            if (!json.hideFromOverview && theme.id !== "personal") {
                 // Official, public themes must have a full english translation
                 const checked = new ValidateLanguageCompleteness("en")
                     .convert(theme, theme.id)
@@ -171,7 +175,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
 class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
     constructor() {
-        super("Checks that an 'overrideAll' does not override a single override",[],"OverrideShadowingCheck");
+        super("Checks that an 'overrideAll' does not override a single override", [], "OverrideShadowingCheck");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
@@ -211,11 +215,12 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
 export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("Checks that the mappings don't shadow each other",[],"DetectShadowedMappings");
+        super("Checks that the mappings don't shadow each other", [], "DetectShadowedMappings");
     }
 
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
+        const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
@@ -230,10 +235,13 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                 properties[k] = v
             })
             for (let j = 0; j < i; j++) {
+                if(json.mappings[j].hideInAnswer === true){
+                    continue
+                }
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
                 if (doesMatch) {
                     // The current mapping is shadowed!
-                    errors.push(`Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
+                    warnings.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping, which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
@@ -246,8 +254,45 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
 
         return {
             errors,
+            warnings,
             result: json
         };
+    }
+}
+
+export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJson> {
+    constructor() {
+        super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
+    }
+
+    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+        const warnings = []
+        if (json.mappings === undefined || json.mappings.length === 0) {
+            return {result: json}
+        }
+        for (let i = 0; i < json.mappings.length; i++) {
+
+            const mapping = json.mappings[i]
+            const images = Utils.Dedup(Translations.T(mapping.then).ExtractImages())
+            if (images.length > 0) {
+                warnings.push(context + ".mappings[" + i + "]: A mapping has an image in the 'then'-clause. Remove the image there and use `\"icon\": <your-image>` instead. The images found are "+images.join(", "))
+            }
+        }
+
+        return {
+            warnings,
+            result: json
+        };
+    }
+}
+
+export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
+    constructor() {
+        super("Various validation on tagRenderingConfigs",
+        // TODO enable these checks again
+        //    new DetectShadowedMappings(),
+         //   new DetectMappingsWithImages()    e
+        );
     }
 }
 
@@ -261,16 +306,16 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
     private readonly _isBuiltin: boolean;
 
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
-        super("Doesn't change anything, but emits warnings and errors", [],"ValidateLayer");
+        super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
     }
 
-    convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings?: string[] } {
+    convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings?: string[], information?: string[] } {
         const errors = []
         const warnings = []
-
+        const information = []
         if (typeof json === "string") {
             errors.push(context + ": This layer hasn't been expanded: " + json)
             return {
@@ -343,23 +388,26 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             if (json.tagRenderings !== undefined) {
-                new DetectShadowedMappings().convertAll(<TagRenderingConfigJson[]>json.tagRenderings, context + ".tagRenderings")
+               const r = new OnEvery("tagRenderings", new ValidateTagRenderings()).convert(json, context)
+                warnings.push(...(r.warnings??[]))
+                errors.push(...(r.errors??[]))
+                information.push(...(r.information??[]))
             }
 
-            if(json.presets !== undefined){
-                
+            if (json.presets !== undefined) {
+
                 // Check that a preset will be picked up by the layer itself
-                const baseTags = TagUtils.Tag( json.source.osmTags)
-                for (let i = 0; i < json.presets.length; i++){
+                const baseTags = TagUtils.Tag(json.source.osmTags)
+                for (let i = 0; i < json.presets.length; i++) {
                     const preset = json.presets[i];
-                    const tags : {k: string,v: string}[]= new And(preset.tags.map(t => TagUtils.Tag(t))).asChange({id:"node/-1"})
+                    const tags: { k: string, v: string }[] = new And(preset.tags.map(t => TagUtils.Tag(t))).asChange({id: "node/-1"})
                     const properties = {}
                     for (const tag of tags) {
                         properties[tag.k] = tag.v
                     }
                     const doMatch = baseTags.matchesProperties(properties)
-                    if(!doMatch){
-                        errors.push(context+".presets["+i+"]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: "+JSON.stringify(properties)+"\n    The required tags are: "+baseTags.asHumanString(false, false, {}))
+                    if (!doMatch) {
+                        errors.push(context + ".presets[" + i + "]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " + JSON.stringify(properties) + "\n    The required tags are: " + baseTags.asHumanString(false, false, {}))
                     }
                 }
             }
@@ -372,7 +420,8 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         return {
             result: json,
             errors,
-            warnings
+            warnings,
+            information
         };
     }
 }

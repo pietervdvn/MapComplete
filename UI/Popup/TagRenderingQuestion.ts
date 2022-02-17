@@ -168,9 +168,8 @@ export default class TagRenderingQuestion extends Combine {
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
        
-        const hasImages = applicableMappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
+        const hasImages = applicableMappings.findIndex(mapping => mapping.then.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
-
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
 
@@ -355,7 +354,8 @@ export default class TagRenderingQuestion extends Combine {
             if: TagsFilter,
             then: Translation,
             addExtraTags: Tag[],
-            img?: string
+            icon?: string,
+            iconClass?: string
         }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging: TagsFilter = mapping.if;
@@ -375,13 +375,14 @@ export default class TagRenderingQuestion extends Combine {
 
     private static GenerateMappingContent(mapping: {
         then: Translation,
-        icon?: string
+        icon?: string,
+        iconClass?: string
     }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement {
         const text = new SubstitutedTranslation(mapping.then, tagsSource, state)
         if (mapping.icon === undefined) {
             return text;
         }
-        return new Combine([new Img(mapping.icon).SetClass("w-6 max-h-6 pr-2"), text]).SetClass("flex")
+        return new Combine([new Img(mapping.icon).SetClass("mapping-icon-"+(mapping.iconClass ?? "small")), text]).SetClass("flex")
     }
 
     private static GenerateFreeform(state, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)

@@ -16,7 +16,7 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
     constructor(
         state: DesugaringContext,
     ) {
-        super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", [],"SubstuteLayers");
+        super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", [],"SubstituteLayer");
         this._state = state;
     }
     

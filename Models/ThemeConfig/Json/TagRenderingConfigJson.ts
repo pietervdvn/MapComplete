@@ -122,7 +122,18 @@ export interface TagRenderingConfigJson {
          * An icon supporting this mapping; typically shown pretty small
          * Type: icon
          */
-        icon?: string
+        icon?: string | {
+            /**
+             * The path to the icon
+             * Type: icon
+             */
+            path: string,
+            /**
+             * A hint to mapcomplete on how to render this icon within the mapping.
+             * This is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)
+             */
+            class: "small" | "medium" | "large" | string
+        }
         /**
          * In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).
          *
