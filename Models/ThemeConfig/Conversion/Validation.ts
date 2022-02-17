@@ -226,7 +226,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
         }
         const parsedConditions = json.mappings.map(m => TagUtils.Tag(m.if))
         for (let i = 0; i < json.mappings.length; i++) {
-            if (!parsedConditions[i].isUsableAsAnswer()) {
+            if(json.mappings[i].hideInAnswer === true){
                 continue
             }
             const keyValues = parsedConditions[i].asChange({});
@@ -241,7 +241,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
                 if (doesMatch) {
                     // The current mapping is shadowed!
-                    warnings.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
+                    errors.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping, which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
