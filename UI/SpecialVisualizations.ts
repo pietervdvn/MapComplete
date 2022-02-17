@@ -12,7 +12,6 @@ import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-import State from "../State";
 import BaseUIElement from "./BaseUIElement";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
@@ -54,6 +53,45 @@ export interface SpecialVisualization {
     example?: string,
     args: { name: string, defaultValue?: string, doc: string }[],
     getLayerDependencies?: (argument: string[]) => string[]
+}
+
+export class AllTagsPanel extends VariableUiElement {
+
+    constructor(tags: UIEventSource<any>, state?) {
+
+        const calculatedTags = [].concat(
+            SimpleMetaTagger.lazyTags,
+            ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
+
+
+        super(tags.map(tags => {
+            const parts = [];
+            for (const key in tags) {
+                if (!tags.hasOwnProperty(key)) {
+                    continue
+                }
+                let v = tags[key]
+                if (v === "") {
+                    v = "<b>empty string</b>"
+                }
+                parts.push([key, v ?? "<b>undefined</b>"]);
+            }
+
+            for (const key of calculatedTags) {
+                const value = tags[key]
+                if (value === undefined) {
+                    continue
+                }
+                parts.push(["<i>" + key + "</i>", value])
+            }
+
+            return new Table(
+                ["key", "value"],
+                parts
+            )
+                .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
+        }))
+    }
 }
 
 export default class SpecialVisualizations {
@@ -100,37 +138,7 @@ export default class SpecialVisualizations {
                     funcName: "all_tags",
                     docs: "Prints all key-value pairs of the object - used for debugging",
                     args: [],
-                    constr: ((state: State, tags: UIEventSource<any>) => {
-                        const calculatedTags = [].concat(
-                            SimpleMetaTagger.lazyTags,
-                            ...state.layoutToUse.layers.map(l => l.calculatedTags?.map(c => c[0]) ?? []))
-                        return new VariableUiElement(tags.map(tags => {
-                            const parts = [];
-                            for (const key in tags) {
-                                if (!tags.hasOwnProperty(key)) {
-                                    continue
-                                }
-                                let v = tags[key]
-                                if (v === "") {
-                                    v = "<b>empty string</b>"
-                                }
-                                parts.push([key, v ?? "<b>undefined</b>"]);
-                            }
-
-                            for (const key of calculatedTags) {
-                                const value = tags[key]
-                                if (value === undefined) {
-                                    continue
-                                }
-                                parts.push(["<i>" + key + "</i>", value])
-                            }
-
-                            return new Table(
-                                ["key", "value"],
-                                parts
-                            )
-                        })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
-                    })
+                    constr: ((state, tags: UIEventSource<any>) => new AllTagsPanel(tags, state))
                 },
                 {
                     funcName: "image_carousel",
@@ -140,7 +148,7 @@ export default class SpecialVisualizations {
                         defaultValue: AllImageProviders.defaultKeys.join(","),
                         doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
                     }],
-                    constr: (state: State, tags, args) => {
+                    constr: (state, tags, args) => {
                         let imagePrefixes: string[] = undefined;
                         if (args.length > 0) {
                             imagePrefixes = [].concat(...args.map(a => a.split(",")));
@@ -160,7 +168,7 @@ export default class SpecialVisualizations {
                         doc: "The text to show on the button",
                         defaultValue: "Add image"
                     }],
-                    constr: (state: State, tags, args) => {
+                    constr: (state, tags, args) => {
                         return new ImageUploadFlow(tags, state, args[0], args[1])
                     }
                 },
@@ -259,11 +267,10 @@ export default class SpecialVisualizations {
                         new ShowDataMultiLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                enablePopups: false,
+                                popup: undefined,
                                 zoomToFeatures: true,
-                                layers: State.state.filteredLayers,
-                                features: new StaticFeatureSource(featuresToShow, true),
-                                allElements: State.state.allElements
+                                layers: state.filteredLayers,
+                                features: new StaticFeatureSource(featuresToShow, true)
                             }
                         )
 
@@ -306,11 +313,11 @@ export default class SpecialVisualizations {
                         new ShowDataLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                enablePopups: false,
+                                popup: undefined,
                                 zoomToFeatures: true,
                                 layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
                                 features: new StaticFeatureSource([copy], false),
-                                allElements: State.state.allElements
+                                state
                             }
                         )
 
@@ -331,7 +338,7 @@ export default class SpecialVisualizations {
                         name: "fallback",
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
                     }],
-                    constr: (state: State, tags, args) => {
+                    constr: (state, tags, args) => {
                         const tgs = tags.data;
                         const key = args[0] ?? "name"
                         let subject = tgs[key] ?? args[1];
@@ -341,7 +348,7 @@ export default class SpecialVisualizations {
                         const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),
                             encodeURIComponent(subject),
                             state.mangroveIdentity,
-                            state.osmConnection._dryRun
+                            state.featureSwitchIsTesting.data
                         );
                         const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection);
                         return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
@@ -364,7 +371,7 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
                     }],
                     example: "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
-                    constr: (state: State, tagSource: UIEventSource<any>, args) => {
+                    constr: (state, tagSource: UIEventSource<any>, args) => {
                         return new OpeningHoursVisualization(tagSource, state, args[0], args[1], args[2])
                     }
                 },
@@ -380,7 +387,7 @@ export default class SpecialVisualizations {
                     }, {
                         name: "path", doc: "The path (or shorthand) that should be returned"
                     }],
-                    constr: (state: State, tagSource: UIEventSource<any>, args) => {
+                    constr: (state, tagSource: UIEventSource<any>, args) => {
                         const url = args[0];
                         const shorthands = args[1];
                         const neededValue = args[2];
@@ -413,7 +420,7 @@ export default class SpecialVisualizations {
 
                         }
                     ],
-                    constr: (state: State, tagSource: UIEventSource<any>, args: string[]) => {
+                    constr: (state, tagSource: UIEventSource<any>, args: string[]) => {
 
                         let assignColors = undefined;
                         if (args.length >= 3) {
@@ -448,7 +455,7 @@ export default class SpecialVisualizations {
                                     return undefined;
                                 }
                             })
-                        return new Histogram(listSource, args[1], args[2], assignColors)
+                        return new Histogram(listSource, args[1], args[2], {assignColor: assignColors})
                     }
                 },
                 {
@@ -461,7 +468,7 @@ export default class SpecialVisualizations {
                             doc: "The url to share (default: current URL)",
                         }
                     ],
-                    constr: (state: State, tagSource: UIEventSource<any>, args) => {
+                    constr: (state, tagSource: UIEventSource<any>, args) => {
                         if (window.navigator.share) {
 
                             const generateShareData = () => {
@@ -527,7 +534,7 @@ export default class SpecialVisualizations {
                     funcName: "multi_apply",
                     docs: "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags",
                     args: [
-                        {name: "feature_ids", doc: "A JSOn-serialized list of IDs of features to apply the tagging on"},
+                        {name: "feature_ids", doc: "A JSON-serialized list of IDs of features to apply the tagging on"},
                         {
                             name: "keys",
                             doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."
@@ -580,7 +587,7 @@ export default class SpecialVisualizations {
                     funcName: "export_as_gpx",
                     docs: "Exports the selected feature as GPX-file",
                     args: [],
-                    constr: (state, tagSource, args) => {
+                    constr: (state, tagSource) => {
                         const t = Translations.t.general.download;
 
                         return new SubtleButton(Svg.download_ui(),
@@ -605,7 +612,7 @@ export default class SpecialVisualizations {
                     funcName: "export_as_geojson",
                     docs: "Exports the selected feature as GeoJson-file",
                     args: [],
-                    constr: (state, tagSource, args) => {
+                    constr: (state, tagSource) => {
                         const t = Translations.t.general.download;
 
                         return new SubtleButton(Svg.download_ui(),
@@ -672,7 +679,7 @@ export default class SpecialVisualizations {
                             doc: "Text to add onto the note when closing",
                         }
                     ],
-                    constr: (state, tags, args, guiState) => {
+                    constr: (state, tags, args) => {
                         const t = Translations.t.notes;
 
                         let icon = Svg.checkmark_svg()
@@ -690,11 +697,11 @@ export default class SpecialVisualizations {
                             const id = tags.data[args[2] ?? "id"]
                             state.osmConnection.closeNote(id, args[3])
                                 ?.then(_ => {
-                                tags.data["closed_at"] = new Date().toISOString();
-                                tags.ping()
-                            })
+                                    tags.data["closed_at"] = new Date().toISOString();
+                                    tags.ping()
+                                })
                         })
-                        return new LoginToggle( new Toggle(
+                        return new LoginToggle(new Toggle(
                             t.isClosed.SetClass("thanks"),
                             closeButton,
                             isClosed
@@ -711,14 +718,14 @@ export default class SpecialVisualizations {
                             defaultValue: "id"
                         }
                     ],
-                    constr: (state, tags, args, guiState) => {
+                    constr: (state, tags, args) => {
 
                         const t = Translations.t.notes;
-                        const textField = ValidatedTextField.InputForType("text", {placeholder: t.addCommentPlaceholder})
+                        const textField = ValidatedTextField.ForType("text").ConstructInputElement({placeholder: t.addCommentPlaceholder})
                         textField.SetClass("rounded-l border border-grey")
                         const txt = textField.GetValue()
 
-                        const addCommentButton = new SubtleButton(Svg.addSmall_svg().SetClass("max-h-7"), t.addCommentPlaceholder)
+                        const addCommentButton = new SubtleButton(Svg.speech_bubble_svg().SetClass("max-h-7"), t.addCommentPlaceholder)
                             .onClick(async () => {
                                 const id = tags.data[args[1] ?? "id"]
 
@@ -745,10 +752,6 @@ export default class SpecialVisualizations {
                             return t.addCommentAndClose
                         }))).onClick(() => {
                             const id = tags.data[args[1] ?? "id"]
-                            if (state.featureSwitchIsTesting.data) {
-                                console.log("Testmode: Not actually closing note...")
-                                return;
-                            }
                             state.osmConnection.closeNote(id, txt.data).then(_ => {
                                 tags.data["closed_at"] = new Date().toISOString();
                                 tags.ping()
@@ -762,10 +765,6 @@ export default class SpecialVisualizations {
                             return t.reopenNoteAndComment
                         }))).onClick(() => {
                             const id = tags.data[args[1] ?? "id"]
-                            if (state.featureSwitchIsTesting.data) {
-                                console.log("Testmode: Not actually reopening note...")
-                                return;
-                            }
                             state.osmConnection.reopenNote(id, txt.data).then(_ => {
                                 tags.data["closed_at"] = undefined;
                                 tags.ping()
@@ -779,7 +778,9 @@ export default class SpecialVisualizations {
                             new Combine([
                                 new Title("Add a comment"),
                                 textField,
-                                new Combine([addCommentButton.SetClass("mr-2"), stateButtons]).SetClass("flex justify-end")
+                                new Combine([
+                                    new Toggle(addCommentButton, undefined, textField.GetValue().map(t => t !==undefined && t.length > 1)).SetClass("mr-2")
+                                    , stateButtons]).SetClass("flex justify-end")
                             ]).SetClass("border-2 border-black rounded-xl p-4 block"),
                             t.loginToAddComment, state)
                     }
@@ -795,7 +796,7 @@ export default class SpecialVisualizations {
                         },
                         {
                             name: "start",
-                            doc:"Drop the first 'start' comments",
+                            doc: "Drop the first 'start' comments",
                             defaultValue: "0"
                         }
                     ]
@@ -805,7 +806,7 @@ export default class SpecialVisualizations {
                                 .map(commentsStr => {
                                     const comments: any[] = JSON.parse(commentsStr)
                                     const startLoc = Number(args[1] ?? 0)
-                                    if(!isNaN(startLoc) && startLoc > 0){
+                                    if (!isNaN(startLoc) && startLoc > 0) {
                                         comments.splice(0, startLoc)
                                     }
                                     return new Combine(comments
@@ -823,9 +824,9 @@ export default class SpecialVisualizations {
                         defaultValue: "id"
                     }],
                     constr: (state, tags, args) => {
-                    const isUploading = new UIEventSource(false);
-                      const t = Translations.t.notes;
-                          const id = tags.data[args[0] ?? "id"]
+                        const isUploading = new UIEventSource(false);
+                        const t = Translations.t.notes;
+                        const id = tags.data[args[0] ?? "id"]
 
                         const uploader = new ImgurUploader(url => {
                             isUploading.setData(false)
@@ -843,7 +844,7 @@ export default class SpecialVisualizations {
                         fileSelector.GetValue().addCallback(filelist => {
                             isUploading.setData(true)
                             uploader.uploadMany("Image for osm.org/note/" + id, "CC0", filelist)
-                            
+
                         })
                         const ti = Translations.t.image
                         const uploadPanel = new Combine([
@@ -852,12 +853,26 @@ export default class SpecialVisualizations {
                             ti.ccoExplanation.SetClass("subtle text-sm"),
                             ti.respectPrivacy.SetClass("text-sm")
                         ]).SetClass("flex flex-col")
-                        return new LoginToggle( new Toggle( 
+                        return new LoginToggle(new Toggle(
                             Translations.t.image.uploadingPicture.SetClass("alert"),
                             uploadPanel,
                             isUploading), t.loginToAddPicture, state)
                     }
 
+                },
+                {
+                    funcName:"title",
+                    args: [],
+                    docs:"Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
+                    example:"`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
+                    constr: (state, tags, args, guistate) =>
+                        new VariableUiElement(tags.map(tags => {
+                            const layer = state.layoutToUse.getMatchingLayer(tags)
+                            console.log("Layer for tags", tags,"is", layer.id)
+                            const title = layer?.title?.GetRenderValue(tags)
+                            console.log("Title became: ", title)
+                            return title
+                        }))
                 }
             ]
 

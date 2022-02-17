@@ -508,15 +508,15 @@
         "name": "Stazioni bici (riparazione, gonfiaggio o entrambi)",
         "presets": {
             "0": {
-                "description": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.<h3>Esempi di pompe per biciclette</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-                "title": "Pompa per bici"
+                "description": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.",
+                "title": "pompa per bici"
             },
             "1": {
-                "description": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.<h3>Esempio</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-                "title": "Stazione di riparazione bici e pompa"
+                "description": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
+                "title": "stazione di riparazione bici e pompa"
             },
             "2": {
-                "title": "Stazione di riparazione bici senza pompa"
+                "title": "stazione di riparazione bici senza pompa"
             }
         },
         "tagRenderings": {
@@ -595,9 +595,6 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Sempre aperto"
-                    },
-                    "1": {
                         "then": "Sempre aperto"
                     }
                 },
@@ -774,7 +771,7 @@
                     "then": "Noleggio di biciclette <i>{name}</i>"
                 },
                 "3": {
-                    "then": "Riparazione biciclette <i>{name</i>"
+                    "then": "Riparazione biciclette <i>{name}</i>"
                 },
                 "4": {
                     "then": "Negozio di biciclette <i>{name}</i>"
@@ -1234,12 +1231,8 @@
             "Surface area": {
                 "render": "Area: {_surface:ha} ha"
             },
-            "Website": {
-                "question": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?"
-            },
             "phone": {
-                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)"
             }
         }
     },
@@ -1274,7 +1267,7 @@
         "name": "Campi da gioco",
         "presets": {
             "0": {
-                "title": "Campetto"
+                "title": "campetto"
             }
         },
         "tagRenderings": {
@@ -1298,15 +1291,12 @@
                         "then": "Accessibile pubblicamente"
                     },
                     "1": {
-                        "then": "Accessibile pubblicamente"
-                    },
-                    "2": {
                         "then": "Accessibile solamente ai clienti dell’attività che lo gestisce"
                     },
-                    "3": {
+                    "2": {
                         "then": "Accessibile solamente agli studenti della scuola"
                     },
-                    "4": {
+                    "3": {
                         "then": "Non accessibile"
                     }
                 },
@@ -1341,9 +1331,6 @@
                         "then": "Si può accedere dall'alba al tramonto"
                     },
                     "1": {
-                        "then": "Si può sempre accedere"
-                    },
-                    "2": {
                         "then": "Si può sempre accedere"
                     }
                 },

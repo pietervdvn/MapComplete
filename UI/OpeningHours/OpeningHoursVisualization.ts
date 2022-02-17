@@ -23,7 +23,7 @@ export default class OpeningHoursVisualization extends Toggle {
         Translations.t.general.weekdays.abbreviations.sunday,
     ]
 
-    constructor(tags: UIEventSource<any>, state:{osmConnection?: OsmConnection}, key: string, prefix = "", postfix = "") {
+    constructor(tags: UIEventSource<any>, state: { osmConnection?: OsmConnection }, key: string, prefix = "", postfix = "") {
         const tagsDirect = tags.data;
         const ohTable = new VariableUiElement(tags
             .map(tags => {

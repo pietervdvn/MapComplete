@@ -142,6 +142,16 @@
     ]
   },
   {
+    "path": "cash.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Online Web Fonts"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/464494"
+    ]
+  },
+  {
     "path": "checkbox-empty.svg",
     "license": "CC0",
     "authors": [
@@ -576,6 +586,16 @@
     ]
   },
   {
+    "path": "invalid.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
     "path": "josm_logo.svg",
     "license": "CC0",
     "authors": [
@@ -806,6 +826,16 @@
     "sources": []
   },
   {
+    "path": "nfc_card.svg",
+    "license": "CC0",
+    "authors": [
+      "Stijn Wens"
+    ],
+    "sources": [
+      "https://wens.be/free-antwerpenize-bicycle-font"
+    ]
+  },
+  {
     "path": "no_checkmark.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -822,6 +852,16 @@
     "license": "CC0",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "not_found.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
   },
   {
     "path": "note.svg",
@@ -865,6 +905,16 @@
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
+    ]
+  },
+  {
+    "path": "payment_card.svg",
+    "license": "CC0",
+    "authors": [
+      " \tMaxi Koichi (maxixam)"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Credit_Card_-_The_Noun_Project.svg"
     ]
   },
   {
@@ -1070,6 +1120,26 @@
     "sources": []
   },
   {
+    "path": "smartphone.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "To Uyen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Smartphone_icon_-_Noun_Project_283536.svg"
+    ]
+  },
+  {
+    "path": "speech_bubble.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
     "path": "square.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -1160,9 +1230,7 @@
   {
     "path": "teardrop_with_hole_green.svg",
     "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
+    "authors": [],
     "sources": []
   },
   {

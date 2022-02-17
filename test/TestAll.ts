@@ -17,12 +17,14 @@ import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 import T from "./TestHelper";
 import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
+import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations.spec";
+import CreateCacheSpec from "./CreateCache.spec";
+import CodeQualitySpec from "./CodeQuality.spec";
 
 
 async function main() {
 
-    ScriptUtils.fixUtils()
-    const allTests : T[] = [
+    const allTests: T[] = [
         new OsmObjectSpec(),
         new TagSpec(),
         new ImageAttributionSpec(),
@@ -38,12 +40,17 @@ async function main() {
         new ActorsSpec(),
         new ReplaceGeometrySpec(),
         new LegacyThemeLoaderSpec(),
-        new CreateNoteImportLayerSpec()
+        new CreateNoteImportLayerSpec(),
+        new ValidatedTextFieldTranslationsSpec(),
+        new CreateCacheSpec(),
+        new CodeQualitySpec()
     ]
+    ScriptUtils.fixUtils();
+    const realDownloadFunc = Utils.externalDownloadFunction;
 
     Utils.externalDownloadFunction = async (url) => {
         console.error("Fetching ", url, "blocked in tests, use Utils.injectJsonDownloadForTests")
-        const data = await ScriptUtils.DownloadJSON(url)
+        const data = await realDownloadFunc(url)
         console.log("\n\n ----------- \nBLOCKED DATA\n Utils.injectJsonDownloadForTests(\n" +
             "       ", JSON.stringify(url), ", \n",
             "       ", JSON.stringify(data), "\n    )\n------------------\n\n")
@@ -58,9 +65,9 @@ async function main() {
     let testsToRun = allTests
     if (args.length > 0) {
         args = args.map(a => a.toLowerCase()).map(a => {
-            if(!a.endsWith("spec")){
+            if (!a.endsWith("spec")) {
                 return a + "spec"
-            }else{
+            } else {
                 return a;
             }
         })
@@ -76,7 +83,7 @@ async function main() {
     for (let i = 0; i < testsToRun.length; i++) {
         const test = testsToRun[i];
         console.log(" Running test", i, "/", testsToRun.length, test.name)
-        
+
         allFailures.push(...(await test.Run() ?? []))
         console.log("OK!")
     }

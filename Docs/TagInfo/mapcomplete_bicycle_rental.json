@@ -1,0 +1,188 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Bicycle rental",
+    "description": "A map with bicycle rental stations and bicycle rental shops",
+    "project_url": "https://mapcomplete.osm.be/bicycle_rental",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/bicycle_rental/logo.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Bicycle rental has a layer Bicycle rental showing features with this tag",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "The MapComplete theme Bicycle rental has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "The MapComplete theme Bicycle rental has a layer Bicycle rental showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "The MapComplete theme Bicycle rental has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=bicycle_rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows shop=bicycle_rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "shop"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "rental"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "bicycle"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked into a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "docking_station"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "key_dispensing_machine"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point: a designated bicycle parking for this cycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "dropoff_point"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle rental' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle rental' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle rental' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'rental' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for childs can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "kid_bike"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:city_bike' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:ebike' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:kid_bike' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bmx' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:mtb' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Bicycle rental')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Bicycle rental has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
+    }
+  ]
+}

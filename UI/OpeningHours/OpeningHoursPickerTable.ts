@@ -24,7 +24,6 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             Translations.t.general.weekdays.abbreviations.saturday,
             Translations.t.general.weekdays.abbreviations.sunday
         ]
-    public readonly IsSelected: UIEventSource<boolean>;
     /*
     These html-elements are an overlay over the table columns and act as a host for the ranges in the weekdays
      */
@@ -34,7 +33,6 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
     constructor(source?: UIEventSource<OpeningHour[]>) {
         super();
         this.source = source ?? new UIEventSource<OpeningHour[]>([]);
-        this.IsSelected = new UIEventSource<boolean>(false);
         this.SetStyle("width:100%;height:100%;display:block;");
     }
 

@@ -31,6 +31,10 @@ export default class Combine extends BaseUIElement {
         }
     }
 
+    public getElements(): BaseUIElement[] {
+        return this.uiElements
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         try {
@@ -55,10 +59,6 @@ export default class Combine extends BaseUIElement {
         }
 
         return el;
-    }
-
-    public getElements(): BaseUIElement[] {
-        return this.uiElements
     }
 
 

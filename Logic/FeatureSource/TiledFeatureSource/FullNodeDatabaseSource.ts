@@ -45,8 +45,8 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
             for (const nodeId of osmWay.nodes) {
 
                 if (!this.parentWays.has(nodeId)) {
-                    const src =  new UIEventSource<OsmWay[]>([])
-                    this.parentWays.set(nodeId,src)
+                    const src = new UIEventSource<OsmWay[]>([])
+                    this.parentWays.set(nodeId, src)
                     src.addCallback(parentWays => {
                         const tgs = nodesById.get(nodeId).tags
                         tgs    ["parent_ways"] = JSON.stringify(parentWays.map(w => w.tags))

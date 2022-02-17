@@ -402,7 +402,7 @@ export class OsmWay extends OsmObject {
     }
 
     public asGeoJson() {
-        let coordinates: ([number, number][] | [number, number][][]) = this.coordinates.map(c => [c[1], c[0]]);
+        let coordinates: ([number, number][] | [number, number][][]) = this.coordinates.map(([lat, lon]) => [lon, lat]);
         if (this.isPolygon()) {
             coordinates = [coordinates]
         }

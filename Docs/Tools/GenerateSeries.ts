@@ -4,6 +4,8 @@ import {Utils} from "../../Utils";
 import {exec} from "child_process"
 import {GeoOperations} from "../../Logic/GeoOperations";
 
+ScriptUtils.fixUtils()
+
 class StatsDownloader {
 
     private readonly startYear = 2020
@@ -75,7 +77,7 @@ class StatsDownloader {
 
         while (url) {
             ScriptUtils.erasableLog(`Downloading stats for ${year}-${month}, page ${page} ${url}`)
-            const result = await ScriptUtils.DownloadJSON(url, headers)
+            const result = await Utils.downloadJson(url, headers)
             page++;
             allFeatures.push(...result.features)
             if (result.features === undefined) {
@@ -613,6 +615,18 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         "Changesets per version number" + appliedFilterDescription,
         allFeatures,
         f => f.properties.editor.substr("MapComplete ".length, 6).replace(/[a-zA-Z-/]/g, ''),
+        1
+    )
+    
+    Group.createStackedBarChartPerDay(
+        "Changesets per minor version number" + appliedFilterDescription,
+        allFeatures,
+        f => {
+        	const base = f.properties.editor.substr("MapComplete ".length).replace(/[a-zA-Z-/]/g, '')
+        	const [major, minor, patch] = base.split(".")
+        	return major+"."+minor
+        
+        },
         1
     )
 

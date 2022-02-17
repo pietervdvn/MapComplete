@@ -70,6 +70,11 @@
         "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
     },
     "general": {
+        "logout": "Log out",
+        "next": "Next",
+        "confirm": "Confirm",
+        "back": "Back",
+        "backToMapcomplete": "Back to the theme overview",
         "loading": "Loading...",
         "pdf": {
             "generatedWith": "Generated with MapComplete.osm.be",
@@ -80,6 +85,7 @@
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "welcomeBack": "You are logged in, welcome back!",
         "loginToStart": "Log in to answer this question",
+        "loginFailed": "Logging in into OpenStreetMap failed",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "search": {
             "search": "Search a location",
@@ -99,16 +105,16 @@
             "addNewMapLabel": "Click here to add a new item",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
             "disableFilters": "Disable all filters",
-            "addNew": "Add a new {category} here",
+            "addNew": "Add a new {category}",
             "presetInfo": "The new POI will have {tags}",
             "warnVisibleForEveryone": "Your addition will be visible for everyone",
             "title": "Add a new point?",
             "intro": "You clicked somewhere where no data is known yet.<br/>",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Please log in to add a new point</a>",
+            "pleaseLogin": "Please log in to add a new point",
             "zoomInFurther": "Zoom in further to add a point.",
             "stillLoading": "The data is still loading. Please wait a bit before you add a new point.",
-            "confirmIntro": "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
-            "confirmButton": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>",
+            "confirmIntro": "<h3>Add a {title}?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+            "confirmButton": "Add a {category}<br/><div class='alert'>Your addition is visible for everyone</div>",
             "openLayerControl": "Open the layer control box",
             "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point",
             "hasBeenImported": "This point has already been imported",
@@ -266,7 +272,11 @@
         "apply_button": {
             "isApplied": "The changes are applied",
             "appliedOnAnotherObject": "The object {id} will receive {tags}"
-        }
+        },
+        "loadingTheme": "Loading {theme}...",
+        "poweredByOsm": "Powered by OpenStreetMap",
+        "example": "Example",
+        "examples": "Examples"
     },
     "favourite": {
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
@@ -332,7 +342,6 @@
         "surveillance": "As you are reading the privacy policy, you probably care about privacy - so do we! We even made <a href='https://mapcomplete.osm.be/surveillance'>a theme showing surveillance cameras.</a> Feel free to map them all!"
     },
     "professional": {
-        "backToMapcomplete": "Back to the theme overview",
         "indexPage": {
             "hook": "Need professional support?",
             "hookMore": "We can help with setting up surveys, data imports and OpenStreetMap-consultancy",
@@ -347,7 +356,7 @@
             "aboutOsm": {
                 "title": "What is OpenStreetMap?",
                 "intro": "OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as <b>it can be verified on the ground</b>.<br/> OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:",
-                "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run over theme",
+                "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run there, …",
                 "li1": "Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, …",
                 "li2": "Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, …",
                 "li3": "and much, much more…"
@@ -387,7 +396,7 @@
             },
             "survey": {
                 "title": "Survey possibilities",
-                "intro": "<p>MapComplete is an easy to use <i>survey</i> tool. It is ideal to collect the necessary in a few clicks, both on desktop and on mobile. This data is contributed directly into OpenStreetMap.</p><p>We can setup a <b>custom survey tool</b>, asking precisely the data you need in a future-proof way.</p><p>Do you have a dataset that has to be (re)surveyed? This is the perfect moment to make the switch to OpenStreetMap.MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.</p>\n"
+                "intro": "<p>MapComplete is an easy to use <i>survey</i> tool. It is ideal to collect the necessary in a few clicks, both on desktop and on mobile. This data is contributed directly into OpenStreetMap.</p><p>We can setup a <b>custom survey tool</b>, asking precisely the data you need in a future-proof way.</p><p>Do you have a dataset that has to be (re)surveyed? This is the perfect moment to make the switch to OpenStreetMap. MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.</p>\n"
             },
             "internalUse": {
                 "title": "Using the data in internal processes",
@@ -424,13 +433,13 @@
                 "usecaseMapDifferentSources": {
                     "title": "Creating a map from different sources",
                     "intro": "<p>For example, one could make a map with all benches in some city, based on the benches known by OpenStreetMap. This printed map needs a clear statement that the map data is based on OpenStreetMap. Selling these maps is permitted.If the mapmaker notices that the benches are missing in some area and adds them on the printed map, the data on the missing benches are automatically open data too. This means that an OpenStreetMap-contributor is allowed to take the paper map and use it to add the missing benches back into OpenStreetMap.</p><p>This contributor also has the right to ask for the dataset of the missing benches, which should be provided too.</p><p>If the mapmaker notices that the benches are missing in some area and adds them on the printed map, the data on the missing benches are automatically open data too. This means that an OpenStreetMap-contributor is allowed to take the paper map and use it to add the missing benches back into OpenStreetMap. This contributor also has the right to ask for the dataset of the missing benches, which should be provided too.</p><p>Of course, a map with only benches can be boring. The mapmaker might also decide to add in a layer with shops, possibly sourced from another geodata provider under another license. This is permitted to, if the map clearly states that the benches are sourced from OSM (under ODBL) and the shops have a different source (eventually with an all rights reserved).</p><p>However, mixing two datasets into one undistinguishible layer might not be permitted. For example, the mapmaker migth find that OSM has excellent data on benches in one part of the city and the closed-source provider might have excellent data on benches in another part of the city, merging these datasets into one could be problematic: </p>",
-                    "li0": "the open license would require the modifications to be openly republished...",
-                    "li1": "...whereas the all-rights-reserved license would prohibit this.",
+                    "li0": "the open license would require the modifications to be openly republished…",
+                    "li1": "…whereas the all-rights-reserved license would prohibit this.",
                     "outro": "As a result, this kind of mixing is not allowed"
                 },
                 "usecaseGatheringOpenData": {
                     "title": "Gathering open data",
-                    "intro": "MapComplete is an excellent way to create Open Data, also for governments. By default, this data will be freely redistributable under the ODbL. However, if there is a requirement to publish the gathered data under a <i>public domain</i>-license (where <b>all</b> rights are granted to the public and no attribution is required), the ODbL is too restrictive. In this case, one can ask the contributors to add data as Public Domain (e.g. by informing them in the mapcomplete theme).  "
+                    "intro": "MapComplete is an excellent way to create Open Data, also for governments. By default, this data will be freely redistributable under the ODbL. However, if there is a requirement to publish the gathered data under a <i>public domain</i>-license (where <b>all</b> rights are granted to the public and no attribution is required), the ODbL is too restrictive. In this case, one can ask the contributors to add data as Public Domain (e.g. by informing them in the mapcomplete theme)."
                 }
             }
         }
@@ -449,6 +458,7 @@
         "loginToClose": "Login to close this note",
         "createNoteTitle": "Create a new note here",
         "createNote": "Create a new note",
+        "textNeeded": "Enter a descriptive text to create a note",
         "noteIsPublic": "This will be visible to everyone",
         "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers",
         "warnAnonymous": "You are not logged in. We won't be able to contact you to resolve your issue.",
@@ -462,6 +472,90 @@
     "importLayer": {
         "layerName": "Possible {title}",
         "description": "A layer which imports entries for {title}",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "Possible {title}",
+        "importButton": "import_button({layerId}, _tags, I have found a {title} here - add it to the map,./assets/svg/addSmall.svg,,,id)",
+        "notFound": "I could not find {title} - remove it",
+        "alreadyMapped": "There already is another {title} on the map - this point is a duplicate",
+        "importHandled": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>"
+    },
+    "importHelper": {
+        "title": "Import helper",
+        "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
+        "importFormat": "A text in a note should have the following format in order to be picked up: <br/><div class='literal-code'>[A bit of introduction]<br/>https://mapcomplete.osm.be/[themename].html?[parameters such as lat and lon]#import<br/>[all tags of the feature] </div>",
+        "userAccountTitle": "Select user account",
+        "loggedInWith": "You are currently logged in as {name} and have made {csCount} changesets",
+        "loginRequired": "You have to be logged in to continue",
+        "locked": "You need at least {importHelperUnlock} to use the import helper",
+        "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
+        "selectLayer": "Select a layer...",
+        "selectFile": {
+            "title": "Select file",
+            "description": "Select a .csv or .geojson file to get started",
+            "fileFormatDescription": "Select a <b class='code'>.csv</b> or a <b class='code'>.geojson</b> file",
+            "fileFormatDescriptionCsv": "In the CSV-file, there should be a column <span class='literal-code'>lat</span> and <span class='literal-code'>lon</span> with the coordinates in WGS84. There should be an additional column for every attribute.",
+            "fileFormatDescriptionGeoJson": "In the geojson file, only points should be present. The properties should be exactly those properties that should go into OpenStreetMap",
+            "errNoName": "Some columns don't have a name",
+            "noFilesLoaded": "No file is currently loaded",
+            "errDuplicate": "Some columns have the same name",
+            "loadedFilesAre": "Currently loaded file is {file}",
+            "errNoLatOrLon": "The header does not contain `lat` or `lon`",
+            "errPointsOnly": "The loaded JSON-file should only contain points",
+            "errNotFeatureCollection": "The loaded JSON-file is not a geojson-featurecollection"
+        },
+        "mapPreview": {
+            "title": "Map preview",
+            "autodetected": "The layer was automatically deducted based on the properties",
+            "selectLayer": "Which layer does this import match with?",
+            "mismatch": "{count} features did not match the selected layer. Make sure that the tags to indicate the type are present, namely {tags}",
+            "confirm": "The features are on the right location on the map"
+        },
+        "validateDataTitle": "Validate data",
+        "allAttributesSame": "All features to import have this tag",
+        "someHaveSame": "{count} features to import have this tag, this is {percentage}% of the total",
+        "inspectDataTitle": "Inspect data of {count} features to import",
+        "inspectDidAutoDected": "Layer was chosen automatically",
+        "inspectLooksCorrect": "These values look correct"
+    },
+    "importInspector": {
+        "title": "Inspect and manage import notes"
+    },
+    "validation": {
+        "string": {
+            "description": "a piece of text"
+        },
+        "email": {
+            "description": "email-adres",
+            "feedback": "This is not a valid email address",
+            "noAt": "An email address should contain an @"
+        },
+        "phone": {
+            "description": "a phone number",
+            "feedback": "This is not a valid phone number"
+        },
+        "url": {
+            "description": "link to a website",
+            "feedback": "This is not a valid web address"
+        },
+        "pnat": {
+            "description": "a positive, whone number",
+            "noZero": "Zero is not allowed"
+        },
+        "nat": {
+            "description": "a positive, whole number or zero",
+            "mustBePositive": "This number should be positive",
+            "notANumber": "Enter a number",
+            "mustBeWhole": "Only whole numbers are allowed"
+        },
+        "int": {
+            "description": "a whole number"
+        },
+        "float": {
+            "description": "a number",
+            "feedback": "This is not a number"
+        },
+        "pfloat": {
+            "description": "a positive number"
+        },
+        "tooLong": "Text is to long, at most 255 characters are allowed. You do have {count} characters now"
     }
 }

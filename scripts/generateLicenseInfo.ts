@@ -2,6 +2,10 @@ import {existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync} from "fs
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
+
+function validateLicenseInfo(l : SmallLicense){
+   l.sources.map(s => new URL(s))
+}
 /**
  * Sweeps the entire 'assets/' (except assets/generated) directory for image files and any 'license_info.json'-file.
  * Checks that the license info is included for each of them and generates a compiles license_info.json for those
@@ -11,8 +15,6 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
     for (const path of paths) {
         try {
-
-
             const parsed = JSON.parse(readFileSync(path, "UTF-8"))
             if (Array.isArray(parsed)) {
                 const l: SmallLicense[] = parsed
@@ -22,12 +24,6 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
                 licenses.push(...l)
             } else {
                 const smallLicens: SmallLicense = parsed;
-                /*if(parsed.license === "CC-BY"){
-                    console.log("Rewriting ", path)
-                    parsed.license === "CC-BY 4.0"
-                    writeFileSync(path, JSON.stringify(smallLicens, null, "  "))
-                }*/
-
                 smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
                 licenses.push(smallLicens)
             }
@@ -89,6 +85,29 @@ knownLicenses.set("na", {
     path: undefined,
     license: "CC0",
     sources: []
+})
+
+knownLicenses.set("tv", {
+    authors: ["Toerisme Vlaanderen"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://toerismevlaanderen.be/pinjepunt","https://mapcomplete.osm.be/toerisme_vlaanderenn"]
+})
+
+knownLicenses.set("tvf", {
+    authors: ["Jo De Baerdemaeker "],
+    path: undefined,
+    license: "All rights reserved",
+    sources: ["https://www.studiotype.be/fonts/flandersart"]
+})
+
+
+
+knownLicenses.set("twemoji", {
+    authors: ["Twemoji"],
+    path: undefined,
+    license: "CC-BY 4.0",
+    sources: ["https://github.com/twitter/twemoji"]
 })
 
 
@@ -206,6 +225,7 @@ function createFullLicenseOverview(licensePaths) {
     for (const licensePath of licensePaths) {
         const licenses = <SmallLicense[]>JSON.parse(readFileSync(licensePath, "UTF-8"))
         for (const license of licenses) {
+            validateLicenseInfo(license)
             const dir = licensePath.substring(0, licensePath.length - "license_info.json".length)
             license.path = dir + license.path
             allLicenses.push(license)
@@ -216,18 +236,29 @@ function createFullLicenseOverview(licensePaths) {
 }
 
 console.log("Checking and compiling license info")
-const contents = ScriptUtils.readDirRecSync("./assets")
-    .filter(entry => entry.indexOf("./assets/generated") != 0)
-const licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
-const licenseInfos = generateLicenseInfos(licensePaths);
 
 if (!existsSync("./assets/generated")) {
     mkdirSync("./assets/generated")
 }
 
 
-const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
+let contents = ScriptUtils.readDirRecSync("./assets")
+    .filter(entry => entry.indexOf("./assets/generated") != 0)
+let licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
+let licenseInfos = generateLicenseInfos(licensePaths);
+
+
+
+const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
+if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
+    queryMissingLicenses(missingLicenses)
+    contents = ScriptUtils.readDirRecSync("./assets")
+        .filter(entry => entry.indexOf("./assets/generated") != 0)
+    licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
+    licenseInfos = generateLicenseInfos(licensePaths);
+}
+
 const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
 for (const licenseInfo of licenseInfos) {
     for (const source of licenseInfo.sources) {
@@ -241,9 +272,7 @@ for (const licenseInfo of licenseInfos) {
         }
     }
 }
-if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
-    queryMissingLicenses(missingLicenses)
-}
+
 if (missingLicenses.length > 0) {
     const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
     console.log(missingLicenses.concat(invalidLicenses).join("\n"))

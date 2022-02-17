@@ -20,14 +20,14 @@ export interface MergePointConfig {
 
 /**
  * CreateWayWithPointreuse will create a 'CoordinateInfo' for _every_ point in the way to be created.
- * 
+ *
  * The CoordinateInfo indicates the action to take, e.g.:
- * 
+ *
  * - Create a new point
  * - Reuse an existing OSM point (and don't move it)
  * - Reuse an existing OSM point (and leave it where it is)
  * - Reuse another Coordinate info (and don't do anything else with it)
- * 
+ *
  */
 interface CoordinateInfo {
     /**
@@ -56,6 +56,8 @@ interface CoordinateInfo {
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
 export default class CreateWayWithPointReuseAction extends OsmCreateAction {
+    public newElementId: string = undefined;
+    public newElementIdNumber: number = undefined
     private readonly _tags: Tag[];
     /**
      * lngLat-coordinates
@@ -64,20 +66,17 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     private _coordinateInfo: CoordinateInfo[];
     private _state: FeaturePipelineState;
     private _config: MergePointConfig[];
-    
-    public newElementId: string = undefined;
-    public newElementIdNumber: number = undefined
 
     constructor(tags: Tag[],
                 coordinates: [number, number][],
                 state: FeaturePipelineState,
                 config: MergePointConfig[]
     ) {
-        super(null,true);
+        super(null, true);
         this._tags = tags;
         this._state = state;
         this._config = config;
-        
+
         // The main logic of this class: the coordinateInfo contains all the changes
         this._coordinateInfo = this.CalculateClosebyNodes(coordinates);
 
@@ -117,7 +116,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                         "move": "yes",
                         "osm-id": reusedPoint.node.properties.id,
                         "id": "new-geometry-move-existing" + i,
-                        "distance":GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
+                        "distance": GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
                     },
                     geometry: {
                         type: "LineString",
@@ -136,7 +135,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                         "move": "no",
                         "osm-id": reusedPoint.node.properties.id,
                         "id": "new-geometry-reuse-existing" + i,
-                        "distance":GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
+                        "distance": GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
                     },
                     geometry: {
                         type: "LineString",
@@ -238,7 +237,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
         const newWay = new CreateNewWayAction(this._tags, nodeIdsToUse, {
             theme
         })
-        
+
         allChanges.push(...(await newWay.CreateChangeDescriptions(changes)))
         this.newElementId = newWay.newElementId
         this.newElementIdNumber = newWay.newElementIdNumber
@@ -266,7 +265,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
             }[]
         }[] = coordinates.map(_ => undefined)
 
-        
+
         // First loop: gather all information...
         for (let i = 0; i < coordinates.length; i++) {
 
@@ -328,7 +327,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
 
         }
 
-        
+
         // Second loop: figure out which point moves where without creating conflicts
         let conflictFree = true;
         do {
@@ -348,8 +347,8 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                     if (other.closebyNodes === undefined || other.closebyNodes[0] === undefined) {
                         continue
                     }
-                    
-                    if(coorInfo.closebyNodes[0] === undefined){
+
+                    if (coorInfo.closebyNodes[0] === undefined) {
                         continue
                     }
 

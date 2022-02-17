@@ -69,10 +69,6 @@
   "tagRenderings": [
     "images",
     {
-      "id": "minimap",
-      "render": "{minimap():height: 9rem; border-radius: 2.5rem; overflow:hidden;border:1px solid gray}"
-    },
-    {
       "render": {
         "en": "The name of this bookcase is {name}",
         "nl": "De naam van dit boekenruilkastje is {name}",
@@ -434,7 +430,7 @@
         "fr": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>",
         "ru": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>",
         "it": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>",
-        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>."
+        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
       },
       "question": {
         "en": "Is there a website with more information about this public bookcase?",

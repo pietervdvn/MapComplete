@@ -9,7 +9,7 @@ import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Toggle from "../Input/Toggle";
 import {Utils} from "../../Utils";
@@ -52,7 +52,8 @@ export default class MoreScreen extends Combine {
             id: string,
             icon: string,
             title: any,
-            shortDescription: any
+            shortDescription: any,
+            definition?: any
         }, isCustom: boolean = false
     ):
         BaseUIElement {
@@ -87,6 +88,11 @@ export default class MoreScreen extends Combine {
             linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
         }
 
+        let hash = ""
+        if(layout.definition !== undefined){
+            hash = "#"+btoa(JSON.stringify(layout.definition))
+        }
+        
         const linkText = currentLocation?.map(currentLocation => {
             const params = [
                 ["z", currentLocation?.zoom],
@@ -95,8 +101,9 @@ export default class MoreScreen extends Combine {
             ].filter(part => part[1] !== undefined)
                 .map(part => part[0] + "=" + part[1])
                 .join("&")
-            return `${linkPrefix}${params}`;
+            return `${linkPrefix}${params}${hash}`;
         }) ?? new UIEventSource<string>(`${linkPrefix}`)
+
 
 
         return new SubtleButton(layout.icon,
@@ -110,7 +117,7 @@ export default class MoreScreen extends Combine {
             ]), {url: linkText, newTab: false});
     }
 
-    private static CreateProffessionalSerivesButton() {
+    public static CreateProffessionalSerivesButton() {
         const t = Translations.t.professional.indexPage;
         return new Combine([
             new Title(t.hook, 4),
@@ -119,17 +126,69 @@ export default class MoreScreen extends Combine {
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
 
+    private static createUnofficialButtonFor(state: UserRelatedState, id: string): BaseUIElement {
+        const allPreferences = state.osmConnection.preferencesHandler.preferences.data;
+        const length = Number(allPreferences[id + "-length"])
+        let str = "";
+        for (let i = 0; i < length; i++) {
+            str += allPreferences[id + "-" + i]
+        }
+        if(str === undefined || str === "undefined"){
+            return undefined
+        }
+        try {
+            const value: {
+                id: string
+                icon: string,
+                title: any,
+                shortDescription: any,
+                definition?: any
+            } = JSON.parse(str)
+
+            return MoreScreen.createLinkButton(state, value, true)
+        } catch (e) {
+            console.debug("Could not parse unofficial theme information for " + id, "The json is: ", str, e)
+            return undefined
+        }
+    }
+
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
-        return new VariableUiElement(state.installedThemes.map(customThemes => {
-            if (customThemes.length <= 0) {
-                return undefined;
-            }
-            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme, true)?.SetClass(buttonClass))
-            return new Combine([
-                Translations.t.general.customThemeIntro.Clone(),
-                new Combine(customThemeButtons).SetClass(themeListClasses)
-            ]);
-        }));
+        const prefix = "mapcomplete-unofficial-theme-";
+
+        var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
+            .map(allPreferences => {
+                const ids: string[] = []
+
+                for (const key in allPreferences) {
+                    if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
+                        const id = key.substring(0, key.length - "-length".length)
+                        ids.push(id)
+                    }
+                }
+
+                return ids
+            });
+
+        var stableIds = UIEventSource.ListStabilized<string>(currentIds)
+
+        return new VariableUiElement(
+            stableIds.map(ids => {
+                const allThemes: BaseUIElement[] = []
+                for (const id of ids) {
+                    const link = this.createUnofficialButtonFor(state, id)
+                    if (link !== undefined) {
+                        allThemes.push(link.SetClass(buttonClass))
+                    }
+                }
+
+                if (allThemes.length <= 0) {
+                    return undefined;
+                }
+                return new Combine([
+                    Translations.t.general.customThemeIntro.Clone(),
+                    new Combine(allThemes).SetClass(themeListClasses)
+                ]);
+            }));
     }
 
     private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
@@ -198,7 +257,7 @@ export default class MoreScreen extends Combine {
             }
             return button;
         })
-        
+
         const professional = MoreScreen.CreateProffessionalSerivesButton();
         const customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
         buttons.splice(0, 0, customGeneratorLink, professional);

@@ -10,6 +10,8 @@ import IndexText from "./BigComponents/IndexText";
 import FeaturedMessage from "./BigComponents/FeaturedMessage";
 import Toggle from "./Input/Toggle";
 import {SubtleButton} from "./Base/SubtleButton";
+import {VariableUiElement} from "./Base/VariableUIElement";
+import Svg from "../Svg";
 
 export default class AllThemesGui {
     constructor() {
@@ -26,12 +28,21 @@ export default class AllThemesGui {
             ]);
             new Combine([
                 intro,
-                new FeaturedMessage(),
+                new FeaturedMessage().SetClass("mb-4 block"),
                 new MoreScreen(state, true),
                 new Toggle(
                     undefined,
                     new SubtleButton(undefined, Translations.t.index.logIn).SetStyle("height:min-content").onClick(() => state.osmConnection.AttemptLogin()),
                     state.osmConnection.isLoggedIn),
+                new VariableUiElement(state.osmConnection.userDetails.map(ud => {
+                    if (ud.csCount < Constants.userJourney.importHelperUnlock) {
+                        return undefined;
+                    }
+                    return new Combine([
+                        new SubtleButton(undefined, Translations.t.importHelper.title, {url: "import_helper.html"}),
+                        new SubtleButton(Svg.note_svg(), Translations.t.importInspector.title, {url: "import_viewer.html"})
+                    ]).SetClass("p-4 border-2 border-gray-500 m-4 block")
+                })),
                 Translations.t.general.aboutMapcomplete
                     .Subs({"osmcha_link": Utils.OsmChaLinkFor(7)})
                     .SetClass("link-underline"),

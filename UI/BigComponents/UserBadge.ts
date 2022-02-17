@@ -8,20 +8,12 @@ import Link from "../Base/Link";
 import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
 import MapState from "../../Logic/State/MapState";
+import {LoginToggle} from "../Popup/LoginButton";
 
-export default class UserBadge extends Toggle {
+export default class UserBadge extends LoginToggle {
 
     constructor(state: MapState) {
-
-
         const userDetails = state.osmConnection.userDetails;
-
-        const loginButton = Translations.t.general.loginWithOpenStreetMap
-            .Clone()
-            .SetClass("userbadge-login inline-flex justify-center items-center w-full h-full text-lg font-bold min-w-[20em]")
-            .onClick(() => state.osmConnection.AttemptLogin());
-
-
         const logout =
             Svg.logout_svg()
                 .onClick(() => {
@@ -34,7 +26,7 @@ export default class UserBadge extends Toggle {
                 const homeButton = new VariableUiElement(
                     userDetails.map((userinfo) => {
                         if (userinfo.home) {
-                            return Svg.home_ui();
+                            return Svg.home_svg();
                         }
                         return " ";
                     })
@@ -73,10 +65,11 @@ export default class UserBadge extends Toggle {
                     ).SetClass("alert")
                 }
 
-                let dryrun = new FixedUiElement("");
-                if (user.dryRun) {
-                    dryrun = new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4");
-                }
+                let dryrun = new Toggle(
+                    new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4"),
+                    undefined,
+                    state.featureSwitchIsTesting
+                )
 
                 const settings =
                     new Link(Svg.gear,
@@ -125,15 +118,13 @@ export default class UserBadge extends Toggle {
             }
         }));
 
-        userBadge.SetClass("inline-block m-0 w-full").SetStyle("pointer-events: all")
+            
         super(
-            userBadge,
-            loginButton,
-            state.osmConnection.isLoggedIn
+           new Combine([userBadge.SetClass("inline-block m-0 w-full").SetStyle("pointer-events: all")]) 
+            .SetClass("shadow rounded-full h-min overflow-hidden block w-full md:w-max"),
+            Translations.t.general.loginWithOpenStreetMap,
+            state
         )
-
-
-        this.SetClass("shadow rounded-full h-min overflow-hidden block w-full md:w-max")
 
     }
 

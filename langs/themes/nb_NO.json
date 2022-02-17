@@ -198,8 +198,7 @@
                         "3": {
                             "then": "Denne gaten er ikke en sykkelvei"
                         }
-                    },
-                    "question": "Er denne gaten en sykkelvei?"
+                    }
                 }
             }
         },
@@ -239,9 +238,6 @@
     },
     "maps": {
         "title": "Et kart over kart"
-    },
-    "natuurpunt": {
-        "title": "Naturreservater"
     },
     "openwindpowermap": {
         "layers": {

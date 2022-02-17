@@ -15,6 +15,17 @@ export class VariableUiElement extends BaseUIElement {
         this.isDestroyed = true;
     }
 
+    AsMarkdown(): string {
+        const d = this._contents.data;
+        if (typeof d === "string") {
+            return d;
+        }
+        if (d instanceof BaseUIElement) {
+            return d.AsMarkdown()
+        }
+        return new Combine(<BaseUIElement[]>d).AsMarkdown()
+    }
+
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span");
         const self = this;
@@ -46,16 +57,5 @@ export class VariableUiElement extends BaseUIElement {
             }
         });
         return el;
-    }
-
-    AsMarkdown(): string {
-        const d = this._contents.data;
-        if (typeof d === "string") {
-            return d;
-        }
-        if (d instanceof BaseUIElement) {
-            return d.AsMarkdown()
-        }
-        return new Combine(<BaseUIElement[]>d).AsMarkdown()
     }
 }

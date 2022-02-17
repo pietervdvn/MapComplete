@@ -5,7 +5,6 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 
 export default class VariableInputElement<T> extends InputElement<T> {
 
-    public readonly IsSelected: UIEventSource<boolean>;
     private readonly value: UIEventSource<T>;
     private readonly element: BaseUIElement
     private readonly upstream: UIEventSource<InputElement<T>>;
@@ -16,7 +15,6 @@ export default class VariableInputElement<T> extends InputElement<T> {
         this.upstream = upstream;
         this.value = upstream.bind(v => v.GetValue())
         this.element = new VariableUiElement(upstream)
-        this.IsSelected = upstream.bind(v => v.IsSelected)
     }
 
     GetValue(): UIEventSource<T> {

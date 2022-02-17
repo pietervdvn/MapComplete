@@ -99,11 +99,6 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows  with a fixed text, namely 'Accessible to the general public' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key access.",
-      "value": ""
-    },
-    {
-      "key": "access",
       "description": "Layer 'Playgrounds' shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
       "value": "yes"
     },
@@ -114,7 +109,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' (in the MapComplete.osm.be theme 'Playgrounds')",
       "value": "students"
     },
     {
@@ -160,13 +155,8 @@
       "value": "24/7"
     },
     {
-      "key": "opening_hours",
-      "description": "Layer 'Playgrounds' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Playgrounds') Picking this answer will delete the key opening_hours.",
-      "value": ""
-    },
-    {
       "key": "id",
-      "description": "The MapComplete theme Playgrounds has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Playgrounds has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

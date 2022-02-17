@@ -2,10 +2,6 @@
   "id": "street_lighting_assen",
   "maintainer": "Robin van der Linde",
   "version": "2021-10-22",
-  "language": [
-    "nl",
-    "en"
-  ],
   "title": {
     "nl": "Straatverlichting - Assen"
   },

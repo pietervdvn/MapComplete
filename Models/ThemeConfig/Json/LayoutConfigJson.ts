@@ -1,5 +1,6 @@
 import {LayerConfigJson} from "./LayerConfigJson";
 import TilesourceConfigJson from "./TilesourceConfigJson";
+import ExtraLinkConfigJson from "./ExtraLinkConfigJson";
 
 /**
  * Defines the entire theme.
@@ -32,7 +33,7 @@ export interface LayoutConfigJson {
     credits?: string;
 
     /**
-     * Who does maintian this preset?
+     * Who does maintain this preset?
      */
     maintainer: string;
 
@@ -41,20 +42,16 @@ export interface LayoutConfigJson {
      * Should be sortable, where the higher value is the later version
      */
     version: string;
-    /**
-     * The supported language(s).
-     * This should be a two-letter, lowercase code which identifies the language, e.g. "en", "nl", ...
-     * If the theme supports multiple languages, use a list: `["en","nl","fr"]` to allow the user to pick any of them
-     */
-    language: string | string[];
 
     /**
-     * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated
+     * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.
+     * 
+     * This must be a list of two-letter, lowercase codes which identifies the language, e.g. "en", "nl", ...
      */
     mustHaveLanguage?: string[]
 
     /**
-     * The title, as shown in the welcome message and the more-screen
+     * The title, as shown in the welcome message and the more-screen.
      */
     title: string | any;
 
@@ -78,13 +75,17 @@ export interface LayoutConfigJson {
      * The icon representing this theme.
      * Used as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)
+     * 
+     * Type: icon
      */
     icon: string;
 
     /**
      * Link to a 'social image' which is included as og:image-tag on official themes.
      * Useful to share the theme on social media.
-     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information
+     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information$
+     * 
+     * Type: image
      */
     socialImage?: string;
 
@@ -202,7 +203,14 @@ export interface LayoutConfigJson {
      * }
      *```
      */
-    layers: (LayerConfigJson | string | { builtin: string | string[], override: any })[],
+    layers: (LayerConfigJson | string | 
+        { builtin: string | string[], 
+            override: any,
+            /**
+             * TagRenderings with any of these labels will be removed from the layer.
+             * Note that the 'id' and 'group' are considered labels too
+             */
+            hideTagRenderingsWithLabels?: string[]})[],
 
     /**
      * If defined, data will be clustered.
@@ -216,7 +224,7 @@ export interface LayoutConfigJson {
         maxZoom?: number,
         /**
          * The number of elements per tile needed to start clustering
-         * If clustering is defined, defaults to 25
+         * If clustering is defined, defaults to 250
          */
         minNeededElements?: number
     } | false,
@@ -232,23 +240,76 @@ export interface LayoutConfigJson {
 
     /**
      * If set to true, the basemap will not scroll outside of the area visible on initial zoom.
-     * If set to [[lat0, lon0], [lat1, lon1]], the map will not scroll outside of those bounds.
+     * If set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.
      * Off by default, which will enable panning to the entire world
      */
-    lockLocation?: boolean | [[number, number], [number, number]] | number[][];
+    lockLocation?: [[number, number], [number, number]] | number[][];
 
-    enableUserBadge?: boolean;
-    enableShareScreen?: boolean;
-    enableMoreQuests?: boolean;
-    enableLayers?: boolean;
-    enableSearch?: boolean;
-    enableAddNewPoints?: boolean;
-    enableGeolocation?: boolean;
-    enableBackgroundLayerSelection?: boolean;
-    enableShowAllQuestions?: boolean;
-    enableDownload?: boolean;
-    enablePdfDownload?: boolean;
-    enableIframePopout?: true | boolean;
+    /**
+     * Adds an additional button on the top-left of the application.
+     * This can link to an arbitrary location.
+     * 
+     * Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced
+     * 
+     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]}, 
+     * 
+     */
+    extraLink?: ExtraLinkConfigJson
+    
+    /**
+     * If set to false, disables logging in.
+     * The userbadge will be hidden, all login-buttons will be hidden and editing will be disabled
+     */
+    enableUserBadge?: true | boolean;
+    /**
+     * If false, hides the tab 'share'-tab in the welcomeMessage
+     */
+    enableShareScreen?: true | boolean;
+    /**
+     * Hides the tab with more themes in the welcomeMessage
+     */
+    enableMoreQuests?: true | boolean;
+    /**
+     * If false, the layer selection/filter view will be hidden
+     * The corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'
+     */
+    enableLayers?: true | boolean;
+    /**
+     * If set to false, hides the search bar
+     */
+    enableSearch?: true | boolean;
+    /**
+     * If set to false, the ability to add new points or nodes will be disabled.
+     * Editing already existing features will still be possible
+     */
+    enableAddNewPoints?: true | boolean;
+    /**
+     * If set to false, the 'geolocation'-button will be hidden.
+     */
+    enableGeolocation?: true | boolean;
+    /**
+     * Enable switching the backgroundlayer.
+     * If false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well 
+     */
+    enableBackgroundLayerSelection?: true | boolean;
+    /**
+     * If set to true, will show _all_ unanswered questions in a popup instead of just the next one
+     */
+    enableShowAllQuestions?: false | boolean;
+    /**
+     * If set to true, download button for the data will be shown (offers downloading as geojson and csv)
+     */
+    enableDownload?: false | boolean;
+    /**
+     * If set to true, exporting a pdf is enabled
+     */
+    enablePdfDownload?: false | boolean;
+
+    /**
+     * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
+     * these notes will be shown if a relevant layer is present.
+     */
+    enableNoteImports?: true | boolean;
 
     /**
      * Set one or more overpass URLs to use for this theme..

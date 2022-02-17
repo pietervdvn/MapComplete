@@ -44,7 +44,9 @@ export default class LineRenderingConfig extends WithContextLoader {
             if (tags === undefined) {
                 return deflt
             }
-            if(tr === undefined){return deflt}
+            if (tr === undefined) {
+                return deflt
+            }
             const str = tr?.GetRenderValue(tags)?.txt ?? deflt;
             if (str === "") {
                 return deflt
@@ -59,7 +61,7 @@ export default class LineRenderingConfig extends WithContextLoader {
                 "--catch-detail-color"
             );
         }
-        
+
         const style = {
             color,
             dashArray,
@@ -73,13 +75,13 @@ export default class LineRenderingConfig extends WithContextLoader {
         if (fillStr !== undefined && fillStr !== "") {
             style["fill"] = fillStr === "yes" || fillStr === "true"
         }
-        
+
         const fillColorStr = render(this.fillColor, undefined)
-        if(fillColorStr !== undefined){
+        if (fillColorStr !== undefined) {
             style["fillColor"] = fillColorStr
         }
         return style
-        
+
     }
 
 }

@@ -1,6 +1,7 @@
 import SimpleMetaTaggers, {SimpleMetaTagger} from "./SimpleMetaTagger";
 import {ExtraFuncParams, ExtraFunctions} from "./ExtraFunctions";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {ElementStorage} from "./ElementStorage";
 
 
 /**
@@ -13,6 +14,7 @@ export default class MetaTagging {
 
     private static errorPrintCount = 0;
     private static readonly stopErrorOutputAt = 10;
+    private static retaggingFuncCache = new Map<string, ((feature: any) => void)[]>()
 
     /**
      * This method (re)calculates all metatags and calculated tags on every given object.
@@ -23,10 +25,11 @@ export default class MetaTagging {
     public static addMetatags(features: { feature: any; freshness: Date }[],
                               params: ExtraFuncParams,
                               layer: LayerConfig,
-                              state,
+                              state?: { allElements?: ElementStorage },
                               options?: {
                                   includeDates?: true | boolean,
-                                  includeNonDates?: true | boolean
+                                  includeNonDates?: true | boolean,
+                                  evaluateStrict?: false | boolean
                               }): boolean {
         if (features === undefined || features.length === 0) {
             return;
@@ -35,11 +38,11 @@ export default class MetaTagging {
         const metatagsToApply: SimpleMetaTagger[] = []
         for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {
-                if (options.includeDates ?? true) {
+                if (options?.includeDates ?? true) {
                     metatagsToApply.push(metatag)
                 }
             } else {
-                if (options.includeNonDates ?? true) {
+                if (options?.includeNonDates ?? true) {
                     metatagsToApply.push(metatag)
                 }
             }
@@ -55,7 +58,7 @@ export default class MetaTagging {
             const feature = ff.feature
             const freshness = ff.freshness
             let somethingChanged = false
-            let definedTags = new Set(Object.getOwnPropertyNames( feature.properties ))
+            let definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
             for (const metatag of metatagsToApply) {
                 try {
                     if (!metatag.keys.some(key => feature.properties[key] === undefined)) {
@@ -64,12 +67,17 @@ export default class MetaTagging {
                     }
 
                     if (metatag.isLazy) {
-                        if(!metatag.keys.some(key => !definedTags.has(key))) {
+                        if (!metatag.keys.some(key => !definedTags.has(key))) {
                             // All keys are defined - lets skip!
                             continue
                         }
                         somethingChanged = true;
                         metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
+                        if(options?.evaluateStrict){
+                            for (const key of metatag.keys) {
+                                feature.properties[key]
+                            }
+                        }
                     } else {
                         const newValueAdded = metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
                         /* Note that the expression:
@@ -103,7 +111,8 @@ export default class MetaTagging {
         }
         return atLeastOneFeatureChanged
     }
-    public static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
+
+    private static createFunctionsForFeature(layerId: string, calculatedTags: [string, string, boolean][]): ((feature: any) => void)[] {
         const functions: ((feature: any) => any)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
@@ -126,7 +135,7 @@ export default class MetaTagging {
                     delete feat.properties[key]
                     feat.properties[key] = result;
                     return result
-                }catch(e){
+                } catch (e) {
                     if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                         console.warn("Could not calculate a " + (isStrict ? "strict " : "") + " calculated tag for key " + key + " defined by " + code + " (in layer" + layerId + ") due to \n" + e + "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e, e.stack)
                         MetaTagging.errorPrintCount++;
@@ -136,10 +145,10 @@ export default class MetaTagging {
                     }
                     return undefined;
                 }
-            } 
-                
-            
-            if(isStrict){
+            }
+
+
+            if (isStrict) {
                 functions.push(calculateAndAssign)
                 continue
             }
@@ -164,8 +173,6 @@ export default class MetaTagging {
         return functions;
     }
 
-    private static retaggingFuncCache = new Map<string, ((feature: any) => void)[]>()
-
     /**
      * Creates the function which adds all the calculated tags to a feature. Called once per layer
      * @param layer
@@ -180,7 +187,7 @@ export default class MetaTagging {
             return undefined;
         }
 
-        let functions :((feature: any) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id);
+        let functions: ((feature: any) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id);
         if (functions === undefined) {
             functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
             MetaTagging.retaggingFuncCache.set(layer.id, functions)

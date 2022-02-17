@@ -5,6 +5,9 @@ import Link from "./Link";
 import Img from "./Img";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
+import {VariableUiElement} from "./VariableUIElement";
+import Lazy from "./Lazy";
+import Loading from "./Loading";
 
 
 export class SubtleButton extends UIElement {
@@ -21,7 +24,7 @@ export class SubtleButton extends UIElement {
     }
 
     protected InnerRender(): string | BaseUIElement {
-        const classes = "block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline";
+        const classes = "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
         const message = Translations.W(this.message);
         let img;
         if ((this.imageUrl ?? "") === "") {
@@ -31,29 +34,55 @@ export class SubtleButton extends UIElement {
         } else {
             img = this.imageUrl;
         }
-        img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")
-        const image = new Combine([img])
+        const image = new Combine([img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")])
             .SetClass("flex-shrink-0");
+
+        message?.SetClass("block overflow-ellipsis no-images")
+
+        const button = new Combine([
+            image,
+            message
+        ]).SetClass("flex group w-full")
 
         if (this.linkTo == undefined) {
             this.SetClass(classes)
-            return new Combine([
-                image,
-                message?.SetClass("block overflow-ellipsis"),
-            ]).SetClass("flex group w-full");
+            return button
         }
 
 
         return new Link(
-            new Combine([
-                image,
-                message?.SetClass("block overflow-ellipsis")
-            ]).SetClass("flex group w-full"),
+            button,
             this.linkTo.url,
             this.linkTo.newTab ?? false
         ).SetClass(classes)
 
     }
 
+    public OnClickWithLoading(
+        loadingText: BaseUIElement | string,
+        action: () => Promise<void> ) : BaseUIElement{
+        const state = new UIEventSource<"idle" | "running">("idle")
+        const button = this;
+        
+        button.onClick(async() => {
+            state.setData("running")
+            try{    
+               await action()
+            }catch(e){
+                console.error(e)
+            }finally {
+                state.setData("idle")
+            }
+            
+        })
+        const loading = new Lazy(() => new Loading(loadingText) )
+        return new VariableUiElement(state.map(st => {
+            console.log("State is: ", st)
+            if(st === "idle"){
+                return button
+            }
+            return loading
+        }))
+    }
 
 }

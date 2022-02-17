@@ -6,7 +6,7 @@ import ScriptUtils from "./ScriptUtils";
 import {Utils} from "../Utils";
 
 /**
- * This script slices a big newline-delimeted geojson file into tiled geojson 
+ * This script slices a big newline-delimeted geojson file into tiled geojson
  * It was used to convert the CRAB-data into geojson tiles
  */
 
@@ -117,7 +117,7 @@ async function main(args: string[]) {
 
     const keysToRemove = ["STRAATNMID", "GEMEENTE", "POSTCODE"]
     for (const f of allFeatures) {
-        if(f.properties === null){
+        if (f.properties === null) {
             console.log("Got a feature without properties!", f)
             continue
         }
@@ -126,10 +126,6 @@ async function main(args: string[]) {
         }
         delete f.bbox
     }
-
-    //const knownKeys = Utils.Dedup([].concat(...allFeatures.map(f => Object.keys(f.properties))))
-    //console.log("Kept keys: ", knownKeys)
-
     TiledFeatureSource.createHierarchy(
         new StaticFeatureSource(allFeatures, false),
         {

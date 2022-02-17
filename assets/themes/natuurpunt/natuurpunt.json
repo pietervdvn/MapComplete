@@ -21,14 +21,6 @@
     "de": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
     "zh_Hant": "在這張地圖上您可以找到 Natuurpunt 提供的所有自然保護區 "
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "nb_NO",
-    "it",
-    "zh_Hant"
-  ],
   "mustHaveLanguage": [
     "nl"
   ],
@@ -38,11 +30,21 @@
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 15,
+  "lockLocation": [
+    [
+      2.1,
+      50.4
+    ],
+    [
+      6.4,
+      51.54
+    ]
+  ],
   "widenFactor": 2,
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
   "enablePdfDownload": true,
-  "enableDownload": true,
+  "enableDownload": false,
   "hideFromOverview": true,
   "clustering": {
     "maxZoom": 0,
@@ -72,7 +74,11 @@
               "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
             }
           }
-        ]
+        ],
+        "=filter": {
+          "sameAs": "nature_reserve_centerpoints"
+        },
+        "=presets": []
       }
     },
     {
@@ -97,6 +103,11 @@
               "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
             },
             "presets": []
+          }
+        ],
+        "presets": [
+          {
+            "tags+": "operator=Natuurpunt"
           }
         ]
       }
@@ -136,7 +147,7 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "minzoom": 10,
+        "minzoom": 14,
         "mapRendering": [
           {
             "icon": {
@@ -159,7 +170,7 @@
     {
       "builtin": "toilet",
       "override": {
-        "minzoom": "15",
+        "minzoom": "14",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -187,11 +198,24 @@
     {
       "builtin": "birdhide",
       "override": {
-        "minzoom": 12,
+        "minzoom": 14,
+        "presets": [
+          {
+            "tags+": "operator=Natuurpunt"
+          },
+          {
+            "tags+": "operator=Natuurpunt"
+          }
+        ],
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
-          "isOsmCache": true
+          "isOsmCache": true,
+          "osmTags": {
+            "+and": [
+              "operator~.*[nN]atuurpunt.*"
+            ]
+          }
         },
         "mapRendering": [
           {
@@ -206,7 +230,7 @@
     {
       "builtin": "picnic_table",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -224,7 +248,7 @@
     {
       "builtin": "drinking_water",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -242,7 +266,7 @@
     {
       "builtin": "parking",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "mapRendering": [
           {
             "icon": {
@@ -269,7 +293,7 @@
     {
       "builtin": "information_board",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -287,7 +311,7 @@
     {
       "builtin": "bench",
       "override": {
-        "minzoom": "18",
+        "minzoom": "14",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -305,7 +329,7 @@
     {
       "builtin": "watermill",
       "override": {
-        "minzoom": "18",
+        "minzoom": "14",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -319,7 +343,17 @@
           }
         ]
       }
+    },
+    {
+      "builtin": "gps_track",
+      "override": {
+        "name": null
+      }
     }
   ],
-  "enableIframePopout": false
+  "enableMoreQuests": false,
+  "enableShareScreen": false,
+  "enableIframePopout": false,
+  "enableBackgroundLayerSelection": false,
+  "enableNoteImports": false
 }

@@ -469,7 +469,7 @@
     "bike_repair_station": {
         "presets": {
             "0": {
-                "title": "Велосипедный насос"
+                "title": "bелосипедный насос"
             }
         },
         "tagRenderings": {
@@ -1007,19 +1007,11 @@
         "tagRenderings": {
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "phone": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
             }
         }
     },
     "observation_tower": {
         "name": "Смотровые башни",
-        "presets": {
-            "0": {
-                "title": "смотровая башня"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
@@ -1089,7 +1081,7 @@
             },
             "playground-access": {
                 "mappings": {
-                    "4": {
+                    "3": {
                         "then": "Недоступно"
                     }
                 }
@@ -1121,9 +1113,6 @@
                         "then": "Открыто от рассвета до заката"
                     },
                     "1": {
-                        "then": "Всегда доступен"
-                    },
-                    "2": {
                         "then": "Всегда доступен"
                     }
                 },

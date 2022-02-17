@@ -26,7 +26,7 @@ export default class ThemeIntroductionPanel extends Combine {
         const loginStatus =
             new Toggle(
                 new LoginToggle(
-                    t.welcomeBack,
+                    undefined,
                     new Combine([Translations.t.general.loginWithOpenStreetMap.SetClass("text-xl font-bold"),
                         Translations.t.general.loginOnlyNeededToEdit.Clone().SetClass("font-bold")]
                     ).SetClass("flex flex-col"),

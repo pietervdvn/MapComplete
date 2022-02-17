@@ -663,15 +663,15 @@
         "name": "Fahrradstationen (Reparatur, Pumpe oder beides)",
         "presets": {
             "0": {
-                "description": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.<h3>Beispiele für Fahrradpumpen</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-                "title": "Fahrradpumpe"
+                "description": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
+                "title": "fahrradpumpe"
             },
             "1": {
-                "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.<h3>Beispiel</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-                "title": "Fahrrad-Reparaturstation und Pumpe"
+                "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
+                "title": "fahrrad-Reparaturstation und Pumpe"
             },
             "2": {
-                "title": "Fahrrad-Reparaturstation ohne Pumpe"
+                "title": "fahrrad-Reparaturstation ohne Pumpe"
             }
         },
         "tagRenderings": {
@@ -756,9 +756,6 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Immer geöffnet"
-                    },
-                    "1": {
                         "then": "Immer geöffnet"
                     }
                 },
@@ -2047,6 +2044,9 @@
                 },
                 "1": {
                     "then": "Schnellrestaurant<i>{name}</i>"
+                },
+                "2": {
+                    "then": "Schnellrestaurant"
                 }
             }
         }
@@ -2240,23 +2240,14 @@
             "Surface area": {
                 "render": "Grundfläche: {_surface:ha}ha"
             },
-            "Website": {
-                "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
-            },
             "phone": {
-                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
             }
         }
     },
     "observation_tower": {
         "description": "Türme zur Aussicht auf die umgebende Landschaft",
         "name": "Aussichtstürme",
-        "presets": {
-            "0": {
-                "title": "Beobachtungsturm"
-            }
-        },
         "tagRenderings": {
             "Fee": {
                 "mappings": {
@@ -2334,7 +2325,7 @@
         "name": "Spielplätze",
         "presets": {
             "0": {
-                "title": "Spielplatz"
+                "title": "spielplatz"
             }
         },
         "tagRenderings": {
@@ -2358,15 +2349,12 @@
                         "then": "Zugänglich für die Allgemeinheit"
                     },
                     "1": {
-                        "then": "Zugänglich für die Allgemeinheit"
-                    },
-                    "2": {
                         "then": "Nur für Kunden des Betreibers zugänglich"
                     },
-                    "3": {
+                    "2": {
                         "then": "Nur für Schüler der Schule zugänglich"
                     },
-                    "4": {
+                    "3": {
                         "then": "Nicht zugänglich"
                     }
                 },
@@ -2401,9 +2389,6 @@
                         "then": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
                     },
                     "1": {
-                        "then": "Immer zugänglich"
-                    },
-                    "2": {
                         "then": "Immer zugänglich"
                     }
                 },

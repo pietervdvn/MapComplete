@@ -968,6 +968,16 @@
       "value": "yes"
     },
     {
+      "key": "payment:app",
+      "description": "Layer 'Charging stations' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Charging stations' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
       "key": "authentication:membership_card",
       "description": "Layer 'Charging stations' shows authentication:membership_card=yes with a fixed text, namely 'Authentication by a membership card' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
@@ -1110,6 +1120,11 @@
       "value": "1"
     },
     {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "-1"
+    },
+    {
       "key": "ref",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Charging stations')"
     },
@@ -1250,7 +1265,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Charging stations has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Charging stations has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

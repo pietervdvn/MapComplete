@@ -5,7 +5,7 @@
     "description": "A map for showing and editing wind turbines",
     "project_url": "https://mapcomplete.osm.be/openwindpowermap",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/openwindpowermap/wind_turbine.svg",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/openwindpowermap/logo.svg",
     "contact_name": "Pieter Vander Vennet, Seppe Santens",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -53,7 +53,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme OpenWindPowerMap has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme OpenWindPowerMap has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

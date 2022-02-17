@@ -18,19 +18,13 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     public readonly layer: FilteredLayer;
     public readonly tileIndex
     public readonly bbox;
-    private readonly seenids: Set<string> = new Set<string>()
-    /**
-     * Only used if the actual source is a tiled geojson.
-     * A big feature might be contained in multiple tiles.
-     * However, we only want to load them once. The blacklist thus contains all ids of all features previously seen
-     * @private
-     */
-    private readonly featureIdBlacklist?: UIEventSource<Set<string>>
+    private readonly seenids: Set<string>;
+    private readonly idKey ?: string;
 
     public constructor(flayer: FilteredLayer,
-                       zxy?: [number, number, number],
+                       zxy?: [number, number, number] | BBox,
                        options?: {
-                           featureIdBlacklist?: UIEventSource<Set<string>>
+                           featureIdBlacklist?: Set<string>
                        }) {
 
         if (flayer.layerDef.source.geojsonZoomLevel !== undefined && zxy === undefined) {
@@ -38,26 +32,36 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         }
 
         this.layer = flayer;
-        this.featureIdBlacklist = options?.featureIdBlacklist
+        this.idKey = flayer.layerDef.source.idKey
+        this.seenids = options?.featureIdBlacklist ?? new Set<string>()
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         if (zxy !== undefined) {
-            const [z, x, y] = zxy;
-            let tile_bbox = BBox.fromTile(z, x, y)
+            let tile_bbox: BBox;
+            if (zxy instanceof BBox) {
+                tile_bbox = zxy;
+            } else {
+                const [z, x, y] = zxy;
+                tile_bbox = BBox.fromTile(z, x, y);
+
+                this.tileIndex = Tiles.tile_index(z, x, y)
+                this.bbox = BBox.fromTile(z, x, y)
+                url = url
+                    .replace('{z}', "" + z)
+                    .replace('{x}', "" + x)
+                    .replace('{y}', "" + y)
+            }
             let bounds: { minLat: number, maxLat: number, minLon: number, maxLon: number } = tile_bbox
             if (this.layer.layerDef.source.mercatorCrs) {
                 bounds = tile_bbox.toMercator()
             }
+
             url = url
-                .replace('{z}', "" + z)
-                .replace('{x}', "" + x)
-                .replace('{y}', "" + y)
                 .replace('{y_min}', "" + bounds.minLat)
                 .replace('{y_max}', "" + bounds.maxLat)
                 .replace('{x_min}', "" + bounds.minLon)
                 .replace('{x_max}', "" + bounds.maxLon)
 
-            this.tileIndex = Tiles.tile_index(z, x, y)
-            this.bbox = BBox.fromTile(z, x, y)
+
         } else {
             this.tileIndex = Tiles.tile_index(0, 0, 0)
             this.bbox = BBox.global;
@@ -83,7 +87,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 if (self.layer.layerDef.source.mercatorCrs) {
                     json = GeoOperations.GeoJsonToWGS84(json)
                 }
-                
+
                 const time = new Date();
                 const newFeatures: { feature: any, freshness: Date } [] = []
                 let i = 0;
@@ -91,12 +95,21 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 for (const feature of json.features) {
                     const props = feature.properties
                     for (const key in props) {
+                        
+                        if(props[key] === null){
+                            delete props[key]
+                        }
+                        
                         if (typeof props[key] !== "string") {
                             // Make sure all the values are string, it crashes stuff otherwise
                             props[key] = JSON.stringify(props[key])
                         }
                     }
 
+                    if(self.idKey !== undefined){
+                        props.id = props[self.idKey]
+                    }
+                    
                     if (props.id === undefined) {
                         props.id = url + "/" + i;
                         feature.id = url + "/" + i;
@@ -107,10 +120,6 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                         continue;
                     }
                     self.seenids.add(props.id)
-
-                    if (self.featureIdBlacklist?.data?.has(props.id)) {
-                        continue;
-                    }
 
                     let freshness: Date = time;
                     if (feature.properties["_last_edit:timestamp"] !== undefined) {

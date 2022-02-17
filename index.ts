@@ -1,6 +1,5 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Combine from "./UI/Base/Combine";
-import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
 import {Utils} from "./Utils";
 import AllThemesGui from "./UI/AllThemesGui";
@@ -8,13 +7,11 @@ import DetermineLayout from "./Logic/DetermineLayout";
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
 import DefaultGUI from "./UI/DefaultGUI";
 import State from "./State";
-import AvailableBaseLayersImplementation from "./Logic/Actors/AvailableBaseLayersImplementation";
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation";
 import {DefaultGuiState} from "./UI/DefaultGuiState";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
-AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
 ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 Utils.DisableLongPresses()
@@ -41,7 +38,7 @@ class Init {
         window.mapcomplete_state = State.state;
         new DefaultGUI(State.state, guiState)
 
-       
+
     }
 }
 
@@ -61,8 +58,8 @@ new Combine(["Initializing... <br/>",
 DetermineLayout.GetLayout().then(value => {
     console.log("Got ", value)
     Init.Init(value)
-    }).catch(err => {
-        console.error("Error while initializing: ", err, err.stack)
-    })
+}).catch(err => {
+    console.error("Error while initializing: ", err, err.stack)
+})
 
 

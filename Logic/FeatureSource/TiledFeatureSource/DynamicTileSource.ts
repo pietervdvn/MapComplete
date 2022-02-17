@@ -27,7 +27,7 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
         this.loadedTiles = new Map<number, FeatureSourceForLayer & Tiled>()
         const neededTiles = state.locationControl.map(
             location => {
-                if (!layer.isDisplayed.data) {
+                if (!layer.isDisplayed.data && !layer.layerDef.forceLoad) {
                     // No need to download! - the layer is disabled
                     return undefined;
                 }
@@ -44,11 +44,11 @@ export default class DynamicTileSource implements TileHierarchy<FeatureSourceFor
                     return undefined
                 }
                 const tileRange = Tiles.TileRangeBetween(zoomlevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
-                if(tileRange.total > 10000){
+                if (tileRange.total > 10000) {
                     console.error("Got a really big tilerange, bounds and location might be out of sync")
                     return undefined
                 }
-                
+
                 const needed = Tiles.MapRange(tileRange, (x, y) => Tiles.tile_index(zoomlevel, x, y)).filter(i => !self._loadedTiles.has(i))
                 if (needed.length === 0) {
                     return undefined

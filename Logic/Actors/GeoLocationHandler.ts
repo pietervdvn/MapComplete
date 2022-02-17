@@ -11,11 +11,11 @@ export interface GeoLocationPointProperties {
     "user:location": "yes",
     "date": string,
     "latitude": number
-    "longitude":number,
+    "longitude": number,
     "speed": number,
     "accuracy": number
     "heading": number
-    "altitude":number
+    "altitude": number
 }
 
 export default class GeoLocationHandler extends VariableUiElement {

@@ -11,36 +11,22 @@
       "type": "string"
     },
     "maintainer": {
-      "description": "Who does maintian this preset?",
+      "description": "Who does maintain this preset?",
       "type": "string"
     },
     "version": {
       "description": "A version number, either semantically or by date.\nShould be sortable, where the higher value is the later version",
       "type": "string"
     },
-    "language": {
-      "description": "The supported language(s).\nThis should be a two-letter, lowercase code which identifies the language, e.g. \"en\", \"nl\", ...\nIf the theme supports multiple languages, use a list: `[\"en\",\"nl\",\"fr\"]` to allow the user to pick any of them",
-      "anyOf": [
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        {
-          "type": "string"
-        }
-      ]
-    },
     "mustHaveLanguage": {
-      "description": "Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated",
+      "description": "Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.\n\nThis must be a list of two-letter, lowercase codes which identifies the language, e.g. \"en\", \"nl\", ...",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
     "title": {
-      "description": "The title, as shown in the welcome message and the more-screen"
+      "description": "The title, as shown in the welcome message and the more-screen."
     },
     "shortDescription": {
       "description": "A short description, showed as social description and in the 'more theme'-buttons.\nNote that if this one is not defined, the first sentence of 'description' is used"
@@ -52,11 +38,11 @@
       "description": "A part of the description, shown under the login-button."
     },
     "icon": {
-      "description": "The icon representing this theme.\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)",
+      "description": "The icon representing this theme.\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)\n\nType: icon",
       "type": "string"
     },
     "socialImage": {
-      "description": "Link to a 'social image' which is included as og:image-tag on official themes.\nUseful to share the theme on social media.\nSee https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information",
+      "description": "Link to a 'social image' which is included as og:image-tag on official themes.\nUseful to share the theme on social media.\nSee https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information$\n\nType: image",
       "type": "string"
     },
     "startZoom": {
@@ -92,7 +78,7 @@
       "description": "Define some (overlay) slippy map tilesources",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/default_5"
+        "$ref": "#/definitions/default_6"
       }
     },
     "layers": {
@@ -119,7 +105,14 @@
                   }
                 ]
               },
-              "override": {}
+              "override": {},
+              "hideTagRenderingsWithLabels": {
+                "description": "TagRenderings with any of these labels will be removed from the layer.\nNote that the 'id' and 'group' are considered labels too",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             },
             "required": [
               "builtin",
@@ -134,17 +127,27 @@
     },
     "clustering": {
       "description": "If defined, data will be clustered.\nDefaults to {maxZoom: 16, minNeeded: 500}",
-      "type": "object",
-      "properties": {
-        "maxZoom": {
-          "description": "All zoom levels above 'maxzoom' are not clustered anymore.\nDefaults to 18",
-          "type": "number"
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "maxZoom": {
+              "description": "All zoom levels above 'maxzoom' are not clustered anymore.\nDefaults to 18",
+              "type": "number"
+            },
+            "minNeededElements": {
+              "description": "The number of elements per tile needed to start clustering\nIf clustering is defined, defaults to 250",
+              "type": "number"
+            }
+          }
         },
-        "minNeededElements": {
-          "description": "The number of elements per tile needed to start clustering\nIf clustering is defined, defaults to 25",
-          "type": "number"
+        {
+          "enum": [
+            false
+          ],
+          "type": "boolean"
         }
-      }
+      ]
     },
     "customCss": {
       "description": "The URL of a custom CSS stylesheet to modify the layout",
@@ -155,7 +158,7 @@
       "type": "boolean"
     },
     "lockLocation": {
-      "description": "If set to true, the basemap will not scroll outside of the area visible on initial zoom.\nIf set to [[lat0, lon0], [lat1, lon1]], the map will not scroll outside of those bounds.\nOff by default, which will enable panning to the entire world",
+      "description": "If set to true, the basemap will not scroll outside of the area visible on initial zoom.\nIf set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.\nOff by default, which will enable panning to the entire world",
       "anyOf": [
         {
           "type": "array",
@@ -198,46 +201,59 @@
               "type": "number"
             }
           }
-        },
-        {
-          "type": "boolean"
         }
       ]
     },
+    "extraLink": {
+      "description": "Adds an additional button on the top-left of the application.\nThis can link to an arbitrary location.\n\nNote that {lat},{lon},{zoom}, {language} and {theme} will be replaced\n\nDefault: {icon: \"./assets/svg/pop-out.svg\", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: [\"iframe\",\"no-welcome-message]},",
+      "$ref": "#/definitions/default"
+    },
     "enableUserBadge": {
+      "description": "If set to false, disables logging in.\nThe userbadge will be hidden, all login-buttons will be hidden and editing will be disabled",
       "type": "boolean"
     },
     "enableShareScreen": {
+      "description": "If false, hides the tab 'share'-tab in the welcomeMessage",
       "type": "boolean"
     },
     "enableMoreQuests": {
+      "description": "Hides the tab with more themes in the welcomeMessage",
       "type": "boolean"
     },
     "enableLayers": {
+      "description": "If false, the layer selection/filter view will be hidden\nThe corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'",
       "type": "boolean"
     },
     "enableSearch": {
+      "description": "If set to false, hides the search bar",
       "type": "boolean"
     },
     "enableAddNewPoints": {
+      "description": "If set to false, the ability to add new points or nodes will be disabled.\nEditing already existing features will still be possible",
       "type": "boolean"
     },
     "enableGeolocation": {
+      "description": "If set to false, the 'geolocation'-button will be hidden.",
       "type": "boolean"
     },
     "enableBackgroundLayerSelection": {
+      "description": "Enable switching the backgroundlayer.\nIf false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well",
       "type": "boolean"
     },
     "enableShowAllQuestions": {
+      "description": "If set to true, will show _all_ unanswered questions in a popup instead of just the next one",
       "type": "boolean"
     },
     "enableDownload": {
+      "description": "If set to true, download button for the data will be shown (offers downloading as geojson and csv)",
       "type": "boolean"
     },
     "enablePdfDownload": {
+      "description": "If set to true, exporting a pdf is enabled",
       "type": "boolean"
     },
-    "enableIframePopout": {
+    "enableNoteImports": {
+      "description": "If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),\nthese notes will be shown if a relevant layer is present.",
       "type": "boolean"
     },
     "overpassUrl": {
@@ -263,7 +279,6 @@
     "description",
     "icon",
     "id",
-    "language",
     "layers",
     "maintainer",
     "startLat",
@@ -355,8 +370,15 @@
           "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
           "type": "string"
         },
+        "labels": {
+          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "render": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`"
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
         },
         "question": {
           "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
@@ -383,6 +405,9 @@
             "type": {
               "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
               "type": "string"
+            },
+            "placeholder": {
+              "description": "A (translated) text that is shown (as gray text) within the textfield"
             },
             "helperArgs": {
               "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -431,7 +456,11 @@
                 ]
               },
               "then": {
-                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
+                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\ntype: rendered"
+              },
+              "icon": {
+                "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",
+                "type": "string"
               },
               "hideInAnswer": {
                 "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n        \n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}",
@@ -475,7 +504,7 @@
       },
       "additionalProperties": false
     },
-    "default_3": {
+    "default_4": {
       "description": "The PointRenderingConfig gives all details onto how to render a single point of a feature.\n\nThis can be used if:\n\n- The feature is a point\n- To render something at the centroid of an area, or at the start, end or projected centroid of a way",
       "type": "object",
       "properties": {
@@ -483,17 +512,11 @@
           "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
           "type": "array",
           "items": {
-            "enum": [
-              "centroid",
-              "end",
-              "point",
-              "start"
-            ],
             "type": "string"
           }
         },
         "icon": {
-          "description": "The icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one can use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`",
+          "description": "The icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one can use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`\n\nType: icon",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -520,6 +543,7 @@
                 ]
               },
               "then": {
+                "description": "Badge to show\nType: icon",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/TagRenderingConfigJson"
@@ -575,7 +599,7 @@
       ],
       "additionalProperties": false
     },
-    "default_4": {
+    "default_5": {
       "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
       "type": "object",
       "properties": {
@@ -597,7 +621,10 @@
               "$ref": "#/definitions/TagRenderingConfigJson"
             },
             {
-              "type": "string"
+              "type": [
+                "string",
+                "number"
+              ]
             }
           ]
         },
@@ -663,7 +690,7 @@
       },
       "additionalProperties": false
     },
-    "default": {
+    "default_1": {
       "type": "object",
       "properties": {
         "id": {
@@ -686,6 +713,26 @@
                     "type": "string"
                   }
                 ]
+              },
+              "default": {
+                "type": "boolean"
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
               }
             },
             "required": [
@@ -758,7 +805,7 @@
       },
       "additionalProperties": false
     },
-    "default_2": {
+    "default_3": {
       "type": "object",
       "properties": {
         "enableImproveAccuracy": {
@@ -772,7 +819,7 @@
       },
       "additionalProperties": false
     },
-    "default_1": {
+    "default_2": {
       "type": "object",
       "properties": {
         "appliesToKey": {
@@ -800,7 +847,7 @@
       ],
       "additionalProperties": false
     },
-    "default_5": {
+    "default_6": {
       "description": "Configuration for a tilesource config",
       "type": "object",
       "properties": {
@@ -854,7 +901,7 @@
           "description": "A description for this layer.\nShown in the layer selections and in the personel theme"
         },
         "source": {
-          "description": "This determines where the data for the layer is fetched.\nThere are some options:\n\n# Query OSM directly\nsource: {osmTags: \"key=value\"}\n will fetch all objects with given tags from OSM.\n Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API\n\n# Query OSM Via the overpass API with a custom script\nsource: {overpassScript: \"<custom overpass tags>\"} when you want to do special things. _This should be really rare_.\n     This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query\n     However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...\n\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\nSome API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nNote that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too\n\n\nNOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: \"key=value\"}\n While still supported, this is considered deprecated",
+          "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.",
           "anyOf": [
             {
               "allOf": [
@@ -862,6 +909,7 @@
                   "type": "object",
                   "properties": {
                     "osmTags": {
+                      "description": "Every source must set which tags have to be present in order to load the given layer.",
                       "anyOf": [
                         {
                           "$ref": "#/definitions/AndOrTagConfigJson"
@@ -871,8 +919,9 @@
                         }
                       ]
                     },
-                    "overpassScript": {
-                      "type": "string"
+                    "maxCacheAge": {
+                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                      "type": "number"
                     }
                   },
                   "required": [
@@ -882,9 +931,8 @@
                 {
                   "type": "object",
                   "properties": {
-                    "maxCacheAge": {
-                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
-                      "type": "number"
+                    "overpassScript": {
+                      "type": "string"
                     }
                   }
                 }
@@ -896,6 +944,7 @@
                   "type": "object",
                   "properties": {
                     "osmTags": {
+                      "description": "Every source must set which tags have to be present in order to load the given layer.",
                       "anyOf": [
                         {
                           "$ref": "#/definitions/AndOrTagConfigJson"
@@ -905,39 +954,49 @@
                         }
                       ]
                     },
-                    "geoJson": {
-                      "type": "string"
-                    },
-                    "geoJsonZoomLevel": {
+                    "maxCacheAge": {
+                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
                       "type": "number"
-                    },
-                    "isOsmCache": {
-                      "type": "boolean"
-                    },
-                    "mercatorCrs": {
-                      "type": "boolean"
                     }
                   },
                   "required": [
-                    "geoJson",
                     "osmTags"
                   ]
                 },
                 {
                   "type": "object",
                   "properties": {
-                    "maxCacheAge": {
-                      "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                    "geoJson": {
+                      "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+                      "type": "string"
+                    },
+                    "geoJsonZoomLevel": {
+                      "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
                       "type": "number"
+                    },
+                    "isOsmCache": {
+                      "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+                      "type": "boolean"
+                    },
+                    "mercatorCrs": {
+                      "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+                      "type": "boolean"
+                    },
+                    "idKey": {
+                      "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+                      "type": "string"
                     }
-                  }
+                  },
+                  "required": [
+                    "geoJson"
+                  ]
                 }
               ]
             }
           ]
         },
         "calculatedTags": {
-          "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]",
+          "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]",
           "type": "array",
           "items": {
             "type": "string"
@@ -950,6 +1009,10 @@
         "isShown": {
           "description": "This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.\nThis is useful to hide certain features from view.\n\nImportant: hiding features does not work dynamically, but is only calculated when the data is first renders.\nThis implies that it is not possible to hide a feature after a tagging change\n\nThe default value is 'yes'",
           "$ref": "#/definitions/TagRenderingConfigJson"
+        },
+        "forceLoad": {
+          "description": "Advanced option - might be set by the theme compiler\n\nIf true, this data will _always_ be loaded, even if the theme is disabled",
+          "type": "boolean"
         },
         "minzoom": {
           "description": "The minimum needed zoomlevel required before loading of the data start\nDefault: 0",
@@ -975,31 +1038,55 @@
           ]
         },
         "titleIcons": {
-          "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons",
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/TagRenderingConfigJson"
-              },
-              {
-                "type": "string"
+          "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nType: icon[]",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/TagRenderingConfigJson"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
-            ]
-          }
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "defaults"
+                  ]
+                }
+              ],
+              "minItems": 1,
+              "maxItems": 1
+            }
+          ]
         },
         "mapRendering": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/default_3"
-              },
-              {
-                "$ref": "#/definitions/default_4"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/default_4"
+                  },
+                  {
+                    "$ref": "#/definitions/default_5"
+                  }
+                ]
               }
-            ]
-          }
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "passAllFeatures": {
           "description": "If set, this layer will pass all the features it receives onto the next layer.\nThis is ideal for decoration, e.g. directionss on cameras",
@@ -1023,6 +1110,13 @@
               },
               "description": {
                 "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)"
+              },
+              "exampleImages": {
+                "description": "Example images, which show real-life pictures of what such a feature might look like\n\nType: image",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "preciseInput": {
                 "description": "If set, the user will prompted to confirm the location before actually adding the data.\nThis will be with a 'drag crosshair'-method.\n\nIf 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.",
@@ -1107,25 +1201,26 @@
                 "type": "object",
                 "properties": {
                   "rewrite": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "sourceString": {
+                    "type": "object",
+                    "properties": {
+                      "sourceString": {
+                        "type": "array",
+                        "items": {
                           "type": "string"
-                        },
-                        "into": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
                         }
                       },
-                      "required": [
-                        "into",
-                        "sourceString"
-                      ]
-                    }
+                      "into": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {}
+                        }
+                      }
+                    },
+                    "required": [
+                      "into",
+                      "sourceString"
+                    ]
                   },
                   "renderings": {
                     "type": "array",
@@ -1167,10 +1262,25 @@
         },
         "filter": {
           "description": "All the extra questions for filtering",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/default"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/default_1"
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "sameAs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sameAs"
+              ]
+            }
+          ]
         },
         "deletion": {
           "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n The delete dialog\n =================\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n#### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.",
@@ -1187,7 +1297,7 @@
           "description": "Indicates if a point can be moved and configures the modalities.\n\nA feature can be moved by MapComplete if:\n\n- It is a point\n- The point is _not_ part of a way or a a relation.\n\nOff by default. Can be enabled by setting this flag or by configuring.",
           "anyOf": [
             {
-              "$ref": "#/definitions/default_2"
+              "$ref": "#/definitions/default_3"
             },
             {
               "type": "boolean"
@@ -1202,7 +1312,7 @@
           "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/default_1"
+            "$ref": "#/definitions/default_2"
           }
         }
       },
@@ -1210,6 +1320,37 @@
         "id",
         "mapRendering",
         "source"
+      ],
+      "additionalProperties": false
+    },
+    "default": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string"
+        },
+        "text": {},
+        "href": {
+          "type": "string"
+        },
+        "newTab": {
+          "type": "boolean"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "iframe",
+              "no-iframe",
+              "no-welcome-message",
+              "welcome-message"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "href"
       ],
       "additionalProperties": false
     }

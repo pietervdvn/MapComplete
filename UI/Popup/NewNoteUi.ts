@@ -18,13 +18,16 @@ export default class NewNoteUi extends Toggle {
                 isShown: UIEventSource<boolean>,
                 state: {
                     LastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-                    osmConnection: OsmConnection, layoutToUse: LayoutConfig, featurePipeline: FeaturePipeline
+                    osmConnection: OsmConnection, 
+                    layoutToUse: LayoutConfig, 
+                    featurePipeline: FeaturePipeline,
+                    selectedElement: UIEventSource<any>
                 }) {
 
         const t = Translations.t.notes;
         const isCreated = new UIEventSource(false);
         state.LastClickLocation.addCallbackAndRun(_ => isCreated.setData(false)) // Reset 'isCreated' on every click
-        const text = ValidatedTextField.InputForType("text", {
+        const text = ValidatedTextField.ForType("text").ConstructInputElement({
             value: LocalStorageSource.Get("note-text")
         })
         text.SetClass("border rounded-sm border-grey-500")
@@ -37,7 +40,27 @@ export default class NewNoteUi extends Toggle {
             }
             txt += "\n\n #MapComplete #" + state?.layoutToUse?.id
             const loc = state.LastClickLocation.data;
-            state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
+            const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
+            const feature = {
+                type:"Feature",
+                geometry:{
+                    type:"Point",
+                    coordinates: [loc.lon, loc.lat]
+                },
+                properties: {
+                    id: ""+id.id,
+                    date_created: new Date().toISOString(),
+                    _first_comment : txt,
+                    comments:JSON.stringify( [{
+                        text: txt,
+                        html: txt,
+                        user: state.osmConnection?.userDetails?.data?.name,
+                        uid: state.osmConnection?.userDetails?.data?.uid
+                    }]),
+                },
+            };
+            state?.featurePipeline?.InjectNewPoint(feature)
+            state.selectedElement?.setData(feature)
             text.GetValue().setData("")
             isCreated.setData(true)
         })
@@ -45,7 +68,13 @@ export default class NewNoteUi extends Toggle {
             new Title(t.createNoteTitle),
             t.createNoteIntro,
             text,
-            new Combine([new Toggle(undefined, t.warnAnonymous, state?.osmConnection?.isLoggedIn).SetClass("alert"), postNote]).SetClass("flex justify-end items-center")
+            new Combine([new Toggle(undefined, t.warnAnonymous.SetClass("alert"), state?.osmConnection?.isLoggedIn), 
+                new Toggle(postNote,
+                    t.textNeeded.SetClass("alert"),
+                    text.GetValue().map(txt => txt.length > 3)
+                    )
+            
+            ]).SetClass("flex justify-end items-center")
         ]).SetClass("flex flex-col border-2 border-black rounded-xl p-4");
 
 
@@ -60,7 +89,6 @@ export default class NewNoteUi extends Toggle {
 
         super(
             new Toggle(
-               
                 new Combine(
                     [
                         t.noteLayerHasFilters.SetClass("alert"),

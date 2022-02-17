@@ -86,13 +86,18 @@ export default class ExportPDF {
                 if (tile.layer.layerDef.minzoom > l.zoom) {
                     return
                 }
+                if(tile.layer.layerDef.id.startsWith("note_import")){
+                    // Don't export notes to import
+                    return;
+                }
                 new ShowDataLayer(
                     {
                         features: tile,
                         leafletMap: minimap.leafletMap,
                         layerToShow: tile.layer.layerDef,
-                        enablePopups: false,
-                        doShowLayer: tile.layer.isDisplayed
+                        popup: undefined,
+                        doShowLayer: tile.layer.isDisplayed,
+                        state: undefined
                     }
                 )
             })

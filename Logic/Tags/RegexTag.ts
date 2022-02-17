@@ -10,6 +10,13 @@ export class RegexTag extends TagsFilter {
     constructor(key: string | RegExp, value: RegExp | string, invert: boolean = false) {
         super();
         this.key = key;
+        if (typeof value === "string") {
+            if (value.indexOf("^") < 0 && value.indexOf("$") < 0) {
+                value = "^" + value + "$"
+            }
+            value = new RegExp(value)
+        }
+
         this.value = value;
         this.invert = invert;
         this.matchesEmpty = RegexTag.doesMatch("", this.value);
@@ -109,7 +116,7 @@ export class RegexTag extends TagsFilter {
         console.error("Cannot export regex tag to asChange; ", this.key, this.value)
         return []
     }
-    
+
     AsJson() {
         return this.asHumanString()
     }

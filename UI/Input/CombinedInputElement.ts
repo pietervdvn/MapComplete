@@ -5,7 +5,6 @@ import BaseUIElement from "../BaseUIElement";
 
 export default class CombinedInputElement<T, J, X> extends InputElement<X> {
 
-    public readonly IsSelected: UIEventSource<boolean>;
     private readonly _a: InputElement<T>;
     private readonly _b: InputElement<J>;
     private readonly _combined: BaseUIElement;
@@ -19,9 +18,6 @@ export default class CombinedInputElement<T, J, X> extends InputElement<X> {
         this._a = a;
         this._b = b;
         this._split = split;
-        this.IsSelected = this._a.IsSelected.map((isSelected) => {
-            return isSelected || b.IsSelected.data
-        }, [b.IsSelected])
         this._combined = new Combine([this._a, this._b]);
         this._value = this._a.GetValue().map(
             t => combine(t, this._b?.GetValue()?.data),

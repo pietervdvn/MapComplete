@@ -81,6 +81,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }))
 
     }
+
     // @ts-ignore
 
     public static WikidataResponsePreview(wikidata: WikidataResponse): BaseUIElement {
@@ -142,7 +143,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 continue
             }
             const value: string[] = Array.from(wikidata.claims.get(key))
-           
+
             if (display instanceof Translation) {
                 els.push(display.Subs({value: value.join(", ")}).SetClass("m-2"))
                 continue

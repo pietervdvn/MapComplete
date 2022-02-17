@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>"
         },
@@ -21,7 +21,7 @@
             "question": "Be lehet-e vinni kutyát ebbe az üzletbe?"
         },
         "email": {
-            "question": "Mi a(z) {name} e-mail címe?"
+            "question": "Mi a(z) {title()} e-mail címe?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "A(z) {level}. emeleten"
         },
         "opening_hours": {
-            "question": "Mikor van nyitva ez: {name}?",
+            "question": "Mikor van nyitva ez: {title()}?",
             "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -56,8 +56,20 @@
             },
             "question": "Milyen fizetési módokat fogadnak el itt?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Fizetés erre a célra szolgáló alkalmazással"
+                    },
+                    "1": {
+                        "then": "Fizetési tagsági kártyával"
+                    }
+                }
+            }
+        },
         "phone": {
-            "question": "Mi a telefonszáma ennek: {name}?"
+            "question": "Mi a telefonszáma ennek: {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +89,7 @@
             "question": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
         },
         "website": {
-            "question": "Mi a weboldala ennek: {name}?"
+            "question": "Mi a weboldala ennek: {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

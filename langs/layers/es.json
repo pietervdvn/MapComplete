@@ -1,4 +1,27 @@
 {
+    "address": {
+        "description": "Direcciones",
+        "name": "Direcciones conocidas en OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "¿Qué debe corregirse aquí? Expóngalo"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta edificación no tiene número"
+                    }
+                },
+                "question": "¿Cuál es el número de esta casa?"
+            },
+            "street": {
+                "question": "¿En qué calle se encuentra esta dirección?"
+            }
+        },
+        "title": {
+            "render": "Domicilio conocido"
+        }
+    },
     "artwork": {
         "description": "Diversas piezas de obras de arte",
         "name": "Obras de arte",
@@ -9,17 +32,75 @@
         },
         "tagRenderings": {
             "artwork-artwork_type": {
-                "question": "Cuál es el tipo de esta obra de arte?",
+                "mappings": {
+                    "0": {
+                        "then": "Arquitectura"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "2": {
+                        "then": "Pintura"
+                    },
+                    "3": {
+                        "then": "Escultura"
+                    },
+                    "4": {
+                        "then": "Estatua"
+                    },
+                    "5": {
+                        "then": "Busto"
+                    },
+                    "7": {
+                        "then": "Instalación"
+                    },
+                    "8": {
+                        "then": "Grafiti"
+                    }
+                },
+                "question": "¿Qué tipo de obra es esta pieza?",
                 "render": "Esta es un {artwork_type}"
             }
         },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Obra de arte <i>{nombre}</i>"
+                    "then": "Obra de arte <i>{name}</i>"
                 }
             },
             "render": "Obra de arte"
+        }
+    },
+    "barrier": {
+        "name": "Barreras",
+        "presets": {
+            "0": {
+                "title": "Bolardo"
+            }
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "1": {
+                        "then": "Bolardo fijo"
+                    },
+                    "3": {
+                        "then": "Bolardo flexible, normalmente plástico"
+                    },
+                    "4": {
+                        "then": "Bolardo levadizo"
+                    }
+                },
+                "question": "¿Qué tipo de bolardo es este?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bolardo"
+                }
+            },
+            "render": "Barrera"
         }
     },
     "bench": {
@@ -33,13 +114,43 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Respaldo: Si"
+                        "then": "Respaldo: sí"
                     },
                     "1": {
-                        "then": "Respaldo: No"
+                        "then": "Respaldo: no"
                     }
                 },
-                "question": "¿Este banco tiene un respaldo?"
+                "question": "¿Este banco tiene respaldo?"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "1": {
+                        "then": "Color: verde"
+                    },
+                    "2": {
+                        "then": "Color: gris"
+                    },
+                    "3": {
+                        "then": "Color: blanco"
+                    },
+                    "4": {
+                        "then": "Color: rojo"
+                    },
+                    "5": {
+                        "then": "Color: negro"
+                    },
+                    "6": {
+                        "then": "Color: azul"
+                    },
+                    "7": {
+                        "then": "Color: amarillo"
+                    }
+                },
+                "question": "¿De qué color es este banco?",
+                "render": "Color: {colour}"
+            },
+            "bench-direction": {
+                "question": "¿En qué dirección se mira al sentarse en el banco?"
             },
             "bench-material": {
                 "mappings": {
@@ -74,9 +185,79 @@
         }
     },
     "bench_at_pt": {
+        "description": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
         "name": "Bancos en una parada de transporte público",
+        "tagRenderings": {
+            "bench_at_pt-bench_type": {
+                "question": "¿Qué tipo de banco es este?"
+            },
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
+        },
         "title": {
             "render": "Banco"
+        }
+    },
+    "bicycle_rental": {
+        "title": {
+            "render": "Alquiler de bicicletas"
+        }
+    },
+    "bike_cafe": {
+        "tagRenderings": {
+            "bike_cafe-repair-tools": {
+                "question": "¿Hay herramientas para reparar su propia bicicleta?"
+            }
+        }
+    },
+    "charging_station": {
+        "tagRenderings": {
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Autenticación mediante tarjeta de membresía"
+                    },
+                    "1": {
+                        "then": "Autenticación mediante aplicación"
+                    },
+                    "2": {
+                        "then": "Autenticación mediante llamada telefónica disponible"
+                    },
+                    "3": {
+                        "then": "Autenticación mediante SMS disponible"
+                    },
+                    "4": {
+                        "then": "Autenticación mediante NFC disponible"
+                    },
+                    "5": {
+                        "then": "Autenticación mediante Money Card disponible"
+                    },
+                    "6": {
+                        "then": "Autenticación mediante tarjeta de débito disponible"
+                    }
+                }
+            },
+            "Network": {
+                "mappings": {
+                    "1": {
+                        "then": "No forma parte de una red mayor"
+                    }
+                },
+                "question": "¿Esta estación de carga forma parte de una red?",
+                "render": "Parte de la red <b>{network}</b>"
+            },
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Abre 24/7 (incluidos días festivos)"
+                    }
+                },
+                "question": "¿Cuándo abre esta estación de carga?"
+            },
+            "Type": {
+                "question": "¿A qué vehículos se permite la carga aquí?"
+            }
         }
     },
     "defibrillator": {
@@ -143,6 +324,13 @@
         },
         "title": {
             "render": "Bicicleta blanca"
+        }
+    },
+    "observation_tower": {
+        "tagRenderings": {
+            "access": {
+                "question": "¿Se puede visitar esta torre?"
+            }
         }
     }
 }

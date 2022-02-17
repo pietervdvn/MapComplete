@@ -11,10 +11,6 @@
     "en": "Experimental theme",
     "ru": "Экспериментальная тема"
   },
-  "language": [
-    "en",
-    "ru"
-  ],
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
   "version": "0",
@@ -66,10 +62,16 @@
         },
         {
           "rewrite": {
-            "sourceString": "left|right",
+            "sourceString": [
+              "left|right"
+            ],
             "into": [
-              "left",
-              "right"
+              [
+                "left"
+              ],
+              [
+                "right"
+              ]
             ]
           },
           "renderings": [

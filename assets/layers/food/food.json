@@ -64,6 +64,7 @@
         "cuisine=friture"
       ],
       "description": {
+        "en": "A fastfood-buisiness focused on french fries",
         "nl": "Een fastfood-zaak waar je frieten koopt"
       },
       "preciseInput": {
@@ -73,6 +74,7 @@
   ],
   "title": {
     "render": {
+      "en": "Restaurant",
       "nl": "Eetgelegenheid"
     },
     "mappings": [
@@ -100,6 +102,18 @@
           "nl": "Fastfood-zaak <i>{name}</i>",
           "en": "Fastfood <i>{name}</i>",
           "de": "Schnellrestaurant<i>{name}</i>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "amenity=fast_food"
+          ]
+        },
+        "then": {
+          "nl": "Fastfood-zaak",
+          "en": "Fastfood",
+          "de": "Schnellrestaurant"
         }
       }
     ]
@@ -132,12 +146,14 @@
         {
           "if": "amenity=fast_food",
           "then": {
+            "en": "This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.",
             "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
           }
         },
         {
           "if": "amenity=restaurant",
           "then": {
+            "en": "A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table",
             "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
           }
         }
@@ -195,72 +211,84 @@
         {
           "if": "cuisine=kebab",
           "then": {
+            "en": "This is kebab shop",
             "nl": "Dit is een kebabzaak"
           }
         },
         {
           "if": "cuisine=sandwich",
           "then": {
+            "en": "This is a sandwichbar",
             "nl": "Dit is een broodjeszaak"
           }
         },
         {
           "if": "cuisine=burger",
           "then": {
+            "en": "Burgers are served here",
             "nl": "Dit is een hamburgerrestaurant"
           }
         },
         {
           "if": "cuisine=sushi",
           "then": {
+            "en": "Sushi is served here",
             "nl": "Dit is een sushirestaurant"
           }
         },
         {
           "if": "cuisine=coffee",
           "then": {
+            "en": "Coffee is served here",
             "nl": "Dit is een koffiezaak"
           }
         },
         {
           "if": "cuisine=italian",
           "then": {
+            "en": "This is an italian restaurant (which serves more then pasta and pizza)",
             "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
           }
         },
         {
           "if": "cuisine=french",
           "then": {
+            "en": "French dishes are served here",
             "nl": "Dit is een Frans restaurant"
           }
         },
         {
           "if": "cuisine=chinese",
           "then": {
+            "en": "Chinese dishes are served here",
             "nl": "Dit is een Chinees restaurant"
           }
         },
         {
           "if": "cuisine=greek",
           "then": {
+            "en": "Greek dishes are served here",
             "nl": "Dit is een Grieks restaurant"
           }
         },
         {
           "if": "cuisine=indian",
           "then": {
+            "en": "Indian dishes are served here",
             "nl": "Dit is een Indisch restaurant"
           }
         },
         {
           "if": "cuisine=turkish",
           "then": {
+            "en": "Turkish dishes are served here",
             "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
           }
         },
         {
           "if": "cuisine=thai",
           "then": {
+            "en": "Thai dishes are served here",
             "nl": "Dit is een Thaïs restaurant"
           }
         }
@@ -311,24 +339,28 @@
         {
           "if": "diet:vegetarian=no",
           "then": {
+            "en": "No vegetarian options are available",
             "nl": "Geen vegetarische opties beschikbaar"
           }
         },
         {
           "if": "diet:vegetarian=limited",
           "then": {
+            "en": "Some vegetarian options are available",
             "nl": "Beperkte vegetarische opties zijn beschikbaar"
           }
         },
         {
           "if": "diet:vegetarian=yes",
           "then": {
+            "en": "No vegetarian options are available",
             "nl": "Vegetarische opties zijn beschikbaar"
           }
         },
         {
           "if": "diet:vegetarian=only",
           "then": {
+            "en": "All dishes are vegetarian",
             "nl": "Enkel vegetarische opties zijn beschikbaar"
           }
         }
@@ -338,30 +370,35 @@
     },
     {
       "question": {
+        "en": "Does this business serve vegan meals?",
         "nl": "Heeft deze eetgelegenheid een veganistische optie?"
       },
       "mappings": [
         {
           "if": "diet:vegan=no",
           "then": {
+            "en": "No vegan options available",
             "nl": "Geen veganistische opties beschikbaar"
           }
         },
         {
           "if": "diet:vegan=limited",
           "then": {
+            "en": "Some vegan options are available",
             "nl": "Beperkte veganistische opties zijn beschikbaar"
           }
         },
         {
           "if": "diet:vegan=yes",
           "then": {
+            "en": "Vegan options are available",
             "nl": "Veganistische opties zijn beschikbaar"
           }
         },
         {
           "if": "diet:vegan=only",
           "then": {
+            "en": "All dishes are vegan",
             "nl": "Enkel veganistische opties zijn beschikbaar"
           }
         }
@@ -415,6 +452,7 @@
     {
       "id": "friture-vegetarian",
       "question": {
+        "en": "Does this fries shop have vegetarian snacks?",
         "nl": "Heeft deze frituur vegetarische snacks?",
         "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
       },
@@ -422,6 +460,7 @@
         {
           "if": "diet:vegetarian=yes",
           "then": {
+            "en": "Vegetarian snacks are available",
             "nl": "Er zijn vegetarische snacks aanwezig",
             "fr": "Des collations végétariens sont disponibles"
           }
@@ -429,6 +468,7 @@
         {
           "if": "diet:vegetarian=limited",
           "then": {
+            "en": "Only a small selection of snacks are vegetarian",
             "nl": "Slechts enkele vegetarische snacks",
             "fr": "Quelques snacks végétariens seulement"
           }
@@ -436,6 +476,7 @@
         {
           "if": "diet:vegetarian=no",
           "then": {
+            "en": "No vegetarian snacks are available",
             "nl": "Geen vegetarische snacks beschikbaar",
             "fr": "Pas d'en-cas végétariens disponibles"
           }
@@ -446,6 +487,7 @@
     {
       "id": "friture-vegan",
       "question": {
+        "en": "Does this fries shop have vegan snacks?",
         "nl": "Heeft deze frituur veganistische snacks?",
         "fr": "Cette friterie est-elle équipée de snacks végétaliens ?"
       },
@@ -453,6 +495,7 @@
         {
           "if": "diet:vegan=yes",
           "then": {
+            "en": "Vegan snacks are available",
             "nl": "Er zijn veganistische snacks aanwezig",
             "fr": "Des collations végétaliens sont disponibles"
           }
@@ -460,6 +503,7 @@
         {
           "if": "diet:vegan=limited",
           "then": {
+            "en": "A small selection of vegan snacks are available",
             "nl": "Slechts enkele veganistische snacks",
             "fr": "Quelques snacks végétaliens seulement"
           }
@@ -467,6 +511,7 @@
         {
           "if": "diet:vegan=no",
           "then": {
+            "en": "No vegan snacks are available",
             "nl": "Geen veganistische snacks beschikbaar",
             "fr": "Pas d'en-cas végétaliens disponibles"
           }
@@ -477,6 +522,7 @@
     {
       "id": "friture-oil",
       "question": {
+        "en": "Does this fries shop use vegetable or animal cooking?",
         "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
         "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
       },
@@ -484,13 +530,15 @@
         {
           "if": "friture:oil=vegetable",
           "then": {
-            "nl": "Plantaardige olie",
+            "en": "Vegetable oil",
+            "nl": "Bakt in plantaardige olie",
             "fr": "Huile végétale"
           }
         },
         {
           "if": "friture:oil=animal",
           "then": {
+            "en": "Animal oil",
             "nl": "Dierlijk vet",
             "fr": "Graisse animale"
           }

@@ -30,7 +30,7 @@ import DynamicGeoJsonTileSource from "../Logic/FeatureSource/TiledFeatureSource/
 import * as themeOverview from "../assets/generated/theme_overview.json"
 
 
-class AutomationPanel extends Combine{
+class AutomationPanel extends Combine {
     private static readonly openChangeset = new UIEventSource<number>(undefined);
 
     constructor(layoutToUse: LayoutConfig, indices: number[], extraCommentText: UIEventSource<string>, tagRenderingToAutomate: { layer: LayerConfig, tagRendering: TagRenderingConfig }) {
@@ -39,10 +39,10 @@ class AutomationPanel extends Combine{
         const tileState = LocalStorageSource.GetParsed("automation-tile_state-" + layerId + "-" + trId, {})
         const logMessages = new UIEventSource<string[]>([])
         if (indices === undefined) {
-           throw ("No tiles loaded - can not automate")
+            throw ("No tiles loaded - can not automate")
         }
         const openChangeset = AutomationPanel.openChangeset;
-      
+
         openChangeset.addCallbackAndRun(cs => console.trace("Sync current open changeset to:", cs))
 
         const nextTileToHandle = tileState.map(handledTiles => {
@@ -62,22 +62,22 @@ class AutomationPanel extends Combine{
             if (tileIndex === undefined) {
                 return new FixedUiElement("All done!").SetClass("thanks")
             }
-            console.warn("Triggered map on nextTileToHandle",tileIndex)
+            console.warn("Triggered map on nextTileToHandle", tileIndex)
             const start = new Date()
             return AutomationPanel.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,
                 openChangeset,
                 (result, logMessage) => {
-                const end = new Date()
-                const timeNeeded = (end.getTime() - start.getTime()) / 1000;
-                neededTimes.data.push(timeNeeded)
-                neededTimes.ping()
-                tileState.data[tileIndex] = result
-                tileState.ping();
-                if(logMessage !== undefined){
-                    logMessages.data.push(logMessage)
-                    logMessages.ping();
-                }
-            });
+                    const end = new Date()
+                    const timeNeeded = (end.getTime() - start.getTime()) / 1000;
+                    neededTimes.data.push(timeNeeded)
+                    neededTimes.ping()
+                    tileState.data[tileIndex] = result
+                    tileState.ping();
+                    if (logMessage !== undefined) {
+                        logMessages.data.push(logMessage)
+                        logMessages.ping();
+                    }
+                });
         }))
 
 
@@ -102,27 +102,27 @@ class AutomationPanel extends Combine{
             ]).SetClass("flex flex-col")
         }))
 
-       super([statistics, automaton, 
-           new SubtleButton(undefined, "Clear fixed").onClick(() => {
+        super([statistics, automaton,
+            new SubtleButton(undefined, "Clear fixed").onClick(() => {
                 const st = tileState.data
-               for (const tileIndex in st) {
-                   if(st[tileIndex] === "fixed"){
-                       delete st[tileIndex]
-                   }
-               }
-               
-               tileState.ping();
-           }),
-           new VariableUiElement(logMessages.map(logMessages => new List(logMessages)))])
-       this.SetClass("flex flex-col")
+                for (const tileIndex in st) {
+                    if (st[tileIndex] === "fixed") {
+                        delete st[tileIndex]
+                    }
+                }
+
+                tileState.ping();
+            }),
+            new VariableUiElement(logMessages.map(logMessages => new List(logMessages)))])
+        this.SetClass("flex flex-col")
     }
 
-    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>, 
+    private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>,
                                openChangeset: UIEventSource<number>,
                                whenDone: ((result: string, logMessage?: string) => void)): BaseUIElement {
 
         const state = new MapState(layoutToUse, {attemptLogin: false})
-        extraCommentText.syncWith( state.changes.extraComment)
+        extraCommentText.syncWith(state.changes.extraComment)
         const [z, x, y] = Tiles.tile_from_index(tileIndex)
         state.locationControl.setData({
             zoom: z,
@@ -161,8 +161,6 @@ class AutomationPanel extends Combine{
                     whenDone("empty")
                     return true;
                 }
-                stateToShow.setData("Applying metatags")
-                pipeline.updateAllMetaTagging("triggered by automaton")
                 stateToShow.setData("Gathering applicable elements")
 
                 let handled = 0
@@ -178,7 +176,7 @@ class AutomationPanel extends Combine{
                         const feature = ffs.feature
                         const renderingTr = targetAction.GetRenderValue(feature.properties)
                         const rendering = renderingTr.txt
-                        log.push("<a href='https://openstreetmap.org/"+feature.properties.id+"' target='_blank'>"+feature.properties.id+"</a>: "+new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), state).ConstructElement().innerText)
+                        log.push("<a href='https://openstreetmap.org/" + feature.properties.id + "' target='_blank'>" + feature.properties.id + "</a>: " + new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), undefined).ConstructElement().innerText)
                         const actions = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
                             .map(obj => obj.special))
                         for (const action of actions) {
@@ -203,11 +201,11 @@ class AutomationPanel extends Combine{
                 }
 
                 if (handled === 0) {
-                    whenDone("no-action","Inspected "+inspected+" elements: "+log.join("; "))
-                }else{
+                    whenDone("no-action", "Inspected " + inspected + " elements: " + log.join("; "))
+                } else {
                     state.osmConnection.AttemptLogin()
                     state.changes.flushChanges("handled tile automatically, time to flush!", openChangeset)
-                    whenDone("fixed", "Updated " + handled+" elements, inspected "+inspected+": "+log.join("; "))
+                    whenDone("fixed", "Updated " + handled + " elements, inspected " + inspected + ": " + log.join("; "))
                 }
                 return true;
 
@@ -221,15 +219,11 @@ class AutomationPanel extends Combine{
 }
 
 
-
 class AutomatonGui {
 
     constructor() {
 
         const osmConnection = new OsmConnection({
-            allElements: undefined,
-            changes: undefined,
-            layoutName: "automaton",
             singlePage: false,
             oauth_token: QueryParameters.GetQueryParameter("oauth_token", "OAuth token")
         });
@@ -244,7 +238,7 @@ class AutomatonGui {
                 AutomatonGui.GenerateMainPanel(),
                 new SubtleButton(Svg.osm_logo_svg(), "Login to get started").onClick(() => osmConnection.AttemptLogin()),
                 osmConnection.isLoggedIn
-            )]) .SetClass("block p-4")
+            )]).SetClass("block p-4")
             .AttachTo("main")
     }
 
@@ -252,36 +246,36 @@ class AutomatonGui {
     private static GenerateMainPanel(): BaseUIElement {
 
         const themeSelect = new DropDown<string>("Select a theme",
-            Array.from(themeOverview).map(l => ({value: l.id, shown: l.id})) 
+            Array.from(themeOverview).map(l => ({value: l.id, shown: l.id}))
         )
 
         LocalStorageSource.Get("automation-theme-id", "missing_streets").syncWith(themeSelect.GetValue())
 
-
-        const tilepath = ValidatedTextField.InputForType("url", {
+        const tilepath = ValidatedTextField.ForType("url").ConstructInputElement({
             placeholder: "Specifiy the path of the overview",
+            inputStyle: "width: 100%"
         })
         tilepath.SetClass("w-full")
         LocalStorageSource.Get("automation-tile_path").syncWith(tilepath.GetValue(), true)
 
-        
+
         let tilesToRunOver = tilepath.GetValue().bind(path => {
             if (path === undefined) {
                 return undefined
             }
-            return UIEventSource.FromPromiseWithErr(Utils.downloadJsonCached(path,1000*60*60))
+            return UIEventSource.FromPromiseWithErr(Utils.downloadJsonCached(path, 1000 * 60 * 60))
         })
-        
+
         const targetZoom = 14
 
         const tilesPerIndex = tilesToRunOver.map(tiles => {
-            
+
             if (tiles === undefined || tiles["error"] !== undefined) {
                 return undefined
             }
-            let indexes : number[] = [];
+            let indexes: number[] = [];
             const tilesS = tiles["success"]
-            DynamicGeoJsonTileSource.RegisterWhitelist(tilepath.GetValue().data , tilesS)
+            DynamicGeoJsonTileSource.RegisterWhitelist(tilepath.GetValue().data, tilesS)
             const z = Number(tilesS["zoom"])
             for (const key in tilesS) {
                 if (key === "zoom") {
@@ -308,7 +302,7 @@ class AutomatonGui {
             return Array.from(rezoomed)
         })
 
-        const extraComment = ValidatedTextField.InputForType("text")
+        const extraComment = ValidatedTextField.ForType("text").ConstructInputElement()
         LocalStorageSource.Get("automaton-extra-comment").syncWith(extraComment.GetValue())
 
         return new Combine([
@@ -317,7 +311,7 @@ class AutomatonGui {
             tilepath,
             "Add an extra comment:",
             extraComment,
-            new VariableUiElement(extraComment.GetValue().map(c => "Your comment is "+(c?.length??0)+"/200 characters long")).SetClass("subtle"),
+            new VariableUiElement(extraComment.GetValue().map(c => "Your comment is " + (c?.length ?? 0) + "/200 characters long")).SetClass("subtle"),
             new VariableUiElement(tilesToRunOver.map(t => {
                 if (t === undefined) {
                     return "No path given or still loading..."

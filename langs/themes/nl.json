@@ -16,6 +16,11 @@
         "shortDescription": "Een kaart van zitbanken",
         "title": "Zitbanken"
     },
+    "bicycle_rental": {
+        "description": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken",
+        "shortDescription": "Een kaart met fietsverhuurpunten en fietsverhuurzaken",
+        "title": "Fietsverhuur"
+    },
     "bicyclelib": {
         "description": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
         "title": "Fietsbibliotheken"
@@ -598,12 +603,12 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Straten zonder etymologische informatie"
+                    "=name": "Straten zonder etymologische informatie"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parken en bossen zonder etymologische informatie"
+                    "=name": "Parken en bossen zonder etymologische informatie"
                 }
             }
         },
@@ -861,11 +866,6 @@
         "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",
         "title": "De Natuur in"
     },
-    "natuurpunt": {
-        "description": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt",
-        "shortDescription": "Deze kaart toont de natuurgebieden van Natuurpunt",
-        "title": "De Natuurpunt-kaart"
-    },
     "observation_towers": {
         "description": "Publieke uitkijktorens om van het panorama te genieten",
         "shortDescription": "Publieke uitkijktorens om van het panorama te genieten",
@@ -1041,12 +1041,6 @@
         "shortDescription": "Bewakingscameras en dergelijke",
         "title": "Surveillance under Surveillance"
     },
-    "toerisme_vlaanderen": {
-        "description": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p class='mb-4'>We verzamelen 7 thematische lagen:  <ol><li>Laadpunten voor e-bikes</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijkpunten, uitkijkplatformen en uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol><p>Klik op de exacte locatie op de kaart om een van deze 7 punten toe te voegen. Of corrigeer bestaande punten door erop te klikken.</p>",
-        "descriptionTail": "<p>Met de steun van Toerisme Vlaanderen</p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaaneren.be</a><img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />",
-        "shortDescription": "Een kaart om toeristisch relevante info op aan te duiden",
-        "title": "Pin je punt"
-    },
     "toilets": {
         "description": "Een kaart met openbare toiletten",
         "title": "Open Toilettenkaart"
@@ -1055,36 +1049,6 @@
         "description": "Breng bomen in kaart!",
         "shortDescription": "Breng bomen in kaart",
         "title": "Bomen"
-    },
-    "uk_addresses": {
-        "description": "Draag bij aan OpenStreetMap door adresinformatie in te vullen",
-        "layers": {
-            "2": {
-                "description": "Adressen",
-                "name": "Bekende adressen in OSM",
-                "tagRenderings": {
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dit gebouw heeft geen huisnummer"
-                            }
-                        },
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Bekend adres"
-                }
-            }
-        }
-    },
-    "waste": {
-        "description": "Kaart met afvalbakken en recyclingfaciliteiten.",
-        "title": "Afval"
-    },
-    "waste_assen": {
-        "description": "Kaart met afvalbakken en recyclingfaciliteiten + een dataset voor Assen.",
-        "title": "Afval - Assen"
     },
     "waste_basket": {
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",

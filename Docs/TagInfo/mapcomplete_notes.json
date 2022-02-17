@@ -5,7 +5,7 @@
     "description": "A note is a pin on the map with some text to indicate something wrong",
     "project_url": "https://mapcomplete.osm.be/notes",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/svg/resolved.svg",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/notes/logo.svg",
     "contact_name": "Pieter Vander Vennet, MapComplete",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -16,7 +16,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Notes on OpenStreetMap has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Notes on OpenStreetMap has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

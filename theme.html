@@ -18,7 +18,6 @@
     <!-- THEME-SPECIFIC -->
     <!-- Every theme gets their own html page, this is created by a script; this part will be removed except for the index -->
     <title>MapComplete</title>
-    <link href="./index.manifest" rel="manifest">
     <link href="./assets/svg/add.svg" rel="icon" sizes="any" type="image/svg+xml">
     <meta content="./assets/SocialImage.png" property="og:image">
     <meta content="MapComplete - editable, thematic maps with OpenStreetMap" property="og:title">
@@ -36,16 +35,8 @@
     <link href="./assets/generated/svg_mapcomplete_logo96.png" rel="apple-touch-icon" sizes="96x96">
     <link href="./assets/generated/svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
 
-
     <!-- THEME-SPECIFIC-END-->
-
-    <style>
-        #decoration-desktop img {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
+    
 </head>
 <body>
 
@@ -71,11 +62,27 @@
 
 <div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
      id="centermessage" style="z-index: 4000">
-    Loading MapComplete, hang on...
+    <div style="height: max-content">
+    <div style="margin-top: -3rem">
+        <div class="flex" style="justify-content: center">
+            <img src="./assets/svg/loading.svg" class="animate-spin" style="width: 1.5rem; height: 1.5rem; min-width: 1.5rem;"/>
+            <h1 style="font-weight: bold; font-size: xx-large; margin-bottom: 1rem; padding-left: 1rem">Loading MapComplete, hang on...</h1>
+        </div>
+    <p class="subtle" style="padding-bottom: 1rem">Powered by OpenStreetMap</p>
+    <div style="background: #ffffffaa; padding-bottom: 1rem; border-radius: 0.25rem">
+    <!-- DESCRIPTION START -->
+    MapComplete is an easy to use map viewer and map editor
+    <!-- DESCRIPTION END -->
+    </div>
+    </div>
+    </div>
 </div>
+
 
 <span class="absolute" id="belowmap" style="z-index: -1">Below</span>
 <div id="leafletDiv"></div>
+
+
 
 <script src="./index.ts"></script>
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>

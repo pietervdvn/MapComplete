@@ -1,10 +1,10 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
         },
         "email": {
-            "question": "Qual o endereço de e-mail de {name}?"
+            "question": "Qual o endereço de e-mail de {title()}?"
         },
         "level": {
             "mappings": {
@@ -25,7 +25,7 @@
             "render": "Localizado no {level}o andar"
         },
         "opening_hours": {
-            "question": "Qual o horário de funcionamento de {name}?",
+            "question": "Qual o horário de funcionamento de {title()}?",
             "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -40,10 +40,10 @@
             "question": "Quais métodos de pagamento são aceitos aqui?"
         },
         "phone": {
-            "question": "Qual o número de telefone de {name}?"
+            "question": "Qual o número de telefone de {title()}?"
         },
         "website": {
-            "question": "Qual o site de {name}?"
+            "question": "Qual o site de {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

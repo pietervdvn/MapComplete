@@ -8,7 +8,7 @@
   },
   "mapRendering": [
     {
-      "icon": "crosshair:#00f",
+      "icon": "crosshair:var(--catch-detail-color)",
       "iconSize": "40,40,center",
       "location": [
         "point",

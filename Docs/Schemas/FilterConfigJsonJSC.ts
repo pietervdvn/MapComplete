@@ -21,6 +21,26 @@ export default {
                 "type": "string"
               }
             ]
+          },
+          "default": {
+            "type": "boolean"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
           }
         },
         "required": [

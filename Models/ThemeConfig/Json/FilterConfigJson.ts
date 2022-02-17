@@ -12,8 +12,9 @@ export default interface FilterConfigJson {
      * Filtering is done based on the given osmTags that are compared to the objects in that layer.
      */
     options: {
-        question: string | any; 
-        osmTags?: AndOrTagConfigJson | string, 
+        question: string | any;
+        osmTags?: AndOrTagConfigJson | string,
+        default?: boolean,
         fields?: {
             name: string,
             type?: string | "string"

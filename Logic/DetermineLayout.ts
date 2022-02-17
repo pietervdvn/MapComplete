@@ -10,14 +10,21 @@ import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
 import * as personal from "../assets/themes/personal/personal.json";
-import {FixLegacyTheme, PrepareTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 import * as known_layers from "../assets/generated/known_layers.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
+import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
+import * as licenses from "../assets/generated/license_info.json"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import {FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
+import Svg from "../Svg";
 
 export default class DetermineLayout {
 
+    private static readonly _knownImages =new Set( Array.from(licenses).map(l => l.path))
+    
     /**
      * Gets the correct layout for this website
      */
@@ -63,26 +70,12 @@ export default class DetermineLayout {
         return layoutToUse
     }
 
-    private static prepCustomTheme(json: any): LayoutConfigJson{
-        const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers["default"]) {
-            const layer = known_layers["default"][key]
-            knownLayersDict.set(layer.id, layer)
-        }
-        const converState = {
-            tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-            sharedLayers: knownLayersDict
-        }
-        json = new FixLegacyTheme().convertStrict(converState, json, "While loading a dynamic theme")
-        json = new PrepareTheme().convertStrict(converState, json, "While preparing a dynamic theme")
-        console.log("The layoutconfig is ", json)
-        return json
-    }
-    
     public static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
-    ): LayoutConfig | null {
+    ): (LayoutConfig & {definition: LayoutConfigJson}) | null {
         let hash = location.hash.substr(1);
+        let json: any;
+
         try {
             // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
             const dedicatedHashFromLocalStorage = LocalStorageSource.Get(
@@ -105,7 +98,6 @@ export default class DetermineLayout {
                 dedicatedHashFromLocalStorage.setData(hash);
             }
 
-            let json: any;
             try {
                 json = JSON.parse(atob(hash));
             } catch (e) {
@@ -121,30 +113,69 @@ export default class DetermineLayout {
 
             const layoutToUse = DetermineLayout.prepCustomTheme(json)
             userLayoutParam.setData(layoutToUse.id);
-            return new LayoutConfig(layoutToUse, false);
+            const config = new LayoutConfig(layoutToUse, false);
+            config["definition"] = json
+            return <any> config
         } catch (e) {
             console.error(e)
             if (hash === undefined || hash.length < 10) {
-                DetermineLayout.ShowErrorOnCustomTheme("Could not load a theme from the hash", new FixedUiElement("Hash does not contain data"))
+                DetermineLayout.ShowErrorOnCustomTheme("Could not load a theme from the hash", new FixedUiElement("Hash does not contain data"), json)
             }
-            this.ShowErrorOnCustomTheme("Could not parse the hash", new FixedUiElement(e))
+            this.ShowErrorOnCustomTheme("Could not parse the hash", new FixedUiElement(e), json)
             return null;
         }
     }
 
     public static ShowErrorOnCustomTheme(
         intro: string = "Error: could not parse the custom layout:",
-        error: BaseUIElement) {
+        error: BaseUIElement,
+        json?: any) {
         new Combine([
             intro,
             error.SetClass("alert"),
-            new SubtleButton("./assets/svg/mapcomplete_logo.svg",
+            new SubtleButton(Svg.back_svg(),
                 "Go back to the theme overview",
-                {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false})
-
+                {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false}),
+            json !== undefined ? new SubtleButton(Svg.download_svg(),"Download the JSON file").onClick(() => {
+                Utils.offerContentsAsDownloadableFile(JSON.stringify(json, null, "  "), "theme_definition.json")
+            }) : undefined
         ])
             .SetClass("flex flex-col clickable")
             .AttachTo("centermessage");
+    }
+
+    private static prepCustomTheme(json: any): LayoutConfigJson {
+        
+        if(json.layers === undefined && json.tagRenderings !== undefined){
+            const iconTr = json.mapRendering.map(mr => mr.icon).find(icon => icon !== undefined)
+            const icon = new TagRenderingConfig(iconTr).render.txt
+            json = {
+                id: json.id,
+                description: json.description,
+                descriptionTail: {
+                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer."
+                },
+                icon,
+                title: json.name,
+                layers: [json],
+            }
+        }
+        
+        
+        const knownLayersDict = new Map<string, LayerConfigJson>()
+        for (const key in known_layers.layers) {
+            const layer = known_layers.layers[key]
+            knownLayersDict.set(layer.id,<LayerConfigJson> layer)
+        }
+        const converState = {
+            tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
+            sharedLayers: knownLayersDict
+        }
+        json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
+        json = new FixImages(DetermineLayout._knownImages).convertStrict(json, "While fixing the images")
+        json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
+        console.log("The layoutconfig is ", json)
+        return json
     }
 
     private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
@@ -156,24 +187,17 @@ export default class DetermineLayout {
         try {
 
             let parsed = await Utils.downloadJson(link)
-            console.log("Got ", parsed)
-            parsed = new FixLegacyTheme().convertStrict({
-                tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-                sharedLayers: new Map<string, LayerConfigJson>() // FIXME: actually add the layers
-            }, parsed, "While loading a dynamic theme")
-
-
-                parsed.id = link;
-
-
             try {
+                parsed.id = link;
+                console.log("Loaded remote link:", link)
                 const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
-                return new LayoutConfig(layoutToUse,false).patchImages(link, JSON.stringify(layoutToUse));
+                return new LayoutConfig(layoutToUse, false)
             } catch (e) {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(
                     `<a href="${link}">${link}</a> is invalid:`,
-                    new FixedUiElement(e)
+                    new FixedUiElement(e),
+                    parsed
                 )
                 return null;
             }

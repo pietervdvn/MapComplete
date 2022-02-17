@@ -36,7 +36,7 @@ export class SubstitutedTranslation extends VariableUiElement {
 
         super(
             Locale.language.map(language => {
-                let txt = translation.textFor(language);
+                let txt = translation?.textFor(language);
                 if (txt === undefined) {
                     return undefined
                 }
@@ -72,7 +72,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             style: string
         }
     }[] {
-        
+
         for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
 
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'

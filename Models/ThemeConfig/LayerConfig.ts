@@ -15,7 +15,6 @@ import LineRenderingConfig from "./LineRenderingConfig";
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson";
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson";
 import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
-import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Combine from "../../UI/Base/Combine";
 import Title from "../../UI/Base/Title";
@@ -24,6 +23,7 @@ import Link from "../../UI/Base/Link";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import Table from "../../UI/Base/Table";
+import FilterConfigJson from "./Json/FilterConfigJson";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -58,7 +58,11 @@ export default class LayerConfig extends WithContextLoader {
 
     public readonly tagRenderings: TagRenderingConfig[];
     public readonly filters: FilterConfig[];
-
+    public readonly filterIsSameAs: string;
+    public readonly forceLoad: boolean;
+    
+    public readonly syncSelection:  "no" | "local" | "theme-only" | "global"
+    
     constructor(
         json: LayerConfigJson,
         context?: string,
@@ -67,9 +71,9 @@ export default class LayerConfig extends WithContextLoader {
         context = context + "." + json.id;
         super(json, context)
         this.id = json.id;
-        
-        if(json.id === undefined){
-            throw "Not a valid layer: id is undefined: "+JSON.stringify(json)
+
+        if (json.id === undefined) {
+            throw "Not a valid layer: id is undefined: " + JSON.stringify(json)
         }
 
         if (json.source === undefined) {
@@ -88,7 +92,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-
+        this.syncSelection = json.syncSelection;
         const osmTags = TagUtils.Tag(
             json.source.osmTags,
             context + "source.osmTags"
@@ -105,11 +109,13 @@ export default class LayerConfig extends WithContextLoader {
         this.source = new SourceConfig(
             {
                 osmTags: osmTags,
-                geojsonSource: json.source["geoJson"],
-                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
+                            geojsonSource: json.source["geoJson"],
+               geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                 overpassScript: json.source["overpassScript"],
                 isOsmCache: json.source["isOsmCache"],
-                mercatorCrs: json.source["mercatorCrs"]
+                mercatorCrs: json.source["mercatorCrs"],
+                idKey: json.source["idKey"]
+
             },
             json.id
         );
@@ -164,6 +170,7 @@ export default class LayerConfig extends WithContextLoader {
         this.minzoom = json.minzoom ?? 0;
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.shownByDefault = json.shownByDefault ?? true;
+        this.forceLoad = json.forceLoad ?? false;
         if (json.presets !== undefined && json.presets?.map === undefined) {
             throw "Presets should be a list of items (at " + context + ")"
         }
@@ -205,6 +212,7 @@ export default class LayerConfig extends WithContextLoader {
                 tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
                 description: Translations.T(pr.description, `${context}.presets[${i}].description`),
                 preciseInput: preciseInput,
+                exampleImages: pr.exampleImages
             }
             return config;
         });
@@ -230,8 +238,8 @@ export default class LayerConfig extends WithContextLoader {
             if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
                 console.log(json.mapRendering)
                 throw("The layer " + this.id + " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'")
-            } else if (!hasCenterRendering && this.lineRendering.length === 0) {
-                throw "The layer " + this.id + " might not render ways. This might result in dropped information"
+            } else if (!hasCenterRendering && this.lineRendering.length === 0 && !this.source.geojsonSource?.startsWith("https://api.openstreetmap.org/api/0.6/notes.json")) {
+                throw "The layer " + this.id + " might not render ways. This might result in dropped information (at "+context+")"
             }
         }
 
@@ -243,9 +251,14 @@ export default class LayerConfig extends WithContextLoader {
 
         this.tagRenderings = (Utils.NoNull(json.tagRenderings) ?? []).map((tr, i) => new TagRenderingConfig(<TagRenderingConfigJson>tr, this.id + ".tagRenderings[" + i + "]"))
 
-        this.filters = (json.filter ?? []).map((option, i) => {
-            return new FilterConfig(option, `${context}.filter-[${i}]`)
-        });
+        if(json.filter !== undefined && json.filter !== null && json.filter["sameAs"] !== undefined){
+            this.filterIsSameAs = json.filter["sameAs"]
+            this.filters = []
+        }else{
+            this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
+                return new FilterConfig(option, `${context}.filter-[${i}]`)
+            });
+        }
 
         {
             const duplicateIds = Utils.Dupiclates(this.filters.map(f => f.id))
@@ -259,7 +272,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
 
-        this.titleIcons = this.ParseTagRenderings((<TagRenderingConfigJson[]> json.titleIcons), {
+        this.titleIcons = this.ParseTagRenderings((<TagRenderingConfigJson[]>json.titleIcons), {
             readOnlyMode: true
         });
 
@@ -301,8 +314,11 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        const defaultTags = new UIEventSource(TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"})))
-        return mapRendering.GenerateLeafletStyle(defaultTags, false, {noSize: true}).html
+        return mapRendering.GetBaseIcon(this.GetBaseTags())
+    }
+    
+    public GetBaseTags(): any{
+        return TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
     }
 
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
@@ -355,12 +371,6 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push(new Combine(["This layer is needed as dependency for layer", new Link(revDep, "#" + revDep)]))
         }
 
-        const icon = Array.from(this.mapRendering[0]?.icon?.ExtractImages(true) ?? [])[0]
-        let iconImg = ""
-        if (icon !== undefined) {
-            iconImg = `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
-        }
-
         let neededTags: TagsFilter[] = [this.source.osmTags]
         if (this.source.osmTags["and"] !== undefined) {
             neededTags = this.source.osmTags["and"]
@@ -375,9 +385,9 @@ export default class LayerConfig extends WithContextLoader {
                 return [
                     new Combine([
                         new Link(
-                        "<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>",
-                        "https://taginfo.openstreetmap.org/keys/"+values.key+"#values"
-                    ),Link.OsmWiki(values.key)
+                            "<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>",
+                            "https://taginfo.openstreetmap.org/keys/" + values.key + "#values"
+                        ), Link.OsmWiki(values.key)
                     ]),
                     values.type === undefined ? "Multiple choice" : new Link(values.type, "../SpecialInputElements.md#" + values.type),
                     new Combine(embedded)
@@ -390,6 +400,16 @@ export default class LayerConfig extends WithContextLoader {
                 "**Warning** This quick overview is incomplete",
                 new Table(["attribute", "type", "values which are supported by this layer"], tableRows)
             ]).SetClass("flex-col flex")
+        }
+
+        const icon =  this.mapRendering
+            .filter(mr => mr.location.has("point"))
+            .map(mr => mr.icon?.render?.txt)
+            .find(i => i !== undefined)
+        let iconImg = ""
+        if (icon !== undefined) {
+            // This is for the documentation, so we have to use raw HTML
+            iconImg = `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
         }
 
         return new Combine([
@@ -423,24 +443,6 @@ export default class LayerConfig extends WithContextLoader {
 
     AllTagRenderings(): TagRenderingConfig[] {
         return Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title, this.isShown])
-    }
-
-    public ExtractImages(): Set<string> {
-        const parts: Set<string>[] = [];
-        parts.push(...this.tagRenderings?.map((tr) => tr.ExtractImages(false)));
-        parts.push(...this.titleIcons?.map((tr) => tr.ExtractImages(true)));
-        for (const preset of this.presets) {
-            parts.push(new Set<string>(preset.description?.ExtractImages(false)));
-        }
-        for (const pointRenderingConfig of this.mapRendering) {
-            parts.push(pointRenderingConfig.ExtractImages())
-        }
-        const allIcons = new Set<string>();
-        for (const part of parts) {
-            part?.forEach(allIcons.add, allIcons);
-        }
-
-        return allIcons;
     }
 
     public isLeftRightSensitive(): boolean {

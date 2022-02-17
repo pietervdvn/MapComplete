@@ -125,7 +125,7 @@
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">créez un compte</a>",
         "noTagsSelected": "Aucune balise sélectionnée",
         "customThemeIntro": "<h3>Thèmes personnalisés</h3>Vous avez déjà visité ces thèmes personnalisés.",
-        "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponible dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'&lt;i&gt;iframe&lt;/i&gt; pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou l'&lt;i&gt;<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a>&lt;/i&gt; </p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponible dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'&lt;i&gt;iframe&lt;/i&gt; pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou l'&lt;i&gt;<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a>&lt;/i&gt; </p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "backgroundMap": "Carte de fonds",
         "layerSelection": {
             "zoomInToSeeThisLayer": "Aggrandissez la carte pour voir cette couche",
@@ -188,7 +188,7 @@
             "wikipediaboxTitle": "Wikipédia",
             "loading": "Chargement de Wikipédia…",
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
-            "noResults": "Pas de résultats pour",
+            "noResults": "Pas de résultats pour {search}",
             "searchWikidata": "Rechercher sur Wikidata",
             "failed": "Le chargement de Wikipédia a échoué"
         },
@@ -244,8 +244,7 @@
         "whyDelete": "Pourquoi ce point devrait-il être supprimé ?",
         "explanations": {
             "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
-            "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
-            "softDelete": "Cet élément sera mis à jour et caché de l’application."
+            "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées"
         },
         "reasons": {
             "test": "Élément de test qui n’a jamais été ici",

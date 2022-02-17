@@ -59,7 +59,7 @@ export class GeoOperations {
             const coor = feature.geometry.coordinates;
             for (const otherFeature of otherFeatures) {
 
-                if (feature.id !== undefined && feature.id === otherFeature.id) {
+                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
                     continue;
                 }
 
@@ -79,7 +79,7 @@ export class GeoOperations {
 
             for (const otherFeature of otherFeatures) {
 
-                if (feature.id !== undefined && feature.id === otherFeature.id) {
+                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
                     continue;
                 }
 
@@ -97,7 +97,7 @@ export class GeoOperations {
 
             for (const otherFeature of otherFeatures) {
 
-                if (feature.id === otherFeature.id) {
+                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
                     continue;
                 }
 
@@ -124,6 +124,20 @@ export class GeoOperations {
         return result;
     }
 
+    public static pointInPolygonCoordinates(x: number, y: number, coordinates: [number, number][][]) {
+        const inside = GeoOperations.pointWithinRing(x, y, /*This is the outer ring of the polygon */coordinates[0])
+        if (!inside) {
+            return false;
+        }
+        for (let i = 1; i < coordinates.length; i++) {
+            const inHole = GeoOperations.pointWithinRing(x, y, coordinates[i] /* These are inner rings, aka holes*/)
+            if (inHole) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static inside(pointCoordinate, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
@@ -136,62 +150,31 @@ export class GeoOperations {
             pointCoordinate = pointCoordinate.geometry.coordinates
         }
 
-        if (feature.geometry.type === "MultiPolygon") {
-            const coordinates = feature.geometry.coordinates[0];
-            const outerPolygon = coordinates[0];
-            const inside = GeoOperations.inside(pointCoordinate, {
-                geometry: {
-                    type: 'Polygon',
-                    coordinates: [outerPolygon]
-                }
-            })
-            if (!inside) {
-                return false;
-            }
-            for (let i = 1; i < coordinates.length; i++) {
-                const inHole = GeoOperations.inside(pointCoordinate, {
-                    geometry: {
-                        type: 'Polygon',
-                        coordinates: [coordinates[i]]
-                    }
-                })
-                if (inHole) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-
         const x: number = pointCoordinate[0];
         const y: number = pointCoordinate[1];
 
-        for (let i = 0; i < feature.geometry.coordinates.length; i++) {
-            let poly = feature.geometry.coordinates[i];
 
-            let inside = false;
-            for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-                const coori = poly[i];
-                const coorj = poly[j];
-
-                const xi = coori[0];
-                const yi = coori[1];
-                const xj = coorj[0];
-                const yj = coorj[1];
-
-                const intersect = ((yi > y) != (yj > y))
-                    && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-                if (intersect) {
-                    inside = !inside;
+        if (feature.geometry.type === "MultiPolygon") {
+            const coordinatess = feature.geometry.coordinates;
+            for (const coordinates of coordinatess) {
+                const inThisPolygon = GeoOperations.pointInPolygonCoordinates(x, y, coordinates)
+                if (inThisPolygon) {
+                    return true;
                 }
+
             }
-            if (inside) {
-                return true;
-            }
+            return false;
         }
 
-        return false;
-    };
+
+        if (feature.geometry.type === "Polygon") {
+            return GeoOperations.pointInPolygonCoordinates(x, y, feature.geometry.coordinates)
+        }
+
+        throw "GeoOperations.inside: unsupported geometry type "+feature.geometry.type
+
+
+    }
 
     static lengthInMeters(feature: any) {
         return turf.length(feature) * 1000
@@ -558,19 +541,19 @@ export class GeoOperations {
             const prevCoordinate = coordinates[i - 1]
 
             const distP = GeoOperations.distanceBetween(coordinate, prevCoordinate)
-            if(distP < 0.1){
+            if (distP < 0.1) {
                 coordinates.splice(i, 1)
                 continue
             }
-        
-            if(i == coordinates.length - 2){
+
+            if (i == coordinates.length - 2) {
                 const distN = GeoOperations.distanceBetween(coordinate, nextCoordinate)
-                if(distN < 0.1){
+                if (distN < 0.1) {
                     coordinates.splice(i, 1)
                     continue
                 }
             }
-            
+
             const bearingN = turf.bearing(coordinate, nextCoordinate)
             const bearingP = turf.bearing(prevCoordinate, coordinate)
             const diff = Math.abs(bearingN - bearingP)
@@ -585,6 +568,26 @@ export class GeoOperations {
         }
         return copy;
 
+    }
+
+    private static pointWithinRing(x: number, y: number, ring: [number, number][]) {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+            const coori = ring[i];
+            const coorj = ring[j];
+
+            const xi = coori[0];
+            const yi = coori[1];
+            const xj = coorj[0];
+            const yj = coorj[1];
+
+            const intersect = ((yi > y) != (yj > y))
+                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+            if (intersect) {
+                inside = !inside;
+            }
+        }
+        return inside;
     }
 
     /**
@@ -683,6 +686,8 @@ export class GeoOperations {
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
 
     }
+
+
 }
 
 

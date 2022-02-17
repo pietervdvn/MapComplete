@@ -631,14 +631,6 @@
             },
             "1": {
                 "name": "Knotenpunkte",
-                "presets": {
-                    "0": {
-                        "title": "Knotenpunkt"
-                    },
-                    "1": {
-                        "title": "Knotenpunkt im Netzwerk Spree-Neiße"
-                    }
-                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "question": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
@@ -700,7 +692,7 @@
                             "then": "Diese Straße ist keine Fahrradstraße"
                         }
                     },
-                    "question": "Ist die Straße <b>{Name}</b> eine Fahrradstraße?"
+                    "question": "Ist die Straße <b>{name}</b> eine Fahrradstraße?"
                 },
                 "1": {
                     "question": "Wann wird diese Straße eine Fahrradstraße?",
@@ -724,12 +716,12 @@
         "layers": {
             "1": {
                 "override": {
-                    "name": "Straßen ohne Informationen zur Namensherkunft"
+                    "=name": "Straßen ohne Informationen zur Namensherkunft"
                 }
             },
             "2": {
                 "override": {
-                    "name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
+                    "=name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
                 }
             }
         },
@@ -941,11 +933,6 @@
         "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
         "title": "Eine Karte der Karten"
     },
-    "natuurpunt": {
-        "description": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
-        "shortDescription": "Diese Karte zeigt Naturschutzgebiete des flämischen Naturverbands Natuurpunt",
-        "title": "Die Karte von Natuurpunt"
-    },
     "observation_towers": {
         "description": "Öffentlich zugänglicher Aussichtsturm",
         "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
@@ -1078,43 +1065,6 @@
         "description": "Kartieren Sie alle Bäume!",
         "shortDescription": "Kartieren Sie alle Bäume",
         "title": "Bäume"
-    },
-    "uk_addresses": {
-        "description": "Tragen Sie zu OpenStreetMap bei, indem Sie Adressinformationen ausfüllen",
-        "layers": {
-            "2": {
-                "description": "Adressen",
-                "name": "Bekannte Adressen in OSM",
-                "tagRenderings": {
-                    "uk_addresses_explanation_osm": {
-                        "render": "Diese Adresse ist in OpenStreetMap gespeichert"
-                    },
-                    "uk_addresses_housenumber": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieses Gebäude hat keine Hausnummer"
-                            }
-                        },
-                        "question": "Wie lautet die Nummer dieses Hauses?",
-                        "render": "Die Hausnummer ist <b>{addr:housenumber}</b>"
-                    },
-                    "uk_addresses_street": {
-                        "question": "In welcher Straße befindet sich diese Adresse?",
-                        "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
-                    }
-                },
-                "title": {
-                    "render": "Bekannte Adresse"
-                }
-            }
-        },
-        "shortDescription": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
-        "tileLayerSources": {
-            "0": {
-                "name": "Grenzverläufe gemäß osmuk.org"
-            }
-        },
-        "title": "Adressen in Großbritannien"
     },
     "waste_basket": {
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",

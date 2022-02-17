@@ -8,10 +8,10 @@ import {Utils} from "../Utils";
 export default abstract class BaseUIElement {
 
     protected _constructedHtmlElement: HTMLElement;
+    protected isDestroyed = false;
     private clss: Set<string> = new Set<string>();
     private style: string;
     private _onClick: () => void;
-    protected isDestroyed = false;
 
     public onClick(f: (() => void)) {
         this._onClick = f;
@@ -38,6 +38,10 @@ export default abstract class BaseUIElement {
         }
 
         return this;
+    }
+    
+    public ScrollToTop(){
+        this._constructedHtmlElement?.scrollTo(0,0)
     }
 
     /**
@@ -98,11 +102,6 @@ export default abstract class BaseUIElement {
             return this._constructedHtmlElement
         }
 
-        if (this.InnerConstructElement === undefined) {
-            throw "ERROR! This is not a correct baseUIElement: " + this.constructor.name
-        }
-
-
         try {
             const el = this.InnerConstructElement();
 
@@ -148,10 +147,10 @@ export default abstract class BaseUIElement {
     }
 
     public AsMarkdown(): string {
-        throw "AsMarkdown is not implemented by " + this.constructor.name+"; implement it in the subclass"
+        throw "AsMarkdown is not implemented; implement it in the subclass"
     }
-    
-    public Destroy(){
+
+    public Destroy() {
         this.isDestroyed = true;
     }
 

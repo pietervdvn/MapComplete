@@ -103,7 +103,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
 
             try {
 
-                const json = await ScriptUtils.DownloadJSON(url)
+                const json = await Utils.downloadJson(url)
                 if ((<string>json.remark ?? "").startsWith("runtime error")) {
                     console.error("Got a runtime error: ", json.remark)
                     failed++;
@@ -142,7 +142,7 @@ async function downloadExtraData(theme: LayoutConfig)/* : any[] */ {
             continue;
         }
         console.log("Downloading extra data: ", source)
-        await ScriptUtils.DownloadJSON(source).then(json => allFeatures.push(...json.features))
+        await Utils.downloadJson(source).then(json => allFeatures.push(...json.features))
     }
     return allFeatures;
 }
@@ -225,7 +225,8 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
             {},
             {
                 includeDates: false,
-                includeNonDates: true
+                includeNonDates: true,
+                evaluateStrict: true
             });
 
 
@@ -354,7 +355,7 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
 }
 
 
-async function main(args: string[]) {
+export async function main(args: string[]) {
 
     console.log("Cache builder started with args ", args.join(", "))
     if (args.length < 6) {
@@ -376,8 +377,27 @@ async function main(args: string[]) {
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
 
+    if (isNaN(lat0)) {
+        throw "The first number (a latitude) is not a valid number"
+    }
+
+    if (isNaN(lon0)) {
+        throw "The second number (a longitude) is not a valid number"
+    }
+    if (isNaN(lat1)) {
+        throw "The third number (a latitude) is not a valid number"
+    }
+
+    if (isNaN(lon1)) {
+        throw "The fourth number (a longitude) is not a valid number"
+    }
+
 
     const tileRange = Tiles.TileRangeBetween(zoomlevel, lat0, lon0, lat1, lon1)
+
+    if (isNaN(tileRange.total)) {
+        throw "Something has gone wrong: tilerange is NAN"
+    }
 
     if (tileRange.total === 0) {
         console.log("Tilerange has zero tiles - this is probably an error")
@@ -438,10 +458,13 @@ async function main(args: string[]) {
 
 
 let args = [...process.argv]
-args.splice(0, 2)
-try {
-    main(args).catch(e => console.error("Error building cache:", e));
-} catch (e) {
-    console.error("Error building cache:", e)
+if (!args[1]?.endsWith("test/TestAll.ts")) {
+    args.splice(0, 2)
+    try {
+        main(args)
+            .then(() => console.log("All done!"))
+            .catch(e => console.error("Error building cache:", e));
+    } catch (e) {
+        console.error("Error building cache:", e)
+    }
 }
-console.log("All done!")

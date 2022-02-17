@@ -45,16 +45,14 @@
       "description": "Layer 'Observation towers' shows and asks freeform values for key 'height' (in the MapComplete.osm.be theme 'Observation towers')"
     },
     {
-      "key": "operator",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Observation towers')"
+      "key": "access",
+      "description": "Layer 'Observation towers' shows access=yes with a fixed text, namely 'This tower is publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
     },
     {
-      "key": "website",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Observation towers')"
-    },
-    {
-      "key": "contact:website",
-      "description": "Layer 'Observation towers' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Observation towers')"
+      "key": "access",
+      "description": "Layer 'Observation towers' shows access=guided with a fixed text, namely 'This tower can only be visited with a guide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "guided"
     },
     {
       "key": "charge",
@@ -79,6 +77,32 @@
       "key": "payment:cards",
       "description": "Layer 'Observation towers' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
       "value": "yes"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Observation towers' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "step_count",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'step_count' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
+      "key": "elevator",
+      "description": "Layer 'Observation towers' shows elevator=yes with a fixed text, namely 'This tower has an elevator which takes visitors to the top' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "yes"
+    },
+    {
+      "key": "elevator",
+      "description": "Layer 'Observation towers' shows elevator=no with a fixed text, namely 'This tower does not have an elevator' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Observation towers')",
+      "value": "no"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Observation towers')"
     },
     {
       "key": "wheelchair",
@@ -111,7 +135,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Observation towers has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Observation towers has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

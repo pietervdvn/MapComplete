@@ -11,7 +11,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class DeleteImage extends Toggle {
 
-    constructor(key: string, tags: UIEventSource<any>, state: {layoutToUse: LayoutConfig, changes?: Changes, osmConnection?: OsmConnection}) {
+    constructor(key: string, tags: UIEventSource<any>, state: { layoutToUse: LayoutConfig, changes?: Changes, osmConnection?: OsmConnection }) {
         const oldValue = tags.data[key]
         const isDeletedBadge = Translations.t.image.isDeleted.Clone()
             .SetClass("rounded-full p-1")
@@ -30,7 +30,7 @@ export default class DeleteImage extends Toggle {
                 await state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data, {
                         changeType: "answer",
-                        theme: "test"
+                        theme: state.layoutToUse.id
                     })
                 )
             });

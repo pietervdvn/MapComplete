@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
         },
@@ -21,7 +21,7 @@
             "question": "Tillates hunder i denne forretningen?"
         },
         "email": {
-            "question": "Hva er e-postadressen til {name}?"
+            "question": "Hva er e-postadressen til {title()}?"
         },
         "level": {
             "mappings": {
@@ -40,7 +40,7 @@
             }
         },
         "opening_hours": {
-            "question": "Hva er åpningstidene for {name})",
+            "question": "Hva er åpningstidene for {title()})",
             "render": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -55,10 +55,10 @@
             "question": "Hvilke betalingsmetoder godtas her?"
         },
         "phone": {
-            "question": "Hva er telefonnummeret til {name}?"
+            "question": "Hva er telefonnummeret til {title()}?"
         },
         "website": {
-            "question": "Hva er nettsiden til {name}?"
+            "question": "Hva er nettsiden til {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

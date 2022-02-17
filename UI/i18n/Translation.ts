@@ -7,13 +7,13 @@ export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined;
 
     public readonly translations: object
-    
+
     constructor(translations: object, context?: string) {
         super()
         if (translations === undefined) {
             throw `Translation without content (${context})`
         }
-        if(typeof translations === "string"){
+        if (typeof translations === "string") {
             translations = {"*": translations};
         }
         let count = 0;
@@ -35,12 +35,7 @@ export class Translation extends BaseUIElement {
 
     get txt(): string {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
-    }
-    
-    Destroy() {
-        super.Destroy();
-        this.isDestroyed = true;
-    }
+    }   
 
     static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
         const allTranslations: { context: string, tr: Translation }[] = []
@@ -74,6 +69,11 @@ export class Translation extends BaseUIElement {
         return new Translation(translations);
     }
 
+    Destroy() {
+        super.Destroy();
+        this.isDestroyed = true;
+    }
+
     public textFor(language: string): string {
         if (this.translations["*"]) {
             return this.translations["*"];
@@ -100,7 +100,7 @@ export class Translation extends BaseUIElement {
         const el = document.createElement("span")
         const self = this
         Locale.language.addCallbackAndRun(_ => {
-            if(self.isDestroyed){
+            if (self.isDestroyed) {
                 return true
             }
             el.innerHTML = this.txt
@@ -124,8 +124,8 @@ export class Translation extends BaseUIElement {
         }
         return langs;
     }
-    
-    public AllValues(): string[]{
+
+    public AllValues(): string[] {
         return this.SupportedLanguages().map(lng => this.translations[lng]);
     }
 
@@ -140,6 +140,33 @@ export class Translation extends BaseUIElement {
         }
         return new Translation(newTranslations);
 
+    }
+
+    /**
+     * 
+     * Given a translation such as `{en: "How much of bicycle_types are rented here}` (which is this translation)
+     * and a translation object `{ en: "electrical bikes" }`, plus the translation specification `bicycle_types`, will return 
+     * a new translation:
+     * `{en: "How much electrical bikes are rented here?"}`
+     * 
+     * @param translationObject
+     * @param stringToReplace
+     * @constructor
+     */
+    public Fuse(translationObject: Translation, stringToReplace: string): Translation{
+        const translations = this.translations
+        const newTranslations = {}
+        for (const lang in translations) {
+            const target = translationObject.textFor(lang)
+            if(target === undefined){
+                continue
+            }
+            if(typeof target !== "string"){
+                throw "Invalid object in Translation.fuse: translationObject['"+lang+"'] is not a string, it is: "+JSON.stringify(target)
+            }
+            newTranslations[lang] = this.translations[lang].replaceAll(stringToReplace, target)
+        }
+        return new Translation(newTranslations)
     }
 
     public replace(a: string, b: string) {
@@ -205,7 +232,7 @@ export class Translation extends BaseUIElement {
         }
         return allIcons.filter(icon => icon != undefined)
     }
-    
+
     AsMarkdown(): string {
         return this.txt
     }

@@ -33,7 +33,7 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows height~^[0-9.]+$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "leaf_type",
@@ -168,7 +168,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Trees has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Trees has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

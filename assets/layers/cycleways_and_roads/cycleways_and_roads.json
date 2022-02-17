@@ -692,7 +692,8 @@
           "then": {
             "en": "Usable for thin rollers: rollerblade, skateboard",
             "de": "Geeignet für dünne Rollen: Rollerblades, Skateboard",
-            "id": "Dapat digunakan untuk roller tipis: rollerblade, skateboard"
+            "id": "Dapat digunakan untuk roller tipis: rollerblade, skateboard",
+            "nl": "Bruikbaar voor kleine, harde wielen: rollerblade, skateboard"
           }
         },
         {
@@ -700,7 +701,8 @@
           "then": {
             "en": "Usable for thin wheels: racing bike",
             "de": "Geeignet für dünne Reifen: Rennrad",
-            "id": "Dapat digunakan untuk roda tipis: sepeda balap"
+            "id": "Dapat digunakan untuk roda tipis: sepeda balap",
+            "nl": "Bruikbaar voor smalle wielen: racefiets"
           }
         },
         {
@@ -708,7 +710,8 @@
           "then": {
             "en": "Usable for normal wheels: city bike, wheelchair, scooter",
             "de": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter",
-            "id": "Dapat digunakan untuk roda normal: sepeda kota, kursi roda, skuter"
+            "id": "Dapat digunakan untuk roda normal: sepeda kota, kursi roda, skuter",
+            "nl": "Bruikbaar voor normale wielen: stadsfiets, rolwagen, step"
           }
         },
         {
@@ -716,14 +719,16 @@
           "then": {
             "en": "Usable for robust wheels: trekking bike, car, rickshaw",
             "de": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha",
-            "id": "Dapat digunakan untuk roda yang kuat: sepeda trekking, mobil, becak"
+            "id": "Dapat digunakan untuk roda yang kuat: sepeda trekking, mobil, becak",
+            "nl": "Bruikbaar voor robuuste wielen: trekking fiets, auto, rickshaw"
           }
         },
         {
           "if": "smoothness=very_bad",
           "then": {
             "en": "Usable for vehicles with high clearance: light duty off-road vehicle",
-            "de": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen"
+            "de": "Geeignet für Fahrzeuge mit großer Bodenfreiheit: leichte Geländewagen",
+            "nl": "Bruikbaar voor terreinvoertuigen: 4x4 personenwagens"
           }
         },
         {
@@ -731,7 +736,8 @@
           "then": {
             "en": "Usable for off-road vehicles: heavy duty off-road vehicle",
             "de": "Geeignet für Geländefahrzeuge: schwerer Geländewagen",
-            "id": "Dapat digunakan untuk kendaraan off-road: kendaraan off-road berat"
+            "id": "Dapat digunakan untuk kendaraan off-road: kendaraan off-road berat",
+            "nl": "Bruikbaar voor terreinvoertuigen: zware 4x4 voertuigen"
           }
         },
         {
@@ -739,14 +745,16 @@
           "then": {
             "en": "Usable for specialized off-road vehicles: tractor, ATV",
             "de": "Geeignet für spezielle Geländewagen: Traktor, ATV",
-            "id": "Dapat digunakan untuk kendaraan off-road khusus: traktor, ATV"
+            "id": "Dapat digunakan untuk kendaraan off-road khusus: traktor, ATV",
+            "nl": "Bruikbaar voor uitzonderlijke terreinvoertuigen: tractor, ATV"
           }
         },
         {
           "if": "smoothness=impassable",
           "then": {
             "en": "Impassable / No wheeled vehicle",
-            "de": "Unpassierbar / Keine bereiften Fahrzeuge"
+            "de": "Unpassierbar / Keine bereiften Fahrzeuge",
+            "nl": "Onmogelijk om met een voertuig met wielen te passeren"
           }
         }
       ],
@@ -1339,6 +1347,7 @@
     }
   ],
   "description": {
-    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\""
+    "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\"",
+    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur"
   }
 }

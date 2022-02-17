@@ -39,20 +39,6 @@
     "nb_NO": "Kartlegg trærne.",
     "hu": "Térképezzünk fel minden fát!"
   },
-  "language": [
-    "nl",
-    "en",
-    "fr",
-    "it",
-    "ru",
-    "ja",
-    "zh_Hant",
-    "pl",
-    "de",
-    "nb_NO",
-    "id",
-    "hu"
-  ],
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",
   "version": "0",

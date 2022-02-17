@@ -1,6 +1,7 @@
 {
   "id": "parking",
   "name": {
+    "en": "Parking",
     "nl": "Parking"
   },
   "minzoom": 12,

@@ -108,7 +108,8 @@
         "fi": "{name}",
         "pl": "{name}",
         "pt": "{name}",
-        "eo": "{name}"
+        "eo": "{name}",
+        "es": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -120,7 +121,8 @@
       "question": {
         "en": "What kind of bench is this?",
         "nl": "Wat voor soort bank is dit?",
-        "de": "Was ist das für eine Bank?"
+        "de": "Was ist das für eine Bank?",
+        "es": "¿Qué tipo de banco es este?"
       },
       "mappings": [
         {
@@ -179,6 +181,8 @@
     }
   ],
   "description": {
-    "en": "A layer showing all public-transport-stops which do have a bench"
+    "en": "A layer showing all public-transport-stops which do have a bench",
+    "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
+    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is"
   }
 }

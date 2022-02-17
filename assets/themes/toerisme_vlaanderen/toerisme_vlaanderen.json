@@ -2,12 +2,8 @@
   "id": "toerisme_vlaanderen",
   "credits": "Commissioned theme for <a href='https://www.toerismevlaanderen.be/'>Toerisme Vlaandere</a>",
   "maintainer": "MapComplete",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "customCss": "./assets/themes/toerisme_vlaanderen/custom.css",
-  "language": [
-    "en",
-    "nl"
-  ],
   "mustHaveLanguage": [
     "nl"
   ],
@@ -15,15 +11,26 @@
     "nl": "Pin je punt"
   },
   "shortDescription": {
-    "nl": "Een kaart om toeristisch relevante info op aan te duiden"
+    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p>Met de steun van Toerisme Vlaanderen</p><img style='max-height:10rem; float: right; margin-top: 4rem; background: white; width: auto; padding: 0.5rem' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
   "description": {
-    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige gegevens verzamelen die handig zijn voor andere wandelaars en fietsers.</p><p class='mb-4'>We verzamelen 7 thematische lagen:  <ol><li>Laadpunten voor e-bikes</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijkpunten, uitkijkplatformen en uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol><p>Klik op de exacte locatie op de kaart om een van deze 7 punten toe te voegen. Of corrigeer bestaande punten door erop te klikken.</p>"
+    "nl": "<p class='mb-4'><i>Pin je punt</i> is een open toerismekaart waarin wandelaars en fietsers nuttige info verzamelen voor andere wandelaars en fietsers.</p><p><b>Klik op de exacte locatie op de kaart</b> om een punt toe te voegen of op een bestaand punt om het te wijzigen. <br/> We verzamelen:<ol><li>Laadpunten voor elektrische fietsen</li><li>Openbare toiletten</li><li>Zit- en picknickbankjes</li><li>Uitkijktorens</li><li>Fietsherstelpunten</li><li>Fietsverhuurpunten</li><li>Speeltuinen</li></ol></p>"
   },
   "descriptionTail": {
-    "nl": "<p>Met de steun van Toerisme Vlaanderen</p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaaneren.be</a><img style='height:5rem; width: auto;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
+    "nl": "<p>Een initiatief van de 5 provinciale toeristische organisaties en Toerisme Vlaanderen</p><p><a href='https://www.toerismevlaanderen.be/pinjepunt'>Meer informatie op toerismevlaanderen.be</a></p><img style='height:5rem; width: auto; margin-top: 1.25rem; margin-bottom: 0.5rem; margin-left: 1.5rem;' src='./assets/themes/toerisme_vlaanderen/logo.png' />"
   },
-  "icon": "./assets/svg/teardrop_with_hole_green.svg",
+  "extraLink": {
+    "icon": "./assets/svg/pop-out.svg",
+    "href": "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
+    "newTab": true,
+    "requirements": [
+      "iframe"
+    ],
+    "text": {
+      "nl": "Open in volledig scherm"
+    }
+  },
+  "icon": "./assets/themes/toerisme_vlaanderen/logo.svg",
   "startZoom": 8,
   "startLat": 50.8536,
   "startLon": 4.433,
@@ -31,19 +38,190 @@
   "layers": [
     {
       "builtin": [
-        "toilet",
-        "bench",
-        "picnic_table",
-        "observation_tower",
-        "bike_repair_station",
-        "playground",
         "charging_station"
       ],
       "override": {
-        "minzoom": 14
+        "id": "charging_station_ebikes",
+        "minzoom": 14,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle=yes"
+            ]
+          }
+        },
+        "=filter": null,
+        "=mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": "./assets/themes/toerisme_vlaanderen/charging_station_ebike.svg"
+          }
+        ],
+        "=presets": [
+          {
+            "tags": [
+              "amenity=charging_station",
+              "motorcar=no",
+              "bicycle=yes",
+              "socket:typee=1"
+            ],
+            "title": {
+              "nl": "laadpunt voor elektrische fietsen"
+            },
+            "preciseInput": {
+              "preferredBackground": "map"
+            }
+          }
+        ]
       }
+    },
+    {
+      "#": "All charging stations at a high zoom level, to avoid duplicates",
+      "builtin": "charging_station",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "charging_station_ebike"
+        },
+        "minzoom": 18
+      }
+    },
+    {
+      "builtin": "toilet",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/toilets.svg",
+              "=mappings": [
+                {
+                  "if": "wheelchair=yes",
+                  "then": "./assets/themes/toerisme_vlaanderen/toilets_wheelchair.svg"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "bench",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/bench.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "picnic_table",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/picnic_table.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "observation_tower",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/observation_tower.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "bike_repair_station",
+      "override": {
+        "minzoom": 14,
+        "=mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg",
+              "mappings": [
+                {
+                  "if": {
+                    "and": [
+                      "service:bicycle:tools=yes",
+                      "service:bicycle:pump=yes"
+                    ]
+                  },
+                  "then": "./assets/themes/toerisme_vlaanderen/cycle_repair_and_pump.svg"
+                },
+                {
+                  "if": {
+                    "and": [
+                      "service:bicycle:tools=yes",
+                      "service:bicycle:pump=no"
+                    ]
+                  },
+                  "then": "./assets/themes/toerisme_vlaanderen/cycle_repair.svg"
+                }
+              ]
+            },
+            "iconBadges": [
+              {
+                "if": "service:bicycle:pump:operational_status=broken",
+                "then": "close:red"
+              },
+              {
+                "if": {
+                  "or": [
+                    "access=no",
+                    "access=private"
+                  ]
+                },
+                "then": "invalid"
+              }
+            ]
+          }
+        ]
+      },
+      "hideTagRenderingsWithLabels": [
+        "operator-info",
+        "bike_repair_station-valves"
+      ]
+    },
+    "bicycle_rental",
+    {
+      "builtin": "playground",
+      "override": {
+        "minzoom": 14,
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/toerisme_vlaanderen/playground.svg"
+            }
+          }
+        ]
+      },
+      "hideTagRenderingsWithLabels": [
+        "extra"
+      ]
     }
   ],
   "hideFromOverview": true,
-  "enableMoreQuests": false
+  "enableMoreQuests": false,
+  "enableShareScreen": false
 }

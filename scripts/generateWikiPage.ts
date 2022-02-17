@@ -2,17 +2,17 @@ import {writeFile} from "fs";
 import Translations from "../UI/i18n/Translations";
 import * as themeOverview from "../assets/generated/theme_overview.json"
 
-function generateWikiEntry(layout: {hideFromOverview: boolean, id: string, shortDescription: any}) {
+function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shortDescription: any }) {
     if (layout.hideFromOverview) {
         return "";
     }
-    
+
     const languagesInDescr = []
     for (const shortDescriptionKey in layout.shortDescription) {
         languagesInDescr.push(shortDescriptionKey)
     }
-    
-    const languages = languagesInDescr .map(ln => `{{#language:${ln}|en}}`).join(", ")
+
+    const languages = languagesInDescr.map(ln => `{{#language:${ln}|en}}`).join(", ")
     let auth = "Yes";
     return `{{service_item
 |name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]

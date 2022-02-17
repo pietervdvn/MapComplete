@@ -3,11 +3,10 @@ import {FixedUiElement} from "./FixedUiElement";
 import {Utils} from "../../Utils";
 
 export default class Title extends BaseUIElement {
+    private static readonly defaultClassesPerLevel = ["", "text-3xl font-bold", "text-2xl font-bold", "text-xl font-bold", "text-lg font-bold"]
     public readonly title: BaseUIElement;
     public readonly level: number;
     public readonly id: string
-
-    private static readonly defaultClassesPerLevel = ["", "text-3xl font-bold", "text-2xl font-bold", "text-xl font-bold", "text-lg font-bold"]
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()

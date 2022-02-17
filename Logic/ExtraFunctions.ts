@@ -94,7 +94,7 @@ class IntersectionFunc implements ExtraFunction {
                     for (const otherFeature of tile) {
 
                         const intersections = GeoOperations.LineIntersections(feat, otherFeature)
-                        if(intersections.length === 0){
+                        if (intersections.length === 0) {
                             continue
                         }
                         result.push({feat: otherFeature, intersections})
@@ -154,27 +154,11 @@ class ClosestObjectFunc implements ExtraFunction {
 
 
 class ClosestNObjectFunc implements ExtraFunction {
-    _f(params, feature) {
-
-        return (features, amount, uniqueTag, maxDistanceInMeters) => {
-            let distance: number = Number(maxDistanceInMeters)
-            if (isNaN(distance)) {
-                distance = undefined
-            }
-            return ClosestNObjectFunc.GetClosestNFeatures(params, feature, features, {
-                maxFeatures: Number(amount),
-                uniqueTag: uniqueTag,
-                maxDistance: distance
-            });
-        }
-    }
-
     _name = "closestn"
     _doc = "Given either a list of geojson features or a single layer name, gives the n closest objects which are nearest to the feature (excluding the feature itself). In the case of ways/polygons, only the centerpoint is considered. " +
         "Returns a list of `{feat: geojson, distance:number}` the empty list if nothing is found (or not yet loaded)\n\n" +
         "If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name)"
     _args = ["list of features or layer name or '*' to get all features", "amount of features", "unique tag key (optional)", "maxDistanceInMeters (optional)"]
-
 
     /**
      * Gets the closes N features, sorted by ascending distance.
@@ -311,6 +295,21 @@ class ClosestNObjectFunc implements ExtraFunction {
         return closestFeatures;
     }
 
+    _f(params, feature) {
+
+        return (features, amount, uniqueTag, maxDistanceInMeters) => {
+            let distance: number = Number(maxDistanceInMeters)
+            if (isNaN(distance)) {
+                distance = undefined
+            }
+            return ClosestNObjectFunc.GetClosestNFeatures(params, feature, features, {
+                maxFeatures: Number(amount),
+                uniqueTag: uniqueTag,
+                maxDistance: distance
+            });
+        }
+    }
+
 }
 
 
@@ -401,7 +400,7 @@ export class ExtraFunctions {
     ];
 
     public static FullPatchFeature(params: ExtraFuncParams, feature) {
-        if(feature._is_patched){
+        if (feature._is_patched) {
             return
         }
         feature._is_patched = true
@@ -414,7 +413,6 @@ export class ExtraFunctions {
 
         const elems = []
         for (const func of ExtraFunctions.allFuncs) {
-            console.log("Generating ", func.constructor.name)
             elems.push(new Title(func._name, 3),
                 func._doc,
                 new List(func._args ?? [], true))

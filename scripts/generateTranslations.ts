@@ -9,6 +9,11 @@ class TranslationPart {
 
     contents: Map<string, TranslationPart | string> = new Map<string, TranslationPart | string>()
 
+    /**
+     * Add a leaf object
+     * @param language
+     * @param obj
+     */
     add(language: string, obj: any) {
         for (const key in obj) {
             const v = obj[key]
@@ -135,6 +140,94 @@ class TranslationPart {
         }
         return `{${parts.join(",")}}`;
     }
+
+    /**
+     * Recursively adds a translation object, the inverse of 'toJson'
+     * @param language
+     * @param object
+     * @private
+     */
+    private addTranslation(language: string, object: any){
+        for (const key in object) {
+            const v = object[key]
+            let subpart = <TranslationPart>this.contents.get(key)
+            if(subpart === undefined){
+               subpart = new TranslationPart()
+               this.contents.set(key, subpart) 
+            }
+            if(typeof v === "string"){
+                subpart.contents.set(language, v)
+            }else{
+                subpart.addTranslation(language, v)
+            }
+        }
+        
+    }
+    
+    static fromDirectory(path): TranslationPart{
+        const files = ScriptUtils.readDirRecSync(path, 1).filter(file => file.endsWith(".json"))
+        const rootTranslation = new TranslationPart()
+        for (const file of files) {
+            const content = JSON.parse(readFileSync(file, "UTF8"))
+            rootTranslation.addTranslation(file.substr(0, file.length - ".json".length), content)
+        }
+        return rootTranslation
+    }
+
+    validateStrict(ctx?:string): void {
+        const errors = this.validate() 
+        for (const err of errors) {
+            console.error("ERROR in "+(ctx ?? "")+ " " +err.path.join(".")+"\n   "+err.error)
+        }
+        if(errors.length > 0){
+            throw ctx+" has "+errors.length+" inconsistencies in the translation"
+        }
+    }
+    
+    /**
+     * Checks the leaf objects: special values must be present and identical in every leaf
+     */
+    validate(path = []): {error: string, path: string[]} [] {
+        const errors : {error: string, path: string[]} []= []
+        const neededSubparts = new Set<string>()
+        let isLeaf : boolean = undefined
+        this.contents.forEach((value, key) => {
+            if(typeof value === "string"){
+                if(isLeaf === undefined){
+                    isLeaf = true
+                }else if(!isLeaf){
+                    errors.push({error:"Mixed node: non-leaf node has translation strings", path: path})
+                }
+                
+                let subparts: string[] = value.match(/{[^}]*}/g)
+                if(subparts === null){
+                    if(neededSubparts.size > 0){
+                        errors.push({error:"The translation for "+key+" does not have any subparts, but expected "+Array.from(neededSubparts).join(",")+" . The full translation is "+value, path: path})
+                    }
+                    return
+                }
+                
+                subparts = subparts.map(p => p.split(/\(.*\)/)[0])
+                
+                neededSubparts.forEach(part => {
+                    if(subparts.indexOf(part) < 0){
+                        errors.push({error:"The translation for "+key+" does not have the required subpart "+part+". The full translation is "+value, path: path})
+                    }
+                })
+                
+                for (const subpart of subparts) {
+                    neededSubparts.add(subpart)
+                }
+                
+            }else{
+              const recErrors =  value.validate([...path, key])
+                errors.push(...recErrors)
+            }
+        })
+        
+        return errors
+    }
+    
 }
 
 /**
@@ -182,6 +275,14 @@ function transformTranslation(obj: any, depth = 1) {
 }
 
 /**
+ * Formats the specified file, helps to prevent merge conflicts
+ * */
+function formatFile(path) {
+    const contents = JSON.parse(readFileSync(path, "utf8"))
+    writeFileSync(path, JSON.stringify(contents, null, "    "))
+}
+
+/**
  * Generates the big compiledTranslations file
  */
 function genTranslations() {
@@ -194,7 +295,6 @@ function genTranslations() {
 
     fs.writeFileSync("./assets/generated/CompiledTranslations.ts", module);
 
-
 }
 
 /**
@@ -206,16 +306,19 @@ function compileTranslationsFromWeblate() {
         .filter(path => path.indexOf(".json") > 0)
 
     const allTranslations = new TranslationPart()
-
+    
+     allTranslations.validateStrict()
+       
+    
     for (const translationFile of translations) {
-        try{
-            
-        const contents = JSON.parse(readFileSync(translationFile, "utf-8"));
-        let language = translationFile.substring(translationFile.lastIndexOf("/") + 1)
-        language = language.substring(0, language.length - 5)
-        allTranslations.add(language, contents)
-        }catch (e) {
-            throw "Could not read file "+ translationFile+" due to "+e
+        try {
+
+            const contents = JSON.parse(readFileSync(translationFile, "utf-8"));
+            let language = translationFile.substring(translationFile.lastIndexOf("/") + 1)
+            language = language.substring(0, language.length - 5)
+            allTranslations.add(language, contents)
+        } catch (e) {
+            throw "Could not read file " + translationFile + " due to " + e
         }
     }
 
@@ -228,7 +331,7 @@ function compileTranslationsFromWeblate() {
  * @param objects
  * @param target
  */
-function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string) {
+function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string): string[] {
     const tr = new TranslationPart();
 
     for (const layerFile of objects) {
@@ -257,6 +360,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 
         writeFileSync(`langs/${target}/${lang}.json`, json)
     }
+    return langs
 }
 
 /**
@@ -378,15 +482,8 @@ function mergeThemeTranslations() {
         const config = themeFile.parsed;
         mergeLayerTranslation(config, themeFile.path, loadTranslationFilesFrom("themes"))
 
-        const oldLanguages = config.language;
         const allTranslations = new TranslationPart();
         allTranslations.recursiveAdd(config, themeFile.path)
-        const newLanguages = allTranslations.knownLanguages()
-        const languageDiff = newLanguages.filter(l => oldLanguages.indexOf(l) < 0).join(", ")
-        if (languageDiff !== "") {
-            config.language = newLanguages;
-            console.log(" :hooray: Got a new language for theme", config.id, ":", languageDiff)
-        }
         writeFileSync(themeFile.path, JSON.stringify(config, null, "  "))
     }
 }
@@ -405,14 +502,24 @@ if (!themeOverwritesWeblate) {
 } else {
     console.log("Ignore weblate")
 }
-generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
-generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
 
+const l1 = generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
+const l2 = generateTranslationsObjectFrom(ScriptUtils.getThemeFiles().filter(th => th.parsed.mustHaveLanguage === undefined), "themes")
+const l3 = generateTranslationsObjectFrom([{path: questionsPath, parsed: questionsParsed}], "shared-questions")
 
-generateTranslationsObjectFrom([{path: questionsPath, parsed: questionsParsed}], "shared-questions")
+const usedLanguages = Utils.Dedup(l1.concat(l2).concat(l3)).filter(v => v !== "*")
+usedLanguages.sort()
+fs.writeFileSync("./assets/generated/used_languages.json", JSON.stringify({languages: usedLanguages}))
 
 if (!themeOverwritesWeblate) {
 // Generates the core translations
     compileTranslationsFromWeblate();
 }
 genTranslations()
+formatFile("./langs/en.json")
+
+// SOme validation
+TranslationPart.fromDirectory("./langs").validateStrict("./langs")
+TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
+TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
+TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")

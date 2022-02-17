@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
         },
@@ -21,7 +21,7 @@
             "question": "這間商業空間是否允許犬隻？"
         },
         "email": {
-            "question": "{name} 的電子郵件地址是什麼？"
+            "question": "{title()} 的電子郵件地址是什麼？"
         },
         "level": {
             "mappings": {
@@ -36,13 +36,16 @@
                 },
                 "3": {
                     "then": "位於 2 樓"
+                },
+                "4": {
+                    "then": "位於地下一樓"
                 }
             },
             "question": "此圖徽位於哪個樓層／層級？",
             "render": "位於 {level} 樓"
         },
         "opening_hours": {
-            "question": "{name} 的開放時間是什麼？",
+            "question": "{title()} 的開放時間是什麼？",
             "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -56,8 +59,20 @@
             },
             "question": "這邊接受那種付款方式？"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "使用專用應用程式付款"
+                    },
+                    "1": {
+                        "then": "使用會員卡付款"
+                    }
+                }
+            }
+        },
         "phone": {
-            "question": "{name} 的電話號碼是什麼？"
+            "question": "{title()} 的電話號碼是什麼？"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +92,7 @@
             "question": "這個便利設施有電器設備，能給客戶使用嗎？"
         },
         "website": {
-            "question": "{name} 網址是什麼？"
+            "question": "{title()} 網址是什麼？"
         },
         "wheelchair-access": {
             "mappings": {

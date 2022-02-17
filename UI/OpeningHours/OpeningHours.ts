@@ -298,16 +298,16 @@ export class OH {
         }
     }
 
-    public static simplify(str: string): string{
+    public static simplify(str: string): string {
         return OH.ToString(OH.MergeTimes(OH.Parse(str)))
     }
-    
-    public static Parse(rules: string) : OpeningHour[] {
+
+    public static Parse(rules: string): OpeningHour[] {
         if (rules === undefined || rules === "") {
             return []
         }
 
-        const ohs : OpeningHour[] = []
+        const ohs: OpeningHour[] = []
 
         const split = rules.split(";");
 

@@ -5,6 +5,8 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import List from "../Base/List";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import Combine from "../Base/Combine";
+import Img from "../Base/Img";
 
 /***
  * Displays the correct value for a known tagrendering
@@ -13,9 +15,9 @@ export default class TagRenderingAnswer extends VariableUiElement {
 
     constructor(tagsSource: UIEventSource<any>, configuration: TagRenderingConfig,
                 state: any,
-                contentClasses: string = "", contentStyle: string = "", options?:{
-                    specialViz: Map<string, BaseUIElement>
-                }) {
+                contentClasses: string = "", contentStyle: string = "", options?: {
+            specialViz: Map<string, BaseUIElement>
+        }) {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
@@ -38,11 +40,17 @@ export default class TagRenderingAnswer extends VariableUiElement {
                 return undefined;
             }
 
-            const valuesToRender: BaseUIElement[] = trs.map(tr => new SubstitutedTranslation(tr, tagsSource, state, options?.specialViz))
+            const valuesToRender: BaseUIElement[] = trs.map(tr => {
+                const text = new SubstitutedTranslation(tr.then, tagsSource, state, options?.specialViz);
+                if(tr.icon === undefined){
+                    return text
+                }
+                return new Combine([new Img(tr.icon).SetClass("w-6 max-h-6 pr-2"), text]).SetClass("flex")
+            })
             if (valuesToRender.length === 1) {
                 return valuesToRender[0];
             } else if (valuesToRender.length > 1) {
-                return new List(valuesToRender)
+                return new Combine(valuesToRender).SetClass("flex flex-col")
             }
             return undefined;
         }).map((element: BaseUIElement) => element?.SetClass(contentClasses)?.SetStyle(contentStyle)))

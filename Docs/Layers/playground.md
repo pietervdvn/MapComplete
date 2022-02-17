@@ -47,6 +47,7 @@ Playgrounds
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
   - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
 
@@ -85,7 +86,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/min_age#values) [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/max_age#values) [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [students](https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
@@ -186,10 +187,9 @@ The question is **Is this playground accessible to the general public?**
 
 
 
-  - **Accessible to the general public** corresponds with _This option cannot be chosen as answer_
   - **Accessible to the general public** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
   - **Only accessible for clients of the operating business** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - **Only accessible to students of the school** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>
+  - **Only accessible to students of the school** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>_This option cannot be chosen as answer_
   - **Not accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
@@ -247,7 +247,6 @@ This is rendered with `{opening_hours_table(opening_hours)}`
 
   - **Accessible from sunrise till sunset** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dsunrise-sunset' target='_blank'>sunrise-sunset</a>
   - **Always accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-  - **Always accessible** corresponds with _This option cannot be chosen as answer_
 
 
 
@@ -270,4 +269,4 @@ _This tagrendering has no question and is thus read-only_
 
  
 
-This document is autogenerated from assets/layers/playground/playground.json
+This document is autogenerated from [assets/layers/playground/playground.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/playground/playground.json)

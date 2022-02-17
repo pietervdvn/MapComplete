@@ -25,6 +25,8 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     public readonly _matching_layer: LayerConfig;
     public readonly leafletMap: UIEventSource<any>
+    public readonly bounds;
+    public readonly location;
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
     /**
@@ -146,6 +148,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             }
         )
         this.leafletMap = this.map.leafletMap
+        this.location = this.map.location;
     }
 
     GetValue(): UIEventSource<Loc> {
@@ -186,11 +189,10 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 console.log("Constructing the snap-to layer", this._snapTo)
                 new ShowDataMultiLayer({
                         features: new StaticFeatureSource(this._snapTo, true),
-                        enablePopups: false,
+                        popup: undefined,
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
-                        layers: State.state.filteredLayers,
-                        allElements: State.state.allElements
+                        layers: State.state.filteredLayers
                     }
                 )
                 // Show the central point
@@ -202,11 +204,11 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 })
                 new ShowDataLayer({
                     features: new StaticFeatureSource(matchPoint, true),
-                    enablePopups: false,
+                    popup: undefined,
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,
-                    allElements: State.state.allElements,
+                    state: State.state,
                     selectedElement: State.state.selectedElement
                 })
 
@@ -219,7 +221,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
 
                 leaflet.setMaxZoom(layer.max_zoom)
                 leaflet.setMinZoom(self._minZoom ?? layer.max_zoom - 2)
-                leaflet.setZoom(layer.max_zoom)
+                leaflet.setZoom(layer.max_zoom - 1)
 
             }, [this.map.leafletMap])
 

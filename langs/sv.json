@@ -6,7 +6,7 @@
             "ph_not_known": " ",
             "open_24_7": "Öppet dygnet runt",
             "closed_permanently": "Stängt tills vidare",
-            "closed_until": "Stängt till",
+            "closed_until": "Stängt till {date}",
             "openTill": "till",
             "opensAt": "från",
             "open_during_ph": "Om det är en röd dag är det här stället",

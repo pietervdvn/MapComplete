@@ -50,8 +50,8 @@ export default class PerLayerFeatureSourceSplitter {
                             break;
                         }
                     }
-                    noLayerFound.push(f)
                 }
+                noLayerFound.push(f)
             }
 
             // At this point, we have our features per layer as a list

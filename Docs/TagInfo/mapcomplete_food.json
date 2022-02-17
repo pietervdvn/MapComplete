@@ -359,7 +359,7 @@
     },
     {
       "key": "id",
-      "description": "The MapComplete theme Restaurants and fast food has a layer Your track showing features with this tag",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Your travelled track showing features with this tag",
       "value": "location_track"
     }
   ]

@@ -6,9 +6,8 @@ import Toggleable, {Accordeon} from "./Base/Toggleable";
 import List from "./Base/List";
 import BaseUIElement from "./BaseUIElement";
 import LanguagePicker from "./LanguagePicker";
-import {SubtleButton} from "./Base/SubtleButton";
-import Svg from "../Svg";
 import TableOfContents from "./Base/TableOfContents";
+import LeftIndex from "./Base/LeftIndex";
 
 class Snippet extends Toggleable {
     constructor(translations, ...extraContent: BaseUIElement[]) {
@@ -21,26 +20,26 @@ class Snippet extends Toggleable {
 
 
 class SnippetContent extends Combine {
-    constructor(translations:any, ...extras: BaseUIElement[]) {
-           super([
-                translations.intro,
-                new List([
-                    translations.li0,
-                    translations.li1,
-                    translations.li2,
-                    translations.li3,
-                    translations.li4,
-                    translations.li5,
-                    translations.li6,
-                ]),
-                translations.outro,
-                ...extras
-            ])
-            this.SetClass("flex flex-col")
+    constructor(translations: any, ...extras: BaseUIElement[]) {
+        super([
+            translations.intro,
+            new List([
+                translations.li0,
+                translations.li1,
+                translations.li2,
+                translations.li3,
+                translations.li4,
+                translations.li5,
+                translations.li6,
+            ]),
+            translations.outro,
+            ...extras
+        ])
+        this.SetClass("flex flex-col")
     }
 }
 
-export default class ProfessionalGui {
+class ProfessionalGui extends LeftIndex {
 
 
     constructor() {
@@ -83,37 +82,26 @@ export default class ProfessionalGui {
             new Accordeon([
                 new Snippet(t.drawbacks.unsuitedData),
                 new Snippet(t.drawbacks.licenseNuances,
-                   new Title( t.drawbacks.licenseNuances.usecaseMapDifferentSources.title, 4),
+                    new Title(t.drawbacks.licenseNuances.usecaseMapDifferentSources.title, 4),
                     new SnippetContent(t.drawbacks.licenseNuances.usecaseMapDifferentSources),
-                    new Title( t.drawbacks.licenseNuances.usecaseGatheringOpenData.title, 4),
+                    new Title(t.drawbacks.licenseNuances.usecaseGatheringOpenData.title, 4),
                     new SnippetContent(t.drawbacks.licenseNuances.usecaseGatheringOpenData)
-                    )
+                )
             ]),
 
         ]).SetClass("flex flex-col pb-12 m-3 lg:w-3/4 lg:ml-10 link-underline")
 
 
-        const backToIndex = new Combine([new SubtleButton(
-            Svg.back_svg().SetStyle("height: 1.5rem;"),
-            t.backToMapcomplete,
-            {
-                url: "./index.html"
-            }
-        )]).SetClass("block")
-
         const leftContents: BaseUIElement[] = [
-            backToIndex,
             new TableOfContents(content, {
                 noTopLevel: true,
                 maxDepth: 2
             }).SetClass("subtle"),
-            
+
             LanguagePicker.CreateLanguagePicker(Translations.t.professional.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
-        const leftBar = new Combine([
-            new Combine(leftContents).SetClass("sticky top-4 m-4")
-        ]).SetClass("block w-full md:w-2/6 lg:w-1/6")
-        new Combine([leftBar, content]).SetClass("block md:flex").AttachTo("main")
+
+        super(leftContents, content)
 
     }
 
@@ -121,4 +109,4 @@ export default class ProfessionalGui {
 }
 
 new FixedUiElement("").AttachTo("decoration-desktop")
-new ProfessionalGui()
+new ProfessionalGui().AttachTo("main")

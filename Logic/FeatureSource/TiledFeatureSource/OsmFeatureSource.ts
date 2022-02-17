@@ -89,8 +89,8 @@ export default class OsmFeatureSource {
         if (z > 20) {
             throw "This is an absurd high zoom level"
         }
-        
-        if( z < 14){
+
+        if (z < 14) {
             throw `Zoom ${z} is too much for OSM to handle! Use a higher zoom level!`
         }
 

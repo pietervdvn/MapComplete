@@ -9,7 +9,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {CountryCoder} from "latlon2country"
 
 
-export class SimpleMetaTagger  {
+export class SimpleMetaTagger {
     public readonly keys: string[];
     public readonly doc: string;
     public readonly isLazy: boolean;
@@ -42,9 +42,9 @@ export class SimpleMetaTagger  {
 export class CountryTagger extends SimpleMetaTagger {
     private static readonly coder = new CountryCoder("https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country", Utils.downloadJson);
     public runningTasks: Set<any>;
-    
+
     constructor() {
-        const runningTasks=  new Set<any>();
+        const runningTasks = new Set<any>();
         super
         (
             {
@@ -77,19 +77,11 @@ export class CountryTagger extends SimpleMetaTagger {
                 return false;
             })
         )
-            this.runningTasks   = runningTasks;
+        this.runningTasks = runningTasks;
     }
 }
 
 export default class SimpleMetaTaggers {
-
-    private static readonly cardinalDirections = {
-        N: 0, NNE: 22.5, NE: 45, ENE: 67.5,
-        E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
-        S: 180, SSW: 202.5, SW: 225, WSW: 247.5,
-        W: 270, WNW: 292.5, NW: 315, NNW: 337.5
-    }
-
 
     public static readonly objectMetaInfo = new SimpleMetaTagger(
         {
@@ -121,7 +113,24 @@ export default class SimpleMetaTaggers {
             return true;
         }
     )
-
+    public static country = new CountryTagger()
+    public static geometryType = new SimpleMetaTagger(
+        {
+            keys: ["_geometry:type"],
+            doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`",
+        },
+        (feature, _) => {
+            const changed = feature.properties["_geometry:type"] === feature.geometry.type;
+            feature.properties["_geometry:type"] = feature.geometry.type;
+            return changed
+        }
+    )
+    private static readonly cardinalDirections = {
+        N: 0, NNE: 22.5, NE: 45, ENE: 67.5,
+        E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
+        S: 180, SSW: 202.5, SW: 225, WSW: 247.5,
+        W: 270, WNW: 292.5, NW: 315, NNW: 337.5
+    }
     private static latlon = new SimpleMetaTagger({
             keys: ["_lat", "_lon"],
             doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)"
@@ -201,7 +210,6 @@ export default class SimpleMetaTaggers {
             return true;
         })
     );
-
     private static canonicalize = new SimpleMetaTagger(
         {
             doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)",
@@ -254,7 +262,6 @@ export default class SimpleMetaTaggers {
             return rewritten
         })
     )
-
     private static lngth = new SimpleMetaTagger(
         {
             keys: ["_length", "_length:km"],
@@ -269,7 +276,6 @@ export default class SimpleMetaTaggers {
             return true;
         })
     )
-    public static country = new CountryTagger()
     private static isOpen = new SimpleMetaTagger(
         {
             keys: ["_isOpen"],
@@ -277,82 +283,54 @@ export default class SimpleMetaTaggers {
             includesDates: true,
             isLazy: true
         },
-        ((feature, _, __ ,state) => {
+        ((feature, _, __, state) => {
             if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
                 return false
             }
-            
+            if (feature.properties.opening_hours === "24/7") {
+                feature.properties._isOpen = "yes"
+                return true;
+            }
+
+            // _isOpen is calculated dynamically on every call
             Object.defineProperty(feature.properties, "_isOpen", {
                 enumerable: false,
                 configurable: true,
                 get: () => {
-                    delete feature.properties._isOpen
-                    feature.properties._isOpen = undefined
-                    const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
-                    tagsSource
-                        .addCallbackAndRunD(tags => {
-                        if (tags.opening_hours === undefined || tags._country === undefined) {
-                            return;
-                        }
-                        try {
-                            const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                            const oh = new opening_hours(tags["opening_hours"], {
-                                lat: lat,
-                                lon: lon,
-                                address: {
-                                    country_code: tags._country.toLowerCase()
-                                }
-                            }, {tag_key: "opening_hours"});
-                            // AUtomatically triggered on the next change
-                            const updateTags = () => {
-                                const oldValueIsOpen = tags["_isOpen"];
-                                const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
+                    const tags = feature.properties
+                    if (tags.opening_hours === undefined) {
+                        return;
+                    }
+                    if (tags._country === undefined) {
+                        return;
+                    }
 
-                                if (oldNextChange > (new Date()).getTime() &&
-                                    tags["_isOpen:oldvalue"] === tags["opening_hours"]
-                                    && tags["_isOpen"] !== undefined) {
-                                    // Already calculated and should not yet be triggered
-                                    return false;
-                                }
-
-                                tags["_isOpen"] = oh.getState() ? "yes" : "no";
-                                const comment = oh.getComment();
-                                if (comment) {
-                                    tags["_isOpen:description"] = comment;
-                                }
-
-                                if (oldValueIsOpen !== tags._isOpen) {
-                                    tagsSource.ping();
-                                }
-
-                                const nextChange = oh.getNextChange();
-                                if (nextChange !== undefined) {
-                                    const timeout = nextChange.getTime() - (new Date()).getTime();
-                                    tags["_isOpen:nextTrigger"] = nextChange.getTime();
-                                    tags["_isOpen:oldvalue"] = tags.opening_hours
-                                    window.setTimeout(
-                                        () => {
-                                            console.log("Updating the _isOpen tag for ", tags.id, ", it's timer expired after", timeout);
-                                            updateTags();
-                                        },
-                                        timeout
-                                    )
-                                }
+                    try {
+                        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                        const oh = new opening_hours(tags["opening_hours"], {
+                            lat: lat,
+                            lon: lon,
+                            address: {
+                                country_code: tags._country.toLowerCase()
                             }
-                            updateTags();
-                        } catch (e) {
-                            console.warn("Error while parsing opening hours of ", tags.id, e);
-                            delete tags._isOpen
-                            tags["_isOpen"] = "parse_error";
-                        }
+                        }, {tag_key: "opening_hours"});
 
-                    })
-                    return undefined
-                }
-            })
-            return true;
+                        // Recalculate!
+                        return oh.getState() ? "yes" : "no";
+
+                    } catch (e) {
+                        console.warn("Error while parsing opening hours of ", tags.id, e);
+                        delete tags._isOpen
+                        tags["_isOpen"] = "parse_error";
+                    }
+                }});
+            
+            
+            const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
+                  
+                    
 
         })
     )
@@ -380,8 +358,6 @@ export default class SimpleMetaTaggers {
             return true;
         })
     )
-
-
     private static currentTime = new SimpleMetaTagger(
         {
             keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
@@ -410,20 +386,6 @@ export default class SimpleMetaTaggers {
             return true;
         }
     );
-    
-    public static geometryType = new SimpleMetaTagger(
-        {
-            keys:["_geometry:type"],
-            doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`",
-        },
-        (feature, _) => {
-            const changed = feature.properties["_geometry:type"] === feature.geometry.type;
-            feature.properties["_geometry:type"] = feature.geometry.type;
-            return changed
-        }
-    )
-    
-    
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
@@ -439,10 +401,8 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.geometryType
 
     ];
-
     public static readonly lazyTags: string[] = [].concat(...SimpleMetaTaggers.metatags.filter(tagger => tagger.isLazy)
         .map(tagger => tagger.keys));
-
 
     /**
      * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.

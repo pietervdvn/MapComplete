@@ -1,3 +1,22 @@
 .technical.questions {
     display: none
 }
+
+@font-face{
+    font-family:"FlandersArt";
+    src:url("./assets/themes/toerisme_vlaanderen/FlandersArtSans-Light.woff");
+}
+
+@font-face{
+    font-family:"FlandersArtSerif";
+    src:url("./assets/themes/toerisme_vlaanderen/FlandersArtSerif-Medium.woff");
+}
+
+h1, h2, h3, h4 {
+    font-family: 'FlandersArtSerif', sans-serif;
+}
+
+body {
+    font-family: 'FlandersArt', sans-serif;
+}
+

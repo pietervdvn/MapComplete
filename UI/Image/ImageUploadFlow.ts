@@ -21,7 +21,7 @@ export class ImageUploadFlow extends Toggle {
 
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
 
-    constructor(tagsSource: UIEventSource<any>, 
+    constructor(tagsSource: UIEventSource<any>,
                 state: {
                     osmConnection: OsmConnection;
                     layoutToUse: LayoutConfig;
@@ -75,7 +75,7 @@ export class ImageUploadFlow extends Toggle {
         const label = new Combine([
             Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
             labelContent
-        ]).SetClass("p-2 border-4 border-black rounded-full font-bold h-full align-middle w-full flex justify-center")
+        ]).SetClass("p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center")
 
         const fileSelector = new FileSelectorButton(label)
         fileSelector.GetValue().addCallback(filelist => {

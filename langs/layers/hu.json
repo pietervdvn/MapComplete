@@ -358,6 +358,17 @@
             }
         }
     },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "bicycle_rental_type": {
+                "mappings": {
+                    "5": {
+                        "then": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
+                    }
+                }
+            }
+        }
+    },
     "bicycle_tube_vending_machine": {
         "tagRenderings": {
             "Still in use?": {
@@ -621,7 +632,7 @@
             },
             "public_bookcase-website": {
                 "question": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
-                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>."
+                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
             }
         },
         "title": {

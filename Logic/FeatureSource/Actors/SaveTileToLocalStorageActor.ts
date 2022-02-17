@@ -1,8 +1,3 @@
-/***
- * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
- *
- * Technically, more an Actor then a featuresource, but it fits more neatly this ay
- */
 import FeatureSource, {Tiled} from "../FeatureSource";
 import {Tiles} from "../../../Models/TileRange";
 import {IdbLocalStorage} from "../../Web/IdbLocalStorage";
@@ -13,6 +8,11 @@ import SimpleFeatureSource from "../Sources/SimpleFeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import Loc from "../../../Models/Loc";
 
+/***
+ * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
+ *
+ * Technically, more an Actor then a featuresource, but it fits more neatly this ay
+ */
 export default class SaveTileToLocalStorageActor {
     private readonly visitedTiles: UIEventSource<Map<number, Date>>
     private readonly _layer: LayerConfig;
@@ -41,7 +41,7 @@ export default class SaveTileToLocalStorageActor {
         })
     }
 
-    
+
     public LoadTilesFromDisk(currentBounds: UIEventSource<BBox>, location: UIEventSource<Loc>,
                              registerFreshness: (tileId: number, freshness: Date) => void,
                              registerTile: ((src: FeatureSource & Tiled) => void)) {
@@ -55,7 +55,7 @@ export default class SaveTileToLocalStorageActor {
             }
             currentBounds.addCallbackAndRunD(bbox => {
 
-                if(self._layer.minzoomVisible > location.data.zoom){
+                if (self._layer.minzoomVisible > location.data.zoom) {
                     // Not enough zoom
                     return;
                 }
@@ -119,9 +119,9 @@ export default class SaveTileToLocalStorageActor {
     }
 
     private SetIdb(tileIndex, data) {
-        try{
+        try {
             IdbLocalStorage.SetDirectly(this._layer.id + "_" + tileIndex, data)
-        }catch(e){
+        } catch (e) {
             console.error("Could not save tile to indexed-db: ", e, "tileIndex is:", tileIndex, "for layer", this._layer.id)
         }
     }

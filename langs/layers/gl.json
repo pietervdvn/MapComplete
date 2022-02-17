@@ -152,13 +152,13 @@
         "name": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
         "presets": {
             "0": {
-                "title": "Bomba de ar"
+                "title": "bomba de ar"
             },
             "1": {
-                "title": "Estación de arranxo de bicicletas con bomba de ar"
+                "title": "estación de arranxo de bicicletas con bomba de ar"
             },
             "2": {
-                "title": "Estación de arranxo de bicicletas sin bomba de ar"
+                "title": "estación de arranxo de bicicletas sin bomba de ar"
             }
         },
         "tagRenderings": {

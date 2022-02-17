@@ -417,6 +417,103 @@
             "render": "Bicycle library"
         }
     },
+    "bicycle_rental": {
+        "description": "Bicycle rental stations",
+        "name": "Bicycle rental",
+        "presets": {
+            "0": {
+                "description": "A manned shop which focuses on bicycle rental",
+                "title": "bicycle rental shop"
+            },
+            "1": {
+                "title": "bicycle rental"
+            }
+        },
+        "tagRenderings": {
+            "8": {
+                "renderings": {
+                    "0": {
+                        "question": "How much type_plural can be rented here? ",
+                        "render": "{capacity:bicycle_type} type_plural can be rented here"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "city bikes"
+                        },
+                        "1": {
+                            "1": "electrical bikes"
+                        },
+                        "2": {
+                            "1": "bikes for children"
+                        },
+                        "3": {
+                            "1": "BMX bikes"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "bicycle panniers"
+                        }
+                    }
+                }
+            },
+            "bicycle-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Normal city bikes can be rented here"
+                    },
+                    "1": {
+                        "then": "Electrical bikes can be rented here"
+                    },
+                    "2": {
+                        "then": "BMX bikes can be rented here"
+                    },
+                    "3": {
+                        "then": "Mountainbikes can be rented here"
+                    },
+                    "4": {
+                        "then": "Bikes for childs can be rented here"
+                    }
+                },
+                "question": "What kind of bicycles and accessories are rented here?",
+                "render": "{rental} is rented here"
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a shop whose main focus is bicycle rental"
+                    },
+                    "1": {
+                        "then": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus"
+                    },
+                    "2": {
+                        "then": "This is a shop which sells or repairs bicycles, but also rents out bicycles"
+                    },
+                    "3": {
+                        "then": "This is an automated docking station, where a bicycle is mechanically locked into a structure"
+                    },
+                    "4": {
+                        "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
+                    },
+                    "5": {
+                        "then": "This is a dropoff point: a designated bicycle parking for this cycle rental"
+                    }
+                },
+                "question": "What kind of bicycle rental is this?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Bicycle rental"
+        }
+    },
     "bicycle_tube_vending_machine": {
         "description": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)",
         "name": "Bicycle tube vending machine",
@@ -677,18 +774,19 @@
     },
     "bike_repair_station": {
         "description": "A layer showing bicycle pumps and bicycle repair tool stands",
-        "name": "Bike stations (repair, pump or both)",
+        "name": "Bicycle pump and repair",
         "presets": {
             "0": {
-                "description": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-                "title": "Bike pump"
+                "description": "A device to inflate your tires on a fixed location in the public space.",
+                "title": "bike pump"
             },
             "1": {
-                "description": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-                "title": "Bike repair station and pump"
+                "description": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
+                "title": "bike repair station and pump"
             },
             "2": {
-                "title": "Bike repair station without pump"
+                "description": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
+                "title": "bike repair station without pump"
             }
         },
         "tagRenderings": {
@@ -706,6 +804,26 @@
                 },
                 "question": "Is the bike pump still operational?"
             },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible"
+                    },
+                    "1": {
+                        "then": "Publicly accessible"
+                    },
+                    "2": {
+                        "then": "Only for customers"
+                    },
+                    "3": {
+                        "then": "Not accessible to the general public"
+                    },
+                    "4": {
+                        "then": "Not accessible to the general public"
+                    }
+                },
+                "question": "Who is allowed to use this repair station?"
+            },
             "bike_repair_station-available-services": {
                 "mappings": {
                     "0": {
@@ -718,7 +836,7 @@
                         "then": "There are both tools and a pump present"
                     }
                 },
-                "question": "Which services are available at this bike station?"
+                "question": "Which services are available at this location?"
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
@@ -773,9 +891,6 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Always open"
-                    },
-                    "1": {
                         "then": "Always open"
                     }
                 },
@@ -1032,17 +1147,37 @@
         "name": "Cafés and pubs",
         "presets": {
             "0": {
+                "description": "A pub, mostly for drinking beers in a warm, relaxed interior",
                 "title": "pub"
             },
             "1": {
+                "description": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
                 "title": "bar"
             },
             "2": {
+                "description": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
                 "title": "cafe"
             }
         },
         "tagRenderings": {
             "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": "A pub, mostly for drinking beers in a warm, relaxed interior"
+                    },
+                    "1": {
+                        "then": "A more modern and commercial <b>bar</b>, possibly with a music and light installation"
+                    },
+                    "2": {
+                        "then": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment"
+                    },
+                    "3": {
+                        "then": "A <b>restuarant</b> where one can get a proper meal"
+                    },
+                    "4": {
+                        "then": "An open space where beer is served, typically seen in Germany"
+                    }
+                },
                 "question": "What kind of cafe is this"
             },
             "Name": {
@@ -1055,7 +1190,8 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 }
-            }
+            },
+            "render": "Pub"
         }
     },
     "charging_station": {
@@ -1581,18 +1717,6 @@
                 "question": "What is the maximum amount of time one is allowed to stay here?",
                 "render": "One can stay at most <b>{canonical(maxstay)}</b>"
             },
-            "payment-options": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Payment is done using a dedicated app"
-                        },
-                        "1": {
-                            "then": "Payment is done using a membership card"
-                        }
-                    }
-                }
-            },
             "phone": {
                 "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
@@ -2014,6 +2138,14 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Charging station for ebikes"
+                },
+                "1": {
+                    "then": "Charging station for cars"
+                }
+            },
             "render": "Charging station"
         },
         "units": {
@@ -3001,6 +3133,7 @@
                 "title": "fastfood"
             },
             "2": {
+                "description": "A fastfood-buisiness focused on french fries",
                 "title": "fries shop"
             }
         },
@@ -3015,12 +3148,56 @@
                     },
                     "2": {
                         "then": "Mainly serves pasta"
+                    },
+                    "3": {
+                        "then": "This is kebab shop"
+                    },
+                    "4": {
+                        "then": "This is a sandwichbar"
+                    },
+                    "5": {
+                        "then": "Burgers are served here"
+                    },
+                    "6": {
+                        "then": "Sushi is served here"
+                    },
+                    "7": {
+                        "then": "Coffee is served here"
+                    },
+                    "8": {
+                        "then": "This is an italian restaurant (which serves more then pasta and pizza)"
+                    },
+                    "9": {
+                        "then": "French dishes are served here"
+                    },
+                    "10": {
+                        "then": "Chinese dishes are served here"
+                    },
+                    "11": {
+                        "then": "Greek dishes are served here"
+                    },
+                    "12": {
+                        "then": "Indian dishes are served here"
+                    },
+                    "13": {
+                        "then": "Turkish dishes are served here"
+                    },
+                    "14": {
+                        "then": "Thai dishes are served here"
                     }
                 },
                 "question": "Which food is served here?",
                 "render": "This place mostly serves {cuisine}"
             },
             "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional."
+                    },
+                    "1": {
+                        "then": "A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table"
+                    }
+                },
                 "question": "What type of business is this?"
             },
             "Name": {
@@ -3041,8 +3218,50 @@
                 },
                 "question": "Does this place offer takea-way?"
             },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "No vegan options available"
+                    },
+                    "1": {
+                        "then": "Some vegan options are available"
+                    },
+                    "2": {
+                        "then": "Vegan options are available"
+                    },
+                    "3": {
+                        "then": "All dishes are vegan"
+                    }
+                },
+                "question": "Does this business serve vegan meals?"
+            },
             "Vegetarian (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "No vegetarian options are available"
+                    },
+                    "1": {
+                        "then": "Some vegetarian options are available"
+                    },
+                    "2": {
+                        "then": "No vegetarian options are available"
+                    },
+                    "3": {
+                        "then": "All dishes are vegetarian"
+                    }
+                },
                 "question": "Does this restaurant have a vegetarian option?"
+            },
+            "friture-oil": {
+                "mappings": {
+                    "0": {
+                        "then": "Vegetable oil"
+                    },
+                    "1": {
+                        "then": "Animal oil"
+                    }
+                },
+                "question": "Does this fries shop use vegetable or animal cooking?"
             },
             "friture-take-your-container": {
                 "mappings": {
@@ -3057,6 +3276,34 @@
                     }
                 },
                 "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>"
+            },
+            "friture-vegan": {
+                "mappings": {
+                    "0": {
+                        "then": "Vegan snacks are available"
+                    },
+                    "1": {
+                        "then": "A small selection of vegan snacks are available"
+                    },
+                    "2": {
+                        "then": "No vegan snacks are available"
+                    }
+                },
+                "question": "Does this fries shop have vegan snacks?"
+            },
+            "friture-vegetarian": {
+                "mappings": {
+                    "0": {
+                        "then": "Vegetarian snacks are available"
+                    },
+                    "1": {
+                        "then": "Only a small selection of snacks are vegetarian"
+                    },
+                    "2": {
+                        "then": "No vegetarian snacks are available"
+                    }
+                },
+                "question": "Does this fries shop have vegetarian snacks?"
             },
             "halal (no friture)": {
                 "mappings": {
@@ -3083,8 +3330,12 @@
                 },
                 "1": {
                     "then": "Fastfood <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fastfood"
                 }
-            }
+            },
+            "render": "Restaurant"
         }
     },
     "ghost_bike": {
@@ -3131,6 +3382,7 @@
         }
     },
     "gps_track": {
+        "name": "Your travelled track",
         "tagRenderings": {
             "Privacy notice": {
                 "render": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device."
@@ -3262,7 +3514,32 @@
         }
     },
     "nature_reserve": {
+        "description": "A nature reserve is an area where nature can take its course",
         "tagRenderings": {
+            "Access tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible"
+                    },
+                    "1": {
+                        "then": "Not accessible"
+                    },
+                    "2": {
+                        "then": "Not accessible as this is a private area"
+                    },
+                    "3": {
+                        "then": "Accessible despite being a privately owned area"
+                    },
+                    "4": {
+                        "then": "Only accessible with a guide or during organised activities"
+                    },
+                    "5": {
+                        "then": "Accessible with fee"
+                    }
+                },
+                "question": "Is this nature reserve accessible to the public?",
+                "render": "Accessin this nature reserve: {access:description}"
+            },
             "Curator": {
                 "question": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
                 "render": "{curator} is the curator of this nature reserve"
@@ -3285,16 +3562,39 @@
                 "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
+            "Name tag": {
+                "mappings": {
+                    "0": {
+                        "then": "This area doesn't have a name"
+                    }
+                },
+                "question": "What is the name of this area?",
+                "render": "This area is named {name}"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Operated by Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Operated by {operator}"
+                    },
+                    "2": {
+                        "then": "Operated by <i>Agentschap Natuur en Bos</i>"
+                    }
+                },
+                "question": "Who operates this area?",
+                "render": "Operated by {operator}"
+            },
             "Surface area": {
                 "render": "Surface area: {_surface:ha}Ha"
             },
-            "Website": {
-                "question": "On which webpage can one find more information about this nature reserve?"
-            },
             "phone": {
-                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published"
             }
+        },
+        "title": {
+            "render": "Nature reserve"
         }
     },
     "note": {
@@ -3354,6 +3654,13 @@
                         "question": "Only show open notes"
                     }
                 }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Hide import notes"
+                    }
+                }
             }
         },
         "name": "OpenStreetMap notes",
@@ -3383,11 +3690,6 @@
     "observation_tower": {
         "description": "Towers with a panoramic view",
         "name": "Observation towers",
-        "presets": {
-            "0": {
-                "title": "observation tower"
-            }
-        },
         "tagRenderings": {
             "Fee": {
                 "mappings": {
@@ -3406,6 +3708,28 @@
                 "question": "Who maintains this tower?",
                 "render": "Maintained by <b>{operator}</b>"
             },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "This tower is publicly accessible"
+                    },
+                    "1": {
+                        "then": "This tower can only be visited with a guide"
+                    }
+                },
+                "question": "Can this tower be visited?"
+            },
+            "elevator": {
+                "mappings": {
+                    "0": {
+                        "then": "This tower has an elevator which takes visitors to the top"
+                    },
+                    "1": {
+                        "then": "This tower does not have an elevator"
+                    }
+                },
+                "question": "Does this tower have an elevator?"
+            },
             "name": {
                 "mappings": {
                     "0": {
@@ -3414,6 +3738,10 @@
                 },
                 "question": "What is the name of this tower?",
                 "render": "This tower is called <b>{name}</b>"
+            },
+            "step_count": {
+                "question": "How much individual steps does one have to climb to reach the top of this tower?",
+                "render": "This tower has {step_count} steps to reach the top"
             }
         },
         "title": {
@@ -3480,7 +3808,7 @@
         "name": "Playgrounds",
         "presets": {
             "0": {
-                "title": "Playground"
+                "title": "playground"
             }
         },
         "tagRenderings": {
@@ -3504,15 +3832,12 @@
                         "then": "Accessible to the general public"
                     },
                     "1": {
-                        "then": "Accessible to the general public"
-                    },
-                    "2": {
                         "then": "Only accessible for clients of the operating business"
                     },
-                    "3": {
+                    "2": {
                         "then": "Only accessible to students of the school"
                     },
-                    "4": {
+                    "3": {
                         "then": "Not accessible"
                     }
                 },
@@ -3547,9 +3872,6 @@
                         "then": "Accessible from sunrise till sunset"
                     },
                     "1": {
-                        "then": "Always accessible"
-                    },
-                    "2": {
                         "then": "Always accessible"
                     }
                 },

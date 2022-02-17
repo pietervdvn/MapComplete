@@ -10,7 +10,7 @@ export default class SimpleFeatureSource implements FeatureSourceForLayer, Tiled
     public readonly bbox: BBox = BBox.global;
     public readonly tileIndex: number;
 
-    constructor(layer: FilteredLayer, tileIndex: number, featureSource?: UIEventSource<{ feature:any; freshness: Date }[]>) {
+    constructor(layer: FilteredLayer, tileIndex: number, featureSource?: UIEventSource<{ feature: any; freshness: Date }[]>) {
         this.name = "SimpleFeatureSource(" + layer.layerDef.id + ")"
         this.layer = layer
         this.tileIndex = tileIndex ?? 0;

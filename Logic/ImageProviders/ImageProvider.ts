@@ -35,7 +35,7 @@ export default abstract class ImageProvider {
     }): UIEventSource<ProvidedImage[]> {
         const prefixes = options?.prefixes ?? this.defaultKeyPrefixes
         if (prefixes === undefined) {
-            throw "The image provider" + this.constructor.name + " doesn't define `defaultKeyPrefixes`"
+            throw "No `defaultKeyPrefixes` defined by this image provider"
         }
         const relevantUrls = new UIEventSource<{ url: string; key: string; provider: ImageProvider }[]>([])
         const seenValues = new Set<string>()

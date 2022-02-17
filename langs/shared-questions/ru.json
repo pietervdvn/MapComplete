@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>"
         },
@@ -21,7 +21,7 @@
             "question": "Впускают ли собак в это здание?"
         },
         "email": {
-            "question": "Какой адрес электронной почты у {name}?"
+            "question": "Какой адрес электронной почты у {title()}?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "Расположено на {level}ом этаже"
         },
         "opening_hours": {
-            "question": "Какое время работы у {name}?",
+            "question": "Какое время работы у {title()}?",
             "render": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -57,10 +57,10 @@
             "question": "Какие способы оплаты здесь принимают?"
         },
         "phone": {
-            "question": "Какой номер телефона у {name}?"
+            "question": "Какой номер телефона у {title()}?"
         },
         "website": {
-            "question": "Какой сайт у {name}?"
+            "question": "Какой сайт у {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

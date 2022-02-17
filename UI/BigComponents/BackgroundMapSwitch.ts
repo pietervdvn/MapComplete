@@ -84,7 +84,7 @@ class SingleLayerSelectionButton extends Toggle {
             previousLayer.setData(previousLayer.data ?? available.data)
             options.currentBackground.setData(previousLayer.data)
         })
-        
+
         options.currentBackground.addCallbackAndRunD(background => {
             if (background.category === options.preferredType) {
                 previousLayer.setData(background)
@@ -103,9 +103,9 @@ class SingleLayerSelectionButton extends Toggle {
                 // The previously used layer doesn't match the current layer -> no need to switch
                 return;
             }
-            
+
             // Is the previous layer still valid? If so, we don't bother to switch
-            if(previousLayer.data.feature === null || GeoOperations.inside(locationControl.data, previousLayer.data.feature)){
+            if (previousLayer.data.feature === null || GeoOperations.inside(locationControl.data, previousLayer.data.feature)) {
                 return
             }
 

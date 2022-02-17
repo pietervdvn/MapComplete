@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
         },
@@ -21,7 +21,7 @@
             "question": "Zijn honden toegelaten in deze zaak?"
         },
         "email": {
-            "question": "Wat is het e-mailadres van {name}?"
+            "question": "Wat is het e-mailadres van {title()}?"
         },
         "level": {
             "mappings": {
@@ -36,13 +36,16 @@
                 },
                 "3": {
                     "then": "Bevindt zich op de eerste verdieping"
+                },
+                "4": {
+                    "then": "Bevindt zich in de eerste kelderverdieping"
                 }
             },
             "question": "Op welke verdieping bevindt dit punt zich?",
             "render": "Bevindt zich op de {level}de verdieping"
         },
         "opening_hours": {
-            "question": "Wat zijn de openingstijden van {name}?",
+            "question": "Wat zijn de openingstijden van {title()}?",
             "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -56,8 +59,20 @@
             },
             "question": "Welke betaalmiddelen worden hier geaccepteerd?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Betalen via een app van het netwerk"
+                    },
+                    "1": {
+                        "then": "Betalen via een lidkaart van het netwerk"
+                    }
+                }
+            }
+        },
         "phone": {
-            "question": "Wat is het telefoonnummer van {name}?"
+            "question": "Wat is het telefoonnummer van {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +92,7 @@
             "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
         },
         "website": {
-            "question": "Wat is de website van {name}?"
+            "question": "Wat is de website van {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

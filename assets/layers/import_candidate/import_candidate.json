@@ -1,0 +1,26 @@
+{
+  "id": "import_candidate",
+  "description": "Layer used in the importHelper",
+  "source": {
+    "osmTags": {
+      "and": []
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "square:red;",
+      "iconSize": "15,15,center"
+    }
+  ],
+  "title": "Import candidate",
+  "tagRenderings": [
+    {
+      "id": "all_tags",
+      "render": "{all_tags()}"
+    }
+  ]
+}

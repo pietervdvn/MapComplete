@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
         },
@@ -21,7 +21,7 @@
             "question": "Est-ce que les chiens sont admis ici ?"
         },
         "email": {
-            "question": "Quelle est l'adresse courriel de {name} ?"
+            "question": "Quelle est l'adresse courriel de {title()} ?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "Étage {level}"
         },
         "opening_hours": {
-            "question": "Quelles sont les horaires d'ouverture de {name} ?",
+            "question": "Quelles sont les horaires d'ouverture de {title()} ?",
             "render": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -57,7 +57,7 @@
             "question": "Quelles sont les méthodes de paiement acceptées ici ?"
         },
         "phone": {
-            "question": "Quel est le numéro de téléphone de {name} ?"
+            "question": "Quel est le numéro de téléphone de {title()} ?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +77,7 @@
             "question": "Des prises sont elles à disposition des client·e·s en intérieur ?"
         },
         "website": {
-            "question": "Quel est le site web de {name} ?"
+            "question": "Quel est le site web de {title()} ?"
         },
         "wheelchair-access": {
             "mappings": {

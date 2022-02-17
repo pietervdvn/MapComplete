@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>"
         },
@@ -21,7 +21,7 @@
             "question": "I cani sono ammessi in quest’attività?"
         },
         "email": {
-            "question": "Qual è l'indirizzo email di {name}?"
+            "question": "Qual è l'indirizzo email di {title()}?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "Si trova al piano numero {level}"
         },
         "opening_hours": {
-            "question": "Quali sono gli orari di apertura di {name}?",
+            "question": "Quali sono gli orari di apertura di {title()}?",
             "render": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -57,10 +57,10 @@
             "question": "Quali metodi di pagamento sono accettati qui?"
         },
         "phone": {
-            "question": "Qual è il numero di telefono di {name}?"
+            "question": "Qual è il numero di telefono di {title()}?"
         },
         "website": {
-            "question": "Qual è il sito web di {name}?"
+            "question": "Qual è il sito web di {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

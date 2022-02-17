@@ -9,6 +9,7 @@ export default class SourceConfig {
     public geojsonZoomLevel?: number;
     public isOsmCacheLayer: boolean;
     public readonly mercatorCrs: boolean;
+    public readonly idKey : string
 
     constructor(params: {
         mercatorCrs?: boolean;
@@ -17,6 +18,7 @@ export default class SourceConfig {
         geojsonSource?: string,
         isOsmCache?: boolean,
         geojsonSourceLevel?: number,
+        idKey?: string
     }, context?: string) {
 
         let defined = 0;
@@ -47,5 +49,6 @@ export default class SourceConfig {
         this.geojsonZoomLevel = params.geojsonSourceLevel;
         this.isOsmCacheLayer = params.isOsmCache ?? false;
         this.mercatorCrs = params.mercatorCrs ?? false;
+        this.idKey= params.idKey 
     }
 }

@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/themes/charging_stations/plug.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/pin:#fff;./assets/themes/charging_stations/plug.svg' height="100px"> 
 
 A charging station
 
@@ -90,7 +90,7 @@ A charging station
     + [OH](#oh)
     + [fee](#fee)
     + [charge](#charge)
-    + [payment-options](#payment-options)
+    + [payment-options-advanced](#payment-options-advanced)
     + [Authentication](#authentication)
     + [Auth phone](#auth-phone)
     + [maxstay](#maxstay)
@@ -122,6 +122,7 @@ A charging station
 
 
   - [charging_stations](https://mapcomplete.osm.be/charging_stations)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/charging_station/charging_station.json)
@@ -229,7 +230,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/planned:amenity#values) [planned:amenity](https://wiki.openstreetmap.org/wiki/Key:planned:amenity) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) [charging_station](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station) [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking:fee#values) [parking:fee](https://wiki.openstreetmap.org/wiki/Key:parking:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dyes)
@@ -1365,7 +1366,7 @@ This is rendered with `Using this charging station costs <b>{charge}</b>`
 
 
 
-### payment-options 
+### payment-options-advanced 
 
 
 
@@ -1377,6 +1378,8 @@ The question is **Which methods of payment are accepted here?**
 
   - **Cash is accepted here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - **Payment cards are accepted here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - **Payment is done using a dedicated app** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
+  - **Payment is done using a membership card** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
 
 
@@ -1517,6 +1520,7 @@ This is rendered with `Located on the {level}th floor`
   - **Located on the ground floor** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
   - **Located on the ground floor** corresponds with _This option cannot be chosen as answer_
   - **Located on the first floor** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - **Located on the first basement level** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 
@@ -1585,4 +1589,4 @@ _This tagrendering has no question and is thus read-only_
 
  
 
-This document is autogenerated from assets/layers/charging_station/charging_station.json
+This document is autogenerated from [assets/layers/charging_station/charging_station.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/charging_station/charging_station.json)

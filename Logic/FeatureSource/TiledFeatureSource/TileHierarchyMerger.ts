@@ -21,7 +21,6 @@ export class TileHierarchyMerger implements TileHierarchy<FeatureSourceForLayer 
      * Add another feature source for the given tile.
      * Entries for this tile will be merged
      * @param src
-     * @param index
      */
     public registerTile(src: FeatureSource & Tiled) {
 

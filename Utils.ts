@@ -21,7 +21,7 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  `
-    public static readonly imageExtensions = new Set(["jpg","png","svg","jpeg",".gif"])
+    public static readonly imageExtensions = new Set(["jpg", "png", "svg", "jpeg", ".gif"])
 
     public static readonly special_visualizations_importRequirementDocs = `#### Importing a dataset into OpenStreetMap: requirements
 
@@ -255,7 +255,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     const date: Date = el;
                     v = date.toISOString()
                 }
-                
+
                 if (useLang !== undefined && v?.translations !== undefined) {
                     v = v.translations[useLang] ?? v.translations["*"] ?? (v.textFor !== undefined ? v.textFor(useLang) : v);
                 }
@@ -269,7 +269,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     v = "" + v
                 }
                 v = v.replace(/\n/g, "<br/>")
-            }else{
+            } else {
                 // v === undefined 
                 v = ""
             }
@@ -301,10 +301,20 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @return the second parameter as is
      */
     static Merge(source: any, target: any) {
+        if (target === null) {
+            return source
+        }
+        
         for (const key in source) {
             if (!source.hasOwnProperty(key)) {
                 continue
             }
+            if (key.startsWith("=")) {
+                const trimmedKey = key.substr(1);
+                target[trimmedKey] = source[key]
+                continue
+            }
+
             if (key.startsWith("+") || key.endsWith("+")) {
                 const trimmedKey = key.replace("+", "");
                 const sourceV = source[key];
@@ -321,10 +331,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 continue;
             }
 
-            const sourceV = source[key];
-            if (target === null) {
-                return source
-            }
+            const sourceV = source[key]
             const targetV = target[key]
             if (typeof sourceV === "object") {
                 if (sourceV === null) {
@@ -343,16 +350,98 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return target;
     }
 
+
+    /**
+     * Walks the specified path into the object till the end.
+     *
+     * If a list is encountered, this is tranparently walked recursively on every object.
+     *
+     * The leaf objects are replaced by the function
+     */
+    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any) => any)) {
+        const head = path[0]
+        if (path.length === 1) {
+            // We have reached the leaf
+            const leaf = object[head];
+            if (leaf !== undefined) {
+                if(Array.isArray(leaf)){
+                    object[head] = leaf.map(replaceLeaf)
+                }else{
+                    object[head] = replaceLeaf(leaf)
+                }
+            }
+            return
+
+        }
+        const sub = object[head]
+        if (sub === undefined) {
+            return;
+        }
+        if (typeof sub !== "object") {
+            return;
+        }
+        if (Array.isArray(sub)) {
+            sub.forEach(el => Utils.WalkPath(path.slice(1), el, replaceLeaf))
+            return;
+        }
+        Utils.WalkPath(path.slice(1), sub, replaceLeaf)
+    }
+
+    /**
+     * Walks the specified path into the object till the end.
+     * If a list is encountered, this is tranparently walked recursively on every object.
+     *
+     * The leaf objects are collected in the list
+     */
+    public static CollectPath(path: string[], object: any, collectedList = []): any[] {
+        if (object === undefined || object === null) {
+            return collectedList;
+        }
+        const head = path[0]
+        if (path.length === 1) {
+            // We have reached the leaf
+            const leaf = object[head];
+            if (leaf === undefined || leaf === null) {
+                return collectedList
+            } 
+                if (Array.isArray(leaf)) {
+                    collectedList.push(...leaf)
+                } else {
+                    collectedList.push(leaf)
+                }
+            return collectedList
+        }
+        const sub = object[head]
+        if (sub === undefined || sub === null) {
+            return collectedList;
+        }
+
+        if (Array.isArray(sub)) {
+            sub.forEach(el => Utils.CollectPath(path.slice(1), el, collectedList))
+            return collectedList;
+        }
+        if (typeof sub !== "object") {
+            return collectedList;
+        }
+        return Utils.CollectPath(path.slice(1), sub, collectedList)
+    }
+
+    /**
+     * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON
+     * @param json
+     * @param f
+     * @constructor
+     */
     static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any) {
-        if(json === undefined){
+        if (json === undefined) {
             return f(undefined)
         }
         const jtp = typeof json
-        if (jtp === "boolean" || jtp === "string" || jtp === "number"){
+        if (jtp === "boolean" || jtp === "string" || jtp === "number") {
             return f(json)
         }
         if (json.map !== undefined) {
-          return json.map(sub => {
+            return json.map(sub => {
                 return Utils.WalkJson(sub, f);
             })
         }
@@ -495,7 +584,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const data = await Utils.download(url, Utils.Merge({"accept": "application/json"}, headers ?? {}))
         try {
-            return JSON.parse(data)
+            if (typeof data === "string") {
+                return JSON.parse(data)
+            }
+            return data
         } catch (e) {
             console.error("Could not parse ", data, "due to", e, "\n", e.stack)
             throw e;
@@ -626,6 +718,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return JSON.parse(JSON.stringify(x));
     }
 
+    public static ParseDate(str: string): Date {
+        if (str.endsWith(" UTC")) {
+            str = str.replace(" UTC", "+00")
+        }
+        return new Date(str)
+    }
+
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
@@ -651,6 +750,28 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             g: parseInt(hex.substr(3, 2), 16),
             b: parseInt(hex.substr(5, 2), 16),
         }
+    }
+
+    public static levenshteinDistance (str1: string, str2: string) {
+        const track = Array(str2.length + 1).fill(null).map(() =>
+            Array(str1.length + 1).fill(null));
+        for (let i = 0; i <= str1.length; i += 1) {
+            track[0][i] = i;
+        }
+        for (let j = 0; j <= str2.length; j += 1) {
+            track[j][0] = j;
+        }
+        for (let j = 1; j <= str2.length; j += 1) {
+            for (let i = 1; i <= str1.length; i += 1) {
+                const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                track[j][i] = Math.min(
+                    track[j][i - 1] + 1, // deletion
+                    track[j - 1][i] + 1, // insertion
+                    track[j - 1][i - 1] + indicator, // substitution
+                );
+            }
+        }
+        return track[str2.length][str1.length];
     }
 }
 

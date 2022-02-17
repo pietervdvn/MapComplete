@@ -7,19 +7,59 @@
   "minzoom": 10,
   "source": {
     "osmTags": {
-      "or": [
-        "amenity=charging_station",
-        "disused:amenity=charging_station",
-        "planned:amenity=charging_station",
-        "construction:amenity=charging_station"
+      "and": [
+        {
+          "or": [
+            "amenity=charging_station",
+            "disused:amenity=charging_station",
+            "planned:amenity=charging_station",
+            "construction:amenity=charging_station"
+          ]
+        }
       ]
     }
   },
   "title": {
     "render": {
       "en": "Charging station",
-      "nl": "Oplaadpunten"
-    }
+      "nl": "Oplaadpunt"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "bicycle=yes",
+            {
+              "or": [
+                "motorcar=",
+                "motorcar=no"
+              ]
+            }
+          ]
+        },
+        "then": {
+          "en": "Charging station for electrical bicycles",
+          "nl": "Oplaadpunt voor elektrische fietsen"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "motorcar=yes",
+            {
+              "or": [
+                "bicycle=",
+                "bicycle=no"
+              ]
+            }
+          ]
+        },
+        "then": {
+          "en": "Charging station for cars",
+          "nl": "Oplaadpunt voor elektrische auto's"
+        }
+      }
+    ]
   },
   "description": {
     "en": "A charging station",
@@ -41,7 +81,7 @@
           "ifnot": "bicycle=no",
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
-            "nl": "<b>Fietsen</b> kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden"
           }
         },
         {
@@ -57,7 +97,7 @@
           "ifnot": "scooter=no",
           "then": {
             "en": "<b>Scooters</b> can be charged here",
-            "nl": "<b>Electrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
           }
         },
         {
@@ -260,32 +300,14 @@
     },
     {
       "id": "payment-options",
-      "builtin": "payment-options",
+      "builtin": "payment-options-advanced",
       "override": {
         "condition": {
           "or": [
             "fee=yes",
             "charge~*"
           ]
-        },
-        "mappings+": [
-          {
-            "if": "payment:app=yes",
-            "ifnot": "payment:app=no",
-            "then": {
-              "en": "Payment is done using a dedicated app",
-              "nl": "Betalen via een app van het netwerk"
-            }
-          },
-          {
-            "if": "payment:membership_card=yes",
-            "ifnot": "payment:membership_card=no",
-            "then": {
-              "en": "Payment is done using a membership card",
-              "nl": "Betalen via een lidkaart van het netwerk"
-            }
-          }
-        ]
+        }
       }
     },
     {
@@ -782,8 +804,8 @@
         "socket:typee=1"
       ],
       "title": {
-        "en": "charging station with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
-        "nl": "laadpunt met gewone stekker(s) <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (bedoeld om electrische fietsen op te laden)"
+        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
+        "nl": "oplaadpunt voor elektrische fietsen"
       },
       "preciseInput": {
         "preferredBackground": "map"

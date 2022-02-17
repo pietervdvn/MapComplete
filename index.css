@@ -24,49 +24,70 @@
         .w-160 {
             width: 40rem;
         }
+
+        .bg-subtle {
+            background-color: var(--subtle-detail-color);
+            color: var(--subtle-detail-color-contrast);
+        }
+
+        .bg-unsubtle {
+            background-color: var(--unsubtle-detail-color);
+            color: var(--unsubtle-detail-color-contrast);
+        }
+
+        .bg-catch {
+            background-color: var(--catch-detail-color);
+            color: var(--catch-detail-color-contrast);
+        }
     }
 
-    .btn {
-        @apply inline-flex justify-center;
-        @apply py-2 px-4;
-        @apply border border-transparent shadow-sm;
-        @apply shadow-sm rounded-3xl;
-        @apply ring-2 ring-blue-200 hover:ring-blue-300;
-        @apply mt-1 mr-1;
-        @apply text-sm font-medium text-white;
-        @apply bg-blue-600 hover:bg-blue-700;
-        @apply focus:outline-none focus:ring-blue-700;
-    }
-
-    .btn-secondary {
-        @apply bg-gray-600 hover:bg-gray-700;
-    }
-
-    .btn-disabled {
-        @apply bg-gray-500 hover:bg-gray-500;
-        @apply text-gray-300;
-        @apply ring-gray-200 hover:ring-gray-200 focus:ring-gray-200;
-        @apply cursor-default;
-    }
 }
 
 
 :root {
-    --subtle-detail-color: #e5f5ff;
+    /* The main colour scheme of mapcomplete is configured here.
+     * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
+     */
+
+    /* Main color of the application: the background and text colours */
+    --background-color: white;
+    /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
+    --foreground-color: black;
+    
+    /* A colour to indicate an error or warning */
+    --alert-color: #fee4d1;
+    
+    /**
+     * Base colour of interactive elements, mainly the 'subtle button'
+     * 
+     */
+    --subtle-detail-color: #DBEAFE;
     --subtle-detail-color-contrast: black;
     --subtle-detail-color-light-contrast: lightgrey;
 
+    /**
+     * A stronger variant of the 'subtle-detail-colour'
+     * Used as subtle button hover
+     */
+    --unsubtle-detail-color: #BFDBFE;
+    --unsubtle-detail-color-contrast: black;
+    
+    
     --catch-detail-color: #3a3aeb;
     --catch-detail-color-contrast: white;
-    --alert-color: #fee4d1;
-    --background-color: white;
-    --foreground-color: black;
-    --popup-border: white;
-    --shadow-color: #00000066;
-    --variable-title-height: 0px; /* Set by javascript */
-    --return-to-the-map-height: 2em;
 
+    
+    --non-active-tab-svg: var(--foreground-color);
+    --shadow-color: #00000066;
+    
+    --return-to-the-map-height: 2em;
     --image-carousel-height: 350px;
+
+    /* The border colour of the leaflet popup */
+    --popup-border: white;
+
+    /* Technical variable to make some dynamic behaviour possible; set by javascript. */
+    --variable-title-height: 0px; 
 }
 
 html, body {
@@ -106,6 +127,26 @@ svg, img {
     height: 100%;
 }
 
+.svg-catch svg path {
+    fill: var(--catch-detail-color) !important;
+    stroke: var(--catch-detail-color) !important;
+}
+
+.svg-unsubtle svg path {
+    fill: var(--unsubtle-detail-color) !important;
+    stroke: var(--unsubtle-detail-color) !important;
+}
+
+.svg-subtle svg path {
+    fill: var(--subtle-detail-color) !important;
+    stroke: var(--subtle-detail-color) !important;
+}
+
+.svg-foreground svg path {
+    fill: var(--foreground-color) !important;
+    stroke: var(--foreground-color) !important;
+}
+
 .no-images img {
     display: none;
 }
@@ -122,20 +163,56 @@ a {
     color: var(--foreground-color);
 }
 
-btn {
-    margin-top: 0.25rem;
-    margin-right: 0.25rem;
-    font-size: 0.875rem;
+.btn {
     line-height: 1.25rem;
-    font-weight: 500;
     --tw-text-opacity: 1;
     color: var(--catch-detail-color-contrast);
     --tw-bg-opacity: 1;
     background-color: var(--catch-detail-color);
+    display: inline-flex;
+    border-radius: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: large;
+    font-weight: bold;
+    transition: 100ms;
+    /*-- invisible border: rendered on hover*/
+    border: 3px solid var(--unsubtle-detail-color);
+}
+
+.btn:hover {
+    border: 3px solid var(--catch-detail-color);
+}
+
+.btn-secondary {
+    background-color: var(--catch-detail-color);
+    filter: saturate(0.5);
+    
+}
+
+.btn-secondary:hover {
+    background-color: var(--catch-detail-color);
+    filter: unset;
+}
+
+.btn-disabled {
+    filter: saturate(0.3);
+    cursor: default;
+}
+
+.btn-disabled:hover {
+    border: 3px solid var(--unsubtle-detail-color);
 }
 
 .h-min {
     height: min-content;
+}
+
+
+.border-detail {
+    border-color: var(--foreground-color);
 }
 
 .w-min {
@@ -147,8 +224,7 @@ btn {
 }
 
 .link-underline a {
-    text-decoration: underline 1px #0078a855;;
-    color: #0078A8;
+    text-decoration: underline 1px var(--foreground-color);
 }
 
 .link-no-underline a {
@@ -233,6 +309,7 @@ li::marker {
 }
 
 .leaflet-container {
+    font: unset !important;
     background-color: var(--background-color) !important;
 }
 
@@ -286,6 +363,7 @@ li::marker {
 
 .alert {
     background-color: var(--alert-color);
+    color: var(--foreground-color);
     font-weight: bold;
     border-radius: 1em;
     margin: 0.25em;
@@ -419,15 +497,17 @@ li::marker {
     max-width: calc(100vw - 5em);
     width: 40em;
     max-height: calc(100vh - 15em);
-    overflow-y: auto;
-    border-radius: 1em;
     background-color: var(--background-color);
     color: var(--foreground-color);
 }
 
 
+
 /***************** Info box (box containing features and questions ******************/
 
+input {
+    color: var(--foreground-color)
+}
 
 .leaflet-popup-content {
     width: 45em !important;
@@ -482,3 +562,29 @@ li::marker {
     transition: max-height .5s ease-in-out;
     overflow-y: hidden;
 }
+
+
+.zebra-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.layer-toggle {
+    /* The checkbox that toggles a single layer */
+}
+
+.layer-filters {
+    /* If needed, the panel which contains the extra filters for a layer */
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--foreground-color);
+}
+
+.filter-panel {
+    /* The panel for a single layer, containing both the toggle and the filters (if any) */
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 0.5rem;
+}
+
+.first-filter-panel {
+    /* Additional class on the first layer filter */
+}
+

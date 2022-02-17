@@ -628,15 +628,15 @@
         "name": "Station velo (réparation, pompe à vélo)",
         "presets": {
             "0": {
-                "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-                "title": "Pompe à vélo"
+                "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
+                "title": "pompe à vélo"
             },
             "1": {
-                "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.<h3>Exemple</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-                "title": "Point de réparation vélo avec pompe"
+                "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
+                "title": "point de réparation vélo avec pompe"
             },
             "2": {
-                "title": "Point de réparation vélo sans pompe"
+                "title": "point de réparation vélo sans pompe"
             }
         },
         "tagRenderings": {
@@ -718,9 +718,6 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Ouvert en permanence"
-                    },
-                    "1": {
                         "then": "Ouvert en permanence"
                     }
                 },
@@ -1546,12 +1543,8 @@
             "Surface area": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
             },
-            "Website": {
-                "question": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?"
-            },
             "phone": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             }
         }
     },
@@ -1586,7 +1579,7 @@
         "name": "Aire de jeu",
         "presets": {
             "0": {
-                "title": "Terrain de jeux"
+                "title": "terrain de jeux"
             }
         },
         "tagRenderings": {
@@ -1610,15 +1603,12 @@
                         "then": "Accessible au public"
                     },
                     "1": {
-                        "then": "Accessible au public"
-                    },
-                    "2": {
                         "then": "Réservée aux clients"
                     },
-                    "3": {
+                    "2": {
                         "then": "Réservée aux élèves de l’école"
                     },
-                    "4": {
+                    "3": {
                         "then": "Non accessible"
                     }
                 },
@@ -1653,9 +1643,6 @@
                         "then": "Accessible du lever au coucher du soleil"
                     },
                     "1": {
-                        "then": "Toujours accessible"
-                    },
-                    "2": {
                         "then": "Toujours accessible"
                     }
                 },

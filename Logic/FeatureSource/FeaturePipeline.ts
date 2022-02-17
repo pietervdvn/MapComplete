@@ -5,7 +5,6 @@ import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from 
 import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
-import MetaTagging from "../MetaTagging";
 import RememberingSource from "./Sources/RememberingSource";
 import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
 import GeoJsonSource from "./Sources/GeoJsonSource";
@@ -44,37 +43,35 @@ export default class FeaturePipeline {
     public readonly timeout: UIEventSource<number>;
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
-
-    
-    
+    public readonly relationTracker: RelationsTracker
+    /**
+     * Keeps track of all raw OSM-nodes.
+     * Only initialized if 'type_node' is defined as layer
+     */
+    public readonly fullNodeDatabase?: FullNodeDatabaseSource
     private readonly overpassUpdater: OverpassFeatureSource
     private state: MapState;
-    private readonly relationTracker: RelationsTracker
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>;
-
     /**
      * Keeps track of the age of the loaded data.
      * Has one freshness-Calculator for every layer
      * @private
      */
     private readonly freshnesses = new Map<string, TileFreshnessCalculator>();
-
     private readonly oldestAllowedDate: Date;
     private readonly osmSourceZoomLevel
-
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
-    private readonly metataggingRecalculated = new UIEventSource<void>(undefined)
-    private readonly requestMetataggingRecalculation = new UIEventSource<Date>(undefined)
     
-    /**
-     * Keeps track of all raw OSM-nodes.
-     * Only initialized if 'type_node' is defined as layer
-     */
-    public readonly fullNodeDatabase? : FullNodeDatabaseSource
-    
+    private readonly newGeometryHandler : NewGeometryFromChangesFeatureSource;
+
     constructor(
         handleFeatureSource: (source: FeatureSourceForLayer & Tiled) => void,
-        state: MapState) {
+        state: MapState,
+        options?: {
+            /*Used for metatagging - will receive all the sources with changeGeometry applied but without filtering*/
+            handleRawFeatureSource: (source: FeatureSourceForLayer) => void
+        }
+    ) {
         this.state = state;
 
         const self = this
@@ -103,10 +100,6 @@ export default class FeaturePipeline {
             }
         );
 
-        this.requestMetataggingRecalculation.stabilized(500).addCallbackAndRunD(_ => {
-            self.updateAllMetaTagging("Request stabilized")
-        })
-        
         const neededTilesFromOsm = this.getNeededTilesFromOsm(this.sufficientlyZoomed)
 
         const perLayerHierarchy = new Map<string, TileHierarchyMerger>()
@@ -115,13 +108,13 @@ export default class FeaturePipeline {
         // Given a tile, wraps it and passes it on to render (handled by 'handleFeatureSource'
         function patchedHandleFeatureSource(src: FeatureSourceForLayer & IndexedFeatureSource & Tiled) {
             // This will already contain the merged features for this tile. In other words, this will only be triggered once for every tile
-            const srcFiltered =
-                new FilteringFeatureSource(state, src.tileIndex,
-                    new ChangeGeometryApplicator(src, state.changes),
-                    self.metataggingRecalculated
-                )
+            const withChanges = new ChangeGeometryApplicator(src, state.changes);
+            const srcFiltered = new FilteringFeatureSource(state, src.tileIndex, withChanges)
 
             handleFeatureSource(srcFiltered)
+            if (options?.handleRawFeatureSource) {
+                options.handleRawFeatureSource(withChanges)
+            }
             self.somethingLoaded.setData(true)
             // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
         }
@@ -178,11 +171,6 @@ export default class FeaturePipeline {
 
             if (id === "current_view") {
                 handlePriviligedFeatureSource(state.currentView)
-                state.currentView.features.map(ffs => ffs[0]?.feature?.properties?.id).withEqualityStabilized((x,y) => x === y)
-                    .addCallbackAndRunD(_ => {
-                            self.applyMetaTags(state.currentView, <any>this.state, `currentview changed`)
-                        }
-                    )
                 continue
             }
 
@@ -216,7 +204,7 @@ export default class FeaturePipeline {
                     TiledFeatureSource.createHierarchy(src, {
                         layer: src.layer,
                         minZoomLevel: this.osmSourceZoomLevel,
-                        dontEnforceMinZoom: true,
+                        noDuplicates: true,
                         registerTile: (tile) => {
                             new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                             perLayerHierarchy.get(id).registerTile(tile)
@@ -274,7 +262,7 @@ export default class FeaturePipeline {
                 })
         })
 
-        if(this.fullNodeDatabase !== undefined){
+        if (this.fullNodeDatabase !== undefined) {
             osmFeatureSource.rawDataHandlers.push((osmJson, tileId) => this.fullNodeDatabase.handleOsmJson(osmJson, tileId))
         }
 
@@ -288,7 +276,7 @@ export default class FeaturePipeline {
             (source) => TiledFeatureSource.createHierarchy(source, {
                 layer: source.layer,
                 minZoomLevel: source.layer.layerDef.minzoom,
-                dontEnforceMinZoom: true,
+                noDuplicates: true,
                 maxFeatureCount: state.layoutToUse.clustering.minNeededElements,
                 maxZoomLevel: state.layoutToUse.clustering.maxZoom,
                 registerTile: (tile) => {
@@ -296,7 +284,7 @@ export default class FeaturePipeline {
                     self.localStorageSavers.get(tile.layer.layerDef.id)?.addTile(tile)
                     perLayerHierarchy.get(source.layer.layerDef.id).registerTile(new RememberingSource(tile))
                     tile.features.addCallbackAndRunD(f => {
-                        if(f.length === 0){
+                        if (f.length === 0) {
                             return
                         }
                         self.onNewDataLoaded(tile)
@@ -305,17 +293,20 @@ export default class FeaturePipeline {
                 }
             }),
             updater,
-            {handleLeftovers: (leftOvers) => {
-                console.warn("Overpass returned a few non-matched features:", leftOvers)
-                }})
+            {
+                handleLeftovers: (leftOvers) => {
+                    console.warn("Overpass returned a few non-matched features:", leftOvers)
+                }
+            })
 
 
         // Also load points/lines that are newly added. 
-        const newGeometry = new NewGeometryFromChangesFeatureSource(state.changes, state.osmConnection._oauth_config.url)
+        const newGeometry = new NewGeometryFromChangesFeatureSource(state.changes, state.allElements, state.osmConnection._oauth_config.url)
+        this.newGeometryHandler = newGeometry;
         newGeometry.features.addCallbackAndRun(geometries => {
             console.debug("New geometries are:", geometries)
         })
-        
+
         new RegisteringAllFromFeatureSourceActor(newGeometry, state.allElements)
         // A NewGeometryFromChangesFeatureSource does not split per layer, so we do this next
         new PerLayerFeatureSourceSplitter(state.filteredLayers,
@@ -323,21 +314,18 @@ export default class FeaturePipeline {
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
-                perLayer.features.addCallbackAndRunD(_ => self.onNewDataLoaded(perLayer))
+                perLayer.features.addCallbackAndRunD(feats => {
+                    self.onNewDataLoaded(perLayer);
+                })
 
             },
             newGeometry,
-            {handleLeftovers: (leftOvers) => {
-                console.warn("Got some leftovers from the filteredLayers: ", leftOvers)
-                }}
+            {
+                handleLeftovers: (leftOvers) => {
+                    console.warn("Got some leftovers from the filteredLayers: ", leftOvers)
+                }
+            }
         )
-
-
-        // Whenever fresh data comes in, we need to update the metatagging
-        self.newDataLoadedSignal.stabilized(250).addCallback(src => {
-            self.updateAllMetaTagging(`New data loaded by ${src.name} (and stabilized)`)
-        })
-
 
         this.runningQuery = updater.runningQuery.map(
             overpass => {
@@ -349,16 +337,27 @@ export default class FeaturePipeline {
 
     }
 
-    private onNewDataLoaded(src: FeatureSource){
-        this.newDataLoadedSignal.setData(src)
-        this.requestMetataggingRecalculation.setData(new Date())
-    }
-    
     public GetAllFeaturesWithin(bbox: BBox): any[][] {
         const self = this
         const tiles = []
         Array.from(this.perLayerHierarchy.keys())
             .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
+        return tiles;
+    }
+
+    public GetAllFeaturesAndMetaWithin(bbox: BBox, layerIdWhitelist?: Set<string>): {features: any[], layer: string}[] {
+        const self = this
+        const tiles :{features: any[], layer: string}[]= []
+        Array.from(this.perLayerHierarchy.keys())
+            .forEach(key => {
+                if(layerIdWhitelist !== undefined && !layerIdWhitelist.has(key)){
+                    return;
+                }
+                return tiles.push({
+                    layer: key,
+                    features: [].concat(...self.GetFeaturesWithin(key, bbox))
+                });
+            })
         return tiles;
     }
 
@@ -382,20 +381,24 @@ export default class FeaturePipeline {
         })
     }
 
+    private onNewDataLoaded(src: FeatureSource) {
+        this.newDataLoadedSignal.setData(src)
+    }
+
     private freshnessForVisibleLayers(z: number, x: number, y: number): Date {
         let oldestDate = undefined;
         for (const flayer of this.state.filteredLayers.data) {
-            if (!flayer.isDisplayed.data) {
+            if (!flayer.isDisplayed.data && !flayer.layerDef.forceLoad) {
                 continue
             }
             if (this.state.locationControl.data.zoom < flayer.layerDef.minzoom) {
                 continue;
             }
-            if(flayer.layerDef.maxAgeOfCache === 0){
+            if (flayer.layerDef.maxAgeOfCache === 0) {
                 return undefined;
             }
             const freshnessCalc = this.freshnesses.get(flayer.layerDef.id)
-            if(freshnessCalc === undefined){
+            if (freshnessCalc === undefined) {
                 console.warn("No freshness tracker found for ", flayer.layerDef.id)
                 return undefined
             }
@@ -411,6 +414,9 @@ export default class FeaturePipeline {
         return oldestDate
     }
 
+    /*
+    * Gives an UIEventSource containing the tileIndexes of the tiles that should be loaded from OSM
+    * */
     private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {
@@ -498,44 +504,14 @@ export default class FeaturePipeline {
         return updater;
     }
 
-    private applyMetaTags(src: FeatureSourceForLayer, state: any, reason: string) {
-        const self = this
-        if(src === undefined){
-            throw "Src is undefined"
-        }
-        const layerDef = src.layer.layerDef;
-        console.debug(`Applying metatags onto ${src.name} due to ${reason} which has ${src.features.data?.length} features`)
-        if(src.features.data.length == 0){
-            return
-        }
-        MetaTagging.addMetatags(
-            src.features.data,
-            {
-                memberships: this.relationTracker,
-                getFeaturesWithin: (layerId, bbox: BBox) => self.GetFeaturesWithin(layerId, bbox),
-                getFeatureById: (id: string) => self.state.allElements.ContainingFeatures.get(id)
-            },
-            layerDef,
-            state,
-            {
-                includeDates: true,
-                // We assume that the non-dated metatags are already set by the cache generator
-                includeNonDates: layerDef.source.geojsonSource === undefined || !layerDef.source.isOsmCacheLayer
-            }
-        )
-
-    }
-    
-
-    public updateAllMetaTagging(reason: string) {
-        const self = this;
-        this.perLayerHierarchy.forEach(hierarchy => {
-            hierarchy.loadedTiles.forEach(tile => {
-                self.applyMetaTags(tile, <any> this.state, `${reason} (tile ${tile.tileIndex})`)
-            })
+    /**
+    * Inject a new point
+     */
+    InjectNewPoint(geojson) {
+        this.newGeometryHandler.features.data.push({
+            feature: geojson,
+            freshness: new Date()
         })
-        self.metataggingRecalculated.ping()
-
+        this.newGeometryHandler.features.ping();
     }
-
 }

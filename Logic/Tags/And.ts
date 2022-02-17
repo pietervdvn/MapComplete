@@ -117,7 +117,7 @@ export class And extends TagsFilter {
         }
         return result;
     }
-    
+
     AsJson() {
         return {
             and: this.and.map(a => a.AsJson())

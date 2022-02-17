@@ -7,15 +7,12 @@ import {Utils} from "../../Utils";
 
 export class QueryParameters {
 
+    static defaults = {}
+    static documentation = {}
     private static order: string [] = ["layout", "test", "z", "lat", "lon"];
     private static _wasInitialized: Set<string> = new Set()
     private static knownSources = {};
     private static initialized = false;
-    static defaults = {}
-
-    static documentation = {}
-
-
 
     public static GetQueryParameter(key: string, deflt: string, documentation?: string): UIEventSource<string> {
         if (!this.initialized) {
@@ -35,10 +32,9 @@ export class QueryParameters {
         return source;
     }
 
-    public static GetBooleanQueryParameter(key: string, deflt: string, documentation?: string): UIEventSource<boolean> {
-        return QueryParameters.GetQueryParameter(key, deflt, documentation).map(str => str === "true", [], b => "" + b)
+    public static GetBooleanQueryParameter(key: string, deflt: boolean, documentation?: string): UIEventSource<boolean> {
+        return QueryParameters.GetQueryParameter(key, ""+ deflt, documentation).map(str => str === "true", [], b => "" + b)
     }
-
 
 
     public static wasInitialized(key: string): boolean {
@@ -75,7 +71,7 @@ export class QueryParameters {
                 QueryParameters.knownSources[key] = source;
             }
         }
-
+        
     }
 
     private static Serialize() {

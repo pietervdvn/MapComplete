@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/observation_tower/Tower_observation.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/observation_tower/Tower_observation.svg' height="100px"> 
 
 Towers with a panoramic view
 
@@ -21,10 +21,13 @@ Towers with a panoramic view
     + [images](#images)
     + [name](#name)
     + [Height](#height)
-    + [Operator](#operator)
-    + [website](#website)
+    + [access](#access)
     + [Fee](#fee)
     + [payment-options](#payment-options)
+    + [website](#website)
+    + [step_count](#step_count)
+    + [elevator](#elevator)
+    + [Operator](#operator)
     + [wheelchair-access](#wheelchair-access)
     + [wikipedia](#wikipedia)
 
@@ -44,6 +47,7 @@ Towers with a panoramic view
 
 
   - [observation_towers](https://mapcomplete.osm.be/observation_towers)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/observation_tower/observation_tower.json)
@@ -77,9 +81,12 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [guided](https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/step_count#values) [step_count](https://wiki.openstreetmap.org/wiki/Key:step_count) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/elevator#values) [elevator](https://wiki.openstreetmap.org/wiki/Key:elevator) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 
@@ -123,29 +130,18 @@ This is rendered with `This tower is {height} high`
 
 
 
-### Operator 
+### access 
 
 
 
-The question is **Who maintains this tower?**
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-This is rendered with `Maintained by <b>{operator}</b>`
+The question is **Can this tower be visited?**
 
 
 
-### website 
 
 
-
-The question is **What is the website of {name}?**
-
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
-
-
-
-  - **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This option cannot be chosen as answer_
+  - **This tower is publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - **This tower can only be visited with a guide** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>
 
 
 
@@ -182,6 +178,60 @@ The question is **Which methods of payment are accepted here?**
 
 
 
+### website 
+
+
+
+The question is **What is the website of {name}?**
+
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
+This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+
+
+
+  - **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This option cannot be chosen as answer_
+
+
+
+
+### step_count 
+
+
+
+The question is **How much individual steps does one have to climb to reach the top of this tower?**
+
+This rendering asks information about the property  [step_count](https://wiki.openstreetmap.org/wiki/Key:step_count) 
+This is rendered with `This tower has {step_count} steps to reach the top`
+
+
+
+### elevator 
+
+
+
+The question is **Does this tower have an elevator?**
+
+
+
+
+
+  - **This tower has an elevator which takes visitors to the top** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:elevator' target='_blank'>elevator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dyes' target='_blank'>yes</a>
+  - **This tower does not have an elevator** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:elevator' target='_blank'>elevator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dno' target='_blank'>no</a>
+
+
+
+
+### Operator 
+
+
+
+The question is **Who maintains this tower?**
+
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
+This is rendered with `Maintained by <b>{operator}</b>`
+
+
+
 ### wheelchair-access 
 
 
@@ -214,4 +264,4 @@ This is rendered with `{wikipedia():max-height:25rem}`
   - **No Wikipedia page has been linked yet** corresponds with _This option cannot be chosen as answer_
  
 
-This document is autogenerated from assets/layers/observation_tower/observation_tower.json
+This document is autogenerated from [assets/layers/observation_tower/observation_tower.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/observation_tower/observation_tower.json)

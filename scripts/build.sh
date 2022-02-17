@@ -25,6 +25,8 @@ cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
+cp assets/generated/*.png dist/assets/generated/
+cp assets/generated/*.svg dist/assets/generated/
 
 SRC_MAPS="--no-source-maps"
 BRANCH=`git rev-parse --abbrev-ref HEAD`
@@ -37,7 +39,11 @@ fi
 
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "land.html" "customGenerator.html" "theme.html" vendor
+parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
+if [ $? -ne 0 ]; then
+    echo "ERROR - stopping the build"
+    exit 1
+fi
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
@@ -47,15 +53,9 @@ do
     echo -e "\n\n  $theme"
     echo -e " ------------ \n\n"
     # Builds the necessary files for just one theme, e.g. 'bookcases.html' + 'index_bookcases.ts' + supporting file
-    # npm run generate && node --max_old_space_size=12000 $(which parcel)  build 
-    parcel build --public-url './' $SRC_MAPS "$theme.html" 
-done
-# At last: a workaround; parcel 1.x borks the link to social images; the public-URL (./) is setup incorrectly, so we fix those
-cd dist
-echo -e "Fixing social images..."
-for file in $(ls *.html)
-do
-    echo "Hi!"
-    # sed -i 's!<meta content="\([^"]\+\)" property="og:image">!<meta content="./\1" property="og:image">!' $file
-    # sed -i 's!<meta property="og:image" content="\([^"]\+\)">!<meta content="./\1" property="og:image">!' $file
+    parcel build --public-url './' $SRC_MAPS "$theme.html"
+    if [ $? -ne 0 ]; then
+        echo "ERROR - stopping the build"
+        exit 1
+    fi
 done

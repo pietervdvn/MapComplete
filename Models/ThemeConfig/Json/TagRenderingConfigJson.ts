@@ -9,7 +9,7 @@ export interface TagRenderingConfigJson {
     /**
      * The id of the tagrendering, should be an unique string.
      * Used to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.
-     * 
+     *
      * Use 'questions' to trigger the question box of this group (if a group is defined)
      */
     id?: string,
@@ -21,13 +21,19 @@ export interface TagRenderingConfigJson {
     group?: string
 
     /**
+     * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
+     */
+    labels?: string[]
+
+    /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
      *
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
+     * type: rendered
      */
     render?: string | any,
-
+    
     /**
      * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
      * If undefined, the question is never asked and this tagrendering is read-only
@@ -56,6 +62,11 @@ export interface TagRenderingConfigJson {
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
          */
         type?: string,
+        /**
+         * A (translated) text that is shown (as gray text) within the textfield
+         */
+        placeholder?: string | any
+        
         /**
          * Extra parameters to initialize the input helper arguments.
          * For semantics, see the 'SpecialInputElements.md'
@@ -104,8 +115,14 @@ export interface TagRenderingConfigJson {
         /**
          * If the condition `if` is met, the text `then` will be rendered.
          * If not known yet, the user will be presented with `then` as an option
+         * type: rendered
          */
         then: string | any,
+        /**
+         * An icon supporting this mapping; typically shown pretty small
+         * Type: icon
+         */
+        icon?: string
         /**
          * In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).
          *

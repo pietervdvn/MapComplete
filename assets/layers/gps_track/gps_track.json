@@ -19,17 +19,22 @@
       }
     },
     "export_as_gpx",
+    "export_as_geojson",
     "minimap",
     {
       "id": "delete",
       "render": "{clear_location_history()}"
     }
   ],
-  "name": "Your track",
+  "name": {
+    "en": "Your travelled track",
+    "nl": "Jouw afgelegde route"
+  },
   "mapRendering": [
     {
       "width": 3,
       "color": "#bb000077"
     }
-  ]
+  ],
+  "syncSelection": "global"
 }

@@ -192,16 +192,13 @@ export class TagUtils {
                     }
 
                     const f = (value: string | undefined) => {
-                        if(value === undefined){
+                        if (value === undefined) {
                             return false;
                         }
-                        let b = Number(value?.trim() )
+                        let b = Number(value?.trim())
                         if (isNaN(b)) {
-                            if(value.endsWith(" UTC")) {
-                                value = value.replace(" UTC", "+00")
-                            }
-                            b = new Date(value).getTime()
-                            if(isNaN(b)){
+                            b = Utils.ParseDate(value).getTime()
+                            if (isNaN(b)) {
                                 return false
                             }
                         }
@@ -218,7 +215,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                    split[1],
                     true
                 );
             }
@@ -228,8 +225,8 @@ export class TagUtils {
                     split[1] = "..*"
                 }
                 return new RegexTag(
-                    new RegExp("^" + split[0] + "$"),
-                    new RegExp("^" + split[1] + "$")
+                    split[0],
+                    split[1]
                 );
             }
             if (tag.indexOf("!:=") >= 0) {
@@ -259,7 +256,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                    split[1],
                     true
                 );
             }
@@ -273,7 +270,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$")
+                    split[1]
                 );
             }
             if (tag.indexOf("=") >= 0) {
@@ -288,6 +285,10 @@ export class TagUtils {
             throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
 
         }
+        
+        if(json.and !== undefined && json.or !== undefined){
+            throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`}
+        
         if (json.and !== undefined) {
             return new And(json.and.map(t => TagUtils.Tag(t, context)));
         }

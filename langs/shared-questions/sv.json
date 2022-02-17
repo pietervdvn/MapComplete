@@ -1,5 +1,5 @@
 {
-    "undefined": {
+    "shared_questions": {
         "description": {
             "question": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>"
         },
@@ -21,7 +21,7 @@
             "question": "Tillåts hundar i den här affären?"
         },
         "email": {
-            "question": "Vad är e-postadressen till {name}?"
+            "question": "Vad är e-postadressen till {title()}?"
         },
         "level": {
             "mappings": {
@@ -42,7 +42,7 @@
             "render": "Ligger på {level}:e våningen"
         },
         "opening_hours": {
-            "question": "Vilka är öppettiderna för {name}?",
+            "question": "Vilka är öppettiderna för {title()}?",
             "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -57,7 +57,7 @@
             "question": "Vilka betalningsmetoder accepteras här?"
         },
         "phone": {
-            "question": "Vad är telefonnumret till {name}?"
+            "question": "Vad är telefonnumret till {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +77,7 @@
             "question": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?"
         },
         "website": {
-            "question": "Vad är webbplatsen för {name}?"
+            "question": "Vad är webbplatsen för {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

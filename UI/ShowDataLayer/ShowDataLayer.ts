@@ -1,9 +1,9 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/RenderingMultiPlexerFeatureSource";
+import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 /*
 // import 'leaflet-polylineoffset'; 
 We don't actually import it here. It is imported in the 'MinimapImplementation'-class, which'll result in a patched 'L' object.
@@ -44,12 +44,12 @@ export default class ShowDataLayer {
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
     private readonly showDataLayerid: number;
+    private readonly createPopup: (tags: any, layer: LayerConfig) => ScrollableFullScreen
 
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
         this.showDataLayerid = ShowDataLayer.dataLayerIds;
         ShowDataLayer.dataLayerIds++
-        this._enablePopups = options.enablePopups ?? true;
         if (options.features === undefined) {
             console.error("Invalid ShowDataLayer invocation: options.features is undefed")
             throw "Invalid ShowDataLayer invocation: options.features is undefed"
@@ -57,7 +57,12 @@ export default class ShowDataLayer {
         this._features = new RenderingMultiPlexerFeatureSource(options.features, options.layerToShow);
         this._layerToShow = options.layerToShow;
         this._selectedElement = options.selectedElement
-        this.allElements = options.allElements;
+        this.allElements = options.state?.allElements;
+        this.createPopup = undefined;
+        this._enablePopups = options.popup !== undefined;
+        if (options.popup !== undefined) {
+            this.createPopup = options.popup
+        }
         const self = this;
 
         options.leafletMap.addCallback(_ => {
@@ -68,7 +73,7 @@ export default class ShowDataLayer {
         this._features.features.addCallback(_ => self.update(options));
         options.doShowLayer?.addCallback(doShow => {
             const mp = options.leafletMap.data;
-            if(mp === null){
+            if (mp === null) {
                 self.Destroy()
                 return true;
             }
@@ -137,7 +142,7 @@ export default class ShowDataLayer {
         }
     }
 
-    private update(options: ShowDataLayerOptions) : boolean{
+    private update(options: ShowDataLayerOptions): boolean {
         if (this._features.features.data === undefined) {
             return;
         }
@@ -147,13 +152,13 @@ export default class ShowDataLayer {
         }
         const mp = options.leafletMap.data;
 
-        if(mp === null){
+        if (mp === null) {
             return true; // Unregister as the map has been destroyed
         }
         if (mp === undefined) {
             return;
         }
-       
+
         this._cleanCount++
         // clean all the old stuff away, if any
         if (this.geoLayer !== undefined) {
@@ -300,14 +305,14 @@ export default class ShowDataLayer {
 
         leafletLayer.bindPopup(popup);
 
-        let infobox: FeatureInfoBox = undefined;
-
+        let infobox: ScrollableFullScreen = undefined;
         const id = `popup-${feature.properties.id}-${feature.geometry.type}-${this.showDataLayerid}-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}-${feature.multiLineStringIndex ?? ""}`
         popup.setContent(`<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`)
+        const createpopup = this.createPopup;
         leafletLayer.on("popupopen", () => {
             if (infobox === undefined) {
                 const tags = this.allElements?.getEventSourceById(feature.properties.id) ?? new UIEventSource<any>(feature.properties);
-                infobox = new FeatureInfoBox(tags, layer);
+                infobox = createpopup(tags, layer);
 
                 infobox.isShown.addCallback(isShown => {
                     if (!isShown) {

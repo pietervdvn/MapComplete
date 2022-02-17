@@ -159,7 +159,7 @@
                             "then": "Estação de despejo"
                         }
                     },
-                    "render": "Estação de despejo {nome}"
+                    "render": "Estação de despejo {name}"
                 }
             }
         },

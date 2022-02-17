@@ -1,6 +1,7 @@
 import Translations from "./i18n/Translations";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
+import Loading from "./Base/Loading";
 
 export default class CenterMessageBox extends VariableUiElement {
 
@@ -10,7 +11,7 @@ export default class CenterMessageBox extends VariableUiElement {
         const message = updater.runningQuery.map(
             isRunning => {
                 if (isRunning) {
-                    return {el: t.loadingData};
+                    return {el: new Loading(t.loadingData)};
                 }
                 if (!updater.sufficientlyZoomed.data) {
                     return {el: t.zoomIn}
@@ -26,8 +27,8 @@ export default class CenterMessageBox extends VariableUiElement {
 
         super(message.map(toShow => toShow.el))
 
-        this.SetClass("block " +
-            "rounded-3xl bg-white text-xl font-bold text-center pointer-events-none p-4")
+        this.SetClass("flex justify-center " +
+            "rounded-3xl bg-white text-xl font-bold pointer-events-none p-4")
         this.SetStyle("transition: opacity 750ms linear")
 
         message.addCallbackAndRun(toShow => {

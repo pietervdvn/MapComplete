@@ -4,18 +4,15 @@ import * as licenses from "../assets/generated/license_info.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
-import {
-    DesugaringContext,
-    PrepareLayer,
-    PrepareTheme,
-    ValidateLayer,
-    ValidateThemeAndLayers
-} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
+import {PrevalidateTheme, ValidateLayer, ValidateThemeAndLayers} from "../Models/ThemeConfig/Conversion/Validation";
 import {Translation} from "../UI/i18n/Translation";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import * as questions from "../assets/tagRenderings/questions.json";
 import * as icons from "../assets/tagRenderings/icons.json";
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson";
+import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
+import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
+import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -72,10 +69,16 @@ class LayerOverviewUtils {
         const dict = new Map<string, TagRenderingConfigJson>();
 
         for (const key in questions["default"]) {
+            if (key === "id") {
+                continue
+            }
             questions[key].id = key;
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
         for (const key in icons["default"]) {
+            if (key === "id") {
+                continue
+            }
             if (typeof icons[key] !== "object") {
                 continue
             }
@@ -84,11 +87,36 @@ class LayerOverviewUtils {
         }
 
         dict.forEach((value, key) => {
+            if (key === "id") {
+                return
+            }
             value.id = value.id ?? key;
         })
 
         return dict;
     }
+
+    checkAllSvgs() {
+        const allSvgs = ScriptUtils.readDirRecSync("./assets")
+            .filter(path => path.endsWith(".svg"))
+            .filter(path => !path.startsWith("./assets/generated"))
+        let errCount = 0;
+        for (const path of allSvgs) {
+            const contents = readFileSync(path, "UTF8")
+            if (contents.indexOf("data:image/png;") < 0) {
+                continue;
+            }
+            console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
+            errCount++;
+            if (path.startsWith("./assets/svg")) {
+                throw "A core SVG is actually a PNG. Don't do this!"
+            }
+        }
+        if (errCount > 0) {
+            throw `There are ${errCount} fake svgs`
+        }
+    }
+
 
     main(_: string[]) {
 
@@ -105,7 +133,7 @@ class LayerOverviewUtils {
             "themes": Array.from(sharedThemes.values())
         }))
 
-        writeFileSync("./assets/generated/known_layers.json", JSON.stringify(Array.from(sharedLayers.values())))
+        writeFileSync("./assets/generated/known_layers.json", JSON.stringify({layers: Array.from(sharedLayers.values())}))
 
 
         {
@@ -120,8 +148,9 @@ class LayerOverviewUtils {
             const rendering = (<PointRenderingConfigJson>protolayer.mapRendering[0])
             rendering.icon["mappings"] = iconsPerTheme
             writeFileSync('./assets/themes/mapcomplete-changes/mapcomplete-changes.json', JSON.stringify(proto, null, "  "))
-
         }
+
+        this.checkAllSvgs()
     }
 
     private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {
@@ -132,16 +161,16 @@ class LayerOverviewUtils {
         const sharedTagRenderings = this.getSharedTagRenderings();
         const layerFiles = ScriptUtils.getLayerFiles();
         const sharedLayers = new Map<string, LayerConfigJson>()
-        const prepLayer = new PrepareLayer();
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
             sharedLayers
         }
+        const prepLayer = new PrepareLayer(state);
         for (const sharedLayerJson of layerFiles) {
             const context = "While building builtin layer " + sharedLayerJson.path
-            const fixed = prepLayer.convertStrict(state, sharedLayerJson.parsed, context)
+            const fixed = prepLayer.convertStrict(sharedLayerJson.parsed, context)
             const validator = new ValidateLayer(knownImagePaths, sharedLayerJson.path, true);
-            validator.convertStrict(state, fixed, context)
+            validator.convertStrict(fixed, context)
 
             if (sharedLayers.has(fixed.id)) {
                 throw "There are multiple layers with the id " + fixed.id
@@ -168,10 +197,11 @@ class LayerOverviewUtils {
             let themeFile = themeInfo.parsed
             const themePath = themeInfo.path
 
-            themeFile = new PrepareTheme().convertStrict(convertState, themeFile, themePath)
+            new PrevalidateTheme().convertStrict(themeFile, themePath)
+            themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
             new ValidateThemeAndLayers(knownImagePaths, themePath, true)
-                .convertStrict(convertState, themeFile, themePath)
+                .convertStrict(themeFile, themePath)
 
             this.writeTheme(themeFile)
             fixed.set(themeFile.id, themeFile)

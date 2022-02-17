@@ -22,27 +22,27 @@ export class DefaultGuiState {
         ));
         this.welcomeMessageIsOpened = QueryParameters.GetBooleanQueryParameter(
             "welcome-control-toggle",
-            "false",
+            false,
             "Whether or not the welcome panel is shown"
         )
         this.downloadControlIsOpened = QueryParameters.GetBooleanQueryParameter(
             "download-control-toggle",
-            "false",
+            false,
             "Whether or not the download panel is shown"
         )
         this.filterViewIsOpened = QueryParameters.GetBooleanQueryParameter(
             "filter-toggle",
-            "false",
+            false,
             "Whether or not the filter view is shown"
         )
         this.copyrightViewIsOpened = QueryParameters.GetBooleanQueryParameter(
             "copyright-toggle",
-            "false",
+            false,
             "Whether or not the copyright view is shown"
         )
         this.currentViewControlIsOpened = QueryParameters.GetBooleanQueryParameter(
             "currentview-toggle",
-            "false",
+            false,
             "Whether or not the current view box is shown"
         )
         const states = {
@@ -56,7 +56,7 @@ export class DefaultGuiState {
             hash = hash.toLowerCase()
             states[hash]?.setData(true)
         })
-       
+
         if (Hash.hash.data === "" || Hash.hash.data === undefined) {
             this.welcomeMessageIsOpened.setData(true)
         }

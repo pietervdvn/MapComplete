@@ -32,10 +32,10 @@ function genImages(dryrun = false) {
         }
 
         let rawName = name;
-        if(dryrun){
+        if (dryrun) {
             rawName = "add";
         }
-        
+
         module += `    public static ${name} = "${svg}"\n`
         module += `    public static ${name}_img = Img.AsImageElement(Svg.${rawName})\n`
         module += `    public static ${name}_svg() { return new Img(Svg.${rawName}, true);}\n`

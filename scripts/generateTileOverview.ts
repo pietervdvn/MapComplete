@@ -19,23 +19,23 @@ function main(args: string[]) {
             continue
         }
         const z = match[1]
-        if(zoomLevel === undefined){
+        if (zoomLevel === undefined) {
             zoomLevel = z
-        }else if(zoomLevel !== z){
+        } else if (zoomLevel !== z) {
             throw "Mixed zoomlevels detected"
         }
-        
+
         const x = match[2]
         const y = match[3]
-        if(indices[x] === undefined){
+        if (indices[x] === undefined) {
             indices[x] = []
         }
         indices[x].push(Number(y))
     }
     indices["zoom"] = zoomLevel;
     const match = files[0].match("\(.*\)_\([0-9]*\)_\([0-9]*\)_\([0-9]*\).geojson")
-    const path = match[1]+"_"+zoomLevel+"_overview.json"
-    writeFileSync( path, JSON.stringify(indices))
+    const path = match[1] + "_" + zoomLevel + "_overview.json"
+    writeFileSync(path, JSON.stringify(indices))
     console.log("Written overview for", files.length, " tiles at", path)
 }
 

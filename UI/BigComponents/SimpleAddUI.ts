@@ -23,6 +23,7 @@ import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 import BaseLayer from "../../Models/BaseLayer";
+import Loading from "../Base/Loading";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -35,14 +36,17 @@ import BaseLayer from "../../Models/BaseLayer";
 export interface PresetInfo extends PresetConfig {
     name: string | BaseUIElement,
     icon: () => BaseUIElement,
-    layerToAddTo: FilteredLayer
+    layerToAddTo: FilteredLayer,
+    boundsFactor?: 0.25 | number
 }
 
 export default class SimpleAddUI extends Toggle {
 
     constructor(isShown: UIEventSource<boolean>,
+                resetScrollSignal: UIEventSource<void>,
                 filterViewIsOpened: UIEventSource<boolean>,
                 state: {
+                    featureSwitchIsTesting: UIEventSource<boolean>,
                     layoutToUse: LayoutConfig,
                     osmConnection: OsmConnection,
                     changes: Changes,
@@ -65,6 +69,11 @@ export default class SimpleAddUI extends Toggle {
 
 
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
+        selectedPreset.addCallback(_ => {
+            resetScrollSignal.ping();
+        })
+        
+        
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
         state.LastClickLocation.addCallback(_ => selectedPreset.setData(undefined))
 
@@ -91,7 +100,7 @@ export default class SimpleAddUI extends Toggle {
                         return presetsOverview
                     }
 
-                    function confirm(tags:any[], location: {lat: number, lon:number}, snapOntoWayId?: string) {
+                    function confirm(tags: any[], location: { lat: number, lon: number }, snapOntoWayId?: string) {
                         if (snapOntoWayId === undefined) {
                             createNewPoint(tags, location, undefined)
                         } else {
@@ -123,7 +132,7 @@ export default class SimpleAddUI extends Toggle {
             new Toggle(
                 new Toggle(
                     new Toggle(
-                        Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
+                        new Loading(Translations.t.general.add.stillLoading).SetClass("alert"),
                         addUi,
                         state.featurePipeline.runningQuery
                     ),
@@ -155,6 +164,7 @@ export default class SimpleAddUI extends Toggle {
 
     private static CreateAllPresetsPanel(selectedPreset: UIEventSource<PresetInfo>,
                                          state: {
+                                             featureSwitchIsTesting: UIEventSource<boolean>;
                                              filteredLayers: UIEventSource<FilteredLayer[]>,
                                              featureSwitchFilter: UIEventSource<boolean>,
                                              osmConnection: OsmConnection
@@ -162,26 +172,23 @@ export default class SimpleAddUI extends Toggle {
         const presetButtons = SimpleAddUI.CreatePresetButtons(state, selectedPreset)
         let intro: BaseUIElement = Translations.t.general.add.intro;
 
-        let testMode: BaseUIElement = undefined;
-        if (state.osmConnection?.userDetails?.data?.dryRun) {
-            testMode = Translations.t.general.testing.Clone().SetClass("alert")
-        }
+        let testMode: BaseUIElement = new Toggle(Translations.t.general.testing.SetClass("alert"),
+            undefined,
+            state.featureSwitchIsTesting);
 
         return new Combine([intro, testMode, presetButtons]).SetClass("flex flex-col")
 
     }
 
-    private static CreatePresetSelectButton(preset: PresetInfo, osmConnection: OsmConnection) {
+    private static CreatePresetSelectButton(preset: PresetInfo) {
 
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, osmConnection, false);
         return new SubtleButton(
             preset.icon(),
             new Combine([
                 Translations.t.general.add.addNew.Subs({
                     category: preset.name
                 }).SetClass("font-bold"),
-                Translations.WT(preset.description)?.FirstSentence(),
-                tagInfo?.SetClass("subtle")
+                Translations.WT(preset.description)?.FirstSentence()
             ]).SetClass("flex flex-col")
         )
     }
@@ -215,16 +222,15 @@ export default class SimpleAddUI extends Toggle {
                 let icon: () => BaseUIElement = () => layer.layerDef.mapRendering[0].GenerateLeafletStyle(new UIEventSource<any>(tags), false).html
                     .SetClass("w-12 h-12 block relative");
                 const presetInfo: PresetInfo = {
-                    tags: preset.tags,
                     layerToAddTo: layer,
                     name: preset.title,
                     title: preset.title,
-                    description: preset.description,
                     icon: icon,
-                    preciseInput: preset.preciseInput
+                    preciseInput: preset.preciseInput,
+                    ...preset
                 }
 
-                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo, state.osmConnection);
+                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo);
                 button.onClick(() => {
                     selectedPreset.setData(presetInfo)
                 })
