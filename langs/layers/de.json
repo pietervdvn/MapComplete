@@ -3214,6 +3214,9 @@
                     },
                     "5": {
                         "question": "Mülleimer für Nadeln und andere scharfe Gegenstände"
+                    },
+                    "6": {
+                        "question": "Mülleimer für Plastik"
                     }
                 }
             },
@@ -3276,6 +3279,9 @@
                     },
                     "5": {
                         "then": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
+                    },
+                    "6": {
+                        "then": "Ein Abfalleimer für Plastik"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"

@@ -3473,6 +3473,7 @@
                 "question": "Zijn honden toegelaten in dit gebied?"
             },
             "Editable description": {
+                "question": "Is er extra info die je kwijt wil?",
                 "render": "Extra info: <i>{description:0}</i>"
             },
             "Email": {
@@ -4999,6 +5000,9 @@
                     },
                     "5": {
                         "question": "Vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                    },
+                    "6": {
+                        "question": "Vuilnisbak voor plastic"
                     }
                 }
             },
@@ -5061,6 +5065,9 @@
                     },
                     "5": {
                         "then": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                    },
+                    "6": {
+                        "then": "Een vuilnisbak voor plastic"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"

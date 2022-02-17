@@ -1123,6 +1123,7 @@
         }
     },
     "birdhide": {
+        "description": "A birdhide",
         "filter": {
             "0": {
                 "options": {
@@ -1130,7 +1131,84 @@
                         "question": "Wheelchair accessible"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Only covered birdhides"
+                    }
+                }
             }
+        },
+        "name": "Bird watching places",
+        "presets": {
+            "0": {
+                "description": "A covered shelter where one can watch birds comfortably",
+                "title": "Birdhide"
+            },
+            "1": {
+                "description": "A screen or wall with openings to watch birds",
+                "title": "Bird blind"
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "0": {
+                        "then": "Bird blind"
+                    },
+                    "1": {
+                        "then": "Bird hide"
+                    },
+                    "2": {
+                        "then": "Bird tower hide"
+                    },
+                    "3": {
+                        "then": "Bird hide shelter"
+                    }
+                },
+                "question": "Is this a bird blind or a bird watching shelter?"
+            },
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "There are special provisions for wheelchair users"
+                    },
+                    "1": {
+                        "then": "A wheelchair can easily use this birdhide"
+                    },
+                    "2": {
+                        "then": "This birdhide is reachable by wheelchair, but it is not easy"
+                    },
+                    "3": {
+                        "then": "Not accessible to wheelchair users"
+                    }
+                },
+                "question": "Is this bird hide accessible to wheelchair users?"
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Operated by Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Operated by the Agency for Nature and Forests"
+                    }
+                },
+                "question": "Who operates this birdhide?",
+                "render": "Operated by {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Bird hide {name}"
+                },
+                "2": {
+                    "then": "Bird blind {name}"
+                }
+            },
+            "render": "Bird watching place"
         }
     },
     "cafe_pub": {
@@ -3515,6 +3593,35 @@
     },
     "nature_reserve": {
         "description": "A nature reserve is an area where nature can take its course",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Freely accesible"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "All nature reserves"
+                    },
+                    "1": {
+                        "question": "Dogs are allowed to roam freely"
+                    },
+                    "2": {
+                        "question": "Dogs are allowed if they are leashed"
+                    }
+                }
+            }
+        },
+        "name": "Nature reserve",
+        "presets": {
+            "0": {
+                "description": "Add a missing nature reserve",
+                "title": "nature reserve"
+            }
+        },
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
@@ -3558,6 +3665,10 @@
                 },
                 "question": "Are dogs allowed in this nature reserve?"
             },
+            "Editable description": {
+                "question": "Is there some extra info?",
+                "render": "Extra info: <i>{description:0}</i>"
+            },
             "Email": {
                 "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
@@ -3570,6 +3681,9 @@
                 },
                 "question": "What is the name of this area?",
                 "render": "This area is named {name}"
+            },
+            "Non-editable description": {
+                "render": "Extra information: <i>{description}</i>"
             },
             "Operator tag": {
                 "mappings": {
@@ -3764,6 +3878,7 @@
     },
     "parking": {
         "description": "A layer showing car parkings",
+        "name": "Parking",
         "presets": {
             "0": {
                 "title": "car parking"
@@ -5088,6 +5203,9 @@
                     },
                     "5": {
                         "question": "Waste basket for sharps"
+                    },
+                    "6": {
+                        "question": "Waste basket for plastic"
                     }
                 }
             },
@@ -5150,6 +5268,9 @@
                     },
                     "5": {
                         "then": "A waste basket for needles and other sharp objects"
+                    },
+                    "6": {
+                        "then": "A waste basket for plastic"
                     }
                 },
                 "question": "What kind of waste basket is this?"
