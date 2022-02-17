@@ -40,7 +40,7 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/recycling/recycling-14.svg",
+      "icon": "circle:white;./assets/layers/recycling/recycling-14.svg",
       "iconBadges": [
         {
           "if": "recycling:batteries=yes",
