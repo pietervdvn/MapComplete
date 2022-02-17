@@ -4046,6 +4046,9 @@
                     },
                     "17": {
                         "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Restafval kan hier gerecycled worden</div>"
+                    },
+                    "18": {
+                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Restafval kan hier gerecycled worden</div>"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"
