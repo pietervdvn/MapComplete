@@ -3,7 +3,7 @@ import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
-import {DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
+import {DetectMappingsWithImages, DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
 import * as Assert from "assert";
 import {FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
 
@@ -449,7 +449,25 @@ export default class LegacyThemeLoaderSpec extends T {
                 const fixedMapping = fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then
                 Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg",
                     fixedMapping)
-            } ]
+            } ],
+            ["Images in 'thens' are detected", () => {
+                const r = new DetectMappingsWithImages().convert({
+                        "mappings": [
+                    {
+                        "if": "bicycle_parking=stands",
+                        "then": {
+                            "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+                            "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                            "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                            "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                            "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                            "hu": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+                            "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+                            "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        }
+                    }]}, "test");
+                T.isTrue(r.warnings.length > 0, "No images found");
+            }]
             ]
         );
     }
