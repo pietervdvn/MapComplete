@@ -3473,6 +3473,7 @@
                 "question": "Zijn honden toegelaten in dit gebied?"
             },
             "Editable description": {
+                "question": "Is er extra info die je kwijt wil?",
                 "render": "Extra info: <i>{description:0}</i>"
             },
             "Email": {

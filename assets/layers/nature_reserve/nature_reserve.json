@@ -35,7 +35,8 @@
           ]
         },
         "then": {
-          "*": "{name}"
+          "*": "{name}",
+          "nl": "{name}"
         }
       }
     ]
@@ -348,7 +349,7 @@
     {
       "question": {
         "en": "Is there some extra info?",
-       "nl": "Is er extra info die je kwijt wil?"
+        "nl": "Is er extra info die je kwijt wil?"
       },
       "render": {
         "en": "Extra info: <i>{description:0}</i>",

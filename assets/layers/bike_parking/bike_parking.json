@@ -272,21 +272,6 @@
             "pt": "Estacionamento ao nível da superfície"
           },
           "hideInAnswer": true
-        },
-        {
-          "if": "location=rooftop",
-          "then": {
-            "en": "Rooftop parking",
-            "nl": "Dakparking",
-            "fr": "Parking sur un toit",
-            "hu": "Tetőparkoló",
-            "it": "Parcheggio sul tetto",
-            "ru": "Парковка на крыше",
-            "zh_Hant": "屋頂停車場",
-            "pt_BR": "Estacionamento no telhado",
-            "de": "Parkplatz auf dem Dach",
-            "pt": "Estacionamento no telhado"
-          }
         }
       ],
       "id": "Underground?"
