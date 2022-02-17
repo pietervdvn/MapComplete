@@ -168,9 +168,8 @@ export default class TagRenderingQuestion extends Combine {
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
        
-        const hasImages = applicableMappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
+        const hasImages = applicableMappings.findIndex(mapping => mapping.then.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
-
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
 
