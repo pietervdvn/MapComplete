@@ -130,13 +130,16 @@ export class Translation extends BaseUIElement {
     }
 
     public Subs(text: any): Translation {
+        return this.OnEveryLanguage((template, lang) => Utils.SubstituteKeys(template, text, lang))
+    }
+
+    public OnEveryLanguage(f: (s: string, language: string) => string): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
             if (!this.translations.hasOwnProperty(lang)) {
                 continue;
             }
-            let template: string = this.translations[lang];
-            newTranslations[lang] = Utils.SubstituteKeys(template, text, lang);
+            newTranslations[lang] = f(this.translations[lang], lang);
         }
         return new Translation(newTranslations);
 
