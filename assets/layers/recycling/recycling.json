@@ -211,153 +211,229 @@
           "if": "recycling:batteries=yes",
           "ifnot": "recycling:batteries=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/batteries.svg'/> Batteries can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/batteries.svg'/> Batterijen kunnen hier gerecycled worden</div>"
+            "en": "Batteries can be recycled here",
+            "nl": "Batterijen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/batteries.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:beverage_cartons=yes",
           "ifnot": "recycling:beverage_cartons=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/beverage_cartons.svg'/> Beverage cartons can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/beverage_cartons.svg'/> Drankpakken kunnen hier gerecycled worden</div>"
+            "en": "Beverage cartons can be recycled here",
+            "nl": "Drankpakken kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/beverage_cartons.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:cans=yes",
           "ifnot": "recycling:cans=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cans.svg'/> Cans can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cans.svg'/> Blikken kunnen hier gerecycled worden</div>"
+            "en": "Cans can be recycled here",
+            "nl": "Blikken kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/cans.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:clothes=yes",
           "ifnot": "recycling:clothes=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/clothes.svg'/> Clothes can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/clothes.svg'/> Kleren kunnen hier gerecycled worden</div>"
+            "en": "Clothes can be recycled here",
+            "nl": "Kleren kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/clothes.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:cooking_oil=yes",
           "ifnot": "recycling:cooking_oil=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cooking_oil.svg'/> Cooking oil can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cooking_oil.svg'/> Frituurvet kan hier gerecycled worden</div>"
+            "en": "Cooking oil can be recycled here",
+            "nl": "Frituurvet kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/cooking_oil.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:engine_oil=yes",
           "ifnot": "recycling:engine_oil=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/engine_oil.svg'/> Engine oil can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/engine_oil.svg'/> Motorolie kan hier gerecycled worden</div>"
+            "en": "Engine oil can be recycled here",
+            "nl": "Motorolie kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/engine_oil.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:green_waste=yes",
           "ifnot": "recycling:green_waste=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Green waste can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Groen afval kan hier gerecycled worden</div>"
+            "en": "Green waste can be recycled here",
+            "nl": "Groen afval kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/garden_waste.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:organic=yes",
           "ifnot": "recycling:organic=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Organic waste can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Organisch afval kan hier gerecycled worden</div>"
+            "en": "Organic waste can be recycled here",
+            "nl": "Organisch afval kan hier gerecycled worden"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/recycling/garden_waste.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "recycling:glass_bottles=yes",
           "ifnot": "recycling:glass_bottles=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass_bottles.svg'/> Glass bottles can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass_bottles.svg'/> Glazen flessen kunnen hier gerecycled worden</div>"
+            "en": "Glass bottles can be recycled here",
+            "nl": "Glazen flessen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/glass_bottles.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:glass=yes",
           "ifnot": "recycling:glass=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass.svg'/> Glass can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass.svg'/> Glas kan hier gerecycled worden</div>"
+            "en": "Glass can be recycled here",
+            "nl": "Glas kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/glass.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:newspaper=yes",
           "ifnot": "recycling:newspaper=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/newspaper.svg'/> Newspapers can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/newspaper.svg'/> Kranten kunnen hier gerecycled worden</div>"
+            "en": "Newspapers can be recycled here",
+            "nl": "Kranten kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/newspaper.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:paper=yes",
           "ifnot": "recycling:paper=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/paper.svg'/> Paper can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/paper.svg'/> Papier kan hier gerecycled worden</div>"
+            "en": "Paper can be recycled here",
+            "nl": "Papier kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/paper.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:plastic_bottles=yes",
           "ifnot": "recycling:plastic_bottles=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_bottles.svg'/> Plastic bottles can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_bottles.svg'/> Plastic flessen kunnen hier gerecycled worden</div>"
+            "en": "Plastic bottles can be recycled here",
+            "nl": "Plastic flessen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic_bottles.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:plastic_packaging=yes",
           "ifnot": "recycling:plastic_packaging=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_packaging.svg'/> Plastic packaging can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_packaging.svg'/> Plastic verpakking kan hier gerecycled worden</div>"
+            "en": "Plastic packaging can be recycled here",
+            "nl": "Plastic verpakking kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic_packaging.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:plastic=yes",
           "ifnot": "recycling:plastic=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic.svg'/> Plastic can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic.svg'/> Plastic kan hier gerecycled worden</div>"
+            "en": "Plastic can be recycled here",
+            "nl": "Plastic kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:scrap_metal=yes",
           "ifnot": "recycling:scrap_metal=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/scrap_metal.svg'/> Scrap metal can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/scrap_metal.svg'/> Oud metaal kan hier gerecycled worden</div>"
+            "en": "Scrap metal can be recycled here",
+            "nl": "Oud metaal kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/scrap_metal.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:shoes=yes",
           "ifnot": "recycling:shoes=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/shoes.svg'/> Shoes can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/shoes.svg'/> Schoenen kunnen hier gerecycled worden</div>"
+            "en": "Shoes can be recycled here",
+            "nl": "Schoenen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/shoes.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:small_electrical_appliances=yes",
           "ifnot": "recycling:small_electrical_appliances=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/small_electrical_appliances.svg'/> Small electrical appliances can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/small_electrical_appliances.svg'/> Kleine elektronische apparaten kunnen hier gerecycled worden</div>"
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektronische apparaten kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "class": "medium"
           }
         },
         {
           "if": "recycling:waste=yes",
           "ifnot": "recycling:waste=",
           "then": {
-            "en": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Residual waste can be recycled here</div>",
-            "nl": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Restafval kan hier gerecycled worden</div>"
+            "en": "Residual waste can be recycled here",
+            "nl": "Restafval kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/waste_disposal/waste_disposal.svg",
+            "class": "medium"
           }
         }
       ]
