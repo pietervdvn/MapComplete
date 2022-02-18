@@ -12,6 +12,7 @@ import {ExtractImages} from "./FixImages";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {And} from "../../../Logic/Tags/And";
 import Translations from "../../../UI/i18n/Translations";
+import Svg from "../../../Svg";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -50,12 +51,14 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _path?: string;
     private readonly knownImagePaths: Set<string>;
     private readonly _isBuiltin: boolean;
+    private _sharedTagRenderings: Map<string, any>;
 
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
+        this._sharedTagRenderings = sharedTagRenderings;
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[], information: string[] } {
@@ -78,7 +81,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
         {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
-            const images = new ExtractImages(this._isBuiltin).convertStrict(json, "validation")
+            const images = new ExtractImages(this._isBuiltin, this._sharedTagRenderings).convertStrict(json, "validation")
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
                 errors.push("Found a remote image: " + remoteImage + " in theme " + json.id + ", please download it.")
@@ -93,8 +96,11 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     continue
                 }
                 if (image.match(/[a-z]*/)) {
-                    // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                    continue;
+                    
+                    if(Svg.All[image + ".svg"] !== undefined){
+                        // This is a builtin img, e.g. 'checkmark' or 'crosshair'
+                        continue;
+                    }
                 }
 
                 if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
@@ -163,10 +169,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 }
 
 export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Validates a theme and the contained layers",
-            new ValidateTheme(knownImagePaths, path, isBuiltin),
-            new OnEvery("layers", new ValidateLayer(knownImagePaths, undefined, false))
+            new ValidateTheme(knownImagePaths, path, isBuiltin, sharedTagRenderings),
+            new OnEvery("layers", new ValidateLayer(undefined, false))
         );
     }
 }
@@ -302,12 +308,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
      * @private
      */
     private readonly _path?: string;
-    private readonly knownImagePaths?: Set<string>;
     private readonly _isBuiltin: boolean;
 
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(path: string, isBuiltin: boolean) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer");
-        this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
     }

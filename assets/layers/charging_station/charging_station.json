@@ -241,7 +241,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "CEE7_4F.svg",
+            "path": "./assets/layers/charging_station/CEE7_4F.svg",
             "class": "medium"
           }
         },
@@ -270,7 +270,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "TypeE.svg",
+            "path": "./assets/layers/charging_station/TypeE.svg",
             "class": "medium"
           }
         },
@@ -325,7 +325,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Chademo_type4.svg",
+            "path": "./assets/layers/charging_station/Chademo_type4.svg",
             "class": "medium"
           }
         },
@@ -380,7 +380,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type1_J1772.svg",
+            "path": "./assets/layers/charging_station/Type1_J1772.svg",
             "class": "medium"
           }
         },
@@ -435,7 +435,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type1_J1772.svg",
+            "path": "./assets/layers/charging_station/Type1_J1772.svg",
             "class": "medium"
           }
         },
@@ -490,7 +490,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type1-ccs.svg",
+            "path": "./assets/layers/charging_station/Type1-ccs.svg",
             "class": "medium"
           }
         },
@@ -545,7 +545,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Tesla-hpwc-model-s.svg",
+            "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
             "class": "medium"
           }
         },
@@ -600,7 +600,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type2_socket.svg",
+            "path": "./assets/layers/charging_station/Type2_socket.svg",
             "class": "medium"
           }
         },
@@ -655,7 +655,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type2_CCS.svg",
+            "path": "./assets/layers/charging_station/Type2_CCS.svg",
             "class": "medium"
           }
         },
@@ -710,7 +710,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type2_tethered.svg",
+            "path": "./assets/layers/charging_station/Type2_tethered.svg",
             "class": "medium"
           }
         },
@@ -765,7 +765,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type2_CCS.svg",
+            "path": "./assets/layers/charging_station/Type2_CCS.svg",
             "class": "medium"
           }
         },
@@ -826,7 +826,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Tesla-hpwc-model-s.svg",
+            "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
             "class": "medium"
           }
         },
@@ -887,7 +887,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "Type2_tethered.svg",
+            "path": "./assets/layers/charging_station/Type2_tethered.svg",
             "class": "medium"
           }
         },
@@ -916,7 +916,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "usb_port.svg",
+            "path": "./assets/layers/charging_station/usb_port.svg",
             "class": "medium"
           }
         },
@@ -967,7 +967,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "bosch-3pin.svg",
+            "path": "./assets/layers/charging_station/bosch-3pin.svg",
             "class": "medium"
           }
         },
@@ -1018,7 +1018,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "bosch-5pin.svg",
+            "path": "./assets/layers/charging_station/bosch-5pin.svg",
             "class": "medium"
           }
         }
@@ -3953,7 +3953,7 @@
               "operational_status=broken"
             ]
           },
-          "then": "cross:#c22;"
+          "then": "close:#c22;"
         },
         {
           "if": {

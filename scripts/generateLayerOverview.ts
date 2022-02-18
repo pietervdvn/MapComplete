@@ -169,7 +169,7 @@ class LayerOverviewUtils {
         for (const sharedLayerJson of layerFiles) {
             const context = "While building builtin layer " + sharedLayerJson.path
             const fixed = prepLayer.convertStrict(sharedLayerJson.parsed, context)
-            const validator = new ValidateLayer(knownImagePaths, sharedLayerJson.path, true);
+            const validator = new ValidateLayer(sharedLayerJson.path, true);
             validator.convertStrict(fixed, context)
 
             if (sharedLayers.has(fixed.id)) {
@@ -200,7 +200,10 @@ class LayerOverviewUtils {
             new PrevalidateTheme().convertStrict(themeFile, themePath)
             themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
-            new ValidateThemeAndLayers(knownImagePaths, themePath, true)
+            if(knownImagePaths === undefined){
+                throw "Could not load known images/licenses"
+            }
+            new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
                 .convertStrict(themeFile, themePath)
 
             this.writeTheme(themeFile)

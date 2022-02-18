@@ -358,16 +358,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * The leaf objects are replaced by the function
      */
-    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any) => any)) {
+    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) {
         const head = path[0]
         if (path.length === 1) {
             // We have reached the leaf
             const leaf = object[head];
             if (leaf !== undefined) {
                 if(Array.isArray(leaf)){
-                    object[head] = leaf.map(replaceLeaf)
+                    object[head] = leaf.map(o => replaceLeaf(o, travelledPath))
                 }else{
-                    object[head] = replaceLeaf(leaf)
+                    object[head] = replaceLeaf(leaf, travelledPath)
                 }
             }
             return
@@ -381,10 +381,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return;
         }
         if (Array.isArray(sub)) {
-            sub.forEach(el => Utils.WalkPath(path.slice(1), el, replaceLeaf))
+            sub.forEach((el, i) => Utils.WalkPath(path.slice(1), el, replaceLeaf, [...travelledPath, head, ""+i]))
             return;
         }
-        Utils.WalkPath(path.slice(1), sub, replaceLeaf)
+        Utils.WalkPath(path.slice(1), sub, replaceLeaf, [...travelledPath,head])
     }
 
     /**
@@ -393,7 +393,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * The leaf objects are collected in the list
      */
-    public static CollectPath(path: string[], object: any, collectedList = []): any[] {
+    public static CollectPath(path: string[], object: any, collectedList: {leaf: any, path: string[]}[] = [], travelledPath: string[] = []): {leaf: any, path: string[]}[] {
         if (object === undefined || object === null) {
             return collectedList;
         }
@@ -417,13 +417,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         if (Array.isArray(sub)) {
-            sub.forEach(el => Utils.CollectPath(path.slice(1), el, collectedList))
+            sub.forEach((el, i) => Utils.CollectPath(path.slice(1), el, collectedList, [...travelledPath,head,""+i]))
             return collectedList;
         }
         if (typeof sub !== "object") {
             return collectedList;
         }
-        return Utils.CollectPath(path.slice(1), sub, collectedList)
+        return Utils.CollectPath(path.slice(1), sub, collectedList,[...travelledPath, head])
     }
 
     /**
