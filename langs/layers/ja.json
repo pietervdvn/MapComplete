@@ -276,16 +276,16 @@
                         "then": "消火栓の種類は不明です。"
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> ピラー型。"
+                        "then": "ピラー型。"
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> パイプ型。"
+                        "then": "パイプ型。"
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> 壁型。"
+                        "then": "壁型。"
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" />地下式。"
+                        "then": "地下式。"
                     }
                 },
                 "question": "どんな消火栓なんですか?",

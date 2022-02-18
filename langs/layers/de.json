@@ -2124,16 +2124,16 @@
                         "then": "Der Typ des Hydranten ist unbekannt."
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
+                        "then": "Säulenart."
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
+                        "then": "Rohrtyp."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
+                        "then": "Wandtyp."
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
+                        "then": "Untergrundtyp."
                     }
                 },
                 "question": "Um welche Art von Hydrant handelt es sich?",

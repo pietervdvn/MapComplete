@@ -3486,16 +3486,16 @@
                         "then": "The hydrant type is unknown."
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type."
+                        "then": "Pillar type."
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type."
+                        "then": "Pipe type."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type."
+                        "then": "Wall type."
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type."
+                        "then": "Underground type."
                     }
                 },
                 "question": "What type of hydrant is it?",

@@ -957,7 +957,7 @@
                         "then": "Тип гидранта не определён."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены."
+                        "then": "Тип стены."
                     }
                 },
                 "question": "К какому типу относится этот гидрант?",

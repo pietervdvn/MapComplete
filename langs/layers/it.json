@@ -1126,16 +1126,16 @@
                         "then": "Il tipo di idrante è sconosciuto."
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Soprasuolo."
+                        "then": "Soprasuolo."
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tubo."
+                        "then": "Tubo."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> A muro."
+                        "then": "A muro."
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Sottosuolo."
+                        "then": "Sottosuolo."
                     }
                 },
                 "question": "Di che tipo è questo idrante?",

@@ -1438,16 +1438,16 @@
                         "then": "La borne est de type inconnu."
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier."
+                        "then": "Pilier."
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau."
+                        "then": "Tuyau."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural."
+                        "then": "Mural."
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré."
+                        "then": "Enterré."
                     }
                 },
                 "question": "De quel type de borne s’agit-il ?",
