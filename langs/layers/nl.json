@@ -2642,16 +2642,16 @@
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Verplicht fietspad"
                     },
                     "1": {
-                        "then": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Verplicht fietspad (met onderbord)<br>"
                     },
                     "2": {
-                        "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                        "then": "Afgescheiden voet-/fietspad"
                     },
                     "3": {
-                        "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                        "then": "Gedeeld voet-/fietspad"
                     },
                     "4": {
                         "then": "Geen verkeersbord aanwezig"
@@ -2679,16 +2679,16 @@
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Verplicht fietspad"
                     },
                     "1": {
-                        "then": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Verplicht fietspad (met onderbord)<br>"
                     },
                     "2": {
-                        "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                        "then": "Afgescheiden voet-/fietspad"
                     },
                     "3": {
-                        "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                        "then": "Gedeeld voet-/fietspad"
                     },
                     "4": {
                         "then": "Geen verkeersbord aanwezig"
@@ -2699,22 +2699,22 @@
             "cycleway-traffic-signs-D7-supplementary": {
                 "mappings": {
                     "0": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B verplicht"
                     },
                     "1": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
+                        "then": "Speedpedelc (klasse P) verplicht"
                     },
                     "2": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B en speedpedelec (klasse P) verplicht"
                     },
                     "3": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B <b>verboden</b>"
                     },
                     "4": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
+                        "then": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
                     },
                     "5": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
                     },
                     "6": {
                         "then": "Geen onderbord aanwezig"
@@ -2725,22 +2725,22 @@
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
                     "0": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
+                        "then": "Bromfiets Klass B verplicht"
                     },
                     "1": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
+                        "then": "Speedpedelec (Bromfiets klasse P) verplicht"
                     },
                     "2": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht"
                     },
                     "3": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B <b>verboden</b>"
                     },
                     "4": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
+                        "then": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
                     },
                     "5": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
+                        "then": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
                     },
                     "6": {
                         "then": "Geen onderbord aanwezig"
