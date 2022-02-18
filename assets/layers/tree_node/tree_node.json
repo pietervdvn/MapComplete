@@ -30,15 +30,7 @@
       {
         "if": "name~*",
         "then": {
-          "nl": "<i>{name}</i>",
-          "en": "<i>{name}</i>",
-          "ca": "<i>{name}</i>",
-          "de": "<i>{name}</i>",
-          "fr": "<i>{name}</i>",
-          "it": "<i>{name}</i>",
-          "ru": "<i>{name}</i>",
-          "id": "<i>{name}</i>",
-          "eo": "<i>{name}</i>"
+          "*": "<i>{name}</i>"
         }
       }
     ]
@@ -95,11 +87,15 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom",
-            "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved",
-            "it": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia",
-            "fr": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu",
-            "de": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Laubbaum"
+            "nl": "Loofboom",
+            "en": "Broadleaved",
+            "it": "Latifoglia",
+            "fr": "Feuillu",
+            "de": "Laubbaum"
+          },
+          "icon": {
+            "path": "./assets/themes/trees/broadleaved.svg",
+            "class": "small"
           }
         },
         {
@@ -109,11 +105,15 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom",
-            "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved",
-            "it": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia",
-            "fr": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux",
-            "de": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Nadelbaum"
+            "nl": "Naaldboom",
+            "en": "Needleleaved",
+            "it": "Aghifoglia",
+            "fr": "Résineux",
+            "de": "Nadelbaum"
+          },
+          "icon": {
+            "path": "./assets/themes/trees/needleleaved.svg",
+            "class": "small"
           }
         },
         {
@@ -123,13 +123,17 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos",
-            "en": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless",
-            "it": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)",
-            "fr": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)",
-            "de": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dauerhaft blattlos"
+            "nl": "Permanent bladloos",
+            "en": "Permanently leafless",
+            "it": "Privo di foglie (permanente)",
+            "fr": "Sans feuilles (Permanent)",
+            "de": "Dauerhaft blattlos"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/themes/trees/leafless.svg",
+            "class": "small"
+          }
         }
       ]
     },
@@ -373,11 +377,15 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
-            "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
-            "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
-            "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
-            "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
+            "nl": "Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
+            "en": "Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
+            "it": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
+            "fr": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
+            "de": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
+          },
+          "icon": {
+            "path": "./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg",
+            "class": "small"
           }
         },
         {
