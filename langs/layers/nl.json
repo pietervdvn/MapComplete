@@ -2696,42 +2696,16 @@
                 },
                 "question": "Welk verkeersbord heeft dit fietspad?"
             },
-            "cycleway-traffic-signs-D7-supplementary": {
-                "mappings": {
-                    "0": {
-                        "then": "Bromfiets klasse B verplicht"
-                    },
-                    "1": {
-                        "then": "Speedpedelc (klasse P) verplicht"
-                    },
-                    "2": {
-                        "then": "Bromfiets klasse B en speedpedelec (klasse P) verplicht"
-                    },
-                    "3": {
-                        "then": "Bromfiets klasse B <b>verboden</b>"
-                    },
-                    "4": {
-                        "then": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
-                    },
-                    "5": {
-                        "then": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
-                    },
-                    "6": {
-                        "then": "Geen onderbord aanwezig"
-                    }
-                },
-                "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
-            },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
                     "0": {
-                        "then": "Bromfiets Klass B verplicht"
+                        "then": "Bromfiets Klass B verplicht op het fietspad"
                     },
                     "1": {
-                        "then": "Speedpedelec (Bromfiets klasse P) verplicht"
+                        "then": "Speedpedelec (Bromfiets klasse P) verplicht op het fietspad"
                     },
                     "2": {
-                        "then": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht"
+                        "then": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht op het fietspad"
                     },
                     "3": {
                         "then": "Bromfiets klasse B <b>verboden</b>"

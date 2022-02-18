@@ -2680,16 +2680,26 @@
                 },
                 "question": "What traffic sign does this cycleway have?"
             },
-            "cycleway-traffic-signs-D7-supplementary": {
-                "mappings": {
-                    "6": {
-                        "then": "No supplementary traffic sign present"
-                    }
-                },
-                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
-            },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
+                    "0": {
+                        "then": "Mopeds must use the cycleway"
+                    },
+                    "1": {
+                        "then": "Speedpedelecs must use the cycleway"
+                    },
+                    "2": {
+                        "then": "Mopeds and speedpedelecs must use the cycleway"
+                    },
+                    "3": {
+                        "then": "Mopeds are not allowed"
+                    },
+                    "4": {
+                        "then": "Speedpedelecs are not allowed"
+                    },
+                    "5": {
+                        "then": "Mopeds and speedpedelecs are not allowed"
+                    },
                     "6": {
                         "then": "No supplementary traffic sign present"
                     }

@@ -993,7 +993,8 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M6",
           "then": {
-            "nl": "Bromfiets Klass B verplicht"
+            "en": "Mopeds must use the cycleway",
+            "nl": "Bromfiets Klass B verplicht op het fietspad"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1007,7 +1008,8 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M13",
           "then": {
-            "nl": "Speedpedelec (Bromfiets klasse P) verplicht"
+            "en": "Speedpedelecs must use the cycleway",
+            "nl": "Speedpedelec (Bromfiets klasse P) verplicht op het fietspad"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1021,7 +1023,8 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M14",
           "then": {
-            "nl": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht"
+            "en": "Mopeds and speedpedelecs must use the cycleway",
+            "nl": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht op het fietspad"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1036,6 +1039,7 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M7",
           "then": {
+            "en": "Mopeds are not allowed",
             "nl": "Bromfiets klasse B <b>verboden</b>"
           },
           "hideInAnswer": "_country!=be",
@@ -1050,6 +1054,7 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M15",
           "then": {
+            "en": "Speedpedelecs are not allowed",
             "nl": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
           },
           "hideInAnswer": "_country!=be",
@@ -1064,6 +1069,7 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M16",
           "then": {
+            "en": "Mopeds and speedpedelecs are not allowed",
             "nl": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
           },
           "hideInAnswer": "_country!=be",
@@ -1078,116 +1084,6 @@
         },
         {
           "if": "cycleway:traffic_sign:supplementary=none",
-          "then": {
-            "en": "No supplementary traffic sign present",
-            "nl": "Geen onderbord aanwezig",
-            "de": "Kein zusätzliches Verkehrszeichen vorhanden"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cycleway-traffic-signs-D7-supplementary",
-      "question": {
-        "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-        "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
-        "de": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
-      },
-      "condition": {
-        "or": [
-          "traffic_sign=BE:D7",
-          "traffic_sign~BE:D7;.*"
-        ]
-      },
-      "mappings": [
-        {
-          "if": "traffic_sign=BE:D7;BE:M6",
-          "then": {
-            "nl": "Bromfiets klasse B verplicht"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=designated"
-          ],
-          "icon": {
-            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg",
-            "class": "medium"
-          }
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M13",
-          "then": {
-            "nl": "Speedpedelc (klasse P) verplicht"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "speed_pedelec=designated"
-          ],
-          "icon": {
-            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg",
-            "class": "medium"
-          }
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M14",
-          "then": {
-            "nl": "Bromfiets klasse B en speedpedelec (klasse P) verplicht"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=designated",
-            "speed_pedelec=designated"
-          ],
-          "icon": {
-            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg",
-            "class": "medium"
-          }
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M7",
-          "then": {
-            "nl": "Bromfiets klasse B <b>verboden</b>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=no"
-          ],
-          "icon": {
-            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg",
-            "class": "medium"
-          }
-        },
-        {
-          "if": "cycleway:traffic_sign=BE:D7;BE:M15",
-          "then": {
-            "nl": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "cycleway:speed_pedelec=no"
-          ],
-          "icon": {
-            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg",
-            "class": "medium"
-          }
-        },
-        {
-          "if": "cycleway:traffic_sign=BE:D7;BE:M16",
-          "then": {
-            "nl": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "cycleway:moped=designated",
-            "cycleway:speed_pedelec=no"
-          ],
-          "icon": {
-            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg",
-            "class": "medium"
-          }
-        },
-        {
-          "if": "traffic_sign:supplementary=none",
           "then": {
             "en": "No supplementary traffic sign present",
             "nl": "Geen onderbord aanwezig",
