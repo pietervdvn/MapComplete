@@ -433,9 +433,6 @@
                     },
                     "3": {
                         "then": "Felszíni parkoló"
-                    },
-                    "4": {
-                        "then": "Tetőparkoló"
                     }
                 }
             }

@@ -357,13 +357,6 @@
             "tree_node-name": {
                 "render": "Nama: {name}"
             }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
         }
     },
     "viewpoint": {

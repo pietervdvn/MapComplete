@@ -397,9 +397,6 @@
                     },
                     "3": {
                         "then": "Estacionamento ao nível da superfície"
-                    },
-                    "4": {
-                        "then": "Estacionamento no telhado"
                     }
                 },
                 "question": "Qual a localização relativa deste estacionamento de bicicletas?"

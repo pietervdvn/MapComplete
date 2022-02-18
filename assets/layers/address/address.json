@@ -9,7 +9,8 @@
     "fr": "Adresses connues d’OpenStreetMap",
     "ru": "Известные адреса в OSM",
     "id": "Alamat yang dikenal di OSM",
-    "es": "Direcciones conocidas en OSM"
+    "es": "Direcciones conocidas en OSM",
+    "zh_Hans": "OSM中已知的地址"
   },
   "minzoom": 18,
   "source": {
@@ -35,7 +36,8 @@
       "fr": "Adresse connue",
       "pl": "Znany adres",
       "ru": "Известный адрес",
-      "es": "Domicilio conocido"
+      "es": "Domicilio conocido",
+      "zh_Hans": "已知的地址"
     }
   },
   "description": {
@@ -48,7 +50,8 @@
     "fr": "Adresses",
     "pl": "Adresy",
     "id": "Alamat",
-    "es": "Direcciones"
+    "es": "Direcciones",
+    "zh_Hans": "地址"
   },
   "tagRenderings": [
     {
@@ -60,7 +63,8 @@
         "hu": "A házszám: <b>{addr:housenumber}</b>",
         "fr": "Son numéro est le <b>{addr:housenumber}</b>",
         "pl": "Numer tego domu to <b>{addr:housenumber}</b>",
-        "ru": "Номер дома <b>{addr:housenumber}</b>"
+        "ru": "Номер дома <b>{addr:housenumber}</b>",
+        "zh_Hans": "门牌号是<b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -70,7 +74,8 @@
         "fr": "Quel est le numéro de ce bâtiment ?",
         "pl": "Jaki jest numer tego domu?",
         "ru": "Какой номер у этого дома?",
-        "es": "¿Cuál es el número de esta casa?"
+        "es": "¿Cuál es el número de esta casa?",
+        "zh_Hans": "这个屋子的门牌号是多少？"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -94,7 +99,8 @@
             "pl": "Ten budynek nie ma numeru",
             "ru": "У этого здания нет номера",
             "id": "Bangunan ini tidak memiliki nomor rumah",
-            "es": "Esta edificación no tiene número"
+            "es": "Esta edificación no tiene número",
+            "zh_Hans": "这个建筑物没有门牌号"
           }
         }
       ]
@@ -107,7 +113,8 @@
         "hu": "Ez a cím a következő utcában van: <b>{addr:street}</b>",
         "nl": "Dit adres bevindt zich in de straat <b>{addr:street}</b>",
         "fr": "Le nom de la voie est <b>{addr:street}</b>",
-        "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>"
+        "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
+        "zh_Hans": "这个地址位于<b>{addr:street}</b>街"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -117,7 +124,8 @@
         "fr": "Dans quelle rue est située l’adresse ?",
         "pl": "Na jakiej ulicy znajduje się ten adres?",
         "ru": "Какая эта улица?",
-        "es": "¿En qué calle se encuentra esta dirección?"
+        "es": "¿En qué calle se encuentra esta dirección?",
+        "zh_Hans": "这个地址位于哪条街道？"
       },
       "freeform": {
         "key": "addr:street"
@@ -157,7 +165,8 @@
         "pl": "Co wymaga naprawy? Proszę wytłumaczyć",
         "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan",
         "es": "¿Qué debe corregirse aquí? Expóngalo",
-        "nl": "Wat moet hier gecorrigeerd worden? Leg het uit"
+        "nl": "Wat moet hier gecorrigeerd worden? Leg het uit",
+        "zh_Hans": "这里应被如何修复？请做出解释"
       },
       "freeform": {
         "key": "fixme"

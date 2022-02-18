@@ -8,6 +8,7 @@ import {Utils} from "../../Utils";
 import Link from "../Base/Link";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import * as contributors from "../../assets/contributors.json"
+import * as translators from "../../assets/translators.json"
 import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import Title from "../Base/Title";
@@ -21,6 +22,7 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
 import Img from "../Base/Img";
+import {Translation} from "../i18n/Translation";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
@@ -180,7 +182,8 @@ export default class CopyrightPanel extends Combine {
 
 
             })),
-            CopyrightPanel.CodeContributors(),
+            CopyrightPanel.CodeContributors(contributors,  Translations.t.general.attribution.codeContributionsBy),
+            CopyrightPanel.CodeContributors(translators,  Translations.t.general.attribution.translatedBy),
             new Title(t.iconAttribution.title, 3),
             ...iconAttributions
         ].map(e => e?.SetClass("mt-4")));
@@ -188,7 +191,7 @@ export default class CopyrightPanel extends Combine {
         this.SetStyle("max-width:100%; width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
     }
 
-    private static CodeContributors(): BaseUIElement {
+    private static CodeContributors(contributors, translation: Translation): BaseUIElement {
 
         const total = contributors.contributors.length;
         let filtered = [...contributors.contributors]
@@ -202,7 +205,7 @@ export default class CopyrightPanel extends Combine {
             return undefined;
         }
 
-        return Translations.t.general.attribution.codeContributionsBy.Subs({
+        return translation.Subs({
             contributors: contribsStr,
             hiddenCount: total - 10
         });

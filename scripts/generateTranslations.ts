@@ -274,11 +274,29 @@ function transformTranslation(obj: any, depth = 1) {
 
 }
 
+function sortKeys(o: object): object{
+    const keys = Object.keys(o)
+    keys.sort()
+    const nw = {}
+    for (const key of keys) {
+        const v = o[key]
+        if(typeof v === "object"){
+            nw[key] = sortKeys(v)
+        }else{
+            nw[key] = v
+        }
+    }
+    return nw
+}
+
 /**
  * Formats the specified file, helps to prevent merge conflicts
  * */
 function formatFile(path) {
-    const contents = JSON.parse(readFileSync(path, "utf8"))
+    let contents = JSON.parse(readFileSync(path, "utf8"))
+    
+    contents = sortKeys(contents)
+    
     writeFileSync(path, JSON.stringify(contents, null, "    "))
 }
 
@@ -469,7 +487,7 @@ function mergeLayerTranslations() {
     const layerFiles = ScriptUtils.getLayerFiles();
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
-        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  ")) // layers use 2 spaces
     }
 }
 
@@ -484,7 +502,7 @@ function mergeThemeTranslations() {
 
         const allTranslations = new TranslationPart();
         allTranslations.recursiveAdd(config, themeFile.path)
-        writeFileSync(themeFile.path, JSON.stringify(config, null, "  "))
+        writeFileSync(themeFile.path, JSON.stringify(config, null, "  ")) // Themefiles use 2 spaces
     }
 }
 
@@ -516,7 +534,12 @@ if (!themeOverwritesWeblate) {
     compileTranslationsFromWeblate();
 }
 genTranslations()
-formatFile("./langs/en.json")
+const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
+for (const path of allTranslationFiles) {
+    console.log("Formatting ", path)
+    formatFile(path)
+}
+
 
 // SOme validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")

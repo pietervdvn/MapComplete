@@ -423,7 +423,7 @@ export default class LegacyThemeLoaderSpec extends T {
                                 }
                             ]
                         }, "test");
-                    T.isTrue(r.errors.length > 0, "Failing case is not detected")
+                    T.isTrue(r.errors.length > 0, "Failing case 0 is not detected")
 
                         const r0 = new DetectShadowedMappings().convert( {
                             mappings: [
@@ -437,7 +437,7 @@ export default class LegacyThemeLoaderSpec extends T {
                                 }
                             ]
                         }, "test");
-                        T.isTrue(r0.errors.length > 0, "Failing case is not detected")
+                        T.isTrue(r0.errors.length > 0, "Failing case 1 is not detected")
                     }
                 ],
             ["Images are rewritten", () => {

@@ -1,73 +1,73 @@
 {
-    "general": {
-        "opening_hours": {
-            "ph_open": "öppet",
-            "ph_closed": "stängt",
-            "ph_not_known": " ",
-            "open_24_7": "Öppet dygnet runt",
-            "closed_permanently": "Stängt tills vidare",
-            "closed_until": "Stängt till {date}",
-            "openTill": "till",
-            "opensAt": "från",
-            "open_during_ph": "Om det är en röd dag är det här stället",
-            "error_loading": "Fel: kunde inte visualisera öppettiderna."
-        },
-        "weekdays": {
-            "sunday": "Söndag",
-            "saturday": "Lördag",
-            "friday": "Fredag",
-            "thursday": "Torsdag",
-            "wednesday": "Onsdag",
-            "tuesday": "Tisdag",
-            "monday": "Måndag",
-            "abbreviations": {
-                "friday": "Fre",
-                "wednesday": "Ons",
-                "tuesday": "Tis",
-                "thursday": "Tor",
-                "sunday": "Sön",
-                "saturday": "Lör",
-                "monday": "Mån"
-            }
-        },
-        "cancel": "Avbryt"
-    },
     "centerMessage": {
-        "ready": "Klar!",
-        "zoomIn": "Zooma in för att visa eller redigera data",
         "loadingData": "Laddar data…",
-        "retrying": "Det gick inte att ladda in data. Försöker igen om {count} sekunder…"
-    },
-    "image": {
-        "isDeleted": "Borttagen",
-        "doDelete": "Ta bort bild",
-        "dontDelete": "Avbryt",
-        "uploadDone": "<span class=\"thanks\">Din bild har lagts till. Tack för att du bidrar!</span>",
-        "respectPrivacy": "Fotografera inte personer eller registreringsskyltar. Ladda inte upp från Google Maps, Google Streetview eller andra upphovsrättsskyddade källor.",
-        "uploadFailed": "Misslyckades med att ladda upp din bild. Är du säker på att du är uppkopplad och tredjeparts-API:er tillåts? Brave eller uMatrix kanske blockerar dem.",
-        "ccb": "under CC-BY-licensen",
-        "ccbs": "under CC-BY-SA-licensen",
-        "cco": "med fri användning (public domain)",
-        "willBePublished": "Din bild kommer att publiceras: ",
-        "pleaseLogin": "Logga in för att lägga till en bild",
-        "uploadingMultiple": "Laddar upp {count} bilder…",
-        "uploadingPicture": "Laddar upp din bild…",
-        "addPicture": "Lägg till bild",
-        "uploadMultipleDone": "{count} bilder har lagts till. Tack för att du hjälper till!",
-        "toBig": "Din bild är för stor då den är {actual_size}. Vänligen använd endast bilder som är högst {max_size}"
-    },
-    "split": {
-        "cancel": "Avbryt",
-        "split": "Dela"
+        "ready": "Klar!",
+        "retrying": "Det gick inte att ladda in data. Försöker igen om {count} sekunder…",
+        "zoomIn": "Zooma in för att visa eller redigera data"
     },
     "delete": {
         "cancel": "Avbryt"
     },
+    "general": {
+        "cancel": "Avbryt",
+        "opening_hours": {
+            "closed_permanently": "Stängt tills vidare",
+            "closed_until": "Stängt till {date}",
+            "error_loading": "Fel: kunde inte visualisera öppettiderna.",
+            "openTill": "till",
+            "open_24_7": "Öppet dygnet runt",
+            "open_during_ph": "Om det är en röd dag är det här stället",
+            "opensAt": "från",
+            "ph_closed": "stängt",
+            "ph_not_known": " ",
+            "ph_open": "öppet"
+        },
+        "weekdays": {
+            "abbreviations": {
+                "friday": "Fre",
+                "monday": "Mån",
+                "saturday": "Lör",
+                "sunday": "Sön",
+                "thursday": "Tor",
+                "tuesday": "Tis",
+                "wednesday": "Ons"
+            },
+            "friday": "Fredag",
+            "monday": "Måndag",
+            "saturday": "Lördag",
+            "sunday": "Söndag",
+            "thursday": "Torsdag",
+            "tuesday": "Tisdag",
+            "wednesday": "Onsdag"
+        }
+    },
+    "image": {
+        "addPicture": "Lägg till bild",
+        "ccb": "under CC-BY-licensen",
+        "ccbs": "under CC-BY-SA-licensen",
+        "cco": "med fri användning (public domain)",
+        "doDelete": "Ta bort bild",
+        "dontDelete": "Avbryt",
+        "isDeleted": "Borttagen",
+        "pleaseLogin": "Logga in för att lägga till en bild",
+        "respectPrivacy": "Fotografera inte personer eller registreringsskyltar. Ladda inte upp från Google Maps, Google Streetview eller andra upphovsrättsskyddade källor.",
+        "toBig": "Din bild är för stor då den är {actual_size}. Vänligen använd endast bilder som är högst {max_size}",
+        "uploadDone": "<span class=\"thanks\">Din bild har lagts till. Tack för att du bidrar!</span>",
+        "uploadFailed": "Misslyckades med att ladda upp din bild. Är du säker på att du är uppkopplad och tredjeparts-API:er tillåts? Brave eller uMatrix kanske blockerar dem.",
+        "uploadMultipleDone": "{count} bilder har lagts till. Tack för att du hjälper till!",
+        "uploadingMultiple": "Laddar upp {count} bilder…",
+        "uploadingPicture": "Laddar upp din bild…",
+        "willBePublished": "Din bild kommer att publiceras: "
+    },
     "index": {
         "#": "De här texterna visas ovanför tema-knapparna när inget tema är laddat",
-        "intro": "MapComplete är en OpenStreetMap-visare och redigerare som visar dig information om funktioner för ett specifikt tema och tillåter att det uppdateras.",
         "featuredThemeTitle": "Utvalda den här veckan",
+        "intro": "MapComplete är en OpenStreetMap-visare och redigerare som visar dig information om funktioner för ett specifikt tema och tillåter att det uppdateras.",
         "pickTheme": "Välj ett tema nedan för att börja.",
         "title": "Välkommen till MapComplete"
+    },
+    "split": {
+        "cancel": "Avbryt",
+        "split": "Dela"
     }
 }

@@ -760,9 +760,6 @@
                     },
                     "3": {
                         "then": "Surface level parking"
-                    },
-                    "4": {
-                        "then": "Rooftop parking"
                     }
                 },
                 "question": "What is the relative location of this bicycle parking?"
@@ -3040,7 +3037,7 @@
                         "then": "This door revolves automatically all the time"
                     },
                     "7": {
-                        "then": "This door will be opened by staff when requested by <b>pressing a button</b"
+                        "then": "This door will be opened by staff when requested by <b>pressing a button</b>"
                     },
                     "8": {
                         "then": "This door will be opened by staff when requested"
@@ -4897,7 +4894,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
+                        "then": "Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
                     },
                     "1": {
                         "then": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels"
@@ -4917,13 +4914,13 @@
             "tree-leaf_type": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved"
+                        "then": "Broadleaved"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved"
+                        "then": "Needleleaved"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless"
+                        "then": "Permanently leafless"
                     }
                 },
                 "question": "Is this a broadleaved or needleleaved tree?"
@@ -4947,11 +4944,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Tree"
         }
     },
