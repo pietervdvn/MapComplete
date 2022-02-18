@@ -2,7 +2,8 @@
   "id": "charging_station",
   "name": {
     "en": "Charging stations",
-    "nl": "Oplaadpunten"
+    "nl": "Oplaadpunten",
+    "de": "Ladestationen"
   },
   "minzoom": 10,
   "source": {
@@ -63,7 +64,8 @@
   },
   "description": {
     "en": "A charging station",
-    "nl": "Oplaadpunten"
+    "nl": "Oplaadpunten",
+    "de": "Eine Ladestation"
   },
   "tagRenderings": [
     "images",
@@ -72,7 +74,9 @@
       "#": "Allowed vehicle types",
       "question": {
         "en": "Which vehicles are allowed to charge here?",
-        "nl": "Welke voertuigen kunnen hier opgeladen worden?"
+        "nl": "Welke voertuigen kunnen hier opgeladen worden?",
+        "de": "Welche Fahrzeuge dürfen hier laden?",
+        "es": "¿A qué vehículos se permite la carga aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -81,7 +85,8 @@
           "ifnot": "bicycle=no",
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
-            "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden",
+            "de": "<b>Fahrräder</b> können hier geladen werden"
           }
         },
         {
@@ -89,7 +94,8 @@
           "ifnot": "motorcar=no",
           "then": {
             "en": "<b>Cars</b> can be charged here",
-            "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden",
+            "de": "<b>Autos</b> können hier geladen werden"
           }
         },
         {
@@ -97,7 +103,8 @@
           "ifnot": "scooter=no",
           "then": {
             "en": "<b>Scooters</b> can be charged here",
-            "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden"
+            "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
+            "de": "<b>Roller</b> können hier geladen werden"
           }
         },
         {
@@ -105,7 +112,8 @@
           "ifnot": "hgv=no",
           "then": {
             "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here",
-            "nl": "<b>Vrachtwagens</b> kunnen hier opgeladen worden"
+            "nl": "<b>Vrachtwagens</b> kunnen hier opgeladen worden",
+            "de": "<b>LKW</b> können hier geladen werden"
           }
         },
         {
@@ -113,7 +121,8 @@
           "ifnot": "bus=no",
           "then": {
             "en": "<b>Buses</b> can be charged here",
-            "nl": "<b>Bussen</b> kunnen hier opgeladen worden"
+            "nl": "<b>Bussen</b> kunnen hier opgeladen worden",
+            "de": "<b>Busse</b> können hier geladen werden"
           }
         }
       ]
@@ -190,7 +199,8 @@
       "id": "Available_charging_stations (generated)",
       "question": {
         "en": "Which charging connections are available here?",
-        "nl": "Welke aansluitingen zijn hier beschikbaar?"
+        "nl": "Welke aansluitingen zijn hier beschikbaar?",
+        "de": "Welche Ladeanschlüsse gibt es hier?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -3330,14 +3340,18 @@
       },
       "question": {
         "en": "When is this charging station opened?",
-        "nl": "Wanneer is dit oplaadpunt beschikbaar??"
+        "nl": "Wanneer is dit oplaadpunt beschikbaar??",
+        "de": "Wann ist diese Ladestation geöffnet?",
+        "es": "¿Cuándo abre esta estación de carga?"
       },
       "mappings": [
         {
           "if": "opening_hours=24/7",
           "then": {
             "en": "24/7 opened (including holidays)",
-            "nl": "24/7 open - ook tijdens vakanties"
+            "nl": "24/7 open - ook tijdens vakanties",
+            "de": "durchgehend geöffnet (einschließlich Feiertage)",
+            "es": "Abre 24/7 (incluidos días festivos)"
           }
         }
       ]
@@ -3447,7 +3461,9 @@
       "#": "In some cases, charging is free but one has to be authenticated. We only ask for authentication if fee is no (or unset). By default one sees the questions for either the payment options or the authentication options, but normally not both",
       "question": {
         "en": "What kind of authentication is available at the charging station?",
-        "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?"
+        "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?",
+        "de": "Welche Art der Authentifizierung ist an der Ladestation möglich?",
+        "fr": "Quelle sorte d'authentification est disponible à cette station de charge ?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -3456,7 +3472,10 @@
           "ifnot": "authentication:membership_card=no",
           "then": {
             "en": "Authentication by a membership card",
-            "nl": "Aanmelden met een lidkaart is mogelijk"
+            "nl": "Aanmelden met een lidkaart is mogelijk",
+            "de": "Authentifizierung per Mitgliedskarte",
+            "es": "Autenticación mediante tarjeta de membresía",
+            "fr": "Authentification par carte de membre"
           }
         },
         {
@@ -3464,7 +3483,10 @@
           "ifnot": "authentication:app=no",
           "then": {
             "en": "Authentication by an app",
-            "nl": "Aanmelden via een applicatie is mogelijk"
+            "nl": "Aanmelden via een applicatie is mogelijk",
+            "de": "Authentifizierung per App",
+            "es": "Autenticación mediante aplicación",
+            "fr": "Authentification par une app"
           }
         },
         {
@@ -3472,7 +3494,10 @@
           "ifnot": "authentication:phone_call=no",
           "then": {
             "en": "Authentication via phone call is available",
-            "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk"
+            "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
+            "de": "Authentifizierung per Anruf ist möglich",
+            "es": "Autenticación mediante llamada telefónica disponible",
+            "fr": "Authentification par appel téléphonique est disponible"
           }
         },
         {
@@ -3480,7 +3505,10 @@
           "ifnot": "authentication:short_message=no",
           "then": {
             "en": "Authentication via SMS is available",
-            "nl": "Aanmelden via SMS is mogelijk"
+            "nl": "Aanmelden via SMS is mogelijk",
+            "de": "Authentifizierung per SMS ist möglich",
+            "es": "Autenticación mediante SMS disponible",
+            "fr": "Authentification par SMS est disponible"
           }
         },
         {
@@ -3488,7 +3516,10 @@
           "ifnot": "authentication:nfc=no",
           "then": {
             "en": "Authentication via NFC is available",
-            "nl": "Aanmelden via NFC is mogelijk"
+            "nl": "Aanmelden via NFC is mogelijk",
+            "de": "Authentifizierung per NFC ist möglich",
+            "es": "Autenticación mediante NFC disponible",
+            "fr": "Authentification par NFC est disponible"
           }
         },
         {
@@ -3496,7 +3527,9 @@
           "ifnot": "authentication:money_card=no",
           "then": {
             "en": "Authentication via Money Card is available",
-            "nl": "Aanmelden met Money Card is mogelijk"
+            "nl": "Aanmelden met Money Card is mogelijk",
+            "de": "Authentifizierung per Geldkarte ist möglich",
+            "es": "Autenticación mediante Money Card disponible"
           }
         },
         {
@@ -3504,7 +3537,10 @@
           "ifnot": "authentication:debit_card=no",
           "then": {
             "en": "Authentication via debit card is available",
-            "nl": "Aanmelden met een betaalkaart is mogelijk"
+            "nl": "Aanmelden met een betaalkaart is mogelijk",
+            "de": "Authentifizierung per Kreditkarte ist möglich",
+            "es": "Autenticación mediante tarjeta de débito disponible",
+            "fr": "Authentification par carte de débit est disponible"
           }
         },
         {
@@ -3512,7 +3548,9 @@
           "ifnot": "authentication:none=no",
           "then": {
             "en": "Charging here is (also) possible without authentication",
-            "nl": "Hier opladen is (ook) mogelijk zonder aan te melden"
+            "nl": "Hier opladen is (ook) mogelijk zonder aan te melden",
+            "de": "Das Laden ist hier (auch) ohne Authentifizierung möglich",
+            "fr": "Charger ici est (aussi) possible sans authentification"
           }
         }
       ],
@@ -3579,11 +3617,15 @@
       "id": "Network",
       "render": {
         "en": "Part of the network <b>{network}</b>",
-        "nl": "Maakt deel uit van het <b>{network}</b>-netwerk"
+        "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
+        "de": "Teil des Netzwerks <b>{network}</b>",
+        "es": "Parte de la red <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
-        "nl": "Is dit oplaadpunt deel van een groter netwerk?"
+        "nl": "Is dit oplaadpunt deel van een groter netwerk?",
+        "de": "Ist diese Ladestation Teil eines Netzwerks?",
+        "es": "¿Esta estación de carga forma parte de una red?"
       },
       "freeform": {
         "key": "network"
@@ -3593,14 +3635,17 @@
           "if": "no:network=yes",
           "then": {
             "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
-            "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt"
+            "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt",
+            "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird"
           }
         },
         {
           "if": "network=none",
           "then": {
             "en": "Not part of a bigger network",
-            "nl": "Maakt geen deel uit van een groter netwerk"
+            "nl": "Maakt geen deel uit van een groter netwerk",
+            "de": "Nicht Teil eines größeren Netzwerks",
+            "es": "No forma parte de una red mayor"
           },
           "hideInAnswer": true
         },
@@ -3646,11 +3691,13 @@
       "id": "Operator",
       "question": {
         "en": "Who is the operator of this charging station?",
-        "nl": "Wie beheert dit oplaadpunt?"
+        "nl": "Wie beheert dit oplaadpunt?",
+        "de": "Wer ist der Betreiber dieser Ladestation?"
       },
       "render": {
         "en": "This charging station is operated by {operator}",
-        "nl": "Wordt beheerd door {operator}"
+        "nl": "Wordt beheerd door {operator}",
+        "de": "Diese Ladestation wird betrieben von {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -3664,7 +3711,8 @@
           },
           "then": {
             "en": "Actually, {operator} is the network",
-            "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt"
+            "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt",
+            "de": "Eigentlich ist {operator} das Netzwerk"
           },
           "addExtraTags": [
             "operator="
@@ -3740,7 +3788,8 @@
       "id": "Operational status",
       "question": {
         "en": "Is this charging point in use?",
-        "nl": "Is dit oplaadpunt operationeel?"
+        "nl": "Is dit oplaadpunt operationeel?",
+        "de": "Ist dieser Ladepunkt in Betrieb?"
       },
       "mappings": [
         {
@@ -3755,7 +3804,8 @@
           },
           "then": {
             "en": "This charging station works",
-            "nl": "Dit oplaadpunt werkt"
+            "nl": "Dit oplaadpunt werkt",
+            "de": "Diese Ladestation ist betriebsbereit"
           }
         },
         {
@@ -3770,7 +3820,8 @@
           },
           "then": {
             "en": "This charging station is broken",
-            "nl": "Dit oplaadpunt is kapot"
+            "nl": "Dit oplaadpunt is kapot",
+            "de": "Diese Ladestation ist defekt"
           }
         },
         {
@@ -3785,7 +3836,8 @@
           },
           "then": {
             "en": "A charging station is planned here",
-            "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden"
+            "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
+            "de": "Hier ist eine Ladestation geplant"
           }
         },
         {
@@ -3800,7 +3852,8 @@
           },
           "then": {
             "en": "A charging station is constructed here",
-            "nl": "Hier wordt op dit moment een oplaadpunt gebouwd"
+            "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
+            "de": "Hier wird eine Ladestation errichtet"
           }
         },
         {
@@ -3815,7 +3868,8 @@
           },
           "then": {
             "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
-            "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig"
+            "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig",
+            "de": "Diese Ladestation wurde dauerhaft geschlossen und wird nicht mehr benutzt, ist aber noch sichtbar"
           }
         }
       ]
@@ -3824,21 +3878,24 @@
       "id": "Parking:fee",
       "question": {
         "en": "Does one have to pay a parking fee while charging?",
-        "nl": "Moet men parkeergeld betalen tijdens het opladen?"
+        "nl": "Moet men parkeergeld betalen tijdens het opladen?",
+        "de": "Muss man während des Ladens eine Parkgebühr bezahlen?"
       },
       "mappings": [
         {
           "if": "parking:fee=no",
           "then": {
             "en": "No additional parking cost while charging",
-            "nl": "Geen extra parkeerkost tijdens het opladen"
+            "nl": "Geen extra parkeerkost tijdens het opladen",
+            "de": "Keine zusätzlichen Parkkosten während des Ladens"
           }
         },
         {
           "if": "parking:fee=yes",
           "then": {
             "en": "An additional parking fee should be paid while charging",
-            "nl": "Tijdens het opladen moet er parkeergeld betaald worden"
+            "nl": "Tijdens het opladen moet er parkeergeld betaald worden",
+            "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten"
           }
         }
       ],
@@ -3951,7 +4008,8 @@
       ],
       "title": {
         "en": "charging station for cars",
-        "nl": "oplaadstation voor elektrische auto's"
+        "nl": "oplaadstation voor elektrische auto's",
+        "de": "Ladestation für e-bikes"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -3965,20 +4023,26 @@
         {
           "question": {
             "en": "All vehicle types",
-            "nl": "Alle voertuigen"
+            "nl": "Alle voertuigen",
+            "de": "Alle Fahrzeugtypen",
+            "fr": "Tout type de véhicule"
           }
         },
         {
           "question": {
             "en": "Charging station for bicycles",
-            "nl": "Oplaadpunten voor fietsen"
+            "nl": "Oplaadpunten voor fietsen",
+            "de": "Ladestation für Fahrräder",
+            "fr": "Station de charge pour vélos"
           },
           "osmTags": "bicycle=yes"
         },
         {
           "question": {
             "en": "Charging station for cars",
-            "nl": "Oplaadpunten voor auto's"
+            "nl": "Oplaadpunten voor auto's",
+            "de": "Ladestation für Autos",
+            "fr": "Station de charge pour automobiles"
           },
           "osmTags": {
             "or": [
@@ -3995,7 +4059,8 @@
         {
           "question": {
             "en": "Only working charging stations",
-            "nl": "Enkel werkende oplaadpunten"
+            "nl": "Enkel werkende oplaadpunten",
+            "de": "Nur funktionierende Ladestationen"
           },
           "osmTags": {
             "and": [
@@ -4012,13 +4077,15 @@
         {
           "question": {
             "en": "All connectors",
-            "nl": "Alle types"
+            "nl": "Alle types",
+            "de": "Alle Anschlüsse"
           }
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
           },
           "osmTags": "socket:schuko~*"
         },
@@ -4032,35 +4099,40 @@
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
           },
           "osmTags": "socket:chademo~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
           },
           "osmTags": "socket:type1_cable~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772) <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker <i>ohne</i> Kabel</b>"
           },
           "osmTags": "socket:type1~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker, auch bekannt als Typ 1 Combo</b>"
           },
           "osmTags": "socket:type1_combo~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
           },
           "osmTags": "socket:tesla_supercharger~*"
         },
@@ -4148,11 +4220,13 @@
           ],
           "human": {
             "en": " minutes",
-            "nl": " minuten"
+            "nl": " minuten",
+            "ru": " минут"
           },
           "humanSingular": {
             "en": " minute",
-            "nl": " minuut"
+            "nl": " minuut",
+            "ru": " минута"
           }
         },
         {
@@ -4168,11 +4242,13 @@
           ],
           "human": {
             "en": " hours",
-            "nl": " uren"
+            "nl": " uren",
+            "ru": " часов"
           },
           "humanSingular": {
             "en": " hour",
-            "nl": " uur"
+            "nl": " uur",
+            "ru": " час"
           }
         },
         {
@@ -4185,11 +4261,13 @@
           ],
           "human": {
             "en": " days",
-            "nl": " day"
+            "nl": " day",
+            "ru": " дней"
           },
           "humanSingular": {
             "en": " day",
-            "nl": " dag"
+            "nl": " dag",
+            "ru": " день"
           }
         }
       ]
@@ -4225,7 +4303,8 @@
           ],
           "human": {
             "en": "Volts",
-            "nl": "volt"
+            "nl": "volt",
+            "ru": "Вольт"
           }
         }
       ],
@@ -4294,7 +4373,8 @@
           ],
           "human": {
             "en": "kilowatt",
-            "nl": "kilowatt"
+            "nl": "kilowatt",
+            "ru": "киловатт"
           }
         },
         {
@@ -4304,7 +4384,8 @@
           ],
           "human": {
             "en": "megawatt",
-            "nl": "megawatt"
+            "nl": "megawatt",
+            "ru": "мегаватт"
           }
         }
       ],
