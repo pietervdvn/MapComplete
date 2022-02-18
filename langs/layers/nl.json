@@ -760,9 +760,6 @@
                     },
                     "3": {
                         "then": "Parking op de begane grond"
-                    },
-                    "4": {
-                        "then": "Dakparking"
                     }
                 },
                 "question": "Wat is de relatieve locatie van deze parking??"
@@ -4689,7 +4686,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen"
+                        "then": "Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen"
                     },
                     "1": {
                         "then": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel"
@@ -4709,13 +4706,13 @@
             "tree-leaf_type": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom"
+                        "then": "Loofboom"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom"
+                        "then": "Naaldboom"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos"
+                        "then": "Permanent bladloos"
                     }
                 },
                 "question": "Is dit een naald- of loofboom?"
@@ -4739,11 +4736,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Boom"
         }
     },

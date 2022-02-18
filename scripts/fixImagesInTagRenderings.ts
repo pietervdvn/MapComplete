@@ -60,7 +60,7 @@ function main() {
     console.log("Fixing images in " + path)
     const parsed = JSON.parse(readFileSync(path, "UTF8"))
     const converted = new ConvertImagesToIcon(iconClass).convertStrict(parsed, "While running the fixImagesInTagRenderings-script")
-    writeFileSync(targetFile, JSON.stringify(converted, null, "    "))
+    writeFileSync(targetFile, JSON.stringify(converted, null, "  "))
     console.log("Written fixed version to " + targetFile)
 }
 

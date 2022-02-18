@@ -647,9 +647,6 @@
                     },
                     "3": {
                         "then": "Ebenerdiges Parken"
-                    },
-                    "4": {
-                        "then": "Parkplatz auf dem Dach"
                     }
                 },
                 "question": "Wo befinden sich diese Fahrradabstellplätze?"
@@ -3106,7 +3103,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
+                        "then": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern"
                     },
                     "1": {
                         "then": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel"
@@ -3126,13 +3123,13 @@
             "tree-leaf_type": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Laubbaum"
+                        "then": "Laubbaum"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Nadelbaum"
+                        "then": "Nadelbaum"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dauerhaft blattlos"
+                        "then": "Dauerhaft blattlos"
                     }
                 },
                 "question": "Ist dies ein Laub- oder Nadelbaum?"
@@ -3155,11 +3152,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Baum"
         }
     },

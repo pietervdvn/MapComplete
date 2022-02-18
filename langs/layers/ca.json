@@ -87,14 +87,5 @@
                 "render": "<a href='{website}'>{website}</a>"
             }
         }
-    },
-    "tree_node": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
-        }
     }
 }
