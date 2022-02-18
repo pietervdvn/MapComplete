@@ -204,5 +204,39 @@
             },
             "render": "自行车咖啡"
         }
+    },
+    "address": {
+        "description": "地址",
+        "name": "OSM中已知的地址",
+        "tagRenderings": {
+            "fixme": {
+                "question": "这里应被如何修复？请做出解释"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "这个建筑物没有门牌号"
+                    }
+                },
+                "render": "门牌号是<b>{addr:housenumber}</b>",
+                "question": "这个屋子的门牌号是多少？"
+            },
+            "street": {
+                "render": "这个地址位于<b>{addr:street}</b>街",
+                "question": "这个地址位于哪条街道？"
+            }
+        },
+        "title": {
+            "render": "已知的地址"
+        }
+    },
+    "ambulancestation": {
+        "name": "救护车站地图",
+        "presets": {
+            "0": {
+                "description": "向地图中添加一个救护车站",
+                "title": "救护车站"
+            }
+        }
     }
 }
