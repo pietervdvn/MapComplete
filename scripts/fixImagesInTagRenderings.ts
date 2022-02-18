@@ -3,6 +3,7 @@ import {DesugaringStep} from "../Models/ThemeConfig/Conversion/Conversion";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {Utils} from "../Utils";
 import Translations from "../UI/i18n/Translations";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
 class ConvertImagesToIcon extends DesugaringStep<LayerConfigJson> {
     private _iconClass: string;
@@ -55,11 +56,12 @@ function main() {
     args.splice(0, 2)
     const path = args[0]
     const iconClass = args[1] ?? "small"
+    const targetFile = args[2] ?? path + ".autoconverted.json"
     console.log("Fixing images in " + path)
     const parsed = JSON.parse(readFileSync(path, "UTF8"))
     const converted = new ConvertImagesToIcon(iconClass).convertStrict(parsed, "While running the fixImagesInTagRenderings-script")
-    writeFileSync(path + ".autoconverted.json", JSON.stringify(converted, null, "    "))
-    console.log("Written fixed version to " + path + ".autoconverted.json")
+    writeFileSync(targetFile, JSON.stringify(converted, null, "    "))
+    console.log("Written fixed version to " + targetFile)
 }
 
 main();
