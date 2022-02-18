@@ -3,7 +3,6 @@ import {DesugaringStep} from "../Models/ThemeConfig/Conversion/Conversion";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import {Utils} from "../Utils";
 import Translations from "../UI/i18n/Translations";
-import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
 class ConvertImagesToIcon extends DesugaringStep<LayerConfigJson> {
     private _iconClass: string;
@@ -32,7 +31,7 @@ class ConvertImagesToIcon extends DesugaringStep<LayerConfigJson> {
                 }
                 information.push("Replaced image " + images[0])
                 const replaced = then.OnEveryLanguage((s) => {
-                    return s.replace(/(<div [^>]*>)?<img [^>]*> ?/, "").replace(/<\/div>$/, "")
+                    return s.replace(/(<div [^>]*>)?<img [^>]*> ?/, "").replace(/<\/div>$/, "").trim()
                 })
 
                 mapping.then = replaced.translations
