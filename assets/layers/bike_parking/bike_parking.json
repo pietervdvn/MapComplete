@@ -100,91 +100,119 @@
         {
           "if": "bicycle_parking=stands",
           "then": {
-            "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "hu": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+            "en": "Staple racks",
+            "nl": "Nietjes",
+            "fr": "Arceaux",
+            "gl": "De roda (Stands)",
+            "de": "Fahrradbügel",
+            "hu": "Korlát",
+            "it": "Archetti",
+            "zh_Hant": "單車架"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/staple.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=wall_loops",
           "then": {
-            "en": "Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "nl": "Wielrek/lussen <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "fr": "Pinces-roues <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "gl": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "de": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "hu": "Kerékbefogó hurok <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "it": "Scolapiatti <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "zh_Hant": "車輪架/圓圈 <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+            "en": "Wheel rack/loops",
+            "nl": "Wielrek/lussen",
+            "fr": "Pinces-roues",
+            "gl": "Aros",
+            "de": "Metallgestänge",
+            "hu": "Kerékbefogó hurok",
+            "it": "Scolapiatti",
+            "zh_Hant": "車輪架/圓圈"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/wall_loops.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=handlebar_holder",
           "then": {
-            "en": "Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "nl": "Stuurhouder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "fr": "Support guidon <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "gl": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "de": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "it": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "zh_Hant": "車把架 <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+            "en": "Handlebar holder",
+            "nl": "Stuurhouder",
+            "fr": "Support guidon",
+            "gl": "Cadeado para guiador",
+            "de": "Halter für Fahrradlenker",
+            "it": "Blocca manubrio",
+            "zh_Hant": "車把架"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/handlebar_holder.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=rack",
           "then": {
-            "en": "Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "nl": "Rek <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "fr": "Râtelier <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "gl": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "de": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "zh_Hant": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "it": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "ru": "Стойка <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+            "en": "Rack",
+            "nl": "Rek",
+            "fr": "Râtelier",
+            "gl": "Cremalleira",
+            "de": "Gestell",
+            "zh_Hant": "車架",
+            "it": "Rastrelliera",
+            "ru": "Стойка"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/rack.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=two_tier",
           "then": {
-            "en": "Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "nl": "Dubbel (twee verdiepingen) <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "fr": "Superposé <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "gl": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "de": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "hu": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "zh_Hant": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "it": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "ru": "Двухуровневая <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+            "en": "Two-tiered",
+            "nl": "Dubbel (twee verdiepingen)",
+            "fr": "Superposé",
+            "gl": "Dobre cremalleira",
+            "de": "Zweistufig",
+            "hu": "Kétszintű",
+            "zh_Hant": "兩層",
+            "it": "A due piani",
+            "ru": "Двухуровневая"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/two_tier.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=shed",
           "then": {
-            "en": "Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "nl": "Schuur <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "fr": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "gl": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "de": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "hu": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "zh_Hant": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "it": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "ru": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+            "en": "Shed",
+            "nl": "Schuur",
+            "fr": "Abri",
+            "gl": "Abeiro",
+            "de": "Schuppen",
+            "hu": "Fészer",
+            "zh_Hant": "車棚",
+            "it": "Rimessa",
+            "ru": "Навес"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/shed.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=bollard",
           "then": {
-            "en": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "nl": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "fr": "Potelet <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "de": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "zh_Hant": "柱子 <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+            "en": "Bollard",
+            "nl": "Paal met ring",
+            "fr": "Potelet",
+            "it": "Colonnina",
+            "de": "Poller",
+            "zh_Hant": "柱子"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/bollard.svg",
+            "class": "large"
           }
         },
         {

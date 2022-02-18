@@ -419,25 +419,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Archetti"
                     },
                     "1": {
-                        "then": "Scolapiatti <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Scolapiatti"
                     },
                     "2": {
-                        "then": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Blocca manubrio"
                     },
                     "3": {
-                        "then": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Rastrelliera"
                     },
                     "4": {
-                        "then": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "A due piani"
                     },
                     "5": {
-                        "then": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Rimessa"
                     },
                     "6": {
-                        "then": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Colonnina"
                     },
                     "7": {
                         "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"

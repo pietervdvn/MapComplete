@@ -687,25 +687,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Nietjes"
                     },
                     "1": {
-                        "then": "Wielrek/lussen <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Wielrek/lussen"
                     },
                     "2": {
-                        "then": "Stuurhouder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Stuurhouder"
                     },
                     "3": {
-                        "then": "Rek <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Rek"
                     },
                     "4": {
-                        "then": "Dubbel (twee verdiepingen) <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Dubbel (twee verdiepingen)"
                     },
                     "5": {
-                        "then": "Schuur <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Schuur"
                     },
                     "6": {
-                        "then": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Paal met ring"
                     },
                     "7": {
                         "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"

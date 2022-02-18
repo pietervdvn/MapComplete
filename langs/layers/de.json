@@ -574,25 +574,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Fahrradbügel"
                     },
                     "1": {
-                        "then": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Metallgestänge"
                     },
                     "2": {
-                        "then": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Halter für Fahrradlenker"
                     },
                     "3": {
-                        "then": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Gestell"
                     },
                     "4": {
-                        "then": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Zweistufig"
                     },
                     "5": {
-                        "then": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Schuppen"
                     },
                     "6": {
-                        "then": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Poller"
                     },
                     "7": {
                         "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"

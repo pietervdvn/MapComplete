@@ -397,16 +397,16 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Korlát"
                     },
                     "1": {
-                        "then": "Kerékbefogó hurok <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Kerékbefogó hurok"
                     },
                     "4": {
-                        "then": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Kétszintű"
                     },
                     "5": {
-                        "then": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Fészer"
                     }
                 },
                 "question": "Milyen típusú ez a kerékpártároló?",

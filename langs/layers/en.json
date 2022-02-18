@@ -687,25 +687,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Staple racks"
                     },
                     "1": {
-                        "then": "Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Wheel rack/loops"
                     },
                     "2": {
-                        "then": "Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Handlebar holder"
                     },
                     "3": {
-                        "then": "Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Rack"
                     },
                     "4": {
-                        "then": "Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Two-tiered"
                     },
                     "5": {
-                        "then": "Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Shed"
                     },
                     "6": {
-                        "then": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Bollard"
                     },
                     "7": {
                         "then": "An area on the floor which is  marked for bicycle parking"
