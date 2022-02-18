@@ -4050,61 +4050,61 @@
             "recycling-accepts": {
                 "mappings": {
                     "0": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/batteries.svg'/> Batterijen kunnen hier gerecycled worden</div>"
+                        "then": "Batterijen kunnen hier gerecycled worden"
                     },
                     "1": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/beverage_cartons.svg'/> Drankpakken kunnen hier gerecycled worden</div>"
+                        "then": "Drankpakken kunnen hier gerecycled worden"
                     },
                     "2": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cans.svg'/> Blikken kunnen hier gerecycled worden</div>"
+                        "then": "Blikken kunnen hier gerecycled worden"
                     },
                     "3": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/clothes.svg'/> Kleren kunnen hier gerecycled worden</div>"
+                        "then": "Kleren kunnen hier gerecycled worden"
                     },
                     "4": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cooking_oil.svg'/> Frituurvet kan hier gerecycled worden</div>"
+                        "then": "Frituurvet kan hier gerecycled worden"
                     },
                     "5": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/engine_oil.svg'/> Motorolie kan hier gerecycled worden</div>"
+                        "then": "Motorolie kan hier gerecycled worden"
                     },
                     "6": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Groen afval kan hier gerecycled worden</div>"
+                        "then": "Groen afval kan hier gerecycled worden"
                     },
                     "7": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Organisch afval kan hier gerecycled worden</div>"
+                        "then": "Organisch afval kan hier gerecycled worden"
                     },
                     "8": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass_bottles.svg'/> Glazen flessen kunnen hier gerecycled worden</div>"
+                        "then": "Glazen flessen kunnen hier gerecycled worden"
                     },
                     "9": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass.svg'/> Glas kan hier gerecycled worden</div>"
+                        "then": "Glas kan hier gerecycled worden"
                     },
                     "10": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/newspaper.svg'/> Kranten kunnen hier gerecycled worden</div>"
+                        "then": "Kranten kunnen hier gerecycled worden"
                     },
                     "11": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/paper.svg'/> Papier kan hier gerecycled worden</div>"
+                        "then": "Papier kan hier gerecycled worden"
                     },
                     "12": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_bottles.svg'/> Plastic flessen kunnen hier gerecycled worden</div>"
+                        "then": "Plastic flessen kunnen hier gerecycled worden"
                     },
                     "13": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_packaging.svg'/> Plastic verpakking kan hier gerecycled worden</div>"
+                        "then": "Plastic verpakking kan hier gerecycled worden"
                     },
                     "14": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic.svg'/> Plastic kan hier gerecycled worden</div>"
+                        "then": "Plastic kan hier gerecycled worden"
                     },
                     "15": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/scrap_metal.svg'/> Oud metaal kan hier gerecycled worden</div>"
+                        "then": "Oud metaal kan hier gerecycled worden"
                     },
                     "16": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/shoes.svg'/> Schoenen kunnen hier gerecycled worden</div>"
+                        "then": "Schoenen kunnen hier gerecycled worden"
                     },
                     "17": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/small_electrical_appliances.svg'/> Kleine elektronische apparaten kunnen hier gerecycled worden</div>"
+                        "then": "Kleine elektronische apparaten kunnen hier gerecycled worden"
                     },
                     "18": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Restafval kan hier gerecycled worden</div>"
+                        "then": "Restafval kan hier gerecycled worden"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"

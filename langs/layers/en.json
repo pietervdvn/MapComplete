@@ -4258,61 +4258,61 @@
             "recycling-accepts": {
                 "mappings": {
                     "0": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/batteries.svg'/> Batteries can be recycled here</div>"
+                        "then": "Batteries can be recycled here"
                     },
                     "1": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/beverage_cartons.svg'/> Beverage cartons can be recycled here</div>"
+                        "then": "Beverage cartons can be recycled here"
                     },
                     "2": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cans.svg'/> Cans can be recycled here</div>"
+                        "then": "Cans can be recycled here"
                     },
                     "3": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/clothes.svg'/> Clothes can be recycled here</div>"
+                        "then": "Clothes can be recycled here"
                     },
                     "4": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/cooking_oil.svg'/> Cooking oil can be recycled here</div>"
+                        "then": "Cooking oil can be recycled here"
                     },
                     "5": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/engine_oil.svg'/> Engine oil can be recycled here</div>"
+                        "then": "Engine oil can be recycled here"
                     },
                     "6": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Green waste can be recycled here</div>"
+                        "then": "Green waste can be recycled here"
                     },
                     "7": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/garden_waste.svg'/> Organic waste can be recycled here</div>"
+                        "then": "Organic waste can be recycled here"
                     },
                     "8": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass_bottles.svg'/> Glass bottles can be recycled here</div>"
+                        "then": "Glass bottles can be recycled here"
                     },
                     "9": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/glass.svg'/> Glass can be recycled here</div>"
+                        "then": "Glass can be recycled here"
                     },
                     "10": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/newspaper.svg'/> Newspapers can be recycled here</div>"
+                        "then": "Newspapers can be recycled here"
                     },
                     "11": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/paper.svg'/> Paper can be recycled here</div>"
+                        "then": "Paper can be recycled here"
                     },
                     "12": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_bottles.svg'/> Plastic bottles can be recycled here</div>"
+                        "then": "Plastic bottles can be recycled here"
                     },
                     "13": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic_packaging.svg'/> Plastic packaging can be recycled here</div>"
+                        "then": "Plastic packaging can be recycled here"
                     },
                     "14": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/plastic.svg'/> Plastic can be recycled here</div>"
+                        "then": "Plastic can be recycled here"
                     },
                     "15": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/scrap_metal.svg'/> Scrap metal can be recycled here</div>"
+                        "then": "Scrap metal can be recycled here"
                     },
                     "16": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/shoes.svg'/> Shoes can be recycled here</div>"
+                        "then": "Shoes can be recycled here"
                     },
                     "17": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/recycling/small_electrical_appliances.svg'/> Small electrical appliances can be recycled here</div>"
+                        "then": "Small electrical appliances can be recycled here"
                     },
                     "18": {
-                        "then": "<div class='flex'><img class='w-12 mx-4' src='./assets/layers/waste_disposal/waste_disposal.svg'/> Residual waste can be recycled here</div>"
+                        "then": "Residual waste can be recycled here"
                     }
                 },
                 "question": "What can be recycled here?"
