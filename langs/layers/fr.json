@@ -183,16 +183,16 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Simple, deux barrières côte à côte <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                        "then": "Simple, deux barrières côte à côte"
                     },
                     "1": {
                         "then": "Double, deux barrières successives"
                     },
                     "2": {
-                        "then": "Triple, trois barrières successives <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                        "then": "Triple, trois barrières successives"
                     },
                     "3": {
-                        "then": "Poire, l’espace en hauteur est plus faible qu’au sol <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                        "then": "Poire, l’espace en hauteur est plus faible qu’au sol"
                     }
                 },
                 "question": "Quel est ce type de barrière cyclable ?"

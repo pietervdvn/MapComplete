@@ -183,16 +183,16 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                        "then": "Einfach, nur zwei Barrieren mit einem Zwischenraum"
                     },
                     "1": {
-                        "then": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
+                        "then": "Doppelt, zwei Barrieren hintereinander"
                     },
                     "2": {
-                        "then": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                        "then": "Dreifach, drei Barrieren hintereinander"
                     },
                     "3": {
-                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten"
                     }
                 },
                 "question": "Um welche Art Fahrradhindernis handelt es sich?"

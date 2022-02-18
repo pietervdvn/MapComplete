@@ -183,16 +183,16 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Egyszeres: csak két korlát, közöttük térköz <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                        "then": "Egyszeres: csak két korlát, közöttük térköz"
                     },
                     "1": {
-                        "then": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
+                        "then": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után"
                     },
                     "2": {
-                        "then": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                        "then": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után"
                     },
                     "3": {
-                        "then": "Szűkítőkapu: a rés felül keskenyebb, mint alul <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                        "then": "Szűkítőkapu: a rés felül keskenyebb, mint alul"
                     }
                 },
                 "question": "Milyen fajta kerékpárakadály ez?"
