@@ -469,7 +469,7 @@ function mergeLayerTranslations() {
     const layerFiles = ScriptUtils.getLayerFiles();
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
-        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  ")) // layers use 2 spaces
     }
 }
 
@@ -484,7 +484,7 @@ function mergeThemeTranslations() {
 
         const allTranslations = new TranslationPart();
         allTranslations.recursiveAdd(config, themeFile.path)
-        writeFileSync(themeFile.path, JSON.stringify(config, null, "  "))
+        writeFileSync(themeFile.path, JSON.stringify(config, null, "  ")) // Themefiles use 2 spaces
     }
 }
 
@@ -516,12 +516,11 @@ if (!themeOverwritesWeblate) {
     compileTranslationsFromWeblate();
 }
 genTranslations()
-formatFile("./langs/themes/nl.json")
-/*const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
+const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
 for (const path of allTranslationFiles) {
     console.log("Formatting ", path)
     formatFile(path)
-}*/
+}
 
 
 // SOme validation

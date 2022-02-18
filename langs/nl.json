@@ -486,5 +486,4 @@
         },
         "tooLong": "Deze tekst is te lang. De tekst heeft {count} lettertekens, er mogen maximaal 255 letters zijn"
     }
-
 }
