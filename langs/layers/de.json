@@ -1242,7 +1242,7 @@
             "crossing-continue-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
                     },
                     "1": {
                         "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
@@ -1278,7 +1278,7 @@
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
                     },
                     "1": {
                         "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"

@@ -2305,7 +2305,7 @@
             "crossing-continue-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                        "then": "A cyclist can go straight on if the light is red"
                     },
                     "1": {
                         "then": "A cyclist can go straight on if the light is red"
@@ -2341,7 +2341,7 @@
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                        "then": "A cyclist can turn right if the light is red"
                     },
                     "1": {
                         "then": "A cyclist can turn right if the light is red"

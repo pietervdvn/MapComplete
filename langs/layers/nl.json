@@ -2321,7 +2321,7 @@
             "crossing-continue-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Een fietser mag wel rechtdoor gaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                        "then": "Een fietser mag wel rechtdoor gaan als het licht rood is"
                     },
                     "1": {
                         "then": "Een fietser mag wel rechtdoor gaan als het licht rood is"
@@ -2357,7 +2357,7 @@
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is"
                     },
                     "1": {
                         "then": "Een fietser mag wel rechtsaf slaan als het licht rood is"
