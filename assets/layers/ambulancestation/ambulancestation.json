@@ -8,7 +8,8 @@
     "de": "Karte der Rettungswachen",
     "it": "Carta delle stazioni delle ambulanze",
     "hu": "Mentőállomás-térkép",
-    "nl": "Kaart van ambulancestations"
+    "nl": "Kaart van ambulancestations",
+    "zh_Hans": "救护车站地图"
   },
   "minzoom": 12,
   "source": {
@@ -252,7 +253,8 @@
         "de": "Rettungswache",
         "it": "Stazione delle ambulanze",
         "hu": "Mentőállomás",
-        "nl": "Ambulancestation"
+        "nl": "Ambulancestation",
+        "zh_Hans": "救护车站"
       },
       "description": {
         "en": "Add an ambulance station to the map",
@@ -262,7 +264,8 @@
         "de": "Eine Rettungsstation der Karte hinzufügen",
         "it": "Aggiungi una stazione delle ambulanza alla mappa",
         "hu": "Mentőállomás hozzáadása a térképhez",
-        "nl": "Voeg een ambulancestation toe aan de kaart"
+        "nl": "Voeg een ambulancestation toe aan de kaart",
+        "zh_Hans": "向地图中添加一个救护车站"
       }
     }
   ],

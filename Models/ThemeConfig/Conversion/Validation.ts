@@ -291,7 +291,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
         super("Various validation on tagRenderingConfigs",
         // TODO enable these checks again
         //    new DetectShadowedMappings(),
-         //   new DetectMappingsWithImages()    e
+            new DetectMappingsWithImages()    
         );
     }
 }

@@ -27,7 +27,8 @@
     {
       "id": "Entrance type",
       "question": {
-        "en": "What type of entrance is this?"
+        "en": "What type of entrance is this?",
+        "nl": "Wat voor ingang is dit?"
       },
       "mappings": [
         {
@@ -46,7 +47,8 @@
             ]
           },
           "then": {
-            "en": "This is an indoor door, separating a room or a corridor within a single building"
+            "en": "This is an indoor door, separating a room or a corridor within a single building",
+            "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit"
           }
         },
         {
@@ -57,7 +59,8 @@
             ]
           },
           "then": {
-            "en": "This is the main entrance"
+            "en": "This is the main entrance",
+            "nl": "Dit is de hoofdingang"
           }
         },
         {
@@ -68,7 +71,8 @@
             ]
           },
           "then": {
-            "en": "This is a secondary entrance"
+            "en": "This is a secondary entrance",
+            "nl": "Dit is een secundaire ingang"
           }
         },
         {
@@ -79,7 +83,8 @@
             ]
           },
           "then": {
-            "en": "This is a service entrance - normally only used for employees, delivery, ..."
+            "en": "This is a service entrance - normally only used for employees, delivery, ...",
+            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, ..."
           }
         },
         {
@@ -90,7 +95,8 @@
             ]
           },
           "then": {
-            "en": "This is an exit where one can not enter"
+            "en": "This is an exit where one can not enter",
+            "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen"
           }
         },
         {
@@ -101,7 +107,8 @@
             ]
           },
           "then": {
-            "en": "This is an entrance where one can only enter (but not exit)"
+            "en": "This is an entrance where one can only enter (but not exit)",
+            "nl": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)"
           }
         },
         {
@@ -112,7 +119,8 @@
             ]
           },
           "then": {
-            "en": "This is emergency exit"
+            "en": "This is emergency exit",
+            "nl": "Dit is een nooduitgang"
           }
         },
         {
@@ -123,7 +131,8 @@
             ]
           },
           "then": {
-            "en": "This is the entrance to a private home"
+            "en": "This is the entrance to a private home",
+            "nl": "Dit is de ingang van een private woning"
           }
         }
       ]
@@ -189,56 +198,65 @@
         {
           "if": "automatic_door=yes",
           "then": {
-            "en": "This is an automatic door"
+            "en": "This is an automatic door",
+            "nl": "Dit is een automatische deur"
           },
           "hideInAnswer": true
         },
         {
           "if": "automatic_door=no",
           "then": {
-            "en": "This door is <b>not</b> automated"
+            "en": "This door is <b>not</b> automated",
+            "nl": "Deze deur is <b>niet</b> automatisch"
           }
         },
         {
           "if": "automatic_door=motion",
           "then": {
-            "en": "This door will open automatically when <b>motion</b> is detected"
+            "en": "This door will open automatically when <b>motion</b> is detected",
+            "nl": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd"
           }
         },
         {
           "if": "automatic_door=floor",
           "then": {
-            "en": "This door will open automatically when a <b>sensor in the floor</b> is triggered"
+            "en": "This door will open automatically when a <b>sensor in the floor</b> is triggered",
+            "nl": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd"
           }
         },
         {
           "if": "automatic_door=button",
           "then": {
-            "en": "This door will open automatically when a <b>button is pressed</b>"
+            "en": "This door will open automatically when a <b>button is pressed</b>",
+            "nl": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>"
           }
         },
         {
           "if": "automatic_door=slowdown_button",
           "then": {
-            "en": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users"
+            "en": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users",
+            "nl": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers"
           }
         },
         {
           "if": "automatic_door=continuous",
           "then": {
-            "en": "This door revolves automatically all the time"
+            "en": "This door revolves automatically all the time",
+            "nl": "De deur draait continue automatisch"
           }
         },
         {
           "if": "automatic_door=serviced_on_button_press",
           "then": {
-            "en": "This door will be opened by staff when requested by <b>pressing a button</b"
+            "en": "This door will be opened by staff when requested by <b>pressing a button</b>",
+            "nl": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>"
           }
         },
         {
           "if": "automatic_door=serviced_on_request",
           "then": {
-            "en": "This door will be opened by staff when requested"
+            "en": "This door will be opened by staff when requested",
+            "nl": "De deur wordt geopend door personeel wanneer je het vraagt"
           }
         }
       ]
@@ -249,7 +267,8 @@
         "en": "This door has a width of {canonical(width)} meter"
       },
       "question": {
-        "en": "What is the width of this door/entrance?"
+        "en": "What is the width of this door/entrance?",
+        "nl": "Wat is de breedte van deze deur/toegang?"
       },
       "freeform": {
         "key": "width",

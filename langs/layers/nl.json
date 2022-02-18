@@ -760,9 +760,6 @@
                     },
                     "3": {
                         "then": "Parking op de begane grond"
-                    },
-                    "4": {
-                        "then": "Dakparking"
                     }
                 },
                 "question": "Wat is de relatieve locatie van deze parking??"
@@ -3004,8 +3001,67 @@
                 "mappings": {
                     "0": {
                         "then": "Het specifieke type ingang is onbekend"
+                    },
+                    "1": {
+                        "then": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit"
+                    },
+                    "2": {
+                        "then": "Dit is de hoofdingang"
+                    },
+                    "3": {
+                        "then": "Dit is een secundaire ingang"
+                    },
+                    "4": {
+                        "then": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, ..."
+                    },
+                    "5": {
+                        "then": "Dit is enkel een uitgang, je kan hier niet naar binnen"
+                    },
+                    "6": {
+                        "then": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)"
+                    },
+                    "7": {
+                        "then": "Dit is een nooduitgang"
+                    },
+                    "8": {
+                        "then": "Dit is de ingang van een private woning"
+                    }
+                },
+                "question": "Wat voor ingang is dit?"
+            },
+            "automatic_door": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een automatische deur"
+                    },
+                    "1": {
+                        "then": "Deze deur is <b>niet</b> automatisch"
+                    },
+                    "2": {
+                        "then": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd"
+                    },
+                    "3": {
+                        "then": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd"
+                    },
+                    "4": {
+                        "then": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>"
+                    },
+                    "5": {
+                        "then": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers"
+                    },
+                    "6": {
+                        "then": "De deur draait continue automatisch"
+                    },
+                    "7": {
+                        "then": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>"
+                    },
+                    "8": {
+                        "then": "De deur wordt geopend door personeel wanneer je het vraagt"
                     }
                 }
+            },
+            "width": {
+                "question": "Wat is de breedte van deze deur/toegang?"
             }
         }
     },
@@ -4880,7 +4936,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen"
+                        "then": "Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen"
                     },
                     "1": {
                         "then": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel"
@@ -4900,13 +4956,13 @@
             "tree-leaf_type": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom"
+                        "then": "Loofboom"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom"
+                        "then": "Naaldboom"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos"
+                        "then": "Permanent bladloos"
                     }
                 },
                 "question": "Is dit een naald- of loofboom?"
@@ -4930,11 +4986,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Boom"
         }
     },

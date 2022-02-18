@@ -612,9 +612,6 @@
                     },
                     "3": {
                         "then": "Parking en surface"
-                    },
-                    "4": {
-                        "then": "Parking sur un toit"
                     }
                 },
                 "question": "Quelle est la position relative de ce parking à vélo ?"
@@ -2302,7 +2299,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "then": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
                     },
                     "1": {
                         "then": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
@@ -2322,13 +2319,13 @@
             "tree-leaf_type": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Feuillu"
+                        "then": "Feuillu"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Résineux"
+                        "then": "Résineux"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Sans feuilles (Permanent)"
+                        "then": "Sans feuilles (Permanent)"
                     }
                 },
                 "question": "Cet arbre est-il un feuillu ou un résineux ?"
@@ -2352,11 +2349,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Arbre"
         }
     },

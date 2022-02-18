@@ -55,11 +55,11 @@ function main() {
     args.splice(0, 2)
     const path = args[0]
     const iconClass = args[1] ?? "small"
-    console.log("Fixing images in " + path)
+    const targetFile = args[2] ?? path + ".autoconverted.json"
     const parsed = JSON.parse(readFileSync(path, "UTF8"))
     const converted = new ConvertImagesToIcon(iconClass).convertStrict(parsed, "While running the fixImagesInTagRenderings-script")
-    writeFileSync(path + ".autoconverted.json", JSON.stringify(converted, null, "    "))
-    console.log("Written fixed version to " + path + ".autoconverted.json")
+    writeFileSync(targetFile, JSON.stringify(converted, null, "  "))
+    console.log("Written fixed version to " + targetFile)
 }
 
 main();

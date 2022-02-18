@@ -162,11 +162,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Arbo"
         }
     },

@@ -492,9 +492,6 @@
                     },
                     "3": {
                         "then": "Parcheggio in superficie"
-                    },
-                    "4": {
-                        "then": "Parcheggio sul tetto"
                     }
                 },
                 "question": "Qual è la posizione relativa di questo parcheggio bici?"
@@ -1926,7 +1923,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders"
+                        "then": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders"
                     },
                     "1": {
                         "then": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles"
@@ -1946,13 +1943,13 @@
             "tree-leaf_type": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Latifoglia"
+                        "then": "Latifoglia"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Aghifoglia"
+                        "then": "Aghifoglia"
                     },
                     "2": {
-                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Privo di foglie (permanente)"
+                        "then": "Privo di foglie (permanente)"
                     }
                 },
                 "question": "Si tratta di un albero latifoglia o aghifoglia?"
@@ -1976,11 +1973,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            },
             "render": "Albero"
         }
     },
