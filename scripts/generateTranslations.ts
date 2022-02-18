@@ -516,7 +516,13 @@ if (!themeOverwritesWeblate) {
     compileTranslationsFromWeblate();
 }
 genTranslations()
-formatFile("./langs/en.json")
+formatFile("./langs/themes/nl.json")
+/*const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
+for (const path of allTranslationFiles) {
+    console.log("Formatting ", path)
+    formatFile(path)
+}*/
+
 
 // SOme validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
