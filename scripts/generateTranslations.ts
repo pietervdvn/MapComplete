@@ -274,11 +274,29 @@ function transformTranslation(obj: any, depth = 1) {
 
 }
 
+function sortKeys(o: object): object{
+    const keys = Object.keys(o)
+    keys.sort()
+    const nw = {}
+    for (const key of keys) {
+        const v = o[key]
+        if(typeof v === "object"){
+            nw[key] = sortKeys(v)
+        }else{
+            nw[key] = v
+        }
+    }
+    return nw
+}
+
 /**
  * Formats the specified file, helps to prevent merge conflicts
  * */
 function formatFile(path) {
-    const contents = JSON.parse(readFileSync(path, "utf8"))
+    let contents = JSON.parse(readFileSync(path, "utf8"))
+    
+    contents = sortKeys(contents)
+    
     writeFileSync(path, JSON.stringify(contents, null, "    "))
 }
 
