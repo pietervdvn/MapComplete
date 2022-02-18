@@ -1,61 +1,61 @@
 {
-  "general": {
-    "opening_hours": {
-      "ph_open": "avattu",
-      "ph_closed": "suljettu",
-      "ph_not_known": " "
+    "centerMessage": {
+        "ready": "Valmis!"
     },
-    "weekdays": {
-      "sunday": "Sunnuntai",
-      "saturday": "Lauantai",
-      "friday": "Perjantai",
-      "thursday": "Torstai",
-      "wednesday": "Keskiviikko",
-      "tuesday": "Tiistai",
-      "monday": "Maanantai",
-      "abbreviations": {
-        "sunday": "Su",
-        "saturday": "La",
-        "friday": "Pe",
-        "thursday": "To",
-        "wednesday": "Ke",
-        "tuesday": "Ti",
-        "monday": "Ma"
-      }
+    "general": {
+        "backgroundMap": "Taustakartta",
+        "cancel": "Peruuta",
+        "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
+        "number": "numero",
+        "opening_hours": {
+            "ph_closed": "suljettu",
+            "ph_not_known": " ",
+            "ph_open": "avattu"
+        },
+        "pickLanguage": "Valitse kieli: ",
+        "questions": {
+            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "save": "Tallenna",
+        "search": {
+            "searching": "Etsitään…"
+        },
+        "sharescreen": {
+            "thanksForSharing": "Kiitos jakamisesta!"
+        },
+        "skip": "Ohita tämä kysymys",
+        "weekdays": {
+            "abbreviations": {
+                "friday": "Pe",
+                "monday": "Ma",
+                "saturday": "La",
+                "sunday": "Su",
+                "thursday": "To",
+                "tuesday": "Ti",
+                "wednesday": "Ke"
+            },
+            "friday": "Perjantai",
+            "monday": "Maanantai",
+            "saturday": "Lauantai",
+            "sunday": "Sunnuntai",
+            "thursday": "Torstai",
+            "tuesday": "Tiistai",
+            "wednesday": "Keskiviikko"
+        }
     },
-    "backgroundMap": "Taustakartta",
-    "pickLanguage": "Valitse kieli: ",
-    "number": "numero",
-    "cancel": "Peruuta",
-    "save": "Tallenna",
-    "search": {
-      "searching": "Etsitään…"
+    "image": {
+        "addPicture": "Lisää kuva",
+        "ccb": "CC-BY-lisenssillä",
+        "ccbs": "CC-BY-SA-lisenssillä",
+        "doDelete": "Poista kuva",
+        "dontDelete": "Peruuta",
+        "isDeleted": "Poistettu"
     },
-    "sharescreen": {
-      "thanksForSharing": "Kiitos jakamisesta!"
+    "index": {
+        "title": "Tervetuloa MapCompleteen"
     },
-    "questions": {
-      "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
-    },
-    "skip": "Ohita tämä kysymys",
-    "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla"
-  },
-  "centerMessage": {
-    "ready": "Valmis!"
-  },
-  "image": {
-    "doDelete": "Poista kuva",
-    "dontDelete": "Peruuta",
-    "addPicture": "Lisää kuva",
-    "isDeleted": "Poistettu",
-    "ccb": "CC-BY-lisenssillä",
-    "ccbs": "CC-BY-SA-lisenssillä"
-  },
-  "reviews": {
-    "title": "{count} arvostelua",
-    "title_singular": "Yksi arvostelu"
-  },
-  "index": {
-    "title": "Tervetuloa MapCompleteen"
-  }
+    "reviews": {
+        "title": "{count} arvostelua",
+        "title_singular": "Yksi arvostelu"
+    }
 }

@@ -1,157 +1,157 @@
 {
-  "image": {
-    "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
-    "ccb": "sob a licença CC-BY",
-    "ccbs": "sob a licença CC-BY-SA",
-    "cco": "no domínio público",
-    "willBePublished": "Sua imagem será publicada: ",
-    "pleaseLogin": "Faça login para adicionar uma imagem",
-    "uploadingMultiple": "Fazendo upload de {count} imagens…",
-    "uploadingPicture": "Enviando sua imagem…",
-    "addPicture": "Adicionar imagem",
-    "isDeleted": "Excluída",
-    "doDelete": "Remover imagem",
-    "dontDelete": "Cancelar",
-    "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
-    "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los."
-  },
-  "centerMessage": {
-    "ready": "Concluído!",
-    "zoomIn": "Amplie para ver ou editar os dados",
-    "loadingData": "Carregando dados…",
-    "retrying": "Falha ao carregar dados. Tentando novamente em {count} segundos…"
-  },
-  "general": {
-    "questions": {
-      "phoneNumberOf": "Qual é o número de telefone de {category}?",
-      "emailIs": "O endereço de e-mail deste {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-      "emailOf": "Qual é o endereço de e-mail de {category}?",
-      "websiteIs": "Site: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-      "websiteOf": "Qual é o site de {category}?",
-      "phoneNumberIs": "O número de telefone deste {category} é <a target=\"_blank\">{phone}</a>"
+    "centerMessage": {
+        "loadingData": "Carregando dados…",
+        "ready": "Concluído!",
+        "retrying": "Falha ao carregar dados. Tentando novamente em {count} segundos…",
+        "zoomIn": "Amplie para ver ou editar os dados"
     },
-    "noNameCategory": "{category} sem nome",
-    "nameInlineQuestion": "O nome desta {category} é $$$",
-    "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
-    "pickLanguage": "Escolha um idioma: ",
-    "add": {
-      "addNew": "Adicione uma nova {category} aqui",
-      "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
-      "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
-      "openLayerControl": "Abra a caixa de controle da camada",
-      "confirmIntro": "<h3>Adicionar um {title} aqui?</h3>O ponto que você criar aqui será <b>visível para todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitos aplicativos usam esses dados.",
-      "stillLoading": "Os dados ainda estão sendo carregados. Aguarde um pouco antes de adicionar um novo ponto.",
-      "zoomInFurther": "Aumente mais o zoom para adicionar um ponto.",
-      "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, faça o login para adicionar um novo ponto</a>",
-      "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
-      "title": "Adicionar um novo ponto?"
+    "favourite": {
+        "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap",
+        "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais",
+        "reload": "Recarregar dados"
     },
-    "osmLinkTooltip": "Veja este objeto no OpenStreetMap para histórico e mais opções de edição",
-    "number": "número",
-    "skippedQuestions": "Algumas perguntas foram puladas",
-    "skip": "Pule esta pergunta",
-    "oneSkippedQuestion": "Uma pergunta foi pulada",
-    "cancel": "Cancelar",
-    "save": "Salvar",
-    "returnToTheMap": "Voltar ao mapa",
-    "search": {
-      "error": "Algo deu errado…",
-      "nothing": "Nada encontrado…",
-      "searching": "Procurando…",
-      "search": "Pesquise um local"
+    "general": {
+        "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
+        "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Com o MapComplete, você pode enriquecer o OpenStreetMap com informações sobre um<b>único tema.</b>Responda a algumas perguntas e, em minutos, suas contribuições estarão disponíveis em todo o mundo! O<b>mantenedor do tema</b>define elementos, questões e linguagens para o tema.</p><h3>Saiba mais</h3><p>MapComplete sempre<b>oferece a próxima etapa</b>para saber mais sobre o OpenStreetMap.</p><ul><li>Quando incorporado em um site, o iframe vincula-se a um MapComplete em tela inteira</li><li>A versão em tela inteira oferece informações sobre o OpenStreetMap</li><li>A visualização funciona sem login, mas a edição requer um login do OSM.</li><li>Se você não estiver conectado, será solicitado que você faça o login</li><li>Depois de responder a uma única pergunta, você pode adicionar novos aponta para o mapa </li><li> Depois de um tempo, as tags OSM reais são mostradas, posteriormente vinculadas ao wiki </li></ul><p></p><br><p>Você percebeu<b>um problema</b>? Você tem uma<b>solicitação de recurso </b>? Quer<b>ajudar a traduzir</b>? Acesse <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">o código-fonte</a>ou <a href=\"https: //github.com/pietervdvn/MapComplete / issues \" target=\" _ blank \">rastreador de problemas.</a></p><p>Quer ver<b>seu progresso</b>? Siga a contagem de edição em<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "add": {
+            "addNew": "Adicione uma nova {category} aqui",
+            "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
+            "confirmIntro": "<h3>Adicionar um {title} aqui?</h3>O ponto que você criar aqui será <b>visível para todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitos aplicativos usam esses dados.",
+            "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
+            "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
+            "openLayerControl": "Abra a caixa de controle da camada",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, faça o login para adicionar um novo ponto</a>",
+            "stillLoading": "Os dados ainda estão sendo carregados. Aguarde um pouco antes de adicionar um novo ponto.",
+            "title": "Adicionar um novo ponto?",
+            "zoomInFurther": "Aumente mais o zoom para adicionar um ponto."
+        },
+        "backgroundMap": "Mapa de fundo",
+        "cancel": "Cancelar",
+        "customThemeIntro": "<h3>Temas personalizados</h3> Esses são temas gerados pelo usuário visitados anteriormente.",
+        "fewChangesBefore": "Por favor, responda algumas perguntas de pontos existentes antes de adicionar um novo ponto.",
+        "getStartedLogin": "Entrar com OpenStreetMap para começar",
+        "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma nova conta</a>",
+        "goToInbox": "Abrir mensagens",
+        "layerSelection": {
+            "title": "Selecionar camadas",
+            "zoomInToSeeThisLayer": "Amplie para ver esta camada"
+        },
+        "loginToStart": "Faça login para responder a esta pergunta",
+        "loginWithOpenStreetMap": "Entrar com OpenStreetMap",
+        "nameInlineQuestion": "O nome desta {category} é $$$",
+        "noNameCategory": "{category} sem nome",
+        "noTagsSelected": "Nenhuma tag selecionada",
+        "number": "número",
+        "oneSkippedQuestion": "Uma pergunta foi pulada",
+        "opening_hours": {
+            "closed_permanently": "Fechado por tempo desconhecido",
+            "closed_until": "Fechado até {date}",
+            "error_loading": "Erro: não foi possível visualizar este horário de funcionamento.",
+            "not_all_rules_parsed": "O horário de funcionamento desta loja é complicado. As seguintes regras são ignoradas na entrada:",
+            "openTill": "até",
+            "open_24_7": "Aberto 24 horas por dia",
+            "open_during_ph": "Durante um feriado, esse serviço está",
+            "opensAt": "desde",
+            "ph_closed": "fechado",
+            "ph_not_known": " ",
+            "ph_open": "aberto"
+        },
+        "osmLinkTooltip": "Veja este objeto no OpenStreetMap para histórico e mais opções de edição",
+        "pickLanguage": "Escolha um idioma: ",
+        "questions": {
+            "emailIs": "O endereço de e-mail deste {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "Qual é o endereço de e-mail de {category}?",
+            "phoneNumberIs": "O número de telefone deste {category} é <a target=\"_blank\">{phone}</a>",
+            "phoneNumberOf": "Qual é o número de telefone de {category}?",
+            "websiteIs": "Site: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "Qual é o site de {category}?"
+        },
+        "readYourMessages": "Por favor, leia todas as suas mensagens do OpenStreetMap antes de adicionar um novo ponto.",
+        "returnToTheMap": "Voltar ao mapa",
+        "save": "Salvar",
+        "search": {
+            "error": "Algo deu errado…",
+            "nothing": "Nada encontrado…",
+            "search": "Pesquise um local",
+            "searching": "Procurando…"
+        },
+        "sharescreen": {
+            "addToHomeScreen": "<h3>Adicionar à sua tela inicial</h3>Você pode adicionar facilmente este site à tela inicial do smartphone para uma sensação nativa. Clique no botão 'adicionar à tela inicial' na barra de URL para fazer isso.",
+            "copiedToClipboard": "Link copiado para a área de transferência",
+            "editThemeDescription": "Adicione ou altere perguntas a este tema do mapa",
+            "editThisTheme": "Editar neste tema",
+            "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará.",
+            "fsAddNew": "Habilite o botão 'adicionar novo POI'",
+            "fsGeolocation": "Ative o botão 'localizar-me geograficamente' (apenas para celular)",
+            "fsIncludeCurrentBackgroundMap": "Incluir a escolha de fundo atual <b>{name}</b>",
+            "fsIncludeCurrentLayers": "Incluir as opções de camada atuais",
+            "fsIncludeCurrentLocation": "Incluir localização atual",
+            "fsLayerControlToggle": "Iniciar com o controle de camada expandido",
+            "fsLayers": "Ativar o controle de camada",
+            "fsSearch": "Ativar a barra de pesquisa",
+            "fsUserbadge": "Habilite o botão de login",
+            "fsWelcomeMessage": "Mostra o pop-up da mensagem de boas-vindas e as guias associadas",
+            "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:",
+            "thanksForSharing": "Obrigado por compartilhar!"
+        },
+        "skip": "Pule esta pergunta",
+        "skippedQuestions": "Algumas perguntas foram puladas",
+        "weekdays": {
+            "abbreviations": {
+                "friday": "Sex",
+                "monday": "Seg",
+                "saturday": "Sab",
+                "sunday": "Dom",
+                "thursday": "Qui",
+                "tuesday": "Ter",
+                "wednesday": "Qua"
+            },
+            "friday": "Sexta",
+            "monday": "Segunda",
+            "saturday": "Sábado",
+            "sunday": "Domingo",
+            "thursday": "Quinta",
+            "tuesday": "Terça",
+            "wednesday": "Quanta"
+        },
+        "welcomeBack": "Você está logado, seja bem-vindo de volta!"
     },
-    "loginToStart": "Faça login para responder a esta pergunta",
-    "welcomeBack": "Você está logado, seja bem-vindo de volta!",
-    "loginWithOpenStreetMap": "Entrar com OpenStreetMap",
-    "opening_hours": {
-      "ph_open": "aberto",
-      "ph_closed": "fechado",
-      "ph_not_known": " ",
-      "open_24_7": "Aberto 24 horas por dia",
-      "closed_permanently": "Fechado por tempo desconhecido",
-      "closed_until": "Fechado até {date}",
-      "not_all_rules_parsed": "O horário de funcionamento desta loja é complicado. As seguintes regras são ignoradas na entrada:",
-      "openTill": "até",
-      "opensAt": "desde",
-      "open_during_ph": "Durante um feriado, esse serviço está",
-      "error_loading": "Erro: não foi possível visualizar este horário de funcionamento."
+    "image": {
+        "addPicture": "Adicionar imagem",
+        "ccb": "sob a licença CC-BY",
+        "ccbs": "sob a licença CC-BY-SA",
+        "cco": "no domínio público",
+        "doDelete": "Remover imagem",
+        "dontDelete": "Cancelar",
+        "isDeleted": "Excluída",
+        "pleaseLogin": "Faça login para adicionar uma imagem",
+        "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
+        "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
+        "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los.",
+        "uploadingMultiple": "Fazendo upload de {count} imagens…",
+        "uploadingPicture": "Enviando sua imagem…",
+        "willBePublished": "Sua imagem será publicada: "
     },
-    "weekdays": {
-      "sunday": "Domingo",
-      "saturday": "Sábado",
-      "friday": "Sexta",
-      "thursday": "Quinta",
-      "wednesday": "Quanta",
-      "tuesday": "Terça",
-      "monday": "Segunda",
-      "abbreviations": {
-        "sunday": "Dom",
-        "saturday": "Sab",
-        "friday": "Sex",
-        "thursday": "Qui",
-        "wednesday": "Qua",
-        "tuesday": "Ter",
-        "monday": "Seg"
-      }
+    "index": {
+        "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
+        "intro": "MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
+        "pickTheme": "Escolha um tema abaixo para começar.",
+        "title": "Bem-vindo(a) ao MapComplete"
     },
-    "layerSelection": {
-      "title": "Selecionar camadas",
-      "zoomInToSeeThisLayer": "Amplie para ver esta camada"
-    },
-    "backgroundMap": "Mapa de fundo",
-    "customThemeIntro": "<h3>Temas personalizados</h3> Esses são temas gerados pelo usuário visitados anteriormente.",
-    "noTagsSelected": "Nenhuma tag selecionada",
-    "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma nova conta</a>",
-    "getStartedLogin": "Entrar com OpenStreetMap para começar",
-    "goToInbox": "Abrir mensagens",
-    "fewChangesBefore": "Por favor, responda algumas perguntas de pontos existentes antes de adicionar um novo ponto.",
-    "readYourMessages": "Por favor, leia todas as suas mensagens do OpenStreetMap antes de adicionar um novo ponto.",
-    "sharescreen": {
-      "fsIncludeCurrentLocation": "Incluir localização atual",
-      "fsIncludeCurrentLayers": "Incluir as opções de camada atuais",
-      "fsIncludeCurrentBackgroundMap": "Incluir a escolha de fundo atual <b>{name}</b>",
-      "fsGeolocation": "Ative o botão 'localizar-me geograficamente' (apenas para celular)",
-      "fsAddNew": "Habilite o botão 'adicionar novo POI'",
-      "fsLayerControlToggle": "Iniciar com o controle de camada expandido",
-      "fsLayers": "Ativar o controle de camada",
-      "fsWelcomeMessage": "Mostra o pop-up da mensagem de boas-vindas e as guias associadas",
-      "fsSearch": "Ativar a barra de pesquisa",
-      "fsUserbadge": "Habilite o botão de login",
-      "editThemeDescription": "Adicione ou altere perguntas a este tema do mapa",
-      "editThisTheme": "Editar neste tema",
-      "thanksForSharing": "Obrigado por compartilhar!",
-      "copiedToClipboard": "Link copiado para a área de transferência",
-      "addToHomeScreen": "<h3>Adicionar à sua tela inicial</h3>Você pode adicionar facilmente este site à tela inicial do smartphone para uma sensação nativa. Clique no botão 'adicionar à tela inicial' na barra de URL para fazer isso.",
-      "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:",
-      "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará."
-    },
-    "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Com o MapComplete, você pode enriquecer o OpenStreetMap com informações sobre um<b>único tema.</b>Responda a algumas perguntas e, em minutos, suas contribuições estarão disponíveis em todo o mundo! O<b>mantenedor do tema</b>define elementos, questões e linguagens para o tema.</p><h3>Saiba mais</h3><p>MapComplete sempre<b>oferece a próxima etapa</b>para saber mais sobre o OpenStreetMap.</p><ul><li>Quando incorporado em um site, o iframe vincula-se a um MapComplete em tela inteira</li><li>A versão em tela inteira oferece informações sobre o OpenStreetMap</li><li>A visualização funciona sem login, mas a edição requer um login do OSM.</li><li>Se você não estiver conectado, será solicitado que você faça o login</li><li>Depois de responder a uma única pergunta, você pode adicionar novos aponta para o mapa </li><li> Depois de um tempo, as tags OSM reais são mostradas, posteriormente vinculadas ao wiki </li></ul><p></p><br><p>Você percebeu<b>um problema</b>? Você tem uma<b>solicitação de recurso </b>? Quer<b>ajudar a traduzir</b>? Acesse <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">o código-fonte</a>ou <a href=\"https: //github.com/pietervdvn/MapComplete / issues \" target=\" _ blank \">rastreador de problemas.</a></p><p>Quer ver<b>seu progresso</b>? Siga a contagem de edição em<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>"
-  },
-  "index": {
-    "pickTheme": "Escolha um tema abaixo para começar.",
-    "intro": "MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
-    "title": "Bem-vindo(a) ao MapComplete",
-    "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado"
-  },
-  "reviews": {
-    "plz_login": "Entrar para deixar um comentário",
-    "saved": "<span class=\"thanks\">Comentário salvo. Obrigado por compartilhar!</span>",
-    "saving_review": "Salvando…",
-    "i_am_affiliated": "<span>Eu sou afiliado a este objeto</span><br><span class=\"subtle\"><br><span class=\"subtle\">Verifique se você é proprietário, criador, funcionário, …</span></span>",
-    "posting_as": "Postando como",
-    "no_rating": "Nenhuma classificação dada",
-    "write_a_comment": "Deixe um comentário…",
-    "no_reviews_yet": "Não há comentários ainda. Seja o primeiro a escrever um e ajude a abrir os dados e os negócios!",
-    "name_required": "É necessário um nome para exibir e criar comentários",
-    "title_singular": "Um comentário",
-    "title": "{count} comentários",
-    "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
-    "affiliated_reviewer_warning": "(Revisão de afiliados)",
-    "attribution": "As resenhas são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis em <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>."
-  },
-  "favourite": {
-    "reload": "Recarregar dados",
-    "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais",
-    "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap"
-  }
+    "reviews": {
+        "affiliated_reviewer_warning": "(Revisão de afiliados)",
+        "attribution": "As resenhas são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis em <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
+        "i_am_affiliated": "<span>Eu sou afiliado a este objeto</span><br><span class=\"subtle\"><br><span class=\"subtle\">Verifique se você é proprietário, criador, funcionário, …</span></span>",
+        "name_required": "É necessário um nome para exibir e criar comentários",
+        "no_rating": "Nenhuma classificação dada",
+        "no_reviews_yet": "Não há comentários ainda. Seja o primeiro a escrever um e ajude a abrir os dados e os negócios!",
+        "plz_login": "Entrar para deixar um comentário",
+        "posting_as": "Postando como",
+        "saved": "<span class=\"thanks\">Comentário salvo. Obrigado por compartilhar!</span>",
+        "saving_review": "Salvando…",
+        "title": "{count} comentários",
+        "title_singular": "Um comentário",
+        "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
+        "write_a_comment": "Deixe um comentário…"
+    }
 }
