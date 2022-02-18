@@ -3002,9 +3002,6 @@
                     "0": {
                         "then": "Het specifieke type ingang is onbekend"
                     },
-                    "6": {
-                        "then": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)"
-                    },
                     "1": {
                         "then": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit"
                     },
@@ -3020,6 +3017,9 @@
                     "5": {
                         "then": "Dit is enkel een uitgang, je kan hier niet naar binnen"
                     },
+                    "6": {
+                        "then": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)"
+                    },
                     "7": {
                         "then": "Dit is een nooduitgang"
                     },
@@ -3031,11 +3031,14 @@
             },
             "automatic_door": {
                 "mappings": {
-                    "7": {
-                        "then": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>"
+                    "0": {
+                        "then": "Dit is een automatische deur"
                     },
-                    "8": {
-                        "then": "De deur wordt geopend door personeel wanneer je het vraagt"
+                    "1": {
+                        "then": "Deze deur is <b>niet</b> automatisch"
+                    },
+                    "2": {
+                        "then": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd"
                     },
                     "3": {
                         "then": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd"
@@ -3049,14 +3052,11 @@
                     "6": {
                         "then": "De deur draait continue automatisch"
                     },
-                    "0": {
-                        "then": "Dit is een automatische deur"
+                    "7": {
+                        "then": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>"
                     },
-                    "1": {
-                        "then": "Deze deur is <b>niet</b> automatisch"
-                    },
-                    "2": {
-                        "then": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd"
+                    "8": {
+                        "then": "De deur wordt geopend door personeel wanneer je het vraagt"
                     }
                 }
             },
