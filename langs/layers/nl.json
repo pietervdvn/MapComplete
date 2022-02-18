@@ -4101,9 +4101,12 @@
                         "then": "Schoenen kunnen hier gerecycled worden"
                     },
                     "17": {
-                        "then": "Kleine elektronische apparaten kunnen hier gerecycled worden"
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "18": {
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                    },
+                    "19": {
                         "then": "Restafval kan hier gerecycled worden"
                     }
                 },

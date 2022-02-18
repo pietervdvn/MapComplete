@@ -112,7 +112,12 @@
           "then": "circle:#FFFFFF;./assets/layers/recycling/shoes.svg"
         },
         {
-          "if": "recycling:small_electrical_appliances=yes",
+          "if": {
+            "or": [
+              "recycling:small_appliances=yes",
+              "recycling:small_electrical_appliances=yes"
+            ]
+          },
           "then": "circle:#FFFFFF;./assets/layers/recycling/small_electrical_appliances.svg"
         },
         {
@@ -413,12 +418,25 @@
           }
         },
         {
+          "if": "recycling:small_appliances=yes",
+          "ifnot": "recycling:small_appliances=",
+          "then": {
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "class": "medium"
+          }
+        },
+        {
           "if": "recycling:small_electrical_appliances=yes",
           "ifnot": "recycling:small_electrical_appliances=",
           "then": {
             "en": "Small electrical appliances can be recycled here",
-            "nl": "Kleine elektronische apparaten kunnen hier gerecycled worden"
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden"
           },
+          "hideInAnswer": true,
           "icon": {
             "path": "./assets/layers/recycling/small_electrical_appliances.svg",
             "class": "medium"
@@ -544,7 +562,12 @@
             "en": "Recycling of green waste",
             "nl": "Recycling van groen afval"
           },
-          "osmTags": "recycling:green_waste=yes"
+          "osmTags": {
+            "or": [
+              "recycling:green_waste=yes",
+              "recycling:organic=yes"
+            ]
+          }
         },
         {
           "question": {
@@ -607,7 +630,12 @@
             "en": "Recycling of small electrical appliances",
             "nl": "Recycling van kleine elektrische apparaten"
           },
-          "osmTags": "recycling:small_electrical_appliances=yes"
+          "osmTags": {
+            "or": [
+              "recycling:small_appliances=yes",
+              "recycling:small_electrical_appliances=yes"
+            ]
+          }
         },
         {
           "question": {
