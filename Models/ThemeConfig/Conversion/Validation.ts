@@ -305,9 +305,9 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
             const ctx = `${context}.mappings[${i}]`
             if (images.length > 0) {
                 if(!ignore){
-                    errors.push(`${ctx}: A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(", ")}. (Ignore this warning by adding "#": "${ignoreToken}" to the mapping`)
+                    errors.push(`${ctx}: A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(", ")}. (This check can be turned of by adding "#": "${ignoreToken}" in the mapping, but this is discouraged`)
                 }else{
-                    information.push(`${ctx}: Ignored images in then`)
+                    information.push(`${ctx}: Ignored image ${images.join(", ")} in 'then'-clause of a mapping as this check has been disabled`)
                 }
             }else if (ignore){
                 warnings.push(`${ctx}: unused '${ignoreToken}' - please remove this`)
