@@ -9,7 +9,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     private _sharedTagRenderings: Map<string, any>;
 
     private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths).filter(mp => mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
-    private static readonly tagRenderingMetaPaths = (tagrenderingmetapaths["default"] ?? tagrenderingmetapaths).filter(trpath => trpath.typeHint !== "rendered")
+    private static readonly tagRenderingMetaPaths = (tagrenderingmetapaths["default"] ?? tagrenderingmetapaths).filter(trpath => trpath.typeHint === "rendered")
 
 
     constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
@@ -48,7 +48,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
                             for (const img of fromPath) {
                                 if (typeof img.leaf !== "string") {
-                                    (this._isOfficial ?   errors: warnings).push(context+": found an image path that is not a path at " + context + "." + img.path.join(".") + ": " + JSON.stringify(img))
+                                    (this._isOfficial ?   errors: warnings).push(context+"."+img.path.join(".")+": found an image path that is not a string: " + JSON.stringify(img.leaf))
                                 }
                             }
                             allFoundImages.push(...fromPath.map(i => i.leaf).filter(i => typeof i=== "string"))
