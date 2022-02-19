@@ -228,16 +228,16 @@
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Jalur sepeda wajib"
                     },
                     "1": {
-                        "then": "Jalur sepeda wajib (dengan tanda tambahan)<br><img src ='./aset/tema/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                        "then": "Jalur sepeda wajib (dengan tanda tambahan)<br>"
                     },
                     "2": {
-                        "then": "Jalur pejalan kaki/sepeda terpisah <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                        "then": "Jalur pejalan kaki/sepeda terpisah"
                     },
                     "3": {
-                        "then": "Jalur pejalan kaki/sepeda tidak terpisah <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                        "then": "Jalur pejalan kaki/sepeda tidak terpisah"
                     },
                     "4": {
                         "then": "Tidak ada rambu lalu lintas"
@@ -265,7 +265,7 @@
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Jalur sepeda wajib"
                     }
                 }
             }
@@ -304,7 +304,7 @@
             "hydrant-type": {
                 "mappings": {
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
+                        "then": "Jenis dinding."
                     }
                 }
             }

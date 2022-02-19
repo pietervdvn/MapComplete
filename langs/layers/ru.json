@@ -420,13 +420,13 @@
             "Bicycle parking type": {
                 "mappings": {
                     "3": {
-                        "then": "Стойка <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Стойка"
                     },
                     "4": {
-                        "then": "Двухуровневая <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Двухуровневая"
                     },
                     "5": {
-                        "then": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Навес"
                     }
                 },
                 "question": "К какому типу относится эта велопарковка?",
@@ -957,7 +957,7 @@
                         "then": "Тип гидранта не определён."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены."
+                        "then": "Тип стены."
                     }
                 },
                 "question": "К какому типу относится этот гидрант?",

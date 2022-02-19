@@ -126,6 +126,11 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const oldThemeConfig = {...json}
+        
+        if(oldThemeConfig.socialImage === ""){
+            delete oldThemeConfig.socialImage
+        }
+        
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
 
             if (oldThemeConfig["roamingRenderings"].length == 0) {

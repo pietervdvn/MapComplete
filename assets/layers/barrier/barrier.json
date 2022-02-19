@@ -246,41 +246,57 @@
         {
           "if": "cycle_barrier=single",
           "then": {
-            "en": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
-            "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
-            "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
-            "hu": "Egyszeres: csak két korlát, közöttük térköz <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
-            "fr": "Simple, deux barrières côte à côte <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+            "en": "Single, just two barriers with a space inbetween",
+            "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen",
+            "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum",
+            "hu": "Egyszeres: csak két korlát, közöttük térköz",
+            "fr": "Simple, deux barrières côte à côte"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_single.png",
+            "class": "large"
           }
         },
         {
           "if": "cycle_barrier=double",
           "then": {
-            "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
-            "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
-            "de": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
-            "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>",
+            "en": "Double, two barriers behind each other",
+            "nl": "Dubbel, twee hekjes achter elkaar",
+            "de": "Doppelt, zwei Barrieren hintereinander",
+            "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után",
             "fr": "Double, deux barrières successives"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_double.svg",
+            "class": "large"
           }
         },
         {
           "if": "cycle_barrier=triple",
           "then": {
-            "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
-            "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
-            "de": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
-            "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
-            "fr": "Triple, trois barrières successives <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+            "en": "Triple, three barriers behind each other",
+            "nl": "Drievoudig, drie hekjes achter elkaar",
+            "de": "Dreifach, drei Barrieren hintereinander",
+            "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után",
+            "fr": "Triple, trois barrières successives"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_triple.png",
+            "class": "large"
           }
         },
         {
           "if": "cycle_barrier=squeeze",
           "then": {
-            "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-            "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-            "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-            "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>",
-            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+            "en": "Squeeze gate, gap is smaller at top, than at the bottom",
+            "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem",
+            "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten",
+            "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul",
+            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_squeeze.png",
+            "class": "large"
           }
         }
       ],

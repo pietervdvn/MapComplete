@@ -134,13 +134,13 @@
                 "1": {
                     "mappings": {
                         "1": {
-                            "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                            "then": "Dit gebied wordt beheerd door Natuurpunt"
                         },
                         "2": {
-                            "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                            "then": "Dit gebied wordt beheerd door {operator}"
                         },
                         "3": {
-                            "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                            "then": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
                         }
                     },
                     "question": "Wie beheert dit gebied?",

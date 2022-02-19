@@ -45,6 +45,7 @@ import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
 import FileSelectorButton from "./Input/FileSelectorButton";
 import {LoginToggle} from "./Popup/LoginButton";
 import {start} from "repl";
+import {SubstitutedTranslation} from "./SubstitutedTranslation";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -865,13 +866,14 @@ export default class SpecialVisualizations {
                     args: [],
                     docs:"Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                     example:"`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                    constr: (state, tags, args, guistate) =>
-                        new VariableUiElement(tags.map(tags => {
+                    constr: (state, tagsSource, args, guistate) =>
+                        new VariableUiElement(tagsSource.map(tags => {
                             const layer = state.layoutToUse.getMatchingLayer(tags)
-                            console.log("Layer for tags", tags,"is", layer.id)
                             const title = layer?.title?.GetRenderValue(tags)
-                            console.log("Title became: ", title)
-                            return title
+                            if(title === undefined){
+                                return undefined
+                            }
+                            return new SubstitutedTranslation(title, tagsSource, state)
                         }))
                 }
             ]

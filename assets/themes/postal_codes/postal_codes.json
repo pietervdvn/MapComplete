@@ -22,7 +22,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 0.05,
-  "socialImage": "",
   "hideFromOverview": true,
   "clustering": false,
   "overpassTimeout": 180,

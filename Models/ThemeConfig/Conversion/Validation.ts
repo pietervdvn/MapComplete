@@ -12,6 +12,7 @@ import {ExtractImages} from "./FixImages";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {And} from "../../../Logic/Tags/And";
 import Translations from "../../../UI/i18n/Translations";
+import Svg from "../../../Svg";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -50,12 +51,14 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _path?: string;
     private readonly knownImagePaths: Set<string>;
     private readonly _isBuiltin: boolean;
+    private _sharedTagRenderings: Map<string, any>;
 
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
+        this._sharedTagRenderings = sharedTagRenderings;
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[], information: string[] } {
@@ -78,7 +81,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
         {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
-            const images = new ExtractImages(this._isBuiltin).convertStrict(json, "validation")
+            const images = new ExtractImages(this._isBuiltin, this._sharedTagRenderings).convertStrict(json, "validation")
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
                 errors.push("Found a remote image: " + remoteImage + " in theme " + json.id + ", please download it.")
@@ -93,8 +96,11 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     continue
                 }
                 if (image.match(/[a-z]*/)) {
-                    // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                    continue;
+                    
+                    if(Svg.All[image + ".svg"] !== undefined){
+                        // This is a builtin img, e.g. 'checkmark' or 'crosshair'
+                        continue;
+                    }
                 }
 
                 if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
@@ -163,10 +169,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 }
 
 export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Validates a theme and the contained layers",
-            new ValidateTheme(knownImagePaths, path, isBuiltin),
-            new OnEvery("layers", new ValidateLayer(knownImagePaths, undefined, false))
+            new ValidateTheme(knownImagePaths, path, isBuiltin, sharedTagRenderings),
+            new OnEvery("layers", new ValidateLayer(undefined, false))
         );
     }
 }
@@ -202,11 +208,29 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
 }
 
+class MiscThemeChecks extends DesugaringStep<LayoutConfigJson>{
+    constructor() {
+        super("Miscelleanous checks on the theme", [],"MiscThemesChecks");
+    }
+    
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const warnings = []
+        if(json.socialImage === ""){
+            warnings.push("Social image for theme "+json.id+" is the emtpy string")
+        }
+        return {
+            result :json,
+            warnings
+        };
+    }
+}
+
 export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
     constructor() {
         super("Various consistency checks on the raw JSON",
-            new OverrideShadowingCheck()
+            new OverrideShadowingCheck(),
+            new MiscThemeChecks()
         );
 
     }
@@ -265,22 +289,33 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
     }
 
-    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[], information?: string[] } {
+        const errors = []
         const warnings = []
+        const information = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
+        const ignoreToken = "ignore-image-in-then"
         for (let i = 0; i < json.mappings.length; i++) {
 
             const mapping = json.mappings[i]
+            const ignore = mapping["#"]?.indexOf(ignoreToken) >=0
             const images = Utils.Dedup(Translations.T(mapping.then).ExtractImages())
+            const ctx = `${context}.mappings[${i}]`
             if (images.length > 0) {
-                warnings.push(context + ".mappings[" + i + "]: A mapping has an image in the 'then'-clause. Remove the image there and use `\"icon\": <your-image>` instead. The images found are "+images.join(", "))
+                if(!ignore){
+                    errors.push(`${ctx}: A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(", ")}. (Ignore this warning by adding "#": "${ignoreToken}" to the mapping`)
+                }else{
+                    information.push(`${ctx}: Ignored images in then`)
+                }
+            }else if (ignore){
+                warnings.push(`${ctx}: unused '${ignoreToken}' - please remove this`)
             }
         }
 
         return {
-            warnings,
+            errors,warnings,information,
             result: json
         };
     }
@@ -302,12 +337,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
      * @private
      */
     private readonly _path?: string;
-    private readonly knownImagePaths?: Set<string>;
     private readonly _isBuiltin: boolean;
 
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(path: string, isBuiltin: boolean) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer");
-        this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
     }

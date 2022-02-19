@@ -157,11 +157,15 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> ピラー型。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Soprasuolo."
+            "en": "Pillar type.",
+            "ja": "ピラー型。",
+            "fr": "Pilier.",
+            "de": "Säulenart.",
+            "it": "Soprasuolo."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_pillar.svg",
+            "class": "small"
           }
         },
         {
@@ -171,11 +175,15 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> パイプ型。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tubo."
+            "en": "Pipe type.",
+            "ja": "パイプ型。",
+            "fr": "Tuyau.",
+            "de": "Rohrtyp.",
+            "it": "Tubo."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
+            "class": "small"
           }
         },
         {
@@ -185,13 +193,17 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type.",
-            "id": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding.",
-            "ru": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> 壁型。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> A muro."
+            "en": "Wall type.",
+            "id": "Jenis dinding.",
+            "ru": "Тип стены.",
+            "ja": "壁型。",
+            "fr": "Mural.",
+            "de": "Wandtyp.",
+            "it": "A muro."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
+            "class": "small"
           }
         },
         {
@@ -201,11 +213,15 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" />地下式。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Sottosuolo."
+            "en": "Underground type.",
+            "ja": "地下式。",
+            "fr": "Enterré.",
+            "de": "Untergrundtyp.",
+            "it": "Sottosuolo."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_underground.svg",
+            "class": "small"
           }
         }
       ]

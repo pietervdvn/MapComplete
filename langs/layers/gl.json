@@ -89,22 +89,22 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "De roda (Stands)"
                     },
                     "1": {
-                        "then": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Aros"
                     },
                     "2": {
-                        "then": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Cadeado para guiador"
                     },
                     "3": {
-                        "then": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Cremalleira"
                     },
                     "4": {
-                        "then": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Dobre cremalleira"
                     },
                     "5": {
-                        "then": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Abeiro"
                     }
                 },
                 "question": "Que tipo de aparcadoiro de bicicletas é?",

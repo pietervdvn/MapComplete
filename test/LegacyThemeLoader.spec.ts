@@ -5,7 +5,7 @@ import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingCon
 import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DetectMappingsWithImages, DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
 import * as Assert from "assert";
-import {FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
+import {ExtractImages, FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -144,7 +144,7 @@ export default class LegacyThemeLoaderSpec extends T {
         ]
     }
 
-    private static readonly verkeerde_borden ={
+    private static readonly verkeerde_borden = {
         "id": "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/VerkeerdeBordenDatabank.json",
         "title": {
             "nl": "VerkeerdeBordenDatabank",
@@ -242,7 +242,7 @@ export default class LegacyThemeLoaderSpec extends T {
                         "icon": "./TS_bolt.svg",
                         iconBadges: [{
                             if: "id=yes",
-                            then:{
+                            then: {
                                 mappings: [
                                     {
                                         if: "id=yes",
@@ -351,7 +351,6 @@ export default class LegacyThemeLoaderSpec extends T {
     }
 
 
-
     constructor() {
         super([
                 ["Walking_node_theme", () => {
@@ -423,9 +422,9 @@ export default class LegacyThemeLoaderSpec extends T {
                                 }
                             ]
                         }, "test");
-                    T.isTrue(r.errors.length > 0, "Failing case 0 is not detected")
+                        T.isTrue(r.errors.length > 0, "Failing case 0 is not detected")
 
-                        const r0 = new DetectShadowedMappings().convert( {
+                        const r0 = new DetectShadowedMappings().convert({
                             mappings: [
                                 {
                                     if: {or: ["key=value", "x=y"]},
@@ -440,34 +439,72 @@ export default class LegacyThemeLoaderSpec extends T {
                         T.isTrue(r0.errors.length > 0, "Failing case 1 is not detected")
                     }
                 ],
-            ["Images are rewritten", () => {
-                const fixed =   new FixImages(new Set<string>()).convertStrict(LegacyThemeLoaderSpec.verkeerde_borden, "test")
-                const fixedValue = fixed.layers[0]["mapRendering"][0].icon
-                Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg",
-                    fixedValue)
+                ["Images are rewritten", () => {
+                    const fixed = new FixImages(new Set<string>()).convertStrict(LegacyThemeLoaderSpec.verkeerde_borden, "test")
+                    const fixedValue = fixed.layers[0]["mapRendering"][0].icon
+                    Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg",
+                        fixedValue)
 
-                const fixedMapping = fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then
-                Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg",
-                    fixedMapping)
-            } ],
-            ["Images in 'thens' are detected", () => {
-                const r = new DetectMappingsWithImages().convert({
+                    const fixedMapping = fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then
+                    Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg",
+                        fixedMapping)
+                }],
+                ["Images in 'thens' are detected", () => {
+                    const r = new DetectMappingsWithImages().convert({
                         "mappings": [
-                    {
-                        "if": "bicycle_parking=stands",
-                        "then": {
-                            "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-                            "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-                            "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-                            "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-                            "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-                            "hu": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-                            "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-                            "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
-                        }
-                    }]}, "test");
-                T.isTrue(r.warnings.length > 0, "No images found");
-            }]
+                            {
+                                "if": "bicycle_parking=stands",
+                                "then": {
+                                    "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "hu": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+                                    "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                                }
+                            }]
+                    }, "test");
+                    const errors = r.errors;
+                    T.isTrue(errors.length > 0, "No images found");
+                    T.isTrue(errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0), "staple.svg not mentioned");
+                }],
+                ["Images in 'thens' icons are detected", () => {
+                    const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
+                        "layers": [
+                            {
+                                tagRenderings: [
+                                    {
+                                        "mappings": [
+                                            {
+                                                "if": "bicycle_parking=stands",
+                                                "then": {
+                                                    "en": "Staple racks",
+                                                },
+                                                "icon": {
+                                                    path: "./assets/layers/bike_parking/staple.svg",
+                                                    class: "small"
+                                                }
+                                            },
+                                            {
+                                                "if": "bicycle_parking=stands",
+                                                "then": {
+                                                    "en": "Bollard",
+                                                },
+                                                "icon": "./assets/layers/bike_parking/bollard.svg",
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }, "test");
+                    const images = r.result
+                    T.isTrue(images.length > 0, "No images found");
+                    T.isTrue(images.findIndex(img => img =="./assets/layers/bike_parking/staple.svg") >= 0, "staple.svg not mentioned");
+                    T.isTrue(images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") >= 0, "bollard.svg not mentioned");
+                }]
             ]
         );
     }

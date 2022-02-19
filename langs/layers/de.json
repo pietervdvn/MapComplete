@@ -183,16 +183,16 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Einfach, nur zwei Barrieren mit einem Zwischenraum <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                        "then": "Einfach, nur zwei Barrieren mit einem Zwischenraum"
                     },
                     "1": {
-                        "then": "Doppelt, zwei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>"
+                        "then": "Doppelt, zwei Barrieren hintereinander"
                     },
                     "2": {
-                        "then": "Dreifach, drei Barrieren hintereinander <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                        "then": "Dreifach, drei Barrieren hintereinander"
                     },
                     "3": {
-                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten"
                     }
                 },
                 "question": "Um welche Art Fahrradhindernis handelt es sich?"
@@ -574,25 +574,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Fahrradbügel"
                     },
                     "1": {
-                        "then": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Metallgestänge"
                     },
                     "2": {
-                        "then": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Halter für Fahrradlenker"
                     },
                     "3": {
-                        "then": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Gestell"
                     },
                     "4": {
-                        "then": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Zweistufig"
                     },
                     "5": {
-                        "then": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Schuppen"
                     },
                     "6": {
-                        "then": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Poller"
                     },
                     "7": {
                         "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
@@ -1242,7 +1242,7 @@
             "crossing-continue-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
                     },
                     "1": {
                         "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
@@ -1278,7 +1278,7 @@
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
                     },
                     "1": {
                         "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
@@ -1559,16 +1559,16 @@
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Vorgeschriebener Radweg"
                     },
                     "1": {
-                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br>"
                     },
                     "2": {
-                        "then": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                        "then": "Getrennter Fuß-/Radweg"
                     },
                     "3": {
-                        "then": "Gemeinsamer Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                        "then": "Gemeinsamer Fuß-/Radweg"
                     },
                     "4": {
                         "then": "Kein Verkehrsschild vorhanden"
@@ -1596,33 +1596,22 @@
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Vorgeschriebener Radweg"
                     },
                     "1": {
-                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                        "then": "Vorgeschriebener Radweg (mit Zusatzschild)<br>"
                     },
                     "2": {
-                        "then": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                        "then": "Getrennter Fuß-/Radweg"
                     },
                     "3": {
-                        "then": "Gemeinsamer Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                        "then": "Gemeinsamer Fuß-/Radweg"
                     },
                     "4": {
                         "then": "Kein Verkehrsschild vorhanden"
                     }
                 },
                 "question": "Welches Verkehrszeichen hat dieser Radweg?"
-            },
-            "cycleway-traffic-signs-D7-supplementary": {
-                "mappings": {
-                    "1": {
-                        "then": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
-                    },
-                    "6": {
-                        "then": "Kein zusätzliches Verkehrszeichen vorhanden"
-                    }
-                },
-                "question": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
@@ -2135,16 +2124,16 @@
                         "then": "Der Typ des Hydranten ist unbekannt."
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart."
+                        "then": "Säulenart."
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp."
+                        "then": "Rohrtyp."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp."
+                        "then": "Wandtyp."
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp."
+                        "then": "Untergrundtyp."
                     }
                 },
                 "question": "Um welche Art von Hydrant handelt es sich?",

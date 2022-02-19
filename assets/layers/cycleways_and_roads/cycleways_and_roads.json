@@ -805,50 +805,66 @@
         {
           "if": "cycleway:traffic_sign=BE:D7",
           "then": {
-            "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "de": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "id": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+            "en": "Compulsory cycleway",
+            "nl": "Verplicht fietspad",
+            "de": "Vorgeschriebener Radweg",
+            "id": "Jalur sepeda wajib"
           },
-          "hideInAnswer": "_country!=be"
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D07.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign~BE:D7;.*",
           "then": {
-            "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-            "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-            "id": "Jalur sepeda wajib (dengan tanda tambahan)<br><img src ='./aset/tema/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+            "en": "Compulsory cycleway (with supplementary sign)<br>",
+            "nl": "Verplicht fietspad (met onderbord)<br>",
+            "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br>",
+            "id": "Jalur sepeda wajib (dengan tanda tambahan)<br>"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D07.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D9",
           "then": {
-            "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
-            "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
-            "de": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
-            "id": "Jalur pejalan kaki/sepeda terpisah <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+            "en": "Segregated foot/cycleway",
+            "nl": "Afgescheiden voet-/fietspad",
+            "de": "Getrennter Fuß-/Radweg",
+            "id": "Jalur pejalan kaki/sepeda terpisah"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:foot=designated",
             "cycleway:segregated=yes"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D09.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D10",
           "then": {
-            "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
-            "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
-            "de": "Gemeinsamer Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
-            "id": "Jalur pejalan kaki/sepeda tidak terpisah <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+            "en": "Unsegregated foot/cycleway",
+            "nl": "Gedeeld voet-/fietspad",
+            "de": "Gemeinsamer Fuß-/Radweg",
+            "id": "Jalur pejalan kaki/sepeda tidak terpisah"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:foot=designated",
             "cycleway:segregated=no"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D10.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=none",
@@ -878,10 +894,10 @@
         {
           "if": "traffic_sign=BE:D7",
           "then": {
-            "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "de": "Vorgeschriebener Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "id": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+            "en": "Compulsory cycleway",
+            "nl": "Verplicht fietspad",
+            "de": "Vorgeschriebener Radweg",
+            "id": "Jalur sepeda wajib"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -889,23 +905,31 @@
             "mofa=designated",
             "moped=yes",
             "speed_pedelec=yes"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D07.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "traffic_sign~BE:D7;.*",
           "then": {
-            "en": "Compulsory cycleway (with supplementary sign)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> ",
-            "nl": "Verplicht fietspad (met onderbord)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>",
-            "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br><img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+            "en": "Compulsory cycleway (with supplementary sign)<br>",
+            "nl": "Verplicht fietspad (met onderbord)<br>",
+            "de": "Vorgeschriebener Radweg (mit Zusatzschild)<br>"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D07.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "traffic_sign=BE:D9",
           "then": {
-            "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
-            "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>",
-            "de": "Getrennter Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+            "en": "Segregated foot/cycleway",
+            "nl": "Afgescheiden voet-/fietspad",
+            "de": "Getrennter Fuß-/Radweg"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -915,14 +939,18 @@
             "moped=no",
             "speed_pedelec=no",
             "segregated=yes"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D09.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "traffic_sign=BE:D10",
           "then": {
-            "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
-            "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>",
-            "de": "Gemeinsamer Fuß-/Radweg <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+            "en": "Unsegregated foot/cycleway",
+            "nl": "Gedeeld voet-/fietspad",
+            "de": "Gemeinsamer Fuß-/Radweg"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -932,7 +960,11 @@
             "moped=no",
             "speed_pedelec=no",
             "segregated=no"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_road_sign_D10.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "traffic_sign=none",
@@ -961,166 +993,97 @@
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M6",
           "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
+            "en": "Mopeds must use the cycleway",
+            "nl": "Bromfiets Klass B verplicht op het fietspad"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:moped=designated"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M13",
           "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
+            "en": "Speedpedelecs must use the cycleway",
+            "nl": "Speedpedelec (Bromfiets klasse P) verplicht op het fietspad"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:speed_pedelec=designated"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M14",
           "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
+            "en": "Mopeds and speedpedelecs must use the cycleway",
+            "nl": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht op het fietspad"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:moped=designated",
             "cycleway:speed_pedelec=designated"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M7",
           "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
+            "en": "Mopeds are not allowed",
+            "nl": "Bromfiets klasse B <b>verboden</b>"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:moped=no"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M15",
           "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
+            "en": "Speedpedelecs are not allowed",
+            "nl": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:speed_pedelec=no"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign=BE:D7;BE:M16",
           "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
+            "en": "Mopeds and speedpedelecs are not allowed",
+            "nl": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
             "cycleway:moped=designated",
             "cycleway:speed_pedelec=no"
-          ]
+          ],
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg",
+            "class": "medium"
+          }
         },
         {
           "if": "cycleway:traffic_sign:supplementary=none",
-          "then": {
-            "en": "No supplementary traffic sign present",
-            "nl": "Geen onderbord aanwezig",
-            "de": "Kein zusätzliches Verkehrszeichen vorhanden"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cycleway-traffic-signs-D7-supplementary",
-      "question": {
-        "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-        "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
-        "de": "Hat das Verkehrszeichen D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
-      },
-      "condition": {
-        "or": [
-          "traffic_sign=BE:D7",
-          "traffic_sign~BE:D7;.*"
-        ]
-      },
-      "mappings": [
-        {
-          "if": "traffic_sign=BE:D7;BE:M6",
-          "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M6.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=designated"
-          ]
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M13",
-          "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>",
-            "de": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M13.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "speed_pedelec=designated"
-          ]
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M14",
-          "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M14.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=designated",
-            "speed_pedelec=designated"
-          ]
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M7",
-          "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M7.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=no"
-          ]
-        },
-        {
-          "if": ":traffic_sign=BE:D7;BE:M15",
-          "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M15.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "speed_pedelec=no"
-          ]
-        },
-        {
-          "if": "traffic_sign=BE:D7;BE:M16",
-          "then": {
-            "en": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>",
-            "nl": "<img src='./assets/themes/cycle_infra/Belgian_traffic_sign_M16.svg' style='width: 3em'>"
-          },
-          "hideInAnswer": "_country!=be",
-          "addExtraTags": [
-            "moped=designated",
-            "speed_pedelec=no"
-          ]
-        },
-        {
-          "if": "traffic_sign:supplementary=none",
           "then": {
             "en": "No supplementary traffic sign present",
             "nl": "Geen onderbord aanwezig",

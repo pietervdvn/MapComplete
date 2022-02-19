@@ -24,7 +24,6 @@
   "startLon": 51.52224,
   "startZoom": 17,
   "widenFactor": 1.01,
-  "socialImage": "",
   "hideFromOverview": true,
   "clustering": {
     "minNeededFeatures": 25,
@@ -240,6 +239,7 @@
           },
           "mappings": [
             {
+              "#": "ignore-image-in-then",
               "if": "addr:substreet~*",
               "then": "<div>The envelope below shows the address that we have recorded. You can change this by answering any remaining questions above, or by clicking the pencil icons below. We do not need you to provide a recipient's name or any of the parts shown in <span style='color: #4e7ce8'>[blue]</span>.</div><div style='background: #f1d592; min-height: 270px; border-radius: 2px; padding: 1rem 1rem 2rem 7rem; margin: 1rem; box-shadow: 0 2px 5px 0px rgba(0,0,0,.6)' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp-outline.png' class='self-end w-16'/><div>{addr:unit} {addr:housename}</div><div>{addr:housenumber} {addr:substreet}</div><div>{addr:street}</div><div>{addr:parentstreet}</div><div style='color: #4e7ce8'>[Suburb]</div><div style='color: #4e7ce8'>[Town]</div><div style='color: #4e7ce8'>[Postal code]</div></div>"
             }

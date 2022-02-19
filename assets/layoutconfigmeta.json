@@ -485,6 +485,48 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "isShown",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -753,6 +795,48 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "title",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -1014,6 +1098,48 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "titleIcons",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -1291,6 +1417,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "icon",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -1585,6 +1755,52 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -1852,6 +2068,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "iconSize",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -2116,6 +2376,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "rotation",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -2380,6 +2684,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "label",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -2651,6 +2999,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "color",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -2918,6 +3310,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "width",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -3182,6 +3618,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "dashArray",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -3446,6 +3926,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "lineCap",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -3714,6 +4238,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fill",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -3978,6 +4546,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "fillColor",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -4242,6 +4854,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "offset",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -4625,6 +5281,48 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -4871,6 +5569,50 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {
@@ -5159,6 +5901,13 @@
       "default"
     ],
     "type": "boolean"
+  },
+  {
+    "path": [
+      "layers",
+      "syncSelection"
+    ],
+    "type": "string"
   },
   {
     "path": [

@@ -31,7 +31,7 @@ class ConvertImagesToIcon extends DesugaringStep<LayerConfigJson> {
                 }
                 information.push("Replaced image " + images[0])
                 const replaced = then.OnEveryLanguage((s) => {
-                    return s.replace(/(<div [^>]*>)?<img [^>]*> ?/, "").replace(/<\/div>$/, "")
+                    return s.replace(/(<div [^>]*>)?<img [^>]*> ?/, "").replace(/<\/div>$/, "").trim()
                 })
 
                 mapping.then = replaced.translations

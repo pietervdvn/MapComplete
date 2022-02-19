@@ -183,16 +183,16 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Simple, deux barrières côte à côte <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
+                        "then": "Simple, deux barrières côte à côte"
                     },
                     "1": {
                         "then": "Double, deux barrières successives"
                     },
                     "2": {
-                        "then": "Triple, trois barrières successives <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                        "then": "Triple, trois barrières successives"
                     },
                     "3": {
-                        "then": "Poire, l’espace en hauteur est plus faible qu’au sol <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                        "then": "Poire, l’espace en hauteur est plus faible qu’au sol"
                     }
                 },
                 "question": "Quel est ce type de barrière cyclable ?"
@@ -539,25 +539,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Arceaux"
                     },
                     "1": {
-                        "then": "Pinces-roues <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Pinces-roues"
                     },
                     "2": {
-                        "then": "Support guidon <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Support guidon"
                     },
                     "3": {
-                        "then": "Râtelier <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Râtelier"
                     },
                     "4": {
-                        "then": "Superposé <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Superposé"
                     },
                     "5": {
-                        "then": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Abri"
                     },
                     "6": {
-                        "then": "Potelet <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "Potelet"
                     },
                     "7": {
                         "then": "Zone au sol qui est marquée pour le stationnement des vélos"
@@ -1438,16 +1438,16 @@
                         "then": "La borne est de type inconnu."
                     },
                     "1": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier."
+                        "then": "Pilier."
                     },
                     "2": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau."
+                        "then": "Tuyau."
                     },
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural."
+                        "then": "Mural."
                     },
                     "4": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré."
+                        "then": "Enterré."
                     }
                 },
                 "question": "De quel type de borne s’agit-il ?",

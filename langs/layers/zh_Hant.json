@@ -379,25 +379,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "單車架"
                     },
                     "1": {
-                        "then": "車輪架/圓圈 <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "車輪架/圓圈"
                     },
                     "2": {
-                        "then": "車把架 <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "車把架"
                     },
                     "3": {
-                        "then": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "車架"
                     },
                     "4": {
-                        "then": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "兩層"
                     },
                     "5": {
-                        "then": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "車棚"
                     },
                     "6": {
-                        "then": "柱子 <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "柱子"
                     },
                     "7": {
                         "then": "樓層當中標示為單車停車場的區域"

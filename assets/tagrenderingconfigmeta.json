@@ -138,6 +138,44 @@
       "icon"
     ],
     "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "mappings",
+      "icon",
+      "class"
+    ],
     "type": "string"
   },
   {

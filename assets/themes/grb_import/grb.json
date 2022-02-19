@@ -11,14 +11,13 @@
     "en": "This theme is an attempt to help automating the GRB import.",
     "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
   },
-  "maintainer": "",
+  "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/grb_import/logo.svg",
   "version": "0",
   "startLat": 51.0249,
   "startLon": 4.026489,
   "startZoom": 9,
   "widenFactor": 2,
-  "socialImage": "",
   "clustering": {
     "maxZoom": 15
   },
@@ -605,15 +604,14 @@
           },
           "iconSize": "50,50,center",
           "icon": {
-            "render": "./assets/themes/grb_import/housenumber_blank.svg",
             "mappings": [
               {
                 "if": "_intersects_with_other_features~*",
                 "then": "./assets/themes/grb_import/warning.svg"
               },
               {
-                "if": "addr:housenumber=",
-                "then": ""
+                "if": "addr:housenumber~*",
+                "then": "./assets/themes/grb_import/housenumber_blank.svg"
               }
             ]
           },
