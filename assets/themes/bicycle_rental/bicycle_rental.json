@@ -19,7 +19,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 0.05,
-  "socialImage": "",
   "layers": [
     "bicycle_rental"
   ]

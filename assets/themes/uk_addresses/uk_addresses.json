@@ -24,7 +24,6 @@
   "startLon": 51.52224,
   "startZoom": 17,
   "widenFactor": 1.01,
-  "socialImage": "",
   "hideFromOverview": true,
   "clustering": {
     "minNeededFeatures": 25,
