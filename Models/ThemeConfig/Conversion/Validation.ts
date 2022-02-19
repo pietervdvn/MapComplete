@@ -208,11 +208,29 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
 }
 
+class MiscThemeChecks extends DesugaringStep<LayoutConfigJson>{
+    constructor() {
+        super("Miscelleanous checks on the theme", [],"MiscThemesChecks");
+    }
+    
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const warnings = []
+        if(json.socialImage === ""){
+            warnings.push("Social image for theme "+json.id+" is the emtpy string")
+        }
+        return {
+            result :json,
+            warnings
+        };
+    }
+}
+
 export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
     constructor() {
         super("Various consistency checks on the raw JSON",
-            new OverrideShadowingCheck()
+            new OverrideShadowingCheck(),
+            new MiscThemeChecks()
         );
 
     }

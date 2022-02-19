@@ -19,7 +19,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     }
 
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
-         const allFoundImages = []
+        const allFoundImages : string[] = []
         const errors = []
         const warnings = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
@@ -33,7 +33,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                     if (typeof foundImage === "string") {
                         
                         if(foundImage == ""){
-                            errors.push(context+"."+path.join(".")+" Found an empty image")
+                            warnings.push(context+"."+path.join(".")+" Found an empty image")
                         }
                         
                         if(this._sharedTagRenderings?.has(foundImage)){
@@ -54,7 +54,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             allFoundImages.push(...fromPath.map(i => i.leaf).filter(i => typeof i=== "string"))
                             for (const pathAndImg of fromPath) {
                                 if(pathAndImg.leaf === "" || pathAndImg.leaf["path"] == ""){
-                                    errors.push(context+[...path,...pathAndImg.path].join(".")+": Found an empty image at ")
+                                    warnings.push(context+[...path,...pathAndImg.path].join(".")+": Found an empty image at ")
                                 }
                             }
                         }
@@ -62,7 +62,14 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                     }
                 }
             } else {
-                allFoundImages.push(...found.map(i => i.leaf))
+                for (const foundElement of found) {
+                    if(foundElement.leaf === ""){
+                        warnings.push(context+"."+foundElement.path.join(".")+" Found an empty image")
+                        continue
+                    }
+                    allFoundImages.push(foundElement.leaf)
+                }
+                
             }
         }
 
@@ -70,6 +77,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
             .map(img => img["path"] ?? img)
             .map(img => img.split(";")))
             .map(img => img.split(":")[0])
+            .filter(img => img !== "")
         return {result: Utils.Dedup(splitParts), errors, warnings};
     }
 
