@@ -1343,7 +1343,7 @@
                         "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
                     },
                     "13": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "14": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
@@ -1499,7 +1499,7 @@
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
                     }
                 },
-                "question": "Welke aansluitingen zijn hier beschikbaar?"
+                "question": "Welke laadaansluitingen zijn hier beschikbaar?"
             },
             "Network": {
                 "mappings": {
@@ -1658,8 +1658,8 @@
                         "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 32 A"
                     }
                 },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
+                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
             },
             "current-13": {
                 "mappings": {
@@ -1822,7 +1822,7 @@
                 "render": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
             },
             "plugs-12": {
-                "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?",
+                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?",
                 "render": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
             },
             "plugs-13": {
@@ -3882,7 +3882,7 @@
                         "then": "Dit boekenruilkastje heeft geen naam"
                     }
                 },
-                "question": "Wat is de naam van dit boekenuilkastje?",
+                "question": "Wat is de naam van dit boekenruilkastje?",
                 "render": "De naam van dit boekenruilkastje is {name}"
             },
             "public_bookcase-operator": {
@@ -4841,10 +4841,10 @@
                         "then": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes"
                     },
                     "1": {
-                        "then": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes"
+                        "then": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes"
                     },
                     "2": {
-                        "then": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes"
+                        "then": "Deze vuilnisbak heeft <b>waarschijnlijk geen</b> verdeler voor hondenpoepzakjes"
                     }
                 },
                 "question": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?"
