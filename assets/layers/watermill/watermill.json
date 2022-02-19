@@ -146,7 +146,11 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+            "nl": "Dit gebied wordt beheerd door Natuurpunt"
+          },
+          "icon": {
+            "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
+            "class": "small"
           }
         },
         {
@@ -156,9 +160,13 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+            "nl": "Dit gebied wordt beheerd door {operator}"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
+            "class": "small"
+          }
         }
       ],
       "id": "Operator tag"

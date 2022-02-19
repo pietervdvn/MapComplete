@@ -4612,10 +4612,10 @@
             "Operator tag": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                        "then": "Dit gebied wordt beheerd door Natuurpunt"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                        "then": "Dit gebied wordt beheerd door {operator}"
                     }
                 },
                 "question": "Wie beheert deze wandeltocht?",
@@ -4908,10 +4908,10 @@
             "Operator tag": {
                 "mappings": {
                     "0": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                        "then": "Dit gebied wordt beheerd door Natuurpunt"
                     },
                     "1": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                        "then": "Dit gebied wordt beheerd door {operator}"
                     }
                 },
                 "question": "Wie beheert dit pad?",
