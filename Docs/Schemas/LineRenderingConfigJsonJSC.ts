@@ -254,7 +254,7 @@ export default {
                 ]
               },
               "then": {
-                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\ntype: rendered"
+                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered"
               },
               "icon": {
                 "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",

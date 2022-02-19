@@ -470,7 +470,7 @@ export default class LegacyThemeLoaderSpec extends T {
                     T.isTrue(r.warnings.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0), "staple.svg not mentioned");
                 }],
                 ["Images in 'thens' icons are detected", () => {
-                    const r = new ExtractImages(true).convert(<any>{
+                    const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
                         "layers": [
                             {
                                 tagRenderings: [

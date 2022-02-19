@@ -7,6 +7,11 @@ import * as tagrenderingmetapaths from "../../../assets/tagrenderingconfigmeta.j
 export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     private _isOfficial: boolean;
     private _sharedTagRenderings: Map<string, any>;
+
+    private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths).filter(mp => mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
+    private static readonly tagRenderingMetaPaths = (tagrenderingmetapaths["default"] ?? tagrenderingmetapaths).filter(trpath => trpath.typeHint !== "rendered")
+
+
     constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
         super("Extract all images from a layoutConfig using the meta paths",[],"ExctractImages");
         this._isOfficial = isOfficial;
@@ -14,25 +19,17 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     }
 
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
-        const paths = metapaths["default"] ?? metapaths
-        const trpaths = tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
-        const allFoundImages = []
+         const allFoundImages = []
         const errors = []
         const warnings = []
-        for (const metapath of paths) {
-            if (metapath.typeHint === undefined) {
-                continue
-            }
-            if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
-                continue
-            }
-
+        for (const metapath of ExtractImages.layoutMetaPaths) {
             const mightBeTr = Array.isArray(metapath.type) && metapath.type.some(t => t["$ref"] == "#/definitions/TagRenderingConfigJson")
             const found = Utils.CollectPath(metapath.path, json)
             if (mightBeTr) {
                 // We might have tagRenderingConfigs containing icons here
-                for (const {path, leaf} of found) {
-                    const foundImage = leaf;
+                for (const el of found) {
+                    const path = el.path
+                    const foundImage = el.leaf;
                     if (typeof foundImage === "string") {
                         
                         if(foundImage == ""){
@@ -47,17 +44,14 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                         allFoundImages.push(foundImage)
                     } else{
                         // This is a tagRendering where every rendered value might be an icon!
-                        for (const trpath of trpaths) {
-                            if (trpath.typeHint !== "rendered") {
-                                continue
-                            }
+                        for (const trpath of ExtractImages.tagRenderingMetaPaths) {
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
                             for (const img of fromPath) {
-                                if (typeof img !== "string") {
-                                    (this._isOfficial ?   errors: warnings).push(context+": found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
+                                if (typeof img.leaf !== "string") {
+                                    (this._isOfficial ?   errors: warnings).push(context+": found an image path that is not a path at " + context + "." + img.path.join(".") + ": " + JSON.stringify(img))
                                 }
                             }
-                            allFoundImages.push(...fromPath.filter(i => typeof i === "string"))
+                            allFoundImages.push(...fromPath.map(i => i.leaf).filter(i => typeof i=== "string"))
                             for (const pathAndImg of fromPath) {
                                 if(pathAndImg.leaf === "" || pathAndImg.leaf["path"] == ""){
                                     errors.push(context+[...path,...pathAndImg.path].join(".")+": Found an empty image at ")
@@ -68,7 +62,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                     }
                 }
             } else {
-                allFoundImages.push(...found)
+                allFoundImages.push(...found.map(i => i.leaf))
             }
         }
 
