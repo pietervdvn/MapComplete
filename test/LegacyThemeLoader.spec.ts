@@ -466,8 +466,9 @@ export default class LegacyThemeLoaderSpec extends T {
                                 }
                             }]
                     }, "test");
-                    T.isTrue(r.warnings.length > 0, "No images found");
-                    T.isTrue(r.warnings.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0), "staple.svg not mentioned");
+                    const errors = r.errors;
+                    T.isTrue(errors.length > 0, "No images found");
+                    T.isTrue(errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0), "staple.svg not mentioned");
                 }],
                 ["Images in 'thens' icons are detected", () => {
                     const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
