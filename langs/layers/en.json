@@ -4327,6 +4327,9 @@
                     },
                     "1": {
                         "then": "This is a recycling centre"
+                    },
+                    "2": {
+                        "then": "Waste disposal container for residual waste"
                     }
                 },
                 "question": "What type of recycling is this?"

@@ -4119,6 +4119,9 @@
                     },
                     "1": {
                         "then": "Dit is een recyclingcentrum"
+                    },
+                    "2": {
+                        "then": "Afvalcontainer voor restafval"
                     }
                 },
                 "question": "Wat voor soort recycling is dit?"
