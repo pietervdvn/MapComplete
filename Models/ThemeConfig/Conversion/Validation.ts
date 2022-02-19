@@ -289,22 +289,33 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
     }
 
-    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[], information?: string[] } {
+        const errors = []
         const warnings = []
+        const information = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
+        const ignoreToken = "ignore-image-in-then"
         for (let i = 0; i < json.mappings.length; i++) {
 
             const mapping = json.mappings[i]
+            const ignore = mapping["#"]?.indexOf(ignoreToken) >=0
             const images = Utils.Dedup(Translations.T(mapping.then).ExtractImages())
+            const ctx = `${context}.mappings[${i}]`
             if (images.length > 0) {
-                warnings.push(context + ".mappings[" + i + "]: A mapping has an image in the 'then'-clause. Remove the image there and use `\"icon\": <your-image>` instead. The images found are "+images.join(", "))
+                if(!ignore){
+                    errors.push(`${ctx}: A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(", ")}. (Ignore this warning by adding "#": "${ignoreToken}" to the mapping`)
+                }else{
+                    information.push(`${ctx}: Ignored images in then`)
+                }
+            }else if (ignore){
+                warnings.push(`${ctx}: unused '${ignoreToken}' - please remove this`)
             }
         }
 
         return {
-            warnings,
+            errors,warnings,information,
             result: json
         };
     }
