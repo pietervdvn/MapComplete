@@ -248,9 +248,19 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
-        const parsedConditions = json.mappings.map(m => TagUtils.Tag(m.if))
+        const parsedConditions = json.mappings.map(m => {
+            const ifTags = TagUtils.Tag(m.if);
+            if(m.hideInAnswer !== undefined && m.hideInAnswer !== false && m.hideInAnswer !== true){
+                let conditionTags = TagUtils.Tag( m.hideInAnswer)
+                // Merge the condition too!
+                return new And([conditionTags, ifTags])
+            }
+            return ifTags
+        })
         for (let i = 0; i < json.mappings.length; i++) {
-            if(json.mappings[i].hideInAnswer === true){
+            if(!parsedConditions[i].isUsableAsAnswer()){
+                // There is no straightforward way to convert this mapping.if into a properties-object, so we simply skip this one
+                // Yes, it might be shadowed, but running this check is to difficult right now
                 continue
             }
             const keyValues = parsedConditions[i].asChange({});
@@ -259,14 +269,11 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                 properties[k] = v
             })
             for (let j = 0; j < i; j++) {
-                if(json.mappings[j].hideInAnswer === true){
-                    continue
-                }
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
                 if (doesMatch) {
                     // The current mapping is shadowed!
                     errors.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
-    The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping, which matches:
+    The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
     Move the mapping up to fix this problem
@@ -275,6 +282,10 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             }
 
         }
+
+        // TODO make this errors again
+        warnings.push(...errors)
+        errors.splice(0, errors.length)
 
         return {
             errors,
@@ -314,8 +325,10 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
             }
         }
 
-        return {
-            errors,warnings,information,
+         return {
+            errors,
+            warnings,
+            information,
             result: json
         };
     }
@@ -324,8 +337,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
     constructor() {
         super("Various validation on tagRenderingConfigs",
-        // TODO enable these checks again
-        //    new DetectShadowedMappings(),
+            new DetectShadowedMappings(),
             new DetectMappingsWithImages()    
         );
     }
