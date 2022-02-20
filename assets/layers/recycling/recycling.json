@@ -296,7 +296,7 @@
         {
           "if": {
             "and": [
-              "_waste_amount=1",
+              "_waste_amount>1",
               {
                 "or": [
                   "recycling:green_waste=yes",
