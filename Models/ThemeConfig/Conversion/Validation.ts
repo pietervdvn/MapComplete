@@ -264,7 +264,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                 continue
             }
             const keyValues = parsedConditions[i].asChange({});
-            const properties = []
+            const properties = {}
             keyValues.forEach(({k, v}) => {
                 properties[k] = v
             })
