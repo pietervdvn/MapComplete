@@ -422,8 +422,8 @@ export default class LegacyThemeLoaderSpec extends T {
                                 }
                             ]
                         }, "test");
-                        T.isTrue(r.errors.length > 0, "Failing case 0 is not detected")
-
+                        T.isTrue(r.warnings.length > 0, "Failing case 0 is not detected")
+                        T.isTrue(r.warnings[0].indexOf("The mapping key=value is fully matched by a previous mapping (namely 0)") >= 0, "Error message does not contain tag and indices")
                         const r0 = new DetectShadowedMappings().convert({
                             mappings: [
                                 {
@@ -436,7 +436,7 @@ export default class LegacyThemeLoaderSpec extends T {
                                 }
                             ]
                         }, "test");
-                        T.isTrue(r0.errors.length > 0, "Failing case 1 is not detected")
+                        T.isTrue(r0.warnings.length > 0, "Failing case 1 is not detected")
                     }
                 ],
                 ["Images are rewritten", () => {
