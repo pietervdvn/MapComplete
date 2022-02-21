@@ -945,5 +945,10 @@
         }
       ]
     }
-  ]
+  ],
+  "deletion": {"neededChangesets": 1},
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  }
 }
