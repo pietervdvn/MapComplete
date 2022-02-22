@@ -126,7 +126,7 @@
           },
           "then": {
             "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
-            "nl": "Deze vuilnisbak heeft <i>geen</i>verdeler voor hondenpoepzakjes",
+            "nl": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
             "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
           }
         },
@@ -134,7 +134,7 @@
           "if": "vending=",
           "then": {
             "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
-            "nl": "Deze vuilnisbaak heeft waarschijnlijk geen verdeler voor hondenpoepzakjes",
+            "nl": "Deze vuilnisbak heeft <b>waarschijnlijk geen</b> verdeler voor hondenpoepzakjes",
             "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
           },
           "hideInAnwer": true

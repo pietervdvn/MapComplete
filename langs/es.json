@@ -7,16 +7,16 @@
     },
     "delete": {
         "cancel": "Cancelar",
+        "cannotBeDeleted": "Esta función no puede ser eliminada",
         "delete": "Eliminar",
-        "isDeleted": "Esta función se ha eliminado",
         "explanations": {
-            "selectReason": "Por favor, seleccione el motivo por el que esta característica debe ser eliminada",
-            "hardDelete": "Este punto será eliminado en OpenStreetMap. Puede ser recuperado por un colaborador experimentado"
+            "hardDelete": "Este punto será eliminado en OpenStreetMap. Puede ser recuperado por un colaborador experimentado",
+            "selectReason": "Por favor, seleccione el motivo por el que esta característica debe ser eliminada"
         },
-        "whyDelete": "¿Por qué debería eliminarse este punto?",
+        "isDeleted": "Esta función se ha eliminado",
         "safeDelete": "Este punto puede ser eliminado con seguridad.",
         "useSomethingElse": "Utilice otro editor de OpenStreetMap para eliminarlo",
-        "cannotBeDeleted": "Esta función no puede ser eliminada"
+        "whyDelete": "¿Por qué debería eliminarse este punto?"
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenStreetMap",
@@ -27,31 +27,35 @@
         "about": "Edita fácilmente y añade puntos en OpenStreetMap de un tema concreto",
         "add": {
             "addNew": "Añadir una nueva {category}",
+            "addNewMapLabel": "Haga clic aquí para añadir un nuevo ítem",
             "confirmButton": "Añadir una {category} .<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
+            "disableFilters": "Desactivar todos los filtros",
+            "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
+            "hasBeenImported": "Este punto ya ha sido importado",
+            "import": {
+                "hasBeenImported": "Este objeto ya ha sido importado",
+                "importTags": "El elemento recibirá {tags}",
+                "officialThemesOnly": "El botón de importación está desactivado para los temas no oficiales para evitar accidentes",
+                "wrongType": "Este elemento no es un punto o una vía y no puede ser importado",
+                "zoomInMore": "Ampliar más para importar este elemento"
+            },
+            "importTags": "El elemento recibirá {tags}",
             "intro": "Has marcado un lugar del que no conocemos los datos.<br>",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
             "openLayerControl": "Abrir el control de capas",
             "pleaseLogin": "&lt;a class=\"activate-osm-authentication\"&gt;`Por favor inicia sesión para añadir un nuevo punto&lt;/a&gt;",
+            "presetInfo": "El nuevo POI tendrá {tags}",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
             "title": "Quieres añadir un punto?",
-            "zoomInFurther": "Acerca para añadir un punto.",
-            "import": {
-                "hasBeenImported": "Este objeto ya ha sido importado",
-                "importTags": "El elemento recibirá {tags}",
-                "wrongType": "Este elemento no es un punto o una vía y no puede ser importado",
-                "zoomInMore": "Ampliar más para importar este elemento",
-                "officialThemesOnly": "El botón de importación está desactivado para los temas no oficiales para evitar accidentes"
-            },
-            "hasBeenImported": "Este punto ya ha sido importado",
-            "disableFilters": "Desactivar todos los filtros",
             "warnVisibleForEveryone": "Su adición será visible para todos",
-            "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
-            "presetInfo": "El nuevo POI tendrá {tags}",
-            "importTags": "El elemento recibirá {tags}",
             "wrongType": "Este elemento no es un punto o una vía y no puede ser importado",
-            "addNewMapLabel": "Haga clic aquí para añadir un nuevo ítem",
+            "zoomInFurther": "Acerca para añadir un punto.",
             "zoomInMore": "Aumente el zoom para importar este elemento"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "El objeto {id} recibirá {tags}",
+            "isApplied": "Los cambios serán aplicados"
         },
         "attribution": {
             "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
@@ -163,11 +167,7 @@
             "tuesday": "Martes",
             "wednesday": "Miércoles"
         },
-        "welcomeBack": "Has entrado, bienvenido.",
-        "apply_button": {
-            "isApplied": "Los cambios serán aplicados",
-            "appliedOnAnotherObject": "El objeto {id} recibirá {tags}"
-        }
+        "welcomeBack": "Has entrado, bienvenido."
     },
     "image": {
         "addPicture": "Añadir foto",
