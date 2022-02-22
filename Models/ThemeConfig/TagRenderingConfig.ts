@@ -338,7 +338,8 @@ export default class TagRenderingConfig {
 
             const free = this.freeform?.key
             if (free !== undefined) {
-                return tags[free] !== undefined
+                const value = tags[free]
+                return value !== undefined && value !== ""
             }
             return false
 

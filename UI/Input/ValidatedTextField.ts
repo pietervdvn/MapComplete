@@ -543,9 +543,9 @@ class LengthTextField extends TextFieldDef {
         // Bit of a hack: we project the centerpoint to the closes point on the road - if available
         if (options?.feature !== undefined && options.feature.geometry.type !== "Point") {
             const lonlat = <[number, number]>[...options.location]
-            lonlat.reverse()
+            lonlat.reverse(/*Changes a clone, this is safe */)
             options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
-            options.location.reverse()
+            options.location.reverse(/*Changes a clone, this is safe */)
         }
 
 

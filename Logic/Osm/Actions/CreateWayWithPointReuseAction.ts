@@ -186,7 +186,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     }
 
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const theme = this._state.layoutToUse.id
+        const theme = this._state?.layoutToUse?.id
         const allChanges: ChangeDescription[] = []
         const nodeIdsToUse: { lat: number, lon: number, nodeId?: number }[] = []
         for (let i = 0; i < this._coordinateInfo.length; i++) {
@@ -251,7 +251,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
 
         const bbox = new BBox(coordinates)
         const state = this._state
-        const allNodes = [].concat(...state.featurePipeline.GetFeaturesWithin("type_node", bbox.pad(1.2)))
+        const allNodes = [].concat(...state?.featurePipeline?.GetFeaturesWithin("type_node", bbox.pad(1.2))??[])
         const maxDistance = Math.max(...this._config.map(c => c.withinRangeOfM))
 
         // Init coordianteinfo with undefined but the same length as coordinates

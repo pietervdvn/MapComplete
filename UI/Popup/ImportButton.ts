@@ -373,7 +373,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 {
                     name: "max_snap_distance",
                     doc: "If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way",
-                    defaultValue: "5"
+                    defaultValue: "0.05"
                 },
                 {
                     name: "move_osm_point_if",
@@ -381,7 +381,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 }, {
                 name: "max_move_distance",
                 doc: "If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m",
-                defaultValue: "1"
+                defaultValue: "0.05"
             }, {
                 name: "snap_onto_layers",
                 doc: "If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead",
@@ -406,24 +406,12 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         AbstractImportButton.importedIds.add(originalFeatureTags.data.id)
         const args = this.parseArgs(argument, originalFeatureTags)
         const feature = state.allElements.ContainingFeatures.get(id)
-        console.log("Geometry to auto-import is:", feature)
-        const geom = feature.geometry
-        let coordinates: [number, number][]
-        if (geom.type === "LineString") {
-            coordinates = geom.coordinates
-        } else if (geom.type === "Polygon") {
-            coordinates = geom.coordinates[0]
-        }
-
-
         const mergeConfigs = this.GetMergeConfig(args);
-
-        const action = this.CreateAction(
+        const action = ImportWayButton.CreateAction(
             feature,
             args,
             <FeaturePipelineState>state,
-            mergeConfigs,
-            coordinates
+            mergeConfigs
         )
         await state.changes.applyAction(action)
     }
@@ -455,18 +443,8 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
 
         // Upload the way to OSM
-        const geom = feature.geometry
-        let coordinates: [number, number][]
-        if (geom.type === "LineString") {
-            coordinates = geom.coordinates
-        } else if (geom.type === "Polygon") {
-            coordinates = geom.coordinates[0]
-        }
         const mergeConfigs = this.GetMergeConfig(args);
-
-
-        let action = this.CreateAction(feature, args, state, mergeConfigs, coordinates);
-
+        let action = ImportWayButton.CreateAction(feature, args, state, mergeConfigs);
         return this.createConfirmPanelForWay(
             state,
             args,
@@ -508,14 +486,12 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         return mergeConfigs;
     }
 
-    private CreateAction(feature,
+    private static CreateAction(feature,
                          args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string },
                          state: FeaturePipelineState,
-                         mergeConfigs: any[],
-                         coordinates: [number, number][]) {
-
+                         mergeConfigs: any[]) {
         const coors = feature.geometry.coordinates
-        if (feature.geometry.type === "Polygon" && coors.length > 1) {
+        if ((feature.geometry.type === "Polygon" ) && coors.length > 1) {
             const outer = coors[0]
             const inner = [...coors]
             inner.splice(0, 1)
@@ -531,7 +507,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
             return new CreateWayWithPointReuseAction(
                 args.newTags.data,
-                coordinates,
+                coors,
                 state,
                 mergeConfigs
             )

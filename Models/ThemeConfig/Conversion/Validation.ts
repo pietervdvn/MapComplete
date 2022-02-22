@@ -12,6 +12,7 @@ import {ExtractImages} from "./FixImages";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {And} from "../../../Logic/Tags/And";
 import Translations from "../../../UI/i18n/Translations";
+import Svg from "../../../Svg";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -50,12 +51,14 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _path?: string;
     private readonly knownImagePaths: Set<string>;
     private readonly _isBuiltin: boolean;
+    private _sharedTagRenderings: Map<string, any>;
 
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
+        this._sharedTagRenderings = sharedTagRenderings;
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[], information: string[] } {
@@ -78,7 +81,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
         {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
-            const images = new ExtractImages(this._isBuiltin).convertStrict(json, "validation")
+            const images = new ExtractImages(this._isBuiltin, this._sharedTagRenderings).convertStrict(json, "validation")
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
                 errors.push("Found a remote image: " + remoteImage + " in theme " + json.id + ", please download it.")
@@ -93,8 +96,11 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     continue
                 }
                 if (image.match(/[a-z]*/)) {
-                    // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                    continue;
+                    
+                    if(Svg.All[image + ".svg"] !== undefined){
+                        // This is a builtin img, e.g. 'checkmark' or 'crosshair'
+                        continue;
+                    }
                 }
 
                 if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
@@ -163,10 +169,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 }
 
 export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Validates a theme and the contained layers",
-            new ValidateTheme(knownImagePaths, path, isBuiltin),
-            new OnEvery("layers", new ValidateLayer(knownImagePaths, undefined, false))
+            new ValidateTheme(knownImagePaths, path, isBuiltin, sharedTagRenderings),
+            new OnEvery("layers", new ValidateLayer(undefined, false))
         );
     }
 }
@@ -202,11 +208,29 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
 }
 
+class MiscThemeChecks extends DesugaringStep<LayoutConfigJson>{
+    constructor() {
+        super("Miscelleanous checks on the theme", [],"MiscThemesChecks");
+    }
+    
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const warnings = []
+        if(json.socialImage === ""){
+            warnings.push("Social image for theme "+json.id+" is the emtpy string")
+        }
+        return {
+            result :json,
+            warnings
+        };
+    }
+}
+
 export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
     constructor() {
         super("Various consistency checks on the raw JSON",
-            new OverrideShadowingCheck()
+            new OverrideShadowingCheck(),
+            new MiscThemeChecks()
         );
 
     }
@@ -224,25 +248,32 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
-        const parsedConditions = json.mappings.map(m => TagUtils.Tag(m.if))
+        const parsedConditions = json.mappings.map(m => {
+            const ifTags = TagUtils.Tag(m.if);
+            if(m.hideInAnswer !== undefined && m.hideInAnswer !== false && m.hideInAnswer !== true){
+                let conditionTags = TagUtils.Tag( m.hideInAnswer)
+                // Merge the condition too!
+                return new And([conditionTags, ifTags])
+            }
+            return ifTags
+        })
         for (let i = 0; i < json.mappings.length; i++) {
-            if(json.mappings[i].hideInAnswer === true){
+            if(!parsedConditions[i].isUsableAsAnswer()){
+                // There is no straightforward way to convert this mapping.if into a properties-object, so we simply skip this one
+                // Yes, it might be shadowed, but running this check is to difficult right now
                 continue
             }
             const keyValues = parsedConditions[i].asChange({});
-            const properties = []
+            const properties = {}
             keyValues.forEach(({k, v}) => {
                 properties[k] = v
             })
             for (let j = 0; j < i; j++) {
-                if(json.mappings[j].hideInAnswer === true){
-                    continue
-                }
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
                 if (doesMatch) {
                     // The current mapping is shadowed!
                     errors.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
-    The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping, which matches:
+    The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
     Move the mapping up to fix this problem
@@ -251,6 +282,10 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             }
 
         }
+
+        // TODO make this errors again
+        warnings.push(...errors)
+        errors.splice(0, errors.length)
 
         return {
             errors,
@@ -265,22 +300,35 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
     }
 
-    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[], information?: string[] } {
+        const errors = []
         const warnings = []
+        const information = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
+        const ignoreToken = "ignore-image-in-then"
         for (let i = 0; i < json.mappings.length; i++) {
 
             const mapping = json.mappings[i]
+            const ignore = mapping["#"]?.indexOf(ignoreToken) >=0
             const images = Utils.Dedup(Translations.T(mapping.then).ExtractImages())
+            const ctx = `${context}.mappings[${i}]`
             if (images.length > 0) {
-                warnings.push(context + ".mappings[" + i + "]: A mapping has an image in the 'then'-clause. Remove the image there and use `\"icon\": <your-image>` instead. The images found are "+images.join(", "))
+                if(!ignore){
+                    errors.push(`${ctx}: A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(", ")}. (This check can be turned of by adding "#": "${ignoreToken}" in the mapping, but this is discouraged`)
+                }else{
+                    information.push(`${ctx}: Ignored image ${images.join(", ")} in 'then'-clause of a mapping as this check has been disabled`)
+                }
+            }else if (ignore){
+                warnings.push(`${ctx}: unused '${ignoreToken}' - please remove this`)
             }
         }
 
-        return {
+         return {
+            errors,
             warnings,
+            information,
             result: json
         };
     }
@@ -289,8 +337,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
     constructor() {
         super("Various validation on tagRenderingConfigs",
-        // TODO enable these checks again
-        //    new DetectShadowedMappings(),
+            new DetectShadowedMappings(),
             new DetectMappingsWithImages()    
         );
     }
@@ -302,12 +349,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
      * @private
      */
     private readonly _path?: string;
-    private readonly knownImagePaths?: Set<string>;
     private readonly _isBuiltin: boolean;
 
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean) {
+    constructor(path: string, isBuiltin: boolean) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer");
-        this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
     }

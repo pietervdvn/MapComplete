@@ -1242,7 +1242,7 @@
             "crossing-continue-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>"
+                        "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
                     },
                     "1": {
                         "then": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
@@ -1278,7 +1278,7 @@
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>"
+                        "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
                     },
                     "1": {
                         "then": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
@@ -3175,6 +3175,40 @@
     },
     "waste_basket": {
         "description": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Typen"
+                    },
+                    "1": {
+                        "question": "Mülleimer für Zigaretten"
+                    },
+                    "2": {
+                        "question": "Mülleimer für Drogen"
+                    },
+                    "3": {
+                        "question": "Mülleimer für Hundekot"
+                    },
+                    "4": {
+                        "question": "Mülleimer für allgemeinen Müll"
+                    },
+                    "5": {
+                        "question": "Mülleimer für Nadeln und andere scharfe Gegenstände"
+                    },
+                    "6": {
+                        "question": "Mülleimer für Plastik"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Abfalleimer mit Spender für (Hunde-)Kotbeutel"
+                    }
+                }
+            }
+        },
         "mapRendering": {
             "0": {
                 "iconSize": {
@@ -3226,6 +3260,9 @@
                     },
                     "5": {
                         "then": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
+                    },
+                    "6": {
+                        "then": "Ein Abfalleimer für Plastik"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"

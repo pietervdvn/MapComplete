@@ -304,7 +304,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (target === null) {
             return source
         }
-        
+
         for (const key in source) {
             if (!source.hasOwnProperty(key)) {
                 continue
@@ -358,16 +358,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * The leaf objects are replaced by the function
      */
-    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any) => any)) {
+    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) {
         const head = path[0]
         if (path.length === 1) {
             // We have reached the leaf
             const leaf = object[head];
             if (leaf !== undefined) {
-                if(Array.isArray(leaf)){
-                    object[head] = leaf.map(replaceLeaf)
-                }else{
-                    object[head] = replaceLeaf(leaf)
+                if (Array.isArray(leaf)) {
+                    object[head] = leaf.map(o => replaceLeaf(o, travelledPath))
+                } else {
+                    object[head] = replaceLeaf(leaf, travelledPath)
                 }
             }
             return
@@ -381,10 +381,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return;
         }
         if (Array.isArray(sub)) {
-            sub.forEach(el => Utils.WalkPath(path.slice(1), el, replaceLeaf))
+            sub.forEach((el, i) => Utils.WalkPath(path.slice(1), el, replaceLeaf, [...travelledPath, head, "" + i]))
             return;
         }
-        Utils.WalkPath(path.slice(1), sub, replaceLeaf)
+        Utils.WalkPath(path.slice(1), sub, replaceLeaf, [...travelledPath, head])
     }
 
     /**
@@ -393,22 +393,26 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * The leaf objects are collected in the list
      */
-    public static CollectPath(path: string[], object: any, collectedList = []): any[] {
+    public static CollectPath(path: string[], object: any, collectedList: { leaf: any, path: string[] }[] = [], travelledPath: string[] = []): { leaf: any, path: string[] }[] {
         if (object === undefined || object === null) {
             return collectedList;
         }
         const head = path[0]
+        travelledPath = [...travelledPath, head]
         if (path.length === 1) {
             // We have reached the leaf
             const leaf = object[head];
             if (leaf === undefined || leaf === null) {
                 return collectedList
-            } 
-                if (Array.isArray(leaf)) {
-                    collectedList.push(...leaf)
-                } else {
-                    collectedList.push(leaf)
+            }
+            if (Array.isArray(leaf)) {
+                for (let i = 0; i < (<any[]>leaf).length; i++){
+                    const l = (<any[]>leaf)[i];
+                    collectedList.push({leaf: l, path: [...travelledPath, ""+i]})
                 }
+            } else {
+                collectedList.push({leaf, path: travelledPath})
+            }
             return collectedList
         }
         const sub = object[head]
@@ -417,13 +421,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         if (Array.isArray(sub)) {
-            sub.forEach(el => Utils.CollectPath(path.slice(1), el, collectedList))
+            sub.forEach((el, i) => Utils.CollectPath(path.slice(1), el, collectedList, [...travelledPath, "" + i]))
             return collectedList;
         }
         if (typeof sub !== "object") {
             return collectedList;
         }
-        return Utils.CollectPath(path.slice(1), sub, collectedList)
+        return Utils.CollectPath(path.slice(1), sub, collectedList, travelledPath)
     }
 
     /**
@@ -725,6 +729,28 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return new Date(str)
     }
 
+    public static levenshteinDistance(str1: string, str2: string) {
+        const track = Array(str2.length + 1).fill(null).map(() =>
+            Array(str1.length + 1).fill(null));
+        for (let i = 0; i <= str1.length; i += 1) {
+            track[0][i] = i;
+        }
+        for (let j = 0; j <= str2.length; j += 1) {
+            track[j][0] = j;
+        }
+        for (let j = 1; j <= str2.length; j += 1) {
+            for (let i = 1; i <= str1.length; i += 1) {
+                const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                track[j][i] = Math.min(
+                    track[j][i - 1] + 1, // deletion
+                    track[j - 1][i] + 1, // insertion
+                    track[j - 1][i - 1] + indicator, // substitution
+                );
+            }
+        }
+        return track[str2.length][str1.length];
+    }
+
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
@@ -751,27 +777,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
-
-    public static levenshteinDistance (str1: string, str2: string) {
-        const track = Array(str2.length + 1).fill(null).map(() =>
-            Array(str1.length + 1).fill(null));
-        for (let i = 0; i <= str1.length; i += 1) {
-            track[0][i] = i;
-        }
-        for (let j = 0; j <= str2.length; j += 1) {
-            track[j][0] = j;
-        }
-        for (let j = 1; j <= str2.length; j += 1) {
-            for (let i = 1; i <= str1.length; i += 1) {
-                const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
-                track[j][i] = Math.min(
-                    track[j][i - 1] + 1, // deletion
-                    track[j - 1][i] + 1, // insertion
-                    track[j - 1][i - 1] + indicator, // substitution
-                );
-            }
-        }
-        return track[str2.length][str1.length];
-    }
+    
 }
 

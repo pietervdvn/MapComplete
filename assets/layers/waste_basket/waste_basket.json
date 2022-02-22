@@ -86,6 +86,14 @@
             "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
             "de": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
           }
+        },
+        {
+          "if": "waste=plastic",
+          "then": {
+            "en": "A waste basket for plastic",
+            "nl": "Een vuilnisbak voor plastic",
+            "de": "Ein Abfalleimer für Plastik"
+          }
         }
       ]
     },
@@ -137,7 +145,7 @@
             "nl": "Deze vuilnisbak heeft <b>waarschijnlijk geen</b> verdeler voor hondenpoepzakjes",
             "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
           },
-          "hideInAnwer": true
+          "hideInAnswer": true
         }
       ]
     }
@@ -157,6 +165,81 @@
       "presiceInput": {
         "preferredBackground": "photo"
       }
+    }
+  ],
+  "filter": [
+    {
+      "id": "waste-type",
+      "options": [
+        {
+          "question": {
+            "en": "All types",
+            "nl": "Alle soorten",
+            "de": "Alle Typen"
+          }
+        },
+        {
+          "question": {
+            "en": "Waste basket for cigarettes",
+            "nl": "Vuilnisbak voor sigarettenpeuken",
+            "de": "Mülleimer für Zigaretten"
+          },
+          "osmTags": "waste~.*cigarettes.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for drugs",
+            "nl": "Vuilnisbak voor (vervallen) medicatie en drugs",
+            "de": "Mülleimer für Drogen"
+          },
+          "osmTags": "waste~.*drugs.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for dog excrement",
+            "nl": "Vuilnisbak voor hondenuitwerpselen",
+            "de": "Mülleimer für Hundekot"
+          },
+          "osmTags": "waste~.*dog_excrement.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for trash",
+            "nl": "Vuilnisbak voor zwerfvuil",
+            "de": "Mülleimer für allgemeinen Müll"
+          },
+          "osmTags": "waste~.*trash.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for sharps",
+            "nl": "Vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
+            "de": "Mülleimer für Nadeln und andere scharfe Gegenstände"
+          },
+          "osmTags": "waste~.*sharps.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for plastic",
+            "nl": "Vuilnisbak voor plastic",
+            "de": "Mülleimer für Plastik"
+          },
+          "osmTags": "waste~.*plastic.*"
+        }
+      ]
+    },
+    {
+      "id": "waste-vending",
+      "options": [
+        {
+          "question": {
+            "en": "Waste basket with dispenser for (dog) excrement bags",
+            "nl": "Vuilnisbak met verdeler voor hondenpoepzakjes",
+            "de": "Abfalleimer mit Spender für (Hunde-)Kotbeutel"
+          },
+          "osmTags": "vending=dog_excrement_bag"
+        }
+      ]
     }
   ],
   "deletion": {

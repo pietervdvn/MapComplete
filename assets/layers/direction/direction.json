@@ -32,16 +32,7 @@
   "presets": [],
   "mapRendering": [
     {
-      "icon": {
-        "render": "direction_gradient:var(--catch-detail-color)",
-        "#": "For some weird reason, showing the icon in the layer control panel breaks the svg-gradient (because the svg gradient has a global color or smthng) - so we use a different icon without gradient",
-        "mappings": [
-          {
-            "if": "id=node/-1",
-            "then": "direction:var(--catch-detail-color)"
-          }
-        ]
-      },
+      "icon": "direction_gradient:var(--catch-detail-color)",
       "iconSize": "200,200,center",
       "location": [
         "point",

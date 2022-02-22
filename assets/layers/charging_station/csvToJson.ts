@@ -131,7 +131,7 @@ function run(file, protojson) {
             then: txt,
             hideInAnswer: true,
             icon:{
-                path: e.image,
+                path: `./assets/layers/charging_station/${e.image}`,
                 class:"medium"
             }
         }

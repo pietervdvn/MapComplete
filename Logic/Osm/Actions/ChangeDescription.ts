@@ -81,7 +81,7 @@ export class ChangeDescriptionTools {
             case "way":
                 const w = new OsmWay(change.id)
                 w.nodes = change.changes["nodes"]
-                w.coordinates = change.changes["coordinates"].map(coor => coor.reverse())
+                w.coordinates = change.changes["coordinates"].map(([lon, lat]) => [lat, lon])
                 return w.asGeoJson().geometry
             case "relation":
                 const r = new OsmRelation(change.id)

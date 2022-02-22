@@ -6,51 +6,70 @@ import * as tagrenderingmetapaths from "../../../assets/tagrenderingconfigmeta.j
 
 export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     private _isOfficial: boolean;
-    constructor(isOfficial: boolean) {
+    private _sharedTagRenderings: Map<string, any>;
+
+    private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths).filter(mp => mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
+    private static readonly tagRenderingMetaPaths = (tagrenderingmetapaths["default"] ?? tagrenderingmetapaths).filter(trpath => trpath.typeHint === "rendered")
+
+
+    constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
         super("Extract all images from a layoutConfig using the meta paths",[],"ExctractImages");
         this._isOfficial = isOfficial;
+        this._sharedTagRenderings = sharedTagRenderings;
     }
 
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
-        const paths = metapaths["default"] ?? metapaths
-        const trpaths = tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
-        const allFoundImages = []
+        const allFoundImages : string[] = []
         const errors = []
         const warnings = []
-        for (const metapath of paths) {
-            if (metapath.typeHint === undefined) {
-                continue
-            }
-            if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
-                continue
-            }
-
+        for (const metapath of ExtractImages.layoutMetaPaths) {
             const mightBeTr = Array.isArray(metapath.type) && metapath.type.some(t => t["$ref"] == "#/definitions/TagRenderingConfigJson")
             const found = Utils.CollectPath(metapath.path, json)
             if (mightBeTr) {
                 // We might have tagRenderingConfigs containing icons here
-                for (const foundImage of found) {
+                for (const el of found) {
+                    const path = el.path
+                    const foundImage = el.leaf;
                     if (typeof foundImage === "string") {
+                        
+                        if(foundImage == ""){
+                            warnings.push(context+"."+path.join(".")+" Found an empty image")
+                        }
+                        
+                        if(this._sharedTagRenderings?.has(foundImage)){
+                            // This is not an image, but a shared tag rendering
+                            continue
+                        }
+                        
                         allFoundImages.push(foundImage)
                     } else{
                         // This is a tagRendering where every rendered value might be an icon!
-                        for (const trpath of trpaths) {
-                            if (trpath.typeHint !== "rendered") {
-                                continue
-                            }
+                        for (const trpath of ExtractImages.tagRenderingMetaPaths) {
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
                             for (const img of fromPath) {
-                                if (typeof img !== "string") {
-                                    (this._isOfficial ?   errors: warnings).push(context+": found an image path that is not a path at " + context + "." + metapath.path.join(".") + ": " + JSON.stringify(img))
+                                if (typeof img.leaf !== "string") {
+                                    (this._isOfficial ?   errors: warnings).push(context+"."+img.path.join(".")+": found an image path that is not a string: " + JSON.stringify(img.leaf))
                                 }
                             }
-                            allFoundImages.push(...fromPath.filter(i => typeof i === "string"))
+                            allFoundImages.push(...fromPath.map(i => i.leaf).filter(i => typeof i=== "string"))
+                            for (const pathAndImg of fromPath) {
+                                if(pathAndImg.leaf === "" || pathAndImg.leaf["path"] == ""){
+                                    warnings.push(context+[...path,...pathAndImg.path].join(".")+": Found an empty image at ")
+                                }
+                            }
                         }
 
                     }
                 }
             } else {
-                allFoundImages.push(...found)
+                for (const foundElement of found) {
+                    if(foundElement.leaf === ""){
+                        warnings.push(context+"."+foundElement.path.join(".")+" Found an empty image")
+                        continue
+                    }
+                    allFoundImages.push(foundElement.leaf)
+                }
+                
             }
         }
 
@@ -58,6 +77,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
             .map(img => img["path"] ?? img)
             .map(img => img.split(";")))
             .map(img => img.split(":")[0])
+            .filter(img => img !== "")
         return {result: Utils.Dedup(splitParts), errors, warnings};
     }
 
@@ -108,7 +128,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
                 continue
             }
             const mightBeTr = Array.isArray(metapath.type) && metapath.type.some(t => t["$ref"] == "#/definitions/TagRenderingConfigJson")
-            Utils.WalkPath(metapath.path, json, leaf => {
+            Utils.WalkPath(metapath.path, json, (leaf, path) => {
                 if (typeof leaf === "string") {
                     return replaceString(leaf)
                 }

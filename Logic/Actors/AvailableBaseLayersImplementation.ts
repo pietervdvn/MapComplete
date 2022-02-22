@@ -239,7 +239,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                     prefered = preferedCategory.data;
                 }
 
-                prefered.reverse();
+                prefered.reverse(/*New list, inplace reverse is fine*/);
                 for (const category of prefered) {
                     //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
                     available.sort((a, b) => {

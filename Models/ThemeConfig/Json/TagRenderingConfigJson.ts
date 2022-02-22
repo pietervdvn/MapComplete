@@ -115,7 +115,7 @@ export interface TagRenderingConfigJson {
         /**
          * If the condition `if` is met, the text `then` will be rendered.
          * If not known yet, the user will be presented with `then` as an option
-         * type: rendered
+         * Type: rendered
          */
         then: string | any,
         /**

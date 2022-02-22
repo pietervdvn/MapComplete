@@ -93,7 +93,7 @@ export default class Histogram<T> extends VariableUiElement {
                     keys.sort()
                     break;
                 case "name-rev":
-                    keys.sort().reverse()
+                    keys.sort().reverse(/*Copy of array, inplace reverse if fine*/)
                     break;
                 case "count":
                     keys.sort((k0, k1) => counts.get(k0) - counts.get(k1))

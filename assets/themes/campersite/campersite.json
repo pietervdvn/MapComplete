@@ -42,7 +42,7 @@
   "startLon": 3.14,
   "startZoom": 14,
   "widenFactor": 1.5,
-  "socialImage": "./assets/themes/campersite/Bar%C3%9Fel_Wohnmobilstellplatz.jpg",
+  "socialImage": "./assets/themes/campersite/social_image.jpg",
   "layers": [
     {
       "id": "caravansites",

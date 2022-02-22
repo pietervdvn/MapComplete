@@ -764,7 +764,7 @@
               "operational_status=broken"
             ]
           },
-          "then": "cross:#c22;"
+          "then": "close:#c22;"
         },
         {
           "if": {

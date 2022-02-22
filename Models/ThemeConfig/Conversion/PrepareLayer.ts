@@ -75,14 +75,14 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
 
         if (typeof tr === "string") {
             const lookup = this.lookup(tr);
-            if (lookup !== undefined) {
-                return lookup
+            if (lookup === undefined) {
+                warnings.push(ctx + "A literal rendering was detected: " + tr)
+                return [{
+                    render: tr,
+                    id: tr.replace(/![a-zA-Z0-9]/g, "")
+                }]
             }
-            warnings.push(ctx + "A literal rendering was detected: " + tr)
-            return [{
-                render: tr,
-                id: tr.replace(/![a-zA-Z0-9]/g, "")
-            }]
+            return lookup
         }
 
         if (tr["builtin"] !== undefined) {
@@ -122,7 +122,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
 
         const result = []
         for (const tr of trs) {
-            if (tr["builtin"] !== undefined) {
+            if (typeof tr === "string" || tr["builtin"] !== undefined) {
                 const stable = this.convertUntilStable(tr, warnings, errors, ctx + "(RECURSIVE RESOLVE)")
                 result.push(...stable)
             } else {

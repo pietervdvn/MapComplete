@@ -20,6 +20,7 @@ import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
 import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations.spec";
 import CreateCacheSpec from "./CreateCache.spec";
 import CodeQualitySpec from "./CodeQuality.spec";
+import ImportMultiPolygonSpec from "./ImportMultiPolygon.spec";
 
 
 async function main() {
@@ -43,7 +44,8 @@ async function main() {
         new CreateNoteImportLayerSpec(),
         new ValidatedTextFieldTranslationsSpec(),
         new CreateCacheSpec(),
-        new CodeQualitySpec()
+        new CodeQualitySpec(),
+        new ImportMultiPolygonSpec()
     ]
     ScriptUtils.fixUtils();
     const realDownloadFunc = Utils.externalDownloadFunction;
@@ -59,7 +61,7 @@ async function main() {
 
     let args = [...process.argv]
     args.splice(0, 2)
-    args = args.map(a => a.toLowerCase())
+    args = args.map(a => a.toLowerCase().replace(/"/g, ""))
 
     const allFailures: { testsuite: string, name: string, msg: string } [] = []
     let testsToRun = allTests
@@ -72,6 +74,7 @@ async function main() {
             }
         })
         testsToRun = allTests.filter(t => args.indexOf(t.name.toLowerCase()) >= 0)
+        console.log("Only running test "+testsToRun.join(", "))
     }
 
     if (testsToRun.length == 0) {

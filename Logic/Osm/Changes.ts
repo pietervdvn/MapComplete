@@ -55,8 +55,8 @@ export class Changes {
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
-    private static createChangesetFor(csId: string,
-                                      allChanges: {
+    static createChangesetFor(csId: string,
+                              allChanges: {
                                           modifiedObjects: OsmObject[],
                                           newObjects: OsmObject[],
                                           deletedObjects: OsmObject[]
