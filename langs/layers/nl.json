@@ -4086,6 +4086,15 @@
                 },
                 "question": "Wat kan hier gerecycled worden?"
             },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit recyclagecentrum heeft geen specifieke naam"
+                    }
+                },
+                "question": "Wat is de naam van dit recyclagecentrum?",
+                "render": "Dit recyclagecentrum heet <b>{name}</b>"
+            },
             "recycling-type": {
                 "mappings": {
                     "0": {
@@ -4107,6 +4116,9 @@
                     "then": "Recyclingcentrum"
                 },
                 "1": {
+                    "then": "Recyclingcontainer"
+                },
+                "2": {
                     "then": "Recyclingcontainer"
                 }
             },

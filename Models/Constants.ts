@@ -61,7 +61,7 @@ export default class Constants {
      * For every bin, the totals are uploaded as metadata
      */
     static distanceToChangeObjectBins = [25, 50, 100, 500, 1000, 5000, Number.MAX_VALUE]
-    static themeOrder = ["personal", "cyclofix", "hailhydrant", "bookcases", "toilets", "aed"];
+    static themeOrder = ["personal", "cyclofix", "waste" , "etymology",  "food","cafes_and_pubs", "playgrounds", "hailhydrant", "toilets", "aed", "bookcases"];
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

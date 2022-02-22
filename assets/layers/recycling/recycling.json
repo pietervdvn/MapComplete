@@ -22,10 +22,18 @@
     },
     "mappings": [
       {
-        "if": "recycling_type=centre",
+        "if": "name~*",
         "then": {
+          "*": "{name}",
           "en": "Recycling centre",
           "nl": "Recyclingcentrum"
+        }
+      },
+      {
+        "if": "recycling_type=centre",
+        "then": {
+          "en": "Recycling container",
+          "nl": "Recyclingcontainer"
         }
       },
       {
@@ -419,6 +427,7 @@
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "id": "recycling-type",
       "question": {
@@ -470,6 +479,30 @@
           ]
         }
       ]
+    },
+    {
+      "id": "recycling-centre-name",
+      "question": {
+        "en": "What is the name of this recycling centre?",
+        "nl": "Wat is de naam van dit recyclagecentrum?"
+      },
+      "render": {
+        "en": "This recycling centre is named <b>{name}</b>",
+        "nl": "Dit recyclagecentrum heet <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "This recycling centre doesn't have a specific name",
+            "nl": "Dit recyclagecentrum heeft geen specifieke naam"
+          }
+        }
+      ],
+      "condition": "recycling_type=centre"
     },
     {
       "id": "container-location",
@@ -771,6 +804,16 @@
       }
     },
     {
+      "builtin": [
+        "website",
+        "email",
+        "phone"
+      ],
+      "override": {
+        "condition": "recycling_type=centre"
+      }
+    },
+    {
       "id": "opening_hours",
       "render": "{opening_hours_table()}",
       "question": {
@@ -946,7 +989,9 @@
       ]
     }
   ],
-  "deletion": {"neededChangesets": 1},
+  "deletion": {
+    "neededChangesets": 1
+  },
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true

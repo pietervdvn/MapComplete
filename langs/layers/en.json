@@ -4294,6 +4294,15 @@
                 },
                 "question": "What can be recycled here?"
             },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": "This recycling centre doesn't have a specific name"
+                    }
+                },
+                "question": "What is the name of this recycling centre?",
+                "render": "This recycling centre is named <b>{name}</b>"
+            },
             "recycling-type": {
                 "mappings": {
                     "0": {
@@ -4315,6 +4324,9 @@
                     "then": "Recycling centre"
                 },
                 "1": {
+                    "then": "Recycling container"
+                },
+                "2": {
                     "then": "Recycling container"
                 }
             },
