@@ -525,8 +525,8 @@
       "source": {
         "osmTags": "shop~*"
       },
-      "minzoom": 20,
-      "minzoomVisible": 20,
+      "minzoom": 21,
+      "minzoomVisible": 21,
       "title": {
         "render": {
           "en": "Shop"
