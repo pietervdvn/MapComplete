@@ -214,9 +214,9 @@ export default class CopyrightPanel extends Combine {
     private static IconAttribution(iconPath: string): BaseUIElement {
         if (iconPath.startsWith("http")) {
             try{
-            iconPath = "." + new URL(iconPath).pathname;
+                iconPath = "." + new URL(iconPath).pathname;
             }catch(e){
-                console.error(e)
+                console.warn(e)
             }
         }
 
