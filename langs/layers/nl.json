@@ -3916,6 +3916,203 @@
             "render": "Boekenruilkast"
         }
     },
+    "recycling": {
+        "description": "Een laag met recyclagingcontainers en -centrums",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Op dit moment open"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle recyclingtypes"
+                    },
+                    "1": {
+                        "question": "Recycling van batterijen"
+                    },
+                    "2": {
+                        "question": "Recycling van drankpakken"
+                    },
+                    "3": {
+                        "question": "Recycling van blikken"
+                    },
+                    "4": {
+                        "question": "Recycling van kleding"
+                    },
+                    "5": {
+                        "question": "Recycling van frituurvet"
+                    },
+                    "6": {
+                        "question": "Recycling van motorolie"
+                    },
+                    "7": {
+                        "question": "Recycling van groen afval"
+                    },
+                    "8": {
+                        "question": "Recycling van glazen flessen"
+                    },
+                    "9": {
+                        "question": "Recycling van glas"
+                    },
+                    "10": {
+                        "question": "Recycling van kranten"
+                    },
+                    "11": {
+                        "question": "Recycling van papier"
+                    },
+                    "12": {
+                        "question": "Recycling van plastic flessen"
+                    },
+                    "13": {
+                        "question": "Recycling van plastic verpakking"
+                    },
+                    "14": {
+                        "question": "Recycling van plastic"
+                    },
+                    "15": {
+                        "question": "Recycling van oud metaal"
+                    },
+                    "16": {
+                        "question": "Recycling van kleine elektrische apparaten"
+                    },
+                    "17": {
+                        "question": "Recycling van restafval"
+                    }
+                }
+            }
+        },
+        "name": "Recycling",
+        "presets": {
+            "0": {
+                "title": "recycling container"
+            },
+            "1": {
+                "title": "recycling centre"
+            }
+        },
+        "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een ondergrondse container"
+                    },
+                    "1": {
+                        "then": "Deze container bevindt zich binnen"
+                    },
+                    "2": {
+                        "then": "Deze container is buiten"
+                    }
+                },
+                "question": "Waar bevindt deze container zich?"
+            },
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7"
+                    }
+                },
+                "question": "Wat zijn de openingstijden van deze recyclingfaciliteit?"
+            },
+            "operator": {
+                "question": "Wat is de beheerder van deze recyclingfaciliteit?",
+                "render": "Deze recyclingfaciliteit wordt beheerd door {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "0": {
+                        "then": "Batterijen kunnen hier gerecycled worden"
+                    },
+                    "1": {
+                        "then": "Drankpakken kunnen hier gerecycled worden"
+                    },
+                    "2": {
+                        "then": "Blikken kunnen hier gerecycled worden"
+                    },
+                    "3": {
+                        "then": "Kleren kunnen hier gerecycled worden"
+                    },
+                    "4": {
+                        "then": "Frituurvet kan hier gerecycled worden"
+                    },
+                    "5": {
+                        "then": "Motorolie kan hier gerecycled worden"
+                    },
+                    "6": {
+                        "then": "Groen afval kan hier gerecycled worden"
+                    },
+                    "7": {
+                        "then": "Organisch afval kan hier gerecycled worden"
+                    },
+                    "8": {
+                        "then": "Glazen flessen kunnen hier gerecycled worden"
+                    },
+                    "9": {
+                        "then": "Glas kan hier gerecycled worden"
+                    },
+                    "10": {
+                        "then": "Kranten kunnen hier gerecycled worden"
+                    },
+                    "11": {
+                        "then": "Papier kan hier gerecycled worden"
+                    },
+                    "12": {
+                        "then": "Plastic flessen kunnen hier gerecycled worden"
+                    },
+                    "13": {
+                        "then": "Plastic verpakking kan hier gerecycled worden"
+                    },
+                    "14": {
+                        "then": "Plastic kan hier gerecycled worden"
+                    },
+                    "15": {
+                        "then": "Oud metaal kan hier gerecycled worden"
+                    },
+                    "16": {
+                        "then": "Schoenen kunnen hier gerecycled worden"
+                    },
+                    "17": {
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                    },
+                    "18": {
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                    },
+                    "19": {
+                        "then": "Restafval kan hier gerecycled worden"
+                    }
+                },
+                "question": "Wat kan hier gerecycled worden?"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een recyclingcontainer"
+                    },
+                    "1": {
+                        "then": "Dit is een recyclingcentrum"
+                    },
+                    "2": {
+                        "then": "Afvalcontainer voor restafval"
+                    }
+                },
+                "question": "Wat voor soort recycling is dit?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Recyclingcentrum"
+                },
+                "1": {
+                    "then": "Recyclingcontainer"
+                }
+            },
+            "render": "Recyclingfaciliteit"
+        }
+    },
     "shops": {
         "description": "Een winkel",
         "name": "Winkel",
@@ -4817,6 +5014,40 @@
     },
     "waste_basket": {
         "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle soorten"
+                    },
+                    "1": {
+                        "question": "Vuilnisbak voor sigarettenpeuken"
+                    },
+                    "2": {
+                        "question": "Vuilnisbak voor (vervallen) medicatie en drugs"
+                    },
+                    "3": {
+                        "question": "Vuilnisbak voor hondenuitwerpselen"
+                    },
+                    "4": {
+                        "question": "Vuilnisbak voor zwerfvuil"
+                    },
+                    "5": {
+                        "question": "Vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                    },
+                    "6": {
+                        "question": "Vuilnisbak voor plastic"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Vuilnisbak met verdeler voor hondenpoepzakjes"
+                    }
+                }
+            }
+        },
         "mapRendering": {
             "0": {
                 "iconSize": {
@@ -4868,6 +5099,9 @@
                     },
                     "5": {
                         "then": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen"
+                    },
+                    "6": {
+                        "then": "Een vuilnisbak voor plastic"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"
@@ -4875,6 +5109,24 @@
         },
         "title": {
             "render": "Vuilnisbak"
+        }
+    },
+    "waste_disposal": {
+        "tagRenderings": {
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een ondergrondse container"
+                    },
+                    "1": {
+                        "then": "Deze container bevindt zich binnen"
+                    },
+                    "2": {
+                        "then": "Deze container is buiten"
+                    }
+                },
+                "question": "Waar bevindt deze container zich?"
+            }
         }
     },
     "watermill": {

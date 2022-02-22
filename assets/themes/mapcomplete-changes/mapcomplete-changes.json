@@ -300,6 +300,14 @@
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
               },
               {
+                "if": "theme=waste",
+                "then": "./assets/layers/recycling/recycling-14.svg"
+              },
+              {
+                "if": "theme=waste_assen",
+                "then": "./assets/layers/recycling/recycling-14.svg"
+              },
+              {
                 "if": "theme=waste_basket",
                 "then": "./assets/themes/waste_basket/waste_basket.svg"
               }

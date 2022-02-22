@@ -1,0 +1,119 @@
+{
+  "id": "waste_disposal",
+  "name": {
+    "en": "Waste Disposal Bins"
+  },
+  "description": {
+    "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste"
+  },
+  "source": {
+    "osmTags": "amenity=waste_disposal"
+  },
+  "minzoom": 18,
+  "minzoomVisible": 18,
+  "title": {
+    "render": {
+      "en": "Waste Disposal"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "Waste Disposal Bin"
+      },
+      "tags": [
+        "amenity=waste_disposal"
+      ],
+      "description": {
+        "en": "Medium to large bin for disposal of (household) waste"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "access",
+      "render": {
+        "en": "Access: {access}"
+      },
+      "question": {
+        "en": "Who can use this waste disposal bin?"
+      },
+      "freeform": {
+        "key": "access",
+        "type": "string"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "This bin can be used by anyone"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "en": "This bin is private"
+          }
+        },
+        {
+          "if": "access=residents",
+          "then": {
+            "en": "This bin is only for residents"
+          }
+        }
+      ]
+    },
+    {
+      "id": "disposal-location",
+      "question": {
+        "en": "Where is this container located?",
+        "nl": "Waar bevindt deze container zich?"
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "This is an underground container",
+            "nl": "Dit is een ondergrondse container"
+          }
+        },
+        {
+          "if": "location=indoor",
+          "then": {
+            "en": "This container is located indoors",
+            "nl": "Deze container bevindt zich binnen"
+          }
+        },
+        {
+          "if": "location=",
+          "then": {
+            "en": "This container is located outdoors",
+            "nl": "Deze container is buiten"
+          }
+        }
+      ]
+    }
+  ],
+  "filter": [
+    {
+      "id": "public-access",
+      "options": [
+        {
+          "question": {
+            "en": "Only public access"
+          },
+          "osmTags": "access=yes"
+        }
+      ]
+    }
+  ]
+}

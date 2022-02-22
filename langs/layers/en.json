@@ -4124,6 +4124,203 @@
             "render": "Bookcase"
         }
     },
+    "recycling": {
+        "description": "A layer with recycling containers and centres",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Currently open"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "All recycling types"
+                    },
+                    "1": {
+                        "question": "Recycling of batteries"
+                    },
+                    "2": {
+                        "question": "Recycling of beverage cartons"
+                    },
+                    "3": {
+                        "question": "Recycling of cans"
+                    },
+                    "4": {
+                        "question": "Recycling of clothes"
+                    },
+                    "5": {
+                        "question": "Recycling of cooking oil"
+                    },
+                    "6": {
+                        "question": "Recycling of engine oil"
+                    },
+                    "7": {
+                        "question": "Recycling of green waste"
+                    },
+                    "8": {
+                        "question": "Recycling of glass bottles"
+                    },
+                    "9": {
+                        "question": "Recycling of glass"
+                    },
+                    "10": {
+                        "question": "Recycling of newspapers"
+                    },
+                    "11": {
+                        "question": "Recycling of paper"
+                    },
+                    "12": {
+                        "question": "Recycling of plastic bottles"
+                    },
+                    "13": {
+                        "question": "Recycling of plastic packaging"
+                    },
+                    "14": {
+                        "question": "Recycling of plastic"
+                    },
+                    "15": {
+                        "question": "Recycling of scrap metal"
+                    },
+                    "16": {
+                        "question": "Recycling of small electrical appliances"
+                    },
+                    "17": {
+                        "question": "Recycling of residual waste"
+                    }
+                }
+            }
+        },
+        "name": "Recycling",
+        "presets": {
+            "0": {
+                "title": "recycling container"
+            },
+            "1": {
+                "title": "recycling centre"
+            }
+        },
+        "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an underground container"
+                    },
+                    "1": {
+                        "then": "This container is located indoors"
+                    },
+                    "2": {
+                        "then": "This container is located outdoors"
+                    }
+                },
+                "question": "Where is this container located?"
+            },
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7"
+                    }
+                },
+                "question": "What are the opening hours of this recycling facility?"
+            },
+            "operator": {
+                "question": "What company operates this recycling facility?",
+                "render": "This recycling facility is operated by {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "0": {
+                        "then": "Batteries can be recycled here"
+                    },
+                    "1": {
+                        "then": "Beverage cartons can be recycled here"
+                    },
+                    "2": {
+                        "then": "Cans can be recycled here"
+                    },
+                    "3": {
+                        "then": "Clothes can be recycled here"
+                    },
+                    "4": {
+                        "then": "Cooking oil can be recycled here"
+                    },
+                    "5": {
+                        "then": "Engine oil can be recycled here"
+                    },
+                    "6": {
+                        "then": "Green waste can be recycled here"
+                    },
+                    "7": {
+                        "then": "Organic waste can be recycled here"
+                    },
+                    "8": {
+                        "then": "Glass bottles can be recycled here"
+                    },
+                    "9": {
+                        "then": "Glass can be recycled here"
+                    },
+                    "10": {
+                        "then": "Newspapers can be recycled here"
+                    },
+                    "11": {
+                        "then": "Paper can be recycled here"
+                    },
+                    "12": {
+                        "then": "Plastic bottles can be recycled here"
+                    },
+                    "13": {
+                        "then": "Plastic packaging can be recycled here"
+                    },
+                    "14": {
+                        "then": "Plastic can be recycled here"
+                    },
+                    "15": {
+                        "then": "Scrap metal can be recycled here"
+                    },
+                    "16": {
+                        "then": "Shoes can be recycled here"
+                    },
+                    "17": {
+                        "then": "Small electrical appliances can be recycled here"
+                    },
+                    "18": {
+                        "then": "Small electrical appliances can be recycled here"
+                    },
+                    "19": {
+                        "then": "Residual waste can be recycled here"
+                    }
+                },
+                "question": "What can be recycled here?"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a recycling container"
+                    },
+                    "1": {
+                        "then": "This is a recycling centre"
+                    },
+                    "2": {
+                        "then": "Waste disposal container for residual waste"
+                    }
+                },
+                "question": "What type of recycling is this?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Recycling centre"
+                },
+                "1": {
+                    "then": "Recycling container"
+                }
+            },
+            "render": "Recycling facility"
+        }
+    },
     "shops": {
         "description": "A shop",
         "name": "Shop",
@@ -4961,6 +5158,40 @@
     },
     "waste_basket": {
         "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "All types"
+                    },
+                    "1": {
+                        "question": "Waste basket for cigarettes"
+                    },
+                    "2": {
+                        "question": "Waste basket for drugs"
+                    },
+                    "3": {
+                        "question": "Waste basket for dog excrement"
+                    },
+                    "4": {
+                        "question": "Waste basket for trash"
+                    },
+                    "5": {
+                        "question": "Waste basket for sharps"
+                    },
+                    "6": {
+                        "question": "Waste basket for plastic"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Waste basket with dispenser for (dog) excrement bags"
+                    }
+                }
+            }
+        },
         "mapRendering": {
             "0": {
                 "iconSize": {
@@ -5012,6 +5243,9 @@
                     },
                     "5": {
                         "then": "A waste basket for needles and other sharp objects"
+                    },
+                    "6": {
+                        "then": "A waste basket for plastic"
                     }
                 },
                 "question": "What kind of waste basket is this?"
@@ -5019,6 +5253,59 @@
         },
         "title": {
             "render": "Waste Basket"
+        }
+    },
+    "waste_disposal": {
+        "description": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Only public access"
+                    }
+                }
+            }
+        },
+        "name": "Waste Disposal Bins",
+        "presets": {
+            "0": {
+                "description": "Medium to large bin for disposal of (household) waste",
+                "title": "Waste Disposal Bin"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "This bin can be used by anyone"
+                    },
+                    "1": {
+                        "then": "This bin is private"
+                    },
+                    "2": {
+                        "then": "This bin is only for residents"
+                    }
+                },
+                "question": "Who can use this waste disposal bin?",
+                "render": "Access: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an underground container"
+                    },
+                    "1": {
+                        "then": "This container is located indoors"
+                    },
+                    "2": {
+                        "then": "This container is located outdoors"
+                    }
+                },
+                "question": "Where is this container located?"
+            }
+        },
+        "title": {
+            "render": "Waste Disposal"
         }
     },
     "watermill": {
