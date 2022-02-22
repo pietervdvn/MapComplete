@@ -12,7 +12,8 @@ mkdir dist/assets 2> /dev/null
 npm run generate:editor-layer-index 
 npm run generate &&
 npm run test &&
-npm run generate:layouts
+npm run generate:layouts &&
+npm run generate:layouts # generate:layouts has to be run twice: the personal theme won't pick up all the layers otherwise
 
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"

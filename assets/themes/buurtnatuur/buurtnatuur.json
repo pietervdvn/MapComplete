@@ -504,9 +504,9 @@
               ]
             },
             "then": {
-              "nl": "Dit gebied wordt beheerd door Natuurpunt",
-              "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
-            }
+              "nl": "Dit gebied wordt beheerd door Natuurpunt"
+            },
+            "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
           },
           {
             "if": {
@@ -515,9 +515,9 @@
               ]
             },
             "then": {
-              "nl": "Dit gebied wordt beheerd door {operator}",
-              "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
+              "nl": "Dit gebied wordt beheerd door {operator}"
             },
+            "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
             "hideInAnswer": true
           },
           {
@@ -527,9 +527,9 @@
               ]
             },
             "then": {
-              "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos",
-              "icon": "./assets/themes/buurtnatuur/ANB.jpg"
-            }
+              "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+            },
+            "icon": "./assets/themes/buurtnatuur/ANB.jpg"
           },
           {
             "if": {
