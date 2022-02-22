@@ -3046,6 +3046,9 @@
         "description": "Alle lagen met een gelinkt etymology",
         "name": "Heeft etymology info",
         "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata,name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
+            },
             "simple etymology": {
                 "mappings": {
                     "0": {
@@ -3058,19 +3061,34 @@
             "street-name-sign-image": {
                 "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
             },
+            "wikipedia": {
+                "render": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}"
+            },
             "wikipedia-etymology": {
                 "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
                 "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
-            },
-            "wikipedia": {
-                "render": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}"
-            },
-            "etymology_multi_apply": {
-                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata,name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
             }
+        }
+    },
+    "extinguisher": {
+        "description": "Kaartlaag met brandblussers.",
+        "name": "Kaart van brandblussers.",
+        "presets": {
+            "0": {
+                "description": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
+                "title": "Brandblusser"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "render": "Locatie: {location}"
+            }
+        },
+        "title": {
+            "render": "Brandblussers"
         }
     },
     "food": {
@@ -3380,6 +3398,10 @@
             },
             "render": "Speelweide in een park"
         }
+    },
+    "hydrant": {
+        "description": "Kaartlaag met brandkranen.",
+        "name": "Kaart van brandkranen"
     },
     "information_board": {
         "description": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
@@ -4938,27 +4960,5 @@
             },
             "render": "Watermolens"
         }
-    },
-    "extinguisher": {
-        "tagRenderings": {
-            "extinguisher-location": {
-                "render": "Locatie: {location}"
-            }
-        },
-        "title": {
-            "render": "Brandblussers"
-        },
-        "description": "Kaartlaag met brandblussers.",
-        "name": "Kaart van brandblussers.",
-        "presets": {
-            "0": {
-                "description": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
-                "title": "Brandblusser"
-            }
-        }
-    },
-    "hydrant": {
-        "description": "Kaartlaag met brandkranen.",
-        "name": "Kaart van brandkranen"
     }
 }

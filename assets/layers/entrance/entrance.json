@@ -19,7 +19,8 @@
   "minzoom": 14,
   "title": {
     "render": {
-      "en": "Entrance"
+      "en": "Entrance",
+      "nl": "Ingang"
     }
   },
   "tagRenderings": [

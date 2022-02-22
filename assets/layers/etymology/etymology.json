@@ -139,14 +139,16 @@
     {
       "id": "etymology_multi_apply",
       "render": {
-        "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+        "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
+        "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata,name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
       }
     },
     {
       "id": "wikipedia",
       "#": "Note that this is a _read_only_ option, to prevent people entering a 'wikidata'-link instead of 'name:etymology:wikidata'",
       "render": {
-        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}"
+        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}",
+        "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

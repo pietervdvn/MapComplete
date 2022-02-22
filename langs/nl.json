@@ -294,6 +294,9 @@
         "uploadingPicture": "Bezig met een foto te uploaden…",
         "willBePublished": "Jouw foto wordt gepubliceerd "
     },
+    "importHelper": {
+        "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag"
+    },
     "importLayer": {
         "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
         "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
@@ -485,8 +488,5 @@
             "description": "een link naar een webpagina",
             "feedback": "Dit is geen geldige link"
         }
-    },
-    "importHelper": {
-        "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag"
     }
 }

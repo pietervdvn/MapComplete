@@ -7,7 +7,8 @@
     "ru": "Карта огнетушителей.",
     "fr": "Couche des extincteurs.",
     "de": "Karte mit Feuerlöschern.",
-    "it": "Cartina degli estintori."
+    "it": "Cartina degli estintori.",
+    "nl": "Kaart van brandblussers."
   },
   "minzoom": 14,
   "source": {
@@ -25,18 +26,20 @@
       "nb_NO": "Brannslokkere",
       "fr": "Exctincteurs",
       "de": "Feuerlöscher",
-      "it": "Estintori"
+      "it": "Estintori",
+      "nl": "Brandblussers"
     }
   },
   "description": {
-    "en": "Map layer to show fire hydrants.",
+    "en": "Map layer to show fire extinguishers.",
     "ja": "消火栓を表示するマップレイヤ。",
     "zh_Hant": "顯示消防栓的地圖圖層。",
     "nb_NO": "Kartlag for å vise brannslokkere.",
     "ru": "Слой карты, отображающий огнетушители.",
     "fr": "Couche des lances à incendie.",
     "de": "Kartenebene zur Anzeige von Hydranten.",
-    "it": "Livello della mappa che mostra gli idranti antincendio."
+    "it": "Livello della mappa che mostra gli idranti antincendio.",
+    "nl": "Kaartlaag met brandblussers."
   },
   "tagRenderings": [
     {
@@ -48,7 +51,8 @@
         "fr": "Emplacement : {location}",
         "de": "Standort: {location}",
         "eo": "Loko: {location}",
-        "it": "Posizione: {location}"
+        "it": "Posizione: {location}",
+        "nl": "Locatie: {location}"
       },
       "question": {
         "en": "Where is it positioned?",
@@ -108,7 +112,8 @@
         "ru": "Огнетушитель",
         "fr": "Extincteur",
         "de": "Feuerlöscher",
-        "it": "Estintore"
+        "it": "Estintore",
+        "nl": "Brandblusser"
       },
       "description": {
         "en": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -116,7 +121,8 @@
         "ru": "Огнетушитель - небольшое переносное устройство для тушения огня",
         "fr": "Un extincteur est un appareil portatif servant à éteindre un feu",
         "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
-        "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio"
+        "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
+        "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen"
       }
     }
   ],
