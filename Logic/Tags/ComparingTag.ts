@@ -39,4 +39,8 @@ export default class ComparingTag implements TagsFilter {
         return [this._key];
     }
 
+    AsJson() {
+        return this.asHumanString(false, false, {})
+    }
+
 }

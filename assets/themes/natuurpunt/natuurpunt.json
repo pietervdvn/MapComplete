@@ -2,9 +2,9 @@
   "id": "natuurpunt",
   "customCss": "./assets/themes/natuurpunt/natuurpunt.css",
   "title": {
-    "nl": "Natuurgebieden",
-    "en": "Nature Reserves",
-    "de": "Naturschutzgebiete",
+    "nl": "De Natuurpunt-kaart",
+    "en": "The map of Natuurpunt",
+    "de": "Die Karte von Natuurpunt",
     "nb_NO": "Naturreservater",
     "it": "Riserve naturali"
   },
@@ -18,15 +18,9 @@
     "nl": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt",
     "en": "On this map you can find all the nature reserves that Natuurpunt offers ",
     "it": "In questa cartina è possibile trovare tutte le riserve naturali offerte da Natuupunt. ",
-    "de": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden "
+    "de": "Auf dieser Karte können Sie alle Naturschutzgebiete von Natuurpunt finden ",
+    "zh_Hant": "在這張地圖上您可以找到 Natuurpunt 提供的所有自然保護區 "
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO"
-  ],
   "mustHaveLanguage": [
     "nl"
   ],
@@ -36,11 +30,20 @@
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 15,
+  "lockLocation": [
+    [
+      2.1,
+      50.4
+    ],
+    [
+      6.4,
+      51.54
+    ]
+  ],
   "widenFactor": 2,
-  "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
   "enablePdfDownload": true,
-  "enableDownload": true,
+  "enableDownload": false,
   "hideFromOverview": true,
   "clustering": {
     "maxZoom": 0,
@@ -58,7 +61,7 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -70,7 +73,11 @@
               "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
             }
           }
-        ]
+        ],
+        "=filter": {
+          "sameAs": "nature_reserve_centerpoints"
+        },
+        "=presets": []
       }
     },
     {
@@ -78,13 +85,14 @@
       "builtin": "nature_reserve",
       "wayHandling": 1,
       "override": {
+        "id": "nature_reserve_centerpoints",
         "source": {
           "osmTags": {
             "+and": [
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
           "isOsmCache": "duplicate"
         },
         "minzoom": 1,
@@ -94,6 +102,11 @@
               "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
             },
             "presets": []
+          }
+        ],
+        "presets": [
+          {
+            "tags+": "operator=Natuurpunt"
           }
         ]
       }
@@ -107,7 +120,7 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_points.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_points.geojson",
           "isOsmCache": true
         },
         "minzoom": 1,
@@ -129,11 +142,11 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "minzoom": 10,
+        "minzoom": 14,
         "mapRendering": [
           {
             "icon": {
@@ -156,9 +169,9 @@
     {
       "builtin": "toilet",
       "override": {
-        "minzoom": "15",
+        "minzoom": "14",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -184,11 +197,24 @@
     {
       "builtin": "birdhide",
       "override": {
-        "minzoom": 12,
+        "minzoom": 14,
+        "presets": [
+          {
+            "tags+": "operator=Natuurpunt"
+          },
+          {
+            "tags+": "operator=Natuurpunt"
+          }
+        ],
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
-          "isOsmCache": true
+          "isOsmCache": true,
+          "osmTags": {
+            "+and": [
+              "operator~.*[nN]atuurpunt.*"
+            ]
+          }
         },
         "mapRendering": [
           {
@@ -203,9 +229,9 @@
     {
       "builtin": "picnic_table",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -221,9 +247,9 @@
     {
       "builtin": "drinking_water",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -239,7 +265,7 @@
     {
       "builtin": "parking",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "mapRendering": [
           {
             "icon": {
@@ -266,9 +292,9 @@
     {
       "builtin": "information_board",
       "override": {
-        "minzoom": "16",
+        "minzoom": "14",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -284,9 +310,9 @@
     {
       "builtin": "bench",
       "override": {
-        "minzoom": "18",
+        "minzoom": "14",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -302,9 +328,9 @@
     {
       "builtin": "watermill",
       "override": {
-        "minzoom": "18",
+        "minzoom": "14",
         "source": {
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
@@ -316,7 +342,17 @@
           }
         ]
       }
+    },
+    {
+      "builtin": "gps_track",
+      "override": {
+        "name": null
+      }
     }
   ],
-  "enableIframePopout": false
+  "enableMoreQuests": false,
+  "enableShareScreen": false,
+  "enableIframePopout": false,
+  "enableBackgroundLayerSelection": false,
+  "enableNoteImports": false
 }

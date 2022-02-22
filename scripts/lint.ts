@@ -1,6 +1,6 @@
 import ScriptUtils from "./ScriptUtils";
 import {writeFileSync} from "fs";
-import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
+import {FixLegacyTheme, UpdateLegacyLayer} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 
 /*
  * This script reads all theme and layer files and reformats them inplace
@@ -9,12 +9,20 @@ import LegacyJsonConvert from "../Models/ThemeConfig/LegacyJsonConvert";
 
 const layerFiles = ScriptUtils.getLayerFiles();
 for (const layerFile of layerFiles) {
-    LegacyJsonConvert.fixLayerConfig(layerFile.parsed)
-    writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
+    try {
+        const fixed = new UpdateLegacyLayer().convertStrict(layerFile.parsed, "While linting " + layerFile.path);
+        writeFileSync(layerFile.path, JSON.stringify(fixed, null, "  "))
+    } catch (e) {
+        console.error("COULD NOT LINT LAYER" + layerFile.path + ":\n\t" + e)
+    }
 }
 
 const themeFiles = ScriptUtils.getThemeFiles()
 for (const themeFile of themeFiles) {
-    LegacyJsonConvert.fixThemeConfig(themeFile.parsed)
-    writeFileSync(themeFile.path, JSON.stringify(themeFile.parsed, null, "  "))
+    try {
+        const fixed = new FixLegacyTheme().convertStrict(themeFile.parsed, "While linting " + themeFile.path);
+        writeFileSync(themeFile.path, JSON.stringify(fixed, null, "  "))
+    } catch (e) {
+        console.error("COULD NOT LINT THEME" + themeFile.path + ":\n\t" + e)
+    }
 }

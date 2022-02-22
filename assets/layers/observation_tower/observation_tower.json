@@ -77,22 +77,29 @@
       "id": "Height"
     },
     {
+      "id": "access",
       "question": {
-        "en": "Who maintains this tower?",
-        "nl": "Wie onderhoudt deze toren?",
-        "de": "Wer betreibt diesen Turm?"
+        "en": "Can this tower be visited?",
+        "nl": "Is deze toren publiek toegankelijk?",
+        "es": "¿Se puede visitar esta torre?"
       },
-      "render": {
-        "nl": "Wordt onderhouden door <b>{operator}</b>",
-        "en": "Maintained by <b>{operator}</b>",
-        "de": "Betrieben von <b>{operator}</b>"
-      },
-      "freeform": {
-        "key": "operator"
-      },
-      "id": "Operator"
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "This tower is publicly accessible",
+            "nl": "Deze toren is publiek toegankelijk"
+          }
+        },
+        {
+          "if": "access=guided",
+          "then": {
+            "en": "This tower can only be visited with a guide",
+            "nl": "Deze toren can enkel bezocht worden met een gids"
+          }
+        }
+      ]
     },
-    "website",
     {
       "question": {
         "en": "How much does one have to pay to enter this tower?",
@@ -125,7 +132,13 @@
           }
         }
       ],
-      "id": "Fee"
+      "id": "Fee",
+      "condition": {
+        "or": [
+          "access=yes",
+          "access=guided"
+        ]
+      }
     },
     {
       "builtin": "payment-options",
@@ -139,25 +152,90 @@
       },
       "id": "Payment methods"
     },
-    "wheelchair-access",
-    "wikipedia"
-  ],
-  "presets": [
+    "website",
     {
-      "tags": [
-        "man_made=tower",
-        "tower:type=observation"
-      ],
-      "title": {
-        "en": "observation tower",
-        "nl": "Uitkijktoren",
-        "ru": "смотровая башня",
-        "de": "Beobachtungsturm"
+      "id": "step_count",
+      "question": {
+        "en": "How much individual steps does one have to climb to reach the top of this tower?",
+        "nl": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?"
       },
-      "description": {
-        "nl": "Een publiek toegankelijke uitkijktoren"
+      "freeform": {
+        "key": "step_count",
+        "type": "pnat"
+      },
+      "render": {
+        "en": "This tower has {step_count} steps to reach the top",
+        "nl": "Deze toren heeft {step_count} traptredes"
+      },
+      "condition": {
+        "or": [
+          "access=yes",
+          "access=guided"
+        ]
       }
-    }
+    },
+    {
+      "id": "elevator",
+      "question": {
+        "en": "Does this tower have an elevator?",
+        "nl": "Heeft deze toren een lift?"
+      },
+      "mappings": [
+        {
+          "if": "elevator=yes",
+          "then": {
+            "en": "This tower has an elevator which takes visitors to the top",
+            "nl": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt"
+          }
+        },
+        {
+          "if": "elevator=no",
+          "then": {
+            "en": "This tower does not have an elevator",
+            "nl": "Deze toren heeft geen lift"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "access=yes",
+          "access=guided"
+        ]
+      }
+    },
+    {
+      "question": {
+        "en": "Who maintains this tower?",
+        "nl": "Wie onderhoudt deze toren?",
+        "de": "Wer betreibt diesen Turm?"
+      },
+      "render": {
+        "nl": "Wordt onderhouden door <b>{operator}</b>",
+        "en": "Maintained by <b>{operator}</b>",
+        "de": "Betrieben von <b>{operator}</b>"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "id": "Operator"
+    },
+    {
+      "builtin": "wheelchair-access",
+      "override": {
+        "condition": {
+          "and": [
+            "elevator=yes",
+            {
+              "or": [
+                "access=yes",
+                "access=guided"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "wikipedia"
   ],
   "source": {
     "osmTags": {

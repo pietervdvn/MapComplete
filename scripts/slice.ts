@@ -3,6 +3,12 @@ import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledF
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
 import * as readline from "readline";
 import ScriptUtils from "./ScriptUtils";
+import {Utils} from "../Utils";
+
+/**
+ * This script slices a big newline-delimeted geojson file into tiled geojson
+ * It was used to convert the CRAB-data into geojson tiles
+ */
 
 async function readFeaturesFromLineDelimitedJsonFile(inputFile: string): Promise<any[]> {
     const fileStream = fs.createReadStream(inputFile);
@@ -98,25 +104,28 @@ async function main(args: string[]) {
 
     let allFeatures: any [];
     if (inputFile.endsWith(".geojson")) {
+        console.log("Detected geojson")
         allFeatures = await readFeaturesFromGeoJson(inputFile)
     } else {
+        console.log("Loading as newline-delimited features")
         allFeatures = await readFeaturesFromLineDelimitedJsonFile(inputFile)
     }
+    allFeatures = Utils.NoNull(allFeatures)
 
 
     console.log("Loaded all", allFeatures.length, "points")
 
     const keysToRemove = ["STRAATNMID", "GEMEENTE", "POSTCODE"]
     for (const f of allFeatures) {
+        if (f.properties === null) {
+            console.log("Got a feature without properties!", f)
+            continue
+        }
         for (const keyToRm of keysToRemove) {
             delete f.properties[keyToRm]
         }
         delete f.bbox
     }
-
-    //const knownKeys = Utils.Dedup([].concat(...allFeatures.map(f => Object.keys(f.properties))))
-    //console.log("Kept keys: ", knownKeys)
-
     TiledFeatureSource.createHierarchy(
         new StaticFeatureSource(allFeatures, false),
         {

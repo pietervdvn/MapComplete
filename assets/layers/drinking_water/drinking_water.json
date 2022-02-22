@@ -8,7 +8,8 @@
     "de": "Trinkwasserstelle",
     "it": "Acqua potabile",
     "ru": "Питьевая вода",
-    "id": "Air minum"
+    "id": "Air minum",
+    "hu": "Ivóvíz"
   },
   "title": {
     "render": {
@@ -19,7 +20,8 @@
       "de": "Trinkwasserstelle",
       "it": "Acqua potabile",
       "ru": "Питьевая вода",
-      "id": "Air minum"
+      "id": "Air minum",
+      "hu": "Ivóvíz"
     }
   },
   "source": {
@@ -47,7 +49,8 @@
         "de": "trinkwasser",
         "it": "acqua potabile",
         "ru": "питьевая вода",
-        "id": "air minum"
+        "id": "air minum",
+        "hu": "ivóvíz"
       },
       "tags": [
         "amenity=drinking_water"
@@ -62,14 +65,16 @@
         "nl": "Is deze drinkwaterkraan nog steeds werkende?",
         "it": "Questo punto di acqua potabile è sempre funzionante?",
         "fr": "Ce point d'eau potable est-il toujours opérationnel ?",
-        "de": "Ist diese Trinkwasserstelle noch in Betrieb?"
+        "de": "Ist diese Trinkwasserstelle noch in Betrieb?",
+        "hu": "Működik-e még ez az ivóvíznyerő hely?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
         "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
         "it": "Lo stato operativo è <i>{operational_status}</i>",
         "fr": "L'état opérationnel est <i>{operational_status}</i>",
-        "de": "Der Betriebsstatus ist <i>{operational_status}/i>"
+        "de": "Der Betriebsstatus ist <i>{operational_status}</i>",
+        "hu": "Működési állapota: <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -82,7 +87,8 @@
             "nl": "Deze drinkwaterfontein werkt",
             "it": "La fontanella funziona",
             "fr": "Cette fontaine fonctionne",
-            "de": "Diese Trinkwasserstelle funktioniert"
+            "de": "Diese Trinkwasserstelle funktioniert",
+            "hu": "Ez az ivóvízkút működik"
           }
         },
         {
@@ -92,7 +98,8 @@
             "nl": "Deze drinkwaterfontein is kapot",
             "it": "La fontanella è guasta",
             "fr": "Cette fontaine est cassée",
-            "de": "Diese Trinkwasserstelle ist kaputt"
+            "de": "Diese Trinkwasserstelle ist kaputt",
+            "hu": "Ez az ivóvízkút elromlott"
           }
         },
         {
@@ -102,7 +109,8 @@
             "nl": "Deze drinkwaterfontein is afgesloten",
             "it": "La fontanella è chiusa",
             "fr": "Cette fontaine est fermée",
-            "de": "Diese Trinkwasserstelle wurde geschlossen"
+            "de": "Diese Trinkwasserstelle wurde geschlossen",
+            "hu": "Ez az ivóvízkút el van zárva"
           }
         }
       ],
@@ -114,7 +122,8 @@
         "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
         "de": "Wie einfach ist es, Wasserflaschen zu füllen?",
         "it": "Quanto è facile riempire d’acqua le bottiglie?",
-        "fr": "Est-il facile de remplir des bouteilles d'eau ?"
+        "fr": "Est-il facile de remplir des bouteilles d'eau ?",
+        "hu": "Mennyire könnyű itt vizespalackot tölteni?"
       },
       "mappings": [
         {
@@ -124,7 +133,8 @@
             "nl": "Een drinkbus bijvullen gaat makkelijk",
             "de": "Es ist einfach, Wasserflaschen nachzufüllen",
             "it": "È facile riempire d’acqua le bottiglie",
-            "fr": "Il est facile de remplir les bouteilles d'eau"
+            "fr": "Il est facile de remplir les bouteilles d'eau",
+            "hu": "Könnyen lehet vizespalackot tölteni"
           }
         },
         {
@@ -134,7 +144,8 @@
             "nl": "Een drinkbus past moeilijk",
             "de": "Wasserflaschen passen möglicherweise nicht",
             "it": "Le bottiglie d’acqua potrebbero non entrare",
-            "fr": "Les bouteilles d'eau peuvent ne pas passer"
+            "fr": "Les bouteilles d'eau peuvent ne pas passer",
+            "hu": "Lehet, hogy nem fér alá egy vizespalack"
           }
         }
       ],
@@ -147,7 +158,8 @@
         "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",
         "it": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>",
         "de": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>",
-        "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>"
+        "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>",
+        "hu": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>"
       },
       "condition": "_closest_other_drinking_water_id~*"
     }
@@ -187,5 +199,10 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing drinking water fountains",
+    "nl": "Deze laag toont drinkwaterpunten",
+    "hu": "Ivóvizet adó kutakat megjelenítő réteg"
+  }
 }

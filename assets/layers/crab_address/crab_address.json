@@ -1,0 +1,36 @@
+{
+  "id": "crab_address",
+  "description": "Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version",
+  "source": {
+    "osmTags": "HUISNR~*",
+    "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
+    "geoJsonZoomLevel": 18,
+    "maxCacheAge": 0
+  },
+  "name": "CRAB-addressen",
+  "title": "CRAB-adres",
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "50,50,center",
+      "icon": "./assets/layers/crab_address/housenumber_blank.svg",
+      "label": {
+        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{_HNRLABEL}</div>"
+      }
+    }
+  ],
+  "calculatedTags": [
+    "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"
+  ],
+  "tagRenderings": [
+    {
+      "id": "render_crab",
+      "render": {
+        "nl": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
+      }
+    }
+  ]
+}

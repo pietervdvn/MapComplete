@@ -1,116 +1,131 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
-    },
-    "dog-access": {
-      "mappings": {
-        "0": {
-          "then": "Dogs are allowed"
+    "shared_questions": {
+        "description": {
+            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
         },
-        "1": {
-          "then": "Dogs are <b>not</b> allowed"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Dogs are allowed"
+                },
+                "1": {
+                    "then": "Dogs are <b>not</b> allowed"
+                },
+                "2": {
+                    "then": "Dogs are allowed, but they have to be leashed"
+                },
+                "3": {
+                    "then": "Dogs are allowed and can run around freely"
+                }
+            },
+            "question": "Are dogs allowed in this business?"
         },
-        "2": {
-          "then": "Dogs are allowed, but they have to be leashed"
+        "email": {
+            "question": "What is the email address of {title()}?"
         },
-        "3": {
-          "then": "Dogs are allowed and can run around freely"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Located underground"
+                },
+                "1": {
+                    "then": "Located on the ground floor"
+                },
+                "2": {
+                    "then": "Located on the ground floor"
+                },
+                "3": {
+                    "then": "Located on the first floor"
+                },
+                "4": {
+                    "then": "Located on the first basement level"
+                }
+            },
+            "question": "On what level is this feature located?",
+            "render": "Located on the {level}th floor"
+        },
+        "opening_hours": {
+            "question": "What are the opening hours of {title()}?",
+            "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Cash is accepted here"
+                },
+                "1": {
+                    "then": "Payment cards are accepted here"
+                }
+            },
+            "question": "Which methods of payment are accepted here?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Payment is done using a dedicated app"
+                    },
+                    "1": {
+                        "then": "Payment is done using a membership card"
+                    }
+                }
+            }
+        },
+        "phone": {
+            "question": "What is the phone number of {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics"
+                },
+                "1": {
+                    "then": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics"
+                },
+                "2": {
+                    "then": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked"
+                },
+                "3": {
+                    "then": "There are a no domestic sockets available to customers seated indoors"
+                }
+            },
+            "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
+        },
+        "website": {
+            "question": "What is the website of {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "This place is specially adapted for wheelchair users"
+                },
+                "1": {
+                    "then": "This place is easily reachable with a wheelchair"
+                },
+                "2": {
+                    "then": "It is possible to reach this place in a wheelchair, but it is not easy"
+                },
+                "3": {
+                    "then": "This place is not reachable with a wheelchair"
+                }
+            },
+            "question": "Is this place accessible with a wheelchair?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "No Wikipedia page has been linked yet"
+                }
+            },
+            "question": "What is the corresponding Wikidata entity?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Not linked with Wikipedia"
+                }
+            },
+            "question": "What is the corresponding item on Wikipedia?"
         }
-      },
-      "question": "Are dogs allowed in this business?"
-    },
-    "email": {
-      "question": "What is the email address of {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Located underground"
-        },
-        "1": {
-          "then": "Located on the ground floor"
-        },
-        "2": {
-          "then": "Located on the ground floor"
-        },
-        "3": {
-          "then": "Located on the first floor"
-        }
-      },
-      "question": "On what level is this feature located?",
-      "render": "Located on the {level}th floor"
-    },
-    "opening_hours": {
-      "question": "What are the opening hours of {name}?",
-      "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "mappings": {
-        "0": {
-          "then": "Cash is accepted here"
-        },
-        "1": {
-          "then": "Payment cards are accepted here"
-        }
-      },
-      "question": "Which methods of payment are accepted here?"
-    },
-    "phone": {
-      "question": "What is the phone number of {name}?"
-    },
-    "service:electricity": {
-      "mappings": {
-        "0": {
-          "then": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics"
-        },
-        "1": {
-          "then": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics"
-        },
-        "2": {
-          "then": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked"
-        },
-        "3": {
-          "then": "There are a no domestic sockets available to customers seated indoors"
-        }
-      },
-      "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
-    },
-    "website": {
-      "question": "What is the website of {name}?"
-    },
-    "wheelchair-access": {
-      "mappings": {
-        "0": {
-          "then": "This place is specially adapted for wheelchair users"
-        },
-        "1": {
-          "then": "This place is easily reachable with a wheelchair"
-        },
-        "2": {
-          "then": "It is possible to reach this place in a wheelchair, but it is not easy"
-        },
-        "3": {
-          "then": "This place is not reachable with a wheelchair"
-        }
-      },
-      "question": "Is this place accessible with a wheelchair?"
-    },
-    "wikipedia": {
-      "mappings": {
-        "0": {
-          "then": "No Wikipedia page has been linked yet"
-        }
-      },
-      "question": "What is the corresponding Wikidata entity?"
-    },
-    "wikipedialink": {
-      "mappings": {
-        "0": {
-          "then": "Not linked with Wikipedia"
-        }
-      },
-      "question": "What is the corresponding item on Wikipedia?"
     }
-  }
 }

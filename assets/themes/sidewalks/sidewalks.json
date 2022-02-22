@@ -1,17 +1,16 @@
 {
   "id": "sidewalks",
   "title": {
-    "en": "Sidewalks"
+    "en": "Sidewalks",
+    "ru": "Тротуары"
   },
   "shortDescription": {
     "en": "Sidewalk mapping"
   },
   "description": {
-    "en": "Experimental theme"
+    "en": "Experimental theme",
+    "ru": "Экспериментальная тема"
   },
-  "language": [
-    "en"
-  ],
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
   "version": "0",
@@ -19,13 +18,13 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 0.05,
-  "socialImage": "",
   "hideFromOverview": true,
   "layers": [
     {
       "id": "sidewalks",
       "name": {
-        "en": "Sidewalks"
+        "en": "Sidewalks",
+        "ru": "Тротуары"
       },
       "minzoom": 12,
       "source": {
@@ -40,7 +39,8 @@
       },
       "title": {
         "render": {
-          "en": "{name}"
+          "en": "{name}",
+          "ru": "{name}"
         },
         "mappings": [
           {
@@ -61,19 +61,25 @@
         },
         {
           "rewrite": {
-            "sourceString": "left|right",
+            "sourceString": [
+              "left|right"
+            ],
             "into": [
-              "left",
-              "right"
+              [
+                "left"
+              ],
+              [
+                "right"
+              ]
             ]
           },
           "renderings": [
             {
-              "id": "sidewalk_minimap",
+              "id": "sidewalk_minimap_left|right",
               "render": "{sided_minimap(left|right):height:8rem;border-radius:0.5rem;overflow:hidden}"
             },
             {
-              "id": "has_sidewalk",
+              "id": "has_sidewalk_left|right",
               "question": "Is there a sidewalk on this side of the road?",
               "mappings": [
                 {
@@ -87,7 +93,7 @@
               ]
             },
             {
-              "id": "sidewalk_width",
+              "id": "sidewalk_width_left|right",
               "question": "What is the width of the sidewalk on this side of the road?",
               "render": "This sidewalk is {sidewalk:left|right:width}m wide",
               "condition": "sidewalk:left|right=yes",

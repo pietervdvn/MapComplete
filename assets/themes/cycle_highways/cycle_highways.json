@@ -15,11 +15,6 @@
     "de": "Diese Karte zeigt Radschnellwege",
     "it": "Questa cartina mostra le strade per velocipedi"
   },
-  "language": [
-    "en",
-    "de",
-    "it"
-  ],
   "version": "2021-08-23",
   "startLat": 51.1599,
   "startLon": 3.3475,

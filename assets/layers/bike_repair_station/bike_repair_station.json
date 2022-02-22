@@ -1,8 +1,8 @@
 {
   "id": "bike_repair_station",
   "name": {
-    "en": "Bike stations (repair, pump or both)",
-    "nl": "Fietspunten (herstel, pomp of allebei)",
+    "en": "Bicycle pump and repair",
+    "nl": "Fietspomp and fietsherstel",
     "fr": "Station velo (réparation, pompe à vélo)",
     "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
     "de": "Fahrradstationen (Reparatur, Pumpe oder beides)",
@@ -138,8 +138,8 @@
     {
       "id": "bike_repair_station-available-services",
       "question": {
-        "en": "Which services are available at this bike station?",
-        "nl": "Welke functies biedt dit fietspunt?",
+        "en": "Which services are available at this location?",
+        "nl": "Welke functies biedt locatie?",
         "fr": "Quels services sont valables à cette station vélo ?",
         "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
         "de": "Welche Einrichtungen stehen an dieser Fahrradstation zur Verfügung?",
@@ -206,60 +206,45 @@
     },
     {
       "question": {
-        "en": "Who maintains this cycle pump?",
-        "nl": "Wie beheert deze fietspomp?",
-        "fr": "Qui maintient cette pompe à vélo ?",
-        "it": "Chi gestisce questa pompa per bici?",
-        "de": "Wer wartet diese Fahrradpumpe?",
-        "pt_BR": "Quem faz a manutenção desta bomba de ciclo?",
-        "pt": "Quem faz a manutenção desta bomba de ciclo?"
+        "en": "Is the bike pump still operational?",
+        "nl": "Werkt de fietspomp nog?",
+        "fr": "La pompe à vélo fonctionne-t-elle toujours ?",
+        "gl": "Segue a funcionar a bomba de ar?",
+        "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
+        "it": "La pompa per bici è sempre funzionante?",
+        "ru": "Велосипедный насос все еще работает?",
+        "pl": "Czy pompka rowerowa jest nadal sprawna?"
       },
-      "render": {
-        "nl": "Beheer door {operator}",
-        "en": "Maintained by {operator}",
-        "fr": "Mantenue par {operator}",
-        "it": "Manutenuta da {operator}",
-        "de": "Gewartet von {operator}",
-        "pt_BR": "Mantida por {operator}",
-        "pt": "Mantida por {operator}"
-      },
-      "freeform": {
-        "key": "operator"
-      },
+      "condition": "service:bicycle:pump=yes",
       "mappings": [
         {
-          "if": "operator=De Fietsambassade Gent",
-          "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>",
-          "hideInAnswer": "_country!=be"
+          "if": "service:bicycle:pump:operational_status=broken",
+          "then": {
+            "en": "The bike pump is broken",
+            "nl": "De fietspomp is kapot",
+            "fr": "La pompe à vélo est cassée",
+            "gl": "A bomba de ar está estragada",
+            "de": "Die Fahrradpumpe ist kaputt",
+            "it": "La pompa per bici è guasta",
+            "ru": "Велосипедный насос сломан",
+            "pl": "Pompka rowerowa jest zepsuta"
+          }
+        },
+        {
+          "if": "service:bicycle:pump:operational_status=operational",
+          "then": {
+            "en": "The bike pump is operational",
+            "nl": "De fietspomp werkt nog",
+            "fr": "La pompe est opérationnelle",
+            "gl": "A bomba de ar está operativa",
+            "de": "Die Fahrradpumpe ist betriebsbereit",
+            "it": "La pompa per bici funziona",
+            "ru": "Велосипедный насос работает",
+            "pl": "Pompka rowerowa jest sprawna"
+          }
         }
       ],
-      "id": "bike_repair_station-operator"
-    },
-    {
-      "question": {
-        "en": "What is the email address of the maintainer?",
-        "nl": "Wat is het email-adres van de beheerder?",
-        "de": "Wie lautet die E-Mail-Adresse des Betreuers?"
-      },
-      "freeform": {
-        "key": "email",
-        "type": "email"
-      },
-      "render": "<a href='mailto:{email}'>{email}</a>",
-      "id": "bike_repair_station-email"
-    },
-    {
-      "question": {
-        "en": "What is the phone number of the maintainer?",
-        "nl": "Wat is het telefoonnummer van de beheerder?",
-        "de": "Wie lautet die Telefonnummer des Betreibers?"
-      },
-      "freeform": {
-        "key": "phone",
-        "type": "phone"
-      },
-      "render": "<a href='tel:{phone}'>{phone}</a>",
-      "id": "bike_repair_station-phone"
+      "id": "Operational status"
     },
     {
       "question": {
@@ -288,22 +273,118 @@
             "pt_BR": "Sempre aberto",
             "pt": "Sempre aberto"
           }
-        },
-        {
-          "if": "opening_hours=",
-          "then": {
-            "nl": "Dag en nacht open",
-            "en": "Always open",
-            "fr": "Ouvert en permanence",
-            "it": "Sempre aperto",
-            "de": "Immer geöffnet",
-            "pt_BR": "Sempre aberto",
-            "pt": "Sempre aberto"
-          },
-          "hideInAnswer": true
         }
       ],
       "id": "bike_repair_station-opening_hours"
+    },
+    {
+      "id": "access",
+      "question": {
+        "en": "Who is allowed to use this repair station?",
+        "nl": "Wie kan dit herstelpunt gebruiken?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Publicly accessible",
+            "nl": "Publiek toegankelijk"
+          }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "en": "Publicly accessible",
+            "nl": "Publiek toegankelijk"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only for customers",
+            "nl": "Enkel voor klanten van de bijhorende zaak"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "Not accessible to the general public",
+            "nl": "Niet publiek toegankelijk"
+          },
+          "icon": "./assets/svg/invalid.svg"
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "en": "Not accessible to the general public",
+            "nl": "Niet publiek toegankelijk"
+          },
+          "icon": "./assets/svg/invalid.svg",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "labels": [
+        "operator-info"
+      ],
+      "question": {
+        "en": "Who maintains this cycle pump?",
+        "nl": "Wie beheert deze fietspomp?",
+        "fr": "Qui maintient cette pompe à vélo ?",
+        "it": "Chi gestisce questa pompa per bici?",
+        "de": "Wer wartet diese Fahrradpumpe?",
+        "pt_BR": "Quem faz a manutenção desta bomba de ciclo?",
+        "pt": "Quem faz a manutenção desta bomba de ciclo?"
+      },
+      "render": {
+        "nl": "Beheer door {operator}",
+        "en": "Maintained by {operator}",
+        "fr": "Mantenue par {operator}",
+        "it": "Manutenuta da {operator}",
+        "de": "Gewartet von {operator}",
+        "pt_BR": "Mantida por {operator}",
+        "pt": "Mantida por {operator}"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "id": "bike_repair_station-operator"
+    },
+    {
+      "labels": [
+        "operator-info"
+      ],
+      "question": {
+        "en": "What is the email address of the maintainer?",
+        "nl": "Wat is het email-adres van de beheerder?",
+        "de": "Wie lautet die E-Mail-Adresse des Betreuers?",
+        "fr": "Quelle est l'adresse email du service de maintenance ?"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "render": "<a href='mailto:{email}'>{email}</a>",
+      "id": "bike_repair_station-email"
+    },
+    {
+      "labels": [
+        "operator-info"
+      ],
+      "question": {
+        "en": "What is the phone number of the maintainer?",
+        "nl": "Wat is het telefoonnummer van de beheerder?",
+        "de": "Wie lautet die Telefonnummer des Betreibers?",
+        "fr": "Quel est le numéro de téléphone du service de maintenance ?"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "render": "<a href='tel:{phone}'>{phone}</a>",
+      "id": "bike_repair_station-phone"
     },
     {
       "id": "bike_repair_station-bike-chain-tool",
@@ -386,48 +467,6 @@
       ]
     },
     {
-      "question": {
-        "en": "Is the bike pump still operational?",
-        "nl": "Werkt de fietspomp nog?",
-        "fr": "La pompe à vélo fonctionne-t-elle toujours ?",
-        "gl": "Segue a funcionar a bomba de ar?",
-        "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
-        "it": "La pompa per bici è sempre funzionante?",
-        "ru": "Велосипедный насос все еще работает?",
-        "pl": "Czy pompka rowerowa jest nadal sprawna?"
-      },
-      "condition": "service:bicycle:pump=yes",
-      "mappings": [
-        {
-          "if": "service:bicycle:pump:operational_status=broken",
-          "then": {
-            "en": "The bike pump is broken",
-            "nl": "De fietspomp is kapot",
-            "fr": "La pompe à vélo est cassée",
-            "gl": "A bomba de ar está estragada",
-            "de": "Die Fahrradpumpe ist kaputt",
-            "it": "La pompa per bici è guasta",
-            "ru": "Велосипедный насос сломан",
-            "pl": "Pompka rowerowa jest zepsuta"
-          }
-        },
-        {
-          "if": "service:bicycle:pump:operational_status=",
-          "then": {
-            "en": "The bike pump is operational",
-            "nl": "De fietspomp werkt nog",
-            "fr": "La pompe est opérationnelle",
-            "gl": "A bomba de ar está operativa",
-            "de": "Die Fahrradpumpe ist betriebsbereit",
-            "it": "La pompa per bici funziona",
-            "ru": "Велосипедный насос работает",
-            "pl": "Pompka rowerowa jest sprawna"
-          }
-        }
-      ],
-      "id": "Operational status"
-    },
-    {
       "condition": {
         "and": [
           "email~*",
@@ -435,9 +474,9 @@
         ]
       },
       "render": {
-        "en": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.'>Report this bicycle pump as broken</a>",
-        "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix#{id}.'>Rapporteer deze fietspomp als kapot</a>",
-        "de": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
+        "en": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,%0D%0A%0D%0AWith this email, I&#39;d like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} is broken.%0D%0A%0D%0A Kind regards'>Report this bicycle pump as broken</a>",
+        "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>",
+        "de": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
       },
       "id": "Email maintainer"
     },
@@ -511,7 +550,7 @@
       "id": "bike_repair_station-electrical_pump",
       "question": {
         "en": "Is this an electric bike pump?",
-        "nl": "Is dit een electrische fietspomp?",
+        "nl": "Is dit een elektrische fietspomp?",
         "fr": "Est-ce que cette pompe est électrique ?",
         "gl": "Esta é unha bomba de ar eléctrica?",
         "de": "Ist dies eine elektrische Fahrradpumpe?",
@@ -540,7 +579,7 @@
           "if": "manual=no",
           "then": {
             "en": "Electrical pump",
-            "nl": "Electrische pomp",
+            "nl": "Elektrische pomp",
             "fr": "Pompe électrique",
             "gl": "Bomba de ar eléctrica",
             "de": "Elektrische Pumpe",
@@ -618,16 +657,16 @@
   "presets": [
     {
       "title": {
-        "en": "Bike pump",
-        "nl": "Fietspomp",
-        "fr": "Pompe à vélo",
-        "gl": "Bomba de ar",
-        "de": "Fahrradpumpe",
-        "it": "Pompa per bici",
-        "ru": "Велосипедный насос",
-        "fi": "Pyöräpumppu",
-        "pl": "Pompka do roweru",
-        "pt_BR": "Bomba de bicicleta"
+        "en": "bike pump",
+        "nl": "fietspomp",
+        "fr": "pompe à vélo",
+        "gl": "bomba de ar",
+        "de": "fahrradpumpe",
+        "it": "pompa per bici",
+        "ru": "bелосипедный насос",
+        "fi": "pyöräpumppu",
+        "pl": "pompka do roweru",
+        "pt_BR": "bomba de bicicleta"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -635,25 +674,30 @@
         "service:bicycle:pump=yes"
       ],
       "description": {
-        "en": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "nl": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.<h3>Esempi di pompe per biciclette</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "de": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.<h3>Beispiele für Fahrradpumpen</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.<h3>Przykłady pompek rowerowych</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público<h3>Exemplos de bombas de bicicletas</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
-      }
+        "en": "A device to inflate your tires on a fixed location in the public space.",
+        "nl": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
+        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.",
+        "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
+        "de": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
+        "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
+        "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público",
+        "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público"
+      },
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/pump_example_round.jpg",
+        "./assets/layers/bike_repair_station/pump_example.png",
+        "./assets/layers/bike_repair_station/pump_example_manual.jpg"
+      ]
     },
     {
       "title": {
-        "en": "Bike repair station and pump",
-        "nl": "Herstelpunt en pomp",
-        "fr": "Point de réparation vélo avec pompe",
-        "gl": "Estación de arranxo de bicicletas con bomba de ar",
-        "de": "Fahrrad-Reparaturstation und Pumpe",
-        "it": "Stazione di riparazione bici e pompa",
-        "pl": "Stacja naprawy rowerów i pompka"
+        "en": "bike repair station and pump",
+        "nl": "herstelpunt en pomp",
+        "fr": "point de réparation vélo avec pompe",
+        "gl": "estación de arranxo de bicicletas con bomba de ar",
+        "de": "fahrrad-Reparaturstation und Pumpe",
+        "it": "stazione di riparazione bici e pompa",
+        "pl": "stacja naprawy rowerów i pompka"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -661,27 +705,35 @@
         "service:bicycle:pump=yes"
       ],
       "description": {
-        "en": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-        "nl": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-        "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.<h3>Exemple</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-        "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.<h3>Esempio</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-        "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.<h3>Beispiel</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
-      }
+        "en": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
+        "nl": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
+        "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
+        "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
+        "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert."
+      },
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
+        "./assets/layers/bike_repair_station/repair_station_example_3.jpg"
+      ]
     },
     {
       "title": {
-        "en": "Bike repair station without pump",
-        "nl": "Herstelpunt zonder pomp",
-        "fr": "Point de réparation vélo sans pompe",
-        "gl": "Estación de arranxo de bicicletas sin bomba de ar",
-        "de": "Fahrrad-Reparaturstation ohne Pumpe",
-        "it": "Stazione di riparazione bici senza pompa"
+        "en": "bike repair station without pump",
+        "nl": "herstelpunt zonder pomp",
+        "fr": "point de réparation vélo sans pompe",
+        "gl": "estación de arranxo de bicicletas sin bomba de ar",
+        "de": "fahrrad-Reparaturstation ohne Pumpe",
+        "it": "stazione di riparazione bici senza pompa"
       },
       "tags": [
         "amenity=bicycle_repair_station",
         "service:bicycle:tools=yes",
         "service:bicycle:pump=no"
-      ]
+      ],
+      "description": {
+        "en": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
+        "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal."
+      }
     }
   ],
   "deletion": {
@@ -700,16 +752,17 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_repair_station/repair_station.svg",
+        "render": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station.svg",
         "mappings": [
           {
             "if": {
               "and": [
-                "service:bicycle:pump=no",
+                "service:bicycle:pump=yes",
+                "service:bicycle:tools=yes",
                 "service:bicycle:pump:operational_status=broken"
               ]
             },
-            "then": "./assets/layers/bike_repair_station/repair_station.svg"
+            "then": "pin:#88d32c;./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
           },
           {
             "if": {
@@ -718,7 +771,7 @@
                 "service:bicycle:tools=yes"
               ]
             },
-            "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+            "then": "pin:#30abf0;./assets/layers/bike_repair_station/repair_station_pump.svg"
           },
           {
             "if": {
@@ -727,7 +780,7 @@
                 "service:bicycle:tools=no"
               ]
             },
-            "then": "./assets/layers/bike_repair_station/broken_pump_2.svg"
+            "then": "pin:black;./assets/layers/bike_repair_station/broken_pump.svg"
           },
           {
             "if": {
@@ -741,7 +794,7 @@
                 }
               ]
             },
-            "then": "./assets/layers/bike_repair_station/pump.svg"
+            "then": "pin:#e1783a;./assets/layers/bike_repair_station/pump.svg"
           }
         ]
       },
@@ -749,6 +802,15 @@
         {
           "if": "operator=De Fietsambassade Gent",
           "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+        },
+        {
+          "if": {
+            "or": [
+              "access=no",
+              "access=private"
+            ]
+          },
+          "then": "invalid"
         }
       ],
       "iconSize": {
@@ -758,14 +820,10 @@
         "point",
         "centroid"
       ]
-    },
-    {
-      "color": {
-        "render": "#00f"
-      },
-      "width": {
-        "render": "1"
-      }
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen"
+  }
 }

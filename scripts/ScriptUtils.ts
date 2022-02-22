@@ -4,11 +4,8 @@ import {Utils} from "../Utils";
 import * as https from "https";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-
-Utils.runningFromConsole = true
-
+import xml2js from 'xml2js';
 export default class ScriptUtils {
-
 
     public static fixUtils() {
         Utils.externalDownloadFunction = ScriptUtils.DownloadJSON
@@ -48,12 +45,12 @@ export default class ScriptUtils {
         })
     }
 
-    public static DownloadJSON(url, headers?: any): Promise<any> {
+    private static DownloadJSON(url, headers?: any): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
                 headers.accept = "application/json"
-                console.log("ScriptUtils.DownloadJson(", url.substring(0, 40), url.length > 40 ? "..." : "", ")")
+                console.log(" > ScriptUtils.DownloadJson(", url, ")")
                 const urlObj = new URL(url)
                 https.get({
                     host: urlObj.host,
@@ -123,7 +120,7 @@ export default class ScriptUtils {
 
     public static getThemeFiles(): { parsed: LayoutConfigJson, path: string }[] {
         return ScriptUtils.readDirRecSync("./assets/themes")
-            .filter(path => path.endsWith(".json"))
+            .filter(path => path.endsWith(".json") && !path.endsWith(".proto.json"))
             .filter(path => path.indexOf("license_info.json") < 0)
             .map(path => {
                 try {
@@ -148,4 +145,18 @@ export default class ScriptUtils {
         return ScriptUtils.DownloadJSON(url)
     }
 
+    public static async ReadSvg(path: string): Promise<any>{
+        const root =  await xml2js.parseStringPromise(readFileSync(path, "UTF8"))
+        return root.svg
+    }
+
+    public static async ReadSvgSync(path: string, callback: ((svg: any) => void)): Promise<any>{
+         xml2js.parseString(readFileSync(path, "UTF8"),{async: false} , (err, root) => {
+             if(err){
+                 throw err
+             }
+             callback(root["svg"]);
+         })
+    }
+    
 }

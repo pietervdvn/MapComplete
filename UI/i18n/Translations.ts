@@ -1,12 +1,13 @@
 import {FixedUiElement} from "../Base/FixedUiElement";
-import AllTranslationAssets from "../../AllTranslationAssets";
 import {Translation} from "./Translation";
 import BaseUIElement from "../BaseUIElement";
+import * as known_languages from "../../assets/generated/used_languages.json"
+import CompiledTranslations from "../../assets/generated/CompiledTranslations";
 
 export default class Translations {
 
-    static t = AllTranslationAssets.t;
-
+    static t = CompiledTranslations.t;
+    private static knownLanguages = new Set(known_languages.languages)
     constructor() {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
@@ -89,4 +90,11 @@ export default class Translations {
 
     }
 
+    static isProbablyATranslation(transl: any) {
+        if(typeof transl !== "object"){
+            return false;
+        }
+        // is a weird key found?
+        return !Object.keys(transl).some(key => !this.knownLanguages.has(key))
+    }
 }

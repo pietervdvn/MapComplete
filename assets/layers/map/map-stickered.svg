@@ -12,14 +12,7 @@
         width="256"
         height="256"
         id="svg3038"
-        version="1.1"
-        inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-        sodipodi:docname="map-stickered.svg"
-        inkscape:export-filename="/home/fred/bla.png"
-        inkscape:export-xdpi="180"
-        inkscape:export-ydpi="180"
-        sodipodi:version="0.32"
-        inkscape:output_extension="org.inkscape.output.svg.inkscape">
+        version="1.1">
     <title
             id="title3594">OpenStreetMap logo 2011
     </title>
@@ -2326,20 +2319,6 @@
                     id="path36"
                     d="M 3,5.848 H 23.234 V 24.41 H 3 Z"/>
         </clipPath>
-        <mask
-                id="mask40"
-                height="1"
-                width="1"
-                y="0"
-                x="0"
-                maskUnits="userSpaceOnUse">
-            <image
-                    id="image42"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAZCAAAAADldwqCAAAAAXNCSVQI5gpbmQAAAV9JREFUKJGd0btLA0EQBvBvbve8y0OTiBGCBBTxAWqhhYWoEAQb/1/RIgQhVcRGsBCEWBgQNSGPi7nbvduxyJELiTZONcuPZWe+Bf4umj0TAOZ5I9u2LIs4UOGsyVTOYcNEod9XDIiE7HxJ9Ya+0iaVlToE5ITE0kq7pxlEIsgt04eaupcueh3FAHOklSwon62p10Y6bqPvtl9wMTGyZDw6AB710k5iIJH0iBQjMWbLnUITmql7Sm0WJttKW5vJnCTs4gn1NI/zyWa8YRSblVnbPDjb8DwYkEhl0qYfxJmJ/O7Zca5Z8zqfXcW0YIeDUTTOxSkeXpyuvlRroXCy0JHy/MAAEqBU+fjyaLF52/iKLNsVHCllGACBslvnlT1+ur57DTD+wDgECXf7qrLefbhpvKvxnkmKSO+flt/q1cdOiJmS0N1W+77+PDCzBIIs7Yhm65vnCARIl/zwF/p3/QBhxpVghEtiJAAAAABJRU5ErkJggg=="
-                    preserveAspectRatio="none"
-                    height="1"
-                    width="1"/>
-        </mask>
         <clipPath
                 id="clipPath64"
                 clipPathUnits="userSpaceOnUse">
@@ -2356,20 +2335,6 @@
                     id="path66"
                     d="M 1.5,4.348 H 22.836 V 21.91 H 1.5 Z"/>
         </clipPath>
-        <mask
-                id="mask70"
-                height="1"
-                width="1"
-                y="0"
-                x="0"
-                maskUnits="userSpaceOnUse">
-            <image
-                    id="image72"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAYCAAAAAAjNalgAAAAAXNCSVQI5gpbmQAAAStJREFUKJGFkr1KA1EQhb+5mXV3Q0gI/iASY2GXRhHsfFdfwMrGp7ARFcQgCVioqBFJNmb3/lisoHAXnGrgcM6cMzPwX8lvJxGS5MFZGxBVxbnKg6qGRQAFl2XgKzU10VtUBL+qQCHYtonH+eXMoxCWbY3R4D5AASttiWGdOhQkX08blD9rV2bQa1Aunxwo6F43dhWKNw+KZINOTK1eHTW304CWVQCUsHjZbMWmDq8tKNjxURaT97cnHgU3TRukk9FjiUIomlaZDrVEwWztdGNuMa7nrp308zjv/Kq+UXLcj3dVTX7um446RgTwzhtjBAhhfm+BFtLbeJ7RSVqrm7PT23m3m7RYXJ5fvAcQEBVMvrv2UFhvjA4P3N30y7vAn48z+LoRgw9xhob6Bn34cikMgRDDAAAAAElFTkSuQmCC"
-                    preserveAspectRatio="none"
-                    height="1"
-                    width="1"/>
-        </mask>
         <clipPath
                 id="clipPath96"
                 clipPathUnits="userSpaceOnUse">
@@ -4548,20 +4513,6 @@
                     id="path2110"
                     d="M 3,2.848 H 21.352 V 20.293 H 3 Z"/>
         </clipPath>
-        <mask
-                id="mask2114"
-                height="1"
-                width="1"
-                y="0"
-                x="0"
-                maskUnits="userSpaceOnUse">
-            <image
-                    id="image2116"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAAAAAAq3gkaAAAAAXNCSVQI5gpbmQAAAURJREFUKJF1kD1Pw0AMhu3cpSFNWj4ioKoETAy0DFRsCITEAFJXBgb+AP+BmZmJmR2JjQGJFbZOICY+hKCNUAOUfqRtuMjH0Cg5FfpO9j1+fbYBRgn/e5F/iZ5iyBi1hQTgarWRHxcBMrS+O6R6MFPwPgAZMxyqNqRC7MLrl5AIwJ0Z87bHYsDmRE0AAAB1g0nL02LCc1URhdR8yWsJAUPEITXdTEJQU/78qdmKh6u7ia7i4UoVUDPJpJhWyoiSJKyXs0lnATHR9P7KxkSUsizGdzMW5ktri6nrViABzXSuRdE8ZnF33amcLNWfGgSYthrv0d3Spb1yzj24McamDBFS4LfFoJu1ur89613dB0HbN1HKXp8GE9pbp2/+w3GRAwAgYrxxZufM9e+OlnUYEt+88DqVw8IwYIBZ//Px8vw5HLaM1C+RSG2wcCGrPwAAAABJRU5ErkJggg=="
-                    preserveAspectRatio="none"
-                    height="1"
-                    width="1"/>
-        </mask>
         <clipPath
                 id="clipPath2140"
                 clipPathUnits="userSpaceOnUse">
@@ -11229,51 +11180,6 @@
                                                             </g>
                                                         </g>
                                                     </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-                <g
-                        id="g2088"
-                        transform="matrix(1.2523649,0,0,1.2523649,0.64164081,-0.51951627)">
-                    <g
-                            id="g2090"
-                            clip-path="url(#clipPath2094)">
-                        <g
-                                id="g2096"
-                                clip-path="url(#clipPath2100)">
-                            <g
-                                    id="g2102">
-                                <g
-                                        id="g2104"/>
-                                <g
-                                        id="g2130">
-                                    <g
-                                            clip-path="url(#clipPath2108)"
-                                            id="g2128">
-                                        <g
-                                                id="g2118"/>
-                                        <g
-                                                id="g2126">
-                                            <g
-                                                    clip-path="url(#clipPath2112)"
-                                                    id="g2124">
-                                                <g
-                                                        transform="matrix(18.34988,0,0,-17.444655,3,20.291112)"
-                                                        id="g2122">
-                                                    <image
-                                                            width="1"
-                                                            height="1"
-                                                            preserveAspectRatio="none"
-                                                            transform="matrix(1,0,0,-1,0,1)"
-                                                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAABHNCSVQICAgIfAhkiAAAAaJJREFUSIm9lcFu00AQhr/1rklIZFVcIw5OY7sVcbDa938FhJI2tAotkaLeK5WDSbzj5UICBbesE8ov7WX3H30z2tlZBTheWMFLA/4bxOwbmCQJN2EInQ6Fc4gIl5cOmDf6XZuVJMmz52maujzPf9/3B2RZ5uXL89yladoeMh6PHUxaJbSt2vviy24XuPC1s1gsqKMIaNNdde1t3erLxw1w7A9xVdUaAnPeFpE/pFJqDwgE9/f+kHpPyGq18oe82gvxU55tmbgse9/q4W5Xi9l1Q7drGAwGratQ/G3UFwXHXwOcE15HmtJZqrrmbt48o3Y6PYXraw/IyQnvej2s0xglWDQucCBCKcLdhQJmj2POzmCzgV+SeBIyGo3QvTcYA1YEo+HTwwPc3u48k8mE9XpNGIYYY5hOp425NkKGwyHh0RFGaazUGK2x4ljMPjxZ9HP64z8ZnZ+jv4FRAfKjgko2fJ7NmuLbQ+K4QKMxHYuIoI2iBJYHAB5B4jimH4VUzmEF0FCWJcvg8B96B+n3+1ShAisQGFRVsry6OhgAPu/kH+g7cxLppwYWpnwAAAAASUVORK5CYII="
-                                                            mask="url(#mask2114)"
-                                                            id="image2120"/>
                                                 </g>
                                             </g>
                                         </g>

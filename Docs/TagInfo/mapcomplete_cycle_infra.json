@@ -132,7 +132,7 @@
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Cycleways and roads' shows cyclestreet= with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key cyclestreet.",
+      "description": "Layer 'Cycleways and roads' shows  with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key cyclestreet.",
       "value": ""
     },
     {
@@ -569,6 +569,16 @@
       "value": "no"
     },
     {
+      "key": "barrier",
+      "description": "Layer 'Barriers' shows barrier=bollard with a fixed text, namely 'This is a single bollard in the road' (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "value": "bollard"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'Barriers' shows barrier=cycle_barrier with a fixed text, namely 'This is a cycle barrier slowing down cyclists' (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "value": "cycle_barrier"
+    },
+    {
       "key": "bollard",
       "description": "Layer 'Barriers' shows bollard=removable with a fixed text, namely 'Removable bollard' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "removable"
@@ -594,23 +604,23 @@
       "value": "rising"
     },
     {
-      "key": "cycle_barrier:type",
-      "description": "Layer 'Barriers' shows cycle_barrier:type=single with a fixed text, namely 'Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "key": "cycle_barrier",
+      "description": "Layer 'Barriers' shows cycle_barrier=single with a fixed text, namely 'Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "single"
     },
     {
-      "key": "cycle_barrier:type",
-      "description": "Layer 'Barriers' shows cycle_barrier:type=double with a fixed text, namely 'Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "key": "cycle_barrier",
+      "description": "Layer 'Barriers' shows cycle_barrier=double with a fixed text, namely 'Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "double"
     },
     {
-      "key": "cycle_barrier:type",
-      "description": "Layer 'Barriers' shows cycle_barrier:type=triple with a fixed text, namely 'Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "key": "cycle_barrier",
+      "description": "Layer 'Barriers' shows cycle_barrier=triple with a fixed text, namely 'Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "triple"
     },
     {
-      "key": "cycle_barrier:type",
-      "description": "Layer 'Barriers' shows cycle_barrier:type=squeeze with a fixed text, namely 'Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "key": "cycle_barrier",
+      "description": "Layer 'Barriers' shows cycle_barrier=squeeze with a fixed text, namely 'Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "squeeze"
     },
     {
@@ -655,13 +665,18 @@
       "value": "zebra"
     },
     {
+      "key": "crossing",
+      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "value": "unmarked"
+    },
+    {
       "key": "crossing_ref",
       "description": "Layer 'Crossings' shows crossing_ref=zebra with a fixed text, namely 'This is a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "zebra"
     },
     {
       "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key crossing_ref.",
+      "description": "Layer 'Crossings' shows  with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') Picking this answer will delete the key crossing_ref.",
       "value": ""
     },
     {
@@ -738,6 +753,11 @@
       "key": "red_turn:straight:bicycle",
       "description": "Layer 'Crossings' shows red_turn:straight:bicycle=no with a fixed text, namely 'A cyclist can not go straight on if the light is red' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "no"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

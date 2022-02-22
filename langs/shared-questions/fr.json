@@ -1,77 +1,116 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
-    },
-    "dog-access": {
-      "mappings": {
-        "0": {
-          "then": "Chiens admis"
+    "shared_questions": {
+        "description": {
+            "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
         },
-        "1": {
-          "then": "Les chiens <b>ne</b> sont <b>pas</b> admis"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Chiens admis"
+                },
+                "1": {
+                    "then": "Chiens <b>non</b> admis"
+                },
+                "2": {
+                    "then": "Les chiens sont admis, mais ils doivent être tenus en laisse"
+                },
+                "3": {
+                    "then": "Les chiens sont admis et peuvent circuler librement"
+                }
+            },
+            "question": "Est-ce que les chiens sont admis ici ?"
         },
-        "2": {
-          "then": "Les chiens sont admis, mais ils doivent être tenus en laisse"
+        "email": {
+            "question": "Quelle est l'adresse courriel de {title()} ?"
         },
-        "3": {
-          "then": "Les chiens sont admis et peuvent circuler librement"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "En sous-sol"
+                },
+                "1": {
+                    "then": "Rez-de-chaussée"
+                },
+                "2": {
+                    "then": "Rez-de-chaussée"
+                },
+                "3": {
+                    "then": "Premier étage"
+                }
+            },
+            "question": "À quel étage se situe l’élément ?",
+            "render": "Étage {level}"
+        },
+        "opening_hours": {
+            "question": "Quelles sont les horaires d'ouverture de {title()} ?",
+            "render": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Paiement en liquide accepté"
+                },
+                "1": {
+                    "then": "Paiement par carte accepté"
+                }
+            },
+            "question": "Quelles sont les méthodes de paiement acceptées ici ?"
+        },
+        "phone": {
+            "question": "Quel est le numéro de téléphone de {title()} ?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+                },
+                "1": {
+                    "then": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils"
+                },
+                "2": {
+                    "then": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés"
+                },
+                "3": {
+                    "then": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur"
+                }
+            },
+            "question": "Des prises sont elles à disposition des client·e·s en intérieur ?"
+        },
+        "website": {
+            "question": "Quel est le site web de {title()} ?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants"
+                },
+                "1": {
+                    "then": "Cet endroit est facilement accessible avec un fauteuil roulant"
+                },
+                "2": {
+                    "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
+                },
+                "3": {
+                    "then": "Cet endroit n'est pas accessible en chaise roulante"
+                }
+            },
+            "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Pas encore de lien vers une page Wikipedia"
+                }
+            },
+            "question": "Quelle est l'entité Wikidata correspondante ?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Non lié avec Wikipedia"
+                }
+            },
+            "question": "Quel est l’élément Wikipédia correspondant ?"
         }
-      },
-      "question": "Est-ce que les chiens sont admis ici ?"
-    },
-    "email": {
-      "question": "Quelle est l'adresse courriel de {name} ?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "En sous-sol"
-        },
-        "1": {
-          "then": "Rez-de-chaussée"
-        },
-        "2": {
-          "then": "Rez-de-chaussée"
-        },
-        "3": {
-          "then": "Premier étage"
-        }
-      },
-      "question": "À quel étage se situe l’élément ?",
-      "render": "Étage {level}"
-    },
-    "opening_hours": {
-      "question": "Quelles sont les horaires d'ouverture de {name} ?",
-      "render": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "mappings": {
-        "0": {
-          "then": "Paiement en liquide accepté"
-        },
-        "1": {
-          "then": "Paiement par carte accepté"
-        }
-      },
-      "question": "Quelles sont les méthodes de paiement acceptées ici ?"
-    },
-    "phone": {
-      "question": "Quel est le numéro de téléphone de {name} ?"
-    },
-    "website": {
-      "question": "Quel est le site web de {name} ?"
-    },
-    "wheelchair-access": {
-      "mappings": {
-        "2": {
-          "then": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile"
-        },
-        "3": {
-          "then": "Cet endroit n'est pas accessible en chaise roulante"
-        }
-      },
-      "question": "Est-ce que cet endroit est accessible en chaise roulante ?"
     }
-  }
 }

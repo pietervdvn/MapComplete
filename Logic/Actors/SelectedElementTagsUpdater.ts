@@ -117,7 +117,6 @@ export default class SelectedElementTagsUpdater {
 
                 const localValue = currentTags[key]
                 if (localValue !== osmValue) {
-                    console.log("Local value for ", key, ":", localValue, "upstream", osmValue)
                     somethingChanged = true;
                     currentTags[key] = osmValue
                 }

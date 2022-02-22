@@ -1,5 +1,4 @@
 import T from "./TestHelper";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdater";
 import UserRelatedState from "../Logic/State/UserRelatedState";
 import {Utils} from "../Utils";
@@ -7,6 +6,8 @@ import SelectedFeatureHandler from "../Logic/Actors/SelectedFeatureHandler";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {ElementStorage} from "../Logic/ElementStorage";
 import Loc from "../Models/Loc";
+import * as bookcaseJson from "../assets/generated/themes/bookcases.json"
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 
 export default class ActorsSpec extends T {
 
@@ -48,11 +49,11 @@ export default class ActorsSpec extends T {
             }
         )
 
-        super("Actors", [
+        super([
             [
                 "download latest version",
                 () => {
-                    const state = new UserRelatedState(AllKnownLayouts.allKnownLayouts.get("bookcases"))
+                    const state = new UserRelatedState(new LayoutConfig(<any> bookcaseJson, true, "tests"))
                     const feature = {
                         "type": "Feature",
                         "id": "node/5568693115",

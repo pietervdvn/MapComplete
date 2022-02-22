@@ -1,0 +1,999 @@
+{
+  "id": "recycling",
+  "name": {
+    "en": "Recycling",
+    "nl": "Recycling"
+  },
+  "description": {
+    "en": "A layer with recycling containers and centres",
+    "nl": "Een laag met recyclagingcontainers en -centrums"
+  },
+  "source": {
+    "osmTags": "amenity=recycling"
+  },
+  "calculatedTags": [
+    "_waste_amount=Object.values(Object.keys(feat.properties).filter((key) => key.startsWith('recycling:')).reduce((cur, key) => { return Object.assign(cur, { [key]: feat.properties[key] })}, {})).reduce((n, x) => n + (x == \"yes\"), 0);"
+  ],
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Recycling facility",
+      "nl": "Recyclingfaciliteit"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}",
+          "en": "Recycling centre",
+          "nl": "Recyclingcentrum"
+        }
+      },
+      {
+        "if": "recycling_type=centre",
+        "then": {
+          "en": "Recycling container",
+          "nl": "Recyclingcontainer"
+        }
+      },
+      {
+        "if": "recycling_type=container",
+        "then": {
+          "en": "Recycling container",
+          "nl": "Recyclingcontainer"
+        }
+      }
+    ]
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "circle:white;./assets/layers/recycling/recycling-14.svg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:batteries=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/batteries.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:beverage_cartons=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/beverage_cartons.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:cans=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/cans.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:clothes=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/clothes.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:cooking_oil=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/cooking_oil.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:engine_oil=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/engine_oil.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:glass=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/glass.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:glass_bottles=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/glass_bottles.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                {
+                  "or": [
+                    "recycling:green_waste=yes",
+                    "recycling:organic=yes"
+                  ]
+                }
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/garden_waste.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:newspaper=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/newspaper.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:paper=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/paper.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:plastic_bottles=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/plastic_bottles.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:plastic_packaging=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/plastic_packaging.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:plastic=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/plastic.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:scrap_metal=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/scrap_metal.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:shoes=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/shoes.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                {
+                  "or": [
+                    "recycling:small_appliances=yes",
+                    "recycling:small_electric_appliances=yes"
+                  ]
+                }
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/small_electrical_appliances.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:waste=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg"
+          }
+        ]
+      },
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:batteries=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/batteries.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:beverage_cartons=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/beverage_cartons.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:cans=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/cans.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:clothes=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/clothes.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:cooking_oil=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/cooking_oil.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:engine_oil=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/engine_oil.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:glass=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/glass.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:glass_bottles=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/glass_bottles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              {
+                "or": [
+                  "recycling:green_waste=yes",
+                  "recycling:organic=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/garden_waste.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:newspaper=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/newspaper.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:paper=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/paper.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic_bottles=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/plastic_bottles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic_packaging=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/plastic_packaging.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/plastic.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:scrap_metal=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/scrap_metal.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:shoes=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/shoes.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              {
+                "or": [
+                  "recycling:small_appliances=yes",
+                  "recycling:small_electrical_appliances=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/small_electrical_appliances.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:waste=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "recycling container",
+        "nl": "recycling container"
+      },
+      "tags": [
+        "amenity=recycling",
+        "recycling_type=container"
+      ]
+    },
+    {
+      "title": {
+        "en": "recycling centre",
+        "nl": "recycling centre"
+      },
+      "tags": [
+        "amenity=recycling",
+        "recycling_type=centre"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "recycling-type",
+      "question": {
+        "en": "What type of recycling is this?",
+        "nl": "Wat voor soort recycling is dit?"
+      },
+      "mappings": [
+        {
+          "if": "recycling_type=container",
+          "then": {
+            "en": "This is a recycling container",
+            "nl": "Dit is een recyclingcontainer"
+          }
+        },
+        {
+          "if": "recycling_type=centre",
+          "then": {
+            "en": "This is a recycling centre",
+            "nl": "Dit is een recyclingcentrum"
+          }
+        },
+        {
+          "if": "amenity=waste_disposal",
+          "then": {
+            "en": "Waste disposal container for residual waste",
+            "nl": "Afvalcontainer voor restafval"
+          },
+          "addExtraTags": [
+            "recycling:batteries=",
+            "recycling:beverage_cartons=",
+            "recycling:cans=",
+            "recycling:clothes=",
+            "recycling:cooking_oil=",
+            "recycling:engine_oil=",
+            "recycling:green_waste=",
+            "recycling:organic=",
+            "recycling:glass_bottles=",
+            "recycling:glass=",
+            "recycling:newspaper=",
+            "recycling:paper=",
+            "recycling:plastic_bottles=",
+            "recycling:plastic_packaging=",
+            "recycling:plastic=",
+            "recycling:scrap_metal=",
+            "recycling:shoes=",
+            "recycling:small_appliances=",
+            "recycling:small_electrical_appliances=",
+            "recycling:waste="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recycling-centre-name",
+      "question": {
+        "en": "What is the name of this recycling centre?",
+        "nl": "Wat is de naam van dit recyclagecentrum?"
+      },
+      "render": {
+        "en": "This recycling centre is named <b>{name}</b>",
+        "nl": "Dit recyclagecentrum heet <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "This recycling centre doesn't have a specific name",
+            "nl": "Dit recyclagecentrum heeft geen specifieke naam"
+          }
+        }
+      ],
+      "condition": "recycling_type=centre"
+    },
+    {
+      "id": "container-location",
+      "question": {
+        "en": "Where is this container located?",
+        "nl": "Waar bevindt deze container zich?"
+      },
+      "condition": "recycling_type=container",
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "This is an underground container",
+            "nl": "Dit is een ondergrondse container"
+          }
+        },
+        {
+          "if": "location=indoor",
+          "then": {
+            "en": "This container is located indoors",
+            "nl": "Deze container bevindt zich binnen"
+          }
+        },
+        {
+          "if": "location=",
+          "then": {
+            "en": "This container is located outdoors",
+            "nl": "Deze container is buiten"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recycling-accepts",
+      "question": {
+        "en": "What can be recycled here?",
+        "nl": "Wat kan hier gerecycled worden?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "recycling:batteries=yes",
+          "ifnot": "recycling:batteries=",
+          "then": {
+            "en": "Batteries can be recycled here",
+            "nl": "Batterijen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/batteries.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:beverage_cartons=yes",
+          "ifnot": "recycling:beverage_cartons=",
+          "then": {
+            "en": "Beverage cartons can be recycled here",
+            "nl": "Drankpakken kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/beverage_cartons.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:cans=yes",
+          "ifnot": "recycling:cans=",
+          "then": {
+            "en": "Cans can be recycled here",
+            "nl": "Blikken kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/cans.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:clothes=yes",
+          "ifnot": "recycling:clothes=",
+          "then": {
+            "en": "Clothes can be recycled here",
+            "nl": "Kleren kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/clothes.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:cooking_oil=yes",
+          "ifnot": "recycling:cooking_oil=",
+          "then": {
+            "en": "Cooking oil can be recycled here",
+            "nl": "Frituurvet kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/cooking_oil.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:engine_oil=yes",
+          "ifnot": "recycling:engine_oil=",
+          "then": {
+            "en": "Engine oil can be recycled here",
+            "nl": "Motorolie kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/engine_oil.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:green_waste=yes",
+          "ifnot": "recycling:green_waste=",
+          "then": {
+            "en": "Green waste can be recycled here",
+            "nl": "Groen afval kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/garden_waste.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:organic=yes",
+          "ifnot": "recycling:organic=",
+          "then": {
+            "en": "Organic waste can be recycled here",
+            "nl": "Organisch afval kan hier gerecycled worden"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/recycling/garden_waste.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:glass_bottles=yes",
+          "ifnot": "recycling:glass_bottles=",
+          "then": {
+            "en": "Glass bottles can be recycled here",
+            "nl": "Glazen flessen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/glass_bottles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:glass=yes",
+          "ifnot": "recycling:glass=",
+          "then": {
+            "en": "Glass can be recycled here",
+            "nl": "Glas kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/glass.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:newspaper=yes",
+          "ifnot": "recycling:newspaper=",
+          "then": {
+            "en": "Newspapers can be recycled here",
+            "nl": "Kranten kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/newspaper.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:paper=yes",
+          "ifnot": "recycling:paper=",
+          "then": {
+            "en": "Paper can be recycled here",
+            "nl": "Papier kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/paper.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:plastic_bottles=yes",
+          "ifnot": "recycling:plastic_bottles=",
+          "then": {
+            "en": "Plastic bottles can be recycled here",
+            "nl": "Plastic flessen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic_bottles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:plastic_packaging=yes",
+          "ifnot": "recycling:plastic_packaging=",
+          "then": {
+            "en": "Plastic packaging can be recycled here",
+            "nl": "Plastic verpakking kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic_packaging.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:plastic=yes",
+          "ifnot": "recycling:plastic=",
+          "then": {
+            "en": "Plastic can be recycled here",
+            "nl": "Plastic kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:scrap_metal=yes",
+          "ifnot": "recycling:scrap_metal=",
+          "then": {
+            "en": "Scrap metal can be recycled here",
+            "nl": "Oud metaal kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/scrap_metal.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:shoes=yes",
+          "ifnot": "recycling:shoes=",
+          "then": {
+            "en": "Shoes can be recycled here",
+            "nl": "Schoenen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/shoes.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:small_appliances=yes",
+          "ifnot": "recycling:small_appliances=",
+          "then": {
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:small_electrical_appliances=yes",
+          "ifnot": "recycling:small_electrical_appliances=",
+          "then": {
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:waste=yes",
+          "ifnot": "recycling:waste=",
+          "then": {
+            "en": "Residual waste can be recycled here",
+            "nl": "Restafval kan hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/waste_disposal/waste_disposal.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": "recycling_type=container"
+        }
+      ]
+    },
+    {
+      "id": "operator",
+      "render": {
+        "en": "This recycling facility is operated by {operator}",
+        "nl": "Deze recyclingfaciliteit wordt beheerd door {operator}"
+      },
+      "question": {
+        "en": "What company operates this recycling facility?",
+        "nl": "Wat is de beheerder van deze recyclingfaciliteit?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string"
+      }
+    },
+    {
+      "builtin": [
+        "website",
+        "email",
+        "phone"
+      ],
+      "override": {
+        "condition": "recycling_type=centre"
+      }
+    },
+    {
+      "id": "opening_hours",
+      "render": "{opening_hours_table()}",
+      "question": {
+        "en": "What are the opening hours of this recycling facility?",
+        "nl": "Wat zijn de openingstijden van deze recyclingfaciliteit?"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "24/7",
+            "nl": "24/7"
+          }
+        }
+      ]
+    }
+  ],
+  "filter": [
+    {
+      "id": "isOpen",
+      "options": [
+        {
+          "question": {
+            "en": "Currently open",
+            "nl": "Op dit moment open"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "id": "recyclingType",
+      "options": [
+        {
+          "question": {
+            "en": "All recycling types",
+            "nl": "Alle recyclingtypes"
+          }
+        },
+        {
+          "question": {
+            "en": "Recycling of batteries",
+            "nl": "Recycling van batterijen"
+          },
+          "osmTags": "recycling:batteries=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of beverage cartons",
+            "nl": "Recycling van drankpakken"
+          },
+          "osmTags": "recycling:beverage_cartons=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of cans",
+            "nl": "Recycling van blikken"
+          },
+          "osmTags": "recycling:cans=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of clothes",
+            "nl": "Recycling van kleding"
+          },
+          "osmTags": "recycling:clothes=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of cooking oil",
+            "nl": "Recycling van frituurvet"
+          },
+          "osmTags": "recycling:cooking_oil=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of engine oil",
+            "nl": "Recycling van motorolie"
+          },
+          "osmTags": "recycling:engine_oil=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of green waste",
+            "nl": "Recycling van groen afval"
+          },
+          "osmTags": {
+            "or": [
+              "recycling:green_waste=yes",
+              "recycling:organic=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Recycling of glass bottles",
+            "nl": "Recycling van glazen flessen"
+          },
+          "osmTags": "recycling:glass_bottles=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of glass",
+            "nl": "Recycling van glas"
+          },
+          "osmTags": "recycling:glass=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of newspapers",
+            "nl": "Recycling van kranten"
+          },
+          "osmTags": "recycling:newspaper=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of paper",
+            "nl": "Recycling van papier"
+          },
+          "osmTags": "recycling:paper=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic bottles",
+            "nl": "Recycling van plastic flessen"
+          },
+          "osmTags": "recycling:plastic_bottles=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic packaging",
+            "nl": "Recycling van plastic verpakking"
+          },
+          "osmTags": "recycling:plastic_packaging=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic",
+            "nl": "Recycling van plastic"
+          },
+          "osmTags": "recycling:plastic=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of scrap metal",
+            "nl": "Recycling van oud metaal"
+          },
+          "osmTags": "recycling:scrap_metal=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of small electrical appliances",
+            "nl": "Recycling van kleine elektrische apparaten"
+          },
+          "osmTags": {
+            "or": [
+              "recycling:small_appliances=yes",
+              "recycling:small_electrical_appliances=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Recycling of residual waste",
+            "nl": "Recycling van restafval"
+          },
+          "osmTags": "recycling:waste=yes"
+        }
+      ]
+    }
+  ],
+  "deletion": {
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  }
+}

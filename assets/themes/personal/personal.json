@@ -11,7 +11,8 @@
     "ja": "個人的なテーマ",
     "zh_Hant": "個人化主題",
     "it": "Tema personalizzato",
-    "nb_NO": "Personlig tema"
+    "nb_NO": "Personlig tema",
+    "id": "Tema pribadi"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
@@ -20,26 +21,12 @@
     "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
     "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
     "fr": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
-    "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+    "de": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
     "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する",
     "zh_Hant": "從所有可用的主題圖層創建個人化主題",
-    "ru": "Создать персональную тему на основе доступных слоёв тем",
+    "ru": "Создать персональную тему на основе доступных слоёв тем. Чтобы отобразить некоторые данные, откройте <a href='#filter'>выбор слоя</a>",
     "it": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>"
   },
-  "language": [
-    "en",
-    "nl",
-    "es",
-    "ca",
-    "gl",
-    "fr",
-    "de",
-    "ja",
-    "zh_Hant",
-    "it",
-    "nb_NO",
-    "ru"
-  ],
   "maintainer": "MapComplete",
   "icon": "./assets/svg/addSmall.svg",
   "clustering": {
@@ -48,8 +35,14 @@
   "version": "0",
   "startLat": 0,
   "startLon": 0,
-  "startZoom": 16,
+  "startZoom": 0,
   "widenFactor": 1.2,
-  "overpassMaxZoom": 0,
+  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the overrideAll",
+  "overpassMaxZoom": 15,
+  "overrideAll": {
+    "minZoom": 16,
+    "syncSelection": "theme",
+    "shownByDefault": false
+  },
   "layers": []
 }

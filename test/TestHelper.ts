@@ -1,10 +1,10 @@
 export default class T {
 
     public readonly name: string;
-    private readonly _tests: [string, (() => void)][];
+    private readonly _tests: [string, (() => (void | Promise<void>))][];
 
-    constructor(testsuite: string, tests: [string, () => void][]) {
-        this.name = testsuite
+    constructor(tests: [string, () => (Promise<void> | void)][]) {
+        this.name = this.constructor.name;
         this._tests = tests;
     }
 
@@ -45,7 +45,9 @@ export default class T {
             throw `ListIdentical failed: expected a list of length ${expected.length} but got a list of length ${actual.length}`
         }
         for (let i = 0; i < expected.length; i++) {
-            if (expected[i] !== actual[i]) {
+            if (expected[i] !== undefined && expected[i]["length"] !== undefined) {
+                T.listIdentical(<any>expected[i], <any>actual[i])
+            } else if (expected[i] !== actual[i]) {
                 throw `ListIdentical failed at index ${i}: expected ${expected[i]} but got ${actual[i]}`
             }
         }
@@ -56,11 +58,20 @@ export default class T {
      * Returns an empty list if successful
      * @constructor
      */
-    public Run(): ({ testsuite: string, name: string, msg: string } []) {
+    public async Run(): Promise<{ testsuite: string, name: string, msg: string } []> {
         const failures: { testsuite: string, name: string, msg: string } [] = []
         for (const [name, test] of this._tests) {
             try {
-                test();
+                const r = test()
+                if (r instanceof Promise) {
+                    try {
+                        await r
+                    } catch (e) {
+                        console.log("ASYNC ERROR: ", e, e.stack)
+                        failures.push({testsuite: this.name, name: name, msg: "" + e});
+                    }
+                }
+
             } catch (e) {
                 console.log("ERROR: ", e, e.stack)
                 failures.push({testsuite: this.name, name: name, msg: "" + e});

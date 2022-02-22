@@ -44,7 +44,7 @@ export class Imgur extends ImageProvider {
 
     }
 
-    static uploadImage(title: string, description: string, blob,
+    static uploadImage(title: string, description: string, blob: File,
                        handleSuccessfullUpload: ((imageURL: string) => void),
                        onFail: (reason: string) => void) {
 

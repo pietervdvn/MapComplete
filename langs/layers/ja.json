@@ -1,168 +1,368 @@
 {
-  "artwork": {
-    "description": "多様な作品",
-    "name": "美術品",
-    "presets": {
-      "0": {
-        "title": "アートワーク"
-      }
-    },
-    "tagRenderings": {
-      "artwork-artist_name": {
-        "question": "どのアーティストが作ったんですか?",
-        "render": "作成者:{artist_name}"
-      },
-      "artwork-artwork_type": {
-        "mappings": {
-          "0": {
-            "then": "建物"
-          },
-          "1": {
-            "then": "壁画"
-          },
-          "2": {
-            "then": "絵画"
-          },
-          "3": {
-            "then": "彫刻"
-          },
-          "4": {
-            "then": "彫像"
-          },
-          "5": {
-            "then": "胸像"
-          },
-          "6": {
-            "then": "石"
-          },
-          "7": {
-            "then": "インスタレーション"
-          },
-          "8": {
-            "then": "落書き"
-          },
-          "9": {
-            "then": "レリーフ"
-          },
-          "10": {
-            "then": "Azulejo (スペインの装飾タイル)"
-          },
-          "11": {
-            "then": "タイルワーク"
-          }
+    "ambulancestation": {
+        "description": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
+        "name": "救急ステーションの地図",
+        "presets": {
+            "0": {
+                "description": "救急ステーション(消防署)をマップに追加する",
+                "title": "救急ステーション(消防署)"
+            }
         },
-        "question": "この作品の種類は何ですか?",
-        "render": "これは{artwork_type}です"
-      },
-      "artwork-website": {
-        "question": "この作品についての詳しい情報はどのウェブサイトにありますか?",
-        "render": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある"
-      },
-      "artwork-wikidata": {
-        "question": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
-        "render": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "アートワーク <i>{name}</i>"
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "このステーションを運営しているのはどこですか?",
+                "render": "このステーションは{operator}によって運営されています。"
+            },
+            "ambulance-name": {
+                "question": "この救急ステーションの名前は何ですか?",
+                "render": "このステーションの名前は{name}です。"
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "ステーションは自治体が運営する。"
+                    },
+                    "1": {
+                        "then": "任意団体やコミュニティが運営しているステーションである。"
+                    },
+                    "2": {
+                        "then": "公益団体が運営しているステーションである。"
+                    },
+                    "3": {
+                        "then": "個人が運営しているステーションである。"
+                    }
+                },
+                "question": "ステーションの運営の分類は?",
+                "render": "運営者は、{operator:type} です。"
+            },
+            "ambulance-place": {
+                "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
+                "render": "このステーションは{addr:place}にあります。"
+            },
+            "ambulance-street": {
+                "question": " 救急ステーションの所在地はどこですか?",
+                "render": "{addr:street} 沿いにあります。"
+            }
+        },
+        "title": {
+            "render": "救急ステーション"
         }
-      },
-      "render": "アートワーク"
-    }
-  },
-  "food": {
-    "tagRenderings": {
-      "friture-take-your-container": {
-        "mappings": {
-          "0": {
-            "then": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます"
-          },
-          "1": {
-            "then": "独自の容器を持参することは<b>できません</b>"
-          },
-          "2": {
-            "then": "自身の容器が注文に<b>必要</b>。"
-          }
-        },
-        "question": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>"
-      }
-    }
-  },
-  "ghost_bike": {
-    "name": "ゴーストバイク",
-    "title": {
-      "render": "ゴーストバイク"
-    }
-  },
-  "shops": {
-    "description": "ショップ",
-    "name": "店",
-    "presets": {
-      "0": {
-        "description": "新しい店を追加する",
-        "title": "店"
-      }
     },
-    "tagRenderings": {
-      "shops-email": {
-        "question": "このお店のメールアドレスは何ですか?",
-        "render": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "shops-name": {
-        "question": "このお店の名前は何ですか?"
-      },
-      "shops-opening_hours": {
-        "question": "この店の営業時間は何時から何時までですか?",
-        "render": "{opening_hours_table(opening_hours)}"
-      },
-      "shops-phone": {
-        "question": "電話番号は何番ですか?",
-        "render": "<a href='tel:{phone}'>{phone}</a>"
-      },
-      "shops-shop": {
-        "mappings": {
-          "0": {
-            "then": "コンビニエンスストア"
-          },
-          "1": {
-            "then": "スーパーマーケット"
-          },
-          "2": {
-            "then": "衣料品店"
-          },
-          "3": {
-            "then": "理容師"
-          },
-          "4": {
-            "then": "ベーカリー"
-          },
-          "5": {
-            "then": "自動車修理(ガレージ)"
-          },
-          "6": {
-            "then": "自動車ディーラー"
-          }
+    "artwork": {
+        "description": "多様な作品",
+        "name": "美術品",
+        "presets": {
+            "0": {
+                "title": "アートワーク"
+            }
         },
-        "question": "このお店では何を売っていますか?",
-        "render": "こちらのお店では{shop}を販売しております"
-      },
-      "shops-website": {
-        "question": "このお店のホームページは何ですか?",
-        "render": "<a href='{website}'>{website}</a>"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "{name}"
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "どのアーティストが作ったんですか?",
+                "render": "作成者:{artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "建物"
+                    },
+                    "1": {
+                        "then": "壁画"
+                    },
+                    "2": {
+                        "then": "絵画"
+                    },
+                    "3": {
+                        "then": "彫刻"
+                    },
+                    "4": {
+                        "then": "彫像"
+                    },
+                    "5": {
+                        "then": "胸像"
+                    },
+                    "6": {
+                        "then": "石"
+                    },
+                    "7": {
+                        "then": "インスタレーション"
+                    },
+                    "8": {
+                        "then": "落書き"
+                    },
+                    "9": {
+                        "then": "レリーフ"
+                    },
+                    "10": {
+                        "then": "Azulejo (スペインの装飾タイル)"
+                    },
+                    "11": {
+                        "then": "タイルワーク"
+                    }
+                },
+                "question": "この作品の種類は何ですか?",
+                "render": "これは{artwork_type}です"
+            },
+            "artwork-website": {
+                "question": "この作品についての詳しい情報はどのウェブサイトにありますか?",
+                "render": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある"
+            },
+            "artwork-wikidata": {
+                "question": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
+                "render": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する"
+            }
         },
-        "1": {
-          "then": "{shop}"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "アートワーク <i>{name}</i>"
+                }
+            },
+            "render": "アートワーク"
         }
-      },
-      "render": "店"
+    },
+    "extinguisher": {
+        "description": "消火栓を表示するマップレイヤ。",
+        "name": "消火器の地図です。",
+        "presets": {
+            "0": {
+                "description": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
+                "title": "消火器"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "屋内にある。"
+                    },
+                    "1": {
+                        "then": "屋外にある。"
+                    }
+                },
+                "question": "どこにあるんですか?",
+                "render": "場所:{location}"
+            }
+        },
+        "title": {
+            "render": "消火器"
+        }
+    },
+    "fire_station": {
+        "description": "消防署を表示するためのマップレイヤ。",
+        "name": "消防署の地図",
+        "presets": {
+            "0": {
+                "description": "消防署は、運転していないときに消防車や消防士がいる場所です。",
+                "title": "消防署"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "消防局(消防庁)"
+                    }
+                },
+                "question": "このステーションを運営しているのはどこですか?",
+                "render": "このステーションは{operator}によって運営されています。"
+            },
+            "station-name": {
+                "question": "この消防署の名前は何ですか?",
+                "render": "このステーションの名前は{name}です。"
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "ステーションは自治体が運営する。"
+                    },
+                    "1": {
+                        "then": "任意団体やコミュニティが運営しているステーションである。"
+                    },
+                    "2": {
+                        "then": "公益団体が運営しているステーションである。"
+                    },
+                    "3": {
+                        "then": "個人が運営しているステーションである。"
+                    }
+                },
+                "question": "ステーションの運営の分類は?",
+                "render": "運営者は、{operator:type} です。"
+            },
+            "station-place": {
+                "question": "このステーションの住所は?(例: 地区、村、または町の名称)",
+                "render": "このステーションは{addr:place}にあります。"
+            },
+            "station-street": {
+                "question": " 救急ステーションの所在地はどこですか?",
+                "render": "{addr:street} 沿いにあります。"
+            }
+        },
+        "title": {
+            "render": "消防署"
+        }
+    },
+    "food": {
+        "tagRenderings": {
+            "friture-take-your-container": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>自分の容器</b>を持ってきて、注文を受け取ることができ、使い捨ての梱包材を節約して、無駄を省くことができます"
+                    },
+                    "1": {
+                        "then": "独自の容器を持参することは<b>できません</b>"
+                    },
+                    "2": {
+                        "then": "自身の容器が注文に<b>必要</b>。"
+                    }
+                },
+                "question": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>"
+            }
+        }
+    },
+    "ghost_bike": {
+        "name": "ゴーストバイク",
+        "presets": {
+            "0": {
+                "title": "ゴーストバイク"
+            }
+        },
+        "title": {
+            "render": "ゴーストバイク"
+        }
+    },
+    "hydrant": {
+        "description": "消火栓を表示するマップレイヤ。",
+        "name": "消火栓の地図",
+        "presets": {
+            "0": {
+                "description": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
+                "title": "消火栓"
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": "消火栓の色は不明です。"
+                    },
+                    "1": {
+                        "then": "消火栓の色は黄色です。"
+                    },
+                    "2": {
+                        "then": "消火栓の色は赤です。"
+                    }
+                },
+                "question": "消火栓の色は何色ですか?",
+                "render": "消火栓の色は{colour}です"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "消火栓は(完全にまたは部分的に)機能しています。"
+                    },
+                    "1": {
+                        "then": "消火栓は使用できません。"
+                    },
+                    "2": {
+                        "then": "消火栓が撤去されました。"
+                    }
+                },
+                "question": "消火栓のライフサイクルステータスを更新します。"
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "0": {
+                        "then": "消火栓の種類は不明です。"
+                    },
+                    "1": {
+                        "then": "ピラー型。"
+                    },
+                    "2": {
+                        "then": "パイプ型。"
+                    },
+                    "3": {
+                        "then": "壁型。"
+                    },
+                    "4": {
+                        "then": "地下式。"
+                    }
+                },
+                "question": "どんな消火栓なんですか?",
+                "render": " 消火栓のタイプ:{fire_hydrant:type}"
+            }
+        },
+        "title": {
+            "render": "消火栓"
+        }
+    },
+    "shops": {
+        "description": "ショップ",
+        "name": "店",
+        "presets": {
+            "0": {
+                "description": "新しい店を追加する",
+                "title": "店"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "このお店のメールアドレスは何ですか?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "このお店の名前は何ですか?"
+            },
+            "shops-opening_hours": {
+                "question": "この店の営業時間は何時から何時までですか?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "電話番号は何番ですか?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "0": {
+                        "then": "コンビニエンスストア"
+                    },
+                    "1": {
+                        "then": "スーパーマーケット"
+                    },
+                    "2": {
+                        "then": "衣料品店"
+                    },
+                    "3": {
+                        "then": "理容師"
+                    },
+                    "4": {
+                        "then": "ベーカリー"
+                    },
+                    "5": {
+                        "then": "自動車修理(ガレージ)"
+                    },
+                    "6": {
+                        "then": "自動車ディーラー"
+                    }
+                },
+                "question": "このお店では何を売っていますか?",
+                "render": "こちらのお店では{shop}を販売しております"
+            },
+            "shops-website": {
+                "question": "このお店のホームページは何ですか?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "店"
+        }
     }
-  }
 }

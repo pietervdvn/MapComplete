@@ -1,66 +1,66 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
-    },
-    "email": {
-      "question": "Qual o endereço de e-mail de {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Localizado no subsolo"
+    "shared_questions": {
+        "description": {
+            "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
         },
-        "1": {
-          "then": "Localizado no térreo"
+        "email": {
+            "question": "Qual o endereço de e-mail de {title()}?"
         },
-        "2": {
-          "then": "Localizado no térreo"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Localizado no subsolo"
+                },
+                "1": {
+                    "then": "Localizado no térreo"
+                },
+                "2": {
+                    "then": "Localizado no térreo"
+                },
+                "3": {
+                    "then": "Localizado no primeiro andar"
+                }
+            },
+            "question": "Em que nível esse recurso está localizado?",
+            "render": "Localizado no {level}o andar"
         },
-        "3": {
-          "then": "Localizado no primeiro andar"
+        "opening_hours": {
+            "question": "Qual o horário de funcionamento de {title()}?",
+            "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Dinheiro é aceito aqui"
+                },
+                "1": {
+                    "then": "Cartões de pagamento são aceitos aqui"
+                }
+            },
+            "question": "Quais métodos de pagamento são aceitos aqui?"
+        },
+        "phone": {
+            "question": "Qual o número de telefone de {title()}?"
+        },
+        "website": {
+            "question": "Qual o site de {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar é especialmente adaptado para usuários de cadeira de rodas"
+                },
+                "1": {
+                    "then": "Este lugar é facilmente acessível com uma cadeira de rodas"
+                },
+                "2": {
+                    "then": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil"
+                },
+                "3": {
+                    "then": "Este lugar não é alcançável com uma cadeira de rodas"
+                }
+            },
+            "question": "Este lugar é acessível com uma cadeira de rodas?"
         }
-      },
-      "question": "Em que nível esse recurso está localizado?",
-      "render": "Localizado no {level}o andar"
-    },
-    "opening_hours": {
-      "question": "Qual o horário de funcionamento de {name}?",
-      "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "mappings": {
-        "0": {
-          "then": "Dinheiro é aceito aqui"
-        },
-        "1": {
-          "then": "Cartões de pagamento são aceitos aqui"
-        }
-      },
-      "question": "Quais métodos de pagamento são aceitos aqui?"
-    },
-    "phone": {
-      "question": "Qual o número de telefone de {name}?"
-    },
-    "website": {
-      "question": "Qual o site de {name}?"
-    },
-    "wheelchair-access": {
-      "mappings": {
-        "0": {
-          "then": "Este lugar é especialmente adaptado para usuários de cadeira de rodas"
-        },
-        "1": {
-          "then": "Este lugar é facilmente acessível com uma cadeira de rodas"
-        },
-        "2": {
-          "then": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil"
-        },
-        "3": {
-          "then": "Este lugar não é alcançável com uma cadeira de rodas"
-        }
-      },
-      "question": "Este lugar é acessível com uma cadeira de rodas?"
     }
-  }
 }

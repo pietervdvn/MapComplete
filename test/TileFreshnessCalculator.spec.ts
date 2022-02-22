@@ -6,7 +6,7 @@ import {equal} from "assert";
 export default class TileFreshnessCalculatorSpec extends T {
 
     constructor() {
-        super("TileFreshnessCalculatorSpec", [
+        super([
             [
                 "TileFresnessTests",
                 () => {

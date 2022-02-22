@@ -42,12 +42,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Camper sites' shows fee=no&charge= with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows fee=no with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Camper sites' shows fee=no&charge= with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') Picking this answer will delete the key charge.",
+      "description": "Layer 'Camper sites' shows fee=no with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') Picking this answer will delete the key charge.",
       "value": ""
     },
     {
@@ -252,6 +252,11 @@
       "key": "power_supply",
       "description": "Layer 'Sanitary dump stations' shows power_supply=no with a fixed text, namely 'This place does not have power supply' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "no"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Campersites has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

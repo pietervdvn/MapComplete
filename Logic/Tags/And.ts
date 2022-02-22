@@ -59,7 +59,7 @@ export class And extends TagsFilter {
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
-        return this.and.map(t => t.asHumanString(linkToWiki, shorten, properties)).join("&");
+        return this.and.map(t => t.asHumanString(linkToWiki, shorten, properties)).filter(x => x !== "").join("&");
     }
 
     isUsableAsAnswer(): boolean {
@@ -116,5 +116,11 @@ export class And extends TagsFilter {
             result.push(...tagsFilter.asChange(properties))
         }
         return result;
+    }
+
+    AsJson() {
+        return {
+            and: this.and.map(a => a.AsJson())
+        }
     }
 }

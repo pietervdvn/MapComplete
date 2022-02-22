@@ -165,6 +165,9 @@
       "id": "playground-surface"
     },
     {
+      "labels": [
+        "extra"
+      ],
       "id": "playground-lit",
       "question": {
         "nl": "Is deze speeltuin 's nachts verlicht?",
@@ -200,6 +203,9 @@
       ]
     },
     {
+      "labels": [
+        "extra"
+      ],
       "render": {
         "nl": "Toegankelijk vanaf {min_age} jaar oud",
         "en": "Accessible to kids older than {min_age} years",
@@ -223,6 +229,9 @@
       "id": "playground-min_age"
     },
     {
+      "labels": [
+        "extra"
+      ],
       "render": {
         "nl": "Toegankelijk tot {max_age}",
         "en": "Accessible to kids of at most {max_age}",
@@ -275,17 +284,6 @@
       },
       "mappings": [
         {
-          "if": "access=",
-          "then": {
-            "en": "Accessible to the general public",
-            "nl": "Vrij toegankelijk voor het publiek",
-            "it": "Accessibile pubblicamente",
-            "de": "Zugänglich für die Allgemeinheit",
-            "fr": "Accessible au public"
-          },
-          "hideInAnswer": true
-        },
-        {
           "if": "access=yes",
           "then": {
             "en": "Accessible to the general public",
@@ -309,11 +307,12 @@
           "if": "access=students",
           "then": {
             "en": "Only accessible to students of the school",
-            "nl": "Vrij toegankelijk voor scholieren van de school",
+            "nl": "Enkel toegankelijk voor scholieren van de bijhorende school",
             "it": "Accessibile solamente agli studenti della scuola",
             "de": "Nur für Schüler der Schule zugänglich",
             "fr": "Réservée aux élèves de l’école"
-          }
+          },
+          "hideInAnswer": true
         },
         {
           "if": "access=private",
@@ -458,18 +457,6 @@
             "it": "Si può sempre accedere",
             "de": "Immer zugänglich"
           }
-        },
-        {
-          "if": "opening_hours=",
-          "then": {
-            "nl": "Dag en nacht toegankelijk",
-            "en": "Always accessible",
-            "ru": "Всегда доступен",
-            "fr": "Toujours accessible",
-            "it": "Si può sempre accedere",
-            "de": "Immer zugänglich"
-          },
-          "hideInAnswer": true
         }
       ],
       "id": "playground-opening_hours"
@@ -486,12 +473,12 @@
         "leisure=playground"
       ],
       "title": {
-        "nl": "Speeltuin",
-        "en": "Playground",
+        "nl": "speeltuin",
+        "en": "playground",
         "ru": "Детская площадка",
-        "fr": "Terrain de jeux",
-        "it": "Campetto",
-        "de": "Spielplatz"
+        "fr": "terrain de jeux",
+        "it": "campetto",
+        "de": "spielplatz"
       }
     }
   ],

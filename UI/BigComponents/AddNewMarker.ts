@@ -14,6 +14,9 @@ export default class AddNewMarker extends Combine {
             let last = undefined;
             for (const filteredLayer of filteredLayers) {
                 const layer = filteredLayer.layerDef;
+                if(layer.name === undefined){
+                    continue
+                }
                 for (const preset of filteredLayer.layerDef.presets) {
                     const tags = TagUtils.KVtoProperties(preset.tags)
                     const icon = layer.mapRendering[0].GenerateLeafletStyle(new UIEventSource<any>(tags), false).html
@@ -26,6 +29,9 @@ export default class AddNewMarker extends Combine {
                             .SetStyle("width: 42px; height: 42px;");
                     }
                 }
+            }
+            if (icons.length === 0) {
+                return undefined
             }
             if (icons.length === 1) {
                 return icons[0]

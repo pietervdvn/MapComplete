@@ -548,7 +548,7 @@ export default class RelationSplitHandlerSpec extends T {
         )
 
 
-        super("relationsplithandler", [
+        super([
             ["split 295132739",
                 async () => {
                     // Lets mimick a split action of https://www.openstreetmap.org/way/295132739

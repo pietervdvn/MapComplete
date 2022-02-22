@@ -15,25 +15,18 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "./Toggle";
+import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
 
 export default class LocationInput extends InputElement<Loc> implements MinimapObj {
 
-    private static readonly matchLayer = new LayerConfig(
-        {
-            id: "matchpoint", source: {
-                osmTags: {and: []}
-            },
-            mapRendering: [{
-                location: ["point","centroid"],
-                icon: "./assets/svg/crosshair-empty.svg"
-            }]
-        }, "matchpoint icon", true
-    )
+    private static readonly matchLayer = new LayerConfig(matchpoint, "LocationInput.matchpoint", true)
 
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     public readonly _matching_layer: LayerConfig;
     public readonly leafletMap: UIEventSource<any>
+    public readonly bounds;
+    public readonly location;
     private _centerLocation: UIEventSource<Loc>;
     private readonly mapBackground: UIEventSource<BaseLayer>;
     /**
@@ -150,10 +143,12 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 background: this.mapBackground,
                 attribution: this.mapBackground !== State.state?.backgroundLayer,
                 lastClickLocation: this.clickLocation,
-                bounds: this._bounds
+                bounds: this._bounds,
+                addLayerControl: true
             }
         )
         this.leafletMap = this.map.leafletMap
+        this.location = this.map.location;
     }
 
     GetValue(): UIEventSource<Loc> {
@@ -191,13 +186,13 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
             if (this._snapTo !== undefined) {
 
                 // Show the lines to snap to
+                console.log("Constructing the snap-to layer", this._snapTo)
                 new ShowDataMultiLayer({
                         features: new StaticFeatureSource(this._snapTo, true),
-                        enablePopups: false,
+                        popup: undefined,
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
-                        layers: State.state.filteredLayers,
-                        allElements: State.state.allElements
+                        layers: State.state.filteredLayers
                     }
                 )
                 // Show the central point
@@ -209,11 +204,11 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 })
                 new ShowDataLayer({
                     features: new StaticFeatureSource(matchPoint, true),
-                    enablePopups: false,
+                    popup: undefined,
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,
-                    allElements: State.state.allElements,
+                    state: State.state,
                     selectedElement: State.state.selectedElement
                 })
 

@@ -84,12 +84,24 @@
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cafés and pubs')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Cafés and pubs' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cafés and pubs')"
     },
     {
+      "key": "contact:email",
+      "description": "Layer 'Cafés and pubs' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Cafés and pubs' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cafés and pubs')"
     },
     {
       "key": "payment:cash",
@@ -160,6 +172,11 @@
       "key": "dog",
       "description": "Layer 'Cafés and pubs' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "unleashed"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Cafés and pubs has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

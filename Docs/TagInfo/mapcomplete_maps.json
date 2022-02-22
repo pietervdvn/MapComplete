@@ -42,12 +42,12 @@
     },
     {
       "key": "map_source",
-      "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
       "value": "OpenStreetMap"
     },
     {
       "key": "not:map_source",
-      "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps') Picking this answer will delete the key not:map_source.",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps') Picking this answer will delete the key not:map_source.",
       "value": ""
     },
     {
@@ -74,6 +74,11 @@
       "key": "map_source:attribution",
       "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the MapComplete.osm.be theme 'A map of maps')",
       "value": "no"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme A map of maps has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

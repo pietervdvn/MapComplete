@@ -1,4 +1,5 @@
 {
+  "id": "shared_questions",
   "questions": {
     "id": "questions"
   },
@@ -7,6 +8,9 @@
   },
   "export_as_gpx": {
     "render": "{export_as_gpx()}"
+  },
+  "export_as_geojson": {
+    "render": "{export_as_geojson()}"
   },
   "wikipedia": {
     "render": "{wikipedia():max-height:25rem}",
@@ -17,7 +21,13 @@
       "pt": "Qual é a entidade Wikidata correspondente?",
       "hu": "Mi a megfelelő Wikidata-elem?",
       "it": "Qual è l’elemento Wikidata corrispondente?",
-      "nb_NO": "Hva er respektivt Wikipedia-element?"
+      "nb_NO": "Hva er respektivt Wikipedia-element?",
+      "fr": "Quelle est l'entité Wikidata correspondante ?",
+      "ca": "Quina és la correspondent entitat a Wikidata?",
+      "sv": "Vad är den motsvarande Wikidata-enheten?",
+      "zh_Hant": "對應的維基資料項目是？",
+      "pl": "Jaki jest powiązany obiekt Wikidata?",
+      "ja": "対応するウィキデータのエンティティは何ですか？"
     },
     "mappings": [
       {
@@ -29,7 +39,14 @@
           "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
           "hu": "Még nincs Wikipédia-oldal belinkelve",
           "it": "Nessuna pagina Wikipedia è ancora stata collegata",
-          "nb_NO": "Ingen Wikipedia-side lenket enda"
+          "nb_NO": "Ingen Wikipedia-side lenket enda",
+          "fr": "Pas encore de lien vers une page Wikipedia",
+          "ca": "No hi ha cap enllaça a Viquipèdia encara",
+          "sv": "Ingen Wikipedia-sida har länkats än",
+          "zh_Hant": "還沒有連結到維基百科頁面",
+          "ru": "Никакой страницы на Википедии не было прикреплено",
+          "pl": "Link do strony Wikipedii nie został jeszcze określony",
+          "ja": "ウィキペディアのページはまだリンクされていません"
         },
         "hideInAnswer": true
       }
@@ -47,26 +64,38 @@
   },
   "phone": {
     "question": {
-      "en": "What is the phone number of {name}?",
-      "nl": "Wat is het telefoonnummer van {name}?",
-      "fr": "Quel est le numéro de téléphone de {name} ?",
-      "de": "Was ist die Telefonnummer von {name}?",
-      "nb_NO": "Hva er telefonnummeret til {name}?",
-      "ru": "Какой номер телефона у {name}?",
-      "sv": "Vad är telefonnumret till {name}?",
-      "zh_Hant": "{name} 的電話號碼是什麼？",
-      "it": "Qual è il numero di telefono di {name}?",
-      "pt_BR": "Qual o número de telefone de {name}?",
-      "id": "Nomor telepon dari {name|?",
-      "pl": "Jaki jest numer telefonu do {name}?",
-      "pt": "Qual é o número de telefone de {name}?",
-      "eo": "Kio estas la telefonnumero de {name}?",
-      "hu": "Mi a telefonszáma ennek: {name}?"
+      "en": "What is the phone number of {title()}?",
+      "nl": "Wat is het telefoonnummer van {title()}?",
+      "fr": "Quel est le numéro de téléphone de {title()} ?",
+      "de": "Was ist die Telefonnummer von {title()}?",
+      "nb_NO": "Hva er telefonnummeret til {title()}?",
+      "ru": "Какой номер телефона у {title()}?",
+      "sv": "Vad är telefonnumret till {title()}?",
+      "zh_Hant": "{title()} 的電話號碼是什麼？",
+      "it": "Qual è il numero di telefono di {title()}?",
+      "pt_BR": "Qual o número de telefone de {title()}?",
+      "id": "Nomor telepon dari {title()}?",
+      "pl": "Jaki jest numer telefonu do {title()}?",
+      "pt": "Qual é o número de telefone de {title()}?",
+      "eo": "Kio estas la telefonnumero de {title()}?",
+      "hu": "Mi a telefonszáma ennek: {title()}?",
+      "ca": "Quin és el telèfon de {title()}?",
+      "ja": "{title()}の電話番号は？"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
+    "mappings": [
+      {
+        "if": "contact:phone~*",
+        "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+        "hideInAnswer": true
+      }
+    ],
     "freeform": {
       "key": "phone",
-      "type": "phone"
+      "type": "phone",
+      "addExtraTags": [
+        "contact:phone="
+      ]
     }
   },
   "osmlink": {
@@ -87,7 +116,13 @@
       "pt": "Qual é o item correspondente na Wikipédia?",
       "hu": "Mi a megfelelő szócikk a Wikipédián?",
       "it": "Qual è il corrispondente elemento su Wikipedia?",
-      "nb_NO": "Hva er respektivt element på Wikipedia?"
+      "nb_NO": "Hva er respektivt element på Wikipedia?",
+      "ca": "Quin és l'ítem a Viquipèdia?",
+      "sv": "Vad är det motsvarande objektet på Wikipedia?",
+      "zh_Hant": "維基百科上對應的項目是什麼？",
+      "fr": "Quel est l’élément Wikipédia correspondant ?",
+      "pl": "Jaki jest link do strony Wikipedii?",
+      "ja": "Wikipediaの該当項目は何ですか？"
     },
     "mappings": [
       {
@@ -99,7 +134,13 @@
           "pt": "Não vinculado à Wikipédia",
           "hu": "Nincs belinkelve a Wikipédiához",
           "it": "Non collegato a Wikipedia",
-          "nb_NO": "Ikke lenket med Wikipedia"
+          "nb_NO": "Ikke lenket med Wikipedia",
+          "fr": "Non lié avec Wikipedia",
+          "ca": "No enllaçat amb Viquipèdia",
+          "sv": "Inte länkad med Wikipedia",
+          "zh_Hant": "沒有連結到維基百科",
+          "pl": "Brak linku do strony Wikipedii",
+          "ja": "ウィキペディアと連動していない"
         }
       }
     ],
@@ -111,51 +152,75 @@
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
-      "nl": "Wat is het e-mailadres van {name}?",
-      "fr": "Quelle est l'adresse courriel de {name} ?",
-      "en": "What is the email address of {name}?",
-      "nb_NO": "Hva er e-postadressen til {name}?",
-      "ru": "Какой адрес электронной почты у {name}?",
-      "id": "Apa alamat surel dari {name}?",
-      "zh_Hant": "{name} 的電子郵件地址是什麼？",
-      "it": "Qual è l'indirizzo email di {name}?",
-      "de": "Was ist die Mail-Adresse von {name}?",
-      "pt_BR": "Qual o endereço de e-mail de {name}?",
-      "pl": "Jaki jest adres e-mail do {name}?",
-      "sv": "Vad är e-postadressen till {name}?",
-      "pt": "Qual é o endereço de e-mail de {name}?",
-      "eo": "Kio estas la retpoŝta adreso de {name}?",
-      "hu": "Mi a(z) {name} e-mail címe?"
+      "nl": "Wat is het e-mailadres van {title()}?",
+      "fr": "Quelle est l'adresse courriel de {title()} ?",
+      "en": "What is the email address of {title()}?",
+      "nb_NO": "Hva er e-postadressen til {title()}?",
+      "ru": "Какой адрес электронной почты у {title()}?",
+      "id": "Apa alamat surel dari {title()}?",
+      "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+      "it": "Qual è l'indirizzo email di {title()}?",
+      "de": "Was ist die Mail-Adresse von {title()}?",
+      "pt_BR": "Qual o endereço de e-mail de {title()}?",
+      "pl": "Jaki jest adres e-mail do {title()}?",
+      "sv": "Vad är e-postadressen till {title()}?",
+      "pt": "Qual é o endereço de e-mail de {title()}?",
+      "eo": "Kio estas la retpoŝta adreso de {title()}?",
+      "hu": "Mi a(z) {title()} e-mail címe?",
+      "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+      "ja": "{title()}のEメールアドレスは何ですか？"
     },
+    "mappings": [
+      {
+        "if": "contact:email~*",
+        "then": "<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>",
+        "hideInAnswer": true
+      }
+    ],
     "freeform": {
       "key": "email",
-      "type": "email"
+      "type": "email",
+      "addExtraTags": [
+        "contact:email="
+      ]
     }
   },
   "website": {
     "question": {
-      "en": "What is the website of {name}?",
-      "nl": "Wat is de website van {name}?",
-      "fr": "Quel est le site web de {name} ?",
-      "gl": "Cal é a páxina web de {name}?",
-      "nb_NO": "Hva er nettsiden til {name}?",
-      "ru": "Какой сайт у {name}?",
-      "id": "Apa situs web dari {name}?",
-      "zh_Hant": "{name} 網址是什麼？",
-      "it": "Qual è il sito web di {name}?",
-      "de": "Was ist die Website von {name}?",
-      "pt_BR": "Qual o site de {name}?",
-      "pl": "Jaka jest strona internetowa {name}?",
-      "sv": "Vad är webbplatsen för {name}?",
-      "pt": "Qual é o sítio web de {name}?",
-      "eo": "Kie estas la retejo de {name}?",
-      "hu": "Mi a weboldala ennek: {name}?"
+      "en": "What is the website of {title()}?",
+      "nl": "Wat is de website van {title()}?",
+      "fr": "Quel est le site web de {title()} ?",
+      "gl": "Cal é a páxina web de {title()}?",
+      "nb_NO": "Hva er nettsiden til {title()}?",
+      "ru": "Какой сайт у {title()}?",
+      "id": "Apa situs web dari {title()}?",
+      "zh_Hant": "{title()} 網址是什麼？",
+      "it": "Qual è il sito web di {title()}?",
+      "de": "Was ist die Website von {title()}?",
+      "pt_BR": "Qual o site de {title()}?",
+      "pl": "Jaka jest strona internetowa {title()}?",
+      "sv": "Vad är webbplatsen för {title()}?",
+      "pt": "Qual é o sítio web de {title()}?",
+      "eo": "Kie estas la retejo de {title()}?",
+      "hu": "Mi a weboldala ennek: {title()}?",
+      "ca": "Quina és la web de {title()}?",
+      "ja": "{title()}のウェブサイトは？"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
       "key": "website",
-      "type": "url"
-    }
+      "type": "url",
+      "addExtraTags": [
+        "contact:website="
+      ]
+    },
+    "mappings": [
+      {
+        "if": "contact:website~*",
+        "then": "<a href='{contact:website}' target='_blank'>{contact:website}</a>",
+        "hideInAnswer": true
+      }
+    ]
   },
   "wheelchair-access": {
     "question": {
@@ -167,7 +232,12 @@
       "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
       "hu": "Akadálymentes-e ez a hely?",
       "it": "Questo luogo è accessibile con una sedia a rotelle?",
-      "nb_NO": "Er dette stedet tilgjengelig for rullestoler?"
+      "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+      "ca": "Aquest lloc és accessible amb cadira de rodes?",
+      "sv": "Är det här stället tillgängligt med en rullstol?",
+      "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+      "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+      "ja": "車いすでのアクセスは可能ですか？"
     },
     "mappings": [
       {
@@ -184,7 +254,14 @@
           "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet",
           "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
           "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
-          "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere"
+          "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+          "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+          "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+          "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+          "zh_Hant": "這個地方有特別設計給輪椅使用者",
+          "ru": "Это место подходит для людей на инвалидной коляске",
+          "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+          "ja": "この場所は、車椅子の方のための特別仕様になっています"
         }
       },
       {
@@ -201,7 +278,14 @@
           "de": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen",
           "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
           "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
-          "nb_NO": "Dette stedet kan enkelt besøkes med rullestol"
+          "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+          "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+          "ca": "És facilment arribable amb cadira de rodes",
+          "sv": "Denna plats är lätt att nå med rullstol",
+          "zh_Hant": "這個地方坐輪椅很容易到達",
+          "ru": "До этого места легко добраться на инвалидной коляске",
+          "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+          "ja": "この場所は、車いすで簡単に行くことができます"
         }
       },
       {
@@ -219,7 +303,13 @@
           "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
           "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
           "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
-          "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett"
+          "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+          "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+          "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+          "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+          "ru": "До этого места можно добраться, но не просто",
+          "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+          "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません"
         }
       },
       {
@@ -237,7 +327,12 @@
           "fr": "Cet endroit n'est pas accessible en chaise roulante",
           "hu": "Ez a hely kerekesszékkel elérhetetlen",
           "it": "Questo luogo non è accessibile con una sedia a rotelle",
-          "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol"
+          "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+          "ca": "Aquest lloc no és accessible amb cadira de rodes",
+          "sv": "Den här platsen kan inte nås med en rullstol",
+          "zh_Hant": "輪椅無法到達這個地方",
+          "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+          "ja": "この場所は車いすでは行けません"
         }
       }
     ]
@@ -251,7 +346,13 @@
       "fr": "Est-ce que les chiens sont admis ici ?",
       "hu": "Be lehet-e vinni kutyát ebbe az üzletbe?",
       "it": "I cani sono ammessi in quest’attività?",
-      "nb_NO": "Tillates hunder i denne forretningen?"
+      "nb_NO": "Tillates hunder i denne forretningen?",
+      "ca": "S'accepten gossos en aquest negoci?",
+      "sv": "Tillåts hundar i den här affären?",
+      "zh_Hant": "這間商業空間是否允許犬隻？",
+      "ru": "Впускают ли собак в это здание?",
+      "pl": "Czy w tej firmie psy są dozwolone?",
+      "ja": "犬を飼うことができますか？"
     },
     "mappings": [
       {
@@ -265,7 +366,15 @@
           "eo": "Hundoj estas permesataj",
           "hu": "Kutya bevihető",
           "it": "Cani ammessi",
-          "nb_NO": "Hunder tillates"
+          "nb_NO": "Hunder tillates",
+          "ca": "S'accepten gossos",
+          "ru": "Собаки разрешены",
+          "sv": "Hundar tillåts",
+          "zh_Hant": "允許犬隻",
+          "id": "Anjing diperbolehkan",
+          "pl": "Psy dozwolone",
+          "ja": "ペット同伴可能",
+          "es": "Se permiten perros"
         }
       },
       {
@@ -275,11 +384,19 @@
           "nl": "honden zijn <b>niet</b> toegelaten",
           "pt": "Os cães <b>não</b> são permitidos",
           "de": "Hunde sind <b>nicht</b> erlaubt",
-          "fr": "Les chiens <b>ne</b> sont <b>pas</b> admis",
+          "fr": "Chiens <b>non</b> admis",
           "eo": "Hundoj estas <b>malpermesataj</b>",
           "hu": "Kutya <b>nem</b> vihető be",
           "it": "I cani <b>non</b> sono ammessi",
-          "nb_NO": "Hunder tillates <b>ikke</b>"
+          "nb_NO": "Hunder tillates <b>ikke</b>",
+          "ca": "<b>No</b> s'accepten gossos",
+          "sv": "Hundar tillåts <b>inte</b>",
+          "zh_Hant": "<b>不</b>允許犬隻",
+          "pl": "Psy <b>nie</b> dozwolone",
+          "ru": "С собаками <b>не</b> впускают",
+          "id": "Anjing <b> tidak </b> diperbolehkan",
+          "ja": "ペット同伴<b>不可</b>",
+          "es": "<b>No</b> se permiten perros"
         }
       },
       {
@@ -292,7 +409,14 @@
           "fr": "Les chiens sont admis, mais ils doivent être tenus en laisse",
           "hu": "Kutya bevihető, de csak pórázon",
           "it": "Cani ammessi ma solo se tenuti al guinzaglio",
-          "nb_NO": "Hunder tillates, men de må være i bånd"
+          "nb_NO": "Hunder tillates, men de må være i bånd",
+          "ca": "S'accepten gossos però lligats",
+          "sv": "Hundar tillåts, men de måste vara kopplade",
+          "zh_Hant": "允許犬隻，但需要掛牽繩",
+          "ru": "Собак впускают, но на поводке",
+          "id": "Anjing diperbolehkan, tetapi mereka harus diikat",
+          "pl": "Psy dozwolone, ale muszą być na smyczy",
+          "ja": "ペット同伴可能。ただしリード着用"
         }
       },
       {
@@ -305,7 +429,13 @@
           "fr": "Les chiens sont admis et peuvent circuler librement",
           "hu": "Kutya bevihető és szabadon szaladgálhat",
           "it": "I cani sono ammessi e possono andare in giro liberamente",
-          "nb_NO": "Hunder tillates og kan gå fritt"
+          "nb_NO": "Hunder tillates og kan gå fritt",
+          "ca": "S'accepten gossos lliures",
+          "sv": "Hundar tillåts och får springa fritt omkring",
+          "zh_Hant": "允許犬隻而且可以自由跑動",
+          "ru": "Собак свободно впускают",
+          "pl": "Psy dozwolone i mogą biegać bez ograniczeń",
+          "ja": "犬同伴可能、自由に走り回れる"
         }
       }
     ]
@@ -323,7 +453,12 @@
       "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>",
       "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>",
       "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>",
-      "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>"
+      "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>",
+      "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>",
+      "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>",
+      "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>",
+      "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>",
+      "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -332,19 +467,21 @@
   },
   "opening_hours": {
     "question": {
-      "en": "What are the opening hours of {name}?",
-      "fr": "Quelles sont les horaires d'ouverture de {name} ?",
-      "de": "Was sind die Öffnungszeiten von {name}?",
-      "nl": "Wat zijn de openingstijden van {name}?",
-      "nb_NO": "Hva er åpningstidene for {name})",
-      "ru": "Какое время работы у {name}?",
-      "zh_Hant": "{name} 的開放時間是什麼？",
-      "it": "Quali sono gli orari di apertura di {name}?",
-      "pt_BR": "Qual o horário de funcionamento de {name}?",
-      "pl": "Jakie są godziny otwarcia {name}?",
-      "sv": "Vilka är öppettiderna för {name}?",
-      "pt": "Qual é o horário de funcionamento de {name}?",
-      "hu": "Mikor van nyitva ez: {name}?"
+      "en": "What are the opening hours of {title()}?",
+      "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+      "de": "Was sind die Öffnungszeiten von {title()}?",
+      "nl": "Wat zijn de openingstijden van {title()}?",
+      "nb_NO": "Hva er åpningstidene for {title()})",
+      "ru": "Какое время работы у {title()}?",
+      "zh_Hant": "{title()} 的開放時間是什麼？",
+      "it": "Quali sono gli orari di apertura di {title()}?",
+      "pt_BR": "Qual o horário de funcionamento de {title()}?",
+      "pl": "Jakie są godziny otwarcia {title()}?",
+      "sv": "Vilka är öppettiderna för {title()}?",
+      "pt": "Qual é o horário de funcionamento de {title()}?",
+      "hu": "Mikor van nyitva ez: {title()}?",
+      "ca": "Quin és l'horari d'obertura de {title()}?",
+      "ja": "{title()}の営業時間は？"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -360,7 +497,9 @@
       "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
       "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
       "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
-      "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
+      "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+      "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+      "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -371,34 +510,79 @@
     "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
     "question": {
       "en": "Does this amenity have electrical outlets, available to customers when they are inside?",
-      "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+      "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?",
+      "pt": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?",
+      "ca": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?",
+      "de": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?",
+      "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
+      "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
+      "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?",
+      "fr": "Des prises sont elles à disposition des client·e·s en intérieur ?",
+      "pl": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?",
+      "ja": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？"
     },
     "mappings": [
       {
         "then": {
           "en": "There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics",
-          "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden"
+          "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden",
+          "pt": "Há muitas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
+          "ca": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics",
+          "de": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
+          "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
+          "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
+          "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+          "fr": "Il y a suffisamment de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils",
+          "pl": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia",
+          "ja": "屋内の席に座っているお客様には、家庭用コンセントがたくさん用意されており、そこで電子機器を充電することができます"
         },
         "if": "service:electricity=yes"
       },
       {
         "then": {
           "en": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics",
-          "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden"
+          "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden",
+          "pt": "Há algumas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
+          "ca": "Hi ha aslguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
+          "de": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
+          "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
+          "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
+          "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
+          "fr": "Il y a peu de prises disponibles pour les client·e·s en intérieur souhaitant recharger leurs appareils",
+          "pl": "W budynku znajduje się kilka gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia",
+          "ja": "屋内の席に座ったお客様が充電できるよう、コンセントがいくつか用意されています"
         },
         "if": "service:electricity=limited"
       },
       {
         "then": {
           "en": "There are no sockets available indoors to customers, but charging might be possible if the staff is asked",
-          "nl": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt"
+          "nl": "Er zijn binnen geen stekkers beschikbaar, maar electronica opladen kan indien men dit aan het personeel vraagt",
+          "fr": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés",
+          "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior, mas pode-se pedir aos funcionários para carregar dispositivos eletrónicos",
+          "ca": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables",
+          "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
+          "sv": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas",
+          "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電",
+          "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni",
+          "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi",
+          "ja": "屋内にはコンセントがありませんが、スタッフに声をかければ充電できるかもしれません"
         },
         "if": "service:electricity=ask"
       },
       {
         "then": {
           "en": "There are a no domestic sockets available to customers seated indoors",
-          "nl": "Er zijn binnen geen stekkers beschikbaar"
+          "nl": "Er zijn binnen geen stekkers beschikbaar",
+          "fr": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur",
+          "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior",
+          "ca": "No hi ha endolls disponibles per als clients",
+          "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung",
+          "sv": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus",
+          "zh_Hant": "這裡客戶座位沒有室內插座",
+          "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor",
+          "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów",
+          "ja": "屋内の席には、家庭用コンセントはありません"
         },
         "if": "service:electricity=no"
       }
@@ -415,13 +599,20 @@
       "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
       "hu": "Milyen fizetési módokat fogadnak el itt?",
       "it": "Quali metodi di pagamento sono accettati qui?",
-      "nb_NO": "Hvilke betalingsmetoder godtas her?"
+      "nb_NO": "Hvilke betalingsmetoder godtas her?",
+      "ca": "Quins mètodes de pagament s'accepten aquí?",
+      "sv": "Vilka betalningsmetoder accepteras här?",
+      "zh_Hant": "這邊接受那種付款方式？",
+      "pl": "Jakie metody płatności są tutaj dostępne?",
+      "ru": "Какие способы оплаты здесь принимают?",
+      "ja": "どのような支払い方法が可能ですか？"
     },
     "multiAnswer": true,
     "mappings": [
       {
         "if": "payment:cash=yes",
         "ifnot": "payment:cash=no",
+        "icon": "./assets/svg/cash.svg",
         "then": {
           "en": "Cash is accepted here",
           "nl": "Cash geld wordt hier aanvaard",
@@ -432,12 +623,19 @@
           "fr": "Paiement en liquide accepté",
           "hu": "Itt készpénzzel is lehet fizetni",
           "it": "I contanti sono accettati",
-          "nb_NO": "Kontanter godtas her"
+          "nb_NO": "Kontanter godtas her",
+          "ca": "S'accepten diners",
+          "sv": "Pengar accepteras här",
+          "zh_Hant": "這邊接受現金",
+          "pl": "Płatność gotówkowa jest tutaj dostępna",
+          "ru": "Здесь принимают наличными",
+          "ja": "現金利用可能"
         }
       },
       {
         "if": "payment:cards=yes",
         "ifnot": "payment:cards=no",
+        "icon": "./assets/svg/payment_card.svg",
         "then": {
           "en": "Payment cards are accepted here",
           "nl": "Betalen met bankkaarten kan hier",
@@ -448,10 +646,45 @@
           "fr": "Paiement par carte accepté",
           "hu": "Itt fizetőkártyákkal is lehet fizetni",
           "it": "I pagamenti con la carta sono accettati",
-          "nb_NO": "Betalingskort godtas her"
+          "nb_NO": "Betalingskort godtas her",
+          "ca": "S'accepten targetes de crèdit",
+          "sv": "Betalningskort accepteras här",
+          "zh_Hant": "這邊接受現金卡",
+          "pl": "Płatność kartą jest tutaj dostępna",
+          "ru": "Здесь принимают банковские карты",
+          "ja": "お支払いはこちらで承ります"
         }
       }
     ]
+  },
+  "payment-options-advanced": {
+    "builtin": "payment-options",
+    "override": {
+      "mappings+": [
+        {
+          "if": "payment:app=yes",
+          "ifnot": "payment:app=no",
+          "icon": "./assets/svg/smartphone.svg",
+          "then": {
+            "en": "Payment is done using a dedicated app",
+            "nl": "Betalen via een app van het netwerk",
+            "hu": "Fizetés erre a célra szolgáló alkalmazással",
+            "zh_Hant": "使用專用應用程式付款"
+          }
+        },
+        {
+          "if": "payment:membership_card=yes",
+          "ifnot": "payment:membership_card=no",
+          "icon": "./assets/svg/nfc_card.svg",
+          "then": {
+            "en": "Payment is done using a membership card",
+            "nl": "Betalen via een lidkaart van het netwerk",
+            "hu": "Fizetési tagsági kártyával",
+            "zh_Hant": "使用會員卡付款"
+          }
+        }
+      ]
+    }
   },
   "last_edit": {
     "#": "Gives some metainfo about the last edit and who did edit it - rendering only",
@@ -475,7 +708,10 @@
       "pt": "Em que nível se encontra este elemento?",
       "id": "Pada tingkat apa fitur ini diletakkan?",
       "hu": "Melyik szinten található ez a létesítmény?",
-      "it": "A quale piano si trova questo elemento?"
+      "it": "A quale piano si trova questo elemento?",
+      "ca": "A quina planta està situat aquest element?",
+      "sv": "På vilken nivå finns den här funktionen?",
+      "ja": "この機能は何階にあるのでしょうか？"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -489,8 +725,10 @@
       "sv": "Ligger på {level}:e våningen",
       "pt": "Está no {level}º andar",
       "eo": "En la {level}a etaĝo",
-      "hu": "{level}. emeleten található",
-      "it": "Si trova al piano numero {level}"
+      "hu": "A(z) {level}. emeleten",
+      "it": "Si trova al piano numero {level}",
+      "ca": "Situat a la planta {level}",
+      "ja": "{level}階にあります"
     },
     "freeform": {
       "key": "level",
@@ -510,9 +748,11 @@
           "sv": "Ligger under jorden",
           "pt": "Está no subsolo",
           "de": "Unterirdisch gelegen",
-          "hu": "A föld alatt található",
+          "hu": "A föld alatt",
           "it": "Si trova sotto il livello stradale",
-          "nb_NO": "Under bakken"
+          "nb_NO": "Under bakken",
+          "ca": "Situat a planta subterrani",
+          "ja": "地下にあります"
         },
         "hideInAnswer": true
       },
@@ -530,9 +770,11 @@
           "sv": "Ligger på bottenvåningen",
           "pt": "Está ao nível do rés-do-chão",
           "eo": "En la teretaĝo",
-          "hu": "A földszinten található",
+          "hu": "A földszinten",
           "it": "Si trova al pianoterra",
-          "nb_NO": "På gateplan"
+          "nb_NO": "På gateplan",
+          "ca": "Situat a planta zero",
+          "ja": "1階にあります"
         }
       },
       {
@@ -550,9 +792,11 @@
           "sv": "Ligger på bottenvåningen",
           "pt": "Está ao nível do rés-do-chão",
           "eo": "En la teretaĝo",
-          "hu": "A földszinten található",
+          "hu": "A földszinten",
           "it": "Si trova al pianoterra",
-          "nb_NO": "På gateplan"
+          "nb_NO": "På gateplan",
+          "ca": "Situat a planta zero",
+          "ja": "1階にあります"
         }
       },
       {
@@ -570,9 +814,19 @@
           "pt": "Está no primeiro andar",
           "id": "Berlokasi di lantai pertama",
           "eo": "En la unua etaĝo",
-          "hu": "Az első emeleten található",
+          "hu": "Az első emeleten",
           "it": "Si trova al primo piano",
-          "nb_NO": "I andre etasje"
+          "nb_NO": "I andre etasje",
+          "ca": "Situat a primera planta",
+          "ja": "1階にあります"
+        }
+      },
+      {
+        "if": "level=-1",
+        "then": {
+          "en": "Located on the first basement level",
+          "nl": "Bevindt zich in de eerste kelderverdieping",
+          "zh_Hant": "位於地下一樓"
         }
       }
     ]

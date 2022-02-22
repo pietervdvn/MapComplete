@@ -1,26 +1,24 @@
-import {Utils} from "../Utils";
 import {writeFile} from "fs";
 import Translations from "../UI/i18n/Translations";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import * as themeOverview from "../assets/generated/theme_overview.json"
 
-Utils.runningFromConsole = true;
-
-
-function generateWikiEntry(layout: LayoutConfig) {
+function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shortDescription: any }) {
     if (layout.hideFromOverview) {
         return "";
     }
-    const languages = layout.language.map(ln => `{{#language:${ln}|en}}`).join(", ")
-    let auth = "Yes";
-    if (layout.maintainer !== "" && layout.maintainer !== "MapComplete") {
-        auth = `Yes, by ${layout.maintainer};`
+
+    const languagesInDescr = []
+    for (const shortDescriptionKey in layout.shortDescription) {
+        languagesInDescr.push(shortDescriptionKey)
     }
+
+    const languages = languagesInDescr.map(ln => `{{#language:${ln}|en}}`).join(", ")
+    let auth = "Yes";
     return `{{service_item
 |name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
-|descr= A MapComplete theme: ${Translations.WT(layout.description)
+|descr= A MapComplete theme: ${Translations.WT(layout.shortDescription)
         .textFor("en")
         .replace("<a href='", "[[")
         .replace(/'>.*<\/a>/, "]]")
@@ -35,7 +33,7 @@ let wikiPage = "{|class=\"wikitable sortable\"\n" +
     "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
     "|-";
 
-for (const layout of AllKnownLayouts.layoutsList) {
+for (const layout of themeOverview) {
     if (layout.hideFromOverview) {
         continue;
     }

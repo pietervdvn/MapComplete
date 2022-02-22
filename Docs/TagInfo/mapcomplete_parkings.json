@@ -16,16 +16,6 @@
       "value": "parking"
     },
     {
-      "key": "amenity",
-      "description": "The MapComplete theme Parking has a layer Parking showing features with this tag",
-      "value": "motorcycle_parking"
-    },
-    {
-      "key": "amenity",
-      "description": "The MapComplete theme Parking has a layer Parking showing features with this tag",
-      "value": "bicycle_parking"
-    },
-    {
       "key": "image",
       "description": "The layer 'Parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -40,6 +30,11 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Parking has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

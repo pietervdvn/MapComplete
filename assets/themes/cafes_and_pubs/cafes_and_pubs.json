@@ -7,20 +7,14 @@
     "it": "Caffè e pub",
     "nb_NO": "Kafeer og kneiper",
     "id": "Kafe dan pub",
-    "zh_Hant": "咖啡廳與酒吧"
+    "zh_Hant": "咖啡廳與酒吧",
+    "ru": "Кафе и пабы",
+    "hu": "Kávézók és kocsmák"
   },
   "description": {
+    "en": "Pubs and bars",
     "nl": "Cafés, kroegen en drinkgelegenheden"
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO",
-    "id",
-    "zh_Hant"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "version": "0",
@@ -28,7 +22,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 1.5,
-  "socialImage": "",
   "layers": [
     "cafe_pub"
   ]

@@ -1,6 +1,5 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
-import Constants from "../Models/Constants";
 import Hash from "../Logic/Web/Hash";
 
 export class DefaultGuiState {
@@ -9,6 +8,7 @@ export class DefaultGuiState {
     public readonly downloadControlIsOpened: UIEventSource<boolean>;
     public readonly filterViewIsOpened: UIEventSource<boolean>;
     public readonly copyrightViewIsOpened: UIEventSource<boolean>;
+    public readonly currentViewControlIsOpened: UIEventSource<boolean>;
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
     public readonly allFullScreenStates: UIEventSource<boolean>[] = []
 
@@ -18,42 +18,50 @@ export class DefaultGuiState {
         this.welcomeMessageOpenedTab = UIEventSource.asFloat(QueryParameters.GetQueryParameter(
             "tab",
             "0",
-            `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`
+            `The tab that is shown in the welcome-message.`
         ));
         this.welcomeMessageIsOpened = QueryParameters.GetBooleanQueryParameter(
             "welcome-control-toggle",
-            "false",
+            false,
             "Whether or not the welcome panel is shown"
         )
         this.downloadControlIsOpened = QueryParameters.GetBooleanQueryParameter(
             "download-control-toggle",
-            "false",
+            false,
             "Whether or not the download panel is shown"
         )
         this.filterViewIsOpened = QueryParameters.GetBooleanQueryParameter(
             "filter-toggle",
-            "false",
+            false,
             "Whether or not the filter view is shown"
         )
         this.copyrightViewIsOpened = QueryParameters.GetBooleanQueryParameter(
             "copyright-toggle",
-            "false",
+            false,
             "Whether or not the copyright view is shown"
         )
-        if (Hash.hash.data === "download") {
-            this.downloadControlIsOpened.setData(true)
+        this.currentViewControlIsOpened = QueryParameters.GetBooleanQueryParameter(
+            "currentview-toggle",
+            false,
+            "Whether or not the current view box is shown"
+        )
+        const states = {
+            download: this.downloadControlIsOpened,
+            filters: this.filterViewIsOpened,
+            copyright: this.copyrightViewIsOpened,
+            currentview: this.currentViewControlIsOpened,
+            welcome: this.welcomeMessageIsOpened
         }
-        if (Hash.hash.data === "filters") {
-            this.filterViewIsOpened.setData(true)
-        }
-        if (Hash.hash.data === "copyright") {
-            this.copyrightViewIsOpened.setData(true)
-        }
-        if (Hash.hash.data === "" || Hash.hash.data === undefined || Hash.hash.data === "welcome") {
+        Hash.hash.addCallbackAndRunD(hash => {
+            hash = hash.toLowerCase()
+            states[hash]?.setData(true)
+        })
+
+        if (Hash.hash.data === "" || Hash.hash.data === undefined) {
             this.welcomeMessageIsOpened.setData(true)
         }
 
-        this.allFullScreenStates.push(this.downloadControlIsOpened, this.filterViewIsOpened, this.copyrightViewIsOpened, this.welcomeMessageIsOpened)
+        this.allFullScreenStates.push(this.downloadControlIsOpened, this.filterViewIsOpened, this.copyrightViewIsOpened, this.welcomeMessageIsOpened, this.currentViewControlIsOpened)
 
         for (let i = 0; i < this.allFullScreenStates.length; i++) {
             const fullScreenState = this.allFullScreenStates[i];

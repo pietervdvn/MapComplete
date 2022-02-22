@@ -1,35 +1,5 @@
 [
   {
-    "path": "Commemorative_plaque_on_Elizabeth_House_-_geograph.org.uk_-_2693028.jpg",
-    "license": "CC-BY-SA 2.0 Unported",
-    "authors": [
-      "Basher Eyre"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Commemorative_plaque_on_Elizabeth_House_-_geograph.org.uk_-_2693028.jpg"
-    ]
-  },
-  {
-    "path": "Plaque,_Raphoe_House_-_geograph.org.uk_-_1925685.jpg",
-    "license": "CC-BY-SA 2.0",
-    "authors": [
-      "Kenneth Allen"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Plaque,_Raphoe_House_-_geograph.org.uk_-_1925685.jpg"
-    ]
-  },
-  {
-    "path": "Plaque,_Séamus_Roddy_House_-_geograph.org.uk_-_2000318.jpg",
-    "license": "CC-BY-SA 2.0 Unported",
-    "authors": [
-      "Kenneth Allen"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Plaque,_S%C3%A9amus_Roddy_House_-_geograph.org.uk_-_2000318.jpg"
-    ]
-  },
-  {
     "path": "housenumber_add.svg",
     "license": "CC0",
     "authors": [
@@ -75,6 +45,14 @@
     "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "stamp-outline.png",
+    "license": "CC0",
+    "authors": [
+      "Rob Nickerson"
     ],
     "sources": []
   }

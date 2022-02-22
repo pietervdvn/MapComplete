@@ -8,7 +8,7 @@ export abstract class TagsFilter {
 
     abstract matchesProperties(properties: any): boolean;
 
-    abstract asHumanString(linkToWiki: boolean, shorten: boolean, properties: any);
+    abstract asHumanString(linkToWiki: boolean, shorten: boolean, properties: any): string;
 
     abstract usedKeys(): string[];
 
@@ -20,4 +20,5 @@ export abstract class TagsFilter {
      */
     abstract asChange(properties: any): { k: string, v: string }[]
 
+    abstract AsJson() ;
 }

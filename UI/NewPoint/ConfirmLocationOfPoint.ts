@@ -12,14 +12,19 @@ import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import SimpleAddUI, {PresetInfo} from "../BigComponents/SimpleAddUI";
+import BaseLayer from "../../Models/BaseLayer";
+import Img from "../Base/Img";
+import Title from "../Base/Title";
 
 export default class ConfirmLocationOfPoint extends Combine {
 
 
     constructor(
         state: {
+            featureSwitchIsTesting: UIEventSource<boolean>;
             osmConnection: OsmConnection,
-            featurePipeline: FeaturePipeline
+            featurePipeline: FeaturePipeline,
+            backgroundLayer?: UIEventSource<BaseLayer>
         },
         filterViewIsOpened: UIEventSource<boolean>,
         preset: PresetInfo,
@@ -27,17 +32,23 @@ export default class ConfirmLocationOfPoint extends Combine {
         loc: { lon: number, lat: number },
         confirm: (tags: any[], location: { lat: number, lon: number }, snapOntoWayId: string) => void,
         cancel: () => void,
+        closePopup: () => void
     ) {
 
         let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
+            // Create location input
+            
+            
             // We uncouple the event source
             const zloc = {...loc, zoom: 19}
             const locationSrc = new UIEventSource(zloc);
 
-            let backgroundLayer = undefined;
+            let backgroundLayer = new UIEventSource(state?.backgroundLayer?.data ?? AvailableBaseLayers.osmCarto);
             if (preset.preciseInput.preferredBackground) {
-                backgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
+                const defaultBackground = AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground));
+                // Note that we _break the link_ here, as the minimap will take care of the switching!
+                backgroundLayer.setData(defaultBackground.data)
             }
 
             let snapToFeatures: UIEventSource<{ feature: any }[]> = undefined
@@ -57,8 +68,8 @@ export default class ConfirmLocationOfPoint extends Combine {
                 maxSnapDistance: preset.preciseInput.maxSnapDistance,
                 bounds: mapBounds
             })
-            preciseInput.installBounds(0.15, true)
-            preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
+            preciseInput.installBounds(preset.boundsFactor ?? 0.25, true)
+            preciseInput.SetClass("h-40 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
 
 
             if (preset.preciseInput.snapToLayers && preset.preciseInput.snapToLayers.length > 0) {
@@ -72,7 +83,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                         // return;
                     }
 
-                    bbox = bbox.pad(2);
+                    bbox = bbox.pad(Math.max(preset.boundsFactor ?? 0.25, 2), Math.max(preset.boundsFactor ?? 0.25, 2));
                     loadedBbox = bbox;
                     const allFeatures: { feature: any }[] = []
                     preset.preciseInput.snapToLayers.forEach(layerId => {
@@ -94,7 +105,8 @@ export default class ConfirmLocationOfPoint extends Combine {
             ]).SetClass("flex flex-col")
         ).SetClass("font-bold break-words")
             .onClick(() => {
-                confirm(preset.tags, (preciseInput?.GetValue()?.data ?? loc), preciseInput?.snappedOnto?.data?.properties?.id);
+                console.log("The confirmLocationPanel - precise input yielded ", preciseInput?.GetValue()?.data)
+                confirm(preset.tags, preciseInput?.GetValue()?.data ?? loc, preciseInput?.snappedOnto?.data?.properties?.id);
             });
 
         if (preciseInput !== undefined) {
@@ -132,33 +144,25 @@ export default class ConfirmLocationOfPoint extends Combine {
                 ]
             ).SetClass("flex flex-col")
         ).onClick(() => {
-            preset.layerToAddTo.appliedFilters.setData([])
+
+            const appliedFilters = preset.layerToAddTo.appliedFilters;
+            appliedFilters.data.forEach((_, k) => appliedFilters.data.set(k, undefined))
+            appliedFilters.ping()
             cancel()
+            closePopup()
         })
 
+        const hasActiveFilter = preset.layerToAddTo.appliedFilters
+            .map(appliedFilters => {
+                const activeFilters = Array.from(appliedFilters.values()).filter(f => f?.currentFilter !== undefined);
+                return activeFilters.length === 0;
+            })
+
+        // If at least one filter is active which _might_ hide a newly added item, this blocks the preset and requests the filter to be disabled
         const disableFiltersOrConfirm = new Toggle(
             openLayerOrConfirm,
             disableFilter,
-            preset.layerToAddTo.appliedFilters.map(filters => {
-                if (filters === undefined || filters.length === 0) {
-                    return true;
-                }
-                for (const filter of filters) {
-                    if (filter.selected === 0 && filter.filter.options.length === 1) {
-                        return false;
-                    }
-                    if (filter.selected !== undefined) {
-                        const tags = filter.filter.options[filter.selected].osmTags
-                        if (tags !== undefined && tags["and"]?.length !== 0) {
-                            // This actually doesn't filter anything at all
-                            return false;
-                        }
-                    }
-                }
-                return true
-
-            })
-        )
+            hasActiveFilter)
 
 
         const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection);
@@ -167,12 +171,26 @@ export default class ConfirmLocationOfPoint extends Combine {
             Translations.t.general.cancel
         ).onClick(cancel)
 
+        
+        let examples : BaseUIElement = undefined;
+        if(preset.exampleImages !== undefined && preset.exampleImages.length > 0){
+            examples = new Combine([
+             new Title( preset.exampleImages.length == 1 ?  Translations.t.general.example :  Translations.t.general.examples),
+                new Combine(preset.exampleImages.map(img => new Img(img).SetClass("h-64 m-1 w-auto rounded-lg"))).SetClass("flex flex-wrap items-stretch")
+            ])
+            
+        }
+        
         super([
-            state.osmConnection.userDetails.data.dryRun ?
-                Translations.t.general.testing.Clone().SetClass("alert") : undefined,
+            new Toggle(
+                Translations.t.general.testing.SetClass("alert"),
+                undefined,
+                state.featureSwitchIsTesting
+            ),
             disableFiltersOrConfirm,
             cancelButton,
             preset.description,
+            examples,
             tagInfo
 
         ])

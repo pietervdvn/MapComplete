@@ -3,6 +3,7 @@ import {Utils} from "../../../Utils";
 import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
+import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
 
 
 function colonSplit(value: string): string[] {
@@ -19,7 +20,8 @@ function loadCsv(file): {
     commonCurrents?: number[],
     commonOutputs?: string[],
     associatedVehicleTypes?: string[],
-    neverAssociatedWith?: string[]
+    neverAssociatedWith?: string[],
+    extraVisualisationCondition: string
 }[] {
     const entries: string[] = Utils.NoNull(readFileSync(file, "utf8").split("\n").map(str => str.trim()))
     const header = entries.shift().split(",")
@@ -70,13 +72,17 @@ function run(file, protojson) {
     for (let i = 0; i < entries.length; i++) {
         const e = entries[i];
         const txt = {
-            en: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("en")}</span></div>`,
-            nl: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("nl")}</span></div>`
+            en: e.description.get("en"),
+            nl: e.description.get("nl")
         }
         const json = {
             if: `${e.key}=1`,
             ifnot: `${e.key}=`,
             then: txt,
+            icon:{
+                path:"./assets/layers/charging_station/" + e.image,
+                class:"medium"
+            }
         }
 
         if (e.countryWhiteList.length > 0 && e.countryBlackList.length > 0) {
@@ -120,10 +126,14 @@ function run(file, protojson) {
         // We add a second time for any amount to trigger a visualisation; but this is not an answer option
         const no_ask_json = {
             if: {
-                and: [`${e.key}~*`, `${e.key}!=1`]
+                and:Utils.NoEmpty( [`${e.key}~*`, `${e.key}!=1`, ...e.extraVisualisationCondition.split(";")])
             },
             then: txt,
-            hideInAnswer: true
+            hideInAnswer: true,
+            icon:{
+                path: `./assets/layers/charging_station/${e.image}`,
+                class:"medium"
+            }
         }
         overview_question_answers.push(no_ask_json)
 
@@ -168,8 +178,12 @@ function run(file, protojson) {
                 return {
                     if: `socket:${e.key}:voltage=${voltage} V`,
                     then: {
-                        en: `${descrWithImage_en} outputs ${voltage} volt`,
-                        nl: `${descrWithImage_nl} heeft een spanning van ${voltage} volt`
+                        en: `${e.description.get("en")} outputs ${voltage} volt`,
+                        nl: `${e.description.get("nl")} heeft een spanning van ${voltage} volt`
+                    },
+                    icon: {
+                        path: `./assets/layers/charging_station/${e.image}`,
+                        class:"medium"
                     }
                 }
             }),
@@ -198,8 +212,12 @@ function run(file, protojson) {
                 return {
                     if: `socket:${e.key}:current=${current} A`,
                     then: {
-                        en: `${descrWithImage_en} outputs at most ${current} A`,
-                        nl: `${descrWithImage_nl} levert een stroom van maximaal ${current} A`
+                        en: `${e.description.get("en")} outputs at most ${current} A`,
+                        nl: `${e.description.get("nl")} levert een stroom van maximaal ${current} A`
+                    },
+                    icon: {
+                        path: `./assets/layers/charging_station/${e.image}`,
+                        class:"medium"
                     }
                 }
             }),
@@ -228,8 +246,12 @@ function run(file, protojson) {
                 return {
                     if: `socket:${e.key}:output=${output}`,
                     then: {
-                        en: `${descrWithImage_en} outputs at most ${output}`,
-                        nl: `${descrWithImage_nl} levert een vermogen van maximaal ${output}`
+                        en: `${e.description.get("en")} outputs at most ${output} A`,
+                        nl: `${e.description.get("nl")} levert een vermogen van maximaal ${output} A`
+                    },
+                    icon: {
+                        path: `./assets/layers/charging_station/${e.image}`,
+                        class:"medium"
                     }
                 }
             }),
@@ -264,6 +286,10 @@ function run(file, protojson) {
 
     protoString = protoString.replace(/{[ \t\n]*"id"[ \t\n]*:[ \t\n]*"\$\$\$"[ \t\n]*}/, stringified.join(",\n"))
     const proto = <LayerConfigJson>JSON.parse(protoString)
+    if(typeof proto.filter === "string"){
+        throw "Filters of a the protojson should be a list of FilterConfigJsons"
+    }
+    proto.filter = <FilterConfigJson[]> proto.filter;
     proto.tagRenderings.forEach(tr => {
         if (typeof tr === "string") {
             return;
@@ -274,7 +300,7 @@ function run(file, protojson) {
         }
     })
 
-    proto["filter"].push({
+    proto.filter.push({
         id: "connection_type",
         options: filterOptions
     })

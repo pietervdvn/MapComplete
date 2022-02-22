@@ -12,6 +12,9 @@ import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
 
+/**
+ * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
+ */
 export default class OsmFeatureSource {
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly downloadedTiles = new Set<number>()
@@ -63,22 +66,20 @@ export default class OsmFeatureSource {
             try {
 
                 for (const neededTile of neededTiles) {
-                    console.log("Tile download", Tiles.tile_from_index(neededTile).join("/"), "started")
                     self.downloadedTiles.add(neededTile)
                     self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
-                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded")
+                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded from OSM")
                     })
                 }
             } catch (e) {
                 console.error(e)
             } finally {
-                console.log("Done")
                 self.isRunning.setData(false)
             }
         })
 
 
-        const neededLayers = options.state.layoutToUse.layers
+        const neededLayers = (options.state.layoutToUse?.layers ?? [])
             .filter(layer => !layer.doNotDownload)
             .filter(layer => layer.source.geojsonSource === undefined || layer.source.isOsmCacheLayer)
         this.allowedTags = new Or(neededLayers.map(l => l.source.osmTags))
@@ -89,11 +90,14 @@ export default class OsmFeatureSource {
             throw "This is an absurd high zoom level"
         }
 
+        if (z < 14) {
+            throw `Zoom ${z} is too much for OSM to handle! Use a higher zoom level!`
+        }
+
         const bbox = BBox.fromTile(z, x, y)
         const url = `${this._backend}/api/0.6/map?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
         try {
 
-            console.log("Attempting to get tile", z, x, y, "from the osm api")
             const osmJson = await Utils.downloadJson(url)
             try {
                 console.debug("Got tile", z, x, y, "from the osm api")
@@ -108,7 +112,9 @@ export default class OsmFeatureSource {
                 // We only keep what is needed
 
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
-                geojson.features.forEach(f => f.properties["_backend"] = this._backend)
+                geojson.features.forEach(f => {
+                    f.properties["_backend"] = this._backend
+                })
 
                 const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,

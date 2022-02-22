@@ -1,12 +1,12 @@
 import {Tag} from "../../Tags/Tag";
-import OsmChangeAction from "./OsmChangeAction";
+import {OsmCreateAction} from "./OsmChangeAction";
 import {Changes} from "../Changes";
 import {ChangeDescription} from "./ChangeDescription";
 import {And} from "../../Tags/And";
 import {OsmWay} from "../OsmObject";
 import {GeoOperations} from "../../GeoOperations";
 
-export default class CreateNewNodeAction extends OsmChangeAction {
+export default class CreateNewNodeAction extends OsmCreateAction {
 
     /**
      * Maps previously created points onto their assigned ID, to reuse the point if uplaoded
@@ -20,18 +20,21 @@ export default class CreateNewNodeAction extends OsmChangeAction {
     private readonly _lon: number;
     private readonly _snapOnto: OsmWay;
     private readonly _reusePointDistance: number;
-    private meta: { changeType: "create" | "import"; theme: string };
+    private meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string };
     private readonly _reusePreviouslyCreatedPoint: boolean;
 
+    
     constructor(basicTags: Tag[],
                 lat: number, lon: number,
                 options: {
                     allowReuseOfPreviouslyCreatedPoints?: boolean,
                     snapOnto?: OsmWay,
                     reusePointWithinMeters?: number,
-                    theme: string, changeType: "create" | "import" | null
+                    theme: string,
+                    changeType: "create" | "import" | null,
+                    specialMotivation?: string
                 }) {
-        super(null,basicTags !== undefined && basicTags.length > 0)
+        super(null, basicTags !== undefined && basicTags.length > 0)
         this._basicTags = basicTags;
         this._lat = lat;
         this._lon = lon;
@@ -43,7 +46,8 @@ export default class CreateNewNodeAction extends OsmChangeAction {
         this._reusePreviouslyCreatedPoint = options?.allowReuseOfPreviouslyCreatedPoints ?? (basicTags.length === 0)
         this.meta = {
             theme: options.theme,
-            changeType: options.changeType
+            changeType: options.changeType,
+            specialMotivation: options.specialMotivation
         }
     }
 
@@ -64,6 +68,7 @@ export default class CreateNewNodeAction extends OsmChangeAction {
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+
         if (this._reusePreviouslyCreatedPoint) {
 
             const key = this._lat + "," + this._lon
@@ -107,21 +112,29 @@ export default class CreateNewNodeAction extends OsmChangeAction {
 
         const geojson = this._snapOnto.asGeoJson()
         const projected = GeoOperations.nearestPoint(geojson, [this._lon, this._lat])
+       const projectedCoor=     <[number, number]>projected.geometry.coordinates
         const index = projected.properties.index
         // We check that it isn't close to an already existing point
         let reusedPointId = undefined;
-        const prev = <[number, number]>geojson.geometry.coordinates[index]
-        if (GeoOperations.distanceBetween(prev, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
+        let outerring : [number,number][];
+        
+        if(geojson.geometry.type === "LineString"){
+           outerring = <[number, number][]> geojson.geometry.coordinates
+        }else if(geojson.geometry.type === "Polygon"){
+           outerring =<[number, number][]>  geojson.geometry.coordinates[0]
+        }
+        
+        const prev= outerring[index]
+        if (GeoOperations.distanceBetween(prev, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
         }
-        const next = <[number, number]>geojson.geometry.coordinates[index + 1]
-        if (GeoOperations.distanceBetween(next, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
+        const next = outerring[index + 1]
+        if (GeoOperations.distanceBetween(next, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index + 1]
         }
         if (reusedPointId !== undefined) {
-            console.log("Reusing an existing point:", reusedPointId)
             this.setElementId(reusedPointId)
             return [{
                 tags: new And(this._basicTags).asChange(properties),
@@ -131,14 +144,12 @@ export default class CreateNewNodeAction extends OsmChangeAction {
             }]
         }
 
-        const locations = [...this._snapOnto.coordinates]
-        locations.forEach(coor => coor.reverse())
-        console.log("Locations are: ", locations)
+        const locations = [...this._snapOnto.coordinates.map(([lat, lon]) =><[number,number]> [lon, lat])]
         const ids = [...this._snapOnto.nodes]
 
         locations.splice(index + 1, 0, [this._lon, this._lat])
         ids.splice(index + 1, 0, id)
-
+        
         // Allright, we have to insert a new point in the way
         return [
             newPointChange,

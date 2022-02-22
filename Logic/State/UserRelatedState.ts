@@ -3,15 +3,14 @@ import {OsmConnection} from "../Osm/OsmConnection";
 import {MangroveIdentity} from "../Web/MangroveReviews";
 import {UIEventSource} from "../UIEventSource";
 import {QueryParameters} from "../Web/QueryParameters";
-import InstalledThemes from "../Actors/InstalledThemes";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {Utils} from "../../Utils";
 import Locale from "../../UI/i18n/Locale";
 import ElementsState from "./ElementsState";
 import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater";
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource";
-import FeatureSource from "../FeatureSource/FeatureSource";
-import {Feature} from "@turf/turf";
+import {Changes} from "../Osm/Changes";
+import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
+import PendingChangesUploader from "../Actors/PendingChangesUploader";
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -25,6 +24,10 @@ export default class UserRelatedState extends ElementsState {
      */
     public osmConnection: OsmConnection;
     /**
+     THe change handler
+     */
+    public changes: Changes;
+    /**
      * The key for mangrove
      */
     public mangroveIdentity: MangroveIdentity;
@@ -33,28 +36,27 @@ export default class UserRelatedState extends ElementsState {
      */
     public favouriteLayers: UIEventSource<string[]>;
 
-    /**
-     * WHich other themes the user previously visited
-     */
-    public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
-
-
-    constructor(layoutToUse: LayoutConfig) {
+    constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
 
         this.osmConnection = new OsmConnection({
-            changes: this.changes,
-            dryRun: this.featureSwitchIsTesting.data,
+            dryRun: this.featureSwitchIsTesting,
             fakeUser: this.featureSwitchFakeUser.data,
-            allElements: this.allElements,
             oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
                 "Used to complete the login"
             ),
-            layoutName: layoutToUse?.id,
-            osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data
+            osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
+            attemptLogin: options?.attemptLogin
         })
+
+
+        this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
+
+
+        new ChangeToElementsActor(this.changes, this.allElements)
+        new PendingChangesUploader(this.changes, this.selectedElement);
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
@@ -71,9 +73,18 @@ export default class UserRelatedState extends ElementsState {
             })
         }
 
-        this.installedThemes = new InstalledThemes(
-            this.osmConnection
-        ).installedThemes;
+        if (this.layoutToUse !== undefined && !this.layoutToUse.official) {
+            console.log("Marking unofficial theme as visited")
+            this.osmConnection.GetLongPreference("unofficial-theme-" + this.layoutToUse.id)
+                .setData(JSON.stringify({
+                    id: this.layoutToUse.id,
+                    icon: this.layoutToUse.icon,
+                    title: this.layoutToUse.title.translations,
+                    shortDescription: this.layoutToUse.shortDescription.translations,
+                    definition: this.layoutToUse["definition"]
+                }))
+        }
+
 
         // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
         this.favouriteLayers = LocalStorageSource.Get("favouriteLayers")
@@ -83,7 +94,6 @@ export default class UserRelatedState extends ElementsState {
                 [],
                 (layers) => Utils.Dedup(layers)?.join(";")
             );
-
 
         this.InitializeLanguage();
         new SelectedElementTagsUpdater(this)

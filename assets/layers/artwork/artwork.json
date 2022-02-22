@@ -11,7 +11,10 @@
     "es": "Obras de arte",
     "ja": "美術品",
     "zh_Hant": "藝術品",
-    "nb_NO": "Kunstverk"
+    "nb_NO": "Kunstverk",
+    "pt": "Obras de arte",
+    "hu": "Műalkotások",
+    "pl": "Dzieła sztuki"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -48,7 +51,7 @@
           "id": "Karya Seni <i>{name}</i>",
           "it": "Opera <i>{name}</i>",
           "ru": "Художественная работа <i>{name}</i>",
-          "es": "Obra de arte <i>{nombre}</i>",
+          "es": "Obra de arte <i>{name}</i>",
           "ja": "アートワーク <i>{name}</i>",
           "zh_Hant": "藝術品<i>{name}</i>",
           "fi": "Taideteos <i>{name}</i>",
@@ -73,7 +76,9 @@
     "es": "Diversas piezas de obras de arte",
     "ja": "多様な作品",
     "zh_Hant": "不同類型的藝術品",
-    "id": "Beragam karya seni"
+    "id": "Beragam karya seni",
+    "pt": "Diversas obras de arte",
+    "hu": "Különféle műalkotások"
   },
   "minzoom": 12,
   "presets": [
@@ -117,20 +122,26 @@
         "ja": "これは{artwork_type}です",
         "zh_Hant": "這是 {artwork_type}",
         "nb_NO": "Dette er et kunstverk av typen {artwork_type}",
-        "id": "Ini adalah {artwork_type}"
+        "id": "Ini adalah {artwork_type}",
+        "pt": "Isto é um(a) {artwork_type}",
+        "hu": "Ez egy {artwork_type}",
+        "pl": "Jest to {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
         "nl": "Wat voor soort kunstwerk is dit?",
-        "fr": "Quel est le type de cette œuvre d'art?",
+        "fr": "Quel est le type de cette œuvre d'art ?",
         "de": "Was ist die Art dieses Kunstwerks?",
         "it": "Che tipo di opera d’arte è questo?",
         "ru": "К какому типу относится эта работа?",
-        "es": "Cuál es el tipo de esta obra de arte?",
+        "es": "¿Qué tipo de obra es esta pieza?",
         "ja": "この作品の種類は何ですか?",
         "zh_Hant": "這是什麼類型的藝術品？",
         "nb_NO": "Hvilken type kunstverk er dette?",
-        "id": "Apa jenis karya seni ini?"
+        "id": "Apa jenis karya seni ini?",
+        "pt": "Qual é o tipo desta obra de arte?",
+        "hu": "Milyen fajta műalkotás ez?",
+        "pl": "Jakiego rodzaju jest to dzieło sztuki?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -151,7 +162,11 @@
             "ja": "建物",
             "zh_Hant": "建築物",
             "nb_NO": "Arkitektur",
-            "id": "Arsitektur"
+            "id": "Arsitektur",
+            "pt": "Arquitetura",
+            "hu": "Építészet",
+            "pl": "Architektura",
+            "es": "Arquitectura"
           }
         },
         {
@@ -166,7 +181,11 @@
             "ja": "壁画",
             "zh_Hant": "壁畫",
             "nb_NO": "Veggmaleri",
-            "id": "Mural"
+            "id": "Mural",
+            "pt": "Mural",
+            "hu": "Falfestmény",
+            "pl": "Mural",
+            "es": "Mural"
           }
         },
         {
@@ -181,7 +200,11 @@
             "ja": "絵画",
             "zh_Hant": "繪畫",
             "nb_NO": "Maleri",
-            "id": "Lukisan"
+            "id": "Lukisan",
+            "pt": "Pintura",
+            "hu": "Festmény",
+            "pl": "Obraz",
+            "es": "Pintura"
           }
         },
         {
@@ -196,7 +219,11 @@
             "ja": "彫刻",
             "zh_Hant": "雕塑",
             "nb_NO": "Skulptur",
-            "id": "Patung"
+            "id": "Patung",
+            "pt": "Escultura",
+            "hu": "Absztrakt szobor",
+            "pl": "Rzeźba",
+            "es": "Escultura"
           }
         },
         {
@@ -210,7 +237,11 @@
             "ru": "Статуя",
             "ja": "彫像",
             "zh_Hant": "雕像",
-            "nb_NO": "Statue"
+            "nb_NO": "Statue",
+            "pt": "Estátua",
+            "hu": "Szobor",
+            "pl": "Posąg",
+            "es": "Estatua"
           }
         },
         {
@@ -224,7 +255,11 @@
             "ru": "Бюст",
             "ja": "胸像",
             "zh_Hant": "半身像",
-            "nb_NO": "Byste"
+            "nb_NO": "Byste",
+            "pt": "Busto",
+            "hu": "Mellszobor",
+            "pl": "Popiersie",
+            "es": "Busto"
           }
         },
         {
@@ -239,7 +274,10 @@
             "ja": "石",
             "zh_Hant": "石頭",
             "nb_NO": "Stein",
-            "id": "Batu"
+            "id": "Batu",
+            "pt": "Pedra",
+            "hu": "Kő",
+            "pl": "Skała"
           }
         },
         {
@@ -254,7 +292,11 @@
             "ja": "インスタレーション",
             "zh_Hant": "安裝",
             "nb_NO": "Installasjon",
-            "id": "Instalasi"
+            "id": "Instalasi",
+            "pt": "Instalação",
+            "hu": "Installáció",
+            "pl": "Instalacja artystyczna",
+            "es": "Instalación"
           }
         },
         {
@@ -269,7 +311,11 @@
             "ja": "落書き",
             "zh_Hant": "塗鴨",
             "nb_NO": "Graffiti",
-            "id": "Graffiti"
+            "id": "Graffiti",
+            "pt": "Graffiti",
+            "hu": "Graffiti",
+            "pl": "Graffiti",
+            "es": "Grafiti"
           }
         },
         {
@@ -284,7 +330,10 @@
             "ja": "レリーフ",
             "zh_Hant": "寬慰",
             "nb_NO": "Relieff",
-            "id": "Relief"
+            "id": "Relief",
+            "pt": "Relevo",
+            "hu": "Dombormű",
+            "pl": "Płaskorzeźba"
           }
         },
         {
@@ -299,7 +348,10 @@
             "ja": "Azulejo (スペインの装飾タイル)",
             "zh_Hant": "Azulejo (西班牙雕塑作品名稱)",
             "nb_NO": "Azulejo (Spansk dekorativt flisverk)",
-            "id": "Azulejo (ubin dekoratif Spanyol)"
+            "id": "Azulejo (ubin dekoratif Spanyol)",
+            "pt": "Azulejo (azulejo decorativo espanhol e português)",
+            "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
+            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)"
           }
         },
         {
@@ -313,7 +365,10 @@
             "ru": "Плитка (мозаика)",
             "ja": "タイルワーク",
             "zh_Hant": "瓷磚",
-            "nb_NO": "Flisarbeid"
+            "nb_NO": "Flisarbeid",
+            "pt": "Ladrilhos",
+            "hu": "Csempe",
+            "pl": "Płyta ceramiczna (fliza)"
           }
         }
       ],
@@ -330,7 +385,10 @@
         "ja": "どのアーティストが作ったんですか?",
         "zh_Hant": "創造這個的藝術家是誰？",
         "nb_NO": "Hvilken artist lagde dette?",
-        "id": "Seniman mana yang menciptakan ini?"
+        "id": "Seniman mana yang menciptakan ini?",
+        "pt": "Que artista criou isto?",
+        "hu": "Melyik művész alkotása ezt?",
+        "pl": "Który artysta to stworzył?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -342,7 +400,10 @@
         "ja": "作成者:{artist_name}",
         "zh_Hant": "{artist_name} 創作",
         "nb_NO": "Laget av {artist_name}",
-        "id": "Dibuat oleh {artist_name}"
+        "id": "Dibuat oleh {artist_name}",
+        "pt": "Criado por {artist_name}",
+        "hu": "Alkotó: {artist_name}",
+        "pl": "Stworzone przez {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -360,7 +421,10 @@
         "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
         "zh_Hant": "在那個網站能夠找到更多藝術品的資訊？",
         "nb_NO": "Finnes det en nettside med mer info om dette kunstverket?",
-        "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?"
+        "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
+        "pt": "Existe um site com mais informações sobre esta obra de arte?",
+        "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
+        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -372,7 +436,10 @@
         "ru": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>",
         "ja": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある",
         "zh_Hant": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊",
-        "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
+        "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>",
+        "pt": "Mais informações <a href='{website}' target='_blank'>neste site</a>",
+        "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>",
+        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>"
       },
       "freeform": {
         "key": "website",
@@ -391,7 +458,9 @@
         "ja": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
         "zh_Hant": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
         "nb_NO": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
-        "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?"
+        "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
+        "pt": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
+        "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?"
       },
       "render": {
         "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
@@ -403,7 +472,9 @@
         "ja": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する",
         "zh_Hant": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應",
         "nb_NO": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+        "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+        "pt": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+        "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
       },
       "freeform": {
         "key": "wikidata",

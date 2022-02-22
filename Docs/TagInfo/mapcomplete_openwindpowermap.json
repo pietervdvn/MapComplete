@@ -5,7 +5,7 @@
     "description": "A map for showing and editing wind turbines",
     "project_url": "https://mapcomplete.osm.be/openwindpowermap",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/openwindpowermap/wind_turbine.svg",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/openwindpowermap/logo.svg",
     "contact_name": "Pieter Vander Vennet, Seppe Santens",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -50,6 +50,11 @@
     {
       "key": "wikipedia",
       "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme OpenWindPowerMap has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

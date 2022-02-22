@@ -14,60 +14,90 @@ import WikidataSpecTest from "./Wikidata.spec.test";
 import ImageProviderSpec from "./ImageProvider.spec";
 import ActorsSpec from "./Actors.spec";
 import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
+import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
+import T from "./TestHelper";
+import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
+import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations.spec";
+import CreateCacheSpec from "./CreateCache.spec";
+import CodeQualitySpec from "./CodeQuality.spec";
+import ImportMultiPolygonSpec from "./ImportMultiPolygon.spec";
 
 
-ScriptUtils.fixUtils()
-const allTests = [
-    new OsmObjectSpec(),
-    new TagSpec(),
-    new ImageAttributionSpec(),
-    new GeoOperationsSpec(),
-    new ThemeSpec(),
-    new UtilsSpec(),
-    new UnitsSpec(),
-    new RelationSplitHandlerSpec(),
-    new SplitActionSpec(),
-    new TileFreshnessCalculatorSpec(),
-    new WikidataSpecTest(),
-    new ImageProviderSpec(),
-    new ActorsSpec(),
-    new ReplaceGeometrySpec()
-]
+async function main() {
 
-Utils.externalDownloadFunction = async (url) => {
-    console.error("Fetching ", url, "blocked in tests, use Utils.injectJsonDownloadForTests")
-    const data = await ScriptUtils.DownloadJSON(url)
-    console.log("\n\n ----------- \nBLOCKED DATA\n Utils.injectJsonDownloadForTests(\n" +
-        "       ", JSON.stringify(url), ", \n",
-        "       ", JSON.stringify(data), "\n    )\n------------------\n\n")
-    throw "Detected internet access for URL " + url + ", please inject it with Utils.injectJsonDownloadForTests"
-}
+    const allTests: T[] = [
+        new OsmObjectSpec(),
+        new TagSpec(),
+        new ImageAttributionSpec(),
+        new GeoOperationsSpec(),
+        new ThemeSpec(),
+        new UtilsSpec(),
+        new UnitsSpec(),
+        new RelationSplitHandlerSpec(),
+        new SplitActionSpec(),
+        new TileFreshnessCalculatorSpec(),
+        new WikidataSpecTest(),
+        new ImageProviderSpec(),
+        new ActorsSpec(),
+        new ReplaceGeometrySpec(),
+        new LegacyThemeLoaderSpec(),
+        new CreateNoteImportLayerSpec(),
+        new ValidatedTextFieldTranslationsSpec(),
+        new CreateCacheSpec(),
+        new CodeQualitySpec(),
+        new ImportMultiPolygonSpec()
+    ]
+    ScriptUtils.fixUtils();
+    const realDownloadFunc = Utils.externalDownloadFunction;
 
-let args = [...process.argv]
-args.splice(0, 2)
-args = args.map(a => a.toLowerCase())
-
-const allFailures: { testsuite: string, name: string, msg: string } [] = []
-let testsToRun = allTests
-if (args.length > 0) {
-    args = args.map(a => a.toLowerCase())
-    testsToRun = allTests.filter(t => args.indexOf(t.name.toLowerCase()) >= 0)
-}
-
-if (testsToRun.length == 0) {
-    throw "No tests found. Try one of " + allTests.map(t => t.name).join(", ")
-}
-
-for (let i = 0; i < testsToRun.length; i++) {
-    const test = testsToRun[i];
-    console.log(" Running test", i, "/", testsToRun.length, test.name)
-    allFailures.push(...(test.Run() ?? []))
-    console.log("OK!")
-}
-if (allFailures.length > 0) {
-    for (const failure of allFailures) {
-        console.error("  !! " + failure.testsuite + "." + failure.name + " failed due to: " + failure.msg)
+    Utils.externalDownloadFunction = async (url) => {
+        console.error("Fetching ", url, "blocked in tests, use Utils.injectJsonDownloadForTests")
+        const data = await realDownloadFunc(url)
+        console.log("\n\n ----------- \nBLOCKED DATA\n Utils.injectJsonDownloadForTests(\n" +
+            "       ", JSON.stringify(url), ", \n",
+            "       ", JSON.stringify(data), "\n    )\n------------------\n\n")
+        throw "Detected internet access for URL " + url + ", please inject it with Utils.injectJsonDownloadForTests"
     }
-    throw "Some test failed"
+
+    let args = [...process.argv]
+    args.splice(0, 2)
+    args = args.map(a => a.toLowerCase().replace(/"/g, ""))
+
+    const allFailures: { testsuite: string, name: string, msg: string } [] = []
+    let testsToRun = allTests
+    if (args.length > 0) {
+        args = args.map(a => a.toLowerCase()).map(a => {
+            if (!a.endsWith("spec")) {
+                return a + "spec"
+            } else {
+                return a;
+            }
+        })
+        testsToRun = allTests.filter(t => args.indexOf(t.name.toLowerCase()) >= 0)
+        console.log("Only running test "+testsToRun.join(", "))
+    }
+
+    if (testsToRun.length == 0) {
+        const available = allTests.map(t => t.name)
+        available.sort()
+        throw "No tests found. Try one of " + available.join(", ")
+    }
+
+    for (let i = 0; i < testsToRun.length; i++) {
+        const test = testsToRun[i];
+        console.log(" Running test", i, "/", testsToRun.length, test.name)
+
+        allFailures.push(...(await test.Run() ?? []))
+        console.log("OK!")
+    }
+    if (allFailures.length > 0) {
+        for (const failure of allFailures) {
+            console.error("  !! " + failure.testsuite + "." + failure.name + " failed due to: " + failure.msg)
+        }
+        throw "Some test failed"
+    }
+    console.log("All tests successful: ", testsToRun.map(t => t.name).join(", "))
+
 }
-console.log("All tests successful: ", testsToRun.map(t => t.name).join(", "))
+
+main()

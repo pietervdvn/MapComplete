@@ -6,7 +6,7 @@
     "fr": "Parking à vélo",
     "gl": "Aparcadoiro de bicicletas",
     "de": "Fahrrad-Parkplätze",
-    "hu": "Kerékpáros parkoló",
+    "hu": "Kerékpártároló",
     "it": "Parcheggio bici",
     "zh_Hant": "單車停車場",
     "ru": "Велопарковка",
@@ -30,7 +30,7 @@
         "fr": "Parking à vélo",
         "gl": "Aparcadoiro de bicicletas",
         "de": "Fahrrad-Parkplätze",
-        "hu": "Kerékpáros parkoló",
+        "hu": "Kerékpártároló",
         "it": "Parcheggio bici",
         "zh_Hant": "單車停車場",
         "ru": "Велопарковка",
@@ -50,7 +50,7 @@
       "fr": "Parking à vélo",
       "gl": "Aparcadoiro de bicicletas",
       "de": "Fahrrad-Parkplätze",
-      "hu": "Kerékpáros parkoló",
+      "hu": "Kerékpártároló",
       "it": "Parcheggio bici",
       "zh_Hant": "單車停車場",
       "ru": "Велопарковка",
@@ -68,7 +68,7 @@
         "fr": "Quel type de parking à vélos est-ce ?",
         "gl": "Que tipo de aparcadoiro de bicicletas é?",
         "de": "Was ist die Art dieses Fahrrad-Parkplatzes?",
-        "hu": "Milyen típusú ez a kerékpáros parkoló?",
+        "hu": "Milyen típusú ez a kerékpártároló?",
         "it": "Di che tipo di parcheggio bici si tratta?",
         "ru": "К какому типу относится эта велопарковка?",
         "zh_Hant": "這是那種類型的單車停車場？",
@@ -82,7 +82,7 @@
         "fr": "Ceci est un parking à vélo de type {bicycle_parking}",
         "gl": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}",
         "de": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}",
-        "hu": "Ez egy {bicycle_parking} típusú kerékpáros parkoló",
+        "hu": "Ez egy {bicycle_parking} típusú kerékpártároló",
         "it": "È un parcheggio bici del tipo: {bicycle_parking}",
         "zh_Hant": "這個單車停車場的類型是：{bicycle_parking}",
         "ru": "Это велопарковка типа {bicycle_parking}",
@@ -100,91 +100,119 @@
         {
           "if": "bicycle_parking=stands",
           "then": {
-            "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "hu": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+            "en": "Staple racks",
+            "nl": "Nietjes",
+            "fr": "Arceaux",
+            "gl": "De roda (Stands)",
+            "de": "Fahrradbügel",
+            "hu": "Korlát",
+            "it": "Archetti",
+            "zh_Hant": "單車架"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/staple.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=wall_loops",
           "then": {
-            "en": "Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "nl": "Wielrek/lussen <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "fr": "Pinces-roues <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "gl": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "de": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "hu": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "it": "Scolapiatti <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "zh_Hant": "車輪架/圓圈 <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+            "en": "Wheel rack/loops",
+            "nl": "Wielrek/lussen",
+            "fr": "Pinces-roues",
+            "gl": "Aros",
+            "de": "Metallgestänge",
+            "hu": "Kerékbefogó hurok",
+            "it": "Scolapiatti",
+            "zh_Hant": "車輪架/圓圈"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/wall_loops.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=handlebar_holder",
           "then": {
-            "en": "Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "nl": "Stuurhouder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "fr": "Support guidon <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "gl": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "de": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "it": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "zh_Hant": "車把架 <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+            "en": "Handlebar holder",
+            "nl": "Stuurhouder",
+            "fr": "Support guidon",
+            "gl": "Cadeado para guiador",
+            "de": "Halter für Fahrradlenker",
+            "it": "Blocca manubrio",
+            "zh_Hant": "車把架"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/handlebar_holder.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=rack",
           "then": {
-            "en": "Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "nl": "Rek <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "fr": "Râtelier <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "gl": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "de": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "zh_Hant": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "it": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "ru": "Стойка <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+            "en": "Rack",
+            "nl": "Rek",
+            "fr": "Râtelier",
+            "gl": "Cremalleira",
+            "de": "Gestell",
+            "zh_Hant": "車架",
+            "it": "Rastrelliera",
+            "ru": "Стойка"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/rack.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=two_tier",
           "then": {
-            "en": "Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "nl": "Dubbel (twee verdiepingen) <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "fr": "Superposé <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "gl": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "de": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "hu": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "zh_Hant": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "it": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "ru": "Двухуровневая <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+            "en": "Two-tiered",
+            "nl": "Dubbel (twee verdiepingen)",
+            "fr": "Superposé",
+            "gl": "Dobre cremalleira",
+            "de": "Zweistufig",
+            "hu": "Kétszintű",
+            "zh_Hant": "兩層",
+            "it": "A due piani",
+            "ru": "Двухуровневая"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/two_tier.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=shed",
           "then": {
-            "en": "Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "nl": "Schuur <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "fr": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "gl": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "de": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "hu": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "zh_Hant": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "it": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "ru": "Навес <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+            "en": "Shed",
+            "nl": "Schuur",
+            "fr": "Abri",
+            "gl": "Abeiro",
+            "de": "Schuppen",
+            "hu": "Fészer",
+            "zh_Hant": "車棚",
+            "it": "Rimessa",
+            "ru": "Навес"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/shed.svg",
+            "class": "large"
           }
         },
         {
           "if": "bicycle_parking=bollard",
           "then": {
-            "en": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "nl": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "fr": "Potelet <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "de": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "zh_Hant": "柱子 <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+            "en": "Bollard",
+            "nl": "Paal met ring",
+            "fr": "Potelet",
+            "it": "Colonnina",
+            "de": "Poller",
+            "zh_Hant": "柱子"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/bollard.svg",
+            "class": "large"
           }
         },
         {
@@ -271,22 +299,7 @@
             "pt_BR": "Estacionamento ao nível da superfície",
             "pt": "Estacionamento ao nível da superfície"
           },
-          "hideInAnwser": true
-        },
-        {
-          "if": "location=rooftop",
-          "then": {
-            "en": "Rooftop parking",
-            "nl": "Dakparking",
-            "fr": "Parking sur un toit",
-            "hu": "Tetőparkoló",
-            "it": "Parcheggio sul tetto",
-            "ru": "Парковка на крыше",
-            "zh_Hant": "屋頂停車場",
-            "pt_BR": "Estacionamento no telhado",
-            "de": "Parkplatz auf dem Dach",
-            "pt": "Estacionamento no telhado"
-          }
+          "hideInAnswer": true
         }
       ],
       "id": "Underground?"
@@ -298,7 +311,7 @@
         "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
         "de": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze.",
         "fr": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
-        "hu": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)",
+        "hu": "Fedett-e ez a parkoló? Beltéri parkolónál is válaszd a „fedett” opciót.",
         "it": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno.",
         "zh_Hant": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。",
         "pt_BR": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
@@ -319,7 +332,7 @@
             "gl": "Este aparcadoiro está cuberto (ten un teito)",
             "de": "Dieser Parkplatz ist überdacht (er hat ein Dach)",
             "fr": "Ce parking est couvert (il a un toit)",
-            "hu": "A parkoló fedett",
+            "hu": "Ez a parkoló fedett",
             "it": "È un parcheggio coperto (ha un tetto)",
             "zh_Hant": "這個停車場有遮蔽 (有屋頂)",
             "ru": "Это крытая парковка (есть крыша/навес)",
@@ -335,7 +348,7 @@
             "gl": "Este aparcadoiro non está cuberto",
             "de": "Dieser Parkplatz ist nicht überdacht",
             "fr": "Ce parking n'est pas couvert",
-            "hu": "A parkoló nem fedett",
+            "hu": "Ez a parkoló nem fedett",
             "it": "Non è un parcheggio coperto",
             "zh_Hant": "這個停車場沒有遮蔽",
             "ru": "Это открытая парковка",
@@ -480,7 +493,7 @@
           "if": "cargo_bike=designated",
           "then": {
             "en": "This parking has designated (official) spots for cargo bikes.",
-            "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen",
+            "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen.",
             "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga.",
             "de": "Dieser Parkplatz verfügt über ausgewiesene (offizielle) Plätze für Lastenfahrräder.",
             "fr": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo.",
@@ -519,7 +532,7 @@
       },
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
-        "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen",
+        "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} bakfietsen",
         "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport",
         "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
         "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder",
@@ -551,7 +564,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_parking/parking.svg"
+        "render": "pin:#5473de;./assets/layers/bike_parking/parking.svg"
       },
       "iconSize": "40,40,bottom",
       "location": [
@@ -563,5 +576,9 @@
       "color": "#00f",
       "width": "1"
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing where you can park your bike",
+    "nl": "Een laag die toont waar je je fiets kunt parkeren"
+  }
 }

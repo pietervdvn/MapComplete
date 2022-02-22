@@ -3,7 +3,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 
 
 export default class InputElementMap<T, X> extends InputElement<X> {
-    public readonly IsSelected: UIEventSource<boolean>;
     private readonly _inputElement: InputElement<T>;
     private isSame: (x0: X, x1: X) => boolean;
     private readonly fromX: (x: X) => T;
@@ -21,7 +20,6 @@ export default class InputElementMap<T, X> extends InputElement<X> {
         this.fromX = fromX;
         this.toX = toX;
         this._inputElement = inputElement;
-        this.IsSelected = inputElement.IsSelected;
         const self = this;
         this._value = inputElement.GetValue().map(
             (t => {

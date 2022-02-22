@@ -207,27 +207,36 @@ export abstract class OsmObject {
         return objects;
     }
 
+    /**
+     * Uses the list of polygon features to determine if the given tags are a polygon or not.
+     * */
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
             if (!tags.hasOwnProperty(tagsKey)) {
                 continue
             }
-            const polyGuide = OsmObject.polygonFeatures.get(tagsKey)
+            const polyGuide : { values: Set<string>; blacklist: boolean } = OsmObject.polygonFeatures.get(tagsKey)
             if (polyGuide === undefined) {
                 continue
             }
             if ((polyGuide.values === null)) {
-                // We match all
+                // .values is null, thus merely _having_ this key is enough to be a polygon (or if blacklist, being a line)
                 return !polyGuide.blacklist
             }
-            // is the key contained?
-            return polyGuide.values.has(tags[tagsKey])
+            // is the key contained? Then we have a match if the value is contained
+            const doesMatch = polyGuide.values.has(tags[tagsKey])
+            if(polyGuide.blacklist){
+                return !doesMatch
+            }
+            return doesMatch
         }
+        
+        return false;
     }
 
     private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
         const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
-        for (const polygonFeature of polygon_features) {
+        for (const polygonFeature of (polygon_features["default"] ?? polygon_features)) {
             const key = polygonFeature.key;
 
             if (polygonFeature.polygon === "all") {
@@ -381,7 +390,7 @@ export class OsmWay extends OsmObject {
         }
 
         if (element.nodes === undefined) {
-            console.log("PANIC")
+            console.error("PANIC: no nodes!")
         }
 
         for (const nodeId of element.nodes) {
@@ -391,10 +400,9 @@ export class OsmWay extends OsmObject {
                 // This is probably part of a relation which hasn't been fully downloaded
                 continue;
             }
-            const cp = node.centerpoint();
-            this.coordinates.push(cp);
-            latSum += cp[0]
-            lonSum += cp[1]
+            this.coordinates.push(node.centerpoint());
+            latSum += node.lat
+            lonSum += node.lon
         }
         let count = this.coordinates.length;
         this.lat = latSum / count;
@@ -403,7 +411,7 @@ export class OsmWay extends OsmObject {
     }
 
     public asGeoJson() {
-        let coordinates: ([number, number][] | [number, number][][]) = this.coordinates.map(c => [c[1], c[0]]);
+        let coordinates: ([number, number][] | [number, number][][]) = this.coordinates.map(([lat, lon]) => [lon, lat]);
         if (this.isPolygon()) {
             coordinates = [coordinates]
         }
@@ -418,7 +426,9 @@ export class OsmWay extends OsmObject {
     }
 
     private isPolygon(): boolean {
-        if (this.coordinates[0] !== this.coordinates[this.coordinates.length - 1]) {
+        // Compare lat and lon seperately, as the coordinate array might not be a reference to the same object
+        if (this.coordinates[0][0] !== this.coordinates[this.coordinates.length - 1][0] ||
+            this.coordinates[0][1] !== this.coordinates[this.coordinates.length - 1][1] ) {
             return false; // Not closed
         }
         return OsmObject.isPolygon(this.tags)

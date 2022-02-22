@@ -37,12 +37,24 @@
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Climbing club' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
+      "key": "contact:email",
+      "description": "Layer 'Climbing club' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Climbing club' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "opening_hours",
@@ -64,7 +76,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -203,12 +215,24 @@
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Climbing gyms' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
+      "key": "contact:phone",
+      "description": "Layer 'Climbing gyms' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Climbing gyms' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "opening_hours",
@@ -230,7 +254,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -361,12 +385,12 @@
     },
     {
       "key": "noname",
-      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows noname=yes with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Climbing routes' shows noname=yes&name= with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
+      "description": "Layer 'Climbing routes' shows noname=yes with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
       "value": ""
     },
     {
@@ -411,7 +435,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -542,12 +566,12 @@
     },
     {
       "key": "noname",
-      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows noname=yes with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Climbing opportunities' shows noname=yes&name= with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
+      "description": "Layer 'Climbing opportunities' shows noname=yes with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') Picking this answer will delete the key name.",
       "value": ""
     },
     {
@@ -590,7 +614,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -755,7 +779,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only custumers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "customers"
     },
     {
@@ -858,6 +882,11 @@
     {
       "key": "climbing:speed",
       "description": "Layer 'Climbing opportunities?' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Open Climbing Map has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

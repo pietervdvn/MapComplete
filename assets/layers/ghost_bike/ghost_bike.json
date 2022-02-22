@@ -10,12 +10,12 @@
     "es": "Bicicleta blanca",
     "fi": "Haamupyörä",
     "gl": "Bicicleta pantasma",
-    "hu": "Emlékkerékpár",
+    "hu": "Emlékkerékpárok",
     "ja": "ゴーストバイク",
     "nb_NO": "Spøkelsessykler",
     "pl": "Duch roweru",
     "pt_BR": "Bicicleta fantasma",
-    "ru": "Велосипед Ghost",
+    "ru": "Велосипед ghost",
     "sv": "Spökcykel",
     "zh_Hant": "幽靈單車",
     "pt": "Bicicleta fantasma"
@@ -65,7 +65,20 @@
         "nl": "Witte fiets",
         "de": "Geisterrad",
         "it": "Bici fantasma",
-        "fr": "Vélo fantôme"
+        "fr": "Vélo fantôme",
+        "eo": "Fantombiciklo",
+        "es": "Bicicleta blanca",
+        "fi": "Haamupyörä",
+        "gl": "Bicicleta pantasma",
+        "hu": "Emlékkerékpár",
+        "ja": "ゴーストバイク",
+        "nb_NO": "Spøkelsessykler",
+        "pl": "Duch roweru",
+        "pt": "Bicicleta fantasma",
+        "pt_BR": "Bicicleta fantasma",
+        "ru": "Велосипед ghost",
+        "sv": "Spökcykel",
+        "zh_Hant": "幽靈單車"
       },
       "tags": [
         "historic=memorial",
@@ -209,5 +222,8 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing memorials for cyclists, killed in road accidents"
+  }
 }

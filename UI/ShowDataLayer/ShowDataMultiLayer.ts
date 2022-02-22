@@ -12,8 +12,9 @@ export default class ShowDataMultiLayer {
 
         new PerLayerFeatureSourceSplitter(options.layers, (perLayer => {
                 const newOptions = {
+                    ...options,
                     layerToShow: perLayer.layer.layerDef,
-                    ...options
+                    features: perLayer
                 }
                 new ShowDataLayer(newOptions)
             }),

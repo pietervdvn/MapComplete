@@ -60,5 +60,8 @@
       "color": "#0f0",
       "width": "1"
     }
-  ]
+  ],
+  "description": {
+    "en": "Searches for all accessible grass patches within public parks - these are 'groenzones'\""
+  }
 }

@@ -4,7 +4,6 @@ import {Utils} from "../../Utils";
 
 export class RadioButton<T> extends InputElement<T> {
     private static _nextId = 0;
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<T>;
     private _elements: InputElement<T>[];
     private _selectFirstAsDefault: boolean;
@@ -74,11 +73,7 @@ export class RadioButton<T> extends InputElement<T> {
             elements[i]?.onClick(() => {
                 selectedElementIndex.setData(i);
             });
-            elements[i].IsSelected.addCallback((isSelected) => {
-                if (isSelected) {
-                    selectedElementIndex.setData(i);
-                }
-            });
+
             elements[i].GetValue().addCallback(() => {
                 selectedElementIndex.setData(i);
             });
@@ -148,10 +143,10 @@ export class RadioButton<T> extends InputElement<T> {
                 block.classList.add(
                     "m-1",
                     "border",
-                    "rounded-3xl",
-                    "border-gray-400",
+                    "border-gray-400"
                 )
             }
+            block.style.borderRadius = "1.5rem"
             wrappers.push(block);
 
             form.appendChild(block);
@@ -166,10 +161,10 @@ export class RadioButton<T> extends InputElement<T> {
 
                 if (input.checked) {
                     wrappers[i].classList.remove("border-gray-400");
-                    wrappers[i].classList.add("border-black");
+                    wrappers[i].classList.add("border-attention");
                 } else {
                     wrappers[i].classList.add("border-gray-400");
-                    wrappers[i].classList.remove("border-black");
+                    wrappers[i].classList.remove("border-attention");
                 }
             }
         });

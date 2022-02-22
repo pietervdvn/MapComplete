@@ -3,21 +3,21 @@ import {UIEventSource} from "../UIEventSource";
 import BaseLayer from "../../Models/BaseLayer";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import AvailableBaseLayers from "../Actors/AvailableBaseLayers";
-import BackgroundLayerResetter from "../Actors/BackgroundLayerResetter";
 import Attribution from "../../UI/BigComponents/Attribution";
 import Minimap, {MinimapObj} from "../../UI/Base/Minimap";
 import {Tiles} from "../../Models/TileRange";
 import BaseUIElement from "../../UI/BaseUIElement";
-import FilteredLayer from "../../Models/FilteredLayer";
+import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig";
 import {QueryParameters} from "../Web/QueryParameters";
-import * as personal from "../../assets/themes/personal/personal.json";
-import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {GeoOperations} from "../GeoOperations";
+import TitleHandler from "../Actors/TitleHandler";
+import {BBox} from "../BBox";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 /**
  * Contains all the leaflet-map related state
@@ -46,6 +46,10 @@ export default class MapState extends UserRelatedState {
     }> = new UIEventSource<{ lat: number; lon: number }>(undefined);
 
     /**
+     * The bounds of the current map view
+     */
+    public currentView: FeatureSourceForLayer & Tiled;
+    /**
      * The location as delivered by the GPS
      */
     public currentUserLocation: FeatureSourceForLayer & Tiled;
@@ -55,7 +59,8 @@ export default class MapState extends UserRelatedState {
      */
     public historicalUserLocations: FeatureSourceForLayer & Tiled;
     /**
-     * The number of seconds that the GPS-locations are stored in memory
+     * The number of seconds that the GPS-locations are stored in memory.
+     * Time in seconds
      */
     public gpsLocationHistoryRetentionTime = new UIEventSource(7 * 24 * 60 * 60, "gps_location_retention")
     public historicalUserLocationsTrack: FeatureSourceForLayer & Tiled;
@@ -69,7 +74,7 @@ export default class MapState extends UserRelatedState {
 
 
     /**
-     * WHich layers are enabled in the current theme
+     * Which layers are enabled in the current theme and what filters are applied onto them
      */
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
     /**
@@ -78,39 +83,21 @@ export default class MapState extends UserRelatedState {
     public overlayToggles: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]
 
 
-    constructor(layoutToUse: LayoutConfig) {
-        super(layoutToUse);
+    constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
+        super(layoutToUse, options);
 
         this.availableBackgroundLayers = AvailableBaseLayers.AvailableLayersAt(this.locationControl);
 
-        this.backgroundLayer = this.backgroundLayerId.map(
-            (selectedId: string) => {
-                if (selectedId === undefined) {
-                    return AvailableBaseLayers.osmCarto;
-                }
-
-                const available = this.availableBackgroundLayers.data;
-                for (const layer of available) {
-                    if (layer.id === selectedId) {
-                        return layer;
-                    }
-                }
-                return AvailableBaseLayers.osmCarto;
-            },
-            [this.availableBackgroundLayers],
-            (layer) => layer.id
-        );
-
-
-        /*
-        * Selects a different background layer if the background layer has no coverage at the current location
-         */
-        new BackgroundLayerResetter(
-            this.backgroundLayer,
-            this.locationControl,
-            this.availableBackgroundLayers,
-            this.layoutToUse.defaultBackgroundId
-        );
+        let defaultLayer = AvailableBaseLayers.osmCarto
+        const available = this.availableBackgroundLayers.data;
+        for (const layer of available) {
+            if (this.backgroundLayerId.data === layer.id) {
+                defaultLayer = layer;
+            }
+        }
+        const self = this
+        this.backgroundLayer = new UIEventSource<BaseLayer>(defaultLayer)
+        this.backgroundLayer.addCallbackAndRunD(layer => self.backgroundLayerId.setData(layer.id))
 
         const attr = new Attribution(
             this.locationControl,
@@ -130,10 +117,12 @@ export default class MapState extends UserRelatedState {
         })
 
 
-        this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
+        this.overlayToggles = this.layoutToUse?.tileLayerSources
+            ?.filter(c => c.name !== undefined)
+            ?.map(c => ({
             config: c,
-            isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, "" + c.defaultState, "Wether or not the overlay " + c.id + " is shown")
-        }))
+            isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, c.defaultState, "Wether or not the overlay " + c.id + " is shown")
+        })) ?? []
         this.filteredLayers = this.InitializeFilteredLayers()
 
 
@@ -143,6 +132,9 @@ export default class MapState extends UserRelatedState {
         this.initHomeLocation()
         this.initGpsLocation()
         this.initUserLocationTrail()
+        this.initCurrentView()
+
+        new TitleHandler(this);
     }
 
     public AddAllOverlaysToMap(leafletMap: UIEventSource<any>) {
@@ -152,7 +144,7 @@ export default class MapState extends UserRelatedState {
             initialized.add(overlayToggle.config)
         }
 
-        for (const tileLayerSource of this.layoutToUse.tileLayerSources) {
+        for (const tileLayerSource of this.layoutToUse?.tileLayerSources ?? []) {
             if (initialized.has(tileLayerSource)) {
                 continue
             }
@@ -163,34 +155,65 @@ export default class MapState extends UserRelatedState {
 
     private lockBounds() {
         const layout = this.layoutToUse;
-        if (layout.lockLocation) {
-            if (layout.lockLocation === true) {
-                const tile = Tiles.embedded_tile(
-                    layout.startLat,
-                    layout.startLon,
-                    layout.startZoom - 1
-                );
-                const bounds = Tiles.tile_bounds(tile.z, tile.x, tile.y);
-                // We use the bounds to get a sense of distance for this zoom level
-                const latDiff = bounds[0][0] - bounds[1][0];
-                const lonDiff = bounds[0][1] - bounds[1][1];
-                layout.lockLocation = [
-                    [layout.startLat - latDiff, layout.startLon - lonDiff],
-                    [layout.startLat + latDiff, layout.startLon + lonDiff],
-                ];
-            }
-            console.warn("Locking the bounds to ", layout.lockLocation);
-            this.leafletMap.addCallbackAndRunD(map => {
-                // @ts-ignore
-                map.setMaxBounds(layout.lockLocation);
-                map.setMinZoom(layout.startZoom);
-            })
+        if (!layout?.lockLocation) {
+            return;
         }
+        console.warn("Locking the bounds to ", layout.lockLocation);
+        this.mainMapObject.installBounds(
+            new BBox(layout.lockLocation),
+            this.featureSwitchIsTesting.data
+        )
+    }
+
+    private initCurrentView() {
+        let currentViewLayer: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "current_view")[0]
+
+        if (currentViewLayer === undefined) {
+            // This layer is not needed by the theme and thus unloaded
+            return;
+        }
+
+
+        let i = 0
+        const self = this;
+        const features: UIEventSource<{ feature: any, freshness: Date }[]> = this.currentBounds.map(bounds => {
+            if (bounds === undefined) {
+                return []
+            }
+            i++
+            const feature = {
+                freshness: new Date(),
+                feature: {
+                    type: "Feature",
+                    properties: {
+                        id: "current_view-" + i,
+                        "current_view": "yes",
+                        "zoom": "" + self.locationControl.data.zoom
+                    },
+                    geometry: {
+                        type: "Polygon",
+                        coordinates: [[
+                            [bounds.maxLon, bounds.maxLat],
+                            [bounds.minLon, bounds.maxLat],
+                            [bounds.minLon, bounds.minLat],
+                            [bounds.maxLon, bounds.minLat],
+                            [bounds.maxLon, bounds.maxLat],
+                        ]]
+                    }
+                }
+            }
+            return [feature]
+        })
+
+        this.currentView = new SimpleFeatureSource(currentViewLayer, 0, features)
     }
 
     private initGpsLocation() {
         // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location")[0]
+        if (gpsLayerDef === undefined) {
+            return
+        }
         this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0));
     }
 
@@ -199,11 +222,11 @@ export default class MapState extends UserRelatedState {
         const now = new Date().getTime()
         features.data = features.data
             .map(ff => ({feature: ff.feature, freshness: new Date(ff.freshness)}))
-            .filter(ff => (now - ff.freshness.getTime()) < this.gpsLocationHistoryRetentionTime.data)
+            .filter(ff => (now - ff.freshness.getTime()) < 1000 * this.gpsLocationHistoryRetentionTime.data)
         features.ping()
         const self = this;
         let i = 0
-        this.currentUserLocation.features.addCallbackAndRunD(([location]) => {
+        this.currentUserLocation?.features?.addCallbackAndRunD(([location]) => {
             if (location === undefined) {
                 return;
             }
@@ -217,7 +240,7 @@ export default class MapState extends UserRelatedState {
                 let timeDiff = Number.MAX_VALUE // in seconds
                 const olderLocation = features.data[features.data.length - 2]
                 if (olderLocation !== undefined) {
-                    timeDiff = (previousLocation.freshness.getTime() - olderLocation.freshness.getTime()) / 1000
+                    timeDiff = (new Date(previousLocation.freshness).getTime() - new Date(olderLocation.freshness).getTime()) / 1000
                 }
                 if (d < 20 && timeDiff < 60) {
                     // Do not append changes less then 20m - it's probably noise anyway
@@ -234,8 +257,10 @@ export default class MapState extends UserRelatedState {
 
 
         let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_location_history")[0]
-        this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
-        this.changes.useLocationHistory(this)
+        if (gpsLayerDef !== undefined) {
+            this.historicalUserLocations = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0), features);
+            this.changes.setHistoricalUserLocations(this.historicalUserLocations)
+        }
 
 
         const asLine = features.map(allPoints => {
@@ -263,7 +288,9 @@ export default class MapState extends UserRelatedState {
             }]
         })
         let gpsLineLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
-        this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
+        if (gpsLineLayerDef !== undefined) {
+            this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
+        }
     }
 
     private initHomeLocation() {
@@ -300,55 +327,82 @@ export default class MapState extends UserRelatedState {
         })
 
         const flayer = this.filteredLayers.data.filter(l => l.layerDef.id === "home_location")[0]
-        this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+        if (flayer !== undefined) {
+            this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+        }
 
     }
 
-    private InitializeFilteredLayers() {
+    private getPref(key: string, layer: LayerConfig): UIEventSource<boolean> {
+      const pref = this.osmConnection
+            .GetPreference(key)
+            .map(v => {
+                if(v === undefined){
+                    return undefined
+                }
+                return v === "true";
+            }, [], b => {
+                if(b === undefined){
+                    return undefined
+                }
+                return "" + b;
+            })
+        pref.setData(layer.shownByDefault)
+        return pref
+    }
 
+    private InitializeFilteredLayers() {
         const layoutToUse = this.layoutToUse;
-        const empty = []
+        if(layoutToUse === undefined){
+            return new UIEventSource<FilteredLayer[]>([])
+        }
         const flayers: FilteredLayer[] = [];
         for (const layer of layoutToUse.layers) {
             let isDisplayed: UIEventSource<boolean>
-            if (layoutToUse.id === personal.id) {
-                isDisplayed = this.osmConnection.GetPreference("personal-theme-layer-" + layer.id + "-enabled")
-                    .map(value => value === "yes", [], enabled => {
-                        return enabled ? "yes" : "";
-                    })
+            if (layer.syncSelection === "local") {
+                isDisplayed = LocalStorageSource.GetParsed(layoutToUse.id + "-layer-" + layer.id + "-enabled", layer.shownByDefault)
+            } else if (layer.syncSelection === "theme-only") {
+                isDisplayed = this.getPref(layoutToUse.id+ "-layer-" + layer.id + "-enabled", layer)
+            } else if (layer.syncSelection === "global") {
+                isDisplayed = this.getPref("layer-" + layer.id + "-enabled", layer)
             } else {
-                isDisplayed = QueryParameters.GetBooleanQueryParameter(
-                    "layer-" + layer.id,
-                    "true",
-                    "Wether or not layer " + layer.id + " is shown"
-                )
+                isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id, layer.shownByDefault, "Wether or not layer "+layer.id+" is shown")
             }
-            const flayer = {
+
+
+            const flayer: FilteredLayer = {
                 isDisplayed: isDisplayed,
                 layerDef: layer,
-                appliedFilters: new UIEventSource<{ filter: FilterConfig, selected: number }[]>([]),
+                appliedFilters: new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
             };
+            layer.filters.forEach(filterConfig => {
+                const stateSrc = filterConfig.initState()
 
-            if (layer.filters.length > 0) {
-                const filtersPerName = new Map<string, FilterConfig>()
-                layer.filters.forEach(f => filtersPerName.set(f.id, f))
-                const qp = QueryParameters.GetQueryParameter("filter-" + layer.id, "", "Filtering state for a layer")
-                flayer.appliedFilters.map(filters => {
-                    filters = filters ?? []
-                    return filters.map(f => f.filter.id + "." + f.selected).join(",")
-                }, [], textual => {
-                    if (textual.length === 0) {
-                        return empty
-                    }
-                    return textual.split(",").map(part => {
-                        const [filterId, selected] = part.split(".");
-                        return {filter: filtersPerName.get(filterId), selected: Number(selected)}
-                    }).filter(f => f.filter !== undefined && !isNaN(f.selected))
-                }).syncWith(qp, true)
-            }
+                stateSrc.addCallbackAndRun(state => flayer.appliedFilters.data.set(filterConfig.id, state))
+                flayer.appliedFilters.map(dict => dict.get(filterConfig.id))
+                    .addCallback(state => stateSrc.setData(state))
+            })
 
             flayers.push(flayer);
         }
+
+        for (const layer of layoutToUse.layers) {
+            if (layer.filterIsSameAs === undefined) {
+                continue
+            }
+            const toReuse = flayers.find(l => l.layerDef.id === layer.filterIsSameAs)
+            if (toReuse === undefined) {
+                throw "Error in layer " + layer.id + ": it defines that it should be use the filters of " + layer.filterIsSameAs + ", but this layer was not loaded"
+            }
+            console.warn("Linking filter and isDisplayed-states of " + layer.id + " and " + layer.filterIsSameAs)
+            const selfLayer = flayers.findIndex(l => l.layerDef.id === layer.id)
+            flayers[selfLayer] = {
+                isDisplayed: toReuse.isDisplayed,
+                layerDef: layer,
+                appliedFilters: toReuse.appliedFilters
+            };
+        }
+
         return new UIEventSource<FilteredLayer[]>(flayers);
     }
 

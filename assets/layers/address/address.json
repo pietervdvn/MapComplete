@@ -1,0 +1,238 @@
+{
+  "id": "address",
+  "name": {
+    "en": "Known addresses in OSM",
+    "de": "Bekannte Adressen in OSM",
+    "zh_Hant": "OSM 上已知的地址",
+    "hu": "Ismert címek az OSM-en",
+    "nl": "Bekende adressen in OSM",
+    "fr": "Adresses connues d’OpenStreetMap",
+    "ru": "Известные адреса в OSM",
+    "id": "Alamat yang dikenal di OSM",
+    "es": "Direcciones conocidas en OSM",
+    "zh_Hans": "OSM中已知的地址"
+  },
+  "minzoom": 18,
+  "source": {
+    "osmTags": {
+      "or": [
+        "addr:housenumber~*",
+        "addr:street~*"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
+    "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+    "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+    "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+  ],
+  "title": {
+    "render": {
+      "en": "Known address",
+      "de": "Bekannte Adresse",
+      "hu": "Ismert cím",
+      "nl": "Bekend adres",
+      "fr": "Adresse connue",
+      "pl": "Znany adres",
+      "ru": "Известный адрес",
+      "es": "Domicilio conocido",
+      "zh_Hans": "已知的地址"
+    }
+  },
+  "description": {
+    "en": "Addresses",
+    "nl": "Adressen",
+    "de": "Adressen",
+    "ru": "Адреса",
+    "zh_Hant": "地址",
+    "hu": "Címek",
+    "fr": "Adresses",
+    "pl": "Adresy",
+    "id": "Alamat",
+    "es": "Direcciones",
+    "zh_Hans": "地址"
+  },
+  "tagRenderings": [
+    {
+      "id": "housenumber",
+      "render": {
+        "en": "The housenumber is <b>{addr:housenumber}</b>",
+        "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
+        "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
+        "hu": "A házszám: <b>{addr:housenumber}</b>",
+        "fr": "Son numéro est le <b>{addr:housenumber}</b>",
+        "pl": "Numer tego domu to <b>{addr:housenumber}</b>",
+        "ru": "Номер дома <b>{addr:housenumber}</b>",
+        "zh_Hans": "门牌号是<b>{addr:housenumber}</b>"
+      },
+      "question": {
+        "en": "What is the number of this house?",
+        "de": "Wie lautet die Nummer dieses Hauses?",
+        "hu": "Mi ennek az épületnek a házszáma?",
+        "nl": "Wat is het huisnummer van dit huis?",
+        "fr": "Quel est le numéro de ce bâtiment ?",
+        "pl": "Jaki jest numer tego domu?",
+        "ru": "Какой номер у этого дома?",
+        "es": "¿Cuál es el número de esta casa?",
+        "zh_Hans": "这个屋子的门牌号是多少？"
+      },
+      "freeform": {
+        "key": "addr:housenumber",
+        "addExtraTags": [
+          "nohousenumber="
+        ]
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "nohousenumber=yes"
+            ]
+          },
+          "then": {
+            "en": "This building has no house number",
+            "nl": "Dit gebouw heeft geen huisnummer",
+            "de": "Dieses Gebäude hat keine Hausnummer",
+            "hu": "Ennek az épületnek nincs házszáma",
+            "fr": "Ce bâtiment n’a pas de numéro",
+            "pl": "Ten budynek nie ma numeru",
+            "ru": "У этого здания нет номера",
+            "id": "Bangunan ini tidak memiliki nomor rumah",
+            "es": "Esta edificación no tiene número",
+            "zh_Hans": "这个建筑物没有门牌号"
+          }
+        }
+      ]
+    },
+    {
+      "id": "street",
+      "render": {
+        "en": "This address is in street <b>{addr:street}</b>",
+        "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
+        "hu": "Ez a cím a következő utcában van: <b>{addr:street}</b>",
+        "nl": "Dit adres bevindt zich in de straat <b>{addr:street}</b>",
+        "fr": "Le nom de la voie est <b>{addr:street}</b>",
+        "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
+        "zh_Hans": "这个地址位于<b>{addr:street}</b>街"
+      },
+      "question": {
+        "en": "What street is this address located in?",
+        "de": "In welcher Straße befindet sich diese Adresse?",
+        "hu": "Melyik utcában található ez a cím?",
+        "nl": "In welke straat bevindt dit adres zich?",
+        "fr": "Dans quelle rue est située l’adresse ?",
+        "pl": "Na jakiej ulicy znajduje się ten adres?",
+        "ru": "Какая эта улица?",
+        "es": "¿En qué calle se encuentra esta dirección?",
+        "zh_Hans": "这个地址位于哪条街道？"
+      },
+      "freeform": {
+        "key": "addr:street"
+      },
+      "mappings": [
+        {
+          "if": "addr:street:={_closest_street:0:name}",
+          "then": "Located in <b>{_closest_street:0:name}</b>",
+          "hideInAnswer": "_closest_street:0:name="
+        },
+        {
+          "if": "addr:street:={_closest_street:1:name}",
+          "then": "Located in <b>{_closest_street:1:name}</b>",
+          "hideInAnswer": "_closest_street:1:name="
+        },
+        {
+          "if": "addr:street:={_closest_street:2:name}",
+          "then": "Located in <b>{_closest_street:2:name}</b>",
+          "hideInAnswer": "_closest_street:2:name="
+        }
+      ],
+      "condition": {
+        "and": [
+          "nohousenumber!~yes"
+        ]
+      }
+    },
+    {
+      "id": "fixme",
+      "render": "<b>Fixme description</b>{fixme}",
+      "question": {
+        "en": "What should be fixed here? Please explain",
+        "zh_Hant": "這裡需要修什麼？請直接解釋",
+        "de": "Was sollte hier korrigiert werden? Bitte erläutern",
+        "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el",
+        "fr": "Précisez ce qui devrait être corrigé ici",
+        "pl": "Co wymaga naprawy? Proszę wytłumaczyć",
+        "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan",
+        "es": "¿Qué debe corregirse aquí? Expóngalo",
+        "nl": "Wat moet hier gecorrigeerd worden? Leg het uit",
+        "zh_Hans": "这里应被如何修复？请做出解释"
+      },
+      "freeform": {
+        "key": "fixme"
+      },
+      "mappings": [
+        {
+          "if": "fixme=",
+          "then": "No fixme - write something here to explain complicated cases"
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "label": {
+        "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+        "condition": "addr:housenumber~*"
+      },
+      "iconSize": "50,50,center",
+      "icon": {
+        "render": "./assets/layers/address/housenumber_blank.svg",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
+                  ]
+                },
+                "addr:street="
+              ]
+            },
+            "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#00f",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                {
+                  "and": [
+                    "addr:housenumber=",
+                    "nohousenumber!=yes"
+                  ]
+                },
+                "addr:street="
+              ]
+            },
+            "then": "#ff0"
+          }
+        ]
+      },
+      "width": {
+        "render": "8"
+      }
+    }
+  ]
+}

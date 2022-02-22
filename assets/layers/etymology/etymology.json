@@ -9,9 +9,13 @@
   "minzoom": 12,
   "source": {
     "osmTags": {
-      "or": [
-        "name:etymology:wikidata~*",
-        "name:etymology~*"
+      "and": [
+        {
+          "or": [
+            "name:etymology:wikidata~*",
+            "name:etymology~*"
+          ]
+        }
       ]
     }
   },
@@ -138,12 +142,19 @@
         "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
       }
     },
-    "wikipedia"
+    {
+      "id": "wikipedia",
+      "#": "Note that this is a _read_only_ option, to prevent people entering a 'wikidata'-link instead of 'name:etymology:wikidata'",
+      "render": {
+        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}"
+      },
+      "condition": "wikidata~*"
+    }
   ],
   "mapRendering": [
     {
       "icon": {
-        "render": "pin:#05d7fcaa;./assets/layers/etymology/logo.svg",
+        "render": "pin:#05d7fcaa",
         "mappings": [
           {
             "if": {
@@ -152,7 +163,7 @@
                 "name:etymology:wikidata="
               ]
             },
-            "then": "pin:#fcca05aa;./assets/layers/etymology/logo.svg"
+            "then": "pin:#fcca05aa"
           }
         ]
       },
@@ -178,8 +189,15 @@
           }
         ]
       },
+      "fill": "no",
       "width": {
-        "render": "8"
+        "render": "8",
+        "mappings": [
+          {
+            "if": "_geometry:type=Polygon",
+            "then": "16"
+          }
+        ]
       }
     }
   ]

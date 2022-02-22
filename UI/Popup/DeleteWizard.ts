@@ -1,5 +1,4 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import State from "../../State";
 import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
@@ -17,6 +16,10 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import DeleteConfig from "../../Models/ThemeConfig/DeleteConfig";
 import {OsmObject} from "../../Logic/Osm/OsmObject";
+import {ElementStorage} from "../../Logic/ElementStorage";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import {Changes} from "../../Logic/Osm/Changes";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -35,13 +38,21 @@ export default class DeleteWizard extends Toggle {
      * (Note that _delete_reason is used as trigger to do actual deletion - setting such a tag WILL delete from the database with that as changeset comment)
      *
      * @param id: The id of the element to remove
+     * @param state: the state of the application
      * @param options softDeletionTags: the tags to apply if the user doesn't have permission to delete, e.g. 'disused:amenity=public_bookcase', 'amenity='. After applying, the element should not be picked up on the map anymore. If undefined, the wizard will only show up if the point can be (hard) deleted
      */
     constructor(id: string,
+                state: {
+                    osmConnection: OsmConnection;
+                    allElements: ElementStorage,
+                    layoutToUse?: LayoutConfig,
+                    changes?: Changes
+                },
                 options: DeleteConfig) {
 
-        const deleteAbility = new DeleteabilityChecker(id, options.neededChangesets)
-        const tagsSource = State.state.allElements.getEventSourceById(id)
+
+        const deleteAbility = new DeleteabilityChecker(id, state, options.neededChangesets)
+        const tagsSource = state.allElements.getEventSourceById(id)
 
         const isDeleted = new UIEventSource(false)
         const allowSoftDeletion = !!options.softDeletionTags
@@ -59,12 +70,12 @@ export default class DeleteWizard extends Toggle {
             const deleteAction = new DeleteAction(id,
                 options.softDeletionTags,
                 {
-                    theme: State.state?.layoutToUse?.id ?? "unkown",
+                    theme: state?.layoutToUse?.id ?? "unkown",
                     specialMotivation: deleteReasonMatch[0]?.v
                 },
                 deleteAbility.canBeDeleted.data.canBeDeleted
             )
-            State.state.changes.applyAction(deleteAction)
+            state.changes?.applyAction(deleteAction)
             isDeleted.setData(true)
 
         }
@@ -77,8 +88,9 @@ export default class DeleteWizard extends Toggle {
             return new TagRenderingQuestion(
                 tagsSource,
                 config,
+                state,
                 {
-                    cancelButton: cancelButton,
+                    cancelButton,
                     /*Using a custom save button constructor erases all logic to actually save, so we have to listen for the click!*/
                     saveButtonConstr: (v) => DeleteWizard.constructConfirmButton(v).onClick(() => {
                         doDelete(v.data)
@@ -93,7 +105,7 @@ export default class DeleteWizard extends Toggle {
          * The button which is shown first. Opening it will trigger the check for deletions
          */
         const deleteButton = new SubtleButton(
-            Svg.delete_icon_ui().SetStyle("width: auto; height: 1.5rem;"), t.delete.Clone()).onClick(
+            Svg.delete_icon_svg().SetStyle("width: 1.5rem; height: 1.5rem;"), t.delete.Clone()).onClick(
             () => {
                 deleteAbility.CheckDeleteability(true)
                 confirm.setData(true);
@@ -112,7 +124,7 @@ export default class DeleteWizard extends Toggle {
                             new Toggle(
                                 question,
                                 new SubtleButton(Svg.envelope_ui(), t.readMessages.Clone()),
-                                State.state.osmConnection.userDetails.map(ud => ud.csCount > Constants.userJourney.addNewPointWithUnreadMessagesUnlock || ud.unreadMessages == 0)
+                                state.osmConnection.userDetails.map(ud => ud.csCount > Constants.userJourney.addNewPointWithUnreadMessagesUnlock || ud.unreadMessages == 0)
                             ),
 
                             deleteButton,
@@ -131,8 +143,8 @@ export default class DeleteWizard extends Toggle {
                         ,
                         deleteAbility.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
 
-                    t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),
-                    State.state.osmConnection.isLoggedIn
+                    t.loginToDelete.Clone().onClick(state.osmConnection.AttemptLogin),
+                    state.osmConnection.isLoggedIn
                 ),
                 isDeleted),
             undefined,
@@ -275,11 +287,16 @@ class DeleteabilityChecker {
     public readonly canBeDeleted: UIEventSource<{ canBeDeleted?: boolean, reason: Translation }>;
     private readonly _id: string;
     private readonly _allowDeletionAtChangesetCount: number;
+    private readonly _state: {
+        osmConnection: OsmConnection
+    };
 
 
     constructor(id: string,
+                state: { osmConnection: OsmConnection },
                 allowDeletionAtChangesetCount?: number) {
         this._id = id;
+        this._state = state;
         this._allowDeletionAtChangesetCount = allowDeletionAtChangesetCount ?? Number.MAX_VALUE;
 
         this.canBeDeleted = new UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>({
@@ -299,6 +316,7 @@ class DeleteabilityChecker {
         const t = Translations.t.delete;
         const id = this._id;
         const state = this.canBeDeleted
+        const self = this;
         if (!id.startsWith("node")) {
             this.canBeDeleted.setData({
                 canBeDeleted: false,
@@ -308,8 +326,7 @@ class DeleteabilityChecker {
         }
 
         // Does the currently logged in user have enough experience to delete this point?
-
-        const deletingPointsOfOtherAllowed = State.state.osmConnection.userDetails.map(ud => {
+        const deletingPointsOfOtherAllowed = this._state.osmConnection.userDetails.map(ud => {
             if (ud === undefined) {
                 return undefined;
             }
@@ -320,15 +337,14 @@ class DeleteabilityChecker {
         })
 
         const previousEditors = new UIEventSource<number[]>(undefined)
-
         const allByMyself = previousEditors.map(previous => {
             if (previous === null || previous === undefined) {
                 // Not yet downloaded
                 return null;
             }
-            const userId = State.state.osmConnection.userDetails.data.uid;
+            const userId = self._state.osmConnection.userDetails.data.uid;
             return !previous.some(editor => editor !== userId)
-        }, [State.state.osmConnection.userDetails])
+        }, [self._state.osmConnection.userDetails])
 
 
         // User allowed OR only edited by self?

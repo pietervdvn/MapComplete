@@ -1,0 +1,219 @@
+[
+  {
+    "path": [],
+    "type": "object"
+  },
+  {
+    "path": [
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "question"
+    ]
+  },
+  {
+    "path": [
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "freeform",
+      "type"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "freeform",
+      "placeholder"
+    ]
+  },
+  {
+    "path": [
+      "freeform",
+      "helperArgs"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "freeform",
+      "addExtraTags"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "freeform",
+      "inline"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "freeform",
+      "default"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "multiAnswer"
+    ],
+    "type": "boolean"
+  },
+  {
+    "path": [
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "mappings",
+      "hideInAnswer"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "boolean"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "mappings",
+      "ifnot"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "mappings",
+      "addExtraTags"
+    ],
+    "type": "array"
+  }
+]

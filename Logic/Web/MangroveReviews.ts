@@ -1,6 +1,7 @@
 import * as mangrove from 'mangrove-reviews'
 import {UIEventSource} from "../UIEventSource";
 import {Review} from "./Review";
+import {Utils} from "../../Utils";
 
 export class MangroveIdentity {
     public keypair: any = undefined;
@@ -23,7 +24,7 @@ export class MangroveIdentity {
             })
         })
         try {
-            if ((mangroveIdentity.data ?? "") === "") {
+            if (!Utils.runningFromConsole && (mangroveIdentity.data ?? "") === "") {
                 this.CreateIdentity();
             }
         } catch (e) {

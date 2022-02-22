@@ -10,8 +10,6 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {Utils} from "../../Utils";
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
 import PendingChangesUploader from "../Actors/PendingChangesUploader";
-import TitleHandler from "../Actors/TitleHandler";
-import FeatureSource from "../FeatureSource/FeatureSource";
 
 /**
  * The part of the state keeping track of where the elements, loading them, configuring the feature pipeline etc
@@ -22,11 +20,7 @@ export default class ElementsState extends FeatureSwitchState {
      The mapping from id -> UIEventSource<properties>
      */
     public allElements: ElementStorage = new ElementStorage();
-    /**
-     THe change handler
-     */
-    public changes: Changes;
-
+ 
     /**
      The latest element that was selected
      */
@@ -50,8 +44,6 @@ export default class ElementsState extends FeatureSwitchState {
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
-        this.changes = new Changes(layoutToUse?.isLeftRightSensitive() ?? false)
-        {
             // -- Location control initialization
             const zoom = UIEventSource.asFloat(
                 QueryParameters.GetQueryParameter(
@@ -86,11 +78,7 @@ export default class ElementsState extends FeatureSwitchState {
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);
             });
-        }
 
-        new ChangeToElementsActor(this.changes, this.allElements)
-        new PendingChangesUploader(this.changes, this.selectedElement);
-        new TitleHandler(this);
-
+      
     }
 }

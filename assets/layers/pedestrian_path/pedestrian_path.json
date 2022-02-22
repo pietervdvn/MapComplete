@@ -1,0 +1,34 @@
+{
+  "id": "pedestrian_path",
+  "name": {
+    "en": "Pedestrain paths"
+  },
+  "minzoom": 18,
+  "source": {
+    "osmTags": {
+      "or": [
+        "highway=footway",
+        "highway=path",
+        "highway=corridor",
+        "highway=steps"
+      ]
+    }
+  },
+  "title": {},
+  "description": {
+    "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer"
+  },
+  "mapRendering": [
+    {
+      "icon": "./assets/svg/bug.svg",
+      "location": [
+        "point"
+      ]
+    },
+    {
+      "color": "#b33",
+      "width": 4,
+      "dashArray": "12 6"
+    }
+  ]
+}

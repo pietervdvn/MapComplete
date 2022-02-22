@@ -1,99 +1,128 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>"
-    },
-    "dog-access": {
-      "mappings": {
-        "0": {
-          "then": "Kutya bevihető"
+    "shared_questions": {
+        "description": {
+            "question": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>"
         },
-        "1": {
-          "then": "Kutya <b>nem</b> vihető be"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Kutya bevihető"
+                },
+                "1": {
+                    "then": "Kutya <b>nem</b> vihető be"
+                },
+                "2": {
+                    "then": "Kutya bevihető, de csak pórázon"
+                },
+                "3": {
+                    "then": "Kutya bevihető és szabadon szaladgálhat"
+                }
+            },
+            "question": "Be lehet-e vinni kutyát ebbe az üzletbe?"
         },
-        "2": {
-          "then": "Kutya bevihető, de csak pórázon"
+        "email": {
+            "question": "Mi a(z) {title()} e-mail címe?"
         },
-        "3": {
-          "then": "Kutya bevihető és szabadon szaladgálhat"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "A föld alatt"
+                },
+                "1": {
+                    "then": "A földszinten"
+                },
+                "2": {
+                    "then": "A földszinten"
+                },
+                "3": {
+                    "then": "Az első emeleten"
+                }
+            },
+            "question": "Melyik szinten található ez a létesítmény?",
+            "render": "A(z) {level}. emeleten"
+        },
+        "opening_hours": {
+            "question": "Mikor van nyitva ez: {title()}?",
+            "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Itt készpénzzel is lehet fizetni"
+                },
+                "1": {
+                    "then": "Itt fizetőkártyákkal is lehet fizetni"
+                }
+            },
+            "question": "Milyen fizetési módokat fogadnak el itt?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Fizetés erre a célra szolgáló alkalmazással"
+                    },
+                    "1": {
+                        "then": "Fizetési tagsági kártyával"
+                    }
+                }
+            }
+        },
+        "phone": {
+            "question": "Mi a telefonszáma ennek: {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+                },
+                "1": {
+                    "then": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik"
+                },
+                "2": {
+                    "then": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni"
+                },
+                "3": {
+                    "then": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor"
+                }
+            },
+            "question": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?"
+        },
+        "website": {
+            "question": "Mi a weboldala ennek: {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva"
+                },
+                "1": {
+                    "then": "Ez a hely könnyedén elérhető kerekesszékkel"
+                },
+                "2": {
+                    "then": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen"
+                },
+                "3": {
+                    "then": "Ez a hely kerekesszékkel elérhetetlen"
+                }
+            },
+            "question": "Akadálymentes-e ez a hely?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Még nincs Wikipédia-oldal belinkelve"
+                }
+            },
+            "question": "Mi a megfelelő Wikidata-elem?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Nincs belinkelve a Wikipédiához"
+                }
+            },
+            "question": "Mi a megfelelő szócikk a Wikipédián?"
         }
-      },
-      "question": "Be lehet-e vinni kutyát ebbe az üzletbe?"
-    },
-    "email": {
-      "question": "Mi a(z) {name} e-mail címe?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "A föld alatt található"
-        },
-        "1": {
-          "then": "A földszinten található"
-        },
-        "2": {
-          "then": "A földszinten található"
-        },
-        "3": {
-          "then": "Az első emeleten található"
-        }
-      },
-      "question": "Melyik szinten található ez a létesítmény?",
-      "render": "{level}. emeleten található"
-    },
-    "opening_hours": {
-      "question": "Mikor van nyitva ez: {name}?",
-      "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "mappings": {
-        "0": {
-          "then": "Itt készpénzzel is lehet fizetni"
-        },
-        "1": {
-          "then": "Itt fizetőkártyákkal is lehet fizetni"
-        }
-      },
-      "question": "Milyen fizetési módokat fogadnak el itt?"
-    },
-    "phone": {
-      "question": "Mi a telefonszáma ennek: {name}?"
-    },
-    "website": {
-      "question": "Mi a weboldala ennek: {name}?"
-    },
-    "wheelchair-access": {
-      "mappings": {
-        "0": {
-          "then": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva"
-        },
-        "1": {
-          "then": "Ez a hely könnyedén elérhető kerekesszékkel"
-        },
-        "2": {
-          "then": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen"
-        },
-        "3": {
-          "then": "Ez a hely kerekesszékkel elérhetetlen"
-        }
-      },
-      "question": "Akadálymentes-e ez a hely?"
-    },
-    "wikipedia": {
-      "mappings": {
-        "0": {
-          "then": "Még nincs Wikipédia-oldal belinkelve"
-        }
-      },
-      "question": "Mi a megfelelő Wikidata-elem?"
-    },
-    "wikipedialink": {
-      "mappings": {
-        "0": {
-          "then": "Nincs belinkelve a Wikipédiához"
-        }
-      },
-      "question": "Mi a megfelelő szócikk a Wikipédián?"
     }
-  }
 }

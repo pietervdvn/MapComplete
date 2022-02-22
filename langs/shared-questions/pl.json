@@ -1,38 +1,116 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
-    },
-    "email": {
-      "question": "Jaki jest adres e-mail do {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Znajduje się pod ziemią"
+    "shared_questions": {
+        "description": {
+            "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
         },
-        "1": {
-          "then": "Znajduje się na parterze"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Psy dozwolone"
+                },
+                "1": {
+                    "then": "Psy <b>nie</b> dozwolone"
+                },
+                "2": {
+                    "then": "Psy dozwolone, ale muszą być na smyczy"
+                },
+                "3": {
+                    "then": "Psy dozwolone i mogą biegać bez ograniczeń"
+                }
+            },
+            "question": "Czy w tej firmie psy są dozwolone?"
         },
-        "2": {
-          "then": "Znajduje się na parterze"
+        "email": {
+            "question": "Jaki jest adres e-mail do {title()}?"
         },
-        "3": {
-          "then": "Znajduje się na pierwszym piętrze"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Znajduje się pod ziemią"
+                },
+                "1": {
+                    "then": "Znajduje się na parterze"
+                },
+                "2": {
+                    "then": "Znajduje się na parterze"
+                },
+                "3": {
+                    "then": "Znajduje się na pierwszym piętrze"
+                }
+            },
+            "question": "Na jakim poziomie znajduje się ta funkcja?",
+            "render": "Znajduje się na {level} piętrze"
+        },
+        "opening_hours": {
+            "question": "Jakie są godziny otwarcia {title()}?",
+            "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Płatność gotówkowa jest tutaj dostępna"
+                },
+                "1": {
+                    "then": "Płatność kartą jest tutaj dostępna"
+                }
+            },
+            "question": "Jakie metody płatności są tutaj dostępne?"
+        },
+        "phone": {
+            "question": "Jaki jest numer telefonu do {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
+                },
+                "1": {
+                    "then": "W budynku znajduje się kilka gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia"
+                },
+                "2": {
+                    "then": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi"
+                },
+                "3": {
+                    "then": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów"
+                }
+            },
+            "question": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
+        },
+        "website": {
+            "question": "Jaka jest strona internetowa {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich"
+                },
+                "1": {
+                    "then": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich"
+                },
+                "2": {
+                    "then": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami"
+                },
+                "3": {
+                    "then": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich"
+                }
+            },
+            "question": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Link do strony Wikipedii nie został jeszcze określony"
+                }
+            },
+            "question": "Jaki jest powiązany obiekt Wikidata?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Brak linku do strony Wikipedii"
+                }
+            },
+            "question": "Jaki jest link do strony Wikipedii?"
         }
-      },
-      "question": "Na jakim poziomie znajduje się ta funkcja?",
-      "render": "Znajduje się na {level} piętrze"
-    },
-    "opening_hours": {
-      "question": "Jakie są godziny otwarcia {name}?",
-      "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
-    },
-    "phone": {
-      "question": "Jaki jest numer telefonu do {name}?"
-    },
-    "website": {
-      "question": "Jaka jest strona internetowa {name}?"
     }
-  }
 }

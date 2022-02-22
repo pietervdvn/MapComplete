@@ -60,7 +60,7 @@ export default class RenderingMultiPlexerFeatureSource {
                         }
 
                         if (feat.geometry.type === "LineString") {
-                            
+
                             // Add start- and endpoints
                             const coordinates = feat.geometry.coordinates
                             for (const rendering of startRenderings) {
@@ -70,40 +70,16 @@ export default class RenderingMultiPlexerFeatureSource {
                                 const coordinate = coordinates[coordinates.length - 1]
                                 addAsPoint(feat, rendering, coordinate)
                             }
-                           
+
                         }
 
-
-                        if (feat.geometry.type === "MultiLineString") {
-                            // Multilinestrings get a special treatment: we split them into their subparts before rendering
-                            const lineList: [number, number][][] = feat.geometry.coordinates
-                            
-                            for (let i1 = 0; i1 < lineList.length; i1++) {
-                                const coordinates = lineList[i1];
-
-                                for (let i = 0; i < lineRenderObjects.length; i++) {
-                                    const orig = {
-                                        ...feat,
-                                        lineRenderingIndex: i,
-                                        multiLineStringIndex: i1
-                                    }
-                                    orig.geometry.coordinates = coordinates
-                                    orig.geometry.type = "LineString"
-                                    withIndex.push(orig)
-                                }
-                            }
-                            
-                        }else{
-                            
-                            // AT last, add it 'as is' to what we should render 
-                            for (let i = 0; i < lineRenderObjects.length; i++) {
-                                withIndex.push({
-                                    ...feat,
-                                    lineRenderingIndex: i
-                                })
-                            }
+                        // AT last, add it 'as is' to what we should render 
+                        for (let i = 0; i < lineRenderObjects.length; i++) {
+                            withIndex.push({
+                                ...feat,
+                                lineRenderingIndex: i
+                            })
                         }
-                     
 
                     }
                 }

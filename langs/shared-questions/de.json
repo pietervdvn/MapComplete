@@ -1,99 +1,116 @@
 {
-  "undefined": {
-    "description": {
-      "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
-    },
-    "dog-access": {
-      "mappings": {
-        "0": {
-          "then": "Hunde sind erlaubt"
+    "shared_questions": {
+        "description": {
+            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
         },
-        "1": {
-          "then": "Hunde sind <b>nicht</b> erlaubt"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Hunde sind erlaubt"
+                },
+                "1": {
+                    "then": "Hunde sind <b>nicht</b> erlaubt"
+                },
+                "2": {
+                    "then": "Hunde sind erlaubt, müssen aber angeleint sein"
+                },
+                "3": {
+                    "then": "Hunde sind erlaubt und können frei herumlaufen"
+                }
+            },
+            "question": "Sind Hunde in diesem Geschäft erlaubt?"
         },
-        "2": {
-          "then": "Hunde sind erlaubt, müssen aber angeleint sein"
+        "email": {
+            "question": "Was ist die Mail-Adresse von {title()}?"
         },
-        "3": {
-          "then": "Hunde sind erlaubt und können frei herumlaufen"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Unterirdisch gelegen"
+                },
+                "1": {
+                    "then": "Ist im Erdgeschoss"
+                },
+                "2": {
+                    "then": "Ist im Erdgeschoss"
+                },
+                "3": {
+                    "then": "Ist im ersten Stock"
+                }
+            },
+            "question": "In welchem Stockwerk befindet sich dieses Objekt?",
+            "render": "Befindet sich im {level}ten Stock"
+        },
+        "opening_hours": {
+            "question": "Was sind die Öffnungszeiten von {title()}?",
+            "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Hier wird Bargeld akzeptiert"
+                },
+                "1": {
+                    "then": "Hier werden Zahlungskarten akzeptiert"
+                }
+            },
+            "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
+        },
+        "phone": {
+            "question": "Was ist die Telefonnummer von {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                },
+                "1": {
+                    "then": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                },
+                "2": {
+                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
+                },
+                "3": {
+                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung"
+                }
+            },
+            "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
+        },
+        "website": {
+            "question": "Was ist die Website von {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
+                },
+                "1": {
+                    "then": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
+                },
+                "2": {
+                    "then": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
+                },
+                "3": {
+                    "then": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar"
+                }
+            },
+            "question": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
+                }
+            },
+            "question": "Was ist das entsprechende Wikidata Element?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Nicht mit Wikipedia verknüpft"
+                }
+            },
+            "question": "Was ist der entsprechende Artikel auf Wikipedia?"
         }
-      },
-      "question": "Sind Hunde in diesem Geschäft erlaubt?"
-    },
-    "email": {
-      "question": "Was ist die Mail-Adresse von {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Unterirdisch gelegen"
-        },
-        "1": {
-          "then": "Ist im Erdgeschoss"
-        },
-        "2": {
-          "then": "Ist im Erdgeschoss"
-        },
-        "3": {
-          "then": "Ist im ersten Stock"
-        }
-      },
-      "question": "In welchem Stockwerk befindet sich dieses Objekt?",
-      "render": "Befindet sich im {level}ten Stock"
-    },
-    "opening_hours": {
-      "question": "Was sind die Öffnungszeiten von {name}?",
-      "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
-    },
-    "payment-options": {
-      "mappings": {
-        "0": {
-          "then": "Hier wird Bargeld akzeptiert"
-        },
-        "1": {
-          "then": "Hier werden Zahlungskarten akzeptiert"
-        }
-      },
-      "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
-    },
-    "phone": {
-      "question": "Was ist die Telefonnummer von {name}?"
-    },
-    "website": {
-      "question": "Was ist die Website von {name}?"
-    },
-    "wheelchair-access": {
-      "mappings": {
-        "0": {
-          "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
-        },
-        "1": {
-          "then": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
-        },
-        "2": {
-          "then": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
-        },
-        "3": {
-          "then": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar"
-        }
-      },
-      "question": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
-    },
-    "wikipedia": {
-      "mappings": {
-        "0": {
-          "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
-        }
-      },
-      "question": "Was ist das entsprechende Wikidata Element?"
-    },
-    "wikipedialink": {
-      "mappings": {
-        "0": {
-          "then": "Nicht mit Wikipedia verknüpft"
-        }
-      },
-      "question": "Was ist der entsprechende Artikel auf Wikipedia?"
     }
-  }
 }

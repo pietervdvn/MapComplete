@@ -8,6 +8,7 @@ import {TileLayer} from "leaflet";
 import * as X from "leaflet-providers";
 import {Utils} from "../../Utils";
 import {AvailableBaseLayersObj} from "./AvailableBaseLayers";
+import {BBox} from "../BBox";
 
 export default class AvailableBaseLayersImplementation implements AvailableBaseLayersObj {
 
@@ -22,11 +23,13 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             feature: null,
             max_zoom: 19,
             min_zoom: 0,
-            isBest: false, // This is a lie! Of course OSM is the best map! (But not in this context)
+            isBest: true, // Of course, OpenStreetMap is the best map!
             category: "osmbasedmap"
         }
 
-    public layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(AvailableBaseLayersImplementation.LoadProviderIndex());
+    public readonly layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(AvailableBaseLayersImplementation.LoadProviderIndex());
+    public readonly globalLayers = this.layerOverview.filter(layer => layer.feature?.geometry === undefined || layer.feature?.geometry === null)
+    public readonly localLayers = this.layerOverview.filter(layer => layer.feature?.geometry !== undefined && layer.featuer?.geometry !== null)
 
     private static LoadRasterIndex(): BaseLayer[] {
         const layers: BaseLayer[] = []
@@ -36,8 +39,8 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             const layer = features[i];
             const props = layer.properties;
 
-            if (props.id === "Bing") {
-                // Doesnt work
+            if (props.type === "bing") {
+                // A lot of work to implement - see https://github.com/pietervdvn/MapComplete/issues/648
                 continue;
             }
 
@@ -65,6 +68,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 continue
             }
 
+
             const leafletLayer: () => TileLayer = () => AvailableBaseLayersImplementation.CreateBackgroundLayer(
                 props.id,
                 props.name,
@@ -83,7 +87,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 min_zoom: props.min_zoom ?? 1,
                 name: props.name,
                 layer: leafletLayer,
-                feature: layer,
+                feature: layer.geometry !== null ? layer : null,
                 isBest: props.best ?? false,
                 category: props.category
             });
@@ -96,14 +100,17 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
         X; // Import X to make sure the namespace is not optimized away
         function l(id: string, name: string): BaseLayer {
             try {
-                const layer: any = () => L.tileLayer.provider(id, undefined);
+                const layer: any = L.tileLayer.provider(id, undefined);
                 return {
                     feature: null,
                     id: id,
                     name: name,
-                    layer: layer,
-                    min_zoom: layer.minzoom,
-                    max_zoom: layer.maxzoom,
+                    layer: () => L.tileLayer.provider(id, {
+                        maxNativeZoom: layer.options?.maxZoom,
+                       maxZoom: Math.max(layer.options?.maxZoom ?? 19, 21)
+                    }),
+                    min_zoom: 1,
+                    max_zoom: layer.options.maxZoom,
                     category: "osmbasedmap",
                     isBest: false
                 }
@@ -114,7 +121,6 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
         }
 
         const layers = [
-            l("CyclOSM", "CyclOSM - A bicycle oriented map"),
             l("Stamen.TonerLite", "Toner Lite (by Stamen)"),
             l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
             l("Stamen.Watercolor", "Watercolor (by Stamen)"),
@@ -156,11 +162,12 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
 
             const isUpper = urlObj.searchParams["LAYERS"] !== null;
             const options = {
-                maxZoom: maxZoom ?? 19,
+                maxZoom: Math.max(maxZoom ?? 19, 21),
+                maxNativeZoom: maxZoom ?? 19,
                 attribution: attribution + " | ",
                 subdomains: domains,
                 uppercase: isUpper,
-                transparent: false
+                transparent: false,
             };
 
             for (const paramater of paramaters) {
@@ -186,7 +193,8 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
         return L.tileLayer(url,
             {
                 attribution: attribution,
-                maxZoom: maxZoom,
+                maxZoom: Math.max(21, maxZoom ?? 19),
+                maxNativeZoom: maxZoom ?? 19,
                 minZoom: 1,
                 // @ts-ignore
                 wmts: isWMTS ?? false,
@@ -195,98 +203,81 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
     }
 
     public AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
-        const source = location.map(
+        return UIEventSource.ListStabilized(location.map(
             (currentLocation) => {
-
                 if (currentLocation === undefined) {
                     return this.layerOverview;
                 }
-
-                const currentLayers = source?.data; // A bit unorthodox - I know
-                const newLayers = this.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
-
-                if (currentLayers === undefined) {
-                    return newLayers;
-                }
-                if (newLayers.length !== currentLayers.length) {
-                    return newLayers;
-                }
-                for (let i = 0; i < newLayers.length; i++) {
-                    if (newLayers[i].name !== currentLayers[i].name) {
-                        return newLayers;
-                    }
-                }
-
-                return currentLayers;
-            });
-        return source;
+                return this.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
+            }));
     }
 
     public SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
-        return this.AvailableLayersAt(location).map(available => {
-            // First float all 'best layers' to the top
-            available.sort((a, b) => {
-                    if (a.isBest && b.isBest) {
-                        return 0;
-                    }
-                    if (!a.isBest) {
-                        return 1
-                    }
-
-                    return -1;
-                }
-            )
-
-            if (preferedCategory.data === undefined) {
-                return available[0]
-            }
-
-            let prefered: string []
-            if (typeof preferedCategory.data === "string") {
-                prefered = [preferedCategory.data]
-            } else {
-                prefered = preferedCategory.data;
-            }
-
-            prefered.reverse();
-            for (const category of prefered) {
-                //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
+        return this.AvailableLayersAt(location)
+            .map(available => {
+                // First float all 'best layers' to the top
                 available.sort((a, b) => {
-                        if (a.category === category && b.category === category) {
+                        if (a.isBest && b.isBest) {
                             return 0;
                         }
-                        if (a.category !== category) {
+                        if (!a.isBest) {
                             return 1
                         }
 
                         return -1;
                     }
                 )
-            }
-            return available[0]
-        })
+
+                if (preferedCategory.data === undefined) {
+                    return available[0]
+                }
+
+                let prefered: string []
+                if (typeof preferedCategory.data === "string") {
+                    prefered = [preferedCategory.data]
+                } else {
+                    prefered = preferedCategory.data;
+                }
+
+                prefered.reverse(/*New list, inplace reverse is fine*/);
+                for (const category of prefered) {
+                    //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
+                    available.sort((a, b) => {
+                            if (a.category === category && b.category === category) {
+                                return 0;
+                            }
+                            if (a.category !== category) {
+                                return 1
+                            }
+
+                            return -1;
+                        }
+                    )
+                }
+                return available[0]
+            }, [preferedCategory])
     }
+
 
     private CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [this.osmCarto]
-        const globalLayers = [];
-        for (const layerOverviewItem of this.layerOverview) {
+        if (lon === undefined || lat === undefined) {
+            return availableLayers.concat(this.globalLayers);
+        }
+        const lonlat = [lon, lat];
+        for (const layerOverviewItem of this.localLayers) {
             const layer = layerOverviewItem;
-
-            if (layer.feature?.geometry === undefined || layer.feature?.geometry === null) {
-                globalLayers.push(layer);
-                continue;
+            const bbox = BBox.get(layer.feature)
+            
+            if(!bbox.contains(lonlat)){
+                continue
             }
 
-            if (lon === undefined || lat === undefined) {
-                continue;
-            }
-
-            if (GeoOperations.inside([lon, lat], layer.feature)) {
+            if (GeoOperations.inside(lonlat, layer.feature)) {
                 availableLayers.push(layer);
             }
         }
 
-        return availableLayers.concat(globalLayers);
+        return availableLayers.concat(this.globalLayers);
     }
 }

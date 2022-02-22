@@ -72,54 +72,6 @@
     "sources": []
   },
   {
-    "path": "arrow-download.svg",
-    "license": "CC0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-left-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-left-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-left-thin.svg",
-    "license": "CC0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-right-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "arrow-right-smooth.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
     "path": "back.svg",
     "license": "CC0",
     "authors": [
@@ -187,6 +139,16 @@
     "sources": [
       "https://fontawesome.com/",
       "https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg"
+    ]
+  },
+  {
+    "path": "cash.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Online Web Fonts"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/464494"
     ]
   },
   {
@@ -374,18 +336,6 @@
     "sources": []
   },
   {
-    "path": "direction.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "direction.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
     "path": "direction_gradient.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -395,38 +345,6 @@
     "path": "direction_gradient.svg",
     "license": "CC0; trivial",
     "authors": [],
-    "sources": []
-  },
-  {
-    "path": "direction_masked.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "direction_masked.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "direction_outline.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "direction_outline.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
     "sources": []
   },
   {
@@ -443,18 +361,6 @@
     "authors": [
       "Pieter Vander Vennet"
     ],
-    "sources": []
-  },
-  {
-    "path": "down.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "down.svg",
-    "license": "CC0; trivial",
-    "authors": [],
     "sources": []
   },
   {
@@ -486,6 +392,16 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "eye.svg",
+    "license": "CC-BY-SA 3.0 Unported",
+    "authors": [
+      "Dave Gandy"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/File:Eye_open_font_awesome.svg"
+    ]
   },
   {
     "path": "filter.svg",
@@ -618,6 +534,16 @@
     ]
   },
   {
+    "path": "generic_map.svg",
+    "license": "CC0",
+    "authors": [
+      "Svg Repo"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/22182/map"
+    ]
+  },
+  {
     "path": "hand.svg",
     "license": "CC0",
     "authors": [
@@ -660,23 +586,13 @@
     ]
   },
   {
-    "path": "home_white_bg.svg",
-    "license": "CC-BY-SA 3.0",
+    "path": "invalid.svg",
+    "license": "CC-BY 4.0",
     "authors": [
-      "Timothy Miller"
+      "Twemoji"
     ],
     "sources": [
-      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
-    ]
-  },
-  {
-    "path": "home_white_bg.svg",
-    "license": "CC-BY-SA 3.0",
-    "authors": [
-      "Timothy Miller"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Home-icon.svg"
+      "https://github.com/twitter/twemoji"
     ]
   },
   {
@@ -709,18 +625,6 @@
   },
   {
     "path": "layers.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "layersAdd.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "layersAdd.svg",
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
@@ -922,6 +826,16 @@
     "sources": []
   },
   {
+    "path": "nfc_card.svg",
+    "license": "CC0",
+    "authors": [
+      "Stijn Wens"
+    ],
+    "sources": [
+      "https://wens.be/free-antwerpenize-bicycle-font"
+    ]
+  },
+  {
     "path": "no_checkmark.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -934,32 +848,28 @@
     "sources": []
   },
   {
-    "path": "or.svg",
-    "license": "CC0; trivial",
+    "path": "none.svg",
+    "license": "CC0",
     "authors": [],
     "sources": []
   },
   {
-    "path": "or.svg",
-    "license": "CC0; trivial",
-    "authors": [],
+    "path": "not_found.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
+    "path": "note.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "sources": []
-  },
-  {
-    "path": "osm-copyright.svg",
-    "license": "logo; all rights reserved",
-    "authors": [],
-    "sources": [
-      "https://www.OpenStreetMap.org"
-    ]
-  },
-  {
-    "path": "osm-copyright.svg",
-    "license": "logo; all rights reserved",
-    "authors": [],
-    "sources": [
-      "https://www.OpenStreetMap.org"
-    ]
   },
   {
     "path": "osm-logo-us.svg",
@@ -995,6 +905,16 @@
     "authors": [],
     "sources": [
       "https://www.OpenStreetMap.org"
+    ]
+  },
+  {
+    "path": "payment_card.svg",
+    "license": "CC0",
+    "authors": [
+      " \tMaxi Koichi (maxixam)"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Credit_Card_-_The_Noun_Project.svg"
     ]
   },
   {
@@ -1104,6 +1024,14 @@
     "sources": []
   },
   {
+    "path": "resolved.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "ring.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -1114,6 +1042,26 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "robot.svg",
+    "license": "CC-BY 4.0 International",
+    "authors": [
+      "Font Awesome"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_robot.svg"
+    ]
+  },
+  {
+    "path": "satellite.svg",
+    "license": "CC0",
+    "authors": [
+      "SVG Repo"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/80960/satellite"
+    ]
   },
   {
     "path": "scissors.svg",
@@ -1170,6 +1118,26 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
+  },
+  {
+    "path": "smartphone.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "To Uyen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Smartphone_icon_-_Noun_Project_283536.svg"
+    ]
+  },
+  {
+    "path": "speech_bubble.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
   },
   {
     "path": "square.svg",
@@ -1262,9 +1230,7 @@
   {
     "path": "teardrop_with_hole_green.svg",
     "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
+    "authors": [],
     "sources": []
   },
   {

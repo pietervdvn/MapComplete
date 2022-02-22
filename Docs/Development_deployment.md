@@ -33,7 +33,6 @@ To develop and build MapComplete, you
     - You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
 0. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
    nodeJS: https://nodejs.org/en/download/
-0. On iOS, install `wget` (`brew install wget`)
 0. Run `npm run init` which …
     - runs `npm install`
     - generates some additional dependencies and files
@@ -107,7 +106,8 @@ Try removing `node_modules`, `package-lock.json` and `.cache`
 Misc setup
 ----------
 
-~~The json-git-merger is used to quickly merge translation files, [documentation here](https://github.com/jonatanpedersen/git-json-merge#single-project--directory).~~
+~~The json-git-merger is used to quickly merge translation
+files, [documentation here](https://github.com/jonatanpedersen/git-json-merge#single-project--directory).~~
 This merge driver is broken and would sometimes drop new questions or duplicate them... Not a good idea!
 
 Overview of package.json-scripts

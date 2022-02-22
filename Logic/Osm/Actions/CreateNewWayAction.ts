@@ -1,12 +1,13 @@
 import {ChangeDescription} from "./ChangeDescription";
-import OsmChangeAction from "./OsmChangeAction";
+import {OsmCreateAction} from "./OsmChangeAction";
 import {Changes} from "../Changes";
 import {Tag} from "../../Tags/Tag";
 import CreateNewNodeAction from "./CreateNewNodeAction";
 import {And} from "../../Tags/And";
 
-export default class CreateNewWayAction extends OsmChangeAction {
+export default class CreateNewWayAction extends OsmCreateAction {
     public newElementId: string = undefined
+    public newElementIdNumber: number = undefined;
     private readonly coordinates: ({ nodeId?: number, lat: number, lon: number })[];
     private readonly tags: Tag[];
     private readonly _options: {
@@ -24,8 +25,23 @@ export default class CreateNewWayAction extends OsmChangeAction {
                 options: {
                     theme: string
                 }) {
-        super(null,true)
-        this.coordinates = coordinates;
+        super(null, true)
+        this.coordinates = [];
+
+        for (const coordinate of coordinates) {
+            /* The 'PointReuseAction' is a bit buggy and might generate duplicate ids.
+                We filter those here, as the CreateWayWithPointReuseAction delegates the actual creation to here.
+                Filtering here also prevents similar bugs in other actions
+             */
+            if(this.coordinates.length > 0 && coordinate.nodeId !== undefined && this.coordinates[this.coordinates.length - 1].nodeId === coordinate.nodeId){
+                // This is a duplicate id
+                console.warn("Skipping a node in createWay to avoid a duplicate node:", coordinate,"\nThe previous coordinates are: ", this.coordinates)
+                continue
+            }
+            
+            this.coordinates.push(coordinate)
+        }
+        
         this.tags = tags;
         this._options = options;
     }
@@ -55,7 +71,7 @@ export default class CreateNewWayAction extends OsmChangeAction {
 
 
         const id = changes.getNewID()
-
+        this.newElementIdNumber = id
         const newWay = <ChangeDescription>{
             id,
             type: "way",

@@ -35,7 +35,7 @@ export default class SimpleDatePicker extends InputElement<string> {
     }
 
     IsValid(t: string): boolean {
-        return false;
+        return !isNaN(new Date(t).getTime());
     }
 
     protected InnerConstructElement(): HTMLElement {

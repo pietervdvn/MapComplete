@@ -25,31 +25,23 @@
   "presets": [
     {
       "title": {
-        "en": "toilet",
-        "de": "toilette",
-        "fr": "toilettes",
-        "nl": "toilet",
-        "ru": "tуалет",
-        "it": "servizi igienici"
+        "en": "public toilet",
+        "de": "öffentlich zugängliche Toilette",
+        "fr": "toilette publique",
+        "nl": "publiek toilet",
+        "ru": "общественный туалет ",
+        "it": "servizi igienici aperti al pubblico"
       },
       "tags": [
         "amenity=toilets"
-      ],
-      "description": {
-        "en": "A publicly accessible toilet or restroom",
-        "de": "Eine öffentlich zugängliche Toilette",
-        "fr": "Des toilettes",
-        "nl": "Een publieke toilet",
-        "it": "Servizi igienici aperti al pubblico",
-        "ru": "Туалет или комната отдыха со свободным доступом"
-      }
+      ]
     },
     {
       "title": {
         "en": "toilets with wheelchair accessible toilet",
         "de": "toiletten mit rollstuhlgerechter Toilette",
         "fr": "toilettes accessible aux personnes à mobilité réduite",
-        "nl": "een rolstoeltoegankelijke toilet",
+        "nl": "rolstoeltoegankelijke, publiek toilet",
         "it": "servizi igienici accessibili per persone in sedia a rotelle",
         "ru": "tуалет с доступом для пользователей кресел-колясок"
       },
@@ -470,8 +462,8 @@
         ]
       }
     },
-"level",
-"description"
+    "level",
+    "description"
   ],
   "filter": [
     {
@@ -581,5 +573,9 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing (public) toilets",
+    "nl": "Een laag die publieke toiletten toont"
+  }
 }

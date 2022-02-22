@@ -13,7 +13,7 @@ export default {
       "description": "A description for this layer.\nShown in the layer selections and in the personel theme"
     },
     "source": {
-      "description": "This determines where the data for the layer is fetched.\nThere are some options:\n\n# Query OSM directly\nsource: {osmTags: \"key=value\"}\n will fetch all objects with given tags from OSM.\n Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API\n\n# Query OSM Via the overpass API with a custom script\nsource: {overpassScript: \"<custom overpass tags>\"} when you want to do special things. _This should be really rare_.\n     This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query\n     However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...\n\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}\nSome API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nNote that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too\n\n\nNOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: \"key=value\"}\n While still supported, this is considered deprecated",
+      "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.",
       "anyOf": [
         {
           "allOf": [
@@ -21,6 +21,7 @@ export default {
               "type": "object",
               "properties": {
                 "osmTags": {
+                  "description": "Every source must set which tags have to be present in order to load the given layer.",
                   "anyOf": [
                     {
                       "$ref": "#/definitions/AndOrTagConfigJson"
@@ -30,8 +31,9 @@ export default {
                     }
                   ]
                 },
-                "overpassScript": {
-                  "type": "string"
+                "maxCacheAge": {
+                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                  "type": "number"
                 }
               },
               "required": [
@@ -41,9 +43,8 @@ export default {
             {
               "type": "object",
               "properties": {
-                "maxCacheAge": {
-                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
-                  "type": "number"
+                "overpassScript": {
+                  "type": "string"
                 }
               }
             }
@@ -55,6 +56,7 @@ export default {
               "type": "object",
               "properties": {
                 "osmTags": {
+                  "description": "Every source must set which tags have to be present in order to load the given layer.",
                   "anyOf": [
                     {
                       "$ref": "#/definitions/AndOrTagConfigJson"
@@ -64,39 +66,49 @@ export default {
                     }
                   ]
                 },
-                "geoJson": {
-                  "type": "string"
-                },
-                "geoJsonZoomLevel": {
+                "maxCacheAge": {
+                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
                   "type": "number"
-                },
-                "isOsmCache": {
-                  "type": "boolean"
-                },
-                "mercatorCrs": {
-                  "type": "boolean"
                 }
               },
               "required": [
-                "geoJson",
                 "osmTags"
               ]
             },
             {
               "type": "object",
               "properties": {
-                "maxCacheAge": {
-                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+                "geoJson": {
+                  "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+                  "type": "string"
+                },
+                "geoJsonZoomLevel": {
+                  "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
                   "type": "number"
+                },
+                "isOsmCache": {
+                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+                  "type": "boolean"
+                },
+                "mercatorCrs": {
+                  "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+                  "type": "boolean"
+                },
+                "idKey": {
+                  "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+                  "type": "string"
                 }
-              }
+              },
+              "required": [
+                "geoJson"
+              ]
             }
           ]
         }
       ]
     },
     "calculatedTags": {
-      "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]",
+      "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]",
       "type": "array",
       "items": {
         "type": "string"
@@ -110,9 +122,17 @@ export default {
       "description": "This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.\nThis is useful to hide certain features from view.\n\nImportant: hiding features does not work dynamically, but is only calculated when the data is first renders.\nThis implies that it is not possible to hide a feature after a tagging change\n\nThe default value is 'yes'",
       "$ref": "#/definitions/TagRenderingConfigJson"
     },
+    "forceLoad": {
+      "description": "Advanced option - might be set by the theme compiler\n\nIf true, this data will _always_ be loaded, even if the theme is disabled",
+      "type": "boolean"
+    },
     "minzoom": {
       "description": "The minimum needed zoomlevel required before loading of the data start\nDefault: 0",
       "type": "number"
+    },
+    "shownByDefault": {
+      "description": "Indicates if this layer is shown by default;\ncan be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)",
+      "type": "boolean"
     },
     "minzoomVisible": {
       "description": "The zoom level at which point the data is hidden again\nDefault: 100 (thus: always visible",
@@ -130,31 +150,55 @@ export default {
       ]
     },
     "titleIcons": {
-      "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/TagRenderingConfigJson"
-          },
-          {
-            "type": "string"
+      "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nType: icon[]",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/TagRenderingConfigJson"
+              },
+              {
+                "type": "string"
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": [
+                "defaults"
+              ]
+            }
+          ],
+          "minItems": 1,
+          "maxItems": 1
+        }
+      ]
     },
     "mapRendering": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/default_3"
-          },
-          {
-            "$ref": "#/definitions/default_4"
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/default_4"
+              },
+              {
+                "$ref": "#/definitions/default_5"
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "passAllFeatures": {
       "description": "If set, this layer will pass all the features it receives onto the next layer.\nThis is ideal for decoration, e.g. directionss on cameras",
@@ -178,6 +222,13 @@ export default {
           },
           "description": {
             "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)"
+          },
+          "exampleImages": {
+            "description": "Example images, which show real-life pictures of what such a feature might look like\n\nType: image",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "preciseInput": {
             "description": "If set, the user will prompted to confirm the location before actually adding the data.\nThis will be with a 'drag crosshair'-method.\n\nIf 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.",
@@ -262,25 +313,26 @@ export default {
             "type": "object",
             "properties": {
               "rewrite": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "sourceString": {
+                "type": "object",
+                "properties": {
+                  "sourceString": {
+                    "type": "array",
+                    "items": {
                       "type": "string"
-                    },
-                    "into": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
                     }
                   },
-                  "required": [
-                    "into",
-                    "sourceString"
-                  ]
-                }
+                  "into": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                },
+                "required": [
+                  "into",
+                  "sourceString"
+                ]
               },
               "renderings": {
                 "type": "array",
@@ -322,10 +374,25 @@ export default {
     },
     "filter": {
       "description": "All the extra questions for filtering",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/default"
-      }
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/default_1"
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "sameAs": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "sameAs"
+          ]
+        }
+      ]
     },
     "deletion": {
       "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n The delete dialog\n =================\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n#### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.",
@@ -342,7 +409,7 @@ export default {
       "description": "Indicates if a point can be moved and configures the modalities.\n\nA feature can be moved by MapComplete if:\n\n- It is a point\n- The point is _not_ part of a way or a a relation.\n\nOff by default. Can be enabled by setting this flag or by configuring.",
       "anyOf": [
         {
-          "$ref": "#/definitions/default_2"
+          "$ref": "#/definitions/default_3"
         },
         {
           "type": "boolean"
@@ -357,8 +424,18 @@ export default {
       "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/default_1"
+        "$ref": "#/definitions/default_2"
       }
+    },
+    "syncSelection": {
+      "description": "If set, synchronizes wether or not this layer is selected.\n\nno: Do not sync at all, always revert to default\nlocal: keep selection on local storage\ntheme-only: sync via OSM, but this layer will only be toggled in this theme\nglobal: all layers with this ID will be synced accross all themes",
+      "enum": [
+        "global",
+        "local",
+        "no",
+        "theme-only"
+      ],
+      "type": "string"
     }
   },
   "required": [
@@ -440,15 +517,22 @@ export default {
       "type": "object",
       "properties": {
         "id": {
-          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise",
+          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
           "type": "string"
         },
         "group": {
           "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
           "type": "string"
         },
+        "labels": {
+          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "render": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`"
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
         },
         "question": {
           "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
@@ -475,6 +559,9 @@ export default {
             "type": {
               "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
               "type": "string"
+            },
+            "placeholder": {
+              "description": "A (translated) text that is shown (as gray text) within the textfield"
             },
             "helperArgs": {
               "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
@@ -523,7 +610,32 @@ export default {
                 ]
               },
               "then": {
-                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option"
+                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered"
+              },
+              "icon": {
+                "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "description": "The path to the icon\nType: icon",
+                        "type": "string"
+                      },
+                      "class": {
+                        "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "class",
+                      "path"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               },
               "hideInAnswer": {
                 "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n        \n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}",
@@ -566,7 +678,7 @@ export default {
         }
       }
     },
-    "default_3": {
+    "default_4": {
       "description": "The PointRenderingConfig gives all details onto how to render a single point of a feature.\n\nThis can be used if:\n\n- The feature is a point\n- To render something at the centroid of an area, or at the start, end or projected centroid of a way",
       "type": "object",
       "properties": {
@@ -574,17 +686,11 @@ export default {
           "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
           "type": "array",
           "items": {
-            "enum": [
-              "centroid",
-              "end",
-              "point",
-              "start"
-            ],
             "type": "string"
           }
         },
         "icon": {
-          "description": "The icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one can use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`",
+          "description": "The icon for an element.\nNote that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.\n\nThe result of the icon is rendered as follows:\nthe resulting string is interpreted as a _list_ of items, separated by \";\". The bottommost layer is the first layer.\nAs a result, on could use a generic pin, then overlay it with a specific icon.\nTo make things even more practical, one can use all SVG's from the folder \"assets/svg\" and _substitute the color_ in it.\nE.g. to draw a red pin, use \"pin:#f00\", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`\n\nType: icon",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -611,6 +717,7 @@ export default {
                 ]
               },
               "then": {
+                "description": "Badge to show\nType: icon",
                 "anyOf": [
                   {
                     "$ref": "#/definitions/TagRenderingConfigJson"
@@ -665,7 +772,7 @@ export default {
         "location"
       ]
     },
-    "default_4": {
+    "default_5": {
       "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
       "type": "object",
       "properties": {
@@ -687,7 +794,10 @@ export default {
               "$ref": "#/definitions/TagRenderingConfigJson"
             },
             {
-              "type": "string"
+              "type": [
+                "string",
+                "number"
+              ]
             }
           ]
         },
@@ -752,7 +862,7 @@ export default {
         }
       }
     },
-    "default": {
+    "default_1": {
       "type": "object",
       "properties": {
         "id": {
@@ -775,6 +885,26 @@ export default {
                     "type": "string"
                   }
                 ]
+              },
+              "default": {
+                "type": "boolean"
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
               }
             },
             "required": [
@@ -845,7 +975,7 @@ export default {
         }
       }
     },
-    "default_2": {
+    "default_3": {
       "type": "object",
       "properties": {
         "enableImproveAccuracy": {
@@ -858,7 +988,7 @@ export default {
         }
       }
     },
-    "default_1": {
+    "default_2": {
       "type": "object",
       "properties": {
         "appliesToKey": {

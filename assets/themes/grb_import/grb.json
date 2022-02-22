@@ -1,72 +1,81 @@
 {
   "id": "grb",
   "title": {
-    "nl": "GRB Fixup"
+    "nl": "GRB import helper"
   },
   "shortDescription": {
-    "nl": "Grb Fixup"
+    "nl": "Grb import helper tool"
   },
   "description": {
-    "nl": "GRB Fixup",
-    "en": "This theme is an attempt to help automating the GRB import.<br/>Note that this is very hacky and 'steals' the GRB data from an external site; in order to do this, you need to install and activate <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>this firefox extension</a> for it to work."
+    "nl": "Dit thema helpt het GRB importeren.",
+    "en": "This theme is an attempt to help automating the GRB import.",
+    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
   },
-  "language": [
-    "nl",
-    "en"
-  ],
-  "maintainer": "",
-  "icon": "./assets/svg/bug.svg",
+  "maintainer": "Pieter Vander Vennet",
+  "icon": "./assets/themes/grb_import/logo.svg",
   "version": "0",
-  "startLat": 51.2132,
-  "startLon": 3.231,
-  "startZoom": 14,
+  "startLat": 51.0249,
+  "startLon": 4.026489,
+  "startZoom": 9,
   "widenFactor": 2,
-  "socialImage": "",
   "clustering": {
     "maxZoom": 15
   },
   "overrideAll": {
-    "minzoom": 18
+    "minzoom": 19
   },
-  "trackAllNodes": true,
-  "enableGeolocation": false,
   "layers": [
     {
       "builtin": "type_node",
-      "isShown": {
-        "render": "no"
-      },
       "override": {
         "calculatedTags": [
           "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
+          "_is_part_of_grb_building=feat.get('parent_ways')?.some(p => p['source:geometry:ref'] !== undefined) ?? false",
           "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
           "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
-          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false"
+          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false",
+          "_moveable=feat.get('_is_part_of_building') && !feat.get('_is_part_of_grb_building')"
         ],
         "mapRendering": [
           {
-            "icon": "square:#00f",
+            "icon": "square:#cc0",
             "iconSize": "5,5,center",
-            "location": "point"
+            "location": [
+              "point"
+            ]
           }
-        ]
+        ],
+        "passAllFeatures": true
       }
     },
     {
-      "id": "OSM-buildings",
+      "id": "osm-buildings",
       "name": "All OSM-buildings",
       "source": {
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
+      "calculatedTags": [
+        "_surface:strict:=feat.get('_surface')"
+      ],
       "mapRendering": [
         {
           "width": {
-            "render": "2"
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
           },
           "color": {
             "render": "#00c",
             "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "#ff00ff"
+              },
               {
                 "if": "building=house",
                 "then": "#a00"
@@ -101,7 +110,8 @@
           },
           "render": "The building type is <b>{building}</b>",
           "question": {
-            "en": "What kind of building is this?"
+            "en": "What kind of building is this?",
+            "de": "Was ist das für ein Gebäude?"
           },
           "mappings": [
             {
@@ -146,17 +156,135 @@
             }
           ]
         },
+        {
+          "id": "grb-housenumber",
+          "render": {
+            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
+          },
+          "question": {
+            "nl": "Wat is het huisnummer?"
+          },
+          "freeform": {
+            "key": "addr:housenumber"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "not:addr:housenumber=yes",
+                  "addr:housenumber="
+                ]
+              },
+              "then": {
+                "nl": "Geen huisnummer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "grb-unit",
+          "question": "Wat is de wooneenheid-aanduiding?",
+          "render": {
+            "nl": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
+          },
+          "freeform": {
+            "key": "addr:unit"
+          },
+          "mappings": [
+            {
+              "if": "addr:unit=",
+              "then": "Geen wooneenheid-nummer"
+            }
+          ]
+        },
+        {
+          "id": "grb-street",
+          "render": {
+            "nl": "De straat is <b>{addr:street}</b>"
+          },
+          "freeform": {
+            "key": "addr:street"
+          },
+          "question": {
+            "nl": "Wat is de straat?"
+          }
+        },
+        {
+          "id": "grb-fixme",
+          "render": {
+            "nl": "De fixme is <b>{fixme}</b>"
+          },
+          "question": {
+            "nl": "Wat zegt de fixme?"
+          },
+          "freeform": {
+            "key": "fixme"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fixme="
+                ]
+              },
+              "then": {
+                "nl": "Geen fixme"
+              }
+            }
+          ]
+        },
+        {
+          "id": "grb-min-level",
+          "render": {
+            "nl": "Dit gebouw begint maar op de {building:min_level} verdieping"
+          },
+          "question": {
+            "nl": "Hoeveel verdiepingen ontbreken?"
+          },
+          "freeform": {
+            "key": "building:min_level",
+            "type": "pnat"
+          }
+        },
         "all_tags"
+      ],
+      "filter": [
+        {
+          "id": "has-fixme",
+          "options": [
+            {
+              "osmTags": "fixme~*",
+              "question": "Heeft een FIXME"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "All OSM objects",
+      "id": "service_ways",
+      "name": "Service roads",
+      "description": "A seperate layer with service roads, as to remove them from the intersection testing",
+      "source": {
+        "osmTags": "highway=service"
+      },
+      "mapRendering": [
+        {
+          "width": 4,
+          "color": "#888888"
+        }
+      ],
+      "title": {
+        "render": "Service road"
+      },
+      "tagRenderings": []
+    },
+    {
+      "id": "generic_osm_object",
       "name": "All OSM Objects",
       "source": {
         "osmTags": {
           "and": [
             "id~*",
-            "landuse=",
             "place=",
             "disused:power=",
             "power=",
@@ -181,500 +309,264 @@
       "mapRendering": [
         {
           "color": {
-            "render": "#00c"
+            "render": "#ccc"
           },
           "width": {
             "render": "1"
-          }
+          },
+          "fill": "no"
         }
       ],
       "title": {
         "render": {
-          "*": "OSM-Object"
+          "*": "Other OSM-Object"
         }
       },
       "tagRenderings": [
         "all_tags"
       ]
     },
+    "address",
     {
-      "id": "osm-fixmes",
-      "name": {
-        "nl": "Fixmes op gebouwen"
-      },
-      "source": {
-        "maxCacheAge": 0,
-        "osmTags": {
-          "and": [
-            "fixme~*",
-            "building~*"
-          ]
-        }
-      },
-      "calculatedTags": [
-        "_grbNumber=(feat.properties.fixme?.match(/GRB thinks that this has number ([^;]+)/ ) ?? ['','none']) [1]"
-      ],
-      "title": {
-        "render": {
-          "nl": "{addr:street} {addr:housenumber}"
-        },
-        "mappings": [
+      "builtin": "crab_address",
+      "override": {
+        "calculatedTags+": [
+          "_embedded_in=feat.overlapWith('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
+          "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']+(feat.get('_embedded_in')['addr:unit'] ?? '')",
+          "_embedding_street=feat.get('_embedded_in')['addr:street']",
+          "_embedding_id=feat.get('_embedded_in').id",
+          "_closeby_addresses=feat.closestn('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
+          "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'",
+          "_embedded_in_grb=feat.overlapWith('grb')[0]?.feat?.properties ?? {}",
+          "_embedding_nr_grb=feat.get('_embedded_in_grb')['addr:housenumber']",
+          "_embedding_street_grb=feat.get('_embedded_in_grb')['addr:street']"
+        ],
+        "filter": [
           {
-            "if": {
-              "and": [
-                "fixme~*"
-              ]
-            },
-            "then": {
-              "nl": "{fixme}"
-            }
-          }
-        ]
-      },
-      "description": {
-        "nl": "Dit gebouw heeft een foutmelding"
-      },
-      "tagRenderings": [
-        {
-          "id": "grb-housenumber",
-          "render": {
-            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
-          },
-          "question": {
-            "nl": "Wat is het huisnummer?"
-          },
-          "freeform": {
-            "key": "addr:housenumber"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "not:addr:housenumber=yes",
-                  "addr:housenumber="
-                ]
+            "id": "show_matched_addresses",
+            "options": [
+              {
+                "question": "Show all CRAB-addresses (including already matched ones)"
               },
-              "then": {
-                "nl": "Geen huisnummer"
+              {
+                "question": "Only show unmatched addresses",
+                "osmTags": {
+                  "and": [
+                    "_has_identical_closeby_address!=yes",
+                    {
+                      "#": "Matches the embedding OSM object",
+                      "or": [
+                        "_embedding_nr!:={HUISNR}",
+                        "_embedding_street!:={STRAATNM}"
+                      ]
+                    },
+                    {
+                      "#": "Matches the embedding GRB object",
+                      "or": [
+                        "_embedding_nr_grb!:={HUISNR}",
+                        "_embedding_street_grb!:={STRAATNM}"
+                      ]
+                    }
+                  ]
+                },
+                "default": true
               }
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber:={_grbNumber}",
-                  "fixme="
-                ]
-              },
-              "then": "Het huisnummer is <b>{_grbNumber}</b>, wat overeenkomt met het GRB",
-              "hideInAnswer": {
-                "or": [
-                  "_grbNumber=",
-                  "_grbNumber=none",
-                  "_grbNumber=no number"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber=",
-                  "not:addr:housenumber=yes",
-                  "fixme="
-                ]
-              },
-              "then": "Dit gebouw heeft geen nummer, net zoals in het GRB",
-              "hideInAnswer": "_grbNumber!=no number"
-            }
-          ]
-        },
-        {
-          "id": "grb-unit",
-          "question": "Wat is de wooneenheid-aanduiding?",
-          "render": {
-            "nl": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-          },
-          "freeform": {
-            "key": "addr:unit"
-          },
-          "mappings": [
-            {
-              "if": "addr:unit=",
-              "then": "Geen wooneenheid-nummer"
-            }
-          ]
-        },
-        {
-          "id": "grb-street",
-          "render": {
-            "nl": "De straat is <b>{addr:street}</b>"
-          },
-          "freeform": {
-            "key": "addr:street"
-          },
-          "question": {
-            "nl": "Wat is de straat?"
+            ]
           }
-        },
-        {
-          "id": "grb-fixme",
-          "render": {
-            "nl": "De fixme is <b>{fixme}</b>"
+        ],
+        "tagRenderings+": [
+          {
+            "id": "render_embedded",
+            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>"
           },
-          "question": {
-            "nl": "Wat zegt de fixme?"
-          },
-          "freeform": {
-            "key": "fixme"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "fixme="
-                ]
-              },
-              "then": {
-                "nl": "Geen fixme"
-              }
-            }
-          ]
-        },
-        {
-          "id": "grb-min-level",
-          "render": {
-            "nl": "Dit gebouw begint maar op de {building:min_level} verdieping"
-          },
-          "question": {
-            "nl": "Hoeveel verdiepingen ontbreken?"
-          },
-          "freeform": {
-            "key": "building:min_level",
-            "type": "pnat"
-          }
-        }
-      ],
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "label": {
+          {
+            "id": "embedded_address",
+            "render": "Het omliggende OSM-gebouw heeft geen volledig address",
             "mappings": [
               {
-                "if": "addr:housenumber~*",
-                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+                "if": {
+                  "and": [
+                    "_embedding_street~*",
+                    "_embedding_nr~*"
+                  ]
+                },
+                "then": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}"
               }
-            ]
+            ],
+            "condition": "_embedding_id~*"
           },
-          "iconSize": {
-            "render": "40,40,center"
-          }
-        },
-        {
-          "dashes": "2 2",
-          "color": {
-            "render": "#00f"
-          },
-          "width": {
-            "render": "2"
-          }
-        }
-      ]
-    },
-    {
-      "id": "crab-addresses 2021-10-26",
-      "source": {
-        "osmTags": "HUISNR~*",
-        "geoJson": "https://raw.githubusercontent.com/pietervdvn/pietervdvn.github.io/master/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
-        "#geoJson": "https://pietervdvn.github.io/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
-        "geoJsonZoomLevel": 18,
-        "maxCacheAge": 0
-      },
-      "name": "CRAB-addressen",
-      "title": "CRAB-adres",
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": "circle:#bb3322",
-          "iconSize": "15,15,center"
-        }
-      ],
-      "calculatedTags": [
-        "_embedded_in=feat.overlapWith('OSM-buildings')[0]?.feat?.properties ",
-        "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']",
-        "_embedding_street=feat.get('_embedded_in')['addr:street']",
-        "_embedding_id=feat.get('_embedded_in').id"
-      ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
           {
-            "if": {
+            "id": "apply-button",
+            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Apply this address on the OSM-building,,_embedding_id)}",
+            "condition": {
               "and": [
-                "_embedding_nr:={HUISNR}",
-                "_embedding_street:={STRAATNM}"
+                "_embedding_id!=",
+                {
+                  "or": [
+                    "_embedding_street!:={STRAATNM}",
+                    "_embedding_nr!:={_HNRLABEL}"
+                  ]
+                }
               ]
-            },
-            "then": "no"
+            }
+          },
+          {
+            "id": "import-button",
+            "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,osm-buildings,5)}",
+            "condition": {
+              "and": [
+                "_embedding_id!=",
+                {
+                  "or": [
+                    "_embedding_street!:={STRAATNM}",
+                    "_embedding_nr!:={_HNRLABEL}"
+                  ]
+                }
+              ]
+            }
           }
         ]
-      },
-      "tagRenderings": [
-        {
-          "id": "render_crab",
-          "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-        },
-        {
-          "id": "render_embedded",
-          "render": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}",
-          "condition": {
-            "and": [
-              "_embedding_street~*",
-              "_embedding_nr~*"
-            ]
-          }
-        },
-        "all_tags",
-        {
-          "id": "import-button",
-          "render": "{import_button(OSM-buildings, addr:street=$STRAATNM; addr:housenumber=$HUISNR,Import this address,,,OSM-buildings,5)}"
-        },
-        {
-          "id": "apply-button",
-          "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$HUISNR,Apply this address on the OSM-building,,_embedding_id)}",
-          "condition": "_embedded_in!="
-        }
-      ]
+      }
     },
     {
-      "id": "grb-fixmes",
-      "name": {
-        "nl": "Fixmes op gebouwen"
-      },
+      "id": "grb",
+      "description": "Geometry which comes from GRB with tools to import them",
       "source": {
-        "maxCacheAge": 0,
         "osmTags": {
           "and": [
-            "fixme~*",
-            "building~*"
-          ]
-        }
-      },
-      "calculatedTags": [
-        "_grbNumber=(feat.properties.fixme?.match(/GRB thinks that this has number ([^;]+)/ ) ?? ['','none']) [1]"
-      ],
-      "title": {
-        "render": {
-          "nl": "{addr:street} {addr:housenumber}"
-        },
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "fixme~*"
-              ]
-            },
-            "then": {
-              "nl": "{fixme}"
-            }
-          }
-        ]
-      },
-      "description": {
-        "nl": "Dit gebouw heeft een foutmelding"
-      },
-      "tagRenderings": [
-        {
-          "id": "grb-housenumber",
-          "render": {
-            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
-          },
-          "question": {
-            "nl": "Wat is het huisnummer?"
-          },
-          "freeform": {
-            "key": "addr:housenumber"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "not:addr:housenumber=yes",
-                  "addr:housenumber="
-                ]
-              },
-              "then": {
-                "nl": "Geen huisnummer"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber:={_grbNumber}",
-                  "fixme="
-                ]
-              },
-              "then": "Het huisnummer is <b>{_grbNumber}</b>, wat overeenkomt met het GRB",
-              "hideInAnswer": {
-                "or": [
-                  "_grbNumber=",
-                  "_grbNumber=none",
-                  "_grbNumber=no number"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber=",
-                  "not:addr:housenumber=yes",
-                  "fixme="
-                ]
-              },
-              "then": "Dit gebouw heeft geen nummer, net zoals in het GRB",
-              "hideInAnswer": "_grbNumber!=no number"
-            }
+            "HUISNR~*",
+            "man_made!=mast"
           ]
         },
-        {
-          "id": "grb-unit",
-          "question": "Wat is de wooneenheid-aanduiding?",
-          "render": {
-            "nl": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-          },
-          "freeform": {
-            "key": "addr:unit"
-          },
-          "mappings": [
-            {
-              "if": "addr:unit=",
-              "then": "Geen wooneenheid-nummer"
-            }
-          ]
-        },
-        {
-          "id": "grb-street",
-          "render": {
-            "nl": "De straat is <b>{addr:street}</b>"
-          },
-          "freeform": {
-            "key": "addr:street"
-          },
-          "question": {
-            "nl": "Wat is de straat?"
-          }
-        },
-        {
-          "id": "grb-fixme",
-          "render": {
-            "nl": "De fixme is <b>{fixme}</b>"
-          },
-          "question": {
-            "nl": "Wat zegt de fixme?"
-          },
-          "freeform": {
-            "key": "fixme"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "fixme="
-                ]
-              },
-              "then": {
-                "nl": "Geen fixme"
-              }
-            }
-          ]
-        },
-        {
-          "id": "grb-min-level",
-          "render": {
-            "nl": "Dit gebouw begint maar op de {building:min_level} verdieping"
-          },
-          "question": {
-            "nl": "Hoeveel verdiepingen ontbreken?"
-          },
-          "freeform": {
-            "key": "building:min_level",
-            "type": "pnat"
-          }
-        }
-      ],
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "iconSize": {
-            "render": "40,40,center"
-          },
-          "label": {
-            "mappings": [
-              {
-                "if": "addr:housenumber~*",
-                "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
-              }
-            ]
-          }
-        },
-        {
-          "width": {
-            "render": "2"
-          },
-          "color": {
-            "render": "#00f"
-          }
-        }
-      ]
-    },
-    {
-      "id": "GRB",
-      "source": {
-        "osmTags": "HUISNR~*",
         "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
         "geoJsonZoomLevel": 18,
         "mercatorCrs": true,
-        "maxCacheAge": 0
+        "maxCacheAge": 0,
+        "idKey": "osm_id"
       },
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with=feat.overlapWith('OSM-buildings').filter(f => f.overlap > 1 &&  (feat.get('_surface') < 20 || f.overlap / feat.get('_surface')) > 0.5)[0] ?? null",
-        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
-        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface')) ",
+        "_overlaps_with_buildings=feat.overlapWith('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
+        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
         "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
-        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties.building",
-        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties.id",
+        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
+        "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
+        "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
+        "_osm_obj:surface=(feat.get('_overlaps_with')?.feat?.properties ?? {})['_surface:strict']",
+        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
+        "_reverse_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface'))",
+        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_osm_obj:surface'))",
         "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
-        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)"
+        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
+        "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
+        "_intersects_with_other_features=feat.intersectionsWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
       ],
       "tagRenderings": [
+        {
+          "id": "Import-button",
+          "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
+          "mappings": [
+            {
+              "#": "Actually the same as below, except that the text shows 'add the address' too",
+              "if": {
+                "and": [
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_overlaps_with!=",
+                  "_osm_obj:addr:street=",
+                  "_osm_obj:addr:housenumber=",
+                  "addr:street~*",
+                  "addr:housenumber~*",
+                  "addr:street!:={_osm_obj:addr:street}",
+                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
+                ]
+              },
+              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
+            },
+            {
+              "if": {
+                "and": [
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_overlaps_with!="
+                ]
+              },
+              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
+            }
+          ]
+        },
         {
           "id": "Building info",
           "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
         },
         {
+          "id": "overlapping building address",
+          "render": "The overlapping openstreetmap-building has no address information at all",
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "_osm_obj:addr:street~*",
+                  "_osm_obj:addr:housenumber~*"
+                ]
+              },
+              "then": "The overlapping openstreetmap-building has address {_osm_obj:addr:street} {_osm_obj:addr:housenumber}"
+            },
+            {
+              "if": "_osm_obj:addr:street~*",
+              "then": "The overlapping building only has a street known: {_osm_obj:addr:street}"
+            },
+            {
+              "if": "_osm_obj:addr:housenumber~*",
+              "then": "The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}"
+            },
+            {
+              "if": "_osm_obj:id=",
+              "then": "No overlapping OpenStreetMap-building found"
+            }
+          ]
+        },
+        {
+          "id": "grb_address_diff",
+          "render": "<div>The overlapping openstreetmap-building has a different address then this GRB-object: {addr:street} {addr:housenumber}<br/>{tag_apply(addr:street=$addr:street; addr:housenumber=$addr:housenumber,Copy the GRB-address onto the OSM-object,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_osm_obj:id~*",
+              "addr:street~*",
+              "addr:housenumber~*",
+              {
+                "or": [
+                  "addr:street~*",
+                  "addr:housenumber~*"
+                ]
+              },
+              {
+                "or": [
+                  "addr:street!:={_osm_obj:addr:street}",
+                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
+                ]
+              }
+            ]
+          }
+        },
+        {
           "id": "overlapping building type",
-          "render": "<div>The overlapping openstreetmap-building is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
-          "condition": "_overlaps_with!=null"
+          "render": "<div>The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building.<br/>The GRB-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
+          "condition": "_overlaps_with!="
         },
         {
           "id": "apply-id",
           "render": "{tag_apply(source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref,Mark the OSM-building as imported,,_osm_obj:id)}",
           "condition": {
             "and": [
-              "_overlaps_with!=null"
+              "_overlaps_with!=",
+              "_imported!=yes"
             ]
           }
         },
@@ -683,23 +575,12 @@
           "render": "{tag_apply(building=$building,Use the building type from GRB,,_osm_obj:id)}",
           "condition": {
             "and": [
-              "_overlaps_with!=null",
+              "_overlaps_with!=",
               "_osm_obj:building=yes",
               "building!=yes"
             ]
           }
-        },
-        {
-          "id": "Import-button",
-          "render": "{import_button(OSM-buildings,building=$building; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Upload this building to OpenStreetMap)}",
-          "mappings": [
-            {
-              "if": "_overlaps_with!=null",
-              "then": "{import_button(OSM-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,,_osm_obj:id)}"
-            }
-          ]
-        },
-        "all_tags"
+        }
       ],
       "isShown": {
         "render": "yes",
@@ -717,9 +598,45 @@
       },
       "mapRendering": [
         {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50,center",
+          "icon": {
+            "mappings": [
+              {
+                "if": "_intersects_with_other_features~*",
+                "then": "./assets/themes/grb_import/warning.svg"
+              },
+              {
+                "if": "addr:housenumber~*",
+                "then": "./assets/themes/grb_import/housenumber_blank.svg"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "width": {
+            "render": 5,
+            "mappings": [
+              {
+                "if": "_imported=yes",
+                "then": "1"
+              }
+            ]
+          },
           "color": {
             "render": "#00a",
             "mappings": [
+              {
+                "if": "_imported=yes",
+                "then": "#00ff00"
+              },
               {
                 "if": {
                   "and": [
@@ -733,10 +650,61 @@
           }
         }
       ]
+    },
+    {
+      "builtin": "current_view",
+      "override": {
+        "calculatedTags": [
+          "_overlapping=Number(feat.properties.zoom) >= 16 ? feat.overlapWith('grb').map(ff => ff.feat.properties) : undefined",
+          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found !== 'true' && p._intersects_with_other_features === ''))?.map(p => p.id)",
+          "_applicable_count=feat.get('_applicable')?.length"
+        ],
+        "tagRenderings": [
+          {
+            "id": "hw",
+            "render": "There are {_applicable_count} applicable elements in view",
+            "mappings": [
+              {
+                "if": "zoom<14",
+                "then": "Zoom in more to see the automatic action"
+              },
+              {
+                "if": "_applicable_count=",
+                "then": "Loading..."
+              },
+              {
+                "if": "_applicable_count=0",
+                "then": "No importable buildins in view"
+              }
+            ]
+          },
+          {
+            "id": "autoapply",
+            "render": "{auto_apply(grb, _applicable, Import-button, Import or conflate all non-conflicting buildings in view)}",
+            "mappings": [
+              {
+                "if": "zoom<16",
+                "then": "Zoom in more to import"
+              }
+            ]
+          }
+        ],
+        "+mapRendering": [
+          {
+            "location": [
+              "point"
+            ],
+            "icon": {
+              "render": "./assets/svg/robot.svg"
+            },
+            "iconSize": "15,15,center"
+          }
+        ]
+      }
     }
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",
-  "overpassMaxZoom": 15,
+  "overpassMaxZoom": 17,
   "osmApiTileSize": 17
 }

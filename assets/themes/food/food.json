@@ -5,18 +5,14 @@
     "en": "Restaurants and fast food",
     "de": "Restaurants und Schnellimbisse",
     "it": "Ristoranti e fast food",
-    "nb_NO": "Restauranter og søppelmat"
+    "nb_NO": "Restauranter og søppelmat",
+    "zh_Hant": "餐廳與快餐店",
+    "hu": "Éttermek és büfék"
   },
   "description": {
-    "nl": "Restaurants en fast food"
+    "nl": "Restaurants en fast food",
+    "en": "Restaurants and fast food"
   },
-  "language": [
-    "nl",
-    "en",
-    "de",
-    "it",
-    "nb_NO"
-  ],
   "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",
   "version": "0",
@@ -24,7 +20,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 3,
-  "socialImage": "",
   "layers": [
     "food"
   ]

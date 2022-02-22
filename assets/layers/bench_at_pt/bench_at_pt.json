@@ -108,7 +108,8 @@
         "fi": "{name}",
         "pl": "{name}",
         "pt": "{name}",
-        "eo": "{name}"
+        "eo": "{name}",
+        "es": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -119,13 +120,18 @@
       "id": "bench_at_pt-bench_type",
       "question": {
         "en": "What kind of bench is this?",
-        "nl": "Wat voor soort bank is dit?"
+        "nl": "Wat voor soort bank is dit?",
+        "de": "Was ist das für eine Bank?",
+        "es": "¿Qué tipo de banco es este?"
       },
       "mappings": [
         {
           "if": "bench=yes",
           "then": {
-            "en": "There is a normal, sit-down bench here"
+            "en": "There is a normal, sit-down bench here",
+            "fr": "Il y a un banc normal pour s'asseoir ici",
+            "de": "Hier gibt es eine normale Sitzbank",
+            "nl": "Er is hier een normale zitbank"
           }
         },
         {
@@ -144,7 +150,10 @@
         {
           "if": "bench=no",
           "then": {
-            "en": "There is no bench here"
+            "en": "There is no bench here",
+            "fr": "Il n'y a pas de banc ici",
+            "de": "Hier gibt es keine Bank",
+            "nl": "Er is hier geen bank"
           }
         }
       ]
@@ -170,5 +179,10 @@
         "render": "8"
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing all public-transport-stops which do have a bench",
+    "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
+    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is"
+  }
 }

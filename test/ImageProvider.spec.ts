@@ -6,7 +6,7 @@ import {Utils} from "../Utils";
 export default class ImageProviderSpec extends T {
 
     constructor() {
-        super("ImageProvider", [
+        super([
             ["Search images", () => {
 
                 let i = 0

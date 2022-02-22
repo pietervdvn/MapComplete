@@ -75,12 +75,12 @@
     },
     {
       "key": "camera:direction",
-      "description": "Layer 'Surveillance camera's' shows camera:direction=&direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction.",
+      "description": "Layer 'Surveillance camera's' shows direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction.",
       "value": ""
     },
     {
       "key": "direction",
-      "description": "Layer 'Surveillance camera's' shows camera:direction=&direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
+      "description": "Layer 'Surveillance camera's' shows direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
     },
     {
       "key": "operator",
@@ -113,7 +113,7 @@
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows indoor= with a fixed text, namely 'This camera is probably located outdoors' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Surveillance camera's' shows  with a fixed text, namely 'This camera is probably located outdoors' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
@@ -172,6 +172,11 @@
       "key": "camera:mount",
       "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "ceiling"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

@@ -17,6 +17,9 @@ import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import FilteredLayer from "../../Models/FilteredLayer";
+import CopyrightPanel from "./CopyrightPanel";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
@@ -29,6 +32,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                     featureSwitchShareScreen: UIEventSource<boolean>,
                     featureSwitchMoreQuests: UIEventSource<boolean>,
                     locationControl: UIEventSource<Loc>,
+                    featurePipeline: FeaturePipeline,
                     backgroundLayer: UIEventSource<BaseLayer>,
                     filteredLayers: UIEventSource<FilteredLayer[]>
                 } & UserRelatedState) {
@@ -46,25 +50,16 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                                          osmConnection: OsmConnection,
                                          featureSwitchShareScreen: UIEventSource<boolean>,
                                          featureSwitchMoreQuests: UIEventSource<boolean>,
+                                         featurePipeline: FeaturePipeline,
                                          locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>
                                      } & UserRelatedState,
                                      isShown: UIEventSource<boolean>):
         { header: string | BaseUIElement; content: BaseUIElement }[] {
 
-        let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
-
         const tabs: { header: string | BaseUIElement, content: BaseUIElement }[] = [
-            {header: `<img src='${state.layoutToUse.icon}'>`, content: welcome},
-            {
-                header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro.SetClass("link-underline")
-            },
-
+            {header: `<img src='${state.layoutToUse.icon}'>`, content: new ThemeIntroductionPanel(isShown)},
         ]
 
-        if (state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen(state)});
-        }
 
         if (state.featureSwitchMoreQuests.data) {
             tabs.push({
@@ -77,6 +72,31 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             });
         }
 
+
+        if (state.featureSwitchShareScreen.data) {
+            tabs.push({header: Svg.share_img, content: new ShareScreen(state)});
+        }
+
+        const copyright = {
+            header: Svg.copyright_svg(),
+            content:
+                new Combine(
+                    [
+                        Translations.t.general.openStreetMapIntro.SetClass("link-underline"),
+                        Translations.t.general.attribution.attributionTitle,
+                        new CopyrightPanel(state)
+
+                    ]
+                )
+        }
+        tabs.push(copyright)
+
+        const privacy = {
+            header: Svg.eye_svg(),
+            content: new PrivacyPolicy()
+        }
+        tabs.push(privacy)
+
         return tabs;
     }
 
@@ -85,6 +105,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         osmConnection: OsmConnection,
         featureSwitchShareScreen: UIEventSource<boolean>,
         featureSwitchMoreQuests: UIEventSource<boolean>,
+        featurePipeline: FeaturePipeline,
         locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>
     } & UserRelatedState, currentTab: UIEventSource<number>, isShown: UIEventSource<boolean>) {
 

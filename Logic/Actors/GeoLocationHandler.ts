@@ -11,11 +11,11 @@ export interface GeoLocationPointProperties {
     "user:location": "yes",
     "date": string,
     "latitude": number
-    "longitude":number,
+    "longitude": number,
     "speed": number,
     "accuracy": number
     "heading": number
-    "altitude":number
+    "altitude": number
 }
 
 export default class GeoLocationHandler extends VariableUiElement {
@@ -70,6 +70,7 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     constructor(
         state: {
+            selectedElement: UIEventSource<any>;
             currentUserLocation: FeatureSource,
             leafletMap: UIEventSource<any>,
             layoutToUse: LayoutConfig,
@@ -183,7 +184,8 @@ export default class GeoLocationHandler extends VariableUiElement {
 
         const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
 
-        this.init(false, !latLonGiven && state.featureSwitchGeolocation.data);
+        const doAutoZoomToLocation = !latLonGiven && state.featureSwitchGeolocation.data && state.selectedElement.data !== undefined
+        this.init(false, doAutoZoomToLocation);
 
         isLocked.addCallbackAndRunD(isLocked => {
             if (isLocked) {

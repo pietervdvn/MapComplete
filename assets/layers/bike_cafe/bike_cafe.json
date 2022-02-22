@@ -162,7 +162,8 @@
         "zh_Hant": "這裡是否有工具修理你的單車嗎？",
         "ru": "Есть ли здесь инструменты для починки вашего велосипеда?",
         "pt_BR": "Há ferramentas aqui para consertar sua bicicleta?",
-        "pt": "Há ferramentas aqui para consertar a sua própria bicicleta?"
+        "pt": "Há ferramentas aqui para consertar a sua própria bicicleta?",
+        "es": "¿Hay herramientas para reparar su propia bicicleta?"
       },
       "mappings": [
         {
@@ -356,7 +357,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/bike_cafe/bike_cafe.svg"
+        "render": "pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg"
       },
       "iconSize": {
         "render": "50,50,bottom"
@@ -374,5 +375,9 @@
         "render": "2"
       }
     }
-  ]
+  ],
+  "description": {
+    "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...",
+    "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts."
+  }
 }

@@ -1,34 +1,116 @@
 {
-  "undefined": {
-    "email": {
-      "question": "Vad är e-postadressen till {name}?"
-    },
-    "level": {
-      "mappings": {
-        "0": {
-          "then": "Ligger under jorden"
+    "shared_questions": {
+        "description": {
+            "question": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>"
         },
-        "1": {
-          "then": "Ligger på bottenvåningen"
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Hundar tillåts"
+                },
+                "1": {
+                    "then": "Hundar tillåts <b>inte</b>"
+                },
+                "2": {
+                    "then": "Hundar tillåts, men de måste vara kopplade"
+                },
+                "3": {
+                    "then": "Hundar tillåts och får springa fritt omkring"
+                }
+            },
+            "question": "Tillåts hundar i den här affären?"
         },
-        "2": {
-          "then": "Ligger på bottenvåningen"
+        "email": {
+            "question": "Vad är e-postadressen till {title()}?"
         },
-        "3": {
-          "then": "Ligger på första våningen"
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Ligger under jorden"
+                },
+                "1": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "2": {
+                    "then": "Ligger på bottenvåningen"
+                },
+                "3": {
+                    "then": "Ligger på första våningen"
+                }
+            },
+            "question": "På vilken nivå finns den här funktionen?",
+            "render": "Ligger på {level}:e våningen"
+        },
+        "opening_hours": {
+            "question": "Vilka är öppettiderna för {title()}?",
+            "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Pengar accepteras här"
+                },
+                "1": {
+                    "then": "Betalningskort accepteras här"
+                }
+            },
+            "question": "Vilka betalningsmetoder accepteras här?"
+        },
+        "phone": {
+            "question": "Vad är telefonnumret till {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik"
+                },
+                "1": {
+                    "then": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik"
+                },
+                "2": {
+                    "then": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas"
+                },
+                "3": {
+                    "then": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus"
+                }
+            },
+            "question": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?"
+        },
+        "website": {
+            "question": "Vad är webbplatsen för {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Det här stället är speciellt anpassat för rullstolsburna användare"
+                },
+                "1": {
+                    "then": "Denna plats är lätt att nå med rullstol"
+                },
+                "2": {
+                    "then": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt"
+                },
+                "3": {
+                    "then": "Den här platsen kan inte nås med en rullstol"
+                }
+            },
+            "question": "Är det här stället tillgängligt med en rullstol?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Ingen Wikipedia-sida har länkats än"
+                }
+            },
+            "question": "Vad är den motsvarande Wikidata-enheten?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Inte länkad med Wikipedia"
+                }
+            },
+            "question": "Vad är det motsvarande objektet på Wikipedia?"
         }
-      },
-      "render": "Ligger på {level}:e våningen"
-    },
-    "opening_hours": {
-      "question": "Vilka är öppettiderna för {name}?",
-      "render": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}"
-    },
-    "phone": {
-      "question": "Vad är telefonnumret till {name}?"
-    },
-    "website": {
-      "question": "Vad är webbplatsen för {name}?"
     }
-  }
 }

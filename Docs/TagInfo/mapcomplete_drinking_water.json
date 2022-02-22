@@ -37,7 +37,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows  with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
@@ -59,6 +59,11 @@
       "key": "bottle",
       "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
       "value": "no"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Drinking Water has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

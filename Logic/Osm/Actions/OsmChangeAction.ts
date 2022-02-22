@@ -7,15 +7,15 @@ import {ChangeDescription} from "./ChangeDescription";
 
 export default abstract class OsmChangeAction {
 
-    private isUsed = false
     public readonly trackStatistics: boolean;
     /**
      * The ID of the object that is the center of this change.
-     * Null if the action creates a new object
+     * Null if the action creates a new object (at initialization)
      * Undefined if such an id does not make sense
      */
     public readonly mainObjectId: string;
-    
+    private isUsed = false
+
     constructor(mainObjectId: string, trackStatistics: boolean = true) {
         this.trackStatistics = trackStatistics;
         this.mainObjectId = mainObjectId
@@ -23,11 +23,18 @@ export default abstract class OsmChangeAction {
 
     public Perform(changes: Changes) {
         if (this.isUsed) {
-            throw "This ChangeAction is already used: " + this.constructor.name
+            throw "This ChangeAction is already used"
         }
         this.isUsed = true;
         return this.CreateChangeDescriptions(changes)
     }
 
     protected abstract CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]>
+}
+
+export abstract class OsmCreateAction extends OsmChangeAction {
+
+    public newElementId: string
+    public newElementIdNumber: number
+
 }

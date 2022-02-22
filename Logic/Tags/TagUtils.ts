@@ -56,9 +56,6 @@ export class TagUtils {
 
     /***
      * Creates a hash {key --> [values : string | Regex ]}, with all the values present in the tagsfilter
-     *
-     * @param tagsFilters
-     * @constructor
      */
     static SplitKeys(tagsFilters: TagsFilter[], allowRegex = false) {
         const keyValues = {} // Map string -> string[]
@@ -189,15 +186,21 @@ export class TagUtils {
                 if (tag.indexOf(operator) >= 0) {
                     const split = Utils.SplitFirst(tag, operator);
 
-                    const val = Number(split[1].trim())
+                    let val = Number(split[1].trim())
                     if (isNaN(val)) {
-                        throw `Error: not a valid value for a comparison: ${split[1]}, make sure it is a number and nothing more (at ${context})`
+                        val = new Date(split[1].trim()).getTime()
                     }
 
                     const f = (value: string | undefined) => {
-                        const b = Number(value?.replace(/[^\d.]/g, ''))
-                        if (isNaN(b)) {
+                        if (value === undefined) {
                             return false;
+                        }
+                        let b = Number(value?.trim())
+                        if (isNaN(b)) {
+                            b = Utils.ParseDate(value).getTime()
+                            if (isNaN(b)) {
+                                return false
+                            }
                         }
                         return comparator(b, val)
                     }
@@ -212,7 +215,7 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                    split[1],
                     true
                 );
             }
@@ -222,9 +225,13 @@ export class TagUtils {
                     split[1] = "..*"
                 }
                 return new RegexTag(
-                    new RegExp("^" + split[0] + "$"),
-                    new RegExp("^" + split[1] + "$")
+                    split[0],
+                    split[1]
                 );
+            }
+            if (tag.indexOf("!:=") >= 0) {
+                const split = Utils.SplitFirst(tag, "!:=");
+                return new SubstitutingTag(split[0], split[1], true);
             }
             if (tag.indexOf(":=") >= 0) {
                 const split = Utils.SplitFirst(tag, ":=");
@@ -249,18 +256,21 @@ export class TagUtils {
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$"),
+                    split[1],
                     true
                 );
             }
             if (tag.indexOf("~") >= 0) {
                 const split = Utils.SplitFirst(tag, "~");
+                if (split[1] === "") {
+                    throw "Detected a regextag with an empty regex; this is not allowed. Use '" + split[0] + "='instead (at " + context + ")"
+                }
                 if (split[1] === "*") {
                     split[1] = "..*"
                 }
                 return new RegexTag(
                     split[0],
-                    new RegExp("^" + split[1] + "$")
+                    split[1]
                 );
             }
             if (tag.indexOf("=") >= 0) {
@@ -275,6 +285,10 @@ export class TagUtils {
             throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
 
         }
+        
+        if(json.and !== undefined && json.or !== undefined){
+            throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`}
+        
         if (json.and !== undefined) {
             return new And(json.and.map(t => TagUtils.Tag(t, context)));
         }

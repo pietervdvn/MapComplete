@@ -16,7 +16,7 @@ export default class QuestionBox extends VariableUiElement {
     public readonly skippedQuestions: UIEventSource<number[]>;
     public readonly restingQuestions: UIEventSource<BaseUIElement[]>;
 
-    constructor(options: {
+    constructor(state, options: {
         tagsSource: UIEventSource<any>,
         tagRenderings: TagRenderingConfig[], units: Unit[],
         showAllQuestionsAtOnce?: boolean | UIEventSource<boolean>
@@ -34,7 +34,7 @@ export default class QuestionBox extends VariableUiElement {
 
         const tagRenderingQuestions = tagRenderings
             .map((tagRendering, i) =>
-                new Lazy(() => new TagRenderingQuestion(tagsSource, tagRendering,
+                new Lazy(() => new TagRenderingQuestion(tagsSource, tagRendering, state,
                     {
                         units: units,
                         afterSave: () => {
@@ -42,7 +42,7 @@ export default class QuestionBox extends VariableUiElement {
                             skippedQuestions.ping();
                         },
                         cancelButton: Translations.t.general.skip.Clone()
-                            .SetClass("btn btn-secondary mr-3")
+                            .SetClass("btn btn-secondary")
                             .onClick(() => {
                                 skippedQuestions.data.push(i);
                                 skippedQuestions.ping();
@@ -68,10 +68,11 @@ export default class QuestionBox extends VariableUiElement {
                 if (tagRendering.IsKnown(tags)) {
                     continue;
                 }
-                if (tagRendering.condition &&
-                    !tagRendering.condition.matchesProperties(tags)) {
-                    // Filtered away by the condition, so it is kindof known
-                    continue;
+                if (tagRendering.condition) {
+                    if (!tagRendering.condition.matchesProperties(tags)) {
+                        // Filtered away by the condition, so it is kindof known
+                        continue;
+                    }
                 }
 
                 // this value is NOT known - this is the question we have to show!
@@ -79,7 +80,7 @@ export default class QuestionBox extends VariableUiElement {
             }
             return undefined; // The questions are depleted
         }, [skippedQuestions]);
-        
+
         const questionsToAsk: UIEventSource<BaseUIElement[]> = tagsSource.map(tags => {
             if (tags === undefined) {
                 return [];

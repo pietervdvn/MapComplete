@@ -3,7 +3,7 @@ import {OsmObject} from "../Logic/Osm/OsmObject";
 
 export default class OsmObjectSpec extends T {
     constructor() {
-        super("osmobject", [
+        super([
             [
                 "Download referencing ways",
                 () => {

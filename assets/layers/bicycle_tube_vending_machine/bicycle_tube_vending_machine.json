@@ -101,7 +101,7 @@
             "en": "This vending machine works",
             "nl": "Deze verkoopsautomaat werkt",
             "fr": "Le distributeur automatique fonctionne",
-            "hu": "Az automata működik",
+            "hu": "Ez az automata működik",
             "it": "Il distributore automatico funziona",
             "ru": "Этот торговый автомат работает",
             "zh_Hans": "这个借还机正常工作",
@@ -117,7 +117,7 @@
             "en": "This vending machine is broken",
             "nl": "Deze verkoopsautomaat is kapot",
             "fr": "Le distributeur automatique est en panne",
-            "hu": "Az automata elromlott",
+            "hu": "Ez az automata elromlott",
             "it": "Il distributore automatico è guasto",
             "ru": "Этот торговый автомат сломан",
             "zh_Hans": "这个借还机已经损坏",
@@ -133,7 +133,7 @@
             "en": "This vending machine is closed",
             "nl": "Deze verkoopsautomaat is uitgeschakeld",
             "fr": "Le distributeur automatique est fermé",
-            "hu": "Az automata zárva van",
+            "hu": "Ez az automata zárva van",
             "it": "Il distributore automatico è spento",
             "ru": "Этот торговый автомат закрыт",
             "zh_Hans": "这个借还机被关闭了",
@@ -284,5 +284,9 @@
     {
       "color": "#6bc4f7"
     }
-  ]
+  ],
+  "description": {
+    "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)",
+    "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)"
+  }
 }

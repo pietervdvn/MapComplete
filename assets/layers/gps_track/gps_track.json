@@ -9,25 +9,32 @@
   "title": {
     "render": "Your travelled path"
   },
+  "shownByDefault": false,
   "tagRenderings": [
     {
       "id": "Privacy notice",
       "render": {
-        "en": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device without your permission."
+        "en": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device.",
+        "nl": "Dit is waar je was sinds je deze website hebt geopened. Dit is enkel zichtbaar voor jou en niemand anders, je locatie wordt niet verstuurd"
       }
     },
     "export_as_gpx",
+    "export_as_geojson",
     "minimap",
     {
       "id": "delete",
       "render": "{clear_location_history()}"
     }
   ],
-  "name": "Your track",
+  "name": {
+    "en": "Your travelled track",
+    "nl": "Jouw afgelegde route"
+  },
   "mapRendering": [
     {
       "width": 3,
       "color": "#bb000077"
     }
-  ]
+  ],
+  "syncSelection": "global"
 }

@@ -59,12 +59,24 @@
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Restaurants and fast food' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
     },
     {
+      "key": "contact:email",
+      "description": "Layer 'Restaurants and fast food' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
     },
     {
       "key": "payment:cash",
@@ -344,6 +356,11 @@
       "key": "dog",
       "description": "Layer 'Restaurants and fast food' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "unleashed"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

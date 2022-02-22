@@ -9,7 +9,7 @@ export default class LanguagePicker {
         languages: string[],
         label: string | BaseUIElement = "") {
 
-        if (languages.length <= 1) {
+        if (languages === undefined || languages.length <= 1) {
             return undefined;
         }
 

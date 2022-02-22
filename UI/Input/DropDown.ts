@@ -37,7 +37,7 @@ export class DropDown<T> extends InputElement<T> {
         el.id = "dropdown" + id;
 
         {
-            const labelEl = Translations.W(label).ConstructElement()
+            const labelEl = Translations.W(label)?.ConstructElement()
             if (labelEl !== undefined) {
                 const labelHtml = document.createElement("label")
                 labelHtml.appendChild(labelEl)
@@ -54,7 +54,6 @@ export class DropDown<T> extends InputElement<T> {
             const select = document.createElement("select")
             select.classList.add(...(options.select_class.split(" ") ?? []))
             for (let i = 0; i < values.length; i++) {
-
                 const option = document.createElement("option")
                 option.value = "" + i
                 option.appendChild(Translations.W(values[i].shown).ConstructElement())

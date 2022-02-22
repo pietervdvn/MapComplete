@@ -1,0 +1,257 @@
+{
+  "id": "fire_station",
+  "name": {
+    "en": "Map of fire stations",
+    "ja": "消防署の地図",
+    "nb_NO": "Kart over brannstasjoner",
+    "it": "Mappa delle caserme dei vigili del fuoco",
+    "ru": "Карта пожарных частей",
+    "fr": "Couche des stations de pompiers",
+    "de": "Karte der Feuerwachen"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=fire_station"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Fire Station",
+      "ja": "消防署",
+      "ru": "Пожарная часть",
+      "nb_NO": "Brannstasjon",
+      "it": "Caserma dei vigili del fuoco",
+      "fr": "Station de pompiers",
+      "de": "Feuerwache"
+    }
+  },
+  "description": {
+    "en": "Map layer to show fire stations.",
+    "ja": "消防署を表示するためのマップレイヤ。",
+    "it": "Livello che mostra le caserme dei vigili del fuoco.",
+    "ru": "Слой карты, отображающий пожарные части.",
+    "fr": "Couche des stations de pompiers.",
+    "de": "Kartenebene zur Darstellung von Feuerwachen."
+  },
+  "tagRenderings": [
+    {
+      "id": "station-name",
+      "freeform": {
+        "key": "name"
+      },
+      "question": {
+        "en": "What is the name of this fire station?",
+        "ja": "この消防署の名前は何ですか?",
+        "ru": "Как называется эта пожарная часть?",
+        "it": "Come si chiama questa caserma dei vigili del fuoco?",
+        "fr": "Quel est le nom de la station ?",
+        "de": "Wie lautet der Name dieser Feuerwache?"
+      },
+      "render": {
+        "en": "This station is called {name}.",
+        "ja": "このステーションの名前は{name}です。",
+        "it": "Questa caserma si chiama {name}.",
+        "ru": "Эта часть называется {name}.",
+        "fr": "Cette station s’appelle {name}.",
+        "nb_NO": "Denne stasjonen heter {name}."
+      }
+    },
+    {
+      "id": "station-street",
+      "freeform": {
+        "key": "addr:street"
+      },
+      "question": {
+        "en": " What is the street name where the station located?",
+        "ja": " 救急ステーションの所在地はどこですか?",
+        "it": " Qual è il nome della via in cui si trova la caserma?",
+        "ru": " По какому адресу расположена эта часть?",
+        "fr": " Quel est le nom de la rue dans lequel elle se situe ?"
+      },
+      "render": {
+        "en": "This station is along a highway called {addr:street}.",
+        "ja": "{addr:street} 沿いにあります。",
+        "ru": "Часть расположена вдоль шоссе {addr:street}.",
+        "fr": "La station fait partie de la {addr:street}.",
+        "it": "La stazione si trova in una strada chiamata {addr:street}."
+      }
+    },
+    {
+      "id": "station-place",
+      "question": {
+        "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+        "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
+        "ru": "Где расположена часть? (напр., название населённого пункта)",
+        "fr": "Dans quelle localité la station est-elle située ?",
+        "it": "In che località si trova la stazione? (ad es. quartiere, paese o città)"
+      },
+      "freeform": {
+        "key": "addr:place"
+      },
+      "render": {
+        "en": "This station is found within {addr:place}.",
+        "ja": "このステーションは{addr:place}にあります。",
+        "ru": "Эта часть расположена в {addr:place}.",
+        "fr": "La station fait partie de {addr:place}.",
+        "it": "La stazione si trova a {addr:place}."
+      }
+    },
+    {
+      "id": "station-agency",
+      "question": {
+        "en": "What agency operates this station?",
+        "ja": "このステーションを運営しているのはどこですか?",
+        "fr": "Quel est l’exploitant de la station ?",
+        "it": "Quale agenzia gestisce questa stazione?"
+      },
+      "render": {
+        "en": "This station is operated by {operator}.",
+        "ja": "このステーションは{operator}によって運営されています。",
+        "fr": "Cette station est opérée par {operator}.",
+        "it": "Questa stazione è gestita da {operator}."
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Bureau of Fire Protection",
+              "operator:type=government"
+            ]
+          },
+          "then": {
+            "en": "Bureau of Fire Protection",
+            "ja": "消防局(消防庁)",
+            "fr": "Brigade de Protection du Feu",
+            "de": "Brandschutzbehörde",
+            "it": "Servizio antincendio governativo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "station-operator",
+      "question": {
+        "en": "How is the station operator classified?",
+        "ja": "ステーションの運営の分類は?",
+        "fr": "Quel est le type d’exploitant ?",
+        "it": "Com’è classificato il gestore di questa stazione?"
+      },
+      "render": {
+        "en": "The operator is a(n) {operator:type} entity.",
+        "ja": "運営者は、{operator:type} です。",
+        "fr": "L’exploitant est de type {operator:type}.",
+        "it": "Il gestore è un ente {operator:type}."
+      },
+      "freeform": {
+        "key": "operator:type"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator:type=government"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by the government.",
+            "ja": "ステーションは自治体が運営する。",
+            "fr": "La station est opérée par le gouvernement.",
+            "it": "Questa stazione è gestita dal governo.",
+            "nb_NO": "Stasjonen drives av myndighetene."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=community"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a community-based, or informal organization.",
+            "ja": "任意団体やコミュニティが運営しているステーションである。",
+            "fr": "La station est opérée par une organisation informelle.",
+            "it": "Questa stazione è gestita dalla comunità oppure un’associazione informale."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=ngo"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a formal group of volunteers.",
+            "ja": "公益団体が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe officiel de bénévoles.",
+            "it": "Questa stazione è gestita da un gruppo di volontari ufficiale."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=private"
+            ]
+          },
+          "then": {
+            "en": "The station is privately operated.",
+            "ja": "個人が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe privé.",
+            "it": "Questa stazione è gestita da privati."
+          }
+        }
+      ]
+    },
+    "images"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=fire_station"
+      ],
+      "title": {
+        "en": "Fire station",
+        "ja": "消防署",
+        "ru": "Пожарная часть",
+        "fr": "Caserne de pompiers",
+        "de": "Feuerwache",
+        "it": "Caserma dei vigili del fuoco",
+        "nb_NO": "Brannstasjon"
+      },
+      "description": {
+        "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
+        "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
+        "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+        "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+        "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra."
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+      },
+      "iconSize": {
+        "render": "35,35,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#c22"
+      },
+      "width": {
+        "render": "1"
+      }
+    }
+  ]
+}

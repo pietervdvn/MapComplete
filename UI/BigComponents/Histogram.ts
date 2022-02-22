@@ -5,7 +5,7 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
-import Translations from "../i18n/Translations";
+import Svg from "../../Svg";
 
 export default class Histogram<T> extends VariableUiElement {
 
@@ -13,17 +13,65 @@ export default class Histogram<T> extends VariableUiElement {
         "#ff5858",
         "#ffad48",
         "#ffff59",
-        "#9d62d9",
         "#56bd56",
         "#63a9ff",
+        "#9d62d9",
         "#fa61fa"
     ]
 
     constructor(values: UIEventSource<string[]>,
                 title: string | BaseUIElement,
                 countTitle: string | BaseUIElement,
-                assignColor?: (t0: string) => string
+                options?: {
+                    assignColor?: (t0: string) => string,
+                    sortMode?: "name" | "name-rev" | "count" | "count-rev"
+                }
     ) {
+        const sortMode = new UIEventSource<"name" | "name-rev" | "count" | "count-rev">(options?.sortMode ?? "name")
+        const sortName = new VariableUiElement(sortMode.map(m => {
+            switch (m) {
+                case "name":
+                    return Svg.up_svg()
+                case "name-rev":
+                    return Svg.up_svg().SetStyle("transform: rotate(180deg)")
+                default:
+                    return Svg.circle_svg()
+            }
+        }))
+        const titleHeader = new Combine([sortName.SetClass("w-4 mr-2"), title]).SetClass("flex")
+            .onClick(() => {
+                if (sortMode.data === "name") {
+                    sortMode.setData("name-rev")
+                } else {
+                    sortMode.setData("name")
+                }
+            })
+
+        const sortCount = new VariableUiElement(sortMode.map(m => {
+            switch (m) {
+                case "count":
+                    return Svg.up_svg()
+                case "count-rev":
+                    return Svg.up_svg().SetStyle("transform: rotate(180deg)")
+                default:
+                    return Svg.circle_svg()
+            }
+        }))
+
+
+        const countHeader = new Combine([sortCount.SetClass("w-4 mr-2"), countTitle]).SetClass("flex").onClick(() => {
+            if (sortMode.data === "count-rev") {
+                sortMode.setData("count")
+            } else {
+                sortMode.setData("count-rev")
+            }
+        })
+
+        const header = [
+            titleHeader,
+            countHeader
+        ]
+
         super(values.map(values => {
 
             if (values === undefined) {
@@ -39,7 +87,21 @@ export default class Histogram<T> extends VariableUiElement {
             }
 
             const keys = Array.from(counts.keys());
-            keys.sort()
+
+            switch (sortMode.data) {
+                case "name":
+                    keys.sort()
+                    break;
+                case "name-rev":
+                    keys.sort().reverse(/*Copy of array, inplace reverse if fine*/)
+                    break;
+                case "count":
+                    keys.sort((k0, k1) => counts.get(k0) - counts.get(k1))
+                    break;
+                case "count-rev":
+                    keys.sort((k0, k1) => counts.get(k1) - counts.get(k0))
+                    break;
+            }
 
             const max = Math.max(...Array.from(counts.values()))
 
@@ -48,16 +110,16 @@ export default class Histogram<T> extends VariableUiElement {
                 return Histogram.defaultPalette[index % Histogram.defaultPalette.length]
             };
             let actualAssignColor = undefined;
-            if (assignColor === undefined) {
+            if (options?.assignColor === undefined) {
                 actualAssignColor = fallbackColor;
             } else {
                 actualAssignColor = (keyValue: string) => {
-                    return assignColor(keyValue) ?? fallbackColor(keyValue)
+                    return options.assignColor(keyValue) ?? fallbackColor(keyValue)
                 }
             }
 
             return new Table(
-                [Translations.W(title), countTitle],
+                header,
                 keys.map(key => [
                     key,
                     new Combine([
@@ -68,7 +130,7 @@ export default class Histogram<T> extends VariableUiElement {
 
                 ]),
                 keys.map(_ => ["width: 20%"])
-            ).SetClass("w-full");
-        }));
+            ).SetClass("w-full zebra-table");
+        }, [sortMode]));
     }
 }

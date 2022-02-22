@@ -1,65 +1,79 @@
 import Combine from "../Base/Combine";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
-import CopyrightPanel from "./CopyrightPanel";
-import ContributorCount from "../../Logic/ContributorCount";
 import Toggle from "../Input/Toggle";
 import MapControlButton from "../MapControlButton";
 import Svg from "../../Svg";
 import AllDownloads from "./AllDownloads";
 import FilterView from "./FilterView";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
-import Loc from "../../Models/Loc";
-import {BBox} from "../../Logic/BBox";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import FilteredLayer from "../../Models/FilteredLayer";
-import BaseLayer from "../../Models/BaseLayer";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import BackgroundMapSwitch from "./BackgroundMapSwitch";
+import Lazy from "../Base/Lazy";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import FeatureInfoBox from "../Popup/FeatureInfoBox";
+import CopyrightPanel from "./CopyrightPanel";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 
 export default class LeftControls extends Combine {
 
-    constructor(state: {
-                    layoutToUse: LayoutConfig,
-                    featurePipeline: FeaturePipeline,
-                    currentBounds: UIEventSource<BBox>,
-                    locationControl: UIEventSource<Loc>,
-                    overlayToggles: any,
-                    featureSwitchEnableExport: UIEventSource<boolean>,
-                    featureSwitchExportAsPdf: UIEventSource<boolean>,
-                    filteredLayers: UIEventSource<FilteredLayer[]>,
-                    featureSwitchFilter: UIEventSource<boolean>,
-                    backgroundLayer: UIEventSource<BaseLayer>,
-                    osmConnection: OsmConnection
-                },
+    constructor(state: FeaturePipelineState,
                 guiState: {
+                    currentViewControlIsOpened: UIEventSource<boolean>;
                     downloadControlIsOpened: UIEventSource<boolean>,
                     filterViewIsOpened: UIEventSource<boolean>,
                     copyrightViewIsOpened: UIEventSource<boolean>
                 }) {
 
-        const toggledCopyright = new ScrollableFullScreen(
-            () => Translations.t.general.attribution.attributionTitle.Clone(),
-            () =>
-                new CopyrightPanel(
-                    state,
-                    new ContributorCount(state).Contributors
-                ),
-            "copyright",
-            guiState.copyrightViewIsOpened
-        );
 
-        const copyrightButton = new Toggle(
-            toggledCopyright,
-            new MapControlButton(Svg.copyright_svg())
-                .onClick(() => toggledCopyright.isShown.setData(true)),
-            toggledCopyright.isShown
-        ).SetClass("p-0.5");
+        const currentViewFL = state.currentView?.layer
+        const currentViewAction = new Toggle(
+            new Lazy(() => {
+                const feature: UIEventSource<any> = state.currentView.features.map(ffs => ffs[0]?.feature)
+                const icon = new VariableUiElement(feature.map(feature => {
+                    const defaultIcon = Svg.checkbox_empty_svg()
+                    if (feature === undefined) {
+                        return defaultIcon;
+                    }
+                    const tags = {...feature.properties, button: "yes"}
+                    const elem = currentViewFL.layerDef.mapRendering[0]?.GetSimpleIcon(new UIEventSource(tags));
+                    if (elem === undefined) {
+                        return defaultIcon
+                    }
+                    return elem
+                })).SetClass("inline-block w-full h-full")
+
+                const featureBox = new VariableUiElement(feature.map(feature => {
+                    if (feature === undefined) {
+                        return undefined
+                    }
+                    return new Lazy(() => {
+                        const tagsSource = state.allElements.getEventSourceById(feature.properties.id)
+                        return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, "currentview", guiState.currentViewControlIsOpened)
+                            .SetClass("md:floating-element-width")
+                    })
+                })).SetStyle("width: 40rem").SetClass("block")
+
+
+                return new Toggle(
+                    featureBox,
+                    new MapControlButton(icon),
+                    guiState.currentViewControlIsOpened
+                )
+
+            }).onClick(() => {
+                guiState.currentViewControlIsOpened.setData(true)
+            }),
+
+
+            undefined,
+            new UIEventSource<boolean>(currentViewFL !== undefined && currentViewFL?.layerDef?.tagRenderings !== null)
+        )
 
         const toggledDownload = new Toggle(
             new AllDownloads(
-                guiState.downloadControlIsOpened
-            ).SetClass("block p-1 rounded-full"),
+                guiState.downloadControlIsOpened,
+                state
+            ).SetClass("block p-1 rounded-full md:floating-element-width"),
             new MapControlButton(Svg.download_svg())
                 .onClick(() => guiState.downloadControlIsOpened.setData(true)),
             guiState.downloadControlIsOpened
@@ -81,8 +95,8 @@ export default class LeftControls extends Combine {
                     ),
                 "filters",
                 guiState.filterViewIsOpened
-            ).SetClass("rounded-lg"),
-            new MapControlButton(Svg.filter_svg())
+            ).SetClass("rounded-lg md:floating-element-width"),
+            new MapControlButton(Svg.layers_svg())
                 .onClick(() => guiState.filterViewIsOpened.setData(true)),
             guiState.filterViewIsOpened
         )
@@ -93,10 +107,37 @@ export default class LeftControls extends Combine {
             state.featureSwitchFilter
         );
 
+        const mapSwitch = new Toggle(
+            new BackgroundMapSwitch(state, state.backgroundLayer),
+            undefined,
+            state.featureSwitchBackgroundSelection
+        )
 
-        super([filterButton,
+        // If the welcomeMessage is disabled, the copyright is hidden (as that is where the copyright is located
+        const copyright = new Toggle(
+            undefined,
+            new Lazy(() =>
+                new Toggle(
+                    new ScrollableFullScreen(
+                        () => Translations.t.general.attribution.attributionTitle,
+                        () => new CopyrightPanel(state),
+                        "copyright",
+                        guiState.copyrightViewIsOpened
+                    ),
+                    new MapControlButton(Svg.copyright_svg()).onClick(() => guiState.copyrightViewIsOpened.setData(true)),
+                    guiState.copyrightViewIsOpened
+                )
+            ),
+            state.featureSwitchWelcomeMessage
+        )
+
+        super([
+            currentViewAction,
+            filterButton,
             downloadButtonn,
-            copyrightButton])
+            copyright,
+            mapSwitch
+        ])
 
         this.SetClass("flex flex-col")
 

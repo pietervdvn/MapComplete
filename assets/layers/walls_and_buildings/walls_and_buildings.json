@@ -1,0 +1,42 @@
+{
+  "id": "walls_and_buildings",
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Wall or building"
+    }
+  },
+  "description": {
+    "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, ...). This layer is invisible by default and not toggleable by the user."
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "barrier=wall",
+        "building~*"
+      ]
+    }
+  },
+  "passAllFeatures": true,
+  "shownByDefault": false,
+  "mapRendering": [
+    {
+      "color": {
+        "render": "#fff"
+      },
+      "fill": "no",
+      "width": {
+        "render": "3"
+      }
+    },
+    {
+      "color": {
+        "render": "#333"
+      },
+      "fill": "no",
+      "width": {
+        "render": "2"
+      }
+    }
+  ]
+}

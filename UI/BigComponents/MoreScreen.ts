@@ -1,5 +1,4 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
 import Svg from "../../Svg";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -10,11 +9,13 @@ import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Toggle from "../Input/Toggle";
 import {Utils} from "../../Utils";
 import Title from "../Base/Title";
+import * as themeOverview from "../../assets/generated/theme_overview.json"
+import {Translation} from "../i18n/Translation";
 
 export default class MoreScreen extends Combine {
 
@@ -47,7 +48,13 @@ export default class MoreScreen extends Combine {
         state: {
             locationControl?: UIEventSource<Loc>,
             layoutToUse?: LayoutConfig
-        }, layout: LayoutConfig, customThemeDefinition: string = undefined
+        }, layout: {
+            id: string,
+            icon: string,
+            title: any,
+            shortDescription: any,
+            definition?: any
+        }, isCustom: boolean = false
     ):
         BaseUIElement {
         if (layout === undefined) {
@@ -73,16 +80,19 @@ export default class MoreScreen extends Combine {
         }
 
         let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
-        let linkSuffix = ""
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-            linkPrefix = `${path}/index.html?layout=${layout.id}&`
+            linkPrefix = `${path}/theme.html?layout=${layout.id}&`
         }
 
-        if (customThemeDefinition) {
-            linkPrefix = `${path}/index.html?userlayout=${layout.id}&`
-            linkSuffix = `#${customThemeDefinition}`
+        if (isCustom) {
+            linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
         }
 
+        let hash = ""
+        if(layout.definition !== undefined){
+            hash = "#"+btoa(JSON.stringify(layout.definition))
+        }
+        
         const linkText = currentLocation?.map(currentLocation => {
             const params = [
                 ["z", currentLocation?.zoom],
@@ -91,58 +101,122 @@ export default class MoreScreen extends Combine {
             ].filter(part => part[1] !== undefined)
                 .map(part => part[0] + "=" + part[1])
                 .join("&")
-            return `${linkPrefix}${params}${linkSuffix}`;
-        }) ?? new UIEventSource<string>(`${linkPrefix}${linkSuffix}`)
+            return `${linkPrefix}${params}${hash}`;
+        }) ?? new UIEventSource<string>(`${linkPrefix}`)
+
 
 
         return new SubtleButton(layout.icon,
             new Combine([
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                Translations.WT(layout.title),
+                new Translation(layout.title),
                 `</dt>`,
                 `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
-                Translations.WT(layout.shortDescription)?.SetClass("subtle") ?? "",
+                new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
                 `</dd>`,
             ]), {url: linkText, newTab: false});
     }
 
+    public static CreateProffessionalSerivesButton() {
+        const t = Translations.t.professional.indexPage;
+        return new Combine([
+            new Title(t.hook, 4),
+            t.hookMore,
+            new SubtleButton(undefined, t.button, {url: "./professional.html"}),
+        ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
+    }
+
+    private static createUnofficialButtonFor(state: UserRelatedState, id: string): BaseUIElement {
+        const allPreferences = state.osmConnection.preferencesHandler.preferences.data;
+        const length = Number(allPreferences[id + "-length"])
+        let str = "";
+        for (let i = 0; i < length; i++) {
+            str += allPreferences[id + "-" + i]
+        }
+        if(str === undefined || str === "undefined"){
+            return undefined
+        }
+        try {
+            const value: {
+                id: string
+                icon: string,
+                title: any,
+                shortDescription: any,
+                definition?: any
+            } = JSON.parse(str)
+
+            return MoreScreen.createLinkButton(state, value, true)
+        } catch (e) {
+            console.debug("Could not parse unofficial theme information for " + id, "The json is: ", str, e)
+            return undefined
+        }
+    }
+
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
-        return new VariableUiElement(state.installedThemes.map(customThemes => {
-            if (customThemes.length <= 0) {
-                return undefined;
-            }
-            const customThemeButtons = customThemes.map(theme => MoreScreen.createLinkButton(state, theme.layout, theme.definition)?.SetClass(buttonClass))
-            return new Combine([
-                Translations.t.general.customThemeIntro.Clone(),
-                new Combine(customThemeButtons).SetClass(themeListClasses)
-            ]);
-        }));
+        const prefix = "mapcomplete-unofficial-theme-";
+
+        var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
+            .map(allPreferences => {
+                const ids: string[] = []
+
+                for (const key in allPreferences) {
+                    if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
+                        const id = key.substring(0, key.length - "-length".length)
+                        ids.push(id)
+                    }
+                }
+
+                return ids
+            });
+
+        var stableIds = UIEventSource.ListStabilized<string>(currentIds)
+
+        return new VariableUiElement(
+            stableIds.map(ids => {
+                const allThemes: BaseUIElement[] = []
+                for (const id of ids) {
+                    const link = this.createUnofficialButtonFor(state, id)
+                    if (link !== undefined) {
+                        allThemes.push(link.SetClass(buttonClass))
+                    }
+                }
+
+                if (allThemes.length <= 0) {
+                    return undefined;
+                }
+                return new Combine([
+                    Translations.t.general.customThemeIntro.Clone(),
+                    new Combine(allThemes).SetClass(themeListClasses)
+                ]);
+            }));
     }
 
     private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
         const t = Translations.t.general.morescreen
         const prefix = "mapcomplete-hidden-theme-"
-        const hiddenTotal = AllKnownLayouts.layoutsList.filter(layout => layout.hideFromOverview).length
+        const hiddenThemes = themeOverview["default"].filter(layout => layout.hideFromOverview)
+        const hiddenTotal = hiddenThemes.length
+
         return new Toggle(
             new VariableUiElement(
                 state.osmConnection.preferencesHandler.preferences.map(allPreferences => {
-                    const knownThemes = Utils.NoNull(Object.keys(allPreferences)
+                    const knownThemes: Set<string> = new Set(Utils.NoNull(Object.keys(allPreferences)
                         .filter(key => key.startsWith(prefix))
-                        .map(key => key.substring(prefix.length, key.length - "-enabled".length))
-                        .map(theme => AllKnownLayouts.allKnownLayouts.get(theme)))
-                        .filter(theme => theme?.hideFromOverview)
-                    if (knownThemes.length === 0) {
+                        .map(key => key.substring(prefix.length, key.length - "-enabled".length))));
+
+                    if (knownThemes.size === 0) {
                         return undefined
                     }
 
-                    const knownLayouts = new Combine(knownThemes.map(layout =>
-                        MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass)
-                    )).SetClass(themeListStyle)
+                    const knownThemeDescriptions = hiddenThemes.filter(theme => knownThemes.has(theme.id))
+                        .map(theme => MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass));
+
+                    const knownLayouts = new Combine(knownThemeDescriptions).SetClass(themeListStyle)
 
                     return new Combine([
                         new Title(t.previouslyHiddenTitle),
                         t.hiddenExplanation.Subs({
-                            hidden_discovered: "" + knownThemes.length,
+                            hidden_discovered: "" + knownThemes.size,
                             total_hidden: "" + hiddenTotal
                         }),
                         knownLayouts
@@ -158,7 +232,7 @@ export default class MoreScreen extends Combine {
     }
 
     private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string): BaseUIElement {
-        let officialThemes = AllKnownLayouts.layoutsList
+        let officialThemes = themeOverview["default"];
 
         let buttons = officialThemes.map((layout) => {
             if (layout === undefined) {
@@ -184,8 +258,9 @@ export default class MoreScreen extends Combine {
             return button;
         })
 
-        let customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
-        buttons.splice(0, 0, customGeneratorLink);
+        const professional = MoreScreen.CreateProffessionalSerivesButton();
+        const customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
+        buttons.splice(0, 0, customGeneratorLink, professional);
 
         return new Combine(buttons)
     }

@@ -1,231 +1,655 @@
 {
-  "artwork": {
-    "presets": {
-      "0": {
-        "title": "Műalkotás"
-      }
-    },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Műalkotás <i>{name}</i>"
+    "address": {
+        "description": "Címek",
+        "name": "Ismert címek az OSM-en",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Mit kellene itt kijavítani? Légy szíves, magyarázd el"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Ennek az épületnek nincs házszáma"
+                    }
+                },
+                "question": "Mi ennek az épületnek a házszáma?",
+                "render": "A házszám: <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Melyik utcában található ez a cím?",
+                "render": "Ez a cím a következő utcában van: <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Ismert cím"
         }
-      },
-      "render": "Műalkotás"
-    }
-  },
-  "bench": {
-    "name": "Padok",
-    "tagRenderings": {
-      "bench-backrest": {
-        "mappings": {
-          "0": {
-            "then": "Háttámla: Igen"
-          },
-          "1": {
-            "then": "Háttámla: Nem"
-          }
-        },
-        "question": "Van háttámlája ennek a padnak?"
-      },
-      "bench-colour": {
-        "mappings": {
-          "0": {
-            "then": "Szín: barna"
-          },
-          "1": {
-            "then": "Szín: zöld"
-          },
-          "2": {
-            "then": "Szín: szürke"
-          },
-          "3": {
-            "then": "Szín: fehér"
-          },
-          "4": {
-            "then": "Szín: piros"
-          },
-          "5": {
-            "then": "Szín: fekete"
-          },
-          "6": {
-            "then": "Szín: kék"
-          },
-          "7": {
-            "then": "Szín: sárga"
-          }
-        },
-        "question": "Milyen színű a pad?",
-        "render": "Szín: {colour}"
-      },
-      "bench-direction": {
-        "question": "Milyen irányba néz a pad?",
-        "render": "A pad {direction}° felé néz."
-      },
-      "bench-material": {
-        "mappings": {
-          "0": {
-            "then": "Anyag: fa"
-          },
-          "1": {
-            "then": "Anyag: fém"
-          },
-          "2": {
-            "then": "Anyag: kő"
-          },
-          "3": {
-            "then": "Anyag: beton"
-          },
-          "4": {
-            "then": "Anyag: műanyag"
-          },
-          "5": {
-            "then": "Anyag: acél"
-          }
-        },
-        "question": "Miből van a pad (ülő része)?",
-        "render": "Anyag: {material}"
-      },
-      "bench-seats": {
-        "question": "Hány ülőhely van ezen a padon?",
-        "render": "{seats} ülőhely"
-      }
     },
-    "title": {
-      "render": "Pad"
-    }
-  },
-  "bench_at_pt": {
-    "name": "Padok megállókban",
-    "tagRenderings": {
-      "bench_at_pt-name": {
-        "render": "{name}"
-      }
+    "ambulancestation": {
+        "description": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
+        "name": "Mentőállomás-térkép",
+        "presets": {
+            "0": {
+                "description": "Mentőállomás hozzáadása a térképhez",
+                "title": "Mentőállomás"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Milyen szervezet működteti ezt az állomást?",
+                "render": "Az állomás üzemeltetője: {operator}."
+            },
+            "ambulance-name": {
+                "question": "Mi a neve ennek a menőtállomásnak?",
+                "render": "A mentőállomás neve: {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "A mentőállomást a kormány üzemelteti."
+                    },
+                    "1": {
+                        "then": "Mentőállomást egy közösségi vagy nem hivatalos szervezet működteti."
+                    },
+                    "2": {
+                        "then": "A mentőállomást egy önkéntesekből álló hivatalos csoport működteti."
+                    },
+                    "3": {
+                        "then": "Az állomást egy magánkézben lévő szervezet működteti."
+                    }
+                },
+                "question": "Hogyan sorolható be az állomás üzemeltetője?",
+                "render": "Az üzemeltető egy {operator:type} jellegű szervezet."
+            },
+            "ambulance-place": {
+                "question": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)",
+                "render": "Ez az állomás itt található: {addr:place}."
+            },
+            "ambulance-street": {
+                "question": " Mi a neve annak az utcának, amelyben az állomás található?",
+                "render": "Ez az állomás a következő utcában van: {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Mentőállomás"
+        }
     },
-    "title": {
-      "mappings": {
-        "0": {
-          "then": "Pad megállóban"
+    "artwork": {
+        "description": "Különféle műalkotások",
+        "name": "Műalkotások",
+        "presets": {
+            "0": {
+                "title": "Műalkotás"
+            }
         },
-        "1": {
-          "then": "Pad fedett helyen"
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Melyik művész alkotása ezt?",
+                "render": "Alkotó: {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Építészet"
+                    },
+                    "1": {
+                        "then": "Falfestmény"
+                    },
+                    "2": {
+                        "then": "Festmény"
+                    },
+                    "3": {
+                        "then": "Absztrakt szobor"
+                    },
+                    "4": {
+                        "then": "Szobor"
+                    },
+                    "5": {
+                        "then": "Mellszobor"
+                    },
+                    "6": {
+                        "then": "Kő"
+                    },
+                    "7": {
+                        "then": "Installáció"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Dombormű"
+                    },
+                    "10": {
+                        "then": "Azulejo (portugál vagy spanyol dekoratív csempe)"
+                    },
+                    "11": {
+                        "then": "Csempe"
+                    }
+                },
+                "question": "Milyen fajta műalkotás ez?",
+                "render": "Ez egy {artwork_type}"
+            },
+            "artwork-website": {
+                "question": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
+                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
+            },
+            "artwork-wikidata": {
+                "question": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?",
+                "render": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Műalkotás <i>{name}</i>"
+                }
+            },
+            "render": "Műalkotás"
         }
-      },
-      "render": "Pad"
-    }
-  },
-  "bicycle_library": {
-    "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
-    "tagRenderings": {
-      "bicycle-library-target-group": {
-        "mappings": {
-          "0": {
-            "then": ""
-          }
-        },
-        "question": "Ki kölcsönözhet itt kerékpárt?"
-      },
-      "bicycle_library-charge": {
-        "mappings": {
-          "0": {
-            "then": "A kerékpárkölcsönzés ingyenes"
-          }
-        },
-        "question": "Mennyibe kerül egy kerékpár kölcsönzése?",
-        "render": "Egy kerékpár kölcsönzése {charge}"
-      }
-    }
-  },
-  "bicycle_tube_vending_machine": {
-    "tagRenderings": {
-      "Still in use?": {
-        "mappings": {
-          "0": {
-            "then": "Az automata működik"
-          },
-          "1": {
-            "then": "Az automata elromlott"
-          },
-          "2": {
-            "then": "Az automata zárva van"
-          }
-        }
-      }
-    }
-  },
-  "bike_parking": {
-    "name": "Kerékpáros parkoló",
-    "presets": {
-      "0": {
-        "title": "Kerékpáros parkoló"
-      }
     },
-    "tagRenderings": {
-      "Bicycle parking type": {
-        "mappings": {
-          "0": {
-            "then": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
-          },
-          "1": {
-            "then": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
-          },
-          "4": {
-            "then": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
-          },
-          "5": {
-            "then": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
-          }
+    "barrier": {
+        "description": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
+        "name": "Akadályok",
+        "presets": {
+            "0": {
+                "description": "Terelőoszlop az úton",
+                "title": "Terelőoszlop"
+            },
+            "1": {
+                "description": "A kerékpáros sebességét csökkentő kerékpárakadály",
+                "title": "Kerékpárakadály"
+            }
         },
-        "question": "Milyen típusú ez a kerékpáros parkoló?",
-        "render": "Ez egy {bicycle_parking} típusú kerékpáros parkoló"
-      },
-      "Is covered?": {
-        "mappings": {
-          "0": {
-            "then": "A parkoló fedett"
-          },
-          "1": {
-            "then": "A parkoló nem fedett"
-          }
-        },
-        "question": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)"
-      },
-      "Underground?": {
-        "mappings": {
-          "1": {
-            "then": "Felszíni parkoló"
-          },
-          "2": {
-            "then": "Tetőparkoló"
-          },
-          "3": {
-            "then": "Felszíni parkoló"
-          },
-          "4": {
-            "then": "Tetőparkoló"
-          }
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "0": {
+                        "then": "Eltávolítható terelőoszlop"
+                    },
+                    "1": {
+                        "then": "Rögzített terelőoszlop"
+                    },
+                    "2": {
+                        "then": "Lehajtható terelőoszlop"
+                    },
+                    "3": {
+                        "then": "Rugalmas (általában műanyag) terelőoszlop"
+                    },
+                    "4": {
+                        "then": "Felemelkedő terelőoszlop"
+                    }
+                },
+                "question": "Milyen fajta terelőoszlop ez?"
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Egyszeres: csak két korlát, közöttük térköz"
+                    },
+                    "1": {
+                        "then": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után"
+                    },
+                    "2": {
+                        "then": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után"
+                    },
+                    "3": {
+                        "then": "Szűkítőkapu: a rés felül keskenyebb, mint alul"
+                    }
+                },
+                "question": "Milyen fajta kerékpárakadály ez?"
+            },
+            "MaxWidth": {
+                "question": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?",
+                "render": "Legnagyobb szélesség: {maxwidth:physical} m"
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "Mekkora a korlátok átfedése?",
+                "render": "Átfedés: {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "Mekkora távolság van a korlátok között (az út irányában)?",
+                "render": "A korlátok közötti távolság (az út irányában): {width:separation} m"
+            },
+            "Width of opening (cyclebarrier)": {
+                "question": "Milyen széles a korlátok melletti legkisebb nyílás?",
+                "render": "Nyílás szélessége: {width:opening} m"
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez egyetlen oszlop az úton"
+                    },
+                    "1": {
+                        "then": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat"
+                    }
+                }
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "Kerékpárral át lehet hajtani."
+                    },
+                    "1": {
+                        "then": "Kerékpárral nem lehet áthajtani."
+                    }
+                },
+                "question": "Át lehet-e menni rajta kerékpárral?"
+            }
         }
-      }
     },
-    "title": {
-      "render": "Kerékpáros parkoló"
-    }
-  },
-  "ghost_bike": {
-    "name": "Emlékkerékpár",
-    "title": {
-      "render": "Emlékkerékpár"
-    }
-  },
-  "shops": {
-    "tagRenderings": {
-      "shops-shop": {
-        "mappings": {
-          "5": {
-            "then": "Autószerelő"
-          }
+    "bench": {
+        "name": "Padok",
+        "tagRenderings": {
+            "bench-backrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Háttámla van"
+                    },
+                    "1": {
+                        "then": "Háttámla nincs"
+                    }
+                },
+                "question": "Van-e háttámlája ennek a padnak?"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Szín: barna"
+                    },
+                    "1": {
+                        "then": "Szín: zöld"
+                    },
+                    "2": {
+                        "then": "Szín: szürke"
+                    },
+                    "3": {
+                        "then": "Szín: fehér"
+                    },
+                    "4": {
+                        "then": "Szín: piros"
+                    },
+                    "5": {
+                        "then": "Szín: fekete"
+                    },
+                    "6": {
+                        "then": "Szín: kék"
+                    },
+                    "7": {
+                        "then": "Szín: sárga"
+                    }
+                },
+                "question": "Milyen színű ez a pad?",
+                "render": "Szín: {colour}"
+            },
+            "bench-direction": {
+                "question": "Milyen irányba néz a pad?",
+                "render": "A pad {direction}° felé néz."
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Anyag: fa"
+                    },
+                    "1": {
+                        "then": "Anyag: fém"
+                    },
+                    "2": {
+                        "then": "Anyag: kő"
+                    },
+                    "3": {
+                        "then": "Anyag: beton"
+                    },
+                    "4": {
+                        "then": "Anyag: műanyag"
+                    },
+                    "5": {
+                        "then": "Anyag: acél"
+                    }
+                },
+                "question": "Miből van a pad (ülő része)?",
+                "render": "Anyag: {material}"
+            },
+            "bench-seats": {
+                "question": "Hány ülőhely van ezen a padon?",
+                "render": "{seats} ülőhely"
+            }
+        },
+        "title": {
+            "render": "Pad"
         }
-      }
+    },
+    "bench_at_pt": {
+        "name": "Padok megállókban",
+        "tagRenderings": {
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pad megállóban"
+                },
+                "1": {
+                    "then": "Pad fedett helyen"
+                }
+            },
+            "render": "Pad"
+        }
+    },
+    "bicycle_library": {
+        "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
+        "tagRenderings": {
+            "bicycle-library-target-group": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "Ki kölcsönözhet itt kerékpárt?"
+            },
+            "bicycle_library-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "A kerékpárkölcsönzés ingyenes"
+                    }
+                },
+                "question": "Mennyibe kerül egy kerékpár kölcsönzése?",
+                "render": "Egy kerékpár kölcsönzése {charge}"
+            }
+        }
+    },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "bicycle_rental_type": {
+                "mappings": {
+                    "5": {
+                        "then": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
+                    }
+                }
+            }
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez az automata működik"
+                    },
+                    "1": {
+                        "then": "Ez az automata elromlott"
+                    },
+                    "2": {
+                        "then": "Ez az automata zárva van"
+                    }
+                }
+            }
+        }
+    },
+    "bike_parking": {
+        "name": "Kerékpártároló",
+        "presets": {
+            "0": {
+                "title": "Kerékpártároló"
+            }
+        },
+        "tagRenderings": {
+            "Bicycle parking type": {
+                "mappings": {
+                    "0": {
+                        "then": "Korlát"
+                    },
+                    "1": {
+                        "then": "Kerékbefogó hurok"
+                    },
+                    "4": {
+                        "then": "Kétszintű"
+                    },
+                    "5": {
+                        "then": "Fészer"
+                    }
+                },
+                "question": "Milyen típusú ez a kerékpártároló?",
+                "render": "Ez egy {bicycle_parking} típusú kerékpártároló"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez a parkoló fedett"
+                    },
+                    "1": {
+                        "then": "Ez a parkoló nem fedett"
+                    }
+                },
+                "question": "Fedett-e ez a parkoló? Beltéri parkolónál is válaszd a „fedett” opciót."
+            },
+            "Underground?": {
+                "mappings": {
+                    "1": {
+                        "then": "Felszíni parkoló"
+                    },
+                    "2": {
+                        "then": "Tetőparkoló"
+                    },
+                    "3": {
+                        "then": "Felszíni parkoló"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Kerékpártároló"
+        }
+    },
+    "cafe_pub": {
+        "description": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Most nyitva van"
+                    }
+                }
+            }
+        },
+        "name": "Kávézók és kocsmák",
+        "presets": {
+            "0": {
+                "title": "kocsma"
+            },
+            "1": {
+                "title": "bár"
+            },
+            "2": {
+                "title": "kávézó"
+            }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "question": "Milyen fajta kávézó ez?"
+            },
+            "Name": {
+                "question": "Mi a neve ennek a kocsmának?",
+                "render": "A kocsma neve: {name}"
+            }
+        }
+    },
+    "drinking_water": {
+        "description": "Ivóvizet adó kutakat megjelenítő réteg",
+        "name": "Ivóvíz",
+        "presets": {
+            "0": {
+                "title": "ivóvíz"
+            }
+        },
+        "tagRenderings": {
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": "Könnyen lehet vizespalackot tölteni"
+                    },
+                    "1": {
+                        "then": "Lehet, hogy nem fér alá egy vizespalack"
+                    }
+                },
+                "question": "Mennyire könnyű itt vizespalackot tölteni?"
+            },
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez az ivóvízkút működik"
+                    },
+                    "1": {
+                        "then": "Ez az ivóvízkút elromlott"
+                    },
+                    "2": {
+                        "then": "Ez az ivóvízkút el van zárva"
+                    }
+                },
+                "question": "Működik-e még ez az ivóvíznyerő hely?",
+                "render": "Működési állapota: <i>{operational_status}</i>"
+            },
+            "render-closest-drinking-water": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>"
+            }
+        },
+        "title": {
+            "render": "Ivóvíz"
+        }
+    },
+    "ghost_bike": {
+        "name": "Emlékkerékpárok",
+        "presets": {
+            "0": {
+                "title": "Emlékkerékpár"
+            }
+        },
+        "title": {
+            "render": "Emlékkerékpár"
+        }
+    },
+    "public_bookcase": {
+        "description": "Egy utcai szekrény könyvekkel, amelyet bárki használhat",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Beltéri vagy kültéri"
+                    }
+                }
+            }
+        },
+        "name": "Könyvespolcok",
+        "presets": {
+            "0": {
+                "title": "Könyvespolc"
+            }
+        },
+        "tagRenderings": {
+            "bookcase-booktypes": {
+                "mappings": {
+                    "0": {
+                        "then": "Többnyire gyermekkönyvek"
+                    },
+                    "1": {
+                        "then": "Többnyire felnőtteknek szóló könyvek"
+                    },
+                    "2": {
+                        "then": "Gyerekeknek és felnőtteknek szóló könyvek egyaránt"
+                    }
+                },
+                "question": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
+            },
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "Nyilvánosan használható"
+                    },
+                    "1": {
+                        "then": "Csak ügyfelek használhatják"
+                    }
+                },
+                "question": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?"
+            },
+            "bookcase-is-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez a könyvespolc beltérben található"
+                    },
+                    "1": {
+                        "then": "Ez a könyvespolc a szabadban van"
+                    },
+                    "2": {
+                        "then": "Ez a könyvszekrény a szabadban van"
+                    }
+                },
+                "question": "A szabadban van-e ez a könyvespolc?"
+            },
+            "public_bookcase-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "A „Little Free Library” hálózat része"
+                    },
+                    "1": {
+                        "then": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak"
+                    }
+                },
+                "question": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?",
+                "render": "Ez a nyilvános könyvespolc a(z) {brand} része"
+            },
+            "public_bookcase-capacity": {
+                "question": "Hány könyv fér el ezen a nyilvános könyvespolcon?",
+                "render": "Ezen a könyvespolcon {capacity} könyv fér el"
+            },
+            "public_bookcase-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Ennek a könyvespolcnak nincs neve"
+                    }
+                },
+                "question": "Mi a neve ennek a nyilvános könyvespolcnak?",
+                "render": "Ennek a könyvespolcnak a neve: {name}"
+            },
+            "public_bookcase-operator": {
+                "question": "Ki tartja fenn ezt a nyilvános könyvespolcot?",
+                "render": "Üzemeltető: {operator}"
+            },
+            "public_bookcase-ref": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez a könyvespolc nem része egy nagyobb hálózatnak"
+                    }
+                },
+                "question": "Mi az azonosító száma ennek a nyilvános könyvespolcnak?",
+                "render": "A(z) {brand} márkanéven belül ennek a nyilvános könyvespolcnak az azonosító száma: {ref}"
+            },
+            "public_bookcase-start_date": {
+                "question": "Mikor állították fel ezt a nyilvános könyvespolcot?",
+                "render": "Telepítés dátuma: {start_date}"
+            },
+            "public_bookcase-website": {
+                "question": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
+                "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "A nyilvános könyvespolc neve: <i>{name}</i>"
+                }
+            },
+            "render": "Könyvespolc"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "shops-shop": {
+                "mappings": {
+                    "5": {
+                        "then": "Autószerelő"
+                    }
+                }
+            }
+        }
     }
-  }
 }

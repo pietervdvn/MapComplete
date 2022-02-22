@@ -4,7 +4,8 @@
     "en": "Trails",
     "nl": "Wandeltochten",
     "ru": "Тропы",
-    "de": "Wanderwege"
+    "de": "Wanderwege",
+    "fr": "Sentiers"
   },
   "minzoom": 12,
   "source": {
@@ -12,9 +13,10 @@
       "and": [
         {
           "or": [
-            "route=hiking",
-            "route=bycicle",
-            "route=horse"
+            "route~.*foot.*",
+            "route~.*hiking.*",
+            "route~.*bycicle.*",
+            "route~.*horse.*"
           ]
         }
       ]
@@ -25,7 +27,8 @@
       "en": "Trail",
       "nl": "Wandeltocht",
       "ru": "Тропа",
-      "de": "Wanderweg"
+      "de": "Wanderweg",
+      "fr": "Sentier"
     },
     "mappings": [
       {
@@ -74,7 +77,11 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+            "nl": "Dit gebied wordt beheerd door Natuurpunt"
+          },
+          "icon": {
+            "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
+            "class": "small"
           }
         },
         {
@@ -84,9 +91,13 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+            "nl": "Dit gebied wordt beheerd door {operator}"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
+            "class": "small"
+          }
         }
       ],
       "id": "Operator tag"

@@ -1,0 +1,311 @@
+{
+  "id": "entrance",
+  "name": {
+    "en": "Entrance",
+    "nl": "Toegang"
+  },
+  "description": {
+    "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)",
+    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "entrance~*",
+        "indoor=door"
+      ]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Entrance"
+    }
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "Entrance type",
+      "question": {
+        "en": "What type of entrance is this?",
+        "nl": "Wat voor ingang is dit?"
+      },
+      "mappings": [
+        {
+          "if": "entrance=yes",
+          "then": {
+            "en": "No specific entrance type is known",
+            "nl": "Het specifieke type ingang is onbekend"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "entrance=",
+              "indoor=door"
+            ]
+          },
+          "then": {
+            "en": "This is an indoor door, separating a room or a corridor within a single building",
+            "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=main"
+            ]
+          },
+          "then": {
+            "en": "This is the main entrance",
+            "nl": "Dit is de hoofdingang"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=secondary"
+            ]
+          },
+          "then": {
+            "en": "This is a secondary entrance",
+            "nl": "Dit is een secundaire ingang"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=service"
+            ]
+          },
+          "then": {
+            "en": "This is a service entrance - normally only used for employees, delivery, ...",
+            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, ..."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=exit"
+            ]
+          },
+          "then": {
+            "en": "This is an exit where one can not enter",
+            "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=entrance"
+            ]
+          },
+          "then": {
+            "en": "This is an entrance where one can only enter (but not exit)",
+            "nl": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=emergency"
+            ]
+          },
+          "then": {
+            "en": "This is emergency exit",
+            "nl": "Dit is een nooduitgang"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=home"
+            ]
+          },
+          "then": {
+            "en": "This is the entrance to a private home",
+            "nl": "Dit is de ingang van een private woning"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Door_type",
+      "question": {
+        "en": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>",
+        "nl": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
+      },
+      "mappings": [
+        {
+          "if": "door=yes",
+          "then": {
+            "en": "The door type is not known",
+            "nl": "Het type deur is onbekend"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "door=hinged",
+          "then": {
+            "en": "A classical, hinged door supported by joints",
+            "nl": "Een gewone deur die aan scharnieren ophangt en openzwaait"
+          }
+        },
+        {
+          "if": "door=revolving",
+          "then": {
+            "en": "A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure",
+            "nl": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait"
+          }
+        },
+        {
+          "if": "door=sliding",
+          "then": {
+            "en": "A sliding door where the door slides sidewards, typically parallel with a wall",
+            "nl": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt"
+          }
+        },
+        {
+          "if": "door=overhead",
+          "then": {
+            "en": "A door which rolls from overhead, typically seen for garages",
+            "nl": "Een poort die langs boven dichtrolt, typisch voor garages"
+          }
+        },
+        {
+          "if": "door=no",
+          "then": {
+            "en": "This is an entrance without a physical door",
+            "nl": "Er is een toegang zonder een deur"
+          },
+          "hideInAnswer": "entrance="
+        }
+      ]
+    },
+    {
+      "id": "automatic_door",
+      "question": "Is this door automated?",
+      "condition": "door!=no",
+      "mappings": [
+        {
+          "if": "automatic_door=yes",
+          "then": {
+            "en": "This is an automatic door",
+            "nl": "Dit is een automatische deur"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "automatic_door=no",
+          "then": {
+            "en": "This door is <b>not</b> automated",
+            "nl": "Deze deur is <b>niet</b> automatisch"
+          }
+        },
+        {
+          "if": "automatic_door=motion",
+          "then": {
+            "en": "This door will open automatically when <b>motion</b> is detected",
+            "nl": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd"
+          }
+        },
+        {
+          "if": "automatic_door=floor",
+          "then": {
+            "en": "This door will open automatically when a <b>sensor in the floor</b> is triggered",
+            "nl": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd"
+          }
+        },
+        {
+          "if": "automatic_door=button",
+          "then": {
+            "en": "This door will open automatically when a <b>button is pressed</b>",
+            "nl": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>"
+          }
+        },
+        {
+          "if": "automatic_door=slowdown_button",
+          "then": {
+            "en": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users",
+            "nl": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers"
+          }
+        },
+        {
+          "if": "automatic_door=continuous",
+          "then": {
+            "en": "This door revolves automatically all the time",
+            "nl": "De deur draait continue automatisch"
+          }
+        },
+        {
+          "if": "automatic_door=serviced_on_button_press",
+          "then": {
+            "en": "This door will be opened by staff when requested by <b>pressing a button</b>",
+            "nl": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>"
+          }
+        },
+        {
+          "if": "automatic_door=serviced_on_request",
+          "then": {
+            "en": "This door will be opened by staff when requested",
+            "nl": "De deur wordt geopend door personeel wanneer je het vraagt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "width",
+      "render": {
+        "en": "This door has a width of {canonical(width)} meter"
+      },
+      "question": {
+        "en": "What is the width of this door/entrance?",
+        "nl": "Wat is de breedte van deze deur/toegang?"
+      },
+      "freeform": {
+        "key": "width",
+        "type": "length"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "circle:white;./assets/layers/entrance/door.svg",
+        "mappings": [
+          {
+            "if": "entrance=emergency",
+            "then": "circle:white;./assets/layers/entrance/emergency_door.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "presets": [
+    {
+      "title": "entrance",
+      "preciseInput": {
+        "preferredBackground": "photo",
+        "snapToLayer": [
+          "walls_and_buildings",
+          "pedestrian_path"
+        ]
+      },
+      "tags": [
+        "entrance=yes"
+      ]
+    }
+  ]
+}

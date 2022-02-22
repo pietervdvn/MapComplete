@@ -1,5 +1,101 @@
 [
   {
+    "path": "FlandersArtSans-Light.woff",
+    "license": "All rights reserved",
+    "authors": [
+      "Jo De Baerdemaeker "
+    ],
+    "sources": [
+      "https://www.studiotype.be/fonts/flandersart"
+    ]
+  },
+  {
+    "path": "FlandersArtSerif-Medium.woff",
+    "license": "All rights reserved",
+    "authors": [
+      "Jo De Baerdemaeker "
+    ],
+    "sources": [
+      "https://www.studiotype.be/fonts/flandersart"
+    ]
+  },
+  {
+    "path": "avatar.png",
+    "license": "Logo",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/"
+    ]
+  },
+  {
+    "path": "bench.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "bicycle_rental.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "charging_station_ebike.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "cycle_pump.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "cycle_repair.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "cycle_repair_and_pump.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
     "path": "logo.png",
     "license": "Logo (all rights reserved)",
     "authors": [
@@ -7,6 +103,89 @@
     ],
     "sources": [
       "https://www.toerismevlaanderen.be/"
+    ]
+  },
+  {
+    "path": "logo.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "observation_platform.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "observation_tower.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "picnic_table.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "playground.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "toilets.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "toilets_wheelchair.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
+    ]
+  },
+  {
+    "path": "toilets_wheelchair.svg",
+    "license": "CC0",
+    "authors": [
+      "Toerisme Vlaanderen"
+    ],
+    "sources": [
+      "https://toerismevlaanderen.be/pinjepunt",
+      "https://mapcomplete.osm.be/toerisme_vlaanderen"
     ]
   }
 ]

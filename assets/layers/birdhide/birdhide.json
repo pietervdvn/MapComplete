@@ -1,6 +1,7 @@
 {
   "id": "birdhide",
   "name": {
+    "en": "Bird watching places",
     "nl": "Vogelkijkhutten"
   },
   "minzoom": 14,
@@ -13,16 +14,18 @@
   },
   "title": {
     "render": {
+      "en": "Bird watching place",
       "nl": "Vogelkijkplaats"
     },
     "mappings": [
       {
         "if": {
           "and": [
-            "name~((V|v)ogel.*).*"
+            "name~(((V|v)ogel)|(B|b)ird).*"
           ]
         },
         "then": {
+          "*": "{name}",
           "nl": "{name}"
         }
       },
@@ -39,6 +42,7 @@
           ]
         },
         "then": {
+          "en": "Bird hide {name}",
           "nl": "Vogelkijkhut {name}"
         }
       },
@@ -49,12 +53,14 @@
           ]
         },
         "then": {
+          "en": "Bird blind {name}",
           "nl": "Vogelkijkwand {name}"
         }
       }
     ]
   },
   "description": {
+    "en": "A birdhide",
     "nl": "Een vogelkijkhut"
   },
   "tagRenderings": [
@@ -62,6 +68,7 @@
     {
       "id": "bird-hide-shelter-or-wall",
       "question": {
+        "en": "Is this a bird blind or a bird watching shelter?",
         "nl": "Is dit een kijkwand of kijkhut?"
       },
       "mappings": [
@@ -74,6 +81,7 @@
             ]
           },
           "then": {
+            "en": "Bird blind",
             "nl": "Vogelkijkwand"
           }
         },
@@ -86,6 +94,7 @@
             ]
           },
           "then": {
+            "en": "Bird hide",
             "nl": "Vogelkijkhut"
           }
         },
@@ -97,6 +106,7 @@
             ]
           },
           "then": {
+            "en": "Bird tower hide",
             "nl": "Vogelkijktoren"
           }
         },
@@ -109,6 +119,7 @@
             ]
           },
           "then": {
+            "en": "Bird hide shelter",
             "nl": "Vogelkijkhut"
           },
           "hideInAnswer": true
@@ -118,6 +129,7 @@
     {
       "id": "bird-hide-wheelchair",
       "question": {
+        "en": "Is this bird hide accessible to wheelchair users?",
         "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?"
       },
       "mappings": [
@@ -128,6 +140,7 @@
             ]
           },
           "then": {
+            "en": "There are special provisions for wheelchair users",
             "nl": "Er zijn speciale voorzieningen voor rolstoelen"
           }
         },
@@ -138,6 +151,7 @@
             ]
           },
           "then": {
+            "en": "A wheelchair can easily use this birdhide",
             "nl": "Een rolstoel raakt er vlot"
           }
         },
@@ -148,6 +162,7 @@
             ]
           },
           "then": {
+            "en": "This birdhide is reachable by wheelchair, but it is not easy",
             "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
           }
         },
@@ -158,6 +173,7 @@
             ]
           },
           "then": {
+            "en": "Not accessible to wheelchair users",
             "nl": "Niet rolstoeltoegankelijk"
           }
         }
@@ -165,24 +181,28 @@
     },
     {
       "render": {
+        "en": "Operated by {operator}",
         "nl": "Beheer door {operator}"
       },
       "freeform": {
         "key": "operator"
       },
       "question": {
+        "en": "Who operates this birdhide?",
         "nl": "Wie beheert deze vogelkijkplaats?"
       },
       "mappings": [
         {
           "if": "operator=Natuurpunt",
           "then": {
+            "en": "Operated by Natuurpunt",
             "nl": "Beheer door Natuurpunt"
           }
         },
         {
           "if": "operator=Agentschap Natuur en Bos",
           "then": {
+            "en": "Operated by the Agency for Nature and Forests",
             "nl": "Beheer door het Agentschap Natuur en Bos "
           }
         }
@@ -213,9 +233,11 @@
         "amenity=shelter"
       ],
       "title": {
+        "en": "Birdhide",
         "nl": "vogelkijkhut"
       },
       "description": {
+        "en": "A covered shelter where one can watch birds comfortably",
         "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
       }
     },
@@ -226,9 +248,11 @@
         "shelter=no"
       ],
       "title": {
+        "en": "Bird blind",
         "nl": "vogelkijkwand"
       },
       "description": {
+        "en": "A screen or wall with openings to watch birds",
         "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
       }
     }
@@ -241,7 +265,8 @@
           "question": {
             "nl": "Rolstoeltoegankelijk",
             "en": "Wheelchair accessible",
-            "de": "Zugänglich für Rollstuhlfahrer"
+            "de": "Zugänglich für Rollstuhlfahrer",
+            "fr": "Accessible aux fauteuils roulants"
           },
           "osmTags": {
             "or": [
@@ -258,6 +283,7 @@
       "options": [
         {
           "question": {
+            "en": "Only covered birdhides",
             "nl": "Enkel overdekte kijkhutten"
           },
           "osmTags": {
@@ -290,9 +316,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": {
-          "nl": "./assets/layers/birdhide/birdhide.svg"
-        },
+        "render": "./assets/layers/birdhide/birdhide.svg",
         "mappings": [
           {
             "if": {

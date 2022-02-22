@@ -102,6 +102,11 @@
     {
       "key": "description",
       "description": "Layer 'Facade gardens' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Facade gardens')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Facade gardens has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

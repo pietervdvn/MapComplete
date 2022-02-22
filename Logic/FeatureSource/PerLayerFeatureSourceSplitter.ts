@@ -26,7 +26,7 @@ export default class PerLayerFeatureSourceSplitter {
             if (features === undefined) {
                 return;
             }
-            if (layers.data === undefined) {
+            if (layers.data === undefined || layers.data.length === 0) {
                 return;
             }
 
@@ -36,28 +36,22 @@ export default class PerLayerFeatureSourceSplitter {
             const featuresPerLayer = new Map<string, { feature, freshness } []>();
             const noLayerFound = []
 
-            function addTo(layer: FilteredLayer, feature: { feature, freshness }) {
-                const id = layer.layerDef.id
-                const list = featuresPerLayer.get(id)
-                if (list !== undefined) {
-                    list.push(feature)
-                } else {
-                    featuresPerLayer.set(id, [feature])
-                }
+            for (const layer of layers.data) {
+                featuresPerLayer.set(layer.layerDef.id, [])
             }
 
             for (const f of features) {
                 for (const layer of layers.data) {
                     if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         // We have found our matching layer!
-                        addTo(layer, f)
+                        featuresPerLayer.get(layer.layerDef.id).push(f)
                         if (!layer.layerDef.passAllFeatures) {
                             // If not 'passAllFeatures', we are done for this feature
                             break;
                         }
                     }
-                    noLayerFound.push(f)
                 }
+                noLayerFound.push(f)
             }
 
             // At this point, we have our features per layer as a list

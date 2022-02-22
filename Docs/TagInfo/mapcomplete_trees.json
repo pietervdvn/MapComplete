@@ -33,7 +33,7 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows height~^[0-9.]+$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "leaf_type",
@@ -106,12 +106,12 @@
     },
     {
       "key": "name",
-      "description": "Layer 'Tree' shows name=&noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees') Picking this answer will delete the key name.",
+      "description": "Layer 'Tree' shows noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees') Picking this answer will delete the key name.",
       "value": ""
     },
     {
       "key": "noname",
-      "description": "Layer 'Tree' shows name=&noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "yes"
     },
     {
@@ -136,22 +136,22 @@
     },
     {
       "key": "heritage",
-      "description": "Layer 'Tree' shows heritage=yes&heritage:operator= with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows heritage=yes with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "yes"
     },
     {
       "key": "heritage:operator",
-      "description": "Layer 'Tree' shows heritage=yes&heritage:operator= with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees') Picking this answer will delete the key heritage:operator.",
+      "description": "Layer 'Tree' shows heritage=yes with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees') Picking this answer will delete the key heritage:operator.",
       "value": ""
     },
     {
       "key": "heritage",
-      "description": "Layer 'Tree' shows heritage=no&heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows heritage=no with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "no"
     },
     {
       "key": "heritage:operator",
-      "description": "Layer 'Tree' shows heritage=no&heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees') Picking this answer will delete the key heritage:operator.",
+      "description": "Layer 'Tree' shows heritage=no with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees') Picking this answer will delete the key heritage:operator.",
       "value": ""
     },
     {
@@ -165,6 +165,11 @@
     {
       "key": "wikidata",
       "description": "Layer 'Tree' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Trees')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Trees has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
     }
   ]
 }

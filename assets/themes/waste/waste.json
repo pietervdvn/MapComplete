@@ -1,0 +1,32 @@
+{
+  "id": "waste",
+  "maintainer": "",
+  "version": "2022-01-19",
+  "language": [
+    "en",
+    "nl"
+  ],
+  "title": {
+    "en": "Waste",
+    "nl": "Afval"
+  },
+  "description": {
+    "en": "Map showing waste baskets and recycling facilities.",
+    "nl": "Kaart met afvalbakken en recyclingfaciliteiten."
+  },
+  "icon": "./assets/layers/recycling/recycling-14.svg",
+  "startZoom": 19,
+  "startLat": 53.24865,
+  "startLon": 6.60075,
+  "layers": [
+    {
+      "builtin": "waste_basket",
+      "override": {
+        "minzoom": 18,
+        "minzoomVisible": 18
+      }
+    },
+    "recycling",
+    "waste_disposal"
+  ]
+}

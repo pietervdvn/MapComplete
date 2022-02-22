@@ -10,6 +10,9 @@ import RelationsTracker from "../Osm/RelationsTracker";
 import {BBox} from "../BBox";
 import Loc from "../../Models/Loc";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import Constants from "../../Models/Constants";
+import TileFreshnessCalculator from "../FeatureSource/TileFreshnessCalculator";
+import {Tiles} from "../../Models/TileRange";
 
 
 export default class OverpassFeatureSource implements FeatureSource {
@@ -37,8 +40,17 @@ export default class OverpassFeatureSource implements FeatureSource {
         readonly overpassTimeout: UIEventSource<number>;
         readonly currentBounds: UIEventSource<BBox>
     }
-    private readonly _isActive: UIEventSource<boolean>;
+    private readonly _isActive: UIEventSource<boolean>
+    /**
+     * Callback to handle all the data
+     */
     private readonly onBboxLoaded: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void;
+
+    /**
+     * Keeps track of how fresh the data is
+     * @private
+     */
+    private readonly freshnesses: Map<string, TileFreshnessCalculator>;
 
     constructor(
         state: {
@@ -53,13 +65,15 @@ export default class OverpassFeatureSource implements FeatureSource {
             padToTiles: UIEventSource<number>,
             isActive?: UIEventSource<boolean>,
             relationTracker: RelationsTracker,
-            onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void
+            onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void,
+            freshnesses?: Map<string, TileFreshnessCalculator>
         }) {
 
         this.state = state
         this._isActive = options.isActive;
         this.onBboxLoaded = options.onBboxLoaded
         this.relationsTracker = options.relationTracker
+        this.freshnesses = options.freshnesses
         const self = this;
         state.currentBounds.addCallback(_ => {
             self.update(options.padToTiles.data)
@@ -116,10 +130,14 @@ export default class OverpassFeatureSource implements FeatureSource {
 
 
         const layersToDownload = []
+        const neededTiles = this.state.currentBounds.data.expandToTileBounds(padToZoomLevel).containingTileRange(padToZoomLevel)
         for (const layer of this.state.layoutToUse.layers) {
 
             if (typeof (layer) === "string") {
                 throw "A layer was not expanded!"
+            }
+            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+                continue
             }
             if (this.state.locationControl.data.zoom < layer.minzoom) {
                 continue;
@@ -131,7 +149,30 @@ export default class OverpassFeatureSource implements FeatureSource {
                 // Not our responsibility to download this layer!
                 continue;
             }
+            const freshness = this.freshnesses?.get(layer.id)
+            if (freshness !== undefined) {
+                const oldestDataDate = Math.min(...Tiles.MapRange(neededTiles, (x, y) => {
+                    const date = freshness.freshnessFor(padToZoomLevel, x, y);
+                    if (date === undefined) {
+                        return 0
+                    }
+                    return date.getTime()
+                })) / 1000;
+                const now = new Date().getTime()
+                const minRequiredAge = (now / 1000) - layer.maxAgeOfCache
+                if (oldestDataDate >= minRequiredAge) {
+                    // still fresh enough - not updating
+                    continue
+                }
+
+            }
+
             layersToDownload.push(layer)
+        }
+
+        if (layersToDownload.length == 0) {
+            console.debug("Not updating - no layers needed")
+            return;
         }
 
         const self = this;
@@ -184,7 +225,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             if (data === undefined) {
                 return undefined
             }
-            data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date, undefined));
+            data.features.forEach(feature => SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(feature, date, undefined, this.state));
             self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
             return [bounds, date, layersToDownload];
         } catch (e) {

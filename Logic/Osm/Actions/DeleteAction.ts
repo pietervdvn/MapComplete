@@ -1,4 +1,3 @@
-import State from "../../../State";
 import {OsmObject} from "../OsmObject";
 import OsmChangeAction from "./OsmChangeAction";
 import {Changes} from "../Changes";
@@ -27,7 +26,7 @@ export default class DeleteAction extends OsmChangeAction {
                     specialMotivation: string
                 },
                 hardDelete: boolean) {
-        super(id,true)
+        super(id, true)
         this._id = id;
         this._hardDelete = hardDelete;
         this.meta = {...meta, changeType: "deletion"};
@@ -37,7 +36,7 @@ export default class DeleteAction extends OsmChangeAction {
 
     }
 
-    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
 
         const osmObject = await OsmObject.DownloadObjectAsync(this._id)
 
@@ -52,7 +51,7 @@ export default class DeleteAction extends OsmChangeAction {
             return await new ChangeTagAction(
                 this._id, this._softDeletionTags, osmObject.tags,
                 {
-                    theme: State.state?.layoutToUse?.id ?? "unkown",
+                    ...this.meta,
                     changeType: "soft-delete"
                 }
             ).CreateChangeDescriptions(changes)

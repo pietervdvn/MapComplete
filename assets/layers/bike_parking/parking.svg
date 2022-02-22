@@ -1,21 +1,38 @@
-<svg width="97" height="123" viewBox="0 0 97 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M52.1412 111.419C50.4633 115.605 44.5366 115.605 42.8588 111.419L24.7014 66.1099C23.385 62.8252 25.8039 59.25 29.3426 59.25L65.6574 59.25C69.1962 59.25 71.615 62.8252 70.2986 66.11L52.1412 111.419Z"
-          fill="#5675DF"/>
-    <ellipse cx="48.5" cy="47.5" rx="48.5" ry="47.5" fill="#5675DF"/>
-    <g filter="url(#filter0_d)">
-        <path d="M42.2812 53.1875V71H36.2812V25.5H53.0625C58.0417 25.5 61.9375 26.7708 64.75 29.3125C67.5833 31.8542 69 35.2188 69 39.4062C69 43.8229 67.6146 47.2292 64.8438 49.625C62.0938 52 58.1458 53.1875 53 53.1875H42.2812ZM42.2812 48.2812H53.0625C56.2708 48.2812 58.7292 47.5312 60.4375 46.0312C62.1458 44.5104 63 42.3229 63 39.4688C63 36.7604 62.1458 34.5938 60.4375 32.9688C58.7292 31.3438 56.3854 30.5 53.4062 30.4375H42.2812V48.2812Z"
-              fill="white"/>
-    </g>
-    <defs>
-        <filter id="filter0_d" x="32.2812" y="25.5" width="40.7188" height="53.5" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-        </filter>
-    </defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="295"
+   height="348.33301"
+   viewBox="0 0 295 348.33301"
+   version="1.1"
+   id="svg24"
+   sodipodi:docname="parking.svg"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview26"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.6454142"
+     inkscape:cx="160.44592"
+     inkscape:cy="171.38541"
+     inkscape:current-layer="svg24" />
+   <g
+     aria-label="P"
+     transform="translate(-16.798674,-61.651243)"
+     id="text3337"
+     style="font-size:266.667px;line-height:1.25;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3339);fill:#ffffff">
+    <path
+       d="m 173.23565,108.00102 q 36.80005,0 53.60007,16.00002 17.06668,15.73336 17.06668,43.46672 0,16.53336 -6.93334,31.20004 -6.93334,14.40002 -23.20003,23.20003 -16.00002,8.80001 -43.73338,8.80001 h -17.33336 v 67.73342 H 112.43558 V 108.00102 Z m -2.13334,33.06671 h -18.40002 v 56.5334 h 13.33335 q 17.06669,0 26.93337,-6.66667 10.13334,-6.93334 10.13334,-22.13336 0,-27.73337 -32.00004,-27.73337 z"
+       style="font-weight:bold"
+       id="path19001" />
+  </g>
 </svg>

@@ -1,0 +1,228 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Entrances",
+    "description": "Survey entrances to help wheelchair routing",
+    "project_url": "https://mapcomplete.osm.be/entrances",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/entrance/door.svg",
+    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "value": "footway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "value": "path"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "value": "corridor"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "value": "steps"
+    },
+    {
+      "key": "entrance",
+      "description": "The MapComplete theme Entrances has a layer Entrance showing features with this tag"
+    },
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Entrances has a layer Entrance showing features with this tag",
+      "value": "door"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=yes with a fixed text, namely 'No specific entrance type is known' (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "yes"
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key entrance.",
+      "value": ""
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "door"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "main"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "secondary"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "service"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "exit"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "entrance"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "emergency"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "home"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=yes with a fixed text, namely 'The door type is not known' (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "yes"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=hinged with a fixed text, namely 'A classical, hinged door supported by joints' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "hinged"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=revolving with a fixed text, namely 'A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "revolving"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=sliding with a fixed text, namely 'A sliding door where the door slides sidewards, typically parallel with a wall' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "sliding"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=overhead with a fixed text, namely 'A door which rolls from overhead, typically seen for garages' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "overhead"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=no with a fixed text, namely 'This is an entrance without a physical door' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "no"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=yes with a fixed text, namely 'This is an automatic door' (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "yes"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=no with a fixed text, namely 'This door is <b>not</b> automated' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "no"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=motion with a fixed text, namely 'This door will open automatically when <b>motion</b> is detected' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "motion"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=floor with a fixed text, namely 'This door will open automatically when a <b>sensor in the floor</b> is triggered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "floor"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=button with a fixed text, namely 'This door will open automatically when a <b>button is pressed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "button"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=slowdown_button with a fixed text, namely 'This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "slowdown_button"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=continuous with a fixed text, namely 'This door revolves automatically all the time' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "continuous"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "serviced_on_button_press"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_request with a fixed text, namely 'This door will be opened by staff when requested' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "serviced_on_request"
+    },
+    {
+      "key": "width",
+      "description": "Layer 'Entrance' shows and asks freeform values for key 'width' (in the MapComplete.osm.be theme 'Entrances')"
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Entrances has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
+    }
+  ]
+}

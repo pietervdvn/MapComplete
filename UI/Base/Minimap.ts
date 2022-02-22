@@ -13,15 +13,19 @@ export interface MinimapOptions {
     attribution?: BaseUIElement | boolean,
     onFullyLoaded?: (leaflet: L.Map) => void,
     leafletMap?: UIEventSource<any>,
-    lastClickLocation?: UIEventSource<{ lat: number, lon: number }>
+    lastClickLocation?: UIEventSource<{ lat: number, lon: number }>,
+    addLayerControl?: boolean | false
 }
 
 export interface MinimapObj {
     readonly leafletMap: UIEventSource<any>,
+    readonly location: UIEventSource<Loc>;
+    readonly bounds: UIEventSource<BBox>;
 
     installBounds(factor: number | BBox, showRange?: boolean): void
 
     TakeScreenshot(): Promise<any>;
+
 }
 
 export default class Minimap {
@@ -30,11 +34,15 @@ export default class Minimap {
      * importing leaflet crashes node-ts, which is pretty annoying considering the fact that a lot of scripts use it
      */
 
+    private constructor() {
+    }
+
     /**
      * Construct a minimap
      */
-    public static createMiniMap: (options: MinimapOptions) => (BaseUIElement & MinimapObj) = (_) => {
+    public static createMiniMap: (options?: MinimapOptions) => (BaseUIElement & MinimapObj) = (_) => {
         throw "CreateMinimap hasn't been initialized yet. Please call MinimapImplementation.initialize()"
     }
+
 
 }

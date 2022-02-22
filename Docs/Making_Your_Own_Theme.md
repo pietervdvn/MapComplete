@@ -110,18 +110,19 @@ A JSON-schema file is available in Docs/Schemas - use LayoutConfig.schema.json t
 ### MetaTags
 
 There are few tags available that are calculated for convenience - e.g. the country an object is located
-at. [An overview of all these metatags is available here](Docs/CalculatedTags.md)
-
+at. [An overview of all these metatags is available here](CalculatedTags.md)
 
 ### TagRendering groups
 
-A tagRendering can have a `group`-attribute, which acts as a tag.
-All tagRenderings with the same group name will be rendered together, in the same order as they were defined.
+A tagRendering can have a `group`-attribute, which acts as a tag. All tagRenderings with the same group name will be
+rendered together, in the same order as they were defined.
 
-For example, if the defined tagrenderings have groups `A A B A A B B B`, the group order is `A B` and first all tagrenderings from group A will be rendered (thus numbers 0, 1, 3 and 4) followed by the question box for this group.
+For example, if the defined tagrenderings have groups `A A B A A B B B`, the group order is `A B` and first all
+tagrenderings from group A will be rendered (thus numbers 0, 1, 3 and 4) followed by the question box for this group.
 Then, all the tagRenderings for group B will be shown, thus number 2, 5, 6 and 7, again followed by their questionbox.
 
-Additionally, every tagrendering will receive a the groupname as class in the HTML, which can be used to hook up custom CSS.
+Additionally, every tagrendering will receive a the groupname as class in the HTML, which can be used to hook up custom
+CSS.
 
 If no group tag is given, the group is `` (empty string)
 
@@ -133,7 +134,8 @@ To override this behaviour, one can add a tagrendering with id `questions` to mo
 
 To add a title to the questions, one can add a `render` and a condition.
 
-To change the behaviour of the questionbox to show _all_ questions at once, one can use a helperArgs in the freeform field with option `showAllQuestions`.
+To change the behaviour of the questionbox to show _all_ questions at once, one can use a helperArgs in the freeform
+field with option `showAllQuestions`.
 
 For example, to show the questions on top, use:
 

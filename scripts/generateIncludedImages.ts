@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-function genImages() {
+function genImages(dryrun = false) {
 
     console.log("Generating images")
     const dir = fs.readdirSync("./assets/svg")
@@ -17,7 +17,7 @@ function genImages() {
             throw "Non-svg file detected in the svg files: " + path;
         }
 
-        const svg = fs.readFileSync("./assets/svg/" + path, "utf-8")
+        let svg = fs.readFileSync("./assets/svg/" + path, "utf-8")
             .replace(/<\?xml.*?>/, "")
             .replace(/fill: ?none;/g, "fill: none !important;") // This is such a brittle hack...
             .replace(/\n/g, " ")
@@ -26,11 +26,23 @@ function genImages() {
             .replace(/"/g, "\\\"")
         const name = path.substr(0, path.length - 4)
             .replace(/[ -]/g, "_");
+
+        if (dryrun) {
+            svg = "xxx"
+        }
+
+        let rawName = name;
+        if (dryrun) {
+            rawName = "add";
+        }
+
         module += `    public static ${name} = "${svg}"\n`
-        module += `    public static ${name}_img = Img.AsImageElement(Svg.${name})\n`
-        module += `    public static ${name}_svg() { return new Img(Svg.${name}, true);}\n`
-        module += `    public static ${name}_ui() { return new FixedUiElement(Svg.${name}_img);}\n\n`
-        allNames.push(`"${path}": Svg.${name}`)
+        module += `    public static ${name}_img = Img.AsImageElement(Svg.${rawName})\n`
+        module += `    public static ${name}_svg() { return new Img(Svg.${rawName}, true);}\n`
+        module += `    public static ${name}_ui() { return new FixedUiElement(Svg.${rawName}_img);}\n\n`
+        if (!dryrun) {
+            allNames.push(`"${path}": Svg.${name}`)
+        }
     }
     module += `public static All = {${allNames.join(",")}};`
     module += "}\n";

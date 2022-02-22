@@ -2,18 +2,13 @@
   "id": "fritures",
   "title": {
     "nl": "Friturenkaart",
+    "en": "Fries shops",
     "fr": "Carte des friteries"
   },
   "description": {
+    "en": "On this map, you'll find your favourite fries shop!",
     "nl": "Op deze kaart vind je je favoriete frituur!"
   },
-  "language": [
-    "nl",
-    "fr",
-    "en",
-    "de",
-    "it"
-  ],
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
   "version": "0",
@@ -21,7 +16,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 3,
-  "socialImage": "",
   "layers": [
     {
       "builtin": "food",
@@ -32,10 +26,12 @@
           "en": "Fries shop",
           "fr": "Friteries",
           "de": "Pommesbude",
-          "it": "Friggitoria"
+          "it": "Friggitoria",
+          "hu": "Sültkrumplievő-hely"
         },
+        "=presets": [],
         "source": {
-          "osmTags": {
+          "=osmTags": {
             "and": [
               "cuisine=friture",
               {
@@ -53,7 +49,8 @@
       "builtin": "food",
       "override": {
         "minzoom": 19,
-        "filter": null
+        "filter": null,
+        "name": null
       }
     }
   ]
