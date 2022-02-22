@@ -33,12 +33,12 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
         super(null, true);
         this._tags = [...tags, new Tag("type", "multipolygon")];
         this.changeType = changeType;
-        this.theme = state.layoutToUse.id
+        this.theme = state?.layoutToUse?.id ?? ""
         this.createOuterWay = new CreateWayWithPointReuseAction([], outerRingCoordinates, state, config)
         this.createInnerWays = innerRingsCoordinates.map(ringCoordinates =>
             new CreateNewWayAction([],
                 ringCoordinates.map(([lon, lat]) => ({lat, lon})),
-                {theme: state.layoutToUse.id}))
+                {theme: state?.layoutToUse?.id}))
 
         this.geojsonPreview = {
             type: "Feature",

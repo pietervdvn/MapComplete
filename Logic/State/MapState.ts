@@ -117,10 +117,12 @@ export default class MapState extends UserRelatedState {
         })
 
 
-        this.overlayToggles = this.layoutToUse.tileLayerSources.filter(c => c.name !== undefined).map(c => ({
+        this.overlayToggles = this.layoutToUse?.tileLayerSources
+            ?.filter(c => c.name !== undefined)
+            ?.map(c => ({
             config: c,
             isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, c.defaultState, "Wether or not the overlay " + c.id + " is shown")
-        }))
+        })) ?? []
         this.filteredLayers = this.InitializeFilteredLayers()
 
 
@@ -142,7 +144,7 @@ export default class MapState extends UserRelatedState {
             initialized.add(overlayToggle.config)
         }
 
-        for (const tileLayerSource of this.layoutToUse.tileLayerSources) {
+        for (const tileLayerSource of this.layoutToUse?.tileLayerSources ?? []) {
             if (initialized.has(tileLayerSource)) {
                 continue
             }
@@ -153,28 +155,14 @@ export default class MapState extends UserRelatedState {
 
     private lockBounds() {
         const layout = this.layoutToUse;
-        if (layout.lockLocation) {
-            if (layout.lockLocation === true) {
-                const tile = Tiles.embedded_tile(
-                    layout.startLat,
-                    layout.startLon,
-                    layout.startZoom - 1
-                );
-                const bounds = Tiles.tile_bounds(tile.z, tile.x, tile.y);
-                // We use the bounds to get a sense of distance for this zoom level
-                const latDiff = bounds[0][0] - bounds[1][0];
-                const lonDiff = bounds[0][1] - bounds[1][1];
-                layout.lockLocation = [
-                    [layout.startLat - latDiff, layout.startLon - lonDiff],
-                    [layout.startLat + latDiff, layout.startLon + lonDiff],
-                ];
-            }
-            console.warn("Locking the bounds to ", layout.lockLocation);
-            this.mainMapObject.installBounds(
-                new BBox(layout.lockLocation),
-                this.featureSwitchIsTesting.data
-            )
+        if (!layout?.lockLocation) {
+            return;
         }
+        console.warn("Locking the bounds to ", layout.lockLocation);
+        this.mainMapObject.installBounds(
+            new BBox(layout.lockLocation),
+            this.featureSwitchIsTesting.data
+        )
     }
 
     private initCurrentView() {
@@ -364,8 +352,10 @@ export default class MapState extends UserRelatedState {
     }
 
     private InitializeFilteredLayers() {
-
         const layoutToUse = this.layoutToUse;
+        if(layoutToUse === undefined){
+            return new UIEventSource<FilteredLayer[]>([])
+        }
         const flayers: FilteredLayer[] = [];
         for (const layer of layoutToUse.layers) {
             let isDisplayed: UIEventSource<boolean>

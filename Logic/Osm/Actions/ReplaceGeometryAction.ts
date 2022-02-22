@@ -28,6 +28,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     /**
      * The target coordinates that should end up in OpenStreetMap.
      * This is identical to either this.feature.geometry.coordinates or -in case of a polygon- feature.geometry.coordinates[0]
+     * Format: [lon, lat]
      */
     private readonly targetCoordinates: [number, number][];
     /**
@@ -540,8 +541,6 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                     id: nodeId,
                 })
             })
-
-
         }
 
         return allChanges

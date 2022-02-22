@@ -528,7 +528,7 @@ function stackHists<K, V>(hists: [V, Histogram<K>][]): [V, Histogram<K>][] {
         runningTotals.bumpHist(hist)
         result.push([vhist[0], clone])
     })
-    result.reverse()
+    result.reverse(/* Changes in place, safe copy*/)
     return result
 }
 

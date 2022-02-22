@@ -75,7 +75,7 @@ export default class FeaturePipeline {
         this.state = state;
 
         const self = this
-        const expiryInSeconds = Math.min(...state.layoutToUse.layers.map(l => l.maxAgeOfCache))
+        const expiryInSeconds = Math.min(...state.layoutToUse?.layers?.map(l => l.maxAgeOfCache) ?? [])
         this.oldestAllowedDate = new Date(new Date().getTime() - expiryInSeconds);
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))

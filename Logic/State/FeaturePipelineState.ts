@@ -25,7 +25,7 @@ export default class FeaturePipelineState extends MapState {
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
-        const clustering = layoutToUse.clustering
+        const clustering = layoutToUse?.clustering
         this.featureAggregator = TileHierarchyAggregator.createHierarchy(this);
         const clusterCounter = this.featureAggregator
         const self = this;

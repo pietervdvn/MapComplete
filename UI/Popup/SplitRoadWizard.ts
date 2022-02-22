@@ -107,7 +107,7 @@ export default class SplitRoadWizard extends Toggle {
                 .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) < 5)
                 .map(p => p[1])
                 .sort((a, b) => a - b)
-                .reverse()
+                .reverse(/*Copy/derived list, inplace reverse is fine*/)
             if (points.length > 0) {
                 for (const point of points) {
                     splitPoints.data.splice(point, 1)

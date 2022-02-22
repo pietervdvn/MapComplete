@@ -79,7 +79,7 @@ export default class OsmFeatureSource {
         })
 
 
-        const neededLayers = options.state.layoutToUse.layers
+        const neededLayers = (options.state.layoutToUse?.layers ?? [])
             .filter(layer => !layer.doNotDownload)
             .filter(layer => layer.source.geojsonSource === undefined || layer.source.isOsmCacheLayer)
         this.allowedTags = new Or(neededLayers.map(l => l.source.osmTags))

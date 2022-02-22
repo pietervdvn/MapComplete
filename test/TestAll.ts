@@ -20,6 +20,7 @@ import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
 import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations.spec";
 import CreateCacheSpec from "./CreateCache.spec";
 import CodeQualitySpec from "./CodeQuality.spec";
+import ImportMultiPolygonSpec from "./ImportMultiPolygon.spec";
 
 
 async function main() {
@@ -43,7 +44,8 @@ async function main() {
         new CreateNoteImportLayerSpec(),
         new ValidatedTextFieldTranslationsSpec(),
         new CreateCacheSpec(),
-        new CodeQualitySpec()
+        new CodeQualitySpec(),
+        new ImportMultiPolygonSpec()
     ]
     ScriptUtils.fixUtils();
     const realDownloadFunc = Utils.externalDownloadFunction;

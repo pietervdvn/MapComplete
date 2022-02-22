@@ -127,7 +127,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     public GetBaseIcon(tags?: any): BaseUIElement {
         tags = tags ?? {id: "node/-1"}
         const rotation = Utils.SubstituteKeys(this.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
-        const htmlDefs = Utils.SubstituteKeys(this.icon.GetRenderValue(tags)?.txt, tags)
+        const htmlDefs = Utils.SubstituteKeys(this.icon?.GetRenderValue(tags)?.txt, tags)
         let defaultPin: BaseUIElement = undefined
         if (this.label === undefined) {
             defaultPin = Svg.teardrop_with_hole_green_svg()
