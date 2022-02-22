@@ -56,7 +56,33 @@
           "zh_Hant": "郵筒",
           "id": "Kotak pos",
           "hu": "Postaláda"
-        }
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "post_office=post_partner",
+                "name="
+              ]
+            },
+            "then": {
+              "en": "Post partner at a shop",
+              "de": "Postfiliale im Einzelhandel"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "post_office=post_partner",
+                "name~*"
+              ]
+            },
+            "then": {
+              "en": "Post partner at {name}",
+              "de": "Postfiliale im {name}"
+            }
+          }
+        ]
       },
       "description": {
         "en": "The layer showing postboxes.",
@@ -489,7 +515,7 @@
       ]
     },
     {
-      "id": "addLayer",
+      "id": "shops",
       "name": {
         "en": "Shops"
       },
