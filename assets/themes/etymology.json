@@ -114,7 +114,106 @@
           }
         }
       }
-    }
+	},
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "cultural_places_without_etymology",
+        "name": {
+          "en": "Cultural places without etymology information"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "amenity=arts_centre",
+                  "amenity=cinema",
+                  "amenity=community_centre",
+                  "amenity=library",
+                  "amenity=theatre"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "toursistic_places_without_etymology",
+        "name": {
+          "en": "Toursistic places without etymology information"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "tourism=aquarium",
+                  "tourism=museum",
+                  "tourism=theme_park",
+                  "tourism=zoo"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "health_and_social_places_without_etymology",
+        "name": {
+          "en": "Healtch and social places without etymology information"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "amenity=clinic",
+                  "amenity=hospital",
+                  "amenity=social_facility"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "sport_places_without_etymology",
+        "name": {
+          "en": "Sport places without etymology information"
+        },
+        "minzoom": 18,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "leisure=sports_centre",
+                  "leisure=stadium",
+                  "leisure=swimming_pool"
+                ]
+              }
+            ]
+          }
+        }
+      }
+	}
   ],
   "hideFromOverview": false
 }
