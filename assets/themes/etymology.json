@@ -114,12 +114,12 @@
           }
         }
       }
-	},
+    },
     {
       "builtin": "etymology",
       "override": {
         "id": "cultural_places_without_etymology",
-        "name": {
+        "=name": {
           "en": "Cultural places without etymology information"
         },
         "minzoom": 18,
@@ -145,7 +145,7 @@
       "builtin": "etymology",
       "override": {
         "id": "toursistic_places_without_etymology",
-        "name": {
+        "=name": {
           "en": "Toursistic places without etymology information"
         },
         "minzoom": 18,
@@ -170,7 +170,7 @@
       "builtin": "etymology",
       "override": {
         "id": "health_and_social_places_without_etymology",
-        "name": {
+        "=name": {
           "en": "Healtch and social places without etymology information"
         },
         "minzoom": 18,
@@ -194,7 +194,7 @@
       "builtin": "etymology",
       "override": {
         "id": "sport_places_without_etymology",
-        "name": {
+        "=name": {
           "en": "Sport places without etymology information"
         },
         "minzoom": 18,
@@ -213,7 +213,7 @@
           }
         }
       }
-	}
+    }
   ],
   "hideFromOverview": false
 }

@@ -739,6 +739,26 @@
                 "override": {
                     "=name": "Education institutions without etymology information"
                 }
+            },
+            "4": {
+                "override": {
+                    "=name": "Cultural places without etymology information"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Toursistic places without etymology information"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Healtch and social places without etymology information"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Sport places without etymology information"
+                }
             }
         },
         "shortDescription": "What is the origin of a toponym?",
