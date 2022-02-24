@@ -23,7 +23,7 @@ export abstract class Conversion<TIn, TOut> {
             throw fixed.errors.join("\n\n");
         }
         fixed.information?.forEach(i => console.log("    ", i))
-        const    yellow = (s) => "\x1b[33m"+s+"\x1b[0m"
+        const yellow = (s) => "\x1b[33m"+s+"\x1b[0m"
         const red = s => '\x1b[31m'+s+'\x1b[0m'
         
         fixed.warnings?.forEach(w => console.warn(red(`<!> `), yellow (w)))

@@ -37,10 +37,10 @@
   "startLon": 0,
   "startZoom": 0,
   "widenFactor": 1.2,
-  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the overrideAll",
+  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the minzzom in overrideAll",
   "overpassMaxZoom": 15,
   "overrideAll": {
-    "minZoom": 16,
+    "minzoom": 17,
     "syncSelection": "theme",
     "shownByDefault": false
   },

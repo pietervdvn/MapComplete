@@ -141,24 +141,6 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         json.layers = [...json.layers]
         const alreadyLoaded = new Set(json.layers.map(l => l["id"]))
 
-        if (json.id === "personal") {
-            json.layers = []
-            for (const publicLayer of AllKnownLayouts.AllPublicLayers()) {
-                const id = publicLayer.id
-                const config = state.sharedLayers.get(id)
-                if (Constants.added_by_default.indexOf(id) >= 0) {
-                    continue;
-                }
-                if (config === undefined) {
-                    // This is a layer which is coded within a public theme, not as separate .json
-                    continue
-                }
-                json.layers.push(config)
-            }
-            const publicIds = AllKnownLayouts.AllPublicLayers().map(l => l.id)
-            publicIds.map(id => state.sharedLayers.get(id))
-        }
-
         for (const layerName of Constants.added_by_default) {
             const v = state.sharedLayers.get(layerName)
             if (v === undefined) {
@@ -306,7 +288,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         delete json.overrideAll
         const newLayers = []
         for (let layer of json.layers) {
-            layer = {...<LayerConfigJson>layer}
+            layer = Utils.Clone(<LayerConfigJson>layer)
             Utils.Merge(overrideAll, layer)
             newLayers.push(layer)
         }
@@ -419,7 +401,6 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         }
         
         json.layers = Array.from(this._state.sharedLayers.keys()).filter(l => Constants.priviliged_layers.indexOf(l) < 0)
-        
         return {result: json};
     }
     
