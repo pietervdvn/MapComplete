@@ -41,6 +41,7 @@ import {AutoAction} from "./AutoApplyButton";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {Changes} from "../../Logic/Osm/Changes";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import Hash from "../../Logic/Web/Hash";
 
 /**
  * A helper class for the various import-flows.
@@ -268,8 +269,8 @@ ${Utils.special_visualizations_importRequirementDocs}
                 originalFeatureTags.data["_imported"] = "yes"
                 originalFeatureTags.ping() // will set isImported as per its definition
                 state.changes.applyAction(action)
-                state.selectedElement.setData(state.allElements.ContainingFeatures.get(action.newElementId ?? action.mainObjectId))
-
+                const newId = action.newElementId ?? action.mainObjectId
+                state.selectedElement.setData(state.allElements.ContainingFeatures.get(newId))
             }
         })
 
@@ -572,6 +573,8 @@ export class ImportPointButton extends AbstractImportButton {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            Hash.hash.setData(newElementAction.newElementId)
+            
             if (note_id !== undefined) {
                 state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
