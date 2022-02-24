@@ -7,7 +7,7 @@
   "homepage": "https://mapcomplete.osm.be",
   "main": "index.js",
   "scripts": {
-    "start": "npm run generate:layeroverview && npm run ",
+    "start": "npm run generate:layeroverview && npm run strt",
     "strt": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve *.html UI/** Logic/** assets/*.json assets/svg/* assets/generated/* assets/layers/*/*.svg assets/layers/*/*.jpg assets/layers/*/*.png assets/layers/*/*.css assets/tagRenderings/*.json assets/themes/*/*.svg assets/themes/*/*.ttf assets/themes/*/*/*.ttf aassets/themes/*/*.otf assets/themes/*/*/*.otf ssets/themes/*/*.css assets/themes/*/*.jpg assets/themes/*/*.png vendor/* vendor/*/*",
     "strttest": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve test.html",
     "watch:css": "tailwindcss -i index.css -o css/index-tailwind-output.css --watch",
