@@ -504,14 +504,23 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 mergeConfigs,
                 "import"
             )
-        } else {
-
+        } else if(feature.geometry.type === "Polygon"){
+            const outer = coors[0]
+            return new CreateWayWithPointReuseAction(
+                args.newTags.data,
+                outer,
+                state,
+                mergeConfigs
+            )
+        }else if(feature.geometry.type === "LineString"){
             return new CreateWayWithPointReuseAction(
                 args.newTags.data,
                 coors,
                 state,
                 mergeConfigs
             )
+        }else{
+            throw "Unsupported type"
         }
     }
 }

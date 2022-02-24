@@ -209,9 +209,9 @@ export class BBox {
 
     }
 
-    private check() {
+    private check() {   
         if (isNaN(this.maxLon) || isNaN(this.maxLat) || isNaN(this.minLon) || isNaN(this.minLat)) {
-            console.log(this);
+            console.trace("BBox with NaN detected:", this);
             throw  "BBOX has NAN";
         }
     }
