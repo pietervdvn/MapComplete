@@ -1823,7 +1823,7 @@
             },
             "plugs-12": {
                 "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                "render": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
             },
             "plugs-13": {
                 "question": "Hoeveel stekkers van type  <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft dit oplaadpunt?",
@@ -1923,8 +1923,8 @@
                         "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) levert een vermogen van maximaal 22 kw A"
                     }
                 },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
+                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
             },
             "power-output-13": {
                 "mappings": {
@@ -2106,8 +2106,8 @@
                         "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 400 volt"
                     }
                 },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
+                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
             },
             "voltage-13": {
                 "mappings": {
@@ -3037,12 +3037,18 @@
             "width": {
                 "question": "Wat is de breedte van deze deur/toegang?"
             }
+        },
+        "title": {
+            "render": "Ingang"
         }
     },
     "etymology": {
         "description": "Alle lagen met een gelinkt etymology",
         "name": "Heeft etymology info",
         "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata,name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
+            },
             "simple etymology": {
                 "mappings": {
                     "0": {
@@ -3055,6 +3061,9 @@
             "street-name-sign-image": {
                 "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
             },
+            "wikipedia": {
+                "render": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}"
+            },
             "wikipedia-etymology": {
                 "question": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
                 "render": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
@@ -3062,6 +3071,24 @@
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>"
             }
+        }
+    },
+    "extinguisher": {
+        "description": "Kaartlaag met brandblussers.",
+        "name": "Kaart van brandblussers.",
+        "presets": {
+            "0": {
+                "description": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
+                "title": "Brandblusser"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "render": "Locatie: {location}"
+            }
+        },
+        "title": {
+            "render": "Brandblussers"
         }
     },
     "food": {
@@ -3371,6 +3398,10 @@
             },
             "render": "Speelweide in een park"
         }
+    },
+    "hydrant": {
+        "description": "Kaartlaag met brandkranen.",
+        "name": "Kaart van brandkranen"
     },
     "information_board": {
         "description": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",

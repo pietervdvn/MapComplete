@@ -3059,7 +3059,7 @@
         }
     },
     "extinguisher": {
-        "description": "Map layer to show fire hydrants.",
+        "description": "Map layer to show fire extinguishers.",
         "name": "Map of fire extinguishers.",
         "presets": {
             "0": {

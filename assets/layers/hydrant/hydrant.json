@@ -8,7 +8,8 @@
     "ru": "Карта пожарных гидрантов",
     "fr": "Carte des bornes incendie",
     "de": "Karte der Hydranten",
-    "it": "Mappa degli idranti"
+    "it": "Mappa degli idranti",
+    "nl": "Kaart van brandkranen"
   },
   "minzoom": 14,
   "source": {
@@ -37,7 +38,8 @@
     "ru": "Слой карты, отображающий пожарные гидранты.",
     "fr": "Couche des bornes incendie.",
     "de": "Kartenebene zur Anzeige von Hydranten.",
-    "it": "Livello della mappa che mostra gli idranti antincendio."
+    "it": "Livello della mappa che mostra gli idranti antincendio.",
+    "nl": "Kaartlaag met brandkranen."
   },
   "tagRenderings": [
     {

@@ -1284,7 +1284,7 @@
       },
       "render": {
         "en": "There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here",
-        "nl": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+        "nl": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
       },
       "freeform": {
         "key": "socket:tesla_destination",
@@ -2933,11 +2933,11 @@
       "group": "technical",
       "question": {
         "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs {socket:tesla_destination:voltage} volt",
-        "nl": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
+        "nl": "<div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
       },
       "freeform": {
         "key": "socket:tesla_destination:voltage",
@@ -3025,11 +3025,11 @@
       "group": "technical",
       "question": {
         "en": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-        "nl": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?"
+        "nl": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}",
-        "nl": "<div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
+        "nl": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
       },
       "freeform": {
         "key": "socket:tesla_destination:output",
