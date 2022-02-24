@@ -757,5 +757,26 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
+    },
+    "etymology": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Route sans origine étymologique"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parcs et forêts sans origine étymologique"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Institutions d'éducation sans origine étymologique"
+                }
+            }
+        },
+        "title": "Open Etymology Map",
+        "shortDescription": "Quelle est l'origine de ce toponyme ?"
     }
 }
