@@ -6,9 +6,22 @@ import * as wds from "wikidata-sdk"
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
 import {existsSync, readFileSync, writeFileSync} from "fs";
-import * as knownLanguages from "../assets/generated/used_languages.json"
 
-async function fetch(target: string) {
+const languageRemap = {
+    // MapComplete (or weblate) on the left, language of wikimedia on the right
+    "nb":"nb_NO",
+    "zh-hant":"zh_Hant",
+    "zh-hans":"zh_Hans",
+    "pt-br":"pt_BR"
+}
+
+async function fetch(target: string){
+    const regular = await fetchRegularLanguages()
+    writeFileSync(target, JSON.stringify(regular, null, "  "))
+    console.log("Written to "+target)
+}
+
+async function fetchRegularLanguages() {
 
     ScriptUtils.fixUtils()
     console.log("Fetching languages")
@@ -24,23 +37,54 @@ async function fetch(target: string) {
 
 // request the generated URL with your favorite HTTP request library
     const result = await Utils.downloadJson(url, {"User-Agent": "MapComplete script"})
-    writeFileSync(target, JSON.stringify(result.results.bindings))
-    console.log("Written to "+target)
+    const bindings = result.results.bindings
+    
+    const zh_hant = await fetchSpecial(18130932, "zh_Hant")
+    const zh_hans = await fetchSpecial(13414913, "zh_Hant")
+    const pt_br = await fetchSpecial( 750553, "pt_BR")
+    
+    bindings.push(...zh_hant)
+    bindings.push(...zh_hans)
+    bindings.push(...pt_br)
+    
+    return result.results.bindings
+
+}
+
+async function fetchSpecial(id: number, code: string) {
+
+    ScriptUtils.fixUtils()
+    console.log("Fetching languages")
+
+    const sparql = 'SELECT ?lang ?label ?code \n' +
+        'WHERE \n' +
+        '{ \n' +
+        '  wd:Q'+id+' rdfs:label ?label. \n' +
+        '} '
+    const url = wds.sparqlQuery(sparql)
+
+// request the generated URL with your favorite HTTP request library
+    const result = await Utils.downloadJson(url, {"User-Agent": "MapComplete script"})
+    const bindings = result.results.bindings
+    bindings.forEach(binding => binding["code"] = {value: code})
+    return bindings
 }
 
 function extract(data){
     console.log("Got "+data.length+" entries")
     const perId = new Map<string, Map<string, string>>();
     for (const element of data) {
-        //const id = element.lang.value.substring(prefixL)
-        const id = element.code.value
-        const labelLang = element.label["xml:lang"]
+        let id = element.code.value
+        id = languageRemap[id] ?? id
+        let labelLang = element.label["xml:lang"]
+        labelLang = languageRemap[labelLang] ?? labelLang
         const value = element.label.value
         if(!perId.has(id)){
             perId.set(id, new Map<string, string>())
         }
         perId.get(id).set(labelLang, value)
     }
+
     console.log("Got "+perId.size+" languages")
     return perId
 }
@@ -53,33 +97,23 @@ function getNativeList(langs: Map<string, Map<string, string>>){
     return native
 }
 
-function getTranslationsIn(targetLanguage: string, perId: Map<string, Map<string, string>>, whitelist = undefined){
-    const langs = {}
-    perId.forEach((translations, langCode) => {
-        if(whitelist !== undefined && whitelist.indexOf(langCode) < 0){
-            return
-        }
-        langs[langCode] = translations.get(targetLanguage)
-    })
-    return langs;
-}
-
-function main(wipeCache = false){
+async function main(wipeCache = false){
     const cacheFile = "./assets/generated/languages-wd.json"
     if(wipeCache || !existsSync(cacheFile)){
-       // await fetch(cacheFile);
+        console.log("Refreshing cache")
+        await fetch(cacheFile);
     }else{
         console.log("Reusing the cached file")
     }
     const data = JSON.parse(readFileSync( cacheFile, "UTF8"))
     const perId = extract(data)
     const nativeList = getNativeList(perId)
-    writeFileSync("./assets/language_native.json", JSON.stringify(nativeList))
+    writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))
     
 
     writeFileSync("./assets/language_translations.json", 
         JSON.stringify(Utils.MapToObj<Map<string, string>>(perId, value => Utils.MapToObj(value)), null, "  "))
 }
 
-
-main()//.then(() => console.log("Done!"))
+const forceRefresh = process.argv[2] === "--force-refresh"
+main(forceRefresh).then(() => console.log("Done!"))
