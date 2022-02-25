@@ -6,7 +6,7 @@ import * as wds from "wikidata-sdk"
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
 import {existsSync, readFileSync, writeFileSync} from "fs";
-
+import * as used_languages from "../assets/generated/used_languages.json"
 const languageRemap = {
     // MapComplete (or weblate) on the left, language of wikimedia on the right
     "nb":"nb_NO",
@@ -14,6 +14,8 @@ const languageRemap = {
     "zh-hans":"zh_Hans",
     "pt-br":"pt_BR"
 }
+
+const usedLanguages : Set<string> = new Set(used_languages.languages)
 
 async function fetch(target: string){
     const regular = await fetchRegularLanguages()
@@ -92,6 +94,9 @@ function extract(data){
 function getNativeList(langs: Map<string, Map<string, string>>){
     const native = {}
     langs.forEach((translations, key ) =>{
+        if(!usedLanguages.has(key)){
+            return
+        }
         native[key] = translations.get(key)
     })
     return native
@@ -111,8 +116,20 @@ async function main(wipeCache = false){
     writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))
     
 
+    const translations = Utils.MapToObj<Map<string, string>>(perId, (value, key) => {
+        if(!usedLanguages.has(key)){
+            return undefined // Remove unused languages
+        }
+        return Utils.MapToObj(value, (v, k ) => {
+            if(!usedLanguages.has(k)){
+                return undefined
+            }
+            return v
+        })
+    })
+    
     writeFileSync("./assets/language_translations.json", 
-        JSON.stringify(Utils.MapToObj<Map<string, string>>(perId, value => Utils.MapToObj(value)), null, "  "))
+        JSON.stringify(translations, null, "  "))
 }
 
 const forceRefresh = process.argv[2] === "--force-refresh"

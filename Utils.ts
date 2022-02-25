@@ -779,11 +779,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
     
     
-    public static MapToObj<T>(d : Map<string, T>, onValue: ((t:T) => any) = undefined): object{
+    public static MapToObj<T>(d : Map<string, T>, onValue: ((t:T, key: string) => any) = undefined): object{
         const o = {}
         d.forEach((value, key) => {
             if(onValue !== undefined){
-                value = onValue(value)
+                value = onValue(value, key)
             }
             o[key] = value;
         })
