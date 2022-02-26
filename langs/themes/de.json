@@ -22,11 +22,12 @@
         "title": "Ferngläser"
     },
     "bookcases": {
-        "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen, zur Aufbewahrung von Büchern. Jeder kann Bücher abstellen oder mitnehmen. Die Karte zielt darauf ab, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
+        "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
         "title": "Öffentliche Bücherschränke Karte"
     },
     "cafes_and_pubs": {
-        "title": "Cafés und Kneipen"
+        "title": "Cafés und Kneipen",
+        "description": "Kneipen und Bars"
     },
     "campersite": {
         "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
@@ -265,7 +266,7 @@
         "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
         "layers": {
             "0": {
-                "description": "Ein Kletterverein oder eine Organisation",
+                "description": "Ein Kletterverein oder -organisation",
                 "name": "Kletterverein",
                 "presets": {
                     "0": {
@@ -273,7 +274,7 @@
                         "title": "Kletterverein"
                     },
                     "1": {
-                        "description": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
+                        "description": "Eine Organisation, die sich mit dem Klettern beschäftigt",
                         "title": "Eine Kletter-Organisation"
                     }
                 },
@@ -501,7 +502,7 @@
                 },
                 "6": {
                     "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-                    "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:max} (französisch/belgisches System)"
+                    "render": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)"
                 },
                 "7": {
                     "mappings": {
@@ -723,6 +724,31 @@
                 "override": {
                     "=name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
                 }
+            },
+            "3": {
+                "override": {
+                    "=name": "Bildungseinrichtungen ohne Informationen zur Etymologie"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Kulturelle Orte ohne etymologische Informationen"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Touristische Orte ohne Angaben zur Etymologie"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Gesundheits- und Sozialeinrichtungen ohne etymologische Informationen"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Sportstätten ohne etymologische Informationen"
+                }
             }
         },
         "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
@@ -816,7 +842,8 @@
         "title": "Fassadengärten"
     },
     "food": {
-        "title": "Restaurants und Schnellimbisse"
+        "title": "Restaurants und Schnellimbisse",
+        "description": "Restaurants und Fast Food"
     },
     "fritures": {
         "layers": {
@@ -825,7 +852,9 @@
                     "name": "Pommesbude"
                 }
             }
-        }
+        },
+        "description": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
+        "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
         "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
@@ -840,7 +869,8 @@
                     }
                 }
             }
-        }
+        },
+        "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
     },
     "grb_fixme": {
         "layers": {
@@ -1070,5 +1100,82 @@
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "nature": {
+        "title": "In die Natur",
+        "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
+        "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber, wie zum Beispiel "
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Geändert von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "theme": {
+                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+                        "mappings": {
+                            "0": {
+                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        }
+                    },
+                    "render_id": {
+                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    }
+                },
+                "description": "Zeigt alle MapComplete-Änderungen",
+                "name": "Schwerpunkte von Änderungssätzen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themenname enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b> Nicht</b> erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Änderungssatz für {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+        "shortDescription": "Zeigt Änderungen, die von MapComplete vorgenommen wurden",
+        "title": "Änderungen mit MapComplete"
+    },
+    "entrances": {
+        "title": "Eingänge",
+        "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
+        "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern"
+    },
+    "bicycle_rental": {
+        "description": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
+        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern",
+        "title": "Fahrradverleih"
     }
 }
