@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Ist im ersten Stock"
+                },
+                "4": {
+                    "then": "Ist im 1. Untergeschoss"
                 }
             },
             "question": "In welchem Stockwerk befindet sich dieses Objekt?",
@@ -111,6 +114,18 @@
                 }
             },
             "question": "Was ist der entsprechende Artikel auf Wikipedia?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "Die Bezahlung erfolgt mit einer Mitgliedskarte"
+                    },
+                    "0": {
+                        "then": "Die Bezahlung erfolgt über eine spezielle App"
+                    }
+                }
+            }
         }
     }
 }
