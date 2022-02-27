@@ -771,7 +771,7 @@
     },
     "bike_repair_station": {
         "description": "Deze laag toont fietspompen en herstelpunten voor fietsen",
-        "name": "Fietspomp and fietsherstel",
+        "name": "Fietspomp en fietsherstel",
         "presets": {
             "0": {
                 "description": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
