@@ -9,7 +9,8 @@
   "description": {
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.",
-    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
+    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
+    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
   },
   "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/grb_import/logo.svg",

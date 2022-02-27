@@ -1,13 +1,16 @@
 {
   "id": "mapcomplete-changes",
   "title": {
-    "en": "Changes made with MapComplete"
+    "en": "Changes made with MapComplete",
+    "de": "Änderungen mit MapComplete"
   },
   "shortDescription": {
-    "en": "Shows changes made by MapComplete"
+    "en": "Shows changes made by MapComplete",
+    "de": "Zeigt Änderungen, die von MapComplete vorgenommen wurden"
   },
   "description": {
-    "en": "This maps shows all the changes made with MapComplete"
+    "en": "This maps shows all the changes made with MapComplete",
+    "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen"
   },
   "maintainer": "",
   "icon": "./assets/svg/logo.svg",
@@ -22,7 +25,8 @@
     {
       "id": "mapcomplete-changes",
       "name": {
-        "en": "Changeset centers"
+        "en": "Changeset centers",
+        "de": "Schwerpunkte von Änderungssätzen"
       },
       "minzoom": 0,
       "source": {
@@ -36,35 +40,41 @@
       ],
       "title": {
         "render": {
-          "en": "Changeset for {theme}"
+          "en": "Changeset for {theme}",
+          "de": "Änderungssatz für {theme}"
         }
       },
       "description": {
-        "en": "Shows all MapComplete changes"
+        "en": "Shows all MapComplete changes",
+        "de": "Zeigt alle MapComplete-Änderungen"
       },
       "tagRenderings": [
         {
           "id": "render_id",
           "render": {
-            "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
           "id": "contributor",
           "render": {
-            "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+            "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>",
+            "de": "Geändert von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
           }
         },
         {
           "id": "theme",
           "render": {
-            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+            "de": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
           },
           "mappings": [
             {
               "if": "theme~http.*",
               "then": {
-                "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
+                "de": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
               }
             }
           ]
@@ -328,7 +338,8 @@
                 }
               ],
               "question": {
-                "en": "Themename contains {search}"
+                "en": "Themename contains {search}",
+                "de": "Themenname enthält {search}"
               }
             }
           ]
@@ -344,7 +355,8 @@
                 }
               ],
               "question": {
-                "en": "Made by contributor {search}"
+                "en": "Made by contributor {search}",
+                "de": "Erstellt von Mitwirkendem {search}"
               }
             }
           ]
@@ -360,7 +372,8 @@
                 }
               ],
               "question": {
-                "en": "<b>Not</b> made by contributor {search}"
+                "en": "<b>Not</b> made by contributor {search}",
+                "de": "<b> Nicht</b> erstellt von Mitwirkendem {search}"
               }
             }
           ]
@@ -375,7 +388,8 @@
           {
             "id": "link_to_more",
             "render": {
-              "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+              "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
+              "de": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
             }
           },
           {

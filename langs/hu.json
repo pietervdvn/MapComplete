@@ -92,8 +92,10 @@
             "openOsmcha": "A téma {theme} legutóbbi szerkesztéseinek megtekintése",
             "themeBy": "A téma karbantartója: {author}"
         },
+        "back": "Vissza",
         "backgroundMap": "Háttértérkép",
         "cancel": "Mégse",
+        "confirm": "Megerősítés",
         "customThemeIntro": "<h3>Egyéni témák</h3> Ezek korábban megnézett, felhasználó által létrehozott témák.",
         "download": {
             "downloadAsPdf": "A jelenlegi térkép letöltése PDF-ként",
@@ -113,6 +115,8 @@
             "title": "A látható adatok letöltése",
             "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
         },
+        "example": "Példa",
+        "examples": "Példák",
         "fewChangesBefore": "Kérjük, válaszolj néhány meglévő pontokra vonatkozó kérdésre, mielőtt új pontot adnál hozzá.",
         "getStartedLogin": "A kezdéshez jelentkezz be az OpenStreetMap-fiókoddal,",
         "getStartedNewAccount": " vagy <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">hozz létre új fiókot</a>",
@@ -125,9 +129,11 @@
             "zoomInToSeeThisLayer": "Nagyíts a réteg megtekintéséhez"
         },
         "loading": "Betöltés…",
+        "loadingTheme": "{theme} betöltése…",
         "loginOnlyNeededToEdit": "ha szerkeszteni szeretnéd a térképet",
         "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal",
+        "logout": "Kijelentkezés",
         "morescreen": {
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
@@ -137,6 +143,7 @@
             "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Ezen {category} neve: $$$",
+        "next": "Következő",
         "noNameCategory": "Név nélküli {category}",
         "noTagsSelected": "Nincs kijelölt címke",
         "number": "szám",
@@ -166,6 +173,7 @@
             "versionInfo": "{version} verzió – létrehozva: {date}"
         },
         "pickLanguage": "Nyelv kiválasztása: ",
+        "poweredByOsm": "Motor: OpenStreetMap",
         "questions": {
             "emailIs": "Ezen {category} e-mail-címe: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Mi az e-mail-címe ennek ({category})?",
@@ -234,15 +242,7 @@
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "back": "Vissza",
-        "confirm": "Megerősítés",
-        "logout": "Kijelentkezés",
-        "next": "Következő",
-        "loadingTheme": "{theme} betöltése…",
-        "poweredByOsm": "Motor: OpenStreetMap",
-        "example": "Példa",
-        "examples": "Példák"
+        }
     },
     "image": {
         "addPicture": "Kép hozzáadása",
@@ -264,6 +264,9 @@
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…",
         "willBePublished": "A képed így lesz közzétéve: "
+    },
+    "importHelper": {
+        "allAttributesSame": "Ez a címke minden importálandó objektumon szerepel"
     },
     "index": {
         "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
@@ -361,8 +364,5 @@
         "loginToSplit": "Egy út szétvágásához be kell jelentkezni",
         "split": "Szétvágás",
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
-    },
-    "importHelper": {
-        "allAttributesSame": "Ez a címke minden importálandó objektumon szerepel"
     }
 }

@@ -230,7 +230,6 @@
         "minzoom": 18
       }
     },
-    
     {
       "builtin": "playground",
       "override": {

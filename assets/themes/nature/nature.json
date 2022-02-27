@@ -2,15 +2,18 @@
   "id": "nature",
   "title": {
     "en": "Into nature",
-    "nl": "De Natuur in"
+    "nl": "De Natuur in",
+    "de": "In die Natur"
   },
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
-    "nl": "Deze kaart bevat informatie voor natuurliefhebbers"
+    "nl": "Deze kaart bevat informatie voor natuurliefhebbers",
+    "de": "Eine Karte für Naturliebhaber, mit interessanten Orten"
   },
   "description": {
     "en": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
-    "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
+    "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
+    "de": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber, wie zum Beispiel "
   },
   "maintainer": "",
   "icon": "./assets/themes/nature/logo.svg",

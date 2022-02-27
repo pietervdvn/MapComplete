@@ -12,6 +12,11 @@
         "shortDescription": "Eine Karte aller Sitzbänke",
         "title": "Sitzbänke"
     },
+    "bicycle_rental": {
+        "description": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
+        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern",
+        "title": "Fahrradverleih"
+    },
     "bicyclelib": {
         "description": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
         "title": "Fahrradbibliothek"
@@ -26,8 +31,8 @@
         "title": "Öffentliche Bücherschränke Karte"
     },
     "cafes_and_pubs": {
-        "title": "Cafés und Kneipen",
-        "description": "Kneipen und Bars"
+        "description": "Kneipen und Bars",
+        "title": "Cafés und Kneipen"
     },
     "campersite": {
         "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
@@ -712,6 +717,11 @@
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
         "title": "Trinkwasserstelle"
     },
+    "entrances": {
+        "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
+        "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern",
+        "title": "Eingänge"
+    },
     "etymology": {
         "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "layers": {
@@ -842,10 +852,11 @@
         "title": "Fassadengärten"
     },
     "food": {
-        "title": "Restaurants und Schnellimbisse",
-        "description": "Restaurants und Fast Food"
+        "description": "Restaurants und Fast Food",
+        "title": "Restaurants und Schnellimbisse"
     },
     "fritures": {
+        "description": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
         "layers": {
             "0": {
                 "override": {
@@ -853,7 +864,6 @@
                 }
             }
         },
-        "description": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
@@ -861,6 +871,7 @@
         "title": "Geisterräder"
     },
     "grb": {
+        "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
         "layers": {
             "1": {
                 "tagRenderings": {
@@ -869,8 +880,7 @@
                     }
                 }
             }
-        },
-        "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
+        }
     },
     "grb_fixme": {
         "layers": {
@@ -958,10 +968,77 @@
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
+    "mapcomplete-changes": {
+        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+        "layers": {
+            "0": {
+                "description": "Zeigt alle MapComplete-Änderungen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themenname enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b> Nicht</b> erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Schwerpunkte von Änderungssätzen",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Geändert von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Änderungssatz für {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zeigt Änderungen, die von MapComplete vorgenommen wurden",
+        "title": "Änderungen mit MapComplete"
+    },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
         "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
         "title": "Eine Karte der Karten"
+    },
+    "nature": {
+        "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber, wie zum Beispiel ",
+        "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
+        "title": "In die Natur"
     },
     "observation_towers": {
         "description": "Öffentlich zugänglicher Aussichtsturm",
@@ -1100,82 +1177,5 @@
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "nature": {
-        "title": "In die Natur",
-        "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
-        "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber, wie zum Beispiel "
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Geändert von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "theme": {
-                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-                        "mappings": {
-                            "0": {
-                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        }
-                    },
-                    "render_id": {
-                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    }
-                },
-                "description": "Zeigt alle MapComplete-Änderungen",
-                "name": "Schwerpunkte von Änderungssätzen",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themenname enthält {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Erstellt von Mitwirkendem {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b> Nicht</b> erstellt von Mitwirkendem {search}"
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "render": "Änderungssatz für {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
-        "shortDescription": "Zeigt Änderungen, die von MapComplete vorgenommen wurden",
-        "title": "Änderungen mit MapComplete"
-    },
-    "entrances": {
-        "title": "Eingänge",
-        "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
-        "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern"
-    },
-    "bicycle_rental": {
-        "description": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
-        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern",
-        "title": "Fahrradverleih"
     }
 }
