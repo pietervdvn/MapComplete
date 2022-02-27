@@ -2708,21 +2708,21 @@
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway <img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br><img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'> ' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br><img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 3em'> ' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D09.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D09.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D9"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D10.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D10.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D10"
     },
     {
@@ -2732,21 +2732,21 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway <img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br><img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'> ' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cycleways and roads' shows traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br><img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 3em'> ' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D09.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D09.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D9"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D10.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D10.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D10"
     },
     {
@@ -2756,32 +2756,32 @@
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M6 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M6.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M6 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M6.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M6"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M13 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M13.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M13 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M13.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M13"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M14 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M14.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M14 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M14.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M14"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M7 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M7.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M7 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M7.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M7"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M15 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M15.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M15 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M15.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M15"
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M16 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M16.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M16 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M16.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M16"
     },
     {
@@ -2791,32 +2791,32 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M6 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M6.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M6 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M6.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M6"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M13 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M13.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M13 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M13.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M13"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M14 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M14.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M14 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M14.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M14"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M7 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M7.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M7 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M7.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M7"
     },
     {
       "key": ":traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows :traffic_sign=BE:D7;BE:M15 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M15.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows :traffic_sign=BE:D7;BE:M15 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M15.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M15"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M16 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M16.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7;BE:M16 with a fixed text, namely '<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M16.svg' style='width: 3em'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "BE:D7;BE:M16"
     },
     {

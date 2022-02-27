@@ -821,7 +821,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg",
             "class": "medium"
           }
         },
@@ -835,7 +835,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg",
             "class": "medium"
           }
         },
@@ -853,7 +853,7 @@
             "cycleway:segregated=yes"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D09.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D09.svg",
             "class": "medium"
           }
         },
@@ -871,7 +871,7 @@
             "cycleway:segregated=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D10.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D10.svg",
             "class": "medium"
           }
         },
@@ -926,7 +926,7 @@
             "speed_pedelec=yes"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg",
             "class": "medium"
           }
         },
@@ -939,7 +939,7 @@
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg",
             "class": "medium"
           }
         },
@@ -960,7 +960,7 @@
             "segregated=yes"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D09.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D09.svg",
             "class": "medium"
           }
         },
@@ -981,7 +981,7 @@
             "segregated=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_road_sign_D10.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D10.svg",
             "class": "medium"
           }
         },
@@ -997,7 +997,7 @@
             "moped=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Nederlands_verkeersbord_G11.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/nl/Nederlands_verkeersbord_G11.svg",
             "class": "medium"
           }
         },
@@ -1013,7 +1013,7 @@
             "moped=designated"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Nederlands_verkeersbord_G12a.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/nl/Nederlands_verkeersbord_G12a.svg",
             "class": "medium"
           }
         },
@@ -1029,7 +1029,7 @@
             "moped=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Nederlands_verkeersbord_G13.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/nl/Nederlands_verkeersbord_G13.svg",
             "class": "medium"
           }
         },
@@ -1046,9 +1046,9 @@
     {
       "id": "cycleway-traffic-signs-supplementary",
       "question": {
-        "en": "Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
-        "nl": "Heeft het verkeersbord D7 (<img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
-        "de": "Hat das Verkehrszeichen D7 (<img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
+        "en": "Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?",
+        "nl": "Heeft het verkeersbord D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?",
+        "de": "Hat das Verkehrszeichen D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
       },
       "condition": {
         "or": [
@@ -1068,7 +1068,7 @@
             "cycleway:moped=designated"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M6.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M6.svg",
             "class": "medium"
           }
         },
@@ -1083,7 +1083,7 @@
             "cycleway:speed_pedelec=designated"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M13.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M13.svg",
             "class": "medium"
           }
         },
@@ -1099,7 +1099,7 @@
             "cycleway:speed_pedelec=designated"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M14.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M14.svg",
             "class": "medium"
           }
         },
@@ -1114,7 +1114,7 @@
             "cycleway:moped=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M7.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M7.svg",
             "class": "medium"
           }
         },
@@ -1129,7 +1129,7 @@
             "cycleway:speed_pedelec=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M15.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M15.svg",
             "class": "medium"
           }
         },
@@ -1145,7 +1145,7 @@
             "cycleway:speed_pedelec=no"
           ],
           "icon": {
-            "path": "./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M16.svg",
+            "path": "./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_traffic_sign_M16.svg",
             "class": "medium"
           }
         },

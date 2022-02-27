@@ -1619,7 +1619,7 @@
                         "then": "Kein zusätzliches Verkehrszeichen vorhanden"
                     }
                 },
-                "question": "Hat das Verkehrszeichen D7 (<img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
+                "question": "Hat das Verkehrszeichen D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
             },
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
