@@ -10,8 +10,8 @@ Requirements
 Before you start, you should have the following qualifications:
 
 - You are a longtime contributor and do know the OpenStreetMap tagging scheme very well.
-- You are not afraid of editing a .JSON-file
-- You're theme will add well-understood tags (aka: the tags have a wiki page, are not controversial and are objective)
+- You are not afraid of editing a JSON file
+- Your theme will add well-understood tags (aka: the tags have a wiki page, are not controversial and are objective)
 - You are in contact with your local OpenStreetMap community and do know some other members to discuss tagging and to
   help testing
 
@@ -27,21 +27,21 @@ get started.
 
 However, the custom theme generator is extremely buggy and built before some updates. This means that some features
 are _not_ available through the custom theme generator. The custom theme generator is good to get the basics of the
-theme set up, but you will have to edit the raw JSON-file anyway afterwards.
+theme set up, but you will have to edit the raw JSON file anyway afterwards.
 
 [A quick tutorial for the custom theme generator can be found here](https://www.youtube.com/watch?v=nVbFrNVPxPw).
 
 Loading your theme
 ------------------
 
-If you have your .json file, there are three ways to distribute your theme:
+If you have your JSON file, there are three ways to distribute your theme:
 
-- Take the entire JSON-file and [base64](https://www.base64encode.org/) encode it. Then open up the
-  url `https://mapcomplete.osm.be?userlayout=true#<base64-encoded-json-here>`. Yes, this URL will be huge; and updates
+- Take the entire JSON file and [base64](https://www.base64encode.org/) encode it. Then open up the
+  URL `https://mapcomplete.osm.be?userlayout=true#<base64-encoded-json-here>`. Yes, this URL will be huge; and updates
   are difficult to distribute as you have to send a new URL to everyone. This is however excellent to have a 'quick and
   dirty' test version up and running as these links can be generated from the customThemeGenerator and can be quickly
   shared with a few other contributors.
-- Host the JSON file on a publicly accessible webserver (e.g. github) and open
+- Host the JSON file on a publicly accessible webserver (e.g. GitHub) and open
   up `https://mapcomplete.osm.be?userlayout=<url-to-the-raw.json>`
 - Ask to have your theme included into the official MapComplete - requirements below
 
@@ -58,42 +58,42 @@ Your theme has to be:
 3) Make sure there are somewhat decent icons. Note that there is _no_ styleguide at the moment though.
 
 The preferred way to add your theme is via a Pull Request. A Pull Request is less work for the maintainer (which makes
-it really easy and for me to add it) and your name will be included in the git history (so you'll be listed as
-contributor). If that is not possible, send the .Json-file and assets, e.g. as a zip in an issue, per email, ...
+it really easy for me to add it) and your name will be included in the git history (so you'll be listed as
+contributor). If that is not possible, send the JSON file and assets, e.g. as a zip in an issue, per email, ...
 
 *Via a pull request:*
 
 1) Fork this repository
-2) Go to `assets/themes` and create a new directory `yourtheme`
-3) Create a new file `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in
+2) Go to `assets/themes` and create a new directory named `yourtheme`
+3) Create a new file named `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in
    the customThemeBuilder (the tab with the *Floppy disk* icon)
 4) Copy all the images into this new directory. **No external sources are allowed!** External image sources leak privacy
    or can break.
     - Make sure the license is suitable, preferable a Creative Commons license or CC0-license.
     - If an SVG version is available, use the SVG version
-    - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg`
-      instead of the HTML link
-    - Create a file `license_info.json` in the theme directory, which contains metadata on every artwork source
-5) Add your theme to the code base: add it into "assets/themes" and make sure all the images are there too. Running '
-   ts-node scripts/fixTheme <path to your theme>' will help downloading the images and attempts to get the licenses if
-   on wikimedia.
+    - Make sure all the links in `yourtheme.json` are updated. You can use a relative link like `./assets/themes/yourtheme/yourimage.svg`
+      instead of an HTML link
+    - Create the file `license_info.json` in the theme directory, which contains metadata on every artwork source
+5) Add your theme to the code base: add it into `assets/themes` and make sure all the images are there too. Running `
+   ts-node scripts/fixTheme <path to your theme>` will help downloading the images and attempts to get the licenses if
+   on Wikimedia.
 6) Add some finishing touches, such as a social image.
    See [this blog post](https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit) for some
-   hints
+   hints.
 7) Test your theme: run the project as described in [development_deployment](Development_deployment.md)
 8) Happy with your theme? Time to open a Pull Request!
 9) Thanks a lot for improving MapComplete!
 
-The .JSON-format
+The theme JSON format
 ----------------
 
-There are three important levels in the .JSON-file:
+There are three important levels in the JSON file:
 
 - The toplevel describes the metadata of the entire theme. It contains the `title`, `description`, `icon`... of the
   theme. The most important object is `layers`, which is a list of objects describing layers.
 - A `layer` describes a layer. It contains the `name`, `icon`, `tags of objects to download from overpass`, and
-  especially the `icon` and a way to ask dynamically render tags and ask questions. A lot of those fields (`icon`
-  , `title`, ...) are actually a `TagRendering`
+  especially the `icon` and a way to dynamically render tags and ask questions. A lot of those fields (`icon`
+  , `title`, ...) are actually a `TagRendering`.
 - A `TagRendering` is an object describing a relationship between what should be shown on screen and the OSM-tagging. It
   works in two ways: if the correct tag is known, the appropriate text will be shown. If the tag is missing (and a
   question is defined), the question will be shown.
@@ -103,43 +103,43 @@ Every field is documented in the source code itself - you can find them here:
 - [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayoutConfigJson.ts)
 - [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayerConfigJson.ts)
 - [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
-- At last, the exact semantics of tags is documented [here](Tags_format.md)
+- At last, the exact semantics of tags are documented [here](Tags_format.md)
 
-A JSON-schema file is available in Docs/Schemas - use LayoutConfig.schema.json to validate a theme file.
+A JSON schema file is available in `Docs/Schemas` - use `LayoutConfig.schema.json` to validate a theme file.
 
 ### MetaTags
 
-There are few tags available that are calculated for convenience - e.g. the country an object is located
-at. [An overview of all these metatags is available here](CalculatedTags.md)
+There are a few tags available that are calculated for convenience - e.g. the country an object is located
+in. [An overview of all these metatags is available here](CalculatedTags.md).
 
 ### TagRendering groups
 
-A tagRendering can have a `group`-attribute, which acts as a tag. All tagRenderings with the same group name will be
+A `tagRendering` can have a `group`-attribute, which acts as a tag. All `tagRendering`s with the same group name will be
 rendered together, in the same order as they were defined.
 
-For example, if the defined tagrenderings have groups `A A B A A B B B`, the group order is `A B` and first all
-tagrenderings from group A will be rendered (thus numbers 0, 1, 3 and 4) followed by the question box for this group.
-Then, all the tagRenderings for group B will be shown, thus number 2, 5, 6 and 7, again followed by their questionbox.
+For example, if the defined `tagRendering`s have groups `A A B A A B B B`, the group order is `A B` and first all
+`tagRendering`s from group A will be rendered (thus numbers 0, 1, 3 and 4) followed by the question box for this group.
+Then, all the `tagRendering`s for group B will be shown, thus number 2, 5, 6 and 7, again followed by their question box.
 
-Additionally, every tagrendering will receive a the groupname as class in the HTML, which can be used to hook up custom
+Additionally, every `tagRendering` will receive the group name as class in the HTML, which can be used to hook up custom
 CSS.
 
-If no group tag is given, the group is `` (empty string)
+If no group tag is given, the group is `` (empty string).
 
 ### Deciding the questions position
 
 By default, the questions are shown just beneath their group.
 
-To override this behaviour, one can add a tagrendering with id `questions` to move the questions up.
+To override this behaviour, one can add a `tagRendering` with id `questions` to move the questions up.
 
-To add a title to the questions, one can add a `render` and a condition.
+To add a title to the questions, one can add a `render` and a `condition`.
 
-To change the behaviour of the questionbox to show _all_ questions at once, one can use a helperArgs in the freeform
-field with option `showAllQuestions`.
+To change the behaviour of the question box to show _all_ questions at once, one can use the `helperArgs` field in the `freeform`
+field with the option `showAllQuestions`.
 
 For example, to show the questions on top, use:
 
-```
+```json
 "tagRenderings": [
     { "id": "questions" }
     { ... some tagrendering ... }
@@ -149,13 +149,13 @@ For example, to show the questions on top, use:
 
 To show _all_ the questions of a group at once in the middle of the tagrenderings, with a header, use:
 
-```
+```json
 "tagRenderings": [
     { 
       "id": "questions" ,
       "group": "groupname",
       "render": {
-        "en": "<h3>Technical questions</h3>The following questions are very technical!<br />{questions}
+        "en": "<h3>Technical questions</h3>The following questions are very technical!<br />{questions}"
       },
       "freeform": {
         "key": "questions",
@@ -174,12 +174,12 @@ Some hints
 
 ### Everything is HTML
 
-All the texts are actually *HTML*-snippets, so you can use `<b>` to add bold, or `<img src=...>` to add images to
+All the texts are actually *HTML* snippets, so you can use `<b>` to add bold, or `<img src=...>` to add images to
 mappings or tagrenderings.
 
 Some remarks:
 
-- links are disabled when answering a question (e.g. a link in a mapping) as it should trigger the answer - not trigger
+- links are disabled when answering a question (e.g. a link in a `mapping`) as it should trigger the answer - not trigger
   to open the link.
 - If you include images, e.g. to clarify a type, make sure these are _icons_ or _diagrams_ - not actual pictures! If
   users see a picture, they think it is a picture of _that actual object_, not a type to clarify the type. An icon is
@@ -232,10 +232,10 @@ Instead, make one layer for one kind of object and change the icon based on attr
 
 Using layers as filters - this doesn't work!
 
-Use the `filter`-functionality instead
+Use the `filter`-functionality instead.
 
-### Not reading the .JSON-specs
+### Not reading the theme JSON specs
 
 There are a few advanced features to do fancy stuff available, which are documented only in the spec above - for
-example, reusing background images and substituting the colours or HTML-rendering. If you need advanced stuff, read it
+example, reusing background images and substituting the colours or HTML rendering. If you need advanced stuff, read it
 through!
