@@ -1,14 +1,16 @@
-import {Conversion, DesugaringContext, Fuse, OnEveryConcat, SetDefault} from "./Conversion";
+import {Conversion, DesugaringContext, Fuse, OnEvery, OnEveryConcat, SetDefault} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Utils} from "../../../Utils";
 import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
+import RewritableConfigJson from "../Json/RewritableConfigJson";
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
+
     constructor(state: DesugaringContext) {
-        super("Converts a tagRenderingSpec into the full tagRendering", [],"ExpandTagRendering");
+        super("Converts a tagRenderingSpec into the full tagRendering", [], "ExpandTagRendering");
         this._state = state;
     }
 
@@ -147,17 +149,17 @@ class ExpandGroupRewrite extends Conversion<{
 
     constructor(state: DesugaringContext) {
         super(
-            "Converts a rewrite config for tagRenderings into the expanded form",[],
+            "Converts a rewrite config for tagRenderings into the expanded form", [],
             "ExpandGroupRewrite"
         );
         this._expandSubTagRenderings = new ExpandTagRendering(state)
     }
 
-    convert( json:
-        {
-            rewrite:
-                { sourceString: string; into: string[] }[]; renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
-        } | TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings?: string[] } {
+    convert(json:
+                {
+                    rewrite:
+                        { sourceString: string; into: string[] }[]; renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
+                } | TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings?: string[] } {
 
         if (json["rewrite"] === undefined) {
             return {result: [<TagRenderingConfigJson>json], errors: [], warnings: []}
@@ -167,32 +169,32 @@ class ExpandGroupRewrite extends Conversion<{
                 { sourceString: string[]; into: (string | any)[][] };
             renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
         }>json;
-       
+
 
         {
             const errors = []
 
-            if(!Array.isArray(config.rewrite.sourceString)){
+            if (!Array.isArray(config.rewrite.sourceString)) {
                 let extra = "";
-                if(typeof config.rewrite.sourceString === "string"){
-                    extra=`<br/>Try <span class='literal-code'>"sourceString": [ "${config.rewrite.sourceString}" ] </span> instead (note the [ and ])`
+                if (typeof config.rewrite.sourceString === "string") {
+                    extra = `<br/>Try <span class='literal-code'>"sourceString": [ "${config.rewrite.sourceString}" ] </span> instead (note the [ and ])`
                 }
-                const msg = context+"<br/>Invalid format: a rewrite block is defined, but the 'sourceString' should be an array of strings, but it is a "+typeof  config.rewrite.sourceString + extra
+                const msg = context + "<br/>Invalid format: a rewrite block is defined, but the 'sourceString' should be an array of strings, but it is a " + typeof config.rewrite.sourceString + extra
                 errors.push(msg)
             }
 
 
             const expectedLength = config.rewrite.sourceString.length
-            for (let i = 0; i < config.rewrite.into.length; i++){
+            for (let i = 0; i < config.rewrite.into.length; i++) {
                 const targets = config.rewrite.into[i];
-                if(!Array.isArray(targets)){
-                    errors.push(`${context}.rewrite.into[${i}] should be an array of values, but it is a `+typeof targets)
-                } else                if(targets.length !== expectedLength){
+                if (!Array.isArray(targets)) {
+                    errors.push(`${context}.rewrite.into[${i}] should be an array of values, but it is a ` + typeof targets)
+                } else if (targets.length !== expectedLength) {
                     errors.push(`${context}.rewrite.into[${i}]:<br/>The rewrite specified ${config.rewrite.sourceString} as sourcestring, which consists of ${expectedLength} values. The target ${JSON.stringify(targets)} has ${targets.length} items`)
-                if(typeof targets[0] !== "string"){
-                    errors.push(context+".rewrite.into["+i+"]: expected a string as first rewrite value values, but got "+targets[0])
+                    if (typeof targets[0] !== "string") {
+                        errors.push(context + ".rewrite.into[" + i + "]: expected a string as first rewrite value values, but got " + targets[0])
 
-                }
+                    }
                 }
             }
 
@@ -205,7 +207,7 @@ class ExpandGroupRewrite extends Conversion<{
             }
         }
 
-        const subRenderingsRes = <{ result: TagRenderingConfigJson[][], errors, warnings }> this._expandSubTagRenderings.convertAll(config.renderings, context);
+        const subRenderingsRes = <{ result: TagRenderingConfigJson[][], errors, warnings }>this._expandSubTagRenderings.convertAll(config.renderings, context);
         const subRenderings: TagRenderingConfigJson[] = [].concat(...subRenderingsRes.result);
         const errors = subRenderingsRes.errors;
         const warnings = subRenderingsRes.warnings;
@@ -217,7 +219,7 @@ class ExpandGroupRewrite extends Conversion<{
         const sourceStrings = config.rewrite.sourceString;
         for (const targets of config.rewrite.into) {
             const groupName = targets[0];
-            if(typeof groupName !== "string"){
+            if (typeof groupName !== "string") {
                 throw "The first string of 'targets' should always be a string"
             }
             const trs: TagRenderingConfigJson[] = []
@@ -227,7 +229,7 @@ class ExpandGroupRewrite extends Conversion<{
                 for (let i = 0; i < sourceStrings.length; i++) {
                     const source = sourceStrings[i]
                     const target = targets[i] // This is a string OR a translation
-                    rewritten = this.prepConfig(source, target, rewritten)
+                    rewritten = ExpandRewrite.RewriteParts(source, target, rewritten)
                 }
                 rewritten.group = rewritten.group ?? groupName
                 trs.push(rewritten)
@@ -253,7 +255,7 @@ class ExpandGroupRewrite extends Conversion<{
         rewrittenPerGroup.forEach((group, _) => {
             group.forEach(tr => {
                 if (tr.id === undefined || tr.id === "") {
-                    errors.push("A tagrendering has an empty ID after expanding the tag; the tagrendering is: "+JSON.stringify(tr))
+                    errors.push("A tagrendering has an empty ID after expanding the tag; the tagrendering is: " + JSON.stringify(tr))
                 }
             })
         })
@@ -264,9 +266,18 @@ class ExpandGroupRewrite extends Conversion<{
         };
     }
 
+}
+
+class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
+
+    constructor() {
+        super("Applies a rewrite", [], "ExpandRewrite");
+    }
+
+
     /* Used for left|right group creation and replacement.
     * Every 'keyToRewrite' will be replaced with 'target' recursively. This substitution will happen in place in the object 'tr' */
-    private prepConfig(keyToRewrite: string, target: string | any, tr: TagRenderingConfigJson): TagRenderingConfigJson {
+    public static RewriteParts<T>(keyToRewrite: string, target: string | any, tr: T): T {
 
         const isTranslation = typeof target !== "string"
 
@@ -293,8 +304,35 @@ class ExpandGroupRewrite extends Conversion<{
 
         return replaceRecursive(tr)
     }
-}
 
+    convert(json: T | RewritableConfigJson<T>, context: string): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
+
+        if (json["rewrite"] === undefined) {
+            
+            // not a rewrite
+            return {result: [(<T>json)]}
+        }
+
+        const rewrite = <RewritableConfigJson<T>>json;
+        let toRewrite: T = rewrite.renderings
+        const keysToRewrite = rewrite.rewrite
+        const ts : T[] = []
+
+        for (let i = 0; i < keysToRewrite.into[0].length; i++){
+            let t = Utils.Clone(rewrite.renderings)
+            for (let i1 = 0; i1 < keysToRewrite.sourceString.length; i1++){
+                const key = keysToRewrite.sourceString[i1];
+                const target = keysToRewrite.into[i1][i]
+                t = ExpandRewrite.RewriteParts(key, target, t)
+            }
+            ts.push(t)
+        }
+
+
+        return {result: ts};
+    }
+
+}
 
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
@@ -302,6 +340,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             "Fully prepares and expands a layer for the LayerConfig.",
             new OnEveryConcat("tagRenderings", new ExpandGroupRewrite(state)),
             new OnEveryConcat("tagRenderings", new ExpandTagRendering(state)),
+            new OnEveryConcat("mapRendering", new ExpandRewrite()),
             new SetDefault("titleIcons", ["defaults"]),
             new OnEveryConcat("titleIcons", new ExpandTagRendering(state))
         );
