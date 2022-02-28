@@ -116,7 +116,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         this._knownImages = knownImages;
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson, warnings?: [] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson, warnings?: string[] } {
         let url: URL;
         try {
             url = new URL(json.id)
@@ -125,7 +125,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             return {result: json}
         }
 
-        const warnings = []
+        const warnings: string[] = []
         const absolute = url.protocol + "//" + url.host
         let relative = url.protocol + "//" + url.host + url.pathname
         relative = relative.substring(0, relative.lastIndexOf("/"))
