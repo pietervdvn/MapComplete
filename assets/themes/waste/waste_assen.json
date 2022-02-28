@@ -2,10 +2,6 @@
   "id": "waste_assen",
   "maintainer": "Robin van der Linde",
   "version": "2022-01-09",
-  "language": [
-    "en",
-    "nl"
-  ],
   "title": {
     "nl": "Afval - Assen"
   },
