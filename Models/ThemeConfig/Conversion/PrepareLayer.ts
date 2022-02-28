@@ -307,6 +307,10 @@ class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
 
     convert(json: T | RewritableConfigJson<T>, context: string): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
 
+        if(json === null || json === undefined){
+            return {result: []}
+        }
+        
         if (json["rewrite"] === undefined) {
             
             // not a rewrite
