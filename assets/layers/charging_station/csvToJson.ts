@@ -4,6 +4,7 @@ import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRender
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
 import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
+import {QuestionableTagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 
 
 function colonSplit(value: string): string[] {
@@ -57,8 +58,8 @@ function loadCsv(file): {
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: (TagRenderingConfigJson & { "id": string })[] = []
-    const technicalQuestions: (TagRenderingConfigJson & { "id": string })[] = []
+    const questions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
+    const technicalQuestions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
