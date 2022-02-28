@@ -1,6 +1,5 @@
 import {Translation} from "../../UI/i18n/Translation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
@@ -12,6 +11,7 @@ import Combine from "../../UI/Base/Combine";
 import Title from "../../UI/Base/Title";
 import Link from "../../UI/Base/Link";
 import List from "../../UI/Base/List";
+import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -50,7 +50,7 @@ export default class TagRenderingConfig {
     }[]
     public readonly labels: string[]
 
-    constructor(json: string | TagRenderingConfigJson, context?: string) {
+    constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }

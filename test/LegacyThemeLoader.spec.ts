@@ -449,7 +449,7 @@ export default class LegacyThemeLoaderSpec extends T {
                     Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg",
                         fixedMapping)
                 }],
-                ["Images in 'thens' are detected", () => {
+                ["Images in simple mappings are detected", () => {
                     const r = new DetectMappingsWithImages().convert({
                         "mappings": [
                             {
@@ -470,7 +470,7 @@ export default class LegacyThemeLoaderSpec extends T {
                     T.isTrue(errors.length > 0, "No images found");
                     T.isTrue(errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0), "staple.svg not mentioned");
                 }],
-                ["Images in 'thens' icons are detected", () => {
+                ["Images in 'thens' are detected in QuestionableTagRenderings", () => {
                     const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
                         "layers": [
                             {
@@ -504,6 +504,26 @@ export default class LegacyThemeLoaderSpec extends T {
                     T.isTrue(images.length > 0, "No images found");
                     T.isTrue(images.findIndex(img => img =="./assets/layers/bike_parking/staple.svg") >= 0, "staple.svg not mentioned");
                     T.isTrue(images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") >= 0, "bollard.svg not mentioned");
+                }],
+                ["Rotation and colours is not detected as image", () => {
+                    const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
+                        "layers": [
+                            {
+                                mapRendering: [
+                                    {
+                                        "location":["point","centroid"],
+                                        "icon": "pin:black",
+                                        rotation: 180,
+                                        iconSize: "40,40,center"
+                                    }
+                                ]
+                            }
+                        ]
+                    }, "test");
+                    const images = r.result
+                    T.isTrue(images.length > 0, "No images found");
+                    T.isTrue(images.length < 2, "To much images found: "+images.join(", "));
+                    T.isTrue(images[0] === "pin", "pin not mentioned");
                 }]
             ]
         );

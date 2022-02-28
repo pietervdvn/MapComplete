@@ -2,20 +2,30 @@ import {Conversion, DesugaringStep} from "./Conversion";
 import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import {Utils} from "../../../Utils";
 import * as metapaths from "../../../assets/layoutconfigmeta.json";
-import * as tagrenderingmetapaths from "../../../assets/tagrenderingconfigmeta.json";
+import * as tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json";
+import Translations from "../../../UI/i18n/Translations";
 
 export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     private _isOfficial: boolean;
     private _sharedTagRenderings: Map<string, any>;
 
-    private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths).filter(mp => mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
-    private static readonly tagRenderingMetaPaths = (tagrenderingmetapaths["default"] ?? tagrenderingmetapaths).filter(trpath => trpath.typeHint === "rendered")
+    private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths)
+        .filter(mp => (ExtractImages.mightBeTagRendering(mp)) || mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
+    private static readonly tagRenderingMetaPaths = (tagrenderingmetapaths["default"] ?? tagrenderingmetapaths)
 
 
     constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
-        super("Extract all images from a layoutConfig using the meta paths",[],"ExctractImages");
+        super("Extract all images from a layoutConfig using the meta paths.",[],"ExctractImages");
         this._isOfficial = isOfficial;
         this._sharedTagRenderings = sharedTagRenderings;
+    }
+    
+    public static mightBeTagRendering(metapath: {type: string | string[]}) : boolean{
+        if(!Array.isArray(metapath.type)){
+            return false
+        }
+        return metapath.type.some(t =>
+            t["$ref"] == "#/definitions/TagRenderingConfigJson" ||  t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson")
     }
 
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
@@ -23,43 +33,58 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
         const errors = []
         const warnings = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
-            const mightBeTr = Array.isArray(metapath.type) && metapath.type.some(t => t["$ref"] == "#/definitions/TagRenderingConfigJson")
+            const mightBeTr = ExtractImages.mightBeTagRendering(metapath)
+            const allRenderedValuesAreImages = metapath.typeHint === "icon" || metapath.typeHint === "image"
             const found = Utils.CollectPath(metapath.path, json)
             if (mightBeTr) {
                 // We might have tagRenderingConfigs containing icons here
                 for (const el of found) {
                     const path = el.path
                     const foundImage = el.leaf;
-                    if (typeof foundImage === "string") {
+                     if (typeof foundImage === "string") {
                         
+                         if(!allRenderedValuesAreImages){
+                             continue
+                         }
+                         
                         if(foundImage == ""){
                             warnings.push(context+"."+path.join(".")+" Found an empty image")
                         }
                         
                         if(this._sharedTagRenderings?.has(foundImage)){
                             // This is not an image, but a shared tag rendering
+                            // At key positions for checking, they'll be expanded already, so we can safely ignore them here
                             continue
                         }
                         
                         allFoundImages.push(foundImage)
                     } else{
-                        // This is a tagRendering where every rendered value might be an icon!
+                        // This is a tagRendering.
+                        // Either every rendered value might be an icon 
+                        // or -in the case of a normal tagrendering- only the 'icons' in the mappings have an icon (or exceptionally an '<img>' tag in the translation
                         for (const trpath of ExtractImages.tagRenderingMetaPaths) {
+                            // Inspect all the rendered values
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
+                            const isRendered = trpath.typeHint === "rendered"
+                            const isImage = trpath.typeHint === "icon" || trpath.typeHint === "image"
                             for (const img of fromPath) {
-                                if (typeof img.leaf !== "string") {
-                                    (this._isOfficial ?   errors: warnings).push(context+"."+img.path.join(".")+": found an image path that is not a string: " + JSON.stringify(img.leaf))
-                                }
-                            }
-                            allFoundImages.push(...fromPath.map(i => i.leaf).filter(i => typeof i=== "string"))
-                            for (const pathAndImg of fromPath) {
-                                if(pathAndImg.leaf === "" || pathAndImg.leaf["path"] == ""){
-                                    warnings.push(context+[...path,...pathAndImg.path].join(".")+": Found an empty image at ")
+                                if (allRenderedValuesAreImages && isRendered) {
+                                    // What we found is an image
+                                    if(img.leaf === "" || img.leaf["path"] == ""){
+                                        warnings.push(context+[...path,...img.path].join(".")+": Found an empty image at ")
+                                    }else if(typeof img.leaf !== "string"){
+                                        (this._isOfficial ?   errors: warnings).push(context+"."+img.path.join(".")+": found an image path that is not a string: " + JSON.stringify(img.leaf))
+                                    }else{
+                                        allFoundImages.push(img.leaf)
+                                    }
+                                } 
+                                if(!allRenderedValuesAreImages && isImage){
+                                    // Extract images from the translations
+                                    allFoundImages.push(...(Translations.T(img.leaf, "extract_images from "+img.path.join(".")).ExtractImages(false)))
                                 }
                             }
                         }
-
-                    }
+                    } 
                 }
             } else {
                 for (const foundElement of found) {
@@ -127,7 +152,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
                 continue
             }
-            const mightBeTr = Array.isArray(metapath.type) && metapath.type.some(t => t["$ref"] == "#/definitions/TagRenderingConfigJson")
+            const mightBeTr = ExtractImages.mightBeTagRendering(metapath)
             Utils.WalkPath(metapath.path, json, (leaf, path) => {
                 if (typeof leaf === "string") {
                     return replaceString(leaf)

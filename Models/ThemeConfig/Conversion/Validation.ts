@@ -13,6 +13,7 @@ import ScriptUtils from "../../../scripts/ScriptUtils";
 import {And} from "../../../Logic/Tags/And";
 import Translations from "../../../UI/i18n/Translations";
 import Svg from "../../../Svg";
+import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -237,12 +238,12 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
 }
 
-export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
+export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRenderingConfigJson> {
     constructor() {
         super("Checks that the mappings don't shadow each other", [], "DetectShadowedMappings");
     }
 
-    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    convert(json: QuestionableTagRenderingConfigJson, context: string): { result: QuestionableTagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
