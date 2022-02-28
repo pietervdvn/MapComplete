@@ -116,7 +116,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         this._knownImages = knownImages;
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson, warnings?: [] } {
         let url: URL;
         try {
             url = new URL(json.id)
@@ -125,6 +125,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             return {result: json}
         }
 
+        const warnings = []
         const absolute = url.protocol + "//" + url.host
         let relative = url.protocol + "//" + url.host + url.pathname
         relative = relative.substring(0, relative.lastIndexOf("/"))
@@ -134,6 +135,12 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             if (self._knownImages.has(leaf)) {
                 return leaf;
             }
+            
+            if(typeof leaf !== "string"){
+                warnings.push("Found a non-string object while replacing images: "+JSON.stringify(leaf))
+                return leaf;
+            }
+            
             if (leaf.startsWith("./")) {
                 return relative + leaf.substring(1)
             }
@@ -178,6 +185,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
 
 
         return {
+            warnings,
             result: json
         };
     }
