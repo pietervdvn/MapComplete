@@ -58,6 +58,8 @@
       * [Example usage of visualize_note_comments](#example-usage-of-visualize_note_comments)
     + [add_image_to_note](#add_image_to_note)
       * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
+    + [title](#title)
+      * [Example usage of title](#example-usage-of-title)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -372,16 +374,16 @@ tags | _undefined_ | The tags to add onto the new object - see specification abo
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_to_point_if | _undefined_ | Points with the given tags will be snapped to or moved
-max_snap_distance | 5 | If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way
+max_snap_distance | 0.05 | If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way
 move_osm_point_if | _undefined_ | Moves the OSM-point to the newly imported point if these conditions are met
-max_move_distance | 1 | If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m
+max_move_distance | 0.05 | If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m
 snap_onto_layers | _undefined_ | If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead
 snap_to_layer_max_distance | 0.1 | Distance to distort the geometry to snap to this layer
  
 
 #### Example usage of import_way_button 
 
- `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,1,,0.1)}`
+ `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,0.05,,0.05,,0.1)}`
 
 
 
@@ -598,6 +600,16 @@ Id-key | id | The property name where the ID of the note to close can be found
 #### Example usage of add_image_to_note 
 
  `{add_image_to_note(id)}`
+
+
+
+### title 
+
+ Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?' 
+
+#### Example usage of title 
+
+ `What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.
 
 
 

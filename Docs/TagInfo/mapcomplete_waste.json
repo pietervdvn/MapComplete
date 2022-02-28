@@ -1,0 +1,320 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Waste",
+    "description": "Map showing waste baskets and recycling facilities",
+    "project_url": "https://mapcomplete.osm.be/waste",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/recycling/recycling-14.svg",
+    "contact_name": "Pieter Vander Vennet, ",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Waste has a layer Waste Basket showing features with this tag",
+      "value": "waste_basket"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'A waste basket for general waste' (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key waste.",
+      "value": ""
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=trash with a fixed text, namely 'A waste basket for general waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "trash"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=dog_excrement with a fixed text, namely 'A waste basket for dog excrements' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "dog_excrement"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=cigarettes with a fixed text, namely 'A waste basket for cigarettes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "cigarettes"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=drugs with a fixed text, namely 'A waste basket for drugs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "drugs"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=sharps with a fixed text, namely 'A waste basket for needles and other sharp objects' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "sharps"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=plastic with a fixed text, namely 'A waste basket for plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "plastic"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "dog_excrement_bag"
+    },
+    {
+      "key": "not:vending",
+      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key not:vending.",
+      "value": ""
+    },
+    {
+      "key": "not:vending",
+      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "dog_excrement_bag"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key vending.",
+      "value": ""
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key vending.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Waste has a layer Recycling showing features with this tag",
+      "value": "recycling"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=container with a fixed text, namely 'This is a recycling container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "container"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=centre with a fixed text, namely 'This is a recycling centre' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "centre"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Recycling' shows amenity=waste_disposal with a fixed text, namely 'Waste disposal container for residual waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Recycling' shows noname=yes with a fixed text, namely 'This recycling centre doesn't have a specific name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Recycling' shows location=underground with a fixed text, namely 'This is an underground container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Recycling' shows location=indoor with a fixed text, namely 'This container is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "indoor"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Recycling' shows  with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key location.",
+      "value": ""
+    },
+    {
+      "key": "recycling:batteries",
+      "description": "Layer 'Recycling' shows recycling:batteries=yes with a fixed text, namely 'Batteries can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:beverage_cartons",
+      "description": "Layer 'Recycling' shows recycling:beverage_cartons=yes with a fixed text, namely 'Beverage cartons can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:cans",
+      "description": "Layer 'Recycling' shows recycling:cans=yes with a fixed text, namely 'Cans can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:clothes",
+      "description": "Layer 'Recycling' shows recycling:clothes=yes with a fixed text, namely 'Clothes can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:cooking_oil",
+      "description": "Layer 'Recycling' shows recycling:cooking_oil=yes with a fixed text, namely 'Cooking oil can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:engine_oil",
+      "description": "Layer 'Recycling' shows recycling:engine_oil=yes with a fixed text, namely 'Engine oil can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:green_waste",
+      "description": "Layer 'Recycling' shows recycling:green_waste=yes with a fixed text, namely 'Green waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:organic",
+      "description": "Layer 'Recycling' shows recycling:organic=yes with a fixed text, namely 'Organic waste can be recycled here' (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:glass_bottles",
+      "description": "Layer 'Recycling' shows recycling:glass_bottles=yes with a fixed text, namely 'Glass bottles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:glass",
+      "description": "Layer 'Recycling' shows recycling:glass=yes with a fixed text, namely 'Glass can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:newspaper",
+      "description": "Layer 'Recycling' shows recycling:newspaper=yes with a fixed text, namely 'Newspapers can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:paper",
+      "description": "Layer 'Recycling' shows recycling:paper=yes with a fixed text, namely 'Paper can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:plastic_bottles",
+      "description": "Layer 'Recycling' shows recycling:plastic_bottles=yes with a fixed text, namely 'Plastic bottles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:plastic_packaging",
+      "description": "Layer 'Recycling' shows recycling:plastic_packaging=yes with a fixed text, namely 'Plastic packaging can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:plastic",
+      "description": "Layer 'Recycling' shows recycling:plastic=yes with a fixed text, namely 'Plastic can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:scrap_metal",
+      "description": "Layer 'Recycling' shows recycling:scrap_metal=yes with a fixed text, namely 'Scrap metal can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:shoes",
+      "description": "Layer 'Recycling' shows recycling:shoes=yes with a fixed text, namely 'Shoes can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:small_appliances",
+      "description": "Layer 'Recycling' shows recycling:small_appliances=yes with a fixed text, namely 'Small electrical appliances can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:small_electrical_appliances",
+      "description": "Layer 'Recycling' shows recycling:small_electrical_appliances=yes with a fixed text, namely 'Small electrical appliances can be recycled here' (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:waste",
+      "description": "Layer 'Recycling' shows recycling:waste=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Recycling' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Recycling' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Recycling' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Recycling' shows opening_hours=24/7 with a fixed text, namely '24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "24/7"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Waste has a layer Waste Disposal Bins showing features with this tag",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows access=yes with a fixed text, namely 'This bin can be used by anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows access=no with a fixed text, namely 'This bin is private' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows access=residents with a fixed text, namely 'This bin is only for residents' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "residents"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Waste Disposal Bins' shows location=underground with a fixed text, namely 'This is an underground container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Waste Disposal Bins' shows location=indoor with a fixed text, namely 'This container is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "indoor"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Waste Disposal Bins' shows  with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key location.",
+      "value": ""
+    },
+    {
+      "key": "id",
+      "description": "The MapComplete theme Waste has a layer Your travelled track showing features with this tag",
+      "value": "location_track"
+    }
+  ]
+}

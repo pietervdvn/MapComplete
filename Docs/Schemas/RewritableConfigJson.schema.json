@@ -1,92 +1,36 @@
-export default {
-  "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
+{
   "type": "object",
   "properties": {
-    "color": {
-      "description": "The color for way-elements and SVG-elements.\nIf the value starts with \"--\", the style of the body element will be queried for the corresponding variable instead",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
+    "rewrite": {
+      "type": "object",
+      "properties": {
+        "sourceString": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        {
-          "type": "string"
+        "into": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {}
+          }
         }
+      },
+      "required": [
+        "into",
+        "sourceString"
       ]
     },
-    "width": {
-      "description": "The stroke-width for way-elements",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "type": [
-            "string",
-            "number"
-          ]
-        }
-      ]
-    },
-    "dashArray": {
-      "description": "A dasharray, e.g. \"5 6\"\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap',\nDefault value: \"\" (empty string == full line)",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "type": "string"
-        }
-      ]
-    },
-    "lineCap": {
-      "description": "The form at the end of a line",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "type": "string"
-        }
-      ]
-    },
-    "fill": {
-      "description": "Wehter or not to fill polygons",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "enum": [
-            "no",
-            "yes"
-          ],
-          "type": "string"
-        }
-      ]
-    },
-    "fillColor": {
-      "description": "The color to fill a polygon with.\nIf undefined, this will be slightly more opaque version of the stroke line",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "type": "string"
-        }
-      ]
-    },
-    "offset": {
-      "description": "The number of pixels this line should be moved.\nUse a positive numbe to move to the right, a negative to move to the left (left/right as defined by the drawing direction of the line).\n\nIMPORTANT: MapComplete will already normalize 'key:both:property' and 'key:both' into the corresponding 'key:left' and 'key:right' tagging (same for 'sidewalk=left/right/both' which is rewritten to 'sidewalk:left' and 'sidewalk:right')\nThis simplifies programming. Refer to the CalculatedTags.md-documentation for more details",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/TagRenderingConfigJson"
-        },
-        {
-          "type": "number"
-        }
-      ]
+    "renderings": {
+      "$ref": "#/definitions/T"
     }
   },
+  "required": [
+    "renderings",
+    "rewrite"
+  ],
   "definitions": {
     "AndOrTagConfigJson": {
       "type": "object",
@@ -117,7 +61,8 @@ export default {
             ]
           }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "ApplicableUnitJson": {
       "type": "object",
@@ -154,7 +99,8 @@ export default {
       },
       "required": [
         "canonicalDenomination"
-      ]
+      ],
+      "additionalProperties": false
     },
     "TagRenderingConfigJson": {
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRenerdering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
@@ -254,8 +200,14 @@ export default {
             ]
           }
         }
-      }
+      },
+      "additionalProperties": false
+    },
+    "T": {
+      "type": "object",
+      "additionalProperties": false
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false
 }

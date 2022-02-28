@@ -45,22 +45,22 @@
     },
     {
       "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=pillar with a fixed text, namely '<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
+      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=pillar with a fixed text, namely 'Pillar type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
       "value": "pillar"
     },
     {
       "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=pipe with a fixed text, namely '<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
+      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=pipe with a fixed text, namely 'Pipe type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
       "value": "pipe"
     },
     {
       "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=wall with a fixed text, namely '<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
+      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=wall with a fixed text, namely 'Wall type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
       "value": "wall"
     },
     {
       "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=underground with a fixed text, namely '<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
+      "description": "Layer 'Map of hydrants' shows fire_hydrant:type=underground with a fixed text, namely 'Underground type.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
       "value": "underground"
     },
     {

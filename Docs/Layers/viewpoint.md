@@ -15,6 +15,7 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 ## Table of contents
 
 1. [viewpoint](#viewpoint)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -25,6 +26,17 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/viewpoint/viewpoint.json)

@@ -974,37 +974,37 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "stands"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "wall_loops"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=handlebar_holder with a fixed text, namely 'Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=handlebar_holder with a fixed text, namely 'Handlebar holder' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "handlebar_holder"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=rack with a fixed text, namely 'Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=rack with a fixed text, namely 'Rack' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "rack"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=two_tier with a fixed text, namely 'Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=two_tier with a fixed text, namely 'Two-tiered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "two_tier"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "shed"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=bollard with a fixed text, namely 'Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=bollard with a fixed text, namely 'Bollard' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "bollard"
     },
     {
@@ -1031,11 +1031,6 @@
       "key": "location",
       "description": "Layer 'Bike parking' shows  with a fixed text, namely 'Surface level parking' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key location.",
       "value": ""
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Bike parking' shows location=rooftop with a fixed text, namely 'Rooftop parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
-      "value": "rooftop"
     },
     {
       "key": "covered",

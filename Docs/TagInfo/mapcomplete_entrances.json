@@ -207,7 +207,7 @@
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "serviced_on_button_press"
     },
     {

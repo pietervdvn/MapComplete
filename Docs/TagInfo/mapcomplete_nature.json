@@ -62,286 +62,286 @@
     },
     {
       "key": "leisure",
-      "description": "The MapComplete theme Into nature has a layer Vogelkijkhutten showing features with this tag",
+      "description": "The MapComplete theme Into nature has a layer Bird watching places showing features with this tag",
       "value": "bird_hide"
     },
     {
       "key": "image",
-      "description": "The layer 'Vogelkijkhutten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Vogelkijkhutten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Vogelkijkhutten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Vogelkijkhutten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "shelter",
-      "description": "Layer 'Vogelkijkhutten' shows shelter=no with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows shelter=no with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "building",
-      "description": "Layer 'Vogelkijkhutten' shows shelter=no with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key building.",
+      "description": "Layer 'Bird watching places' shows shelter=no with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key building.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Vogelkijkhutten' shows shelter=no with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Bird watching places' shows shelter=no with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Vogelkijkhutten' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "shelter"
     },
     {
       "key": "building",
-      "description": "Layer 'Vogelkijkhutten' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "shelter",
-      "description": "Layer 'Vogelkijkhutten' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "building",
-      "description": "Layer 'Vogelkijkhutten' shows building=tower&bird_hide=tower with a fixed text, namely 'Vogelkijktoren' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows building=tower&bird_hide=tower with a fixed text, namely 'Bird tower hide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "tower"
     },
     {
       "key": "bird_hide",
-      "description": "Layer 'Vogelkijkhutten' shows building=tower&bird_hide=tower with a fixed text, namely 'Vogelkijktoren' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows building=tower&bird_hide=tower with a fixed text, namely 'Bird tower hide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "tower"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Vogelkijkhutten' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut' (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Bird hide shelter' (in the MapComplete.osm.be theme 'Into nature')",
       "value": "shelter"
     },
     {
       "key": "building",
-      "description": "Layer 'Vogelkijkhutten' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut' (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Bird hide shelter' (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "shelter",
-      "description": "Layer 'Vogelkijkhutten' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut' (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Bird hide shelter' (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Vogelkijkhutten' shows wheelchair=designated with a fixed text, namely 'Er zijn speciale voorzieningen voor rolstoelen' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows wheelchair=designated with a fixed text, namely 'There are special provisions for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "designated"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Vogelkijkhutten' shows wheelchair=yes with a fixed text, namely 'Een rolstoel raakt er vlot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows wheelchair=yes with a fixed text, namely 'A wheelchair can easily use this birdhide' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Vogelkijkhutten' shows wheelchair=limited with a fixed text, namely 'Je kan er raken met een rolstoel, maar het is niet makkelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows wheelchair=limited with a fixed text, namely 'This birdhide is reachable by wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "limited"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Vogelkijkhutten' shows wheelchair=no with a fixed text, namely 'Niet rolstoeltoegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows wheelchair=no with a fixed text, namely 'Not accessible to wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "operator",
-      "description": "Layer 'Vogelkijkhutten' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Bird watching places' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "operator",
-      "description": "Layer 'Vogelkijkhutten' shows operator=Natuurpunt with a fixed text, namely 'Beheer door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows operator=Natuurpunt with a fixed text, namely 'Operated by Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "Natuurpunt"
     },
     {
       "key": "operator",
-      "description": "Layer 'Vogelkijkhutten' shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Beheer door het Agentschap Natuur en Bos ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Operated by the Agency for Nature and Forests' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "Agentschap Natuur en Bos"
     },
     {
       "key": "leisure",
-      "description": "The MapComplete theme Into nature has a layer Natuurgebied showing features with this tag",
+      "description": "The MapComplete theme Into nature has a layer Nature reserve showing features with this tag",
       "value": "nature_reserve"
     },
     {
       "key": "boundary",
-      "description": "The MapComplete theme Into nature has a layer Natuurgebied showing features with this tag",
+      "description": "The MapComplete theme Into nature has a layer Nature reserve showing features with this tag",
       "value": "protected_area"
     },
     {
       "key": "image",
-      "description": "The layer 'Natuurgebied allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Natuurgebied allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Natuurgebied allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Natuurgebied allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "access:description",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'access:description' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'access:description' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=yes with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=yes with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=no with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=no with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=private with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=private with a fixed text, namely 'Not accessible as this is a private area' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "private"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=private with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=private with a fixed text, namely 'Not accessible as this is a private area' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=permissive with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=permissive with a fixed text, namely 'Accessible despite being a privately owned area' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "permissive"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=permissive with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=permissive with a fixed text, namely 'Accessible despite being a privately owned area' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=guided with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=guided with a fixed text, namely 'Only accessible with a guide or during organised activities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "guided"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=guided with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=guided with a fixed text, namely 'Only accessible with a guide or during organised activities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Natuurgebied' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=yes&fee=yes with a fixed text, namely 'Accessible with fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Natuurgebied' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=yes&fee=yes with a fixed text, namely 'Accessible with fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows operator=Natuurpunt with a fixed text, namely 'Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows operator=Natuurpunt with a fixed text, namely 'Operated by Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "Natuurpunt"
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "operator",
-      "description": "Layer 'Natuurgebied' shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Dit gebied wordt beheerd door het Agentschap Natuur en Bos' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Operated by <i>Agentschap Natuur en Bos</i>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "Agentschap Natuur en Bos"
     },
     {
-      "key": "name:nl",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'name:nl' (in the MapComplete.osm.be theme 'Into nature')"
-    },
-    {
       "key": "name",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "noname",
-      "description": "Layer 'Natuurgebied' shows noname=yes with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows noname=yes with a fixed text, namely 'This area doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Natuurgebied' shows noname=yes with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key name.",
+      "description": "Layer 'Nature reserve' shows noname=yes with a fixed text, namely 'This area doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key name.",
       "value": ""
     },
     {
       "key": "dog",
-      "description": "Layer 'Natuurgebied' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "leashed"
     },
     {
       "key": "dog",
-      "description": "Layer 'Natuurgebied' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "dog",
-      "description": "Layer 'Natuurgebied' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "website",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Nature reserve' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "curator",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'curator' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'curator' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "email",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "phone",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "description",
-      "description": "Layer 'Natuurgebied' shows values with key 'description' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows values with key 'description' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "description:0",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'description:0' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'description:0' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "wikidata",
-      "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "wikidata",
-      "description": "Layer 'Natuurgebied' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key wikidata.",
+      "description": "Layer 'Nature reserve' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key wikidata.",
       "value": ""
     },
     {

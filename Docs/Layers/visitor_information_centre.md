@@ -15,6 +15,7 @@ A visitor center offers information about a specific attraction or place of inte
 ## Table of contents
 
 1. [visitor_information_centre](#visitor_information_centre)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 
@@ -23,6 +24,17 @@ A visitor center offers information about a specific attraction or place of inte
 
 
 
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/visitor_information_centre/visitor_information_centre.json)

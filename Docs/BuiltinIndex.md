@@ -26,6 +26,7 @@
     + [questions](#questions)
     + [reviews](#reviews)
     + [export_as_gpx](#export_as_gpx)
+    + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
     + [wikipedia](#wikipedia)
 
@@ -80,6 +81,7 @@
   - play_forest
   - playground
   - public_bookcase
+  - recycling
   - shops
   - slow_roads
   - sport_pitch
@@ -105,7 +107,9 @@
   - bike_themed_object
   - cafe_pub
   - food
+  - nature_reserve
   - observation_tower
+  - recycling
 
 
 
@@ -121,6 +125,7 @@
   - bike_themed_object
   - cafe_pub
   - food
+  - recycling
 
 
 
@@ -136,6 +141,7 @@
   - bike_themed_object
   - cafe_pub
   - food
+  - recycling
 
 
 
@@ -298,6 +304,17 @@
 
 
 ### export_as_gpx 
+
+
+
+
+
+  - gps_track
+
+
+
+
+### export_as_geojson 
 
 
 
