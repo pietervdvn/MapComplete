@@ -10,7 +10,7 @@ Requirements
 Before you start, you should have the following qualifications:
 
 - You are a longtime contributor and do know the OpenStreetMap tagging scheme very well.
-- You are not afraid of editing a JSON file
+- You are not afraid of editing a JSON file. If you don't know what a JSON-file is, [read this intro](https://www.w3schools.com/whatis/whatis_json.asp)
 - Your theme will add well-understood tags (aka: the tags have a wiki page, are not controversial and are objective)
 - You are in contact with your local OpenStreetMap community and do know some other members to discuss tagging and to
   help testing
