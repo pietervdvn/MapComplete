@@ -6,11 +6,15 @@
   },
   "source": {
     "osmTags": {
-      "or": [
-        "amenity=bicycle_rental",
-        "bicycle_rental~*",
-        "service:bicycle:rental=yes",
-        "rental~.*bicycle.*"
+      "and": [
+        {
+          "or": [
+            "amenity=bicycle_rental",
+            "bicycle_rental~*",
+            "service:bicycle:rental=yes",
+            "rental~.*bicycle.*"
+          ]
+        }
       ]
     }
   },

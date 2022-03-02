@@ -669,7 +669,8 @@
             "en": "Payment is done using a dedicated app",
             "nl": "Betalen via een app van het netwerk",
             "hu": "Fizetés erre a célra szolgáló alkalmazással",
-            "zh_Hant": "使用專用應用程式付款"
+            "zh_Hant": "使用專用應用程式付款",
+            "de": "Die Bezahlung erfolgt über eine spezielle App"
           }
         },
         {
@@ -680,7 +681,8 @@
             "en": "Payment is done using a membership card",
             "nl": "Betalen via een lidkaart van het netwerk",
             "hu": "Fizetési tagsági kártyával",
-            "zh_Hant": "使用會員卡付款"
+            "zh_Hant": "使用會員卡付款",
+            "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte"
           }
         }
       ]
@@ -826,7 +828,9 @@
         "then": {
           "en": "Located on the first basement level",
           "nl": "Bevindt zich in de eerste kelderverdieping",
-          "zh_Hant": "位於地下一樓"
+          "zh_Hant": "位於地下一樓",
+          "de": "Ist im 1. Untergeschoss",
+          "hu": "Az első alagsori szinten"
         }
       }
     ]

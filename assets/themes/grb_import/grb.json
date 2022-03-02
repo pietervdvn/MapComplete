@@ -9,7 +9,8 @@
   "description": {
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.",
-    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
+    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
+    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
   },
   "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/grb_import/logo.svg",
@@ -472,6 +473,13 @@
           "id": "Import-button",
           "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
+            {
+              "#": "Failsafe",
+              "if": "_grb_ref=",
+              "then": {
+                "en": "Did not yet calculate the metatags... Reopen this popup"
+              }
+            },
             {
               "#": "Actually the same as below, except that the text shows 'add the address' too",
               "if": {

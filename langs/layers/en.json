@@ -3293,7 +3293,7 @@
                         "then": "Some vegetarian options are available"
                     },
                     "2": {
-                        "then": "No vegetarian options are available"
+                        "then": "Vegetarian options are available"
                     },
                     "3": {
                         "then": "All dishes are vegetarian"
