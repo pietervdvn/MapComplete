@@ -2,7 +2,7 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
 
 /**
  * A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.
- * For an _editable_ tagRenerdering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one
+ * For an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one
  */
 export interface TagRenderingConfigJson {
 

@@ -33,7 +33,7 @@ export default interface LineRenderingConfigJson {
     lineCap?: "round" | "square" | "butt" | string | TagRenderingConfigJson
 
     /**
-     * Wehter or not to fill polygons
+     * Whether or not to fill polygons
      */
     fill?: "yes" | "no" | TagRenderingConfigJson
 
