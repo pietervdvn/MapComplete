@@ -176,7 +176,7 @@ function run(file, protojson) {
             },
             mappings: e.commonVoltages.map(voltage => {
                 return {
-                    if: `socket:${e.key}:voltage=${voltage} V`,
+                    if: `${e.key}:voltage=${voltage} V`,
                     then: {
                         en: `${e.description.get("en")} outputs ${voltage} volt`,
                         nl: `${e.description.get("nl")} heeft een spanning van ${voltage} volt`
@@ -210,7 +210,7 @@ function run(file, protojson) {
             },
             mappings: e.commonCurrents.map(current => {
                 return {
-                    if: `socket:${e.key}:current=${current} A`,
+                    if: `${e.key}:current=${current} A`,
                     then: {
                         en: `${e.description.get("en")} outputs at most ${current} A`,
                         nl: `${e.description.get("nl")} levert een stroom van maximaal ${current} A`
@@ -244,7 +244,7 @@ function run(file, protojson) {
             },
             mappings: e.commonOutputs.map(output => {
                 return {
-                    if: `socket:${e.key}:output=${output}`,
+                    if: `${e.key}:output=${output}`,
                     then: {
                         en: `${e.description.get("en")} outputs at most ${output} A`,
                         nl: `${e.description.get("nl")} levert een vermogen van maximaal ${output} A`
