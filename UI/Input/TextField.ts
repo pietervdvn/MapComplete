@@ -7,7 +7,7 @@ export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined);
     private readonly value: UIEventSource<string>;
     private _element: HTMLElement;
-    private readonly _isValid: (s: string, country?: () => string) => boolean;
+    private readonly _isValid: (s: string) => boolean;
     private _rawValue: UIEventSource<string> 
     
     constructor(options?: {
@@ -18,7 +18,7 @@ export class TextField extends InputElement<string> {
         label?: BaseUIElement,
         textAreaRows?: number,
         inputStyle?: string,
-        isValid?: ((s: string, country?: () => string) => boolean)
+        isValid?: (s: string) => boolean
     }) {
         super();
         const self = this;
@@ -140,7 +140,7 @@ export class TextField extends InputElement<string> {
         if (t === undefined || t === null) {
             return false
         }
-        return this._isValid(t, undefined);
+        return this._isValid(t);
     }
 
     protected InnerConstructElement(): HTMLElement {
