@@ -142,7 +142,7 @@ export default class FeaturePipelineState extends MapState {
     
     public CreatePopup(tags:any , layer: LayerConfig): ScrollableFullScreen{
         if(this.popups.has(tags.id)){
-            return this.popups.get(tags.id)
+       //     return this.popups.get(tags.id)
         }
         const popup = new FeatureInfoBox(tags, layer, this)
         this.popups.set(tags.id, popup)
