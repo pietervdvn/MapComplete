@@ -367,7 +367,7 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push(new Combine(["This layer will automatically load ", new Link(dep.neededLayer, "./" + dep.neededLayer + ".md"), " into the layout as it depends on it: ", dep.reason, "(" + dep.context + ")"]))
         }
 
-        for (const revDep of layerIsNeededBy?.get(this.id) ?? []) {
+        for (const revDep of Utils.Dedup( layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(new Combine(["This layer is needed as dependency for layer", new Link(revDep, "#" + revDep)]))
         }
 

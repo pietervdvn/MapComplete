@@ -13,7 +13,8 @@
   },
   "description": {
     "en": "Pubs and bars",
-    "nl": "Cafés, kroegen en drinkgelegenheden"
+    "nl": "Cafés, kroegen en drinkgelegenheden",
+    "de": "Kneipen und Bars"
   },
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",
