@@ -7,7 +7,8 @@
     "it": "Apri Carta Etimologica",
     "ru": "Открытая этимологическая карта",
     "zh_Hant": "開放詞源地圖",
-    "hu": "Etimológiai térkép"
+    "hu": "Etimológiai térkép",
+    "fr": "Open Etymology Map"
   },
   "shortDescription": {
     "en": "What is the origin of a toponym?",
@@ -15,7 +16,8 @@
     "de": "Was ist der Ursprung eines Ortsnamens?",
     "it": "Qual è l’origine di un toponimo?",
     "zh_Hant": "地名的由來是？",
-    "hu": "Mi az eredete egy helynévnek?"
+    "hu": "Mi az eredete egy helynévnek?",
+    "fr": "Quelle est l'origine de ce toponyme ?"
   },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
@@ -48,7 +50,8 @@
           "de": "Straßen ohne Informationen zur Namensherkunft",
           "it": "Strade senza informazioni etimologiche",
           "zh_Hant": "道路沒有詞源資訊",
-          "hu": "Etimológiai adat nélküli utcák"
+          "hu": "Etimológiai adat nélküli utcák",
+          "fr": "Route sans origine étymologique"
         },
         "minzoom": 18,
         "source": {
@@ -72,7 +75,8 @@
           "de": "Parks und Waldflächen ohne Informationen zur Namensherkunft",
           "it": "Parchi e foreste senza informazioni etimologiche",
           "zh_Hant": "公園與森哥沒有詞源資訊",
-          "hu": "Etimológiai adat nélküli parkok és erdők"
+          "hu": "Etimológiai adat nélküli parkok és erdők",
+          "fr": "Parcs et forêts sans origine étymologique"
         },
         "minzoom": 18,
         "source": {
@@ -95,7 +99,9 @@
       "override": {
         "id": "education_institutions_without_etymology",
         "=name": {
-          "en": "Education institutions without etymology information"
+          "en": "Education institutions without etymology information",
+          "de": "Bildungseinrichtungen ohne Informationen zur Etymologie",
+          "fr": "Institutions d'éducation sans origine étymologique"
         },
         "minzoom": 18,
         "source": {
@@ -120,7 +126,8 @@
       "override": {
         "id": "cultural_places_without_etymology",
         "=name": {
-          "en": "Cultural places without etymology information"
+          "en": "Cultural places without etymology information",
+          "de": "Kulturelle Orte ohne etymologische Informationen"
         },
         "minzoom": 18,
         "source": {
@@ -146,7 +153,8 @@
       "override": {
         "id": "toursistic_places_without_etymology",
         "=name": {
-          "en": "Toursistic places without etymology information"
+          "en": "Toursistic places without etymology information",
+          "de": "Touristische Orte ohne Angaben zur Etymologie"
         },
         "minzoom": 18,
         "source": {
@@ -171,7 +179,8 @@
       "override": {
         "id": "health_and_social_places_without_etymology",
         "=name": {
-          "en": "Healtch and social places without etymology information"
+          "en": "Health and social places without etymology information",
+          "de": "Gesundheits- und Sozialeinrichtungen ohne etymologische Informationen"
         },
         "minzoom": 18,
         "source": {
@@ -195,7 +204,8 @@
       "override": {
         "id": "sport_places_without_etymology",
         "=name": {
-          "en": "Sport places without etymology information"
+          "en": "Sport places without etymology information",
+          "de": "Sportstätten ohne etymologische Informationen"
         },
         "minzoom": 18,
         "source": {

@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Ist im ersten Stock"
+                },
+                "4": {
+                    "then": "Ist im 1. Untergeschoss"
                 }
             },
             "question": "In welchem Stockwerk befindet sich dieses Objekt?",
@@ -55,6 +58,18 @@
                 }
             },
             "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Die Bezahlung erfolgt über eine spezielle App"
+                    },
+                    "1": {
+                        "then": "Die Bezahlung erfolgt mit einer Mitgliedskarte"
+                    }
+                }
+            }
         },
         "phone": {
             "question": "Was ist die Telefonnummer von {title()}?"

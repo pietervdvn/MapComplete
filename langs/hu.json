@@ -41,10 +41,10 @@
         "about": "Egy adott téma esetében az OpenStreetMap egyszerű szerkesztése és hozzáadása",
         "aboutMapcomplete": "<h3>A MapComplete-ről</h3><p>Arra használhatod, hogy egy <b>egy adott téma szerint</b> OpenStreetMap-adatokat adj hozzá az adatbázishoz. Válaszolj a kérdésekre, és a szerkesztéseid perceken belül mindenhol elérhetővé válnak. A témához tartozó elemeket, kérdéseket és nyelveket a <b>téma karbantartója</b> határozza meg .</p><h3>További információk</h3><p>A MapComplete mindig <b>felkínálja a következő lépést</b> ahhoz, hogy tanulhass az OpenStreetMapről.</p><ul><li>Weboldalba ágyazva az iframe egy teljes képernyős MapComplete-hez vezet</li><li>A teljes képernyős változat az OpenStreetMapről mutat adatokat</li><li>A megtekintés bejelentkezés nélkül is működik, de a szerkesztéshez OSM-fiók szükséges</li><li>Ha nem vagy bejelentkezve, kérjük, tedd meg</li><li>Miután válaszoltál egy kérdésre, új pontokat helyezhetsz a térképre</li><li>Egy idő után megjelennek a tényleges OSM-címkék, amelyek később a wikire hivatkoznak</li></ul><p></p><br><p>Észrevettél <b>egy problémát</b>? Új <b>funkciót szeretnél kérni</b>? Szeretnél <b>segíteni a fordításban</b>? Látogass el a <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">forráskódhoz</a> vagy a <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problémakövetőhöz (issue tracker)</a>. </p><p> Szeretnéd látni <b>a fejlődést</b>? Kövesd a szerkesztések számát az <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a> módosításkészlet-elemzőn.</p>",
         "add": {
-            "addNew": "Új {category} hozzáadása itt",
+            "addNew": "Új {category} hozzáadása",
             "addNewMapLabel": "Új elem hozzáadásához kattints ide",
-            "confirmButton": "{category} hozzáadása itt.<br><div class=\"alert\">A hozzáadott objektum mindenki számára látható lesz</div>",
-            "confirmIntro": "<h3>Felrajzolsz ide egy {title} objektumot?</h3>Az itt létrehozandó pontot <b>mindenki láthatja majd</b>. Kérjük, csak valóban létező dolgokat rajzolj fel a térképre. Ezeket az adatokat sok alkalmazás használja.",
+            "confirmButton": "{category} hozzáadása.<br><div class=\"alert\">A hozzáadott objektum mindenki számára látható lesz</div>",
+            "confirmIntro": "<h3>Felrajzolsz egy {title} objektumot?</h3>Az itt létrehozandó pontot <b>mindenki láthatja majd</b>. Kérjük, csak valóban létező dolgokat rajzolj fel a térképre. Ezeket az adatokat sok alkalmazás használja.",
             "disableFilters": "Minden szűrő kikapcsolása",
             "disableFiltersExplanation": "Lehet, hogy a szűrő miatt egyes objektumok nem látszanak",
             "hasBeenImported": "Ezt a pontot már importálták",
@@ -60,7 +60,7 @@
             "intro": "Olyan helyre kattintottál, ahol még nincs ismert adat.<br>",
             "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Pont hozzáadásához engedélyezd ezt a réteget",
             "openLayerControl": "Rétegvezérlő-doboz megnyitása",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Új pont hozzáadásához be kell jelentkezned</a>",
+            "pleaseLogin": "Új pont hozzáadásához be kell jelentkezned",
             "presetInfo": "Az új érdekes pont (POI) címkéi: {tags}",
             "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá.",
             "title": "Hozzáadsz egy új pontot?",
@@ -92,8 +92,10 @@
             "openOsmcha": "A téma {theme} legutóbbi szerkesztéseinek megtekintése",
             "themeBy": "A téma karbantartója: {author}"
         },
+        "back": "Vissza",
         "backgroundMap": "Háttértérkép",
         "cancel": "Mégse",
+        "confirm": "Megerősítés",
         "customThemeIntro": "<h3>Egyéni témák</h3> Ezek korábban megnézett, felhasználó által létrehozott témák.",
         "download": {
             "downloadAsPdf": "A jelenlegi térkép letöltése PDF-ként",
@@ -113,6 +115,8 @@
             "title": "A látható adatok letöltése",
             "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
         },
+        "example": "Példa",
+        "examples": "Példák",
         "fewChangesBefore": "Kérjük, válaszolj néhány meglévő pontokra vonatkozó kérdésre, mielőtt új pontot adnál hozzá.",
         "getStartedLogin": "A kezdéshez jelentkezz be az OpenStreetMap-fiókoddal,",
         "getStartedNewAccount": " vagy <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">hozz létre új fiókot</a>",
@@ -125,9 +129,11 @@
             "zoomInToSeeThisLayer": "Nagyíts a réteg megtekintéséhez"
         },
         "loading": "Betöltés…",
+        "loadingTheme": "{theme} betöltése…",
         "loginOnlyNeededToEdit": "ha szerkeszteni szeretnéd a térképet",
         "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal",
+        "logout": "Kijelentkezés",
         "morescreen": {
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
@@ -137,6 +143,7 @@
             "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Ezen {category} neve: $$$",
+        "next": "Következő",
         "noNameCategory": "Név nélküli {category}",
         "noTagsSelected": "Nincs kijelölt címke",
         "number": "szám",
@@ -166,6 +173,7 @@
             "versionInfo": "{version} verzió – létrehozva: {date}"
         },
         "pickLanguage": "Nyelv kiválasztása: ",
+        "poweredByOsm": "Motor: OpenStreetMap",
         "questions": {
             "emailIs": "Ezen {category} e-mail-címe: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Mi az e-mail-címe ennek ({category})?",
@@ -257,6 +265,9 @@
         "uploadingPicture": "Kép feltöltése folyamatban…",
         "willBePublished": "A képed így lesz közzétéve: "
     },
+    "importHelper": {
+        "allAttributesSame": "Ez a címke minden importálandó objektumon szerepel"
+    },
     "index": {
         "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
         "featuredThemeTitle": "Kiemelt ezen a héten",
@@ -305,7 +316,7 @@
         "aboutOsm": {
             "aboutOsm": {
                 "intro": "Az OpenStreetMap egy önkéntesek által épített, megosztott, globális adatbázis. Az OpenStreetMaphez minden földrajzi adat hozzáadható, amennyiben <b>a helyszínen ellenőrizhető</b>.<br> Az OpenStreetMap hatalmas és mély adattárrá nőtte ki magát: több ezer objektumkategória adatait tartalmazza. Egy-egy objektumnak is nagyon sok tulajdonsága lehet, amivel rengeteg finom részlet ábrázolható, például:",
-                "li0": "Az utcáknak nem csak egy mértani alakja van a térképen, hanem tartalmazhat adatokat az ott érvényes sebességkorlátozásról, a burkolatáról, arról, hogy van-e rajta közvilágítás, mi a neve, van-e esetleg Wikipédia-szócikk róla, melyik turistautak, kerékpár- és buszútvonalak vezetnek rajta végig és így tovább",
+                "li0": "Az utcáknak nem csak egy mértani alakja van a térképen, hanem tartalmazhat adatokat az ott érvényes sebességkorlátozásról, a burkolatáról, arról, hogy van-e rajta közvilágítás, mi a neve, van-e esetleg Wikipédia-szócikk róla, melyik turistautak, kerékpár- és buszútvonalak vezetnek erre és így tovább…",
                 "li1": "Az üzleteknél és egyéb létesítményeknél megadható a nyitvatartási idejük, a telefonszámuk, a weboldalukra mutató link, az általuk elfogadott fizetési módok, az árusított termékek vagy az általuk kínált szolgáltatások stb.",
                 "li2": "A mosdókon lehet információ az akadálymentességükről, az ott megtalálható pelenkázóasztalokról, arról, hogy kell-e fizetni a használatukért et caetera",
                 "li3": "és még sok-sok minden más…",

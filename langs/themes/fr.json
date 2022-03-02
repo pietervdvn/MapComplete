@@ -545,6 +545,27 @@
         "description": "Cette carte affiche les points d'accès public à de l'eau potable, et permet d'en ajouter facilement",
         "title": "Eau potable"
     },
+    "etymology": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Route sans origine étymologique"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parcs et forêts sans origine étymologique"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Institutions d'éducation sans origine étymologique"
+                }
+            }
+        },
+        "shortDescription": "Quelle est l'origine de ce toponyme ?",
+        "title": "Open Etymology Map"
+    },
     "facadegardens": {
         "description": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
