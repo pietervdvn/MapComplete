@@ -1,10 +1,19 @@
 {
     "centerMessage": {
         "loadingData": "Memuat data…",
-        "ready": "Selesai!"
+        "ready": "Selesai!",
+        "retrying": "Memuat data gagal. Mencoba lagi dalam {count} detik…",
+        "zoomIn": "Perbesar untuk melihat atau mengedit data"
     },
     "delete": {
-        "cancel": "Batal"
+        "cancel": "Batal",
+        "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
+        "explanations": {
+            "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus"
+        },
+        "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi.",
+        "delete": "Hapus",
+        "isDeleted": "Fitur ini telah dihapus"
     },
     "favourite": {
         "reload": "Muat ulang data"
