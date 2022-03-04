@@ -352,7 +352,7 @@ export class ChangesetHandler {
             const metadata = [
                 ["created_by", `MapComplete ${Constants.vNumber}`],
                 ["locale", Locale.language.data],
-                ["host", window.location.host],
+                ["host", `${window.location.origin}${window.location.pathname}`],
                 ["path", path],
                 ["source", self.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],
                 ["imagery", self.changes.state["backgroundLayer"]?.data?.id],
