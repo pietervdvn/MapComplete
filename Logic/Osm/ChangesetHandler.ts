@@ -347,13 +347,10 @@ export class ChangesetHandler {
         const self = this;
         return new Promise<number>(function (resolve, reject) {
 
-            let path = window.location.pathname;
-            path = path.substr(1, path.lastIndexOf("/"));
             const metadata = [
                 ["created_by", `MapComplete ${Constants.vNumber}`],
                 ["locale", Locale.language.data],
-                ["host", window.location.host],
-                ["path", path],
+                ["host", `${window.location.origin}${window.location.pathname}`],
                 ["source", self.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],
                 ["imagery", self.changes.state["backgroundLayer"]?.data?.id],
                 ...changesetTags.map(cstag => [cstag.key, cstag.value])
