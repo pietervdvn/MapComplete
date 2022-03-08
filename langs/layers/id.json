@@ -13,7 +13,7 @@
                     }
                 },
                 "question": "Berapa nomor rumah ini?",
-                "render": "Nomor rumah ini <b>{addr:nomorrumah}</b>"
+                "render": "Nomor rumah ini <b>{addr:housenumber}</b>"
             },
             "street": {
                 "question": "Alamat ini di jalan apa?",
