@@ -19,7 +19,7 @@
     "pt_BR": "Abrir mapa AED"
   },
   "maintainer": "MapComplete",
-  "icon": "./assets/themes/aed/logo.svg",
+  "icon": "./assets/themes/aed/aed.svg",
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
     "ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",

@@ -352,7 +352,8 @@
       "zh_Hant": "這間商業空間是否允許犬隻？",
       "ru": "Впускают ли собак в это здание?",
       "pl": "Czy w tej firmie psy są dozwolone?",
-      "ja": "犬を飼うことができますか？"
+      "ja": "犬を飼うことができますか？",
+      "id": "Apakah anjing diperbolehkan dalam bisnis ini?"
     },
     "mappings": [
       {
@@ -435,7 +436,8 @@
           "zh_Hant": "允許犬隻而且可以自由跑動",
           "ru": "Собак свободно впускают",
           "pl": "Psy dozwolone i mogą biegać bez ograniczeń",
-          "ja": "犬同伴可能、自由に走り回れる"
+          "ja": "犬同伴可能、自由に走り回れる",
+          "id": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas"
         }
       }
     ]
@@ -754,7 +756,8 @@
           "it": "Si trova sotto il livello stradale",
           "nb_NO": "Under bakken",
           "ca": "Situat a planta subterrani",
-          "ja": "地下にあります"
+          "ja": "地下にあります",
+          "id": "Terletak di bawah tanah"
         },
         "hideInAnswer": true
       },
@@ -776,7 +779,8 @@
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero",
-          "ja": "1階にあります"
+          "ja": "1階にあります",
+          "id": "Terletak di lantai dasar"
         }
       },
       {
@@ -798,7 +802,8 @@
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero",
-          "ja": "1階にあります"
+          "ja": "1階にあります",
+          "id": "Terletak di lantai dasar"
         }
       },
       {
@@ -830,7 +835,8 @@
           "nl": "Bevindt zich in de eerste kelderverdieping",
           "zh_Hant": "位於地下一樓",
           "de": "Ist im 1. Untergeschoss",
-          "hu": "Az első alagsori szinten"
+          "hu": "Az első alagsori szinten",
+          "id": "Terletak di lantai basement pertama"
         }
       }
     ]

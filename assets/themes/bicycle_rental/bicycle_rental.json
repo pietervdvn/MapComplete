@@ -3,12 +3,14 @@
   "title": {
     "en": "Bicycle rental",
     "nl": "Fietsverhuur",
-    "de": "Fahrradverleih"
+    "de": "Fahrradverleih",
+    "id": "Sewa sepeda"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
     "nl": "Een kaart met fietsverhuurpunten en fietsverhuurzaken",
-    "de": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern"
+    "de": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern",
+    "id": "Peta dengan stasiun persewaan sepeda dan toko penyewaan sepeda"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",

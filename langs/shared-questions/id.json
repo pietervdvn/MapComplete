@@ -25,17 +25,17 @@
         },
         "level": {
             "mappings": {
-                "3": {
-                    "then": "Berlokasi di lantai pertama"
+                "0": {
+                    "then": "Terletak di bawah tanah"
                 },
                 "1": {
                     "then": "Terletak di lantai dasar"
                 },
-                "0": {
-                    "then": "Terletak di bawah tanah"
-                },
                 "2": {
                     "then": "Terletak di lantai dasar"
+                },
+                "3": {
+                    "then": "Berlokasi di lantai pertama"
                 },
                 "4": {
                     "then": "Terletak di lantai basement pertama"

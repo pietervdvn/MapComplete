@@ -4,7 +4,7 @@
     "nl": "Open AED-kaart - Brugge edition"
   },
   "maintainer": "MapComplete",
-  "icon": "./assets/themes/aed/logo.svg",
+  "icon": "./assets/themes/aed/aed.svg",
   "description": {
     "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren + een export van de brugse defibrillatoren"
   },

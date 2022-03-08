@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import {lstatSync, readdirSync, readFileSync} from "fs";
+import {existsSync, lstatSync, readdirSync, readFileSync} from "fs";
 import {Utils} from "../Utils";
 import * as https from "https";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
@@ -146,6 +146,9 @@ export default class ScriptUtils {
     }
 
     public static async ReadSvg(path: string): Promise<any>{
+        if(!existsSync(path)){
+            throw "File not found: "+path
+        }
         const root =  await xml2js.parseStringPromise(readFileSync(path, "UTF8"))
         return root.svg
     }

@@ -432,27 +432,32 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON
-     * @param json
-     * @param f
-     * @constructor
      */
-    static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any) {
+    static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any, isLeaf: (object) => boolean = undefined) {
         if (json === undefined) {
             return f(undefined)
         }
         const jtp = typeof json
-        if (jtp === "boolean" || jtp === "string" || jtp === "number") {
+        if(isLeaf !== undefined) {
+            if(jtp === "object"){
+                if(isLeaf(json)){
+                    return f(json)
+                }
+            } else {
+                return json
+            }
+        }else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
             return f(json)
         }
-        if (json.map !== undefined) {
+        if (Array.isArray(json)) {
             return json.map(sub => {
-                return Utils.WalkJson(sub, f);
+                return Utils.WalkJson(sub, f, isLeaf);
             })
         }
 
         const cp = {...json}
         for (const key in json) {
-            cp[key] = Utils.WalkJson(json[key], f)
+            cp[key] = Utils.WalkJson(json[key], f, isLeaf)
         }
         return cp
     }

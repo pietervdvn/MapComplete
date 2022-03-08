@@ -102,6 +102,9 @@ class LayerOverviewUtils {
             .filter(path => !path.startsWith("./assets/generated"))
         let errCount = 0;
         for (const path of allSvgs) {
+            if(path.indexOf("assets/SocialImageTemplate") >= 0){
+                continue
+            }
             const contents = readFileSync(path, "UTF8")
             if (contents.indexOf("data:image/png;") < 0) {
                 continue;

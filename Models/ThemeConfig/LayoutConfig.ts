@@ -8,6 +8,7 @@ import {ExtractImages} from "./Conversion/FixImages";
 import ExtraLinkConfig from "./ExtraLinkConfig";
 
 export default class LayoutConfig {
+    public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string;
     public readonly maintainer: string;
     public readonly credits?: string;
@@ -54,7 +55,7 @@ export default class LayoutConfig {
 
     public readonly usedImages: string[]
     public readonly extraLink?: ExtraLinkConfig
-
+    
     constructor(json: LayoutConfigJson, official = true, context?: string) {
         this.official = official;
         this.id = json.id;
@@ -103,10 +104,10 @@ export default class LayoutConfig {
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
         this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
-        this.socialImage = json.socialImage;
-        if (this.socialImage === null || this.socialImage === "" || this.socialImage === undefined) {
+        this.socialImage = json.socialImage ?? LayoutConfig.defaultSocialImage;
+        if (this.socialImage === "") {
             if (official) {
-                throw "Theme " + json.id + " has no social image defined"
+                throw "Theme " + json.id + " has empty string as social image"
             }
         }
         this.startZoom = json.startZoom;
