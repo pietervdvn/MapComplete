@@ -219,7 +219,7 @@
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Fries shop' shows diet:vegetarian=yes with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "yes"
     },
     {

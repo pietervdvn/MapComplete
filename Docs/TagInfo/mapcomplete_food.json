@@ -214,7 +214,7 @@
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "yes"
     },
     {

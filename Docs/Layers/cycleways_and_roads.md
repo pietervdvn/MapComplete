@@ -39,8 +39,6 @@ All infrastructure that someone can cycle over, accompanied with questions about
 
 
   - This layer is needed as dependency for layer [barrier](#barrier)
-  - This layer is needed as dependency for layer [barrier](#barrier)
-  - This layer is needed as dependency for layer [crossings](#crossings)
   - This layer is needed as dependency for layer [crossings](#crossings)
 
 

@@ -389,67 +389,67 @@
     },
     {
       "key": "name",
-      "description": "The MapComplete theme Open Etymology Map has a layer Healtch and social places without etymology information showing features with this tag"
+      "description": "The MapComplete theme Open Etymology Map has a layer Health and social places without etymology information showing features with this tag"
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Open Etymology Map has a layer Healtch and social places without etymology information showing features with this tag",
+      "description": "The MapComplete theme Open Etymology Map has a layer Health and social places without etymology information showing features with this tag",
       "value": "clinic"
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Open Etymology Map has a layer Healtch and social places without etymology information showing features with this tag",
+      "description": "The MapComplete theme Open Etymology Map has a layer Health and social places without etymology information showing features with this tag",
       "value": "hospital"
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Open Etymology Map has a layer Healtch and social places without etymology information showing features with this tag",
+      "description": "The MapComplete theme Open Etymology Map has a layer Health and social places without etymology information showing features with this tag",
       "value": "social_facility"
     },
     {
       "key": "image",
-      "description": "The layer 'Healtch and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Healtch and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Healtch and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Healtch and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Healtch and social places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Healtch and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Healtch and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Health and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
       "value": "unknown"
     },
     {
       "key": "image",
-      "description": "The layer 'Healtch and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Healtch and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Healtch and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Healtch and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
