@@ -279,25 +279,27 @@ class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
     * Every 'keyToRewrite' will be replaced with 'target' recursively. This substitution will happen in place in the object 'tr' */
     public static RewriteParts<T>(keyToRewrite: string, target: string | any, tr: T): T {
 
-        const isTranslation = typeof target !== "string"
-
         function replaceRecursive(transl: string | any) {
+            
+            if(transl === keyToRewrite){
+                return target
+            }
+            
             if (typeof transl === "string") {
                 // This is a simple string - we do a simple replace
                 return transl.replace(keyToRewrite, target)
             }
-            if (transl.map !== undefined) {
+            if (Array.isArray(transl)) {
                 // This is a list of items
                 return transl.map(o => replaceRecursive(o))
             }
 
-            if (Translations.isProbablyATranslation(transl) && isTranslation) {
-                return Translations.T(transl).Fuse(new Translation(target), keyToRewrite).translations
-            }
-
-            transl = {...transl}
-            for (const key in transl) {
-                transl[key] = replaceRecursive(transl[key])
+            if(typeof transl === "object"){
+                transl = {...transl}
+                for (const key in transl) {
+                    transl[key] = replaceRecursive(transl[key])
+                }
+                return transl
             }
             return transl
         }
@@ -318,9 +320,18 @@ class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
         }
 
         const rewrite = <RewritableConfigJson<T>>json;
-        let toRewrite: T = rewrite.renderings
-        const keysToRewrite = rewrite.rewrite
+        const keysToRewrite  = rewrite.rewrite
         const ts : T[] = []
+
+        for (let i = 0; i < keysToRewrite.sourceString.length; i++){
+            const guard = keysToRewrite.sourceString[i];
+            for (let j = i + 1; j < keysToRewrite.sourceString.length; j++) {
+                const toRewrite = keysToRewrite.sourceString[j]
+                if(toRewrite.indexOf(guard) >= 0){
+                    throw `${context} Error in rewrite: sourcestring[${i}] is a substring of sourcestring[${j}]: ${guard} will be substituted away before ${toRewrite} is reached.`
+                }
+            }
+        }
 
         for (let i = 0; i < keysToRewrite.into[0].length; i++){
             let t = Utils.Clone(rewrite.renderings)
@@ -335,6 +346,22 @@ class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
 
         return {result: ts};
     }
+
+}
+
+
+class ExpandRewriteWithFlatten<T> extends Conversion<T | RewritableConfigJson<T | T[]>, T[]> {
+
+    private _rewrite = new ExpandRewrite<T>()
+
+    constructor() {
+        super("Applies a rewrite, the result is flattened if it is an array", [], "ExpandRewriteWithFlatten");
+    }
+
+    convert(json: RewritableConfigJson<T[] | T> | T, context: string): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
+        return undefined;
+    }
+
 
 }
 

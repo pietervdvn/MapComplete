@@ -94,7 +94,15 @@ export default class Translations {
         if(typeof transl !== "object"){
             return false;
         }
+        if(Object.keys(transl).length == 0){
+            // No translations found; not a translation
+            return false
+        }
         // is a weird key found?
-        return !Object.keys(transl).some(key => !this.knownLanguages.has(key))
+        if(Object.keys(transl).some(key => !this.knownLanguages.has(key))){
+            return false
+        }
+        
+        return true;
     }
 }

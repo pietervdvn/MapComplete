@@ -179,7 +179,7 @@ export interface LayerConfigJson {
     /**
      * Visualisation of the items on the map
      */
-    mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson | RewritableConfigJson<LineRenderingConfigJson | PointRenderingConfigJson>)[]
+    mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson | RewritableConfigJson<LineRenderingConfigJson | PointRenderingConfigJson | LineRenderingConfigJson[] | PointRenderingConfigJson[]>)[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.

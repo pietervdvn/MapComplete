@@ -113,7 +113,9 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
         }
         const r = step.convertAll((<X[]>values), context + "." + key)
         const vals: X[][] = r.result
+        
         json[key] = [].concat(...vals)
+        
         return {
             ...r,
             result: json,

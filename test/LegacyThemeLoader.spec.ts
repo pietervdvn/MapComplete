@@ -581,7 +581,7 @@ export default class LegacyThemeLoaderSpec extends T {
                                     {"if": "parking:condition:left=disc",
                                         "then": "#219991"}]
                             }, 
-                            "offset":   "-6"
+                            "offset":   -6
                         }, {
                             "color": {
                                 "render": "#888",
@@ -592,7 +592,7 @@ export default class LegacyThemeLoaderSpec extends T {
                                     {"if": "parking:condition:right=disc",
                                         "then": "#219991"}]
                             }, 
-                            "offset": "6"
+                            "offset": 6
                         }],
                         "titleIcons": [{"render": "defaults", "id": "defaults"}]
                     }
@@ -601,7 +601,56 @@ export default class LegacyThemeLoaderSpec extends T {
                    Assert.equal(JSON.stringify(result), JSON.stringify(expected))
                 }
 
+                ],
+            ["Advanced rewriting of the mapRendering",() => {
+                const source = {"mapRendering": [
+                    {
+                        "rewrite": {
+                            "sourceString": ["left|right", "lr_offset"],
+                            "into": [
+                                ["left", "right"],
+                                [-6, 6]
+                            ]
+                        },
+                        "renderings": [
+                            {
+                                "color": {
+                                    "render": "#888",
+                                    "mappings": [
+                                        {
+                                            "if": "parking:condition:left|right=free",
+                                            "then": "#299921"
+                                        },
+                                        {
+                                            "if": "parking:condition:left|right=ticket",
+                                            "then": "#219991"
+                                        }
+                                    ]
+                                },
+                                "width": {
+                                    "render": 6,
+                                    "mappings": [
+                                        {
+                                            "if": {
+                                                "or": [
+                                                    "parking:lane:left|right=no",
+                                                    "parking:lane:left|right=separate"
+                                                ]
+                                            },
+                                            "then": 0
+                                        }
+                                    ]
+                                },
+                                "offset": "lr_offset",
+                                "lineCap": "butt"
+                            }
+                        ]
+                    }
                 ]
+            }}
+            
+            
+            ]
             ]
         );
     }
