@@ -2691,6 +2691,15 @@
                         "then": "Gedeeld voet-/fietspad"
                     },
                     "4": {
+                        "then": "Verplicht fietspad"
+                    },
+                    "5": {
+                        "then": "Verplicht bromfietspad"
+                    },
+                    "6": {
+                        "then": "Onverplicht fietspad"
+                    },
+                    "7": {
                         "then": "Geen verkeersbord aanwezig"
                     }
                 },
@@ -2720,7 +2729,7 @@
                         "then": "Geen onderbord aanwezig"
                     }
                 },
-                "question": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
+                "question": "Heeft het verkeersbord D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) een onderbord?"
             },
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "Hoe breed is de ruimte tussen het fietspad en de weg?",
