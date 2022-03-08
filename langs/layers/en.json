@@ -2675,6 +2675,15 @@
                         "then": "Unsegregated foot/cycleway"
                     },
                     "4": {
+                        "then": "Compulsory cycleway"
+                    },
+                    "5": {
+                        "then": "Compulsory (moped)cycleway"
+                    },
+                    "6": {
+                        "then": "Non-compulsory cycleway"
+                    },
+                    "7": {
                         "then": "No traffic sign present"
                     }
                 },
@@ -2704,7 +2713,7 @@
                         "then": "No supplementary traffic sign present"
                     }
                 },
-                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
+                "question": "Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
             },
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "How wide is the gap between the cycleway and the road?",
