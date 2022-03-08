@@ -44,8 +44,14 @@ export default class ShowDataLayer {
      */
     private readonly leafletLayersPerId = new Map<string, { feature: any, leafletlayer: any }>()
     private readonly showDataLayerid: number;
-    private readonly createPopup: (tags: any, layer: LayerConfig) => ScrollableFullScreen
+    private readonly createPopup: (tags: UIEventSource<any>, layer: LayerConfig) => ScrollableFullScreen
 
+    /**
+     * Creates a datalayer.
+     * 
+     * If 'createPopup' is set, this function is called every time that 'popupOpen' is called
+     * @param options
+     */
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         this._leafletMap = options.leafletMap;
         this.showDataLayerid = ShowDataLayer.dataLayerIds;

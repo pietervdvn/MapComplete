@@ -23,6 +23,7 @@
   - [Supported attributes](#supported-attributes)
     + [Privacy notice](#privacy-notice)
     + [export_as_gpx](#export_as_gpx)
+    + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
     + [delete](#delete)
 1. [type_node](#type_node)
@@ -274,6 +275,16 @@ _This tagrendering has no question and is thus read-only_
 
 
 ### export_as_gpx 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### export_as_geojson 
 
 
 
@@ -766,6 +777,7 @@ The following layers are included in MapComplete:
   - [play_forest](./Layers/play_forest.md)
   - [playground](./Layers/playground.md)
   - [public_bookcase](./Layers/public_bookcase.md)
+  - [recycling](./Layers/recycling.md)
   - [shops](./Layers/shops.md)
   - [slow_roads](./Layers/slow_roads.md)
   - [split_point](./Layers/split_point.md)
@@ -781,6 +793,7 @@ The following layers are included in MapComplete:
   - [visitor_information_centre](./Layers/visitor_information_centre.md)
   - [walls_and_buildings](./Layers/walls_and_buildings.md)
   - [waste_basket](./Layers/waste_basket.md)
+  - [waste_disposal](./Layers/waste_disposal.md)
   - [watermill](./Layers/watermill.md)
  
 

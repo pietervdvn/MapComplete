@@ -142,8 +142,8 @@ The question is **What type of business is this?**
 
 
 
-  - **Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a>
-  - **Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
+  - **This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a>
+  - **A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
 
 
 
@@ -152,7 +152,7 @@ The question is **What type of business is this?**
 
 
 
-The question is **What are the opening hours of {name}?**
+The question is **What are the opening hours of {title()}?**
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
@@ -163,7 +163,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is **What is the website of {name}?**
+The question is **What is the website of {title()}?**
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
@@ -179,7 +179,7 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is **What is the email address of {title()}?**
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
@@ -195,7 +195,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is **What is the phone number of {title()}?**
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`
@@ -255,18 +255,18 @@ This is rendered with `This place mostly serves {cuisine}`
   - **This is a pizzeria** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpizza' target='_blank'>pizza</a>
   - **This is a friture** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>
   - **Mainly serves pasta** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpasta' target='_blank'>pasta</a>
-  - **Dit is een kebabzaak** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dkebab' target='_blank'>kebab</a>
-  - **Dit is een broodjeszaak** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsandwich' target='_blank'>sandwich</a>
-  - **Dit is een hamburgerrestaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dburger' target='_blank'>burger</a>
-  - **Dit is een sushirestaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsushi' target='_blank'>sushi</a>
-  - **Dit is een koffiezaak** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee' target='_blank'>coffee</a>
-  - **Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Ditalian' target='_blank'>italian</a>
-  - **Dit is een Frans restaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfrench' target='_blank'>french</a>
-  - **Dit is een Chinees restaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dchinese' target='_blank'>chinese</a>
-  - **Dit is een Grieks restaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dgreek' target='_blank'>greek</a>
-  - **Dit is een Indisch restaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dindian' target='_blank'>indian</a>
-  - **Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dturkish' target='_blank'>turkish</a>
-  - **Dit is een Thaïs restaurant** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dthai' target='_blank'>thai</a>
+  - **This is kebab shop** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dkebab' target='_blank'>kebab</a>
+  - **This is a sandwichbar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsandwich' target='_blank'>sandwich</a>
+  - **Burgers are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dburger' target='_blank'>burger</a>
+  - **Sushi is served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsushi' target='_blank'>sushi</a>
+  - **Coffee is served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee' target='_blank'>coffee</a>
+  - **This is an italian restaurant (which serves more then pasta and pizza)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Ditalian' target='_blank'>italian</a>
+  - **French dishes are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfrench' target='_blank'>french</a>
+  - **Chinese dishes are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dchinese' target='_blank'>chinese</a>
+  - **Greek dishes are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dgreek' target='_blank'>greek</a>
+  - **Indian dishes are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dindian' target='_blank'>indian</a>
+  - **Turkish dishes are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dturkish' target='_blank'>turkish</a>
+  - **Thai dishes are served here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dthai' target='_blank'>thai</a>
 
 
 
@@ -298,10 +298,10 @@ The question is **Does this restaurant have a vegetarian option?**
 
 
 
-  - **Geen vegetarische opties beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
-  - **Beperkte vegetarische opties zijn beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
-  - **Vegetarische opties zijn beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
-  - **Enkel vegetarische opties zijn beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly' target='_blank'>only</a>
+  - **No vegetarian options are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
+  - **Some vegetarian options are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
+  - **Vegetarian options are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
+  - **All dishes are vegetarian** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly' target='_blank'>only</a>
 
 
 
@@ -310,16 +310,16 @@ The question is **Does this restaurant have a vegetarian option?**
 
 
 
-The question is **Heeft deze eetgelegenheid een veganistische optie?**
+The question is **Does this business serve vegan meals?**
 
 
 
 
 
-  - **Geen veganistische opties beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
-  - **Beperkte veganistische opties zijn beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
-  - **Veganistische opties zijn beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
-  - **Enkel veganistische opties zijn beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
+  - **No vegan options available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
+  - **Some vegan options are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
+  - **Vegan options are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
+  - **All dishes are vegan** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
 
 
 
@@ -346,15 +346,15 @@ The question is **Does this restaurant offer a halal menu?**
 
 
 
-The question is **Heeft deze frituur vegetarische snacks?**
+The question is **Does this fries shop have vegetarian snacks?**
 
 
 
 
 
-  - **Er zijn vegetarische snacks aanwezig** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
-  - **Slechts enkele vegetarische snacks** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
-  - **Geen vegetarische snacks beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
+  - **Vegetarian snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
+  - **Only a small selection of snacks are vegetarian** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
+  - **No vegetarian snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
 
 
 
@@ -363,15 +363,15 @@ The question is **Heeft deze frituur vegetarische snacks?**
 
 
 
-The question is **Heeft deze frituur veganistische snacks?**
+The question is **Does this fries shop have vegan snacks?**
 
 
 
 
 
-  - **Er zijn veganistische snacks aanwezig** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
-  - **Slechts enkele veganistische snacks** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
-  - **Geen veganistische snacks beschikbaar** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
+  - **Vegan snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
+  - **A small selection of vegan snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
+  - **No vegan snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
 
 
 
@@ -380,14 +380,14 @@ The question is **Heeft deze frituur veganistische snacks?**
 
 
 
-The question is **Bakt deze frituur met dierlijk vet of met plantaardige olie?**
+The question is **Does this fries shop use vegetable or animal cooking?**
 
 
 
 
 
-  - **Plantaardige olie** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable' target='_blank'>vegetable</a>
-  - **Dierlijk vet** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal' target='_blank'>animal</a>
+  - **Vegetable oil** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable' target='_blank'>vegetable</a>
+  - **Animal oil** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal' target='_blank'>animal</a>
 
 
 

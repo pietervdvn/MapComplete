@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Restaurants and fast food",
-    "description": "Restaurants en fast food",
+    "description": "Restaurants and fast food",
     "project_url": "https://mapcomplete.osm.be/food",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/food/restaurant.svg",
@@ -42,12 +42,12 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "fast_food"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "restaurant"
     },
     {
@@ -129,62 +129,62 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'Dit is een kebabzaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'This is kebab shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "kebab"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'Dit is een broodjeszaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'This is a sandwichbar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "sandwich"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Dit is een hamburgerrestaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgers are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "burger"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Dit is een sushirestaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi is served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "sushi"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Dit is een koffiezaak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffee is served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "coffee"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'This is an italian restaurant (which serves more then pasta and pizza)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "italian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'Dit is een Frans restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "french"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Dit is een Chinees restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "chinese"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Dit is een Grieks restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "greek"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Dit is een Indisch restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "indian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "turkish"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Dit is een Thaïs restaurant' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "thai"
     },
     {
@@ -204,42 +204,42 @@
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische opties beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "no"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Beperkte vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Some vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "limited"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "yes"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'Enkel vegetarische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'All dishes are vegetarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "only"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'Geen veganistische opties beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "no"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Beperkte veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Some vegan options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "limited"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "yes"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Enkel veganistische opties zijn beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'All dishes are vegan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "only"
     },
     {
@@ -264,42 +264,42 @@
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "yes"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Only a small selection of snacks are vegetarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "limited"
     },
     {
       "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "no"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "yes"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'A small selection of vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "limited"
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "no"
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'Vegetable oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "vegetable"
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'Animal oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "animal"
     },
     {

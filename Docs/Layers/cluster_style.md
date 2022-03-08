@@ -15,6 +15,7 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
 ## Table of contents
 
 1. [cluster_style](#cluster_style)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
@@ -24,6 +25,17 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
 
 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/cluster_style/cluster_style.json)

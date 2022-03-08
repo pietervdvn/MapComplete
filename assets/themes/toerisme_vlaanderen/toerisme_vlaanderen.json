@@ -203,7 +203,33 @@
         "bike_repair_station-valves"
       ]
     },
-    "bicycle_rental",
+    {
+      "builtin": [
+        "bicycle_rental"
+      ],
+      "override": {
+        "id": "charging_station_non_docking",
+        "minzoom": 14,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle_rental!=docking_station"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "#": "All bicycle rental at a high zoom level, to avoid duplicates",
+      "builtin": "bicycle_rental",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "charging_station_non_docking"
+        },
+        "minzoom": 18
+      }
+    },
     {
       "builtin": "playground",
       "override": {

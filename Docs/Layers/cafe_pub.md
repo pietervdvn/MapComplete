@@ -122,11 +122,11 @@ The question is **What kind of cafe is this**
 
 
 
-  - **Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk ** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>
-  - **Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>
-  - **Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
-  - **Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
-  - **Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a>
+  - **A pub, mostly for drinking beers in a warm, relaxed interior** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>
+  - **A more modern and commercial <b>bar</b>, possibly with a music and light installation** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>
+  - **A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
+  - **A <b>restuarant</b> where one can get a proper meal** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
+  - **An open space where beer is served, typically seen in Germany** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a>
 
 
 
@@ -135,7 +135,7 @@ The question is **What kind of cafe is this**
 
 
 
-The question is **What are the opening hours of {name}?**
+The question is **What are the opening hours of {title()}?**
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
@@ -146,7 +146,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is **What is the website of {name}?**
+The question is **What is the website of {title()}?**
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
@@ -162,7 +162,7 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is **What is the email address of {title()}?**
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
@@ -178,7 +178,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is **What is the phone number of {title()}?**
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`

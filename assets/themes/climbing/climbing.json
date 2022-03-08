@@ -104,7 +104,7 @@
         ]
       },
       "description": {
-        "de": "Ein Kletterverein oder eine Organisation",
+        "de": "Ein Kletterverein oder -organisation",
         "nl": "Een klimclub of organisatie",
         "en": "A climbing club or organisation",
         "ja": "クライミングクラブや団体",
@@ -196,7 +196,7 @@
             "hu": "Mászószervezet"
           },
           "description": {
-            "de": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
+            "de": "Eine Organisation, die sich mit dem Klettern beschäftigt",
             "nl": "Een VZW die werkt rond klimmen",
             "en": "An NGO working around climbing",
             "ja": "登山に関わるNGO",
@@ -1341,7 +1341,7 @@
           "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?"
         },
         "render": {
-          "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:max} (französisch/belgisches System)",
+          "de": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)",
           "en": "The highest grade is {climbing:grade:french:max} according to the french/belgian system",
           "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
           "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",

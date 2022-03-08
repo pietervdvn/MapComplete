@@ -12,6 +12,9 @@ import {BBox} from "../BBox";
 import FeatureInfoBox from "../../UI/Popup/FeatureInfoBox";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import MetaTagRecalculator from "../FeatureSource/Actors/MetaTagRecalculator";
+import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
+import BaseUIElement from "../../UI/BaseUIElement";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class FeaturePipelineState extends MapState {
 
@@ -21,7 +24,8 @@ export default class FeaturePipelineState extends MapState {
     public readonly featurePipeline: FeaturePipeline;
     private readonly featureAggregator: TileHierarchyAggregator;
     private readonly metatagRecalculator: MetaTagRecalculator
-
+    private readonly popups : Map<string, ScrollableFullScreen> = new Map<string, ScrollableFullScreen>();
+    
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
 
@@ -48,7 +52,8 @@ export default class FeaturePipelineState extends MapState {
                 self.metatagRecalculator.registerSource(source)
             }
         }
-
+        
+        
         function registerSource(source: FeatureSourceForLayer & Tiled) {
 
             clusterCounter.addTile(source)
@@ -117,7 +122,7 @@ export default class FeaturePipelineState extends MapState {
                     doShowLayer: doShowFeatures,
                     selectedElement: self.selectedElement,
                     state: self,
-                    popup: (tags, layer) => new FeatureInfoBox(tags, layer, self)
+                    popup: (tags, layer) => self.CreatePopup(tags, layer)
                 }
             )
         }
@@ -133,6 +138,15 @@ export default class FeaturePipelineState extends MapState {
 
         this.AddClusteringToMap(this.leafletMap)
 
+    }
+    
+    public CreatePopup(tags:UIEventSource<any> , layer: LayerConfig): ScrollableFullScreen{
+        if(this.popups.has(tags.data.id)){
+           return this.popups.get(tags.data.id)
+        }
+        const popup = new FeatureInfoBox(tags, layer, this)
+        this.popups.set(tags.data.id, popup)
+        return popup
     }
 
     /**

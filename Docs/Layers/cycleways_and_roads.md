@@ -30,7 +30,6 @@ All infrastructure that someone can cycle over, accompanied with questions about
     + [cycleway-lane-track-traffic-signs](#cycleway-lane-track-traffic-signs)
     + [cycleway-traffic-signs](#cycleway-traffic-signs)
     + [cycleway-traffic-signs-supplementary](#cycleway-traffic-signs-supplementary)
-    + [cycleway-traffic-signs-D7-supplementary](#cycleway-traffic-signs-d7-supplementary)
     + [cycleways_and_roads-cycleway:buffer](#cycleways_and_roads-cyclewaybuffer)
     + [cyclelan-segregation](#cyclelan-segregation)
     + [cycleway-segregation](#cycleway-segregation)
@@ -40,8 +39,6 @@ All infrastructure that someone can cycle over, accompanied with questions about
 
 
   - This layer is needed as dependency for layer [barrier](#barrier)
-  - This layer is needed as dependency for layer [barrier](#barrier)
-  - This layer is needed as dependency for layer [crossings](#crossings)
   - This layer is needed as dependency for layer [crossings](#crossings)
 
 
@@ -300,10 +297,10 @@ The question is **What traffic sign does this cycleway have?**
 
 
 
-  - **Compulsory cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
-  - **Compulsory cycleway (with supplementary sign)<br><img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'> ** corresponds with cycleway:traffic_sign~^BE:D7;.*$_This option cannot be chosen as answer_
-  - **Segregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D09.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
-  - **Unsegregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D10.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
+  - **Compulsory cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
+  - **Compulsory cycleway (with supplementary sign)<br>** corresponds with cycleway:traffic_sign~^BE:D7;.*$_This option cannot be chosen as answer_
+  - **Segregated foot/cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
+  - **Unsegregated foot/cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
   - **No traffic sign present** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3Dnone' target='_blank'>none</a>
 
 
@@ -319,10 +316,10 @@ The question is **What traffic sign does this cycleway have?**
 
 
 
-  - **Compulsory cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
-  - **Compulsory cycleway (with supplementary sign)<br><img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 3em'> ** corresponds with traffic_sign~^BE:D7;.*$_This option cannot be chosen as answer_
-  - **Segregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D09.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
-  - **Unsegregated foot/cycleway <img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D10.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
+  - **Compulsory cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
+  - **Compulsory cycleway (with supplementary sign)<br>** corresponds with traffic_sign~^BE:D7;.*$_This option cannot be chosen as answer_
+  - **Segregated foot/cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
+  - **Unsegregated foot/cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
   - **No traffic sign present** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3Dnone' target='_blank'>none</a>
 
 
@@ -332,40 +329,19 @@ The question is **What traffic sign does this cycleway have?**
 
 
 
-The question is **Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?**
+The question is **Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?**
 
 
 
 
 
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M6.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M6' target='_blank'>BE:D7;BE:M6</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M13.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M13' target='_blank'>BE:D7;BE:M13</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M14.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M14' target='_blank'>BE:D7;BE:M14</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M7.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M7' target='_blank'>BE:D7;BE:M7</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M15.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M15' target='_blank'>BE:D7;BE:M15</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M16.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M16' target='_blank'>BE:D7;BE:M16</a>
+  - **Mopeds must use the cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M6' target='_blank'>BE:D7;BE:M6</a>
+  - **Speedpedelecs must use the cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M13' target='_blank'>BE:D7;BE:M13</a>
+  - **Mopeds and speedpedelecs must use the cycleway** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M14' target='_blank'>BE:D7;BE:M14</a>
+  - **Mopeds are not allowed** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M7' target='_blank'>BE:D7;BE:M7</a>
+  - **Speedpedelecs are not allowed** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M15' target='_blank'>BE:D7;BE:M15</a>
+  - **Mopeds and speedpedelecs are not allowed** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M16' target='_blank'>BE:D7;BE:M16</a>
   - **No supplementary traffic sign present** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign:supplementary' target='_blank'>cycleway:traffic_sign:supplementary</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign:supplementary%3Dnone' target='_blank'>none</a>
-
-
-
-
-### cycleway-traffic-signs-D7-supplementary 
-
-
-
-The question is **Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?**
-
-
-
-
-
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M6.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7;BE:M6' target='_blank'>BE:D7;BE:M6</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M13.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7;BE:M13' target='_blank'>BE:D7;BE:M13</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M14.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7;BE:M14' target='_blank'>BE:D7;BE:M14</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M7.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7;BE:M7' target='_blank'>BE:D7;BE:M7</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M15.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key::traffic_sign' target='_blank'>:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag::traffic_sign%3DBE:D7;BE:M15' target='_blank'>BE:D7;BE:M15</a>
-  - **<img src='./assets/layers/cycleways_and_roads/Belgian_traffic_sign_M16.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7;BE:M16' target='_blank'>BE:D7;BE:M16</a>
-  - **No supplementary traffic sign present** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign:supplementary' target='_blank'>traffic_sign:supplementary</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign:supplementary%3Dnone' target='_blank'>none</a>
 
 
 

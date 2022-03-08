@@ -11,6 +11,7 @@ export class Translation extends BaseUIElement {
     constructor(translations: object, context?: string) {
         super()
         if (translations === undefined) {
+            console.error("Translation without content at "+context)
             throw `Translation without content (${context})`
         }
         if (typeof translations === "string") {
@@ -29,7 +30,8 @@ export class Translation extends BaseUIElement {
         }
         this.translations = translations;
         if (count === 0) {
-            throw `No translations given in the object (${context})`
+            console.error("Constructing a translation, but the object containing translations is empty "+context)
+            throw `Constructing a translation, but the object containing translations is empty (${context})`
         }
     }
 

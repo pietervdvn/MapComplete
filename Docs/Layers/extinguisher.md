@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/hailhydrant/Twemoji12_1f9ef.svg' height="100px"> 
 
-Map layer to show fire hydrants.
+Map layer to show fire extinguishers.
 
 
 

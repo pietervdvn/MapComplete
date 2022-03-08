@@ -2,10 +2,6 @@
   "id": "waste",
   "maintainer": "",
   "version": "2022-01-19",
-  "language": [
-    "en",
-    "nl"
-  ],
   "title": {
     "en": "Waste",
     "nl": "Afval"

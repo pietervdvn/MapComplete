@@ -15,6 +15,7 @@ All carfree roads
 ## Table of contents
 
 1. [slow_roads](#slow_roads)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -27,6 +28,17 @@ All carfree roads
 
 
 
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/slow_roads/slow_roads.json)
@@ -87,7 +99,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-  - **<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
+  - **<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
   - **Dit is een brede, autovrije straat** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian' target='_blank'>pedestrian</a>
   - **Dit is een voetpaadje** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a>
   - **Dit is een wegeltje of bospad** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>

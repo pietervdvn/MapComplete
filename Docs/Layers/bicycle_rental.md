@@ -126,7 +126,7 @@ The question is **What kind of bicycle rental is this?**
 
 
 
-The question is **What is the website of {name}?**
+The question is **What is the website of {title()}?**
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
@@ -142,7 +142,7 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is **What is the email address of {title()}?**
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
@@ -158,7 +158,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is **What is the phone number of {title()}?**
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`
@@ -174,7 +174,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What are the opening hours of {name}?**
+The question is **What are the opening hours of {title()}?**
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
@@ -239,10 +239,10 @@ This is rendered with `{rental} is rented here`
 
 
 
-The question is **How much city bikes can be rented here? **
+The question is **How much [object Object] can be rented here? **
 
 This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) 
-This is rendered with `{capacity:city_bike} city bikes can be rented here`
+This is rendered with `{capacity:city_bike} [object Object] can be rented here`
 
 
 
@@ -260,10 +260,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much electrical bikes can be rented here? **
+The question is **How much [object Object] can be rented here? **
 
 This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) 
-This is rendered with `{capacity:ebike} electrical bikes can be rented here`
+This is rendered with `{capacity:ebike} [object Object] can be rented here`
 
 
 
@@ -281,10 +281,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much bikes for children can be rented here? **
+The question is **How much [object Object] can be rented here? **
 
 This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) 
-This is rendered with `{capacity:kid_bike} bikes for children can be rented here`
+This is rendered with `{capacity:kid_bike} [object Object] can be rented here`
 
 
 
@@ -302,10 +302,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much BMX bikes can be rented here? **
+The question is **How much [object Object] can be rented here? **
 
 This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) 
-This is rendered with `{capacity:bmx} BMX bikes can be rented here`
+This is rendered with `{capacity:bmx} [object Object] can be rented here`
 
 
 
@@ -323,10 +323,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much mountainbike can be rented here? **
+The question is **How much [object Object] can be rented here? **
 
 This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) 
-This is rendered with `{capacity:mtb} mountainbike can be rented here`
+This is rendered with `{capacity:mtb} [object Object] can be rented here`
 
 
 
@@ -344,10 +344,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much bicycle panniers can be rented here? **
+The question is **How much [object Object] can be rented here? **
 
 This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) 
-This is rendered with `{capacity:bicycle_pannier} bicycle panniers can be rented here`
+This is rendered with `{capacity:bicycle_pannier} [object Object] can be rented here`
 
 
 

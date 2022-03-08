@@ -37,17 +37,17 @@
     },
     {
       "key": "leaf_type",
-      "description": "Layer 'Tree' shows leaf_type=broadleaved with a fixed text, namely '<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows leaf_type=broadleaved with a fixed text, namely 'Broadleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "broadleaved"
     },
     {
       "key": "leaf_type",
-      "description": "Layer 'Tree' shows leaf_type=needleleaved with a fixed text, namely '<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows leaf_type=needleleaved with a fixed text, namely 'Needleleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "needleleaved"
     },
     {
       "key": "leaf_type",
-      "description": "Layer 'Tree' shows leaf_type=leafless with a fixed text, namely '<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless' (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows leaf_type=leafless with a fixed text, namely 'Permanently leafless' (in the MapComplete.osm.be theme 'Trees')",
       "value": "leafless"
     },
     {
@@ -116,12 +116,12 @@
     },
     {
       "key": "heritage",
-      "description": "Layer 'Tree' shows heritage=4&heritage:operator=OnroerendErfgoed with a fixed text, namely '<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows heritage=4&heritage:operator=OnroerendErfgoed with a fixed text, namely 'Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "4"
     },
     {
       "key": "heritage:operator",
-      "description": "Layer 'Tree' shows heritage=4&heritage:operator=OnroerendErfgoed with a fixed text, namely '<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows heritage=4&heritage:operator=OnroerendErfgoed with a fixed text, namely 'Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "OnroerendErfgoed"
     },
     {

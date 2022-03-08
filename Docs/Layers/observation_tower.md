@@ -182,7 +182,7 @@ The question is **Which methods of payment are accepted here?**
 
 
 
-The question is **What is the website of {name}?**
+The question is **What is the website of {title()}?**
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 This is rendered with `<a href='{website}' target='_blank'>{website}</a>`

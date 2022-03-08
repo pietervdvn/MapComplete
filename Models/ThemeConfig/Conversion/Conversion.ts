@@ -38,8 +38,8 @@ export abstract class Conversion<TIn, TOut> {
     abstract convert(json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[], information?: string[] }
 
     public convertAll(jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[], information?: string[] } {
-        if(jsons === undefined){
-            throw "convertAll received undefined - don't do this (at "+context+")"
+        if(jsons === undefined || jsons === null){
+            throw "convertAll received undefined or null - don't do this (at "+context+")"
         }
         const result = []
         const errors = []
@@ -105,7 +105,7 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
         const step = this.step
         const key = this.key;
         const values = json[key]
-        if (values === undefined) {
+        if (values === undefined || values === null) {
             // Move on - nothing to see here!
             return {
                 result: json,
@@ -113,7 +113,9 @@ export class OnEveryConcat<X, T> extends DesugaringStep<T> {
         }
         const r = step.convertAll((<X[]>values), context + "." + key)
         const vals: X[][] = r.result
+        
         json[key] = [].concat(...vals)
+        
         return {
             ...r,
             result: json,

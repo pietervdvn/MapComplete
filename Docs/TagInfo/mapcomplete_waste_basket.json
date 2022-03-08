@@ -46,6 +46,11 @@
       "value": "sharps"
     },
     {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=plastic with a fixed text, namely 'A waste basket for plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
+      "value": "plastic"
+    },
+    {
       "key": "vending",
       "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket')",
       "value": "dog_excrement_bag"
@@ -67,7 +72,7 @@
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste Basket') Picking this answer will delete the key vending.",
+      "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the MapComplete.osm.be theme 'Waste Basket') Picking this answer will delete the key vending.",
       "value": ""
     },
     {

@@ -237,7 +237,6 @@ ${Utils.special_visualizations_importRequirementDocs}
         // SHow all relevant data - including (eventually) the way of which the geometry will be replaced
         new ShowDataMultiLayer({
             leafletMap: confirmationMap.leafletMap,
-            popup: undefined,
             zoomToFeatures: true,
             features: new StaticFeatureSource([feature], false),
             state: state,
@@ -248,7 +247,6 @@ ${Utils.special_visualizations_importRequirementDocs}
         action.getPreview().then(changePreview => {
             new ShowDataLayer({
                 leafletMap: confirmationMap.leafletMap,
-                popup: undefined,
                 zoomToFeatures: false,
                 features: changePreview,
                 state,

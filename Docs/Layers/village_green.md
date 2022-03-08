@@ -15,6 +15,7 @@ A layer showing village-green (which are communal green areas, but not quite par
 ## Table of contents
 
 1. [village_green](#village_green)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -26,6 +27,17 @@ A layer showing village-green (which are communal green areas, but not quite par
 
 
 
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/village_green/village_green.json)

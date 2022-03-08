@@ -197,7 +197,7 @@ The question is **Can a cyclist turn right when the light is red?**
 
 
 
-  - **A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>
+  - **A cyclist can turn right if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>
   - **A cyclist can turn right if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>
   - **A cyclist can not turn right if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dno' target='_blank'>no</a>
 
@@ -214,7 +214,7 @@ The question is **Can a cyclist go straight on when the light is red?**
 
 
 
-  - **A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>
+  - **A cyclist can go straight on if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>
   - **A cyclist can go straight on if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>
   - **A cyclist can not go straight on if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dno' target='_blank'>no</a>
  

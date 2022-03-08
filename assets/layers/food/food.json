@@ -353,7 +353,7 @@
         {
           "if": "diet:vegetarian=yes",
           "then": {
-            "en": "No vegetarian options are available",
+            "en": "Vegetarian options are available",
             "nl": "Vegetarische opties zijn beschikbaar"
           }
         },

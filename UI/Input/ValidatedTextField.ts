@@ -25,7 +25,6 @@ import Title from "../Base/Title";
 import InputElementMap from "./InputElementMap";
 import Translations from "../i18n/Translations";
 import {Translation} from "../i18n/Translation";
-import {NOTFOUND} from "dns";
 
 export class TextFieldDef {
 
@@ -97,7 +96,7 @@ export class TextFieldDef {
                 return self.isValid(stripped, options.country)
             }
         } else {
-            options["isValid"] = self.isValid;
+            options["isValid"] = str => self.isValid(str, options.country);
         }
 
 
@@ -752,7 +751,7 @@ class PhoneTextField extends TextFieldDef {
         if (str.startsWith("tel:")) {
             str = str.substring("tel:".length)
         }
-        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational();
+        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.formatInternational();
     }
 }
 

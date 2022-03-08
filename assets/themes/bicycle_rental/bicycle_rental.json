@@ -2,15 +2,18 @@
   "id": "bicycle_rental",
   "title": {
     "en": "Bicycle rental",
-    "nl": "Fietsverhuur"
+    "nl": "Fietsverhuur",
+    "de": "Fahrradverleih"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
-    "nl": "Een kaart met fietsverhuurpunten en fietsverhuurzaken"
+    "nl": "Een kaart met fietsverhuurpunten en fietsverhuurzaken",
+    "de": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
-    "nl": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken"
+    "nl": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken",
+    "de": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden"
   },
   "maintainer": "",
   "icon": "./assets/themes/bicycle_rental/logo.svg",

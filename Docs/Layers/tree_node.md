@@ -123,9 +123,9 @@ The question is **Is this a broadleaved or needleleaved tree?**
 
 
 
-  - **<img src="./assets/themes/trees/broadleaved.svg" style="width:1.5em;height:1.5em" alt=""/> Broadleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
-  - **<img src="./assets/themes/trees/needleleaved.svg" style="width:1.5em;height:1.5em" alt=""/> Needleleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
-  - **<img src="./assets/themes/trees/leafless.svg" style="width:1.5em;height:1.5em" alt=""/> Permanently leafless** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>_This option cannot be chosen as answer_
+  - **Broadleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
+  - **Needleleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
+  - **Permanently leafless** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>_This option cannot be chosen as answer_
 
 
 
@@ -194,7 +194,7 @@ The question is **Is this tree registered heritage?**
 
 
 
-  - **<img src="./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg" style="width:0.85em;height:1em;vertical-align:middle" alt=""/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
+  - **Registered as heritage by <i>Onroerend Erfgoed</i> Flanders** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
   - **Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3Daatl' target='_blank'>aatl</a>
   - **Registered as heritage by a different organisation** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes' target='_blank'>yes</a>
   - **Not registered as heritage** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno' target='_blank'>no</a>

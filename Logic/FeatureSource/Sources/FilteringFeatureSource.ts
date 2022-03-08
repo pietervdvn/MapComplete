@@ -49,7 +49,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             self.update()
         })
 
-        this._is_dirty.stabilized(250).addCallbackAndRunD(dirty => {
+        this._is_dirty.stabilized(1000).addCallbackAndRunD(dirty => {
             if (dirty) {
                 self.update()
             }

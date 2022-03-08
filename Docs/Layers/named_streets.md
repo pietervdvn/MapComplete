@@ -15,6 +15,7 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 ## Table of contents
 
 1. [named_streets](#named_streets)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 
@@ -28,6 +29,17 @@ Hidden layer with all streets which have a name. Useful to detect addresses
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
   - This layer is needed as dependency for layer [address](#address)
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/named_streets/named_streets.json)

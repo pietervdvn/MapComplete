@@ -15,6 +15,7 @@ Aangeduide wandeltochten
 ## Table of contents
 
 1. [trail](#trail)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -30,6 +31,17 @@ Aangeduide wandeltochten
 
 
 
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 [Go to the source code](../assets/layers/trail/trail.json)
@@ -112,8 +124,8 @@ This is rendered with `Beheer door {operator}`
 
 
 
-  - **<img src="./assets/themes/buurtnatuur/Natuurpunt.jpg" style="width:1.5em">Dit gebied wordt beheerd door Natuurpunt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-  - **<img src="./assets/themes/buurtnatuur/Natuurpunt.jpg" style="width:1.5em">Dit gebied wordt beheerd door {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen as answer_
+  - **Dit gebied wordt beheerd door Natuurpunt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+  - **Dit gebied wordt beheerd door {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen as answer_
 
 
 

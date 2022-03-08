@@ -114,7 +114,7 @@ This is rendered with `This bicycle library is called {name}`
 
 
 
-The question is **What is the website of {name}?**
+The question is **What is the website of {title()}?**
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
@@ -130,7 +130,7 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is **What is the phone number of {title()}?**
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`
@@ -146,7 +146,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is **What is the email address of {title()}?**
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
@@ -162,7 +162,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **What are the opening hours of {name}?**
+The question is **What are the opening hours of {title()}?**
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`

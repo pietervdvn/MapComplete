@@ -81,7 +81,6 @@ export default class SplitRoadWizard extends Toggle {
             features: new StaticFeatureSource([roadElement], false),
             layers: state.filteredLayers,
             leafletMap: miniMap.leafletMap,
-            popup: undefined,
             zoomToFeatures: true,
             state
         })
@@ -90,7 +89,6 @@ export default class SplitRoadWizard extends Toggle {
             features: new StaticFeatureSource(splitPoints, true),
             leafletMap: miniMap.leafletMap,
             zoomToFeatures: false,
-            popup: undefined,
             layerToShow: SplitRoadWizard.splitLayerStyling,
             state
         })

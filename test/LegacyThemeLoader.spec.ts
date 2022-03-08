@@ -6,6 +6,9 @@ import {AddMiniMap} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DetectMappingsWithImages, DetectShadowedMappings} from "../Models/ThemeConfig/Conversion/Validation";
 import * as Assert from "assert";
 import {ExtractImages, FixImages} from "../Models/ThemeConfig/Conversion/FixImages";
+import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import LineRenderingConfigJson from "../Models/ThemeConfig/Json/LineRenderingConfigJson";
 
 export default class LegacyThemeLoaderSpec extends T {
 
@@ -449,7 +452,7 @@ export default class LegacyThemeLoaderSpec extends T {
                     Assert.equal("https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg",
                         fixedMapping)
                 }],
-                ["Images in 'thens' are detected", () => {
+                ["Images in simple mappings are detected", () => {
                     const r = new DetectMappingsWithImages().convert({
                         "mappings": [
                             {
@@ -470,7 +473,7 @@ export default class LegacyThemeLoaderSpec extends T {
                     T.isTrue(errors.length > 0, "No images found");
                     T.isTrue(errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0), "staple.svg not mentioned");
                 }],
-                ["Images in 'thens' icons are detected", () => {
+                ["Images in 'thens' are detected in QuestionableTagRenderings", () => {
                     const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
                         "layers": [
                             {
@@ -502,9 +505,152 @@ export default class LegacyThemeLoaderSpec extends T {
                     }, "test");
                     const images = r.result
                     T.isTrue(images.length > 0, "No images found");
-                    T.isTrue(images.findIndex(img => img =="./assets/layers/bike_parking/staple.svg") >= 0, "staple.svg not mentioned");
+                    T.isTrue(images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") >= 0, "staple.svg not mentioned");
                     T.isTrue(images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") >= 0, "bollard.svg not mentioned");
-                }]
+                }],
+                ["Rotation and colours is not detected as image", () => {
+                    const r = new ExtractImages(true, new Map<string, any>()).convert(<any>{
+                        "layers": [
+                            {
+                                mapRendering: [
+                                    {
+                                        "location": ["point", "centroid"],
+                                        "icon": "pin:black",
+                                        rotation: 180,
+                                        iconSize: "40,40,center"
+                                    }
+                                ]
+                            }
+                        ]
+                    }, "test");
+                    const images = r.result
+                    T.isTrue(images.length > 0, "No images found");
+                    T.isTrue(images.length < 2, "To much images found: " + images.join(", "));
+                    T.isTrue(images[0] === "pin", "pin not mentioned");
+                }],
+                ["Test expansion in map renderings", () => {
+                    const exampleLayer: LayerConfigJson = {
+                        id: "testlayer",
+                        source: {
+                            osmTags: "key=value"
+                        },
+                        mapRendering: [
+                            {
+                                "rewrite": {
+                                    sourceString: ["left|right", "lr_offset"],
+                                    into: [
+                                        ["left", "right"],
+                                        [-6, +6]
+                                    ]
+                                },
+                                renderings: <LineRenderingConfigJson>{
+                                    "color": {
+                                        "render": "#888",
+                                        "mappings": [
+                                            {
+                                                "if": "parking:condition:left|right=free",
+                                                "then": "#299921"
+                                            },
+                                            {
+                                                "if": "parking:condition:left|right=disc",
+                                                "then": "#219991"
+                                            }
+                                        ]
+                                    },
+                                    "offset": "lr_offset"
+                                }
+                            }
+                        ]
+                    }
+                    const prep = new PrepareLayer({
+                        tagRenderings: new Map<string, TagRenderingConfigJson>(),
+                        sharedLayers: new Map<string, LayerConfigJson>()
+                    })
+                    const result = prep.convertStrict(exampleLayer, "test")
+
+                    const expected = {
+                        "id": "testlayer",
+                        "source": {"osmTags": "key=value"},
+                        "mapRendering": [{
+                            "color": {
+                                "render": "#888",
+                                "mappings": [{
+                                    "if": "parking:condition:left=free",
+                                    "then": "#299921"
+                                }, 
+                                    {"if": "parking:condition:left=disc",
+                                        "then": "#219991"}]
+                            }, 
+                            "offset":   -6
+                        }, {
+                            "color": {
+                                "render": "#888",
+                                "mappings": [{
+                                    "if": "parking:condition:right=free",
+                                    "then": "#299921"
+                                }, 
+                                    {"if": "parking:condition:right=disc",
+                                        "then": "#219991"}]
+                            }, 
+                            "offset": 6
+                        }],
+                        "titleIcons": [{"render": "defaults", "id": "defaults"}]
+                    }
+
+
+                   Assert.equal(JSON.stringify(result), JSON.stringify(expected))
+                }
+
+                ],
+            ["Advanced rewriting of the mapRendering",() => {
+                const source = {"mapRendering": [
+                    {
+                        "rewrite": {
+                            "sourceString": ["left|right", "lr_offset"],
+                            "into": [
+                                ["left", "right"],
+                                [-6, 6]
+                            ]
+                        },
+                        "renderings": [
+                            {
+                                "color": {
+                                    "render": "#888",
+                                    "mappings": [
+                                        {
+                                            "if": "parking:condition:left|right=free",
+                                            "then": "#299921"
+                                        },
+                                        {
+                                            "if": "parking:condition:left|right=ticket",
+                                            "then": "#219991"
+                                        }
+                                    ]
+                                },
+                                "width": {
+                                    "render": 6,
+                                    "mappings": [
+                                        {
+                                            "if": {
+                                                "or": [
+                                                    "parking:lane:left|right=no",
+                                                    "parking:lane:left|right=separate"
+                                                ]
+                                            },
+                                            "then": 0
+                                        }
+                                    ]
+                                },
+                                "offset": "lr_offset",
+                                "lineCap": "butt"
+                            }
+                        ]
+                    }
+                ]
+            }}
+            
+            
+            ]
             ]
         );
     }

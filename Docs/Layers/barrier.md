@@ -149,10 +149,10 @@ The question is **What kind of cycling barrier is this?**
 
 
 
-  - **Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>
-  - **Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>
-  - **Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
-  - **Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>
+  - **Single, just two barriers with a space inbetween** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>
+  - **Double, two barriers behind each other** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>
+  - **Triple, three barriers behind each other** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
+  - **Squeeze gate, gap is smaller at top, than at the bottom** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>
 
 
 
