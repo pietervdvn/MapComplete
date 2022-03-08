@@ -27,7 +27,7 @@ import CheckBoxes from "../Input/Checkboxes";
 
 class PreviewPanel extends ScrollableFullScreen {
 
-    constructor(tags, layer) {
+    constructor(tags: UIEventSource<any>, layer) {
         super(
             _ => new FixedUiElement("Element to import"),
             _ => new Combine(["The tags are:",

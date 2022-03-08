@@ -96,7 +96,6 @@ class ApplyButton extends UIElement {
 
         new ShowDataLayer({
             leafletMap: previewMap.leafletMap,
-            popup: undefined,
             zoomToFeatures: true,
             features: new StaticFeatureSource(features, false),
             state: this.state,

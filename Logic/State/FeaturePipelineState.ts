@@ -140,12 +140,12 @@ export default class FeaturePipelineState extends MapState {
 
     }
     
-    public CreatePopup(tags:any , layer: LayerConfig): ScrollableFullScreen{
-        if(this.popups.has(tags.id)){
-       //     return this.popups.get(tags.id)
+    public CreatePopup(tags:UIEventSource<any> , layer: LayerConfig): ScrollableFullScreen{
+        if(this.popups.has(tags.data.id)){
+           return this.popups.get(tags.data.id)
         }
         const popup = new FeatureInfoBox(tags, layer, this)
-        this.popups.set(tags.id, popup)
+        this.popups.set(tags.data.id, popup)
         return popup
     }
 

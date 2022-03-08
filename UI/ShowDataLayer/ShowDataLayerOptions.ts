@@ -8,7 +8,7 @@ export interface ShowDataLayerOptions {
     features: FeatureSource,
     selectedElement?: UIEventSource<any>,
     leafletMap: UIEventSource<L.Map>,
-    popup?: undefined | ((tags: any, layer: LayerConfig) => ScrollableFullScreen),
+    popup?: undefined | ((tags: UIEventSource<any>, layer: LayerConfig) => ScrollableFullScreen),
     zoomToFeatures?: false | boolean,
     doShowLayer?: UIEventSource<boolean>,
     state?: { allElements?: ElementStorage }

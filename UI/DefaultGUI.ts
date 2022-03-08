@@ -141,7 +141,6 @@ export default class DefaultGUI {
             leafletMap: state.leafletMap,
             layerToShow: new LayerConfig(home_location_json, "all_known_layers", true),
             features: state.homeLocation,
-            popup: undefined,
             state
         })
 

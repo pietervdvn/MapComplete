@@ -95,7 +95,6 @@ export default class ExportPDF {
                         features: tile,
                         leafletMap: minimap.leafletMap,
                         layerToShow: tile.layer.layerDef,
-                        popup: undefined,
                         doShowLayer: tile.layer.isDisplayed,
                         state: undefined
                     }

@@ -268,7 +268,6 @@ export default class SpecialVisualizations {
                         new ShowDataMultiLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                popup: undefined,
                                 zoomToFeatures: true,
                                 layers: state.filteredLayers,
                                 features: new StaticFeatureSource(featuresToShow, true)
@@ -314,7 +313,6 @@ export default class SpecialVisualizations {
                         new ShowDataLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                popup: undefined,
                                 zoomToFeatures: true,
                                 layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
                                 features: new StaticFeatureSource([copy], false),
