@@ -533,10 +533,10 @@ function stackHists<K, V>(hists: [V, Histogram<K>][]): [V, Histogram<K>][] {
 }
 
 
-function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: string) {
+function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: string, cutoff = undefined) {
     const hist = new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
     hist
-        .createOthersCategory("other", 20)
+        .createOthersCategory("other", cutoff ?? 20)
         .addCountToName()
         .asBar({name: "Changesets per theme (bar)" + appliedFilterDescription})
     .render()
@@ -545,7 +545,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
     new Histogram<string>(allFeatures.map(f => f.properties.user))
         .binPerCount()
         .stringifyName()
-        .createOthersCategory("25 or more", (key, _) => Number(key) >= 25).asBar(
+        .createOthersCategory("25 or more", (key, _) => Number(key) >=(cutoff ?? 25)).asBar(
         {
             compare: (a, b) => Number(a) - Number(b),
             name: "Contributors per changeset count" + appliedFilterDescription
@@ -598,7 +598,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         }).render()
 
     new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
-        .createOthersCategory("< 25 changesets", 25)
+        .createOthersCategory("< 25 changesets", (cutoff ?? 25))
         .addCountToName()
         .asPie({
             name: "Changesets per theme (pie)" + appliedFilterDescription
@@ -608,14 +608,14 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         "Changesets per theme" + appliedFilterDescription,
         allFeatures,
         f => f.properties.metadata.theme,
-        25
+        cutoff ?? 25
     )
 
     Group.createStackedBarChartPerDay(
         "Changesets per version number" + appliedFilterDescription,
         allFeatures,
         f => f.properties.editor.substr("MapComplete ".length, 6).replace(/[a-zA-Z-/]/g, ''),
-        1
+        cutoff ?? 1
     )
     
     Group.createStackedBarChartPerDay(
@@ -627,14 +627,14 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         	return major+"."+minor
         
         },
-        1
+        cutoff ??1
     )
 
     Group.createStackedBarChartPerDay(
         "Deletion-changesets per theme" + appliedFilterDescription,
         allFeatures.filter(f => f.properties.delete > 0),
         f => f.properties.metadata.theme,
-        1
+        cutoff ?? 1
     )
 
     {
@@ -715,7 +715,8 @@ async function main(): Promise<void>{
     createGraphs(allFeatures, "")
     // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
     // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
-    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022"),
+    createGraphs(allFeatures.filter(f => f.properties.metadata.theme==="toerisme_vlaanderen"), " met pin je punt", 0)
 }
 
 main().then(_ => console.log("All done!"))
