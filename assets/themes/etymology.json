@@ -113,7 +113,8 @@
                   "amenity=school",
                   "amenity=kindergarten",
                   "amenity=university",
-                  "amenity=college"
+                  "amenity=college",
+                  "landuse=education"
                 ]
               }
             ]
