@@ -25,6 +25,7 @@ import Combine from "./Base/Combine";
 import AddNewMarker from "./BigComponents/AddNewMarker";
 import FilteredLayer from "../Models/FilteredLayer";
 import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
+import {SubtleButton} from "./Base/SubtleButton";
 
 
 /**
@@ -163,10 +164,21 @@ export default class DefaultGUI {
                 () => new UserBadge(state)
             ),
             Toggle.If(state.featureSwitchExtraLinkEnabled,
-                () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
+                () => {
+                    if (state.layoutToUse.extraLink.text === undefined) {
+                        return Translations.t.general.screenToSmall
+                    }
+                    return new ExtraLinkButton(state, state.layoutToUse.extraLink);
+                }
             )
         ]).SetClass("flex flex-col")
             .AttachTo("userbadge")
+
+        const el = state.layoutToUse.extraLink
+        new Combine([
+            new ExtraLinkButton(state, {...state.layoutToUse.extraLink, newTab: true})
+        ]).SetClass("flex items-center justify-center normal-background h-full")
+            .AttachTo("on-small-screen")
 
         Toggle.If(state.featureSwitchSearch,
             () => new SearchAndGo(state))

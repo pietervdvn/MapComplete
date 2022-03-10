@@ -13,12 +13,8 @@
                 },
                 "2": {
                     "then": "Anjing diperbolehkan, tetapi mereka harus diikat"
-                },
-                "3": {
-                    "then": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas"
                 }
-            },
-            "question": "Apakah anjing diperbolehkan dalam bisnis ini?"
+            }
         },
         "email": {
             "question": "Apa alamat surel dari {title()}?"
@@ -27,18 +23,6 @@
             "mappings": {
                 "3": {
                     "then": "Berlokasi di lantai pertama"
-                },
-                "1": {
-                    "then": "Terletak di lantai dasar"
-                },
-                "0": {
-                    "then": "Terletak di bawah tanah"
-                },
-                "2": {
-                    "then": "Terletak di lantai dasar"
-                },
-                "4": {
-                    "then": "Terletak di lantai basement pertama"
                 }
             },
             "question": "Pada tingkat apa fitur ini diletakkan?"

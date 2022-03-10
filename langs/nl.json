@@ -54,7 +54,7 @@
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "zoomInMore": "Zoom verder in om dit kaart-object te kunnen importeren"
+                "zoomInMore": "Zoom verder in om dit object af te handelen"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",

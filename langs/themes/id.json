@@ -8,8 +8,7 @@
         "title": "Buka Peta Karya Seni"
     },
     "benches": {
-        "title": "Bangku",
-        "shortDescription": "Peta bangku"
+        "title": "Bangku"
     },
     "cafes_and_pubs": {
         "title": "Kafe dan pub"
@@ -283,12 +282,5 @@
     },
     "waste_basket": {
         "title": "Keranjang Sampah"
-    },
-    "bicyclelib": {
-        "title": "Perpustakaan sepeda"
-    },
-    "bicycle_rental": {
-        "title": "Sewa sepeda",
-        "shortDescription": "Peta dengan stasiun persewaan sepeda dan toko penyewaan sepeda"
     }
 }

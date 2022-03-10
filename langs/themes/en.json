@@ -879,6 +879,17 @@
                         "question": "What kind of building is this?"
                     }
                 }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Did not yet calculate the metatags... Reopen this popup"
+                            }
+                        }
+                    }
+                }
             }
         }
     },
