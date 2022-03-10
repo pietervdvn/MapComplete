@@ -382,6 +382,14 @@
     ]
   },
   {
+    "path": "duplicate.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "envelope.svg",
     "license": "CC0; trivial",
     "authors": [],

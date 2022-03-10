@@ -46,6 +46,7 @@ import FileSelectorButton from "./Input/FileSelectorButton";
 import {LoginToggle} from "./Popup/LoginButton";
 import {start} from "repl";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
+import {Feature} from "@turf/turf";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -93,6 +94,88 @@ export class AllTagsPanel extends VariableUiElement {
                 .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
         }))
     }
+}
+
+class CloseNoteButton implements SpecialVisualization {
+    public readonly funcName = "close_note"
+    public readonly docs = "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text."
+    public readonly args = [
+        {
+            name: "text",
+            doc: "Text to show on this button",
+        },
+        {
+            name: "icon",
+            doc: "Icon to show",
+            defaultValue: "checkmark.svg"
+        },
+        {
+            name: "idkey",
+            doc: "The property name where the ID of the note to close can be found",
+            defaultValue: "id"
+        },
+        {
+            name: "comment",
+            doc: "Text to add onto the note when closing",
+        },
+        {
+            name: "minZoom",
+            doc: "If set, only show the closenote button if zoomed in enough"
+        },
+        {
+            name: "zoomButton",
+            doc: "Text to show if not zoomed in enough"
+        }
+    ]
+
+    public constr(state: FeaturePipelineState, tags, args): BaseUIElement {
+        const t = Translations.t.notes;
+
+        const params: {
+            text: string,
+            icon: string,
+            idkey: string,
+            comment: string,
+            minZoom: string,
+            zoomButton: string
+        } = Utils.ParseVisArgs(this.args, args)
+
+        let icon = Svg.checkmark_svg()
+        if (params.icon !== "checkmark.svg" && (args[2] ?? "") !== "") {
+            icon = new Img(args[1])
+        }
+        let textToShow = t.closeNote;
+        if ((params.text ?? "") !== "") {
+            textToShow = Translations.T(args[0])
+        }
+
+        let closeButton: BaseUIElement = new SubtleButton(icon, textToShow)
+        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
+        closeButton.onClick(() => {
+            const id = tags.data[args[2] ?? "id"]
+            state.osmConnection.closeNote(id, args[3])
+                ?.then(_ => {
+                    tags.data["closed_at"] = new Date().toISOString();
+                    tags.ping()
+                })
+        })
+        
+        if((params.minZoom??"") !== "" && !isNaN(Number(params.minZoom))){
+          closeButton =  new Toggle(
+                closeButton,
+                params.zoomButton ?? "",
+                state.  locationControl.map(l => l.zoom >= Number(params.minZoom))
+            )
+        }
+        
+        return new LoginToggle(new Toggle(
+            t.isClosed.SetClass("thanks"),
+            closeButton,
+            
+            isClosed
+        ), t.loginToClose, state)
+    }
+
 }
 
 export default class SpecialVisualizations {
@@ -655,58 +738,7 @@ export default class SpecialVisualizations {
                         })
                     }
                 },
-                {
-                    funcName: "close_note",
-                    docs: "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text.",
-                    args: [
-                        {
-                            name: "text",
-                            doc: "Text to show on this button",
-                        },
-                        {
-                            name: "icon",
-                            doc: "Icon to show",
-                            defaultValue: "checkmark.svg"
-                        },
-                        {
-                            name: "Id-key",
-                            doc: "The property name where the ID of the note to close can be found",
-                            defaultValue: "id"
-                        },
-                        {
-                            name: "comment",
-                            doc: "Text to add onto the note when closing",
-                        }
-                    ],
-                    constr: (state, tags, args) => {
-                        const t = Translations.t.notes;
-
-                        let icon = Svg.checkmark_svg()
-                        if (args[1] !== "checkmark.svg" && (args[2] ?? "") !== "") {
-                            icon = new Img(args[1])
-                        }
-                        let textToShow = t.closeNote;
-                        if ((args[0] ?? "") !== "") {
-                            textToShow = Translations.T(args[0])
-                        }
-
-                        const closeButton = new SubtleButton(icon, textToShow)
-                        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
-                        closeButton.onClick(() => {
-                            const id = tags.data[args[2] ?? "id"]
-                            state.osmConnection.closeNote(id, args[3])
-                                ?.then(_ => {
-                                    tags.data["closed_at"] = new Date().toISOString();
-                                    tags.ping()
-                                })
-                        })
-                        return new LoginToggle(new Toggle(
-                            t.isClosed.SetClass("thanks"),
-                            closeButton,
-                            isClosed
-                        ), t.loginToClose, state)
-                    }
-                },
+                new CloseNoteButton(),
                 {
                     funcName: "add_note_comment",
                     docs: "A textfield to add a comment to a node (with the option to close the note).",
@@ -778,7 +810,7 @@ export default class SpecialVisualizations {
                                 new Title("Add a comment"),
                                 textField,
                                 new Combine([
-                                    new Toggle(addCommentButton, undefined, textField.GetValue().map(t => t !==undefined && t.length > 1)).SetClass("mr-2")
+                                    new Toggle(addCommentButton, undefined, textField.GetValue().map(t => t !== undefined && t.length > 1)).SetClass("mr-2")
                                     , stateButtons]).SetClass("flex justify-end")
                             ]).SetClass("border-2 border-black rounded-xl p-4 block"),
                             t.loginToAddComment, state)
@@ -860,15 +892,15 @@ export default class SpecialVisualizations {
 
                 },
                 {
-                    funcName:"title",
+                    funcName: "title",
                     args: [],
-                    docs:"Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
-                    example:"`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
+                    docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
+                    example: "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
                     constr: (state, tagsSource, args, guistate) =>
                         new VariableUiElement(tagsSource.map(tags => {
                             const layer = state.layoutToUse.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
-                            if(title === undefined){
+                            if (title === undefined) {
                                 return undefined
                             }
                             return new SubstitutedTranslation(title, tagsSource, state)
