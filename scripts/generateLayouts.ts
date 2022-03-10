@@ -25,7 +25,7 @@ async function createIcon(iconPath: string, size: number, alreadyWritten: string
         name = name.substr(2)
     }
 
-    const newname = `assets/generated/images${name.substring(name.lastIndexOf("/"))}${size}.png`;
+    const newname = `assets/generated/images/${name.replace(/\//g,"_")}${size}.png`;
 
     if (alreadyWritten.indexOf(newname) >= 0) {
         return newname;
@@ -44,7 +44,7 @@ async function createIcon(iconPath: string, size: number, alreadyWritten: string
         let img = await sharp(iconPath)
         let resized = await img.resize(size)
         await resized.toFile(newname)
-        console.log("Written", newname)
+        console.log("Created png version at ", newname)
     } catch (e) {
         console.error("Could not read icon", iconPath, " to create a PNG due to", e)
     }
@@ -59,7 +59,7 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
     }
     const path = `./assets/generated/images/social_image_${layout.id}_${template}.svg`
     if(existsSync(path)){
-     //   return path;
+        return path;
     }
     const svg = await ScriptUtils.ReadSvg(layout.icon)
     let width: string = svg.$.width;
@@ -98,7 +98,7 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
     const builder = new xml2js.Builder();
     const xml = builder.buildObject({svg: templateSvg});
     writeFileSync(path, xml)
-    console.log("Written", path)
+    console.log("Created social image at ", path)
     return path
 }
 

@@ -3056,7 +3056,7 @@
         "name": "Heeft etymology info",
         "tagRenderings": {
             "etymology_multi_apply": {
-                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata,name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
             },
             "simple etymology": {
                 "mappings": {

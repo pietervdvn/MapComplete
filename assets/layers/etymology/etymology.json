@@ -140,7 +140,7 @@
       "id": "etymology_multi_apply",
       "render": {
         "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
-        "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata,name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
+        "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}"
       }
     },
     {

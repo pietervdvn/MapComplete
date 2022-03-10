@@ -27,7 +27,6 @@ export default class LanguagePicker {
         const allTranslations =  (language_translations["default"] ?? language_translations)
         const translation = {}
         const trans =  allTranslations[lang]
-        console.log("Generating a hybrid for "+lang, trans)
         if(trans === undefined){
             return new Translation({"*": nativeText})
         }
