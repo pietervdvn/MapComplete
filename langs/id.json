@@ -8,12 +8,12 @@
     "delete": {
         "cancel": "Batal",
         "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
-        "delete": "Hapus",
         "explanations": {
             "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus"
         },
-        "isDeleted": "Fitur ini telah dihapus",
-        "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi."
+        "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi.",
+        "delete": "Hapus",
+        "isDeleted": "Fitur ini telah dihapus"
     },
     "favourite": {
         "reload": "Muat ulang data"
