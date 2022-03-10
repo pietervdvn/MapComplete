@@ -172,6 +172,13 @@
           }
         },
         {
+          "if": "access=key",
+          "then": {
+            "en": "A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>",
+            "nl": "Een <b>sleutel</b> is nodig om dit oplaadpunt te gebruiken<br/><span class='subtle'>Bv. voor klanten van een hotel of een bar, die de sleutel aan de receptie kunnen krijgen</span>"
+          }
+        },
+        {
           "if": "access=private",
           "then": {
             "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
