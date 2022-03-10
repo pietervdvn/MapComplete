@@ -19,7 +19,7 @@ export default class ExtraLinkButton extends UIElement {
         featureSwitchWelcomeMessage: UIEventSource<boolean>, locationControl: UIEventSource<Loc>
     };
 
-    constructor(state: { featureSwitchWelcomeMessage: UIEventSource<boolean>, locationControl: UIEventSource<Loc>, layoutToUse: { id: string, title: Translations } },
+    constructor(state: { featureSwitchWelcomeMessage: UIEventSource<boolean>, locationControl: UIEventSource<Loc>, layoutToUse: { id: string, title: Translation } },
                 config: ExtraLinkConfig) {
         super();
         this.state = state;
