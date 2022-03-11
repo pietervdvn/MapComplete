@@ -210,7 +210,8 @@
                 "render": "Espace entre deux barrières successives : {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
-                "render": "Largeur de l'ouverture : {width:opening} m"
+                "render": "Largeur de l'ouverture : {width:opening} m",
+                "question": "Quelle est la largeur d'ouverture la plus petite près de la barrière ?"
             },
             "bicycle=yes/no": {
                 "mappings": {
@@ -219,6 +220,17 @@
                     },
                     "1": {
                         "then": "Un cycliste ne peut pas franchir ceci."
+                    }
+                },
+                "question": "Est-ce qu'un vélo peut franchir cette barrière ?"
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un plot unique sur la route"
+                    },
+                    "1": {
+                        "then": "C'est une barrière visant à ralentir les vélos"
                     }
                 }
             }
@@ -323,7 +335,8 @@
         },
         "title": {
             "render": "Banc"
-        }
+        },
+        "description": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet."
     },
     "bench_at_pt": {
         "name": "Bancs des arrêts de transport en commun",
@@ -339,7 +352,8 @@
                     "2": {
                         "then": "Il n'y a pas de banc ici"
                     }
-                }
+                },
+                "question": "Quel type de banc est-ce ?"
             },
             "bench_at_pt-name": {
                 "render": "{name}"
@@ -355,7 +369,8 @@
                 }
             },
             "render": "Banc"
-        }
+        },
+        "description": "Une couche montrant tous les arrêts de transports publics qui ont un banc"
     },
     "bicycle_library": {
         "description": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
@@ -2381,5 +2396,18 @@
     },
     "watermill": {
         "name": "Moulin à eau"
+    },
+    "bicycle_rental": {
+        "name": "Location de vélo",
+        "description": "Station de location de vélo",
+        "presets": {
+            "0": {
+                "description": "Un magasin avec employé(s) consacré à la location de vélos",
+                "title": "magasin de location de vélos"
+            },
+            "1": {
+                "title": "location de vélos"
+            }
+        }
     }
 }

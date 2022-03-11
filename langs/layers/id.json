@@ -11,8 +11,17 @@
                     "0": {
                         "then": "Bangunan ini tidak memiliki nomor rumah"
                     }
-                }
+                },
+                "question": "Berapa nomor rumah ini?",
+                "render": "Nomor rumah ini <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Alamat ini di jalan apa?",
+                "render": "Alamat ini ada di jalan <b>{addr:street}</b>"
             }
+        },
+        "title": {
+            "render": "Alamat yang diketahui"
         }
     },
     "artwork": {
@@ -377,5 +386,14 @@
     },
     "watermill": {
         "name": "Kincir Air"
+    },
+    "ambulancestation": {
+        "name": "Peta stasiun ambulans",
+        "presets": {
+            "0": {
+                "description": "Tambahkan stasiun ambulans ke peta",
+                "title": "Stasiun ambulans"
+            }
+        }
     }
 }
