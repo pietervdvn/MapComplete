@@ -3038,7 +3038,8 @@
                 }
             },
             "width": {
-                "question": "Wat is de breedte van deze deur/toegang?"
+                "question": "Wat is de breedte van deze deur/toegang?",
+                "render": ""
             }
         },
         "title": {
@@ -3087,7 +3088,16 @@
         },
         "tagRenderings": {
             "extinguisher-location": {
-                "render": "Locatie: {location}"
+                "render": "Locatie: {location}",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "title": {
@@ -3339,7 +3349,8 @@
                 }
             },
             "render": "Eetgelegenheid"
-        }
+        },
+        "description": ""
     },
     "ghost_bike": {
         "name": "Witte Fietsen",
@@ -3381,7 +3392,8 @@
                 }
             },
             "render": "Witte Fiets"
-        }
+        },
+        "description": ""
     },
     "gps_track": {
         "name": "Jouw afgelegde route",
@@ -3400,11 +3412,73 @@
                 }
             },
             "render": "Speelweide in een park"
-        }
+        },
+        "description": ""
     },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
-        "name": "Kaart van brandkranen"
+        "name": "Kaart van brandkranen",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "render": ""
+        }
     },
     "information_board": {
         "description": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
@@ -4210,14 +4284,25 @@
                     "6": {
                         "then": "Autodealer"
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "shops-website": {
-                "question": "Wat is de website van deze winkel?"
+                "question": "Wat is de website van deze winkel?",
+                "render": ""
             }
         },
         "title": {
-            "render": "Winkel"
+            "render": "Winkel",
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            }
         }
     },
     "slow_roads": {
@@ -4292,7 +4377,8 @@
                 }
             },
             "render": "Trage weg"
-        }
+        },
+        "description": ""
     },
     "sport_pitch": {
         "description": "Een sportterrein",
@@ -4550,7 +4636,8 @@
                 }
             },
             "render": "Straatlantaarn"
-        }
+        },
+        "description": ""
     },
     "surveillance_camera": {
         "name": "Bewakingscamera's",
@@ -4656,7 +4743,16 @@
         },
         "title": {
             "render": "Bewakingscamera"
-        }
+        },
+        "presets": {
+            "1": {
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "description": ""
     },
     "toilet": {
         "description": "Een laag die publieke toiletten toont",
@@ -5016,7 +5112,8 @@
         },
         "title": {
             "render": "Boom"
-        }
+        },
+        "description": ""
     },
     "viewpoint": {
         "description": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
@@ -5044,7 +5141,8 @@
                 }
             },
             "render": "Speelweide"
-        }
+        },
+        "description": ""
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
@@ -5175,6 +5273,41 @@
                     }
                 },
                 "question": "Waar bevindt deze container zich?"
+            },
+            "access": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": "",
+        "description": "",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
             }
         }
     },
@@ -5230,5 +5363,159 @@
             },
             "render": "Watermolens"
         }
+    },
+    "fire_station": {
+        "tagRenderings": {
+            "station-operator": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "station-agency": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "station-name": {
+                "question": "",
+                "render": ""
+            },
+            "station-place": {
+                "question": "",
+                "render": ""
+            },
+            "station-street": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "description": "",
+        "name": "",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "title": {
+            "render": ""
+        }
+    },
+    "note_import": {
+        "name": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "walls_and_buildings": {
+        "description": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "note": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "report-contributor": {
+                "render": ""
+            },
+            "report-note": {
+                "render": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": ""
+    },
+    "pedestrian_path": {
+        "name": "",
+        "description": ""
     }
 }
