@@ -11,7 +11,8 @@
         "delete": "Supprimer",
         "explanations": {
             "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
-            "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé"
+            "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
+            "softDelete": "Cet objet sera mis à jour et caché de l'application. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Cet objet est supprimé",
         "isntAPoint": "Seul les points peuvent être supprimés, l'objet sélectionné est une ligne, un polygone ou une relation.",
@@ -56,7 +57,12 @@
             "title": "Ajouter un nouveau point ?",
             "warnVisibleForEveryone": "Votre ajout sera visible",
             "zoomInFurther": "Rapprochez vous pour ajouter un point.",
-            "zoomInMore": "Zoomez pour importer cet élément"
+            "zoomInMore": "Zoomez pour importer cet élément",
+            "import": {
+                "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
+                "importTags": "L'objet recevra {tags}",
+                "hasBeenImported": "Cet objet a été importé"
+            }
         },
         "attribution": {
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
