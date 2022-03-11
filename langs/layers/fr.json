@@ -1599,13 +1599,13 @@
                     "0": {
                         "then": "Accessible au public"
                     },
-                    "1": {
+                    "2": {
                         "then": "Réservée aux clients"
                     },
-                    "2": {
+                    "3": {
                         "then": "Réservée aux élèves de l’école"
                     },
-                    "3": {
+                    "4": {
                         "then": "Non accessible"
                     }
                 },

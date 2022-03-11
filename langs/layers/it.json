@@ -1287,13 +1287,13 @@
                     "0": {
                         "then": "Accessibile pubblicamente"
                     },
-                    "1": {
+                    "2": {
                         "then": "Accessibile solamente ai clienti dell’attività che lo gestisce"
                     },
-                    "2": {
+                    "3": {
                         "then": "Accessibile solamente agli studenti della scuola"
                     },
-                    "3": {
+                    "4": {
                         "then": "Non accessibile"
                     }
                 },

@@ -3744,12 +3744,15 @@
                         "then": "Vrij toegankelijk voor het publiek"
                     },
                     "1": {
-                        "then": "Enkel toegankelijk voor klanten van de bijhorende zaak"
+                        "then": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken"
                     },
                     "2": {
-                        "then": "Enkel toegankelijk voor scholieren van de bijhorende school"
+                        "then": "Enkel toegankelijk voor klanten van de bijhorende zaak"
                     },
                     "3": {
+                        "then": "Enkel toegankelijk voor scholieren van de bijhorende school"
+                    },
+                    "4": {
                         "then": "Niet vrij toegankelijk"
                     }
                 },
