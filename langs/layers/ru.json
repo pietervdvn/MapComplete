@@ -13,7 +13,11 @@
                 "render": "Номер дома <b>{addr:housenumber}</b>"
             },
             "street": {
-                "question": "Какая эта улица?"
+                "question": "Какая эта улица?",
+                "render": ""
+            },
+            "fixme": {
+                "question": ""
             }
         },
         "title": {
@@ -45,11 +49,20 @@
                     },
                     "1": {
                         "then": "Станция управляется волонтёрами или частной организацией."
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "ambulance-place": {
-                "question": "Где расположена станция? (напр., название населённого пункта)"
+                "question": "Где расположена станция? (напр., название населённого пункта)",
+                "render": ""
             },
             "ambulance-street": {
                 "question": " По какому адресу расположена эта станция?",
@@ -137,17 +150,102 @@
         "name": "Препятствия",
         "presets": {
             "0": {
-                "title": "Прикол"
+                "title": "Прикол",
+                "description": ""
+            },
+            "1": {
+                "title": "",
+                "description": ""
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Прикол"
+                },
+                "1": {
+                    "then": ""
                 }
             },
             "render": "Препятствие"
-        }
+        },
+        "tagRenderings": {
+            "Cycle barrier type": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "MaxWidth": {
+                "question": "",
+                "render": ""
+            },
+            "barrier_type": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "Bollard type": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Width of opening (cyclebarrier)": {
+                "render": "",
+                "question": ""
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "",
+                "render": ""
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "description": ""
     },
     "bench": {
         "name": "Скамейки",
@@ -237,7 +335,8 @@
         },
         "title": {
             "render": "Скамейка"
-        }
+        },
+        "description": ""
     },
     "bench_at_pt": {
         "name": "Скамейки на остановках общественного транспорта",
@@ -246,8 +345,15 @@
                 "mappings": {
                     "1": {
                         "then": "Встаньте на скамейке"
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "bench_at_pt-name": {
                 "render": "{name}"
@@ -263,7 +369,8 @@
                 }
             },
             "render": "Скамейка"
-        }
+        },
+        "description": ""
     },
     "bicycle_library": {
         "description": "Учреждение, где велосипед может быть арендован на более длительный срок",
@@ -336,7 +443,8 @@
         },
         "title": {
             "render": "Торговый автомат для велосипедистов"
-        }
+        },
+        "description": ""
     },
     "bike_cafe": {
         "name": "Велосипедное кафе",
@@ -403,7 +511,8 @@
                 }
             },
             "render": "Велосипедное кафе"
-        }
+        },
+        "description": ""
     },
     "bike_parking": {
         "name": "Велопарковка",
@@ -415,7 +524,18 @@
         "tagRenderings": {
             "Access": {
                 "question": "Кто может пользоваться этой велопарковкой?",
-                "render": "{access}"
+                "render": "{access}",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
             },
             "Bicycle parking type": {
                 "mappings": {
@@ -427,13 +547,29 @@
                     },
                     "5": {
                         "then": "Навес"
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 },
                 "question": "К какому типу относится эта велопарковка?",
                 "render": "Это велопарковка типа {bicycle_parking}"
             },
             "Capacity": {
-                "render": "Место для {capacity} велосипеда(ов)"
+                "render": "Место для {capacity} велосипеда(ов)",
+                "question": ""
             },
             "Is covered?": {
                 "mappings": {
@@ -443,7 +579,8 @@
                     "1": {
                         "then": "Это открытая парковка"
                     }
-                }
+                },
+                "question": ""
             },
             "Underground?": {
                 "mappings": {
@@ -455,18 +592,50 @@
                     },
                     "2": {
                         "then": "Парковка на крыше"
+                    },
+                    "3": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
+            },
+            "Cargo bike capacity?": {
+                "question": "",
+                "render": ""
+            },
+            "Cargo bike spaces?": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "title": {
             "render": "Велопарковка"
-        }
+        },
+        "description": ""
     },
     "bike_repair_station": {
         "presets": {
             "0": {
-                "title": "bелосипедный насос"
+                "title": "bелосипедный насос",
+                "description": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
+            },
+            "2": {
+                "description": "",
+                "title": ""
             }
         },
         "tagRenderings": {
@@ -503,7 +672,8 @@
                     "2": {
                         "then": "Есть манометр, но он сломан"
                     }
-                }
+                },
+                "question": ""
             },
             "bike_repair_station-opening_hours": {
                 "mappings": {
@@ -520,9 +690,82 @@
                     },
                     "1": {
                         "then": "Клапан Dunlop"
+                    },
+                    "2": {
+                        "then": ""
                     }
                 },
-                "render": "Этот насос поддерживает следующие клапаны: {valves}"
+                "render": "Этот насос поддерживает следующие клапаны: {valves}",
+                "question": ""
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-bike-chain-tool": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-available-services": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-operator": {
+                "question": "",
+                "render": ""
+            },
+            "bike_repair_station-bike-stand": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Email maintainer": {
+                "render": ""
+            },
+            "bike_repair_station-phone": {
+                "question": ""
+            },
+            "bike_repair_station-email": {
+                "question": ""
             }
         },
         "title": {
@@ -535,9 +778,18 @@
                 },
                 "4": {
                     "then": "Велосипедный насос"
+                },
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
                 }
-            }
-        }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": ""
     },
     "bike_shop": {
         "description": "Магазин, специализирующийся на продаже велосипедов или сопутствующих товаров",
@@ -555,6 +807,9 @@
                     },
                     "1": {
                         "then": "В этом магазине нет велосипедного насоса для всеобщего пользования"
+                    },
+                    "2": {
+                        "then": ""
                     }
                 },
                 "question": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?"
@@ -566,6 +821,9 @@
                     },
                     "2": {
                         "then": "В этом магазине нет услуг мойки/чистки велосипедов"
+                    },
+                    "1": {
+                        "then": ""
                     }
                 },
                 "question": "Здесь моют велосипеды?"
@@ -627,6 +885,12 @@
                 "mappings": {
                     "2": {
                         "then": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине"
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
                     }
                 },
                 "question": "Есть ли здесь инструменты для починки собственного велосипеда?"
@@ -643,6 +907,9 @@
             },
             "bike_shop-website": {
                 "question": "Какой сайт у {name}?"
+            },
+            "bike_shop-is-bicycle_shop": {
+                "render": ""
             }
         },
         "title": {
@@ -658,6 +925,9 @@
                 },
                 "4": {
                     "then": "Магазин велосипедов <i>{name}</i>"
+                },
+                "5": {
+                    "then": ""
                 }
             },
             "render": "Обслуживание велосипедов/магазин"
@@ -668,23 +938,42 @@
         "name": "Бинокль",
         "presets": {
             "0": {
-                "title": "бинокль"
+                "title": "бинокль",
+                "description": ""
             }
         },
         "title": {
             "render": "Бинокль"
+        },
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "binocular-direction": {
+                "render": "",
+                "question": ""
+            }
         }
     },
     "cafe_pub": {
         "presets": {
             "0": {
-                "title": "паб"
+                "title": "паб",
+                "description": ""
             },
             "1": {
-                "title": "бар"
+                "title": "бар",
+                "description": ""
             },
             "2": {
-                "title": "кафе"
+                "title": "кафе",
+                "description": ""
             }
         },
         "title": {
@@ -692,8 +981,46 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 }
+            },
+            "render": ""
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Name": {
+                "question": "",
+                "render": ""
             }
-        }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "name": "",
+        "description": ""
     },
     "charging_station": {
         "units": {
@@ -729,38 +1056,1464 @@
                         "human": "мегаватт"
                     }
                 }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
             }
-        }
+        },
+        "tagRenderings": {
+            "power-output-15": {
+                "question": "",
+                "render": ""
+            },
+            "power-output-2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "power-output-8": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-9": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "7": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "15": {
+                        "then": ""
+                    },
+                    "20": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "24": {
+                        "then": ""
+                    },
+                    "17": {
+                        "then": ""
+                    },
+                    "25": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "23": {
+                        "then": ""
+                    },
+                    "29": {
+                        "then": ""
+                    },
+                    "18": {
+                        "then": ""
+                    },
+                    "19": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "31": {
+                        "then": ""
+                    },
+                    "21": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "16": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "26": {
+                        "then": ""
+                    },
+                    "27": {
+                        "then": ""
+                    },
+                    "28": {
+                        "then": ""
+                    },
+                    "22": {
+                        "then": ""
+                    },
+                    "30": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Authentication": {
+                "mappings": {
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Type": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "access": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "current-11": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "fee": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "plugs-5": {
+                "question": "",
+                "render": ""
+            },
+            "voltage-13": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "voltage-14": {
+                "question": "",
+                "render": ""
+            },
+            "voltage-15": {
+                "question": "",
+                "render": ""
+            },
+            "voltage-7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "voltage-8": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "capacity": {
+                "render": "",
+                "question": ""
+            },
+            "current-2": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "current-3": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "current-8": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "plugs-9": {
+                "render": "",
+                "question": ""
+            },
+            "power-output-0": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "power-output-1": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-10": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-12": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-3": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "power-output-5": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-0": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-12": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-6": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "current-10": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "current-13": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "current-14": {
+                "question": "",
+                "render": ""
+            },
+            "current-5": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "current-7": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "plugs-7": {
+                "question": "",
+                "render": ""
+            },
+            "power-output-4": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "power-output-13": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "voltage-1": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "voltage-3": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Operational status": {
+                "question": "",
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "voltage-11": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "voltage-10": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "website": {
+                "question": "",
+                "render": ""
+            },
+            "current-6": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "current-15": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-13": {
+                "question": "",
+                "render": ""
+            },
+            "Operator": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "voltage-9": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "plugs-14": {
+                "question": "",
+                "render": ""
+            },
+            "Network": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "power-output-14": {
+                "question": "",
+                "render": ""
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "plugs-0": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-4": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-8": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-2": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-12": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-10": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-15": {
+                "render": "",
+                "question": ""
+            },
+            "power-output-6": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "voltage-4": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "plugs-3": {
+                "render": "",
+                "question": ""
+            },
+            "phone": {
+                "question": "",
+                "render": ""
+            },
+            "ref": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-11": {
+                "question": "",
+                "render": ""
+            },
+            "voltage-2": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "current-4": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "current-1": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "charge": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-1": {
+                "render": "",
+                "question": ""
+            },
+            "questions": {
+                "render": ""
+            },
+            "Auth phone": {
+                "question": "",
+                "render": ""
+            },
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "current-12": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "email": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-6": {
+                "question": "",
+                "render": ""
+            },
+            "current-0": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "current-9": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-11": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "6": {
+                        "question": ""
+                    },
+                    "9": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "16": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "11": {
+                        "question": ""
+                    },
+                    "13": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    },
+                    "12": {
+                        "question": ""
+                    },
+                    "14": {
+                        "question": ""
+                    },
+                    "10": {
+                        "question": ""
+                    },
+                    "15": {
+                        "question": ""
+                    },
+                    "7": {
+                        "question": ""
+                    },
+                    "8": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "presets": {
+            "1": {
+                "title": ""
+            }
+        },
+        "description": ""
     },
     "crossings": {
         "presets": {
             "1": {
-                "title": "Светофор"
+                "title": "Светофор",
+                "description": ""
+            },
+            "0": {
+                "title": "",
+                "description": ""
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Светофор"
+                },
+                "1": {
+                    "then": ""
                 }
+            },
+            "render": ""
+        },
+        "tagRenderings": {
+            "crossing-continue-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-bicycle-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-button": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-type": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                }
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
-        }
+        },
+        "description": "",
+        "name": ""
     },
     "cycleways_and_roads": {
         "title": {
             "mappings": {
                 "0": {
                     "then": "Велосипедная дорожка"
+                },
+                "1": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "4": {
+                    "then": ""
                 }
             },
             "render": "Велосипедные дорожки"
-        }
+        },
+        "tagRenderings": {
+            "Maxspeed (for road)": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "Cycleway type for a road": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cycleway:surface": {
+                "mappings": {
+                    "10": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "cycleway-lane-track-traffic-signs": {
+                "question": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "cycleway-traffic-signs": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Surface of the street": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "is lit?": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "width:carriageway": {
+                "render": "",
+                "question": ""
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "cycleway-traffic-signs-supplementary": {
+                "mappings": {
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "name": "",
+        "description": ""
     },
     "defibrillator": {
         "name": "Дефибрилляторы",
         "presets": {
             "0": {
                 "title": "Дефибриллятор"
+            },
+            "1": {
+                "title": ""
             }
         },
         "tagRenderings": {
@@ -774,40 +2527,116 @@
                     },
                     "2": {
                         "then": "Доступно только для клиентов"
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "defibrillator-defibrillator": {
                 "mappings": {
                     "2": {
                         "then": "Это обычный автоматический дефибриллятор"
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "defibrillator-description": {
-                "render": "Дополнительная информация: {description}"
+                "render": "Дополнительная информация: {description}",
+                "question": ""
             },
             "defibrillator-fixme": {
-                "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}"
+                "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
+                "question": ""
             },
             "defibrillator-opening_hours": {
                 "question": "В какое время доступен этот дефибриллятор?",
-                "render": "{opening_hours_table(opening_hours)}"
+                "render": "{opening_hours_table(opening_hours)}",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
             },
             "defibrillator-survey:date": {
                 "mappings": {
                     "0": {
                         "then": "Проверено сегодня!"
                     }
+                },
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-defibrillator:location": {
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-email": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-defibrillator:location:en": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-defibrillator:location:fr": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-indoors": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "defibrillator-ref": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-phone": {
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-level": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
                 }
             }
         },
         "title": {
             "render": "Дефибриллятор"
-        }
+        },
+        "description": ""
     },
     "direction": {
-        "name": "Визуализация направления"
+        "name": "Визуализация направления",
+        "description": ""
     },
     "drinking_water": {
         "name": "Питьевая вода",
@@ -818,7 +2647,39 @@
         },
         "title": {
             "render": "Питьевая вода"
-        }
+        },
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "render-closest-drinking-water": {
+                "render": ""
+            },
+            "Bottle refill": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "description": ""
     },
     "extinguisher": {
         "description": "Слой карты, отображающий огнетушители.",
@@ -852,7 +2713,8 @@
         "name": "Карта пожарных частей",
         "presets": {
             "0": {
-                "title": "Пожарная часть"
+                "title": "Пожарная часть",
+                "description": ""
             }
         },
         "tagRenderings": {
@@ -867,6 +2729,33 @@
             "station-street": {
                 "question": " По какому адресу расположена эта часть?",
                 "render": "Часть расположена вдоль шоссе {addr:street}."
+            },
+            "station-agency": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
             }
         },
         "title": {
@@ -876,10 +2765,16 @@
     "food": {
         "presets": {
             "0": {
-                "title": "ресторан"
+                "title": "ресторан",
+                "description": ""
             },
             "1": {
-                "title": "быстрое питание"
+                "title": "быстрое питание",
+                "description": ""
+            },
+            "2": {
+                "description": "",
+                "title": ""
             }
         },
         "tagRenderings": {
@@ -887,10 +2782,233 @@
                 "mappings": {
                     "1": {
                         "then": "Приносить свою тару <b>не разрешено</b>"
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "friture-vegetarian": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cuisine": {
+                "mappings": {
+                    "9": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "friture-vegan": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Vegetarian (no friture)": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "friture-oil": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "halal (no friture)": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Takeaway": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Name": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
                     }
                 }
             }
-        }
+        },
+        "name": "",
+        "description": ""
     },
     "ghost_bike": {
         "name": "Велосипед ghost",
@@ -901,28 +3019,47 @@
         },
         "tagRenderings": {
             "ghost_bike-inscription": {
-                "render": "<i>{inscription}</i>"
+                "render": "<i>{inscription}</i>",
+                "question": ""
             },
             "ghost_bike-name": {
-                "render": "В знак памяти о {name}"
+                "render": "В знак памяти о {name}",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             },
             "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>"
+                "render": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
+                "question": ""
             },
             "ghost_bike-start_date": {
-                "render": "Установлен {start_date}"
+                "render": "Установлен {start_date}",
+                "question": ""
+            },
+            "ghost-bike-explanation": {
+                "render": ""
             }
         },
         "title": {
-            "render": "Велосипед Ghost"
-        }
+            "render": "Велосипед Ghost",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "description": ""
     },
     "hydrant": {
         "description": "Слой карты, отображающий пожарные гидранты.",
         "name": "Карта пожарных гидрантов",
         "presets": {
             "0": {
-                "title": "Пожарный гидрант"
+                "title": "Пожарный гидрант",
+                "description": ""
             }
         },
         "tagRenderings": {
@@ -948,8 +3085,12 @@
                     },
                     "2": {
                         "then": "Гидрант демонтирован"
+                    },
+                    "1": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "hydrant-type": {
                 "mappings": {
@@ -958,6 +3099,15 @@
                     },
                     "3": {
                         "then": "Тип стены."
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 },
                 "question": "К какому типу относится этот гидрант?",
@@ -977,13 +3127,15 @@
         },
         "title": {
             "render": "Информационный щит"
-        }
+        },
+        "description": ""
     },
     "map": {
         "name": "Карты",
         "presets": {
             "0": {
-                "title": "Карта"
+                "title": "Карта",
+                "description": ""
             }
         },
         "tagRenderings": {
@@ -993,18 +3145,153 @@
                         "then": "Эта карта основана на OpenStreetMap"
                     }
                 },
-                "render": "Эта карта основана на {map_source}"
+                "render": "Эта карта основана на {map_source}",
+                "question": ""
+            },
+            "map-attribution": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "title": {
             "render": "Карта"
-        }
+        },
+        "description": ""
     },
     "nature_reserve": {
         "tagRenderings": {
             "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "question": ""
+            },
+            "Access tag": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Editable description": {
+                "question": "",
+                "render": ""
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Curator": {
+                "question": "",
+                "render": ""
+            },
+            "Dogs?": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Name tag": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "Non-editable description": {
+                "render": ""
+            },
+            "phone": {
+                "question": ""
+            },
+            "Surface area": {
+                "render": ""
             }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "1": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "name": "",
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "description": "",
+        "title": {
+            "render": ""
         }
     },
     "observation_tower": {
@@ -1022,6 +3309,61 @@
                 "applicableUnits": {
                     "0": {
                         "human": " метр"
+                    }
+                }
+            }
+        },
+        "description": "",
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "elevator": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "step_count": {
+                "question": "",
+                "render": ""
+            },
+            "Fee": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "Height": {
+                "question": "",
+                "render": ""
+            },
+            "Operator": {
+                "question": "",
+                "render": ""
+            },
+            "name": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
                     }
                 }
             }
@@ -1080,11 +3422,25 @@
                 "mappings": {
                     "4": {
                         "then": "Недоступно"
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "playground-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
+                "render": "<a href='mailto:{email}'>{email}</a>",
+                "question": ""
             },
             "playground-lit": {
                 "mappings": {
@@ -1098,7 +3454,8 @@
                 "question": "Эта игровая площадка освещается ночью?"
             },
             "playground-max_age": {
-                "render": "Доступно детям до {max_age}"
+                "render": "Доступно детям до {max_age}",
+                "question": ""
             },
             "playground-min_age": {
                 "question": "С какого возраста доступна эта детская площадка?",
@@ -1116,7 +3473,8 @@
                 "question": "Когда открыта эта игровая площадка?"
             },
             "playground-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": ""
             },
             "playground-surface": {
                 "mappings": {
@@ -1137,9 +3495,20 @@
                     },
                     "5": {
                         "then": "Поверхность - <b>бетон</b>"
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
                     }
                 },
-                "render": "Поверхность - <b>{surface}</b>"
+                "render": "Поверхность - <b>{surface}</b>",
+                "question": ""
+            },
+            "playground-operator": {
+                "render": "",
+                "question": ""
             }
         },
         "title": {
@@ -1178,6 +3547,9 @@
                 "mappings": {
                     "0": {
                         "then": "Свободный доступ"
+                    },
+                    "1": {
+                        "then": ""
                     }
                 },
                 "question": "Имеется ли свободный доступ к этому общественному книжному шкафу?"
@@ -1202,6 +3574,45 @@
             "public_bookcase-website": {
                 "question": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?",
                 "render": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>"
+            },
+            "public_bookcase-operator": {
+                "question": "",
+                "render": ""
+            },
+            "bookcase-is-indoors": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "public_bookcase-brand": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "public_bookcase-ref": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
             }
         },
         "title": {
@@ -1211,6 +3622,15 @@
                 }
             },
             "render": "Книжный шкаф"
+        },
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
         }
     },
     "shops": {
@@ -1254,9 +3674,16 @@
                     },
                     "6": {
                         "then": "Автосалон"
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
                     }
                 },
-                "question": "Что продаётся в этом магазине?"
+                "question": "Что продаётся в этом магазине?",
+                "render": ""
             },
             "shops-website": {
                 "question": "Какой веб-сайт у этого магазина?",
@@ -1296,11 +3723,18 @@
                     },
                     "6": {
                         "then": "Поверхность - <b>бетон</b>"
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 },
                 "render": "Поверхность - <b>{surface}</b>"
             }
-        }
+        },
+        "description": ""
     },
     "sport_pitch": {
         "description": "Спортивная площадка",
@@ -1324,6 +3758,9 @@
                     },
                     "2": {
                         "then": "Доступ только членам клуба"
+                    },
+                    "3": {
+                        "then": ""
                     }
                 },
                 "question": "Есть ли свободный доступ к этой спортивной площадке?"
@@ -1338,6 +3775,9 @@
                     },
                     "3": {
                         "then": "Невозможна предварительная запись"
+                    },
+                    "0": {
+                        "then": ""
                     }
                 },
                 "question": "Нужна ли предварительная запись для доступа на эту спортивную площадку?"
@@ -1370,7 +3810,9 @@
                     "5": {
                         "then": "Здесь можно играть в баскетбол"
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "sport_pitch-surface": {
                 "mappings": {
@@ -1392,6 +3834,12 @@
                 },
                 "question": "Какое покрытие на этой спортивной площадке?",
                 "render": "Поверхность - <b>{surface}</b>"
+            },
+            "sport_pitch-email": {
+                "question": ""
+            },
+            "sport_pitch-phone": {
+                "question": ""
             }
         },
         "title": {
@@ -1408,12 +3856,27 @@
                     },
                     "2": {
                         "then": "Панорамная камера"
+                    },
+                    "0": {
+                        "then": ""
                     }
                 },
                 "question": "Какая это камера?"
             },
             "camera:mount": {
-                "question": "Как расположена эта камера?"
+                "question": "Как расположена эта камера?",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "render": ""
             },
             "is_indoor": {
                 "mappings": {
@@ -1422,12 +3885,80 @@
                     },
                     "2": {
                         "then": "Возможно, эта камера расположена снаружи"
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "camera_direction": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
                     }
                 }
+            },
+            "Level": {
+                "question": "",
+                "render": ""
+            },
+            "Operator": {
+                "render": "",
+                "question": ""
+            },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Surveillance:zone": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
             }
         },
         "title": {
             "render": "Камера наблюдения"
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "title": ""
+            },
+            "1": {
+                "title": ""
+            }
         }
     },
     "toilet": {
@@ -1437,7 +3968,8 @@
                 "title": "общественный туалет "
             },
             "1": {
-                "title": "tуалет с доступом для пользователей кресел-колясок"
+                "title": "tуалет с доступом для пользователей кресел-колясок",
+                "description": ""
             }
         },
         "tagRenderings": {
@@ -1451,9 +3983,16 @@
                     },
                     "4": {
                         "then": "Свободный доступ"
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
                     }
                 },
-                "question": "Есть ли свободный доступ к этим туалетам?"
+                "question": "Есть ли свободный доступ к этим туалетам?",
+                "render": ""
             },
             "toilet-charge": {
                 "question": "Сколько стоит посещение туалета?",
@@ -1463,35 +4002,169 @@
                 "mappings": {
                     "0": {
                         "then": "Это платные туалеты"
+                    },
+                    "1": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "toilets-type": {
-                "question": "Какие это туалеты?"
+                "question": "Какие это туалеты?",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                }
             },
             "toilets-wheelchair": {
                 "mappings": {
                     "1": {
                         "then": "Недоступно пользователям кресел-колясок"
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilet-changing_table:location": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "toilets-changing-table": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
                     }
                 }
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Opening-hours": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "title": {
             "render": "Туалет"
+        },
+        "description": "",
+        "filter": {
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
         }
     },
     "trail": {
         "name": "Тропы",
         "title": {
             "render": "Тропа"
+        },
+        "tagRenderings": {
+            "Color": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "trail-length": {
+                "render": ""
+            }
         }
     },
     "tree_node": {
         "name": "Дерево",
         "presets": {
             "0": {
-                "title": "Лиственное дерево"
+                "title": "Лиственное дерево",
+                "description": ""
             },
             "1": {
                 "description": "Дерево с хвоей (иглами), например, сосна или ель.",
@@ -1532,15 +4205,81 @@
                 "render": "Название: {name}"
             },
             "tree_node-ref:OnroerendErfgoed": {
-                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+                "question": ""
             },
             "tree_node-wikidata": {
-                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+                "question": ""
+            },
+            "tree-leaf_type": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "title": {
             "render": "Дерево"
-        }
+        },
+        "description": ""
     },
     "viewpoint": {
         "name": "Смотровая площадка",
@@ -1556,7 +4295,8 @@
         },
         "title": {
             "render": "Смотровая площадка"
-        }
+        },
+        "description": ""
     },
     "visitor_information_centre": {
         "title": {
@@ -1566,7 +4306,9 @@
                 }
             },
             "render": "{name}"
-        }
+        },
+        "name": "",
+        "description": ""
     },
     "waste_basket": {
         "mapRendering": {
@@ -1588,9 +4330,1000 @@
         },
         "title": {
             "render": "Контейнер для мусора"
-        }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "6": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "description": ""
     },
     "watermill": {
         "name": "Водяная мельница"
+    },
+    "entrance": {
+        "tagRenderings": {
+            "Entrance type": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Door_type": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "automatic_door": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "width": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "bike_themed_object": {
+        "name": "",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": ""
+    },
+    "birdhide": {
+        "presets": {
+            "1": {
+                "title": "",
+                "description": ""
+            },
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "birdhide-operator": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "description": "",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        }
+    },
+    "note": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "report-contributor": {
+                "render": ""
+            },
+            "report-note": {
+                "render": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": ""
+    },
+    "parking": {
+        "name": "",
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "description": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "pedestrian_path": {
+        "description": "",
+        "name": ""
+    },
+    "recycling": {
+        "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "operator": {
+                "question": "",
+                "render": ""
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "17": {
+                        "then": ""
+                    },
+                    "18": {
+                        "then": ""
+                    },
+                    "19": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "15": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "16": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "recycling-type": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "opening_hours": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "15": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    },
+                    "6": {
+                        "question": ""
+                    },
+                    "16": {
+                        "question": ""
+                    },
+                    "17": {
+                        "question": ""
+                    },
+                    "13": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "11": {
+                        "question": ""
+                    },
+                    "14": {
+                        "question": ""
+                    },
+                    "12": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    },
+                    "10": {
+                        "question": ""
+                    },
+                    "9": {
+                        "question": ""
+                    },
+                    "8": {
+                        "question": ""
+                    },
+                    "7": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "presets": {
+            "1": {
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "name": "",
+        "description": ""
+    },
+    "street_lamps": {
+        "tagRenderings": {
+            "method": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "lamp_mount": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "lit": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "colour": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "direction": {
+                "question": "",
+                "render": ""
+            },
+            "ref": {
+                "question": "",
+                "render": ""
+            },
+            "support": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": ""
+    },
+    "village_green": {
+        "description": ""
+    },
+    "waste_disposal": {
+        "title": {
+            "render": ""
+        },
+        "tagRenderings": {
+            "access": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "description": "",
+        "name": ""
+    },
+    "walls_and_buildings": {
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "etymology": {
+        "description": "",
+        "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": ""
+            },
+            "simple etymology": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "street-name-sign-image": {
+                "render": ""
+            },
+            "wikipedia-etymology": {
+                "render": "",
+                "question": ""
+            },
+            "wikipedia": {
+                "render": ""
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": ""
+            }
+        },
+        "name": ""
+    },
+    "note_import": {
+        "name": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "grass_in_parks": {
+        "description": ""
+    },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "bicycle-types": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                }
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "8": {
+                "renderings": {
+                    "0": {
+                        "question": "",
+                        "render": ""
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": ""
+                        },
+                        "1": {
+                            "1": ""
+                        },
+                        "2": {
+                            "1": ""
+                        },
+                        "3": {
+                            "1": ""
+                        },
+                        "4": {
+                            "1": ""
+                        },
+                        "5": {
+                            "1": ""
+                        }
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            },
+            "1": {
+                "title": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": ""
+    },
+    "bike_cleaning": {
+        "tagRenderings": {
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "bike_cleaning-charge": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "description": "",
+        "name": ""
+    },
+    "gps_track": {
+        "name": "",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": ""
+            }
+        }
     }
 }
