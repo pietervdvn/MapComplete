@@ -3921,7 +3921,7 @@
                         "then": "Accessible to the general public"
                     },
                     "1": {
-                        "then": "This is a <b>paid</p> playground"
+                        "then": "This is a <b>paid</b> playground"
                     },
                     "2": {
                         "then": "Only accessible for clients of the operating business"

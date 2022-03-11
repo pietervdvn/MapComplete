@@ -297,16 +297,14 @@
           ]
         },
         {
-          "if": {
-            "and": [
-              "fee=yes",
-              "access=customers"
-            ]
-          },
+          "if": "fee=yes",
           "then": {
-            "en": "This is a <b>paid</p> playground",
+            "en": "This is a <b>paid</b> playground",
             "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken"
-          }
+          },
+          "addExtraTags": [
+            "access=customers"
+          ]
         },
         {
           "if": "access=customers",
