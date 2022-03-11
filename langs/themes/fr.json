@@ -561,6 +561,26 @@
                 "override": {
                     "=name": "Institutions d'éducation sans origine étymologique"
                 }
+            },
+            "5": {
+                "override": {
+                    "=name": "Lieux touristiques sans origine étymologique"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Lieux culturels sans origine étymologique"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Établissements sociaux ou de soins sans origine étymologique"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Lieux sportifs sans origine étymologique"
+                }
             }
         },
         "shortDescription": "Quelle est l'origine de ce toponyme ?",
@@ -778,5 +798,10 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
+    },
+    "bicycle_rental": {
+        "shortDescription": "Une carte avec des stations et magasins de location de vélos",
+        "title": "Location de vélos",
+        "description": "Vous trouverez sur cette carte toutes les stations de location de vélo telles qu'elles sont référencées dans OpenStreetMap"
     }
 }
