@@ -1584,6 +1584,9 @@
                         "then": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>"
                     },
                     "3": {
+                        "then": "A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>"
+                    },
+                    "4": {
                         "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
                     }
                 },

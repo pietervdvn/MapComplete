@@ -9,6 +9,29 @@ Contains tweaks for small screens
     }
 }
 
+
+@media only screen and (min-height: 300px) and (min-width: 225px) {
+    .very-small-screen {
+        display: none !important;
+    }
+
+
+    .hidden-on-very-small-screen {
+    }
+
+}
+
+
+@media not screen and (min-height: 300px) and (min-width: 225px) {
+    .very-small-screen {
+    }
+
+    .hidden-on-very-small-screen {
+        display: none !important;
+    }
+
+}
+
 @media only screen and (max-width: 768px), only screen and (max-height: 768px) {
 
 

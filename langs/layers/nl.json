@@ -1593,6 +1593,9 @@
                         "then": "Enkel <b>klanten van de bijhorende plaats</b> mogen dit oplaadpunt gebruiken<br/><span class='subtle'>Bv. op de parking van een hotel en enkel toegankelijk voor klanten van dit hotel</span>"
                     },
                     "3": {
+                        "then": "Een <b>sleutel</b> is nodig om dit oplaadpunt te gebruiken<br/><span class='subtle'>Bv. voor klanten van een hotel of een bar, die de sleutel aan de receptie kunnen krijgen</span>"
+                    },
+                    "4": {
                         "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
                     }
                 },

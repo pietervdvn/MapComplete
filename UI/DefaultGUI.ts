@@ -168,6 +168,11 @@ export default class DefaultGUI {
         ]).SetClass("flex flex-col")
             .AttachTo("userbadge")
 
+        new Combine([
+            new ExtraLinkButton(state, {...state.layoutToUse.extraLink, newTab: true, requirements: new Set<"iframe" | "no-iframe" | "welcome-message" | "no-welcome-message">( ) })
+        ]).SetClass("flex items-center justify-center normal-background h-full")
+            .AttachTo("on-small-screen")
+
         Toggle.If(state.featureSwitchSearch,
             () => new SearchAndGo(state))
             .AttachTo("searchbox");

@@ -189,6 +189,7 @@
         "removeLocationHistory": "Delete the location history",
         "returnToTheMap": "Return to the map",
         "save": "Save",
+        "screenToSmall": "Open {theme} in a new window",
         "search": {
             "error": "Something went wrong…",
             "nothing": "Nothing found…",

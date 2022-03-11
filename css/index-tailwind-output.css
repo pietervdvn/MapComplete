@@ -1103,10 +1103,6 @@ video {
   max-height: 2rem;
 }
 
-.max-h-6 {
-  max-height: 1.5rem;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1502,10 +1498,6 @@ video {
 
 .p-0 {
   padding: 0px;
-}
-
-.p-1\.5 {
-  padding: 0.375rem;
 }
 
 .p-0\.5 {
