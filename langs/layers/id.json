@@ -65,6 +65,15 @@
                     },
                     "10": {
                         "then": "Azulejo (ubin dekoratif Spanyol)"
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
                     }
                 },
                 "question": "Apa jenis karya seni ini?",
@@ -108,37 +117,359 @@
                 "question": "Apakah bangku ini memiliki sandaran?"
             },
             "bench-colour": {
-                "render": "Warna: {colour}"
+                "render": "Warna: {colour}",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             },
             "bench-seats": {
-                "render": "{seats} kursi"
+                "render": "{seats} kursi",
+                "question": ""
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "bench-survey:date": {
+                "question": "",
+                "render": ""
+            },
+            "bench-direction": {
+                "question": "",
+                "render": ""
             }
         },
         "title": {
             "render": "Bangku"
-        }
+        },
+        "description": ""
     },
     "bench_at_pt": {
         "tagRenderings": {
             "bench_at_pt-name": {
                 "render": "{name}"
+            },
+            "bench_at_pt-bench_type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
         },
         "title": {
-            "render": "Bangku"
-        }
+            "render": "Bangku",
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            }
+        },
+        "name": "",
+        "description": ""
     },
     "bike_parking": {
         "tagRenderings": {
             "Access": {
-                "render": "{access}"
+                "render": "{access}",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cargo bike spaces?": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "Bicycle parking type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Is covered?": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "Underground?": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cargo bike capacity?": {
+                "render": "",
+                "question": ""
+            },
+            "Capacity": {
+                "question": "",
+                "render": ""
             }
-        }
+        },
+        "title": {
+            "render": ""
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "description": "",
+        "name": ""
     },
     "bike_shop": {
         "tagRenderings": {
             "bike_shop-website": {
                 "question": "URL {name} apa?"
+            },
+            "bike_repair_bike-pump-service": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_bike-wash": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_repairs-bikes": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_shop-email": {
+                "question": ""
+            },
+            "bike_repair_sells-bikes": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "bike_repair_second-hand-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_shop-name": {
+                "question": "",
+                "render": ""
+            },
+            "bike_shop-phone": {
+                "question": ""
+            },
+            "bike_shop-is-bicycle_shop": {
+                "render": ""
+            }
+        },
+        "description": "",
+        "name": "",
+        "title": {
+            "mappings": {
+                "4": {
+                    "then": ""
+                },
+                "5": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "presets": {
+            "0": {
+                "title": ""
             }
         }
     },
@@ -151,6 +482,15 @@
                     },
                     "4": {
                         "then": "Kecepatan maksimum 90 km/jam"
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
                     }
                 },
                 "question": "Berapa kecepatan maksimum di jalan ini?",
@@ -190,6 +530,12 @@
                     },
                     "12": {
                         "then": "Jalur sepeda ini terbuat dari tanah alami"
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
                     }
                 },
                 "question": "Permukaan jalannya terbuat dari apa?",
@@ -214,8 +560,15 @@
                     },
                     "6": {
                         "then": "Dapat digunakan untuk kendaraan off-road khusus: traktor, ATV"
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
                     }
-                }
+                },
+                "question": ""
             },
             "cyclelan-segregation": {
                 "mappings": {
@@ -275,17 +628,335 @@
                 "mappings": {
                     "0": {
                         "then": "Jalur sepeda wajib"
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "cycleway-traffic-signs-supplementary": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cycleway type for a road": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cycleway:surface": {
+                "mappings": {
+                    "10": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "is lit?": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
                     }
                 }
+            },
+            "width:carriageway": {
+                "question": "",
+                "render": ""
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "render": "",
+                "question": ""
             }
-        }
+        },
+        "title": {
+            "mappings": {
+                "4": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "description": ""
     },
     "defibrillator": {
         "tagRenderings": {
             "defibrillator-description": {
-                "render": "Informasi tambahan: {description}"
+                "render": "Informasi tambahan: {description}",
+                "question": ""
+            },
+            "defibrillator-access": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-defibrillator": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "defibrillator-defibrillator:location": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-defibrillator:location:fr": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-phone": {
+                "question": "",
+                "render": ""
+            },
+            "defibrillator-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-level": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "defibrillator-indoors": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "defibrillator-email": {
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-ref": {
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-fixme": {
+                "render": "",
+                "question": ""
+            },
+            "defibrillator-defibrillator:location:en": {
+                "render": "",
+                "question": ""
             }
-        }
+        },
+        "presets": {
+            "1": {
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": "",
+        "name": ""
     },
     "drinking_water": {
         "name": "Air minum",
@@ -296,17 +967,82 @@
         },
         "title": {
             "render": "Air minum"
+        },
+        "description": "",
+        "tagRenderings": {
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "render-closest-drinking-water": {
+                "render": ""
+            }
         }
     },
     "ghost_bike": {
         "tagRenderings": {
             "ghost_bike-inscription": {
-                "render": "<i>{inscription}</i>"
+                "render": "<i>{inscription}</i>",
+                "question": ""
             },
             "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>",
+                "question": ""
+            },
+            "ghost_bike-start_date": {
+                "question": "",
+                "render": ""
+            },
+            "ghost_bike-name": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "ghost-bike-explanation": {
+                "render": ""
             }
-        }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": ""
     },
     "hydrant": {
         "tagRenderings": {
@@ -314,59 +1050,496 @@
                 "mappings": {
                     "3": {
                         "then": "Jenis dinding."
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
                     }
-                }
+                },
+                "render": "",
+                "question": ""
+            },
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
             }
+        },
+        "description": "",
+        "name": "",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "title": {
+            "render": ""
         }
     },
     "nature_reserve": {
         "tagRenderings": {
             "Email": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "question": ""
+            },
+            "Access tag": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Curator": {
+                "question": "",
+                "render": ""
+            },
+            "Editable description": {
+                "question": "",
+                "render": ""
+            },
+            "Name tag": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "Operator tag": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "phone": {
+                "question": ""
+            },
+            "Dogs?": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Non-editable description": {
+                "render": ""
+            },
+            "Surface area": {
+                "render": ""
             }
-        }
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "1": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": ""
     },
     "playground": {
         "tagRenderings": {
             "playground-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
+                "render": "<a href='mailto:{email}'>{email}</a>",
+                "question": ""
             },
             "playground-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": ""
+            },
+            "playground-surface": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Playground-wheelchair": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "playground-access": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "playground-lit": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "playground-max_age": {
+                "render": "",
+                "question": ""
+            },
+            "playground-min_age": {
+                "question": "",
+                "render": ""
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "playground-operator": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": "",
+        "presets": {
+            "0": {
+                "title": ""
             }
         }
     },
     "shops": {
         "tagRenderings": {
             "shops-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
+                "render": "<a href='mailto:{email}'>{email}</a>",
+                "question": ""
             },
             "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": ""
             },
             "shops-shop": {
                 "mappings": {
                     "5": {
                         "then": "Bengkel Mobil"
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
                     }
-                }
+                },
+                "question": "",
+                "render": ""
             },
             "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
+                "render": "<a href='{website}'>{website}</a>",
+                "question": ""
+            },
+            "shops-name": {
+                "question": ""
+            },
+            "shops-opening_hours": {
+                "question": "",
+                "render": ""
             }
-        }
+        },
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": ""
     },
     "tree_node": {
         "presets": {
             "2": {
-                "title": "Pohon"
+                "title": "Pohon",
+                "description": ""
+            },
+            "0": {
+                "title": "",
+                "description": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
             }
         },
         "tagRenderings": {
             "tree_node-name": {
-                "render": "Nama: {name}"
+                "render": "Nama: {name}",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "tree-leaf_type": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "tree_node-ref:OnroerendErfgoed": {
+                "render": "",
+                "question": ""
+            },
+            "tree_node-wikidata": {
+                "question": "",
+                "render": ""
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "tree-decidouous": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "tree-height": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
             }
-        }
+        },
+        "description": ""
     },
     "viewpoint": {
         "name": "Sudut pandang",
@@ -382,7 +1555,8 @@
         },
         "title": {
             "render": "Sudut pandang"
-        }
+        },
+        "description": ""
     },
     "watermill": {
         "name": "Kincir Air"
@@ -394,6 +1568,3737 @@
                 "description": "Tambahkan stasiun ambulans ke peta",
                 "title": "Stasiun ambulans"
             }
+        },
+        "description": "",
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "",
+                "render": ""
+            },
+            "ambulance-name": {
+                "render": "",
+                "question": ""
+            },
+            "ambulance-place": {
+                "question": "",
+                "render": ""
+            },
+            "ambulance-street": {
+                "render": "",
+                "question": ""
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
         }
+    },
+    "bike_cafe": {
+        "tagRenderings": {
+            "bike_cafe-email": {
+                "question": ""
+            },
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_cafe-website": {
+                "question": ""
+            },
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_cafe-name": {
+                "question": "",
+                "render": ""
+            },
+            "bike_cafe-opening_hours": {
+                "question": ""
+            },
+            "bike_cafe-phone": {
+                "question": ""
+            },
+            "bike_cafe-repair-service": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": "",
+        "description": "",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        }
+    },
+    "bike_repair_station": {
+        "tagRenderings": {
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-bike-chain-tool": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-valves": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "bike_repair_station-available-services": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "access": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Email maintainer": {
+                "render": ""
+            },
+            "bike_repair_station-phone": {
+                "question": ""
+            },
+            "bike_repair_station-bike-stand": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "bike_repair_station-operator": {
+                "question": "",
+                "render": ""
+            },
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-email": {
+                "question": ""
+            },
+            "bike_repair_station-manometer": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_repair_station-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                },
+                "3": {
+                    "then": ""
+                },
+                "4": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "title": "",
+                "description": ""
+            },
+            "2": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "description": "",
+        "name": ""
+    },
+    "charging_station": {
+        "filter": {
+            "2": {
+                "options": {
+                    "7": {
+                        "question": ""
+                    },
+                    "6": {
+                        "question": ""
+                    },
+                    "9": {
+                        "question": ""
+                    },
+                    "13": {
+                        "question": ""
+                    },
+                    "14": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    },
+                    "8": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    },
+                    "10": {
+                        "question": ""
+                    },
+                    "15": {
+                        "question": ""
+                    },
+                    "16": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "11": {
+                        "question": ""
+                    },
+                    "12": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "plugs-14": {
+                "question": "",
+                "render": ""
+            },
+            "Auth phone": {
+                "render": "",
+                "question": ""
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "20": {
+                        "then": ""
+                    },
+                    "21": {
+                        "then": ""
+                    },
+                    "18": {
+                        "then": ""
+                    },
+                    "23": {
+                        "then": ""
+                    },
+                    "31": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "24": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "15": {
+                        "then": ""
+                    },
+                    "16": {
+                        "then": ""
+                    },
+                    "17": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "22": {
+                        "then": ""
+                    },
+                    "19": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "27": {
+                        "then": ""
+                    },
+                    "30": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "28": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "25": {
+                        "then": ""
+                    },
+                    "26": {
+                        "then": ""
+                    },
+                    "29": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Type": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "power-output-1": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "access": {
+                "question": "",
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "current-0": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "charge": {
+                "render": "",
+                "question": ""
+            },
+            "current-1": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "current-11": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "current-14": {
+                "question": "",
+                "render": ""
+            },
+            "current-2": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "current-6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "fee": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "plugs-1": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-15": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-2": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-4": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-5": {
+                "question": "",
+                "render": ""
+            },
+            "power-output-15": {
+                "render": "",
+                "question": ""
+            },
+            "power-output-6": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "power-output-7": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-9": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "questions": {
+                "render": ""
+            },
+            "ref": {
+                "render": "",
+                "question": ""
+            },
+            "voltage-0": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-1": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "voltage-10": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "voltage-11": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "voltage-12": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-13": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "voltage-14": {
+                "render": "",
+                "question": ""
+            },
+            "voltage-2": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "voltage-3": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-4": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "voltage-5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-6": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-7": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "voltage-8": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "website": {
+                "question": "",
+                "render": ""
+            },
+            "current-5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Authentication": {
+                "mappings": {
+                    "7": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Network": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "current-13": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "current-4": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "current-7": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "plugs-10": {
+                "question": "",
+                "render": ""
+            },
+            "plugs-6": {
+                "render": "",
+                "question": ""
+            },
+            "power-output-0": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "power-output-10": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "power-output-11": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-12": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "power-output-14": {
+                "question": "",
+                "render": ""
+            },
+            "power-output-4": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "power-output-3": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "power-output-5": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "voltage-9": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "capacity": {
+                "question": "",
+                "render": ""
+            },
+            "phone": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-9": {
+                "render": "",
+                "question": ""
+            },
+            "power-output-8": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "power-output-13": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "plugs-3": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-12": {
+                "question": "",
+                "render": ""
+            },
+            "current-9": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "plugs-0": {
+                "render": "",
+                "question": ""
+            },
+            "plugs-8": {
+                "render": "",
+                "question": ""
+            },
+            "current-15": {
+                "render": "",
+                "question": ""
+            },
+            "Operator": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "current-10": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "current-12": {
+                "render": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "plugs-13": {
+                "render": "",
+                "question": ""
+            },
+            "voltage-15": {
+                "render": "",
+                "question": ""
+            },
+            "current-8": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "plugs-7": {
+                "render": "",
+                "question": ""
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "current-3": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "plugs-11": {
+                "question": "",
+                "render": ""
+            },
+            "power-output-2": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "email": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "units": {
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    },
+                    "1": {
+                        "human": ""
+                    }
+                }
+            },
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "",
+                        "humanSingular": ""
+                    },
+                    "0": {
+                        "human": "",
+                        "humanSingular": ""
+                    },
+                    "2": {
+                        "human": "",
+                        "humanSingular": ""
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "description": "",
+        "presets": {
+            "0": {
+                "title": ""
+            },
+            "1": {
+                "title": ""
+            }
+        }
+    },
+    "toilet": {
+        "tagRenderings": {
+            "toilet-has-paper": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "toilet-access": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilets-type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilet-changing_table:location": {
+                "render": "",
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                }
+            },
+            "toilet-charge": {
+                "question": "",
+                "render": ""
+            },
+            "Opening-hours": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilets-changing-table": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "1": {
+                "description": "",
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "description": "",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        }
+    },
+    "crossings": {
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "crossing-bicycle-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-button": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "crossing-continue-through-red": {
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "name": "",
+        "description": "",
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            }
+        }
+    },
+    "birdhide": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "name": "",
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "bird-hide-wheelchair": {
+                "question": "",
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": ""
+    },
+    "cafe_pub": {
+        "description": "",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
+            },
+            "2": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Name": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "name": ""
+    },
+    "entrance": {
+        "title": {
+            "render": ""
+        },
+        "tagRenderings": {
+            "Door_type": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Entrance type": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "automatic_door": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "width": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "description": "",
+        "name": ""
+    },
+    "etymology": {
+        "name": "",
+        "tagRenderings": {
+            "simple etymology": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": ""
+            },
+            "wikipedia-etymology": {
+                "render": "",
+                "question": ""
+            },
+            "wikipedia": {
+                "render": ""
+            },
+            "etymology_multi_apply": {
+                "render": ""
+            },
+            "street-name-sign-image": {
+                "render": ""
+            }
+        },
+        "description": ""
+    },
+    "fire_station": {
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "name": "",
+        "tagRenderings": {
+            "station-agency": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "station-operator": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "station-name": {
+                "question": "",
+                "render": ""
+            },
+            "station-place": {
+                "question": "",
+                "render": ""
+            },
+            "station-street": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "food": {
+        "presets": {
+            "2": {
+                "description": "",
+                "title": ""
+            },
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "Cuisine": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "14": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Takeaway": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Vegetarian (no friture)": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "friture-oil": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "friture-take-your-container": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "halal (no friture)": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "friture-vegan": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "friture-vegetarian": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Name": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "filter": {
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": ""
+                },
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "description": ""
+    },
+    "map": {
+        "tagRenderings": {
+            "map-attribution": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "map-map_source": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": "",
+        "name": "",
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        }
+    },
+    "public_bookcase": {
+        "tagRenderings": {
+            "bookcase-booktypes": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                }
+            },
+            "public_bookcase-start_date": {
+                "render": "",
+                "question": ""
+            },
+            "public_bookcase-website": {
+                "render": "",
+                "question": ""
+            },
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "public_bookcase-brand": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "bookcase-is-indoors": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "public_bookcase-ref": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "public_bookcase-capacity": {
+                "question": "",
+                "render": ""
+            },
+            "public_bookcase-name": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "public_bookcase-operator": {
+                "render": "",
+                "question": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "description": "",
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "name": ""
+    },
+    "sport_pitch": {
+        "tagRenderings": {
+            "sport_pitch-surface": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "sport_pitch-sport": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "sport-pitch-access": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "sport_pitch-email": {
+                "question": ""
+            },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "sport-pitch-reservation": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                }
+            },
+            "sport_pitch-phone": {
+                "question": ""
+            }
+        },
+        "title": {
+            "render": ""
+        }
+    },
+    "street_lamps": {
+        "description": "",
+        "tagRenderings": {
+            "direction": {
+                "render": "",
+                "question": ""
+            },
+            "lamp_mount": {
+                "question": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "ref": {
+                "render": "",
+                "question": ""
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "colour": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "method": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "name": ""
+    },
+    "surveillance_camera": {
+        "description": "",
+        "tagRenderings": {
+            "Level": {
+                "render": "",
+                "question": ""
+            },
+            "Surveillance:zone": {
+                "question": "",
+                "mappings": {
+                    "5": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            },
+            "camera:mount": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "Camera type: fixed; panning; dome": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Operator": {
+                "question": "",
+                "render": ""
+            },
+            "camera_direction": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "1": {
+                "title": ""
+            },
+            "0": {
+                "title": ""
+            }
+        },
+        "title": {
+            "render": ""
+        }
+    },
+    "waste_basket": {
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    },
+                    "6": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": ""
+                        }
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": "",
+        "description": ""
+    },
+    "extinguisher": {
+        "description": "",
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "note": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "tagRenderings": {
+            "report-contributor": {
+                "render": ""
+            },
+            "report-note": {
+                "render": ""
+            }
+        }
+    },
+    "note_import": {
+        "name": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "observation_tower": {
+        "description": "",
+        "tagRenderings": {
+            "Fee": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "render": "",
+                "question": ""
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "Operator": {
+                "question": "",
+                "render": ""
+            },
+            "step_count": {
+                "question": "",
+                "render": ""
+            },
+            "Height": {
+                "render": "",
+                "question": ""
+            },
+            "elevator": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": ""
+                    }
+                }
+            }
+        },
+        "name": ""
+    },
+    "parking": {
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "pedestrian_path": {
+        "description": "",
+        "name": ""
+    },
+    "picnic_table": {
+        "description": "",
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "picnic_table-material": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "render": ""
+        }
+    },
+    "recycling": {
+        "filter": {
+            "1": {
+                "options": {
+                    "10": {
+                        "question": ""
+                    },
+                    "11": {
+                        "question": ""
+                    },
+                    "12": {
+                        "question": ""
+                    },
+                    "9": {
+                        "question": ""
+                    },
+                    "0": {
+                        "question": ""
+                    },
+                    "1": {
+                        "question": ""
+                    },
+                    "2": {
+                        "question": ""
+                    },
+                    "3": {
+                        "question": ""
+                    },
+                    "4": {
+                        "question": ""
+                    },
+                    "5": {
+                        "question": ""
+                    },
+                    "6": {
+                        "question": ""
+                    },
+                    "7": {
+                        "question": ""
+                    },
+                    "8": {
+                        "question": ""
+                    },
+                    "13": {
+                        "question": ""
+                    },
+                    "14": {
+                        "question": ""
+                    },
+                    "15": {
+                        "question": ""
+                    },
+                    "16": {
+                        "question": ""
+                    },
+                    "17": {
+                        "question": ""
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "recycling-accepts": {
+                "mappings": {
+                    "14": {
+                        "then": ""
+                    },
+                    "16": {
+                        "then": ""
+                    },
+                    "15": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "8": {
+                        "then": ""
+                    },
+                    "9": {
+                        "then": ""
+                    },
+                    "10": {
+                        "then": ""
+                    },
+                    "11": {
+                        "then": ""
+                    },
+                    "12": {
+                        "then": ""
+                    },
+                    "13": {
+                        "then": ""
+                    },
+                    "17": {
+                        "then": ""
+                    },
+                    "18": {
+                        "then": ""
+                    },
+                    "19": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "operator": {
+                "question": "",
+                "render": ""
+            },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "render": "",
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                },
+                "2": {
+                    "then": ""
+                }
+            }
+        },
+        "description": "",
+        "name": "",
+        "presets": {
+            "0": {
+                "title": ""
+            },
+            "1": {
+                "title": ""
+            }
+        }
+    },
+    "waste_disposal": {
+        "name": "",
+        "tagRenderings": {
+            "disposal-location": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "description": "",
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": ""
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": ""
+        }
+    },
+    "gps_track": {
+        "name": "",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": ""
+            }
+        }
+    },
+    "trail": {
+        "tagRenderings": {
+            "Color": {
+                "mappings": {
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "trail-length": {
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "name": ""
+    },
+    "direction": {
+        "name": "",
+        "description": ""
+    },
+    "information_board": {
+        "description": "",
+        "name": "",
+        "title": {
+            "render": ""
+        },
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        }
+    },
+    "barrier": {
+        "presets": {
+            "1": {
+                "title": "",
+                "description": ""
+            },
+            "0": {
+                "description": "",
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "3": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "MaxWidth": {
+                "render": "",
+                "question": ""
+            },
+            "Overlap (cyclebarrier)": {
+                "render": "",
+                "question": ""
+            },
+            "Space between barrier (cyclebarrier)": {
+                "render": "",
+                "question": ""
+            },
+            "Width of opening (cyclebarrier)": {
+                "render": "",
+                "question": ""
+            },
+            "barrier_type": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                },
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "name": "",
+        "description": ""
+    },
+    "bicycle_library": {
+        "tagRenderings": {
+            "bicycle_library-charge": {
+                "question": "",
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                }
+            },
+            "bicycle_library-name": {
+                "question": "",
+                "render": ""
+            },
+            "bicycle-library-target-group": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "description": "",
+        "title": {
+            "render": ""
+        },
+        "name": ""
+    },
+    "bicycle_tube_vending_machine": {
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": "",
+        "name": ""
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "slow_roads-surface": {
+                "mappings": {
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    },
+                    "6": {
+                        "then": ""
+                    },
+                    "7": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    }
+                },
+                "render": ""
+            }
+        },
+        "description": ""
+    },
+    "bike_cleaning": {
+        "presets": {
+            "0": {
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "render": "",
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            },
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            }
+        },
+        "name": "",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": ""
+    },
+    "bike_themed_object": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": ""
+    },
+    "binocular": {
+        "name": "",
+        "presets": {
+            "0": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "binocular-direction": {
+                "question": "",
+                "render": ""
+            }
+        },
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "grass_in_parks": {
+        "description": ""
+    },
+    "walls_and_buildings": {
+        "title": {
+            "render": ""
+        },
+        "description": ""
+    },
+    "village_green": {
+        "description": ""
+    },
+    "visitor_information_centre": {
+        "description": ""
+    },
+    "bicycle_rental": {
+        "presets": {
+            "0": {
+                "description": "",
+                "title": ""
+            },
+            "1": {
+                "title": ""
+            }
+        },
+        "tagRenderings": {
+            "8": {
+                "rewrite": {
+                    "into": {
+                        "3": {
+                            "1": ""
+                        },
+                        "4": {
+                            "1": ""
+                        },
+                        "5": {
+                            "1": ""
+                        },
+                        "0": {
+                            "1": ""
+                        },
+                        "1": {
+                            "1": ""
+                        },
+                        "2": {
+                            "1": ""
+                        }
+                    }
+                },
+                "renderings": {
+                    "0": {
+                        "question": "",
+                        "render": ""
+                    }
+                }
+            },
+            "bicycle-types": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    }
+                },
+                "question": "",
+                "render": ""
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    },
+                    "1": {
+                        "then": ""
+                    },
+                    "2": {
+                        "then": ""
+                    },
+                    "3": {
+                        "then": ""
+                    },
+                    "4": {
+                        "then": ""
+                    },
+                    "5": {
+                        "then": ""
+                    }
+                },
+                "question": ""
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": ""
+                }
+            },
+            "render": ""
+        },
+        "description": "",
+        "name": ""
     }
 }
