@@ -5,6 +5,7 @@ import {readFileSync, writeFileSync} from "fs";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import Constants from "../Models/Constants";
+import {Utils} from "../Utils";
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
@@ -118,6 +119,10 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
         }
         usedTags.push(...generateLayerUsage(layer, layout))
     }
+    
+    if(usedTags.length == 0){
+        return undefined
+    }
 
 
     let icon = layout.icon;
@@ -148,7 +153,7 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
 }
 
 // Write the URLS to the taginfo repository. Might fail if the repository is not checked ou
-function generateProjectsOverview() {
+function generateProjectsOverview(files: string[]) {
     try {
         const tagInfoList = "../taginfo-projects/project_list.txt"
         let projectList = readFileSync(tagInfoList, "UTF8")
@@ -169,17 +174,23 @@ function generateProjectsOverview() {
 }
 
 
+function main(){
+    
+
 console.log("Creating taginfo project files")
 
 Locale.language.setData("en")
 Translation.forcedLanguage = "en"
 
-const files = []
-
-for (const layout of AllKnownLayouts.layoutsList) {
-    if (layout.hideFromOverview) {
-        continue;
+    const files = []
+    
+    for (const layout of AllKnownLayouts.layoutsList) {
+        if (layout.hideFromOverview) {
+            continue;
+        }
+        files.push(generateTagInfoEntry(layout));
     }
-    files.push(generateTagInfoEntry(layout));
+    generateProjectsOverview(Utils.NoNull(files));
 }
-generateProjectsOverview();
+
+main()
