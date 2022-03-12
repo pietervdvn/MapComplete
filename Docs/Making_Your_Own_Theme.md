@@ -19,6 +19,11 @@ If you do not have those qualifications, reach out to the MapComplete community 
 on [Telegram](https://t.me/MapComplete)
 or [Matrix](https://app.element.io/#/room/#MapComplete:matrix.org).
 
+The template
+------------
+
+[A basic template is availalbe here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json)
+
 The custom theme generator
 --------------------------
 
