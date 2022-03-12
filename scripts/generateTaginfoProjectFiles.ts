@@ -159,7 +159,7 @@ function generateProjectsOverview(files: string[]) {
         let projectList = readFileSync(tagInfoList, "UTF8")
             .split("\n")
             .filter(entry => entry.indexOf("mapcomplete_") < 0)
-            .concat(files.map(f => `${f} https://raw.githubusercontent.com/pietervdvn/MapComplete/master/Docs/TagInfo/${f}.json`))
+            .concat(files.map(f => `${f} https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/TagInfo/${f}.json`))
             .sort()
             .filter(entry => entry != "")
 
