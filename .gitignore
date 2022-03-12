@@ -20,3 +20,4 @@ Svg.ts
 data/
 Folder.DotSettings.user
 index_*.ts
+.~lock.*
