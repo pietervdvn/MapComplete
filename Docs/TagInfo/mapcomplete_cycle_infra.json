@@ -718,11 +718,6 @@
       "key": "red_turn:straight:bicycle",
       "description": "Layer 'Crossings' shows red_turn:straight:bicycle=no with a fixed text, namely 'A cyclist can not go straight on if the light is red' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "no"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Bicycle infrastructure has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

@@ -1083,11 +1083,6 @@
     {
       "key": "capacity:cargo_bike",
       "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

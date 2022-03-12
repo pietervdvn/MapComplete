@@ -215,11 +215,6 @@
       "key": "material",
       "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "concrete"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Benches has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

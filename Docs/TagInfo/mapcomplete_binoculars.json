@@ -48,11 +48,6 @@
     {
       "key": "direction",
       "description": "Layer 'Binoculars' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Binoculars')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Binoculars has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

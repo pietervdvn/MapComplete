@@ -178,11 +178,6 @@
     {
       "key": "capacity:bicycle_pannier",
       "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Bicycle rental')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Bicycle rental has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

@@ -361,11 +361,6 @@
       "key": "dog",
       "description": "Layer 'Fries shop' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "unleashed"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Fries shops has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

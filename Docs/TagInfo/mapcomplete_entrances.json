@@ -218,11 +218,6 @@
     {
       "key": "width",
       "description": "Layer 'Entrance' shows and asks freeform values for key 'width' (in the MapComplete.osm.be theme 'Entrances')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Entrances has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

@@ -172,11 +172,6 @@
     {
       "key": "fixme",
       "description": "Layer 'Defibrillators' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Open AED Map')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open AED Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

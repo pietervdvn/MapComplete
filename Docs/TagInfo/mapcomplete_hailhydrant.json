@@ -270,11 +270,6 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Map of ambulance stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Ambulance stations. has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

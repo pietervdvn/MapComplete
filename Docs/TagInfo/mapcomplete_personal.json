@@ -2067,6 +2067,11 @@
     },
     {
       "key": "access",
+      "description": "Layer 'Charging stations' shows access=key with a fixed text, namely 'A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "key"
+    },
+    {
+      "key": "access",
       "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "private"
     },
@@ -3232,10 +3237,6 @@
       "key": "parking:fee",
       "description": "Layer 'Charging stations' shows parking:fee=yes with a fixed text, namely 'An additional parking fee should be paid while charging' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
-    },
-    {
-      "key": "HUISNR",
-      "description": "The MapComplete theme Personal theme has a layer CRAB-addressen showing features with this tag"
     },
     {
       "key": "highway",
@@ -5202,10 +5203,6 @@
       "key": "wikidata",
       "description": "Layer 'Nature reserve' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key wikidata.",
       "value": ""
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Personal theme has a layer Possible bookcases showing features with this tag"
     },
     {
       "key": "tower:type",
@@ -7330,11 +7327,6 @@
     {
       "key": "operator",
       "description": "Layer 'Watermill' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Personal theme has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

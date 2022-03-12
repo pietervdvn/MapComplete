@@ -143,11 +143,6 @@
     {
       "key": "website",
       "description": "Layer 'Bookcases' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open Bookcase Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

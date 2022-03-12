@@ -97,6 +97,11 @@
     },
     {
       "key": "access",
+      "description": "Layer 'Charging stations' shows access=key with a fixed text, namely 'A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "key"
+    },
+    {
+      "key": "access",
       "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "private"
     },
@@ -1262,11 +1267,6 @@
       "key": "parking:fee",
       "description": "Layer 'Charging stations' shows parking:fee=yes with a fixed text, namely 'An additional parking fee should be paid while charging' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "yes"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Charging stations has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

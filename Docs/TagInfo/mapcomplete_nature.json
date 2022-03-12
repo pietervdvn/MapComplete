@@ -790,11 +790,6 @@
     {
       "key": "description",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Into nature')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Into nature has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

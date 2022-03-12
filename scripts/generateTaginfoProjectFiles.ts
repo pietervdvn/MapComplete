@@ -4,6 +4,7 @@ import {Translation} from "../UI/i18n/Translation";
 import {readFileSync, writeFileSync} from "fs";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import Constants from "../Models/Constants";
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
@@ -109,6 +110,12 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 function generateTagInfoEntry(layout: LayoutConfig): any {
     const usedTags = []
     for (const layer of layout.layers) {
+        if(Constants.priviliged_layers.indexOf(layer.id) >= 0){
+            continue
+        }
+        if(layer.source.geojsonSource !== undefined && layer.source.isOsmCacheLayer !== true){
+            continue
+        }
         usedTags.push(...generateLayerUsage(layer, layout))
     }
 
@@ -117,19 +124,11 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
     if (icon.startsWith("./")) {
         icon = icon.substring(2)
     }
-    /*
-        const t = new Date();
-        const generationTime = t.getUTCFullYear() + Utils.TwoDigits(t.getUTCMonth()) + Utils.TwoDigits(t.getUTCDate()) + "T" + Utils.TwoDigits(t.getUTCHours()) + Utils.TwoDigits(t.getUTCMinutes()) + Utils.TwoDigits(t.getSeconds()) + "Z"
-    */
 
     const themeInfo = {
         // data format version, currently always 1, will get updated if there are incompatible changes to the format (required)
         "data_format": 1,
-
-        //  "data_url": "...",          # this should be the URL under which this project file can be accessed (optional)
-        // timestamp when project file was updated (optional, will use HTTP header date if not available)
-        // Not marked as not to pollute the github history
-        //"data_updated": generationTime,
+        // timestamp when project file was updated is not given as it pollutes the github history
         "project": {
             "name": "MapComplete " + layout.title.txt,          // name of the project (required)
             "description": layout.shortDescription.txt,   // short description of the project (required)

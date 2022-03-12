@@ -95,11 +95,6 @@
     {
       "key": "start_date",
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Hackerspaces')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Hackerspaces has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

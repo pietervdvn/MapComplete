@@ -98,11 +98,6 @@
       "key": "payment:cards",
       "description": "Layer 'Shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
       "value": "yes"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open Shop Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

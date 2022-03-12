@@ -259,11 +259,6 @@
     {
       "key": "cyclestreet:start_date",
       "description": "Layer 'All streets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Cyclestreets has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

@@ -165,11 +165,6 @@
     {
       "key": "wikidata",
       "description": "Layer 'Tree' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Trees')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Trees has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

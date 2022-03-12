@@ -310,11 +310,6 @@
       "key": "location",
       "description": "Layer 'Waste Disposal Bins' shows  with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key location.",
       "value": ""
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Waste has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }
