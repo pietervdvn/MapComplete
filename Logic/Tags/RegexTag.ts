@@ -43,10 +43,24 @@ export class RegexTag extends TagsFilter {
     }
 
     asOverpass(): string[] {
-        if (typeof this.key === "string") {
-            return [`["${this.key}"${this.invert ? "!" : ""}~"${RegexTag.source(this.value)}"]`];
+        const inv =this.invert ? "!" : ""
+        if (typeof this.key !== "string") {
+            // The key is a regex too
+            return [`[~"${this.key.source}"${inv}~"${RegexTag.source(this.value)}"]`];
         }
-        return [`[~"${this.key.source}"${this.invert ? "!" : ""}~"${RegexTag.source(this.value)}"]`];
+        
+        if(this.value instanceof RegExp){
+            const src =this.value.source
+            if(src === "^..*$"){
+                // anything goes
+                return [`[${inv}"${this.key}"]`]
+            }
+            return [`["${this.key}"${inv}~"${src}"]`]
+        }else{
+            // Normal key and normal value
+            return [`["${this.key}"${inv}="${this.value}"]`];
+        }
+        
     }
 
     isUsableAsAnswer(): boolean {
@@ -99,6 +113,10 @@ export class RegexTag extends TagsFilter {
         }
         throw "Key cannot be determined as it is a regex"
     }
+    
+    usedTags(): { key: string; value: string }[] {
+        return [];
+    }
 
     asChange(properties: any): { k: string; v: string }[] {
         if (this.invert) {
@@ -119,5 +137,9 @@ export class RegexTag extends TagsFilter {
 
     AsJson() {
         return this.asHumanString()
+    }
+    
+    optimize(): TagsFilter | boolean {
+        return this;
     }
 }

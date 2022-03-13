@@ -80,11 +80,22 @@ export class Tag extends TagsFilter {
         return [this.key];
     }
 
+    usedTags(): { key: string; value: string }[] {
+        if(this.value == ""){
+            return []
+        }
+        return [this]
+    }
+
     asChange(properties: any): { k: string; v: string }[] {
         return [{k: this.key, v: this.value}];
     }
 
     AsJson() {
         return this.asHumanString(false, false)
+    }
+    
+    optimize(): TagsFilter | boolean {
+        return this;
     }
 }

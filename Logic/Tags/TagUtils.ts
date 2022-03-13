@@ -8,8 +8,10 @@ import SubstitutingTag from "./SubstitutingTag";
 import {Or} from "./Or";
 import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import {isRegExp} from "util";
+import * as key_counts from "../../assets/key_totals.json"
 
 export class TagUtils {
+    private static keyCounts : {keys: any, tags: any} = key_counts["default"] ?? key_counts
     private static comparators
         : [string, (a: number, b: number) => boolean][]
         = [
@@ -174,6 +176,29 @@ export class TagUtils {
         }
     }
 
+    /**
+     * INLINE sort of the given list
+     */
+    public static sortFilters(filters: TagsFilter [], usePopularity: boolean): void {
+        filters.sort((a,b) => TagUtils.order(a, b, usePopularity))
+    }
+
+    public static toString(f: TagsFilter, toplevel = true): string {
+        let r: string
+        if (f instanceof Or) {
+            r = TagUtils.joinL(f.or, "|", toplevel)
+        } else if (f instanceof And) {
+            r = TagUtils.joinL(f.and, "&", toplevel)
+        } else {
+            r = f.asHumanString(false, false, {})
+        }
+        if(toplevel){
+            r = r.trim()
+        }
+        
+        return r
+    }
+
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
 
         if (json === undefined) {
@@ -285,10 +310,11 @@ export class TagUtils {
             throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
 
         }
-        
-        if(json.and !== undefined && json.or !== undefined){
-            throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`}
-        
+
+        if (json.and !== undefined && json.or !== undefined) {
+            throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
+        }
+
         if (json.and !== undefined) {
             return new And(json.and.map(t => TagUtils.Tag(t, context)));
         }
@@ -296,4 +322,56 @@ export class TagUtils {
             return new Or(json.or.map(t => TagUtils.Tag(t, context)));
         }
     }
+
+    private static GetCount(key: string, value?: string) {
+        if(key === undefined) {
+            return undefined
+        }
+        const tag = TagUtils.keyCounts.tags[key]
+        if(tag !== undefined && tag[value] !== undefined) {
+            return tag[value]
+        }
+        return TagUtils.keyCounts.keys[key]
+    }
+    
+    private static order(a: TagsFilter, b: TagsFilter, usePopularity: boolean): number {
+        const rta = a instanceof RegexTag
+        const rtb = b instanceof RegexTag
+        if(rta !== rtb) {
+            // Regex tags should always go at the end: these use a lot of computation at the overpass side, avoiding it is better
+            if(rta) {
+                return 1 // b < a
+            }else {
+                return -1
+            }
+        }
+        if (a["key"] !== undefined && b["key"] !== undefined) {
+            if(usePopularity) {
+                const countA = TagUtils.GetCount(a["key"], a["value"])
+                const countB = TagUtils.GetCount(b["key"], b["value"])
+                if(countA !== undefined && countB !== undefined) {
+                    return countA - countB
+                }
+            }
+
+            if (a["key"] === b["key"]) {
+                return 0
+            }
+            if (a["key"] < b["key"]) {
+                return -1
+            }
+            return 1
+        }
+
+        return 0
+    }
+
+    private static joinL(tfs: TagsFilter[], seperator: string, toplevel: boolean) {
+        const joined = tfs.map(e => TagUtils.toString(e, false)).join(seperator)
+        if (toplevel) {
+            return joined
+        }
+        return " (" + joined + ") "
+    }
+    
 }

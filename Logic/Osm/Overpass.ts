@@ -25,7 +25,12 @@ export class Overpass {
                 includeMeta = true) {
         this._timeout = timeout;
         this._interpreterUrl = interpreterUrl;
-        this._filter = filter
+        const optimized = filter.optimize()
+        if(optimized === true || optimized === false){
+            throw "Invalid filter: optimizes to true of false"
+        }
+        this._filter = optimized
+        console.log("Overpass filter is",this._filter)
         this._extraScripts = extraScripts;
         this._includeMeta = includeMeta;
         this._relationTracker = relationTracker

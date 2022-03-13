@@ -38,9 +38,16 @@ export default class ComparingTag implements TagsFilter {
     usedKeys(): string[] {
         return [this._key];
     }
+    
+    usedTags(): { key: string; value: string }[] {
+        return [];
+    }
 
     AsJson() {
         return this.asHumanString(false, false, {})
     }
 
+    optimize(): TagsFilter | boolean {
+        return this;
+    }
 }

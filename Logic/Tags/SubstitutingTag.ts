@@ -59,6 +59,10 @@ export default class SubstitutingTag implements TagsFilter {
         return [this._key];
     }
 
+    usedTags(): { key: string; value: string }[] {
+        return []
+    }
+
     asChange(properties: any): { k: string; v: string }[] {
         if (this._invert) {
             throw "An inverted substituting tag can not be used to create a change"
@@ -72,5 +76,9 @@ export default class SubstitutingTag implements TagsFilter {
 
     AsJson() {
         return this._key + (this._invert ? '!' : '') + "=" + this._value
+    }
+    
+    optimize(): TagsFilter | boolean {
+        return this;
     }
 }

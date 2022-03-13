@@ -1,0 +1,229 @@
+{
+  "keys": {
+    "addr:street": 117211930,
+    "addr:housenumber": 125040768,
+    "emergency": 1939478,
+    "barrier": 18424246,
+    "tourism": 2683525,
+    "amenity": 20541353,
+    "bench": 894256,
+    "rental": 8838,
+    "bicycle_rental": 7447,
+    "vending": 206755,
+    "service:bicycle:rental": 3570,
+    "pub": 316,
+    "theme": 426,
+    "service:bicycle:.*": 0,
+    "service:bicycle:cleaning": 807,
+    "shop": 5062252,
+    "service:bicycle:retail": 9162,
+    "network": 2181336,
+    "sport": 2194801,
+    "service:bicycle:repair": 11381,
+    "association": 369,
+    "ngo": 42,
+    "leisure": 7368076,
+    "club": 38429,
+    "disused:amenity": 40880,
+    "planned:amenity": 205,
+    "tileId": 0,
+    "construction:amenity": 1206,
+    "cycleway": 906487,
+    "highway": 218189453,
+    "bicycle": 6218071,
+    "cyclestreet": 8185,
+    "camera:direction": 40676,
+    "direction": 1896015,
+    "access": 16030036,
+    "entrance": 2954076,
+    "name:etymology": 24485,
+    "memorial": 132172,
+    "indoor": 353116,
+    "name:etymology:wikidata": 285224,
+    "landuse": 35524214,
+    "name": 88330405,
+    "protect_class": 73801,
+    "information": 831513,
+    "man_made": 5116088,
+    "boundary": 2142378,
+    "tower:type": 451658,
+    "playground": 109175,
+    "route": 939184,
+    "surveillance:type": 116760,
+    "natural": 52353504,
+    "building": 500469053
+  },
+  "tags": {
+    "emergency": {
+      "defibrillator": 51273,
+      "ambulance_station": 11047,
+      "fire_extinguisher": 7355,
+      "fire_hydrant": 1598739
+    },
+    "barrier": {
+      "cycle_barrier": 104166,
+      "bollard": 502220,
+      "wall": 3535056
+    },
+    "tourism": {
+      "artwork": 187470,
+      "map": 51,
+      "viewpoint": 191765
+    },
+    "amenity": {
+      "bench": 1736979,
+      "bicycle_library": 36,
+      "bicycle_rental": 49082,
+      "vending_machine": 201871,
+      "bar": 199662,
+      "pub": 174979,
+      "cafe": 467521,
+      "restaurant": 1211671,
+      "bicycle_wash": 44,
+      "bike_wash": 0,
+      "bicycle_repair_station": 9247,
+      "bicycle_parking": 435959,
+      "binoculars": 479,
+      "biergarten": 10309,
+      "charging_station": 65402,
+      "drinking_water": 250463,
+      "fast_food": 460079,
+      "fire_station": 122200,
+      "parking": 4255206,
+      "public_bookcase": 13120,
+      "toilets": 350648,
+      "recycling": 333925,
+      "waste_basket": 550357,
+      "waste_disposal": 156765
+    },
+    "bench": {
+      "stand_up_bench": 87,
+      "yes": 524993
+    },
+    "service:bicycle:rental": {
+      "yes": 3054
+    },
+    "pub": {
+      "cycling": 9,
+      "bicycle": 0
+    },
+    "theme": {
+      "cycling": 8,
+      "bicycle": 16
+    },
+    "service:bicycle:cleaning": {
+      "yes": 607,
+      "diy": 0
+    },
+    "shop": {
+      "bicycle": 46488,
+      "sports": 37024
+    },
+    "sport": {
+      "cycling": 6045,
+      "bicycle": 96
+    },
+    "association": {
+      "cycling": 5,
+      "bicycle": 20
+    },
+    "ngo": {
+      "cycling": 0,
+      "bicycle": 0
+    },
+    "leisure": {
+      "bird_hide": 5669,
+      "nature_reserve": 117016,
+      "picnic_table": 206322,
+      "pitch": 1990293,
+      "playground": 705102
+    },
+    "club": {
+      "cycling": 3,
+      "bicycle": 49
+    },
+    "disused:amenity": {
+      "charging_station": 164
+    },
+    "planned:amenity": {
+      "charging_station": 115
+    },
+    "construction:amenity": {
+      "charging_station": 221
+    },
+    "cycleway": {
+      "lane": 314576,
+      "track": 86541,
+      "shared_lane": 60824
+    },
+    "highway": {
+      "residential": 61321708,
+      "crossing": 6119521,
+      "cycleway": 1423789,
+      "traffic_signals": 1512639,
+      "tertiary": 7051727,
+      "unclassified": 15756878,
+      "secondary": 4486617,
+      "primary": 3110552,
+      "footway": 16496620,
+      "path": 11438303,
+      "steps": 1327396,
+      "corridor": 27051,
+      "pedestrian": 685989,
+      "bridleway": 102280,
+      "track": 22670967,
+      "living_street": 1519108,
+      "street_lamp": 2811705
+    },
+    "bicycle": {
+      "designated": 1110839
+    },
+    "cyclestreet": {
+      "yes": 8164
+    },
+    "access": {
+      "public": 6222,
+      "yes": 1363526
+    },
+    "memorial": {
+      "ghost_bike": 503
+    },
+    "indoor": {
+      "door": 9722
+    },
+    "landuse": {
+      "grass": 4898559,
+      "village_green": 104681
+    },
+    "name": {
+      "Park Oude God": 1
+    },
+    "information": {
+      "board": 242007,
+      "map": 85912,
+      "office": 24139,
+      "visitor_centre": 285
+    },
+    "man_made": {
+      "surveillance": 148172,
+      "watermill": 9699
+    },
+    "boundary": {
+      "protected_area": 97075
+    },
+    "tower:type": {
+      "observation": 19654
+    },
+    "playground": {
+      "forest": 56
+    },
+    "surveillance:type": {
+      "camera": 112963,
+      "ALPR": 2522,
+      "ANPR": 3
+    },
+    "natural": {
+      "tree": 18245059
+    }
+  }
+}

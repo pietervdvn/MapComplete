@@ -9,6 +9,9 @@ import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {TagUtils} from "../Logic/Tags/TagUtils";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import {TagsFilter} from "../Logic/Tags/TagsFilter";
+import {Or} from "../Logic/Tags/Or";
+import {RegexTag} from "../Logic/Tags/RegexTag";
 
 export default class TagSpec extends T {
 
@@ -21,6 +24,133 @@ export default class TagSpec extends T {
                 equal(tr.txt, "Test value abc");
 
             }],
+            ["Optimize tags", () => {
+
+                let t : TagsFilter= new And(
+                    [
+                        new And([
+                            new Tag("x", "y")
+                        ]),
+                        new Tag("a", "b")
+                    ]
+                )
+                let opt =<TagsFilter> t.optimize()
+                console.log(TagUtils.toString(opt))
+                T.equals(`a=b&x=y`,TagUtils.toString(opt), "Optimization failed")
+
+
+                // foo&bar & (x=y | a=b) & (x=y | c=d) & foo=bar is equivalent too foo=bar & ((x=y) | (a=b & c=d))
+                t = new And([
+                            new Tag("foo","bar"),
+                            new Or([
+                                new Tag("x", "y"),
+                                new Tag("a", "b")
+                            ]),
+                            new Or([
+                                new Tag("x", "y"),
+                                new Tag("c", "d")
+                            ])
+                        ])
+                opt =<TagsFilter> t.optimize()
+                console.log(TagUtils.toString(opt))
+                T.equals(TagUtils.toString(opt), "foo=bar& (x=y| (a=b&c=d) )")
+
+                t = new Or([
+                    new Tag("foo","bar"),
+                    new And([
+                        new Tag("foo", "bar"),
+                        new Tag("x", "y"),
+                    ])
+                ])
+                opt =<TagsFilter> t.optimize()
+                console.log(TagUtils.toString(opt))
+                T.equals("foo=bar", TagUtils.toString(opt), "Optimizing away an unneeded factor failed")
+
+                
+                t = new And([
+                    new RegexTag("x","y"),
+                    new Tag("a","b")
+                ])
+                opt =<TagsFilter> t.optimize()
+                T.equals("a=b&x~^y$", TagUtils.toString(opt), "Regexes go to the end")
+
+                t = new And([
+                    new Tag("bicycle","yes"),
+                    new Tag("amenity","binoculars")
+                ])
+                opt =<TagsFilter> t.optimize()
+                T.equals("amenity=binoculars&bicycle=yes", TagUtils.toString(opt), "Common keys go to the end")
+                
+
+
+
+                const filter = TagUtils.Tag(  {or:   [
+                    {
+                        "and": [
+                            {
+                                "or": ["amenity=charging_station","disused:amenity=charging_station","planned:amenity=charging_station","construction:amenity=charging_station"]
+                            },
+                            "bicycle=yes"
+                        ]
+                    },
+                       {
+                           "and": [
+                               {
+                                   "or": ["amenity=charging_station","disused:amenity=charging_station","planned:amenity=charging_station","construction:amenity=charging_station"]
+                               },
+                           ]
+                       },
+                       "amenity=toilets",
+                       "amenity=bench",
+                       "leisure=picnic_table",
+                        {
+                            "and": [
+                                "tower:type=observation"
+                            ]
+                        },
+                        {
+                            "and": [
+                                "amenity=bicycle_repair_station"
+                            ]
+                        },
+                        {
+                            "and": [
+                                {
+                                    "or": [
+                                        "amenity=bicycle_rental",
+                                        "bicycle_rental~*",
+                                        "service:bicycle:rental=yes",
+                                        "rental~.*bicycle.*"
+                                    ]
+                                },
+                                "bicycle_rental!=docking_station"
+                            ]
+                        },
+                        {
+                            "and": [
+                                "leisure=playground",
+                                "playground!=forest"
+                            ]
+                        }
+                    ]});
+                   
+                opt = <TagsFilter> filter.optimize()
+                console.log(TagUtils.toString(opt))
+                T.equals(("amenity=charging_station|" +
+                    "amenity=toilets|" +
+                    "amenity=bench|" +
+                    "amenity=bicycle_repair_station" +
+                    "|construction:amenity=charging_station|" +
+                    "disused:amenity=charging_station|" +
+                    "leisure=picnic_table|" +
+                    "planned:amenity=charging_station|" +
+                    "tower:type=observation| " +
+                    "( (amenity=bicycle_rental|service:bicycle:rental=yes|bicycle_rental~^..*$|rental~^.*bicycle.*$) &bicycle_rental!~^docking_station$) |" +
+                    " (leisure=playground&playground!~^forest$)").replace(/ /g, ""),
+                    TagUtils.toString(opt).replace(/ /g, ""), "Advanced case failed")
+        }],
+
+
             ["Parse tag config", (() => {
                 const tag = TagUtils.Tag("key=value") as Tag;
                 equal(tag.key, "key");
@@ -216,6 +346,17 @@ export default class TagSpec extends T {
                     const overpassOrInor = TagUtils.Tag(orInOr).asOverpass()
                     equal(3, overpassOrInor.length)
                 }
+            ],
+            [
+                "Test regex to overpass",() => {
+                /*(Specifiation to parse, expected value for new RegexTag(spec).asOverpass()[0]) */
+                [["a~*", `"a"`],
+                ["a~[xyz]",`"a"~"^[xyz]$"`]].forEach(([spec, expected]) =>{
+                    T.equals(`[${expected}]`, TagUtils.Tag(
+                        spec
+                    ).asOverpass()[0], "RegexRendering failed")
+                } )
+            }
             ],
             [
                 "Merge touching opening hours",

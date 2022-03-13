@@ -20,11 +20,11 @@ export default class T {
         }
     }
 
-    static equals(a, b, msg?) {
-        if (a !== b) {
+    static equals(expected, got, msg?) {
+        if (expected !== got) {
             throw "Not the same: " + (msg ?? "") + "\n" +
-            "Expcected: " + a + "\n" +
-            "Got      : " + b
+            "Expected: " + expected + "\n" +
+            "Got     : " + got
         }
     }
 
@@ -45,7 +45,7 @@ export default class T {
             throw `ListIdentical failed: expected a list of length ${expected.length} but got a list of length ${actual.length}`
         }
         for (let i = 0; i < expected.length; i++) {
-            if (expected[i] !== undefined && expected[i]["length"] !== undefined) {
+            if (Array.isArray(expected[i])) {
                 T.listIdentical(<any>expected[i], <any>actual[i])
             } else if (expected[i] !== actual[i]) {
                 throw `ListIdentical failed at index ${i}: expected ${expected[i]} but got ${actual[i]}`

@@ -1,4 +1,6 @@
 import {TagsFilter} from "./TagsFilter";
+import {TagUtils} from "./TagUtils";
+import {And} from "./And";
 
 
 export class Or extends TagsFilter {
@@ -58,6 +60,10 @@ export class Or extends TagsFilter {
         return [].concat(...this.or.map(subkeys => subkeys.usedKeys()));
     }
 
+    usedTags(): { key: string; value: string }[] {
+        return [].concat(...this.or.map(subkeys => subkeys.usedTags()));
+    }
+
     asChange(properties: any): { k: string; v: string }[] {
         const result = []
         for (const tagsFilter of this.or) {
@@ -70,6 +76,83 @@ export class Or extends TagsFilter {
         return {
             or: this.or.map(o => o.AsJson())
         }
+    }
+
+    optimize(): TagsFilter | boolean {
+        
+        if(this.or.length === 0){
+            return false;
+        }
+        
+        const optimized = this.or.map(t => t.optimize())
+
+        const newOrs : TagsFilter[] = []
+
+        let containedAnds : And[] = []
+        for (const tf of optimized) {
+            if(tf === true){
+                return true
+            }
+            if(tf === false){
+                continue
+            }
+
+            if(tf instanceof Or){
+                newOrs.push(...tf.or)
+            }else if(tf instanceof And){
+                containedAnds.push(tf)
+            } else {
+                newOrs.push(tf)
+            }
+        }
+        
+        containedAnds = containedAnds.filter(ca => {
+            for (const element of ca.and) {
+                if(optimized.some(opt => typeof opt !== "boolean" && element.isEquivalent(opt) )){
+                    // At least one part of the 'AND' is matched by the outer or, so this means that this OR isn't needed at all
+                    // XY | (XY & AB) === XY
+                    return false
+                }
+            }
+            return true;
+        })
+
+        // Extract common keys from the ANDS
+        if(containedAnds.length === 1){
+            newOrs.push(containedAnds[0])
+        } else if(containedAnds.length > 1){
+            let commonValues : TagsFilter [] = containedAnds[0].and
+            for (let i = 1; i < containedAnds.length && commonValues.length > 0; i++){
+                const containedAnd = containedAnds[i];
+                commonValues = commonValues.filter(cv => containedAnd.and.some(candidate => candidate.isEquivalent(cv)))
+            }
+            if(commonValues.length === 0){
+                newOrs.push(...containedAnds)
+            }else{
+                const newAnds: TagsFilter[] = []
+                for (const containedAnd of containedAnds) {
+                    const elements = containedAnd.and.filter(candidate => !commonValues.some(cv => cv.isEquivalent(candidate)))
+                    newAnds.push(new And(elements))
+                }
+
+                commonValues.push(new Or(newAnds))
+                const result = new And(commonValues).optimize()
+                if(result === true){
+                    return true
+                }else if(result === false){
+                    // neutral element: skip
+                }else{
+                    newOrs.push(new And(commonValues))
+                }
+            }
+        }
+
+        if(newOrs.length === 1){
+            return newOrs[0]
+        }
+        TagUtils.sortFilters(newOrs, false)
+
+        return new Or(newOrs)
     }
 }
 
