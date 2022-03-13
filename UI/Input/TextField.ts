@@ -13,7 +13,7 @@ export class TextField extends InputElement<string> {
     constructor(options?: {
         placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
-        htmlType?: string,
+        htmlType?: "area" | "field",
         inputMode?: string,
         label?: BaseUIElement,
         textAreaRows?: number,

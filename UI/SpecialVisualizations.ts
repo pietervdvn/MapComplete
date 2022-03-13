@@ -39,14 +39,13 @@ import * as left_right_style_json from "../assets/layers/left_right_style/left_r
 import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
 import Toggle from "./Input/Toggle";
 import Img from "./Base/Img";
-import ValidatedTextField from "./Input/ValidatedTextField";
 import NoteCommentElement from "./Popup/NoteCommentElement";
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
 import FileSelectorButton from "./Input/FileSelectorButton";
 import {LoginToggle} from "./Popup/LoginButton";
 import {start} from "repl";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
-import {Feature} from "@turf/turf";
+import {TextField} from "./Input/TextField";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -752,7 +751,14 @@ export default class SpecialVisualizations {
                     constr: (state, tags, args) => {
 
                         const t = Translations.t.notes;
-                        const textField = ValidatedTextField.ForType("text").ConstructInputElement({placeholder: t.addCommentPlaceholder})
+                        const textField = new TextField(
+                            {
+                                placeholder: t.addCommentPlaceholder,
+                            inputStyle: "width: 100%; height: 6rem;",
+                                textAreaRows: 3,
+                                htmlType: "area"
+                            }
+                        )
                         textField.SetClass("rounded-l border border-grey")
                         const txt = textField.GetValue()
 
@@ -810,8 +816,11 @@ export default class SpecialVisualizations {
                                 new Title("Add a comment"),
                                 textField,
                                 new Combine([
-                                    new Toggle(addCommentButton, undefined, textField.GetValue().map(t => t !== undefined && t.length > 1)).SetClass("mr-2")
-                                    , stateButtons]).SetClass("flex justify-end")
+                                    stateButtons.SetClass("sm:mr-2"),
+                                    new Toggle(addCommentButton, 
+                                        new Combine([t.typeText]).SetClass("flex items-center h-full subtle"),
+                                        textField.GetValue().map(t => t !== undefined && t.length >= 1)).SetClass("sm:mr-2")
+                                ]).SetClass("sm:flex sm:justify-between sm:items-stretch")
                             ]).SetClass("border-2 border-black rounded-xl p-4 block"),
                             t.loginToAddComment, state)
                     }
@@ -896,7 +905,7 @@ export default class SpecialVisualizations {
                     args: [],
                     docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                     example: "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                    constr: (state, tagsSource, args, guistate) =>
+                    constr: (state, tagsSource) =>
                         new VariableUiElement(tagsSource.map(tags => {
                             const layer = state.layoutToUse.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)

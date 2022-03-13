@@ -98,11 +98,13 @@ export class TextFieldDef {
         } else {
             options["isValid"] = str => self.isValid(str, options.country);
         }
+        options["cssText"] = "width: 100%;"
 
 
         options["inputMode"] = this.inputmode;
         if (this.inputmode === "text") {
             options["htmlType"] = "area"
+            options["textAreaRows"] = 4
         }
 
 

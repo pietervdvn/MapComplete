@@ -13,8 +13,12 @@
                 },
                 "2": {
                     "then": "Anjing diperbolehkan, tetapi mereka harus diikat"
+                },
+                "3": {
+                    "then": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas"
                 }
-            }
+            },
+            "question": "Apakah anjing diperbolehkan dalam bisnis ini?"
         },
         "email": {
             "question": "Apa alamat surel dari {title()}?"

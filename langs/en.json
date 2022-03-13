@@ -369,6 +369,7 @@
         "isCreated": "Your note has been created!",
         "loginToAddComment": "Login to add a comment",
         "loginToAddPicture": "Login to add a picture",
+        "typeText": "Type some text to add a comment",
         "loginToClose": "Login to close this note",
         "noteIsPublic": "This will be visible to everyone",
         "noteLayerDoEnable": "Enable the layer showing notes",
