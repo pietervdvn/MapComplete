@@ -1633,9 +1633,24 @@
       },
       "properties": {
         "check_user": null,
-        "reasons": [],
+        "reasons": [
+          {
+            "id": 489,
+            "name": "Mapbox: Spam text"
+          }
+        ],
         "tags": [],
-        "features": [],
+        "features": [
+          {
+            "url": "node-9461327137",
+            "note": "Spam text reported in [\"name\"] tags in the feature",
+            "osm_id": 9461327137,
+            "reasons": [
+              489
+            ],
+            "version": 1
+          }
+        ],
         "user": "nickinparadise",
         "uid": "2049708",
         "editor": "MapComplete 0.15.1",
@@ -1649,7 +1664,7 @@
         "modify": 0,
         "delete": 0,
         "area": 0,
-        "is_suspect": false,
+        "is_suspect": true,
         "harmful": null,
         "checked": false,
         "check_date": null,
@@ -8554,7 +8569,7 @@
         "uid": "12128135",
         "editor": "MapComplete 0.14.1",
         "comment": "Adding data with #MapComplete for theme #toerisme_vlaanderen",
-        "comments_count": 0,
+        "comments_count": 1,
         "source": "survey",
         "imagery_used": "Not reported",
         "date": "2022-01-23T14:25:12Z",
@@ -8563,7 +8578,7 @@
         "modify": 7,
         "delete": 1,
         "area": 0.00000264645007000264,
-        "is_suspect": true,
+        "is_suspect": false,
         "harmful": null,
         "checked": false,
         "check_date": null,
@@ -18493,10 +18508,27 @@
           {
             "id": 4,
             "name": "mass modification"
+          },
+          {
+            "id": 91,
+            "name": "Motorway/trunk geometry modified"
           }
         ],
         "tags": [],
-        "features": [],
+        "features": [
+          {
+            "url": "way-196714838",
+            "name": "Boulevard Louis Pasteur",
+            "osm_id": 196714838,
+            "reasons": [
+              91
+            ],
+            "version": 6,
+            "primary_tags": {
+              "highway": "trunk"
+            }
+          }
+        ],
         "user": "whatismoss",
         "uid": "8427311",
         "editor": "MapComplete 0.13.1",

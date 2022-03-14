@@ -707,16 +707,25 @@ async function main(): Promise<void>{
         mkdirSync("graphs")
     }
     
-    await new StatsDownloader("stats").DownloadStats()
+    if(process.argv.indexOf("--no-download") < 0){
+        await new StatsDownloader("stats").DownloadStats()
+    }
     const allPaths = readdirSync("stats")
         .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
     let allFeatures: ChangeSetData[] = [].concat(...allPaths
-        .map(path => JSON.parse(readFileSync("stats/" + path, "utf-8")).features
+                .map(path => JSON.parse(readFileSync("stats/" + path, "utf-8")).features
             .map(cs => ChangesetDataTools.cleanChangesetData(cs))));
+    allFeatures = allFeatures.filter(f => f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete"))
 
     const emptyCS = allFeatures.filter(f => f.properties.metadata.theme === "EMPTY CS")
     allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
+    
+    const noEditor = allFeatures.filter(f => f.properties.editor === null).map(f =>"https://www.osm.org/changeset/"+ f.id)
+    writeFileSync("missing_editor.json", JSON.stringify(noEditor, null, "  "));
 
+    if(process.argv.indexOf("--no-graphs") >= 0){
+       return
+    }
     createMiscGraphs(allFeatures, emptyCS)
     createGraphs(allFeatures, "")
     // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")

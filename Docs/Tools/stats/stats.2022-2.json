@@ -6070,6 +6070,72 @@
       }
     },
     {
+      "id": 117826283,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.637074,
+              51.0559106
+            ],
+            [
+              5.637074,
+              51.0559106
+            ],
+            [
+              5.637074,
+              51.0559106
+            ],
+            [
+              5.637074,
+              51.0559106
+            ],
+            [
+              5.637074,
+              51.0559106
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 41,
+            "name": "Software editor was not declared"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "kersentaart",
+        "uid": "9812520",
+        "editor": null,
+        "comment": "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2022-02-24T20:11:06Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "theme": "toerisme_vlaanderen",
+          "answer": 5,
+          "import": 1,
+          "import:node/9533221527": "source: https://osm.org/note/3044350"
+        },
+        "id": 117826283
+      }
+    },
+    {
       "id": 117821852,
       "type": "Feature",
       "geometry": {
@@ -8557,6 +8623,77 @@
           "change_within_5000m": 10
         },
         "id": 117743877
+      }
+    },
+    {
+      "id": 117742017,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.5572219,
+              51.1897337
+            ],
+            [
+              5.5625289,
+              51.1897337
+            ],
+            [
+              5.5625289,
+              51.1989127
+            ],
+            [
+              5.5572219,
+              51.1989127
+            ],
+            [
+              5.5572219,
+              51.1897337
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          },
+          {
+            "id": 41,
+            "name": "Software editor was not declared"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "RobbieRob F",
+        "uid": "14946603",
+        "editor": null,
+        "comment": "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2022-02-22T19:44:51Z",
+        "reviewed_features": [],
+        "create": 3,
+        "modify": 0,
+        "delete": 0,
+        "area": 0.0000487129530000183,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "theme": "toerisme_vlaanderen",
+          "import": 3,
+          "import:node/9528129922": "source: https://osm.org/note/3044427",
+          "import:node/9528149205": "source: https://osm.org/note/3044255",
+          "import:node/9528150239": "source: https://osm.org/note/3044228"
+        },
+        "id": 117742017
       }
     },
     {
@@ -17739,6 +17876,74 @@
           "change_over_5000m": 2
         },
         "id": 117522251
+      }
+    },
+    {
+      "id": 117522028,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.2323273,
+              51.1000423
+            ],
+            [
+              4.2323273,
+              51.1000423
+            ],
+            [
+              4.2323273,
+              51.1000423
+            ],
+            [
+              4.2323273,
+              51.1000423
+            ],
+            [
+              4.2323273,
+              51.1000423
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 41,
+            "name": "Software editor was not declared"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "Pieter Vander Vennet",
+        "uid": "3818858",
+        "editor": null,
+        "comment": "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2022-02-17T13:36:16Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 0,
+        "delete": 1,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "theme": "toerisme_vlaanderen",
+          "import": 1,
+          "deletion": 1,
+          "change_over_5000m": 2,
+          "import:node/9513916030": "source: https://osm.org/note/3023056",
+          "deletion:node/9513916030": "testing point"
+        },
+        "id": 117522028
       }
     },
     {
@@ -29353,6 +29558,72 @@
       }
     },
     {
+      "id": 117287043,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.6461941,
+              42.9169099
+            ],
+            [
+              1.646608,
+              42.9169099
+            ],
+            [
+              1.646608,
+              42.9171661
+            ],
+            [
+              1.6461941,
+              42.9171661
+            ],
+            [
+              1.6461941,
+              42.9169099
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "rejbzh",
+        "uid": "15051154",
+        "editor": "iD 2.20.4",
+        "comment": "Adding data with #MapComplete for theme #surveillance",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "BDOrtho IGN",
+        "date": "2022-02-11T12:54:27Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 1.06041180001093e-7,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "https://www.openstreetmap.org/edit",
+          "locale": "fr",
+          "hashtags": "#MapComplete;#surveillance",
+          "changesets_count": 7
+        },
+        "id": 117287043
+      }
+    },
+    {
       "id": 117286674,
       "type": "Feature",
       "geometry": {
@@ -30621,6 +30892,72 @@
       }
     },
     {
+      "id": 117256030,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.6573136,
+              42.9146837
+            ],
+            [
+              1.6716781,
+              42.9146837
+            ],
+            [
+              1.6716781,
+              42.917024
+            ],
+            [
+              1.6573136,
+              42.917024
+            ],
+            [
+              1.6573136,
+              42.9146837
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "rejbzh",
+        "uid": "15051154",
+        "editor": "iD 2.20.4",
+        "comment": "Adding data with #MapComplete for theme #surveillance",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "BDOrtho IGN",
+        "date": "2022-02-10T17:42:34Z",
+        "reviewed_features": [],
+        "create": 0,
+        "modify": 2,
+        "delete": 0,
+        "area": 0.0000336172393500029,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "https://www.openstreetmap.org/edit",
+          "locale": "fr",
+          "hashtags": "#MapComplete;#surveillance",
+          "changesets_count": 6
+        },
+        "id": 117256030
+      }
+    },
+    {
       "id": 117254536,
       "type": "Feature",
       "geometry": {
@@ -30680,6 +31017,72 @@
           "imagery": "osm"
         },
         "id": 117254536
+      }
+    },
+    {
+      "id": 117253731,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.6402526,
+              42.9134642
+            ],
+            [
+              1.6656386,
+              42.9134642
+            ],
+            [
+              1.6656386,
+              42.9188424
+            ],
+            [
+              1.6402526,
+              42.9188424
+            ],
+            [
+              1.6402526,
+              42.9134642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "rejbzh",
+        "uid": "15051154",
+        "editor": "iD 2.20.4",
+        "comment": "Adding data with #MapComplete for theme #surveillance",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "BDOrtho IGN",
+        "date": "2022-02-10T16:38:38Z",
+        "reviewed_features": [],
+        "create": 8,
+        "modify": 4,
+        "delete": 3,
+        "area": 0.000136530985200068,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "host": "https://www.openstreetmap.org/edit",
+          "locale": "fr",
+          "hashtags": "#MapComplete;#surveillance",
+          "changesets_count": 5
+        },
+        "id": 117253731
       }
     },
     {
@@ -31124,6 +31527,77 @@
           "imagery": "osm"
         },
         "id": 117244900
+      }
+    },
+    {
+      "id": 117244083,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.1852899,
+              50.9119365
+            ],
+            [
+              5.2098409,
+              50.9119365
+            ],
+            [
+              5.2098409,
+              50.9361395
+            ],
+            [
+              5.1852899,
+              50.9361395
+            ],
+            [
+              5.1852899,
+              50.9119365
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          },
+          {
+            "id": 41,
+            "name": "Software editor was not declared"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "jospyck",
+        "uid": "12128135",
+        "editor": null,
+        "comment": "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+        "comments_count": 0,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2022-02-10T12:27:22Z",
+        "reviewed_features": [],
+        "create": 2,
+        "modify": 5,
+        "delete": 0,
+        "area": 0.000594207852999994,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "theme": "toerisme_vlaanderen",
+          "answer": 12,
+          "import": 2,
+          "import:node/9495257973": "source: https://osm.org/note/3044279",
+          "import:node/9495282428": "source: https://osm.org/note/3044139"
+        },
+        "id": 117244083
       }
     },
     {
@@ -39730,6 +40204,76 @@
           "imagery": "osm"
         },
         "id": 117011189
+      }
+    },
+    {
+      "id": 117010979,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.4794074,
+              51.0276134
+            ],
+            [
+              4.4794074,
+              51.0276134
+            ],
+            [
+              4.4794074,
+              51.0276134
+            ],
+            [
+              4.4794074,
+              51.0276134
+            ],
+            [
+              4.4794074,
+              51.0276134
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "check_user": null,
+        "reasons": [
+          {
+            "id": 40,
+            "name": "New mapper"
+          },
+          {
+            "id": 41,
+            "name": "Software editor was not declared"
+          }
+        ],
+        "tags": [],
+        "features": [],
+        "user": "jospyck",
+        "uid": "12128135",
+        "editor": null,
+        "comment": "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+        "comments_count": 3,
+        "source": "Not reported",
+        "imagery_used": "Not reported",
+        "date": "2022-02-04T15:22:45Z",
+        "reviewed_features": [],
+        "create": 1,
+        "modify": 1,
+        "delete": 0,
+        "area": 0,
+        "is_suspect": true,
+        "harmful": null,
+        "checked": false,
+        "check_date": null,
+        "metadata": {
+          "theme": "toerisme_vlaanderen",
+          "answer": 3,
+          "import": 1,
+          "import:node/9476264469": "source: https://osm.org/note/3023001"
+        },
+        "id": 117010979
       }
     },
     {
