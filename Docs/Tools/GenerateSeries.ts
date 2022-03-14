@@ -1,4 +1,4 @@
-import {existsSync, readdirSync, readFileSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from "fs";
 import ScriptUtils from "../../scripts/ScriptUtils";
 import {Utils} from "../../Utils";
 import {exec} from "child_process"
@@ -10,9 +10,11 @@ class StatsDownloader {
 
     private readonly startYear = 2020
     private readonly startMonth = 5;
-    private readonly urlTemplate = "https://osmcha.org/api/v1/changesets/?date__gte={start_date}&date__lte={end_date}&page={page}&editor=mapcomplete&page_size=100"
+    private readonly urlTemplate = "https://osmcha.org/api/v1/changesets/?date__gte={start_date}&date__lte={end_date}&page={page}&comment=%23mapcomplete&page_size=100"
+
     private readonly _targetDirectory: string;
 
+    
 
     constructor(targetDirectory = ".") {
         this._targetDirectory = targetDirectory;
@@ -614,7 +616,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
     Group.createStackedBarChartPerDay(
         "Changesets per version number" + appliedFilterDescription,
         allFeatures,
-        f => f.properties.editor.substr("MapComplete ".length, 6).replace(/[a-zA-Z-/]/g, ''),
+        f => f.properties.editor?.substr("MapComplete ".length, 6)?.replace(/[a-zA-Z-/]/g, '') ?? "UNKNOWN",
         cutoff ?? 1
     )
     
@@ -622,7 +624,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         "Changesets per minor version number" + appliedFilterDescription,
         allFeatures,
         f => {
-        	const base = f.properties.editor.substr("MapComplete ".length).replace(/[a-zA-Z-/]/g, '')
+        	const base = f.properties.editor?.substr("MapComplete ".length)?.replace(/[a-zA-Z-/]/g, '') ?? "UNKNOWN"
         	const [major, minor, patch] = base.split(".")
         	return major+"."+minor
         
@@ -701,6 +703,10 @@ function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]
 }
 
 async function main(): Promise<void>{
+    if(!existsSync("graphs")){
+        mkdirSync("graphs")
+    }
+    
     await new StatsDownloader("stats").DownloadStats()
     const allPaths = readdirSync("stats")
         .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
