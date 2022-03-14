@@ -119,7 +119,8 @@
         "en": "Can a bicycle go past this barrier?",
         "nl": "Kan een fietser langs deze barrière?",
         "de": "Kann ein Radfahrer das Hindernis passieren?",
-        "hu": "Át lehet-e menni rajta kerékpárral?"
+        "hu": "Át lehet-e menni rajta kerékpárral?",
+        "fr": "Est-ce qu'un vélo peut franchir cette barrière ?"
       },
       "mappings": [
         {
@@ -153,7 +154,8 @@
           "then": {
             "en": "This is a single bollard in the road",
             "hu": "Ez egyetlen oszlop az úton",
-            "nl": "Dit is een enkel paaltje in de weg"
+            "nl": "Dit is een enkel paaltje in de weg",
+            "fr": "C'est un plot unique sur la route"
           }
         },
         {
@@ -161,7 +163,8 @@
           "then": {
             "en": "This is a cycle barrier slowing down cyclists",
             "nl": "Dit zijn fietshekjes die fietsers afremmen",
-            "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat"
+            "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat",
+            "fr": "C'est une barrière visant à ralentir les vélos"
           }
         }
       ]
@@ -376,7 +379,8 @@
         "en": "How wide is the smallest opening next to the barriers?",
         "nl": "Hoe breed is de smalste opening naast de barrières?",
         "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
-        "hu": "Milyen széles a korlátok melletti legkisebb nyílás?"
+        "hu": "Milyen széles a korlátok melletti legkisebb nyílás?",
+        "fr": "Quelle est la largeur d'ouverture la plus petite près de la barrière ?"
       },
       "condition": {
         "or": [

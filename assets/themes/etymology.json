@@ -127,7 +127,8 @@
         "id": "cultural_places_without_etymology",
         "=name": {
           "en": "Cultural places without etymology information",
-          "de": "Kulturelle Orte ohne etymologische Informationen"
+          "de": "Kulturelle Orte ohne etymologische Informationen",
+          "fr": "Lieux culturels sans origine étymologique"
         },
         "minzoom": 18,
         "source": {
@@ -154,7 +155,8 @@
         "id": "toursistic_places_without_etymology",
         "=name": {
           "en": "Toursistic places without etymology information",
-          "de": "Touristische Orte ohne Angaben zur Etymologie"
+          "de": "Touristische Orte ohne Angaben zur Etymologie",
+          "fr": "Lieux touristiques sans origine étymologique"
         },
         "minzoom": 18,
         "source": {
@@ -180,7 +182,8 @@
         "id": "health_and_social_places_without_etymology",
         "=name": {
           "en": "Health and social places without etymology information",
-          "de": "Gesundheits- und Sozialeinrichtungen ohne etymologische Informationen"
+          "de": "Gesundheits- und Sozialeinrichtungen ohne etymologische Informationen",
+          "fr": "Établissements sociaux ou de soins sans origine étymologique"
         },
         "minzoom": 18,
         "source": {
@@ -205,7 +208,8 @@
         "id": "sport_places_without_etymology",
         "=name": {
           "en": "Sport places without etymology information",
-          "de": "Sportstätten ohne etymologische Informationen"
+          "de": "Sportstätten ohne etymologische Informationen",
+          "fr": "Lieux sportifs sans origine étymologique"
         },
         "minzoom": 18,
         "source": {

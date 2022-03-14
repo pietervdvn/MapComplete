@@ -59,6 +59,18 @@
             },
             "question": "Quelles sont les méthodes de paiement acceptées ici ?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Paiement via une application"
+                    },
+                    "1": {
+                        "then": "Paiement via une carte de membre"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "Quel est le numéro de téléphone de {title()} ?"
         },
@@ -114,18 +126,6 @@
                 }
             },
             "question": "Quel est l’élément Wikipédia correspondant ?"
-        },
-        "payment-options-advanced": {
-            "override": {
-                "mappings+": {
-                    "0": {
-                        "then": "Paiement via une application"
-                    },
-                    "1": {
-                        "then": "Paiement via une carte de membre"
-                    }
-                }
-            }
         }
     }
 }

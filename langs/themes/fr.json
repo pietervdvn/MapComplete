@@ -12,6 +12,11 @@
         "shortDescription": "Carte des bancs",
         "title": "Bancs"
     },
+    "bicycle_rental": {
+        "description": "Vous trouverez sur cette carte toutes les stations de location de vélo telles qu'elles sont référencées dans OpenStreetMap",
+        "shortDescription": "Une carte avec des stations et magasins de location de vélos",
+        "title": "Location de vélos"
+    },
     "bicyclelib": {
         "description": "Une vélothèque est un endroit où on peut emprunter des vélos, souvent moyennant une petite somme annuelle. Un cas d'utilisation notable est celui des vélothèques pour les enfants, qui leur permettent de passer à un vélo plus grand quand ils sont trop grands pour leur vélo actuel",
         "title": "Vélothèques"
@@ -562,14 +567,14 @@
                     "=name": "Institutions d'éducation sans origine étymologique"
                 }
             },
-            "5": {
-                "override": {
-                    "=name": "Lieux touristiques sans origine étymologique"
-                }
-            },
             "4": {
                 "override": {
                     "=name": "Lieux culturels sans origine étymologique"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Lieux touristiques sans origine étymologique"
                 }
             },
             "6": {
@@ -798,10 +803,5 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
-    },
-    "bicycle_rental": {
-        "shortDescription": "Une carte avec des stations et magasins de location de vélos",
-        "title": "Location de vélos",
-        "description": "Vous trouverez sur cette carte toutes les stations de location de vélo telles qu'elles sont référencées dans OpenStreetMap"
     }
 }

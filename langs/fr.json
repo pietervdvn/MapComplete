@@ -48,6 +48,11 @@
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
             "hasBeenImported": "Ce point a déjà été importé",
+            "import": {
+                "hasBeenImported": "Cet objet a été importé",
+                "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
+                "importTags": "L'objet recevra {tags}"
+            },
             "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
             "openLayerControl": "Ouvrir la panneau de contrôle",
@@ -57,12 +62,7 @@
             "title": "Ajouter un nouveau point ?",
             "warnVisibleForEveryone": "Votre ajout sera visible",
             "zoomInFurther": "Rapprochez vous pour ajouter un point.",
-            "zoomInMore": "Zoomez pour importer cet élément",
-            "import": {
-                "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
-                "importTags": "L'objet recevra {tags}",
-                "hasBeenImported": "Cet objet a été importé"
-            }
+            "zoomInMore": "Zoomez pour importer cet élément"
         },
         "attribution": {
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",

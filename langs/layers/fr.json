@@ -210,8 +210,18 @@
                 "render": "Espace entre deux barrières successives : {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
-                "render": "Largeur de l'ouverture : {width:opening} m",
-                "question": "Quelle est la largeur d'ouverture la plus petite près de la barrière ?"
+                "question": "Quelle est la largeur d'ouverture la plus petite près de la barrière ?",
+                "render": "Largeur de l'ouverture : {width:opening} m"
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un plot unique sur la route"
+                    },
+                    "1": {
+                        "then": "C'est une barrière visant à ralentir les vélos"
+                    }
+                }
             },
             "bicycle=yes/no": {
                 "mappings": {
@@ -223,16 +233,6 @@
                     }
                 },
                 "question": "Est-ce qu'un vélo peut franchir cette barrière ?"
-            },
-            "barrier_type": {
-                "mappings": {
-                    "0": {
-                        "then": "C'est un plot unique sur la route"
-                    },
-                    "1": {
-                        "then": "C'est une barrière visant à ralentir les vélos"
-                    }
-                }
             }
         },
         "title": {
@@ -248,6 +248,7 @@
         }
     },
     "bench": {
+        "description": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
         "name": "Bancs",
         "presets": {
             "0": {
@@ -335,10 +336,10 @@
         },
         "title": {
             "render": "Banc"
-        },
-        "description": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet."
+        }
     },
     "bench_at_pt": {
+        "description": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
         "name": "Bancs des arrêts de transport en commun",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -369,8 +370,7 @@
                 }
             },
             "render": "Banc"
-        },
-        "description": "Une couche montrant tous les arrêts de transports publics qui ont un banc"
+        }
     },
     "bicycle_library": {
         "description": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
@@ -2396,18 +2396,5 @@
     },
     "watermill": {
         "name": "Moulin à eau"
-    },
-    "bicycle_rental": {
-        "name": "Location de vélo",
-        "description": "Station de location de vélo",
-        "presets": {
-            "0": {
-                "description": "Un magasin avec employé(s) consacré à la location de vélos",
-                "title": "magasin de location de vélos"
-            },
-            "1": {
-                "title": "location de vélos"
-            }
-        }
     }
 }
