@@ -418,6 +418,18 @@
         }
     },
     "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore"
+                }
+            }
+        },
         "description": "Bicycle rental stations",
         "name": "Bicycle rental",
         "presets": {
@@ -458,7 +470,7 @@
                             "1": "bicycle panniers"
                         },
                         "6": {
-                            "1": "tandem bicycle"
+                            "1": "tandem"
                         }
                     }
                 }
@@ -1215,6 +1227,13 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
         "filter": {
             "0": {
@@ -3149,6 +3168,13 @@
         }
     },
     "food": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
             "0": {
@@ -4346,6 +4372,13 @@
         }
     },
     "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A shop",
         "name": "Shop",
         "presets": {

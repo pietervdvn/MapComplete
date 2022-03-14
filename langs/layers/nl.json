@@ -418,6 +418,18 @@
         }
     },
     "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer"
+                }
+            }
+        },
         "description": "Fietsverhuustations",
         "name": "Fietsverhuur",
         "presets": {
@@ -446,7 +458,7 @@
                             "1": "elektrische fietsen"
                         },
                         "2": {
-                            "1": "Kinderfietsen"
+                            "1": "kinderfietsen"
                         },
                         "3": {
                             "1": "BMX-fietsen"
@@ -484,8 +496,8 @@
                         "then": "Tandems kunnen hier gehuurd worden"
                     }
                 },
-                "question": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
-                "render": "{rental} wordt hier uitgeleend"
+                "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?",
+                "render": "{rental} kunnen hier uitgeleend worden"
             },
             "bicycle_rental_type": {
                 "mappings": {
@@ -1224,6 +1236,13 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            }
+        },
         "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
         "filter": {
             "0": {
@@ -3101,6 +3120,13 @@
         }
     },
     "food": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            }
+        },
         "filter": {
             "0": {
                 "options": {
@@ -4169,6 +4195,13 @@
         }
     },
     "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            }
+        },
         "description": "Een winkel",
         "name": "Winkel",
         "presets": {
