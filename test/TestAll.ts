@@ -21,11 +21,16 @@ import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations
 import CreateCacheSpec from "./CreateCache.spec";
 import CodeQualitySpec from "./CodeQuality.spec";
 import ImportMultiPolygonSpec from "./ImportMultiPolygon.spec";
+import {ChangesetHandler} from "../Logic/Osm/ChangesetHandler";
+import ChangesetHandlerSpec from "./ChangesetHandler.spec";
+import ChangesSpec from "./Changes.spec";
 
 
 async function main() {
 
     const allTests: T[] = [
+        new ChangesSpec(),
+        new ChangesetHandlerSpec(),
         new OsmObjectSpec(),
         new TagSpec(),
         new ImageAttributionSpec(),
@@ -45,7 +50,7 @@ async function main() {
         new ValidatedTextFieldTranslationsSpec(),
         new CreateCacheSpec(),
         new CodeQualitySpec(),
-        new ImportMultiPolygonSpec()
+        new ImportMultiPolygonSpec(),
     ]
     ScriptUtils.fixUtils();
     const realDownloadFunc = Utils.externalDownloadFunction;

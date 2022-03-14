@@ -51,13 +51,14 @@ export class ChangesetHandler {
     }
 
     /**
+     * Inplace rewrite of extraMetaTags
      * If the metatags contain a special motivation of the format "<change-type>:node/-<number>", this method will rewrite this negative number to the actual ID
      * The key is changed _in place_; true will be returned if a change has been applied
      * @param extraMetaTags
      * @param rewriteIds
      * @private
      */
-    private static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
+    static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
         let hasChange = false;
         for (const tag of extraMetaTags) {
             const match = tag.key.match(/^([a-zA-Z0-9_]+):(node\/-[0-9])$/)
@@ -92,6 +93,8 @@ export class ChangesetHandler {
         if (!extraMetaTags.some(tag => tag.key === "comment") || !extraMetaTags.some(tag => tag.key === "theme")) {
             throw "The meta tags should at least contain a `comment` and a `theme`"
         }
+        
+        extraMetaTags = [...extraMetaTags, ...this.defaultChangesetTags()]
 
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
@@ -112,7 +115,7 @@ export class ChangesetHandler {
                 openChangeset.setData(csId);
                 const changeset = generateChangeXML(csId);
                 console.trace("Opened a new changeset (openChangeset.data is undefined):", changeset);
-                const changes = await this.AddChange(csId, changeset)
+                const changes = await this.UploadChange(csId, changeset)
                 const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(extraMetaTags, changes)
                 if(hasSpecialMotivationChanges){
                     // At this point, 'extraMetaTags' will have changed - we need to set the tags again
@@ -139,11 +142,12 @@ export class ChangesetHandler {
                     return;
                 }
 
-                const rewritings = await this.AddChange(
+                const rewritings = await this.UploadChange(
                     csId,
                     generateChangeXML(csId))
 
-                await this.RewriteTagsOf(extraMetaTags, rewritings, oldChangesetMeta)
+                const rewrittenTags = this.RewriteTagsOf(extraMetaTags, rewritings, oldChangesetMeta)
+                await this.UpdateTags(csId, rewrittenTags)
 
             } catch (e) {
                 console.warn("Could not upload, changeset is probably closed: ", e);
@@ -153,13 +157,13 @@ export class ChangesetHandler {
     }
 
     /**
-     * Updates the metatag of a changeset -
+     * Given an existing changeset with metadata and extraMetaTags to add, will fuse them to a new set of metatags
+     * Does not yet send data
      * @param extraMetaTags: new changeset tags to add/fuse with this changeset
+     * @param rewriteIds: the mapping of ids
      * @param oldChangesetMeta: the metadata-object of the already existing changeset
-     * @constructor
-     * @private
      */
-    private async RewriteTagsOf(extraMetaTags: ChangesetTag[],
+    public RewriteTagsOf(extraMetaTags: ChangesetTag[],
                                 rewriteIds: Map<string, string>,
                                 oldChangesetMeta: {
                                     open: boolean,
@@ -167,9 +171,8 @@ export class ChangesetHandler {
                                     uid: number, // User ID
                                     changes_count: number,
                                     tags: any
-                                }) {
+                                }) : ChangesetTag[] {
 
-        const csId = oldChangesetMeta.id
 
         // Note: extraMetaTags is where all the tags are collected into
 
@@ -214,10 +217,8 @@ export class ChangesetHandler {
 
 
         ChangesetHandler.rewriteMetaTags(extraMetaTags, rewriteIds)
-
-        await this.UpdateTags(csId, extraMetaTags)
-
-
+        return extraMetaTags
+    
     }
 
     private handleIdRewrite(node: any, type: string): [string, string] {
@@ -295,7 +296,7 @@ export class ChangesetHandler {
         })
     }
 
-    private async GetChangesetMeta(csId: number): Promise<{
+    async GetChangesetMeta(csId: number): Promise<{
         id: number,
         open: boolean,
         uid: number,
@@ -340,21 +341,30 @@ export class ChangesetHandler {
             });
         })
     }
+    
+    private defaultChangesetTags() : ChangesetTag[]{
+      return  [ ["created_by", `MapComplete ${Constants.vNumber}`],
+            ["locale", Locale.language.data],
+            ["host", `${window.location.origin}${window.location.pathname}`],
+            ["source", this.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],
+            ["imagery", this.changes.state["backgroundLayer"]?.data?.id]].map(([key, value]) => ({
+            key, value, aggretage: false
+        }))
+    }
 
+    /**
+     * Opens a changeset with the specified tags
+     * @param changesetTags
+     * @constructor
+     * @private
+     */
     private OpenChangeset(
         changesetTags: ChangesetTag[]
     ): Promise<number> {
         const self = this;
         return new Promise<number>(function (resolve, reject) {
 
-            const metadata = [
-                ["created_by", `MapComplete ${Constants.vNumber}`],
-                ["locale", Locale.language.data],
-                ["host", `${window.location.origin}${window.location.pathname}`],
-                ["source", self.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],
-                ["imagery", self.changes.state["backgroundLayer"]?.data?.id],
-                ...changesetTags.map(cstag => [cstag.key, cstag.value])
-            ]
+            const metadata = changesetTags.map(cstag => [cstag.key, cstag.value])
                 .filter(kv => (kv[1] ?? "") !== "")
                 .map(kv => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
                 .join("\n")
@@ -382,7 +392,7 @@ export class ChangesetHandler {
     /**
      * Upload a changesetXML
      */
-    private AddChange(changesetId: number,
+    private UploadChange(changesetId: number,
                       changesetXML: string): Promise<Map<string, string>> {
         const self = this;
         return new Promise(function (resolve, reject) {
