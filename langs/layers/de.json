@@ -2334,13 +2334,13 @@
                     "0": {
                         "then": "Zugänglich für die Allgemeinheit"
                     },
-                    "1": {
+                    "2": {
                         "then": "Nur für Kunden des Betreibers zugänglich"
                     },
-                    "2": {
+                    "3": {
                         "then": "Nur für Schüler der Schule zugänglich"
                     },
-                    "3": {
+                    "4": {
                         "then": "Nicht zugänglich"
                     }
                 },

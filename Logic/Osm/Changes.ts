@@ -363,7 +363,7 @@ export class Changes {
 
     }
 
-    private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
+    public CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
         newObjects: OsmObject[],
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]

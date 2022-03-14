@@ -291,7 +291,20 @@
             "it": "Accessibile pubblicamente",
             "de": "Zugänglich für die Allgemeinheit",
             "fr": "Accessible au public"
-          }
+          },
+          "addExtraTags": [
+            "fee=no"
+          ]
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "This is a <b>paid</b> playground",
+            "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken"
+          },
+          "addExtraTags": [
+            "access=customers"
+          ]
         },
         {
           "if": "access=customers",
@@ -301,7 +314,10 @@
             "it": "Accessibile solamente ai clienti dell’attività che lo gestisce",
             "de": "Nur für Kunden des Betreibers zugänglich",
             "fr": "Réservée aux clients"
-          }
+          },
+          "addExtraTags": [
+            "fee=no"
+          ]
         },
         {
           "if": "access=students",
@@ -312,7 +328,10 @@
             "de": "Nur für Schüler der Schule zugänglich",
             "fr": "Réservée aux élèves de l’école"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "addExtraTags": [
+            "fee=no"
+          ]
         },
         {
           "if": "access=private",

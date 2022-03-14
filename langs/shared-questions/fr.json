@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Premier étage"
+                },
+                "4": {
+                    "then": "Sous-sol"
                 }
             },
             "question": "À quel étage se situe l’élément ?",
@@ -111,6 +114,18 @@
                 }
             },
             "question": "Quel est l’élément Wikipédia correspondant ?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Paiement via une application"
+                    },
+                    "1": {
+                        "then": "Paiement via une carte de membre"
+                    }
+                }
+            }
         }
     }
 }

@@ -3944,12 +3944,15 @@
                         "then": "Accessible to the general public"
                     },
                     "1": {
-                        "then": "Only accessible for clients of the operating business"
+                        "then": "This is a <b>paid</b> playground"
                     },
                     "2": {
-                        "then": "Only accessible to students of the school"
+                        "then": "Only accessible for clients of the operating business"
                     },
                     "3": {
+                        "then": "Only accessible to students of the school"
+                    },
+                    "4": {
                         "then": "Not accessible"
                     }
                 },
