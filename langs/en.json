@@ -369,7 +369,6 @@
         "isCreated": "Your note has been created!",
         "loginToAddComment": "Login to add a comment",
         "loginToAddPicture": "Login to add a picture",
-        "typeText": "Type some text to add a comment",
         "loginToClose": "Login to close this note",
         "noteIsPublic": "This will be visible to everyone",
         "noteLayerDoEnable": "Enable the layer showing notes",
@@ -379,6 +378,7 @@
         "reopenNote": "Reopen note",
         "reopenNoteAndComment": "Reopen note and comment",
         "textNeeded": "Enter a descriptive text to create a note",
+        "typeText": "Type some text to add a comment",
         "warnAnonymous": "You are not logged in. We won't be able to contact you to resolve your issue."
     },
     "privacy": {
