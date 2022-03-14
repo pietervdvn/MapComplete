@@ -455,7 +455,10 @@
                             "1": "mountainbike"
                         },
                         "5": {
-                            "1": "Fietstassen"
+                            "1": "fietstassen"
+                        },
+                        "6": {
+                            "1": "tandem"
                         }
                     }
                 }
@@ -476,6 +479,9 @@
                     },
                     "4": {
                         "then": "Kinderfietsen kunnen hier gehuurd worden"
+                    },
+                    "5": {
+                        "then": "Tandems kunnen hier gehuurd worden"
                     }
                 },
                 "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?",

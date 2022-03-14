@@ -44,6 +44,7 @@
     "nl": "Fietsverhuustations"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "bicycle_rental_type",
       "question": {
@@ -186,6 +187,13 @@
             "en": "Bikes for childs can be rented here",
             "nl": "Kinderfietsen kunnen hier gehuurd worden"
           }
+        },
+        {
+          "if": "rental=tandem",
+          "then": {
+            "en": "Tandem bicycles can be rented here",
+            "nl": "Tandems kunnen hier gehuurd worden"
+          }
         }
       ]
     },
@@ -235,7 +243,14 @@
             "bicycle_pannier",
             {
               "en": "bicycle panniers",
-              "nl": "Fietstassen"
+              "nl": "fietstassen"
+            }
+          ],
+          [
+            "tandem_bicycle",
+            {
+              "en": "tandem bicycle",
+              "nl": "tandem"
             }
           ]
         ]

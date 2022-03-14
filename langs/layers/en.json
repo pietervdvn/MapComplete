@@ -456,6 +456,9 @@
                         },
                         "5": {
                             "1": "bicycle panniers"
+                        },
+                        "6": {
+                            "1": "tandem bicycle"
                         }
                     }
                 }
@@ -476,6 +479,9 @@
                     },
                     "4": {
                         "then": "Bikes for childs can be rented here"
+                    },
+                    "5": {
+                        "then": "Tandem bicycles can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
