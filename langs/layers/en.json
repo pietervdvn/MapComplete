@@ -494,6 +494,9 @@
                     },
                     "5": {
                         "then": "Tandem bicycles can be rented here"
+                    },
+                    "6": {
+                        "then": "Race bicycles can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
@@ -1794,13 +1797,13 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "Free to use"
-                    },
-                    "1": {
                         "then": "Free to use (without authenticating)"
                     },
-                    "2": {
+                    "1": {
                         "then": "Free to use, but one has to authenticate"
+                    },
+                    "2": {
+                        "then": "Free to use"
                     },
                     "3": {
                         "then": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
