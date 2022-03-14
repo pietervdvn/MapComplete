@@ -24,6 +24,15 @@
             "render": "Alamat yang diketahui"
         }
     },
+    "ambulancestation": {
+        "name": "Peta stasiun ambulans",
+        "presets": {
+            "0": {
+                "description": "Tambahkan stasiun ambulans ke peta",
+                "title": "Stasiun ambulans"
+            }
+        }
+    },
     "artwork": {
         "description": "Beragam karya seni",
         "name": "Karya seni",
@@ -386,14 +395,5 @@
     },
     "watermill": {
         "name": "Kincir Air"
-    },
-    "ambulancestation": {
-        "name": "Peta stasiun ambulans",
-        "presets": {
-            "0": {
-                "description": "Tambahkan stasiun ambulans ke peta",
-                "title": "Stasiun ambulans"
-            }
-        }
     }
 }

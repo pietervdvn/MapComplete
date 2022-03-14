@@ -672,7 +672,8 @@
             "nl": "Betalen via een app van het netwerk",
             "hu": "Fizetés erre a célra szolgáló alkalmazással",
             "zh_Hant": "使用專用應用程式付款",
-            "de": "Die Bezahlung erfolgt über eine spezielle App"
+            "de": "Die Bezahlung erfolgt über eine spezielle App",
+            "fr": "Paiement via une application"
           }
         },
         {
@@ -684,7 +685,8 @@
             "nl": "Betalen via een lidkaart van het netwerk",
             "hu": "Fizetési tagsági kártyával",
             "zh_Hant": "使用會員卡付款",
-            "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte"
+            "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte",
+            "fr": "Paiement via une carte de membre"
           }
         }
       ]

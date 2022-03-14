@@ -366,29 +366,34 @@ export default class TagRenderingConfig {
 
         // A flag to check that the freeform key isn't matched multiple times 
         // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
-        let freeformKeyUsed = this.freeform?.key === undefined;
+        let freeformKeyDefined = this.freeform?.key !== undefined;
+        let usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
         const applicableMappings: { then: Translation, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping;
             }
             if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
-                if (!freeformKeyUsed) {
-                    if (mapping.if.usedKeys().indexOf(this.freeform.key) >= 0) {
-                        // This mapping matches the freeform key - we mark the freeform key to be ignored!
-                        freeformKeyUsed = true;
-                    }
+                if (freeformKeyDefined && mapping.if.isUsableAsAnswer()) {
+                    // THe freeform key is defined: what value does it use though?
+                    // We mark the value to see if we have any leftovers
+                    const value = mapping.if.asChange({}).find(kv => kv.k === this.freeform.key).v
+                    usedFreeformValues.add(value)
                 }
                 return mapping;
             }
             return undefined;
         }))
 
-
-        if (!freeformKeyUsed
-            && tags[this.freeform.key] !== undefined) {
-            applicableMappings.push({then: this.render})
+        if(freeformKeyDefined && tags[this.freeform.key] !== undefined){
+            const freeformValues = tags[this.freeform.key].split(";")
+            const leftovers = freeformValues.filter(v => !usedFreeformValues.has(v))
+            for (const leftover of leftovers) {
+                applicableMappings.push({then: this.render.OnEveryLanguage(str => 
+                        str.replace(new RegExp("{"+this.freeform.key+"}", "g"), leftover))})
+            }
         }
+        
         return applicableMappings
     }
 

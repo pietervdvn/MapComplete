@@ -418,6 +418,18 @@
         }
     },
     "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer"
+                }
+            }
+        },
         "description": "Fietsverhuustations",
         "name": "Fietsverhuur",
         "presets": {
@@ -430,7 +442,7 @@
             }
         },
         "tagRenderings": {
-            "8": {
+            "9": {
                 "renderings": {
                     "0": {
                         "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
@@ -446,7 +458,7 @@
                             "1": "elektrische fietsen"
                         },
                         "2": {
-                            "1": "Kinderfietsen"
+                            "1": "kinderfietsen"
                         },
                         "3": {
                             "1": "BMX-fietsen"
@@ -455,7 +467,10 @@
                             "1": "mountainbike"
                         },
                         "5": {
-                            "1": "Fietstassen"
+                            "1": "fietstassen"
+                        },
+                        "6": {
+                            "1": "tandem"
                         }
                     }
                 }
@@ -476,10 +491,13 @@
                     },
                     "4": {
                         "then": "Kinderfietsen kunnen hier gehuurd worden"
+                    },
+                    "5": {
+                        "then": "Tandems kunnen hier gehuurd worden"
                     }
                 },
                 "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?",
-                "render": "{rental} wordt hier uitgeleend"
+                "render": "{rental} kunnen hier uitgeleend worden"
             },
             "bicycle_rental_type": {
                 "mappings": {
@@ -1218,6 +1236,13 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            }
+        },
         "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
         "filter": {
             "0": {
@@ -3104,6 +3129,13 @@
         }
     },
     "food": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            }
+        },
         "filter": {
             "0": {
                 "options": {
@@ -4172,6 +4204,13 @@
         }
     },
     "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} is permanent gestopt"
+                }
+            }
+        },
         "description": "Een winkel",
         "name": "Winkel",
         "presets": {

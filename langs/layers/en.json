@@ -418,6 +418,18 @@
         }
     },
     "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore"
+                }
+            }
+        },
         "description": "Bicycle rental stations",
         "name": "Bicycle rental",
         "presets": {
@@ -430,7 +442,7 @@
             }
         },
         "tagRenderings": {
-            "8": {
+            "9": {
                 "renderings": {
                     "0": {
                         "question": "How much type_plural can be rented here? ",
@@ -456,6 +468,9 @@
                         },
                         "5": {
                             "1": "bicycle panniers"
+                        },
+                        "6": {
+                            "1": "tandem"
                         }
                     }
                 }
@@ -476,6 +491,9 @@
                     },
                     "4": {
                         "then": "Bikes for childs can be rented here"
+                    },
+                    "5": {
+                        "then": "Tandem bicycles can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
@@ -1209,6 +1227,13 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
         "filter": {
             "0": {
@@ -3152,6 +3177,13 @@
         }
     },
     "food": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
             "0": {
@@ -4363,6 +4395,13 @@
         }
     },
     "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A shop",
         "name": "Shop",
         "presets": {

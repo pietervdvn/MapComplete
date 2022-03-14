@@ -1985,6 +1985,14 @@ a {
   width: 4rem !important;
 }
 
+.w-32-imp {
+  width: 8rem !important;
+}
+
+.w-48-imp {
+  width: 12rem !important;
+}
+
 .link-underline a {
   -webkit-text-decoration: underline 1px var(--foreground-color);
           text-decoration: underline 1px var(--foreground-color);

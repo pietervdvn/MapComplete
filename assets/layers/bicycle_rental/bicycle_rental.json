@@ -44,6 +44,7 @@
     "nl": "Fietsverhuustations"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "bicycle_rental_type",
       "question": {
@@ -145,10 +146,11 @@
       },
       "render": {
         "en": "{rental} is rented here",
-        "nl": "{rental} wordt hier uitgeleend"
+        "nl": "{rental} kunnen hier uitgeleend worden"
       },
       "freeform": {
-        "key": "rental"
+        "key": "rental",
+        "inline": true
       },
       "multiAnswer": true,
       "mappings": [
@@ -186,6 +188,20 @@
             "en": "Bikes for childs can be rented here",
             "nl": "Kinderfietsen kunnen hier gehuurd worden"
           }
+        },
+        {
+          "if": "rental=tandem",
+          "then": {
+            "en": "Tandem bicycles can be rented here",
+            "nl": "Tandems kunnen hier gehuurd worden"
+          }
+        },
+        {
+          "if": "rental=racebike",
+          "then": {
+            "en": "Race bicycles can be rented here",
+            "nl": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden"
+          }
         }
       ]
     },
@@ -214,7 +230,7 @@
             "kid_bike",
             {
               "en": "bikes for children",
-              "nl": "Kinderfietsen"
+              "nl": "kinderfietsen"
             }
           ],
           [
@@ -235,7 +251,14 @@
             "bicycle_pannier",
             {
               "en": "bicycle panniers",
-              "nl": "Fietstassen"
+              "nl": "fietstassen"
+            }
+          ],
+          [
+            "tandem_bicycle",
+            {
+              "en": "tandem",
+              "nl": "tandem"
             }
           ]
         ]
@@ -305,5 +328,33 @@
         "render": "2"
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": ["disused:amenity=bicycle_rental", "bicycle_rental=", "rental="]
+    },
+    "neededChangesets": 10,
+    "extraDeleteReasons": [{
+      "explanation": {
+        "nl": "{title()} is permanent gestopt",
+        "en": "{title()} has closed down permanently"
+      },
+      "changesetMessage": "shop_closed"
+    }],
+    "nonDeleteMappings": [{
+      "if": {
+        "and": [
+        "service:bicycle:rental=no"
+        ]
+      },
+      "then": {
+        "en": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore",
+        "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer"
+      }
+    }]
+  }
 }

@@ -9,7 +9,8 @@
     "it": "Carta delle stazioni delle ambulanze",
     "hu": "Mentőállomás-térkép",
     "nl": "Kaart van ambulancestations",
-    "zh_Hans": "救护车站地图"
+    "zh_Hans": "救护车站地图",
+    "id": "Peta stasiun ambulans"
   },
   "minzoom": 12,
   "source": {
@@ -254,7 +255,8 @@
         "it": "Stazione delle ambulanze",
         "hu": "Mentőállomás",
         "nl": "Ambulancestation",
-        "zh_Hans": "救护车站"
+        "zh_Hans": "救护车站",
+        "id": "Stasiun ambulans"
       },
       "description": {
         "en": "Add an ambulance station to the map",
@@ -265,7 +267,8 @@
         "it": "Aggiungi una stazione delle ambulanza alla mappa",
         "hu": "Mentőállomás hozzáadása a térképhez",
         "nl": "Voeg een ambulancestation toe aan de kaart",
-        "zh_Hans": "向地图中添加一个救护车站"
+        "zh_Hans": "向地图中添加一个救护车站",
+        "id": "Tambahkan stasiun ambulans ke peta"
       }
     }
   ],

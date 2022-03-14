@@ -549,7 +549,7 @@
             "feedback": "This is not a valid phone number"
         },
         "pnat": {
-            "description": "a positive, whone number",
+            "description": "a positive, whole number",
             "noZero": "Zero is not allowed"
         },
         "string": {
