@@ -478,7 +478,7 @@
                         "then": "Kinderfietsen kunnen hier gehuurd worden"
                     }
                 },
-                "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?",
+                "question": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
                 "render": "{rental} wordt hier uitgeleend"
             },
             "bicycle_rental_type": {
