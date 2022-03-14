@@ -10,18 +10,15 @@ import RelationSplitHandlerSpec from "./RelationSplitHandler.spec";
 import SplitActionSpec from "./SplitAction.spec";
 import {Utils} from "../Utils";
 import TileFreshnessCalculatorSpec from "./TileFreshnessCalculator.spec";
-import WikidataSpecTest from "./Wikidata.spec.test";
 import ImageProviderSpec from "./ImageProvider.spec";
 import ActorsSpec from "./Actors.spec";
 import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 import T from "./TestHelper";
 import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
-import ValidatedTextFieldTranslationsSpec from "./ValidatedTextFieldTranslations.spec";
 import CreateCacheSpec from "./CreateCache.spec";
 import CodeQualitySpec from "./CodeQuality.spec";
 import ImportMultiPolygonSpec from "./ImportMultiPolygon.spec";
-import {ChangesetHandler} from "../Logic/Osm/ChangesetHandler";
 import ChangesetHandlerSpec from "./ChangesetHandler.spec";
 import ChangesSpec from "./Changes.spec";
 
@@ -41,13 +38,11 @@ async function main() {
         new RelationSplitHandlerSpec(),
         new SplitActionSpec(),
         new TileFreshnessCalculatorSpec(),
-        new WikidataSpecTest(),
         new ImageProviderSpec(),
         new ActorsSpec(),
         new ReplaceGeometrySpec(),
         new LegacyThemeLoaderSpec(),
         new CreateNoteImportLayerSpec(),
-        new ValidatedTextFieldTranslationsSpec(),
         new CreateCacheSpec(),
         new CodeQualitySpec(),
         new ImportMultiPolygonSpec(),

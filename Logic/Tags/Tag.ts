@@ -41,6 +41,12 @@ export class Tag extends TagsFilter {
         return [`["${this.key}"="${this.value}"]`];
     }
 
+    /**
+     
+     const t = new Tag("key", "value")
+     t.asHumanString() // => "key=value"
+     t.asHumanString(true) // => "<a href='https://wiki.openstreetmap.org/wiki/Key:key' target='_blank'>key</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:key%3Dvalue' target='_blank'>value</a>"
+     */
     asHumanString(linkToWiki?: boolean, shorten?: boolean, currentProperties?: any) {
         let v = this.value;
         if (shorten) {

@@ -523,6 +523,18 @@
         "splitTitle": "Choose on the map where to split this road"
     },
     "validation": {
+        "color": {
+            "description": "A color or hexcode"
+        },
+        "date": {
+            "description": "A date, starting with the year"
+        },
+        "decimal": {
+            "description": "A number"
+        },
+        "direction": {
+            "description": "An orientation"
+        },
         "email": {
             "description": "email-adres",
             "feedback": "This is not a valid email address",
@@ -541,6 +553,9 @@
             "mustBeWhole": "Only whole numbers are allowed",
             "notANumber": "Enter a number"
         },
+        "opening_hours": {
+            "description": "Opening hours"
+        },
         "pfloat": {
             "description": "a positive number"
         },
@@ -555,10 +570,16 @@
         "string": {
             "description": "a piece of text"
         },
+        "text": {
+            "description": "a piece of text"
+        },
         "tooLong": "Text is to long, at most 255 characters are allowed. You do have {count} characters now",
         "url": {
             "description": "link to a website",
             "feedback": "This is not a valid web address"
+        },
+        "wikidata": {
+            "description": "A Wikidata identifier"
         }
     }
 }

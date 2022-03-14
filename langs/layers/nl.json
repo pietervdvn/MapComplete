@@ -494,6 +494,9 @@
                     },
                     "5": {
                         "then": "Tandems kunnen hier gehuurd worden"
+                    },
+                    "6": {
+                        "then": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden"
                     }
                 },
                 "question": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?",

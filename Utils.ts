@@ -657,6 +657,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return bestColor ?? hex;
     }
 
+    /**
+     * Reorders an object: creates a new object where the keys have been added alphabetically
+     * 
+     * const sorted = Utils.sortKeys({ x: 'x', abc: {'x': 'x', 'a': 'a'}, def: 'def'})
+     * JSON.stringify(sorted) // => '{"abc":{"a":"a","x":"x"},"def":"def","x":"x"}'
+     */
     static sortKeys(o: any) {
         const copy = {}
         let keys = Object.keys(o)

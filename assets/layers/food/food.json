@@ -671,14 +671,16 @@
         "amenity=",
         "disused:amenity:={amenity}"
       ]
-    }, 
-    "extraDeleteReasons": [{
-      "explanation": {
-        "nl": "{title()} is permanent gestopt",
-        "en": "{title()} has closed down permanently"
-      },
-      "changesetMessage": "shop_closed"
-    }]
+    },
+    "extraDeleteReasons": [
+      {
+        "explanation": {
+          "nl": "{title()} is permanent gestopt",
+          "en": "{title()} has closed down permanently"
+        },
+        "changesetMessage": "shop_closed"
+      }
+    ]
   },
   "allowMove": true,
   "mapRendering": [

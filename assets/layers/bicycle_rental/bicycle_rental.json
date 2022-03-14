@@ -335,26 +335,34 @@
   },
   "deletion": {
     "softDeletionTags": {
-      "and": ["disused:amenity=bicycle_rental", "bicycle_rental=", "rental="]
+      "and": [
+        "disused:amenity=bicycle_rental",
+        "bicycle_rental=",
+        "rental="
+      ]
     },
     "neededChangesets": 10,
-    "extraDeleteReasons": [{
-      "explanation": {
-        "nl": "{title()} is permanent gestopt",
-        "en": "{title()} has closed down permanently"
-      },
-      "changesetMessage": "shop_closed"
-    }],
-    "nonDeleteMappings": [{
-      "if": {
-        "and": [
-        "service:bicycle:rental=no"
-        ]
-      },
-      "then": {
-        "en": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore",
-        "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer"
+    "extraDeleteReasons": [
+      {
+        "explanation": {
+          "nl": "{title()} is permanent gestopt",
+          "en": "{title()} has closed down permanently"
+        },
+        "changesetMessage": "shop_closed"
       }
-    }]
+    ],
+    "nonDeleteMappings": [
+      {
+        "if": {
+          "and": [
+            "service:bicycle:rental=no"
+          ]
+        },
+        "then": {
+          "en": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore",
+          "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer"
+        }
+      }
+    ]
   }
 }

@@ -494,6 +494,9 @@
                     },
                     "5": {
                         "then": "Tandem bicycles can be rented here"
+                    },
+                    "6": {
+                        "then": "Race bicycles can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",

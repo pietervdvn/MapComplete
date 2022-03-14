@@ -224,6 +224,11 @@ export default class Wikidata {
         return responses
     }
 
+    /**
+     * Gets the 'key' segment from a URL
+     * 
+     * Wikidata.ExtractKey("https://www.wikidata.org/wiki/Lexeme:L614072") // => "L614072"
+     */
     public static ExtractKey(value: string | number): string {
         if (typeof value === "number") {
             return "Q" + value
