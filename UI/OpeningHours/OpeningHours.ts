@@ -220,6 +220,23 @@ export class OH {
         }
     }
 
+    /**
+     * Converts an OH-syntax rule into an object
+     * 
+     * 
+     * const rules = OH.ParsePHRule("PH 12:00-17:00")
+     * rules.mode // => " "
+     * rules.start // => "12:00"
+     * rules.end // => "17:00"
+     * 
+     * OH.ParseRule("PH 12:00-17:00") // => null
+     * OH.ParseRule("Th[-1] off") // => null
+     * 
+     * const rules = OH.Parse("24/7");
+     * rules.length // => 7
+     * rules[0].startHour // => 0
+     * OH.ToString(rules) // => "24/7"
+     */
     public static ParseRule(rule: string): OpeningHour[] {
         try {
             if (rule.trim() == "24/7") {

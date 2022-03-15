@@ -109,7 +109,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return "" + i;
     }
 
-    public static Round(i: number) {
+    /**
+     * Converts a number to a string with one number after the comma
+     * 
+     * Utils.Round(15) // => "15.0"
+     * Utils.Round(1) // => "1.0"
+     * Utils.Round(1.5) // => "1.5"
+     * Utils.Round(0.5) // => "0.5"
+     * Utils.Round(1.6) // => "1.6"
+     * Utils.Round(-15) // => "-15.0"
+     * Utils.Round(-1) // => "-1.0"
+     * Utils.Round(-1.5) // => "-1.5"
+     * Utils.Round(-0.5) // => "-0.5"
+     * Utils.Round(-1.6) // => "-1.6"
+     * Utils.Round(-1531.63543) // =>"-1531.6"
+     */
+    public static Round(i: number): string {
         if (i < 0) {
             return "-" + Utils.Round(-i);
         }
