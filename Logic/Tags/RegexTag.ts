@@ -67,6 +67,30 @@ export class RegexTag extends TagsFilter {
         return false;
     }
 
+    /** 
+     * Checks if this tag matches the given properties
+     * 
+     * const isNotEmpty = new RegexTag("key","^$", true);
+     * isNotEmpty.matchesProperties({"key": "value"}) // => true
+     * isNotEmpty.matchesProperties({"key": "other_value"}) // => true
+     * isNotEmpty.matchesProperties({"key": ""}) // => false
+     * isNotEmpty.matchesProperties({"other_key": ""}) // => false
+     * isNotEmpty.matchesProperties({"other_key": "value"}) // => false
+     * 
+     * const isNotEmpty = new RegexTag("key","^..*$", true);
+     * isNotEmpty.matchesProperties({"key": "value"}) // => false
+     * isNotEmpty.matchesProperties({"key": "other_value"}) // => false
+     * isNotEmpty.matchesProperties({"key": ""}) // => true
+     * isNotEmpty.matchesProperties({"other_key": ""}) // => true
+     * isNotEmpty.matchesProperties({"other_key": "value"}) // => true
+     *
+     * const notRegex = new RegexTag("x", /^y$/, true)
+     * notRegex.matchesProperties({"x": "y"}) // => false
+     * notRegex.matchesProperties({"x": "z"}) // => true
+     * notRegex.matchesProperties({"x": ""}) // => true
+     * notRegex.matchesProperties({}) // => true
+
+     */
     matchesProperties(tags: any): boolean {
         if (typeof this.key === "string") {
             const value = tags[this.key] ?? ""

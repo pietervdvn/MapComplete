@@ -174,11 +174,19 @@ export class Translation extends BaseUIElement {
         return new Translation(newTranslations)
     }
 
+    /**
+     * Replaces the given string with the given text in the language.
+     * Other substitutions are left in place
+     * 
+     * const tr = new Translation(
+     *      {"nl": "Een voorbeeldtekst met {key} en {key1}, en nogmaals {key}", 
+     *      "en": "Just a single {key}"})
+     * const r = tr.replace("{key}", "value")
+     * r.textFor("nl") // => "Een voorbeeldtekst met value en {key1}, en nogmaals value"
+     * r.textFor("en") // => "Just a single value"
+     */
     public replace(a: string, b: string) {
-        if (a.startsWith("{") && a.endsWith("}")) {
-            a = a.substr(1, a.length - 2);
-        }
-        return this.Subs({[a]: b});
+        return this.OnEveryLanguage(str => str.replace(new RegExp(a, "g"), b))
     }
 
     public Clone() {

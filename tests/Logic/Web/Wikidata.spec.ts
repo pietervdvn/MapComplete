@@ -7473,7 +7473,7 @@ Utils.injectJsonDownloadForTests(    "https://www.wikidata.org/wiki/Special:Enti
 
 describe("Wikidata", () => {
 
-    it("Download lion", 
+    it("should download Q140 (lion)", 
         async () => {
            
             const wikidata = await Wikidata.LoadWikidataEntryAsync("Q140")
@@ -7481,14 +7481,14 @@ describe("Wikidata", () => {
         }
     )
     
-    it("download wikidata",
+    it("should download wikidata",
         async () => {
             const wdata = await Wikidata.LoadWikidataEntryAsync(14517013)
             expect(wdata.wikisites).to.have.key("nl")
             expect(wdata.wikisites.get("nl")).eq("Vredesmolen")
         })
     
-    it("Download a lexeme", async () => {
+    it("should download a lexeme", async () => {
 
         const response = await Wikidata.LoadWikidataEntryAsync("https://www.wikidata.org/wiki/Lexeme:L614072")
         expect(response).not.undefined

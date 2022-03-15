@@ -5,7 +5,7 @@ import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 
 describe("ValidatedTextFields", () => {
     
-        it("All validated text fields should have a name and description", () => {
+        it("should all have description in the translations", () => {
             const ts = Translations.t.validation;
             const missingTranslations = Array.from(ValidatedTextField.allTypes.keys())
                 .filter(key => ts[key] === undefined || ts[key].description === undefined)

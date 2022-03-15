@@ -295,14 +295,44 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Copies all key-value pairs of the source into the target. This will change the target
      * If the key starts with a '+', the values of the list will be appended to the target instead of overwritten
-     * @param source
-     * @param target
-     * @constructor
-     * @return the second parameter as is
+     * 
+     * const obj = {someValue: 42};
+     * const override = {someValue: null};
+     * Utils.Merge(override, obj);
+     * obj.someValue // => null
+     * 
+     * const obj = {someValue: 42};
+     * const override = {someValue: null};
+     * const returned = Utils.Merge(override, obj);
+     * returned == obj // => true
+     * 
+     *  const source = {
+     *                abc: "def",
+     *                foo: "bar",
+     *                list0: ["overwritten"],
+     *                "list1+": ["appended"]
+     *            }
+     * const target = {
+     *                "xyz": "omega",
+     *                "list0": ["should-be-gone"],
+     *                "list1": ["should-be-kept"],
+     *                "list2": ["should-be-untouched"]
+     *            }
+     * const result = Utils.Merge(source, target)
+     * result.abc // => "def"
+     * result.foo // => "bar"
+     * result.xyz // => "omega"
+     * result.list0.length // =>  1
+     * result.list0[0] // =>  "overwritten"
+     * result.list1.length // =>  2
+     * result.list1[0] // =>  "should-be-kept"
+     * result.list1[1] // =>  "appended"
+     * result.list2.length // =>  1
+     * result.list2[0] // => "should-be-untouched"
      */
-    static Merge(source: any, target: any) {
+    static Merge<T, S>(source: S, target: T): (T & S) {
         if (target === null) {
-            return source
+            return <T & S> source
         }
 
         for (const key in source) {
@@ -322,6 +352,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
                 let newList: any[];
                 if (key.startsWith("+")) {
+                    // @ts-ignore
                     newList = sourceV.concat(targetV)
                 } else {
                     newList = targetV.concat(sourceV)
@@ -332,21 +363,26 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             }
 
             const sourceV = source[key]
+            // @ts-ignore
             const targetV = target[key]
             if (typeof sourceV === "object") {
                 if (sourceV === null) {
+                    // @ts-ignore
                     target[key] = null
                 } else if (targetV === undefined) {
+                    // @ts-ignore
                     target[key] = sourceV;
                 } else {
                     Utils.Merge(sourceV, targetV);
                 }
 
             } else {
+                // @ts-ignore
                 target[key] = sourceV;
             }
 
         }
+        // @ts-ignore
         return target;
     }
 
@@ -471,6 +507,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return dict.get(k);
     }
 
+    /**
+     * Tries to minify the given JSON by applying some compression
+     */
     public static MinifyJSON(stringified: string): string {
         stringified = stringified.replace(/\|/g, "||");
 

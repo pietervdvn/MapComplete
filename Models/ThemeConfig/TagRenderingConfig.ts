@@ -389,8 +389,9 @@ export default class TagRenderingConfig {
             const freeformValues = tags[this.freeform.key].split(";")
             const leftovers = freeformValues.filter(v => !usedFreeformValues.has(v))
             for (const leftover of leftovers) {
-                applicableMappings.push({then: this.render.OnEveryLanguage(str => 
-                        str.replace(new RegExp("{"+this.freeform.key+"}", "g"), leftover))})
+                applicableMappings.push({then: 
+                        this.render.replace("{"+this.freeform.key+"}", leftover)
+                })
             }
         }
         

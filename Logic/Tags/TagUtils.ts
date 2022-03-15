@@ -266,6 +266,9 @@ export class TagUtils {
             if (tag.indexOf("!=") >= 0) {
                 const split = Utils.SplitFirst(tag, "!=");
                 if (split[1] === "*") {
+                    throw "At "+context+": invalid tag "+tag+". To indicate a missing tag, use '"+split[0]+"!=' instead"
+                }
+                if(split[1] === "") {
                     split[1] = "..*"
                 }
                 return new RegexTag(

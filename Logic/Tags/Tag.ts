@@ -22,6 +22,20 @@ export class Tag extends TagsFilter {
     }
 
 
+    /**
+     * const tag = new Tag("key","value")
+     * tag.matchesProperties({"key": "value"}) // =>  true
+     * tag.matchesProperties({"key": "z"}) // =>  false
+     * tag.matchesProperties({"key": ""}) // => false
+     * tag.matchesProperties({"other_key": ""}) // => false
+     * tag.matchesProperties({"other_key": "value"}) // =>  false
+     * 
+     * const isEmpty = new Tag("key","")
+     * isEmpty.matchesProperties({"key": "value"}) // => false
+     * isEmpty.matchesProperties({"key": ""}) // => true
+     * isEmpty.matchesProperties({"other_key": ""}) // => true
+     * isEmpty.matchesProperties({"other_key": "value"}) // => true
+     */
     matchesProperties(properties: any): boolean {
         const foundValue = properties[this.key]
         if (foundValue === undefined && (this.value === "" || this.value === undefined)) {
