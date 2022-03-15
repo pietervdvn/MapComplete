@@ -60,7 +60,7 @@
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
             "openLayerControl": "Open de laag-instellingen",
-            "pleaseLogin": "Gelieve je aan te melden om een punt to te voegen",
+            "pleaseLogin": "Gelieve je aan te melden om een punt toe te voegen",
             "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
             "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
             "title": "Nieuw punt toevoegen?",
