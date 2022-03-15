@@ -227,18 +227,6 @@
         {
           "if": {
             "and": [
-              "fee=no"
-            ]
-          },
-          "then": {
-            "nl": "Gratis te gebruiken",
-            "en": "Free to use"
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
               "fee=no",
               "fee:conditional=",
               "charge=",
@@ -263,6 +251,18 @@
             "nl": "Gratis te gebruiken, maar aanmelden met een applicatie is verplicht",
             "en": "Free to use, but one has to authenticate"
           }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=no"
+            ]
+          },
+          "then": {
+            "nl": "Gratis te gebruiken",
+            "en": "Free to use"
+          },
+          "hideInAnswer": true
         },
         {
           "if": {

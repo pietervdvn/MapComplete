@@ -1806,13 +1806,13 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "Gratis te gebruiken"
-                    },
-                    "1": {
                         "then": "Gratis te gebruiken (zonder aan te melden)"
                     },
-                    "2": {
+                    "1": {
                         "then": "Gratis te gebruiken, maar aanmelden met een applicatie is verplicht"
+                    },
+                    "2": {
+                        "then": "Gratis te gebruiken"
                     },
                     "3": {
                         "then": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/..."

@@ -51,6 +51,22 @@ export class ChangesetHandler {
     }
 
     /**
+     * Creates a new list which contains every key at most once
+     */
+    public static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[]{
+        const r : ChangesetTag[] = []
+        const seen = new Set<string>()
+        for (const extraMetaTag of extraMetaTags) {
+            if(seen.has(extraMetaTag.key)){
+                continue
+            }
+            r.push(extraMetaTag)
+            seen.add(extraMetaTag.key)
+        }
+        return r
+    }
+
+    /**
      * Inplace rewrite of extraMetaTags
      * If the metatags contain a special motivation of the format "<change-type>:node/-<number>", this method will rewrite this negative number to the actual ID
      * The key is changed _in place_; true will be returned if a change has been applied
@@ -95,7 +111,7 @@ export class ChangesetHandler {
         }
         
         extraMetaTags = [...extraMetaTags, ...this.defaultChangesetTags()]
-
+        extraMetaTags = ChangesetHandler.removeDuplicateMetaTags(extraMetaTags)
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
             this.userDetails.data.csCount = 1;
@@ -316,6 +332,7 @@ export class ChangesetHandler {
     private async UpdateTags(
         csId: number,
         tags: ChangesetTag[]) {
+        tags = ChangesetHandler.removeDuplicateMetaTags(tags)
 
         console.trace("Updating tags of " + csId)
         const self = this;
