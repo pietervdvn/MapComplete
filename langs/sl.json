@@ -21,12 +21,18 @@
             "tuesday": "Torek"
         },
         "cancel": "Prekliči",
-        "skip": "Preskoči to vprašanje"
+        "skip": "Preskoči to vprašanje",
+        "pickLanguage": "Izberite jezik: "
     },
     "image": {
         "addPicture": "Dodaj sliko",
         "doDelete": "Odstrani sliko",
         "dontDelete": "Prekliči",
         "isDeleted": "Izbrisana"
+    },
+    "index": {
+        "title": "Dobrodošli na MapComplete",
+        "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
+        "pickTheme": "Za začetek spodaj izberite tematiko."
     }
 }
