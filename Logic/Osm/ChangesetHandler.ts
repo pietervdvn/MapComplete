@@ -52,6 +52,8 @@ export class ChangesetHandler {
 
     /**
      * Creates a new list which contains every key at most once
+     * 
+     * ChangesetHandler.removeDuplicateMetaTags([{key: "k", value: "v"}, {key: "k0", value: "v0"}, {key: "k", value:"v"}] // => [{key: "k", value: "v"}, {key: "k0", value: "v0"}]
      */
     public static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[]{
         const r : ChangesetTag[] = []
