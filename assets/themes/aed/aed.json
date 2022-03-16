@@ -16,7 +16,8 @@
     "nb_NO": "Åpne AED-kart",
     "sv": "Öppna AED-karta",
     "pl": "Otwórz mapę AED",
-    "pt_BR": "Abrir mapa AED"
+    "pt_BR": "Abrir mapa AED",
+    "sl": "Zemljevid defibrilatorjev (AED)"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/logo.svg",
@@ -36,7 +37,8 @@
     "pl": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
     "pt_BR": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
     "nb_NO": "Defibrillatorer i nærheten",
-    "hu": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni"
+    "hu": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni",
+    "sl": "Na tem zemljevidu lahko poiščete in označite bližnje defibrilatorje"
   },
   "version": "2020-08-29",
   "startLat": 0,

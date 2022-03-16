@@ -3,11 +3,11 @@
         "description": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
         "name": "Defibrilatorji",
         "presets": {
-            "1": {
-                "title": "defibrilator je pritrjen na steno"
-            },
             "0": {
                 "title": "Defibrilator"
+            },
+            "1": {
+                "title": "defibrilator je pritrjen na steno"
             }
         },
         "tagRenderings": {
@@ -19,14 +19,14 @@
                     "1": {
                         "then": "Javno dostopen"
                     },
+                    "2": {
+                        "then": "Dostopen samo strankam"
+                    },
                     "3": {
                         "then": "Ni dostopen splošni javnosti (npr. samo za osebje, za lastnike, ...)"
                     },
                     "4": {
                         "then": "Ni dostopen, morda samo za profesionalno rabo"
-                    },
-                    "2": {
-                        "then": "Dostopen samo strankam"
                     }
                 },
                 "question": "Ali je ta defibrilator prosto dostopen?",
@@ -34,6 +34,9 @@
             },
             "defibrillator-defibrillator": {
                 "mappings": {
+                    "0": {
+                        "then": "Ni informacij o vrsti naprave"
+                    },
                     "1": {
                         "then": "To je ročni defibrilator za poklicne reševalce"
                     },
@@ -42,9 +45,6 @@
                     },
                     "3": {
                         "then": "To je posebna vrsta defibrilatorja: {defibrillator}"
-                    },
-                    "0": {
-                        "then": "Ni informacij o vrsti naprave"
                     }
                 },
                 "question": "Ali je to navaden avtomatski defibrilator ali ročni defibrilator namenjen poklicnim reševalcem?"
@@ -54,24 +54,24 @@
                 "render": "<i>Dodatne informacije o lokaciji (v lokalnem jeziku):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "render": "<i>Dodatne informacije o lokaciji (v Angleščini):</i><br/>{defibrillator:location:en}",
-                "question": "Prosimo, opišite kje se nahaja defibrilator (v Angleščini)"
+                "question": "Prosimo, opišite kje se nahaja defibrilator (v Angleščini)",
+                "render": "<i>Dodatne informacije o lokaciji (v Angleščini):</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
-                "render": "<i>Dodatne informacije o lokaciji (v Francoščini):</i><br/>{defibrillator:location:fr}",
-                "question": "Prosimo, opišite kje se nahaja defibrilator (v Francoščini)"
+                "question": "Prosimo, opišite kje se nahaja defibrilator (v Francoščini)",
+                "render": "<i>Dodatne informacije o lokaciji (v Francoščini):</i><br/>{defibrillator:location:fr}"
             },
             "defibrillator-description": {
-                "render": "Dodatne informacije: {description}",
-                "question": "Ali imate še kakšne uporabne informacije za uporabnike, ki jih niste mogli podati zgoraj? (pustite prazno če jih nimate)"
+                "question": "Ali imate še kakšne uporabne informacije za uporabnike, ki jih niste mogli podati zgoraj? (pustite prazno če jih nimate)",
+                "render": "Dodatne informacije: {description}"
             },
             "defibrillator-email": {
                 "question": "Kakšen je email naslov za vprašanja o tem defibrilatorju?",
                 "render": "Email naslov za vprašanja o tem defibrilatorju: <a href='mailto:{email}'>{email}</a>"
             },
             "defibrillator-fixme": {
-                "render": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
-                "question": "Ali je kaj narobe s tem vnosom na zemljevid, in tega niste mogli sami popraviti tu? (pustite opombo OpenStreetMap strokovnjakom)"
+                "question": "Ali je kaj narobe s tem vnosom na zemljevid, in tega niste mogli sami popraviti tu? (pustite opombo OpenStreetMap strokovnjakom)",
+                "render": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -85,7 +85,6 @@
                 "question": "Ali se ta defibrilator nahaja znotraj?"
             },
             "defibrillator-level": {
-                "render": "Ta defibrilator je v {level}. nadstropju",
                 "mappings": {
                     "0": {
                         "then": "Ta defibrilator je v <b>pritličju</b>"
@@ -94,33 +93,34 @@
                         "then": "Ta defibrilator je v <b>prvem nadstropju</b>"
                     }
                 },
-                "question": "V katerem nadstropju je defibrilator?"
+                "question": "V katerem nadstropju je defibrilator?",
+                "render": "Ta defibrilator je v {level}. nadstropju"
             },
             "defibrillator-opening_hours": {
-                "question": "Ob katerih urah je ta defibrilator na voljo?",
-                "render": "{opening_hours_table(opening_hours)}",
                 "mappings": {
                     "0": {
                         "then": "Na voljo 24/7 (tudi za praznike)"
                     }
-                }
+                },
+                "question": "Ob katerih urah je ta defibrilator na voljo?",
+                "render": "{opening_hours_table(opening_hours)}"
             },
             "defibrillator-phone": {
                 "question": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
                 "render": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>"
             },
             "defibrillator-ref": {
-                "render": "Uradna identifikacijska številka te naprave: <i>{ref}</i>",
-                "question": "Kakšna je uradna identifikacijska številka te naprave? (če je vidna na napravi)"
+                "question": "Kakšna je uradna identifikacijska številka te naprave? (če je vidna na napravi)",
+                "render": "Uradna identifikacijska številka te naprave: <i>{ref}</i>"
             },
             "defibrillator-survey:date": {
-                "render": "Ta defibrilator je bil nazadnje opažen {survey:date}",
                 "mappings": {
                     "0": {
                         "then": "Preverjeno danes!"
                     }
                 },
-                "question": "Kdaj je bil ta defibrilator nazadnje opažen?"
+                "question": "Kdaj je bil ta defibrilator nazadnje opažen?",
+                "render": "Ta defibrilator je bil nazadnje opažen {survey:date}"
             }
         },
         "title": {
