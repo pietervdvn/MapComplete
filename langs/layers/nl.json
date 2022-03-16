@@ -262,7 +262,7 @@
                         "then": "Heeft een rugleuning"
                     },
                     "1": {
-                        "then": "Rugleuning ontbreekt"
+                        "then": "Heeft geen rugleuning"
                     }
                 },
                 "question": "Heeft deze zitbank een rugleuning?"
