@@ -239,8 +239,25 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 }
 
 export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRenderingConfigJson> {
-    constructor() {
+    private readonly _calculatedTagNames: string[];
+    constructor(layerConfig?: LayerConfigJson) {
         super("Checks that the mappings don't shadow each other", [], "DetectShadowedMappings");
+        this._calculatedTagNames = DetectShadowedMappings.extractCalculatedTagNames(layerConfig);
+    }
+
+    /**
+     * 
+     * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc:=js()"]}) // => ["_abc"]
+     * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc=js()"]}) // => ["_abc"]
+     */
+    private static extractCalculatedTagNames(layerConfig?: LayerConfigJson){
+        return layerConfig?.calculatedTags?.map(ct => {
+            if(ct.indexOf(':=') >= 0){
+                return ct.split(':=')[0]
+            }
+            return ct.split("=")[0]
+        }) ?? []
+        
     }
 
     convert(json: QuestionableTagRenderingConfigJson, context: string): { result: QuestionableTagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
@@ -248,6 +265,10 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
+        }
+        const defaultProperties = {}
+        for (const calculatedTagName of this._calculatedTagNames) {
+            defaultProperties[calculatedTagName] = "some_calculated_tag_value_for_"+calculatedTagName
         }
         const parsedConditions = json.mappings.map(m => {
             const ifTags = TagUtils.Tag(m.if);
@@ -264,7 +285,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
                 // Yes, it might be shadowed, but running this check is to difficult right now
                 continue
             }
-            const keyValues = parsedConditions[i].asChange({});
+            const keyValues = parsedConditions[i].asChange(defaultProperties);
             const properties = {}
             keyValues.forEach(({k, v}) => {
                 properties[k] = v
@@ -277,16 +298,18 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
     The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
-    Move the mapping up to fix this problem
+    To fix this problem, you can try to:
+    - Move the shadowed mapping up
+    - Use "addExtraTags": ["key=value", ...] in order to avoid a different rendering
+         (e.g. [{"if": "fee=no",                     "then": "Free to use", "hideInAnswer":true},
+                {"if": {"and":["fee=no","charge="]}, "then": "Free to use"}]
+          can be replaced by
+               [{"if":"fee=no", "then": "Free to use", "addExtraTags": ["charge="]}]
 `)
                 }
             }
 
         }
-
-        // TODO make this errors again
-        warnings.push(...errors)
-        errors.splice(0, errors.length)
 
         return {
             errors,
@@ -336,9 +359,9 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
-    constructor() {
+    constructor(layerConfig: LayerConfigJson) {
         super("Various validation on tagRenderingConfigs",
-            new DetectShadowedMappings(),
+            new DetectShadowedMappings( layerConfig),
             new DetectMappingsWithImages()    
         );
     }
@@ -434,7 +457,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             if (json.tagRenderings !== undefined) {
-               const r = new OnEvery("tagRenderings", new ValidateTagRenderings()).convert(json, context)
+               const r = new OnEvery("tagRenderings", new ValidateTagRenderings(json)).convert(json, context)
                 warnings.push(...(r.warnings??[]))
                 errors.push(...(r.errors??[]))
                 information.push(...(r.information??[]))

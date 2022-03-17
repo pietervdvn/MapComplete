@@ -199,12 +199,8 @@
                 "nl": "Kan gratis gebruikt worden",
                 "pt_BR": "Pode ser usado de graça",
                 "de": "Nutzung kostenlos"
-              }
-            },
-            {
-              "if": "fee=no",
-              "then": "Can be used for free",
-              "hideInAnswer": true
+              },
+              "addExtraTags": ["charge="]
             }
           ]
         },

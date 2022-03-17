@@ -1,0 +1,38 @@
+{
+    "general": {
+        "back": "Nazaj",
+        "cancel": "Prekliči",
+        "confirm": "Potrdi",
+        "pickLanguage": "Izberite jezik: ",
+        "skip": "Preskoči to vprašanje",
+        "weekdays": {
+            "abbreviations": {
+                "friday": "Pet",
+                "monday": "Pon",
+                "saturday": "Sob",
+                "sunday": "Ned",
+                "thursday": "Čet",
+                "tuesday": "Tor",
+                "wednesday": "Sre"
+            },
+            "friday": "Petek",
+            "monday": "Ponedeljek",
+            "saturday": "Sobota",
+            "sunday": "Nedelja",
+            "thursday": "Četrtek",
+            "tuesday": "Torek",
+            "wednesday": "Sreda"
+        }
+    },
+    "image": {
+        "addPicture": "Dodaj sliko",
+        "doDelete": "Odstrani sliko",
+        "dontDelete": "Prekliči",
+        "isDeleted": "Izbrisana"
+    },
+    "index": {
+        "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
+        "pickTheme": "Za začetek spodaj izberite tematiko.",
+        "title": "Dobrodošli na MapComplete"
+    }
+}

@@ -538,16 +538,7 @@
               ]
             },
             "then": "Beheer door een privépersoon",
-            "hideInAnswer": true
-          },
-          {
-            "if": {
-              "and": [
-                "operator:type=private",
-                "operator="
-              ]
-            },
-            "then": "Beheer door een privépersoon"
+            "addExtraTags": ["operator="]
           }
         ],
         "condition": {

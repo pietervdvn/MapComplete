@@ -127,15 +127,11 @@
             },
             {
               "if": "building=apartments",
-              "then": "An apartment building - highrise for living"
+              "then": "An apartment building (a highrise building for living)"
             },
             {
               "if": "building=office",
               "then": "An office building - highrise for work"
-            },
-            {
-              "if": "building=apartments",
-              "then": "An apartment building"
             },
             {
               "if": "building=shed",

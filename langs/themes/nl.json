@@ -398,13 +398,13 @@
                     "climbing-possible": {
                         "mappings": {
                             "0": {
-                                "then": "Klimmen is hier niet mogelijk"
+                                "then": "Klimmen is hier niet toegelaten"
                             },
                             "1": {
                                 "then": "Klimmen is hier niet toegelaten"
                             },
                             "2": {
-                                "then": "Klimmen is hier niet toegelaten"
+                                "then": "Klimmen is hier niet mogelijk"
                             }
                         }
                     }
