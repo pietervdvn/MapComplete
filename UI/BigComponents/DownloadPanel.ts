@@ -28,13 +28,13 @@ export class DownloadPanel extends Toggle {
         const t = Translations.t.general.download
         const name = State.state.layoutToUse.id;
 
-        const includeMetaToggle = new CheckBoxes([t.includeMetaData.Clone()])
+        const includeMetaToggle = new CheckBoxes([t.includeMetaData])
         const metaisIncluded = includeMetaToggle.GetValue().map(selected => selected.length > 0)
 
 
         const buttonGeoJson = new SubtleButton(Svg.floppy_ui(),
-            new Combine([t.downloadGeojson.Clone().SetClass("font-bold"),
-                t.downloadGeoJsonHelper.Clone()]).SetClass("flex flex-col"))
+            new Combine([t.downloadGeojson.SetClass("font-bold"),
+                t.downloadGeoJsonHelper]).SetClass("flex flex-col"))
             .OnClickWithLoading(t.exporting,async () => {
                 const geojson = DownloadPanel.getCleanGeoJson(state, metaisIncluded.data)
                 Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson, null, "  "),
@@ -45,8 +45,8 @@ export class DownloadPanel extends Toggle {
 
 
         const buttonCSV = new SubtleButton(Svg.floppy_ui(), new Combine(
-            [t.downloadCSV.Clone().SetClass("font-bold"),
-                t.downloadCSVHelper.Clone()]).SetClass("flex flex-col"))
+            [t.downloadCSV.SetClass("font-bold"),
+                t.downloadCSVHelper]).SetClass("flex flex-col"))
             .OnClickWithLoading(t.exporting, async () => {
                 const geojson = DownloadPanel.getCleanGeoJson(state, metaisIncluded.data)
                 const csv = GeoOperations.toCSV(geojson.features)
@@ -62,12 +62,12 @@ export class DownloadPanel extends Toggle {
                 buttonGeoJson,
                 buttonCSV,
                 includeMetaToggle,
-                t.licenseInfo.Clone().SetClass("link-underline")])
+                t.licenseInfo.SetClass("link-underline")])
             .SetClass("w-full flex flex-col border-4 border-gray-300 rounded-3xl p-4")
 
         super(
             downloadButtons,
-            t.noDataLoaded.Clone(),
+            t.noDataLoaded,
             state.featurePipeline.somethingLoaded)
     }
 
@@ -110,7 +110,7 @@ export class DownloadPanel extends Toggle {
 
                 const cleaned = {
                     type: feature.type,
-                    geometry: feature.geometry,
+                    geometry: {...feature.geometry},
                     properties: {...feature.properties}
                 }
 
