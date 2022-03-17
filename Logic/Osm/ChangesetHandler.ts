@@ -52,6 +52,8 @@ export class ChangesetHandler {
 
     /**
      * Creates a new list which contains every key at most once
+     * 
+     * ChangesetHandler.removeDuplicateMetaTags([{key: "k", value: "v"}, {key: "k0", value: "v0"}, {key: "k", value:"v"}] // => [{key: "k", value: "v"}, {key: "k0", value: "v0"}]
      */
     public static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[]{
         const r : ChangesetTag[] = []
@@ -271,8 +273,8 @@ export class ChangesetHandler {
     private parseUploadChangesetResponse(response: XMLDocument): Map<string, string> {
         const nodes = response.getElementsByTagName("node");
         const mappings = new Map<string, string>()
-        // @ts-ignore
-        for (const node of nodes) {
+        
+        for (const node of Array.from(nodes)) {
             const mapping = this.handleIdRewrite(node, "node")
             if (mapping !== undefined) {
                 mappings.set(mapping[0], mapping[1])
@@ -280,8 +282,7 @@ export class ChangesetHandler {
         }
 
         const ways = response.getElementsByTagName("way");
-        // @ts-ignore
-        for (const way of ways) {
+        for (const way of Array.from(ways)) {
             const mapping = this.handleIdRewrite(way, "way")
             if (mapping !== undefined) {
                 mappings.set(mapping[0], mapping[1])
