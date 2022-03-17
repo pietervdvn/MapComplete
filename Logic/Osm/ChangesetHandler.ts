@@ -273,8 +273,8 @@ export class ChangesetHandler {
     private parseUploadChangesetResponse(response: XMLDocument): Map<string, string> {
         const nodes = response.getElementsByTagName("node");
         const mappings = new Map<string, string>()
-        // @ts-ignore
-        for (const node of nodes) {
+        
+        for (const node of Array.from(nodes)) {
             const mapping = this.handleIdRewrite(node, "node")
             if (mapping !== undefined) {
                 mappings.set(mapping[0], mapping[1])
@@ -282,8 +282,7 @@ export class ChangesetHandler {
         }
 
         const ways = response.getElementsByTagName("way");
-        // @ts-ignore
-        for (const way of ways) {
+        for (const way of Array.from(ways)) {
             const mapping = this.handleIdRewrite(way, "way")
             if (mapping !== undefined) {
                 mappings.set(mapping[0], mapping[1])
