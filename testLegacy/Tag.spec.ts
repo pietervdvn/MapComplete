@@ -1,9 +1,6 @@
-import {Utils} from "../Utils";
 import {equal} from "assert";
 import T from "./TestHelper";
 import Locale from "../UI/i18n/Locale";
-import Translations from "../UI/i18n/Translations";
-import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
 import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
@@ -97,15 +94,6 @@ export default class TagSpec extends T {
                 equal(false, t2.isEquivalent(t0))
                 equal(false, t2.isEquivalent(t1))
             })],
-            ["Parse translation map", (() => {
-
-                const json: any = {"en": "English", "nl": "Nederlands"};
-                const translation = Translations.WT(new Translation(json));
-                Locale.language.setData("en");
-                equal(translation.txt, "English");
-                Locale.language.setData("nl");
-                equal(translation.txt, "Nederlands");
-            })],
             ["Parse tag rendering", (() => {
                 Locale.language.setData("nl");
                 const tr = new TagRenderingConfig({
@@ -130,13 +118,6 @@ export default class TagSpec extends T {
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
 
             })],
-            [
-                "Empty match test",
-                () => {
-                    const t = new Tag("key", "");
-                    equal(false, t.matchesProperties({"key": "somevalue"}))
-                }
-            ],
             [
                 "Test not with overpass",
                 () => {
@@ -385,42 +366,6 @@ export default class TagSpec extends T {
                     ]));
                 equal(rules, "Tu 23:00-00:00");
             }],
-            ["OH 24/7", () => {
-                const rules = OH.Parse("24/7");
-                equal(rules.length, 7);
-                equal(rules[0].startHour, 0);
-                const asStr = OH.ToString(rules);
-                equal(asStr, "24/7");
-            }],
-            ["OH Th[-1] off", () => {
-                const rules = OH.ParseRule("Th[-1] off");
-                equal(rules, null);
-            }],
-            ["OHNo parsePH 12:00-17:00", () => {
-                const rules = OH.ParseRule("PH 12:00-17:00");
-                equal(rules, null);
-            }],
-            ["OH Parse PH 12:00-17:00", () => {
-                const rules = OH.ParsePHRule("PH 12:00-17:00");
-                equal(rules.mode, " ");
-                equal(rules.start, "12:00")
-                equal(rules.end, "17:00")
-            }],
-            ["Round", () => {
-                equal(Utils.Round(15), "15.0")
-                equal(Utils.Round(1), "1.0")
-                equal(Utils.Round(1.5), "1.5")
-                equal(Utils.Round(0.5), "0.5")
-                equal(Utils.Round(1.6), "1.6")
-
-                equal(Utils.Round(-15), "-15.0")
-                equal(Utils.Round(-1), "-1.0")
-                equal(Utils.Round(-1.5), "-1.5")
-                equal(Utils.Round(-0.5), "-0.5")
-                equal(Utils.Round(-1.6), "-1.6")
-
-            }
-            ],
             ["Regression", () => {
 
                 const config = {

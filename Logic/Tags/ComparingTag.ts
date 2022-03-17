@@ -31,6 +31,15 @@ export default class ComparingTag implements TagsFilter {
         return false;
     }
 
+    /**
+     * Checks if the properties match
+     * 
+     * const t = new ComparingTag("key", (x => Number(x) < 42))
+     * t.matchesProperties({key: 42}) // => false
+     * t.matchesProperties({key: 41}) // => true
+     * t.matchesProperties({key: 0}) // => true
+     * t.matchesProperties({differentKey: 42}) // => false
+     */
     matchesProperties(properties: any): boolean {
         return this._predicate(properties[this._key]);
     }

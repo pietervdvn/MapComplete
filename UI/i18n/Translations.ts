@@ -43,6 +43,14 @@ export default class Translations {
         return new Translation(t, context);
     }
 
+    /**
+     * 'Wrap Translation': given an object containing translations OR a string, returns a translation object
+     * 
+     * const json: any = {"en": "English", "nl": "Nederlands"};
+     * const translation = Translations.WT(new Translation(json));
+     * translation.textFor("en") // => "English"
+     * translation.textFor("nl") // => "Nederlands"
+     */
     public static WT(s: string | Translation): Translation {
         if (s === undefined || s === null) {
             return undefined;
