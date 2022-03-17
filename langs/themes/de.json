@@ -442,10 +442,10 @@
                     "climbing-possible": {
                         "mappings": {
                             "0": {
-                                "then": "Hier kann nicht geklettert werden"
+                                "then": "Hier kann geklettert werden"
                             },
                             "1": {
-                                "then": "Hier kann geklettert werden"
+                                "then": "Hier kann nicht geklettert werden"
                             },
                             "2": {
                                 "then": "Hier kann nicht geklettert werden"
