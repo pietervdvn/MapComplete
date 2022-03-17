@@ -276,7 +276,13 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
     The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
-    Move the mapping up to fix this problem
+    To fix this problem, you can try to:
+    - Move the shadowed mapping up
+    - Use "addExtraTags": ["key=value", ...] in order to avoid a different rendering
+         (e.g. [{"if": "fee=no",                     "then": "Free to use", "hideInAnswer":true},
+                {"if": {"and":["fee=no","charge="]}, "then": "Free to use"}]
+          can be replaced by
+               [{"if":"fee=no", "then": "Free to use", "addExtraTags": ["charge="]}]
 `)
                 }
             }
