@@ -19,14 +19,17 @@ export abstract class Conversion<TIn, TOut> {
     }
 
     public static strict<T>(fixed: { errors?: string[], warnings?: string[], information?: string[], result?: T }): T {
-        if (fixed?.errors !== undefined &&  fixed?.errors?.length > 0) {
-            throw fixed.errors.join("\n\n");
-        }
+       
         fixed.information?.forEach(i => console.log("    ", i))
         const yellow = (s) => "\x1b[33m"+s+"\x1b[0m"
         const red = s => '\x1b[31m'+s+'\x1b[0m'
-        
         fixed.warnings?.forEach(w => console.warn(red(`<!> `), yellow (w)))
+
+        if (fixed?.errors !== undefined &&  fixed?.errors?.length > 0) {
+            fixed.errors?.forEach(e => console.error(red(`ERR `+e)))
+            throw "Detected one or more errors, stopping now"
+        }
+        
         return fixed.result;
     }
 

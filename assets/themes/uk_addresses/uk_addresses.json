@@ -256,13 +256,14 @@
           },
           "mappings": [
             {
-              "if": "addr:unit=",
-              "then": "<div class='subtle'>Sub-unit (e.g. \"1\", \"Flat 2\", \"Unit C\")</div>",
-              "hideInAnswer": true
+              "if": "not:addr:unit=yes",
+              "then": "There is no sub-unit within this address",
+              "addExtraTags": ["addr:unit="]
             },
             {
               "if": "addr:unit=",
-              "then": "There is no sub-unit within this address"
+              "then": "<div class='subtle'>Sub-unit (e.g. \"1\", \"Flat 2\", \"Unit C\")</div>",
+              "hideInAnswer": true
             }
           ],
           "condition": {
@@ -291,17 +292,12 @@
                   "addr:housename="
                 ]
               },
-              "then": "<div class='subtle'>House or building name</div>",
-              "hideInAnswer": true
+              "then": "This building has no housename"
             },
             {
-              "if": {
-                "and": [
-                  "nohousename=yes",
-                  "addr:housename="
-                ]
-              },
-              "then": "This building has no housename"
+              "if": "addr:housename=",
+              "then": "<div class='subtle'>House or building name</div>",
+              "hideInAnswer": true
             },
             {
               "#": "By adding nohousenumber!=yes, this option will trigger when first added, but will be untriggered if a housenumber is added, resulting in the question poping up!",
@@ -330,9 +326,17 @@
           },
           "mappings": [
             {
+              "if": "nohousenumber=yes",
+              "then": {
+                "en": "This building has no house number",
+                "nl": "Dit gebouw heeft geen huisnummer",
+                "de": "Dieses Gebäude hat keine Hausnummer"
+              },
+              "addExtraTags": [ "addr:housenumber="]
+            },
+            {
               "if": {
                 "and": [
-                  "nohousenumber=yes",
                   "addr:housenumber="
                 ]
               },
@@ -340,19 +344,6 @@
                 "en": "<div class='subtle'>Number (e.g. 1, 1A, 2)</div>"
               },
               "hideInAnswer": true
-            },
-            {
-              "if": {
-                "and": [
-                  "nohousenumber=yes",
-                  "addr:housenumber="
-                ]
-              },
-              "then": {
-                "en": "This building has no house number",
-                "nl": "Dit gebouw heeft geen huisnummer",
-                "de": "Dieses Gebäude hat keine Hausnummer"
-              }
             }
           ]
         },
@@ -373,17 +364,17 @@
           },
           "mappings": [
             {
+              "if": "not:addr:substreet=yes",
+              "then": {
+                "en": "No extra place name is given or needed"
+              },
+              "addExtraTags": ["addr:substreet="]
+            },{
               "if": "addr:substreet=",
               "then": {
                 "en": "<div class='subtle'>Place (e.g. \"Castle Mews\", \"West Business Park\")</div>"
               },
               "hideInAnswer": true
-            },
-            {
-              "if": "addr:substreet=",
-              "then": {
-                "en": "No extra place name is given or needed"
-              }
             }
           ],
           "condition": "addr:parentstreet="
@@ -404,17 +395,18 @@
           },
           "mappings": [
             {
+              "if": "not:addr:substreet=yes",
+              "then": {
+                "en": "No extra place name is given or needed"
+              },
+              "addExtraTags": ["addr:substreet="]
+            },
+            {
               "if": "addr:substreet=",
               "then": {
                 "en": "<div class='subtle'>Place (e.g. \"Castle Mews\", \"West Business Park\")</div>"
               },
               "hideInAnswer": true
-            },
-            {
-              "if": "addr:substreet=",
-              "then": {
-                "en": "No extra place name is given or needed"
-              }
             }
           ],
           "condition": {
@@ -479,15 +471,9 @@
           },
           "mappings": [
             {
-              "if": "addr:parentstreet=",
-              "then": {
-                "en": "<div class='subtle'>Parent street name</div>"
-              },
-              "hideInAnswer": true
-            },
-            {
-              "if": "addr:parentstreet=",
-              "then": "No parent street name is needed within this address"
+              "if": "not:addr:parentstreet=yes",
+              "then": "No parent street name is needed within this address",
+              "addExtraTags": ["addr:parentstreet="]
             },
             {
               "if": "addr:parentstreet:={_closest_street:0:name}",
@@ -503,6 +489,13 @@
               "if": "addr:parentstreet:={_closest_street:2:name}",
               "then": "<b>{_closest_street:2:name}</b>",
               "hideInAnswer": "_closest_street:2:name="
+            },
+            {
+              "if": "addr:parentstreet=",
+              "then": {
+                "en": "<div class='subtle'>Parent street name</div>"
+              },
+              "hideInAnswer": true
             }
           ],
           "condition": {
