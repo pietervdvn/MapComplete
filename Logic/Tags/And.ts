@@ -2,9 +2,14 @@ import {TagsFilter} from "./TagsFilter";
 import {Or} from "./Or";
 import {TagUtils} from "./TagUtils";
 
+
+// @ts-ignore
+import {Tag} from "./Tag";// needed for tests
+// @ts-ignore
+import {RegexTag} from "./RegexTag";// needed for tests
+
 export class And extends TagsFilter {
     public and: TagsFilter[]
-
     constructor(and: TagsFilter[]) {
         super();
         this.and = and
@@ -40,6 +45,10 @@ export class And extends TagsFilter {
         return true;
     }
 
+    /**
+     * const and = new And([new Tag("boundary","protected_area"), new RegexTag("protect_class","98",true)])
+     * and.asOverpass() // => [ "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]" ]
+     */
     asOverpass(): string[] {
         let allChoices: string[] = null;
         for (const andElement of this.and) {
@@ -73,6 +82,23 @@ export class And extends TagsFilter {
         return true;
     }
 
+    /**
+     * const t0 = new And([
+     *     new Tag("valves:special", "A"),
+     *     new Tag("valves", "A")
+     * ])
+     * const t1 = new And([new Tag("valves", "A")])
+     * const t2 = new And([new Tag("valves", "B")])
+     * t0.isEquivalent(t0) // => true
+     * t1.isEquivalent(t1) // => true
+     * t2.isEquivalent(t2) // => true
+     * t0.isEquivalent(t1) // => false
+     * t0.isEquivalent(t2) // => false
+     * t1.isEquivalent(t0) // => false
+     * t1.isEquivalent(t2) // => false
+     * t2.isEquivalent(t0) // => false
+     * t2.isEquivalent(t1) // => false
+     */
     isEquivalent(other: TagsFilter): boolean {
         if (!(other instanceof And)) {
             return false;

@@ -145,6 +145,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             const v = state.sharedLayers.get(layerName)
             if (v === undefined) {
                 errors.push("Default layer " + layerName + " not found")
+                continue
             }
             if(alreadyLoaded.has(v.id)){
                 warnings.push("Layout "+context+" already has a layer with name "+v.id+"; skipping inclusion of this builtin layer")

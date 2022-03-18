@@ -236,6 +236,18 @@ export class OH {
      * rules.length // => 7
      * rules[0].startHour // => 0
      * OH.ToString(rules) // => "24/7"
+     * 
+     * const rules = OH.ParseRule("11:00-19:00");
+     * rules.length // => 7
+     * rules[0].weekday // => 0
+     * rules[0].startHour // => 11
+     * rules[3].endHour // => 19
+     * 
+     * const rules = OH.ParseRule("Mo-Th 11:00-19:00");
+     * rules.length // => 4
+     * rules[0].weekday // => 0
+     * rules[0].startHour // => 11
+     * rules[3].endHour // => 19
      */
     public static ParseRule(rule: string): OpeningHour[] {
         try {

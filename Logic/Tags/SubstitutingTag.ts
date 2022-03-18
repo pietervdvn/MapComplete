@@ -46,6 +46,14 @@ export default class SubstitutingTag implements TagsFilter {
         return !this._invert;
     }
 
+    /**
+     * const assign = new SubstitutingTag("survey:date", "{_date:now}")
+     * assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-03-29"}) // => true
+     * assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-01-01"}) // => false
+     * assign.matchesProperties({"survey:date": "2021-03-29"}) // => false
+     * assign.matchesProperties({"_date:now": "2021-03-29"}) // => false
+     * assign.matchesProperties({"some_key": "2021-03-29"}) // => false
+     */
     matchesProperties(properties: any): boolean {
         const value = properties[this._key];
         if (value === undefined || value === "") {

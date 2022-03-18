@@ -42,6 +42,12 @@ export class RegexTag extends TagsFilter {
         return r.source;
     }
 
+    /**
+     * new RegexTag("a", /^[xyz]$/).asOverpass() // => [ `["a"~"^[xyz]$"]` ]
+     * 
+     * // A wildcard regextag should only give the key
+     * new RegexTag("a", /^..*$/).asOverpass() // => [ `["a"]` ]
+     */
     asOverpass(): string[] {
         const inv =this.invert ? "!" : ""
         if (typeof this.key !== "string") {
@@ -89,7 +95,29 @@ export class RegexTag extends TagsFilter {
      * notRegex.matchesProperties({"x": "z"}) // => true
      * notRegex.matchesProperties({"x": ""}) // => true
      * notRegex.matchesProperties({}) // => true
-
+     * 
+     * const bicycleTubeRegex = new RegexTag("vending", /^.*bicycle_tube.*$/)
+     * bicycleTubeRegex.matchesProperties({"vending": "bicycle_tube"}) // => true
+     * bicycleTubeRegex.matchesProperties({"vending": "something;bicycle_tube"}) // => true
+     * bicycleTubeRegex.matchesProperties({"vending": "bicycle_tube;something"}) // => true
+     * bicycleTubeRegex.matchesProperties({"vending": "xyz;bicycle_tube;something"}) // => true
+     *
+     * const nameStartsWith = new RegexTag("name", /^[sS]peelbox.*$/)
+     * nameStartsWith.matchesProperties({"name": "Speelbos Sint-Anna"} => true
+     * nameStartsWith.matchesProperties({"name": "speelbos Sint-Anna"} => true
+     * nameStartsWith.matchesProperties({"name": "Sint-Anna"} => false
+     * nameStartsWith.matchesProperties({"name": ""} => false
+     *
+     * const notEmptyList = new RegexTag("xyz", /^\[\]$/, true)
+     * notEmptyList.matchesProperties({"xyz": undefined}) // => true
+     * notEmptyList.matchesProperties({"xyz": "[]"}) // => false
+     * notEmptyList.matchesProperties({"xyz": "[\"abc\"]"}) // => true
+     * 
+     * const importMatch = new RegexTag("tags", /(^|.*;)amenity=public_bookcase($|;.*)/)
+     * importMatch.matchesProperties({"tags": "amenity=public_bookcase;name=test"}) // =>true
+     * importMatch.matchesProperties({"tags": "amenity=public_bookcase"}) // =>true
+     * importMatch.matchesProperties({"tags": "name=test;amenity=public_bookcase"}) // =>true
+     * importMatch.matchesProperties({"tags": "amenity=bench"}) // =>false
      */
     matchesProperties(tags: any): boolean {
         if (typeof this.key === "string") {

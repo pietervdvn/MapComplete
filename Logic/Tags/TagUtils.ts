@@ -167,6 +167,21 @@ export class TagUtils {
         return new Tag(tag[0], tag[1]);
     }
 
+    /**
+     * Parses a tag configuration (a json) into a TagsFilter
+     * 
+     * TagUtils.Tag("key=value") // => new Tag("key", "value")
+     * TagUtils.Tag("key=") // => new Tag("key", "")
+     * TagUtils.Tag("key!=") // => new RegexTag("key", "^..*$", true)
+     * TagUtils.Tag("key!=value") // => new RegexTag("key", /^value$/, true)
+     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/)
+     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/, true)
+     * TagUtils.Tag({"and": ["key=value", "x=y"]}) // => new And([new Tag("key","value"), new Tag("x","y")])
+     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^[sS]peelbos.*$/)
+     * TagUtils.Tag("survey:date:={_date:now}") // => new SubstitutingTag("survey:date", "{_date:now}")
+     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/, true)
+     * TagUtils.Tag("tags~(^|.*;)amenity=public_bookcase($|;.*)") // => new RegexTag("tags", /(^|.*;)amenity=public_bookcase($|;.*)/)
+     */
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
         try {
             return this.TagUnsafe(json, context);

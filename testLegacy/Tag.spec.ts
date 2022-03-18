@@ -6,94 +6,12 @@ import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {TagUtils} from "../Logic/Tags/TagUtils";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import {RegexTag} from "../Logic/Tags/RegexTag";
 
 export default class TagSpec extends T {
 
     constructor() {
         super([
-
-            ["Parse tag config", (() => {
-               
-                const multiMatch = TagUtils.Tag("vending~.*bicycle_tube.*") as Tag;
-                equal(multiMatch.matchesProperties({"vending": "bicycle_tube"}), true)
-                equal(multiMatch.matchesProperties({"vending": "something;bicycle_tube"}), true)
-                equal(multiMatch.matchesProperties({"vending": "bicycle_tube;something"}), true)
-                equal(multiMatch.matchesProperties({"vending": "xyz;bicycle_tube;something"}), true)
-
-                const nameStartsWith = TagUtils.Tag("name~[sS]peelbos.*")
-                equal(nameStartsWith.matchesProperties({"name": "Speelbos Sint-Anna"}), true)
-                equal(nameStartsWith.matchesProperties({"name": "speelbos Sint-Anna"}), true)
-                equal(nameStartsWith.matchesProperties({"name": "Sint-Anna"}), false)
-                equal(nameStartsWith.matchesProperties({"name": ""}), false)
-
-
-                const assign = TagUtils.Tag("survey:date:={_date:now}")
-                equal(assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-03-29"}), true);
-                equal(assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-01-01"}), false);
-                equal(assign.matchesProperties({"survey:date": "2021-03-29"}), false);
-                equal(assign.matchesProperties({"_date:now": "2021-03-29"}), false);
-                equal(assign.matchesProperties({"some_key": "2021-03-29"}), false);
-
-                const notEmptyList = TagUtils.Tag("xyz!~\\[\\]")
-                equal(notEmptyList.matchesProperties({"xyz": undefined}), true);
-                equal(notEmptyList.matchesProperties({"xyz": "[]"}), false);
-                equal(notEmptyList.matchesProperties({"xyz": "[\"abc\"]"}), true);
-
-                let compare = TagUtils.Tag("key<=5")
-                equal(compare.matchesProperties({"key": undefined}), false);
-                equal(compare.matchesProperties({"key": "6"}), false);
-                equal(compare.matchesProperties({"key": "5"}), true);
-                equal(compare.matchesProperties({"key": "4"}), true);
-
-
-                compare = TagUtils.Tag("key<5")
-                equal(compare.matchesProperties({"key": undefined}), false);
-                equal(compare.matchesProperties({"key": "6"}), false);
-                equal(compare.matchesProperties({"key": "5"}), false);
-                equal(compare.matchesProperties({"key": "4.2"}), true);
-
-                compare = TagUtils.Tag("key>5")
-                equal(compare.matchesProperties({"key": undefined}), false);
-                equal(compare.matchesProperties({"key": "6"}), true);
-                equal(compare.matchesProperties({"key": "5"}), false);
-                equal(compare.matchesProperties({"key": "4.2"}), false);
-                compare = TagUtils.Tag("key>=5")
-                equal(compare.matchesProperties({"key": undefined}), false);
-                equal(compare.matchesProperties({"key": "6"}), true);
-                equal(compare.matchesProperties({"key": "5"}), true);
-                equal(compare.matchesProperties({"key": "4.2"}), false);
-
-                const importMatch = TagUtils.Tag("tags~(^|.*;)amenity=public_bookcase($|;.*)")
-                equal(importMatch.matchesProperties({"tags": "amenity=public_bookcase;name=test"}), true)
-                equal(importMatch.matchesProperties({"tags": "amenity=public_bookcase"}), true)
-                equal(importMatch.matchesProperties({"tags": "name=test;amenity=public_bookcase"}), true)
-                equal(importMatch.matchesProperties({"tags": "amenity=bench"}), false)
-
-            })],
-            ["Is equivalent test", (() => {
-
-                const t0 = new And([
-                    new Tag("valves:special", "A"),
-                    new Tag("valves", "A")
-                ])
-                const t1 = new And([
-                    new Tag("valves", "A")
-                ])
-                const t2 = new And([
-                    new Tag("valves", "B")
-                ])
-                equal(true, t0.isEquivalent(t0))
-                equal(true, t1.isEquivalent(t1))
-                equal(true, t2.isEquivalent(t2))
-
-                equal(false, t0.isEquivalent(t1))
-                equal(false, t0.isEquivalent(t2))
-                equal(false, t1.isEquivalent(t0))
-
-                equal(false, t1.isEquivalent(t2))
-                equal(false, t2.isEquivalent(t0))
-                equal(false, t2.isEquivalent(t1))
-            })],
             ["Parse tag rendering", (() => {
                 Locale.language.setData("nl");
                 const tr = new TagRenderingConfig({
@@ -118,51 +36,6 @@ export default class TagSpec extends T {
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
 
             })],
-            [
-                "Test not with overpass",
-                () => {
-                    const t = {
-                        and: [
-                            "boundary=protected_area",
-                            "protect_class!=98"
-                        ]
-                    }
-                    const filter = TagUtils.Tag(t)
-                    const overpass = filter.asOverpass();
-                    console.log(overpass)
-                    equal(overpass[0], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
-
-                    const or = {
-                        or: [
-                            "leisure=nature_reserve",
-                            t
-                        ]
-                    }
-                    const overpassOr = TagUtils.Tag(or).asOverpass()
-                    equal(2, overpassOr.length)
-                    equal(overpassOr[1], "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]")
-
-                    const orInOr = {
-                        or: [
-                            "amenity=drinking_water",
-                            or
-                        ]
-                    }
-                    const overpassOrInor = TagUtils.Tag(orInOr).asOverpass()
-                    equal(3, overpassOrInor.length)
-                }
-            ],
-            [
-                "Test regex to overpass",() => {
-                /*(Specifiation to parse, expected value for new RegexTag(spec).asOverpass()[0]) */
-                [["a~*", `"a"`],
-                ["a~[xyz]",`"a"~"^[xyz]$"`]].forEach(([spec, expected]) =>{
-                    T.equals(`[${expected}]`, TagUtils.Tag(
-                        spec
-                    ).asOverpass()[0], "RegexRendering failed")
-                } )
-            }
-            ],
             [
                 "Merge touching opening hours",
                 () => {
@@ -214,21 +87,7 @@ export default class TagSpec extends T {
                     equal(r.endHour, 12)
 
                 }],
-            ["Parse OH 1", () => {
-                const rules = OH.ParseRule("11:00-19:00");
-                equal(rules.length, 7);
-                equal(rules[0].weekday, 0);
-                equal(rules[0].startHour, 11);
-                equal(rules[3].endHour, 19);
-
-            }],
-            ["Parse OH 2", () => {
-                const rules = OH.ParseRule("Mo-Th 11:00-19:00");
-                equal(rules.length, 4);
-                equal(rules[0].weekday, 0);
-                equal(rules[0].startHour, 11);
-                equal(rules[3].endHour, 19);
-            }],
+           
             ["JOIN OH 1", () => {
                 const rules = OH.ToString([
                     {
@@ -432,14 +291,7 @@ export default class TagSpec extends T {
                     const filter = TagUtils.Tag("_key~*")
                     T.isTrue(filter.matchesProperties(properties), "Lazy value not matched")
                 }
-            ],
-            ["test date comparison", () => {
-
-                const filter = TagUtils.Tag("date_created<2022-01-07")
-                T.isFalse(filter.matchesProperties({"date_created": "2022-01-08"}), "Date comparison: expected a match")
-                T.isTrue(filter.matchesProperties({"date_created": "2022-01-01"}), "Date comparison: didn't expect a match")
-
-            }]]);
+            ]]);
     }
 
 }
