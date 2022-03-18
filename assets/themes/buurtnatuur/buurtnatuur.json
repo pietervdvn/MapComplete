@@ -538,7 +538,9 @@
               ]
             },
             "then": "Beheer door een privépersoon",
-            "addExtraTags": ["operator="]
+            "addExtraTags": [
+              "operator="
+            ]
           }
         ],
         "condition": {

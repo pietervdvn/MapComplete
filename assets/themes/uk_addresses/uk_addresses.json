@@ -258,7 +258,9 @@
             {
               "if": "not:addr:unit=yes",
               "then": "There is no sub-unit within this address",
-              "addExtraTags": ["addr:unit="]
+              "addExtraTags": [
+                "addr:unit="
+              ]
             },
             {
               "if": "addr:unit=",
@@ -332,7 +334,9 @@
                 "nl": "Dit gebouw heeft geen huisnummer",
                 "de": "Dieses Gebäude hat keine Hausnummer"
               },
-              "addExtraTags": [ "addr:housenumber="]
+              "addExtraTags": [
+                "addr:housenumber="
+              ]
             },
             {
               "if": {
@@ -368,8 +372,11 @@
               "then": {
                 "en": "No extra place name is given or needed"
               },
-              "addExtraTags": ["addr:substreet="]
-            },{
+              "addExtraTags": [
+                "addr:substreet="
+              ]
+            },
+            {
               "if": "addr:substreet=",
               "then": {
                 "en": "<div class='subtle'>Place (e.g. \"Castle Mews\", \"West Business Park\")</div>"
@@ -399,7 +406,9 @@
               "then": {
                 "en": "No extra place name is given or needed"
               },
-              "addExtraTags": ["addr:substreet="]
+              "addExtraTags": [
+                "addr:substreet="
+              ]
             },
             {
               "if": "addr:substreet=",
@@ -473,7 +482,9 @@
             {
               "if": "not:addr:parentstreet=yes",
               "then": "No parent street name is needed within this address",
-              "addExtraTags": ["addr:parentstreet="]
+              "addExtraTags": [
+                "addr:parentstreet="
+              ]
             },
             {
               "if": "addr:parentstreet:={_closest_street:0:name}",

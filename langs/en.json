@@ -102,6 +102,8 @@
         "download": {
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",
+            "downloadAsSvg": "Download an SVG of the current map",
+            "downloadAsSvgHelper": "Compatible Inkscape or Adobe Illustrator; will need further processing  ",
             "downloadCSV": "Download visible data as CSV",
             "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Download as GeoJson-file",

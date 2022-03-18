@@ -111,7 +111,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Converts a number to a string with one number after the comma
-     * 
+     *
      * Utils.Round(15) // => "15.0"
      * Utils.Round(1) // => "1.0"
      * Utils.Round(1.5) // => "1.5"
@@ -310,17 +310,17 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Copies all key-value pairs of the source into the target. This will change the target
      * If the key starts with a '+', the values of the list will be appended to the target instead of overwritten
-     * 
+     *
      * const obj = {someValue: 42};
      * const override = {someValue: null};
      * Utils.Merge(override, obj);
      * obj.someValue // => null
-     * 
+     *
      * const obj = {someValue: 42};
      * const override = {someValue: null};
      * const returned = Utils.Merge(override, obj);
      * returned == obj // => true
-     * 
+     *
      *  const source = {
      *                abc: "def",
      *                foo: "bar",
@@ -347,7 +347,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     static Merge<T, S>(source: S, target: T): (T & S) {
         if (target === null) {
-            return <T & S> source
+            return <T & S>source
         }
 
         for (const key in source) {
@@ -457,9 +457,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 return collectedList
             }
             if (Array.isArray(leaf)) {
-                for (let i = 0; i < (<any[]>leaf).length; i++){
+                for (let i = 0; i < (<any[]>leaf).length; i++) {
                     const l = (<any[]>leaf)[i];
-                    collectedList.push({leaf: l, path: [...travelledPath, ""+i]})
+                    collectedList.push({leaf: l, path: [...travelledPath, "" + i]})
                 }
             } else {
                 collectedList.push({leaf, path: travelledPath})
@@ -489,15 +489,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return f(undefined)
         }
         const jtp = typeof json
-        if(isLeaf !== undefined) {
-            if(jtp === "object"){
-                if(isLeaf(json)){
+        if (isLeaf !== undefined) {
+            if (jtp === "object") {
+                if (isLeaf(json)) {
                     return f(json)
                 }
             } else {
                 return json
             }
-        }else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
+        } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
             return f(json)
         }
         if (Array.isArray(json)) {
@@ -661,7 +661,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Triggers a 'download file' popup which will download the contents
      */
     public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt",
-                                                  options?: { mimetype: string | "text/plain" | "text/csv" | "application/vnd.geo+json" | "{gpx=application/gpx+xml}"}) {
+                                                  options?: { mimetype: string | "text/plain" | "text/csv" | "application/vnd.geo+json" | "{gpx=application/gpx+xml}" }) {
         const element = document.createElement("a");
         let file;
         if (typeof (contents) === "string") {
@@ -713,7 +713,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Reorders an object: creates a new object where the keys have been added alphabetically
-     * 
+     *
      * const sorted = Utils.sortKeys({ x: 'x', abc: {'x': 'x', 'a': 'a'}, def: 'def'})
      * JSON.stringify(sorted) // => '{"abc":{"a":"a","x":"x"},"def":"def","x":"x"}'
      */
@@ -816,15 +816,56 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return track[str2.length][str1.length];
     }
 
+    public static MapToObj<T>(d: Map<string, T>, onValue: ((t: T, key: string) => any) = undefined): object {
+        const o = {}
+        d.forEach((value, key) => {
+            if (onValue !== undefined) {
+                value = onValue(value, key)
+            }
+            o[key] = value;
+        })
+        return o
+    }
+
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
 
-    private static color(hex: string): { r: number, g: number, b: number } {
-        if (hex.startsWith == undefined) {
-            console.trace("WUT?", hex)
-            throw "wut?"
+    /**
+     * Utils.colorAsHex({r: 255, g: 128, b: 0}) // => "#ff8000"
+     * Utils.colorAsHex(undefined) // => undefined
+     */
+    public static colorAsHex(c:{ r: number, g: number, b: number } ){
+        if(c === undefined){
+            return undefined
         }
+        function componentToHex(n) {
+            let hex = n.toString(16);
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+        return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b);
+    }
+    
+    /**
+     * 
+     * Utils.color("#ff8000") // => {r: 255, g:128, b: 0}
+     * Utils.color(" rgba  (12,34,56) ") // => {r: 12, g:34, b: 56}
+     * Utils.color(" rgba  (12,34,56,0.5) ") // => {r: 12, g:34, b: 56}
+     * Utils.color(undefined) // => undefined
+     */
+    public static color(hex: string): { r: number, g: number, b: number } {
+        if(hex === undefined){
+            return undefined
+        }
+        hex = hex.replace(/[ \t]/g, "")
+        if (hex.startsWith("rgba(")) {
+               const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
+            if(match == undefined){
+                return undefined
+            }
+            return {r: Number(match[1]), g: Number(match[2]), b:Number( match[3])}
+        }
+
         if (!hex.startsWith("#")) {
             return undefined;
         }
@@ -842,17 +883,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
-    
-    
-    public static MapToObj<T>(d : Map<string, T>, onValue: ((t:T, key: string) => any) = undefined): object{
-        const o = {}
-        d.forEach((value, key) => {
-            if(onValue !== undefined){
-                value = onValue(value, key)
-            }
-            o[key] = value;
-        })
-        return o
-    }
+
+
 }
 
