@@ -1,14 +1,14 @@
 import {describe} from 'mocha'
 import {expect} from 'chai'
 import {LayoutConfigJson} from "../../../../Models/ThemeConfig/Json/LayoutConfigJson";
-import Constants from "../../../../Models/Constants";
 import {LayerConfigJson} from "../../../../Models/ThemeConfig/Json/LayerConfigJson";
 import {PrepareTheme} from "../../../../Models/ThemeConfig/Conversion/PrepareTheme";
 import {TagRenderingConfigJson} from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig";
-import assert from "assert";
 import * as bookcaseLayer from "../../../../assets/generated/layers/public_bookcase.json"
 import LayerConfig from "../../../../Models/ThemeConfig/LayerConfig";
+import {ExtractImages} from "../../../../Models/ThemeConfig/Conversion/FixImages";
+import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
 
 
 const themeConfigJson: LayoutConfigJson = {
@@ -50,5 +50,26 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig> themeConfig.layers.find(l => l.id === "public_bookcase")
         expect(layerUnderTest.source.geojsonSource).eq("xyz")
 
+    })
+})
+
+
+describe("ExtractImages", () => {
+    it("should find all images in a themefile", () => {
+                const images = new Set(new ExtractImages(true, new Map<string, any>()).convertStrict(<any> cyclofix, "test"))
+                const expectedValues = [
+                    './assets/layers/bike_repair_station/repair_station.svg',
+                    './assets/layers/bike_repair_station/repair_station_pump.svg',
+                    './assets/layers/bike_repair_station/broken_pump.svg',
+                    './assets/layers/bike_repair_station/pump.svg',
+                    './assets/themes/cyclofix/fietsambassade_gent_logo_small.svg',
+                    './assets/layers/bike_repair_station/pump_example_manual.jpg',
+                    './assets/layers/bike_repair_station/pump_example.png',
+                    './assets/layers/bike_repair_station/pump_example_round.jpg',
+                    './assets/layers/bike_repair_station/repair_station_example_2.jpg',
+                    'close']
+                for (const expected of expectedValues) {
+                    expect(images).contains(expected)
+                }
     })
 })

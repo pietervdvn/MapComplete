@@ -32,6 +32,32 @@ export class OH {
         return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m);
     }
 
+    /**
+    * const rules = [{weekday: 6,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0},
+    *                {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
+    * OH.ToString(rules) // =>  "Tu 10:00-12:00; Su 13:00-17:00"
+    *
+    * const rules = [{weekday: 3,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0}, {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
+    * OH.ToString(rules) // => "Tu 10:00-12:00; Th 13:00-17:00"
+    * 
+    * const rules = [ { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }]);
+    * OH.ToString(rules) // => "Tu 10:00-12:00, 13:00-17:00"
+    * 
+    * const rules = [ { weekday: 0, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }, { weekday: 0, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0}, { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }];
+    * OH.ToString(rules) // => "Mo-Tu 10:00-12:00, 13:00-17:00"
+     * 
+     * // should merge overlapping opening hours
+     * const timerange0 = {weekday: 1, endHour: 23, endMinutes: 30, startHour: 23, startMinutes: 0 }
+     * const touchingTimeRange = {  weekday: 1, endHour: 0, endMinutes: 0, startHour: 23, startMinutes: 30 }
+     * OH.ToString(OH.MergeTimes([timerange0, touchingTimeRange])) // => "Tu 23:00-00:00"
+     *
+     * // should merge touching opening hours
+     * const timerange0 = {weekday: 1, endHour: 23, endMinutes: 30, startHour: 23, startMinutes: 0 }
+     * const overlappingTimeRange =  { weekday: 1, endHour: 24, endMinutes: 0, startHour: 23, startMinutes: 30 }
+     * OH.ToString(OH.MergeTimes([timerange0, overlappingTimeRange])) // => "Tu 23:00-00:00"
+    * 
+    */
+    
     public static ToString(ohs: OpeningHour[]) {
         if (ohs.length == 0) {
             return "";
@@ -86,8 +112,16 @@ export class OH {
     /**
      * Merge duplicate opening-hour element in place.
      * Returns true if something changed
-     * @param ohs
-     * @constructor
+     * 
+     * // should merge overlapping opening hours
+     * const oh1: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 11, endMinutes: 0 };
+     * const oh0: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 30, endHour: 12, endMinutes: 0 };
+     * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 12, endMinutes: 0 }]
+     *
+     * // should merge touching opening hours
+     * const oh1: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 11, endMinutes: 0 };
+     * const oh0: OpeningHour = { weekday: 0, startHour: 11, startMinutes: 0, endHour: 12, endMinutes: 0 };
+     * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 12, endMinutes: 0 }]
      */
     public static MergeTimes(ohs: OpeningHour[]): OpeningHour[] {
         const queue = ohs.map(oh => {
@@ -248,6 +282,7 @@ export class OH {
      * rules[0].weekday // => 0
      * rules[0].startHour // => 11
      * rules[3].endHour // => 19
+     * 
      */
     public static ParseRule(rule: string): OpeningHour[] {
         try {

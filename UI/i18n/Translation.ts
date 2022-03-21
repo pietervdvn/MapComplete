@@ -209,6 +209,13 @@ export class Translation extends BaseUIElement {
         return new Translation(tr);
     }
 
+    /**
+     * Extracts all images (including HTML-images) from all the embedded translations
+     * 
+     * // should detect sources of <img>
+     * const tr = new Translation({en: "XYZ <img src='a.svg'/> XYZ <img src=\"some image.svg\"></img> XYZ <img src=b.svg/>"})
+     * new Set<string>(tr.ExtractImages(false)) // new Set(["a.svg", "b.svg", "some image.svg"])
+     */
     public ExtractImages(isIcon = false): string[] {
         const allIcons: string[] = []
         for (const key in this.translations) {

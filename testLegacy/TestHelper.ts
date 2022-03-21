@@ -8,12 +8,6 @@ export default class T {
         this._tests = tests;
     }
 
-    static assertContains(needle: string, actual: string) {
-        if (actual.indexOf(needle) < 0) {
-            throw `The substring ${needle} was not found`
-        }
-    }
-
     static isTrue(b: boolean, msg: string) {
         if (!b) {
             throw "Expected true, but got false: " + msg

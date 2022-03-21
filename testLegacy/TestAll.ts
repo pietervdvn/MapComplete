@@ -1,50 +1,32 @@
-import TagSpec from "./Tag.spec";
-import ImageAttributionSpec from "./ImageAttribution.spec";
 import GeoOperationsSpec from "./GeoOperations.spec";
-import ThemeSpec from "./Theme.spec";
-import UtilsSpec from "./Utils.spec";
 import OsmObjectSpec from "./OsmObject.spec";
 import ScriptUtils from "../scripts/ScriptUtils";
-import UnitsSpec from "./Units.spec";
 import RelationSplitHandlerSpec from "./RelationSplitHandler.spec";
 import SplitActionSpec from "./SplitAction.spec";
 import {Utils} from "../Utils";
-import TileFreshnessCalculatorSpec from "./TileFreshnessCalculator.spec";
 import ImageProviderSpec from "./ImageProvider.spec";
-import ActorsSpec from "./Actors.spec";
 import ReplaceGeometrySpec from "./ReplaceGeometry.spec";
 import LegacyThemeLoaderSpec from "./LegacyThemeLoader.spec";
 import T from "./TestHelper";
 import CreateNoteImportLayerSpec from "./CreateNoteImportLayer.spec";
 import CreateCacheSpec from "./CreateCache.spec";
-import CodeQualitySpec from "./CodeQuality.spec";
 import ImportMultiPolygonSpec from "./ImportMultiPolygon.spec";
 import ChangesetHandlerSpec from "./ChangesetHandler.spec";
-import ChangesSpec from "./Changes.spec";
 
 
 async function main() {
 
     const allTests: T[] = [
-        new ChangesSpec(),
         new ChangesetHandlerSpec(),
         new OsmObjectSpec(),
-        new TagSpec(),
-        new ImageAttributionSpec(),
         new GeoOperationsSpec(),
-        new ThemeSpec(),
-        new UtilsSpec(),
-        new UnitsSpec(),
         new RelationSplitHandlerSpec(),
         new SplitActionSpec(),
-        new TileFreshnessCalculatorSpec(),
         new ImageProviderSpec(),
-        new ActorsSpec(),
         new ReplaceGeometrySpec(),
         new LegacyThemeLoaderSpec(),
         new CreateNoteImportLayerSpec(),
         new CreateCacheSpec(),
-        new CodeQualitySpec(),
         new ImportMultiPolygonSpec(),
     ]
     ScriptUtils.fixUtils();
