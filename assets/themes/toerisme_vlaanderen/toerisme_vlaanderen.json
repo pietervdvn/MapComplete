@@ -65,8 +65,7 @@
             "tags": [
               "amenity=charging_station",
               "motorcar=no",
-              "bicycle=yes",
-              "socket:typee=1"
+              "bicycle=yes"
             ],
             "title": {
               "nl": "laadpunt voor elektrische fietsen"
