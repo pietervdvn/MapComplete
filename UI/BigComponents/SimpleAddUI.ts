@@ -24,6 +24,7 @@ import {ElementStorage} from "../../Logic/ElementStorage";
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 import BaseLayer from "../../Models/BaseLayer";
 import Loading from "../Base/Loading";
+import Hash from "../../Logic/Web/Hash";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -92,6 +93,7 @@ export default class SimpleAddUI extends Toggle {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            Hash.hash.setData(newElementAction.newElementId)
         }
 
         const addUi = new VariableUiElement(
