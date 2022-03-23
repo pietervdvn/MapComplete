@@ -883,7 +883,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
+    
+    public static asDict(tags: {key: string, value: string | number}[]) : Map<string, string | number>{
+        const d= new Map<string, string | number>()
 
+        for (const tag of tags) {
+            d.set(tag.key, tag.value)
+        }
 
+        return d
+    }
 }
 

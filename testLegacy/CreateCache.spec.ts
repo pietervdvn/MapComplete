@@ -3,6 +3,7 @@ import {main} from "../scripts/generateCache"
 import {existsSync, mkdirSync, readFileSync, rmdirSync, unlinkSync} from "fs";
 import ScriptUtils from "../scripts/ScriptUtils";
 import {Utils} from "../Utils";
+import {expect} from "chai";
 
 export default class CreateCacheSpec extends T {
 
@@ -26,8 +27,8 @@ export default class CreateCacheSpec extends T {
                     ])
                     await ScriptUtils.sleep(100)
                     const birdhides = JSON.parse(readFileSync("/tmp/np-cache/natuurpunt_birdhide_12_2085_1368.geojson","UTF8"))
-                    T.equals(5, birdhides.features.length, "Got "+birdhides.features.length+" birdhidse")
-                    T.isTrue(birdhides.features.some(f => f.properties.id === "node/5158056232"), "Didn't find birdhide node/5158056232 ")
+                    expect(birdhides.features.length).deep.equal(5)
+                    expect(birdhides.features.some(f => f.properties.id === "node/5158056232"), "Didn't find birdhide node/5158056232 ").true
                 }
             ]
             ]

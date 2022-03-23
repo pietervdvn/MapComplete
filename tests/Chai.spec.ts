@@ -1,5 +1,6 @@
 import {describe} from 'mocha'
 import {expect} from 'chai'
+import {Utils} from "../Utils";
 
 describe("TestSuite", () => {
     
@@ -10,6 +11,7 @@ describe("TestSuite", () => {
     })
 })
 
-it("global test", () => {
+it("global test", async() => {
     expect("abc").eq("abc")
+    expect(() => {throw "hi"}).throws(/hi/)
 })

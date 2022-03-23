@@ -64,6 +64,15 @@ export class BBox {
         return new BBox([[maxLon, maxLat], [minLon, minLat]])
     }
 
+    /**
+     * Calculates the BBox based on a slippy map tile number
+     * 
+     *  const bbox = BBox.fromTile(16, 32754, 21785)
+     *  bbox.minLon // => -0.076904296875 
+     *  bbox.maxLon // => -0.0714111328125 
+     *  bbox.minLat // => 51.5292513551899 
+     *  bbox.maxLat // => 51.53266860674158 
+     */
     static fromTile(z: number, x: number, y: number): BBox {
         return new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
     }

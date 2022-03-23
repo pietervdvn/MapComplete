@@ -28,6 +28,9 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
             t["$ref"] == "#/definitions/TagRenderingConfigJson" ||  t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson")
     }
 
+    /**
+     * 
+     */
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
         const allFoundImages : string[] = []
         const errors = []
@@ -116,6 +119,40 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         this._knownImages = knownImages;
     }
 
+    /**
+     * If the id is an URL to a json file, replaces "./" in images with the path to the json file
+     * 
+     * const theme = {
+     *          "id": "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/verkeerdeborden.json"
+     *         "layers": [
+     *             {
+     *                 "mapRendering": [
+     *                     {
+     *                         "icon": "./TS_bolt.svg",
+     *                         iconBadges: [{
+     *                             if: "id=yes",
+     *                             then: {
+     *                                 mappings: [
+     *                                     {
+     *                                         if: "id=yes",
+     *                                         then: "./Something.svg"
+     *                                     }
+     *                                 ]
+     *                             }
+     *                         }],
+     *                         "location": [
+     *                             "point",
+     *                             "centroid"
+     *                         ]
+     *                     }
+     *                 ]
+     *             }
+     *         ],
+     *     }
+     * const fixed = new FixImages(new Set<string>()).convert(<any> theme, "test").result
+     * fixed.layers[0]["mapRendering"][0].icon // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg"
+     * fixed.layers[0]["mapRendering"][0].iconBadges[0].then.mappings[0].then // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg"
+     */
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson, warnings?: string[] } {
         let url: URL;
         try {

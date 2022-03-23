@@ -1,10 +1,8 @@
 import T from "./TestHelper";
 import CreateMultiPolygonWithPointReuseAction from "../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
-import { Tag } from "../Logic/Tags/Tag";
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
-import { Changes } from "../Logic/Osm/Changes";
-import {ChangesetHandler} from "../Logic/Osm/ChangesetHandler";
-import * as Assert from "assert";
+import {Tag} from "../Logic/Tags/Tag";
+import {Changes} from "../Logic/Osm/Changes";
+import {expect} from "chai";
 
 export default class ImportMultiPolygonSpec extends T {
     
@@ -197,21 +195,21 @@ export default class ImportMultiPolygonSpec extends T {
                 }
                 
                 const ways= descriptions.filter(d => d.type === "way")
-                T.isTrue(ways[0].id == -18, "unexpected id")
-                T.isTrue(ways[1].id == -27, "unexpected id")
+                expect(ways[0].id == -18, "unexpected id").true
+                expect(ways[1].id == -27, "unexpected id").true
                 const outer = ways[0].changes["coordinates"]
                 const outerExpected =    [[5.262684300000043,50.84624409999995],[5.262777500000024,50.84620759999988],[5.262798899999998,50.84621390000019],[5.262999799999994,50.84619519999999],[5.263107500000007,50.84618920000014],[5.263115,50.84620990000026],[5.26310279999998,50.84623050000014],[5.263117999999977,50.846247400000166],[5.263174599999989,50.84631019999971],[5.263166999999989,50.84631459999995],[5.263243999999979,50.84640239999989],[5.2631607000000065,50.84643459999996],[5.26313309999997,50.84640089999985],[5.262907499999996,50.84647790000018],[5.2628939999999576,50.846463699999774],[5.262872100000033,50.846440700000294],[5.262784699999991,50.846348899999924],[5.262684300000043,50.84624409999995]]
-                T.listIdentical(feature.geometry.coordinates[0], outer)
+                expect(outer).deep.equal(feature.geometry.coordinates[0])
                 const inner = ways[1].changes["coordinates"]
-                T.listIdentical(feature.geometry.coordinates[1], inner)
+                expect(inner).deep.equal(feature.geometry.coordinates[1])
                 const members = <{type: string, role: string, ref: number}[]> descriptions.find(d => d.type === "relation").changes["members"]
-                T.isTrue(members[0].role == "outer", "incorrect role")
-                T.isTrue(members[1].role == "inner", "incorrect role")
-                T.isTrue(members[0].type == "way", "incorrect type")
-                T.isTrue(members[1].type == "way", "incorrect type")
-                T.isTrue(members[0].ref == -18, "incorrect id")
-                T.isTrue(members[1].ref == -27, "incorrect id")
-        }]
+                expect(members[0].role == "outer", "incorrect role").true
+                expect(members[1].role == "inner", "incorrect role").true
+                expect(members[0].type == "way", "incorrect type").true
+                expect(members[1].type == "way", "incorrect type").true
+                expect(members[0].ref == -18, "incorrect id").true
+                expect(members[1].ref == -27, "incorrect id").true
+            }]
         ]);
     }
     

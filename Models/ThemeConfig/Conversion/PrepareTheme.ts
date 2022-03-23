@@ -230,6 +230,16 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     /**
      * Returns true if this tag rendering has a minimap in some language.
      * Note: this minimap can be hidden by conditions
+     * 
+     * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
+     * AddMiniMap.hasMinimap({render: {en: "{minimap()}"}}) // => true
+     * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "{minimap()}"}}) // => true
+     * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "No map for the dutch!"}}) // => true
+     * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
+     * AddMiniMap.hasMinimap({render: "{minimap(18,featurelist)}"}) // => true
+     * AddMiniMap.hasMinimap({mappings: [{if: "xyz=abc",then: "{minimap(18,featurelist)}"}]}) // => true
+     * AddMiniMap.hasMinimap({render: "Some random value {key}"}) // => false
+     * AddMiniMap.hasMinimap({render: "Some random value {minimap}"}) // => false
      */
     static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
         const translations: any[] = Utils.NoNull([renderingConfig.render, ...(renderingConfig.mappings ?? []).map(m => m.then)]);

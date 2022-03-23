@@ -1,10 +1,8 @@
-import {describe} from 'mocha'
 import {expect} from 'chai'
 import {Utils} from "../../../Utils";
 import UserRelatedState from "../../../Logic/State/UserRelatedState";
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import SelectedElementTagsUpdater from "../../../Logic/Actors/SelectedElementTagsUpdater";
-import T from "../../../testLegacy/TestHelper";
 
 import * as bookcaseJson from "../../../assets/generated/themes/bookcases.json"
 import {UIEventSource} from "../../../Logic/UIEventSource";
@@ -95,9 +93,9 @@ it("should download the latest version",  () => {
     SelectedElementTagsUpdater.applyUpdate(state, latestTags, feature.properties.id)
 
     // The name should be updated
-    T.equals("Stubbekwartier-buurtbibliotheek", feature.properties.name)
+    expect(feature.properties.name).deep.equal("Stubbekwartier-buurtbibliotheek")
     // The fixme should be removed
-    T.equals(undefined, feature.properties.fixme)
+    expect(feature.properties.fixme).deep.equal(undefined)
 
 })
 it("Hash without selected element should download geojson from OSM-API", async () => {
@@ -111,9 +109,9 @@ it("Hash without selected element should download geojson from OSM-API", async (
 
 
     loc.addCallback(_ => {
-        T.equals("node/5568693115", selected.data.properties.id)
-        T.equals(14, loc.data.zoom)
-        T.equals(51.2179199, loc.data.lat)
+        expect(selected.data.properties.id).deep.equal("node/5568693115")
+        expect(loc.data.zoom).deep.equal(14)
+        expect(loc.data.lat).deep.equal(51.2179199)
     })
 
     new SelectedFeatureHandler(hash, {

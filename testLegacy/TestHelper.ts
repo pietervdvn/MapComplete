@@ -1,3 +1,5 @@
+import {expect} from "chai"
+
 export default class T {
 
     public readonly name: string;
@@ -7,46 +9,6 @@ export default class T {
         this.name = this.constructor.name;
         this._tests = tests;
     }
-
-    static isTrue(b: boolean, msg: string) {
-        if (!b) {
-            throw "Expected true, but got false: " + msg
-        }
-    }
-
-    static equals(expected, got, msg?) {
-        if (expected !== got) {
-            throw "Not the same: " + (msg ?? "") + "\n" +
-            "Expected: " + expected + "\n" +
-            "Got     : " + got
-        }
-    }
-
-    static isFalse(b: boolean, msg: string) {
-        if (b) {
-            throw "Expected false, but got true: " + msg
-        }
-    }
-
-    static listIdentical<T>(expected: T[], actual: T[]): void {
-        if (expected === undefined) {
-            throw "ListIdentical failed: expected list is undefined"
-        }
-        if (actual === undefined) {
-            throw "ListIdentical failed: actual list is undefined"
-        }
-        if (expected.length !== actual.length) {
-            throw `ListIdentical failed: expected a list of length ${expected.length} but got a list of length ${actual.length}`
-        }
-        for (let i = 0; i < expected.length; i++) {
-            if (Array.isArray(expected[i])) {
-                T.listIdentical(<any>expected[i], <any>actual[i])
-            } else if (expected[i] !== actual[i]) {
-                throw `ListIdentical failed at index ${i}: expected ${expected[i]} but got ${actual[i]}`
-            }
-        }
-    }
-
     /**
      * RUns the test, returns the error messages.
      * Returns an empty list if successful

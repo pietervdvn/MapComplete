@@ -250,7 +250,8 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
      * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc:=js()"]}) // => ["_abc"]
      * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc=js()"]}) // => ["_abc"]
      */
-    private static extractCalculatedTagNames(layerConfig?: LayerConfigJson){
+    public static extractCalculatedTagNames(layerConfig?: LayerConfigJson | {calculatedTags : string []}){
+        // TODO make private again when doctests support this
         return layerConfig?.calculatedTags?.map(ct => {
             if(ct.indexOf(':=') >= 0){
                 return ct.split(':=')[0]
@@ -260,6 +261,39 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         
     }
 
+    /**
+     * 
+     * // should detect a simple shadowed mapping
+     * const tr = {mappings: [
+     *            {
+     *                if: {or: ["key=value", "x=y"]},
+     *                then: "Case A"
+     *            },
+     *            {
+     *                if: "key=value",
+     *                then: "Shadowed"
+     *            }
+     *        ]
+     *    }
+     * const r = new DetectShadowedMappings().convert(tr, "test");
+     * r.errors.length // => 1
+     * r.errors[0].indexOf("The mapping key=value is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     *
+     * const tr = {mappings: [
+     *         {
+     *             if: {or: ["key=value", "x=y"]},
+     *             then: "Case A"
+     *         },
+     *         {
+     *             if: {and: ["key=value", "x=y"]},
+     *             then: "Shadowed"
+     *         }
+     *     ]
+     * }
+     * const r = new DetectShadowedMappings().convert(tr, "test");
+     * r.errors.length // => 1
+     * r.errors[0].indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     */
     convert(json: QuestionableTagRenderingConfigJson, context: string): { result: QuestionableTagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
         const warnings = []
@@ -324,6 +358,26 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
     }
 
+    /**
+     * const r = new DetectMappingsWithImages().convert({
+     *     "mappings": [
+     *         {
+     *             "if": "bicycle_parking=stands",
+     *             "then": {
+     *                 "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "hu": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+     *             }
+     *         }]
+     * }, "test");
+     * r.errors.length > 0 // => true
+     * r.errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0) // => true
+     */
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[], information?: string[] } {
         const errors = []
         const warnings = []

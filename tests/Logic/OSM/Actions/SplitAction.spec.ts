@@ -1,297 +1,199 @@
-import T from "./TestHelper";
-import {Changes} from "../Logic/Osm/Changes";
-import SplitAction from "../Logic/Osm/Actions/SplitAction";
-import {equal} from "assert";
-import {Utils} from "../Utils";
+import {describe} from 'mocha'
+import {expect} from 'chai'
+import {Utils} from "../../../../Utils";
+import SplitAction from "../../../../Logic/Osm/Actions/SplitAction";
+import {Changes} from "../../../../Logic/Osm/Changes";
 
-export default class SplitActionSpec extends T {
+describe("SplitAction", () => {
 
-
-    constructor() {
-        super([
-            ["split 295132739",
-                () => SplitActionSpec.split().then(_ => console.log("OK"))],
-            ["split 295132739 on already existing node",
-                () => SplitActionSpec.splitWithPointReuse().then(_ => console.log("OK"))],
-            ["split 61435323 on already existing node",
-                () => SplitActionSpec.SplitHoutkaai().then(_ => console.log("OK"))],
-            ["Split test line",
-                async () => {
-
-                    Utils.injectJsonDownloadForTests(
-                        "https://www.openstreetmap.org/api/0.6/way/941079939/full",
-                        {
-                            "version": "0.6",
-                            "generator": "CGImap 0.8.5 (957273 spike-08.openstreetmap.org)",
-                            "copyright": "OpenStreetMap and contributors",
-                            "attribution": "http://www.openstreetmap.org/copyright",
-                            "license": "http://opendatacommons.org/licenses/odbl/1-0/",
-                            "elements": [{
-                                "type": "node",
-                                "id": 6490126559,
-                                "lat": 51.2332219,
-                                "lon": 3.1429387,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 2,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"highway": "street_lamp", "power": "pole", "support": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440363,
-                                "lat": 51.2324011,
-                                "lon": 3.1367377,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"fixme": "continue"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440364,
-                                "lat": 51.232455,
-                                "lon": 3.1368759,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440365,
-                                "lat": 51.2325883,
-                                "lon": 3.1373986,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440366,
-                                "lat": 51.232688,
-                                "lon": 3.1379837,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440367,
-                                "lat": 51.2327354,
-                                "lon": 3.1385649,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440368,
-                                "lat": 51.2327042,
-                                "lon": 3.1392187,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"highway": "street_lamp", "power": "pole", "support": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440369,
-                                "lat": 51.2323902,
-                                "lon": 3.139353,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440370,
-                                "lat": 51.2321027,
-                                "lon": 3.139601,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"highway": "street_lamp", "power": "pole", "ref": "242", "support": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440371,
-                                "lat": 51.2322614,
-                                "lon": 3.1401564,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440372,
-                                "lat": 51.232378,
-                                "lon": 3.1407909,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440373,
-                                "lat": 51.2325532,
-                                "lon": 3.1413659,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440374,
-                                "lat": 51.2327611,
-                                "lon": 3.1418877,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "node",
-                                "id": 8715440375,
-                                "lat": 51.2330037,
-                                "lon": 3.142418,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "tags": {"power": "pole"}
-                            }, {
-                                "type": "way",
-                                "id": 941079939,
-                                "timestamp": "2021-05-09T19:04:53Z",
-                                "version": 1,
-                                "changeset": 104407928,
-                                "user": "M!dgard",
-                                "uid": 763799,
-                                "nodes": [6490126559, 8715440375, 8715440374, 8715440373, 8715440372, 8715440371, 8715440370, 8715440369, 8715440368, 8715440367, 8715440366, 8715440365, 8715440364, 8715440363],
-                                "tags": {"power": "minor_line"}
-                            }]
-                        }
-                    )
-
-                    Utils.injectJsonDownloadForTests(
-                        "https://www.openstreetmap.org/api/0.6/way/941079939/relations",
-                        {
-                            "version": "0.6",
-                            "generator": "CGImap 0.8.5 (2419440 spike-07.openstreetmap.org)",
-                            "copyright": "OpenStreetMap and contributors",
-                            "attribution": "http://www.openstreetmap.org/copyright",
-                            "license": "http://opendatacommons.org/licenses/odbl/1-0/",
-                            "elements": []
-                        }
-                    )
-
-                    // Split points are lon,lat
-                    const splitPointAroundP3: [number, number] = [3.1392198801040645, 51.232701022376745]
-                    const splitAction = new SplitAction("way/941079939", [splitPointAroundP3], {theme: "test"})
-                    const changes = await splitAction.Perform(new Changes())
-                    console.log(changes)
-                    // 8715440368 is the expected point of the split
-
-                    /* Nodes are
-                        6490126559 (part of ways 941079941 and 941079940)
-                        8715440375
-                        8715440374
-                        8715440373
-                        8715440372
-                        8715440371
-                        8715440370
-                        8715440369
-                        8715440368 <--- split here
-                        8715440367
-                        8715440366
-                        8715440365
-                        8715440364
-                        8715440363
-                     */
-
-                    const nodeList0 = [6490126559,
-                        8715440375,
-                        8715440374,
-                        8715440373,
-                        8715440372,
-                        8715440371,
-                        8715440370,
-                        8715440369,
-                        8715440368]
-
-                    const nodeList1 = [
-                        8715440368,
-                        8715440367,
-                        8715440366,
-                        8715440365,
-                        8715440364,
-                        8715440363
-                    ]
-
-                    T.listIdentical(nodeList0, changes[0].changes["nodes"])
-                    T.listIdentical(nodeList1, changes[1].changes["nodes"])
-                }
-            ],
-            ["Split minor powerline halfway", async () => {
-
-
-                const splitPointHalfway: [number, number] = [3.1392842531204224, 51.23255322710106]
-                const splitAction = new SplitAction("way/941079939", [splitPointHalfway], {theme: "test"}, 1)
-                const changes = await splitAction.Perform(new Changes())
-
-                const nodeList0 = [6490126559,
-                    8715440375,
-                    8715440374,
-                    8715440373,
-                    8715440372,
-                    8715440371,
-                    8715440370,
-                    8715440369,
-                    -1]
-
-                const nodeList1 = [
-                    -1,
-                    8715440368,
-                    8715440367,
-                    8715440366,
-                    8715440365,
-                    8715440364,
-                    8715440363
-                ]
-                // THe first change is the creation of the new node
-                T.equals("node", changes[0].type)
-                T.equals(-1, changes[0].id)
-
-                T.listIdentical(nodeList0, changes[1].changes["nodes"])
-                T.listIdentical(nodeList1, changes[2].changes["nodes"])
-
+    { // Setup of download
+        Utils.injectJsonDownloadForTests(
+            "https://www.openstreetmap.org/api/0.6/way/941079939/full",
+            {
+                "version": "0.6",
+                "generator": "CGImap 0.8.5 (957273 spike-08.openstreetmap.org)",
+                "copyright": "OpenStreetMap and contributors",
+                "attribution": "http://www.openstreetmap.org/copyright",
+                "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+                "elements": [{
+                    "type": "node",
+                    "id": 6490126559,
+                    "lat": 51.2332219,
+                    "lon": 3.1429387,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 2,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"highway": "street_lamp", "power": "pole", "support": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440363,
+                    "lat": 51.2324011,
+                    "lon": 3.1367377,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"fixme": "continue"}
+                }, {
+                    "type": "node",
+                    "id": 8715440364,
+                    "lat": 51.232455,
+                    "lon": 3.1368759,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440365,
+                    "lat": 51.2325883,
+                    "lon": 3.1373986,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440366,
+                    "lat": 51.232688,
+                    "lon": 3.1379837,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440367,
+                    "lat": 51.2327354,
+                    "lon": 3.1385649,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440368,
+                    "lat": 51.2327042,
+                    "lon": 3.1392187,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"highway": "street_lamp", "power": "pole", "support": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440369,
+                    "lat": 51.2323902,
+                    "lon": 3.139353,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440370,
+                    "lat": 51.2321027,
+                    "lon": 3.139601,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"highway": "street_lamp", "power": "pole", "ref": "242", "support": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440371,
+                    "lat": 51.2322614,
+                    "lon": 3.1401564,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440372,
+                    "lat": 51.232378,
+                    "lon": 3.1407909,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440373,
+                    "lat": 51.2325532,
+                    "lon": 3.1413659,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440374,
+                    "lat": 51.2327611,
+                    "lon": 3.1418877,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "node",
+                    "id": 8715440375,
+                    "lat": 51.2330037,
+                    "lon": 3.142418,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "tags": {"power": "pole"}
+                }, {
+                    "type": "way",
+                    "id": 941079939,
+                    "timestamp": "2021-05-09T19:04:53Z",
+                    "version": 1,
+                    "changeset": 104407928,
+                    "user": "M!dgard",
+                    "uid": 763799,
+                    "nodes": [6490126559, 8715440375, 8715440374, 8715440373, 8715440372, 8715440371, 8715440370, 8715440369, 8715440368, 8715440367, 8715440366, 8715440365, 8715440364, 8715440363],
+                    "tags": {"power": "minor_line"}
+                }]
             }
-            ]
-        ]);
-    }
+        )
 
-    private static async split(): Promise<void> {
+        Utils.injectJsonDownloadForTests(
+            "https://www.openstreetmap.org/api/0.6/way/941079939/relations",
+            {
+                "version": "0.6",
+                "generator": "CGImap 0.8.5 (2419440 spike-07.openstreetmap.org)",
+                "copyright": "OpenStreetMap and contributors",
+                "attribution": "http://www.openstreetmap.org/copyright",
+                "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+                "elements": []
+            }
+        )
 
         Utils.injectJsonDownloadForTests(
             "https://www.openstreetmap.org/api/0.6/way/295132739/full",
@@ -471,34 +373,6 @@ export default class SplitActionSpec extends T {
                 "elements": []
             }
         )
-
-        // Lets split road https://www.openstreetmap.org/way/295132739
-        const id = "way/295132739"
-        const splitPoint: [number, number] = [3.246733546257019, 51.181710380278176]
-        const splitter = new SplitAction(id, [splitPoint], {
-            theme: "test"
-        })
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
-
-        equal(changeDescription[0].type, "node")
-        equal(changeDescription[0].id, -1)
-        equal(changeDescription[0].changes["lat"], 51.181710380278176)
-        equal(changeDescription[0].changes["lon"], 3.246733546257019)
-
-        equal(changeDescription[1].type, "way")
-        equal(changeDescription[1].id, -2)
-        equal(changeDescription[1].changes["coordinates"].length, 6)
-        equal(changeDescription[1].changes["coordinates"][5][0], splitPoint[0])
-        equal(changeDescription[1].changes["coordinates"][5][1], splitPoint[1])
-
-        equal(changeDescription[2].type, "way")
-        equal(changeDescription[2].id, 295132739)
-        equal(changeDescription[2].changes["coordinates"].length, 10)
-        equal(changeDescription[2].changes["coordinates"][0][0], splitPoint[0])
-        equal(changeDescription[2].changes["coordinates"][0][1], splitPoint[1])
-    }
-
-    private static async SplitHoutkaai(): Promise<void> {
 
         Utils.injectJsonDownloadForTests(
             "https://www.openstreetmap.org/api/0.6/way/61435323/full",
@@ -2074,37 +1948,144 @@ export default class SplitActionSpec extends T {
                 }]
             }
         )
-
-
-        const id = "way/61435323"
-        const splitPoint: [number, number] = [3.2021324336528774, 51.2170001600597]
-        const splitter = new SplitAction(id, [splitPoint], {
-            theme: "test"
-        })
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
-
-        // Should be a new node
-        equal(changeDescription[0].type, "node")
-        equal(changeDescription[3].type, "relation")
     }
+    
+    it("split 295132739",
+        async () => {
+            // Lets split road https://www.openstreetmap.org/way/295132739
+            const id = "way/295132739"
+            const splitPoint: [number, number] = [3.246733546257019, 51.181710380278176]
+            const splitter = new SplitAction(id, [splitPoint], {
+                theme: "test"
+            })
+            const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
-    private static async splitWithPointReuse(): Promise<void> {
-        // Lets split road near an already existing point https://www.openstreetmap.org/way/295132739
-        const id = "way/295132739"
-        const splitPoint: [number, number] = [3.2451081275939937, 51.18116898253599]
-        const splitter = new SplitAction(id, [splitPoint], {
-            theme: "test"
+            expect(changeDescription[0].type).eq("node")
+            expect(changeDescription[0].id).eq( -1)
+            expect(changeDescription[0].changes["lat"]).eq( 51.181710380278176)
+            expect(changeDescription[0].changes["lon"]).eq( 3.246733546257019)
+            expect(changeDescription[1].type).eq( "way")
+            expect(changeDescription[1].id).eq( -2)
+            expect(changeDescription[1].changes["coordinates"].length).eq( 6)
+            expect(changeDescription[1].changes["coordinates"][5][0]).eq( splitPoint[0])
+            expect(changeDescription[1].changes["coordinates"][5][1]).eq( splitPoint[1])
+            expect(changeDescription[2].type).eq( "way")
+            expect(changeDescription[2].id,).eq(295132739)
+            expect(changeDescription[2].changes["coordinates"].length).eq( 10)
+            expect(changeDescription[2].changes["coordinates"][0][0]).eq( splitPoint[0])
+            expect(changeDescription[2].changes["coordinates"][0][1]).eq( splitPoint[1]);
         })
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+    
+    it("split 295132739 on already existing node",
+        async () => {
+            // Lets split road near an already existing point https://www.openstreetmap.org/way/295132739
+            const id = "way/295132739"
+            const splitPoint: [number, number] = [3.2451081275939937, 51.18116898253599]
+            const splitter = new SplitAction(id, [splitPoint], {
+                theme: "test"
+            })
+            const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
-        equal(2, changeDescription.length)
-        const ch0 = changeDescription[0]
-        const ch1 = changeDescription[1]
-        const nodes0: number[] = ch0.changes["nodes"]
-        const nodes1: number[] = ch1.changes["nodes"]
-        equal(ch0.type, "way")
-        equal(ch1.type, "way")
-        equal(nodes0[nodes0.length - 1], nodes1[0])
-        equal(1507524610, nodes1[0])
-    }
-}
+            expect(changeDescription.length).eq( 2)
+            expect(changeDescription[0].type).eq( "way")
+            expect(changeDescription[1].type).eq( "way")
+            expect(changeDescription[0].changes["nodes"][changeDescription[0].changes["nodes"].length - 1]).eq( changeDescription[1].changes["nodes"][0])
+            expect(changeDescription[1].changes["nodes"][0]).eq( 1507524610);
+        })
+    
+    it("split 61435323 on already existing node",
+        async () => {
+            const id = "way/61435323"
+            const splitPoint: [number, number] = [3.2021324336528774, 51.2170001600597]
+            const splitter = new SplitAction(id, [splitPoint], {
+                theme: "test"
+            })
+            const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+
+            // Should be a new node
+            expect(changeDescription[0].type).eq( "node")
+            expect(changeDescription[3].type).eq( "relation");
+        })
+    
+    it("Split test line",
+        async () => {
+            // Split points are lon,lat
+            const splitPointAroundP3: [number, number] = [3.1392198801040645, 51.232701022376745]
+            const splitAction = new SplitAction("way/941079939", [splitPointAroundP3], {theme: "test"})
+            const changes = await splitAction.Perform(new Changes())
+            console.log(changes)
+            // 8715440368 is the expected point of the split
+
+            /* Nodes are
+                6490126559 (part of ways 941079941 and 941079940)
+                8715440375
+                8715440374
+                8715440373
+                8715440372
+                8715440371
+                8715440370
+                8715440369
+                8715440368 <--- split here
+                8715440367
+                8715440366
+                8715440365
+                8715440364
+                8715440363
+             */
+
+            expect(changes[0].changes["nodes"]).deep.equal([6490126559,
+                8715440375,
+                8715440374,
+                8715440373,
+                8715440372,
+                8715440371,
+                8715440370,
+                8715440369,
+                8715440368])
+            expect(changes[1].changes["nodes"]).deep.equal([
+                8715440368,
+                8715440367,
+                8715440366,
+                8715440365,
+                8715440364,
+                8715440363
+            ])
+            
+        })
+    
+    
+    
+    it("Split minor powerline halfway", async () => {
+
+
+            const splitPointHalfway: [number, number] = [3.1392842531204224, 51.23255322710106]
+            const splitAction = new SplitAction("way/941079939", [splitPointHalfway], {theme: "test"}, 1)
+            const changes = await splitAction.Perform(new Changes())
+
+            // THe first change is the creation of the new node
+            expect(changes[0].type).deep.equal("node")
+            expect(changes[0].id).deep.equal(-1)
+
+            expect(changes[1].changes["nodes"]).deep.equal([6490126559,
+                8715440375,
+                8715440374,
+                8715440373,
+                8715440372,
+                8715440371,
+                8715440370,
+                8715440369,
+                -1])
+            expect(changes[2].changes["nodes"]).deep.equal([
+                -1,
+                8715440368,
+                8715440367,
+                8715440366,
+                8715440365,
+                8715440364,
+                8715440363
+            ])
+
+        
+    })
+})
+
