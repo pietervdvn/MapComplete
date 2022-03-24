@@ -431,6 +431,21 @@
     },
     {
       "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G11 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "value": "NL:G11"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G12a with a fixed text, namely 'Compulsory (moped)cycleway' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "value": "NL:G12a"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G13 with a fixed text, namely 'Non-compulsory cycleway' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "value": "NL:G13"
+    },
+    {
+      "key": "traffic_sign",
       "description": "Layer 'Cycleways and roads' shows traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
       "value": "none"
     },

@@ -67,6 +67,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve' target='_blank'>nature_reserve</a>|protect_class!~^98$&<a href='https://wiki.openstreetmap.org/wiki/Key:boundary' target='_blank'>boundary</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dprotected_area' target='_blank'>protected_area</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22leisure%22%3D%22nature_reserve%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22boundary%22%3D%22protected_area%22%5D%5B%22protect_class%22!~%22%5E98%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 

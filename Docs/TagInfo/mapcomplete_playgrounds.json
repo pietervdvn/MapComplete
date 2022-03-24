@@ -103,6 +103,11 @@
       "value": "yes"
     },
     {
+      "key": "fee",
+      "description": "Layer 'Playgrounds' shows fee=yes with a fixed text, namely 'This is a <b>paid</b> playground' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
       "key": "access",
       "description": "Layer 'Playgrounds' shows access=customers with a fixed text, namely 'Only accessible for clients of the operating business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
       "value": "customers"

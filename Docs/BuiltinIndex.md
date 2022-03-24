@@ -52,6 +52,7 @@
   - bench
   - bench_at_pt
   - bicycle_library
+  - bicycle_rental
   - bicycle_tube_vending_machine
   - bike_cafe
   - bike_cleaning

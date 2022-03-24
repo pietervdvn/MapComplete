@@ -51,10 +51,6 @@
       "value": "bicycle"
     },
     {
-      "key": "service:bicycle:.*",
-      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag"
-    },
-    {
       "key": "image",
       "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },

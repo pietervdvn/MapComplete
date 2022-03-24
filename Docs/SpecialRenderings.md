@@ -547,13 +547,15 @@ name | default | description
 ------ | --------- | -------------
 text | _undefined_ | Text to show on this button
 icon | checkmark.svg | Icon to show
-Id-key | id | The property name where the ID of the note to close can be found
+idkey | id | The property name where the ID of the note to close can be found
 comment | _undefined_ | Text to add onto the note when closing
+minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough
+zoomButton | _undefined_ | Text to show if not zoomed in enough
  
 
 #### Example usage of close_note 
 
- `{close_note(,checkmark.svg,id,)}`
+ `{close_note(,checkmark.svg,id,,,)}`
 
 
 

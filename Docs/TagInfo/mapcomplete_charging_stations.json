@@ -895,11 +895,6 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=no with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Charging stations')",
-      "value": "no"
-    },
-    {
-      "key": "fee",
       "description": "Layer 'Charging stations' shows fee=no&authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "no"
     },
@@ -936,6 +931,11 @@
     {
       "key": "authentication:none",
       "description": "Layer 'Charging stations' shows fee=no&authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Charging stations')",
       "value": "no"
     },
     {

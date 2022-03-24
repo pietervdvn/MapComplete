@@ -200,6 +200,11 @@
       "value": "college"
     },
     {
+      "key": "landuse",
+      "description": "The MapComplete theme Open Etymology Map has a layer Education institutions without etymology information showing features with this tag",
+      "value": "education"
+    },
+    {
       "key": "image",
       "description": "The layer 'Education institutions without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },

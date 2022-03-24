@@ -51,11 +51,6 @@
       "value": ""
     },
     {
-      "key": "fee",
-      "description": "Layer 'Camper sites' shows fee=no with a fixed text, namely 'Can be used for free' (in the MapComplete.osm.be theme 'Campersites')",
-      "value": "no"
-    },
-    {
       "key": "charge",
       "description": "Layer 'Camper sites' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Campersites')"
     },
