@@ -22,7 +22,15 @@
             "thursday": "Četrtek",
             "tuesday": "Torek",
             "wednesday": "Sreda"
-        }
+        },
+        "search": {
+            "searching": "Iskanje…",
+            "error": "Nekaj se je zalomilo…",
+            "nothing": "Nič ni bilo najdenega…",
+            "search": "Poiščite lokacijo"
+        },
+        "save": "Shrani",
+        "skippedQuestions": "Nekatera vprašanja so bila preskočena"
     },
     "image": {
         "addPicture": "Dodaj sliko",
@@ -34,5 +42,13 @@
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
+    },
+    "centerMessage": {
+        "retrying": "Nalaganje podatkov ni uspelo. Ponoven poskus čez {count} sekund…",
+        "loadingData": "Nalaganje podatkov…"
+    },
+    "delete": {
+        "cancel": "Prekliči",
+        "delete": "Izbriši"
     }
 }
