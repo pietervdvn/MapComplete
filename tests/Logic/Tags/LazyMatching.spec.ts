@@ -1,7 +1,6 @@
 import {describe} from 'mocha'
 import {expect} from 'chai'
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
-import T from "../../../testLegacy/TestHelper";
 import {Tag} from "../../../Logic/Tags/Tag";
 
 describe("Lazy object properties", () => {

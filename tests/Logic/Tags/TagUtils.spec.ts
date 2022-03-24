@@ -2,7 +2,6 @@ import {describe} from 'mocha'
 import {expect} from 'chai'
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
 import {equal} from "assert";
-import T from "../../../testLegacy/TestHelper";
 
 describe("TagUtils", () => {
 
