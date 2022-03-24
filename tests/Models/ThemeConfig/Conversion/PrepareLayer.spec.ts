@@ -9,67 +9,85 @@ import * as bookcaseLayer from "../../../../assets/generated/layers/public_bookc
 import LayerConfig from "../../../../Models/ThemeConfig/LayerConfig";
 import {ExtractImages} from "../../../../Models/ThemeConfig/Conversion/FixImages";
 import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
+import LineRenderingConfigJson from "../../../../Models/ThemeConfig/Json/LineRenderingConfigJson";
+import {PrepareLayer} from "../../../../Models/ThemeConfig/Conversion/PrepareLayer";
 
 
-const themeConfigJson: LayoutConfigJson = {
+
+describe("PrepareLayer", () => {
     
-    description: "Descr",
-    icon: "",
-    layers: [
-        {
-            builtin: "public_bookcase",
-            override: {
+    it("should expand mappings in map renderings", () => {
+            const exampleLayer: LayerConfigJson = {
+                id: "testlayer",
                 source: {
-                    geoJson: "xyz"
-                }
+                    osmTags: "key=value"
+                },
+                mapRendering: [
+                    {
+                        "rewrite": {
+                            sourceString: ["left|right", "lr_offset"],
+                            into: [
+                                ["left", "right"],
+                                [-6, +6]
+                            ]
+                        },
+                        renderings: <LineRenderingConfigJson>{
+                            "color": {
+                                "render": "#888",
+                                "mappings": [
+                                    {
+                                        "if": "parking:condition:left|right=free",
+                                        "then": "#299921"
+                                    },
+                                    {
+                                        "if": "parking:condition:left|right=disc",
+                                        "then": "#219991"
+                                    }
+                                ]
+                            },
+                            "offset": "lr_offset"
+                        }
+                    }
+                ]
             }
+            const prep = new PrepareLayer({
+                tagRenderings: new Map<string, TagRenderingConfigJson>(),
+                sharedLayers: new Map<string, LayerConfigJson>()
+            })
+            const result = prep.convertStrict(exampleLayer, "test")
+
+            const expected = {
+                "id": "testlayer",
+                "source": {"osmTags": "key=value"},
+                "mapRendering": [{
+                    "color": {
+                        "render": "#888",
+                        "mappings": [{
+                            "if": "parking:condition:left=free",
+                            "then": "#299921"
+                        },
+                            {"if": "parking:condition:left=disc",
+                                "then": "#219991"}]
+                    },
+                    "offset":   -6
+                }, {
+                    "color": {
+                        "render": "#888",
+                        "mappings": [{
+                            "if": "parking:condition:right=free",
+                            "then": "#299921"
+                        },
+                            {"if": "parking:condition:right=disc",
+                                "then": "#219991"}]
+                    },
+                    "offset": 6
+                }],
+                "titleIcons": [{"render": "defaults", "id": "defaults"}]
+            }
+
+
+            expect(result).deep.eq(expected)
         }
-    ],
-    maintainer: "",
-    startLat: 0,
-    startLon: 0,
-    startZoom: 0,
-    title: {
-        en: "Title"
-    },
-    version: "",
-    id: "test"
-}
-
-describe("PrepareTheme", () => {
-    
-    it("should apply overrideAll", () => {
-
-        const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
-        let themeConfigJsonPrepared = new PrepareTheme({
-            tagRenderings: new Map<string, TagRenderingConfigJson>(),
-            sharedLayers: sharedLayers
-        }).convert( themeConfigJson, "test").result
-        const themeConfig = new LayoutConfig(themeConfigJsonPrepared);
-        const layerUnderTest = <LayerConfig> themeConfig.layers.find(l => l.id === "public_bookcase")
-        expect(layerUnderTest.source.geojsonSource).eq("xyz")
-
-    })
+    )
 })
 
-
-describe("ExtractImages", () => {
-    it("should find all images in a themefile", () => {
-                const images = new Set(new ExtractImages(true, new Map<string, any>()).convertStrict(<any> cyclofix, "test"))
-                const expectedValues = [
-                    './assets/layers/bike_repair_station/repair_station.svg',
-                    './assets/layers/bike_repair_station/repair_station_pump.svg',
-                    './assets/layers/bike_repair_station/broken_pump.svg',
-                    './assets/layers/bike_repair_station/pump.svg',
-                    './assets/themes/cyclofix/fietsambassade_gent_logo_small.svg',
-                    './assets/layers/bike_repair_station/pump_example_manual.jpg',
-                    './assets/layers/bike_repair_station/pump_example.png',
-                    './assets/layers/bike_repair_station/pump_example_round.jpg',
-                    './assets/layers/bike_repair_station/repair_station_example_2.jpg',
-                    'close']
-                for (const expected of expectedValues) {
-                    expect(images).contains(expected)
-                }
-    })
-})

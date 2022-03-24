@@ -366,6 +366,8 @@ class ExpandRewriteWithFlatten<T> extends Conversion<T | RewritableConfigJson<T 
 }
 
 export class PrepareLayer extends Fuse<LayerConfigJson> {
+
+
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",

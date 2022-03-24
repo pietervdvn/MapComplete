@@ -29,6 +29,44 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     }
 
     /**
+     *  const images = new ExtractImages(true, new Map<string, any>()).convert(<any>{
+     *     "layers": [
+     *         {
+     *             tagRenderings: [
+     *                 {
+     *                     "mappings": [
+     *                         {
+     *                             "if": "bicycle_parking=stands",
+     *                             "then": {
+     *                                 "en": "Staple racks",
+     *                             },
+     *                             "icon": {
+     *                                 path: "./assets/layers/bike_parking/staple.svg",
+     *                                 class: "small"
+     *                             }
+     *                         },
+     *                         {
+     *                             "if": "bicycle_parking=stands",
+     *                             "then": {
+     *                                 "en": "Bollard",
+     *                             },
+     *                             "icon": "./assets/layers/bike_parking/bollard.svg",
+     *                         }
+     *                     ]
+     *                 }
+     *             ]
+     *         }
+     *     ]
+     * }, "test").result;
+     * images.length // => 2
+     * images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") // => 0
+     * images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") // => 1
+     * 
+     * // should not pickup rotation, should drop color
+     * const images = new ExtractImages(true, new Map<string, any>()).convert(<any>{"layers": [{mapRendering: [{"location": ["point", "centroid"],"icon": "pin:black",rotation: 180,iconSize: "40,40,center"}]}]
+     * }, "test").result
+     * images.length // => 1
+     * images[0] // => "pin"
      * 
      */
     convert(json: LayoutConfigJson, context: string): { result: string[], errors: string[], warnings: string[] } {
