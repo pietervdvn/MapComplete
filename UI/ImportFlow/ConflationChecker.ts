@@ -32,24 +32,25 @@ import {ImportUtils} from "./ImportUtils";
 /**
  * Given the data to import, the bbox and the layer, will query overpass for similar items
  */
-export default class ConflationChecker extends Combine implements FlowStep<{ features: any[], layer: LayerConfig }> {
+export default class ConflationChecker extends Combine implements FlowStep<{ features: any[], theme: string }> {
 
     public readonly IsValid
     public readonly Value
 
     constructor(
         state,
-        params: { bbox: BBox, layer: LayerConfig, geojson: any }) {
+        params: { bbox: BBox, layer: LayerConfig, theme: string, features: any[] }) {
 
 
         const bbox = params.bbox.padAbsolute(0.0001)
         const layer = params.layer;
-        const toImport = params.geojson;
+        const toImport: {features: any[]} = params;
         let overpassStatus = new UIEventSource<{ error: string } | "running" | "success" | "idle" | "cached">("idle")
         const cacheAge = new UIEventSource<number>(undefined);
         const fromLocalStorage = IdbLocalStorage.Get<[any, Date]>("importer-overpass-cache-" + layer.id, {
+            
             whenLoaded: (v) => {
-                if (v !== undefined) {
+                if (v !== undefined && v !== null) {
                     console.log("Loaded from local storage:", v)
                     const [geojson, date] = v;
                     const timeDiff = (new Date().getTime() - date.getTime()) / 1000;
@@ -213,12 +214,15 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             })),
 
             new Title("Live data on OSM"),
+            "The "+toImport.features.length+" red elements on the following map are all your import candidates.",
+             new VariableUiElement(geojson.map(geojson => new FixedUiElement((geojson?.features?.length ?? "No") + " elements are loaded from OpenStreetMap which match the layer "+layer.id+". Zooming in might be needed to show them"))),
             osmLiveData,
             new Combine(["The live data is shown if the zoomlevel is at least ", zoomLevel, ". The current zoom level is ", new VariableUiElement(osmLiveData.location.map(l => "" + l.zoom))]).SetClass("flex"),
 
             new Title("Nearby features"),
             new Combine(["The following map shows features to import which have an OSM-feature within ", nearbyCutoff, "meter"]).SetClass("flex"),
-            new FixedUiElement("The red elements on the following map will <b>not</b> be imported!").SetClass("alert"),
+            new VariableUiElement(toImportWithNearby.features.map(feats => 
+                    new FixedUiElement("The "+  feats.length +" red elements on the following map will <b>not</b> be imported!").SetClass("alert"))),
             "Set the range to 0 or 1 if you want to import them all",
             matchedFeaturesMap]).SetClass("flex flex-col")
 
@@ -246,7 +250,6 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
         ])
 
         this.Value = paritionedImport.map(feats => ({features: feats?.noNearby, layer: params.layer}))
-        this.Value.addCallbackAndRun(v => console.log("ConflationChecker-step value is ", v))
         this.IsValid = this.Value.map(v => v?.features !== undefined && v.features.length > 0)
     }
 

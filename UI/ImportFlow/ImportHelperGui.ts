@@ -22,6 +22,7 @@ import LoginToImport from "./LoginToImport";
 import {MapPreview} from "./MapPreview";
 import LeftIndex from "../Base/LeftIndex";
 import {SubtleButton} from "../Base/SubtleButton";
+import SelectTheme from "./SelectTheme";
 
 export default class ImportHelperGui extends LeftIndex {
     constructor() {
@@ -31,14 +32,15 @@ export default class ImportHelperGui extends LeftIndex {
             FlowPanelFactory
                 .start("Introduction", new Introdution())
                 .then("Login", _ => new LoginToImport(state))
-                .then("Select file", _ => new RequestFile())
-                .then("Inspect attributes", geojson => new PreviewPanel(state, geojson))
-                .then("Inspect data", geojson => new MapPreview(state, geojson))
-                .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
-                .then("Compare with existing data", v => new ConflationChecker(state, v))
-                .then("License and community check", v => new ConfirmProcess(v))
-                .then("Metadata", (v: { features: any[], layer: LayerConfig }) => new AskMetadata(v))
-                .finish("Note creation", v => new CreateNotes(state, v));
+               .then("Select file", _ => new RequestFile())
+               .then("Inspect attributes", geojson => new PreviewPanel(state, geojson))
+               .then("Inspect data", geojson => new MapPreview(state, geojson))
+               .then("Select theme", v => new SelectTheme(v))
+               .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
+               .then("Compare with existing data", v => new ConflationChecker(state, v))
+               .then("License and community check", (v : {features: any[], theme: string}) => new ConfirmProcess(v))
+               .then("Metadata", (v: { features: any[], layer: LayerConfig, theme: string }) => new AskMetadata(v))
+               .finish("Note creation", v => new CreateNotes(state, v));
 
         const toc = new List(
             titles.map((title, i) => new VariableUiElement(furthestStep.map(currentStep => {

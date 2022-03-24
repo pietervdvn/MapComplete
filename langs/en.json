@@ -280,7 +280,8 @@
         "inspectLooksCorrect": "These values look correct",
         "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
         "locked": "You need at least {importHelperUnlock} to use the import helper",
-        "loggedInWith": "You are currently logged in as {name} and have made {csCount} changesets",
+        "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
+        "loginIsCorrect": "<b>{name}</b> is the correct account to create the import notes with.",
         "loginRequired": "You have to be logged in to continue",
         "mapPreview": {
             "autodetected": "The layer was automatically deducted based on the properties",

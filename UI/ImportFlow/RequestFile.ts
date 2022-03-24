@@ -34,13 +34,13 @@ class FileSelector extends InputElementMap<FileList, { name: string, contents: P
 /**
  * The first step in the import flow: load a file and validate that it is a correct geojson or CSV file
  */
-export class RequestFile extends Combine implements FlowStep<any> {
+export class RequestFile extends Combine implements FlowStep<{features: any[]}> {
 
     public readonly IsValid: UIEventSource<boolean>
     /**
      * The loaded GeoJSON
      */
-    public readonly Value: UIEventSource<any>
+    public readonly Value: UIEventSource<{features: any[]}>
 
     constructor() {
         const t = Translations.t.importHelper.selectFile;

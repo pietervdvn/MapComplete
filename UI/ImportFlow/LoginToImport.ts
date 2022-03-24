@@ -12,6 +12,7 @@ import Toggle from "../Input/Toggle";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import MoreScreen from "../BigComponents/MoreScreen";
+import CheckBoxes from "../Input/Checkboxes";
 
 export default class LoginToImport extends Combine implements FlowStep<UserRelatedState> {
     readonly IsValid: UIEventSource<boolean>;
@@ -21,7 +22,9 @@ export default class LoginToImport extends Combine implements FlowStep<UserRelat
     
     constructor(state: UserRelatedState) {
         const t = Translations.t.importHelper
-        const isValid = state.osmConnection.userDetails.map(ud => LoginToImport.whitelist.indexOf(ud.uid) >= 0 || ud.csCount >= Constants.userJourney.importHelperUnlock)
+        const check = new CheckBoxes([new VariableUiElement(state.osmConnection.userDetails.map(ud => t.loginIsCorrect.Subs(ud)))])
+        const isValid = state.osmConnection.userDetails.map(ud =>
+            LoginToImport.whitelist.indexOf(ud.uid) >= 0 || ud.csCount >= Constants.userJourney.importHelperUnlock)
         super([
             new Title(t.userAccountTitle),
             new LoginToggle(
@@ -33,7 +36,8 @@ export default class LoginToImport extends Combine implements FlowStep<UserRelat
                         new Img(ud.img ?? "./assets/svgs/help.svg").SetClass("w-16 h-16 rounded-full"),
                         t.loggedInWith.Subs(ud),
                         new SubtleButton(Svg.logout_svg().SetClass("h-8"), Translations.t.general.logout)
-                            .onClick(() => state.osmConnection.LogOut())
+                            .onClick(() => state.osmConnection.LogOut()),
+                        check
                     ]);
                 })),
                 t.loginRequired,
@@ -46,6 +50,6 @@ export default class LoginToImport extends Combine implements FlowStep<UserRelat
                 , isValid)
         ])
         this.Value = new UIEventSource<UserRelatedState>(state)
-        this.IsValid = isValid;
+        this.IsValid = isValid.map(isValid => isValid && check.GetValue().data.length > 0, [check.GetValue()]);
     }
 }

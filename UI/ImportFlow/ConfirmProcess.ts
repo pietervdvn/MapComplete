@@ -8,14 +8,13 @@ import Title from "../Base/Title";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import {Utils} from "../../Utils";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
-export class ConfirmProcess extends Combine implements FlowStep<{ features: any[], layer: LayerConfig }> {
+export class ConfirmProcess extends Combine implements FlowStep<{ features: any[], theme: string }> {
 
     public IsValid: UIEventSource<boolean>
-    public Value: UIEventSource<{ features: any[], layer: LayerConfig }>
+    public Value: UIEventSource<{ features: any[],theme: string  }>
 
-    constructor(v: { features: any[], layer: LayerConfig }) {
+    constructor(v: { features: any[], theme: string  }) {
 
         const toConfirm = [
             new Combine(["I have read the ", new Link("import guidelines on the OSM wiki", "https://wiki.openstreetmap.org/wiki/Import_guidelines", true)]),
@@ -35,13 +34,13 @@ export class ConfirmProcess extends Combine implements FlowStep<{ features: any[
                     type:"FeatureCollection",
                     features: v.features
                 }
-                Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "prepared_import_"+v.layer.id+".geojson",{
+                Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "prepared_import_"+v.theme+".geojson",{
                     mimetype: "application/vnd.geo+json"
                 })
             })
         ]);
         this.SetClass("link-underline")
         this.IsValid = licenseClear.GetValue().map(selected => toConfirm.length == selected.length)
-        this.Value = new UIEventSource<{ features: any[], layer: LayerConfig }>(v)
+        this.Value = new UIEventSource<{ features: any[], theme: string }>(v)
     }
 }
