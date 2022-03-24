@@ -181,6 +181,7 @@ export class TagUtils {
      * TagUtils.Tag("survey:date:={_date:now}") // => new SubstitutingTag("survey:date", "{_date:now}")
      * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/, true)
      * TagUtils.Tag("tags~(^|.*;)amenity=public_bookcase($|;.*)") // => new RegexTag("tags", /(^|.*;)amenity=public_bookcase($|;.*)/)
+     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/)
      */
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
         try {
@@ -219,126 +220,125 @@ export class TagUtils {
         if (json === undefined) {
             throw `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
         }
-        if (typeof (json) == "string") {
-            const tag = json as string;
+        if (typeof (json) != "string") {
+            if (json.and !== undefined && json.or !== undefined) {
+                throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
+            }
+            if (json.and !== undefined) {
+                return new And(json.and.map(t => TagUtils.Tag(t, context)));
+            }
+            if (json.or !== undefined) {
+                return new Or(json.or.map(t => TagUtils.Tag(t, context)));
+            }
+            throw "At " + context + ": unrecognized tag"
+        }
+        
+        
+        const tag = json as string;
+        for (const [operator, comparator] of TagUtils.comparators) {
+            if (tag.indexOf(operator) >= 0) {
+                const split = Utils.SplitFirst(tag, operator);
 
-            for (const [operator, comparator] of TagUtils.comparators) {
-                if (tag.indexOf(operator) >= 0) {
-                    const split = Utils.SplitFirst(tag, operator);
+                let val = Number(split[1].trim())
+                if (isNaN(val)) {
+                    val = new Date(split[1].trim()).getTime()
+                }
 
-                    let val = Number(split[1].trim())
-                    if (isNaN(val)) {
-                        val = new Date(split[1].trim()).getTime()
+                const f = (value: string | undefined) => {
+                    if (value === undefined) {
+                        return false;
                     }
-
-                    const f = (value: string | undefined) => {
-                        if (value === undefined) {
-                            return false;
-                        }
-                        let b = Number(value?.trim())
+                    let b = Number(value?.trim())
+                    if (isNaN(b)) {
+                        b = Utils.ParseDate(value).getTime()
                         if (isNaN(b)) {
-                            b = Utils.ParseDate(value).getTime()
-                            if (isNaN(b)) {
-                                return false
-                            }
+                            return false
                         }
-                        return comparator(b, val)
                     }
-                    return new ComparingTag(split[0], f, operator + val)
+                    return comparator(b, val)
                 }
+                return new ComparingTag(split[0], f, operator + val)
             }
-
-            if (tag.indexOf("!~") >= 0) {
-                const split = Utils.SplitFirst(tag, "!~");
-                if (split[1] === "*") {
-                    throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
-                }
-                return new RegexTag(
-                    split[0],
-                    split[1],
-                    true
-                );
-            }
-            if (tag.indexOf("~~") >= 0) {
-                const split = Utils.SplitFirst(tag, "~~");
-                if (split[1] === "*") {
-                    split[1] = "..*"
-                }
-                return new RegexTag(
-                    split[0],
-                    split[1]
-                );
-            }
-            if (tag.indexOf("!:=") >= 0) {
-                const split = Utils.SplitFirst(tag, "!:=");
-                return new SubstitutingTag(split[0], split[1], true);
-            }
-            if (tag.indexOf(":=") >= 0) {
-                const split = Utils.SplitFirst(tag, ":=");
-                return new SubstitutingTag(split[0], split[1]);
-            }
-
-            if (tag.indexOf("!=") >= 0) {
-                const split = Utils.SplitFirst(tag, "!=");
-                if (split[1] === "*") {
-                    throw "At "+context+": invalid tag "+tag+". To indicate a missing tag, use '"+split[0]+"!=' instead"
-                }
-                if(split[1] === "") {
-                    split[1] = "..*"
-                }
-                return new RegexTag(
-                    split[0],
-                    new RegExp("^" + split[1] + "$"),
-                    true
-                );
-            }
-            if (tag.indexOf("!~") >= 0) {
-                const split = Utils.SplitFirst(tag, "!~");
-                if (split[1] === "*") {
-                    split[1] = "..*"
-                }
-                return new RegexTag(
-                    split[0],
-                    split[1],
-                    true
-                );
-            }
-            if (tag.indexOf("~") >= 0) {
-                const split = Utils.SplitFirst(tag, "~");
-                if (split[1] === "") {
-                    throw "Detected a regextag with an empty regex; this is not allowed. Use '" + split[0] + "='instead (at " + context + ")"
-                }
-                if (split[1] === "*") {
-                    split[1] = "..*"
-                }
-                return new RegexTag(
-                    split[0],
-                    split[1]
-                );
-            }
-            if (tag.indexOf("=") >= 0) {
-
-
-                const split = Utils.SplitFirst(tag, "=");
-                if (split[1] == "*") {
-                    throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
-                }
-                return new Tag(split[0], split[1])
-            }
-            throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
-
         }
 
-        if (json.and !== undefined && json.or !== undefined) {
-            throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
+        if (tag.indexOf("!~") >= 0) {
+            const split = Utils.SplitFirst(tag, "!~");
+            if (split[1] === "*") {
+                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
+            }
+            return new RegexTag(
+                split[0],
+                split[1],
+                true
+            );
+        }
+        if (tag.indexOf("~~") >= 0) {
+            const split = Utils.SplitFirst(tag, "~~");
+            if (split[1] === "*") {
+                split[1] = "..*"
+            }
+            return new RegexTag(
+                new RegExp("^"+split[0]+"$"),
+                new RegExp("^"+ split[1]+"$")
+            );
+        }
+        if (tag.indexOf("!:=") >= 0) {
+            const split = Utils.SplitFirst(tag, "!:=");
+            return new SubstitutingTag(split[0], split[1], true);
+        }
+        if (tag.indexOf(":=") >= 0) {
+            const split = Utils.SplitFirst(tag, ":=");
+            return new SubstitutingTag(split[0], split[1]);
         }
 
-        if (json.and !== undefined) {
-            return new And(json.and.map(t => TagUtils.Tag(t, context)));
+        if (tag.indexOf("!=") >= 0) {
+            const split = Utils.SplitFirst(tag, "!=");
+            if (split[1] === "*") {
+                throw "At " + context + ": invalid tag " + tag + ". To indicate a missing tag, use '" + split[0] + "!=' instead"
+            }
+            if (split[1] === "") {
+                split[1] = "..*"
+            }
+            return new RegexTag(
+                split[0],
+                new RegExp("^" + split[1] + "$"),
+                true
+            );
         }
-        if (json.or !== undefined) {
-            return new Or(json.or.map(t => TagUtils.Tag(t, context)));
+        if (tag.indexOf("!~") >= 0) {
+            const split = Utils.SplitFirst(tag, "!~");
+            if (split[1] === "*") {
+                split[1] = "..*"
+            }
+            return new RegexTag(
+                split[0],
+                split[1],
+                true
+            );
         }
+        if (tag.indexOf("~") >= 0) {
+            const split = Utils.SplitFirst(tag, "~");
+            if (split[1] === "") {
+                throw "Detected a regextag with an empty regex; this is not allowed. Use '" + split[0] + "='instead (at " + context + ")"
+            }
+            if (split[1] === "*") {
+                split[1] = "..*"
+            }
+            return new RegexTag(
+                split[0],
+                split[1]
+            );
+        }
+        if (tag.indexOf("=") >= 0) {
+
+
+            const split = Utils.SplitFirst(tag, "=");
+            if (split[1] == "*") {
+                throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
+            }
+            return new Tag(split[0], split[1])
+        }
+        throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
     }
 
     private static GetCount(key: string, value?: string) {

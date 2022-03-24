@@ -24,6 +24,9 @@ import {Utils} from "../../Utils";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import Table from "../../UI/Base/Table";
 import FilterConfigJson from "./Json/FilterConfigJson";
+import {And} from "../../Logic/Tags/And";
+import {Overpass} from "../../Logic/Osm/Overpass";
+import Constants from "../Constants";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -60,9 +63,9 @@ export default class LayerConfig extends WithContextLoader {
     public readonly filters: FilterConfig[];
     public readonly filterIsSameAs: string;
     public readonly forceLoad: boolean;
-    
-    public readonly syncSelection:  "no" | "local" | "theme-only" | "global"
-    
+
+    public readonly syncSelection: "no" | "local" | "theme-only" | "global"
+
     constructor(
         json: LayerConfigJson,
         context?: string,
@@ -109,8 +112,8 @@ export default class LayerConfig extends WithContextLoader {
         this.source = new SourceConfig(
             {
                 osmTags: osmTags,
-                            geojsonSource: json.source["geoJson"],
-               geojsonSourceLevel: json.source["geoJsonZoomLevel"],
+                geojsonSource: json.source["geoJson"],
+                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                 overpassScript: json.source["overpassScript"],
                 isOsmCache: json.source["isOsmCache"],
                 mercatorCrs: json.source["mercatorCrs"],
@@ -236,10 +239,9 @@ export default class LayerConfig extends WithContextLoader {
             const hasCenterRendering = this.mapRendering.some(r => r.location.has("centroid") || r.location.has("start") || r.location.has("end"))
 
             if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
-                console.log(json.mapRendering)
                 throw("The layer " + this.id + " does not have any maprenderings defined and will thus not show up on the map at all. If this is intentional, set maprenderings to 'null' instead of '[]'")
             } else if (!hasCenterRendering && this.lineRendering.length === 0 && !this.source.geojsonSource?.startsWith("https://api.openstreetmap.org/api/0.6/notes.json")) {
-                throw "The layer " + this.id + " might not render ways. This might result in dropped information (at "+context+")"
+                throw "The layer " + this.id + " might not render ways. This might result in dropped information (at " + context + ")"
             }
         }
 
@@ -251,10 +253,10 @@ export default class LayerConfig extends WithContextLoader {
 
         this.tagRenderings = (Utils.NoNull(json.tagRenderings) ?? []).map((tr, i) => new TagRenderingConfig(<TagRenderingConfigJson>tr, this.id + ".tagRenderings[" + i + "]"))
 
-        if(json.filter !== undefined && json.filter !== null && json.filter["sameAs"] !== undefined){
+        if (json.filter !== undefined && json.filter !== null && json.filter["sameAs"] !== undefined) {
             this.filterIsSameAs = json.filter["sameAs"]
             this.filters = []
-        }else{
+        } else {
             this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
                 return new FilterConfig(option, `${context}.filter-[${i}]`)
             });
@@ -316,8 +318,8 @@ export default class LayerConfig extends WithContextLoader {
         }
         return mapRendering.GetBaseIcon(this.GetBaseTags())
     }
-    
-    public GetBaseTags(): any{
+
+    public GetBaseTags(): any {
         return TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
     }
 
@@ -367,7 +369,7 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push(new Combine(["This layer will automatically load ", new Link(dep.neededLayer, "./" + dep.neededLayer + ".md"), " into the layout as it depends on it: ", dep.reason, "(" + dep.context + ")"]))
         }
 
-        for (const revDep of Utils.Dedup( layerIsNeededBy?.get(this.id) ?? [])) {
+        for (const revDep of Utils.Dedup(layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(new Combine(["This layer is needed as dependency for layer", new Link(revDep, "#" + revDep)]))
         }
 
@@ -402,7 +404,7 @@ export default class LayerConfig extends WithContextLoader {
             ]).SetClass("flex-col flex")
         }
 
-        const icon =  this.mapRendering
+        const icon = this.mapRendering
             .filter(mr => mr.location.has("point"))
             .map(mr => mr.icon?.render?.txt)
             .find(i => i !== undefined)
@@ -410,6 +412,15 @@ export default class LayerConfig extends WithContextLoader {
         if (icon !== undefined) {
             // This is for the documentation, so we have to use raw HTML
             iconImg = `<img src='https://mapcomplete.osm.be/${icon}' height="100px"> `
+        }
+
+        let overpassLink: BaseUIElement = undefined;
+        if (Constants.priviliged_layers.indexOf(this.id) < 0) {
+            try {
+                overpassLink = new Link("Execute on overpass", Overpass.AsOverpassTurboLink(<TagsFilter> new And(neededTags).optimize()))
+            } catch (e) {
+                console.error("Could not generate overpasslink for " + this.id)
+            }
         }
 
         return new Combine([
@@ -427,7 +438,7 @@ export default class LayerConfig extends WithContextLoader {
             new Title("Basic tags for this layer", 2),
             "Elements must have the all of following tags to be shown on this layer:",
             new List(neededTags.map(t => t.asHumanString(true, false, {}))),
-
+            overpassLink,
             new Title("Supported attributes", 2),
             quickOverview,
             ...this.tagRenderings.map(tr => tr.GenerateDocumentation())

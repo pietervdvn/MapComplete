@@ -417,11 +417,46 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
     
 }
 
+class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>{
+    
+    constructor() {
+        super("Generates a warning if a theme uses an unsubstituted layer", ["layers"],"WarnForUnsubstitutedLayersInTheme");
+    }
+    
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if(json.hideFromOverview === true){
+            return {result: json}
+        }
+        const warnings = []
+        for (const layer of json.layers) {
+            if(typeof layer === "string"){
+                continue
+            }
+            if(layer["builtin"] !== undefined){
+                continue
+            }
+            if(layer["source"]["geojson"] !== undefined){
+                // We turn a blind eye for import layers
+                continue
+            }
+            
+            const wrn = "The theme "+json.id+" has an inline layer: "+layer["id"]+". This is discouraged."
+            warnings.push(wrn)
+        }
+        return {
+            result: json,
+            warnings
+        };
+    }
+    
+}
+
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a theme",
             new PreparePersonalTheme(state),
+            // new WarnForUnsubstitutedLayersInTheme(),
             new OnEveryConcat("layers", new SubstituteLayer(state)),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             // We expand all tagrenderings first...

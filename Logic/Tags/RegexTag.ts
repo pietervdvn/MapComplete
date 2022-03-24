@@ -47,6 +47,9 @@ export class RegexTag extends TagsFilter {
      * 
      * // A wildcard regextag should only give the key
      * new RegexTag("a", /^..*$/).asOverpass() // => [ `["a"]` ]
+     * 
+     * // A regextag with a regex key should give correct output
+     * new RegexTag(/a.*x/, /^..*$/).asOverpass() // => [ `[~"a.*x"~\"^..*$\"]` ]
      */
     asOverpass(): string[] {
         const inv =this.invert ? "!" : ""

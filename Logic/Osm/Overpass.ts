@@ -4,6 +4,8 @@ import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as osmtogeojson from "osmtogeojson";
+// @ts-ignore
+import {Tag} from "../Tags/Tag"; // used in doctest
 
 /**
  * Interfaces overpass to get all the latest data
@@ -16,21 +18,19 @@ export class Overpass {
     private _includeMeta: boolean;
     private _relationTracker: RelationsTracker;
 
-
     constructor(filter: TagsFilter,
                 extraScripts: string[],
                 interpreterUrl: string,
-                timeout: UIEventSource<number>,
-                relationTracker: RelationsTracker,
+                timeout?: UIEventSource<number>,
+                relationTracker?: RelationsTracker,
                 includeMeta = true) {
-        this._timeout = timeout;
+        this._timeout = timeout ?? new UIEventSource<number>(90);
         this._interpreterUrl = interpreterUrl;
         const optimized = filter.optimize()
         if(optimized === true || optimized === false){
             throw "Invalid filter: optimizes to true of false"
         }
         this._filter = optimized
-        console.log("Overpass filter is",this._filter)
         this._extraScripts = extraScripts;
         this._includeMeta = includeMeta;
         this._relationTracker = relationTracker
@@ -51,23 +51,45 @@ export class Overpass {
             console.warn("No features for", json)
         }
 
-        self._relationTracker.RegisterRelations(json)
+        self._relationTracker?.RegisterRelations(json)
         const geojson = osmtogeojson.default(json);
         const osmTime = new Date(json.osm3s.timestamp_osm_base);
         return [geojson, osmTime];
     }
 
-    buildQuery(bbox: string): string {
+    /**
+     * new Overpass(new Tag("key","value"), [], "").buildScript("{{bbox}}") // => `[out:json][timeout:90]{{bbox}};(nwr["key"="value"];);out body;out meta;>;out skel qt;`
+     */
+    public buildScript(bbox: string, postCall: string = "", pretty = false): string {
         const filters = this._filter.asOverpass()
         let filter = ""
         for (const filterOr of filters) {
-            filter += 'nwr' + filterOr + ';'
+            if(pretty){
+                filter += "    "
+            }
+            filter += 'nwr' + filterOr + postCall + ';'
+            if(pretty){
+                filter+="\n"
+            }
         }
         for (const extraScript of this._extraScripts) {
             filter += '(' + extraScript + ');';
         }
-        const query =
-            `[out:json][timeout:${this._timeout.data}]${bbox};(${filter});out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
+        return`[out:json][timeout:${this._timeout.data}]${bbox};(${filter});out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
+    }
+    
+    public buildQuery(bbox: string): string {
+        const query = this.buildScript(bbox)
         return `${this._interpreterUrl}?data=${encodeURIComponent(query)}`
+    }
+
+    /**
+     * Little helper method to quickly open overpass-turbo in the browser
+     */
+    public static AsOverpassTurboLink(tags: TagsFilter){
+        const overpass = new Overpass(tags, [], "", undefined, undefined, false)
+        const script = overpass.buildScript("","({{bbox}})", true)
+        const url = "http://overpass-turbo.eu/?Q="
+        return url + encodeURIComponent(script)
     }
 }
