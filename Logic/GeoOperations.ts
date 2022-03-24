@@ -549,7 +549,10 @@ export class GeoOperations {
     /**
      * Removes points that do not contribute to the geometry from linestrings and the outer ring of polygons.
      * Returs a new copy of the feature
-     * @param feature
+     * 
+     * const feature = {"geometry": {"type": "Polygon","coordinates": [[[4.477944199999975,51.02783550000022],[4.477987899999996,51.027818800000034],[4.478004500000021,51.02783399999988],[4.478025499999962,51.02782489999994],[4.478079099999993,51.027873899999896],[4.47801040000006,51.027903799999955],[4.477964799999972,51.02785709999982],[4.477964699999964,51.02785690000006],[4.477944199999975,51.02783550000022]]]}}
+     * const copy = GeoOperations.removeOvernoding(feature)
+     * expect(copy.geometry.coordinates[0]).deep.equal([[4.477944199999975,51.02783550000022],[4.477987899999996,51.027818800000034],[4.478004500000021,51.02783399999988],[4.478025499999962,51.02782489999994],[4.478079099999993,51.027873899999896],[4.47801040000006,51.027903799999955],[4.477944199999975,51.02783550000022]])
      */
     static removeOvernoding(feature: any) {
         if (feature.geometry.type !== "LineString" && feature.geometry.type !== "Polygon") {
