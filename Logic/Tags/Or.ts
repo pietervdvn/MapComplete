@@ -2,10 +2,6 @@ import {TagsFilter} from "./TagsFilter";
 import {TagUtils} from "./TagUtils";
 import {And} from "./And";
 
-// @ts-ignore
-import {Tag} from "./Tag";// needed for tests
-// @ts-ignore
-import {RegexTag} from "./RegexTag";// needed for tests
 
 export class Or extends TagsFilter {
     public or: TagsFilter[]
@@ -26,6 +22,10 @@ export class Or extends TagsFilter {
     }
 
     /**
+     *
+     * import {Tag} from "./Tag";
+     * import {RegexTag} from "./RegexTag";
+     * 
      * const and = new And([new Tag("boundary","protected_area"), new RegexTag("protect_class","98",true)])
      * const or = new Or([and, new Tag("leisure", "nature_reserve"])
      * or.asOverpass() // => [ "[\"boundary\"=\"protected_area\"][\"protect_class\"!~\"^98$\"]", "[\"leisure\"=\"nature_reserve\"]" ]

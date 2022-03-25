@@ -100,7 +100,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     
                     if(Svg.All[image + ".svg"] !== undefined){
                         // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                        continue;
+                        continue;// =>
                     }
                 }
 
@@ -250,8 +250,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
      * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc:=js()"]}) // => ["_abc"]
      * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc=js()"]}) // => ["_abc"]
      */
-    public static extractCalculatedTagNames(layerConfig?: LayerConfigJson | {calculatedTags : string []}){
-        // TODO make private again when doctests support this
+    private static extractCalculatedTagNames(layerConfig?: LayerConfigJson | {calculatedTags : string []}){
         return layerConfig?.calculatedTags?.map(ct => {
             if(ct.indexOf(':=') >= 0){
                 return ct.split(':=')[0]
