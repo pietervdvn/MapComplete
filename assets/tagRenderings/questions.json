@@ -80,7 +80,8 @@
       "eo": "Kio estas la telefonnumero de {title()}?",
       "hu": "Mi a telefonszáma ennek: {title()}?",
       "ca": "Quin és el telèfon de {title()}?",
-      "ja": "{title()}の電話番号は？"
+      "ja": "{title()}の電話番号は？",
+      "sl": "Kakšno telefonsko številko ima {title()}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "mappings": [
@@ -168,7 +169,8 @@
       "eo": "Kio estas la retpoŝta adreso de {title()}?",
       "hu": "Mi a(z) {title()} e-mail címe?",
       "ca": "Quina és l'adreça de correu electrònic de {title()}?",
-      "ja": "{title()}のEメールアドレスは何ですか？"
+      "ja": "{title()}のEメールアドレスは何ですか？",
+      "sl": "Kakšen naslov elektronske pošte ima {title()}?"
     },
     "mappings": [
       {
@@ -353,7 +355,8 @@
       "ru": "Впускают ли собак в это здание?",
       "pl": "Czy w tej firmie psy są dozwolone?",
       "ja": "犬を飼うことができますか？",
-      "id": "Apakah anjing diperbolehkan dalam bisnis ini?"
+      "id": "Apakah anjing diperbolehkan dalam bisnis ini?",
+      "sl": "Ali so v tem podjetju dovoljeni psi?"
     },
     "mappings": [
       {
@@ -375,7 +378,8 @@
           "id": "Anjing diperbolehkan",
           "pl": "Psy dozwolone",
           "ja": "ペット同伴可能",
-          "es": "Se permiten perros"
+          "es": "Se permiten perros",
+          "sl": "Psi so dovoljeni"
         }
       },
       {
@@ -397,7 +401,8 @@
           "ru": "С собаками <b>не</b> впускают",
           "id": "Anjing <b> tidak </b> diperbolehkan",
           "ja": "ペット同伴<b>不可</b>",
-          "es": "<b>No</b> se permiten perros"
+          "es": "<b>No</b> se permiten perros",
+          "sl": "Psi <b>niso</b> dovoljeni"
         }
       },
       {
@@ -417,7 +422,8 @@
           "ru": "Собак впускают, но на поводке",
           "id": "Anjing diperbolehkan, tetapi mereka harus diikat",
           "pl": "Psy dozwolone, ale muszą być na smyczy",
-          "ja": "ペット同伴可能。ただしリード着用"
+          "ja": "ペット同伴可能。ただしリード着用",
+          "sl": "Psi so dovoljeni, vendar morajo biti na povodcu"
         }
       },
       {
@@ -437,7 +443,8 @@
           "ru": "Собак свободно впускают",
           "pl": "Psy dozwolone i mogą biegać bez ograniczeń",
           "ja": "犬同伴可能、自由に走り回れる",
-          "id": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas"
+          "id": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas",
+          "sl": "Psi so dovoljeni in lahko prosto tekajo naokoli"
         }
       }
     ]
@@ -460,7 +467,8 @@
       "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>",
       "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>",
       "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>",
-      "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
+      "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>",
+      "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.<br/><span style='font-size: small'>Ne ponavljajte že navedenih dejstev</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -483,7 +491,8 @@
       "pt": "Qual é o horário de funcionamento de {title()}?",
       "hu": "Mikor van nyitva ez: {title()}?",
       "ca": "Quin és l'horari d'obertura de {title()}?",
-      "ja": "{title()}の営業時間は？"
+      "ja": "{title()}の営業時間は？",
+      "sl": "Kakšen odpiralni čas ima {title()}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -501,7 +510,8 @@
       "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
       "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
       "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
-      "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}"
+      "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+      "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -607,7 +617,8 @@
       "zh_Hant": "這邊接受那種付款方式？",
       "pl": "Jakie metody płatności są tutaj dostępne?",
       "ru": "Какие способы оплаты здесь принимают?",
-      "ja": "どのような支払い方法が可能ですか？"
+      "ja": "どのような支払い方法が可能ですか？",
+      "sl": "Kateri načini plačila so možni tu?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -631,7 +642,8 @@
           "zh_Hant": "這邊接受現金",
           "pl": "Płatność gotówkowa jest tutaj dostępna",
           "ru": "Здесь принимают наличными",
-          "ja": "現金利用可能"
+          "ja": "現金利用可能",
+          "sl": "Tu sprejemajo gotovino"
         }
       },
       {
@@ -654,7 +666,8 @@
           "zh_Hant": "這邊接受現金卡",
           "pl": "Płatność kartą jest tutaj dostępna",
           "ru": "Здесь принимают банковские карты",
-          "ja": "お支払いはこちらで承ります"
+          "ja": "お支払いはこちらで承ります",
+          "sl": "Tukaj sprejemajo plačilne kartice"
         }
       }
     ]
@@ -673,7 +686,8 @@
             "hu": "Fizetés erre a célra szolgáló alkalmazással",
             "zh_Hant": "使用專用應用程式付款",
             "de": "Die Bezahlung erfolgt über eine spezielle App",
-            "fr": "Paiement via une application"
+            "fr": "Paiement via une application",
+            "sl": "Plačilo se opravi z namensko aplikacijo"
           }
         },
         {
@@ -686,7 +700,8 @@
             "hu": "Fizetési tagsági kártyával",
             "zh_Hant": "使用會員卡付款",
             "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte",
-            "fr": "Paiement via une carte de membre"
+            "fr": "Paiement via une carte de membre",
+            "sl": "Plačilo se izvede s člansko izkaznico"
           }
         }
       ]
@@ -734,7 +749,8 @@
       "hu": "A(z) {level}. emeleten",
       "it": "Si trova al piano numero {level}",
       "ca": "Situat a la planta {level}",
-      "ja": "{level}階にあります"
+      "ja": "{level}階にあります",
+      "sl": "Nahaja se v {level}. nadstropju"
     },
     "freeform": {
       "key": "level",
@@ -759,7 +775,8 @@
           "nb_NO": "Under bakken",
           "ca": "Situat a planta subterrani",
           "ja": "地下にあります",
-          "id": "Terletak di bawah tanah"
+          "id": "Terletak di bawah tanah",
+          "sl": "Nahaja se pod zemljo"
         },
         "hideInAnswer": true
       },
@@ -782,7 +799,8 @@
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero",
           "ja": "1階にあります",
-          "id": "Terletak di lantai dasar"
+          "id": "Terletak di lantai dasar",
+          "sl": "Nahaja se v pritličju"
         }
       },
       {
@@ -805,7 +823,8 @@
           "nb_NO": "På gateplan",
           "ca": "Situat a planta zero",
           "ja": "1階にあります",
-          "id": "Terletak di lantai dasar"
+          "id": "Terletak di lantai dasar",
+          "sl": "Nahaja se v pritličju"
         }
       },
       {
@@ -827,7 +846,8 @@
           "it": "Si trova al primo piano",
           "nb_NO": "I andre etasje",
           "ca": "Situat a primera planta",
-          "ja": "1階にあります"
+          "ja": "1階にあります",
+          "sl": "Nahaja se v prvem nadstropju"
         }
       },
       {
@@ -839,7 +859,8 @@
           "de": "Ist im 1. Untergeschoss",
           "hu": "Az első alagsori szinten",
           "id": "Terletak di lantai basement pertama",
-          "fr": "Sous-sol"
+          "fr": "Sous-sol",
+          "sl": "Nahaja se v prvi kletni etaži"
         }
       }
     ]

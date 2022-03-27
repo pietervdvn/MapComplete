@@ -1,1 +1,77 @@
-{}
+{
+    "shared_questions": {
+        "description": {
+            "question": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.<br/><span style='font-size: small'>Ne ponavljajte že navedenih dejstev</span>"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Psi so dovoljeni"
+                },
+                "1": {
+                    "then": "Psi <b>niso</b> dovoljeni"
+                },
+                "2": {
+                    "then": "Psi so dovoljeni, vendar morajo biti na povodcu"
+                },
+                "3": {
+                    "then": "Psi so dovoljeni in lahko prosto tekajo naokoli"
+                }
+            },
+            "question": "Ali so v tem podjetju dovoljeni psi?"
+        },
+        "email": {
+            "question": "Kakšen naslov elektronske pošte ima {title()}?"
+        },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Nahaja se pod zemljo"
+                },
+                "1": {
+                    "then": "Nahaja se v pritličju"
+                },
+                "2": {
+                    "then": "Nahaja se v pritličju"
+                },
+                "3": {
+                    "then": "Nahaja se v prvem nadstropju"
+                },
+                "4": {
+                    "then": "Nahaja se v prvi kletni etaži"
+                }
+            },
+            "render": "Nahaja se v {level}. nadstropju"
+        },
+        "opening_hours": {
+            "question": "Kakšen odpiralni čas ima {title()}?",
+            "render": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Tu sprejemajo gotovino"
+                },
+                "1": {
+                    "then": "Tukaj sprejemajo plačilne kartice"
+                }
+            },
+            "question": "Kateri načini plačila so možni tu?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Plačilo se opravi z namensko aplikacijo"
+                    },
+                    "1": {
+                        "then": "Plačilo se izvede s člansko izkaznico"
+                    }
+                }
+            }
+        },
+        "phone": {
+            "question": "Kakšno telefonsko številko ima {title()}?"
+        }
+    }
+}
