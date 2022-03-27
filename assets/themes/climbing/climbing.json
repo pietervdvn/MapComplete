@@ -224,14 +224,14 @@
             "point",
             "centroid"
           ],
-    "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
           }
-        ]
-      }
         }
       ]
     },
@@ -340,14 +340,15 @@
           "location": [
             "point",
             "centroid"
-          ],    "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
           }
-        ]
-      }
         }
       ]
     },
@@ -583,15 +584,15 @@
           "location": [
             "point",
             "centroid"
-          ],    "label": {
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
           }
-        ]
-      }
-
         },
         {
           "color": {
