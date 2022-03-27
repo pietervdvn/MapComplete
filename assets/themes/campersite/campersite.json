@@ -200,7 +200,9 @@
                 "pt_BR": "Pode ser usado de graça",
                 "de": "Nutzung kostenlos"
               },
-              "addExtraTags": ["charge="]
+              "addExtraTags": [
+                "charge="
+              ]
             }
           ]
         },
