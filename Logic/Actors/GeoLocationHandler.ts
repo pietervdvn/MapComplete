@@ -5,6 +5,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 import FeatureSource from "../FeatureSource/FeatureSource";
+import {BBox} from "../BBox";
 
 export interface GeoLocationPointProperties {
     id: "gps",
@@ -20,7 +21,7 @@ export interface GeoLocationPointProperties {
 
 export default class GeoLocationHandler extends VariableUiElement {
 
-    private readonly currentLocation: FeatureSource
+    private readonly currentLocation?: FeatureSource
 
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
@@ -71,7 +72,7 @@ export default class GeoLocationHandler extends VariableUiElement {
     constructor(
         state: {
             selectedElement: UIEventSource<any>;
-            currentUserLocation: FeatureSource,
+            currentUserLocation?: FeatureSource,
             leafletMap: UIEventSource<any>,
             layoutToUse: LayoutConfig,
             featureSwitchGeolocation: UIEventSource<boolean>
@@ -217,14 +218,14 @@ export default class GeoLocationHandler extends VariableUiElement {
                 }
             }
 
-            self.currentLocation.features.setData([{feature, freshness: new Date()}])
+            self.currentLocation?.features?.setData([{feature, freshness: new Date()}])
 
             const timeSinceRequest =
                 (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
-                self.MoveToCurrentLoction(16);
+                self.MoveToCurrentLocation(16);
             } else if (self._isLocked.data) {
-                self.MoveToCurrentLoction();
+                self.MoveToCurrentLocation();
             }
 
         });
@@ -235,8 +236,12 @@ export default class GeoLocationHandler extends VariableUiElement {
         const self = this;
 
         if (self._isActive.data) {
-            self.MoveToCurrentLoction(16);
+            self.MoveToCurrentLocation(16);
             return;
+        }
+        
+        if(typeof navigator === "undefined"){
+            return
         }
 
         try {
@@ -264,7 +269,57 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
     }
 
-    private MoveToCurrentLoction(targetZoom?: number) {
+    /**
+     * Moves to the currently loaded location.
+     * 
+     * // Should move to any location
+     * let resultingLocation = undefined
+     * let resultingzoom = 1
+     * const state = {
+     *             selectedElement: new UIEventSource<any>(undefined);
+     *             currentUserLocation: undefined ,
+     *             leafletMap: new UIEventSource<any>({getZoom: () => resultingzoom; setView: (loc, zoom) => {resultingLocation = loc; resultingzoom = zoom}),
+     *             layoutToUse: new LayoutConfig(<any>{
+     *                 id: 'test',
+     *                 title: {"en":"test"}
+     *                description: "A testing theme",
+     *                layers: []
+     *             }),
+     *             featureSwitchGeolocation : new UIEventSource<boolean>(true)
+     *         }
+     * const handler = new GeoLocationHandler(state)
+     * handler._currentGPSLocation.setData(<any> {latitude : 51.3, longitude: 4.1})
+     * handler.MoveToCurrentLocation()
+     * resultingLocation // => [51.3, 4.1]
+     * handler._currentGPSLocation.setData(<any> {latitude : 60, longitude: 60) // out of bounds
+     * handler.MoveToCurrentLocation()
+     * resultingLocation // => [60, 60]
+     * 
+     * // should refuse to move if out of bounds
+     * let resultingLocation = undefined
+     * let resultingzoom = 1
+     * const state = {
+     *             selectedElement: new UIEventSource<any>(undefined);
+     *             currentUserLocation: undefined ,
+     *             leafletMap: new UIEventSource<any>({getZoom: () => resultingzoom; setView: (loc, zoom) => {resultingLocation = loc; resultingzoom = zoom}),
+     *             layoutToUse: new LayoutConfig(<any>{
+     *                 id: 'test',
+     *                 title: {"en":"test"}
+     *                "lockLocation": [ [ 2.1, 50.4], [6.4, 51.54 ]], 
+     *                description: "A testing theme",
+     *                layers: []
+     *             }),
+     *             featureSwitchGeolocation : new UIEventSource<boolean>(true)
+     *         }
+     * const handler = new GeoLocationHandler(state)
+     * handler._currentGPSLocation.setData(<any> {latitude : 51.3, longitude: 4.1})
+     * handler.MoveToCurrentLocation()
+     * resultingLocation // => [51.3, 4.1]
+     * handler._currentGPSLocation.setData(<any> {latitude : 60, longitude: 60) // out of bounds
+     * handler.MoveToCurrentLocation()
+     * resultingLocation // => [51.3, 4.1]
+     */
+    private MoveToCurrentLocation(targetZoom?: number) {
         const location = this._currentGPSLocation.data;
         this._lastUserRequest = undefined;
 
@@ -282,11 +337,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         if (b) {
             if (b !== true) {
                 // B is an array with our locklocation
-                inRange =
-                    b[0][0] <= location.latitude &&
-                    location.latitude <= b[1][0] &&
-                    b[0][1] <= location.longitude &&
-                    location.longitude <= b[1][1];
+                inRange = new BBox(b).contains([location.longitude, location.latitude])
             }
         }
         if (!inRange) {
@@ -312,7 +363,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             return "";
         }
         if (this._currentGPSLocation.data !== undefined) {
-            this.MoveToCurrentLoction(16);
+            this.MoveToCurrentLocation(16);
         }
 
         if (self._isActive.data) {
