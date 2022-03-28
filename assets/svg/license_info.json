@@ -916,6 +916,16 @@
     ]
   },
   {
+    "path": "party.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
     "path": "payment_card.svg",
     "license": "CC0",
     "authors": [

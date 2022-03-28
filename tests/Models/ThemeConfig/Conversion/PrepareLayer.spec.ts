@@ -1,21 +1,15 @@
 import {describe} from 'mocha'
 import {expect} from 'chai'
-import {LayoutConfigJson} from "../../../../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../../../../Models/ThemeConfig/Json/LayerConfigJson";
-import {PrepareTheme} from "../../../../Models/ThemeConfig/Conversion/PrepareTheme";
 import {TagRenderingConfigJson} from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
-import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig";
-import * as bookcaseLayer from "../../../../assets/generated/layers/public_bookcase.json"
-import LayerConfig from "../../../../Models/ThemeConfig/LayerConfig";
-import {ExtractImages} from "../../../../Models/ThemeConfig/Conversion/FixImages";
-import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
 import LineRenderingConfigJson from "../../../../Models/ThemeConfig/Json/LineRenderingConfigJson";
-import {PrepareLayer} from "../../../../Models/ThemeConfig/Conversion/PrepareLayer";
-
-
+import {PrepareLayer, RewriteSpecial} from "../../../../Models/ThemeConfig/Conversion/PrepareLayer";
+import {
+    QuestionableTagRenderingConfigJson
+} from "../../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 
 describe("PrepareLayer", () => {
-    
+
     it("should expand mappings in map renderings", () => {
             const exampleLayer: LayerConfigJson = {
                 id: "testlayer",
@@ -66,10 +60,12 @@ describe("PrepareLayer", () => {
                             "if": "parking:condition:left=free",
                             "then": "#299921"
                         },
-                            {"if": "parking:condition:left=disc",
-                                "then": "#219991"}]
+                            {
+                                "if": "parking:condition:left=disc",
+                                "then": "#219991"
+                            }]
                     },
-                    "offset":   -6
+                    "offset": -6
                 }, {
                     "color": {
                         "render": "#888",
@@ -77,8 +73,10 @@ describe("PrepareLayer", () => {
                             "if": "parking:condition:right=free",
                             "then": "#299921"
                         },
-                            {"if": "parking:condition:right=disc",
-                                "then": "#219991"}]
+                            {
+                                "if": "parking:condition:right=disc",
+                                "then": "#219991"
+                            }]
                     },
                     "offset": 6
                 }],
@@ -90,4 +88,27 @@ describe("PrepareLayer", () => {
         }
     )
 })
+
+describe('RewriteSpecial', function () {
+    it("should rewrite the UK import button", () => {
+        const tr = <QuestionableTagRenderingConfigJson>{
+            "id": "uk_addresses_import_button",
+            "render": {
+                "special": {
+                    "type": "import_button",
+                    "targetLayer": "address",
+                    "tags": "urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$",
+                    "text": "Add this address",
+                    "icon": "./assets/themes/uk_addresses/housenumber_add.svg",
+                    "location_picker": "none"
+                }
+            }
+        }
+        const r = new RewriteSpecial().convert(tr, "test").result
+        expect(r).to.deep.eq({
+            "id": "uk_addresses_import_button",
+            "render":  {'*': "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,none)}"}
+        })
+    })
+});
 

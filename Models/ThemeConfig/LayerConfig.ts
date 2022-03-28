@@ -197,14 +197,14 @@ export default class LayerConfig extends WithContextLoader {
                     snapToLayers = pr.preciseInput.snapToLayer
                 }
 
-                let preferredBackground: string[]
+                let preferredBackground: ("map" | "photo" | "osmbasedmap" | "historicphoto" | string)[]
                 if (typeof pr.preciseInput.preferredBackground === "string") {
                     preferredBackground = [pr.preciseInput.preferredBackground]
                 } else {
                     preferredBackground = pr.preciseInput.preferredBackground
                 }
                 preciseInput = {
-                    preferredBackground: preferredBackground,
+                    preferredBackground,
                     snapToLayers,
                     maxSnapDistance: pr.preciseInput.maxSnapDistance ?? 10
                 }

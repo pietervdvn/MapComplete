@@ -1,10 +1,12 @@
-import {Conversion, DesugaringContext, Fuse, OnEvery, OnEveryConcat, SetDefault} from "./Conversion";
+import {Conversion, DesugaringContext, DesugaringStep, Fuse, OnEvery, OnEveryConcat, SetDefault} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Utils} from "../../../Utils";
+import RewritableConfigJson from "../Json/RewritableConfigJson";
+import SpecialVisualizations from "../../../UI/SpecialVisualizations";
 import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
-import RewritableConfigJson from "../Json/RewritableConfigJson";
+import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -349,28 +351,168 @@ class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
 
 }
 
-
-class ExpandRewriteWithFlatten<T> extends Conversion<T | RewritableConfigJson<T | T[]>, T[]> {
-
-    private _rewrite = new ExpandRewrite<T>()
-
+/**
+ * Converts a 'special' translation into a regular translation which uses parameters
+ * E.g.
+ * 
+ * const tr = <TagRenderingJson> {
+ *     "special": 
+ * }
+ */
+export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("Applies a rewrite, the result is flattened if it is an array", [], "ExpandRewriteWithFlatten");
+        super("Converts a 'special' translation into a regular translation which uses parameters", ["special"],"RewriteSpecial");
     }
 
-    convert(json: RewritableConfigJson<T[] | T> | T, context: string): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
-        return undefined;
+    /**
+     * Does the heavy lifting and conversion
+     * 
+     * // should not do anything if no 'special'-key is present
+     * RewriteSpecial.convertIfNeeded({"en": "xyz", "nl": "abc"}, [], "test") // => {"en": "xyz", "nl": "abc"}
+     * 
+     * // should handle a simple special case
+     * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel"}}, [], "test") // => {'*': "{image_carousel()}"}
+     * 
+     * // should handle special case with a parameter
+     * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel", "image_key": "some_image_key"}}, [], "test") // =>  {'*': "{image_carousel(some_image_key)}"}
+     * 
+     * // should handle special case with a translated parameter
+     * const spec = {"special": {"type":"image_upload", "label": {"en": "Add a picture to this object", "nl": "Voeg een afbeelding toe"}}}
+     * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
+     * r // => {"en": "{image_upload(,Add a picture to this object)}", "nl": "{image_upload(,Voeg een afbeelding toe)}" }
+     * 
+     * // should warn for unexpected keys
+     * const errors = []
+     * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, errors, "test") // =>  {'*': "{image_carousel()}"}
+     * errors // => ["At test: Unexpected key in a special block: en"]
+     * 
+     * // should give an error on unknown visualisations
+     * const errors = []
+     * RewriteSpecial.convertIfNeeded({"special": {type: "qsdf"}}, errors, "test") // => undefined
+     * errors.length // => 1
+     * errors[0].indexOf("Special visualisation 'qsdf' not found") >= 0 // => true
+     * 
+     * // should give an error is 'type' is missing
+     * const errors = []
+     * RewriteSpecial.convertIfNeeded({"special": {}}, errors, "test") // => undefined
+     * errors // => ["A 'special'-block should define 'type' to indicate which visualisation should be used"]
+     */
+    private static convertIfNeeded(input: (object & {special : {type: string}}) | any, errors: string[], context: string): any {
+        const special = input["special"]
+        if(special === undefined){
+            return input
+        }
+
+        for (const wrongKey of Object.keys(input).filter(k => k !== "special")) {
+            errors.push(`At ${context}: Unexpected key in a special block: ${wrongKey}`)
+        }
+
+        const type = special["type"]
+        if(type === undefined){
+            errors.push("A 'special'-block should define 'type' to indicate which visualisation should be used")
+            return undefined
+        }
+        const vis = SpecialVisualizations.specialVisualizations.find(sp => sp.funcName === type)
+        if(vis === undefined){
+            const options = Utils.sortedByLevenshteinDistance(type, SpecialVisualizations.specialVisualizations, sp => sp.funcName)
+            errors.push(`Special visualisation '${type}' not found. Did you perhaps mean ${options[0].funcName}, ${options[1].funcName} or ${options[2].funcName}?\n\tFor all known special visualisations, please see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/SpecialRenderings.md`)
+            return undefined
+        }
+        
+        const argNamesList = vis.args.map(a => a.name)
+        const argNames = new Set<string>(argNamesList)
+        // Check for obsolete and misspelled arguments
+        errors.push(...Object.keys(special)
+            .filter(k => !argNames.has(k))
+            .filter(k => k !== "type")
+            .map(wrongArg => {
+            const byDistance = Utils.sortedByLevenshteinDistance(wrongArg, argNamesList, x => x)
+            return `Unexpected argument with name '${wrongArg}'. Did you mean ${byDistance[0]}?\n\tAll known arguments are ${ argNamesList.join(", ")}` ;
+        }))
+        
+        // Check that all obligated arguments are present. They are obligated if they don't have a preset value
+        for (const arg of vis.args) {
+            if (arg.required !== true) {
+                continue;
+            }
+            const param = special[arg.name]
+            if(param === undefined){
+                errors.push(`Obligated parameter '${arg.name}' not found`)
+            }
+        }
+        
+        const foundLanguages = new Set<string>()
+        const translatedArgs = argNamesList.map(nm => special[nm])
+            .filter(v => v !== undefined)
+            .filter(v => Translations.isProbablyATranslation(v))
+        for (const translatedArg of translatedArgs) {
+            for (const ln of Object.keys(translatedArg)) {
+                foundLanguages.add(ln)
+            }  
+        }
+        
+        if(foundLanguages.size === 0){
+           const args=   argNamesList.map(nm => special[nm] ?? "").join(",")
+            return {'*': `{${type}(${args})}`
+        }
+        }
+        
+        const result = {}
+        const languages = Array.from(foundLanguages)
+        languages.sort()
+        for (const ln of languages) {
+            const args = []
+            for (const argName of argNamesList) {
+                const v = special[argName] ?? ""
+                if(Translations.isProbablyATranslation(v)){
+                    args.push(new Translation(v).textFor(ln))
+                }else{
+                    args.push(v)
+                }
+            }
+            result[ln] = `{${type}(${args.join(",")})}`
+        }
+        return result
     }
 
-
+    /**
+     * const tr = {
+     *     render: {special: {type: "image_carousel", image_key: "image" }},
+     *     mappings: [
+     *         {
+     *             if: "other_image_key",
+     *             then: {special: {type: "image_carousel", image_key: "other_image_key"}}
+     *         }
+     *     ]
+     * }
+     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const expected = {render:  {'*': "{image_carousel(image)}"}, mappings: [{if: "other_image_key", then:  {'*': "{image_carousel(other_image_key)}"}} ]}
+     * result // => expected
+     */
+    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const errors = []
+        json = Utils.Clone(json)
+        const paths : {path: string[], type?: any, typeHint?: string}[] = tagrenderingconfigmeta["default"] ?? tagrenderingconfigmeta
+        for (const path of paths) {
+            if(path.typeHint !== "rendered"){
+                continue
+            }
+            Utils.WalkPath(path.path, json, ((leaf, travelled) => RewriteSpecial.convertIfNeeded(leaf, errors, travelled.join("."))))
+        }
+        
+        return {
+            result:json,
+            errors
+        };
+    }
+    
 }
 
 export class PrepareLayer extends Fuse<LayerConfigJson> {
-
-
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",
+            new OnEvery("tagRenderings", new RewriteSpecial(), {ignoreIfUndefined: true}),
             new OnEveryConcat("tagRenderings", new ExpandGroupRewrite(state)),
             new OnEveryConcat("tagRenderings", new ExpandTagRendering(state)),
             new OnEveryConcat("mapRendering", new ExpandRewrite()),

@@ -42,7 +42,7 @@ export abstract class Conversion<TIn, TOut> {
 
     public convertAll(jsons: TIn[], context: string): { result: TOut[], errors: string[], warnings: string[], information?: string[] } {
         if(jsons === undefined || jsons === null){
-            throw "convertAll received undefined or null - don't do this (at "+context+")"
+            throw `Detected a bug in the preprocessor pipeline: ${this.name}.convertAll received undefined or null - don't do this (at ${context})`
         }
         const result = []
         const errors = []
@@ -72,23 +72,34 @@ export abstract class DesugaringStep<T> extends Conversion<T, T> {
 export class OnEvery<X, T> extends DesugaringStep<T> {
     private readonly key: string;
     private readonly step: DesugaringStep<X>;
+    private _options: { ignoreIfUndefined: boolean };
 
-    constructor(key: string, step: DesugaringStep<X>) {
+    constructor(key: string, step: DesugaringStep<X>, options?: {
+        ignoreIfUndefined: false | boolean
+    }) {
         super("Applies " + step.name + " onto every object of the list `key`", [key], "OnEvery("+step.name+")");
         this.step = step;
         this.key = key;
+        this._options = options;
     }
 
     convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[], information?: string[] } {
         json = {...json}
         const step = this.step
         const key = this.key;
-        const r = step.convertAll((<X[]>json[key]), context + "." + key)
-        json[key] = r.result
-        return {
-            ...r,
-            result: json,
-        };
+        if( this._options?.ignoreIfUndefined  && json[key] === undefined){
+            return {
+                result: json,
+            };
+        }else{
+            const r = step.convertAll((<X[]>json[key]), context + "." + key)
+            json[key] = r.result
+            return {
+                ...r,
+                result: json,
+            };
+        }
+       
     }
 }
 

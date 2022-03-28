@@ -407,7 +407,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * If a list is encountered, this is tranparently walked recursively on every object.
      *
-     * The leaf objects are replaced by the function
+     * The leaf objects are replaced in the object itself by the specified function
      */
     public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) {
         const head = path[0]
@@ -792,6 +792,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             str = str.replace(" UTC", "+00")
         }
         return new Date(str)
+    }
+    
+    public static sortedByLevenshteinDistance<T>(reference: string, ts: T[], getName: (t:T) => string): T[]{
+        const withDistance: [T, number][] = ts.map(t => [t,  Utils.levenshteinDistance(getName(t), reference)])
+        withDistance.sort(([_, a], [__, b]) => a - b)
+        return withDistance.map(n => n[0])
     }
 
     public static levenshteinDistance(str1: string, str2: string) {

@@ -139,16 +139,59 @@ class MassAction extends Combine {
 }
 
 
+class NoteTable extends Combine {
+
+    constructor(noteStates: NoteState[], state?: UserRelatedState) {
+        const typicalComment = noteStates[0].props.comments[0].html
+
+        const table = new Table(
+            ["id", "status", "last comment", "last modified by"],
+            noteStates.map(ns => {
+                const link = new Link(
+                    "" + ns.props.id,
+                    "https://openstreetmap.org/note/" + ns.props.id, true
+                )
+                let last_comment = "";
+                const last_comment_props = ns.props.comments[ns.props.comments.length - 1]
+                const before_last_comment = ns.props.comments[ns.props.comments.length - 2]
+                if (ns.props.comments.length > 1) {
+                    last_comment = last_comment_props.text
+                    if (last_comment === undefined && before_last_comment?.uid === last_comment_props.uid) {
+                        last_comment = before_last_comment.text
+                    }
+                }
+                const statusIcon = BatchView.icons[ns.status]().SetClass("h-4 w-4 shrink-0")
+                return [link, new Combine([statusIcon, ns.status]).SetClass("flex"), last_comment,
+                    new Link(last_comment_props.user, "https://www.openstreetmap.org/user/" + last_comment_props.user, true)
+                ]
+            }),
+            {sortable: true}
+        ).SetClass("zebra-table link-underline");
+
+
+        super([
+            new Title("Mass apply an action on " + noteStates.length + " notes below"),
+            state !== undefined ? new MassAction(state, noteStates.map(ns => ns.props)).SetClass("block") : undefined,
+            table,
+            new Title("Example note", 4),
+            new FixedUiElement(typicalComment).SetClass("literal-code link-underline"),
+
+        ])
+        this.SetClass("flex flex-col")
+    }
+
+}
+
 class BatchView extends Toggleable {
 
-    private static icons = {
+    public static icons = {
         open: Svg.compass_svg,
         has_comments: Svg.speech_bubble_svg,
         imported: Svg.addSmall_svg,
         already_mapped: Svg.checkmark_svg,
-        invalid: Svg.invalid_svg,
-        closed: Svg.close_svg,
         not_found: Svg.not_found_svg,
+        closed: Svg.close_svg,
+        invalid: Svg.invalid_svg,
     }
 
     constructor(noteStates: NoteState[], state?: UserRelatedState) {
@@ -164,14 +207,44 @@ class BatchView extends Toggleable {
             statusHist.set(st, c + 1)
         }
 
-        const badges: (BaseUIElement)[] = [new FixedUiElement(dateStr).SetClass("literal-code rounded-full")]
-        statusHist.forEach((count, status) => {
-            const icon = BatchView.icons[status]().SetClass("h-6 m-1")
-            badges.push(new Combine([icon, count + " " + status])
-                .SetClass("flex ml-1 mb-1 pl-1 pr-3 items-center rounded-full border border-black"))
+        const unresolvedTotal = (statusHist.get("open") ?? 0) + (statusHist.get("has_comments") ?? 0)
+        const badges: (BaseUIElement)[] = [
+            new FixedUiElement(dateStr).SetClass("literal-code rounded-full"),
+            new FixedUiElement(noteStates.length + " total").SetClass("literal-code rounded-full ml-1 border-4 border-gray")
+                .onClick(() => filterOn.setData(undefined)),
+            unresolvedTotal === 0 ?
+                new Combine([Svg.party_svg().SetClass("h-6 m-1"), "All done!"])
+                    .SetClass("flex ml-1 mb-1 pl-1 pr-3 items-center rounded-full border border-black") :
+                new FixedUiElement(Math.round(100 - 100 * unresolvedTotal / noteStates.length) + "%").SetClass("literal-code rounded-full ml-1")
+        ]
+
+        const filterOn = new UIEventSource<string>(undefined)
+        Object.keys(BatchView.icons).forEach(status => {
+            const count = statusHist.get(status)
+            if (count === undefined) {
+                return undefined
+            }
+
+            const normal = new Combine([BatchView.icons[status]().SetClass("h-6 m-1"), count + " " + status])
+                .SetClass("flex ml-1 mb-1 pl-1 pr-3 items-center rounded-full border border-black")
+            const selected = new Combine([BatchView.icons[status]().SetClass("h-6 m-1"), count + " " + status])
+                .SetClass("flex ml-1 mb-1 pl-1 pr-3 items-center rounded-full border-4 border-black animate-pulse")
+
+            const toggle = new Toggle(selected, normal, filterOn.map(f => f === status, [], (selected, previous) => {
+                if (selected) {
+                    return status;
+                }
+                if (previous === status) {
+                    return undefined
+                }
+                return previous
+            })).ToggleOnClick()
+
+            badges.push(toggle)
         })
 
-        const typicalComment = noteStates[0].props.comments[0].html
+
+        const fullTable = new NoteTable(noteStates, state);
 
 
         super(
@@ -179,27 +252,12 @@ class BatchView extends Toggleable {
                 new Title(theme + ": " + intro, 2),
                 new Combine(badges).SetClass("flex flex-wrap"),
             ]),
-            new Combine([
-                new Title("Example note", 4),
-                new FixedUiElement(typicalComment).SetClass("literal-code link-underline"),
-                new Title("Mass apply an action"),
-                state !== undefined ? new MassAction(state, noteStates.map(ns => ns.props)).SetClass("block") : undefined,
-                new Table(
-                    ["id", "status", "last comment"],
-                    noteStates.map(ns => {
-                        const link = new Link(
-                            "" + ns.props.id,
-                            "https://openstreetmap.org/note/" + ns.props.id, true
-                        )
-                        let last_comment = "";
-                        if (ns.props.comments.length > 1) {
-                            last_comment = ns.props.comments[ns.props.comments.length - 1].text
-                        }
-                        const statusIcon = BatchView.icons[ns.status]().SetClass("h-4 w-4 shrink-0")
-                        return [link, new Combine([statusIcon, ns.status]).SetClass("flex"), last_comment]
-                    })
-                ).SetClass("zebra-table link-underline")
-            ]).SetClass("flex flex-col"),
+            new VariableUiElement(filterOn.map(filter => {
+                if (filter === undefined) {
+                    return fullTable
+                }
+                return new NoteTable(noteStates.filter(ns => ns.status === filter), state)
+            })),
             {
                 closeOnClick: false
             })

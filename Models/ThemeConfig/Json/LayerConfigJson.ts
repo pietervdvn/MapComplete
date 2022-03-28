@@ -234,7 +234,7 @@ export interface LayerConfigJson {
             /**
              * The type of background picture
              */
-            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string | string [],
+            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string | string[],
             /**
              * If specified, these layers will be shown to and the new point will be snapped towards it
              */

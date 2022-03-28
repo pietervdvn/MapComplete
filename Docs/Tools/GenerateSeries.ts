@@ -182,6 +182,9 @@ class ChangesetDataTools {
         } catch (e) {
 
         }
+        if(cs.properties.metadata["answer"] > 100){
+            console.log("Lots of answers for https://osm.org/changeset/"+cs.id)
+        }
         return cs
     }
 

@@ -42,6 +42,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {Changes} from "../../Logic/Osm/Changes";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import Hash from "../../Logic/Web/Hash";
+import {PreciseInput} from "../../Models/ThemeConfig/PresetConfig";
 
 /**
  * A helper class for the various import-flows.
@@ -54,7 +55,7 @@ abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly args: { name: string, defaultValue?: string, doc: string }[]
     private readonly showRemovedTags: boolean;
 
-    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string }[], showRemovedTags = true) {
+    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], showRemovedTags = true) {
         this.funcName = funcName
         this.showRemovedTags = showRemovedTags;
 
@@ -73,11 +74,13 @@ ${Utils.special_visualizations_importRequirementDocs}
         this.args = [
             {
                 name: "targetLayer",
-                doc: "The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements"
+                doc: "The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements",
+                required: true
             },
             {
                 name: "tags",
-                doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead"
+                doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead",
+                required: true
             },
             {
                 name: "text",
@@ -394,6 +397,43 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         )
     }
 
+    private static CreateAction(feature,
+                                args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string },
+                                state: FeaturePipelineState,
+                                mergeConfigs: any[]) {
+        const coors = feature.geometry.coordinates
+        if ((feature.geometry.type === "Polygon") && coors.length > 1) {
+            const outer = coors[0]
+            const inner = [...coors]
+            inner.splice(0, 1)
+            return new CreateMultiPolygonWithPointReuseAction(
+                args.newTags.data,
+                outer,
+                inner,
+                state,
+                mergeConfigs,
+                "import"
+            )
+        } else if (feature.geometry.type === "Polygon") {
+            const outer = coors[0]
+            return new CreateWayWithPointReuseAction(
+                args.newTags.data,
+                outer,
+                state,
+                mergeConfigs
+            )
+        } else if (feature.geometry.type === "LineString") {
+            return new CreateWayWithPointReuseAction(
+                args.newTags.data,
+                coors,
+                state,
+                mergeConfigs
+            )
+        } else {
+            throw "Unsupported type"
+        }
+    }
+
     async applyActionOn(state: { layoutToUse: LayoutConfig; changes: Changes, allElements: ElementStorage },
                         originalFeatureTags: UIEventSource<any>,
                         argument: string[]): Promise<void> {
@@ -484,43 +524,6 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
         return mergeConfigs;
     }
-
-    private static CreateAction(feature,
-                         args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string },
-                         state: FeaturePipelineState,
-                         mergeConfigs: any[]) {
-        const coors = feature.geometry.coordinates
-        if ((feature.geometry.type === "Polygon" ) && coors.length > 1) {
-            const outer = coors[0]
-            const inner = [...coors]
-            inner.splice(0, 1)
-            return new CreateMultiPolygonWithPointReuseAction(
-                args.newTags.data,
-                outer,
-                inner,
-                state,
-                mergeConfigs,
-                "import"
-            )
-        } else if(feature.geometry.type === "Polygon"){
-            const outer = coors[0]
-            return new CreateWayWithPointReuseAction(
-                args.newTags.data,
-                outer,
-                state,
-                mergeConfigs
-            )
-        }else if(feature.geometry.type === "LineString"){
-            return new CreateWayWithPointReuseAction(
-                args.newTags.data,
-                coors,
-                state,
-                mergeConfigs
-            )
-        }else{
-            throw "Unsupported type"
-        }
-    }
 }
 
 export class ImportPointButton extends AbstractImportButton {
@@ -528,18 +531,23 @@ export class ImportPointButton extends AbstractImportButton {
     constructor() {
         super("import_button",
             "This button will copy the point from an external dataset into OpenStreetMap",
-            [{
-                name: "snap_onto_layers",
-                doc: "If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list"
-            },
+            [
+                {
+                    name: "snap_onto_layers",
+                    doc: "If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list"
+                },
                 {
                     name: "max_snap_distance",
                     doc: "The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete",
                     defaultValue: "5"
-                }, {
-                name: "note_id",
-                doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
-            }],
+                },
+                {
+                    name: "note_id",
+                    doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
+                },
+                {name:"location_picker",
+                    defaultValue: "photo",
+                doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"}],
             false
         )
     }
@@ -581,7 +589,7 @@ export class ImportPointButton extends AbstractImportButton {
                 newElementAction.newElementId
             ))
             Hash.hash.setData(newElementAction.newElementId)
-            
+
             if (note_id !== undefined) {
                 state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
@@ -589,16 +597,24 @@ export class ImportPointButton extends AbstractImportButton {
             }
         }
 
+        let preciseInputOption = args["location_picker"]
+        let preciseInputSpec: PreciseInput  = undefined
+        console.log("Precise input location is ", preciseInputOption)
+        if(preciseInputOption !== "none") {
+            preciseInputSpec = {
+                snapToLayers: args.snap_onto_layers?.split(";"),
+                    maxSnapDistance: Number(args.max_snap_distance),
+                    preferredBackground: args["location_picker"] ?? ["photo", "map"]
+            }
+        }
+        
         const presetInfo = <PresetInfo>{
             tags: args.newTags.data,
             icon: () => new Img(args.icon),
             layerToAddTo: state.filteredLayers.data.filter(l => l.layerDef.id === args.targetLayer)[0],
             name: args.text,
             title: Translations.WT(args.text),
-            preciseInput: {
-                snapToLayers: args.snap_onto_layers?.split(";"),
-                maxSnapDistance: Number(args.max_snap_distance)
-            },
+            preciseInput: preciseInputSpec, // must be explicitely assigned, if 'undefined' won't work otherwise
             boundsFactor: 3
         }
 

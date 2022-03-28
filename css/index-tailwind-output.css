@@ -706,6 +706,7 @@ video {
 }
 
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -1502,10 +1503,6 @@ video {
 
 .p-0\.5 {
   padding: 0.125rem;
-}
-
-.p-8 {
-  padding: 2rem;
 }
 
 .px-0 {
