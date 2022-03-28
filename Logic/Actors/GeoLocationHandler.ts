@@ -5,6 +5,7 @@ import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
 import FeatureSource from "../FeatureSource/FeatureSource";
+import {BBox} from "../BBox";
 
 export interface GeoLocationPointProperties {
     id: "gps",
@@ -282,11 +283,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         if (b) {
             if (b !== true) {
                 // B is an array with our locklocation
-                inRange =
-                    b[0][0] <= location.latitude &&
-                    location.latitude <= b[1][0] &&
-                    b[0][1] <= location.longitude &&
-                    location.longitude <= b[1][1];
+                inRange = new BBox(b).contains([location.longitude, location.latitude])
             }
         }
         if (!inRange) {
