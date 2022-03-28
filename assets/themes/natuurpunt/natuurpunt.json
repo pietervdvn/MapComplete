@@ -155,7 +155,7 @@
     {
       "builtin": "toilet",
       "override": {
-        "minzoom": "14",
+        "minzoom": "15",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -225,7 +225,7 @@
     {
       "builtin": "drinking_water",
       "override": {
-        "minzoom": "14",
+        "minzoom": "16",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -243,7 +243,7 @@
     {
       "builtin": "parking",
       "override": {
-        "minzoom": "14",
+        "minzoom": "17",
         "mapRendering": [
           {
             "icon": {
@@ -270,7 +270,7 @@
     {
       "builtin": "information_board",
       "override": {
-        "minzoom": "14",
+        "minzoom": "16",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
@@ -288,7 +288,7 @@
     {
       "builtin": "bench",
       "override": {
-        "minzoom": "14",
+        "minzoom": "18",
         "source": {
           "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 12,
