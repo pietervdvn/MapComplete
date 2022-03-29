@@ -5,7 +5,7 @@
         "presets": {
             "0": {
                 "description": "Aggiungi una stazione delle ambulanza alla mappa",
-                "title": "Stazione delle ambulanze"
+                "title": "una stazione delle ambulanze"
             }
         },
         "tagRenderings": {
@@ -53,7 +53,7 @@
         "name": "Opere d’arte",
         "presets": {
             "0": {
-                "title": "Opera d’arte"
+                "title": "una opera d’arte"
             }
         },
         "tagRenderings": {
@@ -125,7 +125,7 @@
         "name": "Panchine",
         "presets": {
             "0": {
-                "title": "panchina"
+                "title": "una panchina"
             }
         },
         "tagRenderings": {
@@ -243,7 +243,7 @@
         "presets": {
             "0": {
                 "description": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
-                "title": "Bici in prestito"
+                "title": "una bici in prestito"
             }
         },
         "tagRenderings": {
@@ -286,7 +286,7 @@
         "name": "Distributore automatico di camere d’aria per bici",
         "presets": {
             "0": {
-                "title": "Distributore automatico di camere d’aria per bici"
+                "title": "una distributore automatico di camere d’aria per bici"
             }
         },
         "tagRenderings": {
@@ -314,7 +314,7 @@
         "name": "Caffè in bici",
         "presets": {
             "0": {
-                "title": "Caffè in bici"
+                "title": "una caffè in bici"
             }
         },
         "tagRenderings": {
@@ -381,7 +381,7 @@
         "name": "Servizio lavaggio bici",
         "presets": {
             "0": {
-                "title": "Servizio lavaggio bici"
+                "title": "una servizio lavaggio bici"
             }
         },
         "title": {
@@ -397,7 +397,7 @@
         "name": "Parcheggio bici",
         "presets": {
             "0": {
-                "title": "Parcheggio bici"
+                "title": "una parcheggio bici"
             }
         },
         "tagRenderings": {
@@ -506,14 +506,14 @@
         "presets": {
             "0": {
                 "description": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.",
-                "title": "pompa per bici"
+                "title": "una pompa per bici"
             },
             "1": {
                 "description": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
-                "title": "stazione di riparazione bici e pompa"
+                "title": "una stazione di riparazione bici e pompa"
             },
             "2": {
-                "title": "stazione di riparazione bici senza pompa"
+                "title": "una stazione di riparazione bici senza pompa"
             }
         },
         "tagRenderings": {
@@ -643,7 +643,7 @@
         "name": "Venditore/riparatore bici",
         "presets": {
             "0": {
-                "title": "Negozio/riparatore di bici"
+                "title": "una negozio/riparatore di bici"
             }
         },
         "tagRenderings": {
@@ -795,7 +795,7 @@
         "name": "Defibrillatori",
         "presets": {
             "0": {
-                "title": "Defibrillatore"
+                "title": "una defibrillatore"
             }
         },
         "tagRenderings": {
@@ -920,7 +920,7 @@
         "name": "Acqua potabile",
         "presets": {
             "0": {
-                "title": "acqua potabile"
+                "title": "una acqua potabile"
             }
         },
         "tagRenderings": {
@@ -964,7 +964,7 @@
         "presets": {
             "0": {
                 "description": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
-                "title": "Estintore"
+                "title": "una estintore"
             }
         },
         "tagRenderings": {
@@ -991,7 +991,7 @@
         "presets": {
             "0": {
                 "description": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
-                "title": "Caserma dei vigili del fuoco"
+                "title": "una caserma dei vigili del fuoco"
             }
         },
         "tagRenderings": {
@@ -1043,7 +1043,7 @@
         "name": "Bici fantasma",
         "presets": {
             "0": {
-                "title": "Bici fantasma"
+                "title": "una bici fantasma"
             }
         },
         "tagRenderings": {
@@ -1087,7 +1087,7 @@
         "presets": {
             "0": {
                 "description": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
-                "title": "Idrante antincendio"
+                "title": "una idrante antincendio"
             }
         },
         "tagRenderings": {
@@ -1150,7 +1150,7 @@
         "name": "Pannelli informativi",
         "presets": {
             "0": {
-                "title": "pannello informativo"
+                "title": "una pannello informativo"
             }
         },
         "title": {
@@ -1163,7 +1163,7 @@
         "presets": {
             "0": {
                 "description": "Aggiungi una mappa mancante",
-                "title": "Mappa"
+                "title": "una mappa"
             }
         },
         "tagRenderings": {
@@ -1238,7 +1238,7 @@
         "name": "Tavoli da picnic",
         "presets": {
             "0": {
-                "title": "tavolo da picnic"
+                "title": "una tavolo da picnic"
             }
         },
         "tagRenderings": {
@@ -1264,7 +1264,7 @@
         "name": "Campi da gioco",
         "presets": {
             "0": {
-                "title": "campetto"
+                "title": "una campetto"
             }
         },
         "tagRenderings": {
@@ -1386,7 +1386,7 @@
         "name": "Microbiblioteche",
         "presets": {
             "0": {
-                "title": "Microbiblioteca"
+                "title": "una microbiblioteca"
             }
         },
         "tagRenderings": {
@@ -1534,10 +1534,10 @@
         "name": "Campi sportivi",
         "presets": {
             "0": {
-                "title": "Tavolo da tennistavolo"
+                "title": "una tavolo da tennistavolo"
             },
             "1": {
-                "title": "Campo sportivo"
+                "title": "una campo sportivo"
             }
         },
         "tagRenderings": {
@@ -1749,11 +1749,11 @@
         "name": "Servizi igienici",
         "presets": {
             "0": {
-                "title": "servizi igienici aperti al pubblico"
+                "title": "una servizi igienici aperti al pubblico"
             },
             "1": {
                 "description": "Servizi igienici che hanno almeno una toilette accessibile a persone in sedia a rotelle",
-                "title": "servizi igienici accessibili per persone in sedia a rotelle"
+                "title": "una servizi igienici accessibili per persone in sedia a rotelle"
             }
         },
         "tagRenderings": {
@@ -1860,15 +1860,15 @@
         "presets": {
             "0": {
                 "description": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
-                "title": "Albero latifoglia"
+                "title": "una albero latifoglia"
             },
             "1": {
                 "description": "Un albero di una specie con aghi come il pino o l’abete.",
-                "title": "Albero aghifoglia"
+                "title": "una albero aghifoglia"
             },
             "2": {
                 "description": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
-                "title": "Albero"
+                "title": "una albero"
             }
         },
         "tagRenderings": {
@@ -1981,7 +1981,7 @@
         "name": "Punto panoramico",
         "presets": {
             "0": {
-                "title": "Punto panoramico"
+                "title": "una punto panoramico"
             }
         },
         "tagRenderings": {

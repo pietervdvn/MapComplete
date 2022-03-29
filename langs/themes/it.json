@@ -37,7 +37,7 @@
                 "presets": {
                     "0": {
                         "description": "Aggiungi una nuova area di sosta ufficiale per camper. Si tratta di aree destinate alla sosta notturna dei camper. Potrebbe trattarsi di luoghi di campeggio o semplici parcheggi. Potrebbero anche non essere segnalati sul posto, ma semplicemente indicati in una delibera comunale. Un parcheggio destinato ai camper in cui non è però consentito trascorrere la notte -non- va considerato un'area di sosta per camper. ",
-                        "title": "luogo di campeggio"
+                        "title": "una luogo di campeggio"
                     }
                 },
                 "tagRenderings": {
@@ -149,7 +149,7 @@
                 "presets": {
                     "0": {
                         "description": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
-                        "title": "luogo di sversamento delle acque reflue"
+                        "title": "una luogo di sversamento delle acque reflue"
                     }
                 },
                 "tagRenderings": {
@@ -270,11 +270,11 @@
                 "presets": {
                     "0": {
                         "description": "Un club di arrampicata",
-                        "title": "Club di arrampicata"
+                        "title": "una club di arrampicata"
                     },
                     "1": {
                         "description": "Un’associazione che ha a che fare con l’arrampicata",
-                        "title": "Associazione di arrampicata"
+                        "title": "una associazione di arrampicata"
                     }
                 },
                 "tagRenderings": {
@@ -314,7 +314,7 @@
                 "name": "Vie di arrampicata",
                 "presets": {
                     "0": {
-                        "title": "Via di arrampicata"
+                        "title": "una via di arrampicata"
                     }
                 },
                 "tagRenderings": {
@@ -366,7 +366,7 @@
                 "presets": {
                     "0": {
                         "description": "Un’opportunità di arrampicata",
-                        "title": "Opportunità di arrampicata"
+                        "title": "una opportunità di arrampicata"
                     }
                 },
                 "tagRenderings": {
@@ -690,7 +690,7 @@
                 "presets": {
                     "0": {
                         "description": "Aggiungi un giardino verticale",
-                        "title": "giardino verticale"
+                        "title": "una giardino verticale"
                     }
                 },
                 "tagRenderings": {
@@ -811,7 +811,7 @@
                 "name": "pala eolica",
                 "presets": {
                     "0": {
-                        "title": "pala eolica"
+                        "title": "una pala eolica"
                     }
                 },
                 "tagRenderings": {

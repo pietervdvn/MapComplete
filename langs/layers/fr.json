@@ -30,7 +30,7 @@
         "presets": {
             "0": {
                 "description": "Ajouter une station d’ambulances à la carte",
-                "title": "Station d’ambulances"
+                "title": "une station d’ambulances"
             }
         },
         "tagRenderings": {
@@ -78,7 +78,7 @@
         "name": "Œuvres d'art",
         "presets": {
             "0": {
-                "title": "Œuvre d'art"
+                "title": "une œuvre d'art"
             }
         },
         "tagRenderings": {
@@ -152,11 +152,11 @@
         "presets": {
             "0": {
                 "description": "Un potelet sur le chemin",
-                "title": "Bollard"
+                "title": "une bollard"
             },
             "1": {
                 "description": "Barrières cyclables, ralentissant les cyclistes",
-                "title": "Barrière cyclable"
+                "title": "une barrière cyclable"
             }
         },
         "tagRenderings": {
@@ -252,7 +252,7 @@
         "name": "Bancs",
         "presets": {
             "0": {
-                "title": "banc"
+                "title": "une banc"
             }
         },
         "tagRenderings": {
@@ -378,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
-                "title": "Vélothèque"
+                "title": "une vélothèque"
             }
         },
         "tagRenderings": {
@@ -435,7 +435,7 @@
         "presets": {
             "0": {
                 "description": "Un magasin qui priorise la location de vélos",
-                "title": "magasin de location de vélos"
+                "title": "une magasin de location de vélos"
             }
         }
     },
@@ -443,7 +443,7 @@
         "name": "Distributeur automatique de chambre à air de vélo",
         "presets": {
             "0": {
-                "title": "Distributeur automatique de chambre à air de vélo"
+                "title": "une distributeur automatique de chambre à air de vélo"
             }
         },
         "tagRenderings": {
@@ -471,7 +471,7 @@
         "name": "Café vélo",
         "presets": {
             "0": {
-                "title": "Café Vélo"
+                "title": "une café vélo"
             }
         },
         "tagRenderings": {
@@ -538,7 +538,7 @@
         "name": "Service de nettoyage de vélo",
         "presets": {
             "0": {
-                "title": "Service de nettoyage de vélo"
+                "title": "une service de nettoyage de vélo"
             }
         },
         "title": {
@@ -554,7 +554,7 @@
         "name": "Parking à vélo",
         "presets": {
             "0": {
-                "title": "Parking à vélo"
+                "title": "une parking à vélo"
             }
         },
         "tagRenderings": {
@@ -663,14 +663,14 @@
         "presets": {
             "0": {
                 "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
-                "title": "pompe à vélo"
+                "title": "une pompe à vélo"
             },
             "1": {
                 "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
-                "title": "point de réparation vélo avec pompe"
+                "title": "une point de réparation vélo avec pompe"
             },
             "2": {
-                "title": "point de réparation vélo sans pompe"
+                "title": "une point de réparation vélo sans pompe"
             }
         },
         "tagRenderings": {
@@ -806,7 +806,7 @@
         "name": "Magasin ou réparateur de vélo",
         "presets": {
             "0": {
-                "title": "Magasin et réparateur de vélo"
+                "title": "une magasin et réparateur de vélo"
             }
         },
         "tagRenderings": {
@@ -1041,11 +1041,11 @@
         "presets": {
             "0": {
                 "description": "Traversée pour piétons et/ou cyclistes",
-                "title": "Traversée"
+                "title": "une traversée"
             },
             "1": {
                 "description": "Feu de signalisation sur la voie",
-                "title": "Feu de signalisation"
+                "title": "une feu de signalisation"
             }
         },
         "title": {
@@ -1087,7 +1087,7 @@
         "name": "Défibrillateurs",
         "presets": {
             "0": {
-                "title": "Défibrillateur"
+                "title": "une défibrillateur"
             }
         },
         "tagRenderings": {
@@ -1212,7 +1212,7 @@
         "name": "Eau potable",
         "presets": {
             "0": {
-                "title": "eau potable"
+                "title": "une eau potable"
             }
         },
         "tagRenderings": {
@@ -1256,7 +1256,7 @@
         "presets": {
             "0": {
                 "description": "Un extincteur est un appareil portatif servant à éteindre un feu",
-                "title": "Extincteur"
+                "title": "une extincteur"
             }
         },
         "tagRenderings": {
@@ -1283,7 +1283,7 @@
         "presets": {
             "0": {
                 "description": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
-                "title": "Caserne de pompiers"
+                "title": "une caserne de pompiers"
             }
         },
         "tagRenderings": {
@@ -1392,7 +1392,7 @@
         "name": "Vélos fantômes",
         "presets": {
             "0": {
-                "title": "Vélo fantôme"
+                "title": "une vélo fantôme"
             }
         },
         "tagRenderings": {
@@ -1436,7 +1436,7 @@
         "presets": {
             "0": {
                 "description": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
-                "title": "Borne incendie"
+                "title": "une borne incendie"
             }
         },
         "tagRenderings": {
@@ -1499,7 +1499,7 @@
         "name": "Panneaux d'informations",
         "presets": {
             "0": {
-                "title": "panneau d'informations"
+                "title": "une panneau d'informations"
             }
         },
         "title": {
@@ -1512,7 +1512,7 @@
         "presets": {
             "0": {
                 "description": "Ajouter une carte manquante",
-                "title": "Carte"
+                "title": "une carte"
             }
         },
         "tagRenderings": {
@@ -1587,7 +1587,7 @@
         "name": "Tables de pique-nique",
         "presets": {
             "0": {
-                "title": "table de pique-nique"
+                "title": "une table de pique-nique"
             }
         },
         "tagRenderings": {
@@ -1613,7 +1613,7 @@
         "name": "Aire de jeu",
         "presets": {
             "0": {
-                "title": "terrain de jeux"
+                "title": "une terrain de jeux"
             }
         },
         "tagRenderings": {
@@ -1735,7 +1735,7 @@
         "name": "Microbibliothèque",
         "presets": {
             "0": {
-                "title": "Microbibliothèque"
+                "title": "une microbibliothèque"
             }
         },
         "tagRenderings": {
@@ -1840,7 +1840,7 @@
         "presets": {
             "0": {
                 "description": "Ajouter un nouveau magasin",
-                "title": "Magasin"
+                "title": "une magasin"
             }
         },
         "tagRenderings": {
@@ -1941,10 +1941,10 @@
         "name": "Terrains de sport",
         "presets": {
             "0": {
-                "title": "Table de ping-pong"
+                "title": "une table de ping-pong"
             },
             "1": {
-                "title": "Terrain de sport"
+                "title": "une terrain de sport"
             }
         },
         "tagRenderings": {
@@ -2156,11 +2156,11 @@
         "name": "Toilettes",
         "presets": {
             "0": {
-                "title": "toilette publique"
+                "title": "une toilette publique"
             },
             "1": {
                 "description": "Toilettes avec au moins un WC accessible aux personnes à mobilité réduite",
-                "title": "toilettes accessible aux personnes à mobilité réduite"
+                "title": "une toilettes accessible aux personnes à mobilité réduite"
             }
         },
         "tagRenderings": {
@@ -2273,15 +2273,15 @@
         "presets": {
             "0": {
                 "description": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
-                "title": "Arbre feuillu"
+                "title": "une arbre feuillu"
             },
             "1": {
                 "description": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
-                "title": "Arbre résineux"
+                "title": "une arbre résineux"
             },
             "2": {
                 "description": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
-                "title": "Arbre"
+                "title": "une arbre"
             }
         },
         "tagRenderings": {
@@ -2394,7 +2394,7 @@
         "name": "Point de vue",
         "presets": {
             "0": {
-                "title": "Point de vue"
+                "title": "une point de vue"
             }
         },
         "tagRenderings": {

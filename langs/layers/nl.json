@@ -30,7 +30,7 @@
         "presets": {
             "0": {
                 "description": "Voeg een ambulancestation toe aan de kaart",
-                "title": "Ambulancestation"
+                "title": "een ambulancestation"
             }
         },
         "tagRenderings": {
@@ -78,7 +78,7 @@
         "name": "Kunstwerken",
         "presets": {
             "0": {
-                "title": "Kunstwerk"
+                "title": "een kunstwerk"
             }
         },
         "tagRenderings": {
@@ -152,11 +152,11 @@
         "presets": {
             "0": {
                 "description": "Een paaltje in de weg",
-                "title": "Paaltje"
+                "title": "een paaltje"
             },
             "1": {
                 "description": "Fietshekjes, voor het afremmen van fietsers",
-                "title": "Fietshekjes"
+                "title": "een fietshekjes"
             }
         },
         "tagRenderings": {
@@ -252,7 +252,7 @@
         "name": "Zitbanken",
         "presets": {
             "0": {
-                "title": "zitbank"
+                "title": "een zitbank"
             }
         },
         "tagRenderings": {
@@ -378,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
-                "title": "Bicycle library"
+                "title": "een bicycle library"
             }
         },
         "tagRenderings": {
@@ -435,10 +435,10 @@
         "presets": {
             "0": {
                 "description": "Een bemande winkel die focust op fietsverhuur",
-                "title": "fietsverhuurzaak"
+                "title": "een fietsverhuurzaak"
             },
             "1": {
-                "title": "fietsverhuur"
+                "title": "een fietsverhuur"
             }
         },
         "tagRenderings": {
@@ -540,7 +540,7 @@
         "name": "Fietsbanden-verkoopsautomaat",
         "presets": {
             "0": {
-                "title": "Fietsbanden-verkoopsautomaat"
+                "title": "een fietsbanden-verkoopsautomaat"
             }
         },
         "tagRenderings": {
@@ -569,7 +569,7 @@
         "name": "Fietscafé",
         "presets": {
             "0": {
-                "title": "Fietscafé"
+                "title": "een fietscafé"
             }
         },
         "tagRenderings": {
@@ -637,7 +637,7 @@
         "name": "Fietsschoonmaakpunt",
         "presets": {
             "0": {
-                "title": "Fietsschoonmaakpunt"
+                "title": "een fietsschoonmaakpunt"
             }
         },
         "tagRenderings": {
@@ -686,7 +686,7 @@
         "name": "Fietsparking",
         "presets": {
             "0": {
-                "title": "Fietsparking"
+                "title": "een fietsparking"
             }
         },
         "tagRenderings": {
@@ -796,15 +796,15 @@
         "presets": {
             "0": {
                 "description": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
-                "title": "fietspomp"
+                "title": "een fietspomp"
             },
             "1": {
                 "description": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
-                "title": "herstelpunt en pomp"
+                "title": "een herstelpunt en pomp"
             },
             "2": {
                 "description": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
-                "title": "herstelpunt zonder pomp"
+                "title": "een herstelpunt zonder pomp"
             }
         },
         "tagRenderings": {
@@ -963,7 +963,7 @@
         "name": "Fietszaak",
         "presets": {
             "0": {
-                "title": "Fietszaak"
+                "title": "een fietszaak"
             }
         },
         "tagRenderings": {
@@ -1118,7 +1118,7 @@
         "presets": {
             "0": {
                 "description": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "verrekijker"
+                "title": "een verrekijker"
             }
         },
         "tagRenderings": {
@@ -1162,11 +1162,11 @@
         "presets": {
             "0": {
                 "description": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden",
-                "title": "vogelkijkhut"
+                "title": "een vogelkijkhut"
             },
             "1": {
                 "description": "Een vogelkijkwand waarachter men kan staan om vogels te kijken",
-                "title": "vogelkijkwand"
+                "title": "een vogelkijkwand"
             }
         },
         "size": {
@@ -1260,15 +1260,15 @@
         "presets": {
             "0": {
                 "description": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk ",
-                "title": "bruin cafe of kroeg"
+                "title": "een bruin cafe of kroeg"
             },
             "1": {
                 "description": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
-                "title": "bar"
+                "title": "een bar"
             },
             "2": {
                 "description": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
-                "title": "cafe"
+                "title": "een cafe"
             }
         },
         "tagRenderings": {
@@ -1388,10 +1388,10 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "oplaadpunt voor elektrische fietsen"
+                "title": "een oplaadpunt voor elektrische fietsen"
             },
             "1": {
-                "title": "oplaadstation voor elektrische auto's"
+                "title": "een oplaadstation voor elektrische auto's"
             }
         },
         "tagRenderings": {
@@ -2319,11 +2319,11 @@
         "presets": {
             "0": {
                 "description": "Oversteekplaats voor voetgangers en/of fietsers",
-                "title": "Oversteekplaats"
+                "title": "een oversteekplaats"
             },
             "1": {
                 "description": "Verkeerslicht op een weg",
-                "title": "Verkeerslicht"
+                "title": "een verkeerslicht"
             }
         },
         "tagRenderings": {
@@ -2814,10 +2814,10 @@
         "name": "Defibrillatoren",
         "presets": {
             "0": {
-                "title": "Defibrillator"
+                "title": "een defibrillator"
             },
             "1": {
-                "title": "defibrillator die aan een muur hangt"
+                "title": "een defibrillator die aan een muur hangt"
             }
         },
         "tagRenderings": {
@@ -2946,7 +2946,7 @@
         "name": "Drinkbaar water",
         "presets": {
             "0": {
-                "title": "drinkbaar water"
+                "title": "een drinkbaar water"
             }
         },
         "tagRenderings": {
@@ -3119,7 +3119,7 @@
         "presets": {
             "0": {
                 "description": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
-                "title": "Brandblusser"
+                "title": "een brandblusser"
             }
         },
         "tagRenderings": {
@@ -3173,15 +3173,15 @@
         "presets": {
             "0": {
                 "description": "Een eetgegelegenheid waar je aan tafel wordt bediend",
-                "title": "restaurant"
+                "title": "een restaurant"
             },
             "1": {
                 "description": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
-                "title": "fastfood-zaak"
+                "title": "een fastfood-zaak"
             },
             "2": {
                 "description": "Een fastfood-zaak waar je frieten koopt",
-                "title": "frituur"
+                "title": "een frituur"
             }
         },
         "tagRenderings": {
@@ -3389,7 +3389,7 @@
         "name": "Witte Fietsen",
         "presets": {
             "0": {
-                "title": "Witte fiets"
+                "title": "een witte fiets"
             }
         },
         "tagRenderings": {
@@ -3455,7 +3455,7 @@
         "name": "Informatieborden",
         "presets": {
             "0": {
-                "title": "informatiebord"
+                "title": "een informatiebord"
             }
         },
         "title": {
@@ -3468,7 +3468,7 @@
         "presets": {
             "0": {
                 "description": "Voeg een ontbrekende kaart toe",
-                "title": "Kaart"
+                "title": "een kaart"
             }
         },
         "tagRenderings": {
@@ -3534,7 +3534,7 @@
         "presets": {
             "0": {
                 "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
-                "title": "natuurreservaat"
+                "title": "een natuurreservaat"
             }
         },
         "tagRenderings": {
@@ -3711,7 +3711,7 @@
         "name": "Parking",
         "presets": {
             "0": {
-                "title": "parking voor auto's"
+                "title": "een parking voor auto's"
             }
         },
         "title": {
@@ -3723,7 +3723,7 @@
         "name": "Picknicktafels",
         "presets": {
             "0": {
-                "title": "picnic-tafel"
+                "title": "een picnic-tafel"
             }
         },
         "tagRenderings": {
@@ -3764,7 +3764,7 @@
         "name": "Speeltuinen",
         "presets": {
             "0": {
-                "title": "speeltuin"
+                "title": "een speeltuin"
             }
         },
         "tagRenderings": {
@@ -3898,7 +3898,7 @@
         "name": "Boekenruilkastjes",
         "presets": {
             "0": {
-                "title": "Boekenruilkast"
+                "title": "een boekenruilkast"
             }
         },
         "tagRenderings": {
@@ -4069,10 +4069,10 @@
         "name": "Recycling",
         "presets": {
             "0": {
-                "title": "recycling container"
+                "title": "een recycling container"
             },
             "1": {
-                "title": "recycling centre"
+                "title": "een recycling centre"
             }
         },
         "tagRenderings": {
@@ -4219,7 +4219,7 @@
         "presets": {
             "0": {
                 "description": "Voeg een nieuwe winkel toe",
-                "title": "Winkel"
+                "title": "een winkel"
             }
         },
         "tagRenderings": {
@@ -4350,10 +4350,10 @@
         "name": "Sportterrein",
         "presets": {
             "0": {
-                "title": "Ping-pong tafel"
+                "title": "een ping-pong tafel"
             },
             "1": {
-                "title": "Sportterrein"
+                "title": "een sportterrein"
             }
         },
         "tagRenderings": {
@@ -4459,7 +4459,7 @@
         "name": "Straatlantaarns",
         "presets": {
             "0": {
-                "title": "straatlantaarn"
+                "title": "een straatlantaarn"
             }
         },
         "tagRenderings": {
@@ -4744,11 +4744,11 @@
         "name": "Toiletten",
         "presets": {
             "0": {
-                "title": "publiek toilet"
+                "title": "een publiek toilet"
             },
             "1": {
                 "description": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC",
-                "title": "rolstoeltoegankelijke, publiek toilet"
+                "title": "een rolstoeltoegankelijke, publiek toilet"
             }
         },
         "tagRenderings": {
@@ -4953,15 +4953,15 @@
         "presets": {
             "0": {
                 "description": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
-                "title": "Loofboom"
+                "title": "een loofboom"
             },
             "1": {
                 "description": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
-                "title": "Naaldboom"
+                "title": "een naaldboom"
             },
             "2": {
                 "description": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
-                "title": "Boom"
+                "title": "een boom"
             }
         },
         "tagRenderings": {
@@ -5074,7 +5074,7 @@
         "name": "Uitzicht",
         "presets": {
             "0": {
-                "title": "Uitzicht"
+                "title": "een uitzicht"
             }
         },
         "tagRenderings": {
@@ -5162,7 +5162,7 @@
         "name": "Vuilnisbak",
         "presets": {
             "0": {
-                "title": "Vuilnisbak"
+                "title": "een vuilnisbak"
             }
         },
         "tagRenderings": {

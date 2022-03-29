@@ -30,7 +30,7 @@
         "presets": {
             "0": {
                 "description": "Eine Rettungsstation der Karte hinzufügen",
-                "title": "Rettungswache"
+                "title": "eine rettungswache"
             }
         },
         "tagRenderings": {
@@ -78,7 +78,7 @@
         "name": "Kunstwerke",
         "presets": {
             "0": {
-                "title": "Kunstwerk"
+                "title": "eine kunstwerk"
             }
         },
         "tagRenderings": {
@@ -152,11 +152,11 @@
         "presets": {
             "0": {
                 "description": "Ein Poller auf der Straße",
-                "title": "Poller"
+                "title": "eine poller"
             },
             "1": {
                 "description": "Fahrradhindernis, das Radfahrer abbremst",
-                "title": "Fahrradhindernis"
+                "title": "eine fahrradhindernis"
             }
         },
         "tagRenderings": {
@@ -241,7 +241,7 @@
         "name": "Sitzbänke",
         "presets": {
             "0": {
-                "title": "sitzbank"
+                "title": "eine sitzbank"
             }
         },
         "tagRenderings": {
@@ -366,7 +366,7 @@
         "presets": {
             "0": {
                 "description": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
-                "title": "Fahrradbibliothek"
+                "title": "eine fahrradbibliothek"
             }
         },
         "tagRenderings": {
@@ -409,7 +409,7 @@
         "name": "Fahrradschlauch-Automat",
         "presets": {
             "0": {
-                "title": "Fahrradschlauch-Automat"
+                "title": "eine fahrradschlauch-automat"
             }
         },
         "tagRenderings": {
@@ -437,7 +437,7 @@
         "name": "Fahrrad-Café",
         "presets": {
             "0": {
-                "title": "Fahrrad-Café"
+                "title": "eine fahrrad-café"
             }
         },
         "tagRenderings": {
@@ -504,7 +504,7 @@
         "name": "Fahrrad-Reinigungsdienst",
         "presets": {
             "0": {
-                "title": "Fahrrad-Reinigungsdienst"
+                "title": "eine fahrrad-reinigungsdienst"
             }
         },
         "tagRenderings": {
@@ -552,7 +552,7 @@
         "name": "Fahrrad-Parkplätze",
         "presets": {
             "0": {
-                "title": "Fahrrad-Parkplätze"
+                "title": "eine fahrrad-parkplätze"
             }
         },
         "tagRenderings": {
@@ -661,14 +661,14 @@
         "presets": {
             "0": {
                 "description": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
-                "title": "fahrradpumpe"
+                "title": "eine fahrradpumpe"
             },
             "1": {
                 "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
-                "title": "fahrrad-Reparaturstation und Pumpe"
+                "title": "eine fahrrad-reparaturstation und pumpe"
             },
             "2": {
-                "title": "fahrrad-Reparaturstation ohne Pumpe"
+                "title": "eine fahrrad-reparaturstation ohne pumpe"
             }
         },
         "tagRenderings": {
@@ -807,7 +807,7 @@
         "name": "Fahrradwerkstatt/geschäft",
         "presets": {
             "0": {
-                "title": "Fahrradwerkstatt/geschäft"
+                "title": "eine fahrradwerkstatt/geschäft"
             }
         },
         "tagRenderings": {
@@ -961,7 +961,7 @@
         "presets": {
             "0": {
                 "description": "Ein fest installiertes Teleskop oder Fernglas, für die öffentliche Nutzung. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "Ferngläser"
+                "title": "eine ferngläser"
             }
         },
         "tagRenderings": {
@@ -1007,13 +1007,13 @@
         "name": "Cafés und Kneipen",
         "presets": {
             "0": {
-                "title": "Kneipe"
+                "title": "eine kneipe"
             },
             "1": {
-                "title": "Bar"
+                "title": "eine bar"
             },
             "2": {
-                "title": "Café"
+                "title": "eine café"
             }
         },
         "tagRenderings": {
@@ -1085,7 +1085,7 @@
         "name": "Ladestationen",
         "presets": {
             "1": {
-                "title": "Ladestation für e-bikes"
+                "title": "eine ladestation für e-bikes"
             }
         },
         "tagRenderings": {
@@ -1209,11 +1209,11 @@
         "presets": {
             "0": {
                 "description": "Kreuzung für Fußgänger und/oder Radfahrer",
-                "title": "Kreuzung"
+                "title": "eine kreuzung"
             },
             "1": {
                 "description": "Ampel an einer Straße",
-                "title": "Ampel"
+                "title": "eine ampel"
             }
         },
         "tagRenderings": {
@@ -1672,7 +1672,7 @@
         "name": "Defibrillatoren",
         "presets": {
             "0": {
-                "title": "Defibrillator"
+                "title": "eine defibrillator"
             }
         },
         "tagRenderings": {
@@ -1797,7 +1797,7 @@
         "name": "Trinkwasserstelle",
         "presets": {
             "0": {
-                "title": "trinkwasser"
+                "title": "eine trinkwasser"
             }
         },
         "tagRenderings": {
@@ -1860,7 +1860,7 @@
         "presets": {
             "0": {
                 "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
-                "title": "Feuerlöscher"
+                "title": "eine feuerlöscher"
             }
         },
         "tagRenderings": {
@@ -1887,7 +1887,7 @@
         "presets": {
             "0": {
                 "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
-                "title": "Feuerwache"
+                "title": "eine feuerwache"
             }
         },
         "tagRenderings": {
@@ -1941,14 +1941,14 @@
         "presets": {
             "0": {
                 "description": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
-                "title": "Restaurant"
+                "title": "eine restaurant"
             },
             "1": {
                 "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
-                "title": "Schnellimbiss"
+                "title": "eine schnellimbiss"
             },
             "2": {
-                "title": "Pommesbude"
+                "title": "eine pommesbude"
             }
         },
         "tagRenderings": {
@@ -2041,7 +2041,7 @@
         "name": "Geisterräder",
         "presets": {
             "0": {
-                "title": "Geisterrad"
+                "title": "eine geisterrad"
             }
         },
         "tagRenderings": {
@@ -2085,7 +2085,7 @@
         "presets": {
             "0": {
                 "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
-                "title": "Löschwasser-Hydrant"
+                "title": "eine löschwasser-hydrant"
             }
         },
         "tagRenderings": {
@@ -2148,7 +2148,7 @@
         "name": "Informationstafeln",
         "presets": {
             "0": {
-                "title": "informationstafel"
+                "title": "eine informationstafel"
             }
         },
         "title": {
@@ -2161,7 +2161,7 @@
         "presets": {
             "0": {
                 "description": "Fehlende Karte hinzufügen",
-                "title": "Karte"
+                "title": "eine karte"
             }
         },
         "tagRenderings": {
@@ -2285,7 +2285,7 @@
         "name": "Picknick-Tische",
         "presets": {
             "0": {
-                "title": "picknicktisch"
+                "title": "eine picknicktisch"
             }
         },
         "tagRenderings": {
@@ -2311,7 +2311,7 @@
         "name": "Spielplätze",
         "presets": {
             "0": {
-                "title": "spielplatz"
+                "title": "eine spielplatz"
             }
         },
         "tagRenderings": {
@@ -2442,7 +2442,7 @@
         "name": "Bücherschränke",
         "presets": {
             "0": {
-                "title": "Bücherschrank"
+                "title": "eine bücherschrank"
             }
         },
         "tagRenderings": {
@@ -2547,7 +2547,7 @@
         "presets": {
             "0": {
                 "description": "Ein neues Geschäft hinzufügen",
-                "title": "Geschäft"
+                "title": "eine geschäft"
             }
         },
         "tagRenderings": {
@@ -2646,10 +2646,10 @@
         "name": "Sportplätze",
         "presets": {
             "0": {
-                "title": "Tischtennisplatte"
+                "title": "eine tischtennisplatte"
             },
             "1": {
-                "title": "Sportplatz"
+                "title": "eine sportplatz"
             }
         },
         "tagRenderings": {
@@ -2878,11 +2878,11 @@
         "name": "Toiletten",
         "presets": {
             "0": {
-                "title": "öffentlich zugängliche Toilette"
+                "title": "eine öffentlich zugängliche toilette"
             },
             "1": {
                 "description": "Eine Toilettenanlage mit mindestens einer rollstuhlgerechten Toilette",
-                "title": "toiletten mit rollstuhlgerechter Toilette"
+                "title": "eine toiletten mit rollstuhlgerechter toilette"
             }
         },
         "tagRenderings": {
@@ -3035,15 +3035,15 @@
         "presets": {
             "0": {
                 "description": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
-                "title": "Laubbaum"
+                "title": "eine laubbaum"
             },
             "1": {
                 "description": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
-                "title": "Nadelbaum"
+                "title": "eine nadelbaum"
             },
             "2": {
                 "description": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
-                "title": "Baum"
+                "title": "eine baum"
             }
         },
         "tagRenderings": {
@@ -3149,7 +3149,7 @@
         "name": "Aussichtspunkt",
         "presets": {
             "0": {
-                "title": "Aussichtspunkt"
+                "title": "eine aussichtspunkt"
             }
         },
         "tagRenderings": {
@@ -3223,7 +3223,7 @@
         "name": "Abfalleimer",
         "presets": {
             "0": {
-                "title": "Abfalleimer"
+                "title": "eine abfalleimer"
             }
         },
         "tagRenderings": {

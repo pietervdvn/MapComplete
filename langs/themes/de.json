@@ -43,7 +43,7 @@
                 "presets": {
                     "0": {
                         "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
-                        "title": "Wohnmobilstellplatz"
+                        "title": "eine wohnmobilstellplatz"
                     }
                 },
                 "tagRenderings": {
@@ -155,7 +155,7 @@
                 "presets": {
                     "0": {
                         "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-                        "title": "Sanitäre Entsorgungsstation"
+                        "title": "eine sanitäre entsorgungsstation"
                     }
                 },
                 "tagRenderings": {
@@ -276,11 +276,11 @@
                 "presets": {
                     "0": {
                         "description": "Ein Kletterverein",
-                        "title": "Kletterverein"
+                        "title": "eine kletterverein"
                     },
                     "1": {
                         "description": "Eine Organisation, die sich mit dem Klettern beschäftigt",
-                        "title": "Eine Kletter-Organisation"
+                        "title": "eine eine kletter-organisation"
                     }
                 },
                 "tagRenderings": {
@@ -320,7 +320,7 @@
                 "name": "Kletterrouten",
                 "presets": {
                     "0": {
-                        "title": "Kletterroute"
+                        "title": "eine kletterroute"
                     }
                 },
                 "tagRenderings": {
@@ -372,7 +372,7 @@
                 "presets": {
                     "0": {
                         "description": "Eine Klettergelegenheit",
-                        "title": "Klettermöglichkeit"
+                        "title": "eine klettermöglichkeit"
                     }
                 },
                 "tagRenderings": {
@@ -773,7 +773,7 @@
                 "presets": {
                     "0": {
                         "description": "Einen Fassadengarten hinzufügen",
-                        "title": "Fassadengarten"
+                        "title": "eine fassadengarten"
                     }
                 },
                 "tagRenderings": {
@@ -902,11 +902,11 @@
                 "presets": {
                     "0": {
                         "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
-                        "title": "Hackerspace"
+                        "title": "eine hackerspace"
                     },
                     "1": {
                         "description": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
-                        "title": "Makerspace"
+                        "title": "eine makerspace"
                     }
                 },
                 "tagRenderings": {
@@ -990,7 +990,7 @@
                 "name": "Windrad",
                 "presets": {
                     "0": {
-                        "title": "Windrad"
+                        "title": "eine windrad"
                     }
                 },
                 "title": {
@@ -1046,7 +1046,7 @@
                 "name": "Brieflästen",
                 "presets": {
                     "0": {
-                        "title": "Briefkasten"
+                        "title": "eine briefkasten"
                     }
                 },
                 "title": {
@@ -1067,7 +1067,7 @@
                 "name": "Poststellen",
                 "presets": {
                     "0": {
-                        "title": "Poststelle"
+                        "title": "eine poststelle"
                     }
                 },
                 "tagRenderings": {
