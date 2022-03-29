@@ -34,7 +34,7 @@
                 "presets": {
                     "0": {
                         "description": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
-                        "title": "Aire de camping"
+                        "title": "une aire de camping"
                     }
                 },
                 "tagRenderings": {
@@ -146,7 +146,7 @@
                 "presets": {
                     "0": {
                         "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
-                        "title": "Site de vidange"
+                        "title": "une site de vidange"
                     }
                 },
                 "tagRenderings": {
@@ -262,11 +262,11 @@
                 "presets": {
                     "0": {
                         "description": "Un club d’escalade",
-                        "title": "Club d’escalade"
+                        "title": "une club d’escalade"
                     },
                     "1": {
                         "description": "Une association d’escalade",
-                        "title": "Association d’escalade"
+                        "title": "une association d’escalade"
                     }
                 },
                 "tagRenderings": {
@@ -306,7 +306,7 @@
                 "name": "Voies d’escalade",
                 "presets": {
                     "0": {
-                        "title": "Voie d’escalade"
+                        "title": "une voie d’escalade"
                     }
                 },
                 "tagRenderings": {
@@ -358,7 +358,7 @@
                 "presets": {
                     "0": {
                         "description": "Opportunité d’escalade",
-                        "title": "Opportunité d’escalade"
+                        "title": "une opportunité d’escalade"
                     }
                 },
                 "tagRenderings": {
@@ -600,7 +600,7 @@
                 "presets": {
                     "0": {
                         "description": "Ajouter un jardin mural",
-                        "title": "jardin mural"
+                        "title": "une jardin mural"
                     }
                 },
                 "tagRenderings": {
@@ -709,7 +709,7 @@
                 "name": "Éolienne",
                 "presets": {
                     "0": {
-                        "title": "Éolienne"
+                        "title": "une éolienne"
                     }
                 },
                 "tagRenderings": {

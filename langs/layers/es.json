@@ -27,7 +27,7 @@
         "name": "Obras de arte",
         "presets": {
             "0": {
-                "title": "Obra de arte"
+                "title": "una obra de arte"
             }
         },
         "tagRenderings": {
@@ -75,7 +75,7 @@
         "name": "Barreras",
         "presets": {
             "0": {
-                "title": "Bolardo"
+                "title": "una bolardo"
             }
         },
         "tagRenderings": {
@@ -107,7 +107,7 @@
         "name": "Bancos",
         "presets": {
             "0": {
-                "title": "banco"
+                "title": "una banco"
             }
         },
         "tagRenderings": {
@@ -264,7 +264,7 @@
         "name": "Desfibriladores",
         "presets": {
             "0": {
-                "title": "Desfibrilador"
+                "title": "una desfibrilador"
             }
         },
         "tagRenderings": {
@@ -319,7 +319,7 @@
         "name": "Bicicleta blanca",
         "presets": {
             "0": {
-                "title": "Bicicleta blanca"
+                "title": "una bicicleta blanca"
             }
         },
         "title": {

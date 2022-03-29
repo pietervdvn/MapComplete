@@ -4,7 +4,7 @@
         "name": "Obras de arte",
         "presets": {
             "0": {
-                "title": "Obra de arte"
+                "title": "uma obra de arte"
             }
         },
         "tagRenderings": {
@@ -76,7 +76,7 @@
         "name": "Bancos",
         "presets": {
             "0": {
-                "title": "banco"
+                "title": "uma banco"
             }
         },
         "tagRenderings": {
@@ -186,7 +186,7 @@
         "name": "Biblioteca de bicicleta",
         "presets": {
             "0": {
-                "title": "Biblioteca de bicicletas"
+                "title": "uma biblioteca de bicicletas"
             }
         },
         "tagRenderings": {
@@ -229,7 +229,7 @@
         "name": "Máquina de venda automática de tubos de bicicleta",
         "presets": {
             "0": {
-                "title": "Máquina de venda automática de tubos de bicicleta"
+                "title": "uma máquina de venda automática de tubos de bicicleta"
             }
         },
         "tagRenderings": {
@@ -257,7 +257,7 @@
         "name": "Café de bicicletas",
         "presets": {
             "0": {
-                "title": "Café de bicicleta"
+                "title": "uma café de bicicleta"
             }
         },
         "tagRenderings": {
@@ -313,7 +313,7 @@
         "name": "Serviço de limpeza de bicicletas",
         "presets": {
             "0": {
-                "title": "Serviço de limpeza de bicicletas"
+                "title": "uma serviço de limpeza de bicicletas"
             }
         },
         "title": {
@@ -329,7 +329,7 @@
         "name": "Estacionamento de bicicletas",
         "presets": {
             "0": {
-                "title": "Estacionamento de bicicletas"
+                "title": "uma estacionamento de bicicletas"
             }
         },
         "tagRenderings": {
@@ -578,7 +578,7 @@
         "name": "Bicicleta fantasma",
         "presets": {
             "0": {
-                "title": "Bicicleta fantasma"
+                "title": "uma bicicleta fantasma"
             }
         },
         "title": {

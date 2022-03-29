@@ -44,7 +44,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
-                        "title": "Natuurreservaat"
+                        "title": "een natuurreservaat"
                     }
                 },
                 "title": {
@@ -65,7 +65,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg een ontbrekend park toe",
-                        "title": "Park"
+                        "title": "een park"
                     }
                 },
                 "title": {
@@ -86,7 +86,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg een ontbrekend bos toe aan de kaart",
-                        "title": "Bos"
+                        "title": "een bos"
                     }
                 },
                 "title": {
@@ -183,7 +183,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
-                        "title": "camperplaats"
+                        "title": "een camperplaats"
                     }
                 },
                 "tagRenderings": {
@@ -271,11 +271,11 @@
                 "presets": {
                     "0": {
                         "description": "Een klimclub",
-                        "title": "Klimclub"
+                        "title": "een klimclub"
                     },
                     "1": {
                         "description": "Een VZW die werkt rond klimmen",
-                        "title": "Een klimorganisatie"
+                        "title": "een een klimorganisatie"
                     }
                 },
                 "tagRenderings": {
@@ -315,7 +315,7 @@
                 "name": "Klimroute",
                 "presets": {
                     "0": {
-                        "title": "Klimroute"
+                        "title": "een klimroute"
                     }
                 },
                 "tagRenderings": {
@@ -352,7 +352,7 @@
                 "presets": {
                     "0": {
                         "description": "Een klimgelegenheid",
-                        "title": "Klimgelegenheid"
+                        "title": "een klimgelegenheid"
                     }
                 },
                 "tagRenderings": {
@@ -624,7 +624,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg geveltuintje toe",
-                        "title": "geveltuintje"
+                        "title": "een geveltuintje"
                     }
                 },
                 "tagRenderings": {
@@ -725,7 +725,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)",
-                        "title": "Boomgaard"
+                        "title": "een boomgaard"
                     }
                 },
                 "title": {
@@ -738,7 +738,7 @@
                 "presets": {
                     "0": {
                         "description": "Voeg hier een boom toe",
-                        "title": "Boom"
+                        "title": "een boom"
                     }
                 },
                 "tagRenderings": {
@@ -877,7 +877,7 @@
                 "name": "windturbine",
                 "presets": {
                     "0": {
-                        "title": "windturbine"
+                        "title": "een windturbine"
                     }
                 },
                 "title": {

@@ -3,7 +3,7 @@
         "name": "Kunstverk",
         "presets": {
             "0": {
-                "title": "Kunstverk"
+                "title": "en kunstverk"
             }
         },
         "tagRenderings": {
@@ -75,7 +75,7 @@
         "name": "Benker",
         "presets": {
             "0": {
-                "title": "benk"
+                "title": "en benk"
             }
         },
         "tagRenderings": {
@@ -179,7 +179,7 @@
         "name": "Kart over brannhydranter",
         "presets": {
             "0": {
-                "title": "Brannslukker"
+                "title": "en brannslukker"
             }
         },
         "title": {
@@ -190,7 +190,7 @@
         "name": "Kart over brannstasjoner",
         "presets": {
             "0": {
-                "title": "Brannstasjon"
+                "title": "en brannstasjon"
             }
         },
         "tagRenderings": {
@@ -213,7 +213,7 @@
         "name": "Spøkelsessykler",
         "presets": {
             "0": {
-                "title": "Spøkelsessykler"
+                "title": "en spøkelsessykler"
             }
         },
         "title": {
@@ -225,7 +225,7 @@
         "name": "Kart over brannhydranter",
         "presets": {
             "0": {
-                "title": "Brannhydrant"
+                "title": "en brannhydrant"
             }
         },
         "tagRenderings": {
