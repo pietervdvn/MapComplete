@@ -3748,21 +3748,21 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Opened by {search}"
+                        "question": "Opened by contributor {search}"
                     }
                 }
             },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Not</b> opened by {search}"
+                        "question": "<b>Not</b> opened by contributor {search}"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Opened before {search}"
+                        "question": "Last edited by contributor {search}"
                     }
                 }
             },
@@ -3776,21 +3776,21 @@
             "6": {
                 "options": {
                     "0": {
-                        "question": "Opened by anonymous user"
+                        "question": "Created before {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Only show open notes"
+                        "question": "Created after {search}"
                     }
                 }
             },
             "8": {
                 "options": {
                     "0": {
-                        "question": "Hide import notes"
+                        "question": "Only show notes opened by an anonymous contributor"
                     }
                 }
             },
