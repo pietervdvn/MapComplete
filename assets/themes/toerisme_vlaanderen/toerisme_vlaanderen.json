@@ -242,7 +242,8 @@
         ]
       },
       "hideTagRenderingsWithLabels": [
-        "extra"
+        "extra",
+        "website"
       ]
     }
   ],
