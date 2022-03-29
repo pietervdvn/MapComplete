@@ -159,14 +159,14 @@
             "sport=climbing"
           ],
           "title": {
-            "de": "Kletterverein",
+            "de": "eine kletterverein",
             "en": "Climbing club",
-            "nl": "Klimclub",
+            "nl": "een klimclub",
             "ja": "クライミングクラブ",
-            "nb_NO": "Klatreklubb",
+            "nb_NO": "en klatreklubb",
             "ru": "Клуб скалолазания",
-            "fr": "Club d’escalade",
-            "it": "Club di arrampicata",
+            "fr": "une club d’escalade",
+            "it": "una club di arrampicata",
             "hu": "Mászóegyesület"
           },
           "description": {
@@ -187,12 +187,12 @@
             "sport=climbing"
           ],
           "title": {
-            "de": "Eine Kletter-Organisation",
+            "de": "eine eine kletter-organisation",
             "en": "Climbing NGO",
-            "nl": "Een klimorganisatie",
+            "nl": "een een klimorganisatie",
             "ja": "クライミングNGO",
-            "fr": "Association d’escalade",
-            "it": "Associazione di arrampicata",
+            "fr": "une association d’escalade",
+            "it": "una associazione di arrampicata",
             "hu": "Mászószervezet"
           },
           "description": {
@@ -562,10 +562,10 @@
         {
           "title": {
             "en": "Climbing route",
-            "nl": "Klimroute",
-            "fr": "Voie d’escalade",
-            "de": "Kletterroute",
-            "it": "Via di arrampicata"
+            "nl": "een klimroute",
+            "fr": "une voie d’escalade",
+            "de": "eine kletterroute",
+            "it": "una via di arrampicata"
           },
           "tags": [
             "sport=climbing",
@@ -856,12 +856,12 @@
           ],
           "title": {
             "en": "Climbing opportunity",
-            "nl": "Klimgelegenheid",
-            "de": "Klettermöglichkeit",
+            "nl": "een klimgelegenheid",
+            "de": "eine klettermöglichkeit",
             "ja": "登坂教室",
-            "nb_NO": "Klatremulighet",
-            "fr": "Opportunité d’escalade",
-            "it": "Opportunità di arrampicata"
+            "nb_NO": "en klatremulighet",
+            "fr": "une opportunité d’escalade",
+            "it": "una opportunità di arrampicata"
           },
           "description": {
             "nl": "Een klimgelegenheid",

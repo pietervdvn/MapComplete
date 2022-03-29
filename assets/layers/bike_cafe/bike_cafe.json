@@ -337,16 +337,16 @@
     {
       "title": {
         "en": "Bike cafe",
-        "nl": "Fietscafé",
-        "fr": "Café Vélo",
+        "nl": "een fietscafé",
+        "fr": "une café vélo",
         "gl": "Café de ciclistas",
-        "de": "Fahrrad-Café",
-        "it": "Caffè in bici",
+        "de": "eine fahrrad-café",
+        "it": "una caffè in bici",
         "zh_Hans": "自行车咖啡",
         "zh_Hant": "單車咖啡廳",
         "ru": "Велосипедное кафе",
-        "pt_BR": "Café de bicicleta",
-        "pt": "Café de bicicleta"
+        "pt_BR": "uma café de bicicleta",
+        "pt": "uma café de bicicleta"
       },
       "tags": [
         "amenity=pub",

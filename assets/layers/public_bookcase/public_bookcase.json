@@ -51,11 +51,11 @@
     {
       "title": {
         "en": "Bookcase",
-        "nl": "Boekenruilkast",
-        "de": "Bücherschrank",
-        "fr": "Microbibliothèque",
+        "nl": "een boekenruilkast",
+        "de": "eine bücherschrank",
+        "fr": "une microbibliothèque",
         "ru": "Книжный шкаф",
-        "it": "Microbiblioteca",
+        "it": "una microbiblioteca",
         "hu": "Könyvespolc"
       },
       "tags": [

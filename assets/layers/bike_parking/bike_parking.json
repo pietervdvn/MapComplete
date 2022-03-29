@@ -26,17 +26,17 @@
     {
       "title": {
         "en": "Bike parking",
-        "nl": "Fietsparking",
-        "fr": "Parking à vélo",
+        "nl": "een fietsparking",
+        "fr": "une parking à vélo",
         "gl": "Aparcadoiro de bicicletas",
-        "de": "Fahrrad-Parkplätze",
+        "de": "eine fahrrad-parkplätze",
         "hu": "Kerékpártároló",
-        "it": "Parcheggio bici",
+        "it": "una parcheggio bici",
         "zh_Hant": "單車停車場",
         "ru": "Велопарковка",
         "pl": "Parking dla rowerów",
-        "pt_BR": "Estacionamento de bicicletas",
-        "pt": "Estacionamento de bicicletas"
+        "pt_BR": "uma estacionamento de bicicletas",
+        "pt": "uma estacionamento de bicicletas"
       },
       "tags": [
         "amenity=bicycle_parking"

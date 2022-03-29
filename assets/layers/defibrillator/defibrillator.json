@@ -37,11 +37,11 @@
       "title": {
         "en": "Defibrillator",
         "ca": "Desfibril·lador",
-        "es": "Desfibrilador",
-        "fr": "Défibrillateur",
-        "nl": "Defibrillator",
-        "de": "Defibrillator",
-        "it": "Defibrillatore",
+        "es": "una desfibrilador",
+        "fr": "une défibrillateur",
+        "nl": "een defibrillator",
+        "de": "eine defibrillator",
+        "it": "una defibrillatore",
         "ru": "Дефибриллятор",
         "sl": "Defibrilator"
       },
@@ -52,7 +52,7 @@
     {
       "title": {
         "en": "defibrillator mounted on a wall",
-        "nl": "defibrillator die aan een muur hangt",
+        "nl": "een defibrillator die aan een muur hangt",
         "sl": "defibrilator je pritrjen na steno"
       },
       "tags": [

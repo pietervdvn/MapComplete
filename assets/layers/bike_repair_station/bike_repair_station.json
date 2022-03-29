@@ -658,15 +658,15 @@
     {
       "title": {
         "en": "bike pump",
-        "nl": "fietspomp",
-        "fr": "pompe à vélo",
+        "nl": "een fietspomp",
+        "fr": "une pompe à vélo",
         "gl": "bomba de ar",
-        "de": "fahrradpumpe",
-        "it": "pompa per bici",
+        "de": "eine fahrradpumpe",
+        "it": "una pompa per bici",
         "ru": "bелосипедный насос",
         "fi": "pyöräpumppu",
         "pl": "pompka do roweru",
-        "pt_BR": "bomba de bicicleta"
+        "pt_BR": "uma bomba de bicicleta"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -692,11 +692,11 @@
     {
       "title": {
         "en": "bike repair station and pump",
-        "nl": "herstelpunt en pomp",
-        "fr": "point de réparation vélo avec pompe",
+        "nl": "een herstelpunt en pomp",
+        "fr": "une point de réparation vélo avec pompe",
         "gl": "estación de arranxo de bicicletas con bomba de ar",
-        "de": "fahrrad-Reparaturstation und Pumpe",
-        "it": "stazione di riparazione bici e pompa",
+        "de": "eine fahrrad-reparaturstation und pumpe",
+        "it": "una stazione di riparazione bici e pompa",
         "pl": "stacja naprawy rowerów i pompka"
       },
       "tags": [
@@ -719,11 +719,11 @@
     {
       "title": {
         "en": "bike repair station without pump",
-        "nl": "herstelpunt zonder pomp",
-        "fr": "point de réparation vélo sans pompe",
+        "nl": "een herstelpunt zonder pomp",
+        "fr": "une point de réparation vélo sans pompe",
         "gl": "estación de arranxo de bicicletas sin bomba de ar",
-        "de": "fahrrad-Reparaturstation ohne Pumpe",
-        "it": "stazione di riparazione bici senza pompa"
+        "de": "eine fahrrad-reparaturstation ohne pumpe",
+        "it": "una stazione di riparazione bici senza pompa"
       },
       "tags": [
         "amenity=bicycle_repair_station",

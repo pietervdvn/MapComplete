@@ -606,20 +606,20 @@
       ],
       "title": {
         "en": "bench",
-        "de": "sitzbank",
-        "fr": "banc",
-        "nl": "zitbank",
-        "es": "banco",
-        "it": "panchina",
+        "de": "eine sitzbank",
+        "fr": "une banc",
+        "nl": "een zitbank",
+        "es": "una banco",
+        "it": "una panchina",
         "ru": "cкамейка",
         "id": "bangku",
         "zh_Hans": "长椅",
-        "nb_NO": "benk",
+        "nb_NO": "en benk",
         "zh_Hant": "長椅",
-        "pt_BR": "banco",
+        "pt_BR": "uma banco",
         "fi": "penkki",
         "pl": "Ławka",
-        "pt": "banco"
+        "pt": "uma banco"
       },
       "presiceInput": {
         "preferredBackground": "photo"

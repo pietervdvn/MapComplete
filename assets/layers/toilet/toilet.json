@@ -26,11 +26,11 @@
     {
       "title": {
         "en": "public toilet",
-        "de": "öffentlich zugängliche Toilette",
-        "fr": "toilette publique",
-        "nl": "publiek toilet",
+        "de": "eine öffentlich zugängliche toilette",
+        "fr": "une toilette publique",
+        "nl": "een publiek toilet",
         "ru": "общественный туалет ",
-        "it": "servizi igienici aperti al pubblico"
+        "it": "una servizi igienici aperti al pubblico"
       },
       "tags": [
         "amenity=toilets"
@@ -39,10 +39,10 @@
     {
       "title": {
         "en": "toilets with wheelchair accessible toilet",
-        "de": "toiletten mit rollstuhlgerechter Toilette",
-        "fr": "toilettes accessible aux personnes à mobilité réduite",
-        "nl": "rolstoeltoegankelijke, publiek toilet",
-        "it": "servizi igienici accessibili per persone in sedia a rotelle",
+        "de": "eine toiletten mit rollstuhlgerechter toilette",
+        "fr": "une toilettes accessible aux personnes à mobilité réduite",
+        "nl": "een rolstoeltoegankelijke, publiek toilet",
+        "it": "una servizi igienici accessibili per persone in sedia a rotelle",
         "ru": "tуалет с доступом для пользователей кресел-колясок"
       },
       "tags": [

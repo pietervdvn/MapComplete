@@ -36,11 +36,11 @@
         "information=board"
       ],
       "title": {
-        "nl": "informatiebord",
+        "nl": "een informatiebord",
         "en": "information board",
-        "it": "pannello informativo",
-        "fr": "panneau d'informations",
-        "de": "informationstafel",
+        "it": "una pannello informativo",
+        "fr": "une panneau d'informations",
+        "de": "eine informationstafel",
         "ru": "информационный щит"
       }
     }

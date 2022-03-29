@@ -218,10 +218,10 @@
         "en": "Fire station",
         "ja": "消防署",
         "ru": "Пожарная часть",
-        "fr": "Caserne de pompiers",
-        "de": "Feuerwache",
-        "it": "Caserma dei vigili del fuoco",
-        "nb_NO": "Brannstasjon"
+        "fr": "une caserne de pompiers",
+        "de": "eine feuerwache",
+        "it": "una caserma dei vigili del fuoco",
+        "nb_NO": "en brannstasjon"
       },
       "description": {
         "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",

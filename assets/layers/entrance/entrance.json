@@ -296,7 +296,9 @@
   ],
   "presets": [
     {
-      "title": "entrance",
+      "title": {
+        "*": "entrance"
+      },
       "preciseInput": {
         "preferredBackground": "photo",
         "snapToLayer": [

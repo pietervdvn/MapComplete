@@ -25,8 +25,8 @@
       ],
       "title": {
         "en": "pub",
-        "nl": "bruin cafe of kroeg",
-        "de": "Kneipe",
+        "nl": "een bruin cafe of kroeg",
+        "de": "eine kneipe",
         "ru": "паб",
         "hu": "kocsma"
       },
@@ -44,8 +44,8 @@
       ],
       "title": {
         "en": "bar",
-        "nl": "bar",
-        "de": "Bar",
+        "nl": "een bar",
+        "de": "eine bar",
         "ru": "бар",
         "hu": "bár"
       },
@@ -63,8 +63,8 @@
       ],
       "title": {
         "en": "cafe",
-        "nl": "cafe",
-        "de": "Café",
+        "nl": "een cafe",
+        "de": "eine café",
         "ru": "кафе",
         "hu": "kávézó"
       },

@@ -54,9 +54,9 @@
     {
       "title": {
         "en": "Crossing",
-        "nl": "Oversteekplaats",
-        "de": "Kreuzung",
-        "fr": "Traversée"
+        "nl": "een oversteekplaats",
+        "de": "eine kreuzung",
+        "fr": "une traversée"
       },
       "tags": [
         "highway=crossing"
@@ -78,10 +78,10 @@
     {
       "title": {
         "en": "Traffic signal",
-        "nl": "Verkeerslicht",
+        "nl": "een verkeerslicht",
         "ru": "Светофор",
-        "de": "Ampel",
-        "fr": "Feu de signalisation"
+        "de": "eine ampel",
+        "fr": "une feu de signalisation"
       },
       "tags": [
         "highway=traffic_signals"

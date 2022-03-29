@@ -37,7 +37,7 @@
     },
     "general": {
         "add": {
-            "addNew": "Legg til en ny {category} her",
+            "addNew": "Legg til {category} her",
             "addNewMapLabel": "Legg til nytt element",
             "confirmButton": "Legg til en {category} her.<br><div class=\"alert\">Din endring er synlig for alle</div>",
             "confirmIntro": "<h3>Legg til {title} her?</h3>Punktet du oppretter her vil være <b>synlig for alle</b>. Kun legg til ting på kartet hvis de virkelig finnes. Mange programmer bruker denne dataen.",

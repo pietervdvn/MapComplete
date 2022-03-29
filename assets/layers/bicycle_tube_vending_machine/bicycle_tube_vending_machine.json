@@ -50,14 +50,14 @@
     {
       "title": {
         "en": "Bicycle tube vending machine",
-        "nl": "Fietsbanden-verkoopsautomaat",
-        "fr": "Distributeur automatique de chambre à air de vélo",
-        "it": "Distributore automatico di camere d’aria per bici",
-        "de": "Fahrradschlauch-Automat",
+        "nl": "een fietsbanden-verkoopsautomaat",
+        "fr": "une distributeur automatique de chambre à air de vélo",
+        "it": "una distributore automatico di camere d’aria per bici",
+        "de": "eine fahrradschlauch-automat",
         "ru": "Торговый автомат для велосипедистов",
         "zh_Hant": "自行車內胎自動售貨機",
-        "pt_BR": "Máquina de venda automática de tubos de bicicleta",
-        "pt": "Máquina de venda automática de tubos de bicicleta"
+        "pt_BR": "uma máquina de venda automática de tubos de bicicleta",
+        "pt": "uma máquina de venda automática de tubos de bicicleta"
       },
       "tags": [
         "amenity=vending_machine",

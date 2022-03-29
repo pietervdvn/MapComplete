@@ -26,11 +26,11 @@
     {
       "title": {
         "en": "Viewpoint",
-        "nl": "Uitzicht",
-        "de": "Aussichtspunkt",
-        "fr": "Point de vue",
+        "nl": "een uitzicht",
+        "de": "eine aussichtspunkt",
+        "fr": "une point de vue",
         "ru": "Смотровая площадка",
-        "it": "Punto panoramico",
+        "it": "una punto panoramico",
         "id": "Sudut pandang"
       },
       "tags": [

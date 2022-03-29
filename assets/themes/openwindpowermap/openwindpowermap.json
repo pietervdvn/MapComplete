@@ -189,10 +189,10 @@
           ],
           "title": {
             "en": "wind turbine",
-            "nl": "windturbine",
-            "fr": "Éolienne",
-            "de": "Windrad",
-            "it": "pala eolica",
+            "nl": "een windturbine",
+            "fr": "une éolienne",
+            "de": "eine windrad",
+            "it": "una pala eolica",
             "zh_Hant": "風機",
             "hu": "Szélerőmű"
           }

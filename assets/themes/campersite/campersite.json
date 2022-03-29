@@ -652,11 +652,11 @@
             "ru": "площадка для кемпинга",
             "ja": "キャンプサイト",
             "zh_Hant": "露營地",
-            "it": "luogo di campeggio",
-            "fr": "Aire de camping",
-            "pt_BR": "local de acampamento",
-            "de": "Wohnmobilstellplatz",
-            "nl": "camperplaats",
+            "it": "una luogo di campeggio",
+            "fr": "une aire de camping",
+            "pt_BR": "uma local de acampamento",
+            "de": "eine wohnmobilstellplatz",
+            "nl": "een camperplaats",
             "hu": "lakóautós megállóhely"
           },
           "description": {
@@ -1105,9 +1105,9 @@
           "title": {
             "en": "sanitary dump station",
             "ja": "衛生ゴミ捨て場",
-            "it": "luogo di sversamento delle acque reflue",
-            "fr": "Site de vidange",
-            "de": "Sanitäre Entsorgungsstation",
+            "it": "una luogo di sversamento delle acque reflue",
+            "fr": "une site de vidange",
+            "de": "eine sanitäre entsorgungsstation",
             "zh_Hant": "垃圾丟棄站"
           },
           "description": {
