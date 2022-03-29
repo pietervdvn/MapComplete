@@ -2,7 +2,8 @@
   "id": "bicycle_rental",
   "name": {
     "en": "Bicycle rental",
-    "nl": "Fietsverhuur"
+    "nl": "Fietsverhuur",
+    "fr": "Location de vélo"
   },
   "source": {
     "osmTags": {
@@ -41,7 +42,8 @@
   },
   "description": {
     "en": "Bicycle rental stations",
-    "nl": "Fietsverhuustations"
+    "nl": "Fietsverhuustations",
+    "fr": "Station de location de vélo"
   },
   "tagRenderings": [
     "images",
@@ -288,7 +290,8 @@
     {
       "title": {
         "en": "bicycle rental shop",
-        "nl": "fietsverhuurzaak"
+        "nl": "fietsverhuurzaak",
+        "fr": "magasin de location de vélos"
       },
       "tags": [
         "amenity=bicycle_rental",
@@ -296,7 +299,8 @@
       ],
       "description": {
         "en": "A manned shop which focuses on bicycle rental",
-        "nl": "Een bemande winkel die focust op fietsverhuur"
+        "nl": "Een bemande winkel die focust op fietsverhuur",
+        "fr": "Un magasin qui priorise la location de vélos"
       }
     },
     {
@@ -346,7 +350,8 @@
       {
         "explanation": {
           "nl": "{title()} is permanent gestopt",
-          "en": "{title()} has closed down permanently"
+          "en": "{title()} has closed down permanently",
+          "fr": "{title()} a était fermé de façon permanente"
         },
         "changesetMessage": "shop_closed"
       }
@@ -360,7 +365,8 @@
         },
         "then": {
           "en": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore",
-          "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer"
+          "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer",
+          "fr": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant"
         }
       }
     ]

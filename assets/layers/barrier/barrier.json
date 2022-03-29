@@ -380,7 +380,7 @@
         "nl": "Hoe breed is de smalste opening naast de barrières?",
         "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
         "hu": "Milyen széles a korlátok melletti legkisebb nyílás?",
-        "fr": "Quelle est la largeur d'ouverture la plus petite près de la barrière ?"
+        "fr": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?"
       },
       "condition": {
         "or": [

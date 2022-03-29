@@ -417,6 +417,28 @@
             "render": "Vélothèque"
         }
     },
+    "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} a était fermé de façon permanente"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant"
+                }
+            }
+        },
+        "description": "Station de location de vélo",
+        "name": "Location de vélo",
+        "presets": {
+            "0": {
+                "description": "Un magasin qui priorise la location de vélos",
+                "title": "magasin de location de vélos"
+            }
+        }
+    },
     "bicycle_tube_vending_machine": {
         "name": "Distributeur automatique de chambre à air de vélo",
         "presets": {
@@ -2396,27 +2418,5 @@
     },
     "watermill": {
         "name": "Moulin à eau"
-    },
-    "bicycle_rental": {
-        "name": "Location de vélo",
-        "presets": {
-            "0": {
-                "description": "Un magasin qui priorise la location de vélos",
-                "title": "magasin de location de vélos"
-            }
-        },
-        "description": "Station de location de vélo",
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "{title()} a était fermé de façon permanente"
-                }
-            },
-            "nonDeleteMappings": {
-                "0": {
-                    "then": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant"
-                }
-            }
-        }
     }
 }

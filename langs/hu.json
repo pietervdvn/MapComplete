@@ -93,6 +93,7 @@
             "themeBy": "A téma karbantartója: {author}"
         },
         "back": "Vissza",
+        "backToMapcomplete": "Vissza a témák áttekintéséhez",
         "backgroundMap": "Háttértérkép",
         "cancel": "Mégse",
         "confirm": "Megerősítés",
@@ -242,8 +243,7 @@
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "backToMapcomplete": "Vissza a témák áttekintéséhez"
+        }
     },
     "image": {
         "addPicture": "Kép hozzáadása",

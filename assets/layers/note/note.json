@@ -91,7 +91,6 @@
           "if": "_is_import_note~*",
           "then": "addSmall"
         }
-        
       ]
     }
   ],
