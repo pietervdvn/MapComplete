@@ -520,12 +520,12 @@
         "leaf_type=broadleaved"
       ],
       "title": {
-        "nl": "Loofboom",
+        "nl": "een loofboom",
         "en": "Broadleaved tree",
-        "it": "Albero latifoglia",
-        "fr": "Arbre feuillu",
+        "it": "una albero latifoglia",
+        "fr": "une arbre feuillu",
         "ru": "Лиственное дерево",
-        "de": "Laubbaum"
+        "de": "eine laubbaum"
       },
       "description": {
         "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
@@ -544,12 +544,12 @@
         "leaf_type=needleleaved"
       ],
       "title": {
-        "nl": "Naaldboom",
+        "nl": "een naaldboom",
         "en": "Needleleaved tree",
-        "it": "Albero aghifoglia",
+        "it": "una albero aghifoglia",
         "ru": "Хвойное дерево",
-        "fr": "Arbre résineux",
-        "de": "Nadelbaum"
+        "fr": "une arbre résineux",
+        "de": "eine nadelbaum"
       },
       "description": {
         "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
@@ -568,13 +568,13 @@
         "natural=tree"
       ],
       "title": {
-        "nl": "Boom",
+        "nl": "een boom",
         "en": "Tree",
-        "it": "Albero",
+        "it": "una albero",
         "ru": "Дерево",
-        "fr": "Arbre",
+        "fr": "une arbre",
         "id": "Pohon",
-        "de": "Baum"
+        "de": "eine baum"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",

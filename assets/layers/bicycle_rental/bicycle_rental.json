@@ -290,8 +290,8 @@
     {
       "title": {
         "en": "bicycle rental shop",
-        "nl": "fietsverhuurzaak",
-        "fr": "magasin de location de vélos"
+        "nl": "een fietsverhuurzaak",
+        "fr": "une magasin de location de vélos"
       },
       "tags": [
         "amenity=bicycle_rental",
@@ -306,7 +306,7 @@
     {
       "title": {
         "en": "bicycle rental",
-        "nl": "fietsverhuur"
+        "nl": "een fietsverhuur"
       },
       "tags": [
         "amenity=bicycle_rental"

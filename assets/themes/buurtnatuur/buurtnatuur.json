@@ -78,7 +78,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Natuurreservaat"
+            "nl": "een natuurreservaat"
           },
           "description": {
             "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
@@ -198,7 +198,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Park"
+            "nl": "een park"
           },
           "description": {
             "nl": "Voeg een ontbrekend park toe"
@@ -306,7 +306,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Bos"
+            "nl": "een bos"
           },
           "description": {
             "nl": "Voeg een ontbrekend bos toe aan de kaart"

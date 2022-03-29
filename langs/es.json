@@ -26,7 +26,7 @@
     "general": {
         "about": "Edita fácilmente y añade puntos en OpenStreetMap de un tema concreto",
         "add": {
-            "addNew": "Añadir una nueva {category}",
+            "addNew": "Añadir {category}",
             "addNewMapLabel": "Haga clic aquí para añadir un nuevo ítem",
             "confirmButton": "Añadir una {category} .<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",

@@ -18,9 +18,9 @@
     {
       "title": {
         "en": "restaurant",
-        "nl": "restaurant",
+        "nl": "een restaurant",
         "ru": "ресторан",
-        "de": "Restaurant"
+        "de": "eine restaurant"
       },
       "tags": [
         "amenity=restaurant"
@@ -37,9 +37,9 @@
     {
       "title": {
         "en": "fastfood",
-        "nl": "fastfood-zaak",
+        "nl": "een fastfood-zaak",
         "ru": "быстрое питание",
-        "de": "Schnellimbiss"
+        "de": "eine schnellimbiss"
       },
       "tags": [
         "amenity=fast_food"
@@ -56,8 +56,8 @@
     {
       "title": {
         "en": "fries shop",
-        "nl": "frituur",
-        "de": "Pommesbude"
+        "nl": "een frituur",
+        "de": "eine pommesbude"
       },
       "tags": [
         "amenity=fast_food",

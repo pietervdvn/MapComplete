@@ -332,11 +332,11 @@
       ],
       "title": {
         "en": "Shop",
-        "fr": "Magasin",
+        "fr": "une magasin",
         "ru": "Магазин",
         "ja": "店",
-        "nl": "Winkel",
-        "de": "Geschäft",
+        "nl": "een winkel",
+        "de": "eine geschäft",
         "eo": "Butiko"
       },
       "description": {

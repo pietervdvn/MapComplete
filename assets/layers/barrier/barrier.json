@@ -61,12 +61,12 @@
     {
       "title": {
         "en": "Bollard",
-        "nl": "Paaltje",
-        "de": "Poller",
+        "nl": "een paaltje",
+        "de": "eine poller",
         "ru": "Прикол",
-        "fr": "Bollard",
+        "fr": "une bollard",
         "hu": "Terelőoszlop",
-        "es": "Bolardo"
+        "es": "una bolardo"
       },
       "tags": [
         "barrier=bollard"
@@ -89,10 +89,10 @@
     {
       "title": {
         "en": "Cycle barrier",
-        "nl": "Fietshekjes",
-        "de": "Fahrradhindernis",
+        "nl": "een fietshekjes",
+        "de": "eine fahrradhindernis",
         "hu": "Kerékpárakadály",
-        "fr": "Barrière cyclable"
+        "fr": "une barrière cyclable"
       },
       "tags": [
         "barrier=cycle_barrier"

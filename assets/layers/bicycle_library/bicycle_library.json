@@ -240,14 +240,14 @@
     {
       "title": {
         "en": "Fietsbibliotheek",
-        "nl": "Bicycle library",
+        "nl": "een bicycle library",
         "ru": "Велосипедная библиотека",
         "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
-        "it": "Bici in prestito",
-        "fr": "Vélothèque",
-        "pt_BR": "Biblioteca de bicicletas",
-        "de": "Fahrradbibliothek",
-        "pt": "Biblioteca de bicicletas",
+        "it": "una bici in prestito",
+        "fr": "une vélothèque",
+        "pt_BR": "uma biblioteca de bicicletas",
+        "de": "eine fahrradbibliothek",
+        "pt": "uma biblioteca de bicicletas",
         "eo": "Fietsbibliotheek"
       },
       "tags": [

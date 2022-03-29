@@ -492,12 +492,12 @@
         "leisure=playground"
       ],
       "title": {
-        "nl": "speeltuin",
+        "nl": "een speeltuin",
         "en": "playground",
         "ru": "Детская площадка",
-        "fr": "terrain de jeux",
-        "it": "campetto",
-        "de": "spielplatz"
+        "fr": "une terrain de jeux",
+        "it": "una campetto",
+        "de": "eine spielplatz"
       }
     }
   ],

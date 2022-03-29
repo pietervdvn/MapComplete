@@ -297,10 +297,10 @@
         "en": "Fire hydrant",
         "ru": "Пожарный гидрант",
         "ja": "消火栓",
-        "nb_NO": "Brannhydrant",
-        "fr": "Borne incendie",
-        "de": "Löschwasser-Hydrant",
-        "it": "Idrante antincendio"
+        "nb_NO": "en brannhydrant",
+        "fr": "une borne incendie",
+        "de": "eine löschwasser-hydrant",
+        "it": "una idrante antincendio"
       },
       "description": {
         "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",

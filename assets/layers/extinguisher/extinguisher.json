@@ -108,12 +108,12 @@
       "title": {
         "en": "Fire extinguisher",
         "ja": "消火器",
-        "nb_NO": "Brannslukker",
+        "nb_NO": "en brannslukker",
         "ru": "Огнетушитель",
-        "fr": "Extincteur",
-        "de": "Feuerlöscher",
-        "it": "Estintore",
-        "nl": "Brandblusser"
+        "fr": "une extincteur",
+        "de": "eine feuerlöscher",
+        "it": "una estintore",
+        "nl": "een brandblusser"
       },
       "description": {
         "en": "A fire extinguisher is a small, portable device used to stop a fire",

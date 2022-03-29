@@ -394,12 +394,12 @@
             "garden:type=facade_garden"
           ],
           "title": {
-            "nl": "geveltuintje",
+            "nl": "een geveltuintje",
             "en": "facade garden",
             "ja": "ファサード庭園",
-            "it": "giardino verticale",
-            "fr": "jardin mural",
-            "de": "Fassadengarten",
+            "it": "una giardino verticale",
+            "fr": "une jardin mural",
+            "de": "eine fassadengarten",
             "hu": "homlokzatkert"
           },
           "description": {

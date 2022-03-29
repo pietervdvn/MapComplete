@@ -95,7 +95,9 @@
   "hideFromOverview": false,
   "presets": [
     {
-      "title": "Speelbos",
+      "title": {
+        "*": "Speelbos"
+      },
       "tags": [
         "leisure=playground",
         "playground=forest",

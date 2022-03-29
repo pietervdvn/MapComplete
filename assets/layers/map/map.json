@@ -173,11 +173,11 @@
       ],
       "title": {
         "en": "Map",
-        "nl": "Kaart",
-        "it": "Mappa",
+        "nl": "een kaart",
+        "it": "una mappa",
         "ru": "Карта",
-        "fr": "Carte",
-        "de": "Karte"
+        "fr": "une carte",
+        "de": "eine karte"
       },
       "description": {
         "en": "Add a missing map",

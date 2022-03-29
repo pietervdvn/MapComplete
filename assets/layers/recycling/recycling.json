@@ -408,7 +408,7 @@
     {
       "title": {
         "en": "recycling container",
-        "nl": "recycling container"
+        "nl": "een recycling container"
       },
       "tags": [
         "amenity=recycling",
@@ -418,7 +418,7 @@
     {
       "title": {
         "en": "recycling centre",
-        "nl": "recycling centre"
+        "nl": "een recycling centre"
       },
       "tags": [
         "amenity=recycling",

@@ -203,6 +203,11 @@ export interface LayerConfigJson {
     presets?: {
         /**
          * The title - shown on the 'add-new'-button.
+         * 
+         * This should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.
+         * This text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.
+         * 
+         * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          */
         title: string | any,
         /**
