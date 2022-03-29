@@ -68,6 +68,15 @@ export default class FilterConfig {
                 }
             })
 
+            for (const field of fields) {
+                question.OnEveryLanguage((txt, language) => {
+                    if(txt.indexOf("{"+field.name+"}")<0){
+                        throw "Error in filter with fields at "+context+".question."+language+": The question text should contain every field, but it doesn't contain `{"+field+"}`: "+txt
+                    }
+                    return txt
+                })
+            }
+
             if(option.default){
                 if(defaultSelection === undefined){
                     defaultSelection = i;
