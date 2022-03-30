@@ -909,7 +909,8 @@
                     }
                 }
             }
-        }
+        },
+        "title": "Windmolens"
     },
     "parkings": {
         "description": "Deze kaart toont verschillende parkeerplekken",
@@ -1062,5 +1063,20 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "entrances": {
+        "title": "Toegangsdeuren"
+    },
+    "hackerspaces": {
+        "title": "Hackerspaces"
+    },
+    "notes": {
+        "title": "Kaartnotas op OpenStreetMap"
+    },
+    "postboxes": {
+        "title": "Brievenbussen en postkantoren"
+    },
+    "shops": {
+        "title": "Winkels"
     }
 }
