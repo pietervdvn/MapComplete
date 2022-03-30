@@ -226,7 +226,8 @@
             "fsUserbadge": "Skru på innloggingsknappen",
             "fsWelcomeMessage": "Vis velkomst-oppsprettsmeldinger og tilknyttede faner",
             "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor og sende den til venner og familie:",
-            "thanksForSharing": "Takk for at du bidrar."
+            "thanksForSharing": "Takk for at du bidrar.",
+            "fsAddNew": ""
         },
         "skip": "Hopp over dette spørsmålet",
         "skippedQuestions": "Noen spørsmål ble hoppet over",
@@ -314,7 +315,8 @@
         },
         "ccbExplanation": "",
         "ccoExplanation": "",
-        "ccbsExplanation": ""
+        "ccbsExplanation": "",
+        "cco": ""
     },
     "importHelper": {
         "askMetadata": {
@@ -449,7 +451,8 @@
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
         "logIn": "Logg inn for å vise tema du har besøkt tidligere",
         "pickTheme": "Begynn ved å velge et av temaene nedenfor.",
-        "title": "Velkommen til MapComplete"
+        "title": "Velkommen til MapComplete",
+        "#": ""
     },
     "move": {
         "cancel": "Avbryt flytting",
