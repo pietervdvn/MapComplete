@@ -1,9 +1,10 @@
 import ScriptUtils from "./ScriptUtils";
-import {writeFileSync} from "fs";
+import {mkdirSync, writeFileSync} from "fs";
 import {FixLegacyTheme, UpdateLegacyLayer} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 
 /*
  * This script reads all theme and layer files and reformats them inplace
@@ -49,11 +50,27 @@ function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
     //*/
 }
 
+function extractInlineLayer(theme: LayoutConfigJson){
+    for (let i = 0; i < theme.layers.length; i++){
+        const layer = theme.layers[i];
+        if(typeof layer === "string"){
+            continue
+        }
+        if(layer["override"] !== undefined){
+            continue
+        }
+        const l = <LayerConfigJson> layer
+        mkdirSync("./assets/layers/"+l.id)
+        writeFileSync("./assets/layers/"+l.id+"/"+l.id+".json", JSON.stringify(l, null, "    "))
+        theme.layers[i] = l.id
+    }
+}
+
 const layerFiles = ScriptUtils.getLayerFiles();
 for (const layerFile of layerFiles) {
     try {
         const fixed =<LayerConfigJson> new UpdateLegacyLayer().convertStrict(layerFile.parsed, "While linting " + layerFile.path);
-       addArticleToPresets(fixed)
+        addArticleToPresets(fixed)
         writeFileSync(layerFile.path, JSON.stringify(fixed, null, "  "))
     } catch (e) {
         console.error("COULD NOT LINT LAYER" + layerFile.path + ":\n\t" + e)
@@ -69,7 +86,7 @@ for (const themeFile of themeFiles) {
                 addArticleToPresets(<any> layer)
             }
         }
-        
+       // extractInlineLayer(fixed)
         writeFileSync(themeFile.path, JSON.stringify(fixed, null, "  "))
     } catch (e) {
         console.error("COULD NOT LINT THEME" + themeFile.path + ":\n\t" + e)
