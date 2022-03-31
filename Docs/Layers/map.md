@@ -42,7 +42,7 @@ A map, meant for tourists which is permanently installed in the public space
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/map/map.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/map/map.json)
 
 
 

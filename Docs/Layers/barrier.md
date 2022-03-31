@@ -47,7 +47,7 @@ Obstacles while cycling, such as bollards and cycle barriers
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/barrier/barrier.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/barrier/barrier.json)
 
 
 

@@ -47,7 +47,7 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cafe/bike_cafe.json)
 
 
 

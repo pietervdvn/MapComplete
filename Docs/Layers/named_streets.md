@@ -42,7 +42,7 @@ Hidden layer with all streets which have a name. Useful to detect addresses
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/named_streets/named_streets.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/named_streets/named_streets.json)
 
 
 

@@ -182,6 +182,14 @@
       "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:direction' (in the MapComplete.osm.be theme 'Street Lighting')"
     },
     {
+      "key": "highway",
+      "description": "The MapComplete theme Street Lighting has a layer Lit streets showing features with this tag"
+    },
+    {
+      "key": "lit",
+      "description": "The MapComplete theme Street Lighting has a layer Lit streets showing features with this tag"
+    },
+    {
       "key": "lit",
       "description": "Layer 'Lit streets' shows lit=yes with a fixed text, namely 'This street is lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting')",
       "value": "yes"
@@ -200,6 +208,10 @@
       "key": "lit",
       "description": "Layer 'Lit streets' shows lit=24/7 with a fixed text, namely 'This street is lit 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting')",
       "value": "24/7"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Street Lighting has a layer All streets showing features with this tag"
     },
     {
       "key": "lit",

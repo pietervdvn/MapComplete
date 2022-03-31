@@ -61,7 +61,7 @@ Bicycle rental stations
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bicycle_rental/bicycle_rental.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_rental/bicycle_rental.json)
 
 
 

@@ -50,7 +50,7 @@ Towers with a panoramic view
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/observation_tower/observation_tower.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/observation_tower/observation_tower.json)
 
 
 

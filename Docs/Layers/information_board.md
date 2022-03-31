@@ -39,7 +39,7 @@ A layer showing touristical, road side information boards (e.g. giving informati
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/information_board/information_board.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/information_board/information_board.json)
 
 
 

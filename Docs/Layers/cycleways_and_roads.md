@@ -54,7 +54,7 @@ All infrastructure that someone can cycle over, accompanied with questions about
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/cycleways_and_roads/cycleways_and_roads.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cycleways_and_roads/cycleways_and_roads.json)
 
 
 

@@ -41,7 +41,7 @@ A layer showing all public-transport-stops which do have a bench
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bench_at_pt/bench_at_pt.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bench_at_pt/bench_at_pt.json)
 
 
 

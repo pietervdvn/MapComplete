@@ -40,7 +40,7 @@ Searches for all accessible grass patches within public parks - these are 'groen
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/grass_in_parks/grass_in_parks.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/grass_in_parks/grass_in_parks.json)
 
 
 

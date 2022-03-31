@@ -42,7 +42,7 @@ A birdhide
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/birdhide/birdhide.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/birdhide/birdhide.json)
 
 
 

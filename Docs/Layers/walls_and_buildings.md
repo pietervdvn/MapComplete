@@ -45,7 +45,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 
-[Go to the source code](../assets/layers/walls_and_buildings/walls_and_buildings.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/walls_and_buildings/walls_and_buildings.json)
 
 
 

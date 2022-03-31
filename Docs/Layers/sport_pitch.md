@@ -48,7 +48,7 @@ A sport pitch
   - [sport_pitches](https://mapcomplete.osm.be/sport_pitches)
 
 
-[Go to the source code](../assets/layers/sport_pitch/sport_pitch.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/sport_pitch/sport_pitch.json)
 
 
 

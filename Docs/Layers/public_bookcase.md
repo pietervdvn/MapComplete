@@ -49,7 +49,7 @@ A streetside cabinet with books, accessible to anyone
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/public_bookcase/public_bookcase.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/public_bookcase/public_bookcase.json)
 
 
 

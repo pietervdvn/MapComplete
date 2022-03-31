@@ -49,7 +49,7 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/cafe_pub/cafe_pub.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cafe_pub/cafe_pub.json)
 
 
 

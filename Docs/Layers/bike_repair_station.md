@@ -53,7 +53,7 @@ A layer showing bicycle pumps and bicycle repair tool stands
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_repair_station/bike_repair_station.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_repair_station/bike_repair_station.json)
 
 
 

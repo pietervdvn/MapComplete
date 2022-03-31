@@ -44,7 +44,7 @@ Een speelbos is een vrij toegankelijke zone in een bos
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/play_forest/play_forest.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/play_forest/play_forest.json)
 
 
 

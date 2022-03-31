@@ -41,7 +41,7 @@ A layer showing facilities where one can clean their bike
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_cleaning/bike_cleaning.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cleaning/bike_cleaning.json)
 
 
 

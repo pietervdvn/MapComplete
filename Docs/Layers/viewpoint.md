@@ -39,7 +39,7 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/viewpoint/viewpoint.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/viewpoint/viewpoint.json)
 
 
 

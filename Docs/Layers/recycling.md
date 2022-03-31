@@ -48,7 +48,7 @@ A layer with recycling containers and centres
   - [waste](https://mapcomplete.osm.be/waste)
 
 
-[Go to the source code](../assets/layers/recycling/recycling.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/recycling/recycling.json)
 
 
 

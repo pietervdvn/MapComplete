@@ -41,7 +41,7 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
   - [waste_basket](https://mapcomplete.osm.be/waste_basket)
 
 
-[Go to the source code](../assets/layers/waste_basket/waste_basket.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/waste_basket/waste_basket.json)
 
 
 

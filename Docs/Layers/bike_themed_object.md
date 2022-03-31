@@ -44,7 +44,7 @@ A layer with bike-themed objects but who don't match any other layer
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_themed_object/bike_themed_object.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_themed_object/bike_themed_object.json)
 
 
 

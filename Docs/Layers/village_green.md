@@ -40,7 +40,7 @@ A layer showing village-green (which are communal green areas, but not quite par
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/village_green/village_green.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/village_green/village_green.json)
 
 
 

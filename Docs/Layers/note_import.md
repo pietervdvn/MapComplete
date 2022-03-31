@@ -45,7 +45,7 @@ Template for note note imports.
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/note_import/note_import.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/note_import/note_import.json)
 
 
 
