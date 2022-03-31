@@ -34,7 +34,6 @@
     },
     "favourite": {
         "reload": "Last inn dataen igjen",
-        "loginNeeded": "",
         "panelIntro": ""
     },
     "general": {
@@ -167,7 +166,6 @@
             "fsWelcomeMessage": "Vis velkomst-oppsprettsmeldinger og tilknyttede faner",
             "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor og sende den til venner og familie:",
             "thanksForSharing": "Takk for at du bidrar.",
-            "fsAddNew": "",
             "editThemeDescription": ""
         },
         "skip": "Hopp over dette spørsmålet",
@@ -202,9 +200,7 @@
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "loginWithOpenStreetMap": "",
-        "about": "",
-        "nameInlineQuestion": ""
+        "about": ""
     },
     "image": {
         "addPicture": "Legg til bilde",
@@ -221,15 +217,13 @@
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
         "willBePublished": "Ditt bilde vil bli publisert: ",
-        "cco": "",
         "respectPrivacy": ""
     },
     "index": {
         "featuredThemeTitle": "Framhevet denne uken",
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
         "pickTheme": "Begynn ved å velge et av temaene nedenfor.",
-        "title": "Velkommen til MapComplete",
-        "#": ""
+        "title": "Velkommen til MapComplete"
     },
     "move": {
         "cancel": "Avbryt flytting",
