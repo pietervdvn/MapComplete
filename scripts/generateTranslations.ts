@@ -293,11 +293,11 @@ function sortKeys(o: object): object{
  * Formats the specified file, helps to prevent merge conflicts
  * */
 function formatFile(path) {
-    let contents = JSON.parse(readFileSync(path, "utf8"))
-    
+    const original = readFileSync(path, "utf8")
+    let contents = JSON.parse(original)
     contents = sortKeys(contents)
-    
-    writeFileSync(path, JSON.stringify(contents, null, "    "))
+    const endsWithNewline = original.endsWith("\n")
+    writeFileSync(path, JSON.stringify(contents, null, "    ") + (endsWithNewline ? "\n" : ""))
 }
 
 /**
