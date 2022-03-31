@@ -33,8 +33,7 @@
         "whyDelete": "Hvorfor bør dette punktet slettes?"
     },
     "favourite": {
-        "reload": "Last inn dataen igjen",
-        "panelIntro": ""
+        "reload": "Last inn dataen igjen"
     },
     "general": {
         "add": {
@@ -165,8 +164,7 @@
             "fsUserbadge": "Skru på innloggingsknappen",
             "fsWelcomeMessage": "Vis velkomst-oppsprettsmeldinger og tilknyttede faner",
             "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor og sende den til venner og familie:",
-            "thanksForSharing": "Takk for at du bidrar.",
-            "editThemeDescription": ""
+            "thanksForSharing": "Takk for at du bidrar."
         },
         "skip": "Hopp over dette spørsmålet",
         "skippedQuestions": "Noen spørsmål ble hoppet over",
@@ -199,8 +197,7 @@
             "noWikipediaPage": "Dette Wikipedia-elementet har ingen tilknyttet Wikipedia-side enda.",
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "about": ""
+        }
     },
     "image": {
         "addPicture": "Legg til bilde",
@@ -216,8 +213,7 @@
         "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
-        "willBePublished": "Ditt bilde vil bli publisert: ",
-        "respectPrivacy": ""
+        "willBePublished": "Ditt bilde vil bli publisert: "
     },
     "index": {
         "featuredThemeTitle": "Framhevet denne uken",
