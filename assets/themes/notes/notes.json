@@ -6,7 +6,8 @@
   "startZoom": 0,
   "title": {
     "en": "Notes on OpenStreetMap",
-    "hu": "Jegyzetek az OpenStreetMapen"
+    "hu": "Jegyzetek az OpenStreetMapen",
+    "nl": "Kaartnotas op OpenStreetMap"
   },
   "version": "0.1",
   "description": {

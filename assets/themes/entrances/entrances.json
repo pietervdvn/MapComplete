@@ -4,7 +4,8 @@
     "en": "Entrances",
     "zh_Hant": "出入口",
     "hu": "Épületek bejáratai",
-    "de": "Eingänge"
+    "de": "Eingänge",
+    "nl": "Toegangsdeuren"
   },
   "icon": "./assets/layers/entrance/door.svg",
   "description": {

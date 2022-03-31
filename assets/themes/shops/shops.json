@@ -9,7 +9,8 @@
     "de": "Freie Geschäftskarte",
     "it": "Mappa dei negozi",
     "nb_NO": "Kart over åpne butikker",
-    "hu": "Bolttérkép"
+    "hu": "Bolttérkép",
+    "nl": "Winkels"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
