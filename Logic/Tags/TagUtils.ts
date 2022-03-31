@@ -172,7 +172,7 @@ export class TagUtils {
      * 
      * TagUtils.Tag("key=value") // => new Tag("key", "value")
      * TagUtils.Tag("key=") // => new Tag("key", "")
-     * TagUtils.Tag("key!=") // => new RegexTag("key", "^..*$", true)
+     * TagUtils.Tag("key!=") // => new RegexTag("key", "^..*$")
      * TagUtils.Tag("key!=value") // => new RegexTag("key", /^value$/, true)
      * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/)
      * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/, true)
@@ -298,6 +298,7 @@ export class TagUtils {
             }
             if (split[1] === "") {
                 split[1] = "..*"
+                return new RegexTag(split[0], /^..*$/)
             }
             return new RegexTag(
                 split[0],

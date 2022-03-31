@@ -33,5 +33,21 @@ export abstract class TagsFilter {
      */
     abstract optimize(): TagsFilter | boolean;
 
-
+    /**
+     * Returns 'true' if the tagsfilter might select all features (i.e. the filter will return everything from OSM, except a few entries).
+     * 
+     * A typical negative tagsfilter is 'key!=value'
+     * 
+     * import {RegexTag} from "./RegexTag";
+     * import {Tag} from "./Tag";
+     * import {And} from "./And";
+     * import {Or} from "./Or";  
+     * 
+     * new Tag("key","value").isNegative() // => false
+     * new And([new RegexTag("key","value", true)]).isNegative() // => true
+     * new Or([new RegexTag("key","value", true), new Tag("x","y")]).isNegative() // => true
+     * new And([new RegexTag("key","value", true), new Tag("x","y")]).isNegative() // => false
+     */
+    abstract isNegative(): boolean
+    
 }

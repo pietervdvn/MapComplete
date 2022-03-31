@@ -120,4 +120,8 @@ export class Tag extends TagsFilter {
     optimize(): TagsFilter | boolean {
         return this;
     }
+    
+    isNegative(): boolean {
+        return false;
+    }
 }

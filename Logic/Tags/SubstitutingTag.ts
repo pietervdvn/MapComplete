@@ -89,4 +89,8 @@ export default class SubstitutingTag implements TagsFilter {
     optimize(): TagsFilter | boolean {
         return this;
     }
+    
+    isNegative(): boolean {
+        return false;
+    }
 }

@@ -101,6 +101,10 @@ export default class LayerConfig extends WithContextLoader {
             context + "source.osmTags"
         );
 
+        if(Constants.priviliged_layers.indexOf(this.id) < 0 && osmTags.isNegative()){
+            throw context + "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t"+osmTags.asHumanString(false, false, {});
+        }
+        
         if (json.source["geoJsonSource"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geoJsonSource'";
         }
@@ -108,6 +112,7 @@ export default class LayerConfig extends WithContextLoader {
         if (json.source["geojson"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
         }
+        
 
         this.source = new SourceConfig(
             {
