@@ -456,7 +456,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fully prepares and expands a theme",
             new PreparePersonalTheme(state),
-            // new WarnForUnsubstitutedLayersInTheme(),
+            new WarnForUnsubstitutedLayersInTheme(),
             new OnEveryConcat("layers", new SubstituteLayer(state)),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             // We expand all tagrenderings first...

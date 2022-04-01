@@ -106,7 +106,7 @@ Meta layer showing the current location of the user. Add this to your theme and 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-[Go to the source code](../assets/layers/gps_location/gps_location.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/gps_location/gps_location.json)
 
 
 
@@ -151,7 +151,7 @@ Meta layer which contains the previous locations of the user as single points. T
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
-[Go to the source code](../assets/layers/gps_location_history/gps_location_history.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/gps_location_history/gps_location_history.json)
 
 
 
@@ -195,7 +195,7 @@ Meta layer showing the home location of the user. The home location can be set i
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-[Go to the source code](../assets/layers/home_location/home_location.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/home_location/home_location.json)
 
 
 
@@ -239,7 +239,7 @@ Meta layer showing the previous locations of the user as single line. Add this t
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
-[Go to the source code](../assets/layers/gps_track/gps_track.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/gps_track/gps_track.json)
 
 
 
@@ -331,7 +331,7 @@ This is a priviliged meta_layer which exports _every_ point in OSM. This only wo
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
-[Go to the source code](../assets/layers/type_node/type_node.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/type_node/type_node.json)
 
 
 
@@ -373,7 +373,7 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
   - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
 
 
-[Go to the source code](../assets/layers/note/note.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/note/note.json)
 
 
 
@@ -465,7 +465,7 @@ Layer used in the importHelper
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
-[Go to the source code](../assets/layers/import_candidate/import_candidate.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/import_candidate/import_candidate.json)
 
 
 
@@ -517,7 +517,7 @@ If the import-button moves OSM points, the imported way points or conflates, a p
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-[Go to the source code](../assets/layers/conflation/conflation.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/conflation/conflation.json)
 
 
 
@@ -559,7 +559,7 @@ Special meta-style which will show one single line, either on the left or on the
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-[Go to the source code](../assets/layers/left_right_style/left_right_style.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/left_right_style/left_right_style.json)
 
 
 
@@ -601,7 +601,7 @@ Layer rendering the little scissors for the minimap in the 'splitRoadWizard'
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-[Go to the source code](../assets/layers/split_point/split_point.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/split_point/split_point.json)
 
 
 
@@ -645,7 +645,7 @@ The icon on the button is the default icon of the layer, but can be customized b
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-[Go to the source code](../assets/layers/current_view/current_view.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/current_view/current_view.json)
 
 
 
@@ -687,7 +687,7 @@ The default rendering for a locationInput which snaps onto another object
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
 
-[Go to the source code](../assets/layers/matchpoint/matchpoint.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/matchpoint/matchpoint.json)
 
 
 

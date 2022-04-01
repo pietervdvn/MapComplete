@@ -40,7 +40,7 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
   - [waste](https://mapcomplete.osm.be/waste)
 
 
-[Go to the source code](../assets/layers/waste_disposal/waste_disposal.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/waste_disposal/waste_disposal.json)
 
 
 

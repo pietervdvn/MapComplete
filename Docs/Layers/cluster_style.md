@@ -38,7 +38,7 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/cluster_style/cluster_style.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cluster_style/cluster_style.json)
 
 
 

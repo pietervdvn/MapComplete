@@ -44,7 +44,7 @@ A layer showing memorials for cyclists, killed in road accidents
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/ghost_bike/ghost_bike.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/ghost_bike/ghost_bike.json)
 
 
 

@@ -40,7 +40,7 @@ Map layer to show fire extinguishers.
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/extinguisher/extinguisher.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/extinguisher/extinguisher.json)
 
 
 

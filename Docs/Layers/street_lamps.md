@@ -46,7 +46,7 @@ A layer showing street lights
   - [street_lighting](https://mapcomplete.osm.be/street_lighting)
 
 
-[Go to the source code](../assets/layers/street_lamps/street_lamps.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/street_lamps/street_lamps.json)
 
 
 

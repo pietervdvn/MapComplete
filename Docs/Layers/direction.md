@@ -38,7 +38,7 @@ This layer visualizes directions
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 
-[Go to the source code](../assets/layers/direction/direction.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/direction/direction.json)
 
 
 

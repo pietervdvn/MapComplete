@@ -38,7 +38,7 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/pedestrian_path/pedestrian_path.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/pedestrian_path/pedestrian_path.json)
 
 
 

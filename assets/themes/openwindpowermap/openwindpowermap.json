@@ -8,7 +8,8 @@
     "ru": "Открытая карта ветроэнергетики",
     "zh_Hant": "開放風力地圖",
     "id": "OpenWindPowerMap",
-    "hu": "OpenWindPowerMap"
+    "hu": "OpenWindPowerMap",
+    "nl": "Windmolens"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/logo.svg",

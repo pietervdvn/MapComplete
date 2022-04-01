@@ -102,6 +102,10 @@ export default class LayerConfig extends WithContextLoader {
             context + "source.osmTags"
         );
 
+        if(Constants.priviliged_layers.indexOf(this.id) < 0 && osmTags.isNegative()){
+            throw context + "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t"+osmTags.asHumanString(false, false, {});
+        }
+        
         if (json.source["geoJsonSource"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geoJsonSource'";
         }
@@ -109,6 +113,7 @@ export default class LayerConfig extends WithContextLoader {
         if (json.source["geojson"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
         }
+        
 
         this.source = new SourceConfig(
             {
@@ -434,7 +439,8 @@ export default class LayerConfig extends WithContextLoader {
             new List(extraProps),
             ...usingLayer,
 
-            new Link("Go to the source code", `../assets/layers/${this.id}/${this.id}.json`),
+            new Link("Go to the source code", 
+                `https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/${this.id}/${this.id}.json`),
 
             new Title("Basic tags for this layer", 2),
             "Elements must have the all of following tags to be shown on this layer:",

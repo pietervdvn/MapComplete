@@ -45,7 +45,7 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)
 
 
 

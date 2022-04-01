@@ -44,7 +44,7 @@ A layer showing entrances and offering capabilities to survey some advanced data
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/entrance/entrance.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/entrance/entrance.json)
 
 
 

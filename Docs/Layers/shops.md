@@ -48,7 +48,7 @@ A shop
   - [shops](https://mapcomplete.osm.be/shops)
 
 
-[Go to the source code](../assets/layers/shops/shops.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/shops/shops.json)
 
 
 

@@ -40,7 +40,7 @@ Addresses
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/address/address.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/address/address.json)
 
 
 

@@ -51,7 +51,7 @@ Playgrounds
   - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
 
-[Go to the source code](../assets/layers/playground/playground.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/playground/playground.json)
 
 
 

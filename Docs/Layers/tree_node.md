@@ -47,7 +47,7 @@ A layer showing trees
   - [trees](https://mapcomplete.osm.be/trees)
 
 
-[Go to the source code](../assets/layers/tree_node/tree_node.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/tree_node/tree_node.json)
 
 
 

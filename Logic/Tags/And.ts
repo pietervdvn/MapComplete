@@ -238,4 +238,8 @@ export class And extends TagsFilter {
         
         return new And(newAnds)
     }
+    
+    isNegative(): boolean {
+        return !this.and.some(t => !t.isNegative());
+    }
 }

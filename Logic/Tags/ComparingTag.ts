@@ -59,4 +59,8 @@ export default class ComparingTag implements TagsFilter {
     optimize(): TagsFilter | boolean {
         return this;
     }
+    
+    isNegative(): boolean {
+        return true;
+    }
 }

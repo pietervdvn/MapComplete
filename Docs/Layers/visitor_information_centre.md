@@ -37,7 +37,7 @@ A visitor center offers information about a specific attraction or place of inte
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/visitor_information_centre/visitor_information_centre.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/visitor_information_centre/visitor_information_centre.json)
 
 
 

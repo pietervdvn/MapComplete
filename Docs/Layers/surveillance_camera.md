@@ -47,7 +47,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 
-[Go to the source code](../assets/layers/surveillance_camera/surveillance_camera.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/surveillance_camera/surveillance_camera.json)
 
 
 

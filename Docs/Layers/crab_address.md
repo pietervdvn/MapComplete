@@ -38,7 +38,7 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/crab_address/crab_address.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/crab_address/crab_address.json)
 
 
 

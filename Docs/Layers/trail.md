@@ -44,7 +44,7 @@ Aangeduide wandeltochten
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/trail/trail.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/trail/trail.json)
 
 
 

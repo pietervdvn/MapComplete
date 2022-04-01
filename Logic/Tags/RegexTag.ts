@@ -197,4 +197,8 @@ export class RegexTag extends TagsFilter {
     optimize(): TagsFilter | boolean {
         return this;
     }
+    
+    isNegative(): boolean {
+        return this.invert;
+    }
 }

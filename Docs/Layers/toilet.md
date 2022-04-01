@@ -53,7 +53,7 @@ A layer showing (public) toilets
   - [toilets](https://mapcomplete.osm.be/toilets)
 
 
-[Go to the source code](../assets/layers/toilet/toilet.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/toilet/toilet.json)
 
 
 

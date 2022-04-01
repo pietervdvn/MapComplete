@@ -55,7 +55,7 @@ A shop specifically selling bicycles or related items
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_shop/bike_shop.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_shop/bike_shop.json)
 
 
 

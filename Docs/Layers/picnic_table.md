@@ -41,7 +41,7 @@ The layer showing picnic tables
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/picnic_table/picnic_table.json)
+[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/picnic_table/picnic_table.json)
 
 
 

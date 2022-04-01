@@ -167,6 +167,10 @@ export class Or extends TagsFilter {
 
         return new Or(newOrs)
     }
+    
+    isNegative(): boolean {
+        return this.or.some(t => t.isNegative());
+    }
 }
 
 
