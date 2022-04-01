@@ -72,6 +72,7 @@ export default class LayerConfig extends WithContextLoader {
         official: boolean = true
     ) {
         context = context + "." + json.id;
+        const translationContext = "layers:"+json.id
         super(json, context)
         this.id = json.id;
 
@@ -125,7 +126,7 @@ export default class LayerConfig extends WithContextLoader {
 
 
         this.allowSplit = json.allowSplit ?? false;
-        this.name = Translations.T(json.name, context + ".name");
+        this.name = Translations.T(json.name, translationContext + ".name");
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {
@@ -136,7 +137,7 @@ export default class LayerConfig extends WithContextLoader {
 
         this.description = Translations.T(
             json.description,
-            context + ".description"
+            translationContext + ".description"
         );
 
 
@@ -211,9 +212,9 @@ export default class LayerConfig extends WithContextLoader {
             }
 
             const config: PresetConfig = {
-                title: Translations.T(pr.title, `${context}.presets[${i}].title`),
+                title: Translations.T(pr.title, `${translationContext}.presets.${i}.title`),
                 tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
-                description: Translations.T(pr.description, `${context}.presets[${i}].description`),
+                description: Translations.T(pr.description, `${translationContext}.presets.${i}.description`),
                 preciseInput: preciseInput,
                 exampleImages: pr.exampleImages
             }
@@ -258,7 +259,7 @@ export default class LayerConfig extends WithContextLoader {
             this.filters = []
         } else {
             this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
-                return new FilterConfig(option, `${context}.filter-[${i}]`)
+                return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
             });
         }
 

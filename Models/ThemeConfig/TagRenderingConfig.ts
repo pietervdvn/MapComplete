@@ -54,7 +54,6 @@ export default class TagRenderingConfig {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }
-
         if (json === "questions") {
             // Very special value
             this.render = null;
@@ -70,9 +69,23 @@ export default class TagRenderingConfig {
             json = "" + json
         }
 
+        let translationKey = context;
+        if(json["id"] !== undefined){
+            const layerId = context.split(".")[0]
+            if(json["source"]){
+                let src = json["source"]+":"
+                if(json["source"] === "shared-questions"){
+                    src += "shared_questions."
+                }
+                translationKey = `${src}${json["id"] ?? ""}`
+            }else{
+                translationKey = `layers:${layerId}.tagRenderings.${json["id"] ?? ""}`
+            }
+        }
+
 
         if (typeof json === "string") {
-            this.render = Translations.T(json, context + ".render");
+            this.render = Translations.T(json, translationKey + ".render");
             this.multiAnswer = false;
             return;
         }
@@ -86,8 +99,8 @@ export default class TagRenderingConfig {
 
         this.group = json.group ?? "";
         this.labels = json.labels ?? []
-        this.render = Translations.T(json.render, context + ".render");
-        this.question = Translations.T(json.question, context + ".question");
+        this.render = Translations.T(json.render, translationKey + ".render");
+        this.question = Translations.T(json.question, translationKey + ".question");
         this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (json.freeform) {
 
@@ -101,7 +114,7 @@ export default class TagRenderingConfig {
                 const typeDescription = Translations.t.validation[type]?.description
                 placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 if(typeDescription !== undefined){
-                    placeholder = placeholder.Fuse(typeDescription, type)
+                    placeholder = placeholder.Subs({[type]: typeDescription})
                 }
             }
 
@@ -155,7 +168,7 @@ export default class TagRenderingConfig {
 
             this.mappings = json.mappings.map((mapping, i) => {
 
-                const ctx = `${context}.mapping[${i}]`
+                const ctx = `${translationKey}.mappings.${i}`
                 if (mapping.then === undefined) {
                     throw `${ctx}: Invalid mapping: if without body`
                 }

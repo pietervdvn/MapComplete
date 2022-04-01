@@ -83,9 +83,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                 new Combine(
                     [
                         Translations.t.general.openStreetMapIntro.SetClass("link-underline"),
-                        Translations.t.general.attribution.attributionTitle,
                         new CopyrightPanel(state)
-
                     ]
                 )
         }

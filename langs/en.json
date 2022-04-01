@@ -246,6 +246,10 @@
             "loading": "Loading Wikipedia...",
             "noResults": "Nothing found for <i>{search}</i>",
             "noWikipediaPage": "This Wikidata item has no corresponding Wikipedia page yet.",
+            "previewbox": {
+                "born": "Born: {value}",
+                "died": "Died: {value}"
+            },
             "searchWikidata": "Search on Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         }
@@ -359,6 +363,7 @@
         "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
     },
     "notes": {
+        "addAComment": "Add a comment",
         "addComment": "Add comment",
         "addCommentAndClose": "Add comment and close",
         "addCommentPlaceholder": "Add a comment...",
@@ -524,6 +529,15 @@
         "loginToSplit": "You must be logged in to split a road",
         "split": "Split",
         "splitTitle": "Choose on the map where to split this road"
+    },
+    "translations": {
+        "activateButton": "Help to translate MapComplete",
+        "completeness": "Translations for {theme} in {language} are at {percentage}%: {translated} strings out of {total} are translated",
+        "deactivate": "Disable translation buttons",
+        "help": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
+        "isTranslator": "Translation mode is active as your username matches the name of a previous translator",
+        "missing": "{count} untranslated strings",
+        "notImmediate": "Translations are not updated directly. This typically takes a few days"
     },
     "validation": {
         "color": {

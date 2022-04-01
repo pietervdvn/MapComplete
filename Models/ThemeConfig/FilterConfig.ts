@@ -38,7 +38,7 @@ export default class FilterConfig {
         this.id = json.id;
         let defaultSelection : number = undefined
         this.options = json.options.map((option, i) => {
-            const ctx = `${context}.options[${i}]`;
+            const ctx = `${context}.options.${i}`;
             const question = Translations.T(
                 option.question,
                 `${ctx}.question`

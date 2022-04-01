@@ -842,7 +842,7 @@ export default class SpecialVisualizations {
 
                         return new LoginToggle(
                             new Combine([
-                                new Title("Add a comment"),
+                                new Title(t.addAComment),
                                 textField,
                                 new Combine([
                                     stateButtons.SetClass("sm:mr-2"),

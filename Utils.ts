@@ -513,6 +513,37 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return cp
     }
 
+    /**
+     * Walks an object recursively. Will hang on objects with loops
+     */
+    static WalkObject(json: any, collect: (v: number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path = []) {
+        if (json === undefined) {
+            return;
+        }
+        const jtp = typeof json
+        if (isLeaf !== undefined) {
+            if (jtp !== "object") {
+                return
+            }
+            
+            if (isLeaf(json)) {
+                return collect(json, path)
+            }
+        } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
+            return collect(json,path)
+        }
+        if (Array.isArray(json)) {
+            return json.map((sub,i) => {
+                return Utils.WalkObject(sub, collect, isLeaf,[...path, i]);
+            })
+        }
+
+        for (const key in json) {
+           Utils.WalkObject(json[key], collect, isLeaf, [...path,key])
+        }
+    }
+
+
     static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
         let found = dict.get(k);
         if (found !== undefined) {

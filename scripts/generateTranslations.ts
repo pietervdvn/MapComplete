@@ -244,11 +244,11 @@ function isTranslation(tr: any): boolean {
 }
 
 /**
- * Converts a translation object into something that can be added to the 'generated translations'
- * @param obj
- * @param depth
+ * Converts a translation object into something that can be added to the 'generated translations'.
+ * 
+ * To debug the 'compiledTranslations', add a languageWhiteList to only generate a single language
  */
-function transformTranslation(obj: any, depth = 1) {
+function transformTranslation(obj: any, path: string[] = [], languageWhitelist : string[] = undefined) {
 
     if (isTranslation(obj)) {
         return `new Translation( ${JSON.stringify(obj)} )`
@@ -259,15 +259,24 @@ function transformTranslation(obj: any, depth = 1) {
         if (key === "#") {
             continue;
         }
+
         if (key.match("^[a-zA-Z0-9_]*$") === null) {
             throw "Invalid character in key: " + key
         }
-        const value = obj[key]
+        let value = obj[key]
 
         if (isTranslation(value)) {
-            values += (Utils.Times((_) => "  ", depth)) + "get " + key + "() { return new Translation(" + JSON.stringify(value) + ") }" + ",\n"
+            if(languageWhitelist !== undefined){
+                const nv = {}
+                for (const ln of languageWhitelist) {
+                    nv[ln] = value[ln]
+                }
+                value = nv;
+            }
+            values += `${Utils.Times((_) => "  ", path.length + 1)}get ${key}() { return new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}") },
+`
         } else {
-            values += (Utils.Times((_) => "  ", depth)) + key + ": " + transformTranslation(value, depth + 1) + ",\n"
+            values += (Utils.Times((_) => "  ", path.length + 1)) + key + ": " + transformTranslation(value, [...path, key], languageWhitelist) + ",\n"
         }
     }
     return `{${values}}`;
@@ -305,11 +314,11 @@ function formatFile(path) {
  */
 function genTranslations() {
     const translations = JSON.parse(fs.readFileSync("./assets/generated/translations.json", "utf-8"))
-    const transformed = transformTranslation(translations);
+    const transformed =  transformTranslation(translations);
 
     let module = `import {Translation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`;
     module += " public static t = " + transformed;
-    module += "}"
+    module += "\n    }"
 
     fs.writeFileSync("./assets/generated/CompiledTranslations.ts", module);
 
@@ -541,7 +550,7 @@ for (const path of allTranslationFiles) {
 }
 
 
-// SOme validation
+// Some validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
 TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
 TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")

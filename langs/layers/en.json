@@ -1062,6 +1062,9 @@
                 },
                 "question": "Are there tools here to repair your own bike?"
             },
+            "bike_shop-access": {
+                "render": "Only accessible to {access}"
+            },
             "bike_shop-email": {
                 "question": "What is the email address of {name}?"
             },

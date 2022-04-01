@@ -11,7 +11,8 @@ import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater";
 import {Changes} from "../Osm/Changes";
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
 import PendingChangesUploader from "../Actors/PendingChangesUploader";
-
+import * as translators from "../../assets/translators.json"
+        
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
  * which layers they enabled, ...
@@ -36,6 +37,8 @@ export default class UserRelatedState extends ElementsState {
      */
     public favouriteLayers: UIEventSource<string[]>;
 
+    public readonly isTranslator : UIEventSource<boolean>;
+    
     constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
 
@@ -50,6 +53,21 @@ export default class UserRelatedState extends ElementsState {
             osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin
         })
+        this.isTranslator = this.osmConnection.userDetails.map(ud => {
+            if(!ud.loggedIn){
+                return false;
+            }
+            const name= ud.name.toLowerCase().replace(/\s+/g, '')
+            return translators.contributors.some(c => c.contributor.toLowerCase().replace(/\s+/g, '') === name)
+        })
+        this.isTranslator.addCallbackAndRunD(ud => {
+            if(ud){
+                Locale.showLinkToWeblate.setData(true)
+            }
+        });
+        
+        QueryParameters.GetBooleanQueryParameter("fs-translation-mode",false,"If set, will show the translation buttons")
+            .addCallbackAndRunD(tr => Locale.showLinkToWeblate.setData(Locale.showLinkToWeblate.data || tr))
 
 
         this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
@@ -57,7 +75,7 @@ export default class UserRelatedState extends ElementsState {
 
         new ChangeToElementsActor(this.changes, this.allElements)
         new PendingChangesUploader(this.changes, this.selectedElement);
-
+        
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         );

@@ -19,7 +19,7 @@ import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
 
 class LayerOverviewUtils {
 
-    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean }[]) {
+    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean, mustHaveLanguage: boolean }[]) {
         const perId = new Map<string, any>();
         for (const theme of themes) {
             const data = {
@@ -27,7 +27,8 @@ class LayerOverviewUtils {
                 title: theme.title,
                 shortDescription: theme.shortDescription,
                 icon: theme.icon,
-                hideFromOverview: theme.hideFromOverview
+                hideFromOverview: theme.hideFromOverview,
+                mustHaveLanguage: theme.mustHaveLanguage
             }
             perId.set(theme.id, data);
         }
@@ -73,6 +74,7 @@ class LayerOverviewUtils {
                 continue
             }
             questions[key].id = key;
+            questions[key]["source"] = "shared-questions"
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
         for (const key in icons["default"]) {
@@ -218,7 +220,8 @@ class LayerOverviewUtils {
             return {
                 ...t,
                 hideFromOverview: t.hideFromOverview ?? false,
-                shortDescription: t.shortDescription ?? new Translation(t.description).FirstSentence().translations
+                shortDescription: t.shortDescription ?? new Translation(t.description).FirstSentence().translations,
+                mustHaveLanguage: t.mustHaveLanguage?.length > 0
             }
         }));
         return fixed;

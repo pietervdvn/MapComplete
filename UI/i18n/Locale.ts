@@ -7,7 +7,8 @@ import {QueryParameters} from "../../Logic/Web/QueryParameters";
 export default class Locale {
 
     public static language: UIEventSource<string> = Locale.setup();
-
+    public static showLinkToWeblate: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    
     private static setup() {
         const source = LocalStorageSource.Get('language', "en");
         if (!Utils.runningFromConsole) {

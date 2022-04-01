@@ -101,9 +101,7 @@ export default class FilterView extends VariableUiElement {
             iconStyle
         );
 
-        const name: Translation = Translations.WT(
-            filteredLayer.layerDef.name
-        );
+        const name: Translation = filteredLayer.layerDef.name.Clone()
 
         const styledNameChecked = name.Clone().SetStyle("font-size:large").SetClass("ml-3");
 

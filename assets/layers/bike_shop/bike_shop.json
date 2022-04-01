@@ -298,18 +298,13 @@
       },
       "id": "bike_shop-email"
     },
-    {
-      "render": "{opening_hours_table(opening_hours)}",
-      "question": "When is this shop opened?",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "id": "bike_shop-opening_hours"
-    },
+    "opening_hours",
     "description",
     {
-      "render": "Enkel voor {access}",
+      "render": {
+        "en": "Only accessible to {access}",
+        "nl": "Enkel voor {access}"
+      },
       "freeform": {
         "key": "access"
       },
