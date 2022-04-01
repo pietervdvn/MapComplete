@@ -183,6 +183,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return str.substr(0, l - 3) + "...";
     }
+    
+    public static FixedLength(str: string, l: number) {
+        str = Utils.EllipsesAfter(str, l)
+        while(str.length < l){
+            str = " "+str
+        }
+        return str;
+    }
 
     public static Dedup(arr: string[]): string[] {
         if (arr === undefined) {
