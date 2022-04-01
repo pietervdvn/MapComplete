@@ -4260,10 +4260,10 @@
         "name": "Recycling",
         "presets": {
             "0": {
-                "title": "recycling container"
+                "title": "a recycling container"
             },
             "1": {
-                "title": "recycling centre"
+                "title": "a recycling centre"
             }
         },
         "tagRenderings": {
@@ -5289,7 +5289,7 @@
         "name": "Waste Basket",
         "presets": {
             "0": {
-                "title": "Waste Basket"
+                "title": "a waste Basket"
             }
         },
         "tagRenderings": {
@@ -5353,7 +5353,7 @@
         "presets": {
             "0": {
                 "description": "Medium to large bin for disposal of (household) waste",
-                "title": "Waste Disposal Bin"
+                "title": "a waste Disposal Bin"
             }
         },
         "tagRenderings": {
