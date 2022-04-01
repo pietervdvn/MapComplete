@@ -5334,6 +5334,21 @@
                     }
                 },
                 "question": "Waar bevindt deze container zich?"
+            },
+            "access": {
+                "mappings": {
+                    "2": {
+                        "then": "Enkel bewoners mogen deze afvalcontainer gebruiken"
+                    },
+                    "0": {
+                        "then": "Iedereen mag deze afvalcontainer gebruiken"
+                    },
+                    "1": {
+                        "then": "Deze afvalcontainer is enkel voor privaat gebruik"
+                    }
+                },
+                "render": "Toegankelijk voor {access}",
+                "question": "Wie mag deze afvalcontainer gebruiken?"
             }
         },
         "filter": {
@@ -5348,6 +5363,13 @@
         "name": "Afvalcontainers voor huishoudelijk afval",
         "title": {
             "render": "Afvalbak"
+        },
+        "description": "Een grote afvalcontainer voor (huishoudelijk) afval",
+        "presets": {
+            "0": {
+                "title": "Afvalcontainer",
+                "description": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval"
+            }
         }
     },
     "watermill": {
