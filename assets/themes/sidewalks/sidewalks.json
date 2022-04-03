@@ -2,7 +2,8 @@
   "id": "sidewalks",
   "title": {
     "en": "Sidewalks",
-    "ru": "Тротуары"
+    "ru": "Тротуары",
+    "nl": "Voetpaden"
   },
   "shortDescription": {
     "en": "Sidewalk mapping"

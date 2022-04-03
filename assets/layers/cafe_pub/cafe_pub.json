@@ -24,7 +24,7 @@
         "amenity=pub"
       ],
       "title": {
-        "en": "pub",
+        "en": "a pub",
         "nl": "een bruin cafe of kroeg",
         "de": "eine kneipe",
         "ru": "паб",
@@ -43,7 +43,7 @@
         "amenity=bar"
       ],
       "title": {
-        "en": "bar",
+        "en": "a bar",
         "nl": "een bar",
         "de": "eine bar",
         "ru": "бар",
@@ -62,7 +62,7 @@
         "amenity=cafe"
       ],
       "title": {
-        "en": "cafe",
+        "en": "a cafe",
         "nl": "een cafe",
         "de": "eine café",
         "ru": "кафе",

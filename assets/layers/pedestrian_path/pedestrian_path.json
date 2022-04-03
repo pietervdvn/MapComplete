@@ -1,7 +1,8 @@
 {
   "id": "pedestrian_path",
   "name": {
-    "en": "Pedestrain paths"
+    "en": "Pedestrian paths",
+    "nl": "Pad voor voetgangers"
   },
   "minzoom": 18,
   "source": {
@@ -16,7 +17,8 @@
   },
   "title": {},
   "description": {
-    "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer"
+    "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
+    "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag"
   },
   "mapRendering": [
     {

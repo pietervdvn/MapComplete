@@ -280,6 +280,7 @@
     }
   ],
   "description": {
-    "en": "All carfree roads"
+    "en": "All carfree roads",
+    "nl": "Alle verkeersvrije wegen"
   }
 }

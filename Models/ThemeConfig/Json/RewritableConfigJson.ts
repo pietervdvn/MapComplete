@@ -1,5 +1,3 @@
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-
 /**
  * Rewrites and multiplies the given renderings of type T.
  * 
@@ -11,8 +9,9 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
  *     rewrite: {
  *         sourceString: ["key", "a|b|c"],
  *         into: [
- *             ["X","Y", "Z"],
- *             [0,1,2]
+ *             ["X", 0]
+ *             ["Y", 1],
+ *             ["Z", 2]
  *         ],
  *         renderings: {
  *             "key":"a|b|c"
@@ -36,7 +35,7 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
  * 
  * ]
  * 
- * 
+ * @see ExpandRewrite
  */
 export default interface RewritableConfigJson<T> {
     rewrite: {

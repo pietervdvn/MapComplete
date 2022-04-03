@@ -409,6 +409,15 @@
                 "title": "Is vandalisme een probleem?"
             }
         },
+        "drawbacks": {
+            "intro": "Aansluiten bij de OpenStreetMap-community heeft veel voordelen, toch zijn er enkele punten om rekening mee te houden.",
+            "title": "Enkele nadelen om rekening mee te houden",
+            "unsuitedData": {
+                "intro": "De basisregel is dat alle gegevens <b>ter plaatse verifieerbaar</b> moeten en ietwat <b>permanent</b> moeten zijn. Dit betekent dat sommige data <i>niet</i> in OpenStreetMap opgeslaan mogen worden - al bestaan hier oplossingen voor.",
+                "li0": "Subjectieve data (zoals reviews) zijn niet geschikt voor OpenStreetMap. MapComplete heeft een integratie met <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> waar iedereen reviews kan geven. Deze ratings en reviews worden met een open licentie gepubliceerd",
+                "title": "Data die niet geschikt is voor OpenStreetMap"
+            }
+        },
         "indexPage": {
             "button": "Ontdek onze services",
             "hook": "Professionele ondersteuning nodig?",

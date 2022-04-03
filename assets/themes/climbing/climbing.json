@@ -160,7 +160,7 @@
           ],
           "title": {
             "de": "eine kletterverein",
-            "en": "Climbing club",
+            "en": "a climbing club",
             "nl": "een klimclub",
             "ja": "クライミングクラブ",
             "nb_NO": "en klatreklubb",
@@ -188,7 +188,7 @@
           ],
           "title": {
             "de": "eine eine kletter-organisation",
-            "en": "Climbing NGO",
+            "en": "a climbing ngo",
             "nl": "een een klimorganisatie",
             "ja": "クライミングNGO",
             "fr": "une association d’escalade",
@@ -561,7 +561,7 @@
       "presets": [
         {
           "title": {
-            "en": "Climbing route",
+            "en": "a climbing route",
             "nl": "een klimroute",
             "fr": "une voie d’escalade",
             "de": "eine kletterroute",
@@ -855,7 +855,7 @@
             "sport=climbing"
           ],
           "title": {
-            "en": "Climbing opportunity",
+            "en": "a climbing opportunity",
             "nl": "een klimgelegenheid",
             "de": "eine klettermöglichkeit",
             "ja": "登坂教室",

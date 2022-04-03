@@ -62,6 +62,7 @@
     }
   ],
   "description": {
-    "en": "Searches for all accessible grass patches within public parks - these are 'groenzones'\""
+    "en": "Searches for all accessible grass patches within public parks - these are 'groenzones'\"",
+    "nl": "Dit zoekt naar alle toegankelijke grasvelden binnen publieke parken - dit zijn 'groenzones'"
   }
 }

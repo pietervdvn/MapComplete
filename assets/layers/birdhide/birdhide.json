@@ -233,7 +233,7 @@
         "amenity=shelter"
       ],
       "title": {
-        "en": "Birdhide",
+        "en": "a birdhide",
         "nl": "een vogelkijkhut"
       },
       "description": {
@@ -248,7 +248,7 @@
         "shelter=no"
       ],
       "title": {
-        "en": "Bird blind",
+        "en": "a bird blind",
         "nl": "een vogelkijkwand"
       },
       "description": {

@@ -3,11 +3,13 @@
   "minzoom": 18,
   "title": {
     "render": {
-      "en": "Wall or building"
+      "en": "Wall or building",
+      "nl": "Muur of gebouw"
     }
   },
   "description": {
-    "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, ...). This layer is invisible by default and not toggleable by the user."
+    "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, ...). This layer is invisible by default and not toggleable by the user.",
+    "nl": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,...). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker."
   },
   "source": {
     "osmTags": {

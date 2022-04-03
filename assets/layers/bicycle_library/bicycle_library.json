@@ -239,8 +239,8 @@
   "presets": [
     {
       "title": {
-        "en": "Fietsbibliotheek",
-        "nl": "een bicycle library",
+        "nl": "een fietsbibliotheek",
+        "en": "a bicycle library",
         "ru": "Велосипедная библиотека",
         "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
         "it": "una bici in prestito",
