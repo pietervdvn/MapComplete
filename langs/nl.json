@@ -415,7 +415,9 @@
             "unsuitedData": {
                 "intro": "De basisregel is dat alle gegevens <b>ter plaatse verifieerbaar</b> moeten en ietwat <b>permanent</b> moeten zijn. Dit betekent dat sommige data <i>niet</i> in OpenStreetMap opgeslaan mogen worden - al bestaan hier oplossingen voor.",
                 "li0": "Subjectieve data (zoals reviews) zijn niet geschikt voor OpenStreetMap. MapComplete heeft een integratie met <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> waar iedereen reviews kan geven. Deze ratings en reviews worden met een open licentie gepubliceerd",
-                "title": "Data die niet geschikt is voor OpenStreetMap"
+                "title": "Data die niet geschikt is voor OpenStreetMap",
+                "li1": "Gebeurtenissen horen <i>niet</i> thuis in OpenStreetMap, net zoals kortstondige wegenwerken van enkele dagen of weken.",
+                "li2": "Tijdsgebonden data (bv. statistieken van luchtkwaliteit, verkeersintensiteit, ...) kunnen niet bewaard worden op OpenStreetMap. Merk echter op dat MapComplete dit soort data kan visualiseren indien deze op een andere locatie opgeslaan is."
             }
         },
         "indexPage": {
