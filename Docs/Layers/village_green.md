@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/playgrounds/playground.svg' height="100px"> 
 
-A layer showing village-green (which are communal green areas, but not quite parks"
+A layer showing village-green (which are communal green areas, but not quite parks)
 
 
 
