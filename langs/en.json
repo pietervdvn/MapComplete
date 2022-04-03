@@ -475,7 +475,7 @@
             "unsuitedData": {
                 "intro": "The basic rule for OpenStreetMap is that all data must be <b>verifiable on the ground</b> and are somewhat permanent. This implies that some data <i>cannot</i> be sent to OpenStreetMap directly - but some workarounds exist.",
                 "li0": "Subjective data (such as reviews) are not suited for OpenStreetMap. However, MapComplete has an integration with <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, an openly licensed review website",
-                "li1": "Events of a few days, road works that are planned next month are thus <i>not</i> recorded, neither are road works which only last a few days.",
+                "li1": "Events are <i>not</i> recorded, neither are road works which only last a few days.",
                 "li2": "Temporal data (e.g. statistics of air quality, traffic intensity, ...) can not stored on OpenStreetMap as they are hard to verify by a volunteer. Note that, if this data is available elsewhere, it can still be visualized within MapComplete as extra layer.",
                 "title": "Data not suited for OpenStreetMap"
             }
