@@ -53,7 +53,7 @@
   "presets": [
     {
       "title": {
-        "en": "Crossing",
+        "en": "a crossing",
         "nl": "een oversteekplaats",
         "de": "eine kreuzung",
         "fr": "une traversée"
@@ -77,7 +77,7 @@
     },
     {
       "title": {
-        "en": "Traffic signal",
+        "en": "a traffic signal",
         "nl": "een verkeerslicht",
         "ru": "Светофор",
         "de": "eine ampel",

@@ -4000,7 +4000,7 @@
         "socket:typee=1"
       ],
       "title": {
-        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
+        "en": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
         "nl": "een oplaadpunt voor elektrische fietsen"
       },
       "preciseInput": {
@@ -4014,7 +4014,7 @@
         "bicycle=no"
       ],
       "title": {
-        "en": "charging station for cars",
+        "en": "a charging station for cars",
         "nl": "een oplaadstation voor elektrische auto's",
         "de": "eine ladestation für e-bikes"
       },

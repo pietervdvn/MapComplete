@@ -214,7 +214,7 @@
             "leisure=hackerspace"
           ],
           "title": {
-            "en": "Hackerspace",
+            "en": "a hackerspace",
             "de": "eine hackerspace",
             "ru": "Хакерспейс",
             "zh_Hant": "駭客空間",
@@ -233,7 +233,7 @@
             "hackerspace=makerspace"
           ],
           "title": {
-            "en": "Makerspace",
+            "en": "a makerspace",
             "de": "eine makerspace",
             "zh_Hant": "創客空間",
             "hu": "Makerspace"

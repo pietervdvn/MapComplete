@@ -30,7 +30,7 @@
         "presets": {
             "0": {
                 "description": "Add an ambulance station to the map",
-                "title": "Ambulance station"
+                "title": "an ambulance station"
             }
         },
         "tagRenderings": {
@@ -78,7 +78,7 @@
         "name": "Artworks",
         "presets": {
             "0": {
-                "title": "Artwork"
+                "title": "an artwork"
             }
         },
         "tagRenderings": {
@@ -152,11 +152,11 @@
         "presets": {
             "0": {
                 "description": "A bollard in the road",
-                "title": "Bollard"
+                "title": "a bollard"
             },
             "1": {
                 "description": "Cycle barrier, slowing down cyclists",
-                "title": "Cycle barrier"
+                "title": "a cycle barrier"
             }
         },
         "tagRenderings": {
@@ -252,7 +252,7 @@
         "name": "Benches",
         "presets": {
             "0": {
-                "title": "bench"
+                "title": "a bench"
             }
         },
         "tagRenderings": {
@@ -378,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "A bicycle library has a collection of bikes which can be lent",
-                "title": "Fietsbibliotheek"
+                "title": "a bicycle library"
             }
         },
         "tagRenderings": {
@@ -435,10 +435,10 @@
         "presets": {
             "0": {
                 "description": "A manned shop which focuses on bicycle rental",
-                "title": "bicycle rental shop"
+                "title": "a bicycle rental shop"
             },
             "1": {
-                "title": "bicycle rental"
+                "title": "a bicycle rental"
             }
         },
         "tagRenderings": {
@@ -540,7 +540,7 @@
         "name": "Bicycle tube vending machine",
         "presets": {
             "0": {
-                "title": "Bicycle tube vending machine"
+                "title": "a bicycle tube vending machine"
             }
         },
         "tagRenderings": {
@@ -569,7 +569,7 @@
         "name": "Bike cafe",
         "presets": {
             "0": {
-                "title": "Bike cafe"
+                "title": "a bike cafe"
             }
         },
         "tagRenderings": {
@@ -637,7 +637,7 @@
         "name": "Bike cleaning service",
         "presets": {
             "0": {
-                "title": "Bike cleaning service"
+                "title": "a bike cleaning service"
             }
         },
         "tagRenderings": {
@@ -686,7 +686,7 @@
         "name": "Bike parking",
         "presets": {
             "0": {
-                "title": "Bike parking"
+                "title": "a bike parking"
             }
         },
         "tagRenderings": {
@@ -796,15 +796,15 @@
         "presets": {
             "0": {
                 "description": "A device to inflate your tires on a fixed location in the public space.",
-                "title": "bike pump"
+                "title": "a bike pump"
             },
             "1": {
                 "description": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
-                "title": "bike repair station and pump"
+                "title": "a bike repair station and pump"
             },
             "2": {
                 "description": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
-                "title": "bike repair station without pump"
+                "title": "a bike repair station without pump"
             }
         },
         "tagRenderings": {
@@ -963,7 +963,7 @@
         "name": "Bike repair/shop",
         "presets": {
             "0": {
-                "title": "Bike repair/shop"
+                "title": "a bike repair/shop"
             }
         },
         "tagRenderings": {
@@ -1118,7 +1118,7 @@
         "presets": {
             "0": {
                 "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "binoculars"
+                "title": "a binoculars"
             }
         },
         "tagRenderings": {
@@ -1162,11 +1162,11 @@
         "presets": {
             "0": {
                 "description": "A covered shelter where one can watch birds comfortably",
-                "title": "Birdhide"
+                "title": "a birdhide"
             },
             "1": {
                 "description": "A screen or wall with openings to watch birds",
-                "title": "Bird blind"
+                "title": "a bird blind"
             }
         },
         "tagRenderings": {
@@ -1251,15 +1251,15 @@
         "presets": {
             "0": {
                 "description": "A pub, mostly for drinking beers in a warm, relaxed interior",
-                "title": "pub"
+                "title": "a pub"
             },
             "1": {
                 "description": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
-                "title": "bar"
+                "title": "a bar"
             },
             "2": {
                 "description": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
-                "title": "cafe"
+                "title": "a cafe"
             }
         },
         "tagRenderings": {
@@ -1379,10 +1379,10 @@
         "name": "Charging stations",
         "presets": {
             "0": {
-                "title": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
+                "title": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
             },
             "1": {
-                "title": "charging station for cars"
+                "title": "a charging station for cars"
             }
         },
         "tagRenderings": {
@@ -2303,11 +2303,11 @@
         "presets": {
             "0": {
                 "description": "Crossing for pedestrians and/or cyclists",
-                "title": "Crossing"
+                "title": "a crossing"
             },
             "1": {
                 "description": "Traffic signal on a road",
-                "title": "Traffic signal"
+                "title": "a traffic signal"
             }
         },
         "tagRenderings": {
@@ -2798,10 +2798,10 @@
         "name": "Defibrillators",
         "presets": {
             "0": {
-                "title": "Defibrillator"
+                "title": "a defibrillator"
             },
             "1": {
-                "title": "defibrillator mounted on a wall"
+                "title": "a defibrillator mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -2930,7 +2930,7 @@
         "name": "Drinking water",
         "presets": {
             "0": {
-                "title": "drinking water"
+                "title": "a drinking water"
             }
         },
         "tagRenderings": {
@@ -3104,7 +3104,7 @@
         "presets": {
             "0": {
                 "description": "A fire extinguisher is a small, portable device used to stop a fire",
-                "title": "Fire extinguisher"
+                "title": "a fire extinguisher"
             }
         },
         "tagRenderings": {
@@ -3131,7 +3131,7 @@
         "presets": {
             "0": {
                 "description": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
-                "title": "Fire station"
+                "title": "a fire station"
             }
         },
         "tagRenderings": {
@@ -3222,15 +3222,15 @@
         "presets": {
             "0": {
                 "description": "A formal eating place with sit-down facilities selling full meals served by waiters",
-                "title": "restaurant"
+                "title": "a restaurant"
             },
             "1": {
                 "description": "A food business concentrating on fast counter-only service and take-away food",
-                "title": "fastfood"
+                "title": "a fastfood"
             },
             "2": {
                 "description": "A fastfood-buisiness focused on french fries",
-                "title": "fries shop"
+                "title": "a fries shop"
             }
         },
         "tagRenderings": {
@@ -3439,7 +3439,7 @@
         "name": "Ghost bikes",
         "presets": {
             "0": {
-                "title": "Ghost bike"
+                "title": "a ghost bike"
             }
         },
         "tagRenderings": {
@@ -3494,7 +3494,7 @@
         "presets": {
             "0": {
                 "description": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
-                "title": "Fire hydrant"
+                "title": "a fire hydrant"
             }
         },
         "tagRenderings": {
@@ -3558,7 +3558,7 @@
         "name": "Information boards",
         "presets": {
             "0": {
-                "title": "information board"
+                "title": "an information board"
             }
         },
         "title": {
@@ -3571,7 +3571,7 @@
         "presets": {
             "0": {
                 "description": "Add a missing map",
-                "title": "Map"
+                "title": "a map"
             }
         },
         "tagRenderings": {
@@ -3637,7 +3637,7 @@
         "presets": {
             "0": {
                 "description": "Add a missing nature reserve",
-                "title": "nature reserve"
+                "title": "a nature reserve"
             }
         },
         "tagRenderings": {
@@ -3913,7 +3913,7 @@
         "name": "Parking",
         "presets": {
             "0": {
-                "title": "car parking"
+                "title": "a car parking"
             }
         },
         "title": {
@@ -3929,7 +3929,7 @@
         "name": "Picnic tables",
         "presets": {
             "0": {
-                "title": "picnic table"
+                "title": "a picnic table"
             }
         },
         "tagRenderings": {
@@ -3955,7 +3955,7 @@
         "name": "Playgrounds",
         "presets": {
             "0": {
-                "title": "playground"
+                "title": "a playground"
             }
         },
         "tagRenderings": {
@@ -4089,7 +4089,7 @@
         "name": "Bookcases",
         "presets": {
             "0": {
-                "title": "Bookcase"
+                "title": "a bookcase"
             }
         },
         "tagRenderings": {
@@ -4260,10 +4260,10 @@
         "name": "Recycling",
         "presets": {
             "0": {
-                "title": "recycling container"
+                "title": "a recycling container"
             },
             "1": {
-                "title": "recycling centre"
+                "title": "a recycling centre"
             }
         },
         "tagRenderings": {
@@ -4410,7 +4410,7 @@
         "presets": {
             "0": {
                 "description": "Add a new shop",
-                "title": "Shop"
+                "title": "a shop"
             }
         },
         "tagRenderings": {
@@ -4512,10 +4512,10 @@
         "name": "Sport pitches",
         "presets": {
             "0": {
-                "title": "Tabletennis table"
+                "title": "a tabletennis table"
             },
             "1": {
-                "title": "Sport pitch"
+                "title": "a sport pitch"
             }
         },
         "tagRenderings": {
@@ -4622,7 +4622,7 @@
         "name": "Street Lamps",
         "presets": {
             "0": {
-                "title": "street lamp"
+                "title": "a street lamp"
             }
         },
         "tagRenderings": {
@@ -4771,10 +4771,10 @@
         "name": "Surveillance camera's",
         "presets": {
             "0": {
-                "title": "surveillance camera"
+                "title": "a surveillance camera"
             },
             "1": {
-                "title": "surveillance camera mounted on a wall"
+                "title": "a surveillance camera mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -4916,11 +4916,11 @@
         "name": "Toilets",
         "presets": {
             "0": {
-                "title": "public toilet"
+                "title": "a public toilet"
             },
             "1": {
                 "description": "A restroom which has at least one wheelchair-accessible toilet",
-                "title": "toilets with wheelchair accessible toilet"
+                "title": "a toilets with wheelchair accessible toilet"
             }
         },
         "tagRenderings": {
@@ -5085,15 +5085,15 @@
         "presets": {
             "0": {
                 "description": "A tree of a species with leaves, such as oak or populus.",
-                "title": "Broadleaved tree"
+                "title": "a broadleaved tree"
             },
             "1": {
                 "description": "A tree of a species with needles, such as pine or spruce.",
-                "title": "Needleleaved tree"
+                "title": "a needleleaved tree"
             },
             "2": {
                 "description": "If you're not sure whether it's a broadleaved or needleleaved tree.",
-                "title": "Tree"
+                "title": "a tree"
             }
         },
         "tagRenderings": {
@@ -5206,7 +5206,7 @@
         "name": "Viewpoint",
         "presets": {
             "0": {
-                "title": "Viewpoint"
+                "title": "a viewpoint"
             }
         },
         "tagRenderings": {
@@ -5289,7 +5289,7 @@
         "name": "Waste Basket",
         "presets": {
             "0": {
-                "title": "Waste Basket"
+                "title": "a waste basket"
             }
         },
         "tagRenderings": {
@@ -5353,7 +5353,7 @@
         "presets": {
             "0": {
                 "description": "Medium to large bin for disposal of (household) waste",
-                "title": "Waste Disposal Bin"
+                "title": "a waste disposal bin"
             }
         },
         "tagRenderings": {

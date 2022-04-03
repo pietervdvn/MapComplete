@@ -657,7 +657,7 @@
   "presets": [
     {
       "title": {
-        "en": "bike pump",
+        "en": "a bike pump",
         "nl": "een fietspomp",
         "fr": "une pompe à vélo",
         "gl": "bomba de ar",
@@ -691,7 +691,7 @@
     },
     {
       "title": {
-        "en": "bike repair station and pump",
+        "en": "a bike repair station and pump",
         "nl": "een herstelpunt en pomp",
         "fr": "une point de réparation vélo avec pompe",
         "gl": "estación de arranxo de bicicletas con bomba de ar",
@@ -718,7 +718,7 @@
     },
     {
       "title": {
-        "en": "bike repair station without pump",
+        "en": "a bike repair station without pump",
         "nl": "een herstelpunt zonder pomp",
         "fr": "une point de réparation vélo sans pompe",
         "gl": "estación de arranxo de bicicletas sin bomba de ar",

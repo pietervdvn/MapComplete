@@ -79,7 +79,7 @@
             "amenity=post_box"
           ],
           "title": {
-            "en": "postbox",
+            "en": "a postbox",
             "de": "eine briefkasten",
             "ru": "почтовый ящик",
             "zh_Hant": "郵筒",
@@ -195,7 +195,7 @@
             "amenity=post_office"
           ],
           "title": {
-            "en": "Post Office",
+            "en": "a post office",
             "de": "eine poststelle",
             "ru": "Почтовое отделение",
             "zh_Hant": "郵局",

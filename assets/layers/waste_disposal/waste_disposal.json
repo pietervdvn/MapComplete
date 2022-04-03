@@ -29,7 +29,7 @@
   "presets": [
     {
       "title": {
-        "en": "Waste Disposal Bin"
+        "en": "a waste disposal bin"
       },
       "tags": [
         "amenity=waste_disposal"

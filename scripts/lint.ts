@@ -18,29 +18,36 @@ t.OnEveryLanguage((txt, ln) => {
 })
 
 const articles = {
-    de: "eine",
+  /*  de: "eine",
     es: 'una',
     fr: 'une',
     it: 'una',
     nb_NO: 'en',
     nl: 'een',
     pt: 'uma',
-    pt_BR : 'uma',
+    pt_BR : 'uma',//*/
 }
 
 function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
-    /*
+    //*
     if(layerConfig.presets === undefined){
         return 
     }
     for (const preset of layerConfig.presets) {
         preset.title = new Translation(preset.title, "autofix")
             .OnEveryLanguage((txt, lang) => {
-                const article = articles[lang]
+                let article = articles[lang]
+                if(lang === "en"){
+                   if(["a","e","u","o","i"].some(vowel => txt.toLowerCase().startsWith(vowel))) {
+                        article = "an"
+                   }else{
+                       article = "a"
+                   }
+                }
                 if(article === undefined){
                     return txt;
                 }
-                if(txt.startsWith(article)){
+                if(txt.startsWith(article+" ")){
                     return txt;
                 }
                 return article +" " +  txt.toLowerCase();

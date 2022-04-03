@@ -648,7 +648,7 @@
             "tourism=caravan_site"
           ],
           "title": {
-            "en": "camper site",
+            "en": "a camper site",
             "ru": "площадка для кемпинга",
             "ja": "キャンプサイト",
             "zh_Hant": "露營地",
@@ -1103,7 +1103,7 @@
             "amenity=sanitary_dump_station"
           ],
           "title": {
-            "en": "sanitary dump station",
+            "en": "a sanitary dump station",
             "ja": "衛生ゴミ捨て場",
             "it": "una luogo di sversamento delle acque reflue",
             "fr": "une site de vidange",
