@@ -452,7 +452,7 @@
                 "rewrite": {
                     "into": {
                         "0": {
-                            "1": "Stadsfietsen"
+                            "1": "stadsfietsen"
                         },
                         "1": {
                             "1": "elektrische fietsen"
