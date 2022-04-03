@@ -5212,6 +5212,16 @@
         }
     },
     "waste_disposal": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Enkel publiek toegankelijke afvalcontainers"
+                    }
+                }
+            }
+        },
+        "name": "Afvalcontainers voor huishoudelijk afval",
         "tagRenderings": {
             "disposal-location": {
                 "mappings": {
@@ -5227,17 +5237,7 @@
                 },
                 "question": "Waar bevindt deze container zich?"
             }
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Enkel publiek toegankelijke afvalcontainers"
-                    }
-                }
-            }
-        },
-        "name": "Afvalcontainers voor huishoudelijk afval"
+        }
     },
     "watermill": {
         "description": "Watermolens",

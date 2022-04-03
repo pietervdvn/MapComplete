@@ -1,7 +1,8 @@
 {
   "id": "waste_disposal",
   "name": {
-    "en": "Waste Disposal Bins"
+    "en": "Waste Disposal Bins",
+    "nl": "Afvalcontainers voor huishoudelijk afval"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste"
@@ -109,7 +110,8 @@
       "options": [
         {
           "question": {
-            "en": "Only public access"
+            "en": "Only public access",
+            "nl": "Enkel publiek toegankelijke afvalcontainers"
           },
           "osmTags": "access=yes"
         }
