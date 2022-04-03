@@ -66,10 +66,6 @@ export default class UserRelatedState extends ElementsState {
             }
         });
         
-        QueryParameters.GetBooleanQueryParameter("fs-translation-mode",false,"If set, will show the translation buttons")
-            .addCallbackAndRunD(tr => Locale.showLinkToWeblate.setData(Locale.showLinkToWeblate.data || tr))
-
-
         this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
 
 
@@ -125,6 +121,9 @@ export default class UserRelatedState extends ElementsState {
             .addCallback((currentLanguage) => {
                 if (layoutToUse === undefined) {
                     return;
+                }
+                if(Locale.showLinkToWeblate.data){
+                    return true; // Disable auto switching as we are in translators mode
                 }
                 if (this.layoutToUse.language.indexOf(currentLanguage) < 0) {
                     console.log(
