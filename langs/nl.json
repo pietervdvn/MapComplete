@@ -425,7 +425,16 @@
         },
         "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>",
         "text1": "<p>MapComplete is de editor die het gemakkelijk maakt om bij te dragen aan OpenStreetMap.</p>",
-        "title": "Professionele ondersteuning voor MapComplete"
+        "title": "Professionele ondersteuning voor MapComplete",
+        "drawbacks": {
+            "intro": "Aansluiten bij de OpenStreetMap-community heeft veel voordelen, toch zijn er enkele punten om rekening mee te houden.",
+            "unsuitedData": {
+                "intro": "De basisregel is dat alle gegevens <b>ter plaatse verifieerbaar</b> moeten en ietwat <b>permanent</b> moeten zijn. Dit betekent dat sommige data <i>niet</i> in OpenStreetMap opgeslaan mogen worden - al bestaan hier oplossingen voor.",
+                "title": "Data die niet geschikt is voor OpenStreetMap",
+                "li0": "Subjectieve data (zoals reviews) zijn niet geschikt voor OpenStreetMap. MapComplete heeft een integratie met <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> waar iedereen reviews kan geven. Deze ratings en reviews worden met een open licentie gepubliceerd"
+            },
+            "title": "Enkele nadelen om rekening mee te houden"
+        }
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Review door betrokkene)",
