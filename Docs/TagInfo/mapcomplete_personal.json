@@ -5391,22 +5391,22 @@
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
       "value": "footway"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
       "value": "path"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
       "value": "corridor"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
       "value": "steps"
     },
     {
@@ -5607,6 +5607,14 @@
       "key": "access",
       "description": "Layer 'Playgrounds' shows access=private with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "private"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Playgrounds' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
