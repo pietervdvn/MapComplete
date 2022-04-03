@@ -1,7 +1,7 @@
 {
   "id": "hailhydrant",
   "title": {
-    "en": "Hydrants, Extinguishers, Fire stations, and Ambulance stations.",
+    "en": "Hydrants, Extinguishers, Fire stations, and Ambulance stations",
     "ja": "消火栓、消火器、消防署、救急ステーションです。",
     "zh_Hant": "消防栓、滅火器、消防隊、以及急救站。",
     "ru": "Пожарные гидранты, огнетушители, пожарные станции и станции скорой помощи.",
@@ -9,7 +9,8 @@
     "it": "Idranti, estintori, caserme dei vigili del fuoco e stazioni delle ambulanze.",
     "nb_NO": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner.",
     "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
-    "hu": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások."
+    "hu": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások.",
+    "nl": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
