@@ -43,7 +43,7 @@
                 "presets": {
                     "0": {
                         "description": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
-                        "title": "camper site"
+                        "title": "a camper site"
                     }
                 },
                 "tagRenderings": {
@@ -155,7 +155,7 @@
                 "presets": {
                     "0": {
                         "description": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
-                        "title": "sanitary dump station"
+                        "title": "a sanitary dump station"
                     }
                 },
                 "tagRenderings": {
@@ -276,11 +276,11 @@
                 "presets": {
                     "0": {
                         "description": "A climbing club",
-                        "title": "Climbing club"
+                        "title": "a climbing club"
                     },
                     "1": {
                         "description": "An NGO working around climbing",
-                        "title": "Climbing NGO"
+                        "title": "a climbing ngo"
                     }
                 },
                 "tagRenderings": {
@@ -320,7 +320,7 @@
                 "name": "Climbing routes",
                 "presets": {
                     "0": {
-                        "title": "Climbing route"
+                        "title": "a climbing route"
                     }
                 },
                 "tagRenderings": {
@@ -372,7 +372,7 @@
                 "presets": {
                     "0": {
                         "description": "A climbing opportunity",
-                        "title": "Climbing opportunity"
+                        "title": "a climbing opportunity"
                     }
                 },
                 "tagRenderings": {
@@ -773,7 +773,7 @@
                 "presets": {
                     "0": {
                         "description": "Add a facade garden",
-                        "title": "facade garden"
+                        "title": "a facade garden"
                     }
                 },
                 "tagRenderings": {
@@ -913,11 +913,11 @@
                 "presets": {
                     "0": {
                         "description": "A hackerspace is an area where people interested in software gather",
-                        "title": "Hackerspace"
+                        "title": "a hackerspace"
                     },
                     "1": {
                         "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
-                        "title": "Makerspace"
+                        "title": "a makerspace"
                     }
                 },
                 "tagRenderings": {
@@ -1067,7 +1067,7 @@
                 "name": "wind turbine",
                 "presets": {
                     "0": {
-                        "title": "wind turbine"
+                        "title": "a wind turbine"
                     }
                 },
                 "tagRenderings": {
@@ -1175,7 +1175,7 @@
                 "name": "Postboxes",
                 "presets": {
                     "0": {
-                        "title": "postbox"
+                        "title": "a postbox"
                     }
                 },
                 "title": {
@@ -1196,7 +1196,7 @@
                 "name": "Post offices",
                 "presets": {
                     "0": {
-                        "title": "Post Office"
+                        "title": "a post office"
                     }
                 },
                 "tagRenderings": {

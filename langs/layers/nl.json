@@ -378,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
-                "title": "een bicycle library"
+                "title": "een fietsbibliotheek"
             }
         },
         "tagRenderings": {
@@ -5370,6 +5370,7 @@
                 "title": "Afvalcontainer",
                 "description": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval"
             }
+
         }
     },
     "watermill": {

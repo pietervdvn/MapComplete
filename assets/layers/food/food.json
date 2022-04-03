@@ -17,7 +17,7 @@
   "presets": [
     {
       "title": {
-        "en": "restaurant",
+        "en": "a restaurant",
         "nl": "een restaurant",
         "ru": "ресторан",
         "de": "eine restaurant"
@@ -36,7 +36,7 @@
     },
     {
       "title": {
-        "en": "fastfood",
+        "en": "a fastfood",
         "nl": "een fastfood-zaak",
         "ru": "быстрое питание",
         "de": "eine schnellimbiss"
@@ -55,7 +55,7 @@
     },
     {
       "title": {
-        "en": "fries shop",
+        "en": "a fries shop",
         "nl": "een frituur",
         "de": "eine pommesbude"
       },

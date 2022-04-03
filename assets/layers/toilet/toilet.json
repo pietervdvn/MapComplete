@@ -25,7 +25,7 @@
   "presets": [
     {
       "title": {
-        "en": "public toilet",
+        "en": "a public toilet",
         "de": "eine öffentlich zugängliche toilette",
         "fr": "une toilette publique",
         "nl": "een publiek toilet",
@@ -38,7 +38,7 @@
     },
     {
       "title": {
-        "en": "toilets with wheelchair accessible toilet",
+        "en": "a toilets with wheelchair accessible toilet",
         "de": "eine toiletten mit rollstuhlgerechter toilette",
         "fr": "une toilettes accessible aux personnes à mobilité réduite",
         "nl": "een rolstoeltoegankelijke, publiek toilet",

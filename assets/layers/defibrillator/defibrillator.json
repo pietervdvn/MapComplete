@@ -35,7 +35,7 @@
   "presets": [
     {
       "title": {
-        "en": "Defibrillator",
+        "en": "a defibrillator",
         "ca": "Desfibril·lador",
         "es": "una desfibrilador",
         "fr": "une défibrillateur",
@@ -51,7 +51,7 @@
     },
     {
       "title": {
-        "en": "defibrillator mounted on a wall",
+        "en": "a defibrillator mounted on a wall",
         "nl": "een defibrillator die aan een muur hangt",
         "sl": "defibrilator je pritrjen na steno"
       },

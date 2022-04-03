@@ -289,7 +289,7 @@
   "presets": [
     {
       "title": {
-        "en": "bicycle rental shop",
+        "en": "a bicycle rental shop",
         "nl": "een fietsverhuurzaak",
         "fr": "une magasin de location de vélos"
       },
@@ -305,7 +305,7 @@
     },
     {
       "title": {
-        "en": "bicycle rental",
+        "en": "a bicycle rental",
         "nl": "een fietsverhuur"
       },
       "tags": [

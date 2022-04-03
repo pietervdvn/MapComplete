@@ -521,7 +521,7 @@
       ],
       "title": {
         "nl": "een loofboom",
-        "en": "Broadleaved tree",
+        "en": "a broadleaved tree",
         "it": "una albero latifoglia",
         "fr": "une arbre feuillu",
         "ru": "Лиственное дерево",
@@ -545,7 +545,7 @@
       ],
       "title": {
         "nl": "een naaldboom",
-        "en": "Needleleaved tree",
+        "en": "a needleleaved tree",
         "it": "una albero aghifoglia",
         "ru": "Хвойное дерево",
         "fr": "une arbre résineux",
@@ -569,7 +569,7 @@
       ],
       "title": {
         "nl": "een boom",
-        "en": "Tree",
+        "en": "a tree",
         "it": "una albero",
         "ru": "Дерево",
         "fr": "une arbre",
