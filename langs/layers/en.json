@@ -3922,7 +3922,7 @@
     },
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
-        "name": "Pedestrain paths"
+        "name": "Pedestrian paths"
     },
     "picnic_table": {
         "description": "The layer showing picnic tables",
@@ -5219,7 +5219,7 @@
         }
     },
     "village_green": {
-        "description": "A layer showing village-green (which are communal green areas, but not quite parks\""
+        "description": "A layer showing village-green (which are communal green areas, but not quite parks)"
     },
     "visitor_information_centre": {
         "description": "A visitor center offers information about a specific attraction or place of interest where it is located.",
