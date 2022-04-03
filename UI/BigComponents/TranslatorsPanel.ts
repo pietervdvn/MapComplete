@@ -40,6 +40,7 @@ class TranslatorsPanelContent extends Combine {
         })
 
         const missingTranslationsFor = (ln: string) => Utils.NoNull(untranslated.get(ln) ?? [])
+            .filter(ctx => ctx.indexOf(":") >= 0)
             .map(ctx => ctx.replace(/note_import_[a-zA-Z0-9_]*/, "note_import"))
             .map(context => new Link(context, LinkToWeblate.hrefToWeblate(ln, context), true))
 

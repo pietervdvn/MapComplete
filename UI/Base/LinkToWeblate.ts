@@ -12,6 +12,9 @@ export default class LinkToWeblate extends VariableUiElement {
             if(availableTranslations["*"] !== undefined){
                 return undefined
             }
+            if(context === undefined || context.indexOf(":") < 0){
+                return undefined
+            }
             const icon = Svg.translate_svg()
                 .SetClass("rounded-full border border-gray-400 inline-block w-4 h-4 m-1 weblate-link self-center")
             if(availableTranslations[ln] === undefined){
@@ -24,6 +27,9 @@ export default class LinkToWeblate extends VariableUiElement {
     }
     
     public static hrefToWeblate(language: string, contextKey: string): string{
+        if(contextKey === undefined || contextKey.indexOf(":") < 0){
+            return undefined
+        }
         const [category, ...rest] = contextKey.split(":")
         const key = rest.join(":")
         
