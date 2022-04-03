@@ -40,7 +40,8 @@
           "ru": "{name}",
           "ja": "{name}",
           "de": "{name}",
-          "eo": "{name}"
+          "eo": "{name}",
+          "nl": "{name}"
         }
       },
       {
@@ -55,7 +56,8 @@
           "ru": "{shop}",
           "ja": "{shop}",
           "de": "{shop}",
-          "eo": "{shop}"
+          "eo": "{shop}",
+          "nl": "{shop}"
         }
       }
     ]
@@ -92,7 +94,8 @@
         "fr": "Ce magasin vends {shop}",
         "ja": "こちらのお店では{shop}を販売しております",
         "de": "Dieses Geschäft verkauft {shop}",
-        "eo": "Ĉi tiu butiko vendas {shop}"
+        "eo": "Ĉi tiu butiko vendas {shop}",
+        "nl": "Deze winkel is van type \"{shop}\""
       },
       "question": {
         "en": "What does this shop sell?",
@@ -100,7 +103,8 @@
         "ja": "このお店では何を売っていますか?",
         "ru": "Что продаётся в этом магазине?",
         "de": "Was wird in diesem Geschäft verkauft?",
-        "eo": "Kion vendas ĉi tiu butiko?"
+        "eo": "Kion vendas ĉi tiu butiko?",
+        "nl": "Wat verkoopt deze winkel?"
       },
       "freeform": {
         "key": "shop"
@@ -258,7 +262,8 @@
         "ru": "<a href='{website}'>{website}</a>",
         "ja": "<a href='{website}'>{website}</a>",
         "de": "<a href='{website}'>{website}</a>",
-        "eo": "<a href='{website}'>{website}</a>"
+        "eo": "<a href='{website}'>{website}</a>",
+        "nl": "<a href='{website}'>{website}</a>"
       },
       "question": {
         "en": "What is the website of this shop?",

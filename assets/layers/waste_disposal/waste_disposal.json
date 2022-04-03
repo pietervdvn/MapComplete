@@ -5,7 +5,8 @@
     "nl": "Afvalcontainers voor huishoudelijk afval"
   },
   "description": {
-    "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste"
+    "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
+    "nl": "Een grote afvalcontainer voor (huishoudelijk) afval"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -14,7 +15,8 @@
   "minzoomVisible": 18,
   "title": {
     "render": {
-      "en": "Waste Disposal"
+      "en": "Waste Disposal",
+      "nl": "Afvalbak"
     }
   },
   "mapRendering": [
@@ -29,13 +31,15 @@
   "presets": [
     {
       "title": {
-        "en": "a waste disposal bin"
+        "en": "a waste disposal bin",
+        "nl": "Afvalcontainer"
       },
       "tags": [
         "amenity=waste_disposal"
       ],
       "description": {
-        "en": "Medium to large bin for disposal of (household) waste"
+        "en": "Medium to large bin for disposal of (household) waste",
+        "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval"
       }
     }
   ],
@@ -43,10 +47,12 @@
     {
       "id": "access",
       "render": {
-        "en": "Access: {access}"
+        "en": "Access: {access}",
+        "nl": "Toegankelijk voor {access}"
       },
       "question": {
-        "en": "Who can use this waste disposal bin?"
+        "en": "Who can use this waste disposal bin?",
+        "nl": "Wie mag deze afvalcontainer gebruiken?"
       },
       "freeform": {
         "key": "access",
@@ -56,19 +62,22 @@
         {
           "if": "access=yes",
           "then": {
-            "en": "This bin can be used by anyone"
+            "en": "This bin can be used by anyone",
+            "nl": "Iedereen mag deze afvalcontainer gebruiken"
           }
         },
         {
           "if": "access=no",
           "then": {
-            "en": "This bin is private"
+            "en": "This bin is private",
+            "nl": "Deze afvalcontainer is enkel voor privaat gebruik"
           }
         },
         {
           "if": "access=residents",
           "then": {
-            "en": "This bin is only for residents"
+            "en": "This bin is only for residents",
+            "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken"
           }
         }
       ]

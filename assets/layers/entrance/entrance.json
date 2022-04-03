@@ -265,7 +265,8 @@
     {
       "id": "width",
       "render": {
-        "en": "This door has a width of {canonical(width)} meter"
+        "en": "This door has a width of {canonical(width)} meter",
+        "nl": "Deze deur heeft een breedte van {canonical(width)} meter"
       },
       "question": {
         "en": "What is the width of this door/entrance?",

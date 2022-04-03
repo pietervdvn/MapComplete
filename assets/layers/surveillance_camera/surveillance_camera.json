@@ -460,7 +460,8 @@
         "surveillance:type=camera"
       ],
       "title": {
-        "en": "a surveillance camera"
+        "en": "a surveillance camera",
+        "nl": "bewakingscamera"
       }
     },
     {
@@ -470,7 +471,8 @@
         "camera:mount=wall"
       ],
       "title": {
-        "en": "a surveillance camera mounted on a wall"
+        "en": "a surveillance camera mounted on a wall",
+        "nl": "bewakingscamera gemonteerd op een muur"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"
@@ -538,6 +540,7 @@
     }
   ],
   "description": {
-    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
+    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen"
   }
 }

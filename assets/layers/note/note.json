@@ -1,7 +1,8 @@
 {
   "id": "note",
   "name": {
-    "en": "OpenStreetMap notes"
+    "en": "OpenStreetMap notes",
+    "nl": "OpenStreetMap Notes"
   },
   "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
   "source": {
@@ -13,13 +14,15 @@
   "minzoom": 10,
   "title": {
     "render": {
-      "en": "Note"
+      "en": "Note",
+      "nl": "Note"
     },
     "mappings": [
       {
         "if": "closed_at~*",
         "then": {
-          "en": "Closed note"
+          "en": "Closed note",
+          "nl": "Gesloten Note"
         }
       }
     ]
@@ -55,14 +58,16 @@
     {
       "id": "report-contributor",
       "render": {
-        "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>"
+        "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>",
+        "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden als spam</a>"
       },
       "condition": "_opened_by_anonymous_user=false"
     },
     {
       "id": "report-note",
       "render": {
-        "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>"
+        "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
+        "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze not melden als spam of ongepast</a>"
       }
     }
   ],
@@ -106,7 +111,8 @@
             }
           ],
           "question": {
-            "en": "Should mention {search} in the first comment"
+            "en": "Should mention {search} in the first comment",
+            "nl": "Moet in de eerste opmerking \"{search}\" bevatten"
           }
         }
       ]
@@ -122,7 +128,8 @@
             }
           ],
           "question": {
-            "en": "Should <b>not</b> mention {search} in the first comment"
+            "en": "Should <b>not</b> mention {search} in the first comment",
+            "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
           }
         }
       ]
@@ -138,7 +145,8 @@
             }
           ],
           "question": {
-            "en": "Opened by contributor {search}"
+            "en": "Opened by contributor {search}",
+            "nl": "Geopend door bijdrager {search}"
           }
         }
       ]
@@ -154,7 +162,8 @@
             }
           ],
           "question": {
-            "en": "<b>Not</b> opened by contributor {search}"
+            "en": "<b>Not</b> opened by contributor {search}",
+            "nl": "<b>Niet</b> geopend door bijdrager {search}"
           }
         }
       ]
@@ -170,7 +179,8 @@
             }
           ],
           "question": {
-            "en": "Last edited by contributor {search}"
+            "en": "Last edited by contributor {search}",
+            "nl": "Laatst bewerkt door bijdrager {search}"
           }
         }
       ]
@@ -186,7 +196,8 @@
             }
           ],
           "question": {
-            "en": "Opened after {search}"
+            "en": "Opened after {search}",
+            "nl": "Geopend na {search}"
           }
         }
       ]
@@ -203,7 +214,8 @@
             }
           ],
           "question": {
-            "en": "Created before {search}"
+            "en": "Created before {search}",
+            "nl": "Aangemaakt voor {search}"
           }
         }
       ]
@@ -220,7 +232,8 @@
             }
           ],
           "question": {
-            "en": "Created after {search}"
+            "en": "Created after {search}",
+            "nl": "Aangemaakt na {search}"
           }
         }
       ]
@@ -231,7 +244,8 @@
         {
           "osmTags": "_opened_by_anonymous_user=true",
           "question": {
-            "en": "Only show notes opened by an anonymous contributor"
+            "en": "Only show notes opened by an anonymous contributor",
+            "nl": "Toon enkel de Notes geopend door een anonieme bijdrager"
           }
         }
       ]
@@ -242,7 +256,8 @@
         {
           "osmTags": "closed_at=",
           "question": {
-            "en": "Only show open notes"
+            "en": "Only show open notes",
+            "nl": "Toon enkel open Notes"
           }
         }
       ]
@@ -253,7 +268,8 @@
         {
           "osmTags": "_is_import_note=",
           "question": {
-            "en": "Hide import notes"
+            "en": "Hide import notes",
+            "nl": "Verberg import Notes"
           }
         }
       ]

@@ -735,6 +735,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
+    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
+    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)"
   }
 }

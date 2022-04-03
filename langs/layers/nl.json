@@ -3125,7 +3125,6 @@
         },
         "tagRenderings": {
             "extinguisher-location": {
-                "render": "Locatie: {location}",
                 "mappings": {
                     "0": {
                         "then": "In een gebouw."
@@ -3134,11 +3133,66 @@
                         "then": "In open lucht."
                     }
                 },
-                "question": "Op welke locatie staat dit?"
+                "question": "Op welke locatie staat dit?",
+                "render": "Locatie: {location}"
             }
         },
         "title": {
             "render": "Brandblussers"
+        }
+    },
+    "fire_station": {
+        "description": "Kaartlaag die de brandweerstations toont.",
+        "name": "Kaart van de brandweerstations",
+        "presets": {
+            "0": {
+                "description": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
+                "title": "Brandweerstation"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Brandveiligheidsbureau"
+                    }
+                },
+                "question": "Welk agentschap beheert dit station?",
+                "render": "Dit station wordt beheerd door {operator}."
+            },
+            "station-name": {
+                "question": "Wat is de naam van dit brandweerstation?",
+                "render": "Dit station heet {name}."
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit station wordt beheerd door de overheid."
+                    },
+                    "1": {
+                        "then": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie."
+                    },
+                    "2": {
+                        "then": "Dit station wordt beheerd door een formele groep vrijwilligers."
+                    },
+                    "3": {
+                        "then": "Dit station wordt door private organisatie beheerd."
+                    }
+                },
+                "question": "Wat voor soort beheerder beheert dit station?",
+                "render": "De beheerder is een organisatie van type {operator:type} ."
+            },
+            "station-place": {
+                "question": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
+                "render": "Dit station ligt in {addr:place}."
+            },
+            "station-street": {
+                "question": " Aan welke straat ligt dit station?",
+                "render": "Dit station ligt aan {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Brandweerstation"
         }
     },
     "food": {
@@ -3149,6 +3203,7 @@
                 }
             }
         },
+        "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
         "filter": {
             "0": {
                 "options": {
@@ -3393,10 +3448,10 @@
                 }
             },
             "render": "Eetgelegenheid"
-        },
-        "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)"
+        }
     },
     "ghost_bike": {
+        "description": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
         "name": "Witte Fietsen",
         "presets": {
             "0": {
@@ -3436,8 +3491,7 @@
                 }
             },
             "render": "Witte Fiets"
-        },
-        "description": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont"
+        }
     },
     "gps_track": {
         "name": "Jouw afgelegde route",
@@ -3448,6 +3502,7 @@
         }
     },
     "grass_in_parks": {
+        "description": "Dit zoekt naar alle toegankelijke grasvelden binnen publieke parken - dit zijn 'groenzones'",
         "name": "Toegankelijke grasvelden in parken",
         "title": {
             "mappings": {
@@ -3456,20 +3511,25 @@
                 }
             },
             "render": "Speelweide in een park"
-        },
-        "description": "Dit zoekt naar alle toegankelijke grasvelden binnen publieke parken - dit zijn 'groenzones'"
+        }
     },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
         "name": "Kaart van brandkranen",
+        "presets": {
+            "0": {
+                "description": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
+                "title": "Brandkraan"
+            }
+        },
         "tagRenderings": {
             "hydrant-color": {
                 "mappings": {
-                    "1": {
-                        "then": "De brandkraan is geel."
-                    },
                     "0": {
                         "then": "De kleur van de brandkraan is onbekend."
+                    },
+                    "1": {
+                        "then": "De brandkraan is geel."
                     },
                     "2": {
                         "then": "De brandkraan is rood."
@@ -3479,21 +3539,24 @@
                 "render": "De brandkraan is {colour}"
             },
             "hydrant-state": {
-                "question": "Werkt deze brandkraan nog?",
                 "mappings": {
                     "0": {
                         "then": "De brandkraan werkt (minstens gedeeltelijk)"
                     },
-                    "2": {
-                        "then": "Deze brandkraan is verwijderd"
-                    },
                     "1": {
                         "then": "De brandkraan is niet beschikbaar"
+                    },
+                    "2": {
+                        "then": "Deze brandkraan is verwijderd"
                     }
-                }
+                },
+                "question": "Werkt deze brandkraan nog?"
             },
             "hydrant-type": {
                 "mappings": {
+                    "0": {
+                        "then": "Het type brandkraan is onbekend."
+                    },
                     "1": {
                         "then": "Pillaar type."
                     },
@@ -3505,23 +3568,14 @@
                     },
                     "4": {
                         "then": "Ondergronds type."
-                    },
-                    "0": {
-                        "then": "Het type brandkraan is onbekend."
                     }
                 },
-                "render": " Het type brandkraan is {fire_hydrant:type}",
-                "question": "Wat voor soort brandkraan is dit?"
+                "question": "Wat voor soort brandkraan is dit?",
+                "render": " Het type brandkraan is {fire_hydrant:type}"
             }
         },
         "title": {
             "render": "Brandkraan"
-        },
-        "presets": {
-            "0": {
-                "title": "Brandkraan",
-                "description": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds."
-            }
         }
     },
     "information_board": {
@@ -3705,6 +3759,110 @@
             "render": "Natuurgebied"
         }
     },
+    "note": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Geopend door bijdrager {search}"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "<b>Niet</b> geopend door bijdrager {search}"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Laatst bewerkt door bijdrager {search}"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Geopend na {search}"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt voor {search}"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt na {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Toon enkel open Notes"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Verberg import Notes"
+                    }
+                }
+            }
+        },
+        "name": "OpenStreetMap Notes",
+        "tagRenderings": {
+            "report-contributor": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden als spam</a>"
+            },
+            "report-note": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze not melden als spam of ongepast</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Gesloten Note"
+                }
+            },
+            "render": "Note"
+        }
+    },
+    "note_import": {
+        "name": "Mogelijke publieke boekenkastjes",
+        "title": {
+            "render": "Mogelijk object"
+        }
+    },
     "observation_tower": {
         "description": "Torens om van het uitzicht te genieten",
         "name": "Uitkijktorens",
@@ -3791,6 +3949,10 @@
         "title": {
             "render": "Parking voor auto's"
         }
+    },
+    "pedestrian_path": {
+        "description": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
+        "name": "Pad voor voetgangers"
     },
     "picnic_table": {
         "description": "Deze laag toont picknicktafels",
@@ -4345,7 +4507,6 @@
             }
         },
         "title": {
-            "render": "Winkel",
             "mappings": {
                 "0": {
                     "then": "{name}"
@@ -4353,10 +4514,12 @@
                 "1": {
                     "then": "{shop}"
                 }
-            }
+            },
+            "render": "Winkel"
         }
     },
     "slow_roads": {
+        "description": "Alle verkeersvrije wegen",
         "name": "Paadjes, trage wegen en autoluwe straten",
         "tagRenderings": {
             "explanation": {
@@ -4428,8 +4591,7 @@
                 }
             },
             "render": "Trage weg"
-        },
-        "description": "Alle verkeersvrije wegen"
+        }
     },
     "sport_pitch": {
         "description": "Een sportterrein",
@@ -4542,6 +4704,7 @@
         }
     },
     "street_lamps": {
+        "description": "Een laag die alle straatlantaarns toont",
         "name": "Straatlantaarns",
         "presets": {
             "0": {
@@ -4687,11 +4850,19 @@
                 }
             },
             "render": "Straatlantaarn"
-        },
-        "description": "Een laag die alle straatlantaarns toont"
+        }
     },
     "surveillance_camera": {
+        "description": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
         "name": "Bewakingscamera's",
+        "presets": {
+            "0": {
+                "title": "bewakingscamera"
+            },
+            "1": {
+                "title": "bewakingscamera gemonteerd op een muur"
+            }
+        },
         "tagRenderings": {
             "Camera type: fixed; panning; dome": {
                 "mappings": {
@@ -4794,15 +4965,6 @@
         },
         "title": {
             "render": "Bewakingscamera"
-        },
-        "description": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
-        "presets": {
-            "1": {
-                "title": "bewakingscamera gemonteerd op een muur"
-            },
-            "0": {
-                "title": "bewakingscamera"
-            }
         }
     },
     "toilet": {
@@ -5045,6 +5207,7 @@
         }
     },
     "tree_node": {
+        "description": "Een laag die bomen toont",
         "name": "Boom",
         "presets": {
             "0": {
@@ -5163,8 +5326,7 @@
         },
         "title": {
             "render": "Boom"
-        },
-        "description": "Een laag die bomen toont"
+        }
     },
     "viewpoint": {
         "description": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
@@ -5184,6 +5346,7 @@
         }
     },
     "village_green": {
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
         "name": "Speelweide",
         "title": {
             "mappings": {
@@ -5192,8 +5355,7 @@
                 }
             },
             "render": "Speelweide"
-        },
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
@@ -5208,6 +5370,12 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "walls_and_buildings": {
+        "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,...). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
+        "title": {
+            "render": "Muur of gebouw"
         }
     },
     "waste_basket": {
@@ -5310,6 +5478,7 @@
         }
     },
     "waste_disposal": {
+        "description": "Een grote afvalcontainer voor (huishoudelijk) afval",
         "filter": {
             "0": {
                 "options": {
@@ -5320,7 +5489,28 @@
             }
         },
         "name": "Afvalcontainers voor huishoudelijk afval",
+        "presets": {
+            "0": {
+                "description": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval",
+                "title": "Afvalcontainer"
+            }
+        },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Iedereen mag deze afvalcontainer gebruiken"
+                    },
+                    "1": {
+                        "then": "Deze afvalcontainer is enkel voor privaat gebruik"
+                    },
+                    "2": {
+                        "then": "Enkel bewoners mogen deze afvalcontainer gebruiken"
+                    }
+                },
+                "question": "Wie mag deze afvalcontainer gebruiken?",
+                "render": "Toegankelijk voor {access}"
+            },
             "disposal-location": {
                 "mappings": {
                     "0": {
@@ -5334,43 +5524,10 @@
                     }
                 },
                 "question": "Waar bevindt deze container zich?"
-            },
-            "access": {
-                "mappings": {
-                    "2": {
-                        "then": "Enkel bewoners mogen deze afvalcontainer gebruiken"
-                    },
-                    "0": {
-                        "then": "Iedereen mag deze afvalcontainer gebruiken"
-                    },
-                    "1": {
-                        "then": "Deze afvalcontainer is enkel voor privaat gebruik"
-                    }
-                },
-                "render": "Toegankelijk voor {access}",
-                "question": "Wie mag deze afvalcontainer gebruiken?"
             }
         },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Enkel publiek toegankelijke afvalcontainers"
-                    }
-                }
-            }
-        },
-        "name": "Afvalcontainers voor huishoudelijk afval",
         "title": {
             "render": "Afvalbak"
-        },
-        "description": "Een grote afvalcontainer voor (huishoudelijk) afval",
-        "presets": {
-            "0": {
-                "title": "Afvalcontainer",
-                "description": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval"
-            }
-
         }
     },
     "watermill": {
@@ -5424,174 +5581,6 @@
                 }
             },
             "render": "Watermolens"
-        }
-    },
-    "pedestrian_path": {
-        "description": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
-        "name": "Pad voor voetgangers"
-    },
-    "walls_and_buildings": {
-        "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,...). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
-        "title": {
-            "render": "Muur of gebouw"
-        }
-    },
-    "fire_station": {
-        "presets": {
-            "0": {
-                "description": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
-                "title": "Brandweerstation"
-            }
-        },
-        "tagRenderings": {
-            "station-agency": {
-                "mappings": {
-                    "0": {
-                        "then": "Brandveiligheidsbureau"
-                    }
-                },
-                "question": "Welk agentschap beheert dit station?",
-                "render": "Dit station wordt beheerd door {operator}."
-            },
-            "station-name": {
-                "question": "Wat is de naam van dit brandweerstation?",
-                "render": "Dit station heet {name}."
-            },
-            "station-operator": {
-                "mappings": {
-                    "1": {
-                        "then": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie."
-                    },
-                    "2": {
-                        "then": "Dit station wordt beheerd door een formele groep vrijwilligers."
-                    },
-                    "3": {
-                        "then": "Dit station wordt door private organisatie beheerd."
-                    },
-                    "0": {
-                        "then": "Dit station wordt beheerd door de overheid."
-                    }
-                },
-                "render": "De beheerder is een organisatie van type {operator:type} .",
-                "question": "Wat voor soort beheerder beheert dit station?"
-            },
-            "station-place": {
-                "question": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
-                "render": "Dit station ligt in {addr:place}."
-            },
-            "station-street": {
-                "render": "Dit station ligt aan {addr:street}.",
-                "question": " Aan welke straat ligt dit station?"
-            }
-        },
-        "description": "Kaartlaag die de brandweerstations toont.",
-        "name": "Kaart van de brandweerstations",
-        "title": {
-            "render": "Brandweerstation"
-        }
-    },
-    "note": {
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel open Notes"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Verberg import Notes"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Aangemaakt voor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Laatst bewerkt door bijdrager {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Geopend na {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Aangemaakt na {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>Niet</b> geopend door bijdrager {search}"
-                    }
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Gesloten Note"
-                }
-            },
-            "render": "Note"
-        },
-        "tagRenderings": {
-            "report-contributor": {
-                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden als spam</a>"
-            },
-            "report-note": {
-                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze not melden als spam of ongepast</a>"
-            }
-        },
-        "name": "OpenStreetMap Notes"
-    },
-    "note_import": {
-        "name": "Mogelijke publieke boekenkastjes",
-        "title": {
-            "render": "Mogelijk object"
         }
     }
 }

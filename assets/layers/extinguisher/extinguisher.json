@@ -60,7 +60,8 @@
         "ru": "Где это расположено?",
         "fr": "Où est-elle positionnée ?",
         "de": "Wo befindet er sich?",
-        "it": "Dove è posizionato?"
+        "it": "Dove è posizionato?",
+        "nl": "Op welke locatie staat dit?"
       },
       "mappings": [
         {
@@ -75,7 +76,8 @@
             "ru": "Внутри.",
             "fr": "Intérieur.",
             "de": "Im Innenraum vorhanden.",
-            "it": "Si trova all’interno."
+            "it": "Si trova all’interno.",
+            "nl": "In een gebouw."
           }
         },
         {
@@ -90,7 +92,8 @@
             "ru": "Снаружи.",
             "fr": "Extérieur.",
             "de": "Im Außenraum vorhanden.",
-            "it": "Si trova all’esterno."
+            "it": "Si trova all’esterno.",
+            "nl": "In open lucht."
           }
         }
       ],

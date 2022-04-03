@@ -224,6 +224,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing memorials for cyclists, killed in road accidents"
+    "en": "A layer showing memorials for cyclists, killed in road accidents",
+    "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont"
   }
 }

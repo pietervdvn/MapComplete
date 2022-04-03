@@ -629,6 +629,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing trees"
+    "en": "A layer showing trees",
+    "nl": "Een laag die bomen toont"
   }
 }

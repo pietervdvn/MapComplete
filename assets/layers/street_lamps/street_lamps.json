@@ -372,6 +372,7 @@
     "enableRelocation": false
   },
   "description": {
-    "en": "A layer showing street lights"
+    "en": "A layer showing street lights",
+    "nl": "Een laag die alle straatlantaarns toont"
   }
 }
