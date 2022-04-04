@@ -62,7 +62,7 @@ export default class ExtraLinkButton extends UIElement {
 
         let text: Translation
         if (c.text === undefined) {
-            text = Translations.t.general.screenToSmall.Fuse(this.state.layoutToUse.title, "{theme}")
+            text = Translations.t.general.screenToSmall.Subs({theme: this.state.layoutToUse.title})
         } else {
             text = c.text.Clone()
         }
