@@ -4,7 +4,7 @@ import {Utils} from "../Utils";
 
 describe("TestSuite", () => {
     
-    describe("function onder test", () => {
+    describe("function under test", () => {
         it("should work", () => {
         expect("abc").eq("abc")
         })

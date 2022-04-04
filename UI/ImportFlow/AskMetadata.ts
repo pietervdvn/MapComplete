@@ -93,7 +93,6 @@ export class AskMetadata extends Combine implements FlowStep<{
                 return false;
             }
             if ([ obj.features, obj.intro, obj.wikilink, obj.source].some(v => v === undefined)){
-                console.log("Obj is", obj)
                 return false;
             }
             

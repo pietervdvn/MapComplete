@@ -168,6 +168,34 @@ export class TagUtils {
     }
 
     /**
+     * Returns wether or not a keys is (probably) a valid key.
+     * 
+     * // should accept common keys
+     * TagUtils.isValidKey("name") // => true
+     * TagUtils.isValidKey("image:0") // => true
+     * TagUtils.isValidKey("alt_name") // => true
+     * 
+     * // should refuse short keys
+     * TagUtils.isValidKey("x") // => false
+     * TagUtils.isValidKey("xy") // => false
+     * 
+     * // should refuse a string with >255 characters
+     * let a255 = ""
+     * for(let i = 0; i < 255; i++) { a255 += "a"; }
+     * a255.length // => 255
+     * TagUtils.isValidKey(a255) // => true
+     * TagUtils.isValidKey("a"+a255) // => false
+     * 
+     * // Should refuse unexpected characters
+     * TagUtils.isValidKey("with space") // => false
+     * TagUtils.isValidKey("some$type") // => false
+     * TagUtils.isValidKey("_name") // => false
+     */
+    public static isValidKey(key: string): boolean {
+        return key.match(/^[a-z][a-z0-9:_]{2,253}[a-z0-9]$/) !== null
+    }
+    
+    /**
      * Parses a tag configuration (a json) into a TagsFilter
      * 
      * TagUtils.Tag("key=value") // => new Tag("key", "value")

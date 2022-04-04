@@ -13,6 +13,9 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Toggleable from "../Base/Toggleable";
 import {BBox} from "../../Logic/BBox";
+import BaseUIElement from "../BaseUIElement";
+import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
+import List from "../Base/List";
 
 export default class SelectTheme extends Combine implements FlowStep<{
     features: any[],
@@ -29,7 +32,7 @@ export default class SelectTheme extends Combine implements FlowStep<{
     }>;
     public readonly IsValid: UIEventSource<boolean>;
 
-    constructor(params: ({ features: any[], layer: LayerConfig, bbox: BBox,  })) {
+    constructor(params: ({ features: any[], layer: LayerConfig, bbox: BBox, })) {
 
         let options: InputElement<string>[] = AllKnownLayouts.layoutsList
             .filter(th => th.layers.some(l => l.id === params.layer.id))
@@ -37,7 +40,7 @@ export default class SelectTheme extends Combine implements FlowStep<{
             .map(th => new FixedInputElement<string>(
                 new Combine([
                     new Img(th.icon).SetClass("block h-12 w-12 br-4"),
-                    new Title( th.title)
+                    new Title(th.title)
                 ]).SetClass("flex items-center"),
                 th.id))
 
@@ -47,9 +50,8 @@ export default class SelectTheme extends Combine implements FlowStep<{
         })
 
 
-
         const applicablePresets = themeRadios.GetValue().map(theme => {
-            if(theme === undefined){
+            if (theme === undefined) {
                 return []
             }
             // we get the layer with the correct ID via the actual theme config, as the actual theme might have different presets due to overrides
@@ -60,7 +62,7 @@ export default class SelectTheme extends Combine implements FlowStep<{
 
 
         const nonMatchedElements = applicablePresets.map(presets => {
-            if(presets === undefined || presets.length === 0){
+            if (presets === undefined || presets.length === 0) {
                 return undefined
             }
             return params.features.filter(feat => !presets.some(preset => new And(preset.tags).matchesProperties(feat.properties)))
@@ -71,27 +73,15 @@ export default class SelectTheme extends Combine implements FlowStep<{
             "All of the following themes will show the import notes. However, the note on OpenStreetMap can link to only one single theme. Choose which theme that the created notes will link to",
             themeRadios,
             new VariableUiElement(applicablePresets.map(applicablePresets => {
-                if(themeRadios.GetValue().data === undefined){
+                if (themeRadios.GetValue().data === undefined) {
                     return undefined
                 }
-                if(applicablePresets === undefined || applicablePresets.length === 0){
+                if (applicablePresets === undefined || applicablePresets.length === 0) {
                     return new FixedUiElement("This theme has no presets loaded. As a result, imports won't work here").SetClass("alert")
                 }
-            },[themeRadios.GetValue()])),
-            new VariableUiElement(nonMatchedElements.map(unmatched => {
-                if(unmatched === undefined || unmatched.length === 0){
-                    return
-                }
-                return new Combine([new FixedUiElement(unmatched.length+" objects dont match any presets").SetClass("alert"),
-                    ...applicablePresets.data.map(preset => preset.title.txt +" needs tags "+ preset.tags.map(t => t.asHumanString()).join(" & ")),
-                    ,
-                    new Toggleable( new Title( "The following elements don't match any of the presets"),
-                        new Combine( unmatched.map(feat => JSON.stringify(feat.properties))).SetClass("flex flex-col")
-                    )
+            }, [themeRadios.GetValue()])),
 
-                ]) .SetClass("flex flex-col")
-
-            }))
+            new VariableUiElement(nonMatchedElements.map(unmatched => SelectTheme.nonMatchedElementsPanel(unmatched, applicablePresets.data), [applicablePresets]))
         ]);
         this.SetClass("flex flex-col")
 
@@ -106,19 +96,74 @@ export default class SelectTheme extends Combine implements FlowStep<{
             if (obj === undefined) {
                 return false;
             }
-            if ([obj.theme, obj.features].some(v => v === undefined)){
+            if ([obj.theme, obj.features].some(v => v === undefined)) {
                 return false;
             }
-            if(applicablePresets.data === undefined || applicablePresets.data.length === 0){
+            if (applicablePresets.data === undefined || applicablePresets.data.length === 0) {
                 return false
             }
-            if((nonMatchedElements.data?.length??0) > 0){
+            if ((nonMatchedElements.data?.length ?? 0) > 0) {
                 return false;
             }
 
             return true;
 
         }, [applicablePresets])
+    }
+
+    private static nonMatchedElementsPanel(unmatched: any[], applicablePresets: PresetConfig[]): BaseUIElement {
+        if (unmatched === undefined || unmatched.length === 0) {
+            return
+        }
+
+        const applicablePresetsOverview = applicablePresets.map(preset => new Combine([
+            preset.title.txt, "needs tags",
+            new FixedUiElement(preset.tags.map(t => t.asHumanString()).join(" & ")).SetClass("thanks")
+        ]))
+
+        const unmatchedPanels: BaseUIElement[] = []
+        for (const feat of unmatched) {
+            const parts: BaseUIElement[] = []
+            parts.push(new Combine(Object.keys(feat.properties).map(k => 
+                k+"="+feat.properties[k]
+            )).SetClass("flex flex-col"))
+
+            for (const preset of applicablePresets) {
+                const tags = new And(preset.tags).asChange({})
+                const missing = []
+                for (const {k, v} of tags) {
+                    if (preset[k] === undefined) {
+                        missing.push(
+                            `Expected ${k}=${v}, but it is completely missing`
+                        )
+                    } else if (feat.properties[k] !== v) {
+                        missing.push(
+                            `Property with key ${k} does not have expected value ${v}; instead it is ${feat.properties}`
+                        )
+                    }
+                }
+
+                if (missing.length > 0) {
+                    parts.push(
+                        new Combine([
+                            new FixedUiElement(`Preset ${preset.title.txt} is not applicable:`),
+                            new List(missing)
+                        ]).SetClass("flex flex-col alert")
+                    )
+                }
+
+            }
+
+            unmatchedPanels.push(new Combine(parts).SetClass("flex flex-col"))
+        }
+
+        return new Combine([
+            new FixedUiElement(unmatched.length + " objects dont match any presets").SetClass("alert"),
+            ...applicablePresetsOverview,
+            new Toggleable(new Title("The following elements don't match any of the presets"),
+                new Combine(unmatchedPanels))
+        ]).SetClass("flex flex-col")
+
     }
 
 

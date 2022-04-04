@@ -30,10 +30,14 @@ export class CreateNotes extends Combine {
 
             const tags: string [] = []
             for (const key in f.properties) {
+                if (f.properties[key] === null || f.properties[key] === undefined) {
+                    console.warn("Null or undefined key for ", f.properties)
+                    continue
+                }
                 if (f.properties[key] === "") {
                     continue
                 }
-                tags.push(key + "=" + f.properties[key].replace(/=/, "\\=").replace(/;/g, "\\;").replace(/\n/g, "\\n"))
+                tags.push(key + "=" + (f.properties[key]+"").replace(/=/, "\\=").replace(/;/g, "\\;").replace(/\n/g, "\\n"))
             }
             const lat = f.geometry.coordinates[1]
             const lon = f.geometry.coordinates[0]

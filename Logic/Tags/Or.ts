@@ -85,12 +85,6 @@ export class Or extends TagsFilter {
         return result;
     }
 
-    AsJson() {
-        return {
-            or: this.or.map(o => o.AsJson())
-        }
-    }
-
     optimize(): TagsFilter | boolean {
         
         if(this.or.length === 0){
