@@ -11,7 +11,7 @@
         "delete": "刪除",
         "explanations": {
             "hardDelete": "這個點已經在開放街圖被刪除了，可以被實驗性的貢獻者恢復",
-            "selectReason": "請選擇為什麼這個圖徵該被刪除？",
+            "selectReason": "請選擇為什麼這個圖徵應該被刪除",
             "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "這圖徵已經刪除",
@@ -57,7 +57,10 @@
             "title": "新增新的節點？",
             "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
             "zoomInFurther": "放大來新增新的節點。",
-            "zoomInMore": "再放大來匯入這一圖徵"
+            "zoomInMore": "再放大來匯入這一圖徵",
+            "import": {
+                "hasBeenImported": "此物件已匯入"
+            }
         },
         "attribution": {
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
@@ -82,7 +85,8 @@
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
-            "title": "下載可視的資料"
+            "title": "下載可視的資料",
+            "downloadAsSvg": "下載當前地圖的 SVG"
         },
         "fewChangesBefore": "請先回答有關既有節點的問題再來新增新節點。",
         "general": {
@@ -313,7 +317,8 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！"
+        "welcomeBack": "你已經登入了，歡迎回來！",
+        "confirm": "確認"
     },
     "image": {
         "addPicture": "新增圖片",
