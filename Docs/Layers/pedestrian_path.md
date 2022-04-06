@@ -12,17 +12,9 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 
 
 
-## Table of contents
-
-1. [pedestrian_path](#pedestrian_path)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer is needed as dependency for layer [entrance](#entrance)
 
 
@@ -37,8 +29,6 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
   - [entrances](https://mapcomplete.osm.be/entrances)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/pedestrian_path/pedestrian_path.json)
 
 
 

@@ -12,22 +12,9 @@ A birdhide
 
 
 
-## Table of contents
-
-1. [birdhide](#birdhide)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bird-hide-shelter-or-wall](#bird-hide-shelter-or-wall)
-    + [bird-hide-wheelchair](#bird-hide-wheelchair)
-    + [birdhide-operator](#birdhide-operator)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -41,8 +28,6 @@ A birdhide
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/birdhide/birdhide.json)
 
 
 

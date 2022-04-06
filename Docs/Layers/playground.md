@@ -12,32 +12,9 @@ Playgrounds
 
 
 
-## Table of contents
-
-1. [playground](#playground)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [playground-surface](#playground-surface)
-    + [playground-lit](#playground-lit)
-    + [playground-min_age](#playground-min_age)
-    + [playground-max_age](#playground-max_age)
-    + [playground-operator](#playground-operator)
-    + [playground-access](#playground-access)
-    + [website](#website)
-    + [playground-email](#playground-email)
-    + [playground-phone](#playground-phone)
-    + [Playground-wheelchair](#playground-wheelchair)
-    + [playground-opening_hours](#playground-opening_hours)
-    + [questions](#questions)
-    + [playground-reviews](#playground-reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -51,8 +28,6 @@ Playgrounds
   - [personal](https://mapcomplete.osm.be/personal)
   - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/playground/playground.json)
 
 
 

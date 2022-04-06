@@ -12,19 +12,9 @@ A layer showing touristical, road side information boards (e.g. giving informati
 
 
 
-## Table of contents
-
-1. [information_board](#information_board)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -38,8 +28,6 @@ A layer showing touristical, road side information boards (e.g. giving informati
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/information_board/information_board.json)
 
 
 

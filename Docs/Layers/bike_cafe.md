@@ -12,27 +12,9 @@ A bike café is a café geared towards cyclists, for example with services such 
 
 
 
-## Table of contents
-
-1. [bike_cafe](#bike_cafe)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_cafe-name](#bike_cafe-name)
-    + [bike_cafe-bike-pump](#bike_cafe-bike-pump)
-    + [bike_cafe-repair-tools](#bike_cafe-repair-tools)
-    + [bike_cafe-repair-service](#bike_cafe-repair-service)
-    + [bike_cafe-website](#bike_cafe-website)
-    + [bike_cafe-phone](#bike_cafe-phone)
-    + [bike_cafe-email](#bike_cafe-email)
-    + [bike_cafe-opening_hours](#bike_cafe-opening_hours)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -46,8 +28,6 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cafe/bike_cafe.json)
 
 
 

@@ -12,22 +12,9 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 
 
-## Table of contents
-
-1. [entrance](#entrance)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Entrance type](#entrance-type)
-    + [Door_type](#door_type)
-    + [automatic_door](#automatic_door)
-    + [width](#width)
 
 
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer will automatically load  [pedestrian_path](./pedestrian_path.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
 
@@ -43,8 +30,6 @@ A layer showing entrances and offering capabilities to survey some advanced data
   - [entrances](https://mapcomplete.osm.be/entrances)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/entrance/entrance.json)
 
 
 

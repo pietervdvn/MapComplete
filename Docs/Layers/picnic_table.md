@@ -12,20 +12,9 @@ The layer showing picnic tables
 
 
 
-## Table of contents
-
-1. [picnic_table](#picnic_table)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [picnic_table-material](#picnic_table-material)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -40,8 +29,6 @@ The layer showing picnic tables
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/picnic_table/picnic_table.json)
 
 
 

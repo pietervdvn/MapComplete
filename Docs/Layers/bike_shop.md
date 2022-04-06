@@ -12,35 +12,9 @@ A shop specifically selling bicycles or related items
 
 
 
-## Table of contents
-
-1. [bike_shop](#bike_shop)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_shop-is-bicycle_shop](#bike_shop-is-bicycle_shop)
-    + [bike_shop-name](#bike_shop-name)
-    + [bike_shop-website](#bike_shop-website)
-    + [bike_shop-phone](#bike_shop-phone)
-    + [bike_shop-email](#bike_shop-email)
-    + [opening_hours](#opening_hours)
-    + [description](#description)
-    + [bike_shop-access](#bike_shop-access)
-    + [bike_repair_sells-bikes](#bike_repair_sells-bikes)
-    + [bike_repair_repairs-bikes](#bike_repair_repairs-bikes)
-    + [bike_repair_rents-bikes](#bike_repair_rents-bikes)
-    + [bike_repair_second-hand-bikes](#bike_repair_second-hand-bikes)
-    + [bike_repair_bike-pump-service](#bike_repair_bike-pump-service)
-    + [bike_repair_tools-service](#bike_repair_tools-service)
-    + [bike_repair_bike-wash](#bike_repair_bike-wash)
-    + [bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaning-servicebicycle:cleaning:charge)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -54,8 +28,6 @@ A shop specifically selling bicycles or related items
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_shop/bike_shop.json)
 
 
 

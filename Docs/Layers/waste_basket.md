@@ -12,20 +12,9 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 
 
-## Table of contents
-
-1. [waste_basket](#waste_basket)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [waste-basket-waste-types](#waste-basket-waste-types)
-    + [dispensing_dog_bags](#dispensing_dog_bags)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **17** and higher
 
 
 
@@ -40,8 +29,6 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
   - [waste](https://mapcomplete.osm.be/waste)
   - [waste_basket](https://mapcomplete.osm.be/waste_basket)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/waste_basket/waste_basket.json)
 
 
 

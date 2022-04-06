@@ -335,6 +335,8 @@ export default class LayerConfig extends WithContextLoader {
         neededLayer: string;
     }[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
+        
+        extraProps.push("This layer is shown at zoomlevel **"+this.minzoom+"** and higher")
 
         if (canBeIncluded) {
             if (addedByDefault) {
@@ -438,9 +440,6 @@ export default class LayerConfig extends WithContextLoader {
             ]).SetClass("flex flex-col"),
             new List(extraProps),
             ...usingLayer,
-
-            new Link("Go to the source code", 
-                `https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/${this.id}/${this.id}.json`),
 
             new Title("Basic tags for this layer", 2),
             "Elements must have the all of following tags to be shown on this layer:",

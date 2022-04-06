@@ -12,22 +12,9 @@ All carfree roads
 
 
 
-## Table of contents
-
-1. [slow_roads](#slow_roads)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [explanation](#explanation)
-    + [slow_roads-surface](#slow_roads-surface)
-    + [slow_road_is_lit](#slow_road_is_lit)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -40,8 +27,6 @@ All carfree roads
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/slow_roads/slow_roads.json)
 
 
 

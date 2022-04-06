@@ -12,18 +12,9 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
 
 
 
-## Table of contents
-
-1. [crab_address](#crab_address)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [render_crab](#render_crab)
 
 
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
   - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson`
 
 
@@ -37,8 +28,6 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/crab_address/crab_address.json)
 
 
 

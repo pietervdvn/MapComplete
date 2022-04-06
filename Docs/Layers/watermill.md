@@ -12,21 +12,9 @@ Watermolens
 
 
 
-## Table of contents
-
-1. [watermill](#watermill)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Access tag](#access-tag)
-    + [Operator tag](#operator-tag)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -39,8 +27,6 @@ Watermolens
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/watermill/watermill.json)
 
 
 

@@ -12,27 +12,9 @@ A layer showing trees
 
 
 
-## Table of contents
-
-1. [tree_node](#tree_node)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [tree-height](#tree-height)
-    + [tree-leaf_type](#tree-leaf_type)
-    + [tree-denotation](#tree-denotation)
-    + [tree-decidouous](#tree-decidouous)
-    + [tree_node-name](#tree_node-name)
-    + [tree-heritage](#tree-heritage)
-    + [tree_node-ref:OnroerendErfgoed](#tree_node-refonroerenderfgoed)
-    + [tree_node-wikidata](#tree_node-wikidata)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -46,8 +28,6 @@ A layer showing trees
   - [personal](https://mapcomplete.osm.be/personal)
   - [trees](https://mapcomplete.osm.be/trees)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/tree_node/tree_node.json)
 
 
 

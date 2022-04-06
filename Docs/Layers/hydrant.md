@@ -12,22 +12,9 @@ Map layer to show fire hydrants.
 
 
 
-## Table of contents
-
-1. [hydrant](#hydrant)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [hydrant-color](#hydrant-color)
-    + [hydrant-type](#hydrant-type)
-    + [hydrant-state](#hydrant-state)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -41,8 +28,6 @@ Map layer to show fire hydrants.
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/hydrant/hydrant.json)
 
 
 

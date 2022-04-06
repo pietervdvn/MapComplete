@@ -12,18 +12,9 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
 
 
 
-## Table of contents
-
-1. [cluster_style](#cluster_style)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [all_tags](#all_tags)
 
 
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -37,8 +28,6 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cluster_style/cluster_style.json)
 
 
 

@@ -12,20 +12,9 @@ Map layer to show fire extinguishers.
 
 
 
-## Table of contents
-
-1. [extinguisher](#extinguisher)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [extinguisher-location](#extinguisher-location)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -39,8 +28,6 @@ Map layer to show fire extinguishers.
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/extinguisher/extinguisher.json)
 
 
 

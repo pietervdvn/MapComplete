@@ -12,25 +12,9 @@ Crossings for pedestrians and cyclists
 
 
 
-## Table of contents
-
-1. [crossings](#crossings)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [crossing-type](#crossing-type)
-    + [crossing-is-zebra](#crossing-is-zebra)
-    + [crossing-bicycle-allowed](#crossing-bicycle-allowed)
-    + [crossing-has-island](#crossing-has-island)
-    + [crossing-tactile](#crossing-tactile)
-    + [crossing-button](#crossing-button)
-    + [crossing-right-turn-through-red](#crossing-right-turn-through-red)
-    + [crossing-continue-through-red](#crossing-continue-through-red)
 
 
-
-
-
+  - This layer is shown at zoomlevel **17** and higher
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
@@ -46,8 +30,6 @@ Crossings for pedestrians and cyclists
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/crossings/crossings.json)
 
 
 

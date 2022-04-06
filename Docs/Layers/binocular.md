@@ -12,21 +12,9 @@ Binoculas
 
 
 
-## Table of contents
-
-1. [binocular](#binocular)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [binocular-charge](#binocular-charge)
-    + [binocular-direction](#binocular-direction)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
 
 
 
@@ -40,8 +28,6 @@ Binoculas
   - [binoculars](https://mapcomplete.osm.be/binoculars)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/binocular/binocular.json)
 
 
 

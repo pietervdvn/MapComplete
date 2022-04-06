@@ -12,30 +12,9 @@ Towers with a panoramic view
 
 
 
-## Table of contents
-
-1. [observation_tower](#observation_tower)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [name](#name)
-    + [Height](#height)
-    + [access](#access)
-    + [Fee](#fee)
-    + [payment-options](#payment-options)
-    + [website](#website)
-    + [step_count](#step_count)
-    + [elevator](#elevator)
-    + [Operator](#operator)
-    + [wheelchair-access](#wheelchair-access)
-    + [wikipedia](#wikipedia)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **8** and higher
 
 
 
@@ -49,8 +28,6 @@ Towers with a panoramic view
   - [observation_towers](https://mapcomplete.osm.be/observation_towers)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/observation_tower/observation_tower.json)
 
 
 

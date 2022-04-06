@@ -12,28 +12,9 @@ A shop
 
 
 
-## Table of contents
-
-1. [shops](#shops)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [shops-name](#shops-name)
-    + [shops-shop](#shops-shop)
-    + [shops-phone](#shops-phone)
-    + [shops-website](#shops-website)
-    + [shops-email](#shops-email)
-    + [shops-opening_hours](#shops-opening_hours)
-    + [payment-options](#payment-options)
-    + [questions](#questions)
-    + [reviews](#reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -47,8 +28,6 @@ A shop
   - [personal](https://mapcomplete.osm.be/personal)
   - [shops](https://mapcomplete.osm.be/shops)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/shops/shops.json)
 
 
 

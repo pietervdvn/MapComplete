@@ -12,25 +12,9 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
-## Table of contents
-
-1. [barrier](#barrier)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [bicycle=yes/no](#bicycle=yesno)
-    + [barrier_type](#barrier_type)
-    + [Bollard type](#bollard-type)
-    + [Cycle barrier type](#cycle-barrier-type)
-    + [MaxWidth](#maxwidth)
-    + [Space between barrier (cyclebarrier)](#space-between-barrier-(cyclebarrier))
-    + [Width of opening (cyclebarrier)](#width-of-opening-(cyclebarrier))
-    + [Overlap (cyclebarrier)](#overlap-(cyclebarrier))
 
 
-
-
-
+  - This layer is shown at zoomlevel **17** and higher
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
@@ -46,8 +30,6 @@ Obstacles while cycling, such as bollards and cycle barriers
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/barrier/barrier.json)
 
 
 

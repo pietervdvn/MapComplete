@@ -12,20 +12,9 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
-## Table of contents
-
-1. [viewpoint](#viewpoint)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [viewpoint-description](#viewpoint-description)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -38,8 +27,6 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/viewpoint/viewpoint.json)
 
 
 

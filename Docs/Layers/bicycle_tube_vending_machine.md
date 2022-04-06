@@ -12,25 +12,9 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
 
 
 
-## Table of contents
-
-1. [bicycle_tube_vending_machine](#bicycle_tube_vending_machine)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Still in use?](#still-in-use)
-    + [bicycle_tube_vending_machine-charge](#bicycle_tube_vending_machine-charge)
-    + [vending-machine-payment-methods](#vending-machine-payment-methods)
-    + [bicycle_tube_vending_machine-brand](#bicycle_tube_vending_machine-brand)
-    + [bicycle_tube_vending_machine-operator](#bicycle_tube_vending_machine-operator)
-    + [bicycle_tube_vending_maching-other-items](#bicycle_tube_vending_maching-other-items)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -44,8 +28,6 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)
 
 
 

@@ -12,17 +12,9 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 
 
-## Table of contents
-
-1. [walls_and_buildings](#walls_and_buildings)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer is not visible by default and must be enabled in the filter by the user. 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
@@ -44,8 +36,6 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [personal](https://mapcomplete.osm.be/personal)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/walls_and_buildings/walls_and_buildings.json)
 
 
 

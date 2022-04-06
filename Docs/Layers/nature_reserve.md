@@ -12,31 +12,9 @@ A nature reserve is an area where nature can take its course
 
 
 
-## Table of contents
-
-1. [nature_reserve](#nature_reserve)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Access tag](#access-tag)
-    + [Operator tag](#operator-tag)
-    + [Name tag](#name-tag)
-    + [Dogs?](#dogs)
-    + [website](#website)
-    + [Curator](#curator)
-    + [Email](#email)
-    + [phone](#phone)
-    + [Non-editable description](#non-editable-description)
-    + [Editable description](#editable-description)
-    + [Surface area](#surface-area)
-    + [wikipedia](#wikipedia)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -50,8 +28,6 @@ A nature reserve is an area where nature can take its course
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/nature_reserve/nature_reserve.json)
 
 
 

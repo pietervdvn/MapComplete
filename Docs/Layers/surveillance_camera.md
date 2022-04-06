@@ -12,26 +12,9 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 
 
-## Table of contents
-
-1. [surveillance_camera](#surveillance_camera)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Camera type: fixed; panning; dome](#camera-type-fixed;-panning;-dome)
-    + [camera_direction](#camera_direction)
-    + [Operator](#operator)
-    + [Surveillance type: public, outdoor, indoor](#surveillance-type-public,-outdoor,-indoor)
-    + [is_indoor](#is_indoor)
-    + [Level](#level)
-    + [Surveillance:zone](#surveillancezone)
-    + [camera:mount](#cameramount)
 
 
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
@@ -46,8 +29,6 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [personal](https://mapcomplete.osm.be/personal)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/surveillance_camera/surveillance_camera.json)
 
 
 

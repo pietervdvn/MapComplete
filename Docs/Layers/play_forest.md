@@ -12,25 +12,9 @@ Een speelbos is een vrij toegankelijke zone in een bos
 
 
 
-## Table of contents
-
-1. [play_forest](#play_forest)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [play_forest-operator](#play_forest-operator)
-    + [play_forest-opening_hours](#play_forest-opening_hours)
-    + [play_forest-email](#play_forest-email)
-    + [play_forest-phone](#play_forest-phone)
-    + [questions](#questions)
-    + [play_forest-reviews](#play_forest-reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -43,8 +27,6 @@ Een speelbos is een vrij toegankelijke zone in een bos
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/play_forest/play_forest.json)
 
 
 
