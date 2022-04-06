@@ -4,19 +4,8 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import Title from "../Base/Title";
-import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
-import {DropDown} from "../Input/DropDown";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {RadioButton} from "../Input/RadioButton";
-import {FixedInputElement} from "../Input/FixedInputElement";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {InputElement} from "../Input/InputElement";
-import Img from "../Base/Img";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {And} from "../../Logic/Tags/And";
-import Toggleable from "../Base/Toggleable";
 
 export class AskMetadata extends Combine implements FlowStep<{
     features: any[],

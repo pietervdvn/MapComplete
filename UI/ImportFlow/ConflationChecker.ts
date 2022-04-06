@@ -35,7 +35,7 @@ import {ImportUtils} from "./ImportUtils";
 export default class ConflationChecker extends Combine implements FlowStep<{ features: any[], theme: string }> {
 
     public readonly IsValid
-    public readonly Value
+    public readonly Value: UIEventSource<{ features: any[], theme: string }>
 
     constructor(
         state,
@@ -249,7 +249,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
 
         ])
 
-        this.Value = paritionedImport.map(feats => ({features: feats?.noNearby, layer: params.layer}))
+        this.Value = paritionedImport.map(feats => ({theme: params.theme, features: feats?.noNearby, layer: params.layer}))
         this.IsValid = this.Value.map(v => v?.features !== undefined && v.features.length > 0)
     }
 

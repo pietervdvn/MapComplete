@@ -10,7 +10,6 @@ import {RequestFile} from "./RequestFile";
 import {PreviewPanel} from "./PreviewPanel";
 import ConflationChecker from "./ConflationChecker";
 import {AskMetadata} from "./AskMetadata";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {ConfirmProcess} from "./ConfirmProcess";
 import {CreateNotes} from "./CreateNotes";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -38,8 +37,8 @@ export default class ImportHelperGui extends LeftIndex {
                .then("Select theme", v => new SelectTheme(v))
                .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
                .then("Compare with existing data", v => new ConflationChecker(state, v))
-               .then("License and community check", (v : {features: any[], theme: string}) => new ConfirmProcess(v))
-               .then("Metadata", (v: { features: any[], layer: LayerConfig, theme: string }) => new AskMetadata(v))
+               .then("License and community check", v  => new ConfirmProcess(v))
+               .then("Metadata", (v) => new AskMetadata(v))
                .finish("Note creation", v => new CreateNotes(state, v));
 
         const toc = new List(
