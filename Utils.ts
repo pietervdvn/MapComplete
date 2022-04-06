@@ -237,6 +237,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return result;
     }
 
+    /**
+     * Utils.Identical([1,2], [1,2]) // => true
+     * Utils.Identical([1,2,3], [1,2,4}]) // => false
+     * Utils.Identical([1,2], [1,2,3]) // => false
+     */
     public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
         if (t1.length !== t2.length) {
             return false
@@ -250,6 +255,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return true;
     }
 
+    /**
+     * Utils.MergeTags({k0:"v0","common":"0"},{k1:"v1", common: "1"}) // => {k0: "v0", k1:"v1", common: "1"}
+     */
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
