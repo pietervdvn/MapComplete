@@ -35,7 +35,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             )
         })
 
-        const linkToWeblate = new LinkToWeblate(translation.context, translation.translations)
+        const linkToWeblate = translation !== undefined ? new LinkToWeblate(translation.context, translation.translations) : undefined;
         
         super(
             Locale.language.map(language => {

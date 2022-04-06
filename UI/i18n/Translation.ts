@@ -131,7 +131,6 @@ export class Translation extends BaseUIElement {
 
         const wrapper = document.createElement("span")
         wrapper.appendChild(el)
-        wrapper.classList.add("flex")
         Locale.showLinkToWeblate.addCallbackAndRun(doShow => {
 
             if (!doShow) {
