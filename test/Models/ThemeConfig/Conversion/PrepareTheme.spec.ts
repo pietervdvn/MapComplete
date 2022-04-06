@@ -9,6 +9,7 @@ import * as bookcaseLayer from "../../../../assets/generated/layers/public_bookc
 import LayerConfig from "../../../../Models/ThemeConfig/LayerConfig";
 import {ExtractImages} from "../../../../Models/ThemeConfig/Conversion/FixImages";
 import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
+import {Tag} from "../../../../Logic/Tags/Tag";
 
 
 const themeConfigJson: LayoutConfigJson = {
@@ -37,8 +38,24 @@ const themeConfigJson: LayoutConfigJson = {
 }
 
 describe("PrepareTheme", () => {
+
+    it("should substitute layers", () => {
+
+        const sharedLayers = new Map<string, LayerConfigJson>()
+        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        const theme ={...themeConfigJson, layers: ["public_bookcase"]}
+        const prepareStep =  new PrepareTheme({
+            tagRenderings: new Map<string, TagRenderingConfigJson>(),
+            sharedLayers: sharedLayers
+        })
+        let themeConfigJsonPrepared = prepareStep.convert(theme, "test").result
+        const themeConfig = new LayoutConfig(themeConfigJsonPrepared);
+        const layerUnderTest = <LayerConfig> themeConfig.layers.find(l => l.id === "public_bookcase")
+        expect(layerUnderTest.source.osmTags).deep.eq(new Tag("amenity","public_bookcase"))
+
+    })
     
-    it("should apply overrideAll", () => {
+    it("should apply override", () => {
 
         const sharedLayers = new Map<string, LayerConfigJson>()
         sharedLayers.set("public_bookcase", bookcaseLayer["default"])
@@ -50,6 +67,20 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig> themeConfig.layers.find(l => l.id === "public_bookcase")
         expect(layerUnderTest.source.geojsonSource).eq("xyz")
 
+    })
+
+
+    it("should apply override", () => {
+
+        const sharedLayers = new Map<string, LayerConfigJson>()
+        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        let themeConfigJsonPrepared = new PrepareTheme({
+            tagRenderings: new Map<string, TagRenderingConfigJson>(),
+            sharedLayers: sharedLayers
+        }).convert({...themeConfigJson, overrideAll: {source: {geoJson: "https://example.com/data.geojson"}}}, "test").result
+        const themeConfig = new LayoutConfig(themeConfigJsonPrepared);
+        const layerUnderTest = <LayerConfig> themeConfig.layers.find(l => l.id === "public_bookcase")
+        expect(layerUnderTest.source.geojsonSource).eq("https://example.com/data.geojson")
     })
 })
 

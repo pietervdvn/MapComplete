@@ -12,9 +12,6 @@ import RewritableConfigJson from "../../../../Models/ThemeConfig/Json/Rewritable
 
 describe("ExpandRewrite", () => {
 
-    it("should do simple substitution", () => {
-
-    })
     it("should not allow overlapping keys", () => {
         const spec = <RewritableConfigJson<string>>{
             rewrite: {

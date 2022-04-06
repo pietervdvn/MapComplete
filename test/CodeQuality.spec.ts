@@ -24,7 +24,7 @@ function detectInCode(forbidden: string, reason: string) {
             throw stderr
         }
 
-        const found = stdout.split("\n").filter(s => s !== "").filter(s => !s.startsWith("./tests/") && !s.startsWith("./testLegacy/"));
+        const found = stdout.split("\n").filter(s => s !== "").filter(s => !s.startsWith("./test/"));
         if (found.length > 0) {
             throw `Found a '${forbidden}' at \n    ${found.join("\n     ")}.\n ${reason}`
         }
