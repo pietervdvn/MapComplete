@@ -223,7 +223,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * In the given list, all values which are lists will be merged with the values, e.g.
      *
-     * Utils.Flatten([ [1,2], 2, [4, [5 ,6]] ]) // => [1, 2, 3, 4, [5, 6]]
+     * Utils.Flatten([ [1,2], 3, [4, [5 ,6]] ]) // => [1, 2, 3, 4, [5, 6]]
      */
     public static Flatten<T>(list: (T | T[])[]): T[] {
         const result = []
