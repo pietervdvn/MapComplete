@@ -1,10 +1,9 @@
-import {Conversion, DesugaringContext, DesugaringStep, Fuse, OnEvery, OnEveryConcat, SetDefault} from "./Conversion";
+import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, SetDefault} from "./Conversion";
 import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import {PrepareLayer} from "./PrepareLayer";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {Utils} from "../../../Utils";
 import Constants from "../../Constants";
-import {AllKnownLayouts} from "../../../Customizations/AllKnownLayouts";
 import CreateNoteImportLayer from "./CreateNoteImportLayer";
 import LayerConfig from "../LayerConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
@@ -457,18 +456,18 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             "Fully prepares and expands a theme",
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),
-            new OnEveryConcat("layers", new SubstituteLayer(state)),
+            new On("layers", new Concat(new SubstituteLayer(state))),
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             // We expand all tagrenderings first...
-            new OnEvery("layers", new PrepareLayer(state)),
+            new On("layers", new Each(new PrepareLayer(state))),
             // Then we apply the override all
             new ApplyOverrideAll(),
             // And then we prepare all the layers _again_ in case that an override all contained unexpanded tagrenderings!
-            new OnEvery("layers", new PrepareLayer(state)),
+            new On("layers", new Each(new PrepareLayer(state))),
             new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
             new AddImportLayers(),
-            new OnEvery("layers", new AddMiniMap(state))
+            new On("layers", new Each(new AddMiniMap(state)))
         );
     }
 }

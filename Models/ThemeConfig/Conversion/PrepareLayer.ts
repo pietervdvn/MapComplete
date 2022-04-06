@@ -1,4 +1,4 @@
-import {Conversion, DesugaringContext, DesugaringStep, Fuse, OnEvery, OnEveryConcat, SetDefault} from "./Conversion";
+import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, SetDefault} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Utils} from "../../../Utils";
@@ -12,7 +12,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
     private readonly _state: DesugaringContext;
 
     constructor(state: DesugaringContext) {
-        super("Converts a tagRenderingSpec into the full tagRendering", [], "ExpandTagRendering");
+        super("Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question", [], "ExpandTagRendering");
         this._state = state;
     }
 
@@ -138,138 +138,6 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
     }
 }
 
-class ExpandGroupRewrite extends Conversion<{
-    rewrite: {
-        sourceString: string,
-        into: string[]
-    }[],
-    renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
-} | TagRenderingConfigJson, TagRenderingConfigJson[]> {
-
-
-    private _expandSubTagRenderings;
-
-    constructor(state: DesugaringContext) {
-        super(
-            "Converts a rewrite config for tagRenderings into the expanded form", [],
-            "ExpandGroupRewrite"
-        );
-        this._expandSubTagRenderings = new ExpandTagRendering(state)
-    }
-
-    convert(json:
-                {
-                    rewrite:
-                        { sourceString: string; into: string[] }[]; renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
-                } | TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings?: string[] } {
-
-        if (json["rewrite"] === undefined) {
-            return {result: [<TagRenderingConfigJson>json], errors: [], warnings: []}
-        }
-        let config = <{
-            rewrite:
-                { sourceString: string[]; into: (string | any)[][] };
-            renderings: (string | { builtin: string; override: any } | TagRenderingConfigJson)[]
-        }>json;
-
-
-        {
-            const errors = []
-
-            if (!Array.isArray(config.rewrite.sourceString)) {
-                let extra = "";
-                if (typeof config.rewrite.sourceString === "string") {
-                    extra = `<br/>Try <span class='literal-code'>"sourceString": [ "${config.rewrite.sourceString}" ] </span> instead (note the [ and ])`
-                }
-                const msg = context + "<br/>Invalid format: a rewrite block is defined, but the 'sourceString' should be an array of strings, but it is a " + typeof config.rewrite.sourceString + extra
-                errors.push(msg)
-            }
-
-
-            const expectedLength = config.rewrite.sourceString.length
-            for (let i = 0; i < config.rewrite.into.length; i++) {
-                const targets = config.rewrite.into[i];
-                if (!Array.isArray(targets)) {
-                    errors.push(`${context}.rewrite.into[${i}] should be an array of values, but it is a ` + typeof targets)
-                } else if (targets.length !== expectedLength) {
-                    errors.push(`${context}.rewrite.into[${i}]:<br/>The rewrite specified ${config.rewrite.sourceString} as sourcestring, which consists of ${expectedLength} values. The target ${JSON.stringify(targets)} has ${targets.length} items`)
-                    if (typeof targets[0] !== "string") {
-                        errors.push(context + ".rewrite.into[" + i + "]: expected a string as first rewrite value values, but got " + targets[0])
-
-                    }
-                }
-            }
-
-            if (errors.length > 0) {
-                return {
-                    errors,
-                    warnings: [],
-                    result: undefined
-                }
-            }
-        }
-
-        const subRenderingsRes = <{ result: TagRenderingConfigJson[][], errors, warnings }>this._expandSubTagRenderings.convertAll(config.renderings, context);
-        const subRenderings: TagRenderingConfigJson[] = [].concat(...subRenderingsRes.result);
-        const errors = subRenderingsRes.errors;
-        const warnings = subRenderingsRes.warnings;
-
-
-        const rewrittenPerGroup = new Map<string, TagRenderingConfigJson[]>()
-
-        // The actual rewriting
-        const sourceStrings = config.rewrite.sourceString;
-        for (const targets of config.rewrite.into) {
-            const groupName = targets[0];
-            if (typeof groupName !== "string") {
-                throw "The first string of 'targets' should always be a string"
-            }
-            const trs: TagRenderingConfigJson[] = []
-
-            for (const tr of subRenderings) {
-                let rewritten = tr;
-                for (let i = 0; i < sourceStrings.length; i++) {
-                    const source = sourceStrings[i]
-                    const target = targets[i] // This is a string OR a translation
-                    rewritten = ExpandRewrite.RewriteParts(source, target, rewritten)
-                }
-                rewritten.group = rewritten.group ?? groupName
-                trs.push(rewritten)
-            }
-
-            if (rewrittenPerGroup.has(groupName)) {
-                rewrittenPerGroup.get(groupName).push(...trs)
-            } else {
-                rewrittenPerGroup.set(groupName, trs)
-
-            }
-        }
-
-        // Add questions box for this category
-        rewrittenPerGroup.forEach((group, groupName) => {
-            group.push(<TagRenderingConfigJson>{
-                id: "questions",
-                group: groupName
-            })
-        })
-
-
-        rewrittenPerGroup.forEach((group, _) => {
-            group.forEach(tr => {
-                if (tr.id === undefined || tr.id === "") {
-                    errors.push("A tagrendering has an empty ID after expanding the tag; the tagrendering is: " + JSON.stringify(tr))
-                }
-            })
-        })
-
-        return {
-            result: [].concat(...Array.from(rewrittenPerGroup.values())),
-            errors, warnings
-        };
-    }
-
-}
-
 export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
 
     constructor() {
@@ -286,10 +154,15 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
      *   "someKey": "somevalue {xyz}"
      * }
      * ExpandRewrite.RewriteParts("{xyz}", "rewritten", spec) // => {"someKey": "somevalue rewritten"}
+     * 
+     * // should substitute all occurances in strings
+     * const spec = {
+     *   "someKey": "The left|right side has {key:left|right}"
+     * }
+     * ExpandRewrite.RewriteParts("left|right", "left", spec) // => {"someKey": "The left side has {key:left}"}
      *
      */
     public static RewriteParts<T>(keyToRewrite: string, target: string | any, tr: T): T {
-        
         const targetIsTranslation = Translations.isProbablyATranslation(target)
 
         function replaceRecursive(obj: string | any, target) {
@@ -300,7 +173,10 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
 
             if (typeof obj === "string") {
                 // This is a simple string - we do a simple replace
-                return obj.replace(keyToRewrite, target)
+                while(obj.indexOf(keyToRewrite) >= 0){
+                   obj = obj.replace(keyToRewrite, target)
+                }
+                return obj
             }
             if (Array.isArray(obj)) {
                 // This is a list of items
@@ -581,12 +457,12 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",
-            new OnEvery("tagRenderings", new RewriteSpecial(), {ignoreIfUndefined: true}),
-            new OnEveryConcat("tagRenderings", new ExpandGroupRewrite(state)),
-            new OnEveryConcat("tagRenderings", new ExpandTagRendering(state)),
-            new OnEveryConcat("mapRendering", new ExpandRewrite()),
+            new On("tagRenderings", new Each(new RewriteSpecial())),
+            new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
+            new On("tagRenderings", new Concat(new ExpandTagRendering(state))),
+            new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new SetDefault("titleIcons", ["defaults"]),
-            new OnEveryConcat("titleIcons", new ExpandTagRendering(state))
+            new On("titleIcons", new Concat(new ExpandTagRendering(state)))
         );
     }
 }

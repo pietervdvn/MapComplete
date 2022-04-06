@@ -232,6 +232,10 @@
                 "then": "./assets/themes/openwindpowermap/logo.svg"
               },
               {
+                "if": "theme=parking-lanes",
+                "then": "./assets/svg/bug.svg"
+              },
+              {
                 "if": "theme=parkings",
                 "then": "./assets/themes/parkings/parkings.svg"
               },

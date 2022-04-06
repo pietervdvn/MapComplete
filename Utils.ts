@@ -183,11 +183,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return str.substr(0, l - 3) + "...";
     }
-    
+
     public static FixedLength(str: string, l: number) {
         str = Utils.EllipsesAfter(str, l)
-        while(str.length < l){
-            str = " "+str
+        while (str.length < l) {
+            str = " " + str
         }
         return str;
     }
@@ -218,6 +218,23 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             seen.add(string)
         }
         return newArr;
+    }
+
+    /**
+     * In the given list, all values which are lists will be merged with the values, e.g.
+     *
+     * Utils.Flatten([ [1,2], 2, [4, [5 ,6]] ]) // => [1, 2, 3, 4, [5, 6]]
+     */
+    public static Flatten<T>(list: (T | T[])[]): T[] {
+        const result = []
+        for (const value of list) {
+            if (Array.isArray(value)) {
+                result.push(...value)
+            } else {
+                result.push(value)
+            }
+        }
+        return result;
     }
 
     public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
@@ -533,21 +550,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (jtp !== "object") {
                 return
             }
-            
+
             if (isLeaf(json)) {
                 return collect(json, path)
             }
         } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
-            return collect(json,path)
+            return collect(json, path)
         }
         if (Array.isArray(json)) {
-            return json.map((sub,i) => {
-                return Utils.WalkObject(sub, collect, isLeaf,[...path, i]);
+            return json.map((sub, i) => {
+                return Utils.WalkObject(sub, collect, isLeaf, [...path, i]);
             })
         }
 
         for (const key in json) {
-           Utils.WalkObject(json[key], collect, isLeaf, [...path,key])
+            Utils.WalkObject(json[key], collect, isLeaf, [...path, key])
         }
     }
 
@@ -832,9 +849,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return new Date(str)
     }
-    
-    public static sortedByLevenshteinDistance<T>(reference: string, ts: T[], getName: (t:T) => string): T[]{
-        const withDistance: [T, number][] = ts.map(t => [t,  Utils.levenshteinDistance(getName(t), reference)])
+
+    public static sortedByLevenshteinDistance<T>(reference: string, ts: T[], getName: (t: T) => string): T[] {
+        const withDistance: [T, number][] = ts.map(t => [t, Utils.levenshteinDistance(getName(t), reference)])
         withDistance.sort(([_, a], [__, b]) => a - b)
         return withDistance.map(n => n[0])
     }
@@ -872,43 +889,41 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return o
     }
 
-    private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
-    }
-
     /**
      * Utils.colorAsHex({r: 255, g: 128, b: 0}) // => "#ff8000"
      * Utils.colorAsHex(undefined) // => undefined
      */
-    public static colorAsHex(c:{ r: number, g: number, b: number } ){
-        if(c === undefined){
+    public static colorAsHex(c: { r: number, g: number, b: number }) {
+        if (c === undefined) {
             return undefined
         }
+
         function componentToHex(n) {
             let hex = n.toString(16);
             return hex.length == 1 ? "0" + hex : hex;
         }
+
         return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b);
     }
-    
+
     /**
-     * 
+     *
      * Utils.color("#ff8000") // => {r: 255, g:128, b: 0}
      * Utils.color(" rgba  (12,34,56) ") // => {r: 12, g:34, b: 56}
      * Utils.color(" rgba  (12,34,56,0.5) ") // => {r: 12, g:34, b: 56}
      * Utils.color(undefined) // => undefined
      */
     public static color(hex: string): { r: number, g: number, b: number } {
-        if(hex === undefined){
+        if (hex === undefined) {
             return undefined
         }
         hex = hex.replace(/[ \t]/g, "")
         if (hex.startsWith("rgba(")) {
-               const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
-            if(match == undefined){
+            const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
+            if (match == undefined) {
                 return undefined
             }
-            return {r: Number(match[1]), g: Number(match[2]), b:Number( match[3])}
+            return {r: Number(match[1]), g: Number(match[2]), b: Number(match[3])}
         }
 
         if (!hex.startsWith("#")) {
@@ -928,15 +943,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
-    
-    public static asDict(tags: {key: string, value: string | number}[]) : Map<string, string | number>{
-        const d= new Map<string, string | number>()
+
+    public static asDict(tags: { key: string, value: string | number }[]): Map<string, string | number> {
+        const d = new Map<string, string | number>()
 
         for (const tag of tags) {
             d.set(tag.key, tag.value)
         }
 
         return d
+    }
+
+    private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
 }
 

@@ -1,4 +1,4 @@
-import {DesugaringStep, Fuse, OnEvery} from "./Conversion";
+import {DesugaringStep, Each, Fuse, On} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import LayerConfig from "../LayerConfig";
 import {Utils} from "../../../Utils";
@@ -17,11 +17,12 @@ import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderi
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
+    
     private readonly _languages: string[];
 
     constructor(...languages: string[]) {
         super("Checks that the given object is fully translated in the specified languages", [], "ValidateLanguageCompleteness");
-        this._languages = languages;
+        this._languages = languages ?? ["en"];
     }
 
     convert(obj: any, context: string): { result: LayerConfig; errors: string[] } {
@@ -29,7 +30,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         const translations = Translation.ExtractAllTranslationsFrom(
             obj
         )
-        for (const neededLanguage of this._languages ?? ["en"]) {
+        for (const neededLanguage of this._languages) {
             translations
                 .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                 .forEach(missing => {
@@ -173,7 +174,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Validates a theme and the contained layers",
             new ValidateTheme(knownImagePaths, path, isBuiltin, sharedTagRenderings),
-            new OnEvery("layers", new ValidateLayer(undefined, false))
+            new On("layers", new Each(new ValidateLayer(undefined, false)))
         );
     }
 }
@@ -510,7 +511,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             if (json.tagRenderings !== undefined) {
-               const r = new OnEvery("tagRenderings", new ValidateTagRenderings(json)).convert(json, context)
+               const r = new On("tagRenderings", new Each(new ValidateTagRenderings(json))).convert(json, context)
                 warnings.push(...(r.warnings??[]))
                 errors.push(...(r.errors??[]))
                 information.push(...(r.information??[]))
