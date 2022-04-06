@@ -860,9 +860,6 @@
     "hailhydrant": {
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
-    "mapcomplete-changes": {
-        "title": "Wijzigingen gemaakt met MapComplete"
-    },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
         "shortDescription": "Een kaart met alle kaarten die OpenStreetMap kent",

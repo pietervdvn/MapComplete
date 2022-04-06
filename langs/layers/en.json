@@ -4409,6 +4409,22 @@
             }
         },
         "description": "A shop",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Only show shops selling {search}"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Only show shops with name {search}"
+                    }
+                }
+            }
+        },
         "name": "Shop",
         "presets": {
             "0": {
