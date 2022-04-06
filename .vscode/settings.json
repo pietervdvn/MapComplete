@@ -1,0 +1,16 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/assets/layers/*/*.json"
+            ],
+            "url": "./Docs/Schemas/LayerConfigJson.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/assets/themes/*/*.json"
+            ],
+            "url": "./Docs/Schemas/LayoutConfigJson.schema.json"
+        }
+    ]
+}
