@@ -22,3 +22,4 @@ Folder.DotSettings.user
 index_*.ts
 .~lock.*
 *.doctest.ts
+.vscode
