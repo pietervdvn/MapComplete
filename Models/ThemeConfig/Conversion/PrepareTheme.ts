@@ -9,6 +9,7 @@ import LayerConfig from "../LayerConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 import DependencyCalculator from "../DependencyCalculator";
+import Translations from "../../../UI/i18n/Translations";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -279,6 +280,72 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     }
 }
 
+class AddContextToTransltionsInLayout extends DesugaringStep <LayoutConfigJson>{
+    
+    constructor() {
+        super("Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",["_context"], "AddContextToTranlationsInLayout");
+    }
+    
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
+        return conversion.convert(json, json.id);
+    }
+    
+}
+
+class AddContextToTranslations<T> extends DesugaringStep<T> {
+    private readonly _prefix: string;
+    
+    constructor(prefix = "") {
+        super("Adds a '_context' to every object that is probably a translation", ["_context"], "AddContextToTranslation");
+        this._prefix = prefix;
+    }
+
+    /**
+     * const theme = {
+     *   layers: [
+     *       {
+     *           builtin: ["abc"],
+     *           override: {
+     *               title:{
+     *                   en: "Some title"
+     *               }
+     *           }
+     *       }
+     *   ]  
+     * } 
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result 
+     * const expected = {
+     *   layers: [
+     *       {
+     *           builtin: ["abc"],
+     *           override: {
+     *               title:{
+     *                  _context: "prefix:context.layers.0.override.title"
+     *                   en: "Some title"
+     *               }
+     *           }
+     *       }
+     *   ]  
+     * }
+     * rewritten // => expected
+     */
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+        
+        const result = Utils.WalkJson(json, (leaf, path) => {
+            if(typeof leaf === "object"){
+                return {...leaf, _context: this._prefix + context+"."+ path.join(".")}
+            }else{
+                return leaf
+            }
+        }, obj => obj !== undefined && obj !== null && Translations.isProbablyATranslation(obj))
+        
+        return {
+            result
+        };
+    }
+    
+}
 
 class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 
@@ -327,8 +394,13 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             const dependencies: { neededLayer: string, reason: string, context?: string, neededBy: string }[] = []
 
             for (const layerConfig of alreadyLoaded) {
-                const layerDeps = DependencyCalculator.getLayerDependencies(new LayerConfig(layerConfig))
-                dependencies.push(...layerDeps)
+                try{
+                    const layerDeps = DependencyCalculator.getLayerDependencies(new LayerConfig(layerConfig))
+                    dependencies.push(...layerDeps)
+                }catch(e){
+                    console.error(e)
+                    throw "Detecting layer dependencies for "+layerConfig.id+" failed due to "+e
+                }
             }
 
             for (const dependency of dependencies) {
@@ -454,6 +526,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             "Fully prepares and expands a theme",
+            new AddContextToTransltionsInLayout(),
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),
             new On("layers", new Concat(new SubstituteLayer(state))),

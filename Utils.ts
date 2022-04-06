@@ -515,41 +515,46 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON
+     * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON.
+     * Returns a modified copy of the original object.
+     * 
+     * Hangs if the object contains a loop
      */
-    static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any, isLeaf: (object) => boolean = undefined) {
+    static WalkJson(json: any, f: (v: object | number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path: string[] = []) {
         if (json === undefined) {
-            return f(undefined)
+            return f(undefined, path)
         }
         const jtp = typeof json
         if (isLeaf !== undefined) {
             if (jtp === "object") {
                 if (isLeaf(json)) {
-                    return f(json)
+                    return f(json, path)
                 }
             } else {
                 return json
             }
         } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
-            return f(json)
+            return f(json, path)
         }
         if (Array.isArray(json)) {
-            return json.map(sub => {
-                return Utils.WalkJson(sub, f, isLeaf);
+            return json.map((sub,i) => {
+                return Utils.WalkJson(sub, f, isLeaf, [...path,""+i]);
             })
         }
 
         const cp = {...json}
         for (const key in json) {
-            cp[key] = Utils.WalkJson(json[key], f, isLeaf)
+            cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key])
         }
         return cp
     }
 
     /**
-     * Walks an object recursively. Will hang on objects with loops
+     * Walks an object recursively, will execute the 'collect'-callback on every leaf.
+     * 
+     * Will hang on objects with loops
      */
-    static WalkObject(json: any, collect: (v: number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path = []) {
+    static WalkObject(json: any, collect: (v: number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path = []): void {
         if (json === undefined) {
             return;
         }
@@ -563,12 +568,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 return collect(json, path)
             }
         } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
-            return collect(json, path)
+            collect(json, path)
+            return
         }
         if (Array.isArray(json)) {
-            return json.map((sub, i) => {
+            json.map((sub, i) => {
                 return Utils.WalkObject(sub, collect, isLeaf, [...path, i]);
             })
+            return
         }
 
         for (const key in json) {

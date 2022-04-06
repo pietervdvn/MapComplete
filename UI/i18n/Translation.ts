@@ -15,10 +15,14 @@ export class Translation extends BaseUIElement {
 
     constructor(translations: object, context?: string) {
         super()
-        this.context = context;
         if (translations === undefined) {
             console.error("Translation without content at "+context)
             throw `Translation without content (${context})`
+        }
+        this.context = translations["_context"] ?? context;
+        if(translations["_context"] !== undefined){
+            translations = {...translations}
+            delete translations["_context"]
         }
         if (typeof translations === "string") {
             translations = {"*": translations};
@@ -26,6 +30,9 @@ export class Translation extends BaseUIElement {
         let count = 0;
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {
+                continue
+            }
+            if(translationsKey === "_context"){
                 continue
             }
             count++;
