@@ -232,10 +232,6 @@
                 "then": "./assets/themes/openwindpowermap/logo.svg"
               },
               {
-                "if": "theme=parking-lanes",
-                "then": "./assets/svg/bug.svg"
-              },
-              {
                 "if": "theme=parkings",
                 "then": "./assets/themes/parkings/parkings.svg"
               },
@@ -294,6 +290,10 @@
               {
                 "if": "theme=toilets",
                 "then": "./assets/themes/toilets/toilets.svg"
+              },
+              {
+                "if": "theme=transit",
+                "then": "./assets/layers/transit_stops/bus_stop.svg"
               },
               {
                 "if": "theme=trees",

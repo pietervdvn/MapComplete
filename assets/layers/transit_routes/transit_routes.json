@@ -1,0 +1,141 @@
+{
+  "id": "transit_routes",
+  "name": {
+    "en": "Bus lines"
+  },
+  "description": {
+    "en": "Layer showing bus lines"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "type=route",
+        "route=bus"
+      ]
+    }
+  },
+  "minzoom": 15,
+  "title": {
+    "render": {
+      "en": "Bus line"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}"
+        }
+      }
+    ]
+  },
+  "mapRendering": [
+    {
+      "color": {
+        "render": {
+          "en": "#ff0000"
+        },
+        "mappings": [
+          {
+            "if": "colour~*",
+            "then": "{colour}"
+          }
+        ]
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "name",
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": "Bus XX: From => Via => To"
+      },
+      "render": "{name}",
+      "question": {
+        "en": "What is the name for this bus line? (i.e. Bus XX: From => Via => To)"
+      }
+    },
+    {
+      "id": "from",
+      "freeform": {
+        "key": "from",
+        "type": "string",
+        "placeholder": "City, Stop Name"
+      },
+      "render": {
+        "en": "This bus line begins at {from}"
+      },
+      "question": {
+        "en": "What is the starting point for this bus line?"
+      }
+    },
+    {
+      "id": "via",
+      "freeform": {
+        "key": "via",
+        "type": "string",
+        "placeholder": "City, Stop Name"
+      },
+      "render": {
+        "en": "This bus line goes via {via}"
+      },
+      "question": {
+        "en": "What is the via point for this bus line?"
+      }
+    },
+    {
+      "id": "to",
+      "freeform": {
+        "key": "to",
+        "type": "string",
+        "placeholder": "City, Stop Name"
+      },
+      "render": {
+        "en": "This bus line ends at {to}"
+      },
+      "question": {
+        "en": "What is the ending point for this bus line?"
+      }
+    },
+    {
+      "id": "colour",
+      "freeform": {
+        "key": "colour",
+        "type": "color"
+      },
+      "render": {
+        "en": "This bus line has the color {colour}"
+      },
+      "question": {
+        "en": "What is the colour for this bus line?"
+      }
+    },
+    {
+      "id": "network",
+      "freeform": {
+        "key": "network",
+        "type": "string"
+      },
+      "render": {
+        "en": "This bus line is part of the {network} network"
+      },
+      "question": {
+        "en": "What network does this bus line belong to?"
+      }
+    },
+    {
+      "id": "operator",
+      "freeform": {
+        "key": "operator",
+        "type": "string"
+      },
+      "render": {
+        "en": "This bus line is operated by {operator}"
+      },
+      "question": {
+        "en": "What company operates this bus line?"
+      }
+    }
+  ]
+}

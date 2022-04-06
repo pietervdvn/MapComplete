@@ -1312,6 +1312,10 @@
         "description": "A map of public toilets",
         "title": "Open Toilet Map"
     },
+    "transit": {
+        "description": "Transit",
+        "title": "Transit"
+    },
     "trees": {
         "description": "Map all the trees!",
         "shortDescription": "Map all the trees",

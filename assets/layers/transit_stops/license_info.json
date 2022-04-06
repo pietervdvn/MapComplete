@@ -1,0 +1,15 @@
+[
+  {
+    "path": "bus_stop.svg",
+    "license": "CC0",
+    "authors": [
+      "Andy Allan",
+      "Michael Glanznig",
+      "Paul Norman",
+      "Paul Dicker"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/highway/bus_stop.svg"
+    ]
+  }
+]

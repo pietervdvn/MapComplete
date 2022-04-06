@@ -1,0 +1,260 @@
+{
+  "id": "transit_stops",
+  "name": {
+    "en": "Transit Stops"
+  },
+  "description": {
+    "en": "Layer showing different types of transit stops."
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "highway=bus_stop"
+      ]
+    }
+  },
+  "minzoom": 15,
+  "title": {
+    "render": {
+      "en": "Transit Stop"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Stop {name}"
+        }
+      }
+    ]
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/transit_stops/bus_stop.svg",
+        "mappings": []
+      },
+      "label": "<div style=\"background: white; display: block\">{name}</div>"
+    }
+  ],
+  "calculatedTags": [
+    "_routes=feat.memberships()",
+    "_contained_routes_properties=feat.memberships().map(p => {return {id: p.relation.id, name: p.relation.properties.name} }).filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===i)",
+    "_contained_route_ids=JSON.parse(feat.properties._contained_routes_properties ?? '[]').map(p => p.id)",
+    "_contained_routes=JSON.parse(feat.properties._contained_routes_properties ?? '[]').map(p => `<li><a href='#relation/${p.id}'>${p.name ?? 'bus route'}</a></li>`).join('')",
+    "_contained_routes_count=JSON.parse(feat.properties._contained_routes_properties ?? '[]').length"
+  ],
+  "tagRenderings": [
+    {
+      "id": "stop_name",
+      "render": {
+        "en": "This stop is called <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "addExtraTags": [
+          "noname="
+        ],
+        "placeholder": {
+          "en": "Name of the stop"
+        }
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This stop has no name"
+          }
+        }
+      ],
+      "question": {
+        "en": "What is the name of this stop?"
+      },
+      "placeholder": "Name of the stop"
+    },
+    "images",
+    {
+      "id": "shelter",
+      "mappings": [
+        {
+          "if": "shelter=yes",
+          "then": {
+            "en": "This stop has a shelter"
+          }
+        },
+        {
+          "if": "shelter=no",
+          "then": {
+            "en": "This stop does not have a shelter"
+          }
+        },
+        {
+          "if": "shelter=separate",
+          "then": {
+            "en": "This stop has a shelter, that's separately mapped"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "Does this stop have a shelter?"
+      }
+    },
+    {
+      "id": "bench",
+      "mappings": [
+        {
+          "if": "bench=yes",
+          "then": {
+            "en": "This stop has a bench"
+          }
+        },
+        {
+          "if": "bench=no",
+          "then": {
+            "en": "This stop does not have a bench"
+          }
+        },
+        {
+          "if": "bench=separate",
+          "then": {
+            "en": "This stop has a bench, that's separately mapped"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "Does this stop have a bench?"
+      }
+    },
+    {
+      "id": "bin",
+      "mappings": [
+        {
+          "if": "bin=yes",
+          "then": {
+            "en": "This stop has a bin"
+          }
+        },
+        {
+          "if": "bin=no",
+          "then": {
+            "en": "This stop does not have a bin"
+          }
+        },
+        {
+          "if": "bin=separate",
+          "then": {
+            "en": "This stop has a bin, that's separately mapped"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "Does this stop have a bin?"
+      }
+    },
+    "wheelchair-access",
+    {
+      "id": "tactile_paving",
+      "mappings": [
+        {
+          "if": "tactile_paving=yes",
+          "then": {
+            "en": "This stop has tactile paving"
+          }
+        },
+        {
+          "if": "tactile_paving=no",
+          "then": {
+            "en": "This stop does not have tactile paving"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this stop have tactile paving?"
+      }
+    },
+    {
+      "id": "lit",
+      "mappings": [
+        {
+          "if": "lit=yes",
+          "then": {
+            "en": "This stop is lit"
+          }
+        },
+        {
+          "if": "lit=no",
+          "then": {
+            "en": "This stop is not lit"
+          }
+        }
+      ],
+      "question": {
+        "en": "Is this stop lit?"
+      }
+    },
+    {
+      "id": "departures_board",
+      "mappings": [
+        {
+          "if": "departures_board=yes",
+          "then": {
+            "en": "This stop has a departures board of unknown type"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "departures_board=realtime",
+          "then": {
+            "en": "This stop has a board showing realtime departure information"
+          }
+        },
+        {
+          "if": "passenger_information_display=yes",
+          "then": {
+            "en": "This stop has a board showing realtime departure information"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "departures_board=timetable",
+          "then": {
+            "en": "This stop has a timetable showing regular departures"
+          }
+        },
+        {
+          "if": "departures_board=interval",
+          "then": {
+            "en": "This stop has a timetable containing just the interval between departures"
+          }
+        },
+        {
+          "if": "departures_board=no",
+          "then": {
+            "en": "This stop does not have a departures board"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "en": "<h3>{_contained_routes_count} routes stop at this stop</h3> <ul>{_contained_routes}</ul>"
+      },
+      "condition": "_contained_routes~*",
+      "id": "contained_routes"
+    }
+  ],
+  "filter": [],
+  "allowMove": false
+}
