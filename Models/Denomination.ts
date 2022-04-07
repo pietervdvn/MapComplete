@@ -82,7 +82,7 @@ export class Denomination {
      * // Should be trimmed if canonical is empty
      * const unit = new Denomination({
      *               canonicalDenomination: "",
-     *               alternativeDenomination: ["meter","m],
+     *               alternativeDenomination: ["meter","m"],
      *               'default': true,
      *               human: {
      *                   en: "meter"
