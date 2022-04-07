@@ -32,8 +32,8 @@
       {
         "if": "recycling_type=centre",
         "then": {
-          "en": "Recycling container",
-          "nl": "Recyclingcontainer"
+          "en": "Recycling centre",
+          "nl": "Recyclingcentrum"
         }
       },
       {

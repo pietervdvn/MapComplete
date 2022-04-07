@@ -4433,7 +4433,7 @@
                     "then": "Recyclingcentrum"
                 },
                 "1": {
-                    "then": "Recyclingcontainer"
+                    "then": "Recyclingcentrum"
                 },
                 "2": {
                     "then": "Recyclingcontainer"
