@@ -4398,6 +4398,9 @@
                         "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "19": {
+                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                    },
+                    "20": {
                         "then": "Restafval kan hier gerecycled worden"
                     }
                 },

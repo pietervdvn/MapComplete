@@ -4353,6 +4353,9 @@
                         "then": "Small electrical appliances can be recycled here"
                     },
                     "19": {
+                        "then": "Needles can be recycled here"
+                    },
+                    "20": {
                         "then": "Residual waste can be recycled here"
                     }
                 },

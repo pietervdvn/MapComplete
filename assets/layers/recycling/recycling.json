@@ -774,6 +774,14 @@
           }
         },
         {
+          "if": "recycling:needles=yes",
+          "ifnot": "recycling:needles=",
+          "then": {
+            "en": "Needles can be recycled here",
+            "nl": "Injectienaalden kunnen hier gerecycled worden"
+          }
+        },
+        {
           "if": "recycling:waste=yes",
           "ifnot": "recycling:waste=",
           "then": {
