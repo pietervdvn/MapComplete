@@ -93,7 +93,7 @@
           },
           "then": {
             "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
-            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" ",
+            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelfs met vermelding van \"ODBL\"",
             "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL",
             "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz",
             "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL"

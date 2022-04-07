@@ -25,14 +25,14 @@
       ],
       "title": {
         "en": "a pub",
-        "nl": "een bruin cafe of kroeg",
+        "nl": "een bruin café of kroeg",
         "de": "eine kneipe",
         "ru": "паб",
         "hu": "kocsma"
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
-        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -63,7 +63,7 @@
       ],
       "title": {
         "en": "a cafe",
-        "nl": "een cafe",
+        "nl": "een café",
         "de": "eine café",
         "ru": "кафе",
         "hu": "kávézó"
@@ -132,7 +132,7 @@
           "if": "amenity=pub",
           "then": {
             "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
-            "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+            "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk"
           }
         },
         {

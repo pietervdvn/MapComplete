@@ -156,7 +156,7 @@
             },
             "1": {
                 "description": "Fietshekjes, voor het afremmen van fietsers",
-                "title": "een fietshekjes"
+                "title": "een fietsbarrière"
             }
         },
         "tagRenderings": {
@@ -452,7 +452,7 @@
                 "rewrite": {
                     "into": {
                         "0": {
-                            "1": "Stadsfietsen"
+                            "1": "stadsfietsen"
                         },
                         "1": {
                             "1": "elektrische fietsen"
@@ -511,7 +511,7 @@
                         "then": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus"
                     },
                     "2": {
-                        "then": "Dit is een fietsenmaker of fietswinkel die ook fietsen veruurt"
+                        "then": "Dit is een fietsenmaker of fietswinkel die ook fietsen verhuurt"
                     },
                     "3": {
                         "then": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt"
@@ -1219,7 +1219,7 @@
                         "then": "Beheer door Natuurpunt"
                     },
                     "1": {
-                        "then": "Beheer door het Agentschap Natuur en Bos "
+                        "then": "Beheer door het Agentschap Natuur en Bos"
                     }
                 },
                 "question": "Wie beheert deze vogelkijkplaats?",
@@ -1262,8 +1262,8 @@
         "name": "Cafés",
         "presets": {
             "0": {
-                "description": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk ",
-                "title": "een bruin cafe of kroeg"
+                "description": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
+                "title": "een bruin café of kroeg"
             },
             "1": {
                 "description": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
@@ -1271,14 +1271,14 @@
             },
             "2": {
                 "description": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
-                "title": "een cafe"
+                "title": "een café"
             }
         },
         "tagRenderings": {
             "Classification": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk "
+                        "then": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk"
                     },
                     "1": {
                         "then": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
@@ -1391,7 +1391,7 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "een oplaadpunt voor elektrische fietsen"
+                "title": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (speciaal bedoeld voor fietsen)"
             },
             "1": {
                 "title": "een oplaadstation voor elektrische auto's"
@@ -1627,7 +1627,7 @@
                         "then": "Een <b>sleutel</b> is nodig om dit oplaadpunt te gebruiken<br/><span class='subtle'>Bv. voor klanten van een hotel of een bar, die de sleutel aan de receptie kunnen krijgen</span>"
                     },
                     "4": {
-                        "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+                        "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span>"
                     }
                 },
                 "question": "Wie mag er dit oplaadpunt gebruiken?",
@@ -2949,7 +2949,7 @@
         "name": "Drinkbaar water",
         "presets": {
             "0": {
-                "title": "een drinkbaar water"
+                "title": "drinkbaar water"
             }
         },
         "tagRenderings": {
@@ -3099,7 +3099,7 @@
                         "then": "De oorsprong van deze naam is onbekend in de literatuur"
                     }
                 },
-                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
+                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
                 "render": "Vernoemd naar {name:etymology}"
             },
             "street-name-sign-image": {
@@ -3150,7 +3150,7 @@
         "presets": {
             "0": {
                 "description": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
-                "title": "Brandweerstation"
+                "title": "een brandweerstation"
             }
         },
         "tagRenderings": {
@@ -3463,7 +3463,7 @@
         },
         "tagRenderings": {
             "ghost-bike-explanation": {
-                "render": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval."
+                "render": "Een <b>Witte Fiets</b> (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval."
             },
             "ghost_bike-inscription": {
                 "question": "Wat is het opschrift op deze witte fiets?",
@@ -3522,7 +3522,7 @@
         "presets": {
             "0": {
                 "description": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
-                "title": "Brandkraan"
+                "title": "een brandkraan"
             }
         },
         "tagRenderings": {
@@ -3606,7 +3606,7 @@
             "map-attribution": {
                 "mappings": {
                     "0": {
-                        "then": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" "
+                        "then": "De OpenStreetMap-attributie is duidelijk aangegeven, zelfs met vermelding van \"ODBL\""
                     },
                     "1": {
                         "then": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt"
@@ -3740,7 +3740,7 @@
                         "then": "Dit gebied wordt beheerd door {operator}"
                     },
                     "2": {
-                        "then": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                        "then": "Dit gebied wordt beheerd door het <i>Agentschap Natuur en Bos</i>"
                     }
                 },
                 "question": "Wie beheert dit gebied?",
@@ -3962,7 +3962,7 @@
         "name": "Picknicktafels",
         "presets": {
             "0": {
-                "title": "een picnic-tafel"
+                "title": "een picknicktafel"
             }
         },
         "tagRenderings": {
@@ -4311,7 +4311,7 @@
                 "title": "een recycling container"
             },
             "1": {
-                "title": "een recycling centre"
+                "title": "een containerpark (recycling center)"
             }
         },
         "tagRenderings": {
@@ -4860,10 +4860,10 @@
         "name": "Bewakingscamera's",
         "presets": {
             "0": {
-                "title": "bewakingscamera"
+                "title": "een bewakingscamera"
             },
             "1": {
-                "title": "bewakingscamera gemonteerd op een muur"
+                "title": "een bewakingscamera gemonteerd op een muur"
             }
         },
         "tagRenderings": {
@@ -4940,7 +4940,7 @@
                     }
                 },
                 "question": "Hoe is deze camera geplaatst?",
-                "render": "Montage: {camera:mount}"
+                "render": "Ophanging: {camera:mount}"
             },
             "camera_direction": {
                 "mappings": {
@@ -5278,10 +5278,10 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen"
+                        "then": "Erkend als houtig erfgoed door <i>Onroerend Erfgoed Vlaanderen</i>"
                     },
                     "1": {
-                        "then": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel"
+                        "then": "Erkend als natuurlijk erfgoed door <i>Directie Cultureel Erfgoed Brussel</i>"
                     },
                     "2": {
                         "then": "Erkend als erfgoed door een andere organisatie"
@@ -5336,7 +5336,7 @@
         "name": "Uitzicht",
         "presets": {
             "0": {
-                "title": "een uitzicht"
+                "title": "een uitzichtpunt"
             }
         },
         "tagRenderings": {
@@ -5495,7 +5495,7 @@
         "presets": {
             "0": {
                 "description": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval",
-                "title": "Afvalcontainer"
+                "title": "Een afvalcontainer"
             }
         },
         "tagRenderings": {

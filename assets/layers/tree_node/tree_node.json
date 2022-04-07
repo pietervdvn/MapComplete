@@ -377,7 +377,7 @@
             ]
           },
           "then": {
-            "nl": "Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
+            "nl": "Erkend als houtig erfgoed door <i>Onroerend Erfgoed Vlaanderen</i>",
             "en": "Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
             "it": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
             "fr": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
@@ -396,7 +396,7 @@
             ]
           },
           "then": {
-            "nl": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel",
+            "nl": "Erkend als natuurlijk erfgoed door <i>Directie Cultureel Erfgoed Brussel</i>",
             "en": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels",
             "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
             "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",

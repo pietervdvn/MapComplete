@@ -94,7 +94,7 @@
       "id": "simple etymology",
       "question": {
         "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
-        "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
+        "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
         "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>"
       },
       "render": {

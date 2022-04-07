@@ -182,7 +182,7 @@
           "if": "access=private",
           "then": {
             "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
-            "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
+            "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span>"
           }
         }
       ]
@@ -4001,7 +4001,7 @@
       ],
       "title": {
         "en": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
-        "nl": "een oplaadpunt voor elektrische fietsen"
+        "nl": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (speciaal bedoeld voor fietsen)"
       },
       "preciseInput": {
         "preferredBackground": "map"

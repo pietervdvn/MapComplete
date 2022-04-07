@@ -203,7 +203,7 @@
           "if": "operator=Agentschap Natuur en Bos",
           "then": {
             "en": "Operated by the Agency for Nature and Forests",
-            "nl": "Beheer door het Agentschap Natuur en Bos "
+            "nl": "Beheer door het Agentschap Natuur en Bos"
           }
         }
       ],
