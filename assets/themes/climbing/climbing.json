@@ -1049,30 +1049,31 @@
         ]
       },
       {
-            "mappings": [
-              {
-                "if": "climbing:grade:french~3.*",
-                "then": "<div class='rounded-full px-1' style='background-color:#ebf224'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~4.*",
-                "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#7af224'> {climbing:grade:french}</div>"
-              },{
-                "if": "climbing:grade:french~5.*",
-                "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#f24a24'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~6.*",
-                "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#244af2'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~7.*",
-                "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#e904ed'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~*",
-                "then": "<div class='text-white rounded-full px-2' style='background-colour:black'> {climbing:grade:french}</div>"
-              }
+        "mappings": [
+          {
+            "if": "climbing:grade:french~3.*",
+            "then": "<div class='rounded-full px-1' style='background-color:#ebf224'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~4.*",
+            "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#7af224'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~5.*",
+            "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#f24a24'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~6.*",
+            "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#244af2'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~7.*",
+            "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#e904ed'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~*",
+            "then": "<div class='text-white rounded-full px-2' style='background-colour:black'> {climbing:grade:french}</div>"
+          }
         ]
       }
     ],
