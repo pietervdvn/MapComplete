@@ -48,6 +48,9 @@
             "disableFilters": "關閉所有篩選器",
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
             "hasBeenImported": "這個點已經被匯入了",
+            "import": {
+                "hasBeenImported": "此物件已匯入"
+            },
             "intro": "您點擊處目前未有已知的資料。<br>",
             "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的節點",
             "openLayerControl": "開啟圖層控制框",
@@ -57,10 +60,7 @@
             "title": "新增新的節點？",
             "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
             "zoomInFurther": "放大來新增新的節點。",
-            "zoomInMore": "再放大來匯入這一圖徵",
-            "import": {
-                "hasBeenImported": "此物件已匯入"
-            }
+            "zoomInMore": "再放大來匯入這一圖徵"
         },
         "attribution": {
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
@@ -75,18 +75,19 @@
         },
         "backgroundMap": "背景地圖",
         "cancel": "取消",
+        "confirm": "確認",
         "customThemeIntro": "<h3>客製化主題</h3>觀看這些先前使用者創造的主題。",
         "download": {
             "downloadAsPdf": "下載目前地圖的 PDF 檔",
             "downloadAsPdfHelper": "列印當前地圖相當理想",
+            "downloadAsSvg": "下載當前地圖的 SVG",
             "downloadCSV": "下載可視資料為 CSV",
             "downloadCSVHelper": "與 LibreOffice Calc、Excel 等相容",
             "downloadGeoJsonHelper": "與 QGIS、ArcGIS、ESRI 等相容",
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
-            "title": "下載可視的資料",
-            "downloadAsSvg": "下載當前地圖的 SVG"
+            "title": "下載可視的資料"
         },
         "fewChangesBefore": "請先回答有關既有節點的問題再來新增新節點。",
         "general": {
@@ -317,8 +318,7 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！",
-        "confirm": "確認"
+        "welcomeBack": "你已經登入了，歡迎回來！"
     },
     "image": {
         "addPicture": "新增圖片",

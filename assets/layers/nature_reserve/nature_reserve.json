@@ -181,7 +181,7 @@
           },
           "then": {
             "en": "Operated by <i>Agentschap Natuur en Bos</i>",
-            "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+            "nl": "Dit gebied wordt beheerd door het <i>Agentschap Natuur en Bos</i>"
           },
           "icon": "./assets/layers/nature_reserve/ANB.jpg"
         }
