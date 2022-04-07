@@ -12,6 +12,7 @@ import Title from "../../UI/Base/Title";
 import Link from "../../UI/Base/Link";
 import List from "../../UI/Base/List";
 import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -533,12 +534,21 @@ export default class TagRenderingConfig {
                 )
             )
         }
+        
+        let condition : BaseUIElement = undefined
+        if(this.condition !== undefined && !this.condition?.matchesProperties({})){
+            condition = new Combine(["Only visible if",
+                new FixedUiElement( this.condition.asHumanString(false, false, {})
+                ).SetClass("code")
+                 , "is shown"])
+        }
 
         return new Combine([
             new Title(this.id, 3),
             this.question !== undefined ? "The question is **" + this.question.txt + "**" : "_This tagrendering has no question and is thus read-only_",
             new Combine(withRender),
-            mappings
+            mappings,
+            condition
         ]).SetClass("flex-col");
     }
 }
