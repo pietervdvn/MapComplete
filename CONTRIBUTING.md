@@ -53,3 +53,10 @@ To do this:
 
 Alternatively, if you don't have any unmerged changes, you can remove your local copy and clone `pietervdvn/MapComplete`
 again to start fresh.
+
+What not to contribute
+----------------------
+
+I'm currently _not_ accepting files for integration with some editor. There are hundreds of editors out there, if every single one of them needs a file in the repo, this ends up as a mess.
+Furthermore, MapComplete doesn't want to encourage or discourage some editors.
+At last, these files are hard to maintain and are hard to detect if they have fallen out of use.
