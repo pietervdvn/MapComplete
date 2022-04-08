@@ -542,13 +542,28 @@ export default class TagRenderingConfig {
                 ).SetClass("code")
                  , "is shown"])
         }
-
+        
+        let group : BaseUIElement = undefined
+        if(this.group !== undefined && this.group !== ""){
+            group = new Combine([
+                "This tagrendering is part of group ", new FixedUiElement(this.group).SetClass("code")
+            ])
+        }
+        let labels : BaseUIElement = undefined
+        if(this.labels?.length > 0){
+            labels = new Combine([
+                "This tagrendering has labels ",
+                ...this.labels.map(label => new FixedUiElement(label).SetClass("code"))
+            ])
+        }
         return new Combine([
             new Title(this.id, 3),
             this.question !== undefined ? "The question is **" + this.question.txt + "**" : "_This tagrendering has no question and is thus read-only_",
             new Combine(withRender),
             mappings,
-            condition
+            condition,
+            group,
+            labels
         ]).SetClass("flex-col");
     }
 }
