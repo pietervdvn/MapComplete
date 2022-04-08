@@ -970,7 +970,19 @@
         "title": "Speelplekken"
     },
     "postboxes": {
-        "title": "Brievenbussen en postkantoren"
+        "title": "Brievenbussen en postkantoren",
+        "layers": {
+            "1": {
+                "title": {
+                    "render": "Postkantoor"
+                }
+            },
+            "0": {
+                "title": {
+                    "render": "Brievenbus"
+                }
+            }
+        }
     },
     "shops": {
         "title": "Winkels"
