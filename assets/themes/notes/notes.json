@@ -12,7 +12,8 @@
   "version": "0.1",
   "description": {
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
-    "hu": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>."
+    "hu": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>.",
+    "nl": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ..."
   },
   "icon": "./assets/themes/notes/logo.svg",
   "clustering": false,

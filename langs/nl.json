@@ -343,6 +343,17 @@
     "multi_apply": {
         "autoApply": "Wijzigingen aan eigenschappen {attr_names} zullen ook worden uitgevoerd op {count} andere objecten."
     },
+    "notes": {
+        "addCommentAndClose": "Voeg een commentaar toe en sluit de nota",
+        "addCommentPlaceholder": "Voeg een commentaar toe...",
+        "anonymous": "Anonieme bijdrager",
+        "closeNote": "Sluit deze nota",
+        "createNote": "Maak een nieuwe kaartnota",
+        "createNoteIntro": "Ontbreekt hier iets? Is hier iets mis met de kaart? Maak hier dan een kaartnota, deze zal door vrijwilligers verwerkt worden.",
+        "createNoteTitle": "Voeg hier een nieuwe kaartnota toe",
+        "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
+        "typeText": "Typ eerst een commentaar om deze toe te voegen"
+    },
     "privacy": {
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
         "editingTitle": "Wanneer je wijzigingen maakt",
@@ -500,16 +511,5 @@
             "description": "een link naar een webpagina",
             "feedback": "Dit is geen geldige link"
         }
-    },
-    "notes": {
-        "typeText": "Typ eerst een commentaar om deze toe te voegen",
-        "closeNote": "Sluit deze nota",
-        "createNoteTitle": "Voeg hier een nieuwe kaartnota toe",
-        "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
-        "addCommentAndClose": "Voeg een commentaar toe en sluit de nota",
-        "addCommentPlaceholder": "Voeg een commentaar toe...",
-        "anonymous": "Anonieme bijdrager",
-        "createNote": "Maak een nieuwe kaartnota",
-        "createNoteIntro": "Ontbreekt hier iets? Is hier iets mis met de kaart? Maak hier dan een kaartnota, deze zal door vrijwilligers verwerkt worden."
     }
 }
