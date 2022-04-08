@@ -809,6 +809,31 @@
                         "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
                 }
+            },
+            "5": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden"
+                                }
+                            }
+                        },
+                        "3": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
+                                }
+                            },
+                            "render": {
+                                "special": {
+                                    "text": "Voeg dit adres als een nieuw adrespunt toe"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "shortDescription": "Grb import helper tool",

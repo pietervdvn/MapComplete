@@ -375,12 +375,14 @@
           {
             "id": "render_embedded",
             "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>",
-            "mappings": [{
-              "if": "_embedding_id=",
-              "then": {
-                "nl": "Geen omliggend OSM-gebouw gevonden"
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden"
+                }
               }
-            }]
+            ]
           },
           {
             "id": "embedded_address",
@@ -435,10 +437,10 @@
               }
             ],
             "condition": {
-                  "or": [
-                    "_embedding_street!:={STRAATNM}",
-                    "_embedding_nr!:={_HNRLABEL}"
-                  ]
+              "or": [
+                "_embedding_street!:={STRAATNM}",
+                "_embedding_nr!:={_HNRLABEL}"
+              ]
             }
           }
         ]
