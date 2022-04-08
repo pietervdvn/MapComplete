@@ -383,7 +383,7 @@
             "render": "{histogram(_embedded_cs:themes, Themename, Number of changesets)}"
           },
           {
-            "id": "hist_themes",
+            "id": "hist_users",
             "render": "{histogram(_embedded_cs:users, Contributor, Number of changesets)}"
           }
         ],
