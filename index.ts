@@ -36,7 +36,7 @@ class Init {
         // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
-        new DefaultGUI(State.state, guiState)
+        new DefaultGUI(State.state, guiState).setup()
     }
 }
 

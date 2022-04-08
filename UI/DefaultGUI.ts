@@ -33,27 +33,30 @@ import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
  * Adds a welcome pane, contorl buttons, ... etc to index.html
  */
 export default class DefaultGUI {
-    private readonly _guiState: DefaultGuiState;
+    private readonly guiState: DefaultGuiState;
     private readonly state: FeaturePipelineState;
 
 
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         this.state = state;
-        this._guiState = guiState;
+        this.guiState = guiState;
 
-        if (state.layoutToUse.customCss !== undefined) {
-            Utils.LoadCustomCss(state.layoutToUse.customCss);
+        }
+
+    public setup(){
+        if (this.state.layoutToUse.customCss !== undefined) {
+            Utils.LoadCustomCss(this.state.layoutToUse.customCss);
         }
 
         this.SetupUIElements();
         this.SetupMap()
 
 
-        if (state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0) {
-            Utils.LoadCustomCss(state.layoutToUse.customCss)
+        if (this.state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0) {
+            Utils.LoadCustomCss(this.state.layoutToUse.customCss)
         }
     }
-
+    
     public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
 
         const hasPresets = state.layoutToUse.layers.some(layer => layer.presets.length > 0);
@@ -125,7 +128,7 @@ export default class DefaultGUI {
 
     private SetupMap() {
         const state = this.state;
-        const guiState = this._guiState;
+        const guiState = this.guiState;
 
         // Attach the map
         state.mainMapObject.SetClass("w-full h-full")
@@ -155,7 +158,7 @@ export default class DefaultGUI {
 
     private SetupUIElements() {
         const state = this.state;
-        const guiState = this._guiState;
+        const guiState = this.guiState;
 
         const self = this
         new Combine([
@@ -210,8 +213,8 @@ export default class DefaultGUI {
     }
 
     private InitWelcomeMessage(): BaseUIElement {
-        const isOpened = this._guiState.welcomeMessageIsOpened
-        const fullOptions = new FullWelcomePaneWithTabs(isOpened, this._guiState.welcomeMessageOpenedTab, this.state);
+        const isOpened = this.guiState.welcomeMessageIsOpened
+        const fullOptions = new FullWelcomePaneWithTabs(isOpened, this.guiState.welcomeMessageOpenedTab, this.state);
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
