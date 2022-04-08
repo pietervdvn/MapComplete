@@ -365,7 +365,7 @@
         "anonymous": "Anonymous user",
         "closeNote": "Close note",
         "createNote": "Create a new note",
-        "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers",
+        "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers.",
         "createNoteTitle": "Create a new note here",
         "disableAllNoteFilters": "Disable all filters",
         "isClosed": "This note is resolved",

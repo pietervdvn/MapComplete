@@ -500,5 +500,16 @@
             "description": "een link naar een webpagina",
             "feedback": "Dit is geen geldige link"
         }
+    },
+    "notes": {
+        "typeText": "Typ eerst een commentaar om deze toe te voegen",
+        "closeNote": "Sluit deze nota",
+        "createNoteTitle": "Voeg hier een nieuwe kaartnota toe",
+        "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
+        "addCommentAndClose": "Voeg een commentaar toe en sluit de nota",
+        "addCommentPlaceholder": "Voeg een commentaar toe...",
+        "anonymous": "Anonieme bijdrager",
+        "createNote": "Maak een nieuwe kaartnota",
+        "createNoteIntro": "Ontbreekt hier iets? Is hier iets mis met de kaart? Maak hier dan een kaartnota, deze zal door vrijwilligers verwerkt worden."
     }
 }

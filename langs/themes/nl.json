@@ -879,7 +879,8 @@
         "title": "De Natuur in"
     },
     "notes": {
-        "title": "Kaartnotas op OpenStreetMap"
+        "title": "Kaartnotas op OpenStreetMap",
+        "description": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ..."
     },
     "observation_towers": {
         "description": "Publieke uitkijktorens om van het panorama te genieten",
