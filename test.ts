@@ -13,8 +13,7 @@ new Combine(
             try {
                 inp = ValidatedTextField.ForType(key).ConstructInputElement({
                     feedback,
-                    country: () => "be",
-                    
+                    country: () => "be"
                 });
             } catch (e) {
                 console.error(e)
@@ -30,4 +29,3 @@ new Combine(
         }
     )
 ).AttachTo("maindiv")
-

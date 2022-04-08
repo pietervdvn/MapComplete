@@ -19,4 +19,4 @@ if (layout !== "") {
 
 Utils.DisableLongPresses()
 document.getElementById("decoration-desktop").remove();
-new AllThemesGui();
+new AllThemesGui().setup();

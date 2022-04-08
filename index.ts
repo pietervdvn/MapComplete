@@ -26,7 +26,7 @@ class Init {
 
         if (layoutToUse === undefined) {
             // No layout found
-            new AllThemesGui()
+            new AllThemesGui().setup()
             return;
         }
 
@@ -37,8 +37,6 @@ class Init {
         // @ts-ignore
         window.mapcomplete_state = State.state;
         new DefaultGUI(State.state, guiState)
-
-
     }
 }
 

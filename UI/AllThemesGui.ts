@@ -14,7 +14,7 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Svg from "../Svg";
 
 export default class AllThemesGui {
-    constructor() {
+    setup() {
         try {
 
             new FixedUiElement("").AttachTo("centermessage")
