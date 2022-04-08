@@ -18,6 +18,7 @@
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
     + [level](#level)
+    + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
     + [wheelchair-access](#wheelchair-access)
     + [service:electricity](#serviceelectricity)
@@ -215,6 +216,17 @@
   - bike_repair_station
   - charging_station
   - toilet
+
+
+
+
+### bicycle_rental.*bicycle_rental 
+
+
+
+
+
+  - bike_shop
 
 
 

@@ -90,26 +90,6 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### minimap 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
 ### name 
 
 
@@ -180,16 +160,6 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### reviews 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
 ### Website 
 
 
@@ -198,6 +168,8 @@ The question is **Is there a (unofficial) website with more informations (e.g. t
 
 This rendering asks information about the property  [url](https://wiki.openstreetmap.org/wiki/Key:url) 
 This is rendered with `<a href='{url}' target='_blank'>{url}</a>`
+
+Only visible if `leisure!~^sports_centre$&sport=climbing` is shown
 
 
 
@@ -218,6 +190,8 @@ _This tagrendering has no question and is thus read-only_
   - **Not accessible as stated by <a href='#{_embedding_feature:id}'>the containing feature</a>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access' target='_blank'>_embedding_feature:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dno' target='_blank'>no</a>
 
 
+Only visible if `_embedding_feature:access~^..*$` is shown
+
 
 
 ### Access 
@@ -236,6 +210,8 @@ The question is **Who can access here?**
   - **Only club members** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
   - **Not accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
 
+
+Only visible if `climbing!~^no$&sport=climbing|climbing:sport=yes&access~^..*$|` is shown
 
 
 
@@ -259,6 +235,8 @@ The question is **What is the (average) length of the routes in meters?**
 This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
 This is rendered with `The routes are <b>{canonical(climbing:length)}</b> long on average`
 
+Only visible if `climbing!~^route$&climbing:toprope!~^no$&sport=climbing|climbing:sport=yes|climbing=traditional|climbing=gym` is shown
+
 
 
 ### Difficulty-min 
@@ -270,6 +248,8 @@ The question is **What is the grade of the easiest route here, according to the 
 This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) 
 This is rendered with `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
 
+Only visible if `climbing!~^route$&climbing:sport=yes|sport=climbing` is shown
+
 
 
 ### Difficulty-max 
@@ -280,6 +260,8 @@ The question is **What is the highest grade route here, according to the french 
 
 This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) 
 This is rendered with `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
+
+Only visible if `climbing!~^route$&climbing:sport=yes|sport=climbing` is shown
 
 
 
@@ -299,6 +281,8 @@ The question is **Is bouldering possible here?**
   - **There are {climbing:boulder} boulder routes** corresponds with climbing:boulder~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `climbing:sport=yes|sport=climbing` is shown
+
 
 
 ### Toproping? 
@@ -315,6 +299,8 @@ The question is **Is toprope climbing possible here?**
   - **Toprope climbing is not possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>
   - **There are {climbing:toprope} toprope routes** corresponds with climbing:toprope~^..*$_This option cannot be chosen as answer_
 
+
+Only visible if `climbing:sport=yes|sport=climbing` is shown
 
 
 
@@ -333,6 +319,8 @@ The question is **Is sport climbing possible here on fixed anchors?**
   - **There are {climbing:sport} sport climbing routes** corresponds with climbing:sport~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `climbing:sport=yes|sport=climbing` is shown
+
 
 
 ### Traditional climbing? 
@@ -350,6 +338,8 @@ The question is **Is traditional climbing possible here (using own gear e.g. cho
   - **There are {climbing:traditional} traditional climbing routes** corresponds with climbing:traditional~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `climbing:sport=yes|sport=climbing` is shown
+
 
 
 ### Speed climbing? 
@@ -365,6 +355,48 @@ The question is **Is there a speed climbing wall?**
   - **There is a speed climbing wall** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>
   - **There is no speed climbing wall** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>
   - **There are {climbing:speed} speed climbing walls** corresponds with climbing:speed~^..*$_This option cannot be chosen as answer_
+
+
+Only visible if `leisure=sports_centre&climbing:sport=yes|sport=climbing` is shown
+
+
+
+### questions 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### reviews 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### questions 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### minimap 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
  
 
 This document is autogenerated from [assets/themes/climbing/climbing.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/climbing/climbing.json)

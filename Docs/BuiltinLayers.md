@@ -430,6 +430,8 @@ _This tagrendering has no question and is thus read-only_
 
 
 
+Only visible if `_opened_by_anonymous_user=false` is shown
+
 
 
 ### report-note 

@@ -158,6 +158,8 @@ The question is **Is this public bookcase freely accessible?**
   - **Only accessible to customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
 
 
+Only visible if `indoor=yes` is shown
+
 
 
 ### public_bookcase-operator 
@@ -201,6 +203,8 @@ This is rendered with `The reference number of this public bookcase within {bran
 
   - **This bookcase is not part of a bigger network** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
 
+
+Only visible if `brand~^..*$` is shown
 
 
 

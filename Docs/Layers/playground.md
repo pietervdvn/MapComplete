@@ -120,6 +120,8 @@ The question is **Is this playground lit at night?**
   - **This playground is not lit at night** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
 
 
+This tagrendering has labels  `extra`
+
 
 
 ### playground-min_age 
@@ -131,6 +133,8 @@ The question is **What is the minimum age required to access this playground?**
 This rendering asks information about the property  [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) 
 This is rendered with `Accessible to kids older than {min_age} years`
 
+This tagrendering has labels  `extra`
+
 
 
 ### playground-max_age 
@@ -141,6 +145,8 @@ The question is **What is the maximum age allowed to access this playground?**
 
 This rendering asks information about the property  [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) 
 This is rendered with `Accessible to kids of at most {max_age}`
+
+This tagrendering has labels  `extra`
 
 
 

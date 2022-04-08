@@ -106,6 +106,8 @@ The question is **How much does this place charge?**
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 This is rendered with `This place charges {charge}`
 
+Only visible if `fee=yes` is shown
+
 
 
 ### dumpstations-waterpoint 

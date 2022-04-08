@@ -121,6 +121,8 @@ The question is **How much does this place charge?**
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 This is rendered with `This place charges {charge}`
 
+Only visible if `fee=yes` is shown
+
 
 
 ### caravansites-sanitary-dump 
@@ -180,6 +182,8 @@ The question is **Do you have to pay for the internet access?**
   - **You need to pay extra for internet access** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
   - **You do not need to pay extra for internet access** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
 
+
+Only visible if `internet_access=yes` is shown
 
 
 

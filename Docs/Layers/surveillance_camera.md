@@ -158,6 +158,8 @@ The question is **Is the public space surveilled by this camera an indoor or out
   - **This camera is probably located outdoors** corresponds with _This option cannot be chosen as answer_
 
 
+Only visible if `surveillance:type=public` is shown
+
 
 
 ### Level 
@@ -168,6 +170,8 @@ The question is **On which level is this camera located?**
 
 This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
 This is rendered with `Located on level {level}`
+
+Only visible if `indoor=yes|surveillance:type=ye` is shown
 
 
 

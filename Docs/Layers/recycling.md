@@ -110,6 +110,8 @@ This is rendered with `This recycling centre is named <b>{name}</b>`
   - **This recycling centre doesn't have a specific name** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
 
+Only visible if `recycling_type=centre` is shown
+
 
 
 ### container-location 
@@ -126,6 +128,8 @@ The question is **Where is this container located?**
   - **This container is located indoors** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
   - **This container is located outdoors** corresponds with 
 
+
+Only visible if `recycling_type=container` is shown
 
 
 
@@ -158,6 +162,7 @@ The question is **What can be recycled here?**
   - **Shoes can be recycled here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:shoes' target='_blank'>recycling:shoes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:shoes%3Dyes' target='_blank'>yes</a>Unselecting this answer will add 
   - **Small electrical appliances can be recycled here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_appliances' target='_blank'>recycling:small_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_appliances%3Dyes' target='_blank'>yes</a>Unselecting this answer will add 
   - **Small electrical appliances can be recycled here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_electrical_appliances' target='_blank'>recycling:small_electrical_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_electrical_appliances%3Dyes' target='_blank'>yes</a>_This option cannot be chosen as answer_Unselecting this answer will add 
+  - **Needles can be recycled here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:needles' target='_blank'>recycling:needles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:needles%3Dyes' target='_blank'>yes</a>Unselecting this answer will add 
   - **Residual waste can be recycled here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:waste' target='_blank'>recycling:waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:waste%3Dyes' target='_blank'>yes</a>Unselecting this answer will add 
 
 
@@ -188,6 +193,8 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
   - **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `recycling_type=centre` is shown
+
 
 
 ### email 
@@ -204,6 +211,8 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
   - **<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>** corresponds with contact:email~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `recycling_type=centre` is shown
+
 
 
 ### phone 
@@ -219,6 +228,8 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
   - **<a href='tel:{contact:phone}'>{contact:phone}</a>** corresponds with contact:phone~^..*$_This option cannot be chosen as answer_
 
+
+Only visible if `recycling_type=centre` is shown
 
 
 

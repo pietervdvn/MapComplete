@@ -327,6 +327,8 @@ The question is **Does this fries shop have vegetarian snacks?**
   - **No vegetarian snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
 
 
+Only visible if `cuisine=friture` is shown
+
 
 
 ### friture-vegan 
@@ -344,6 +346,8 @@ The question is **Does this fries shop have vegan snacks?**
   - **No vegan snacks are available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
 
 
+Only visible if `cuisine=friture` is shown
+
 
 
 ### friture-oil 
@@ -359,6 +363,8 @@ The question is **Does this fries shop use vegetable or animal cooking?**
   - **Vegetable oil** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable' target='_blank'>vegetable</a>
   - **Animal oil** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal' target='_blank'>animal</a>
 
+
+Only visible if `cuisine=friture` is shown
 
 
 
@@ -376,6 +382,8 @@ The question is **If you bring your own container (such as a cooking pot and sma
   - **Bringing your own container is <b>not allowed</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dno' target='_blank'>no</a>
   - **You <b>must</b> bring your own container to order here.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly' target='_blank'>only</a>
 
+
+Only visible if `cuisine=friture` is shown
 
 
 

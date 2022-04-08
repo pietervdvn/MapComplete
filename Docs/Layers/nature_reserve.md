@@ -153,6 +153,8 @@ The question is **Are dogs allowed in this nature reserve?**
   - **Dogs are allowed to roam freely** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
 
 
+Only visible if `access=yes|access=permissive|access=guided` is shown
+
 
 
 ### website 

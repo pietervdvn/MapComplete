@@ -231,6 +231,11 @@
       "value": "yes"
     },
     {
+      "key": "recycling:needles",
+      "description": "Layer 'Recycling' shows recycling:needles=yes with a fixed text, namely 'Needles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
       "key": "recycling:waste",
       "description": "Layer 'Recycling' shows recycling:waste=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"

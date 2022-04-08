@@ -17,7 +17,7 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write
 
-{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}
+`{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}`
 
 ## Table of contents
 

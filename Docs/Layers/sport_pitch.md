@@ -193,6 +193,8 @@ This is rendered with `Openingsuren: {opening_hours_table()}`
   - **Always accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
+Only visible if `access~^..*$` is shown
+
 
 
 ### questions 

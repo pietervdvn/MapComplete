@@ -140,6 +140,8 @@ The question is **Is this a a regular automatic defibrillator or a manual defibr
   - **This is a special type of defibrillator: {defibrillator}** corresponds with defibrillator~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `access=no` is shown
+
 
 
 ### defibrillator-level 
@@ -156,6 +158,8 @@ This is rendered with `This defibrillator is on floor {level}`
   - **This defibrillator is on the <b>ground floor</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
   - **This defibrillator is on the <b>first floor</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
 
+
+Only visible if `indoor=yes` is shown
 
 
 
