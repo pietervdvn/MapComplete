@@ -308,7 +308,6 @@
       "id": "bike_shop-email"
     },
     "opening_hours",
-    "description",
     {
       "render": {
         "en": "Only accessible to {access}",
@@ -436,6 +435,7 @@
       ]
     },
     {
+      "#": "Remark: we steal the 'bicycle_rental' questions from the other layer. They'll get the condition of their source automatically!",
       "id": "bike_repair_rents-bikes",
       "question": {
         "en": "Does this shop rent out bikes?",
@@ -479,6 +479,7 @@
         }
       ]
     },
+    "bicycle_rental.*bicycle_rental",
     {
       "id": "bike_repair_second-hand-bikes",
       "question": {
@@ -669,7 +670,8 @@
         }
       ]
     },
-    "bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge"
+    "bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge",
+    "description"
   ],
   "presets": [
     {
