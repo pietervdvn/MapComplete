@@ -1069,6 +1069,11 @@
                 "question": "Wat is het email-adres van {name}?"
             },
             "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak focust op verhuur"
+                    }
+                },
                 "render": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten."
             },
             "bike_shop-name": {

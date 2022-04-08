@@ -1069,6 +1069,11 @@
                 "question": "What is the email address of {name}?"
             },
             "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze business focuses on rental"
+                    }
+                },
                 "render": "This shop is specialized in selling {shop} and does bicycle related activities"
             },
             "bike_shop-name": {
