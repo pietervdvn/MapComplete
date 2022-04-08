@@ -27,7 +27,9 @@ export default class LanguagePicker {
     }
     
     private static dropdownFor(languages: string[], label: string | BaseUIElement): BaseUIElement {
-       return new DropDown(label, languages.map(lang => {
+       return new DropDown(label, languages
+           .filter(lang => lang !== "_context")
+           .map(lang => {
                 return {value: lang, shown: LanguagePicker.hybrid(lang) }
             }
         ), Locale.language)
