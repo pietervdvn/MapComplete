@@ -975,12 +975,35 @@
             "1": {
                 "title": {
                     "render": "Postkantoor"
+                },
+                "name": "Postkantoren",
+                "presets": {
+                    "0": {
+                        "title": "een postkantoor"
+                    }
+                },
+                "description": "Een laag die postkantoren toont.",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Momenteel geopend"
+                            }
+                        }
+                    }
                 }
             },
             "0": {
                 "title": {
                     "render": "Brievenbus"
-                }
+                },
+                "description": "Deze laag toont brievenbussen.",
+                "presets": {
+                    "0": {
+                        "title": "een brievenbus"
+                    }
+                },
+                "name": "Brievenbussen"
             }
         }
     },
