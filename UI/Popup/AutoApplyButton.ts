@@ -156,22 +156,26 @@ class ApplyButton extends UIElement {
 export default class AutoApplyButton implements SpecialVisualization {
     public readonly docs: string;
     public readonly funcName: string = "auto_apply";
-    public readonly args: { name: string; defaultValue?: string; doc: string }[] = [
+    public readonly args: { name: string; defaultValue?: string; doc: string, required?: boolean }[] = [
         {
             name: "target_layer",
-            doc: "The layer that the target features will reside in"
+            doc: "The layer that the target features will reside in",
+            required: true
         },
         {
             name: "target_feature_ids",
-            doc: "The key, of which the value contains a list of ids"
+            doc: "The key, of which the value contains a list of ids",
+            required: true
         },
         {
             name: "tag_rendering_id",
-            doc: "The ID of the tagRendering containing the autoAction. This tagrendering will be calculated. The embedded actions will be executed"
+            doc: "The ID of the tagRendering containing the autoAction. This tagrendering will be calculated. The embedded actions will be executed",
+            required: true
         },
         {
             name: "text",
-            doc: "The text to show on the button"
+            doc: "The text to show on the button",
+            required: true
         },
         {
             name: "icon",

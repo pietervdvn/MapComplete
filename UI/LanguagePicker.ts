@@ -4,22 +4,33 @@ import BaseUIElement from "./BaseUIElement";
 import * as native from "../assets/language_native.json"
 import * as language_translations from "../assets/language_translations.json"
 import {Translation} from "./i18n/Translation";
+import * as used_languages from "../assets/generated/used_languages.json"
+import Lazy from "./Base/Lazy";
+import Toggle from "./Input/Toggle";
 
 export default class LanguagePicker {
 
 
     public static CreateLanguagePicker(
         languages: string[],
-        label: string | BaseUIElement = "") {
+        label: string | BaseUIElement = "") : BaseUIElement{
 
         if (languages === undefined || languages.length <= 1) {
             return undefined;
         }
         
-        return new DropDown(label, languages.map(lang => {
+        const allLanguages : string[] = used_languages.languages;
+        
+        const normalPicker = LanguagePicker.dropdownFor(languages, label);
+        const fullPicker = new Lazy(() => LanguagePicker.dropdownFor(allLanguages, label))
+        return new Toggle(fullPicker, normalPicker, Locale.showLinkToWeblate)
+    }
+    
+    private static dropdownFor(languages: string[], label: string | BaseUIElement): BaseUIElement {
+       return new DropDown(label, languages.map(lang => {
                 return {value: lang, shown: LanguagePicker.hybrid(lang) }
             }
-        ), Locale.language);
+        ), Locale.language)
     }
 
     private static hybrid(lang: string): Translation {

@@ -12,33 +12,9 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 
 
-## Table of contents
-
-1. [bike_repair_station](#bike_repair_station)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_repair_station-available-services](#bike_repair_station-available-services)
-    + [Operational status](#operational-status)
-    + [bike_repair_station-opening_hours](#bike_repair_station-opening_hours)
-    + [access](#access)
-    + [bike_repair_station-operator](#bike_repair_station-operator)
-    + [bike_repair_station-email](#bike_repair_station-email)
-    + [bike_repair_station-phone](#bike_repair_station-phone)
-    + [bike_repair_station-bike-chain-tool](#bike_repair_station-bike-chain-tool)
-    + [bike_repair_station-bike-stand](#bike_repair_station-bike-stand)
-    + [Email maintainer](#email-maintainer)
-    + [bike_repair_station-valves](#bike_repair_station-valves)
-    + [bike_repair_station-electrical_pump](#bike_repair_station-electrical_pump)
-    + [bike_repair_station-manometer](#bike_repair_station-manometer)
-    + [level](#level)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -52,8 +28,6 @@ A layer showing bicycle pumps and bicycle repair tool stands
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_repair_station/bike_repair_station.json)
 
 
 

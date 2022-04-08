@@ -51,22 +51,6 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         }
     }
 
-    public static registerIdRewrites(mappings: Map<string, string>) {
-        const toAdd: [string, number][] = []
-
-        this.previouslyCreatedPoints.forEach((oldId, key) => {
-            if (!mappings.has("node/" + oldId)) {
-                return;
-            }
-
-            const newId = Number(mappings.get("node/" + oldId).substr("node/".length))
-            toAdd.push([key, newId])
-        })
-        for (const [key, newId] of toAdd) {
-            CreateNewNodeAction.previouslyCreatedPoints.set(key, newId)
-        }
-    }
-
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
 
         if (this._reusePreviouslyCreatedPoint) {

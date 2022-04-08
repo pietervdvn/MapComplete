@@ -107,7 +107,7 @@ export default class Translations {
             return false
         }
         // is a weird key found?
-        if(Object.keys(transl).some(key => !this.knownLanguages.has(key))){
+        if(Object.keys(transl).some(key => key !== '_context' && !this.knownLanguages.has(key))){
             return false
         }
         

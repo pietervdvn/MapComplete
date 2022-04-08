@@ -7,26 +7,14 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/playgrounds/playground.svg' height="100px"> 
 
-A layer showing village-green (which are communal green areas, but not quite parks"
-
-
-
-
-## Table of contents
-
-1. [village_green](#village_green)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [village_green-explanation](#village_green-explanation)
-    + [village_green-reviews](#village_green-reviews)
+A layer showing village-green (which are communal green areas, but not quite parks)
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
 
 
 
@@ -39,8 +27,6 @@ A layer showing village-green (which are communal green areas, but not quite par
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/village_green/village_green.json)
 
 
 

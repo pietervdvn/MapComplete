@@ -12,39 +12,9 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
 
 
 
-## Table of contents
-
-1. [food](#food)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Name](#name)
-    + [Fastfood vs restaurant](#fastfood-vs-restaurant)
-    + [opening_hours](#opening_hours)
-    + [website](#website)
-    + [email](#email)
-    + [phone](#phone)
-    + [payment-options](#payment-options)
-    + [wheelchair-access](#wheelchair-access)
-    + [Cuisine](#cuisine)
-    + [Takeaway](#takeaway)
-    + [Vegetarian (no friture)](#vegetarian-(no-friture))
-    + [Vegan (no friture)](#vegan-(no-friture))
-    + [halal (no friture)](#halal-(no-friture))
-    + [friture-vegetarian](#friture-vegetarian)
-    + [friture-vegan](#friture-vegan)
-    + [friture-oil](#friture-oil)
-    + [friture-take-your-container](#friture-take-your-container)
-    + [service:electricity](#serviceelectricity)
-    + [dog-access](#dog-access)
-    + [reviews](#reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -59,8 +29,6 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
   - [fritures](https://mapcomplete.osm.be/fritures)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/food/food.json)
 
 
 

@@ -13,6 +13,9 @@ export class FixedUiElement extends BaseUIElement {
     }
 
     AsMarkdown(): string {
+        if(this.HasClass("code")){
+            return "`"+this.content+"`"
+        }
         return this.content;
     }
 

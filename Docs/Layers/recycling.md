@@ -12,28 +12,9 @@ A layer with recycling containers and centres
 
 
 
-## Table of contents
-
-1. [recycling](#recycling)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [recycling-type](#recycling-type)
-    + [recycling-centre-name](#recycling-centre-name)
-    + [container-location](#container-location)
-    + [recycling-accepts](#recycling-accepts)
-    + [operator](#operator)
-    + [website](#website)
-    + [email](#email)
-    + [phone](#phone)
-    + [opening_hours](#opening_hours)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -47,8 +28,6 @@ A layer with recycling containers and centres
   - [personal](https://mapcomplete.osm.be/personal)
   - [waste](https://mapcomplete.osm.be/waste)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/recycling/recycling.json)
 
 
 

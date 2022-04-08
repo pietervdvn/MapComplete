@@ -12,33 +12,9 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 
 
 
-## Table of contents
-
-1. [defibrillator](#defibrillator)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [defibrillator-indoors](#defibrillator-indoors)
-    + [defibrillator-access](#defibrillator-access)
-    + [defibrillator-defibrillator](#defibrillator-defibrillator)
-    + [defibrillator-level](#defibrillator-level)
-    + [defibrillator-defibrillator:location](#defibrillator-defibrillatorlocation)
-    + [defibrillator-defibrillator:location:en](#defibrillator-defibrillatorlocation:en)
-    + [defibrillator-defibrillator:location:fr](#defibrillator-defibrillatorlocation:fr)
-    + [wheelchair-access](#wheelchair-access)
-    + [defibrillator-ref](#defibrillator-ref)
-    + [defibrillator-email](#defibrillator-email)
-    + [defibrillator-phone](#defibrillator-phone)
-    + [defibrillator-opening_hours](#defibrillator-opening_hours)
-    + [defibrillator-description](#defibrillator-description)
-    + [defibrillator-survey:date](#defibrillator-surveydate)
-    + [defibrillator-fixme](#defibrillator-fixme)
 
 
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
@@ -53,8 +29,6 @@ A layer showing defibrillators which can be used in case of emergency. This cont
   - [aed](https://mapcomplete.osm.be/aed)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/defibrillator/defibrillator.json)
 
 
 

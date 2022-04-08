@@ -117,7 +117,7 @@ export default class SimpleAddUI extends Toggle {
                         selectedPreset.setData(undefined)
                     }
 
-                    const message = Translations.t.general.add.addNew.Subs({category: preset.name});
+                    const message = Translations.t.general.add.addNew.Subs({category: preset.name}, preset.name["context"]);
                     return new ConfirmLocationOfPoint(state, filterViewIsOpened, preset,
                         message,
                         state.LastClickLocation.data,
@@ -184,12 +184,13 @@ export default class SimpleAddUI extends Toggle {
 
     private static CreatePresetSelectButton(preset: PresetInfo) {
 
+        const title = Translations.t.general.add.addNew.Subs({
+            category: preset.name
+        }, preset.name["context"])
         return new SubtleButton(
             preset.icon(),
             new Combine([
-                Translations.t.general.add.addNew.Subs({
-                    category: preset.name
-                }).SetClass("font-bold"),
+                title.SetClass("font-bold"),
                 Translations.WT(preset.description)?.FirstSentence()
             ]).SetClass("flex flex-col")
         )

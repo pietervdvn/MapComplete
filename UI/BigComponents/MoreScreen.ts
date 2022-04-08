@@ -9,7 +9,7 @@ import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
-import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Toggle from "../Input/Toggle";
 import {Utils} from "../../Utils";
@@ -53,7 +53,8 @@ export default class MoreScreen extends Combine {
             icon: string,
             title: any,
             shortDescription: any,
-            definition?: any
+            definition?: any,
+            mustHaveLanguage?: boolean
         }, isCustom: boolean = false
     ):
         BaseUIElement {
@@ -109,7 +110,7 @@ export default class MoreScreen extends Combine {
         return new SubtleButton(layout.icon,
             new Combine([
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                new Translation(layout.title),
+                new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:"+layout.id+".title" : undefined),
                 `</dt>`,
                 `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
                 new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
@@ -142,9 +143,10 @@ export default class MoreScreen extends Combine {
                 icon: string,
                 title: any,
                 shortDescription: any,
-                definition?: any
+                definition?: any,
+                isOfficial: boolean
             } = JSON.parse(str)
-
+            value.isOfficial = false
             return MoreScreen.createLinkButton(state, value, true)
         } catch (e) {
             console.debug("Could not parse unofficial theme information for " + id, "The json is: ", str, e)

@@ -39,16 +39,12 @@ export default class WikidataPreviewBox extends VariableUiElement {
         {
             property: "P569",
             requires: WikidataPreviewBox.isHuman,
-            display: new Translation({
-                "*": "Born: {value}"
-            })
+            display: Translations.t.general.wikipedia.previewbox.born
         },
         {
             property: "P570",
             requires: WikidataPreviewBox.isHuman,
-            display: new Translation({
-                "*": "Died: {value}"
-            })
+            display:Translations.t.general.wikipedia.previewbox.died
         }
     ]
 

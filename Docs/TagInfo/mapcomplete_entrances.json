@@ -12,22 +12,22 @@
   "tags": [
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "footway"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "path"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "corridor"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "steps"
     },
     {

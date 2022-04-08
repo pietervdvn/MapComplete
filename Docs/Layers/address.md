@@ -12,20 +12,9 @@ Addresses
 
 
 
-## Table of contents
-
-1. [address](#address)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [housenumber](#housenumber)
-    + [street](#street)
-    + [fixme](#fixme)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_3_street_names)
 
 
@@ -39,8 +28,6 @@ Addresses
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/address/address.json)
 
 
 

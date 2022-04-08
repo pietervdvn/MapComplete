@@ -12,19 +12,9 @@ A layer showing car parkings
 
 
 
-## Table of contents
-
-1. [parking](#parking)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -38,8 +28,6 @@ A layer showing car parkings
   - [parkings](https://mapcomplete.osm.be/parkings)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/parking/parking.json)
 
 
 

@@ -12,17 +12,9 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
 
 
-## Table of contents
-
-1. [named_streets](#named_streets)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer is not visible by default and must be enabled in the filter by the user. 
   - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true
@@ -41,8 +33,6 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/named_streets/named_streets.json)
 
 
 

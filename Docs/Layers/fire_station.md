@@ -12,24 +12,9 @@ Map layer to show fire stations.
 
 
 
-## Table of contents
-
-1. [fire_station](#fire_station)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [station-name](#station-name)
-    + [station-street](#station-street)
-    + [station-place](#station-place)
-    + [station-agency](#station-agency)
-    + [station-operator](#station-operator)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -43,8 +28,6 @@ Map layer to show fire stations.
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/fire_station/fire_station.json)
 
 
 

@@ -23,6 +23,7 @@ import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
 import Img from "../Base/Img";
 import {Translation} from "../i18n/Translation";
+import TranslatorsPanel from "./TranslatorsPanel";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
@@ -110,7 +111,8 @@ export default class CopyrightPanel extends Combine {
         featurePipeline: FeaturePipeline,
         currentBounds: UIEventSource<BBox>,
         locationControl: UIEventSource<Loc>,
-        osmConnection: OsmConnection
+        osmConnection: OsmConnection,
+        isTranslator: UIEventSource<boolean>
     }) {
 
         const t = Translations.t.general.attribution
@@ -131,25 +133,21 @@ export default class CopyrightPanel extends Combine {
             }),
             new OpenIdEditor(state, iconStyle),
             new OpenMapillary(state, iconStyle),
-            new OpenJosm(state, iconStyle)
+            new OpenJosm(state, iconStyle),
+            new TranslatorsPanel(state, iconStyle)
+          
         ]
 
         const iconAttributions = layoutToUse.usedImages.map(CopyrightPanel.IconAttribution)
 
         let maintainer: BaseUIElement = undefined
         if (layoutToUse.maintainer !== undefined && layoutToUse.maintainer !== "" && layoutToUse.maintainer.toLowerCase() !== "mapcomplete") {
-            maintainer = Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.maintainer})
+            maintainer = t.themeBy.Subs({author: layoutToUse.maintainer})
         }
 
         const contributions = new ContributorCount(state).Contributors
 
-        super([
-            Translations.t.general.attribution.attributionContent,
-            new FixedUiElement("MapComplete " + Constants.vNumber).SetClass("font-bold"),
-            maintainer,
-            new Combine(actionButtons).SetClass("block w-full"),
-            new FixedUiElement(layoutToUse.credits),
-            new VariableUiElement(contributions.map(contributions => {
+        const dataContributors =  new VariableUiElement(contributions.map(contributions => {
                 if (contributions === undefined) {
                     return ""
                 }
@@ -170,20 +168,29 @@ export default class CopyrightPanel extends Combine {
                 const contribs = links.join(", ")
 
                 if (hiddenCount <= 0) {
-                    return Translations.t.general.attribution.mapContributionsBy.Subs({
+                    return t.mapContributionsBy.Subs({
                         contributors: contribs
                     })
                 } else {
-                    return Translations.t.general.attribution.mapContributionsByAndHidden.Subs({
+                    return t.mapContributionsByAndHidden.Subs({
                         contributors: contribs,
                         hiddenCount: hiddenCount
                     });
                 }
 
 
-            })),
-            CopyrightPanel.CodeContributors(contributors,  Translations.t.general.attribution.codeContributionsBy),
-            CopyrightPanel.CodeContributors(translators,  Translations.t.general.attribution.translatedBy),
+            }))
+
+        super([
+            new Title(t.attributionTitle),
+            t.attributionContent,
+            maintainer,
+            new FixedUiElement(layoutToUse.credits),
+             dataContributors,
+            CopyrightPanel.CodeContributors(contributors, t.codeContributionsBy),
+            CopyrightPanel.CodeContributors(translators, t.translatedBy),
+            new FixedUiElement("MapComplete " + Constants.vNumber).SetClass("font-bold"),
+            new Combine(actionButtons).SetClass("block w-full"),
             new Title(t.iconAttribution.title, 3),
             ...iconAttributions
         ].map(e => e?.SetClass("mt-4")));
@@ -213,9 +220,9 @@ export default class CopyrightPanel extends Combine {
 
     private static IconAttribution(iconPath: string): BaseUIElement {
         if (iconPath.startsWith("http")) {
-            try{
+            try {
                 iconPath = "." + new URL(iconPath).pathname;
-            }catch(e){
+            } catch (e) {
                 console.warn(e)
             }
         }
@@ -234,16 +241,16 @@ export default class CopyrightPanel extends Combine {
             new Img(iconPath).SetClass("w-12 min-h-12 mr-2 mb-2"),
             new Combine([
                 new FixedUiElement(license.authors.join("; ")).SetClass("font-bold"),
-                    license.license,
-                    new Combine([    ...sources.map(lnk => {
-                            let sourceLinkContent = lnk;
-                            try {
-                                sourceLinkContent = new URL(lnk).hostname
-                            } catch {
-                                console.error("Not a valid URL:", lnk)
-                            }
-                            return new Link(sourceLinkContent, lnk, true).SetClass("mr-2 mb-2");
-                        })]).SetClass("flex flex-wrap")
+                license.license,
+                new Combine([...sources.map(lnk => {
+                    let sourceLinkContent = lnk;
+                    try {
+                        sourceLinkContent = new URL(lnk).hostname
+                    } catch {
+                        console.error("Not a valid URL:", lnk)
+                    }
+                    return new Link(sourceLinkContent, lnk, true).SetClass("mr-2 mb-2");
+                })]).SetClass("flex flex-wrap")
             ]).SetClass("flex flex-col").SetStyle("width: calc(100% - 50px - 0.5em); min-width: 12rem;")
         ]).SetClass("flex flex-wrap border-b border-gray-300 m-2 border-box")
     }

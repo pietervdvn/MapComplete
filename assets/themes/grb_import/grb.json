@@ -374,7 +374,13 @@
         "tagRenderings+": [
           {
             "id": "render_embedded",
-            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>"
+            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>",
+            "mappings": [{
+              "if": "_embedding_id=",
+              "then": {
+                "nl": "Geen omliggend OSM-gebouw gevonden"
+              }
+            }]
           },
           {
             "id": "embedded_address",
@@ -409,17 +415,30 @@
           },
           {
             "id": "import-button",
-            "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,osm-buildings,5)}",
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "address",
+                "tags": "addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL",
+                "text": {
+                  "nl": "Voeg dit adres als een nieuw adrespunt toe"
+                },
+                "snap_onto_layers": "osm-buildings"
+              }
+            },
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
+                }
+              }
+            ],
             "condition": {
-              "and": [
-                "_embedding_id!=",
-                {
                   "or": [
                     "_embedding_street!:={STRAATNM}",
                     "_embedding_nr!:={_HNRLABEL}"
                   ]
-                }
-              ]
             }
           }
         ]

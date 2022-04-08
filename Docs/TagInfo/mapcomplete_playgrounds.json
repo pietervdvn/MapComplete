@@ -123,6 +123,14 @@
       "value": "private"
     },
     {
+      "key": "website",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Playgrounds' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Playgrounds')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Playgrounds' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Playgrounds')"
     },

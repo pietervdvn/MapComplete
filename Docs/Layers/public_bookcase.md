@@ -12,28 +12,9 @@ A streetside cabinet with books, accessible to anyone
 
 
 
-## Table of contents
-
-1. [public_bookcase](#public_bookcase)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [public_bookcase-name](#public_bookcase-name)
-    + [public_bookcase-capacity](#public_bookcase-capacity)
-    + [bookcase-booktypes](#bookcase-booktypes)
-    + [bookcase-is-indoors](#bookcase-is-indoors)
-    + [bookcase-is-accessible](#bookcase-is-accessible)
-    + [public_bookcase-operator](#public_bookcase-operator)
-    + [public_bookcase-brand](#public_bookcase-brand)
-    + [public_bookcase-ref](#public_bookcase-ref)
-    + [public_bookcase-start_date](#public_bookcase-start_date)
-    + [public_bookcase-website](#public_bookcase-website)
 
 
-
-
-
+  - This layer is shown at zoomlevel **10** and higher
   - This layer is needed as dependency for layer [note_import](#note_import)
 
 
@@ -48,8 +29,6 @@ A streetside cabinet with books, accessible to anyone
   - [bookcases](https://mapcomplete.osm.be/bookcases)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/public_bookcase/public_bookcase.json)
 
 
 

@@ -12,21 +12,9 @@ A layer showing drinking water fountains
 
 
 
-## Table of contents
-
-1. [drinking_water](#drinking_water)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Still in use?](#still-in-use)
-    + [Bottle refill](#bottle-refill)
-    + [render-closest-drinking-water](#render-closest-drinking-water)
 
 
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
   - This layer will automatically load  [drinking_water](./drinking_water.md)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_other_drinking_water)
   - This layer is needed as dependency for layer [drinking_water](#drinking_water)
 
@@ -44,8 +32,6 @@ A layer showing drinking water fountains
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/drinking_water/drinking_water.json)
 
 
 

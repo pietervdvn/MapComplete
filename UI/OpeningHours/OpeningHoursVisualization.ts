@@ -168,7 +168,7 @@ export default class OpeningHoursVisualization extends Toggle {
         }
         return new Table(undefined,
             [["&nbsp", header], ...weekdays],
-            [["width: 5%", `position: relative; height: ${headerHeight}`], ...weekdayStyles]
+            {contentStyle: [["width: 5%", `position: relative; height: ${headerHeight}`], ...weekdayStyles]}
         ).SetClass("w-full")
             .SetStyle("border-collapse: collapse; word-break; word-break: normal; word-wrap: normal")
 

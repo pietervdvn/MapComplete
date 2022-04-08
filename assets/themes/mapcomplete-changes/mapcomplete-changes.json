@@ -1,8 +1,7 @@
 {
   "id": "mapcomplete-changes",
   "title": {
-    "en": "Changes made with MapComplete",
-    "nl": "Wijzigingen gemaakt met MapComplete"
+    "en": "Changes made with MapComplete"
   },
   "shortDescription": {
     "en": "Shows changes made by MapComplete"

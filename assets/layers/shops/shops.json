@@ -408,5 +408,41 @@
         "render": "8"
       }
     }
+  ],
+  "filter": [
+    {
+      "id": "shop-type",
+      "options": [
+        {
+          "fields": [
+            {
+              "name": "search",
+              "type": "string"
+            }
+          ],
+          "osmTags": "shop~^.*{search}.*$",
+          "question": {
+            "en": "Only show shops selling {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop-name",
+      "options": [
+        {
+          "fields": [
+            {
+              "name": "search",
+              "type": "string"
+            }
+          ],
+          "osmTags": "name~^.*{search}.*$",
+          "question": {
+            "en": "Only show shops with name {search}"
+          }
+        }
+      ]
+    }
   ]
 }

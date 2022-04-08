@@ -26,8 +26,6 @@ export abstract class TagsFilter {
      */
     abstract asChange(properties: any): { k: string, v: string }[]
 
-    abstract AsJson() ;
-
     /**
      * Returns an optimized version (or self) of this tagsFilter
      */

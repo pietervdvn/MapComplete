@@ -12,26 +12,9 @@ A layer showing where you can park your bike
 
 
 
-## Table of contents
-
-1. [bike_parking](#bike_parking)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Bicycle parking type](#bicycle-parking-type)
-    + [Underground?](#underground)
-    + [Is covered?](#is-covered)
-    + [Capacity](#capacity)
-    + [Access](#access)
-    + [Cargo bike spaces?](#cargo-bike-spaces)
-    + [Cargo bike capacity?](#cargo-bike-capacity)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **17** and higher
 
 
 
@@ -45,8 +28,6 @@ A layer showing where you can park your bike
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_parking/bike_parking.json)
 
 
 

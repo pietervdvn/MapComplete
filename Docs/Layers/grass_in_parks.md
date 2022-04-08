@@ -12,21 +12,9 @@ Searches for all accessible grass patches within public parks - these are 'groen
 
 
 
-## Table of contents
-
-1. [grass_in_parks](#grass_in_parks)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [explanation](#explanation)
-    + [grass-in-parks-reviews](#grass-in-parks-reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
 
 
 
@@ -39,8 +27,6 @@ Searches for all accessible grass patches within public parks - these are 'groen
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/grass_in_parks/grass_in_parks.json)
 
 
 

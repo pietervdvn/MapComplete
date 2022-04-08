@@ -12,21 +12,9 @@ A layer showing facilities where one can clean their bike
 
 
 
-## Table of contents
-
-1. [bike_cleaning](#bike_cleaning)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaning-servicebicycle:cleaning:charge)
-    + [bike_cleaning-charge](#bike_cleaning-charge)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -40,8 +28,6 @@ A layer showing facilities where one can clean their bike
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cleaning/bike_cleaning.json)
 
 
 

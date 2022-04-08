@@ -12,23 +12,9 @@ Diverse pieces of artwork
 
 
 
-## Table of contents
-
-1. [artwork](#artwork)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [artwork-artwork_type](#artwork-artwork_type)
-    + [artwork-artist_name](#artwork-artist_name)
-    + [artwork-website](#artwork-website)
-    + [artwork-wikidata](#artwork-wikidata)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -42,8 +28,6 @@ Diverse pieces of artwork
   - [artwork](https://mapcomplete.osm.be/artwork)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/artwork/artwork.json)
 
 
 

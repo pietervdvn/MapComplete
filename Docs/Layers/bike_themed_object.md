@@ -12,24 +12,9 @@ A layer with bike-themed objects but who don't match any other layer
 
 
 
-## Table of contents
-
-1. [bike_themed_object](#bike_themed_object)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [description](#description)
-    + [website](#website)
-    + [email](#email)
-    + [phone](#phone)
-    + [opening_hours](#opening_hours)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -43,8 +28,6 @@ A layer with bike-themed objects but who don't match any other layer
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_themed_object/bike_themed_object.json)
 
 
 

@@ -2,7 +2,7 @@ import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import {Utils} from "../../../Utils";
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
-import {DesugaringStep, Fuse, OnEvery} from "./Conversion";
+import {DesugaringStep, Each, Fuse, On} from "./Conversion";
 
 export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string | { builtin, override }> {
 
@@ -159,7 +159,7 @@ export class FixLegacyTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fixes a legacy theme to the modern JSON format geared to humans. Syntactic sugars are kept (i.e. no tagRenderings are expandend, no dependencies are automatically gathered)",
             new UpdateLegacyTheme(),
-            new OnEvery("layers", new UpdateLegacyLayer())
+            new On("layers",new Each( new UpdateLegacyLayer()))
         );
     }
 }

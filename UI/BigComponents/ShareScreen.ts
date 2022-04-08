@@ -12,6 +12,8 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import FilteredLayer from "../../Models/FilteredLayer";
+import {InputElement} from "../Input/InputElement";
+import CheckBoxes, {CheckBox} from "../Input/Checkboxes";
 
 export default class ShareScreen extends Combine {
 
@@ -19,7 +21,7 @@ export default class ShareScreen extends Combine {
         const layout = state?.layoutToUse;
         const tr = Translations.t.general.sharescreen;
 
-        const optionCheckboxes: BaseUIElement[] = []
+        const optionCheckboxes: InputElement<boolean>[] = []
         const optionParts: (UIEventSource<string>)[] = [];
 
         function check() {
@@ -30,16 +32,12 @@ export default class ShareScreen extends Combine {
             return Svg.no_checkmark_svg().SetStyle("width: 1.5em; display: inline-block;");
         }
 
-        const includeLocation = new Toggle(
-            new Combine([check(), tr.fsIncludeCurrentLocation.Clone()]),
-            new Combine([nocheck(), tr.fsIncludeCurrentLocation.Clone()]),
-            new UIEventSource<boolean>(true)
-        ).ToggleOnClick()
+        const includeLocation = new CheckBox(tr.fsIncludeCurrentLocation, true)
         optionCheckboxes.push(includeLocation);
 
         const currentLocation = state.locationControl;
 
-        optionParts.push(includeLocation.isEnabled.map((includeL) => {
+        optionParts.push(includeLocation.GetValue().map((includeL) => {
             if (currentLocation === undefined) {
                 return null;
             }
@@ -66,13 +64,9 @@ export default class ShareScreen extends Combine {
         const currentBackground = new VariableUiElement(currentLayer.map(layer => {
             return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""});
         }));
-        const includeCurrentBackground = new Toggle(
-            new Combine([check(), currentBackground]),
-            new Combine([nocheck(), currentBackground]),
-            new UIEventSource<boolean>(true)
-        ).ToggleOnClick()
+        const includeCurrentBackground = new CheckBox(currentBackground, true)
         optionCheckboxes.push(includeCurrentBackground);
-        optionParts.push(includeCurrentBackground.isEnabled.map((includeBG) => {
+        optionParts.push(includeCurrentBackground.GetValue().map((includeBG) => {
             if (includeBG) {
                 return "background=" + currentLayer.data.id
             } else {
@@ -81,14 +75,10 @@ export default class ShareScreen extends Combine {
         }, [currentLayer]));
 
 
-        const includeLayerChoices = new Toggle(
-            new Combine([check(), tr.fsIncludeCurrentLayers.Clone()]),
-            new Combine([nocheck(), tr.fsIncludeCurrentLayers.Clone()]),
-            new UIEventSource<boolean>(true)
-        ).ToggleOnClick()
+        const includeLayerChoices = new CheckBox(tr.fsIncludeCurrentLayers, true)
         optionCheckboxes.push(includeLayerChoices);
 
-        optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
+        optionParts.push(includeLayerChoices.GetValue().map((includeLayerSelection) => {
             if (includeLayerSelection) {
                 return Utils.NoNull(state.filteredLayers.data.map(fLayerToParam)).join("&")
             } else {
@@ -110,13 +100,9 @@ export default class ShareScreen extends Combine {
 
         for (const swtch of switches) {
 
-            const checkbox = new Toggle(
-                new Combine([check(), Translations.W(swtch.human.Clone())]),
-                new Combine([nocheck(), Translations.W(swtch.human.Clone())]),
-                new UIEventSource<boolean>(!swtch.reverse)
-            ).ToggleOnClick();
+            const checkbox =new CheckBox(Translations.W(swtch.human), !swtch.reverse)
             optionCheckboxes.push(checkbox);
-            optionParts.push(checkbox.isEnabled.map((isEn) => {
+            optionParts.push(checkbox.GetValue().map((isEn) => {
                 if (isEn) {
                     if (swtch.reverse) {
                         return `${swtch.urlName}=true`

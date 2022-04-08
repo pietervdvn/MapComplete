@@ -52,7 +52,7 @@ export interface SpecialVisualization {
     constr: ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
     docs: string,
     example?: string,
-    args: { name: string, defaultValue?: string, doc: string }[],
+    args: { name: string, defaultValue?: string, doc: string, required?: false | boolean }[],
     getLayerDependencies?: (argument: string[]) => string[]
 }
 
@@ -102,6 +102,7 @@ class CloseNoteButton implements SpecialVisualization {
         {
             name: "text",
             doc: "Text to show on this button",
+            required: true
         },
         {
             name: "icon",
@@ -179,7 +180,7 @@ class CloseNoteButton implements SpecialVisualization {
 
 export default class SpecialVisualizations {
 
-    public static specialVisualizations = SpecialVisualizations.init()
+    public static specialVisualizations : SpecialVisualization[] = SpecialVisualizations.init()
 
     public static HelpMessage() {
 
@@ -206,9 +207,28 @@ export default class SpecialVisualizations {
             ));
 
         return new Combine([
+            new Combine([
+                
                 new Title("Special tag renderings", 1),
+                
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
                 "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                new Title("Using expanded syntax",4),
+                `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write`,
+                new FixedUiElement(JSON.stringify({
+                    render: {
+                        special:{
+                            type: "some_special_visualisation",
+                            "argname": "some_arg",
+                            "message":{
+                                en:"some other really long message",
+                                nl: "een boodschap in een andere taal"
+                            },
+                            "other_arg_name":"more args"
+                        }
+                    }
+                })).SetClass("code")
+            ]).SetClass("flex flex-col"),
                 ...helpTexts
             ]
         ).SetClass("flex flex-col");
@@ -227,9 +247,9 @@ export default class SpecialVisualizations {
                     funcName: "image_carousel",
                     docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
                     args: [{
-                        name: "image key/prefix (multiple values allowed if comma-seperated)",
+                        name: "image_key",
                         defaultValue: AllImageProviders.defaultKeys.join(","),
-                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
+                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated "
                     }],
                     constr: (state, tags, args) => {
                         let imagePrefixes: string[] = undefined;
@@ -368,6 +388,7 @@ export default class SpecialVisualizations {
                         {
                             doc: "The side to show, either `left` or `right`",
                             name: "side",
+                            required: true
                         }
                     ],
                     example: "`{sided_minimap(left)}`",
@@ -461,12 +482,15 @@ export default class SpecialVisualizations {
                     docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
                     example: "{live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}",
                     args: [{
-                        name: "Url", doc: "The URL to load"
+                        name: "Url", 
+                        doc: "The URL to load",
+                        required: true
                     }, {
                         name: "Shorthands",
                         doc: "A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;"
                     }, {
-                        name: "path", doc: "The path (or shorthand) that should be returned"
+                        name: "path",
+                        doc: "The path (or shorthand) that should be returned"
                     }],
                     constr: (state, tagSource: UIEventSource<any>, args) => {
                         const url = args[0];
@@ -483,7 +507,8 @@ export default class SpecialVisualizations {
                     args: [
                         {
                             name: "key",
-                            doc: "The key to be read and to generate a histogram from"
+                            doc: "The key to be read and to generate a histogram from",
+                            required: true
                         },
                         {
                             name: "title",
@@ -588,7 +613,8 @@ export default class SpecialVisualizations {
                     example: "{canonical(length)} will give 42 metre (in french)",
                     args: [{
                         name: "key",
-                        doc: "The key of the tag to give the canonical text for"
+                        doc: "The key of the tag to give the canonical text for",
+                        required: true
                     }],
                     constr: (state, tagSource, args) => {
                         const key = args [0]
@@ -618,16 +644,19 @@ export default class SpecialVisualizations {
                         {name: "feature_ids", doc: "A JSON-serialized list of IDs of features to apply the tagging on"},
                         {
                             name: "keys",
-                            doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."
+                            doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features.",
+                            required: true
                         },
                         {name: "text", doc: "The text to show on the button"},
                         {
                             name: "autoapply",
-                            doc: "A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown"
+                            doc: "A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown",
+                            required: true
                         },
                         {
                             name: "overwrite",
-                            doc: "If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change"
+                            doc: "If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change",
+                            required: true
                         }
                     ],
                     example: "{multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}",
@@ -813,7 +842,7 @@ export default class SpecialVisualizations {
 
                         return new LoginToggle(
                             new Combine([
-                                new Title("Add a comment"),
+                                new Title(t.addAComment),
                                 textField,
                                 new Combine([
                                     stateButtons.SetClass("sm:mr-2"),
@@ -918,7 +947,7 @@ export default class SpecialVisualizations {
             ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
-
+        
         return specialVisualizations;
     }
 

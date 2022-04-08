@@ -151,6 +151,10 @@ svg, img {
     display: none;
 }
 
+.weblate-link {
+    /* Weblate-links are the little translation icon next to translatable sentences. Due to their special nature, they are exempt from some rules */
+}
+
 .mapcontrol svg path {
     fill: var(--subtle-detail-color-contrast) !important;
 }

@@ -12,32 +12,9 @@ All infrastructure that someone can cycle over, accompanied with questions about
 
 
 
-## Table of contents
-
-1. [cycleways_and_roads](#cycleways_and_roads)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [Cycleway type for a road](#cycleway-type-for-a-road)
-    + [is lit?](#is-lit)
-    + [Is this a cyclestreet? (For a road)](#is-this-a-cyclestreet-(for-a-road))
-    + [Maxspeed (for road)](#maxspeed-(for-road))
-    + [Cycleway:surface](#cyclewaysurface)
-    + [Cycleway:smoothness](#cyclewaysmoothness)
-    + [Surface of the road](#surface-of-the-road)
-    + [Surface of the street](#surface-of-the-street)
-    + [width:carriageway](#widthcarriageway)
-    + [cycleway-lane-track-traffic-signs](#cycleway-lane-track-traffic-signs)
-    + [cycleway-traffic-signs](#cycleway-traffic-signs)
-    + [cycleway-traffic-signs-supplementary](#cycleway-traffic-signs-supplementary)
-    + [cycleways_and_roads-cycleway:buffer](#cycleways_and_roads-cyclewaybuffer)
-    + [cyclelan-segregation](#cyclelan-segregation)
-    + [cycleway-segregation](#cycleway-segregation)
 
 
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
   - This layer is needed as dependency for layer [barrier](#barrier)
   - This layer is needed as dependency for layer [crossings](#crossings)
 
@@ -53,8 +30,6 @@ All infrastructure that someone can cycle over, accompanied with questions about
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cycleways_and_roads/cycleways_and_roads.json)
 
 
 

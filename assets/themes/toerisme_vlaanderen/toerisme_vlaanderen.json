@@ -50,7 +50,7 @@
             ]
           }
         },
-        "=filter": null,
+        "filter": null,
         "=mapRendering": [
           {
             "location": [
@@ -242,7 +242,8 @@
         ]
       },
       "hideTagRenderingsWithLabels": [
-        "extra"
+        "extra",
+        "website"
       ]
     }
   ],

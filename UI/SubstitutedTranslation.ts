@@ -9,6 +9,7 @@ import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
 import {DefaultGuiState} from "./DefaultGuiState";
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
+import LinkToWeblate from "./Base/LinkToWeblate";
 
 export class SubstitutedTranslation extends VariableUiElement {
 
@@ -34,6 +35,8 @@ export class SubstitutedTranslation extends VariableUiElement {
             )
         })
 
+        const linkToWeblate = translation !== undefined ? new LinkToWeblate(translation.context, translation.translations) : undefined;
+        
         super(
             Locale.language.map(language => {
                 let txt = translation?.textFor(language);
@@ -44,7 +47,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                     txt = txt.replace(new RegExp(`{${key}}`, "g"), `{${key}()}`)
                 })
 
-                return new Combine(SubstitutedTranslation.ExtractSpecialComponents(txt, extraMappings).map(
+                const allElements = SubstitutedTranslation.ExtractSpecialComponents(txt, extraMappings).map(
                     proto => {
                         if (proto.fixed !== undefined) {
                             return new VariableUiElement(tagsSource.map(tags => Utils.SubstituteKeys(proto.fixed, tags)));
@@ -56,8 +59,12 @@ export class SubstitutedTranslation extends VariableUiElement {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func.funcName}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
                         }
-                    }
-                ))
+                    });
+                allElements.push(linkToWeblate)
+                
+                return new Combine(
+                   allElements
+                )
             })
         )
 

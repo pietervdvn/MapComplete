@@ -12,32 +12,9 @@ A layer showing (public) toilets
 
 
 
-## Table of contents
-
-1. [toilet](#toilet)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [toilet-access](#toilet-access)
-    + [toilets-fee](#toilets-fee)
-    + [toilet-charge](#toilet-charge)
-    + [payment-options](#payment-options)
-    + [Opening-hours](#opening-hours)
-    + [toilets-wheelchair](#toilets-wheelchair)
-    + [toilets-type](#toilets-type)
-    + [toilets-changing-table](#toilets-changing-table)
-    + [toilet-changing_table:location](#toilet-changing_tablelocation)
-    + [toilet-handwashing](#toilet-handwashing)
-    + [toilet-has-paper](#toilet-has-paper)
-    + [level](#level)
-    + [description](#description)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -52,8 +29,6 @@ A layer showing (public) toilets
   - [personal](https://mapcomplete.osm.be/personal)
   - [toilets](https://mapcomplete.osm.be/toilets)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/toilet/toilet.json)
 
 
 

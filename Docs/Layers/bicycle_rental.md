@@ -12,41 +12,9 @@ Bicycle rental stations
 
 
 
-## Table of contents
-
-1. [bicycle_rental](#bicycle_rental)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bicycle_rental_type](#bicycle_rental_type)
-    + [website](#website)
-    + [email](#email)
-    + [phone](#phone)
-    + [opening_hours](#opening_hours)
-    + [payment-options](#payment-options)
-    + [payment-options-advanced](#payment-options-advanced)
-    + [bicycle-types](#bicycle-types)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
-    + [rental-capacity-bicycle-type](#rental-capacity-bicycle-type)
-    + [questions](#questions)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -60,8 +28,6 @@ Bicycle rental stations
   - [bicycle_rental](https://mapcomplete.osm.be/bicycle_rental)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_rental/bicycle_rental.json)
 
 
 
@@ -257,20 +223,10 @@ This is rendered with `{rental} is rented here`
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much city bikes can be rented here? **
 
 This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) 
-This is rendered with `{capacity:city_bike} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
+This is rendered with `{capacity:city_bike} city bikes can be rented here`
 
 
 
@@ -278,20 +234,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much electrical bikes can be rented here? **
 
 This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) 
-This is rendered with `{capacity:ebike} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
+This is rendered with `{capacity:ebike} electrical bikes can be rented here`
 
 
 
@@ -299,20 +245,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much bikes for children can be rented here? **
 
 This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) 
-This is rendered with `{capacity:kid_bike} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
+This is rendered with `{capacity:kid_bike} bikes for children can be rented here`
 
 
 
@@ -320,20 +256,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much BMX bikes can be rented here? **
 
 This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) 
-This is rendered with `{capacity:bmx} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
+This is rendered with `{capacity:bmx} BMX bikes can be rented here`
 
 
 
@@ -341,20 +267,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much mountainbike can be rented here? **
 
 This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) 
-This is rendered with `{capacity:mtb} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
+This is rendered with `{capacity:mtb} mountainbike can be rented here`
 
 
 
@@ -362,20 +278,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much bicycle panniers can be rented here? **
 
 This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) 
-This is rendered with `{capacity:bicycle_pannier} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
+This is rendered with `{capacity:bicycle_pannier} bicycle panniers can be rented here`
 
 
 
@@ -383,19 +289,9 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **How much [object Object] can be rented here? **
+The question is **How much tandem can be rented here? **
 
 This rendering asks information about the property  [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) 
-This is rendered with `{capacity:tandem_bicycle} [object Object] can be rented here`
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
- 
+This is rendered with `{capacity:tandem_bicycle} tandem can be rented here` 
 
 This document is autogenerated from [assets/layers/bicycle_rental/bicycle_rental.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_rental/bicycle_rental.json)

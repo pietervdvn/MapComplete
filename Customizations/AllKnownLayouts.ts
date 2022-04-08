@@ -37,12 +37,41 @@ export class AllKnownLayouts {
         return allLayers
     }
 
-    public static GenOverviewsForSingleLayer(callback: (layer: LayerConfig, element: BaseUIElement) => void): void {
+    /**
+     * Generates documentation for the layers.
+     * Inline layers are included (if the theme is public)
+     * @param callback
+     * @constructor
+     */
+    public static GenOverviewsForSingleLayer(callback: (layer: LayerConfig, element: BaseUIElement, inlineSource: string) => void): void {
         const allLayers: LayerConfig[] = Array.from(AllKnownLayouts.sharedLayers.values())
             .filter(layer => Constants.priviliged_layers.indexOf(layer.id) < 0)
-
         const builtinLayerIds: Set<string> = new Set<string>()
         allLayers.forEach(l => builtinLayerIds.add(l.id))
+        const inlineLayers = new Map<string, string>();
+
+        for (const layout of Array.from(AllKnownLayouts.allKnownLayouts.values())) {
+            if (layout.hideFromOverview) {
+                continue
+            }
+
+            for (const layer of layout.layers) {
+
+                if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+                    continue
+                }
+                if (builtinLayerIds.has(layer.id)) {
+                    continue
+                }
+                if(layer.source.geojsonSource !== undefined){
+                    // Not an OSM-source
+                    continue
+                }
+                allLayers.push(layer)
+                builtinLayerIds.add(layer.id)
+                inlineLayers.set(layer.id, layout.id)
+            }
+        }
 
         const themesPerLayer = new Map<string, string[]>()
 
@@ -52,6 +81,7 @@ export class AllKnownLayouts {
             }
             for (const layer of layout.layers) {
                 if (!builtinLayerIds.has(layer.id)) {
+                    // This is an inline layer
                     continue
                 }
                 if (!themesPerLayer.has(layer.id)) {
@@ -79,10 +109,14 @@ export class AllKnownLayouts {
 
         allLayers.forEach((layer) => {
             const element = layer.GenerateDocumentation(themesPerLayer.get(layer.id), layerIsNeededBy, DependencyCalculator.getLayerDependencies(layer))
-            callback(layer, element)
+            callback(layer, element, inlineLayers.get(layer.id))
         })
     }
 
+    /**
+     * Generates the documentation for the layers overview page
+     * @constructor
+     */
     public static GenLayerOverviewText(): BaseUIElement {
         for (const id of Constants.priviliged_layers) {
             if (!AllKnownLayouts.sharedLayers.has(id)) {
@@ -171,7 +205,7 @@ export class AllKnownLayouts {
     private static AllLayouts(): Map<string, LayoutConfig> {
         const dict: Map<string, LayoutConfig> = new Map();
         for (const layoutConfigJson of known_themes.themes) {
-            const layout = new LayoutConfig(<LayoutConfigJson> layoutConfigJson, true)
+            const layout = new LayoutConfig(<LayoutConfigJson>layoutConfigJson, true)
             dict.set(layout.id, layout)
             for (let i = 0; i < layout.layers.length; i++) {
                 let layer = layout.layers[i];

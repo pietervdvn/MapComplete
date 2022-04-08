@@ -128,8 +128,9 @@ export default class Histogram<T> extends VariableUiElement {
                             .SetStyle(`background: ${actualAssignColor(key)}; width: ${100 * counts.get(key) / max}%`)
                     ]).SetClass("block w-full")
 
-                ]),
-                keys.map(_ => ["width: 20%"])
+                ]),{
+                    contentStyle:keys.map(_ => ["width: 20%"])
+                }
             ).SetClass("w-full zebra-table");
         }, [sortMode]));
     }

@@ -12,31 +12,9 @@ Playgrounds
 
 
 
-## Table of contents
-
-1. [playground](#playground)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [playground-surface](#playground-surface)
-    + [playground-lit](#playground-lit)
-    + [playground-min_age](#playground-min_age)
-    + [playground-max_age](#playground-max_age)
-    + [playground-operator](#playground-operator)
-    + [playground-access](#playground-access)
-    + [playground-email](#playground-email)
-    + [playground-phone](#playground-phone)
-    + [Playground-wheelchair](#playground-wheelchair)
-    + [playground-opening_hours](#playground-opening_hours)
-    + [questions](#questions)
-    + [playground-reviews](#playground-reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -50,8 +28,6 @@ Playgrounds
   - [personal](https://mapcomplete.osm.be/personal)
   - [playgrounds](https://mapcomplete.osm.be/playgrounds)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/playground/playground.json)
 
 
 
@@ -88,6 +64,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/min_age#values) [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/max_age#values) [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
@@ -193,6 +170,22 @@ The question is **Is this playground accessible to the general public?**
   - **Only accessible for clients of the operating business** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
   - **Only accessible to students of the school** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>_This option cannot be chosen as answer_
   - **Not accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+
+
+
+
+### website 
+
+
+
+The question is **What is the website of {title()}?**
+
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
+This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+
+
+
+  - **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This option cannot be chosen as answer_
 
 
 

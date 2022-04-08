@@ -90,7 +90,7 @@
       "iconBadges": [
         {
           "if": "_total_comments>1",
-          "then": "speech_bubble"
+          "then": "circle:white;speech_bubble"
         },
         {
           "if": "_is_import_note~*",

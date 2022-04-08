@@ -12,29 +12,9 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
 
 
 
-## Table of contents
-
-1. [cafe_pub](#cafe_pub)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Name](#name)
-    + [Classification](#classification)
-    + [opening_hours](#opening_hours)
-    + [website](#website)
-    + [email](#email)
-    + [phone](#phone)
-    + [payment-options](#payment-options)
-    + [wheelchair-access](#wheelchair-access)
-    + [service:electricity](#serviceelectricity)
-    + [dog-access](#dog-access)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
 
 
 
@@ -48,8 +28,6 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
   - [cafes_and_pubs](https://mapcomplete.osm.be/cafes_and_pubs)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cafe_pub/cafe_pub.json)
 
 
 

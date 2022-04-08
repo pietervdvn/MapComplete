@@ -16,6 +16,7 @@ export default class Link extends BaseUIElement {
         if (this._embeddedShow === undefined) {
             throw "Error: got a link where embeddedShow is undefined"
         }
+        this.onClick(() => {})
 
     }
 

@@ -12,27 +12,9 @@ A facility where bicycles can be lent for longer period of times
 
 
 
-## Table of contents
-
-1. [bicycle_library](#bicycle_library)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bicycle_library-name](#bicycle_library-name)
-    + [website](#website)
-    + [phone](#phone)
-    + [email](#email)
-    + [opening_hours](#opening_hours)
-    + [bicycle_library-charge](#bicycle_library-charge)
-    + [bicycle-library-target-group](#bicycle-library-target-group)
-    + [description](#description)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **8** and higher
 
 
 
@@ -47,8 +29,6 @@ A facility where bicycles can be lent for longer period of times
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_library/bicycle_library.json)
 
 
 

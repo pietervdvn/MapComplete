@@ -27,6 +27,7 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import {And} from "../../Logic/Tags/And";
 import {Overpass} from "../../Logic/Osm/Overpass";
 import Constants from "../Constants";
+import undefinedError = Mocha.utils.undefinedError;
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -72,6 +73,7 @@ export default class LayerConfig extends WithContextLoader {
         official: boolean = true
     ) {
         context = context + "." + json.id;
+        const translationContext = "layers:"+json.id
         super(json, context)
         this.id = json.id;
 
@@ -130,7 +132,7 @@ export default class LayerConfig extends WithContextLoader {
 
 
         this.allowSplit = json.allowSplit ?? false;
-        this.name = Translations.T(json.name, context + ".name");
+        this.name = Translations.T(json.name, translationContext + ".name");
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {
@@ -141,7 +143,7 @@ export default class LayerConfig extends WithContextLoader {
 
         this.description = Translations.T(
             json.description,
-            context + ".description"
+            translationContext + ".description"
         );
 
 
@@ -202,23 +204,23 @@ export default class LayerConfig extends WithContextLoader {
                     snapToLayers = pr.preciseInput.snapToLayer
                 }
 
-                let preferredBackground: string[]
+                let preferredBackground: ("map" | "photo" | "osmbasedmap" | "historicphoto" | string)[]
                 if (typeof pr.preciseInput.preferredBackground === "string") {
                     preferredBackground = [pr.preciseInput.preferredBackground]
                 } else {
                     preferredBackground = pr.preciseInput.preferredBackground
                 }
                 preciseInput = {
-                    preferredBackground: preferredBackground,
+                    preferredBackground,
                     snapToLayers,
                     maxSnapDistance: pr.preciseInput.maxSnapDistance ?? 10
                 }
             }
 
             const config: PresetConfig = {
-                title: Translations.T(pr.title, `${context}.presets[${i}].title`),
+                title: Translations.T(pr.title, `${translationContext}.presets.${i}.title`),
                 tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
-                description: Translations.T(pr.description, `${context}.presets[${i}].description`),
+                description: Translations.T(pr.description, `${translationContext}.presets.${i}.description`),
                 preciseInput: preciseInput,
                 exampleImages: pr.exampleImages
             }
@@ -263,7 +265,7 @@ export default class LayerConfig extends WithContextLoader {
             this.filters = []
         } else {
             this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
-                return new FilterConfig(option, `${context}.filter-[${i}]`)
+                return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
             });
         }
 
@@ -334,6 +336,8 @@ export default class LayerConfig extends WithContextLoader {
         neededLayer: string;
     }[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
+        
+        extraProps.push("This layer is shown at zoomlevel **"+this.minzoom+"** and higher")
 
         if (canBeIncluded) {
             if (addedByDefault) {
@@ -437,9 +441,6 @@ export default class LayerConfig extends WithContextLoader {
             ]).SetClass("flex flex-col"),
             new List(extraProps),
             ...usingLayer,
-
-            new Link("Go to the source code", 
-                `https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/${this.id}/${this.id}.json`),
 
             new Title("Basic tags for this layer", 2),
             "Elements must have the all of following tags to be shown on this layer:",

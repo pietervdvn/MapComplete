@@ -706,6 +706,7 @@ video {
 }
 
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -1039,6 +1040,10 @@ video {
   height: 50%;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -1057,10 +1062,6 @@ video {
 
 .h-16 {
   height: 4rem;
-}
-
-.h-4 {
-  height: 1rem;
 }
 
 .h-0 {
@@ -1131,16 +1132,16 @@ video {
   width: 0px;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-screen {
   width: 100vw;
 }
 
 .w-11 {
   width: 2.75rem;
-}
-
-.w-4 {
-  width: 1rem;
 }
 
 .w-16 {
@@ -1411,6 +1412,11 @@ video {
   border-color: rgba(0, 0, 0, var(--tw-border-opacity));
 }
 
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgba(209, 213, 219, var(--tw-border-opacity));
@@ -1419,11 +1425,6 @@ video {
 .border-red-300 {
   --tw-border-opacity: 1;
   border-color: rgba(252, 165, 165, var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
 }
 
 .border-gray-200 {
@@ -1438,6 +1439,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
 }
 
 .bg-gray-400 {
@@ -1502,10 +1508,6 @@ video {
 
 .p-0\.5 {
   padding: 0.125rem;
-}
-
-.p-8 {
-  padding: 2rem;
 }
 
 .px-0 {
@@ -1909,6 +1911,10 @@ svg, img {
 
 .no-images img {
   display: none;
+}
+
+.weblate-link {
+  /* Weblate-links are the little translation icon next to translatable sentences. Due to their special nature, they are exempt from some rules */
 }
 
 .mapcontrol svg path {

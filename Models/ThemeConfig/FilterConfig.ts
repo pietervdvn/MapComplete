@@ -38,7 +38,7 @@ export default class FilterConfig {
         this.id = json.id;
         let defaultSelection : number = undefined
         this.options = json.options.map((option, i) => {
-            const ctx = `${context}.options[${i}]`;
+            const ctx = `${context}.options.${i}`;
             const question = Translations.T(
                 option.question,
                 `${ctx}.question`
@@ -67,6 +67,15 @@ export default class FilterConfig {
                     type
                 }
             })
+
+            for (const field of fields) {
+                question.OnEveryLanguage((txt, language) => {
+                    if(txt.indexOf("{"+field.name+"}")<0){
+                        throw "Error in filter with fields at "+context+".question."+language+": The question text should contain every field, but it doesn't contain `{"+field+"}`: "+txt
+                    }
+                    return txt
+                })
+            }
 
             if(option.default){
                 if(defaultSelection === undefined){

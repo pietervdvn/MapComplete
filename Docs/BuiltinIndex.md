@@ -110,6 +110,7 @@
   - food
   - nature_reserve
   - observation_tower
+  - playground
   - recycling
 
 
@@ -155,6 +156,7 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_shop
   - bike_themed_object
   - cafe_pub
   - food

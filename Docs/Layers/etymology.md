@@ -12,27 +12,9 @@ All objects which have an etymology known
 
 
 
-## Table of contents
-
-1. [etymology](#etymology)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [etymology-images-from-wikipedia](#etymology-images-from-wikipedia)
-    + [wikipedia-etymology](#wikipedia-etymology)
-    + [zoeken op inventaris onroerend erfgoed](#zoeken-op-inventaris-onroerend-erfgoed)
-    + [simple etymology](#simple-etymology)
-    + [questions](#questions)
-    + [street-name-sign-image](#street-name-sign-image)
-    + [minimap](#minimap)
-    + [etymology_multi_apply](#etymology_multi_apply)
-    + [wikipedia](#wikipedia)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -46,8 +28,6 @@ All objects which have an etymology known
   - [etymology](https://mapcomplete.osm.be/etymology)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/etymology/etymology.json)
 
 
 

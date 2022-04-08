@@ -12,26 +12,9 @@ A layer showing street lights
 
 
 
-## Table of contents
-
-1. [street_lamps](#street_lamps)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [ref](#ref)
-    + [support](#support)
-    + [lamp_mount](#lamp_mount)
-    + [method](#method)
-    + [colour](#colour)
-    + [count](#count)
-    + [lit](#lit)
-    + [direction](#direction)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
 
 
 
@@ -45,8 +28,6 @@ A layer showing street lights
   - [personal](https://mapcomplete.osm.be/personal)
   - [street_lighting](https://mapcomplete.osm.be/street_lighting)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/street_lamps/street_lamps.json)
 
 
 

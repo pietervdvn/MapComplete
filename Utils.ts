@@ -184,6 +184,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return str.substr(0, l - 3) + "...";
     }
 
+    public static FixedLength(str: string, l: number) {
+        str = Utils.EllipsesAfter(str, l)
+        while (str.length < l) {
+            str = " " + str
+        }
+        return str;
+    }
+
     public static Dedup(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined;
@@ -212,6 +220,28 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr;
     }
 
+    /**
+     * In the given list, all values which are lists will be merged with the values, e.g.
+     *
+     * Utils.Flatten([ [1,2], 3, [4, [5 ,6]] ]) // => [1, 2, 3, 4, [5, 6]]
+     */
+    public static Flatten<T>(list: (T | T[])[]): T[] {
+        const result = []
+        for (const value of list) {
+            if (Array.isArray(value)) {
+                result.push(...value)
+            } else {
+                result.push(value)
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Utils.Identical([1,2], [1,2]) // => true
+     * Utils.Identical([1,2,3], [1,2,4}]) // => false
+     * Utils.Identical([1,2], [1,2,3]) // => false
+     */
     public static Identical<T>(t1: T[], t2: T[], eq?: (t: T, t0: T) => boolean): boolean {
         if (t1.length !== t2.length) {
             return false
@@ -225,6 +255,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return true;
     }
 
+    /**
+     * Utils.MergeTags({k0:"v0","common":"0"},{k1:"v1", common: "1"}) // => {k0: "v0", k1:"v1", common: "1"}
+     */
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -407,7 +440,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * If a list is encountered, this is tranparently walked recursively on every object.
      *
-     * The leaf objects are replaced by the function
+     * The leaf objects are replaced in the object itself by the specified function
      */
     public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) {
         const head = path[0]
@@ -482,36 +515,74 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON
+     * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON.
+     * Returns a modified copy of the original object.
+     * 
+     * Hangs if the object contains a loop
      */
-    static WalkJson(json: any, f: (v: number | string | boolean | undefined) => any, isLeaf: (object) => boolean = undefined) {
+    static WalkJson(json: any, f: (v: object | number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path: string[] = []) {
         if (json === undefined) {
-            return f(undefined)
+            return f(undefined, path)
         }
         const jtp = typeof json
         if (isLeaf !== undefined) {
             if (jtp === "object") {
                 if (isLeaf(json)) {
-                    return f(json)
+                    return f(json, path)
                 }
             } else {
                 return json
             }
         } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
-            return f(json)
+            return f(json, path)
         }
         if (Array.isArray(json)) {
-            return json.map(sub => {
-                return Utils.WalkJson(sub, f, isLeaf);
+            return json.map((sub,i) => {
+                return Utils.WalkJson(sub, f, isLeaf, [...path,""+i]);
             })
         }
 
         const cp = {...json}
         for (const key in json) {
-            cp[key] = Utils.WalkJson(json[key], f, isLeaf)
+            cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key])
         }
         return cp
     }
+
+    /**
+     * Walks an object recursively, will execute the 'collect'-callback on every leaf.
+     * 
+     * Will hang on objects with loops
+     */
+    static WalkObject(json: any, collect: (v: number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path = []): void {
+        if (json === undefined) {
+            return;
+        }
+        const jtp = typeof json
+        if (isLeaf !== undefined) {
+            if (jtp !== "object") {
+                return
+            }
+
+            if (isLeaf(json)) {
+                return collect(json, path)
+            }
+        } else if (jtp === "boolean" || jtp === "string" || jtp === "number") {
+            collect(json, path)
+            return
+        }
+        if (Array.isArray(json)) {
+            json.map((sub, i) => {
+                return Utils.WalkObject(sub, collect, isLeaf, [...path, i]);
+            })
+            return
+        }
+
+        for (const key in json) {
+            Utils.WalkObject(json[key], collect, isLeaf, [...path, key])
+        }
+    }
+
 
     static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
         let found = dict.get(k);
@@ -794,6 +865,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return new Date(str)
     }
 
+    public static sortedByLevenshteinDistance<T>(reference: string, ts: T[], getName: (t: T) => string): T[] {
+        const withDistance: [T, number][] = ts.map(t => [t, Utils.levenshteinDistance(getName(t), reference)])
+        withDistance.sort(([_, a], [__, b]) => a - b)
+        return withDistance.map(n => n[0])
+    }
+
     public static levenshteinDistance(str1: string, str2: string) {
         const track = Array(str2.length + 1).fill(null).map(() =>
             Array(str1.length + 1).fill(null));
@@ -827,43 +904,41 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return o
     }
 
-    private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
-    }
-
     /**
      * Utils.colorAsHex({r: 255, g: 128, b: 0}) // => "#ff8000"
      * Utils.colorAsHex(undefined) // => undefined
      */
-    public static colorAsHex(c:{ r: number, g: number, b: number } ){
-        if(c === undefined){
+    public static colorAsHex(c: { r: number, g: number, b: number }) {
+        if (c === undefined) {
             return undefined
         }
+
         function componentToHex(n) {
             let hex = n.toString(16);
             return hex.length == 1 ? "0" + hex : hex;
         }
+
         return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b);
     }
-    
+
     /**
-     * 
+     *
      * Utils.color("#ff8000") // => {r: 255, g:128, b: 0}
      * Utils.color(" rgba  (12,34,56) ") // => {r: 12, g:34, b: 56}
      * Utils.color(" rgba  (12,34,56,0.5) ") // => {r: 12, g:34, b: 56}
      * Utils.color(undefined) // => undefined
      */
     public static color(hex: string): { r: number, g: number, b: number } {
-        if(hex === undefined){
+        if (hex === undefined) {
             return undefined
         }
         hex = hex.replace(/[ \t]/g, "")
         if (hex.startsWith("rgba(")) {
-               const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
-            if(match == undefined){
+            const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
+            if (match == undefined) {
                 return undefined
             }
-            return {r: Number(match[1]), g: Number(match[2]), b:Number( match[3])}
+            return {r: Number(match[1]), g: Number(match[2]), b: Number(match[3])}
         }
 
         if (!hex.startsWith("#")) {
@@ -883,15 +958,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
-    
-    public static asDict(tags: {key: string, value: string | number}[]) : Map<string, string | number>{
-        const d= new Map<string, string | number>()
+
+    public static asDict(tags: { key: string, value: string | number }[]): Map<string, string | number> {
+        const d = new Map<string, string | number>()
 
         for (const tag of tags) {
             d.set(tag.key, tag.value)
         }
 
         return d
+    }
+
+    private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
 }
 

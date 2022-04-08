@@ -12,21 +12,9 @@ A map, meant for tourists which is permanently installed in the public space
 
 
 
-## Table of contents
-
-1. [map](#map)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [map-map_source](#map-map_source)
-    + [map-attribution](#map-attribution)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -41,8 +29,6 @@ A map, meant for tourists which is permanently installed in the public space
   - [nature](https://mapcomplete.osm.be/nature)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/map/map.json)
 
 
 

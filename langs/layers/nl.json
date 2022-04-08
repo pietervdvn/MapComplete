@@ -1062,6 +1062,9 @@
                 },
                 "question": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?"
             },
+            "bike_shop-access": {
+                "render": "Enkel voor {access}"
+            },
             "bike_shop-email": {
                 "question": "Wat is het email-adres van {name}?"
             },

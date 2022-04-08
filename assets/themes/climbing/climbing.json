@@ -143,10 +143,6 @@
           },
           "id": "climbing_club-name"
         },
-        {
-          "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-        },
         "website",
         "email",
         "phone",
@@ -287,11 +283,6 @@
       },
       "tagRenderings": [
         "images",
-        "questions",
-        {
-          "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-        },
         {
           "render": {
             "en": "<strong>{name}</strong>",
@@ -320,8 +311,7 @@
         "website",
         "phone",
         "email",
-        "opening_hours",
-        "reviews"
+        "opening_hours"
       ],
       "mapRendering": [
         {
@@ -397,11 +387,6 @@
       },
       "tagRenderings": [
         "images",
-        "questions",
-        {
-          "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-        },
         {
           "render": {
             "en": "<strong>{name}</strong>",
@@ -555,8 +540,7 @@
             "key": "_embedding_features_with_rock:rock"
           },
           "id": "Rock type"
-        },
-        "reviews"
+        }
       ],
       "presets": [
         {
@@ -704,7 +688,6 @@
       },
       "tagRenderings": [
         "images",
-        "questions",
         {
           "id": "minimap",
           "render": "{minimap(18, id, _contained_climbing_route_ids): height: 9rem; overflow: hidden; border-radius:3rem; }"
@@ -846,8 +829,7 @@
             ]
           },
           "id": "Rock type (crag/rock/cliff only)"
-        },
-        "reviews"
+        }
       ],
       "presets": [
         {
@@ -956,10 +938,6 @@
       },
       "tagRenderings": [
         {
-          "id": "minimap",
-          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-        },
-        {
           "id": "climbing-opportunity-name",
           "render": {
             "en": "<strong>{name}</strong>",
@@ -1053,26 +1031,51 @@
     }
   ],
   "overrideAll": {
-    "titleIcons": [
+    "+titleIcons": [
       {
-        "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/height.svg' style='width:2rem; height:2rem'/>{climbing:length}m</div>",
-        "freeform": {
-          "key": "climbing:length"
-        }
+        "render": "<div class='flex' style='word-wrap: normal; padding-right: 0.25rem;'><img src='./assets/themes/climbing/height.svg' style='height: 1.75rem;'/>{climbing:length}m</div>",
+        "condition": "climbing:length~*"
       },
       {
-        "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>{climbing:bolted}</div>",
-        "freeform": {
-          "key": "climbing:bolted"
-        },
         "mappings": [
+          {
+            "if": "climbing:bolts~*",
+            "then": "<div class='flex' style='padding-right: 0.25rem;'><img src='./assets/themes/climbing/carabiner.svg' style='width: 1rem;'/>{climbing:bolts}</div>"
+          },
           {
             "if": "climbing:bolted=yes",
             "then": "<img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>"
           }
         ]
       },
-      "defaults"
+      {
+        "mappings": [
+          {
+            "if": "climbing:grade:french~3.*",
+            "then": "<div class='rounded-full px-1' style='background-color:#ebf224'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~4.*",
+            "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#7af224'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~5.*",
+            "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#f24a24'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~6.*",
+            "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#244af2'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~7.*",
+            "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#e904ed'> {climbing:grade:french}</div>"
+          },
+          {
+            "if": "climbing:grade:french~*",
+            "then": "<div class='text-white rounded-full px-2' style='background-colour:black'> {climbing:grade:french}</div>"
+          }
+        ]
+      }
     ],
     "+calculatedTags": [
       "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
@@ -1690,7 +1693,9 @@
             "hideInAnswer": true
           }
         ]
-      }
+      },
+      "questions",
+      "reviews"
     ]
   }
 }

@@ -12,24 +12,9 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
 
 
 
-## Table of contents
-
-1. [ambulancestation](#ambulancestation)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [ambulance-name](#ambulance-name)
-    + [ambulance-street](#ambulance-street)
-    + [ambulance-place](#ambulance-place)
-    + [ambulance-agency](#ambulance-agency)
-    + [ambulance-operator-type](#ambulance-operator-type)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -43,8 +28,6 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/ambulancestation/ambulancestation.json)
 
 
 

@@ -12,21 +12,9 @@ A layer showing all public-transport-stops which do have a bench
 
 
 
-## Table of contents
-
-1. [bench_at_pt](#bench_at_pt)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bench_at_pt-name](#bench_at_pt-name)
-    + [bench_at_pt-bench_type](#bench_at_pt-bench_type)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -40,8 +28,6 @@ A layer showing all public-transport-stops which do have a bench
   - [benches](https://mapcomplete.osm.be/benches)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bench_at_pt/bench_at_pt.json)
 
 
 

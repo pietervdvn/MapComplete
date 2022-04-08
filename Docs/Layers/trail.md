@@ -12,25 +12,9 @@ Aangeduide wandeltochten
 
 
 
-## Table of contents
-
-1. [trail](#trail)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [trail-length](#trail-length)
-    + [Name](#name)
-    + [Operator tag](#operator-tag)
-    + [Color](#color)
-    + [Wheelchair access](#wheelchair-access)
-    + [pushchair access](#pushchair-access)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -43,8 +27,6 @@ Aangeduide wandeltochten
 
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/trail/trail.json)
 
 
 

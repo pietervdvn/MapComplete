@@ -12,28 +12,9 @@ A sport pitch
 
 
 
-## Table of contents
-
-1. [sport_pitch](#sport_pitch)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [sport_pitch-sport](#sport_pitch-sport)
-    + [sport_pitch-surface](#sport_pitch-surface)
-    + [sport-pitch-access](#sport-pitch-access)
-    + [sport-pitch-reservation](#sport-pitch-reservation)
-    + [sport_pitch-phone](#sport_pitch-phone)
-    + [sport_pitch-email](#sport_pitch-email)
-    + [sport_pitch-opening_hours](#sport_pitch-opening_hours)
-    + [questions](#questions)
-    + [sport-pitch-reviews](#sport-pitch-reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -47,8 +28,6 @@ A sport pitch
   - [personal](https://mapcomplete.osm.be/personal)
   - [sport_pitches](https://mapcomplete.osm.be/sport_pitches)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/sport_pitch/sport_pitch.json)
 
 
 
