@@ -271,7 +271,7 @@
       },
       "renderings": [
         {
-          "id": "rental-capacity-bicycle-type",
+          "id": "rental-capacity-bicycle_type",
           "labels": [
             "bicycle_rental"
           ],
