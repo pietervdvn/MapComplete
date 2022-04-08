@@ -7,6 +7,7 @@ import SpecialVisualizations from "../../../UI/SpecialVisualizations";
 import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
 import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
+import {AddContextToTranslations} from "./AddContextToTranslations";
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -43,20 +44,23 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
                     matchingTrs = layerTrs
                 } else if (id.startsWith("*")) {
                     const id_ = id.substring(1)
-                    matchingTrs = layerTrs.filter(tr => tr.group === id_)
+                    matchingTrs = layerTrs.filter(tr => tr.group === id_ || tr.labels?.indexOf(id_) >= 0)
                 } else {
                     matchingTrs = layerTrs.filter(tr => tr.id === id)
                 }
 
 
+                const contextWriter = new AddContextToTranslations<TagRenderingConfigJson>("layers:")
                 for (let i = 0; i < matchingTrs.length; i++) {
                     // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
-                    const found = Utils.Clone(matchingTrs[i]);
+                    let found : TagRenderingConfigJson = Utils.Clone(matchingTrs[i]);
                     if (found.condition === undefined) {
                         found.condition = layer.source.osmTags
                     } else {
                         found.condition = {and: [found.condition, layer.source.osmTags]}
                     }
+                    
+                    found = contextWriter.convertStrict(found, layer.id+ ".tagRenderings."+found["id"])
                     matchingTrs[i] = found
                 }
 

@@ -9,7 +9,7 @@ import LayerConfig from "../LayerConfig";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {SubstitutedTranslation} from "../../../UI/SubstitutedTranslation";
 import DependencyCalculator from "../DependencyCalculator";
-import Translations from "../../../UI/i18n/Translations";
+import {AddContextToTranslations} from "./AddContextToTranslations";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -289,60 +289,6 @@ class AddContextToTransltionsInLayout extends DesugaringStep <LayoutConfigJson>{
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
         const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
         return conversion.convert(json, json.id);
-    }
-    
-}
-
-class AddContextToTranslations<T> extends DesugaringStep<T> {
-    private readonly _prefix: string;
-    
-    constructor(prefix = "") {
-        super("Adds a '_context' to every object that is probably a translation", ["_context"], "AddContextToTranslation");
-        this._prefix = prefix;
-    }
-
-    /**
-     * const theme = {
-     *   layers: [
-     *       {
-     *           builtin: ["abc"],
-     *           override: {
-     *               title:{
-     *                   en: "Some title"
-     *               }
-     *           }
-     *       }
-     *   ]  
-     * } 
-     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result 
-     * const expected = {
-     *   layers: [
-     *       {
-     *           builtin: ["abc"],
-     *           override: {
-     *               title:{
-     *                  _context: "prefix:context.layers.0.override.title"
-     *                   en: "Some title"
-     *               }
-     *           }
-     *       }
-     *   ]  
-     * }
-     * rewritten // => expected
-     */
-    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
-        
-        const result = Utils.WalkJson(json, (leaf, path) => {
-            if(typeof leaf === "object"){
-                return {...leaf, _context: this._prefix + context+"."+ path.join(".")}
-            }else{
-                return leaf
-            }
-        }, obj => obj !== undefined && obj !== null && Translations.isProbablyATranslation(obj))
-        
-        return {
-            result
-        };
     }
     
 }

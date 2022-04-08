@@ -262,7 +262,12 @@ export interface LayerConfigJson {
      *
      * Note that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,
      * where a few very general questions are defined e.g. website, phone number, ...
-     *
+     * Furthermore, _all_ the questions of another layer can be reused with `otherlayer.*`
+     * If you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`
+     * If one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`
+     * Remark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.
+     * If they are not wanted, remove them with an override
+     * 
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
      * At last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.
