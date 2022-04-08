@@ -11,7 +11,7 @@ import {isRegExp} from "util";
 import * as key_counts from "../../assets/key_totals.json"
 
 export class TagUtils {
-    private static keyCounts : {keys: any, tags: any} = key_counts["default"] ?? key_counts
+    private static keyCounts: { keys: any, tags: any } = key_counts["default"] ?? key_counts
     private static comparators
         : [string, (a: number, b: number) => boolean][]
         = [
@@ -169,23 +169,23 @@ export class TagUtils {
 
     /**
      * Returns wether or not a keys is (probably) a valid key.
-     * 
+     *
      * // should accept common keys
      * TagUtils.isValidKey("name") // => true
      * TagUtils.isValidKey("image:0") // => true
      * TagUtils.isValidKey("alt_name") // => true
-     * 
+     *
      * // should refuse short keys
      * TagUtils.isValidKey("x") // => false
      * TagUtils.isValidKey("xy") // => false
-     * 
+     *
      * // should refuse a string with >255 characters
      * let a255 = ""
      * for(let i = 0; i < 255; i++) { a255 += "a"; }
      * a255.length // => 255
      * TagUtils.isValidKey(a255) // => true
      * TagUtils.isValidKey("a"+a255) // => false
-     * 
+     *
      * // Should refuse unexpected characters
      * TagUtils.isValidKey("with space") // => false
      * TagUtils.isValidKey("some$type") // => false
@@ -194,10 +194,10 @@ export class TagUtils {
     public static isValidKey(key: string): boolean {
         return key.match(/^[a-z][a-z0-9:_]{2,253}[a-z0-9]$/) !== null
     }
-    
+
     /**
      * Parses a tag configuration (a json) into a TagsFilter
-     * 
+     *
      * TagUtils.Tag("key=value") // => new Tag("key", "value")
      * TagUtils.Tag("key=") // => new Tag("key", "")
      * TagUtils.Tag("key!=") // => new RegexTag("key", "^..*$")
@@ -210,6 +210,9 @@ export class TagUtils {
      * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/, true)
      * TagUtils.Tag("tags~(^|.*;)amenity=public_bookcase($|;.*)") // => new RegexTag("tags", /(^|.*;)amenity=public_bookcase($|;.*)/)
      * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/)
+     *
+     * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
+     * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
      */
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
         try {
@@ -224,7 +227,7 @@ export class TagUtils {
      * INLINE sort of the given list
      */
     public static sortFilters(filters: TagsFilter [], usePopularity: boolean): void {
-        filters.sort((a,b) => TagUtils.order(a, b, usePopularity))
+        filters.sort((a, b) => TagUtils.order(a, b, usePopularity))
     }
 
     public static toString(f: TagsFilter, toplevel = true): string {
@@ -236,10 +239,10 @@ export class TagUtils {
         } else {
             r = f.asHumanString(false, false, {})
         }
-        if(toplevel){
+        if (toplevel) {
             r = r.trim()
         }
-        
+
         return r
     }
 
@@ -260,8 +263,8 @@ export class TagUtils {
             }
             throw "At " + context + ": unrecognized tag"
         }
-        
-        
+
+
         const tag = json as string;
         for (const [operator, comparator] of TagUtils.comparators) {
             if (tag.indexOf(operator) >= 0) {
@@ -272,12 +275,19 @@ export class TagUtils {
                     val = new Date(split[1].trim()).getTime()
                 }
 
-                const f = (value: string | undefined) => {
+                const f = (value: string | number | undefined) => {
                     if (value === undefined) {
                         return false;
                     }
-                    let b = Number(value?.trim())
-                    if (isNaN(b)) {
+                    let b: number
+                    if (typeof value === "number") {
+                        b = value
+                    } else if (typeof b === "string") {
+                        b = Number(value?.trim())
+                    } else {
+                        b = Number(value)
+                    }
+                    if (isNaN(b) && typeof value === "string") {
                         b = Utils.ParseDate(value).getTime()
                         if (isNaN(b)) {
                             return false
@@ -306,8 +316,8 @@ export class TagUtils {
                 split[1] = "..*"
             }
             return new RegexTag(
-                new RegExp("^"+split[0]+"$"),
-                new RegExp("^"+ split[1]+"$")
+                new RegExp("^" + split[0] + "$"),
+                new RegExp("^" + split[1] + "$")
             );
         }
         if (tag.indexOf("!:=") >= 0) {
@@ -371,32 +381,32 @@ export class TagUtils {
     }
 
     private static GetCount(key: string, value?: string) {
-        if(key === undefined) {
+        if (key === undefined) {
             return undefined
         }
         const tag = TagUtils.keyCounts.tags[key]
-        if(tag !== undefined && tag[value] !== undefined) {
+        if (tag !== undefined && tag[value] !== undefined) {
             return tag[value]
         }
         return TagUtils.keyCounts.keys[key]
     }
-    
+
     private static order(a: TagsFilter, b: TagsFilter, usePopularity: boolean): number {
         const rta = a instanceof RegexTag
         const rtb = b instanceof RegexTag
-        if(rta !== rtb) {
+        if (rta !== rtb) {
             // Regex tags should always go at the end: these use a lot of computation at the overpass side, avoiding it is better
-            if(rta) {
+            if (rta) {
                 return 1 // b < a
-            }else {
+            } else {
                 return -1
             }
         }
         if (a["key"] !== undefined && b["key"] !== undefined) {
-            if(usePopularity) {
+            if (usePopularity) {
                 const countA = TagUtils.GetCount(a["key"], a["value"])
                 const countB = TagUtils.GetCount(b["key"], b["value"])
-                if(countA !== undefined && countB !== undefined) {
+                if (countA !== undefined && countB !== undefined) {
                     return countA - countB
                 }
             }
@@ -420,5 +430,5 @@ export class TagUtils {
         }
         return " (" + joined + ") "
     }
-    
+
 }

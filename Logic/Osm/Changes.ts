@@ -2,7 +2,7 @@ import {OsmNode, OsmObject, OsmRelation, OsmWay} from "./OsmObject";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
 import OsmChangeAction from "./Actions/OsmChangeAction";
-import {ChangeDescription} from "./Actions/ChangeDescription";
+import {ChangeDescription, ChangeDescriptionTools} from "./Actions/ChangeDescription";
 import {Utils} from "../../Utils";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import SimpleMetaTagger from "../SimpleMetaTagger";
@@ -142,11 +142,7 @@ export class Changes {
         this.allChanges.data.push(...changes)
         this.allChanges.ping()
     }
-
-    public registerIdRewrites(mappings: Map<string, string>): void {
-        CreateNewNodeAction.registerIdRewrites(mappings)
-    }
-
+    
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
 
         const locations = this.historicalUserLocations?.features?.data
@@ -226,17 +222,6 @@ export class Changes {
         }
 
         console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-        const changes: {
-            newObjects: OsmObject[],
-            modifiedObjects: OsmObject[]
-            deletedObjects: OsmObject[]
-        } = self.CreateChangesetObjects(pending, osmObjects)
-        if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
-            console.log("No changes to be made")
-            return true
-        }
-
-
         const perType = Array.from(
             Utils.Hist(pending.filter(descr => descr.meta.changeType !== undefined && descr.meta.changeType !== null)
                 .map(descr => descr.meta.changeType)), ([key, count]) => (
@@ -303,7 +288,19 @@ export class Changes {
         ]
 
         await this._changesetHandler.UploadChangeset(
-            (csId) => Changes.createChangesetFor("" + csId, changes),
+            (csId, remappings) =>{
+                if(remappings.size > 0){
+                    console.log("Rewriting pending changes from", pending, "with", remappings)
+                    pending = pending.map(ch => ChangeDescriptionTools.rewriteIds(ch, remappings))
+                    console.log("Result is", pending)
+                }
+                const changes: {
+                    newObjects: OsmObject[],
+                    modifiedObjects: OsmObject[]
+                    deletedObjects: OsmObject[]
+                } = self.CreateChangesetObjects(pending, osmObjects)
+               return Changes.createChangesetFor("" + csId, changes)
+            },
             metatags,
             openChangeset
         )

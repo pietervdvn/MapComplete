@@ -23,6 +23,14 @@ export class ChangesetHandler {
     private readonly auth: any;
     private readonly backend: string;
 
+
+    /**
+     * Contains previously rewritten IDs
+     * @private
+     */
+    private readonly _remappings = new Map<string, string>()
+
+
     /**
      * Use 'osmConnection.CreateChangesetHandler' instead
      * @param dryRun
@@ -50,6 +58,7 @@ export class ChangesetHandler {
 
     }
 
+    
     /**
      * Creates a new list which contains every key at most once
      * 
@@ -104,7 +113,7 @@ export class ChangesetHandler {
      *
      */
     public async UploadChangeset(
-        generateChangeXML: (csid: number) => string,
+        generateChangeXML: (csid: number, remappings: Map<string, string>) => string,
         extraMetaTags: ChangesetTag[],
         openChangeset: UIEventSource<number>): Promise<void> {
 
@@ -120,7 +129,7 @@ export class ChangesetHandler {
             this.userDetails.ping();
         }
         if (this._dryRun.data) {
-            const changesetXML = generateChangeXML(123456);
+            const changesetXML = generateChangeXML(123456, this._remappings);
             console.log("Metatags are", extraMetaTags)
             console.log(changesetXML);
             return;
@@ -131,7 +140,7 @@ export class ChangesetHandler {
             try {
                 const csId = await this.OpenChangeset(extraMetaTags)
                 openChangeset.setData(csId);
-                const changeset = generateChangeXML(csId);
+                const changeset = generateChangeXML(csId, this._remappings);
                 console.trace("Opened a new changeset (openChangeset.data is undefined):", changeset);
                 const changes = await this.UploadChange(csId, changeset)
                 const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(extraMetaTags, changes)
@@ -162,7 +171,7 @@ export class ChangesetHandler {
 
                 const rewritings = await this.UploadChange(
                     csId,
-                    generateChangeXML(csId))
+                    generateChangeXML(csId, this._remappings))
 
                 const rewrittenTags = this.RewriteTagsOf(extraMetaTags, rewritings, oldChangesetMeta)
                 await this.UpdateTags(csId, rewrittenTags)
@@ -239,57 +248,67 @@ export class ChangesetHandler {
     
     }
 
-    private handleIdRewrite(node: any, type: string): [string, string] {
+    /**
+     * Updates the id in the AllElements store, returns the new ID
+     * @param node: the XML-element, e.g.  <node old_id="-1" new_id="9650458521" new_version="1"/>
+     * @param type
+     * @private
+     */
+    private static parseIdRewrite(node: any, type: string): [string, string] {
         const oldId = parseInt(node.attributes.old_id.value);
         if (node.attributes.new_id === undefined) {
-            // We just removed this point!
-            const element = this.allElements.getEventSourceById("node/" + oldId);
-            element.data._deleted = "yes"
-            element.ping();
-            return;
+            return [type+"/"+oldId, undefined];
         }
 
         const newId = parseInt(node.attributes.new_id.value);
+        // The actual mapping
         const result: [string, string] = [type + "/" + oldId, type + "/" + newId]
-        if (!(oldId !== undefined && newId !== undefined &&
-            !isNaN(oldId) && !isNaN(newId))) {
+        if(oldId === newId){
             return undefined;
         }
-        if (oldId == newId) {
-            return undefined;
-        }
-        const element = this.allElements.getEventSourceById("node/" + oldId);
-        if (element === undefined) {
-            // Element to rewrite not found, probably a node or relation that is not rendered
-            return undefined
-        }
-        element.data.id = type + "/" + newId;
-        this.allElements.addElementById(type + "/" + newId, element);
-        this.allElements.ContainingFeatures.set(type + "/" + newId, this.allElements.ContainingFeatures.get(type + "/" + oldId))
-        element.ping();
         return result;
     }
 
+    /**
+     * Given a diff-result XML of the form 
+     * <diffResult version="0.6">
+     *  <node old_id="-1" new_id="9650458521" new_version="1"/>
+     *  <way old_id="-2" new_id="1050127772" new_version="1"/>
+     * </diffResult>,
+     * will:
+     * 
+     * - create a mapping `{'node/-1' --> "node/9650458521", 'way/-2' --> "way/9650458521"}
+     * - Call this.changes.registerIdRewrites
+     * - Call handleIdRewrites as needed
+     * @param response
+     * @private
+     */
     private parseUploadChangesetResponse(response: XMLDocument): Map<string, string> {
         const nodes = response.getElementsByTagName("node");
-        const mappings = new Map<string, string>()
+        const mappings : [string, string][]= []
         
         for (const node of Array.from(nodes)) {
-            const mapping = this.handleIdRewrite(node, "node")
+            const mapping = ChangesetHandler.parseIdRewrite(node, "node")
             if (mapping !== undefined) {
-                mappings.set(mapping[0], mapping[1])
+                mappings.push(mapping)
             }
         }
 
         const ways = response.getElementsByTagName("way");
         for (const way of Array.from(ways)) {
-            const mapping = this.handleIdRewrite(way, "way")
+            const mapping = ChangesetHandler.parseIdRewrite(way, "way")
             if (mapping !== undefined) {
-                mappings.set(mapping[0], mapping[1])
+                mappings.push(mapping)
             }
         }
-        this.changes.registerIdRewrites(mappings)
-        return mappings
+        for (const mapping of mappings) {
+            const [oldId, newId] = mapping
+            this.allElements.addAlias(oldId, newId);
+            if(newId !== undefined) {
+                this._remappings.set(mapping[0], mapping[1])
+            }
+        }
+        return new Map<string, string>(mappings)
 
     }
 
@@ -335,7 +354,6 @@ export class ChangesetHandler {
         tags: ChangesetTag[]) {
         tags = ChangesetHandler.removeDuplicateMetaTags(tags)
 
-        console.trace("Updating tags of " + csId)
         const self = this;
         return new Promise<string>(function (resolve, reject) {
 
@@ -351,7 +369,7 @@ export class ChangesetHandler {
                     `</changeset></osm>`].join("")
             }, function (err, response) {
                 if (response === undefined) {
-                    console.log("err", err);
+                    console.error("Updating the tags of changeset "+csId+" failed:", err);
                     reject(err)
                 } else {
                     resolve(response);
@@ -397,7 +415,7 @@ export class ChangesetHandler {
                     `</changeset></osm>`].join("")
             }, function (err, response) {
                 if (response === undefined) {
-                    console.log("err", err);
+                    console.error("Opening a changeset failed:", err);
                     reject(err)
                 } else {
                     resolve(Number(response));
@@ -421,7 +439,7 @@ export class ChangesetHandler {
                 content: changesetXML
             }, function (err, response) {
                 if (response == null) {
-                    console.log("err", err);
+                    console.error("Uploading an actual change failed", err);
                     reject(err);
                 }
                 const changes = self.parseUploadChangesetResponse(response);
