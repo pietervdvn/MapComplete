@@ -112,7 +112,8 @@
             "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
           }
         }
-      ]
+      ],
+      "condition": "amenity=bicycle_rental"
     },
     "website",
     "email",
@@ -142,6 +143,7 @@
     },
     {
       "id": "bicycle-types",
+      "group": "bicycle_rental",
       "question": {
         "en": "What kind of bicycles and accessories are rented here?",
         "nl": "Wat voor soort fietsen en fietstoebehren worden hier verhuurd?"
@@ -268,7 +270,7 @@
       "renderings": [
         {
           "id": "rental-capacity-bicycle-type",
-          "group": "",
+          "group": "bicycle_rental",
           "question": {
             "en": "How much type_plural can be rented here? ",
             "nl": "Hoeveel type_plural kunnen hier uitgeleend worden?"

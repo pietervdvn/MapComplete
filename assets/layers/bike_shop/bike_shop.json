@@ -210,7 +210,16 @@
         "pt_BR": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas",
         "de": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig",
         "pt": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
-      }
+      },
+      "mappings": [
+        {
+          "if": "shop=rental",
+          "then": {
+            "nl": "Deze zaak focust op verhuur",
+            "en": "Deze business focuses on rental"
+          }
+        }
+      ]
     },
     {
       "question": {
