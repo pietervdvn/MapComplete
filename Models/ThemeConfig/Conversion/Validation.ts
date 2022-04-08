@@ -455,6 +455,15 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        {
+            // duplicate ids in tagrenderings check
+          const duplicates = Utils.Dedup(Utils.Dupiclates( Utils.NoNull((json.tagRenderings ?? []).map(tr => tr["id"]))))
+              .filter(dupl => dupl !== "questions")
+            if(duplicates.length > 0){
+                errors.push("At "+context+": some tagrenderings have a duplicate id: "+duplicates.join(", "))
+            }
+        }
+        
         try {
             {
                 // Some checks for legacy elements
@@ -472,7 +481,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             {
-                // CHeck location of layer file
+                // Check location of layer file
                 const expected: string = `assets/layers/${json.id}/${json.id}.json`
                 if (this._path != undefined && this._path.indexOf(expected) < 0) {
                     errors.push("Layer is in an incorrect place. The path is " + this._path + ", but expected " + expected)
