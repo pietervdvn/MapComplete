@@ -320,7 +320,12 @@
             "errDuplicate": "Sommige kolommen hebben dezelfde naam",
             "errNoName": "De naam van sommige kolommen ontbreken",
             "errNotFeatureCollection": "Het ingeladen JSON-bestand is geen geojson-featurecollection",
-            "fileFormatDescription": "Selecteer een <b class=\"code\">.csv</b>- of een <b class=\"code\">.geojson</b>bestand"
+            "fileFormatDescription": "Selecteer een <b class=\"code\">.csv</b>- of een <b class=\"code\">.geojson</b>bestand",
+            "loadedFilesAre": "{file} werd ingeladen",
+            "noFilesLoaded": "Geen bestand ingeladen op dit moment",
+            "title": "Selecteer bestand",
+            "fileFormatDescriptionCsv": "Het CSV-bestand moet een kolom <span class=\"literal-code\">lat</span> en <span class=\"literal-code\">lon</span> bevatten die de coordinaten in WGS84 beschrijft. Bovendien moet er voor elk attribuut nog een kolom zijn..",
+            "fileFormatDescriptionGeoJson": "Het geojson-bestand mag enkel punten bevatten. De attributen moeten dezelfde zijn zoals in OpenStreetMap"
         },
         "inspectDataTitle": "Bekijk de data van {count} te importeren objecten",
         "lockNotice": "Deze pagina is afgeschermd. Je hebt minstens {importHelperUnlock} changesets nodig voor je deze pagina mag gebruiken.",
@@ -330,7 +335,12 @@
         "inspectLooksCorrect": "Deze waardes zien er correct uit",
         "locked": "Je hebt minstens {importHelperUnlock} changesets nodig om de import helper te gebruiken",
         "loggedInWith": "Je bent momenteel aangemeld als <b>{name}</b> and maakte {csCount} eerdere wijzigingen",
-        "loginRequired": "Je moet ingelogd zijn om verder te gaan"
+        "loginRequired": "Je moet ingelogd zijn om verder te gaan",
+        "title": "Importeer-helper",
+        "selectLayer": "Selecteer een laag...",
+        "validateDataTitle": "Valideer data",
+        "someHaveSame": "{count} te importeren objecten hebben dit attribuut, dit is {percentage}% van het totaal",
+        "userAccountTitle": "Selecteer een account"
     },
     "importLayer": {
         "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
@@ -386,7 +396,23 @@
         "createNoteIntro": "Ontbreekt hier iets? Is hier iets mis met de kaart? Maak hier dan een kaartnota, deze zal door vrijwilligers verwerkt worden.",
         "createNoteTitle": "Voeg hier een nieuwe kaartnota toe",
         "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
-        "typeText": "Typ eerst een commentaar om deze toe te voegen"
+        "typeText": "Typ eerst een commentaar om deze toe te voegen",
+        "disableAllNoteFilters": "Schakel alle filters uit",
+        "noteLayerHasFilters": "Sommige kaartnota's kunnen verborgen zijn door een filter",
+        "noteLayerNotEnabled": "De laat met kaartnota's staat af. Zet deze aan om een nieuwe kaartnota toe te voegen",
+        "notesLayerMustBeEnabled": "De laat met kaartnota's staat af. Zet deze aan om een nieuwe kaartnota toe te voegen",
+        "reopenNote": "Heropen de kaartnota",
+        "addComment": "Voeg commentaar toe",
+        "noteIsPublic": "Dit zal voor iedereen zichtbaar zijn",
+        "addAComment": "Voeg een commentaar toe",
+        "isClosed": "Deze nota is gesloten",
+        "loginToAddComment": "Log in om een commentaar toe te voegen",
+        "loginToAddPicture": "Log in om een afbeelding toe te voegen",
+        "loginToClose": "Login om deze kaartnota te sluiten",
+        "noteLayerDoEnable": "Schakel de laat met kaartnota's in",
+        "isCreated": "Je kaarnota werd gemaakt!",
+        "warnAnonymous": "Je bent niet aangemeld. We gaan je niet kunnen contacteren om deze kaartnota te verwerken.",
+        "reopenNoteAndComment": "Heropen de kaartnota en voeg commentaar toe"
     },
     "privacy": {
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
@@ -463,6 +489,17 @@
                 "li1": "Gebeurtenissen horen <i>niet</i> thuis in OpenStreetMap, net zoals kortstondige wegenwerken van enkele dagen of weken.",
                 "li2": "Tijdsgebonden data (bv. statistieken van luchtkwaliteit, verkeersintensiteit, ...) kunnen niet bewaard worden op OpenStreetMap. Merk echter op dat MapComplete dit soort data kan visualiseren indien deze op een andere locatie opgeslaan is.",
                 "title": "Data die niet geschikt is voor OpenStreetMap"
+            },
+            "licenseNuances": {
+                "li0": "Alle data mag hergebruikt worden voor alle doeleinden - inclusief commercieel gebruik",
+                "li1": "Applicaties en producten die OpenStreetMap gebruiken moeten een attributie tonen",
+                "li2": "Een dataset of kaartproduct die OpenStreetMap-data bevat moet deze data herpubliceren onder de ODbL, inclusief aanpassingen aan de data in een algemeen bruikbaar formaat.",
+                "outro": "Dit heeft enkele gevolgen voor sommige toepassingen zoals hieronder uitgelegd",
+                "title": "Gevolgen van de ODbL voor enkele toepassingen",
+                "intro": "OpenStreetMap wordt verspreid met de Open Database License. Deze houdt in dat:",
+                "usecaseGatheringOpenData": {
+                    "title": "Het verzamelen van Open Data"
+                }
             }
         },
         "indexPage": {
@@ -512,7 +549,9 @@
         "deactivate": "Verberg de vertaalknoppen",
         "help": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
         "isTranslator": "Vertaalmode is actief: je gebruikersnaam is dezelfde als van een vertaler. We gaan er dus vanuit dat jij die vertaler bent",
-        "missing": "{count} niet-vertaalde teksten"
+        "missing": "{count} niet-vertaalde teksten",
+        "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen",
+        "completeness": "Vertalingen voor {theme} in {language} zijn momenteel op {percentage}%: van {total} teksten zijn er reeds {translated} vertaald"
     },
     "validation": {
         "email": {
@@ -551,6 +590,30 @@
         "url": {
             "description": "een link naar een webpagina",
             "feedback": "Dit is geen geldige link"
+        },
+        "color": {
+            "description": "Een kleur of hexadecimale code voor een kleur"
+        },
+        "direction": {
+            "description": "Een orientatie"
+        },
+        "opening_hours": {
+            "description": "Openingsuren"
+        },
+        "text": {
+            "description": "Een stukje tekst"
+        },
+        "date": {
+            "description": "Een datum (beginnend met het jaar)"
+        },
+        "decimal": {
+            "description": "Een getal"
+        },
+        "wikidata": {
+            "description": "Een Wikidata-code"
         }
+    },
+    "importInspector": {
+        "title": "Inspecteer en beheer importeer-notas"
     }
 }
