@@ -1,7 +1,7 @@
 {
     "aed": {
         "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
-        "title": "AED-Karte öffnen"
+        "title": "AED-Karte"
     },
     "artwork": {
         "description": "Willkommen bei der Freien Kunst-Karte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
@@ -19,10 +19,10 @@
     },
     "bicyclelib": {
         "description": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
-        "title": "Fahrradbibliothek"
+        "title": "Fahrradbibliotheken"
     },
     "binoculars": {
-        "description": "Eine Karte mit festinstallierten Ferngläsern. Man findet sie typischerweise an touristischen Orten, Aussichtspunkten, auf Aussichtstürmen oder gelegentlich in einem Naturschutzgebiet.",
+        "description": "Eine Karte für festinstallierte Ferngläsern. Man findet sie meist an touristischen Orten, Aussichtspunkten, Aussichtstürmen oder gelegentlich in Naturschutzgebieten.",
         "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
         "title": "Ferngläser"
     },
@@ -35,7 +35,7 @@
         "title": "Cafés und Kneipen"
     },
     "campersite": {
-        "description": "Auf dieser Seite finden Sie alle offiziellen Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen. Fügen Sie Bilder und Bewertungen hinzu. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
+        "description": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
         "layers": {
             "0": {
                 "description": "Wohnmobilstellplätze",
@@ -268,11 +268,11 @@
     },
     "climbing": {
         "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
-        "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
+        "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Daten und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
         "layers": {
             "0": {
                 "description": "Ein Kletterverein oder -organisation",
-                "name": "Kletterverein",
+                "name": "Klettervereine",
                 "presets": {
                     "0": {
                         "description": "Ein Kletterverein",
@@ -663,7 +663,7 @@
             },
             "1": {
                 "description": "Diese Straße wird bald eine Fahrradstraße sein",
-                "name": "Zukünftige Fahrradstraße",
+                "name": "Zukünftige Fahrradstraßen",
                 "title": {
                     "mappings": {
                         "0": {
@@ -715,7 +715,7 @@
     },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
-        "title": "Trinkwasserstelle"
+        "title": "Trinkwasserstellen"
     },
     "entrances": {
         "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
@@ -723,7 +723,7 @@
         "title": "Eingänge"
     },
     "etymology": {
-        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, das mit Wikidata verknüpft wurde. In dem Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Zoomen Sie genug hinein und <i>alle</i> Straßen werden angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
+        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "layers": {
             "1": {
                 "override": {
@@ -737,27 +737,27 @@
             },
             "3": {
                 "override": {
-                    "=name": "Bildungseinrichtungen ohne Informationen zur Etymologie"
+                    "=name": "Bildungseinrichtungen ohne Informationen zur Namensherkunft"
                 }
             },
             "4": {
                 "override": {
-                    "=name": "Kulturelle Orte ohne etymologische Informationen"
+                    "=name": "Kultureinrichtungen ohne Informationen zur Namensherkunft"
                 }
             },
             "5": {
                 "override": {
-                    "=name": "Touristische Orte ohne Angaben zur Etymologie"
+                    "=name": "Touristische Einrichtungen ohne Informationen zur Namensherkunft"
                 }
             },
             "6": {
                 "override": {
-                    "=name": "Gesundheits- und Sozialeinrichtungen ohne etymologische Informationen"
+                    "=name": "Gesundheits- und Sozialeinrichtungen ohne Informationen zur Namensherkunft"
                 }
             },
             "7": {
                 "override": {
-                    "=name": "Sportstätten ohne etymologische Informationen"
+                    "=name": "Sporteinrichtungen ohne Informationen zur Namensherkunft"
                 }
             }
         },
@@ -867,7 +867,7 @@
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
         "title": "Geisterräder"
     },
     "grb": {
@@ -898,7 +898,7 @@
         "layers": {
             "0": {
                 "description": "Hackerspace",
-                "name": "Hackerspace",
+                "name": "Hackerspaces",
                 "presets": {
                     "0": {
                         "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
@@ -974,12 +974,12 @@
         "title": "Eine Karte der Karten"
     },
     "nature": {
-        "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber, wie zum Beispiel ",
+        "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
         "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
         "title": "In die Natur"
     },
     "observation_towers": {
-        "description": "Öffentlich zugänglicher Aussichtsturm",
+        "description": "Eine Karte mit öffentlich zugänglichen Aussichtstürmen",
         "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
         "title": "Aussichtstürme"
     },
@@ -987,7 +987,7 @@
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
         "layers": {
             "0": {
-                "name": "Windrad",
+                "name": "Windräder",
                 "presets": {
                     "0": {
                         "title": "eine windrad"
@@ -1026,9 +1026,9 @@
         "title": "Freie Windenergie-Karte"
     },
     "parkings": {
-        "description": "Diese Karte zeigt Parkplätze",
+        "description": "Eine Karte für verschiedene Parkplätze",
         "shortDescription": "Diese Karte zeigt Parkplätze",
-        "title": "Parken"
+        "title": "Parkplatzkarte"
     },
     "personal": {
         "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
@@ -1043,7 +1043,7 @@
         "layers": {
             "0": {
                 "description": "Die Ebene zeigt Briefkästen.",
-                "name": "Brieflästen",
+                "name": "Briefkästen",
                 "presets": {
                     "0": {
                         "title": "eine briefkasten"
@@ -1085,7 +1085,8 @@
             }
         },
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
-        "title": "Karte mit Briefkästen und Poststellen"
+        "title": "Post- und Briefkastenkarte",
+        "description": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. "
     },
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
@@ -1115,5 +1116,25 @@
         "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "street_lighting": {
+        "description": "Eine Karte für alles zum Thema Straßenbeleuchtung",
+        "layers": {
+            "1": {
+                "name": "Beleuchtete Straßen"
+            },
+            "2": {
+                "name": "Alle Straßen"
+            }
+        },
+        "title": "Straßenbeleuchtung"
+    },
+    "waste": {
+        "title": "Abfall",
+        "description": "Eine Karte für Abfallbehälter und Recyclinganlagen."
+    },
+    "notes": {
+        "description": "Ein Hinweis ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzern und Text gesucht werden.",
+        "title": "Hinweise zu OpenStreetMap"
     }
 }
