@@ -1088,7 +1088,7 @@
                         "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
                     },
                     "turbine-height": {
-                        "render": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {Höhe} Meter.",
+                        "render": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
                         "question": "Wie hoch ist dieses Windrad (inklusive Rotorradius) in Metern?"
                     }
                 },

@@ -50,7 +50,8 @@
             "hasBeenImported": "Aquest punt ja ha estat importat",
             "import": {
                 "hasBeenImported": "Aquest objecte ha estat importat",
-                "importTags": "L'element rebrà {tags}"
+                "importTags": "L'element rebrà {tags}",
+                "zoomInMore": "Ampliar més per importar aquest element."
             },
             "importTags": "L'element rebrà {tags}",
             "intro": "Has marcat un lloc on no coneixem les dades.<br>",
@@ -108,7 +109,8 @@
             "noDataLoaded": "No s'han carregat dades. La baixada estarà disponible aviat",
             "title": "Baixar dades visibles",
             "uploadGpx": "Pujar la teva traça a OpenStreetMap",
-            "downloadAsSvg": "Baixa un SVG del mapa actual"
+            "downloadAsSvg": "Baixa un SVG del mapa actual",
+            "downloadAsSvgHelper": "Compatible amb Inkscape o Adobe Illustrator; necessitaràs un processament  "
         },
         "example": "Exemple",
         "examples": "Exemples",
@@ -242,7 +244,8 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        }
+        },
+        "screenToSmall": "Obrir {theme} en una finestra nova."
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -271,13 +274,18 @@
         "selectFile": {
             "loadedFilesAre": "L'arxiu carregat actualment és {file}",
             "noFilesLoaded": "No s'ha carregat cap arxiu",
-            "title": "Seleccionar arxiu"
+            "title": "Seleccionar arxiu",
+            "description": "Seleccionar un fitxer .csv o .geojson per començar",
+            "fileFormatDescription": "Selecciona un fitxer <b class=\"code\">.csv</b> o un fitxer <b class=\"code\">.geojson</b>",
+            "errNoName": "Algunes columnes no tenen nom.",
+            "errDuplicate": "Algunes columnes tenen el mateix nom."
         },
         "selectLayer": "Seleccionar capa...",
         "title": "Ajuda de l'importador",
         "userAccountTitle": "Seleccionar compte d'usuari",
         "validateDataTitle": "Validar dades",
-        "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar"
+        "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
+        "loginRequired": "Has d'entrar per continuar"
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
@@ -285,14 +293,16 @@
     "importLayer": {
         "layerName": "Possible {title}",
         "popupTitle": "Possible {title}",
-        "notFound": "No he pogut trobar {title}: esborra-ho"
+        "notFound": "No he pogut trobar {title}: esborra-ho",
+        "description": "Una capa que importa entrades per a {title}."
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
         "featuredThemeTitle": "Destacades aquesta setmana",
         "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre elements d'una petició específica i et permet actualitzar-los.",
         "pickTheme": "Tria una petició de sota per començar.",
-        "title": "Benvingut/da a MapComplete"
+        "title": "Benvingut/da a MapComplete",
+        "logIn": "Entra per veure altres temes que has visitat anteriorment"
     },
     "move": {
         "cancel": "Cancel·lar moviment",
@@ -339,7 +349,9 @@
         "loginToClose": "Entrar per tancar aquesta nota",
         "noteLayerDoEnable": "Habilita la capa que mostra notes",
         "reopenNote": "Reobrir nota",
-        "reopenNoteAndComment": "Reobrir nota i comentar"
+        "reopenNoteAndComment": "Reobrir nota i comentar",
+        "textNeeded": "Introdueix un text descriptiu per crear una nota",
+        "noteIsPublic": "Això serà visible per a tothom."
     },
     "privacy": {
         "editingTitle": "Quan es facin canvis",
@@ -354,7 +366,13 @@
             "survey": {
                 "title": "Possibilitats d'enquesta"
             },
-            "title": "Utilitzar MapComplete a la teva organització"
+            "title": "Utilitzar MapComplete a la teva organització",
+            "layers": {
+                "title": "Quines dades es poden mostrar amb MapComplete?."
+            },
+            "internalUse": {
+                "title": "Ús de les dades en processos interns."
+            }
         },
         "aboutOsm": {
             "aboutOsm": {
@@ -376,11 +394,17 @@
             "licenseNuances": {
                 "usecaseGatheringOpenData": {
                     "title": "Aconseguint dades obertes"
-                }
+                },
+                "usecaseMapDifferentSources": {
+                    "title": "Creació d'un mapa a partir de diferents fonts.",
+                    "li1": "… mentre que la llicència de tots els drets reservats ho prohibiria.-"
+                },
+                "title": "Implicacions de l'ODbL: alguns casos d'ús."
             },
             "unsuitedData": {
                 "title": "Les dades no són acceptables per OpenStreetMap"
-            }
+            },
+            "title": "Alguns inconvenients a tenir en compte."
         },
         "indexPage": {
             "button": "Descobreix els nostres serveis",
@@ -388,7 +412,8 @@
         },
         "services": {
             "title": "Serveis de Mapcomplete",
-            "li0": "Configurar una petició adaptada a les vostres necessitats"
+            "li0": "Configurar una petició adaptada a les vostres necessitats",
+            "li4": "Formació sobre com baixar dades filtrades d'OpenStreetMap"
         },
         "title": "Suport professional amb MapComplete"
     },
@@ -471,6 +496,9 @@
         },
         "wikidata": {
             "description": "Un identificador de Wikidata"
+        },
+        "date": {
+            "description": "Una data, començant per l'any."
         }
     }
 }
