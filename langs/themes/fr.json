@@ -33,7 +33,7 @@
                 "name": "Campings",
                 "presets": {
                     "0": {
-                        "description": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
+                        "description": "Ajouter une nouvelle aire  officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
                         "title": "une aire de camping"
                     }
                 },
@@ -134,15 +134,15 @@
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "Camping sans nom"
+                            "then": "Site pour camping-cars sans nom"
                         }
                     },
-                    "render": "Camping {name}"
+                    "render": "Site pour camping-cars {name}"
                 }
             },
             "1": {
-                "description": "Site de vidange",
-                "name": "Site de vidange",
+                "description": "Site de vidange sanitaire",
+                "name": "Sites  de vidange sanitaire",
                 "presets": {
                     "0": {
                         "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
