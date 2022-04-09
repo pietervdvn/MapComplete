@@ -121,7 +121,9 @@
             "licenseInfo": "<h3>Copyright</h3>De voorziene data is beschikbaar onder de ODbL. Het hergebruiken van deze data is gratis voor elke toepassing, maar <ul><li>de bronvermelding <b>© OpenStreetMap bijdragers</b> is vereist</li><li>Elke wijziging aan deze data moet opnieuw gepubliceerd worden onder dezelfde licentie</li></ul> Gelieve de volledige <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">licentie</a> te lezen voor details",
             "noDataLoaded": "Er is nog geen data ingeladen. Downloaden kan zodra de data geladen is.",
             "title": "Download de zichtbare data",
-            "uploadGpx": "Track uploaden naar OpenStreetMap"
+            "uploadGpx": "Track uploaden naar OpenStreetMap",
+            "downloadAsSvg": "Download de huidige kaart als SVG",
+            "downloadAsSvgHelper": "Compatibel met Inkscape of Adobe Illustrator; deze data moeten nog verder verwerkt worden…  "
         },
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
@@ -271,8 +273,14 @@
             "noResults": "Niet gevonden voor <i>{search}</i>",
             "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel",
             "searchWikidata": "Zoek op Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
-        }
+            "wikipediaboxTitle": "Wikipedia",
+            "previewbox": {
+                "born": "Geboren: {value}",
+                "died": "Gestorven: {value}"
+            }
+        },
+        "loginFailed": "Het inloggen op OpenStreetMap is gefaald",
+        "screenToSmall": "Open {theme} in een nieuw venster"
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -296,7 +304,33 @@
         "willBePublished": "Jouw foto wordt gepubliceerd "
     },
     "importHelper": {
-        "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag"
+        "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag",
+        "loginIsCorrect": "<b>{name}</b> is de correcte account om de import-nota's mee te maken.",
+        "mapPreview": {
+            "autodetected": "Deze laag was automatisch gekozen gebaseerd op de aanwezige eigenschappen",
+            "confirm": "De objecten bevinden zich op de juiste locatie",
+            "title": "Voorbeeldkaart",
+            "mismatch": "{count} objecten hebben niet de juiste tags. Zorg ervoor dat de juiste tags om het type aan te geven aanwezig zijn, namelijk {tags}",
+            "selectLayer": "Met welke laag komt deze te importeren dataset overeen?"
+        },
+        "selectFile": {
+            "description": "Selecteer een .csv of .geojson-bestand",
+            "errNoLatOrLon": "Geen enkele kolom heet `lat` of `lon`",
+            "errPointsOnly": "Het ingeladen JSON-bestand mag enkel punten bevatten",
+            "errDuplicate": "Sommige kolommen hebben dezelfde naam",
+            "errNoName": "De naam van sommige kolommen ontbreken",
+            "errNotFeatureCollection": "Het ingeladen JSON-bestand is geen geojson-featurecollection",
+            "fileFormatDescription": "Selecteer een <b class=\"code\">.csv</b>- of een <b class=\"code\">.geojson</b>bestand"
+        },
+        "inspectDataTitle": "Bekijk de data van {count} te importeren objecten",
+        "lockNotice": "Deze pagina is afgeschermd. Je hebt minstens {importHelperUnlock} changesets nodig voor je deze pagina mag gebruiken.",
+        "description": "De importeer-helper converteert een externe dataset in OSM-kaartnotas. De externe data moet overeenkomen met een bestaande MapComplete-laag. Voor elk item wordt er een kaartnota gemaakt. Deze notas worden dan samen met de relevante POI getoond en kunnen dan (via MapComplete) snel en eenvoudig toegevoegd worden.",
+        "inspectDidAutoDected": "Deze laag werd automatisch gekozen",
+        "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>",
+        "inspectLooksCorrect": "Deze waardes zien er correct uit",
+        "locked": "Je hebt minstens {importHelperUnlock} changesets nodig om de import helper te gebruiken",
+        "loggedInWith": "Je bent momenteel aangemeld als <b>{name}</b> and maakte {csCount} eerdere wijzigingen",
+        "loginRequired": "Je moet ingelogd zijn om verder te gaan"
     },
     "importLayer": {
         "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
