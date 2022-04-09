@@ -2107,7 +2107,7 @@
                     }
                 },
                 "question": "Qu'est-ce qui est surveillé ici ?",
-                "render": " Surveille un(e) {surveillance:zone}"
+                "render": "Surveille un(e) {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
