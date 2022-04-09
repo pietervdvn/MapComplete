@@ -142,7 +142,7 @@
             },
             "1": {
                 "description": "Site de vidange sanitaire",
-                "name": "Sites  de vidange sanitaire",
+                "name": "Sites de vidange sanitaire",
                 "presets": {
                     "0": {
                         "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires). Généralement alimenté en eau potable et électricité.",
