@@ -280,7 +280,7 @@
                     },
                     "1": {
                         "description": "Eine Organisation, die sich mit dem Klettern beschäftigt",
-                        "title": "eine eine kletter-organisation"
+                        "title": "Eine Kletterorganisation"
                     }
                 },
                 "tagRenderings": {
@@ -852,7 +852,7 @@
         "title": "Fassadengärten"
     },
     "food": {
-        "description": "Restaurants und Fast Food",
+        "description": "Restaurants und Schnellimbisse",
         "title": "Restaurants und Schnellimbisse"
     },
     "fritures": {
@@ -877,6 +877,17 @@
                 "tagRenderings": {
                     "building type": {
                         "question": "Was ist das für ein Gebäude?"
+                    }
+                }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen"
+                            }
+                        }
                     }
                 }
             }
@@ -966,7 +977,7 @@
     "hailhydrant": {
         "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
-        "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
+        "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
     },
     "mapcomplete-changes": {
         "description": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
@@ -1002,11 +1013,20 @@
                     },
                     "render_id": {
                         "render": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+                        "mappings": {
+                            "0": {
+                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        }
                     }
                 },
                 "title": {
                     "render": "Änderungen für {theme}"
-                }
+                },
+                "name": "Schwerpunkte von Änderungssätzen"
             },
             "1": {
                 "override": {
@@ -1066,6 +1086,10 @@
                     "turbine-start-date": {
                         "question": "Wann wurde das Windrad in Betrieb genommen?",
                         "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+                    },
+                    "turbine-height": {
+                        "render": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {Höhe} Meter.",
+                        "question": "Wie hoch ist dieses Windrad (inklusive Rotorradius) in Metern?"
                     }
                 },
                 "title": {
@@ -1126,6 +1150,11 @@
                 "name": "Postleitzahlen",
                 "title": {
                     "render": "Postleitzahl {postal_code}"
+                },
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Die Postleitzahl lautet {postal_code}"
+                    }
                 }
             },
             "2": {
@@ -1177,7 +1206,8 @@
                                 "then": "durchgehend geöffnet (auch an Feiertagen)"
                             }
                         },
-                        "render": "Öffnungszeiten: {opening_hours_table()}"
+                        "render": "Öffnungszeiten: {opening_hours_table()}",
+                        "question": "Wie sind die Öffnungszeiten dieser Poststelle?"
                     }
                 },
                 "title": {
@@ -1199,10 +1229,18 @@
                 "name": "Gehweg",
                 "title": {
                     "render": "{name}"
-                }
+                },
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "Diese Straße heißt {name}"
+                    }
+                },
+                "description": "Ebene mit Bürgersteigen"
             }
         },
-        "title": "Gehwege"
+        "title": "Gehwege",
+        "description": "Experimentelles Thema",
+        "shortDescription": "Kartierung von Bürgersteigen"
     },
     "sport_pitches": {
         "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
@@ -1219,6 +1257,15 @@
                         "mappings": {
                             "0": {
                                 "then": "Diese Straße ist beleuchtet"
+                            },
+                            "1": {
+                                "then": "Diese Straße ist nicht beleuchtet"
+                            },
+                            "2": {
+                                "then": "Diese Straße ist nachts beleuchtet"
+                            },
+                            "3": {
+                                "then": "Diese Straße ist durchgehend beleuchtet"
                             }
                         },
                         "question": "Ist diese Straße beleuchtet?"
@@ -1235,6 +1282,15 @@
                         "mappings": {
                             "0": {
                                 "then": "Diese Straße ist beleuchtet"
+                            },
+                            "3": {
+                                "then": "Diese Straße ist durchgehend beleuchtet"
+                            },
+                            "2": {
+                                "then": "Diese Straße ist nachts beleuchtet"
+                            },
+                            "1": {
+                                "then": "Diese Straße ist nicht beleuchtet"
                             }
                         },
                         "question": "Ist diese Straße beleuchtet?"
