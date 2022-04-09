@@ -4860,7 +4860,7 @@
                     }
                 },
                 "question": "What exactly is surveilled here?",
-                "render": " Surveills a {surveillance:zone}"
+                "render": "Surveills a {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
