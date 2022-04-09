@@ -423,8 +423,7 @@
           "osmTags": "shop~^.*{search}.*$",
           "question": {
             "en": "Only show shops selling {search}",
-            "de": "Nur Geschäfte, die {search} verkaufen",
-            "nl": "Toon enkel winkels die {search} verkopen"
+            "de": "Nur Geschäfte, die {search} verkaufen"
           }
         }
       ]
@@ -442,8 +441,7 @@
           "osmTags": "name~^.*{search}.*$",
           "question": {
             "en": "Only show shops with name {search}",
-            "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
-            "nl": "Toon enkel winkels met naam {search}"
+            "de": "Nur Geschäfte mit dem Namen {search} anzeigen"
           }
         }
       ]

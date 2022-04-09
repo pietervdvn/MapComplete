@@ -65,15 +65,14 @@
             "zoomInMore": "Ampliar per importar aquest element"
         },
         "apply_button": {
-            "appliedOnAnotherObject": "L'objecte {id} rebrà {tags}",
-            "isApplied": "S'aplicaran els canvis"
+            "isApplied": "S'aplicaran els canvis",
+            "appliedOnAnotherObject": "L'objecte {id} rebrà {tags}"
         },
         "attribution": {
             "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
             "attributionTitle": "Avís d’atribució",
             "codeContributionsBy": "MapComplete ha estat fet per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} més contribuïdors</a>",
             "donate": "Donar suport econòmic a MapComplete",
-            "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
             "editJosm": "Editar aquí amb JOSM",
             "iconAttribution": {
                 "title": "Icones utilitzades"
@@ -83,8 +82,9 @@
             "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
             "openIssueTracker": "Registrar un error",
             "openMapillary": "Obrir Mapillary aquí",
-            "openOsmcha": "Veure darreres edicions fetes amb {theme}",
-            "themeBy": "Tema mantingut per {author}"
+            "themeBy": "Tema mantingut per {author}",
+            "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
+            "openOsmcha": "Veure darreres edicions fetes amb {theme}"
         },
         "back": "Tornar",
         "backToMapcomplete": "Tornar a l'explicació general de la petició",
@@ -95,7 +95,6 @@
         "download": {
             "downloadAsPdf": "Baixar un PDF del mapa actual",
             "downloadAsPdfHelper": "Ideal per imprimir el mapa actual",
-            "downloadAsSvg": "Baixa un SVG del mapa actual",
             "downloadCSV": "Baixar dades visibles com a CSV",
             "downloadCSVHelper": "Compatible amb LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Baixar com a arxiu GeoJson",
@@ -108,7 +107,8 @@
             "licenseInfo": "<h3>Avís de drets de còpia</h3>Les dades proveïdes estan sota ODbL. Es poden reutilitzar de forma gratuïta, però <ul><li>l'atribució a <b>© Contribuïdors d'OpenStreetMap</b> és obligatòria</li><li>Qualsevol canvi ha de seguir la llicència</li></ul> Llegeix sencer <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">l'avís de drets de còpia</a> per més detalls.",
             "noDataLoaded": "No s'han carregat dades. La baixada estarà disponible aviat",
             "title": "Baixar dades visibles",
-            "uploadGpx": "Pujar la teva traça a OpenStreetMap"
+            "uploadGpx": "Pujar la teva traça a OpenStreetMap",
+            "downloadAsSvg": "Baixa un SVG del mapa actual"
         },
         "example": "Exemple",
         "examples": "Exemples",
@@ -263,7 +263,6 @@
         "willBePublished": "La teva foto serà publicada: "
     },
     "importHelper": {
-        "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
         "inspectDidAutoDected": "La capa es va seleccionar automàticament",
         "inspectLooksCorrect": "Aquests valors semblen correctes",
         "mapPreview": {
@@ -277,15 +276,16 @@
         "selectLayer": "Seleccionar capa...",
         "title": "Ajuda de l'importador",
         "userAccountTitle": "Seleccionar compte d'usuari",
-        "validateDataTitle": "Validar dades"
+        "validateDataTitle": "Validar dades",
+        "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar"
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
     },
     "importLayer": {
         "layerName": "Possible {title}",
-        "notFound": "No he pogut trobar {title}: esborra-ho",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "Possible {title}",
+        "notFound": "No he pogut trobar {title}: esborra-ho"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
@@ -365,8 +365,8 @@
                 "title": "Beneficis de l'ecosistema OSM"
             },
             "license": {
-                "li0": "Un producte que utilitza dades d'OpenStreetMap ha de donar-ne atribució.",
-                "title": "La llicència"
+                "title": "La llicència",
+                "li0": "Un producte que utilitza dades d'OpenStreetMap ha de donar-ne atribució."
             },
             "vandalism": {
                 "title": "Què és el vandalisme?"
@@ -387,8 +387,8 @@
             "hook": "Necessites ajuda professional?"
         },
         "services": {
-            "li0": "Configurar una petició adaptada a les vostres necessitats",
-            "title": "Serveis de Mapcomplete"
+            "title": "Serveis de Mapcomplete",
+            "li0": "Configurar una petició adaptada a les vostres necessitats"
         },
         "title": "Suport professional amb MapComplete"
     },
@@ -442,10 +442,10 @@
             "description": "un número sencer"
         },
         "nat": {
-            "description": "un nombre positiu, sencer o zero",
             "mustBePositive": "Aquest número ha de ser positiu",
             "mustBeWhole": "Només s'accepten números sencers",
-            "notANumber": "Escriu un número"
+            "notANumber": "Escriu un número",
+            "description": "un nombre positiu, sencer o zero"
         },
         "opening_hours": {
             "description": "Horari d'obertura"

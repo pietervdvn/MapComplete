@@ -4459,22 +4459,6 @@
             }
         },
         "description": "Een winkel",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels die {search} verkopen"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels met naam {search}"
-                    }
-                }
-            }
-        },
         "name": "Winkel",
         "presets": {
             "0": {
@@ -4540,6 +4524,22 @@
                 }
             },
             "render": "Winkel"
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Toon enkel winkels die {search} verkopen"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Toon enkel winkels met naam {search}"
+                    }
+                }
+            }
         }
     },
     "slow_roads": {

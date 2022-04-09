@@ -722,7 +722,7 @@
     "question": {
       "nl": "Op welke verdieping bevindt dit punt zich?",
       "en": "On what level is this feature located?",
-      "de": "Auf welcher Ebene befindet sich dieses Objekt?",
+      "de": "In welchem Stockwerk befindet sich dieses Objekt?",
       "zh_Hant": "此圖徽位於哪個樓層／層級？",
       "fr": "À quel étage se situe l’élément ?",
       "pl": "Na jakim poziomie znajduje się ta funkcja?",

@@ -25,8 +25,7 @@
     "render": {
       "en": "Bicycle rental",
       "nl": "Fietsverhuur",
-      "es": "Alquiler de bicicletas",
-      "de": "Fahrradverleih"
+      "es": "Alquiler de bicicletas"
     },
     "mappings": [
       {
@@ -37,8 +36,7 @@
         },
         "then": {
           "en": "{name}",
-          "nl": "{name}",
-          "de": "{name}"
+          "nl": "{name}"
         }
       }
     ]
@@ -46,8 +44,7 @@
   "description": {
     "en": "Bicycle rental stations",
     "nl": "Fietsverhuustations",
-    "fr": "Station de location de vélo",
-    "de": "Fahrradverleihstationen"
+    "fr": "Station de location de vélo"
   },
   "tagRenderings": [
     "images",
@@ -55,8 +52,7 @@
       "id": "bicycle_rental_type",
       "question": {
         "en": "What kind of bicycle rental is this?",
-        "nl": "Wat voor fietsverhuur is dit?",
-        "de": "Was ist das für ein Fahrradverleih?"
+        "nl": "Wat voor fietsverhuur is dit?"
       },
       "mappings": [
         {
@@ -68,8 +64,7 @@
           },
           "then": {
             "en": "This is a shop whose main focus is bicycle rental",
-            "nl": "Dit is een zaak die focust op fietsverhuur",
-            "de": "Dies ist ein Geschäft, dessen Schwerpunkt auf dem Fahrradverleih liegt"
+            "nl": "Dit is een zaak die focust op fietsverhuur"
           }
         },
         {
@@ -81,24 +76,21 @@
           },
           "then": {
             "en": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
-            "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
-            "de": "Dies ist ein Vermietungsunternehmen, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt"
+            "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus"
           }
         },
         {
           "if": "bicycle_rental=docking_station",
           "then": {
             "en": "This is a shop which sells or repairs bicycles, but also rents out bicycles",
-            "nl": "Dit is een fietsenmaker of fietswinkel die ook fietsen verhuurt",
-            "de": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet"
+            "nl": "Dit is een fietsenmaker of fietswinkel die ook fietsen verhuurt"
           }
         },
         {
           "if": "bicycle_rental=key_dispensing_machine",
           "then": {
             "en": "This is an automated docking station, where a bicycle is mechanically locked into a structure",
-            "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
-            "de": "Dies ist eine automatisierte Dockingstation, bei der ein Fahrrad mechanisch in einer Struktur verriegelt wird"
+            "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt"
           }
         },
         {
@@ -106,8 +98,7 @@
           "then": {
             "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
             "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
-            "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
-            "de": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+            "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
           }
         }
       ],
@@ -146,13 +137,11 @@
       ],
       "question": {
         "en": "What kind of bicycles and accessories are rented here?",
-        "nl": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
-        "de": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?"
+        "nl": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?"
       },
       "render": {
         "en": "{rental} is rented here",
-        "nl": "{rental} kunnen hier uitgeleend worden",
-        "de": "{rental} wird hier vermietet"
+        "nl": "{rental} kunnen hier uitgeleend worden"
       },
       "freeform": {
         "key": "rental",
@@ -164,56 +153,49 @@
           "if": "rental=city_bike",
           "then": {
             "en": "Normal city bikes can be rented here",
-            "nl": "Gewone stadsfietsen kunnen hier gehuurd worden",
-            "de": "Normale Stadtfahrräder können hier gemietet werden"
+            "nl": "Gewone stadsfietsen kunnen hier gehuurd worden"
           }
         },
         {
           "if": "rental=ebike",
           "then": {
             "en": "Electrical bikes can be rented here",
-            "nl": "Elektrische fietsen kunnen hier gehuurd worden",
-            "de": "Elektrofahrräder können hier gemietet werden"
+            "nl": "Elektrische fietsen kunnen hier gehuurd worden"
           }
         },
         {
           "if": "rental=bmx",
           "then": {
             "en": "BMX bikes can be rented here",
-            "nl": "BMX-fietsen kunnen hier gehuurd worden",
-            "de": "BMX-Räder können hier gemietet werden"
+            "nl": "BMX-fietsen kunnen hier gehuurd worden"
           }
         },
         {
           "if": "rental=mtb",
           "then": {
             "en": "Mountainbikes can be rented here",
-            "nl": "Mountainbikes kunnen hier gehuurd worden",
-            "de": "Mountainbikes können hier gemietet werden"
+            "nl": "Mountainbikes kunnen hier gehuurd worden"
           }
         },
         {
           "if": "rental=kid_bike",
           "then": {
             "en": "Bikes for childs can be rented here",
-            "nl": "Kinderfietsen kunnen hier gehuurd worden",
-            "de": "Kinderfahrräder können hier gemietet werden"
+            "nl": "Kinderfietsen kunnen hier gehuurd worden"
           }
         },
         {
           "if": "rental=tandem",
           "then": {
             "en": "Tandem bicycles can be rented here",
-            "nl": "Tandems kunnen hier gehuurd worden",
-            "de": "Tandems können hier gemietet werden"
+            "nl": "Tandems kunnen hier gehuurd worden"
           }
         },
         {
           "if": "rental=racebike",
           "then": {
             "en": "Race bicycles can be rented here",
-            "nl": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden",
-            "de": "Rennräder können hier gemietet werden"
+            "nl": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden"
           }
         }
       ]
@@ -229,56 +211,49 @@
             "city_bike",
             {
               "en": "city bikes",
-              "nl": "stadsfietsen",
-              "de": "Stadträder"
+              "nl": "stadsfietsen"
             }
           ],
           [
             "ebike",
             {
               "en": "electrical bikes",
-              "nl": "elektrische fietsen",
-              "de": "Elektrofahrräder"
+              "nl": "elektrische fietsen"
             }
           ],
           [
             "kid_bike",
             {
               "en": "bikes for children",
-              "nl": "kinderfietsen",
-              "de": "Kinderfahrräder"
+              "nl": "kinderfietsen"
             }
           ],
           [
             "bmx",
             {
               "en": "BMX bikes",
-              "nl": "BMX-fietsen",
-              "de": "BMX-Räder"
+              "nl": "BMX-fietsen"
             }
           ],
           [
             "mtb",
             {
               "en": "mountainbike",
-              "nl": "mountainbike",
-              "de": "Mountainbikes"
+              "nl": "mountainbike"
             }
           ],
           [
             "bicycle_pannier",
             {
               "en": "bicycle panniers",
-              "nl": "fietstassen",
-              "de": "Fahrradtaschen"
+              "nl": "fietstassen"
             }
           ],
           [
             "tandem_bicycle",
             {
               "en": "tandem",
-              "nl": "tandem",
-              "de": "Tandems"
+              "nl": "tandem"
             }
           ]
         ]
@@ -311,8 +286,7 @@
       "title": {
         "en": "a bicycle rental shop",
         "nl": "een fietsverhuurzaak",
-        "fr": "une magasin de location de vélos",
-        "de": "Ein Fahrradverleih"
+        "fr": "une magasin de location de vélos"
       },
       "tags": [
         "amenity=bicycle_rental",
@@ -321,15 +295,13 @@
       "description": {
         "en": "A manned shop which focuses on bicycle rental",
         "nl": "Een bemande winkel die focust op fietsverhuur",
-        "fr": "Un magasin qui priorise la location de vélos",
-        "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert"
+        "fr": "Un magasin qui priorise la location de vélos"
       }
     },
     {
       "title": {
         "en": "a bicycle rental",
-        "nl": "een fietsverhuur",
-        "de": "Ein Fahrradverleih"
+        "nl": "een fietsverhuur"
       },
       "tags": [
         "amenity=bicycle_rental"
@@ -374,8 +346,7 @@
         "explanation": {
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
-          "fr": "{title()} a était fermé de façon permanente",
-          "de": "{title()} ist dauerhaft geschlossen"
+          "fr": "{title()} a était fermé de façon permanente"
         },
         "changesetMessage": "shop_closed"
       }
@@ -390,8 +361,7 @@
         "then": {
           "en": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore",
           "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer",
-          "fr": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant",
-          "de": "Dieser Fahrradladen vermietete früher Fahrräder, aber jetzt nicht mehr"
+          "fr": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant"
         }
       }
     ]

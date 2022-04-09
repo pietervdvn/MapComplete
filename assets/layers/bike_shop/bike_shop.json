@@ -216,8 +216,7 @@
           "if": "shop=rental",
           "then": {
             "nl": "Deze zaak focust op verhuur",
-            "en": "Deze business focuses on rental",
-            "de": "Dieses Geschäft konzentriert sich auf die Vermietung"
+            "en": "Deze business focuses on rental"
           }
         }
       ]
@@ -312,8 +311,7 @@
     {
       "render": {
         "en": "Only accessible to {access}",
-        "nl": "Enkel voor {access}",
-        "de": "Nur zugänglich für {access}"
+        "nl": "Enkel voor {access}"
       },
       "freeform": {
         "key": "access"
