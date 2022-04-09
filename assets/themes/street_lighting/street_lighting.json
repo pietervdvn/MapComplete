@@ -90,7 +90,8 @@
                 "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht",
                 "zh_Hant": "這個道路沒有照明",
-                "hu": "Ezen az utcán nincs közvilágítás"
+                "hu": "Ezen az utcán nincs közvilágítás",
+                "de": "Diese Straße ist nicht beleuchtet"
               }
             },
             {
@@ -99,7 +100,8 @@
                 "en": "This street is lit at night",
                 "nl": "Deze straat is 's nachts verlicht",
                 "zh_Hant": "這個道路晚上有照明",
-                "hu": "Ez az utca éjszaka ki van világítva"
+                "hu": "Ez az utca éjszaka ki van világítva",
+                "de": "Diese Straße ist nachts beleuchtet"
               },
               "hideInAnswer": true
             },
@@ -109,7 +111,8 @@
                 "en": "This street is lit 24/7",
                 "nl": "Deze straat is 24/7 verlicht",
                 "zh_Hant": "這個道路 24/7 有照明",
-                "hu": "Ez az utca éjjel-nappal ki van világítva"
+                "hu": "Ez az utca éjjel-nappal ki van világítva",
+                "de": "Diese Straße ist durchgehend beleuchtet"
               }
             }
           ]
@@ -193,7 +196,8 @@
                 "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht",
                 "zh_Hant": "這道路沒有照明",
-                "hu": "Ez az utca nincs kivilágítva"
+                "hu": "Ez az utca nincs kivilágítva",
+                "de": "Diese Straße ist nicht beleuchtet"
               }
             },
             {
@@ -202,7 +206,8 @@
                 "en": "This street is lit at night",
                 "nl": "Deze straat is 's nachts verlicht",
                 "zh_Hant": "這道路晚上有照明",
-                "hu": "Ez az utca éjjel ki van világítva"
+                "hu": "Ez az utca éjjel ki van világítva",
+                "de": "Diese Straße ist nachts beleuchtet"
               },
               "hideInAnswer": true
             },
@@ -212,7 +217,8 @@
                 "en": "This street is lit 24/7",
                 "nl": "Deze straat is 24/7 verlicht",
                 "zh_Hant": "這道路 24/7 有照明",
-                "hu": "Ez az utca éjjel-nappal ki van világítva"
+                "hu": "Ez az utca éjjel-nappal ki van világítva",
+                "de": "Diese Straße ist durchgehend beleuchtet"
               }
             }
           ]

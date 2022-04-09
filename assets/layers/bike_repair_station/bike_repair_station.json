@@ -285,21 +285,24 @@
       "id": "access",
       "question": {
         "en": "Who is allowed to use this repair station?",
-        "nl": "Wie kan dit herstelpunt gebruiken?"
+        "nl": "Wie kan dit herstelpunt gebruiken?",
+        "de": "Wer darf diese Reparaturstation benutzen?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "en": "Publicly accessible",
-            "nl": "Publiek toegankelijk"
+            "nl": "Publiek toegankelijk",
+            "de": "Öffentlich zugänglich"
           }
         },
         {
           "if": "access=public",
           "then": {
             "en": "Publicly accessible",
-            "nl": "Publiek toegankelijk"
+            "nl": "Publiek toegankelijk",
+            "de": "Öffentlich zugänglich"
           },
           "hideInAnswer": true
         },
@@ -307,14 +310,16 @@
           "if": "access=customers",
           "then": {
             "en": "Only for customers",
-            "nl": "Enkel voor klanten van de bijhorende zaak"
+            "nl": "Enkel voor klanten van de bijhorende zaak",
+            "de": "Nur für Kunden"
           }
         },
         {
           "if": "access=private",
           "then": {
             "en": "Not accessible to the general public",
-            "nl": "Niet publiek toegankelijk"
+            "nl": "Niet publiek toegankelijk",
+            "de": "Nicht für die Allgemeinheit zugänglich"
           },
           "icon": "./assets/svg/invalid.svg"
         },
@@ -322,7 +327,8 @@
           "if": "access=no",
           "then": {
             "en": "Not accessible to the general public",
-            "nl": "Niet publiek toegankelijk"
+            "nl": "Niet publiek toegankelijk",
+            "de": "Nicht für die Allgemeinheit zugänglich"
           },
           "icon": "./assets/svg/invalid.svg",
           "hideInAnswer": true
@@ -737,7 +743,8 @@
       ],
       "description": {
         "en": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
-        "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal."
+        "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
+        "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert."
       }
     }
   ],
@@ -829,6 +836,7 @@
   ],
   "description": {
     "en": "A layer showing bicycle pumps and bicycle repair tool stands",
-    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen"
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
+    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur"
   }
 }

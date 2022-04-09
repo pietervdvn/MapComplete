@@ -127,14 +127,16 @@
             "fr": "La hauteur totale, incluant les pales, est de {height} mètres.",
             "it": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri.",
             "zh_Hant": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。",
-            "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter."
+            "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter.",
+            "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter."
           },
           "question": {
             "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
             "fr": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
             "it": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
             "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
-            "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?"
+            "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
+            "de": "Wie hoch ist dieses Windrad (inklusive Rotorradius) in Metern?"
           },
           "freeform": {
             "key": "height",

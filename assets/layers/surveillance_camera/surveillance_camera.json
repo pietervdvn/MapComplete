@@ -305,11 +305,11 @@
         "key": "surveillance:zone"
       },
       "render": {
-        "en": " Surveills a {surveillance:zone}",
+        "en": "Surveills a {surveillance:zone}",
         "nl": "Bewaakt een {surveillance:zone}",
-        "fr": " Surveille un(e) {surveillance:zone}",
+        "fr": "Surveille un(e) {surveillance:zone}",
         "it": " Sorveglia una {surveillance:zone}",
-        "de": " Überwacht ein/e {surveillance:zone}"
+        "de": "Überwacht ein/e {surveillance:zone}"
       },
       "mappings": [
         {

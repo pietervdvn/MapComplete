@@ -494,7 +494,8 @@
               "#": "Failsafe",
               "if": "_grb_ref=",
               "then": {
-                "en": "Did not yet calculate the metatags... Reopen this popup"
+                "en": "Did not yet calculate the metatags... Reopen this popup",
+                "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen"
               }
             },
             {
