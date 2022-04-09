@@ -57,26 +57,14 @@
         {
           "if": {
             "and": [
-              "shop=bicycle_rental",
+              "shop=rental",
               "bicycle_rental=shop"
             ]
           },
           "then": {
             "en": "This is a shop whose main focus is bicycle rental",
-            "nl": "Dit is een zaak die focust op fietsverhuur"
+            "nl": "Dit is een zaak die focust op (fiets)verhuur"
           }
-        },
-        {
-          "if": {
-            "and": [
-              "shop=rental"
-            ]
-          },
-          "then": {
-            "en": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
-            "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus"
-          },
-          "hideInAnswer": true
         },
         {
           "if": {
