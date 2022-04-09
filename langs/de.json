@@ -293,7 +293,7 @@
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
             "generic": "Verschiebe diesen Punkt",
-            "reasonInaccurate": "Genauigkeit dieses Punktes verbessern",
+            "reasonInaccurate": "Lagegenauigkeit dieses Objekts verbessern",
             "reasonRelocation": "Dieses Element an einen anderen Ort verschieben, weil es sich verlagert hat"
         },
         "inviteToMoveAgain": "Diesen Punkt erneut verschieben",
