@@ -26,7 +26,7 @@
     },
     "ambulancestation": {
         "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
-        "name": "Karte der Rettungswachen",
+        "name": "Rettungswachen anzeigen",
         "presets": {
             "0": {
                 "description": "Eine Rettungsstation der Karte hinzufügen",
@@ -328,7 +328,7 @@
         }
     },
     "bench_at_pt": {
-        "name": "Sitzbänke bei Haltestellen",
+        "name": "Sitzbänke an Haltestellen",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
                 "mappings": {
@@ -362,7 +362,7 @@
     },
     "bicycle_library": {
         "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
-        "name": "Fahrradbibliothek",
+        "name": "Fahrradbibliotheken",
         "presets": {
             "0": {
                 "description": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
@@ -406,7 +406,7 @@
         }
     },
     "bicycle_tube_vending_machine": {
-        "name": "Fahrradschlauch-Automat",
+        "name": "Automaten für Fahrradschläuche",
         "presets": {
             "0": {
                 "title": "eine fahrradschlauch-automat"
@@ -434,7 +434,7 @@
         }
     },
     "bike_cafe": {
-        "name": "Fahrrad-Café",
+        "name": "Fahrrad-Cafés",
         "presets": {
             "0": {
                 "title": "eine fahrrad-café"
@@ -501,7 +501,7 @@
         }
     },
     "bike_cleaning": {
-        "name": "Fahrrad-Reinigungsdienst",
+        "name": "Fahrrad-Reinigungsdienste",
         "presets": {
             "0": {
                 "title": "eine fahrrad-reinigungsdienst"
@@ -804,7 +804,7 @@
     },
     "bike_shop": {
         "description": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
-        "name": "Fahrradwerkstatt/geschäft",
+        "name": "Fahrradgeschäfte und -werkstätten",
         "presets": {
             "0": {
                 "title": "eine fahrradwerkstatt/geschäft"
@@ -945,7 +945,7 @@
         }
     },
     "bike_themed_object": {
-        "name": "Mit Fahrrad zusammenhängendes Objekt",
+        "name": "Weitere fahrradbezogene Objekte",
         "title": {
             "mappings": {
                 "1": {
@@ -991,15 +991,23 @@
                         "question": "Zugänglich für Rollstuhlfahrer"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur überdachte Vogelbeobachtungsstellen"
+                    }
+                }
             }
-        }
+        },
+        "name": "Orte zur Vogelbeobachtung"
     },
     "cafe_pub": {
         "filter": {
             "0": {
                 "options": {
                     "0": {
-                        "question": "Jetzt geöffnet"
+                        "question": "Derzeit geöffnet"
                     }
                 }
             }
@@ -1039,20 +1047,20 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Alle Fahrzeugtypen"
+                        "question": "Ladestationen für alle Fahrzeugtypen"
                     },
                     "1": {
-                        "question": "Ladestation für Fahrräder"
+                        "question": "Ladestationen für Fahrräder"
                     },
                     "2": {
-                        "question": "Ladestation für Autos"
+                        "question": "Ladestationen für Autos"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Nur funktionierende Ladestationen"
+                        "question": "Nur Ladestationen in Betrieb"
                     }
                 }
             },
@@ -1144,7 +1152,7 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Ladestation ist betriebsbereit"
+                        "then": "Diese Ladestation ist in Betrieb"
                     },
                     "1": {
                         "then": "Diese Ladestation ist defekt"
@@ -1200,6 +1208,9 @@
                     }
                 },
                 "question": "Welche Fahrzeuge dürfen hier laden?"
+            },
+            "capacity": {
+                "render": "{capacity} Fahrzeuge können hier gleichzeitig laden"
             }
         }
     },
@@ -1791,10 +1802,10 @@
     },
     "direction": {
         "description": "Diese Ebene visualisiert Richtungen",
-        "name": "Visualisierung der Richtung"
+        "name": "Aufnahmewinkel der Kamera anzeigen"
     },
     "drinking_water": {
-        "name": "Trinkwasserstelle",
+        "name": "Trinkwasserstellen",
         "presets": {
             "0": {
                 "title": "eine trinkwasser"
@@ -1815,7 +1826,7 @@
             "Still in use?": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Trinkwasserstelle funktioniert"
+                        "then": "Diese Trinkwasserstelle ist in Betrieb"
                     },
                     "1": {
                         "then": "Diese Trinkwasserstelle ist kaputt"
@@ -1828,7 +1839,7 @@
                 "render": "Der Betriebsstatus ist <i>{operational_status}</i>"
             },
             "render-closest-drinking-water": {
-                "render": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
             }
         },
         "title": {
@@ -1837,7 +1848,7 @@
     },
     "etymology": {
         "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
-        "name": "Hat eine Namensherkunft",
+        "name": "Objekte mit Informationen zur Namensherkunft",
         "tagRenderings": {
             "simple etymology": {
                 "mappings": {
@@ -1856,7 +1867,7 @@
     },
     "extinguisher": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
-        "name": "Karte mit Feuerlöschern.",
+        "name": "Feuerlöscher anzeigen",
         "presets": {
             "0": {
                 "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
@@ -1883,7 +1894,7 @@
     },
     "fire_station": {
         "description": "Kartenebene zur Darstellung von Feuerwachen.",
-        "name": "Karte der Feuerwachen",
+        "name": "Feuerwachen anzeigen",
         "presets": {
             "0": {
                 "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
@@ -1918,21 +1929,21 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Hat vegetarische Speisen"
+                        "question": "Vegetarische Gerichte im Angebot"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Bietet vegan Speisen an"
+                        "question": "Vegane Gerichte im Angebot"
                     }
                 }
             },
             "3": {
                 "options": {
                     "0": {
-                        "question": "Hat halal Speisen"
+                        "question": "Halal Gerichte im Angebot"
                     }
                 }
             }
@@ -2081,7 +2092,7 @@
     },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
-        "name": "Karte der Hydranten",
+        "name": "Hydranten anzeigen",
         "presets": {
             "0": {
                 "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
@@ -2228,6 +2239,26 @@
             },
             "phone": {
                 "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
+            }
+        },
+        "name": "Naturschutzgebiete",
+        "filter": {
+            "1": {
+                "options": {
+                    "1": {
+                        "question": "Hunde dürfen frei herumlaufen"
+                    },
+                    "2": {
+                        "question": "Hunde nur erlaubt, wenn sie angeleint sind"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Frei zugänglich"
+                    }
+                }
             }
         }
     },
@@ -2543,7 +2574,7 @@
     },
     "shops": {
         "description": "Ein Geschäft",
-        "name": "Geschäft",
+        "name": "Geschäfte",
         "presets": {
             "0": {
                 "description": "Ein neues Geschäft hinzufügen",
@@ -2606,6 +2637,22 @@
                 }
             },
             "render": "Geschäft"
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nur Geschäfte, die {search} verkaufen"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
+                    }
+                }
+            }
         }
     },
     "slow_roads": {
@@ -2782,7 +2829,7 @@
                         "then": "Überwacht wird ein öffentlicher Bereich, z. B. eine Straße, eine Brücke, ein Platz, ein Park, ein Bahnhof, ein öffentlicher Korridor oder Tunnel,..."
                     },
                     "1": {
-                        "then": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
+                        "then": "Ein privater Außenbereich wird überwacht (Parkplatz, Tankstelle, Innenhof, Eingang, private Einfahrt, ...)"
                     },
                     "2": {
                         "then": "Ein privater Innenbereich wird überwacht, z. B. ein Geschäft, eine private Tiefgarage, ..."
@@ -2863,7 +2910,7 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Hat einen Wickeltisch"
+                        "question": "Wickeltisch vorhanden"
                     }
                 }
             },
@@ -2871,6 +2918,13 @@
                 "options": {
                     "0": {
                         "question": "Nutzung kostenlos"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Derzeit geöffnet"
                     }
                 }
             }
@@ -3031,7 +3085,7 @@
         }
     },
     "tree_node": {
-        "name": "Baum",
+        "name": "Bäume",
         "presets": {
             "0": {
                 "description": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
@@ -3274,5 +3328,38 @@
     },
     "watermill": {
         "name": "Wassermühle"
+    },
+    "entrance": {
+        "name": "Eingänge"
+    },
+    "gps_track": {
+        "name": "Zurückgelegte Strecke anzeigen"
+    },
+    "pedestrian_path": {
+        "name": "Fußgängerwege"
+    },
+    "recycling": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Derzeit geöffnet"
+                    }
+                }
+            }
+        },
+        "name": "Recycling"
+    },
+    "parking": {
+        "name": "Parkplätze"
+    },
+    "note": {
+        "name": "OpenStreetMap-Hinweise"
+    },
+    "bicycle_rental": {
+        "name": "Fahrradverleih"
+    },
+    "street_lamps": {
+        "name": "Straßenlaternen"
     }
 }
