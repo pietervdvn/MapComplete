@@ -59,7 +59,13 @@
             "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
             "wrongType": "Dieses Element ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
             "zoomInFurther": "Weiter einzoomen, um einen Punkt hinzuzufügen.",
-            "zoomInMore": "Vergrößern Sie die Ansicht, um dieses Element zu importieren"
+            "zoomInMore": "Vergrößern Sie die Ansicht, um dieses Element zu importieren",
+            "import": {
+                "wrongType": "Dieses Element ist kein Punkt oder Weg und kann deshalb nicht importiert werden.",
+                "officialThemesOnly": "Der Importbutton ist für nicht offizielle Themen deaktiviert um Störfälle zu vermeiden.",
+                "zoomInMore": "Vergrößere um das Feature zu importieren.",
+                "hasBeenImported": "Das Objekt wurde importiert."
+            }
         },
         "attribution": {
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>",
@@ -218,7 +224,10 @@
             "searchWikidata": "Suche auf Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "backToMapcomplete": "Zurück zur Themenübersicht"
+        "backToMapcomplete": "Zurück zur Themenübersicht",
+        "apply_button": {
+            "isApplied": "Die Änderungen wurden gespeichert."
+        }
     },
     "image": {
         "addPicture": "Bild hinzufügen",
