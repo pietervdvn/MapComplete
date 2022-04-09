@@ -57,7 +57,12 @@
             "title": "Vols afegir un punt?",
             "warnVisibleForEveryone": "La teva contribució serà vista per tothom",
             "zoomInFurther": "Apropa per afegir un punt.",
-            "zoomInMore": "Ampliar per importar aquest element"
+            "zoomInMore": "Ampliar per importar aquest element",
+            "importTags": "L'element rebrà {tags}",
+            "import": {
+                "hasBeenImported": "Aquest objecte ha estat importat",
+                "importTags": "L'element rebrà {tags}"
+            }
         },
         "attribution": {
             "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
@@ -68,7 +73,12 @@
             },
             "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
             "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
-            "themeBy": "Tema mantingut per {author}"
+            "themeBy": "Tema mantingut per {author}",
+            "josmOpened": "JOSM és obert",
+            "openIssueTracker": "Registrar un error",
+            "openMapillary": "Obrir Mapillary aquí",
+            "donate": "Donar suport econòmic a MapComplete",
+            "editJosm": "Editar aquí amb JOSM"
         },
         "backgroundMap": "Mapa de fons",
         "cancel": "Cancel·lar",
@@ -84,7 +94,11 @@
             "includeMetaData": "Incloure metadades (darrer editor, valors calculats, ...)",
             "licenseInfo": "<h3>Avís de drets de còpia</h3>Les dades proveïdes estan sota ODbL. Es poden reutilitzar de forma gratuïta, però <ul><li>l'atribució a <b>© Contribuïdors d'OpenStreetMap</b> és obligatòria</li><li>Qualsevol canvi ha de seguir la llicència</li></ul> Llegeix sencer <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">l'avís de drets de còpia</a> per més detalls.",
             "noDataLoaded": "No s'han carregat dades. La baixada estarà disponible aviat",
-            "title": "Baixar dades visibles"
+            "title": "Baixar dades visibles",
+            "downloadFeatureAsGpx": "Baixar com a arxiu GPX",
+            "downloadFeatureAsGeojson": "Baixar com a arxiu GeoJson",
+            "uploadGpx": "Pujar la teva traça a OpenStreetMap",
+            "downloadGpx": "Baixar com a arxiu GPX"
         },
         "fewChangesBefore": "Contesta unes quantes preguntes sobre punts existents abans d'afegir-ne un de nou.",
         "getStartedLogin": "Entra a OpenStreetMap per començar",
@@ -205,8 +219,26 @@
             "noResults": "Res trobat per <i>{search}</i>",
             "noWikipediaPage": "Aquest ítem de Wikidata no té cap pàgina de Viquipèdia corresponent.",
             "searchWikidata": "Cercar a Wikidata",
-            "wikipediaboxTitle": "Viquipèdia"
-        }
+            "wikipediaboxTitle": "Viquipèdia",
+            "previewbox": {
+                "born": "Nascut: {value}",
+                "died": "Mort: {value}"
+            }
+        },
+        "removeLocationHistory": "Esborrar l'historial d'ubicació",
+        "confirm": "Confirmar",
+        "back": "Tornar",
+        "backToMapcomplete": "Tornar a l'explicació general de la petició",
+        "examples": "Exemples",
+        "next": "Següent",
+        "logout": "Sortir",
+        "loadingTheme": "Carregant {theme}...",
+        "poweredByOsm": "Impulsat amb OpenStreetMap",
+        "apply_button": {
+            "isApplied": "S'aplicaran els canvis"
+        },
+        "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
+        "example": "Exemple"
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -284,5 +316,152 @@
         "loginToSplit": "Has d'entrar per poder tallar una carretera",
         "split": "Tallar",
         "splitTitle": "Tria al mapa on tallar aquesta carretera"
+    },
+    "privacy": {
+        "editingTitle": "Quan es facin canvis",
+        "title": "Política de privacitat",
+        "trackingTitle": "Dades estadístiques",
+        "geodataTitle": "La teva geoclocalització",
+        "whileYoureHere": "Et preocupa la privacitat?",
+        "miscCookiesTitle": "Altres galetes"
+    },
+    "notes": {
+        "isClosed": "Aquesta nota s'ha resolt",
+        "addCommentPlaceholder": "Afegir un comentari...",
+        "isCreated": "La teva nota ha estat creada.",
+        "disableAllNoteFilters": "Deshabilitar tots els filtres",
+        "addCommentAndClose": "Afegir comentari i tancar",
+        "closeNote": "Tancar nota",
+        "reopenNote": "Reobrir nota",
+        "anonymous": "Usuari/a anònim/a",
+        "addComment": "Afegir comentari",
+        "addAComment": "Afegir un comentari",
+        "createNote": "Crear una nova nota",
+        "loginToClose": "Entrar per tancar aquesta nota",
+        "noteLayerDoEnable": "Habilita la capa que mostra notes",
+        "loginToAddPicture": "Entrar per afegir una imatge",
+        "loginToAddComment": "Entrar per afegir un comentari",
+        "createNoteTitle": "Crear una nova nota aquí",
+        "reopenNoteAndComment": "Reobrir nota i comentar"
+    },
+    "importLayer": {
+        "layerName": "Possible {title}",
+        "popupTitle": "Possible {title}"
+    },
+    "importHelper": {
+        "title": "Ajuda de l'importador",
+        "mapPreview": {
+            "title": "Vista prèvia del mapa"
+        },
+        "userAccountTitle": "Seleccionar compte d'usuari",
+        "selectLayer": "Seleccionar capa...",
+        "selectFile": {
+            "noFilesLoaded": "No s'ha carregat cap arxiu",
+            "title": "Seleccionar arxiu",
+            "loadedFilesAre": "L'arxiu carregat actualment és {file}"
+        },
+        "inspectLooksCorrect": "Aquests valors semblen correctes",
+        "inspectDidAutoDected": "La capa es va seleccionar automàticament",
+        "validateDataTitle": "Validar dades"
+    },
+    "importInspector": {
+        "title": "Inspeccionar i controlar notes d'importació"
+    },
+    "professional": {
+        "drawbacks": {
+            "unsuitedData": {
+                "title": "Les dades no són acceptables per OpenStreetMap"
+            },
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {
+                    "title": "Aconseguint dades obertes"
+                }
+            }
+        },
+        "aboutOsm": {
+            "license": {
+                "title": "La llicència"
+            },
+            "vandalism": {
+                "title": "Què és el vandalisme?"
+            },
+            "aboutOsm": {
+                "title": "Què és OpenStreetMap?",
+                "li3": "i molt, molt més…"
+            },
+            "benefits": {
+                "title": "Beneficis de l'ecosistema OSM"
+            }
+        },
+        "services": {
+            "title": "Serveis de Mapcomplete"
+        },
+        "indexPage": {
+            "hook": "Necessites ajuda professional?",
+            "button": "Descobreix els nostres serveis"
+        },
+        "title": "Suport professional amb MapComplete",
+        "aboutMc": {
+            "title": "Utilitzar MapComplete a la teva organització",
+            "survey": {
+                "title": "Possibilitats d'enquesta"
+            }
+        }
+    },
+    "validation": {
+        "decimal": {
+            "description": "Un número"
+        },
+        "email": {
+            "description": "Adreça de correu electrònic"
+        },
+        "float": {
+            "description": "un número",
+            "feedback": "No és un nombre"
+        },
+        "opening_hours": {
+            "description": "Horari d'obertura"
+        },
+        "direction": {
+            "description": "Una orientació"
+        },
+        "phone": {
+            "description": "un número de telèfon"
+        },
+        "nat": {
+            "notANumber": "Escriu un número",
+            "mustBeWhole": "Només s'accepten números sencers",
+            "mustBePositive": "Aquest número ha de ser positiu"
+        },
+        "pfloat": {
+            "description": "un número positiu"
+        },
+        "int": {
+            "description": "un número sencer"
+        },
+        "wikidata": {
+            "description": "Un identificador de Wikidata"
+        },
+        "string": {
+            "description": "un tros de text"
+        },
+        "pnat": {
+            "description": "un número sencer, positiu",
+            "noZero": "No es permet el zero"
+        },
+        "url": {
+            "description": "enllaç a un lloc web"
+        },
+        "color": {
+            "description": "Un color o codi hex"
+        },
+        "text": {
+            "description": "un tros de text"
+        }
+    },
+    "translations": {
+        "missing": "{count} cadenes sense traduir",
+        "deactivate": "Deshabilitar els botons de traducció",
+        "activateButton": "Ajudar a traduir MapComplete"
     }
 }
