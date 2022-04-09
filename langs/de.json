@@ -49,7 +49,7 @@
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "hasBeenImported": "Dieser Punkt wurde bereits importiert",
             "importTags": "Das Element erhält {tags}",
-            "intro": "Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br>",
+            "intro": "Sie haben auf eine Stelle in der Karte geklickt, an der noch keine Daten bekannt sind.<br>",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "pleaseLogin": "Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen",
@@ -66,11 +66,17 @@
             "attributionTitle": "Danksagung",
             "codeContributionsBy": "MapComplete wurde von {contributors} und <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} weiteren Beitragenden</a> erstellt",
             "iconAttribution": {
-                "title": "Verwendete Icons"
+                "title": "Verwendete Symbole"
             },
             "mapContributionsBy": "Die aktuell sichtbaren Daten wurden editiert durch {contributors}",
             "mapContributionsByAndHidden": "Die aktuell sichtbaren Daten wurden editiert durch {contributors} und {hiddenCount} weitere Beitragende",
-            "themeBy": "Thema betreut von {author}"
+            "themeBy": "Thema betreut von {author}",
+            "openIssueTracker": "Einen Fehler melden",
+            "translatedBy": "MapComplete wurde von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden übersetzt.</a>",
+            "editId": "Den OpenStreetMap Online-Editor öffnen",
+            "openMapillary": "Mapillary öffnen",
+            "openOsmcha": "Letzte Bearbeitungen mit {theme} ansehen",
+            "donate": "MapComplete finanziell unterstützen"
         },
         "backgroundMap": "Hintergrundkarte",
         "cancel": "Abbrechen",
@@ -84,9 +90,11 @@
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
             "exporting": "Exportieren…",
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
-            "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist erforderlich</li><li>Jede Änderung unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
+            "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist erforderlich</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
             "noDataLoaded": "Noch keine Daten geladen. Download ist in Kürze verfügbar",
-            "title": "Sichtbare Daten herunterladen"
+            "title": "Sichtbare Daten herunterladen",
+            "downloadAsSvg": "Aktuellen Kartenausschnitt als SVG herunterladen",
+            "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; muss weiter bearbeitet werden  "
         },
         "example": "Beispiel",
         "fewChangesBefore": "Bitte beantworten Sie ein paar Fragen zu bestehenden Punkten, bevor Sie einen neuen Punkt hinzufügen.",
@@ -171,10 +179,10 @@
             "fsIncludeCurrentLayers": "Die aktuelle Ebenenauswahl einbeziehen",
             "fsIncludeCurrentLocation": "Aktuelle Position einbeziehen",
             "fsLayerControlToggle": "Mit der erweiterten Ebenenkontrolle beginnen",
-            "fsLayers": "Aktivieren der Layersteuerung",
+            "fsLayers": "Layersteuerung aktivieren",
             "fsSearch": "Suchleiste aktivieren",
-            "fsUserbadge": "Anmelde-Knopf aktivieren",
-            "fsWelcomeMessage": "Popup der Begrüßungsnachricht und zugehörige Registerkarten anzeigen",
+            "fsUserbadge": "Anmeldeschaltfläche aktivieren",
+            "fsWelcomeMessage": "Begrüßungsfenster und zugehörige Registerkarten anzeigen",
             "intro": "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schicken:",
             "thanksForSharing": "Danke für das Teilen!"
         },
@@ -209,7 +217,8 @@
             "noWikipediaPage": "Dieses Wikidata-Element hat noch keine entsprechende Wikipedia-Seite.",
             "searchWikidata": "Suche auf Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "backToMapcomplete": "Zurück zur Themenübersicht"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -237,7 +246,7 @@
         "featuredThemeTitle": "Diese Woche im Blickpunkt",
         "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu Objekten eines bestimmten Themas angezeigt und angepasst werden können.",
         "logIn": "Melden Sie sich an, um Themen anzuzeigen, die Sie zuvor besucht haben",
-        "pickTheme": "Wähle unten ein Thema, um zu starten.",
+        "pickTheme": "Wähle eines der folgenden Themen, um zu starten.",
         "title": "Willkommen bei MapComplete"
     },
     "move": {
@@ -291,5 +300,39 @@
         "loginToSplit": "Sie müssen angemeldet sein, um eine Straße aufzuteilen",
         "split": "Teilen",
         "splitTitle": "Wählen Sie auf der Karte aus, wo die Straße geteilt werden soll"
+    },
+    "privacy": {
+        "geodataTitle": "Ihr Standort",
+        "title": "Datenschutzbestimmungen",
+        "geodata": "Wenn MapComplete Ihre Standortdaten erhält, verbleiben Ihre Daten zum aktuellen Standort und zuvor besuchter Orte auf Ihrem Gerät. Ihre Standortdaten werden niemals automatisch an eine andere Stelle gesendet - es sei denn, eine Funktion gibt eindeutig etwas anderes an.",
+        "editing": "Wenn Sie eine Änderung an der Karte vornehmen, wird diese Änderung auf OpenStreetMap aufgezeichnet und ist für jeden öffentlich zugänglich. Ein mit MapComplete vorgenommener Änderungssatz enthält die folgenden Daten: <ul><li>Die von Ihnen vorgenommenen Änderungen</li><li>Ihr Benutzername</li><li>Wann diese Änderung vorgenommen wurde</li><li>Das Thema, das Sie bei der Änderung verwendet haben</li><li>Die Sprache der Benutzeroberfläche</li><li>Eine Angabe darüber, wie nah Sie an geänderten Objekten waren. Andere Kartierer können diese Informationen nutzen, um festzustellen, ob eine Änderung auf Basis einer Vor-Ort Erkundung oder einer Fernerkundung vorgenommen wurde</li></ul> Ausführliche Informationen finden Sie in <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">den Datenschutzbestimmungen auf OpenStreetMap.org</a>. Wir möchten Sie daran erinnern, dass Sie bei der Anmeldung einen fiktiven Namen verwenden können.",
+        "miscCookiesTitle": "Andere Cookies",
+        "miscCookies": "MapComplete integriert verschiedene andere Dienste, insbesondere um Bilder von Objekten zu laden. Bilder werden auf verschiedenen Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
+        "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.osm.be/surveillance\">ein Thema gemacht, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
+        "intro": "Privatsphäre ist wichtig - sowohl für den Einzelnen als auch für die Gesellschaft. MapComplete versucht, Ihre Privatsphäre so weit wie möglich zu respektieren - bis zu dem Punkt, an dem kein lästiger Cookie-Banner mehr nötig ist. Dennoch möchten wir Sie darüber informieren, welche Informationen gesammelt und weitergegeben werden, unter welchen Umständen und warum diese Kompromisse gemacht werden.",
+        "editingTitle": "Ihre Änderungen",
+        "whileYoureHere": "Ist Ihnen die Privatsphäre wichtig?"
+    },
+    "translations": {
+        "deactivate": "Schaltflächen für die Übersetzung deaktivieren",
+        "activateButton": "Bei der Übersetzung von MapComplete helfen",
+        "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
+        "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
+        "completeness": "Die Übersetzungen für {theme} in {language} liegen bei {percentage}%: {translated} Zeichenfolgen von {total} sind übersetzt"
+    },
+    "professional": {
+        "indexPage": {
+            "hook": "Benötigen Sie professionelle Unterstützung?",
+            "hookMore": "Wir können bei der Erstellung von Umfragen, Datenimporten und OpenStreetMap-Beratung helfen.",
+            "button": "Erfahren Sie mehr über unsere Dienstleistungen"
+        }
+    },
+    "importHelper": {
+        "title": "Import-Helfer",
+        "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer der vorhandenen MapComplete-Ebenen übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird ein einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
+        "importFormat": "Der Hinweistext sollte folgendes Format haben, um aufgenommen zu werden: <br><div class=\"literal-code\">[Eine kleine Einführung]<br>https://mapcomplete.osm.be/[themenname].html?[Parameter wie lat und lon]#import<br>[alle Tags des Objekts] </div>"
+    },
+    "importInspector": {
+        "title": "Importhinweise überprüfen und verwalten"
     }
 }
