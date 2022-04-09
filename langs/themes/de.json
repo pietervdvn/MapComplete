@@ -1136,5 +1136,58 @@
     "notes": {
         "description": "Ein Hinweis ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzern und Text gesucht werden.",
         "title": "Hinweise zu OpenStreetMap"
+    },
+    "mapcomplete-changes": {
+        "description": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
+        "layers": {
+            "0": {
+                "filter": {
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nicht</b> erstellt von {search}"
+                            }
+                        }
+                    },
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themenname enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt von {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Änderung wurde von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a> gemacht"
+                    },
+                    "render_id": {
+                        "render": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Änderung für {theme}"
+                },
+                "description": "Zeigt alle MapComplete-Änderungen"
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Änderungen mit MapComplete",
+        "shortDescription": "Zeigt Änderungen von MapComplete"
     }
 }
