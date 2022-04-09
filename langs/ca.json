@@ -284,7 +284,8 @@
     },
     "importLayer": {
         "layerName": "Possible {title}",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "Possible {title}",
+        "notFound": "No he pogut trobar {title}: esborra-ho"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
