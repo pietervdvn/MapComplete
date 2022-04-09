@@ -62,6 +62,13 @@ export default class Constants {
      */
     static distanceToChangeObjectBins = [25, 50, 100, 500, 1000, 5000, Number.MAX_VALUE]
     static themeOrder = ["personal", "cyclofix", "waste" , "etymology",  "food","cafes_and_pubs", "playgrounds", "hailhydrant", "toilets", "aed", "bookcases"];
+    /**
+     * Upon initialization, the GPS will search the location.
+     * If the location is found within the given timout, it'll automatically fly to it.
+     * 
+     * In seconds
+     */
+    static zoomToLocationTimeout = 60;
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {
