@@ -1147,7 +1147,7 @@
             "OH": {
                 "mappings": {
                     "0": {
-                        "then": "durchgehend geöffnet (einschließlich Feiertage)"
+                        "then": "Die Station ist durchgehend geöffnet (einschließlich Feiertage)"
                     }
                 },
                 "question": "Wann ist diese Ladestation geöffnet?"
@@ -1214,6 +1214,30 @@
             },
             "capacity": {
                 "render": "{capacity} Fahrzeuge können hier gleichzeitig laden"
+            },
+            "access": {
+                "mappings": {
+                    "2": {
+                        "then": "Nur Kunden des Ortes, zu dem diese Station gehört, können diese Ladestation nutzen<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann</span>"
+                    },
+                    "3": {
+                        "then": "Für den Zugang zu dieser Ladestation muss ein <b>Schlüssel</b> angefordert werden<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann, die an der Rezeption einen Schlüssel erhalten, um die Ladestation aufzuschließen</span>"
+                    },
+                    "4": {
+                        "then": "Nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, ...)"
+                    }
+                },
+                "question": "Wer darf diese Ladestation benutzen?"
+            },
+            "charge": {
+                "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
+            },
+            "fee": {
+                "mappings": {
+                    "4": {
+                        "then": "Nutzung gebührenpflichtig"
+                    }
+                }
             }
         }
     },
