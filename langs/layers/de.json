@@ -3069,7 +3069,7 @@
                     }
                 },
                 "question": "Was genau wird hier überwacht?",
-                "render": " Überwacht ein/e {surveillance:zone}"
+                "render": "Überwacht ein/e {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
