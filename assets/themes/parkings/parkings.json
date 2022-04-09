@@ -3,7 +3,7 @@
   "title": {
     "nl": "Parking",
     "en": "Parking",
-    "de": "Parken",
+    "de": "Parkplatzkarte",
     "it": "Parcheggio",
     "nb_NO": "Parkering",
     "ru": "Парковка",
@@ -24,7 +24,7 @@
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
     "en": "This map shows different parking spots",
-    "de": "Diese Karte zeigt Parkplätze",
+    "de": "Eine Karte für verschiedene Parkplätze",
     "it": "Questa cartina mostra diversi posti dove parcheggiare",
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",

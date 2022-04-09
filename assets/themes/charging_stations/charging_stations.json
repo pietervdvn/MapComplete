@@ -3,7 +3,7 @@
   "title": {
     "en": "Charging stations",
     "id": "Stasiun pengisian daya",
-    "it": "Stazioni di ricarica",
+    "it": "Postazione di ricarica",
     "ja": "充電ステーション",
     "zh_Hant": "充電站",
     "nl": "Oplaadpunten",
@@ -14,7 +14,7 @@
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
-    "it": "Una mappa mondiale delle stazioni di ricarica",
+    "it": "Una mappa mondiale di postazioni di ricarica",
     "ja": "充電ステーションの世界地図",
     "zh_Hant": "全世界的充電站地圖",
     "nl": "Een wereldwijde kaart van oplaadpunten",

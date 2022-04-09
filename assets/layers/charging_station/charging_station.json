@@ -191,7 +191,8 @@
       "id": "capacity",
       "render": {
         "en": "{capacity} vehicles can be charged here at the same time",
-        "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden"
+        "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden",
+        "de": "{capacity} Fahrzeuge können hier gleichzeitig laden"
       },
       "question": {
         "en": "How much vehicles can be charged here at the same time?",
@@ -3812,7 +3813,7 @@
           "then": {
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt",
-            "de": "Diese Ladestation ist betriebsbereit"
+            "de": "Diese Ladestation ist in Betrieb"
           }
         },
         {
@@ -4031,7 +4032,7 @@
           "question": {
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
-            "de": "Alle Fahrzeugtypen",
+            "de": "Ladestationen für alle Fahrzeugtypen",
             "fr": "Tout type de véhicule"
           }
         },
@@ -4039,7 +4040,7 @@
           "question": {
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
-            "de": "Ladestation für Fahrräder",
+            "de": "Ladestationen für Fahrräder",
             "fr": "Station de charge pour vélos"
           },
           "osmTags": "bicycle=yes"
@@ -4048,7 +4049,7 @@
           "question": {
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
-            "de": "Ladestation für Autos",
+            "de": "Ladestationen für Autos",
             "fr": "Station de charge pour automobiles"
           },
           "osmTags": {
@@ -4067,7 +4068,7 @@
           "question": {
             "en": "Only working charging stations",
             "nl": "Enkel werkende oplaadpunten",
-            "de": "Nur funktionierende Ladestationen"
+            "de": "Nur Ladestationen in Betrieb"
           },
           "osmTags": {
             "and": [

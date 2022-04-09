@@ -970,18 +970,20 @@
         "title": "Speelplekken"
     },
     "postboxes": {
-        "title": "Brievenbussen en postkantoren",
         "layers": {
-            "1": {
-                "title": {
-                    "render": "Postkantoor"
-                },
-                "name": "Postkantoren",
+            "0": {
+                "description": "Deze laag toont brievenbussen.",
+                "name": "Brievenbussen",
                 "presets": {
                     "0": {
-                        "title": "een postkantoor"
+                        "title": "een brievenbus"
                     }
                 },
+                "title": {
+                    "render": "Brievenbus"
+                }
+            },
+            "1": {
                 "description": "Een laag die postkantoren toont.",
                 "filter": {
                     "0": {
@@ -991,21 +993,19 @@
                             }
                         }
                     }
-                }
-            },
-            "0": {
-                "title": {
-                    "render": "Brievenbus"
                 },
-                "description": "Deze laag toont brievenbussen.",
+                "name": "Postkantoren",
                 "presets": {
                     "0": {
-                        "title": "een brievenbus"
+                        "title": "een postkantoor"
                     }
                 },
-                "name": "Brievenbussen"
+                "title": {
+                    "render": "Postkantoor"
+                }
             }
-        }
+        },
+        "title": "Brievenbussen en postkantoren"
     },
     "shops": {
         "title": "Winkels"

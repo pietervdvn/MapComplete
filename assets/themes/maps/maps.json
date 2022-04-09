@@ -9,7 +9,7 @@
     "ru": "Карта карт",
     "de": "Eine Karte der Karten",
     "eo": "Mapo de mapoj",
-    "it": "Una cartina delle cartine",
+    "it": "Una mappa di mappe",
     "nb_NO": "Et kart over kart"
   },
   "shortDescription": {
@@ -19,7 +19,7 @@
     "ja": "このテーマには、OpenStreetMapが知っているすべての(観光)マップが表示されます",
     "zh_Hant": "這份主題顯示所有已知的開放街圖上的 (旅遊) 地圖",
     "de": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
-    "it": "Questo tema mostra tutte le mappe (turistiche) conosciute da OpenStreetMap"
+    "it": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone"
   },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",

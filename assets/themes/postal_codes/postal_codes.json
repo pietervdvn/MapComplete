@@ -3,17 +3,20 @@
   "title": {
     "en": "Postal codes",
     "id": "Kode pos",
-    "hu": "Irányítószámok"
+    "hu": "Irányítószámok",
+    "de": "Postleitzahlen"
   },
   "shortDescription": {
     "en": "Postal codes",
     "id": "Kode pos",
-    "hu": "Irányítószámok"
+    "hu": "Irányítószámok",
+    "de": "Postleitzahlen"
   },
   "description": {
     "en": "Postal codes",
     "id": "Kode pos",
-    "hu": "Irányítószámok"
+    "hu": "Irányítószámok",
+    "de": "Postleitzahlen"
   },
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
@@ -31,14 +34,16 @@
       "name": {
         "en": "postal codes",
         "id": "kode pos",
-        "hu": "irányítószámok"
+        "hu": "irányítószámok",
+        "de": "Postleitzahlen"
       },
       "minzoom": 8,
       "title": {
         "render": {
           "en": "Postal code {postal_code}",
           "id": "Kode pos {postal_code}",
-          "hu": "Irányítószám: {postal_code}"
+          "hu": "Irányítószám: {postal_code}",
+          "de": "Postleitzahl {postal_code}"
         }
       },
       "description": {},
@@ -117,14 +122,16 @@
       "name": {
         "en": "town halls",
         "id": "balai kota",
-        "hu": "polgármesteri hivatalok"
+        "hu": "polgármesteri hivatalok",
+        "de": "Rathäuser"
       },
       "minzoom": 12,
       "title": {
         "render": {
           "en": "Town hall {name}",
           "id": "Balai kota {name}",
-          "hu": "{name} városháza"
+          "hu": "{name} városháza",
+          "de": "Rathaus {name}"
         }
       },
       "calculatedTags": [

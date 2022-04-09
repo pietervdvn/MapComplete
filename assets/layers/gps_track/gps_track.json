@@ -28,7 +28,8 @@
   ],
   "name": {
     "en": "Your travelled track",
-    "nl": "Jouw afgelegde route"
+    "nl": "Jouw afgelegde route",
+    "de": "Zurückgelegte Strecke anzeigen"
   },
   "mapRendering": [
     {

@@ -968,6 +968,59 @@
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen."
     },
+    "mapcomplete-changes": {
+        "description": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
+        "layers": {
+            "0": {
+                "description": "Zeigt alle MapComplete Änderungen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themenname enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt von {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nicht</b> erstellt von {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Änderung wurde von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a> gemacht"
+                    },
+                    "render_id": {
+                        "render": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Änderungen für {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zeigt Änderungen von MapComplete",
+        "title": "Änderungen mit MapComplete"
+    },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
         "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
@@ -977,6 +1030,10 @@
         "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
         "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
         "title": "In die Natur"
+    },
+    "notes": {
+        "description": "Ein Hinweis ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzern und Text gesucht werden.",
+        "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {
         "description": "Eine Karte mit öffentlich zugänglichen Aussichtstürmen",
@@ -993,13 +1050,31 @@
                         "title": "ein Windrad"
                     }
                 },
+                "tagRenderings": {
+                    "turbine-diameter": {
+                        "question": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
+                        "render": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter."
+                    },
+                    "turbine-operator": {
+                        "question": "Wer betreibt das Windrads?",
+                        "render": "Die Windturbine wird betrieben von {operator}."
+                    },
+                    "turbine-output": {
+                        "question": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)",
+                        "render": "Das Windrad erzeugt {generator:output:electricity} Strom."
+                    },
+                    "turbine-start-date": {
+                        "question": "Wann wurde das Windrad in Betrieb genommen?",
+                        "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+                    }
+                },
                 "title": {
-                    "render": "Windrad",
                     "mappings": {
                         "0": {
                             "then": "{name}"
                         }
-                    }
+                    },
+                    "render": "Windrad"
                 },
                 "units": {
                     "0": {
@@ -1025,24 +1100,6 @@
                             }
                         }
                     }
-                },
-                "tagRenderings": {
-                    "turbine-operator": {
-                        "render": "Die Windturbine wird betrieben von {operator}.",
-                        "question": "Wer betreibt das Windrads?"
-                    },
-                    "turbine-start-date": {
-                        "question": "Wann wurde das Windrad in Betrieb genommen?",
-                        "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
-                    },
-                    "turbine-diameter": {
-                        "render": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
-                        "question": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?"
-                    },
-                    "turbine-output": {
-                        "question": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)",
-                        "render": "Das Windrad erzeugt {generator:output:electricity} Strom."
-                    }
                 }
             }
         },
@@ -1062,7 +1119,27 @@
         "shortDescription": "Eine Karte mit Spielplätzen",
         "title": "Spielpläzte"
     },
+    "postal_codes": {
+        "description": "Postleitzahlen",
+        "layers": {
+            "0": {
+                "name": "Postleitzahlen",
+                "title": {
+                    "render": "Postleitzahl {postal_code}"
+                }
+            },
+            "2": {
+                "name": "Rathäuser",
+                "title": {
+                    "render": "Rathaus {name}"
+                }
+            }
+        },
+        "shortDescription": "Postleitzahlen",
+        "title": "Postleitzahlen"
+    },
     "postboxes": {
+        "description": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. ",
         "layers": {
             "0": {
                 "description": "Die Ebene zeigt Briefkästen.",
@@ -1109,37 +1186,28 @@
             }
         },
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
-        "title": "Post- und Briefkastenkarte",
-        "description": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. "
+        "title": "Post- und Briefkastenkarte"
     },
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
         "title": "Freie Geschäftskarte"
     },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "name": "Gehweg",
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "title": "Gehwege"
+    },
     "sport_pitches": {
         "description": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
         "shortDescription": "Eine Karte mit Sportplätzen",
         "title": "Sportplätze"
-    },
-    "surveillance": {
-        "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
-        "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
-        "title": "Überwachung unter Überwachung"
-    },
-    "toilets": {
-        "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
-        "title": "Freie Toilettenkarte"
-    },
-    "trees": {
-        "description": "Kartieren Sie alle Bäume!",
-        "shortDescription": "Kartieren Sie alle Bäume",
-        "title": "Bäume"
-    },
-    "waste_basket": {
-        "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
-        "shortDescription": "Eine Karte mit Abfalleimern",
-        "title": "Abfalleimer"
     },
     "street_lighting": {
         "description": "Eine Karte für alles zum Thema Straßenbeleuchtung",
@@ -1164,12 +1232,12 @@
                 "name": "Alle Straßen",
                 "tagRenderings": {
                     "lit": {
-                        "question": "Ist diese Straße beleuchtet?",
                         "mappings": {
                             "0": {
                                 "then": "Diese Straße ist beleuchtet"
                             }
-                        }
+                        },
+                        "question": "Ist diese Straße beleuchtet?"
                     }
                 },
                 "title": {
@@ -1179,95 +1247,27 @@
         },
         "title": "Straßenbeleuchtung"
     },
+    "surveillance": {
+        "description": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
+        "shortDescription": "Überwachungskameras und andere Mittel zur Überwachung",
+        "title": "Überwachung unter Überwachung"
+    },
+    "toilets": {
+        "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
+        "title": "Freie Toilettenkarte"
+    },
+    "trees": {
+        "description": "Kartieren Sie alle Bäume!",
+        "shortDescription": "Kartieren Sie alle Bäume",
+        "title": "Bäume"
+    },
     "waste": {
-        "title": "Abfall",
-        "description": "Die Karte zeigt Abfalleimer und Recyclinganlagen."
+        "description": "Die Karte zeigt Abfalleimer und Recyclinganlagen.",
+        "title": "Abfall"
     },
-    "notes": {
-        "description": "Ein Hinweis ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzern und Text gesucht werden.",
-        "title": "Notizen von OpenStreetMap"
-    },
-    "mapcomplete-changes": {
-        "description": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
-        "layers": {
-            "0": {
-                "filter": {
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Nicht</b> erstellt von {search}"
-                            }
-                        }
-                    },
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themenname enthält {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Erstellt von {search}"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Änderung wurde von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a> gemacht"
-                    },
-                    "render_id": {
-                        "render": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Änderungen für {theme}"
-                },
-                "description": "Zeigt alle MapComplete Änderungen"
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "Änderungen mit MapComplete",
-        "shortDescription": "Zeigt Änderungen von MapComplete"
-    },
-    "postal_codes": {
-        "layers": {
-            "0": {
-                "title": {
-                    "render": "Postleitzahl {postal_code}"
-                },
-                "name": "Postleitzahlen"
-            },
-            "2": {
-                "name": "Rathäuser",
-                "title": {
-                    "render": "Rathaus {name}"
-                }
-            }
-        },
-        "shortDescription": "Postleitzahlen",
-        "title": "Postleitzahlen",
-        "description": "Postleitzahlen"
-    },
-    "sidewalks": {
-        "title": "Gehwege",
-        "layers": {
-            "0": {
-                "title": {
-                    "render": "{name}"
-                },
-                "name": "Gehweg"
-            }
-        }
+    "waste_basket": {
+        "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
+        "shortDescription": "Eine Karte mit Abfalleimern",
+        "title": "Abfalleimer"
     }
 }

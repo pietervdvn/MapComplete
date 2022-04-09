@@ -6,7 +6,7 @@
     "ru": "Магазин",
     "ja": "店",
     "nl": "Winkel",
-    "de": "Geschäft",
+    "de": "Geschäfte",
     "eo": "Butiko"
   },
   "minzoom": 16,
@@ -422,7 +422,8 @@
           ],
           "osmTags": "shop~^.*{search}.*$",
           "question": {
-            "en": "Only show shops selling {search}"
+            "en": "Only show shops selling {search}",
+            "de": "Nur Geschäfte, die {search} verkaufen"
           }
         }
       ]
@@ -439,7 +440,8 @@
           ],
           "osmTags": "name~^.*{search}.*$",
           "question": {
-            "en": "Only show shops with name {search}"
+            "en": "Only show shops with name {search}",
+            "de": "Nur Geschäfte mit dem Namen {search} anzeigen"
           }
         }
       ]

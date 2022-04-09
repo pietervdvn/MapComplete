@@ -405,6 +405,9 @@
             "render": "Fahrradbibliothek"
         }
     },
+    "bicycle_rental": {
+        "name": "Fahrradverleih"
+    },
     "bicycle_tube_vending_machine": {
         "name": "Automaten für Fahrradschläuche",
         "presets": {
@@ -1846,6 +1849,9 @@
             "render": "Trinkwasserstelle"
         }
     },
+    "entrance": {
+        "name": "Eingänge"
+    },
     "etymology": {
         "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
         "name": "Objekte mit Informationen zur Namensherkunft",
@@ -2090,6 +2096,9 @@
             "render": "Geisterrad"
         }
     },
+    "gps_track": {
+        "name": "Zurückgelegte Strecke anzeigen"
+    },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
         "name": "Hydranten anzeigen",
@@ -2211,6 +2220,26 @@
         }
     },
     "nature_reserve": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Frei zugänglich"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "1": {
+                        "question": "Hunde dürfen frei herumlaufen"
+                    },
+                    "2": {
+                        "question": "Hunde nur erlaubt, wenn sie angeleint sind"
+                    }
+                }
+            }
+        },
+        "name": "Naturschutzgebiete",
         "tagRenderings": {
             "Curator": {
                 "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
@@ -2240,27 +2269,10 @@
             "phone": {
                 "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
             }
-        },
-        "name": "Naturschutzgebiete",
-        "filter": {
-            "1": {
-                "options": {
-                    "1": {
-                        "question": "Hunde dürfen frei herumlaufen"
-                    },
-                    "2": {
-                        "question": "Hunde nur erlaubt, wenn sie angeleint sind"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Frei zugänglich"
-                    }
-                }
-            }
         }
+    },
+    "note": {
+        "name": "OpenStreetMap-Hinweise"
     },
     "observation_tower": {
         "description": "Türme zur Aussicht auf die umgebende Landschaft",
@@ -2310,6 +2322,12 @@
                 }
             }
         }
+    },
+    "parking": {
+        "name": "Parkplätze"
+    },
+    "pedestrian_path": {
+        "name": "Fußgängerwege"
     },
     "picnic_table": {
         "description": "Die Ebene zeigt Picknicktische an",
@@ -2572,8 +2590,36 @@
             "render": "Bücherschrank"
         }
     },
+    "recycling": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Derzeit geöffnet"
+                    }
+                }
+            }
+        },
+        "name": "Recycling"
+    },
     "shops": {
         "description": "Ein Geschäft",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nur Geschäfte, die {search} verkaufen"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
+                    }
+                }
+            }
+        },
         "name": "Geschäfte",
         "presets": {
             "0": {
@@ -2637,22 +2683,6 @@
                 }
             },
             "render": "Geschäft"
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte, die {search} verkaufen"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
-                    }
-                }
-            }
         }
     },
     "slow_roads": {
@@ -2797,6 +2827,9 @@
         "title": {
             "render": "Sportplatz"
         }
+    },
+    "street_lamps": {
+        "name": "Straßenlaternen"
     },
     "surveillance_camera": {
         "name": "Überwachungskameras",
@@ -3328,38 +3361,5 @@
     },
     "watermill": {
         "name": "Wassermühle"
-    },
-    "entrance": {
-        "name": "Eingänge"
-    },
-    "gps_track": {
-        "name": "Zurückgelegte Strecke anzeigen"
-    },
-    "pedestrian_path": {
-        "name": "Fußgängerwege"
-    },
-    "recycling": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            }
-        },
-        "name": "Recycling"
-    },
-    "parking": {
-        "name": "Parkplätze"
-    },
-    "note": {
-        "name": "OpenStreetMap-Hinweise"
-    },
-    "bicycle_rental": {
-        "name": "Fahrradverleih"
-    },
-    "street_lamps": {
-        "name": "Straßenlaternen"
     }
 }

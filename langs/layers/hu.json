@@ -362,7 +362,7 @@
         "tagRenderings": {
             "bicycle_rental_type": {
                 "mappings": {
-                    "5": {
+                    "4": {
                         "then": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
                     }
                 }

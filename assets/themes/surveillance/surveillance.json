@@ -18,7 +18,7 @@
     "fr": "Caméras et autres dispositifs de surveillance",
     "pl": "Kamery monitorujące i inne środki nadzoru",
     "de": "Überwachungskameras und andere Mittel zur Überwachung",
-    "it": "Telecamere e altri di mezzi di sorveglianza",
+    "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
     "hu": "Térfigyelő kamerák és más figyelőeszközök"
   },
   "description": {
@@ -30,7 +30,8 @@
     "pl": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
     "de": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
     "it": "In questa cartina puoi trovare le telecamera di sorveglianza.",
-    "hu": "Ezen a térképen térfigyelő kamerák láthatók."
+    "hu": "Ezen a térképen térfigyelő kamerák láthatók.",
+    "ru": "На этой открытой карте можно найти камеры слежения."
   },
   "maintainer": "",
   "icon": "./assets/themes/surveillance/logo.svg",

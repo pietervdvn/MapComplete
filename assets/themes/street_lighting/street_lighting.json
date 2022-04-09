@@ -7,13 +7,15 @@
     "nl": "Straatverlichting",
     "ru": "Уличное освещение",
     "zh_Hant": "道路照明",
-    "hu": "Közvilágítás"
+    "hu": "Közvilágítás",
+    "de": "Straßenbeleuchtung"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
     "nl": "Op deze kaart vind je alles over straatlantaarns",
     "zh_Hant": "在這份地圖你可以找到任何有關路燈的事情",
-    "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos"
+    "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
+    "de": "Eine Karte für alles zum Thema Straßenbeleuchtung"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -27,7 +29,8 @@
         "en": "Lit streets",
         "nl": "Verlichte straten",
         "zh_Hant": "有照明的道路",
-        "hu": "Kivilágított utcák"
+        "hu": "Kivilágított utcák",
+        "de": "Beleuchtete Straßen"
       },
       "source": {
         "osmTags": {
@@ -45,7 +48,8 @@
           "en": "Lit street",
           "nl": "Verlichte straat",
           "zh_Hant": "照明道路",
-          "hu": "Kivilágított utca"
+          "hu": "Kivilágított utca",
+          "de": "Bleuchtete Straße"
         },
         "mappings": [
           {
@@ -66,7 +70,8 @@
             "en": "Is this street lit?",
             "nl": "Is deze straat verlicht?",
             "zh_Hant": "這道路有路燈嗎？",
-            "hu": "Ki van-e világítva ez az utca?"
+            "hu": "Ki van-e világítva ez az utca?",
+            "de": "Ist diese Straße beleuchtet?"
           },
           "mappings": [
             {
@@ -75,7 +80,8 @@
                 "en": "This street is lit",
                 "nl": "Deze straat is verlicht",
                 "zh_Hant": "這個道路有照明",
-                "hu": "Ezen az utcán van közvilágítás"
+                "hu": "Ezen az utcán van közvilágítás",
+                "de": "Diese Straße ist beleuchtet"
               }
             },
             {
@@ -118,7 +124,8 @@
         "nl": "Alle straten",
         "ru": "Все улицы",
         "zh_Hant": "所有道路",
-        "hu": "Minden utca"
+        "hu": "Minden utca",
+        "de": "Alle Straßen"
       },
       "source": {
         "osmTags": {
@@ -136,7 +143,8 @@
           "nl": "Straat",
           "ru": "Улица",
           "zh_Hant": "照明",
-          "hu": "Utca"
+          "hu": "Utca",
+          "de": "Straße"
         },
         "mappings": [
           {
@@ -165,7 +173,8 @@
             "en": "Is this street lit?",
             "nl": "Is deze straat verlicht?",
             "zh_Hant": "這道路有照明嗎？",
-            "hu": "Ki van-e világítva ez az utca?"
+            "hu": "Ki van-e világítva ez az utca?",
+            "de": "Ist diese Straße beleuchtet?"
           },
           "mappings": [
             {
@@ -174,7 +183,8 @@
                 "en": "This street is lit",
                 "nl": "Deze straat is verlicht",
                 "zh_Hant": "這道路有照明",
-                "hu": "Ez az utca ki van világítva"
+                "hu": "Ez az utca ki van világítva",
+                "de": "Diese Straße ist beleuchtet"
               }
             },
             {

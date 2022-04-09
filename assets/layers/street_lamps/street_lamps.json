@@ -2,7 +2,8 @@
   "id": "street_lamps",
   "name": {
     "en": "Street Lamps",
-    "nl": "Straatlantaarns"
+    "nl": "Straatlantaarns",
+    "de": "Straßenlaternen"
   },
   "source": {
     "osmTags": "highway=street_lamp"

@@ -3,7 +3,8 @@
   "title": {
     "en": "Sidewalks",
     "ru": "Тротуары",
-    "nl": "Voetpaden"
+    "nl": "Voetpaden",
+    "de": "Gehwege"
   },
   "shortDescription": {
     "en": "Sidewalk mapping"
@@ -25,7 +26,8 @@
       "id": "sidewalks",
       "name": {
         "en": "Sidewalks",
-        "ru": "Тротуары"
+        "ru": "Тротуары",
+        "de": "Gehweg"
       },
       "minzoom": 12,
       "source": {
@@ -41,7 +43,8 @@
       "title": {
         "render": {
           "en": "{name}",
-          "ru": "{name}"
+          "ru": "{name}",
+          "de": "{name}"
         },
         "mappings": [
           {

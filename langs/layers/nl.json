@@ -518,9 +518,6 @@
                     },
                     "4": {
                         "then": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd"
-                    },
-                    "5": {
-                        "then": "Dit is een afzetpunt: een parking met duidelijke signalisatie waar (enkel) fietsen van deze fietsverhuur gezet worden"
                     }
                 },
                 "question": "Wat voor fietsverhuur is dit?"

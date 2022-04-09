@@ -2,7 +2,8 @@
   "id": "parking",
   "name": {
     "en": "Parking",
-    "nl": "Parking"
+    "nl": "Parking",
+    "de": "Parkplätze"
   },
   "minzoom": 12,
   "source": {

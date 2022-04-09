@@ -2,7 +2,8 @@
   "id": "birdhide",
   "name": {
     "en": "Bird watching places",
-    "nl": "Vogelkijkhutten"
+    "nl": "Vogelkijkhutten",
+    "de": "Orte zur Vogelbeobachtung"
   },
   "minzoom": 14,
   "source": {
@@ -284,7 +285,8 @@
         {
           "question": {
             "en": "Only covered birdhides",
-            "nl": "Enkel overdekte kijkhutten"
+            "nl": "Enkel overdekte kijkhutten",
+            "de": "Nur überdachte Vogelbeobachtungsstellen"
           },
           "osmTags": {
             "and": [

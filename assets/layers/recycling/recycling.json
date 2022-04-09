@@ -2,7 +2,8 @@
   "id": "recycling",
   "name": {
     "en": "Recycling",
-    "nl": "Recycling"
+    "nl": "Recycling",
+    "de": "Recycling"
   },
   "description": {
     "en": "A layer with recycling containers and centres",
@@ -850,7 +851,8 @@
         {
           "question": {
             "en": "Currently open",
-            "nl": "Op dit moment open"
+            "nl": "Op dit moment open",
+            "de": "Derzeit geöffnet"
           },
           "osmTags": "_isOpen=yes"
         }

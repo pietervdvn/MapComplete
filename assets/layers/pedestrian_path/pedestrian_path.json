@@ -2,7 +2,8 @@
   "id": "pedestrian_path",
   "name": {
     "en": "Pedestrian paths",
-    "nl": "Pad voor voetgangers"
+    "nl": "Pad voor voetgangers",
+    "de": "Fußgängerwege"
   },
   "minzoom": 18,
   "source": {

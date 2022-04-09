@@ -2,7 +2,8 @@
   "id": "nature_reserve",
   "name": {
     "en": "Nature reserve",
-    "nl": "Natuurgebied"
+    "nl": "Natuurgebied",
+    "de": "Naturschutzgebiete"
   },
   "minzoom": 12,
   "source": {
@@ -396,7 +397,8 @@
         {
           "question": {
             "en": "Freely accesible",
-            "nl": "Vrij te bezoeken"
+            "nl": "Vrij te bezoeken",
+            "de": "Frei zugänglich"
           },
           "osmTags": "access=yes"
         }
@@ -414,14 +416,16 @@
         {
           "question": {
             "en": "Dogs are allowed to roam freely",
-            "nl": "Honden mogen vrij rondlopen"
+            "nl": "Honden mogen vrij rondlopen",
+            "de": "Hunde dürfen frei herumlaufen"
           },
           "osmTags": "dog=yes"
         },
         {
           "question": {
             "en": "Dogs are allowed if they are leashed",
-            "nl": "Honden welkom aan de leiband"
+            "nl": "Honden welkom aan de leiband",
+            "de": "Hunde nur erlaubt, wenn sie angeleint sind"
           },
           "osmTags": {
             "or": [

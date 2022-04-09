@@ -7,7 +7,8 @@
     "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
     "de": "Fahrradstationen (Reparatur, Pumpe oder beides)",
     "it": "Stazioni bici (riparazione, gonfiaggio o entrambi)",
-    "pt_BR": "Estações de bicicletas (reparo, bomba ou ambos)"
+    "pt_BR": "Estações de bicicletas (reparo, bomba ou ambos)",
+    "ru": "Велостанции (ремонт, накачка шин или сразу всё)"
   },
   "minzoom": 13,
   "source": {
@@ -25,7 +26,8 @@
       "gl": "Estación de bicicletas (arranxo e bomba de ar)",
       "de": "Fahrradstation (Pumpe & Reparatur)",
       "it": "Stazione bici (gonfiaggio & riparazione)",
-      "pt_BR": "Estação de bicicletas (bomba e reparo)"
+      "pt_BR": "Estação de bicicletas (bomba e reparo)",
+      "ru": "Велостанция (накачка шин и ремонт)"
     },
     "mappings": [
       {
@@ -43,7 +45,8 @@
           "de": "Fahrrad-Reparaturstation",
           "it": "Stazione riparazione bici",
           "pt_BR": "Estação de reparo de bicicletas",
-          "pt": "Estação de reparo de bicicletas"
+          "pt": "Estação de reparo de bicicletas",
+          "ru": "Станция обслуживания велосипедов"
         }
       },
       {
@@ -61,7 +64,8 @@
           "de": "Fahrrad-Reparaturstation",
           "it": "Stazione riparazione bici",
           "pt_BR": "Estação de reparo de bicicletas",
-          "pt": "Estação de reparo de bicicletas"
+          "pt": "Estação de reparo de bicicletas",
+          "ru": "Станция обслуживания велосипедов"
         }
       },
       {
@@ -83,7 +87,7 @@
           "gl": "Bomba de ar estragada",
           "de": "Kaputte Pumpe",
           "it": "Pompa rotta",
-          "ru": "Сломанный насос",
+          "ru": "Насос сломан",
           "pt_BR": "Bomba quebrada"
         }
       },
@@ -723,7 +727,8 @@
         "fr": "une point de réparation vélo sans pompe",
         "gl": "estación de arranxo de bicicletas sin bomba de ar",
         "de": "eine fahrrad-reparaturstation ohne pumpe",
-        "it": "una stazione di riparazione bici senza pompa"
+        "it": "una stazione di riparazione bici senza pompa",
+        "ru": "Станция обслуживания велосипедов без накачки (насоса)"
       },
       "tags": [
         "amenity=bicycle_repair_station",

@@ -4,11 +4,13 @@
   "version": "2022-01-19",
   "title": {
     "en": "Waste",
-    "nl": "Afval"
+    "nl": "Afval",
+    "de": "Abfall"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",
-    "nl": "Kaart met afvalbakken en recyclingfaciliteiten."
+    "nl": "Kaart met afvalbakken en recyclingfaciliteiten.",
+    "de": "Die Karte zeigt Abfalleimer und Recyclinganlagen."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

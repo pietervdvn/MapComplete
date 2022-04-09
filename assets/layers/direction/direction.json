@@ -6,7 +6,7 @@
     "fr": "Visualisation de la direction",
     "it": "Visualizzazione della direzione",
     "ru": "Визуализация направления",
-    "de": "Visualisierung der Richtung"
+    "de": "Aufnahmewinkel der Kamera anzeigen"
   },
   "minzoom": 16,
   "source": {
@@ -25,7 +25,8 @@
     "nl": "Deze laag toont de oriëntatie van een object",
     "fr": "Cette couche visualise les directions",
     "it": "Questo livello visualizza le direzioni",
-    "de": "Diese Ebene visualisiert Richtungen"
+    "de": "Diese Ebene visualisiert Richtungen",
+    "ru": "Этот слой визуализирует направление"
   },
   "tagRenderings": [],
   "stroke": "0",

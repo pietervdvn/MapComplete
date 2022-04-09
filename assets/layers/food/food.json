@@ -615,7 +615,7 @@
           "question": {
             "en": "Has a vegetarian menu",
             "nl": "Heeft een vegetarisch menu",
-            "de": "Hat vegetarische Speisen"
+            "de": "Vegetarische Gerichte im Angebot"
           },
           "osmTags": {
             "or": [
@@ -635,7 +635,7 @@
           "question": {
             "en": "Has a vegan menu",
             "nl": "Heeft een veganistisch menu",
-            "de": "Bietet vegan Speisen an"
+            "de": "Vegane Gerichte im Angebot"
           },
           "osmTags": {
             "or": [
@@ -653,7 +653,7 @@
           "question": {
             "en": "Has a halal menu",
             "nl": "Heeft een halal menu",
-            "de": "Hat halal Speisen"
+            "de": "Halal Gerichte im Angebot"
           },
           "osmTags": {
             "or": [

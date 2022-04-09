@@ -66,9 +66,16 @@
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
             "themeBy": "Tema mantenido por {author}"
         },
+        "back": "Atrás",
         "backgroundMap": "Mapa de fondo",
         "cancel": "Cancelar",
+        "confirm": "Confirmar",
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
+        "download": {
+            "exporting": "Exportando…"
+        },
+        "example": "Ejemplo",
+        "examples": "Ejemplos",
         "fewChangesBefore": "Contesta unas cuantas preguntas sobre puntos existentes antes de añadir nuevos.",
         "getStartedLogin": "Entra en OpenStreetMap para empezar",
         "getStartedNewAccount": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea una nueva cuenta</a>",
@@ -78,8 +85,10 @@
             "zoomInToSeeThisLayer": "Amplía para ver esta capa"
         },
         "loading": "Cargando…",
+        "loadingTheme": "Cargar {theme}...",
         "loginToStart": "Entra para contestar esta pregunta",
         "loginWithOpenStreetMap": "Acceder con OpenStreetMap",
+        "logout": "Cerrar la sesión",
         "morescreen": {
             "createYourOwnTheme": "Crea tu propia petición completa de MapComplete desde cero.",
             "intro": "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
@@ -87,15 +96,18 @@
             "streetcomplete": "Otra aplicación similar es <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: Su nombre es $$$",
+        "next": "Siguiente",
         "noNameCategory": "{category} sin nombre",
         "noTagsSelected": "No se han seleccionado etiquetas",
         "number": "número",
         "oneSkippedQuestion": "Has ignorado una pregunta",
         "openStreetMapIntro": "<h3>Un mapa abierto</h3><p></p>¿No sería genial si hubiera un solo mapa, que todos pudieran usar y editar libremente?¿Un solo lugar para almacenar toda la información geográfica? Entonces, todos esos sitios web con mapas diferentes, pequeños e incompatibles (que siempre están desactualizados) ya no serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> es ese mapa. Los datos del mapa se pueden utilizar de forma gratuita (con <a href='https://osm.org/copyright' target='_blank'> atribución y publicación de cambios en esos datos</a>). Además de eso, todos pueden agregar libremente nuevos datos y corregir errores. Este sitio web también usa OpenStreetMap. Todos los datos provienen de allí, y tus respuestas y correcciones también se añadirán allí.</p><p>Muchas personas y aplicaciones ya usan OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero también los mapas de Facebook, Instagram, Apple y Bing son (en parte) impulsados ​​por OpenStreetMap. Si cambias algo aquí, también se reflejará en esas aplicaciones, en su próxima actualización</p>",
+        "openTheMap": "Abrir el mapa",
         "opening_hours": {
             "closed_permanently": "Cerrado - sin día de apertura conocido",
             "closed_until": "Cerrado hasta {date}",
             "error_loading": "Error: no se han podido visualizar esos horarios de apertura.",
+            "loadingCountry": "Determinando país…",
             "not_all_rules_parsed": "El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:",
             "openTill": "hasta",
             "open_24_7": "Abierto las 24 horas del día",
@@ -104,8 +116,7 @@
             "ph_closed": "cerrado",
             "ph_not_known": " ",
             "ph_open": "abierto",
-            "ph_open_as_usual": "abierto como siempre",
-            "loadingCountry": "Determinando país…"
+            "ph_open_as_usual": "abierto como siempre"
         },
         "osmLinkTooltip": "Mira este objeto en OpenStreetMap para ver historial y otras opciones de edición",
         "pdf": {
@@ -171,25 +182,14 @@
             "wednesday": "Miércoles"
         },
         "welcomeBack": "Has entrado, bienvenido.",
-        "next": "Siguiente",
-        "confirm": "Confirmar",
-        "back": "Atrás",
-        "logout": "Cerrar la sesión",
-        "loadingTheme": "Cargar {theme}...",
-        "example": "Ejemplo",
         "wikipedia": {
-            "wikipediaboxTitle": "Wikipedia",
+            "loading": "Cargando Wikipedia...",
             "previewbox": {
                 "born": "Nacido: {value}",
                 "died": "Murió: {value}"
             },
-            "loading": "Cargando Wikipedia..."
-        },
-        "download": {
-            "exporting": "Exportando…"
-        },
-        "openTheMap": "Abrir el mapa",
-        "examples": "Ejemplos"
+            "wikipediaboxTitle": "Wikipedia"
+        }
     },
     "image": {
         "addPicture": "Añadir foto",
@@ -208,6 +208,20 @@
         "uploadingPicture": "Cargando la imagen…",
         "willBePublished": "La imagen se publicará "
     },
+    "importHelper": {
+        "mapPreview": {
+            "title": "Previsualización de mapa"
+        },
+        "selectFile": {
+            "title": "Seleccionar archivo"
+        },
+        "title": "Ayudante de importación",
+        "validateDataTitle": "Validar datos"
+    },
+    "importLayer": {
+        "layerName": "Posible {title}",
+        "popupTitle": "Posible {title}"
+    },
     "index": {
         "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "featuredThemeTitle": "Esta semana destacamos",
@@ -215,26 +229,57 @@
         "pickTheme": "Elige un tema de abajo para empezar.",
         "title": "Le damos la bienvenida a MapComplete"
     },
+    "move": {
+        "cancel": "Cancelar movida",
+        "confirmMove": "Mover aquí"
+    },
+    "notes": {
+        "addComment": "Añadir comentario",
+        "anonymous": "Usuario anónimo",
+        "closeNote": "Cerrar nota",
+        "reopenNote": "Reabrir nota"
+    },
+    "privacy": {
+        "geodataTitle": "Tu geoubicación",
+        "miscCookiesTitle": "Otras cookies",
+        "title": "Política de privacidad",
+        "trackingTitle": "Datos estadísticos"
+    },
+    "professional": {
+        "aboutMc": {
+            "survey": {
+                "title": "Posibilidades de estudio"
+            }
+        },
+        "aboutOsm": {
+            "license": {
+                "title": "La licencia"
+            }
+        },
+        "services": {
+            "title": "Servicios MapComplete"
+        }
+    },
     "reviews": {
+        "affiliated_reviewer_warning": "(Revisión afiliada)",
         "name_required": "Se requiere un nombre para mostrar y crear comentarios",
         "no_rating": "Sin calificación dada",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
         "plz_login": "Inicia sesión para dejar una reseña",
+        "posting_as": "Publicación como",
         "saved": "<span class=\"thanks\">Reseña guardada. ¡Gracias por compartir!</span>",
         "saving_review": "Guardando…",
         "title": "{count} comentarios",
         "title_singular": "Un comentario",
-        "write_a_comment": "Deja una reseña…",
-        "affiliated_reviewer_warning": "(Revisión afiliada)",
-        "posting_as": "Publicación como"
+        "write_a_comment": "Deja una reseña…"
     },
     "split": {
         "cancel": "Cancelar",
         "split": "Dividir"
     },
     "validation": {
-        "opening_hours": {
-            "description": "Horarios de apertura"
+        "decimal": {
+            "description": "Un número"
         },
         "direction": {
             "description": "Una orientación"
@@ -242,56 +287,11 @@
         "email": {
             "description": "dirección-electrónica"
         },
-        "decimal": {
-            "description": "Un número"
-        },
         "float": {
             "description": "un número"
+        },
+        "opening_hours": {
+            "description": "Horarios de apertura"
         }
-    },
-    "professional": {
-        "aboutOsm": {
-            "license": {
-                "title": "La licencia"
-            }
-        },
-        "aboutMc": {
-            "survey": {
-                "title": "Posibilidades de estudio"
-            }
-        },
-        "services": {
-            "title": "Servicios MapComplete"
-        }
-    },
-    "move": {
-        "confirmMove": "Mover aquí",
-        "cancel": "Cancelar movida"
-    },
-    "privacy": {
-        "miscCookiesTitle": "Otras cookies",
-        "trackingTitle": "Datos estadísticos",
-        "title": "Política de privacidad",
-        "geodataTitle": "Tu geoubicación"
-    },
-    "notes": {
-        "addComment": "Añadir comentario",
-        "closeNote": "Cerrar nota",
-        "anonymous": "Usuario anónimo",
-        "reopenNote": "Reabrir nota"
-    },
-    "importLayer": {
-        "layerName": "Posible {title}",
-        "popupTitle": "Posible {title}"
-    },
-    "importHelper": {
-        "title": "Ayudante de importación",
-        "selectFile": {
-            "title": "Seleccionar archivo"
-        },
-        "mapPreview": {
-            "title": "Previsualización de mapa"
-        },
-        "validateDataTitle": "Validar datos"
     }
 }

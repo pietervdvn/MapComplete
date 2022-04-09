@@ -35,7 +35,7 @@
         "en": "wind turbine",
         "nl": "windturbine",
         "fr": "Éolienne",
-        "de": "Windrad",
+        "de": "Windräder",
         "it": "pala eolica",
         "zh_Hant": "風機",
         "hu": "Szélerőmű"
@@ -65,7 +65,8 @@
               "it": "{name}",
               "ru": "{name}",
               "zh_Hant": "{name}",
-              "id": "{name}"
+              "id": "{name}",
+              "de": "{name}"
             }
           }
         ]
@@ -79,7 +80,8 @@
             "it": "La potenza generata da questa pala eolica è {generator:output:electricity}.",
             "zh_Hant": "這個風機的電力輸出是 {generator:output:electricity}。",
             "id": "Output daya dari turbin angin ini adalah {generator:output:electricity}.",
-            "hu": "A szélerőmű teljesítménye: {generator:output:electricity}."
+            "hu": "A szélerőmű teljesítménye: {generator:output:electricity}.",
+            "de": "Das Windrad erzeugt {generator:output:electricity} Strom."
           },
           "question": {
             "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
@@ -87,7 +89,8 @@
             "it": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
             "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)",
             "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
-            "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)"
+            "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
+            "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)"
           },
           "freeform": {
             "key": "generator:output:electricity",
@@ -102,14 +105,16 @@
             "it": "Questa pala eolica è gestita da {operator}.",
             "zh_Hant": "這個風機營業商是 {operator}。",
             "id": "Turbin angin ini dioperasikan oleh {operator}.",
-            "hu": "Ennek a szélerőműnek az üzemeltetője: {operator}."
+            "hu": "Ennek a szélerőműnek az üzemeltetője: {operator}.",
+            "de": "Die Windturbine wird betrieben von {operator}."
           },
           "question": {
             "en": "Who operates this wind turbine?",
             "fr": "Qui est l’exploitant de cette éolienne ?",
             "it": "Chi gestisce questa pala eolica?",
             "zh_Hant": "這個風機營業商是？",
-            "hu": "Ki üzemelteti ezt a szélturbinát?"
+            "hu": "Ki üzemelteti ezt a szélturbinát?",
+            "de": "Wer betreibt das Windrads?"
           },
           "freeform": {
             "key": "operator"
@@ -143,14 +148,16 @@
             "fr": "Le diamètre du rotor est de {rotor:diameter} mètres.",
             "it": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri.",
             "zh_Hant": "這個風力渦輪機的風葉直徑是 {rotor:diameter} 公尺。",
-            "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter."
+            "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter.",
+            "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter."
           },
           "question": {
             "en": "What is the rotor diameter of this wind turbine, in metres?",
             "fr": "Quel est le diamètre du rotor en mètres ?",
             "it": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
             "zh_Hant": "這個風力渦輪機的風葉直徑是多少公尺？",
-            "hu": "Hány méter a rotorátmérője ennek a szélturbinának?"
+            "hu": "Hány méter a rotorátmérője ennek a szélturbinának?",
+            "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?"
           },
           "freeform": {
             "key": "rotor:diameter",
@@ -165,7 +172,8 @@
             "it": "Questa pala eolica è entrata in funzione in data {start_date}.",
             "zh_Hant": "這個風機從 {start_date} 開始運轉。",
             "id": "Turbin angin ini mulai beroperasi pada/dalam {start_date}.",
-            "hu": "A szélerőmű üzembe helyezése: {start_date}."
+            "hu": "A szélerőmű üzembe helyezése: {start_date}.",
+            "de": "Das Windrad wurde am {start_date} in Betrieb genommen."
           },
           "question": {
             "en": "When did this wind turbine go into operation?",
@@ -173,7 +181,8 @@
             "it": "Quando è entrata in funzione questa pala eolica?",
             "zh_Hant": "這個風機何時開始營運？",
             "id": "Kapan turbin angin ini mulai beroperasi?",
-            "hu": "Mikor helyezték üzembe ezt a szélerőművet?"
+            "hu": "Mikor helyezték üzembe ezt a szélerőművet?",
+            "de": "Wann wurde das Windrad in Betrieb genommen?"
           },
           "freeform": {
             "key": "start_date",
@@ -192,7 +201,7 @@
             "en": "a wind turbine",
             "nl": "een windturbine",
             "fr": "une éolienne",
-            "de": "eine windrad",
+            "de": "ein Windrad",
             "it": "una pala eolica",
             "zh_Hant": "風機",
             "hu": "Szélerőmű"

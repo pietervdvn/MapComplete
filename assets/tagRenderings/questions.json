@@ -687,7 +687,8 @@
             "zh_Hant": "使用專用應用程式付款",
             "de": "Die Bezahlung erfolgt über eine spezielle App",
             "fr": "Paiement via une application",
-            "sl": "Plačilo se opravi z namensko aplikacijo"
+            "sl": "Plačilo se opravi z namensko aplikacijo",
+            "ca": "El pagament es fa amb una app dedicada"
           }
         },
         {
@@ -701,7 +702,8 @@
             "zh_Hant": "使用會員卡付款",
             "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte",
             "fr": "Paiement via une carte de membre",
-            "sl": "Plačilo se izvede s člansko izkaznico"
+            "sl": "Plačilo se izvede s člansko izkaznico",
+            "ca": "El pagament es fa amb una targeta de membre"
           }
         }
       ]
@@ -860,7 +862,8 @@
           "hu": "Az első alagsori szinten",
           "id": "Terletak di lantai basement pertama",
           "fr": "Sous-sol",
-          "sl": "Nahaja se v prvi kletni etaži"
+          "sl": "Nahaja se v prvi kletni etaži",
+          "ca": "Localitzat a la planta base"
         }
       }
     ]

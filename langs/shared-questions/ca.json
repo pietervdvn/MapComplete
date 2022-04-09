@@ -59,6 +59,18 @@
             },
             "question": "Quins mètodes de pagament s'accepten aquí?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "El pagament es fa amb una app dedicada"
+                    },
+                    "1": {
+                        "then": "El pagament es fa amb una targeta de membre"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "Quin és el telèfon de {title()}?"
         },
@@ -114,18 +126,6 @@
                 }
             },
             "question": "Quin és l'ítem a Viquipèdia?"
-        },
-        "payment-options-advanced": {
-            "override": {
-                "mappings+": {
-                    "0": {
-                        "then": "El pagament es fa amb una app dedicada"
-                    },
-                    "1": {
-                        "then": "El pagament es fa amb una targeta de membre"
-                    }
-                }
-            }
         }
     }
 }

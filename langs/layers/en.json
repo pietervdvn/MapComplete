@@ -518,9 +518,6 @@
                     },
                     "4": {
                         "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
-                    },
-                    "5": {
-                        "then": "This is a dropoff point: a designated bicycle parking for this cycle rental"
                     }
                 },
                 "question": "What kind of bicycle rental is this?"

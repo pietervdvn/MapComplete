@@ -486,7 +486,7 @@
           "question": {
             "en": "Has a changing table",
             "nl": "Heeft een luiertafel",
-            "de": "Hat einen Wickeltisch"
+            "de": "Wickeltisch vorhanden"
           },
           "osmTags": "changing_table=yes"
         }
@@ -517,7 +517,8 @@
         {
           "question": {
             "nl": "Nu geopened",
-            "en": "Opened now"
+            "en": "Opened now",
+            "de": "Derzeit geöffnet"
           },
           "osmTags": {
             "or": [

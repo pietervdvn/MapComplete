@@ -4,7 +4,7 @@
     "en": "Bike related object",
     "nl": "Fietsgerelateerd object",
     "fr": "Objet cycliste",
-    "de": "Mit Fahrrad zusammenhängendes Objekt",
+    "de": "Weitere fahrradbezogene Objekte",
     "it": "Oggetto relativo alle bici"
   },
   "minzoom": 13,
@@ -43,7 +43,8 @@
           "en": "Cycle track",
           "fr": "Piste cyclable",
           "it": "Pista ciclabile",
-          "de": "Radweg"
+          "de": "Radweg",
+          "ru": "Велотрек"
         }
       }
     ]
