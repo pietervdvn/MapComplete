@@ -990,11 +990,16 @@
                 "name": "Windräder",
                 "presets": {
                     "0": {
-                        "title": "eine windrad"
+                        "title": "ein Windrad"
                     }
                 },
                 "title": {
-                    "render": "Windrad"
+                    "render": "Windrad",
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
                 },
                 "units": {
                     "0": {
@@ -1019,6 +1024,24 @@
                                 "human": " Meter"
                             }
                         }
+                    }
+                },
+                "tagRenderings": {
+                    "turbine-operator": {
+                        "render": "Die Windturbine wird betrieben von {operator}.",
+                        "question": "Wer betreibt das Windrads?"
+                    },
+                    "turbine-start-date": {
+                        "question": "Wann wurde das Windrad in Betrieb genommen?",
+                        "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+                    },
+                    "turbine-diameter": {
+                        "render": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
+                        "question": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?"
+                    },
+                    "turbine-output": {
+                        "question": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)",
+                        "render": "Das Windrad erzeugt {generator:output:electricity} Strom."
                     }
                 }
             }
@@ -1076,7 +1099,8 @@
                             "0": {
                                 "then": "durchgehend geöffnet (auch an Feiertagen)"
                             }
-                        }
+                        },
+                        "render": "Öffnungszeiten: {opening_hours_table()}"
                     }
                 },
                 "title": {
@@ -1113,7 +1137,7 @@
         "title": "Bäume"
     },
     "waste_basket": {
-        "description": "Auf dieser Karte finden Sie Abfalleimer in Ihrer Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, können Sie ihn selbst hinzufügen",
+        "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
     },
@@ -1121,21 +1145,47 @@
         "description": "Eine Karte für alles zum Thema Straßenbeleuchtung",
         "layers": {
             "1": {
-                "name": "Beleuchtete Straßen"
+                "name": "Beleuchtete Straßen",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Diese Straße ist beleuchtet"
+                            }
+                        },
+                        "question": "Ist diese Straße beleuchtet?"
+                    }
+                },
+                "title": {
+                    "render": "Bleuchtete Straße"
+                }
             },
             "2": {
-                "name": "Alle Straßen"
+                "name": "Alle Straßen",
+                "tagRenderings": {
+                    "lit": {
+                        "question": "Ist diese Straße beleuchtet?",
+                        "mappings": {
+                            "0": {
+                                "then": "Diese Straße ist beleuchtet"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Straße"
+                }
             }
         },
         "title": "Straßenbeleuchtung"
     },
     "waste": {
         "title": "Abfall",
-        "description": "Eine Karte für Abfallbehälter und Recyclinganlagen."
+        "description": "Die Karte zeigt Abfalleimer und Recyclinganlagen."
     },
     "notes": {
         "description": "Ein Hinweis ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzern und Text gesucht werden.",
-        "title": "Hinweise zu OpenStreetMap"
+        "title": "Notizen von OpenStreetMap"
     },
     "mapcomplete-changes": {
         "description": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
@@ -1173,9 +1223,9 @@
                     }
                 },
                 "title": {
-                    "render": "Änderung für {theme}"
+                    "render": "Änderungen für {theme}"
                 },
-                "description": "Zeigt alle MapComplete-Änderungen"
+                "description": "Zeigt alle MapComplete Änderungen"
             },
             "1": {
                 "override": {
@@ -1189,5 +1239,35 @@
         },
         "title": "Änderungen mit MapComplete",
         "shortDescription": "Zeigt Änderungen von MapComplete"
+    },
+    "postal_codes": {
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "Postleitzahl {postal_code}"
+                },
+                "name": "Postleitzahlen"
+            },
+            "2": {
+                "name": "Rathäuser",
+                "title": {
+                    "render": "Rathaus {name}"
+                }
+            }
+        },
+        "shortDescription": "Postleitzahlen",
+        "title": "Postleitzahlen",
+        "description": "Postleitzahlen"
+    },
+    "sidewalks": {
+        "title": "Gehwege",
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "{name}"
+                },
+                "name": "Gehweg"
+            }
+        }
     }
 }
