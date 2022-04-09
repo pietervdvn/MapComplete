@@ -33,7 +33,7 @@
                 "name": "Campings",
                 "presets": {
                     "0": {
-                        "description": "Ajouter une nouvelle aire de camping officielle, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking ne suffit pas à rentrer dans cette catégorie ",
+                        "description": "Ajouter une nouvelle aire  officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
                         "title": "une aire de camping"
                     }
                 },
@@ -134,18 +134,18 @@
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "Camping sans nom"
+                            "then": "Site pour camping-cars sans nom"
                         }
                     },
-                    "render": "Camping {name}"
+                    "render": "Site pour camping-cars {name}"
                 }
             },
             "1": {
-                "description": "Site de vidange",
-                "name": "Site de vidange",
+                "description": "Site de vidange sanitaire",
+                "name": "Sites de vidange sanitaire",
                 "presets": {
                     "0": {
-                        "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires) généralement alimenté en eau potable et électricité.",
+                        "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires). Généralement alimenté en eau potable et électricité.",
                         "title": "une site de vidange"
                     }
                 },
@@ -250,11 +250,11 @@
             }
         },
         "shortDescription": "Trouver des sites pour passer la nuit avec votre camping-car",
-        "title": "Campings"
+        "title": "Sites pour camping-cars"
     },
     "climbing": {
         "description": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
-        "descriptionTail": "La carte a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+        "descriptionTail": "La carte des sites d'escalade a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
                 "description": "Club ou association d’escalade",

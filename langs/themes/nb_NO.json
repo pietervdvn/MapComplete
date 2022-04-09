@@ -4,7 +4,8 @@
         "title": "Åpne AED-kart"
     },
     "artwork": {
-        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden"
+        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
+        "title": "Kunstkort"
     },
     "benches": {
         "shortDescription": "Et benkekart",

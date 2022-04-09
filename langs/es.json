@@ -103,12 +103,15 @@
             "opensAt": "desde",
             "ph_closed": "cerrado",
             "ph_not_known": " ",
-            "ph_open": "abierto"
+            "ph_open": "abierto",
+            "ph_open_as_usual": "abierto como siempre",
+            "loadingCountry": "Determinando país…"
         },
         "osmLinkTooltip": "Mira este objeto en OpenStreetMap para ver historial y otras opciones de edición",
         "pdf": {
             "attr": "Datos cartográficos © colaboradores de OpenStreetMap, reutilizables en virtud de la ODbL",
-            "attrBackground": "Capa de fondo: {background}"
+            "attrBackground": "Capa de fondo: {background}",
+            "generatedWith": "Generado como MapComplete.osm.be"
         },
         "pickLanguage": "Escoge idioma: ",
         "questions": {
@@ -167,7 +170,26 @@
             "tuesday": "Martes",
             "wednesday": "Miércoles"
         },
-        "welcomeBack": "Has entrado, bienvenido."
+        "welcomeBack": "Has entrado, bienvenido.",
+        "next": "Siguiente",
+        "confirm": "Confirmar",
+        "back": "Atrás",
+        "logout": "Cerrar la sesión",
+        "loadingTheme": "Cargar {theme}...",
+        "example": "Ejemplo",
+        "wikipedia": {
+            "wikipediaboxTitle": "Wikipedia",
+            "previewbox": {
+                "born": "Nacido: {value}",
+                "died": "Murió: {value}"
+            },
+            "loading": "Cargando Wikipedia..."
+        },
+        "download": {
+            "exporting": "Exportando…"
+        },
+        "openTheMap": "Abrir el mapa",
+        "examples": "Ejemplos"
     },
     "image": {
         "addPicture": "Añadir foto",
@@ -202,10 +224,74 @@
         "saving_review": "Guardando…",
         "title": "{count} comentarios",
         "title_singular": "Un comentario",
-        "write_a_comment": "Deja una reseña…"
+        "write_a_comment": "Deja una reseña…",
+        "affiliated_reviewer_warning": "(Revisión afiliada)",
+        "posting_as": "Publicación como"
     },
     "split": {
         "cancel": "Cancelar",
         "split": "Dividir"
+    },
+    "validation": {
+        "opening_hours": {
+            "description": "Horarios de apertura"
+        },
+        "direction": {
+            "description": "Una orientación"
+        },
+        "email": {
+            "description": "dirección-electrónica"
+        },
+        "decimal": {
+            "description": "Un número"
+        },
+        "float": {
+            "description": "un número"
+        }
+    },
+    "professional": {
+        "aboutOsm": {
+            "license": {
+                "title": "La licencia"
+            }
+        },
+        "aboutMc": {
+            "survey": {
+                "title": "Posibilidades de estudio"
+            }
+        },
+        "services": {
+            "title": "Servicios MapComplete"
+        }
+    },
+    "move": {
+        "confirmMove": "Mover aquí",
+        "cancel": "Cancelar movida"
+    },
+    "privacy": {
+        "miscCookiesTitle": "Otras cookies",
+        "trackingTitle": "Datos estadísticos",
+        "title": "Política de privacidad",
+        "geodataTitle": "Tu geoubicación"
+    },
+    "notes": {
+        "addComment": "Añadir comentario",
+        "closeNote": "Cerrar nota",
+        "anonymous": "Usuario anónimo",
+        "reopenNote": "Reabrir nota"
+    },
+    "importLayer": {
+        "layerName": "Posible {title}",
+        "popupTitle": "Posible {title}"
+    },
+    "importHelper": {
+        "title": "Ayudante de importación",
+        "selectFile": {
+            "title": "Seleccionar archivo"
+        },
+        "mapPreview": {
+            "title": "Previsualización de mapa"
+        },
+        "validateDataTitle": "Validar datos"
     }
 }

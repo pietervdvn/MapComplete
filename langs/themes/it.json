@@ -22,7 +22,7 @@
         "title": "Binocoli"
     },
     "bookcases": {
-        "description": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre.",
+        "description": "Una libreria pubblica è una piccola cabina a lato della strada, un locale, una vecchia cabina telefonica o qualche altro luogo in cui sono tenuti libri. Chiunque può lasciare o prendere libri. Scopo della mappa è individuarle. Se scopri nuove librerie nelle vicinanze, puoi facilmente aggiungerle con un account OpenStreetMap.",
         "title": "Mappa libera delle microbiblioteche"
     },
     "cafes_and_pubs": {
@@ -257,8 +257,8 @@
     },
     "charging_stations": {
         "description": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
-        "shortDescription": "Una mappa mondiale delle stazioni di ricarica",
-        "title": "Stazioni di ricarica"
+        "shortDescription": "Una mappa mondiale di postazioni di ricarica",
+        "title": "Postazione di ricarica"
     },
     "climbing": {
         "description": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
@@ -796,8 +796,8 @@
     },
     "maps": {
         "description": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
-        "shortDescription": "Questo tema mostra tutte le mappe (turistiche) conosciute da OpenStreetMap",
-        "title": "Una cartina delle cartine"
+        "shortDescription": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
+        "title": "Una mappa di mappe"
     },
     "observation_towers": {
         "description": "Torri pubblicamente accessibili per godere della vista",
@@ -880,7 +880,7 @@
     },
     "personal": {
         "description": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>",
-        "title": "Tema personalizzato"
+        "title": "Tema personale"
     },
     "playgrounds": {
         "description": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
@@ -898,13 +898,13 @@
         "title": "Mappa dei negozi"
     },
     "sport_pitches": {
-        "description": "Una campo sportivo è un’area dove vengono praticati gli sport",
+        "description": "Un campo sportivo è un'area dove vengono praticati sport",
         "shortDescription": "Una cartina che mostra i campi sportivi",
         "title": "Campi sportivi"
     },
     "surveillance": {
         "description": "In questa cartina puoi trovare le telecamera di sorveglianza.",
-        "shortDescription": "Telecamere e altri di mezzi di sorveglianza",
+        "shortDescription": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
         "title": "Sorveglianza sotto controllo"
     },
     "toilets": {
