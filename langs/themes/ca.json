@@ -367,5 +367,9 @@
     },
     "shops": {
         "title": "Open Shop Map"
+    },
+    "artwork": {
+        "description": "Benvingut a Open Artwork Map, un mapa d'estàtues, busts, grafitis i altres obres d'art del tot el món",
+        "title": "Open Artwork Map"
     }
 }
