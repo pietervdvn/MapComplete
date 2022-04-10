@@ -233,7 +233,12 @@ class TranslationPart {
                 }
                 subparts = subparts.map(p => p.split(/\(.*\)/)[0])
                 if (subparts.indexOf(part) < 0) {
-                    const [_, __, weblatepart, lang] = key.split("/")
+                    let [_, __, weblatepart, lang] = key.split("/")
+                    if (lang === undefined) {
+                        // This is a core translation, it has one less path segment
+                        lang = weblatepart
+                        weblatepart = "core"
+                    }
                     errors.push({
                         error: `The translation for ${key} does not have the required subpart ${part}.
 \tThe full translation is ${value}
