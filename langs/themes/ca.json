@@ -40,10 +40,123 @@
                     }
                 }
             }
+        },
+        "overrideAll": {
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " metre"
+                        },
+                        "1": {
+                            "human": " peus"
+                        }
+                    }
+                }
+            }
         }
     },
     "personal": {
         "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
         "title": "Interfície personal"
+    },
+    "cyclestreets": {
+        "title": "Carrers ciclistes",
+        "layers": {
+            "0": {
+                "name": "Carrers ciclistes"
+            },
+            "2": {
+                "title": {
+                    "render": "Carrer"
+                }
+            }
+        }
+    },
+    "openwindpowermap": {
+        "layers": {
+            "0": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                },
+                "units": {
+                    "0": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " megavats"
+                            },
+                            "1": {
+                                "human": " quilovats"
+                            },
+                            "2": {
+                                "human": " vats"
+                            },
+                            "3": {
+                                "human": " gigavats"
+                            }
+                        }
+                    },
+                    "1": {
+                        "applicableUnits": {
+                            "0": {
+                                "human": " metre"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OpenWindPowerMap"
+    },
+    "postboxes": {
+        "layers": {
+            "0": {
+                "name": "Bústies",
+                "title": {
+                    "render": "Bústia"
+                }
+            }
+        }
+    },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "name": "Voreres"
+            }
+        }
+    },
+    "benches": {
+        "title": "Bancs"
+    },
+    "playgrounds": {
+        "title": "Parcs infantils"
+    },
+    "hackerspaces": {
+        "layers": {
+            "0": {
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": " {name}"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "hackerspaces-opening_hours": {
+                        "render": "{opening_hours_table()}"
+                    }
+                }
+            }
+        }
+    },
+    "campersite": {
+        "title": "Llocs d'acampada"
+    },
+    "trees": {
+        "title": "Arbres"
     }
 }
