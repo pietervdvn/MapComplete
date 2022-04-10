@@ -317,7 +317,7 @@
         "description": "Una capa que importa entrades per a {title}",
         "importHandled": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
         "importButton": "import_button({layerId}, _tags, he trobat un {title} aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)",
-        "alreadyMapped": "Ja hi ha un altre {títol} al mapa; aquest punt és un duplicat"
+        "alreadyMapped": "Ja hi ha un altre {title} al mapa; aquest punt és un duplicat"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
