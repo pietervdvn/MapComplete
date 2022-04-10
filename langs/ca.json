@@ -51,19 +51,22 @@
             "import": {
                 "hasBeenImported": "Aquest objecte ha estat importat",
                 "importTags": "L'element rebrà {tags}",
-                "zoomInMore": "Ampliar més per importar aquest element."
+                "zoomInMore": "Ampliar més per importar aquest element",
+                "officialThemesOnly": "El botó d'importació està desactivat per a temes no oficials per evitar accidents",
+                "wrongType": "Aquest element no és un punt o una via i no pot ser importat"
             },
             "importTags": "L'element rebrà {tags}",
             "intro": "Has marcat un lloc on no coneixem les dades.<br>",
             "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
             "openLayerControl": "Obrir el control de capes",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Entra per afegir un nou punt</a>",
+            "pleaseLogin": "Entra per afegir un nou punt",
             "presetInfo": "El nou PDI tindrà les etiquetes {tags}",
             "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap punt.",
             "title": "Vols afegir un punt?",
             "warnVisibleForEveryone": "La teva contribució serà vista per tothom",
             "zoomInFurther": "Apropa per afegir un punt.",
-            "zoomInMore": "Ampliar per importar aquest element"
+            "zoomInMore": "Ampliar per importar aquest element",
+            "wrongType": "Aquest element no és un punt o una via i no pot ser importat"
         },
         "apply_button": {
             "isApplied": "S'aplicaran els canvis",
@@ -85,7 +88,9 @@
             "openMapillary": "Obrir Mapillary aquí",
             "themeBy": "Tema mantingut per {author}",
             "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
-            "openOsmcha": "Veure darreres edicions fetes amb {theme}"
+            "openOsmcha": "Veure darreres edicions fetes amb {theme}",
+            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>",
+            "josmNotOpened": "No s'ha pogut contactar amb JOSM. Assegura't que estigui obert i que el control remot estigui habilitat"
         },
         "back": "Tornar",
         "backToMapcomplete": "Tornar a l'explicació general de la petició",
@@ -110,7 +115,8 @@
             "title": "Baixar dades visibles",
             "uploadGpx": "Pujar la teva traça a OpenStreetMap",
             "downloadAsSvg": "Baixa un SVG del mapa actual",
-            "downloadAsSvgHelper": "Compatible amb Inkscape o Adobe Illustrator; necessitaràs un processament  "
+            "downloadAsSvgHelper": "Compatible amb Inkscape o Adobe Illustrator; necessitaràs un processament  ",
+            "downloadGpxHelper": "Un fitxer GPX es pot utilitzar amb la majoria de dispositius i aplicacions de navegació"
         },
         "example": "Exemple",
         "examples": "Exemples",
@@ -245,7 +251,7 @@
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
         },
-        "screenToSmall": "Obrir {theme} en una finestra nova."
+        "screenToSmall": "Obrir {theme} en una finestra nova"
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -263,13 +269,18 @@
         "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
         "uploadingMultiple": "Pujant {count} imatges…",
         "uploadingPicture": "Pujant la teva imatge…",
-        "willBePublished": "La teva foto serà publicada: "
+        "willBePublished": "La teva foto serà publicada: ",
+        "ccoExplanation": "Afegir una imatge al domini públic implica que qualsevol pot fer qualsevol cosa amb la teva imatge",
+        "ccbExplanation": "La llicència CC-BY implica que qualsevol persona pot utilitzar la teva imatge per a qualsevol propòsit, però t'ha d'atribuir"
     },
     "importHelper": {
         "inspectDidAutoDected": "La capa es va seleccionar automàticament",
         "inspectLooksCorrect": "Aquests valors semblen correctes",
         "mapPreview": {
-            "title": "Vista prèvia del mapa"
+            "title": "Vista prèvia del mapa",
+            "selectLayer": "Amb quina capa coincideix aquesta importació?",
+            "confirm": "Les característiques es troben a la ubicació correcta del mapa",
+            "autodetected": "La capa es va deduir automàticament en funció de les propietats"
         },
         "selectFile": {
             "loadedFilesAre": "L'arxiu carregat actualment és {file}",
@@ -277,15 +288,24 @@
             "title": "Seleccionar arxiu",
             "description": "Seleccionar un fitxer .csv o .geojson per començar",
             "fileFormatDescription": "Selecciona un fitxer <b class=\"code\">.csv</b> o un fitxer <b class=\"code\">.geojson</b>",
-            "errNoName": "Algunes columnes no tenen nom.",
-            "errDuplicate": "Algunes columnes tenen el mateix nom."
+            "errNoName": "Algunes columnes no tenen nom",
+            "errDuplicate": "Algunes columnes tenen el mateix nom",
+            "errNoLatOrLon": "La capçalera no conté `lat` o `lon`",
+            "errNotFeatureCollection": "El fitxer JSON carregat no és una col·lecció de funcions geojson",
+            "errPointsOnly": "El fitxer JSON carregat només hauria de contenir punts"
         },
         "selectLayer": "Seleccionar capa...",
         "title": "Ajuda de l'importador",
         "userAccountTitle": "Seleccionar compte d'usuari",
         "validateDataTitle": "Validar dades",
         "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
-        "loginRequired": "Has d'entrar per continuar"
+        "loginRequired": "Has d'entrar per continuar",
+        "someHaveSame": "{count} característiques per importar tenen aquesta etiqueta, això és un {percentage}% del total",
+        "locked": "Necessites almenys {importHelperUnlock} per utilitzar l'ajudant d'importació",
+        "loggedInWith": "Actualment has entrat com a <b>{name}</b> i has fet {csCount} conjunts de canvis",
+        "lockNotice": "Aquesta pàgina està bloquejada. Necessites {importHelperUnlock} conjunts de canvis per poder accedir aquí.",
+        "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
+        "loginIsCorrect": "<b>{name}</b> és el compte correcte per crear les notes d'importació."
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
@@ -294,7 +314,10 @@
         "layerName": "Possible {title}",
         "popupTitle": "Possible {title}",
         "notFound": "No he pogut trobar {title}: esborra-ho",
-        "description": "Una capa que importa entrades per a {title}."
+        "description": "Una capa que importa entrades per a {title}",
+        "importHandled": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+        "importButton": "import_button({layerId}, _tags, he trobat un {title} aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)",
+        "alreadyMapped": "Ja hi ha un altre {títol} al mapa; aquest punt és un duplicat"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
@@ -351,7 +374,13 @@
         "reopenNote": "Reobrir nota",
         "reopenNoteAndComment": "Reobrir nota i comentar",
         "textNeeded": "Introdueix un text descriptiu per crear una nota",
-        "noteIsPublic": "Això serà visible per a tothom."
+        "noteIsPublic": "Això serà visible per a tothom",
+        "warnAnonymous": "No has entrat. No podrem contactar amb tu per resoldre el problema.",
+        "noteLayerNotEnabled": "La capa que mostra les notes no està activada. Aquesta capa s'ha d'habilitar per afegir una nota nova",
+        "typeText": "Escriu text per afegir un comentari",
+        "notesLayerMustBeEnabled": "La capa 'notes' està desactivada. Activa-la per afegir una nota",
+        "noteLayerHasFilters": "Algunes notes poden estar ocultes per un filtre",
+        "createNoteIntro": "Hi ha alguna cosa malament o falta al mapa? Creeu una nota aquí. Aquests seran verificats per voluntaris."
     },
     "privacy": {
         "editingTitle": "Quan es facin canvis",
@@ -368,26 +397,38 @@
             },
             "title": "Utilitzar MapComplete a la teva organització",
             "layers": {
-                "title": "Quines dades es poden mostrar amb MapComplete?."
+                "title": "Quines dades es poden mostrar amb MapComplete?"
             },
             "internalUse": {
-                "title": "Ús de les dades en processos interns."
-            }
+                "title": "Ús de les dades en processos interns"
+            },
+            "text2": "Si encara no et sents segur, les possibilitats es descriuen a continuació. A més, es responen algunes preguntes habituals"
         },
         "aboutOsm": {
             "aboutOsm": {
                 "li3": "i molt, molt més…",
-                "title": "Què és OpenStreetMap?"
+                "title": "Què és OpenStreetMap?",
+                "li2": "Els lavabos poden tenir informació sobre l'accessibilitat per a cadira de rodes, un canviador, si cal pagar, …"
             },
             "benefits": {
-                "title": "Beneficis de l'ecosistema OSM"
+                "title": "Beneficis de l'ecosistema OSM",
+                "li2": "Moltes organitzacions governamentals i municipis també utilitzen OpenStreetMap als seus llocs web",
+                "li0": "Ja no estàs sol per reunir i mantenir aquest conjunt de dades: tota una comunitat està al teu costat"
             },
             "license": {
                 "title": "La llicència",
-                "li0": "Un producte que utilitza dades d'OpenStreetMap ha de donar-ne atribució."
+                "li0": "Un producte que utilitza dades d'OpenStreetMap ha de donar-ne atribució.",
+                "outro": "La llicència té algunes implicacions; aquestes s'expliquen a continuació.",
+                "li1": "Les dades d'OpenStreetMap han de romandre <i>obertes</i>. Això significa que les dades d'un mapa que conté dades d'OpenStreetMap es poden tornar a copiar.",
+                "intro": "OpenStreetMap té llicència sota la llicència de base de dades oberta. El <a href=\"https://osm.org/copyright\" target=\"_blank\">text complet dels drets d'autor</a> es pot resumir de la següent manera:"
             },
             "vandalism": {
-                "title": "Què és el vandalisme?"
+                "title": "Què és el vandalisme?",
+                "li0": "la barrera tècnica per fer canvis és alta",
+                "li2": "un canvi d'alt impacte es nota ràpidament i es reverteix ja que molta gent utilitza aquestes dades",
+                "li3": "tots els canvis es fan un seguiment i es vincula a un sol usuari. Un delinqüent reincident és ràpidament prohibit",
+                "li1": "un petit canvi maliciós té un impacte baix, per tant, poca recompensa per a un vàndal",
+                "li4": "A Bèlgica (i alguns altres països), la primera edició d'un nou col·laborador es verifica i corregeix sistemàticament si cal."
             }
         },
         "drawbacks": {
@@ -396,26 +437,42 @@
                     "title": "Aconseguint dades obertes"
                 },
                 "usecaseMapDifferentSources": {
-                    "title": "Creació d'un mapa a partir de diferents fonts.",
-                    "li1": "… mentre que la llicència de tots els drets reservats ho prohibiria.-"
+                    "title": "Creació d'un mapa a partir de diferents fonts",
+                    "li1": "… mentre que la llicència de tots els drets reservats ho prohibiria.",
+                    "outro": "Com a resultat, aquest tipus de barreja no està permès",
+                    "li0": "la llicència oberta requeriria que les modificacions es tornin a publicar obertament…"
                 },
-                "title": "Implicacions de l'ODbL: alguns casos d'ús."
+                "title": "Implicacions de l'ODbL: alguns casos d'ús",
+                "li1": "Les aplicacions o productes que utilitzen OpenStreetMap haurien de donar un avís clar de drets d'autor",
+                "li0": "Totes les dades es poden reutilitzar per a qualsevol finalitat, incloses les comercials",
+                "intro": "OpenStreetMap té llicència sota la llicència de base de dades oberta que estableix que:",
+                "outro": "Això té algunes implicacions que s'han de tenir en compte per a alguns casos d'ús, tal com s'explica a continuació"
             },
             "unsuitedData": {
-                "title": "Les dades no són acceptables per OpenStreetMap"
+                "title": "Les dades no són acceptables per OpenStreetMap",
+                "li1": "Els esdeveniments <i>no</i> es registren, ni tampoc les obres viàries que només duren uns quants dies."
             },
-            "title": "Alguns inconvenients a tenir en compte."
+            "title": "Alguns inconvenients a tenir en compte",
+            "intro": "Tot i que unir-se a aquesta comunitat té enormes beneficis, hi ha alguns temes que cal tenir en compte."
         },
         "indexPage": {
             "button": "Descobreix els nostres serveis",
-            "hook": "Necessites ajuda professional?"
+            "hook": "Necessites ajuda professional?",
+            "hookMore": "Podem ajudar a configurar enquestes, importacions de dades i consultoria OpenStreetMap"
         },
         "services": {
             "title": "Serveis de Mapcomplete",
             "li0": "Configurar una petició adaptada a les vostres necessitats",
-            "li4": "Formació sobre com baixar dades filtrades d'OpenStreetMap"
+            "li4": "Formació sobre com baixar dades filtrades d'OpenStreetMap",
+            "li2": "Formació sobre com aportar dades amb MapComplete",
+            "li3": "Formació avançada (per exemple, per a l'equip GIS) sobre com afegir dades avançades a OpenStreetMap",
+            "intro": "El desenvolupador de MapComplete us pot ajudar amb els serveis següents:",
+            "li1": "Ajuda a configurar el flux de dades intern per integrar OpenStreetMap"
         },
-        "title": "Suport professional amb MapComplete"
+        "title": "Suport professional amb MapComplete",
+        "text1": "<p>MapComplete és l'editor per facilitar la contribució de dades a OpenStreetMap.</p>",
+        "intro": "El desenvolupador de MapComplete ofereix suport professional. Aquest document descriu algunes de les possibilitats, preguntes habituals i els límits de MapComplete",
+        "osmTitle": "Què poden fer OpenStreetMap i MapComplete per a la vostra organització?"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Ressenya afiliada)",
@@ -444,7 +501,10 @@
     "translations": {
         "activateButton": "Ajudar a traduir MapComplete",
         "deactivate": "Deshabilitar els botons de traducció",
-        "missing": "{count} cadenes sense traduir"
+        "missing": "{count} cadenes sense traduir",
+        "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies",
+        "isTranslator": "El mode de traducció està actiu, ja que el vostre nom d'usuari coincideix amb el nom d'un traductor anterior",
+        "completeness": "Les traduccions de {theme} en {language} tenen un {percentage}%: {translated} cadenes de {total} es tradueixen"
     },
     "validation": {
         "color": {
@@ -457,7 +517,9 @@
             "description": "Una orientació"
         },
         "email": {
-            "description": "Adreça de correu electrònic"
+            "description": "Adreça de correu electrònic",
+            "noAt": "Una adreça de correu electrònic ha de contenir una @",
+            "feedback": "Aquesta adreça de correu electrònic no és vàlida"
         },
         "float": {
             "description": "un número",
@@ -479,7 +541,8 @@
             "description": "un número positiu"
         },
         "phone": {
-            "description": "un número de telèfon"
+            "description": "un número de telèfon",
+            "feedback": "Aquest no és un número de telèfon vàlid"
         },
         "pnat": {
             "description": "un número sencer, positiu",
@@ -492,13 +555,15 @@
             "description": "un tros de text"
         },
         "url": {
-            "description": "enllaç a un lloc web"
+            "description": "enllaç a un lloc web",
+            "feedback": "Aquesta adreça web no és vàlida"
         },
         "wikidata": {
             "description": "Un identificador de Wikidata"
         },
         "date": {
-            "description": "Una data, començant per l'any."
-        }
+            "description": "Una data, començant per l'any"
+        },
+        "tooLong": "El text és massa llarg, es permeten com a màxim 255 caràcters. Ara tens {count} caràcters"
     }
 }
