@@ -1,1 +1,20 @@
-{}
+{
+    "centerMessage": {
+        "loadingData": "Ikinakarga ang datos…",
+        "ready": "Tapos na!",
+        "retrying": "Hindi nai-karga ang datos. Susubukan muli pagkaraan ng {count} segundo…",
+        "zoomIn": "Mag-zoom in pa, ng makita or ma-edit ang datos."
+    },
+    "delete": {
+        "cancel": "Kanselá",
+        "isDeleted": "Tinanggal na ang tampók na ito",
+        "isntAPoint": "Mga buko (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
+        "loginToDelete": "Dapat kang naka-logged in para matanggal ang buko(point)",
+        "explanations": {
+            "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito."
+        },
+        "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
+        "loading": "Sinisiyasat ang mga katangian ng tampók para alamin kung maari itong tanggalin.",
+        "delete": "Tanggalin"
+    }
+}
