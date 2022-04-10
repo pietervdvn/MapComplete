@@ -8,14 +8,18 @@
     "delete": {
         "cancel": "Kanselá",
         "isDeleted": "Tinanggal na ang tampók na ito",
-        "isntAPoint": "Mga buko (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
-        "loginToDelete": "Dapat kang naka-logged in para matanggal ang buko(point)",
+        "isntAPoint": "Mga bukó (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
+        "loginToDelete": "Dapat kang naka-logged in para matanggal ang bukó(point)",
         "explanations": {
-            "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito."
+            "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito.",
+            "hardDelete": "Ang tampók na ito ay tatanggalin sa OpenStreetMap. Maari itong ibalik ng mga bihasang tiga-ambag",
+            "softDelete": "Ang tampók na ito ay babaguhin at itatago sa application. <span class=\"subtle\">{reason}</span>"
         },
         "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
         "loading": "Sinisiyasat ang mga katangian ng tampók para alamin kung maari itong tanggalin.",
         "delete": "Tanggalin",
-        "notEnoughExperience": "Ang tampók na ito ay ginawa ng ibang tao."
+        "notEnoughExperience": "Ang tampók na ito ay ginawa ng ibang tao.",
+        "onlyEditedByLoggedInUser": "Ikaw ang patnugot ng tampók na ito, at maari mo itong tanggalin.",
+        "partOfOthers": "Ang bukó (point) na ito ay bahagi ng ibang way o relation, at hindi maaring tanggalin."
     }
 }
