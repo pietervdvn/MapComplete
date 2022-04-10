@@ -2,8 +2,6 @@ import * as fs from "fs";
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import TranslatorsPanel from "../UI/BigComponents/TranslatorsPanel";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -192,42 +190,66 @@ class TranslationPart {
     validate(path = []): {error: string, path: string[]} [] {
         const errors : {error: string, path: string[]} []= []
         const neededSubparts = new Set<string>()
+        
         let isLeaf : boolean = undefined
         this.contents.forEach((value, key) => {
-            if(typeof value === "string"){
-                if(isLeaf === undefined){
-                    isLeaf = true
-                }else if(!isLeaf){
-                    errors.push({error:"Mixed node: non-leaf node has translation strings", path: path})
-                }
-                
-                let subparts: string[] = value.match(/{[^}]*}/g)
-                if(subparts === null){
-                    if(neededSubparts.size > 0){
-                        errors.push({error:"The translation for "+key+" does not have any subparts, but expected "+Array.from(neededSubparts).join(",")+" . The full translation is "+value, path: path})
-                    }
-                    return
-                }
-                
+            if (typeof value !== "string") {
+                const recErrors = value.validate([...path, key])
+                errors.push(...recErrors)
+                return;
+            }
+            if (isLeaf === undefined) {
+                isLeaf = true
+            } else if (!isLeaf) {
+                errors.push({error: "Mixed node: non-leaf node has translation strings", path: path})
+            }
+
+            let subparts: string[] = value.match(/{[^}]*}/g)
+            if (subparts !== null) {
                 subparts = subparts.map(p => p.split(/\(.*\)/)[0])
-                
-                neededSubparts.forEach(part => {
-                    if(subparts.indexOf(part) < 0){
-                        errors.push({error:"The translation for "+key+" does not have the required subpart "+part+". The full translation is "+value, path: path})
-                    }
-                })
-                
                 for (const subpart of subparts) {
                     neededSubparts.add(subpart)
                 }
-                
-            }else{
-              const recErrors =  value.validate([...path, key])
-                errors.push(...recErrors)
             }
         })
-        
-        return errors
+
+
+        // Actually check for the needed sub-parts, e.g. that {key} isn't translated into {sleutel}
+        this.contents.forEach((value, key) => {
+            neededSubparts.forEach(part => {
+                if (typeof value !== "string") {
+                    return;
+                }
+                
+                let subparts: string[] = value.match(/{[^}]*}/g)
+                if (subparts === null) {
+                    if (neededSubparts.size > 0) {
+                        errors.push({
+                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).join(",") + " . The full translation is " + value,
+                            path: path
+                        })
+                    }
+                    return
+                }
+                subparts = subparts.map(p => p.split(/\(.*\)/)[0])
+                if (subparts.indexOf(part) < 0) {
+                    let [_, __, weblatepart, lang] = key.split("/")
+                    if (lang === undefined) {
+                        // This is a core translation, it has one less path segment
+                        lang = weblatepart
+                        weblatepart = "core"
+                    }
+                    errors.push({
+                        error: `The translation for ${key} does not have the required subpart ${part}.
+\tThe full translation is ${value}
+\tFix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${path.join(".")}%22`,
+                        path: path
+                    })
+                }
+            })
+        })
+
+            return errors
     }
     
 }
@@ -394,7 +416,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 
 /**
  * Merge two objects together
- * @param source: where the tranlations come from
+ * @param source: where the translations come from
  * @param target: the object in which the translations should be merged
  * @param language: the language code
  * @param context: context for error handling
