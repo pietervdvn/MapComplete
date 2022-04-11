@@ -21,7 +21,7 @@
     "en"
   ],
   "maintainer": "",
-  "icon": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301.png",
+  "icon": "ES_R301.png",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -150,9 +150,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_10.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_10.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_10.png"
+              "es": "ES_R301_10.png",
+              "ca": "ES_R301_10.png",
+              "en": "ES_R301_10.png"
             }
           },
           {
@@ -162,9 +162,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_20.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_20.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_20.png"
+              "es": "ES_R301_20.png",
+              "ca": "ES_R301_20.png",
+              "en": "ES_R301_20.png"
             }
           },
           {
@@ -174,9 +174,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_30.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_30.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_30.png"
+              "es": "ES_R301_30.png",
+              "ca": "ES_R301_30.png",
+              "en": "ES_R301_30.png"
             }
           },
           {
@@ -186,9 +186,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_40.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_40.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_40.png"
+              "es": "ES_R301_40.png",
+              "ca": "ES_R301_40.png",
+              "en": "ES_R301_40.png"
             }
           },
           {
@@ -198,9 +198,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_50.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_50.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_50.png"
+              "es": "ES_R301_50.png",
+              "ca": "ES_R301_50.png",
+              "en": "ES_R301_50.png"
             }
           },
           {
@@ -210,9 +210,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_60.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_60.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_60.png"
+              "es": "ES_R301_60.png",
+              "ca": "ES_R301_60.png",
+              "en": "ES_R301_60.png"
             }
           },
           {
@@ -222,9 +222,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png"
+              "es": "ES_R301_70.png",
+              "ca": "ES_R301_70.png",
+              "en": "ES_R301_70.png"
             }
           },
           {
@@ -234,9 +234,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_80.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_80.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_80.png"
+              "es": "ES_R301_80.png",
+              "ca": "ES_R301_80.png",
+              "en": "ES_R301_80.png"
             }
           },
           {
@@ -246,9 +246,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_90.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_90.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_90.png"
+              "es": "ES_R301_90.png",
+              "ca": "ES_R301_90.png",
+              "en": "ES_R301_90.png"
             }
           },
           {
@@ -258,9 +258,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_100.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_100.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_100.png"
+              "es": "ES_R301_100.png",
+              "ca": "ES_R301_100.png",
+              "en": "ES_R301_100.png"
             }
           },
           {
@@ -270,9 +270,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_110.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_110.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_110.png"
+              "es": "ES_R301_110.png",
+              "ca": "ES_R301_110.png",
+              "en": "ES_R301_110.png"
             }
           },
           {
@@ -282,9 +282,9 @@
               ]
             },
             "then": {
-              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_120.png",
-              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_120.png",
-              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_120.png"
+              "es": "ES_R301_120.png",
+              "ca": "ES_R301_120.png",
+              "en": "ES_R301_120.png"
             }
           }
         ]
