@@ -98,7 +98,8 @@
                 },
                 "name": "Futur carrer ciclista"
             }
-        }
+        },
+        "shortDescription": "Un mapa de carrers ciclistes"
     },
     "openwindpowermap": {
         "layers": {
@@ -228,7 +229,16 @@
                         "title": "un lloc d'acampada"
                     }
                 },
-                "name": "Llocs d'acampada"
+                "name": "Llocs d'acampada",
+                "tagRenderings": {
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Hi ha accés a internet"
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -371,5 +381,8 @@
     "artwork": {
         "description": "Benvingut a Open Artwork Map, un mapa d'estàtues, busts, grafitis i altres obres d'art del tot el món",
         "title": "Open Artwork Map"
+    },
+    "food": {
+        "title": "Restaurants i menjar ràpid"
     }
 }

@@ -19,7 +19,7 @@
         "loading": "Inspeccionant propietats per si aquest element pot ser esborrat.",
         "loginToDelete": "Has d'entrar per esborrar un punt",
         "notEnoughExperience": "Aquest punt l'ha fet una altra persona.",
-        "onlyEditedByLoggedInUser": "Aquest punt només pot ser editat per tu, el pots esborrar amb seguretat.",
+        "onlyEditedByLoggedInUser": "Aquest punt només l'has editat tu, el pots esborrar amb seguretat.",
         "partOfOthers": "Aquest punt és part d'una via o relació i no es pot esborrar directament.",
         "readMessages": "Tens missatges sense llegir. Llegeix això abans d'esborrar un punt - algú potser t'ha escrit",
         "reasons": {
@@ -283,7 +283,7 @@
             "selectLayer": "Amb quina capa coincideix aquesta importació?",
             "confirm": "Les característiques es troben a la ubicació correcta del mapa",
             "autodetected": "La capa es va deduir automàticament en funció de les propietats",
-            "mismatch": "{count} característiques no coincideixen amb la capa seleccionada. Assegura't que hi hagi les etiquetes per indicar el tipus, és a dir, {etiquetes}"
+            "mismatch": "{count} característiques no coincideixen amb la capa seleccionada. Assegura't que hi hagi les etiquetes per indicar el tipus, és a dir, {tags}"
         },
         "selectFile": {
             "loadedFilesAre": "L'arxiu carregat actualment és {file}",
