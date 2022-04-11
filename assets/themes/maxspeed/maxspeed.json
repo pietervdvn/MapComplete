@@ -1,0 +1,320 @@
+{
+  "id": "velocidad",
+  "title": {
+    "es": "Velocidad",
+    "ca": "Velocitat",
+    "en": "Maxspeed"
+  },
+  "shortDescription": {
+    "es": "Completar propiedades de velocidad",
+    "ca": "Completar propietats de velocitat",
+    "en": "Complete maxspeed tags"
+  },
+  "description": {
+    "es": "Completaremos las propiedades de velocidad de una vía.",
+    "ca": "Completarem les propietats de la velocitat de la via que faltin.",
+    "en": "Complete the maxspeed properties of a way."
+  },
+  "language": [
+    "es",
+    "ca",
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301.png",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.01,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "velocidad",
+      "name": {
+        "es": "Velocidad",
+        "ca": "Velocitat",
+        "en": "Maxspeed"
+      },
+      "minzoom": 16,
+      "overpassTags": {
+        "or": [
+          "highway=residential",
+          "highway=living_street",
+          "highway=motorway",
+          "highway=tertiary",
+          "highway=service",
+          "highway=unclassified",
+          "highway=secondary",
+          "highway=primary",
+          "highway=trunk",
+          "highway=motorway",
+          "highway=tertiary_link",
+          "highway=secondary_link",
+          "highway=primary_link",
+          "highway=trunk_link",
+          "highway=motorway_link"
+        ]
+      },
+      "title": {
+        "render": {
+          "es": "Nombre: {name}",
+          "ca": "Nom: {name}",
+          "en": "Name: {name}"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name="
+              ]
+            },
+            "then": {
+              "es": "Nombre: {name}",
+              "ca": "Nom: {name}",
+              "en": "Name: {name}"
+            }
+          }
+        ]
+      },
+      "description": {
+        "es": "Completar las propiedades que faltan sobre velocidad",
+        "ca": "Completarem les propietats que falten de velocitat",
+        "en": "Complete the maxspeed properties of a way."
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "es": "Velocidad: {maxspeed}",
+            "ca": "Velocitat: {maxspeed}",
+            "en": "Speed: {maxspeed}"
+          },
+          "question": {
+            "es": "Qué velocidad tiene",
+            "ca": "Quina velocitat té",
+            "en": "What is the maxspeed"
+          },
+          "freeform": {
+            "key": "maxspeed"
+          }
+        },
+        {
+          "render": {
+            "es": "Sentido único: {oneway}",
+            "ca": "Sentit únic: {oneway}",
+            "en": "Oneway: {oneway}"
+          },
+          "question": {
+            "es": "¿La vía es de sentido único?",
+            "ca": "La via és de sentit únic?",
+            "en": "Is oneway the way?"
+          },
+          "freeform": {
+            "key": "oneway"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "oneway=yes"
+                ]
+              },
+              "then": {
+                "es": "Sentido único",
+                "ca": "Sentit únic",
+                "en": "One way"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "oneway=no"
+                ]
+              },
+              "then": {
+                "es": "Doble sentido",
+                "ca": "Doble sentit",
+                "en": "No one way"
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "maxspeed=10"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_10.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_10.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_10.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=20"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_20.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_20.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_20.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=30"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_30.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_30.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_30.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=40"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_40.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_40.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_40.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=50"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_50.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_50.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_50.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=60"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_60.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_60.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_60.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=70"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_70.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=80"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_80.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_80.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_80.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=90"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_90.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_90.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_90.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=100"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_100.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_100.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_100.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=110"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_110.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_110.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_110.png"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "maxspeed=120"
+              ]
+            },
+            "then": {
+              "es": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_120.png",
+              "ca": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_120.png",
+              "en": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R301_120.png"
+            }
+          }
+        ]
+      },
+      "width": {
+        "render": "3"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#000000",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "maxspeed="
+              ]
+            },
+            "then": {
+              "es": "#ff0000",
+              "ca": "#ff0000",
+              "en": "#ff0000"
+            }
+          }
+        ]
+      },
+      "presets": [],
+      "wayHandling": 2
+    }
+  ],
+  "roamingRenderings": []
+}
