@@ -283,7 +283,7 @@
             "selectLayer": "Amb quina capa coincideix aquesta importació?",
             "confirm": "Les característiques es troben a la ubicació correcta del mapa",
             "autodetected": "La capa es va deduir automàticament en funció de les propietats",
-            "mismatch": "{count} característiques no coincideixen amb la capa seleccionada. Assegura't que hi hagi les etiquetes per indicar el tipus, és a dir, {etiquetes}"
+            "mismatch": "{count} característiques no coincideixen amb la capa seleccionada. Assegura't que hi hagi les etiquetes per indicar el tipus, és a dir, {tags}"
         },
         "selectFile": {
             "loadedFilesAre": "L'arxiu carregat actualment és {file}",
