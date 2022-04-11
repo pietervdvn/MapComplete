@@ -15,6 +15,7 @@
         },
         "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
         "loading": "Sinisiyasat ang mga katangian ng tampók para alamin kung maari itong tanggalin.",
-        "delete": "Tanggalin"
+        "delete": "Tanggalin",
+        "notEnoughExperience": "Ang tampók na ito ay ginawa ng ibang tao."
     }
 }
