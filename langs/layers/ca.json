@@ -51,6 +51,13 @@
             },
             "defibrillator-opening_hours": {
                 "render": "{opening_hours_table(opening_hours)}"
+            },
+            "defibrillator-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Comprovat avui!"
+                    }
+                }
             }
         },
         "title": {
@@ -82,12 +89,24 @@
             },
             "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": "Sempre accessible--"
+                    }
+                }
             }
         },
         "description": "Parcs infantils",
         "name": "Parcs infantils",
         "title": {
-            "render": "Parc infantil"
+            "render": "Parc infantil",
+            "mappings": {
+                "0": {
+                    "then": "Parc infantil <i>{name}</i>"
+                }
+            }
         },
         "presets": {
             "0": {
@@ -207,6 +226,12 @@
             "mappings": {
                 "2": {
                     "then": "Menjar ràpid"
+                },
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Lloc de menjar ràpid <i>{name}</i>"
                 }
             },
             "render": "Restaurant"
@@ -259,6 +284,12 @@
                     },
                     "0": {
                         "then": "Arquitectura"
+                    },
+                    "9": {
+                        "then": "Relleu"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
                     }
                 }
             }
@@ -331,6 +362,9 @@
                     }
                 },
                 "render": "Color: {colour}"
+            },
+            "bench-seats": {
+                "render": "{seats} seients"
             }
         },
         "title": {
@@ -414,7 +448,16 @@
                 "title": "un pas de vianants"
             }
         },
-        "name": "Encreuaments"
+        "name": "Encreuaments",
+        "tagRenderings": {
+            "crossing-type": {
+                "mappings": {
+                    "2": {
+                        "then": "Pas de zebra"
+                    }
+                }
+            }
+        }
     },
     "observation_tower": {
         "title": {
@@ -474,12 +517,42 @@
         },
         "tagRenderings": {
             "Access": {
-                "render": "{access}"
+                "render": "{access}",
+                "mappings": {
+                    "0": {
+                        "then": "Accessible al públic"
+                    }
+                }
             },
             "Bicycle parking type": {
                 "mappings": {
                     "6": {
                         "then": "Pilona"
+                    },
+                    "3": {
+                        "then": "Enganxament"
+                    },
+                    "0": {
+                        "then": "Bastidors de grapes"
+                    },
+                    "1": {
+                        "then": "Portarodes/bucles"
+                    },
+                    "2": {
+                        "then": "Suport de manillar"
+                    },
+                    "4": {
+                        "then": "De dos nivells"
+                    }
+                }
+            },
+            "Underground?": {
+                "mappings": {
+                    "2": {
+                        "then": "Aparcament al terrat"
+                    },
+                    "0": {
+                        "then": "Aparcament subterrani"
                     }
                 }
             }
@@ -503,6 +576,37 @@
                 }
             },
             "render": "Vies ciclistes"
+        },
+        "tagRenderings": {
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "0": {
+                        "then": "Via ciclista obligatòria"
+                    },
+                    "2": {
+                        "then": "Via segregada a peu/ciclista"
+                    },
+                    "3": {
+                        "then": "Via no segregada a peu/ciclista"
+                    }
+                }
+            },
+            "cycleway-traffic-signs": {
+                "mappings": {
+                    "2": {
+                        "then": "Via segregada a peu/ciclista"
+                    },
+                    "4": {
+                        "then": "Via ciclista obligatòria"
+                    },
+                    "3": {
+                        "then": "Via no segregada a peu/ciclista"
+                    },
+                    "0": {
+                        "then": "Via ciclista obligatòria"
+                    }
+                }
+            }
         }
     },
     "address": {
@@ -517,6 +621,9 @@
                     },
                     "1": {
                         "then": "Pilona fixa"
+                    },
+                    "0": {
+                        "then": "Pilona desmuntable"
                     }
                 }
             }
@@ -611,6 +718,25 @@
         "name": "Arbre",
         "title": {
             "render": "Arbre"
+        },
+        "tagRenderings": {
+            "tree-leaf_type": {
+                "mappings": {
+                    "1": {
+                        "then": "Amb fulles d'agulla"
+                    },
+                    "0": {
+                        "then": "De fulla ampla"
+                    }
+                }
+            },
+            "tree-decidouous": {
+                "mappings": {
+                    "1": {
+                        "then": "Perenne."
+                    }
+                }
+            }
         }
     },
     "viewpoint": {
@@ -670,5 +796,72 @@
                 }
             }
         }
+    },
+    "bicycle_library": {
+        "title": {
+            "render": "Biblioteca per a bicicletes"
+        },
+        "name": "Biblioteca per a bicicletes"
+    },
+    "bike_repair_station": {
+        "tagRenderings": {
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Bomba manual"
+                    },
+                    "1": {
+                        "then": "Bomba elèctrica"
+                    }
+                }
+            },
+            "bike_repair_station-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Sempre obert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Bomba trencada"
+                },
+                "4": {
+                    "then": "Bomba de bicicleta"
+                }
+            }
+        }
+    },
+    "bike_themed_object": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Pista ciclable"
+                }
+            }
+        }
+    },
+    "watermill": {
+        "name": "Molí d'aigua"
+    },
+    "binocular": {
+        "title": {
+            "render": "Prismàtics"
+        },
+        "description": "Prismàtics",
+        "name": "Prismàtics",
+        "presets": {
+            "0": {
+                "title": "uns prismàtics"
+            }
+        }
+    },
+    "bike_cafe": {
+        "title": {
+            "render": "Cafeteria per a bicicletes"
+        },
+        "name": "Cafeteria per a bicicletes"
     }
 }
