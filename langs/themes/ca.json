@@ -190,7 +190,8 @@
     },
     "benches": {
         "title": "Bancs",
-        "shortDescription": "Un mapa de bancs"
+        "shortDescription": "Un mapa de bancs",
+        "description": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic. Amb un compte d'OpenStreetMap pots afegir nous bancs o editar detalls dels existents."
     },
     "playgrounds": {
         "title": "Parcs infantils",
