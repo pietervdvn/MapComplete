@@ -181,7 +181,8 @@
             "en": "What are the opening hours for this post office?",
             "zh_Hant": "這間郵局的開放時間是？",
             "id": "Jam berapa kantor pos ini buka?",
-            "hu": "Mikor van nyitva ez a posta?"
+            "hu": "Mikor van nyitva ez a posta?",
+            "de": "Wie sind die Öffnungszeiten dieser Poststelle?"
           },
           "mappings": [
             {

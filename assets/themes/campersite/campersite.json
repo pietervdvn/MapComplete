@@ -408,7 +408,8 @@
             "zh_Hant": "你需要為網路連線付費嗎？",
             "fr": "L’accès internet est-il payant ?",
             "pt_BR": "Você tem que pagar pelo acesso à internet?",
-            "de": "Ist der Internetzugang gebührenpflichtig?"
+            "de": "Ist der Internetzugang gebührenpflichtig?",
+            "nl": "Moet je betalen voor internettoegang?"
           },
           "mappings": [
             {
@@ -425,7 +426,8 @@
                 "zh_Hant": "你需要額外付費來使用網路連線",
                 "fr": "L’accès internet est en supplément",
                 "pt_BR": "Você precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist gebührenpflichtig"
+                "de": "Der Internetzugang ist gebührenpflichtig",
+                "nl": "Je moet extra betalen voor internettoegang"
               }
             },
             {
@@ -442,7 +444,8 @@
                 "zh_Hant": "你不需要額外付費來使用網路連線",
                 "fr": "L’accès internet est inclus",
                 "pt_BR": "Você não precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist kostenlos"
+                "de": "Der Internetzugang ist kostenlos",
+                "nl": "Je hoeft niet extra te betalen voor internettoegang"
               }
             }
           ],

@@ -7,14 +7,14 @@
     },
     "delete": {
         "cancel": "Kanselá",
-        "isDeleted": "Tinanggal na ang tampók na ito",
-        "isntAPoint": "Mga buko (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
-        "loginToDelete": "Dapat kang naka-logged in para matanggal ang buko(point)",
+        "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
+        "delete": "Tanggalin",
         "explanations": {
             "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito."
         },
-        "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
+        "isDeleted": "Tinanggal na ang tampók na ito",
+        "isntAPoint": "Mga buko (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
         "loading": "Sinisiyasat ang mga katangian ng tampók para alamin kung maari itong tanggalin.",
-        "delete": "Tanggalin"
+        "loginToDelete": "Dapat kang naka-logged in para matanggal ang buko(point)"
     }
 }

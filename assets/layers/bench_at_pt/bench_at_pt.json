@@ -185,6 +185,7 @@
     "en": "A layer showing all public-transport-stops which do have a bench",
     "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
     "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
-    "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc"
+    "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
+    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen"
   }
 }

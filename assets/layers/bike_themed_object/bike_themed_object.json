@@ -82,6 +82,7 @@
   ],
   "description": {
     "en": "A layer with bike-themed objects but who don't match any other layer",
-    "nl": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden"
+    "nl": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden",
+    "de": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen"
   }
 }

@@ -53,7 +53,8 @@
           "render": {
             "en": "The postal code is {postal_code}",
             "id": "Kode posnya adalah {postal_code}",
-            "hu": "Irányítószám: {postal_code}"
+            "hu": "Irányítószám: {postal_code}",
+            "de": "Die Postleitzahl lautet {postal_code}"
           }
         }
       ],
