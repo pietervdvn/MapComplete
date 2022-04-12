@@ -83,7 +83,7 @@
           "question": {
             "es": "¿La vía es de sentido único?",
             "ca": "La via és de sentit únic?",
-            "en": "Is oneway the way?"
+            "en": "Is this road a oneway-road?"
           },
           "freeform": {
             "key": "oneway"
@@ -98,7 +98,7 @@
               "then": {
                 "es": "Sentido único",
                 "ca": "Sentit únic",
-                "en": "One way"
+                "en": "Oneway road"
               }
             },
             {
@@ -110,7 +110,7 @@
               "then": {
                 "es": "Doble sentido",
                 "ca": "Doble sentit",
-                "en": "No one way"
+                "en": "Twoway street"
               }
             }
           ],
