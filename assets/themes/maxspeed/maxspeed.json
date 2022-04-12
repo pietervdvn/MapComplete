@@ -117,7 +117,6 @@
           "id": "maxspeed-oneway"
         }
       ],
-      "presets": [],
       "source": {
         "osmTags": {
           "or": [
@@ -143,150 +142,8 @@
         {
           "icon": {
             "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=10"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_10.png",
-                  "ca": "ES_R301_10.png",
-                  "en": "ES_R301_10.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=20"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_20.png",
-                  "ca": "ES_R301_20.png",
-                  "en": "ES_R301_20.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=30"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_30.png",
-                  "ca": "ES_R301_30.png",
-                  "en": "ES_R301_30.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=40"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_40.png",
-                  "ca": "ES_R301_40.png",
-                  "en": "ES_R301_40.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=50"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_50.png",
-                  "ca": "ES_R301_50.png",
-                  "en": "ES_R301_50.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=60"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_60.png",
-                  "ca": "ES_R301_60.png",
-                  "en": "ES_R301_60.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=70"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_70.png",
-                  "ca": "ES_R301_70.png",
-                  "en": "ES_R301_70.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=80"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_80.png",
-                  "ca": "ES_R301_80.png",
-                  "en": "ES_R301_80.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=90"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_90.png",
-                  "ca": "ES_R301_90.png",
-                  "en": "ES_R301_90.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=100"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_100.png",
-                  "ca": "ES_R301_100.png",
-                  "en": "ES_R301_100.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=110"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_110.png",
-                  "ca": "ES_R301_110.png",
-                  "en": "ES_R301_110.png"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "maxspeed=120"
-                  ]
-                },
-                "then": {
-                  "es": "ES_R301_120.png",
-                  "ca": "ES_R301_120.png",
-                  "en": "ES_R301_120.png"
-                }
-              }
+              "if":"maxspeed~[1-9]0|1[0-2]0",
+              "then": "ES_R301_{maxspeed}.png"
             ]
           },
           "iconSize": {
@@ -302,16 +159,8 @@
             "render": "#000000",
             "mappings": [
               {
-                "if": {
-                  "and": [
-                    "maxspeed="
-                  ]
-                },
-                "then": {
-                  "es": "#ff0000",
-                  "ca": "#ff0000",
-                  "en": "#ff0000"
-                }
+                "if": "maxspeed=",
+                "then": "#ff0000"
               }
             ]
           },
