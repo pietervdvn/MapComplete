@@ -19,7 +19,7 @@
         "loading": "Untersuchung der Eigenschaften, um zu prüfen, ob dieses Element gelöscht werden kann.",
         "loginToDelete": "Sie müssen angemeldet sein, um einen Punkt zu löschen",
         "notEnoughExperience": "Dieser Punkt wurde von jemand anderem erstellt.",
-        "onlyEditedByLoggedInUser": "Dieser Punkt wurde nur von Ihnen selbst bearbeitet, Sie können ihn sicher löschen.",
+        "onlyEditedByLoggedInUser": "Dieser Punkt wurde nur von Ihnen selbst bearbeitet, Sie können ihn gefahrlos löschen.",
         "partOfOthers": "Dieser Punkt ist Teil eines Weges oder einer Relation und kann nicht direkt gelöscht werden.",
         "readMessages": "Du hast ungelesene Nachrichten. Bitte beachte diese, bevor Du einen Punkt löschst - vielleicht hat jemand eine Rückmeldung",
         "reasons": {
@@ -389,7 +389,7 @@
                 "title": "Verwendung der Daten in internen Prozessen",
                 "intro": "Sobald die Daten in OpenStreetMap sind, werden Sie sie wahrscheinlich auch nutzen wollen. Ihr MapComplete-Thema kann eine praktische <i>export</i>-Schaltfläche haben, mit der Sie die Daten in vielen offenen Formaten herunterladen können, die in QGis, ArcGis, Excel, LibreOffice-calc, ... verwendbar sind.<p></p><p>Jemand mit grundlegenden Tabellenkalkulationskenntnissen kann so leicht Diagramme und Einblicke über die Daten erstellen, während die GIS-Experten in Ihrer Organisation leicht mit diesen Daten in ihrer bevorzugten Anwendung arbeiten können.</p><p>Wenn eine automatisierte Einrichtung benötigt wird, ist eine frei zu verwendende, von der Gemeinschaft betriebene API verfügbar.</p>"
             },
-            "text1": "Brauchen Sie andere Daten, aber das Thema existiert noch nicht? Die MapComplete-Entwickler können es <b>für Sie zusammenstellen</b> zu einem anständigen Budget. Kontaktieren Sie uns über <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> oder <a>senden Sie eine Nachricht über osm.org</a>"
+            "text1": "Brauchen Sie andere Daten, aber das Thema existiert noch nicht? Die MapComplete-Entwickler können es <b>für Sie zusammenstellen</b> für einen fairen Betrag. Kontaktieren Sie uns über <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> oder <a href=\"https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet\">;senden Sie eine Nachricht über osm.org</a>"
         },
         "aboutOsm": {
             "license": {
@@ -495,7 +495,7 @@
     },
     "translations": {
         "activateButton": "Bei der Übersetzung von MapComplete helfen",
-        "completeness": "Die Übersetzungen für {theme} in {language} liegen bei {percentage}%: {translated} Zeichenfolgen von {total} sind übersetzt",
+        "completeness": "Die Übersetzungen für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
         "deactivate": "Schaltflächen für die Übersetzung deaktivieren",
         "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
