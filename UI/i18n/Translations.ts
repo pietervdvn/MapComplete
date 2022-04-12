@@ -1,5 +1,5 @@
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "./Translation";
+import {Translation, TypedTranslation} from "./Translation";
 import BaseUIElement from "../BaseUIElement";
 import * as known_languages from "../../assets/generated/used_languages.json"
 import CompiledTranslations from "../../assets/generated/CompiledTranslations";
@@ -22,7 +22,7 @@ export default class Translations {
         return s;
     }
 
-    static T(t: string | any, context = undefined): Translation {
+    static T(t: string | any, context = undefined): TypedTranslation<object> {
         if (t === undefined || t === null) {
             return undefined;
         }
@@ -30,17 +30,17 @@ export default class Translations {
             t = "" + t
         }
         if (typeof t === "string") {
-            return new Translation({"*": t}, context);
+            return new TypedTranslation({"*": t}, context);
         }
         if (t.render !== undefined) {
             const msg = "Creating a translation, but this object contains a 'render'-field. Use the translation directly"
             console.error(msg, t);
             throw msg
         }
-        if (t instanceof Translation) {
+        if (t instanceof TypedTranslation) {
             return t;
         }
-        return new Translation(t, context);
+        return new TypedTranslation(t, context);
     }
 
     /**

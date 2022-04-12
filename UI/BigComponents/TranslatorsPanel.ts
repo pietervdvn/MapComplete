@@ -14,7 +14,7 @@ import Title from "../Base/Title";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
-
+import * as native_languages from "../../assets/language_native.json"
 
 class TranslatorsPanelContent extends Combine {
     constructor(layout: LayoutConfig, isTranslator: UIEventSource<boolean>) {
@@ -48,7 +48,8 @@ class TranslatorsPanelContent extends Combine {
         // "translationCompleteness": "Translations for {theme} in {language} are at {percentage}: {translated} out of {total}",
         const translated = seed.Subs({total, theme: layout.title,
             percentage: new Translation(completenessPercentage),
-            translated: new Translation(completenessTr)
+            translated: new Translation(completenessTr),
+            language: seed.OnEveryLanguage((_, lng) => native_languages[lng])
         })
         
         super([

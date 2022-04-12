@@ -42,11 +42,6 @@
         "getStartedLogin": "Entra no OpenStreetMap para comezar",
         "getStartedNewAccount": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea unha nova conta</a>",
         "goToInbox": "Abrir mensaxes",
-        "index": {
-            "intro": "O MapComplete é un visor e editor do OpenStreetMap, que te amosa información sobre un tema específico.",
-            "pickTheme": "Escolle un tema para comezar.",
-            "title": "Benvido ao MapComplete"
-        },
         "layerSelection": {
             "title": "Seleccionar capas",
             "zoomInToSeeThisLayer": "Achégate para ver esta capa"

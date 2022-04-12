@@ -97,12 +97,6 @@
         "backToMapcomplete": "Terug naar het themaoverzicht",
         "backgroundMap": "Achtergrondkaart",
         "cancel": "Annuleren",
-        "centerMessage": {
-            "loadingData": "Data wordt geladen…",
-            "ready": "Klaar!",
-            "retrying": "Data inladen mislukt. Opnieuw proberen over {count} seconden…",
-            "zoomIn": "Zoom in om de data te zien en te bewerken"
-        },
         "confirm": "Bevestigen",
         "customThemeIntro": "<h3>Onofficiële thema's</h3>De onderstaande thema's heb je eerder bezocht en zijn gemaakt door andere OpenStreetMappers.",
         "download": {
@@ -131,12 +125,6 @@
         "goToInbox": "Ga naar de berichten",
         "histogram": {
             "error_loading": "Kan het histogram niet laden"
-        },
-        "index": {
-            "#": "Deze teksten worden getoond boven de themaknoppen als er geen thema is geladen",
-            "intro": "MapComplete is een OpenStreetMap applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
-            "pickTheme": "Kies hieronder een thema om te beginnen.",
-            "title": "Welkom bij MapComplete"
         },
         "layerSelection": {
             "title": "Selecteer lagen",
@@ -199,22 +187,6 @@
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
         "returnToTheMap": "Ga terug naar de kaart",
-        "reviews": {
-            "affiliated_reviewer_warning": "(Review door betrokkene)",
-            "attribution": "De beoordelingen worden voorzien door <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> en zijn beschikbaar onder de<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0-licentie</a>.",
-            "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
-            "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
-            "no_rating": "Geen score bekend",
-            "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf!",
-            "plz_login": "Meld je aan om een beoordeling te geven",
-            "posting_as": "Ingelogd als",
-            "saved": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>",
-            "saving_review": "Opslaan…",
-            "title": "{count} beoordelingen",
-            "title_singular": "Eén beoordeling",
-            "tos": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
-            "write_a_comment": "Schrijf een beoordeling…"
-        },
         "save": "Opslaan",
         "search": {
             "error": "Niet gelukt...",
