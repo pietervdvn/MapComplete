@@ -1,1 +1,131 @@
-{}
+{
+    "shared_questions": {
+        "dog-access": {
+            "mappings": {
+                "1": {
+                    "then": "<b>Hindi</b> pinapayagan ang mga aso"
+                },
+                "0": {
+                    "then": "Pinapayagan ang mga aso"
+                },
+                "2": {
+                    "then": "Pinapayagan ang mga aso kung may tali"
+                },
+                "3": {
+                    "then": "Pinapayayagan ang mga aso, at malayang makatatakbo"
+                }
+            },
+            "question": "Pinapayagan ba ang mga aso sa establisyementong ito?"
+        },
+        "description": {
+            "question": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>"
+        },
+        "email": {
+            "question": "Ano ang email address ng {title()}?"
+        },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Nasa ilalim ng lupa"
+                },
+                "1": {
+                    "then": "Nasa unang palapag"
+                },
+                "2": {
+                    "then": "Nasa unang palapag"
+                },
+                "3": {
+                    "then": "Nasa unang palapag"
+                },
+                "4": {
+                    "then": "Nasa silong"
+                }
+            },
+            "question": "Anong palapag matatagpuan ang tampók?",
+            "render": "Natagpuan sa ika-{level} na palapag"
+        },
+        "opening_hours": {
+            "question": "Anong oras nagbubukas ang {title()}?",
+            "render": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Tinatanggap ang salapi rito"
+                },
+                "1": {
+                    "then": "Tinatanggap ang mga tarhetang pambayad dito"
+                }
+            },
+            "question": "Anong mga paraang pambayad ang tinatanggap dito?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "Binabayaran gamit ang membership card"
+                    },
+                    "0": {
+                        "then": "Binabayaran gamit ang sariling app"
+                    }
+                }
+            }
+        },
+        "phone": {
+            "question": "Ano ang telepono ng {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Maraming mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks"
+                },
+                "1": {
+                    "then": "May iilang mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks"
+                },
+                "2": {
+                    "then": "Walang mga intsupe (socket) para sa mga suki, pero maaring tanungin ang kawani kung magpapa-karga"
+                },
+                "3": {
+                    "then": "Walang mga intsupe (socket) para sa mga suking nakaubo sa loob"
+                }
+            },
+            "question": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?"
+        },
+        "website": {
+            "question": "Ano ang website ng {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair"
+                },
+                "1": {
+                    "then": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair"
+                },
+                "2": {
+                    "then": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali"
+                },
+                "3": {
+                    "then": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair"
+                }
+            },
+            "question": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Wala pang kawing ng Wikipedia page"
+                }
+            },
+            "question": "Ano ang nau-ukol na entidad sa Wikidata?"
+        },
+        "wikipedialink": {
+            "question": "Ano ang nau-ukol na partida sa Wikipedia?",
+            "mappings": {
+                "0": {
+                    "then": "Hindi naka-ugnay sa Wikipedia"
+                }
+            }
+        }
+    }
+}
