@@ -34,9 +34,9 @@ function main() {
         }
         
         const codeContributorsTarget = "assets/contributors.json"
-        writeFileSync(codeContributorsTarget, JSON.stringify(asList(codeContributors)))
+        writeFileSync(codeContributorsTarget, JSON.stringify(asList(codeContributors), null, "  "))
         const translatorsTarget = "assets/translators.json"
-        writeFileSync(translatorsTarget, JSON.stringify(asList(translationContributors)))
+        writeFileSync(translatorsTarget, JSON.stringify(asList(translationContributors), null, "  "))
 
     }));
 }

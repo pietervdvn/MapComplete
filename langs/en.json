@@ -458,7 +458,7 @@
         "drawbacks": {
             "intro": "While joining this community has tremendous benefits, there are a few topics to carefully consider.",
             "licenseNuances": {
-                "intro": "OpenStreetMap is licensed unter the Open Database License which states that:",
+                "intro": "OpenStreetMap is licensed under the Open Database License which states that:",
                 "li0": "All data can be reused for any purpose - including commercial purposes",
                 "li1": "Applications or products using OpenStreetMap should give a clear copyright notice",
                 "li2": "Any dataset or product which contains OpenStreetMap-data must be republished under ODbL too, including modifications to this dataset and in a usable format.",

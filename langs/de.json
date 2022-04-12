@@ -52,7 +52,9 @@
                 "hasBeenImported": "Das Objekt wurde importiert.",
                 "officialThemesOnly": "Der Importbutton ist für nicht offizielle Themen deaktiviert um Störfälle zu vermeiden.",
                 "wrongType": "Dieses Element ist kein Punkt oder Weg und kann deshalb nicht importiert werden.",
-                "zoomInMore": "Vergrößere um das Feature zu importieren."
+                "zoomInMore": "Vergrößere um das Feature zu importieren.",
+                "importTags": "Das Element wird {tags} bekommen",
+                "howToTest": "Um es zu testen, hänge <b>test=true</b> oder <b>backend=osm-test</b> an die URL an. Die Änderungen werden in der Konsole ausgegeben. Bitte erstelle einen PR um das Thema zu veröffentlichen das den Import Button freischält."
             },
             "importTags": "Das Element erhält {tags}",
             "intro": "Sie haben auf eine Stelle in der Karte geklickt, an der noch keine Daten bekannt sind.<br>",
@@ -68,7 +70,8 @@
             "zoomInMore": "Vergrößern Sie die Ansicht, um dieses Element zu importieren"
         },
         "apply_button": {
-            "isApplied": "Die Änderungen wurden gespeichert."
+            "isApplied": "Die Änderungen wurden gespeichert.",
+            "appliedOnAnotherObject": "Das Objekt {id} wird {tags} bekommen"
         },
         "attribution": {
             "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>",
@@ -247,7 +250,9 @@
             },
             "searchWikidata": "Suche auf Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "loginFailed": "Einloggen zu OpenStreetMap fehlgeschlagen",
+        "poweredByOsm": "Powered by OpenStreetMap"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -274,7 +279,32 @@
         "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer der vorhandenen MapComplete-Ebenen übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird ein einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
         "importFormat": "Der Hinweistext sollte folgendes Format haben, um aufgenommen zu werden: <br><div class=\"literal-code\">[Eine kleine Einführung]<br>https://mapcomplete.osm.be/[themenname].html?[Parameter wie lat und lon]#import<br>[alle Tags des Objekts] </div>",
         "inspectDidAutoDected": "Ebene wurde automatisch ausgewählt",
-        "title": "Import-Helfer"
+        "title": "Import-Helfer",
+        "locked": "Du benötigst mindestens {importHelperUnlock} um die Importhilfe zu benutzen",
+        "selectFile": {
+            "errNoName": "Einige Spalten haben keinen Namen",
+            "errNoLatOrLon": "Der Kopf? enhält weder `lat` noch `lon`",
+            "errDuplicate": "Einige Spalten haben den selben Namen",
+            "errNotFeatureCollection": "Die geladene JSON-Datei ist keine geojson-featurecollection",
+            "errPointsOnly": "Die geladene JSON-Datei sollte nur Punkte enthalten",
+            "fileFormatDescription": "Wähle eine <b class=\"code\">.csv</b> oder <b class=\"code\">.geojson</b> Datei",
+            "fileFormatDescriptionCsv": "In der CSV-Datei sollte es jeweils eine Spalte für <span class=\"literal-code\">lat</span> und <span class=\"literal-code\">lon</span>mit den Koordinaten in WGS84 geben. Jedes weitere Attribut sollte in einer eigenen Spalte sein.",
+            "noFilesLoaded": "Keine Datei geladen",
+            "loadedFilesAre": "Die Datei {file} ist geladen",
+            "title": "Wähle eine Datei",
+            "description": "Wähle eine .csv oder .geojson Datei um anzufangen"
+        },
+        "loginIsCorrect": "<b>{name}</b> ist der richtige Account um Importnotizen zu erstellen.",
+        "inspectLooksCorrect": "Die Werte sehen richtig aus",
+        "lockNotice": "Diese Seite ist gesperrt. Du brauchst die Änderungen {importHelperUnlock} bevor du die Seite öffnen kannst.",
+        "loggedInWith": "Du bist eingeloggt als <b>{name}</b> und hast {csCount} Änderungen",
+        "loginRequired": "Du musst eingeloggt sein um fortzufahren.",
+        "mapPreview": {
+            "title": "Kartenvorschau"
+        },
+        "validateDataTitle": "Bestätige Daten",
+        "selectLayer": "Wähle eine Ebene...",
+        "userAccountTitle": "Wähle einen Benutzeraccount"
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"
@@ -293,7 +323,7 @@
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
             "generic": "Verschiebe diesen Punkt",
-            "reasonInaccurate": "Genauigkeit dieses Punktes verbessern",
+            "reasonInaccurate": "Lagegenauigkeit dieses Objekts verbessern",
             "reasonRelocation": "Dieses Element an einen anderen Ort verschieben, weil es sich verlagert hat"
         },
         "inviteToMoveAgain": "Diesen Punkt erneut verschieben",
@@ -325,13 +355,38 @@
         "miscCookiesTitle": "Andere Cookies",
         "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.osm.be/surveillance\">ein Thema gemacht, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
         "title": "Datenschutzbestimmungen",
-        "whileYoureHere": "Ist Ihnen die Privatsphäre wichtig?"
+        "whileYoureHere": "Ist Ihnen die Privatsphäre wichtig?",
+        "trackingTitle": "Statistische Daten"
     },
     "professional": {
         "indexPage": {
             "button": "Erfahren Sie mehr über unsere Dienstleistungen",
             "hook": "Benötigen Sie professionelle Unterstützung?",
             "hookMore": "Wir können bei der Erstellung von Umfragen, Datenimporten und OpenStreetMap-Beratung helfen."
+        },
+        "aboutMc": {
+            "layers": {
+                "title": "Welche Daten können mit MapComplete gezeigt werden?"
+            },
+            "survey": {
+                "title": "Umfragemöglichkeiten"
+            },
+            "title": "Benutze MapComplete in deinem Organisation"
+        },
+        "aboutOsm": {
+            "license": {
+                "title": "Die Lizenz"
+            },
+            "aboutOsm": {
+                "title": "Was ist OpenStreetMap?",
+                "li3": "und vieles, vieles mehr…"
+            },
+            "vandalism": {
+                "title": "Gibt es Vandalismus?"
+            },
+            "benefits": {
+                "title": "Vorteile des OSM-Ökosystem"
+            }
         }
     },
     "reviews": {
@@ -364,5 +419,31 @@
         "deactivate": "Schaltflächen für die Übersetzung deaktivieren",
         "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt"
+    },
+    "notes": {
+        "addCommentPlaceholder": "Add a comment...",
+        "anonymous": "Anonymer Benutzer",
+        "closeNote": "Schließe Notiz",
+        "disableAllNoteFilters": "Deaktiviere alle Filter",
+        "isCreated": "Deine Notiz wurde erstellt!",
+        "noteIsPublic": "Es wird für alle sichtbar sein",
+        "addAComment": "Füge einen Kommentar hinzu",
+        "addComment": "Kommentieren",
+        "createNote": "Erstelle eine neue Notiz",
+        "createNoteTitle": "Erstelle hier eine neue Notiz",
+        "loginToClose": "Einloggen um die Notiz zu schließen",
+        "isClosed": "Diese Notiz ist geklärt",
+        "loginToAddComment": "Einloggen um zu Kommentieren",
+        "loginToAddPicture": "Einloggen um ein Bild hinzuzufügen",
+        "noteLayerDoEnable": "Aktiviere die Ebene \"showing notes\"",
+        "noteLayerNotEnabled": "Die Ebene \"showing notes\" ist nicht aktiviert. Die Ebene muss aktiviert sein um eine Notiz hinzuzufügen",
+        "noteLayerHasFilters": "Einige Notizen können durch einen Filter versteckt sein",
+        "addCommentAndClose": "Kommentieren und Schließe"
+    },
+    "importLayer": {
+        "popupTitle": "Möglicher {title}",
+        "layerName": "Möglicher {title}",
+        "notFound": "Ich konnte {title} nicht finden - entferne es",
+        "description": "Eine Ebene, die Einträge für {title} importiert"
     }
 }
