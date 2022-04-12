@@ -1,4 +1,4 @@
-import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, SetDefault} from "./Conversion";
+import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, Pass, SetDefault} from "./Conversion";
 import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import {PrepareLayer} from "./PrepareLayer";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
@@ -13,28 +13,30 @@ import {AddContextToTranslations} from "./AddContextToTranslations";
 
 class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfigJson[]> {
     private readonly _state: DesugaringContext;
+
     constructor(
         state: DesugaringContext,
     ) {
-        super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", [],"SubstituteLayer");
+        super("Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form", [], "SubstituteLayer");
         this._state = state;
     }
-    
+
     convert(json: string | LayerConfigJson, context: string): { result: LayerConfigJson[]; errors: string[], information?: string[] } {
         const errors = []
         const information = []
-         const state= this._state
-        function reportNotFound(name: string){
+        const state = this._state
+
+        function reportNotFound(name: string) {
             const knownLayers = Array.from(state.sharedLayers.keys())
-            const withDistance = knownLayers.map(lname => [lname,  Utils.levenshteinDistance(name, lname)])
+            const withDistance = knownLayers.map(lname => [lname, Utils.levenshteinDistance(name, lname)])
             withDistance.sort((a, b) => a[1] - b[1])
             const ids = withDistance.map(n => n[0])
-           // Known builtin layers are "+.join(",")+"\n    For more information, see "
+            // Known builtin layers are "+.join(",")+"\n    For more information, see "
             errors.push(`${context}: The layer with name ${name} was not found as a builtin layer. Perhaps you meant ${ids[0]}, ${ids[1]} or ${ids[2]}?
  For an overview of all available layers, refer to https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md`)
         }
-        
-        
+
+
         if (typeof json === "string") {
             const found = state.sharedLayers.get(json)
             if (found === undefined) {
@@ -72,40 +74,40 @@ class SubstituteLayer extends Conversion<(string | LayerConfigJson), LayerConfig
                 } catch (e) {
                     errors.push(`At ${context}: could not apply an override due to: ${e}.\nThe override is: ${JSON.stringify(json["override"],)}`)
                 }
-                
-                if(json["hideTagRenderingsWithLabels"]){
+
+                if (json["hideTagRenderingsWithLabels"]) {
                     const hideLabels: Set<string> = new Set(json["hideTagRenderingsWithLabels"])
                     // These labels caused at least one deletion
-                    const usedLabels : Set<string> = new Set<string>();
+                    const usedLabels: Set<string> = new Set<string>();
                     const filtered = []
                     for (const tr of found.tagRenderings) {
                         const labels = tr["labels"]
-                        if(labels !== undefined){
+                        if (labels !== undefined) {
                             const forbiddenLabel = labels.findIndex(l => hideLabels.has(l))
-                            if(forbiddenLabel >= 0){
+                            if (forbiddenLabel >= 0) {
                                 usedLabels.add(labels[forbiddenLabel])
-                                information.push(context+": Dropping tagRendering "+tr["id"]+" as it has a forbidden label: "+labels[forbiddenLabel])
+                                information.push(context + ": Dropping tagRendering " + tr["id"] + " as it has a forbidden label: " + labels[forbiddenLabel])
                                 continue
                             }
                         }
-                        
-                        if(hideLabels.has(tr["id"])){
+
+                        if (hideLabels.has(tr["id"])) {
                             usedLabels.add(tr["id"])
-                            information.push(context+": Dropping tagRendering "+tr["id"]+" as its id is a forbidden label")
+                            information.push(context + ": Dropping tagRendering " + tr["id"] + " as its id is a forbidden label")
                             continue
                         }
 
-                        if(hideLabels.has(tr["group"])){
+                        if (hideLabels.has(tr["group"])) {
                             usedLabels.add(tr["group"])
-                            information.push(context+": Dropping tagRendering "+tr["id"]+" as its group `"+tr["group"]+"` is a forbidden label")
+                            information.push(context + ": Dropping tagRendering " + tr["id"] + " as its group `" + tr["group"] + "` is a forbidden label")
                             continue
                         }
 
                         filtered.push(tr)
                     }
                     const unused = Array.from(hideLabels).filter(l => !usedLabels.has(l))
-                    if(unused.length > 0){
-                        errors.push("This theme specifies that certain tagrenderings have to be removed based on forbidden layers. One or more of these layers did not match any tagRenderings and caused no deletions: "+unused.join(", ")+"\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore")
+                    if (unused.length > 0) {
+                        errors.push("This theme specifies that certain tagrenderings have to be removed based on forbidden layers. One or more of these layers did not match any tagRenderings and caused no deletions: " + unused.join(", ") + "\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore")
                     }
                     found.tagRenderings = filtered
                 }
@@ -130,7 +132,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
     private _state: DesugaringContext;
 
     constructor(state: DesugaringContext) {
-        super("Adds the default layers, namely: " + Constants.added_by_default.join(", "), ["layers"],"AddDefaultLayers");
+        super("Adds the default layers, namely: " + Constants.added_by_default.join(", "), ["layers"], "AddDefaultLayers");
         this._state = state;
     }
 
@@ -147,8 +149,8 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
                 errors.push("Default layer " + layerName + " not found")
                 continue
             }
-            if(alreadyLoaded.has(v.id)){
-                warnings.push("Layout "+context+" already has a layer with name "+v.id+"; skipping inclusion of this builtin layer")
+            if (alreadyLoaded.has(v.id)) {
+                warnings.push("Layout " + context + " already has a layer with name " + v.id + "; skipping inclusion of this builtin layer")
                 continue
             }
             json.layers.push(v)
@@ -165,7 +167,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 
 class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
     constructor() {
-        super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"],"AddImportLayers");
+        super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"], "AddImportLayers");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[] } {
@@ -176,7 +178,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         json.layers = [...json.layers]
 
 
-        if(json.enableNoteImports ?? true) {
+        if (json.enableNoteImports ?? true) {
             const creator = new CreateNoteImportLayer()
             for (let i1 = 0; i1 < allLayers.length; i1++) {
                 const layer = allLayers[i1];
@@ -222,15 +224,16 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
 
 export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     private readonly _state: DesugaringContext;
-    constructor(state: DesugaringContext, ) {
-        super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"],"AddMiniMap");
+
+    constructor(state: DesugaringContext,) {
+        super("Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap", ["tagRenderings"], "AddMiniMap");
         this._state = state;
     }
 
     /**
      * Returns true if this tag rendering has a minimap in some language.
      * Note: this minimap can be hidden by conditions
-     * 
+     *
      * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
      * AddMiniMap.hasMinimap({render: {en: "{minimap()}"}}) // => true
      * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "{minimap()}"}}) // => true
@@ -280,23 +283,23 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     }
 }
 
-class AddContextToTransltionsInLayout extends DesugaringStep <LayoutConfigJson>{
-    
+class AddContextToTransltionsInLayout extends DesugaringStep <LayoutConfigJson> {
+
     constructor() {
-        super("Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",["_context"], "AddContextToTranlationsInLayout");
+        super("Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too", ["_context"], "AddContextToTranlationsInLayout");
     }
-    
+
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
         const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
         return conversion.convert(json, json.id);
     }
-    
+
 }
 
 class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 
     constructor() {
-        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards", ["overrideAll", "layers"],"ApplyOverrideAll");
+        super("Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards", ["overrideAll", "layers"], "ApplyOverrideAll");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
@@ -325,8 +328,9 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 
 class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _state: DesugaringContext;
-    constructor(state: DesugaringContext, ) {
-        super("If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)", ["layers"],"AddDependencyLayersToTheme");
+
+    constructor(state: DesugaringContext,) {
+        super("If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)", ["layers"], "AddDependencyLayersToTheme");
         this._state = state;
     }
 
@@ -340,17 +344,17 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             const dependencies: { neededLayer: string, reason: string, context?: string, neededBy: string }[] = []
 
             for (const layerConfig of alreadyLoaded) {
-                try{
+                try {
                     const layerDeps = DependencyCalculator.getLayerDependencies(new LayerConfig(layerConfig))
                     dependencies.push(...layerDeps)
-                }catch(e){
+                } catch (e) {
                     console.error(e)
-                    throw "Detecting layer dependencies for "+layerConfig.id+" failed due to "+e
+                    throw "Detecting layer dependencies for " + layerConfig.id + " failed due to " + e
                 }
             }
 
             for (const dependency of dependencies) {
-                if(loadedLayerIds.has(dependency.neededLayer)){
+                if (loadedLayerIds.has(dependency.neededLayer)) {
                     // We mark the needed layer as 'mustLoad'
                     alreadyLoaded.find(l => l.id === dependency.neededLayer).forceLoad = true
                 }
@@ -380,7 +384,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             }
 
         } while (unmetDependencies.length > 0)
-        
+
         return dependenciesToAdd.map(dep => {
             dep = Utils.Clone(dep);
             dep.forceLoad = true
@@ -418,46 +422,47 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
 
 class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _state: DesugaringContext;
+
     constructor(state: DesugaringContext) {
-        super("Adds every public layer to the personal theme",["layers"],"PreparePersonalTheme");
+        super("Adds every public layer to the personal theme", ["layers"], "PreparePersonalTheme");
         this._state = state;
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
-        if(json.id !== "personal"){
+        if (json.id !== "personal") {
             return {result: json}
         }
-        
+
         json.layers = Array.from(this._state.sharedLayers.keys()).filter(l => Constants.priviliged_layers.indexOf(l) < 0)
         return {result: json};
     }
-    
+
 }
 
-class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>{
-    
+class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson> {
+
     constructor() {
-        super("Generates a warning if a theme uses an unsubstituted layer", ["layers"],"WarnForUnsubstitutedLayersInTheme");
+        super("Generates a warning if a theme uses an unsubstituted layer", ["layers"], "WarnForUnsubstitutedLayersInTheme");
     }
-    
+
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
-        if(json.hideFromOverview === true){
+        if (json.hideFromOverview === true) {
             return {result: json}
         }
         const warnings = []
         for (const layer of json.layers) {
-            if(typeof layer === "string"){
+            if (typeof layer === "string") {
                 continue
             }
-            if(layer["builtin"] !== undefined){
+            if (layer["builtin"] !== undefined) {
                 continue
             }
-            if(layer["source"]["geojson"] !== undefined){
+            if (layer["source"]["geojson"] !== undefined) {
                 // We turn a blind eye for import layers
                 continue
             }
-            
-            const wrn = "The theme "+json.id+" has an inline layer: "+layer["id"]+". This is discouraged."
+
+            const wrn = "The theme " + json.id + " has an inline layer: " + layer["id"] + ". This is discouraged."
             warnings.push(wrn)
         }
         return {
@@ -465,11 +470,13 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
             warnings
         };
     }
-    
+
 }
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
-    constructor(state: DesugaringContext) {
+    constructor(state: DesugaringContext, options?: {
+        skipDefaultLayers: false | boolean
+    }) {
         super(
             "Fully prepares and expands a theme",
             new AddContextToTransltionsInLayout(),
@@ -483,7 +490,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new ApplyOverrideAll(),
             // And then we prepare all the layers _again_ in case that an override all contained unexpanded tagrenderings!
             new On("layers", new Each(new PrepareLayer(state))),
-            new AddDefaultLayers(state),
+            options?.skipDefaultLayers ? new Pass("AddDefaultLayers is disabled due to the set flag") : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
             new AddImportLayers(),
             new On("layers", new Each(new AddMiniMap(state)))

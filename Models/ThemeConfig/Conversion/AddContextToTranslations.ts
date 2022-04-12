@@ -38,16 +38,43 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *   ]  
      * }
      * rewritten // => expected
+     * 
+     * // should preserve nulls
+     * const theme = {
+     *   layers: [
+     *       {
+     *           builtin: ["abc"],
+     *           override: {
+     *               name:null
+     *           }
+     *       }
+     *   ]  
+     * }
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * const expected = {
+     *   layers: [
+     *       {
+     *           builtin: ["abc"],
+     *           override: {
+     *               name: null
+     *           }
+     *       }
+     *   ]  
+     * }
+     * rewritten // => expected
      */
     convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
 
         const result = Utils.WalkJson(json, (leaf, path) => {
+            if(leaf === undefined || leaf === null){
+                return leaf
+            }
             if (typeof leaf === "object") {
                 return {...leaf, _context: this._prefix + context + "." + path.join(".")}
             } else {
                 return leaf
             }
-        }, obj => obj !== undefined && obj !== null && Translations.isProbablyATranslation(obj))
+        }, obj => obj === undefined || obj === null || Translations.isProbablyATranslation(obj))
 
         return {
             result
