@@ -173,7 +173,6 @@ export class OsmPreferences {
             // For differing values, the server overrides local changes
             self.preferenceSources.forEach((preference, key) => {
                 const osmValue = self.preferences.data[key]
-                    console.log("Sending value to osm:", key," osm has: ", osmValue, " local has: ", preference.data)
                 if(osmValue === undefined && preference.data !== undefined){
                     // OSM doesn't know this value yet
                     self.UploadPreference(key, preference.data)
