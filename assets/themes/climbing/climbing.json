@@ -1034,7 +1034,10 @@
     }
   ],
   "overrideAll": {
-"allowMove":{"improveAccuracy": true},
+    "allowMove": {
+      "enableRelocation": false,
+      "enableImproveAccuracy": true
+    },
     "+titleIcons": [
       {
         "render": "<div class='flex' style='word-wrap: normal; padding-right: 0.25rem;'><img src='./assets/themes/climbing/height.svg' style='height: 1.75rem;'/>{climbing:length}m</div>",
