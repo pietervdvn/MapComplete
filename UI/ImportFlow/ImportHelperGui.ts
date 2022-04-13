@@ -7,7 +7,7 @@ import MinimapImplementation from "../Base/MinimapImplementation";
 import Translations from "../i18n/Translations";
 import {FlowPanelFactory} from "./FlowStep";
 import {RequestFile} from "./RequestFile";
-import {PreviewPanel} from "./PreviewPanel";
+import {PreviewAttributesPanel} from "./PreviewPanel";
 import ConflationChecker from "./ConflationChecker";
 import {AskMetadata} from "./AskMetadata";
 import {ConfirmProcess} from "./ConfirmProcess";
@@ -26,16 +26,16 @@ import SelectTheme from "./SelectTheme";
 export default class ImportHelperGui extends LeftIndex {
     constructor() {
         const state = new UserRelatedState(undefined)
-
+        const t =  Translations.t.importHelper;
         const {flow, furthestStep, titles} =
             FlowPanelFactory
-                .start("Introduction", new Introdution())
-                .then("Login", _ => new LoginToImport(state))
-               .then("Select file", _ => new RequestFile())
-               .then("Inspect attributes", geojson => new PreviewPanel(state, geojson))
-               .then("Inspect data", geojson => new MapPreview(state, geojson))
-               .then("Select theme", v => new SelectTheme(v))
-               .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
+                .start(t.introduction, new Introdution())
+                .then(t.login, _ => new LoginToImport(state))
+               .then(t.selectFile, _ => new RequestFile())
+               .then(t.previewAttributes, geojson => new PreviewAttributesPanel(state, geojson))
+               .then(t.mapPreview, geojson => new MapPreview(state, geojson))
+               .then(t.selectTheme, v => new SelectTheme(v))
+               .then(t.compareToAlreadyExistingNotes, v => new CompareToAlreadyExistingNotes(state, v))
                .then("Compare with existing data", v => new ConflationChecker(state, v))
                .then("License and community check", v  => new ConfirmProcess(v))
                .then("Metadata", (v) => new AskMetadata(v))

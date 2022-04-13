@@ -276,23 +276,46 @@
         "willBePublished": "Your picture will be published "
     },
     "importHelper": {
-        "allAttributesSame": "All features to import have this tag",
-        "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
-        "importFormat": "A text in a note should have the following format in order to be picked up: <br/><div class='literal-code'>[A bit of introduction]<br/>https://mapcomplete.osm.be/[themename].html?[parameters such as lat and lon]#import<br/>[all tags of the feature] </div>",
-        "inspectDataTitle": "Inspect data of {count} features to import",
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "All of the proposed points have (or had) an import note already",
+            "loading": "Fetching notes from OSM",
+            "loadingFailed": "Loading notes failed due to {error}",
+            "mapExplanation": "The red elements on the next map are all the data points from your dataset. There are <b>{length}</b> elements in your dataset.",
+            "noPreviousNotesFound": "No previous import notes found",
+            "nothingNearby": "All of the proposed points have don't have a previous import note nearby",
+            "someNearby": "{hasNearby} points do have an already existing import note within {distance} meter",
+            "title": "Compare with existing notes",
+            "titleLong": "Compare with already existing 'to-import'-notes",
+            "wontBeImported": "These data points will <i>not</i> be imported and are shown as red dots on the map below"
+        },
         "inspectDidAutoDected": "Layer was chosen automatically",
-        "inspectLooksCorrect": "These values look correct",
-        "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
+        "introduction": {
+            "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
+            "importFormat": "A text in a note should have the following format in order to be picked up: <br/><div class='literal-code'>[A bit of introduction]<br/>https://mapcomplete.osm.be/[themename].html?[parameters such as lat and lon]#import<br/>[all tags of the feature] </div>",
+            "title": "Introduction"
+        },
         "locked": "You need at least {importHelperUnlock} to use the import helper",
-        "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
-        "loginIsCorrect": "<b>{name}</b> is the correct account to create the import notes with.",
-        "loginRequired": "You have to be logged in to continue",
+        "login": {
+            "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
+            "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
+            "loginIsCorrect": "<b>{name}</b> is the correct account to create the import notes with.",
+            "loginRequired": "You have to be logged in to continue",
+            "title": "Login",
+            "userAccountTitle": "Select user account"
+        },
         "mapPreview": {
             "autodetected": "The layer was automatically deducted based on the properties",
             "confirm": "The features are on the right location on the map",
             "mismatch": "{count} features did not match the selected layer. Make sure that the tags to indicate the type are present, namely {tags}",
             "selectLayer": "Which layer does this import match with?",
             "title": "Map preview"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "All features to import have this tag",
+            "inspectDataTitle": "Inspect data of {count} features to import",
+            "inspectLooksCorrect": "These values look correct",
+            "someHaveSame": "{count} features to import have this tag, this is {percentage}% of the total",
+            "title": "Inspect attributes"
         },
         "selectFile": {
             "description": "Select a .csv or .geojson file to get started",
@@ -308,10 +331,18 @@
             "noFilesLoaded": "No file is currently loaded",
             "title": "Select file"
         },
-        "selectLayer": "Select a layer...",
-        "someHaveSame": "{count} features to import have this tag, this is {percentage}% of the total",
+        "selectTheme": {
+            "displayNonMatchingCount": "{length} objects dont match any presets",
+            "intro": "All of the following themes will show the import notes. However, the note on OpenStreetMap can link to only one single theme. Choose which theme that the created notes will link to",
+            "misMatch": "Property with key {k} does not have expected value {v}; instead it is {properties}",
+            "missing": "Expected $k}={v}, but it is completely missing",
+            "needsTags": "{title} needs tags {tags}",
+            "noMatchingPresets": "This theme has no presets loaded. As a result, imports won't work here",
+            "notApplicable": "Preset {title} is not applicable:",
+            "title": "Select a theme",
+            "unmatchedTitle": "The following elements don't match any of the presets"
+        },
         "title": "Import helper",
-        "userAccountTitle": "Select user account",
         "validateDataTitle": "Validate data"
     },
     "importInspector": {

@@ -25,15 +25,15 @@ export class FlowPanelFactory<T> {
         this._stepNames = stepNames;
     }
 
-    public static start<TOut>(name: string | BaseUIElement, step: FlowStep<TOut>): FlowPanelFactory<TOut> {
-        return new FlowPanelFactory(step, [], [name])
+    public static start<TOut>(name:{title: BaseUIElement}, step: FlowStep<TOut>): FlowPanelFactory<TOut> {
+        return new FlowPanelFactory(step, [], [name.title])
     }
 
-    public then<TOut>(name: string | BaseUIElement, construct: ((t: T) => FlowStep<TOut>)): FlowPanelFactory<TOut> {
+    public then<TOut>(name: string | {title: BaseUIElement}, construct: ((t: T) => FlowStep<TOut>)): FlowPanelFactory<TOut> {
         return new FlowPanelFactory<TOut>(
             this._initial,
             this._steps.concat([construct]),
-            this._stepNames.concat([name])
+            this._stepNames.concat([name["title"] ?? name])
         )
     }
 

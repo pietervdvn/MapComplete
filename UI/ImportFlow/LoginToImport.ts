@@ -21,7 +21,7 @@ export default class LoginToImport extends Combine implements FlowStep<UserRelat
     private static readonly whitelist = [15015689];
     
     constructor(state: UserRelatedState) {
-        const t = Translations.t.importHelper
+        const t = Translations.t.importHelper.login
         const check = new CheckBoxes([new VariableUiElement(state.osmConnection.userDetails.map(ud => t.loginIsCorrect.Subs(ud)))])
         const isValid = state.osmConnection.userDetails.map(ud =>
             LoginToImport.whitelist.indexOf(ud.uid) >= 0 || ud.csCount >= Constants.userJourney.importHelperUnlock)

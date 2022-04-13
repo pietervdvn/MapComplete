@@ -10,9 +10,9 @@ export default class Introdution extends Combine implements FlowStep<void> {
 
     constructor() {
         super([
-            new Title(Translations.t.importHelper.title),
-            Translations.t.importHelper.description,
-            Translations.t.importHelper.importFormat,
+            new Title(Translations.t.importHelper.introduction.title),
+            Translations.t.importHelper.introduction.description,
+            Translations.t.importHelper.introduction.importFormat,
         ]);
         this.SetClass("flex flex-col")
     }
