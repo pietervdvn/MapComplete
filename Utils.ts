@@ -518,11 +518,35 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON.
      * Returns a modified copy of the original object.
      * 
+     * 'null' and 'undefined' are _always_ considered a leaf, even if 'isLeaf' says it isn't
+     * 
      * Hangs if the object contains a loop
+     * 
+     * // should walk a json
+     * const walked = Utils.WalkJson({
+     *     key: "value"
+     * }, (x: string) => x + "!")
+     * walked // => {key: "value!"}
+     * 
+     * // should preserve undefined and null:
+     * const walked = Utils.WalkJson({
+     *   u: undefined,
+     *   n: null,
+     *   v: "value"
+     * }, (x) => {if(x !== undefined && x !== null){return x+"!}; return x})
+     * walked // => {v: "value!", u: undefined, n: null}
+     * 
+     * // should preserve undefined and null, also with a negative isLeaf:
+     * const walked = Utils.WalkJson({
+     *   u: undefined,
+     *   n: null,
+     *   v: "value"
+     * }, (x) => return x}, _ => false)
+     * walked // => {v: "value", u: undefined, n: null}
      */
     static WalkJson(json: any, f: (v: object | number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path: string[] = []) {
-        if (json === undefined) {
-            return f(undefined, path)
+        if (json === undefined || json === null) {
+            return f(json, path)
         }
         const jtp = typeof json
         if (isLeaf !== undefined) {

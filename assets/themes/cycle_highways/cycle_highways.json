@@ -3,7 +3,8 @@
   "title": {
     "en": "Cycle highways",
     "de": "Radschnellwege",
-    "it": "Strade per velocipedi"
+    "it": "Strade per velocipedi",
+    "ca": "Vies ciclistes"
   },
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
@@ -99,7 +100,8 @@
       ],
       "name": {
         "en": "cycle highways",
-        "de": "Radschnellwege"
+        "de": "Radschnellwege",
+        "ca": "vies ciclistes"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -108,7 +110,8 @@
       "title": {
         "render": {
           "en": "cycle highway",
-          "de": "Radschnellweg"
+          "de": "Radschnellweg",
+          "ca": "via ciclista"
         }
       },
       "filter": [

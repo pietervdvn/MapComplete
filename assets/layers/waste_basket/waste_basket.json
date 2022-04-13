@@ -5,7 +5,8 @@
     "nl": "Vuilnisbak",
     "ru": "Контейнер для мусора",
     "de": "Abfalleimer",
-    "eo": "Rubujo"
+    "eo": "Rubujo",
+    "ca": "Paperera"
   },
   "minzoom": 17,
   "source": {
@@ -20,7 +21,8 @@
       "en": "Waste Basket",
       "nl": "Vuilnisbak",
       "ru": "Контейнер для мусора",
-      "de": "Abfalleimer"
+      "de": "Abfalleimer",
+      "ca": "Paperera"
     }
   },
   "description": {

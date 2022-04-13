@@ -14,7 +14,8 @@
     "nb_NO": "Kunstverk",
     "pt": "Obras de arte",
     "hu": "Műalkotások",
-    "pl": "Dzieła sztuki"
+    "pl": "Dzieła sztuki",
+    "ca": "Obres d'art"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -38,7 +39,8 @@
       "pl": "Dzieło sztuki",
       "pt": "Obra de arte",
       "pt_BR": "Obra de arte",
-      "sv": "Konstverk"
+      "sv": "Konstverk",
+      "ca": "Obra d'art"
     },
     "mappings": [
       {
@@ -166,7 +168,8 @@
             "pt": "Arquitetura",
             "hu": "Építészet",
             "pl": "Architektura",
-            "es": "Arquitectura"
+            "es": "Arquitectura",
+            "ca": "Arquitectura"
           }
         },
         {
@@ -185,7 +188,8 @@
             "pt": "Mural",
             "hu": "Falfestmény",
             "pl": "Mural",
-            "es": "Mural"
+            "es": "Mural",
+            "ca": "Mural"
           }
         },
         {
@@ -204,7 +208,8 @@
             "pt": "Pintura",
             "hu": "Festmény",
             "pl": "Obraz",
-            "es": "Pintura"
+            "es": "Pintura",
+            "ca": "Pintura"
           }
         },
         {
@@ -223,7 +228,8 @@
             "pt": "Escultura",
             "hu": "Absztrakt szobor",
             "pl": "Rzeźba",
-            "es": "Escultura"
+            "es": "Escultura",
+            "ca": "Escultura"
           }
         },
         {
@@ -241,7 +247,8 @@
             "pt": "Estátua",
             "hu": "Szobor",
             "pl": "Posąg",
-            "es": "Estatua"
+            "es": "Estatua",
+            "ca": "Estàtua"
           }
         },
         {
@@ -259,7 +266,8 @@
             "pt": "Busto",
             "hu": "Mellszobor",
             "pl": "Popiersie",
-            "es": "Busto"
+            "es": "Busto",
+            "ca": "Bust"
           }
         },
         {
@@ -277,7 +285,8 @@
             "id": "Batu",
             "pt": "Pedra",
             "hu": "Kő",
-            "pl": "Skała"
+            "pl": "Skała",
+            "ca": "Pedra"
           }
         },
         {
@@ -296,7 +305,8 @@
             "pt": "Instalação",
             "hu": "Installáció",
             "pl": "Instalacja artystyczna",
-            "es": "Instalación"
+            "es": "Instalación",
+            "ca": "Instal·lació"
           }
         },
         {
@@ -315,7 +325,8 @@
             "pt": "Graffiti",
             "hu": "Graffiti",
             "pl": "Graffiti",
-            "es": "Grafiti"
+            "es": "Grafiti",
+            "ca": "Grafiti"
           }
         },
         {
@@ -333,7 +344,8 @@
             "id": "Relief",
             "pt": "Relevo",
             "hu": "Dombormű",
-            "pl": "Płaskorzeźba"
+            "pl": "Płaskorzeźba",
+            "ca": "Relleu"
           }
         },
         {
@@ -368,7 +380,8 @@
             "nb_NO": "Flisarbeid",
             "pt": "Ladrilhos",
             "hu": "Csempe",
-            "pl": "Płyta ceramiczna (fliza)"
+            "pl": "Płyta ceramiczna (fliza)",
+            "ca": "Enrajolat"
           }
         }
       ],

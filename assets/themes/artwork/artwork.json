@@ -14,7 +14,8 @@
     "zh_Hant": "開放藝術品地圖",
     "sv": "Öppen konstverkskarta",
     "pl": "Otwórz mapę dzieł sztuki",
-    "nb_NO": "Kunstkort"
+    "nb_NO": "Kunstkort",
+    "ca": "Open Artwork Map"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
@@ -29,7 +30,8 @@
     "zh_Hant": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品",
     "nb_NO": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
     "hu": "Isten hozta a nyílt műalkotástérképen, a világ minden táján megtalálható szobrok, mellszobrok, graffitik és más műalkotások gyűjtőhelyén",
-    "pl": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata"
+    "pl": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata",
+    "ca": "Benvingut a Open Artwork Map, un mapa d'estàtues, busts, grafitis i altres obres d'art del tot el món"
   },
   "icon": "./assets/themes/artwork/artwork.svg",
   "maintainer": "MapComplete",

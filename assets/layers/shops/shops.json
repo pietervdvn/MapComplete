@@ -7,7 +7,8 @@
     "ja": "店",
     "nl": "Winkel",
     "de": "Geschäfte",
-    "eo": "Butiko"
+    "eo": "Butiko",
+    "ca": "Botiga"
   },
   "minzoom": 16,
   "source": {
@@ -25,7 +26,8 @@
       "ja": "店",
       "nl": "Winkel",
       "de": "Geschäft",
-      "eo": "Butiko"
+      "eo": "Butiko",
+      "ca": "Botiga"
     },
     "mappings": [
       {
@@ -41,7 +43,8 @@
           "ja": "{name}",
           "de": "{name}",
           "eo": "{name}",
-          "nl": "{name}"
+          "nl": "{name}",
+          "ca": "{name}"
         }
       },
       {
@@ -57,7 +60,8 @@
           "ja": "{shop}",
           "de": "{shop}",
           "eo": "{shop}",
-          "nl": "{shop}"
+          "nl": "{shop}",
+          "ca": "{shop}"
         }
       }
     ]
@@ -136,7 +140,8 @@
             "ru": "Супермаркет",
             "ja": "スーパーマーケット",
             "nl": "Supermarkt",
-            "de": "Supermarkt"
+            "de": "Supermarkt",
+            "ca": "Supermercat"
           }
         },
         {
@@ -166,7 +171,8 @@
             "ru": "Парикмахерская",
             "ja": "理容師",
             "nl": "Kapper",
-            "de": "Friseur"
+            "de": "Friseur",
+            "ca": "Perruqueria"
           }
         },
         {
@@ -181,7 +187,8 @@
             "ja": "ベーカリー",
             "nl": "Bakkerij",
             "de": "Bäckerei",
-            "eo": "Bakejo"
+            "eo": "Bakejo",
+            "ca": "Fleca"
           }
         },
         {
@@ -310,7 +317,8 @@
         "fr": "{opening_hours_table(opening_hours)}",
         "ru": "{opening_hours_table(opening_hours)}",
         "ja": "{opening_hours_table(opening_hours)}",
-        "nl": "{opening_hours_table(opening_hours)}"
+        "nl": "{opening_hours_table(opening_hours)}",
+        "ca": "{opening_hours_table(opening_hours)}"
       },
       "question": {
         "en": "What are the opening hours of this shop?",

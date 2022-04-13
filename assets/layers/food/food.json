@@ -20,7 +20,8 @@
         "en": "a restaurant",
         "nl": "een restaurant",
         "ru": "ресторан",
-        "de": "eine restaurant"
+        "de": "eine restaurant",
+        "ca": "un restaurant"
       },
       "tags": [
         "amenity=restaurant"
@@ -39,7 +40,8 @@
         "en": "a fastfood",
         "nl": "een fastfood-zaak",
         "ru": "быстрое питание",
-        "de": "eine schnellimbiss"
+        "de": "eine schnellimbiss",
+        "ca": "un de menjar ràpid"
       },
       "tags": [
         "amenity=fast_food"
@@ -75,7 +77,8 @@
   "title": {
     "render": {
       "en": "Restaurant",
-      "nl": "Eetgelegenheid"
+      "nl": "Eetgelegenheid",
+      "ca": "Restaurant"
     },
     "mappings": [
       {
@@ -88,7 +91,8 @@
         "then": {
           "nl": "Restaurant <i>{name}</i>",
           "en": "Restaurant <i>{name}</i>",
-          "de": "Restaurant <i>{name}</i>"
+          "de": "Restaurant <i>{name}</i>",
+          "ca": "Restaurant <i>{name}</i>"
         }
       },
       {
@@ -101,7 +105,8 @@
         "then": {
           "nl": "Fastfood-zaak <i>{name}</i>",
           "en": "Fastfood <i>{name}</i>",
-          "de": "Schnellrestaurant<i>{name}</i>"
+          "de": "Schnellrestaurant<i>{name}</i>",
+          "ca": "Lloc de menjar ràpid <i>{name}</i>"
         }
       },
       {
@@ -113,7 +118,8 @@
         "then": {
           "nl": "Fastfood-zaak",
           "en": "Fastfood",
-          "de": "Schnellrestaurant"
+          "de": "Schnellrestaurant",
+          "ca": "Menjar ràpid"
         }
       }
     ]
@@ -602,7 +608,8 @@
           "question": {
             "en": "Opened now",
             "nl": "Nu geopened",
-            "de": "Aktuell geöffnet"
+            "de": "Aktuell geöffnet",
+            "ca": "Obert ara"
           },
           "osmTags": "_isOpen=yes"
         }

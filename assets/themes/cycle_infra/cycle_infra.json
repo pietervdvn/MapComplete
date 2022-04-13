@@ -8,7 +8,8 @@
     "nb_NO": "Sykkelinfrastruktur",
     "ru": "Велосипедная инфраструктура",
     "zh_Hant": "單車設施",
-    "hu": "Kerékpáros infrastruktúra"
+    "hu": "Kerékpáros infrastruktúra",
+    "ca": "Infraestructura per a bicicletes"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",

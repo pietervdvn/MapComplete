@@ -10,7 +10,8 @@
     "de": "Ladestationen",
     "nb_NO": "Ladestasjoner",
     "ru": "Зарядные станции",
-    "hu": "Elektromos töltőpontok"
+    "hu": "Elektromos töltőpontok",
+    "ca": "Estacions de càrrega"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",

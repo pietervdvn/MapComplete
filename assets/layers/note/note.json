@@ -16,7 +16,8 @@
   "title": {
     "render": {
       "en": "Note",
-      "nl": "Note"
+      "nl": "Note",
+      "ca": "Nota"
     },
     "mappings": [
       {

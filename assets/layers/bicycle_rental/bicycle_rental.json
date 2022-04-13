@@ -38,6 +38,7 @@
         "then": {
           "en": "{name}",
           "nl": "{name}",
+          "ca": "{name}",
           "de": "{name}"
         }
       }
@@ -262,6 +263,7 @@
             {
               "en": "mountainbike",
               "nl": "mountainbike",
+              "ca": "bicicleta de muntanya",
               "de": "Mountainbikes"
             }
           ],
@@ -278,6 +280,7 @@
             {
               "en": "tandem",
               "nl": "tandem",
+              "ca": "tàndem",
               "de": "Tandems"
             }
           ]

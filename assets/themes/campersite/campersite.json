@@ -10,7 +10,8 @@
     "zh_Hant": "露營地點",
     "pt_BR": "Locais de acampamento",
     "de": "Wohnmobilstellplätze",
-    "hu": "Lakóautós megállóhelyek"
+    "hu": "Lakóautós megállóhelyek",
+    "ca": "Llocs d'acampada"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -57,7 +58,8 @@
         "pt_BR": "Locais de acampamento",
         "de": "Wohnmobilstellplätze",
         "hu": "Lakóautós megállóhely",
-        "id": "Tempat camping"
+        "id": "Tempat camping",
+        "ca": "Llocs d'acampada"
       },
       "minzoom": 10,
       "source": {
@@ -113,7 +115,8 @@
         "pt_BR": "Locais de acampamento",
         "de": "Wohnmobilstellplätze",
         "hu": "Lakóautós megállóhelyek",
-        "id": "Tempat camping"
+        "id": "Tempat camping",
+        "ca": "llocs d'acampada"
       },
       "tagRenderings": [
         "images",
@@ -353,7 +356,8 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang"
+                "nl": "Er is internettoegang",
+                "ca": "Hi ha accés a internet"
               }
             },
             {
@@ -660,7 +664,8 @@
             "pt_BR": "uma local de acampamento",
             "de": "eine wohnmobilstellplatz",
             "nl": "een camperplaats",
-            "hu": "lakóautós megállóhely"
+            "hu": "lakóautós megállóhely",
+            "ca": "un lloc d'acampada"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",

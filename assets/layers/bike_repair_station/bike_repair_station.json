@@ -88,7 +88,8 @@
           "de": "Kaputte Pumpe",
           "it": "Pompa rotta",
           "ru": "Насос сломан",
-          "pt_BR": "Bomba quebrada"
+          "pt_BR": "Bomba quebrada",
+          "ca": "Bomba trencada"
         }
       },
       {
@@ -125,7 +126,8 @@
           "de": "Fahrradpumpe",
           "it": "Pompa per bici",
           "ru": "Велосипедный насос",
-          "pt_BR": "Bomba de bicicleta"
+          "pt_BR": "Bomba de bicicleta",
+          "ca": "Bomba de bicicleta"
         }
       }
     ]
@@ -275,7 +277,8 @@
             "de": "Immer geöffnet",
             "ru": "Всегда открыто",
             "pt_BR": "Sempre aberto",
-            "pt": "Sempre aberto"
+            "pt": "Sempre aberto",
+            "ca": "Sempre obert"
           }
         }
       ],
@@ -582,7 +585,8 @@
             "ru": "Ручной насос",
             "pl": "Pompa ręczna",
             "pt_BR": "Bomba manual",
-            "pt": "Bomba manual"
+            "pt": "Bomba manual",
+            "ca": "Bomba manual"
           }
         },
         {
@@ -597,7 +601,8 @@
             "ru": "Электрический насос",
             "pl": "Pompka elektryczna",
             "pt_BR": "Bomba elétrica",
-            "pt": "Bomba elétrica"
+            "pt": "Bomba elétrica",
+            "ca": "Bomba elèctrica"
           }
         }
       ]

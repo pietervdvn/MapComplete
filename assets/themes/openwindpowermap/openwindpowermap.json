@@ -9,7 +9,8 @@
     "zh_Hant": "開放風力地圖",
     "id": "OpenWindPowerMap",
     "hu": "OpenWindPowerMap",
-    "nl": "Windmolens"
+    "nl": "Windmolens",
+    "ca": "OpenWindPowerMap"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/logo.svg",
@@ -66,7 +67,8 @@
               "ru": "{name}",
               "zh_Hant": "{name}",
               "id": "{name}",
-              "de": "{name}"
+              "de": "{name}",
+              "ca": "{name}"
             }
           }
         ]
@@ -232,7 +234,8 @@
                 "ru": " мегаватт",
                 "zh_Hant": " 百萬瓦",
                 "id": " megawat",
-                "hu": " megawatt"
+                "hu": " megawatt",
+                "ca": " megavats"
               }
             },
             {
@@ -252,7 +255,8 @@
                 "ru": " киловатт",
                 "zh_Hant": " 千瓦",
                 "id": " kilowat",
-                "hu": " kilowatt"
+                "hu": " kilowatt",
+                "ca": " quilovats"
               }
             },
             {
@@ -271,7 +275,8 @@
                 "ru": " ватт",
                 "zh_Hant": " 瓦",
                 "id": " watt",
-                "hu": " watt"
+                "hu": " watt",
+                "ca": " vats"
               }
             },
             {
@@ -290,7 +295,8 @@
                 "ru": " гигаватт",
                 "zh_Hant": " 千兆瓦",
                 "id": " gigawatt",
-                "hu": " gigawatt"
+                "hu": " gigawatt",
+                "ca": " gigavats"
               }
             }
           ],
@@ -317,7 +323,8 @@
                 "ru": " метр",
                 "zh_Hant": " 公尺",
                 "id": " meter",
-                "hu": " méter"
+                "hu": " méter",
+                "ca": " metre"
               }
             }
           ]

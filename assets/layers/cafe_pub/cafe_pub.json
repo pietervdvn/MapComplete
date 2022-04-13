@@ -28,7 +28,8 @@
         "nl": "een bruin café of kroeg",
         "de": "eine kneipe",
         "ru": "паб",
-        "hu": "kocsma"
+        "hu": "kocsma",
+        "ca": "un bar"
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
@@ -47,7 +48,8 @@
         "nl": "een bar",
         "de": "eine bar",
         "ru": "бар",
-        "hu": "bár"
+        "hu": "bár",
+        "ca": "un pub"
       },
       "description": {
         "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
@@ -66,7 +68,8 @@
         "nl": "een café",
         "de": "eine café",
         "ru": "кафе",
-        "hu": "kávézó"
+        "hu": "kávézó",
+        "ca": "un cafè"
       },
       "description": {
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
@@ -80,7 +83,8 @@
   "title": {
     "render": {
       "en": "Pub",
-      "nl": "Café"
+      "nl": "Café",
+      "ca": "Bar"
     },
     "mappings": [
       {
@@ -93,7 +97,8 @@
           "nl": "<i>{name}</i>",
           "en": "<i>{name}</i>",
           "de": "<i>{name}</i>",
-          "ru": "<i>{name}</i>"
+          "ru": "<i>{name}</i>",
+          "ca": "<i>{name}</i>"
         }
       }
     ]
@@ -186,7 +191,8 @@
             "nl": "Nu geopened",
             "de": "Derzeit geöffnet",
             "fr": "Ouvert maintenant",
-            "hu": "Most nyitva van"
+            "hu": "Most nyitva van",
+            "ca": "Obert ara"
           },
           "osmTags": "_isOpen=yes"
         }

@@ -7,7 +7,8 @@
     "ru": "Препятствия",
     "hu": "Akadályok",
     "fr": "Barrières",
-    "es": "Barreras"
+    "es": "Barreras",
+    "ca": "Barreres"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
@@ -32,7 +33,8 @@
       "de": "Hindernis",
       "ru": "Препятствие",
       "fr": "Barrière",
-      "es": "Barrera"
+      "es": "Barrera",
+      "ca": "Barrera"
     },
     "mappings": [
       {
@@ -43,7 +45,8 @@
           "de": "Poller",
           "ru": "Прикол",
           "fr": "Bollard",
-          "es": "Bolardo"
+          "es": "Bolardo",
+          "ca": "Pilona"
         }
       },
       {
@@ -52,7 +55,8 @@
           "en": "Cycling Barrier",
           "nl": "Fietshekjes",
           "de": "Barriere für Radfahrer",
-          "fr": "Barrière cyclable"
+          "fr": "Barrière cyclable",
+          "ca": "Barrera ciclista"
         }
       }
     ]
@@ -66,7 +70,8 @@
         "ru": "Прикол",
         "fr": "une bollard",
         "hu": "Terelőoszlop",
-        "es": "una bolardo"
+        "es": "una bolardo",
+        "ca": "una pilona"
       },
       "tags": [
         "barrier=bollard"
@@ -189,7 +194,8 @@
             "nl": "Verwijderbare paal",
             "de": "Entfernbarer Poller",
             "fr": "Bollard amovible",
-            "hu": "Eltávolítható terelőoszlop"
+            "hu": "Eltávolítható terelőoszlop",
+            "ca": "Pilona desmuntable"
           }
         },
         {
@@ -200,7 +206,8 @@
             "de": "Feststehender Poller",
             "fr": "Bollard fixe",
             "hu": "Rögzített terelőoszlop",
-            "es": "Bolardo fijo"
+            "es": "Bolardo fijo",
+            "ca": "Pilona fixa"
           }
         },
         {
@@ -232,7 +239,8 @@
             "de": "Ausfahrender Poller",
             "fr": "Bollard rétractable",
             "hu": "Felemelkedő terelőoszlop",
-            "es": "Bolardo levadizo"
+            "es": "Bolardo levadizo",
+            "ca": "Pilona retràctil"
           }
         }
       ],

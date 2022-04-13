@@ -11,7 +11,8 @@
     "ru": "Велосипедное кафе",
     "zh_Hant": "單車咖啡廳",
     "pt_BR": "Café de bicicletas",
-    "pt": "Café de bicicletas"
+    "pt": "Café de bicicletas",
+    "ca": "Cafeteria per a bicicletes"
   },
   "minzoom": 13,
   "source": {
@@ -50,7 +51,8 @@
       "ru": "Велосипедное кафе",
       "zh_Hant": "單車咖啡廳",
       "pt_BR": "Café de bicicleta",
-      "pt": "Café de bicicleta"
+      "pt": "Café de bicicleta",
+      "ca": "Cafeteria per a bicicletes"
     },
     "mappings": [
       {

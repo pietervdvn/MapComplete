@@ -6,7 +6,8 @@
     "it": "Albero",
     "ru": "Дерево",
     "fr": "Arbre",
-    "de": "Bäume"
+    "de": "Bäume",
+    "ca": "Arbre"
   },
   "minzoom": 16,
   "source": {
@@ -24,7 +25,8 @@
       "ru": "Дерево",
       "fr": "Arbre",
       "de": "Baum",
-      "eo": "Arbo"
+      "eo": "Arbo",
+      "ca": "Arbre"
     },
     "mappings": [
       {
@@ -91,7 +93,8 @@
             "en": "Broadleaved",
             "it": "Latifoglia",
             "fr": "Feuillu",
-            "de": "Laubbaum"
+            "de": "Laubbaum",
+            "ca": "De fulla ampla"
           },
           "icon": {
             "path": "./assets/themes/trees/broadleaved.svg",
@@ -109,7 +112,8 @@
             "en": "Needleleaved",
             "it": "Aghifoglia",
             "fr": "Résineux",
-            "de": "Nadelbaum"
+            "de": "Nadelbaum",
+            "ca": "Amb fulles d'agulla"
           },
           "icon": {
             "path": "./assets/themes/trees/needleleaved.svg",
@@ -297,7 +301,8 @@
             "it": "Sempreverde.",
             "fr": "À feuilles persistantes.",
             "ru": "Вечнозелёное.",
-            "de": "immergrüner Baum."
+            "de": "immergrüner Baum.",
+            "ca": "Perenne."
           }
         }
       ],
@@ -574,7 +579,8 @@
         "ru": "Дерево",
         "fr": "une arbre",
         "id": "Pohon",
-        "de": "eine baum"
+        "de": "eine baum",
+        "ca": "un arbre"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",

@@ -12,7 +12,8 @@
     "de": "Bäume",
     "nb_NO": "Trær",
     "id": "Pohon",
-    "hu": "Fatérkép"
+    "hu": "Fatérkép",
+    "ca": "Arbres"
   },
   "shortDescription": {
     "nl": "Breng bomen in kaart",
@@ -25,7 +26,8 @@
     "pl": "Sporządzić mapę wszystkich drzew",
     "de": "Kartieren Sie alle Bäume",
     "nb_NO": "Kartlegg alle trærne",
-    "hu": "Az összes fa feltérképezése"
+    "hu": "Az összes fa feltérképezése",
+    "ca": "Mapeja tots els arbres"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -37,7 +39,8 @@
     "ru": "Нанесите все деревья на карту!",
     "de": "Kartieren Sie alle Bäume!",
     "nb_NO": "Kartlegg trærne.",
-    "hu": "Térképezzünk fel minden fát!"
+    "hu": "Térképezzünk fel minden fát!",
+    "ca": "Mapeja tots els arbres."
   },
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

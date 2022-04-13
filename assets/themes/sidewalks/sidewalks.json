@@ -4,15 +4,18 @@
     "en": "Sidewalks",
     "ru": "Тротуары",
     "nl": "Voetpaden",
-    "de": "Gehwege"
+    "de": "Gehwege",
+    "ca": "Voreres"
   },
   "shortDescription": {
     "en": "Sidewalk mapping",
+    "ca": "Mapejat de voreres",
     "de": "Kartierung von Bürgersteigen"
   },
   "description": {
     "en": "Experimental theme",
     "ru": "Экспериментальная тема",
+    "ca": "Petició experimental",
     "de": "Experimentelles Thema"
   },
   "maintainer": "",
@@ -29,7 +32,8 @@
       "name": {
         "en": "Sidewalks",
         "ru": "Тротуары",
-        "de": "Gehweg"
+        "de": "Gehweg",
+        "ca": "Voreres"
       },
       "minzoom": 12,
       "source": {
@@ -46,7 +50,8 @@
         "render": {
           "en": "{name}",
           "ru": "{name}",
-          "de": "{name}"
+          "de": "{name}",
+          "ca": "{name}"
         },
         "mappings": [
           {

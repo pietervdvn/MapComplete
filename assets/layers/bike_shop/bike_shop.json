@@ -9,7 +9,8 @@
     "it": "Venditore/riparatore bici",
     "ru": "Обслуживание велосипедов/магазин",
     "pt_BR": "Reparo/loja de bicicletas",
-    "pt": "Reparo/loja de bicicletas"
+    "pt": "Reparo/loja de bicicletas",
+    "ca": "Botiga/reparació de bicicletes"
   },
   "minzoom": 13,
   "allowMove": true,
@@ -54,7 +55,8 @@
       "it": "Venditore/riparatore bici",
       "ru": "Обслуживание велосипедов/магазин",
       "pt_BR": "Reparo/loja de bicicletas",
-      "pt": "Reparo/loja de bicicletas"
+      "pt": "Reparo/loja de bicicletas",
+      "ca": "Botiga/reparació de bicicletes"
     },
     "mappings": [
       {

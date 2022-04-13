@@ -19,7 +19,7 @@
         "loading": "Inspecting properties to check if this feature can be deleted.",
         "loginToDelete": "You must be logged in to delete a point",
         "notEnoughExperience": "This point was made by someone else.",
-        "onlyEditedByLoggedInUser": "This point has only be edited by yourself, you can safely delete it.",
+        "onlyEditedByLoggedInUser": "This point has only been edited by yourself, you can safely delete it.",
         "partOfOthers": "This point is part of some way or relation and can not be deleted directly.",
         "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback",
         "reasons": {
@@ -418,7 +418,7 @@
                 "title": "Survey possibilities"
             },
             "text0": "If an existing MapComplete theme is what you, feel free to use it or embed it on your website. Embedding the public themes is free and always will be.",
-            "text1": "Do you need some other data, but does the theme not exist yet? The MapComplete-developers can <b>build it for you</b> on a decent budget. Get in touch via <a href='mailto:pietervdvn@posteo.net'>email</a>, <a href='https://github.com/pietervdvn/MapComplete/issues'>github</a> or <a href'https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>send a message via osm.org</a>",
+            "text1": "Do you need some other data, but does the theme not exist yet? The MapComplete-developers can <b>build it for you</b> on a decent budget. Get in touch via <a href='mailto:pietervdvn@posteo.net'>email</a>, <a href='https://github.com/pietervdvn/MapComplete/issues'>github</a> or <a href='https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>send a message via osm.org</a>",
             "text2": "If you still feel unsure, the possibilities are outlined below. Additionally, some common questions are answered",
             "title": "Using MapComplete in your organization"
         },

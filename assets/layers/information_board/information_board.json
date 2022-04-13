@@ -6,7 +6,8 @@
     "it": "Pannelli informativi",
     "fr": "Panneaux d'informations",
     "de": "Informationstafeln",
-    "ru": "Информационные щиты"
+    "ru": "Информационные щиты",
+    "ca": "Panells d'informació"
   },
   "minzoom": 12,
   "source": {
@@ -23,7 +24,8 @@
       "it": "Pannello informativo",
       "fr": "Panneau d'informations",
       "de": "Informationstafel",
-      "ru": "Информационный щит"
+      "ru": "Информационный щит",
+      "ca": "Panell d'informació"
     }
   },
   "tagRenderings": [

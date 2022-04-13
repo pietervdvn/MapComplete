@@ -11,7 +11,8 @@
     "it": "Parchi giochi",
     "nb_NO": "Lekeplasser",
     "id": "Taman bermain",
-    "hu": "Játszóterek"
+    "hu": "Játszóterek",
+    "ca": "Parcs infantils"
   },
   "shortDescription": {
     "nl": "Een kaart met speeltuinen",
@@ -24,7 +25,8 @@
     "it": "Una cartina dei parchi giochi",
     "nb_NO": "Et kart med lekeplasser",
     "id": "Peta dengan taman bermain",
-    "hu": "Egy térkép játszóterekkel"
+    "hu": "Egy térkép játszóterekkel",
+    "ca": "Un mapa de parcs infantils"
   },
   "description": {
     "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",

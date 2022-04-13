@@ -158,6 +158,20 @@ export class On<P, T> extends DesugaringStep<T> {
     }
 }
 
+export class Pass<T> extends Conversion<T, T> {
+    constructor(message?: string) {
+        super(message??"Does nothing, often to swap out steps in testing", [], "Pass");
+    }
+
+
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+        return {
+            result: json
+        };
+    }
+    
+}
+
 export class Concat<X, T> extends Conversion<X[], T[]> {
     private readonly _step: Conversion<X, T[]>;
 

@@ -5,7 +5,8 @@
   "title": {
     "en": "Waste",
     "nl": "Afval",
-    "de": "Abfall"
+    "de": "Abfall",
+    "ca": "Brossa"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",

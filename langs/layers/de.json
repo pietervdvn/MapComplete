@@ -2050,7 +2050,7 @@
     },
     "extinguisher": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
-        "name": "Feuerlöscher anzeigen",
+        "name": "Feuerlöscher anzeigen.",
         "presets": {
             "0": {
                 "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",

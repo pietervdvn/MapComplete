@@ -6,7 +6,8 @@
     "fr": "Toilettes",
     "nl": "Toiletten",
     "ru": "Туалеты",
-    "it": "Servizi igienici"
+    "it": "Servizi igienici",
+    "ca": "Lavabos"
   },
   "minzoom": 12,
   "source": {
@@ -19,7 +20,8 @@
       "fr": "Toilettes",
       "nl": "Toilet",
       "ru": "Туалет",
-      "it": "Servizi igienici"
+      "it": "Servizi igienici",
+      "ca": "Lavabo"
     }
   },
   "presets": [

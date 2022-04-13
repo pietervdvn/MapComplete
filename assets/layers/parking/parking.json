@@ -3,7 +3,8 @@
   "name": {
     "en": "Parking",
     "nl": "Parking",
-    "de": "Parkplätze"
+    "de": "Parkplätze",
+    "ca": "Aparcament"
   },
   "minzoom": 12,
   "source": {

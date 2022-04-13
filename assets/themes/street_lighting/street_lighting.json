@@ -8,7 +8,8 @@
     "ru": "Уличное освещение",
     "zh_Hant": "道路照明",
     "hu": "Közvilágítás",
-    "de": "Straßenbeleuchtung"
+    "de": "Straßenbeleuchtung",
+    "ca": "Il·luminació als carrers"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -30,7 +31,8 @@
         "nl": "Verlichte straten",
         "zh_Hant": "有照明的道路",
         "hu": "Kivilágított utcák",
-        "de": "Beleuchtete Straßen"
+        "de": "Beleuchtete Straßen",
+        "ca": "Il·luminació de carrers"
       },
       "source": {
         "osmTags": {
@@ -49,7 +51,8 @@
           "nl": "Verlichte straat",
           "zh_Hant": "照明道路",
           "hu": "Kivilágított utca",
-          "de": "Bleuchtete Straße"
+          "de": "Bleuchtete Straße",
+          "ca": "Il·luminació del carrer"
         },
         "mappings": [
           {
@@ -128,7 +131,8 @@
         "ru": "Все улицы",
         "zh_Hant": "所有道路",
         "hu": "Minden utca",
-        "de": "Alle Straßen"
+        "de": "Alle Straßen",
+        "ca": "Tots els carrers"
       },
       "source": {
         "osmTags": {
@@ -147,7 +151,8 @@
           "ru": "Улица",
           "zh_Hant": "照明",
           "hu": "Utca",
-          "de": "Straße"
+          "de": "Straße",
+          "ca": "Carrer"
         },
         "mappings": [
           {

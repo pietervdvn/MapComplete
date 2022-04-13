@@ -42,7 +42,8 @@
       "pt_BR": "Banco",
       "fi": "Penkki",
       "pl": "Ławka",
-      "pt": "Banco"
+      "pt": "Banco",
+      "ca": "Banc"
     },
     "mappings": [
       {
@@ -109,7 +110,8 @@
         "pl": "{name}",
         "pt": "{name}",
         "eo": "{name}",
-        "es": "{name}"
+        "es": "{name}",
+        "ca": "{name}"
       },
       "freeform": {
         "key": "name"
