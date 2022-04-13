@@ -16,7 +16,7 @@
     "en": "Complete the maxspeed properties of a way."
   },
   "maintainer": "",
-  "icon": "ES_R301.png",
+  "icon": "maxspeed_logo.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -143,7 +143,7 @@
           "icon": {
             "mappings": [
               "if":"maxspeed~[1-9]0|1[0-2]0",
-              "then": "ES_R301_{maxspeed}.png"
+              "then": "maxspeed_{maxspeed}.png"
             ]
           },
           "iconSize": {
