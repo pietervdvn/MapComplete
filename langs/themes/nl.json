@@ -224,6 +224,17 @@
                         },
                         "question": "Biedt deze plaats internettoegang?"
                     },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Je moet extra betalen voor internettoegang"
+                            },
+                            "1": {
+                                "then": "Je hoeft niet extra te betalen voor internettoegang"
+                            }
+                        },
+                        "question": "Moet je betalen voor internettoegang?"
+                    },
                     "caravansites-name": {
                         "question": "Wat is de naam van deze plaats?",
                         "render": "Deze plaats heet {name}"
@@ -242,17 +253,6 @@
                     "caravansites-website": {
                         "question": "Heeft deze plaats een website?",
                         "render": "Officiële website: : <a href='{website}'>{website}</a>"
-                    },
-                    "caravansites-internet-fee": {
-                        "question": "Moet je betalen voor internettoegang?",
-                        "mappings": {
-                            "0": {
-                                "then": "Je moet extra betalen voor internettoegang"
-                            },
-                            "1": {
-                                "then": "Je hoeft niet extra te betalen voor internettoegang"
-                            }
-                        }
                     }
                 },
                 "title": {

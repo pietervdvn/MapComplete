@@ -656,6 +656,7 @@
   "description": {
     "nl": "Deze laag toont zitbanken en enkele vragen over deze zitbanken",
     "en": "A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.",
-    "fr": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet."
+    "fr": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
+    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, ... dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen."
   }
 }

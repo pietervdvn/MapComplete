@@ -155,7 +155,8 @@
             "en": "This is a single bollard in the road",
             "hu": "Ez egyetlen oszlop az úton",
             "nl": "Dit is een enkel paaltje in de weg",
-            "fr": "C'est un plot unique sur la route"
+            "fr": "C'est un plot unique sur la route",
+            "de": "Dies ist ein einzelner Poller auf der Straße"
           }
         },
         {
@@ -164,7 +165,8 @@
             "en": "This is a cycle barrier slowing down cyclists",
             "nl": "Dit zijn fietshekjes die fietsers afremmen",
             "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat",
-            "fr": "C'est une barrière visant à ralentir les vélos"
+            "fr": "C'est une barrière visant à ralentir les vélos",
+            "de": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst"
           }
         }
       ]

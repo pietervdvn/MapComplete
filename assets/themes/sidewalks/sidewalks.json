@@ -7,11 +7,13 @@
     "de": "Gehwege"
   },
   "shortDescription": {
-    "en": "Sidewalk mapping"
+    "en": "Sidewalk mapping",
+    "de": "Kartierung von Bürgersteigen"
   },
   "description": {
     "en": "Experimental theme",
-    "ru": "Экспериментальная тема"
+    "ru": "Экспериментальная тема",
+    "de": "Experimentelles Thema"
   },
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -54,13 +56,15 @@
         ]
       },
       "description": {
-        "en": "Layer showing sidewalks of highways"
+        "en": "Layer showing sidewalks of highways",
+        "de": "Ebene mit Bürgersteigen"
       },
       "tagRenderings": [
         {
           "id": "streetname",
           "render": {
-            "en": "This street is named {name}"
+            "en": "This street is named {name}",
+            "de": "Diese Straße heißt {name}"
           }
         },
         {
