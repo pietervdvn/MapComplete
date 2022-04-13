@@ -20,6 +20,27 @@
         "delete": "Tanggalin",
         "notEnoughExperience": "Ang tampók na ito ay ginawa ng ibang tao.",
         "onlyEditedByLoggedInUser": "Ikaw ang patnugot ng tampók na ito, at maari mo itong tanggalin.",
-        "partOfOthers": "Ang bukó (point) na ito ay bahagi ng ibang way o relation, at hindi maaring tanggalin."
+        "partOfOthers": "Ang bukó (point) na ito ay bahagi ng ibang way o relation, at hindi maaring tanggalin.",
+        "reasons": {
+            "disused": "Ang tampók na ito ay di-aktibo o tinanggal na",
+            "duplicate": "Ang bukó na 'to ay kahalintulad ng iba pang tampók",
+            "notFound": "Ang tampók na 'to ay 'di masumpongan",
+            "test": "Ang bukóng ito ay ginamit na pang-subok - ang tampók ay 'di talaga inimpok"
+        },
+        "safeDelete": "Ang tampók na ito ay di-makapipinsalang tanggalin.",
+        "readMessages": "Meron kang mga bagong mensahe. Basahin ang mga ito bago tanggalin ang tampók - maaring may puná para sa'yo",
+        "useSomethingElse": "Sa halip, gumamit ng iba pang editor ng OpenStreetMap para tanggalin",
+        "whyDelete": "Bakit dapat tanggalin ang tampók na 'to?"
+    },
+    "favourite": {
+        "loginNeeded": "<h3>Mag log-in</h3>Ang personal na pagkakaayos ay para lang sa mga gumagamit ng OpenStreetMap",
+        "reload": "Muling pasanin ang datos"
+    },
+    "general": {
+        "about": "Madaling i-edit at mag-dagdag sa OpenStreetMap gamit ang mga partikular na tikha",
+        "add": {
+            "addNew": "Dagdagan ng {category}",
+            "addNewMapLabel": "I-click ito para mag-dagdag ng bagong bagay"
+        }
     }
 }
