@@ -5,7 +5,8 @@
     "nl": "Fietsverhuur",
     "de": "Fahrradverleih",
     "id": "Sewa sepeda",
-    "fr": "Location de vélos"
+    "fr": "Location de vélos",
+    "ca": "Lloguer de bicicletes"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",

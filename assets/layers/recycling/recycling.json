@@ -3,7 +3,8 @@
   "name": {
     "en": "Recycling",
     "nl": "Recycling",
-    "de": "Recycling"
+    "de": "Recycling",
+    "ca": "Residus"
   },
   "description": {
     "en": "A layer with recycling containers and centres",
@@ -838,7 +839,8 @@
           "if": "opening_hours=24/7",
           "then": {
             "en": "24/7",
-            "nl": "24/7"
+            "nl": "24/7",
+            "ca": "24/7"
           }
         }
       ]

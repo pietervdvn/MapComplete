@@ -61,7 +61,8 @@
               "de": " {name}",
               "ru": " {name}",
               "zh_Hant": " {name}",
-              "hu": " {name}"
+              "hu": " {name}",
+              "ca": " {name}"
             }
           }
         ]
@@ -136,7 +137,8 @@
             "en": "{opening_hours_table()}",
             "de": "{opening_hours_table()}",
             "ru": "{opening_hours_table()}",
-            "zh_Hant": "{opening_hours_table()}"
+            "zh_Hant": "{opening_hours_table()}",
+            "ca": "{opening_hours_table()}"
           },
           "mappings": [
             {
@@ -149,7 +151,8 @@
                 "en": "Opened 24/7",
                 "de": "durchgehend geöffnet",
                 "ru": "Открыто 24/7",
-                "zh_Hant": "24/7 營業"
+                "zh_Hant": "24/7 營業",
+                "ca": "Obert 24/7"
               }
             }
           ],

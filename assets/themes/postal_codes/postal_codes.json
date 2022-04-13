@@ -4,19 +4,22 @@
     "en": "Postal codes",
     "id": "Kode pos",
     "hu": "Irányítószámok",
-    "de": "Postleitzahlen"
+    "de": "Postleitzahlen",
+    "ca": "Codis postals"
   },
   "shortDescription": {
     "en": "Postal codes",
     "id": "Kode pos",
     "hu": "Irányítószámok",
-    "de": "Postleitzahlen"
+    "de": "Postleitzahlen",
+    "ca": "Codis postals"
   },
   "description": {
     "en": "Postal codes",
     "id": "Kode pos",
     "hu": "Irányítószámok",
-    "de": "Postleitzahlen"
+    "de": "Postleitzahlen",
+    "ca": "Codis postals"
   },
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
@@ -35,7 +38,8 @@
         "en": "postal codes",
         "id": "kode pos",
         "hu": "irányítószámok",
-        "de": "Postleitzahlen"
+        "de": "Postleitzahlen",
+        "ca": "codis postals"
       },
       "minzoom": 8,
       "title": {
@@ -53,7 +57,8 @@
           "render": {
             "en": "The postal code is {postal_code}",
             "id": "Kode posnya adalah {postal_code}",
-            "hu": "Irányítószám: {postal_code}"
+            "hu": "Irányítószám: {postal_code}",
+            "de": "Die Postleitzahl lautet {postal_code}"
           }
         }
       ],
@@ -123,7 +128,8 @@
         "en": "town halls",
         "id": "balai kota",
         "hu": "polgármesteri hivatalok",
-        "de": "Rathäuser"
+        "de": "Rathäuser",
+        "ca": "ajuntaments"
       },
       "minzoom": 12,
       "title": {

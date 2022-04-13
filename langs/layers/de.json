@@ -213,6 +213,16 @@
                 "question": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
                 "render": "Breite der Öffnung: {width:opening} m"
             },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein einzelner Poller auf der Straße"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst"
+                    }
+                }
+            },
             "bicycle=yes/no": {
                 "mappings": {
                     "0": {
@@ -223,16 +233,6 @@
                     }
                 },
                 "question": "Kann ein Radfahrer das Hindernis passieren?"
-            },
-            "barrier_type": {
-                "mappings": {
-                    "1": {
-                        "then": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst"
-                    },
-                    "0": {
-                        "then": "Dies ist ein einzelner Poller auf der Straße"
-                    }
-                }
             }
         },
         "title": {
@@ -248,6 +248,7 @@
         }
     },
     "bench": {
+        "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, ... dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
         "name": "Sitzbänke",
         "presets": {
             "0": {
@@ -335,10 +336,10 @@
         },
         "title": {
             "render": "Sitzbank"
-        },
-        "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, ... dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen."
+        }
     },
     "bench_at_pt": {
+        "description": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
         "name": "Sitzbänke an Haltestellen",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -369,8 +370,7 @@
                 }
             },
             "render": "Sitzbank"
-        },
-        "description": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen"
+        }
     },
     "bicycle_library": {
         "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
@@ -418,56 +418,30 @@
         }
     },
     "bicycle_rental": {
-        "name": "Fahrradverleih",
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ist dauerhaft geschlossen"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dieser Fahrradladen vermietete früher Fahrräder, aber jetzt nicht mehr"
+                }
+            }
+        },
         "description": "Fahrradverleihstationen",
+        "name": "Fahrradverleih",
+        "presets": {
+            "0": {
+                "description": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
+                "title": "Ein Fahrradverleih"
+            },
+            "1": {
+                "title": "Ein Fahrradverleih"
+            }
+        },
         "tagRenderings": {
-            "bicycle_rental_type": {
-                "mappings": {
-                    "1": {
-                        "then": "Dies ist ein Vermietungsunternehmen, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt"
-                    },
-                    "3": {
-                        "then": "Dies ist eine automatisierte Dockingstation, bei der ein Fahrrad mechanisch in einer Struktur verriegelt wird"
-                    },
-                    "0": {
-                        "then": "Dies ist ein Geschäft, dessen Schwerpunkt auf dem Fahrradverleih liegt"
-                    },
-                    "2": {
-                        "then": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet"
-                    },
-                    "4": {
-                        "then": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
-                    }
-                },
-                "question": "Was ist das für ein Fahrradverleih?"
-            },
-            "bicycle-types": {
-                "mappings": {
-                    "6": {
-                        "then": "Rennräder können hier gemietet werden"
-                    },
-                    "2": {
-                        "then": "BMX-Räder können hier gemietet werden"
-                    },
-                    "0": {
-                        "then": "Normale Stadtfahrräder können hier gemietet werden"
-                    },
-                    "1": {
-                        "then": "Elektrofahrräder können hier gemietet werden"
-                    },
-                    "4": {
-                        "then": "Kinderfahrräder können hier gemietet werden"
-                    },
-                    "3": {
-                        "then": "Mountainbikes können hier gemietet werden"
-                    },
-                    "5": {
-                        "then": "Tandems können hier gemietet werden"
-                    }
-                },
-                "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
-                "render": "{rental} wird hier vermietet"
-            },
             "9": {
                 "rewrite": {
                     "into": {
@@ -494,15 +468,53 @@
                         }
                     }
                 }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Ein Fahrradverleih",
-                "description": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert"
             },
-            "1": {
-                "title": "Ein Fahrradverleih"
+            "bicycle-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Normale Stadtfahrräder können hier gemietet werden"
+                    },
+                    "1": {
+                        "then": "Elektrofahrräder können hier gemietet werden"
+                    },
+                    "2": {
+                        "then": "BMX-Räder können hier gemietet werden"
+                    },
+                    "3": {
+                        "then": "Mountainbikes können hier gemietet werden"
+                    },
+                    "4": {
+                        "then": "Kinderfahrräder können hier gemietet werden"
+                    },
+                    "5": {
+                        "then": "Tandems können hier gemietet werden"
+                    },
+                    "6": {
+                        "then": "Rennräder können hier gemietet werden"
+                    }
+                },
+                "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
+                "render": "{rental} wird hier vermietet"
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Geschäft, dessen Schwerpunkt auf dem Fahrradverleih liegt"
+                    },
+                    "1": {
+                        "then": "Dies ist ein Vermietungsunternehmen, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt"
+                    },
+                    "2": {
+                        "then": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet"
+                    },
+                    "3": {
+                        "then": "Dies ist eine automatisierte Dockingstation, bei der ein Fahrrad mechanisch in einer Struktur verriegelt wird"
+                    },
+                    "4": {
+                        "then": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+                    }
+                },
+                "question": "Was ist das für ein Fahrradverleih?"
             }
         },
         "title": {
@@ -512,21 +524,10 @@
                 }
             },
             "render": "Fahrradverleih"
-        },
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "{title()} ist dauerhaft geschlossen"
-                }
-            },
-            "nonDeleteMappings": {
-                "0": {
-                    "then": "Dieser Fahrradladen vermietete früher Fahrräder, aber jetzt nicht mehr"
-                }
-            }
         }
     },
     "bicycle_tube_vending_machine": {
+        "description": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, ...)",
         "name": "Automaten für Fahrradschläuche",
         "presets": {
             "0": {
@@ -552,10 +553,10 @@
         },
         "title": {
             "render": "Fahrradschlauch-Automat"
-        },
-        "description": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, ...)"
+        }
     },
     "bike_cafe": {
+        "description": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, ...",
         "name": "Fahrrad-Cafés",
         "presets": {
             "0": {
@@ -620,10 +621,10 @@
                 }
             },
             "render": "Fahrrad-Café"
-        },
-        "description": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, ..."
+        }
     },
     "bike_cleaning": {
+        "description": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
         "name": "Fahrrad-Reinigungsdienste",
         "presets": {
             "0": {
@@ -669,10 +670,10 @@
                 }
             },
             "render": "Fahrrad-Reinigungsdienst"
-        },
-        "description": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann"
+        }
     },
     "bike_parking": {
+        "description": "Eine Ebene, die anzeigt, wo Sie Ihr Fahrrad abstellen können",
         "name": "Fahrrad-Parkplätze",
         "presets": {
             "0": {
@@ -778,10 +779,10 @@
         },
         "title": {
             "render": "Fahrrad-Parkplätze"
-        },
-        "description": "Eine Ebene, die anzeigt, wo Sie Ihr Fahrrad abstellen können"
+        }
     },
     "bike_repair_station": {
+        "description": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
         "name": "Fahrradstationen (Reparatur, Pumpe oder beides)",
         "presets": {
             "0": {
@@ -793,8 +794,8 @@
                 "title": "eine fahrrad-reparaturstation und pumpe"
             },
             "2": {
-                "title": "eine fahrrad-reparaturstation ohne pumpe",
-                "description": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert."
+                "description": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
+                "title": "eine fahrrad-reparaturstation ohne pumpe"
             }
         },
         "tagRenderings": {
@@ -811,6 +812,26 @@
                     }
                 },
                 "question": "Ist die Fahrradpumpe noch funktionstüchtig?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Öffentlich zugänglich"
+                    },
+                    "1": {
+                        "then": "Öffentlich zugänglich"
+                    },
+                    "2": {
+                        "then": "Nur für Kunden"
+                    },
+                    "3": {
+                        "then": "Nicht für die Allgemeinheit zugänglich"
+                    },
+                    "4": {
+                        "then": "Nicht für die Allgemeinheit zugänglich"
+                    }
+                },
+                "question": "Wer darf diese Reparaturstation benutzen?"
             },
             "bike_repair_station-available-services": {
                 "mappings": {
@@ -905,26 +926,6 @@
                 },
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
-            },
-            "access": {
-                "mappings": {
-                    "4": {
-                        "then": "Nicht für die Allgemeinheit zugänglich"
-                    },
-                    "2": {
-                        "then": "Nur für Kunden"
-                    },
-                    "3": {
-                        "then": "Nicht für die Allgemeinheit zugänglich"
-                    },
-                    "0": {
-                        "then": "Öffentlich zugänglich"
-                    },
-                    "1": {
-                        "then": "Öffentlich zugänglich"
-                    }
-                },
-                "question": "Wer darf diese Reparaturstation benutzen?"
             }
         },
         "title": {
@@ -946,8 +947,7 @@
                 }
             },
             "render": "Fahrradstation (Pumpe & Reparatur)"
-        },
-        "description": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur"
+        }
     },
     "bike_shop": {
         "description": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
@@ -1053,16 +1053,19 @@
                 },
                 "question": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?"
             },
+            "bike_shop-access": {
+                "render": "Nur zugänglich für {access}"
+            },
             "bike_shop-email": {
                 "question": "Wie lautet die E-Mail-Adresse von {name}?"
             },
             "bike_shop-is-bicycle_shop": {
-                "render": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig",
                 "mappings": {
                     "0": {
                         "then": "Dieses Geschäft konzentriert sich auf die Vermietung"
                     }
-                }
+                },
+                "render": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig"
             },
             "bike_shop-name": {
                 "question": "Wie heißt dieser Fahrradladen?",
@@ -1073,9 +1076,6 @@
             },
             "bike_shop-website": {
                 "question": "Was ist die Webseite von {name}?"
-            },
-            "bike_shop-access": {
-                "render": "Nur zugänglich für {access}"
             }
         },
         "title": {
@@ -1100,6 +1100,7 @@
         }
     },
     "bike_themed_object": {
+        "description": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen",
         "name": "Weitere fahrradbezogene Objekte",
         "title": {
             "mappings": {
@@ -1108,8 +1109,7 @@
                 }
             },
             "render": "Mit Fahrrad zusammenhängendes Objekt"
-        },
-        "description": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen"
+        }
     },
     "binocular": {
         "description": "Fernglas",
@@ -1365,9 +1365,6 @@
                 },
                 "question": "Welche Fahrzeuge dürfen hier laden?"
             },
-            "capacity": {
-                "render": "{capacity} Fahrzeuge können hier gleichzeitig laden"
-            },
             "access": {
                 "mappings": {
                     "2": {
@@ -1381,6 +1378,9 @@
                     }
                 },
                 "question": "Wer darf diese Ladestation benutzen?"
+            },
+            "capacity": {
+                "render": "{capacity} Fahrzeuge können hier gleichzeitig laden"
             },
             "charge": {
                 "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"

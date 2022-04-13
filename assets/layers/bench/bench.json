@@ -16,7 +16,8 @@
     "fi": "Penkit",
     "pl": "Ławki",
     "pt_BR": "Bancos",
-    "pt": "Bancos"
+    "pt": "Bancos",
+    "ca": "Bancs"
   },
   "minzoom": 17,
   "source": {
@@ -39,7 +40,8 @@
       "fi": "Penkki",
       "pl": "Ławka",
       "pt_BR": "Banco",
-      "pt": "Banco"
+      "pt": "Banco",
+      "ca": "Banc"
     }
   },
   "tagRenderings": [
@@ -64,7 +66,8 @@
             "fi": "Selkänoja: kyllä",
             "pl": "Oparcie: Tak",
             "pt_BR": "Encosto: Sim",
-            "pt": "Encosto: Sim"
+            "pt": "Encosto: Sim",
+            "ca": "Respatller: sí"
           }
         },
         {
@@ -85,7 +88,8 @@
             "fi": "Selkänoja: ei",
             "pl": "Oparcie: Nie",
             "pt_BR": "Encosto: Não",
-            "pt": "Encosto: Não"
+            "pt": "Encosto: Não",
+            "ca": "Respatller: No"
           }
         }
       ],
@@ -123,7 +127,8 @@
         "nb_NO": "{seats} seter",
         "pl": "{seats} siedzeń",
         "pt_BR": "{seats} assentos",
-        "pt": "{seats} assentos"
+        "pt": "{seats} assentos",
+        "ca": "{seats} seients"
       },
       "freeform": {
         "key": "seats",
@@ -164,7 +169,8 @@
         "pl": "Materiał: {material}",
         "pt_BR": "Material: {material}",
         "pt": "Material: {material}",
-        "eo": "Materialo: {material}"
+        "eo": "Materialo: {material}",
+        "ca": "Material: {material}"
       },
       "freeform": {
         "key": "material",
@@ -189,7 +195,8 @@
             "fi": "Materiaali: puu",
             "pl": "Materiał: drewno",
             "pt": "Material: madeira",
-            "eo": "Materialo: ligna"
+            "eo": "Materialo: ligna",
+            "ca": "Material: fusta"
           }
         },
         {
@@ -209,7 +216,8 @@
             "pl": "Materiał: metal",
             "pt_BR": "Material: metal",
             "pt": "Material: metal",
-            "eo": "Materialo: metala"
+            "eo": "Materialo: metala",
+            "ca": "Material: metall"
           }
         },
         {
@@ -230,7 +238,8 @@
             "fi": "Materiaali: kivi",
             "pl": "Materiał: kamień",
             "pt": "Material: pedra",
-            "eo": "Materialo: ŝtona"
+            "eo": "Materialo: ŝtona",
+            "ca": "Material: pedra"
           }
         },
         {
@@ -251,7 +260,8 @@
             "fi": "Materiaali: betoni",
             "pl": "Materiał: beton",
             "pt": "Material: concreto",
-            "eo": "Materialo: betona"
+            "eo": "Materialo: betona",
+            "ca": "Material: ciment"
           }
         },
         {
@@ -272,7 +282,8 @@
             "fi": "Materiaali: muovi",
             "pl": "Materiał: plastik",
             "pt": "Material: plástico",
-            "eo": "Materialo: plasta"
+            "eo": "Materialo: plasta",
+            "ca": "Material: plàstic"
           }
         },
         {
@@ -293,7 +304,8 @@
             "fi": "Materiaali: teräs",
             "pl": "Materiał: stal",
             "pt": "Material: aço",
-            "eo": "Materialo: ŝtala"
+            "eo": "Materialo: ŝtala",
+            "ca": "Material: acer"
           }
         }
       ],
@@ -367,7 +379,8 @@
         "pl": "Kolor: {colour}",
         "pt": "Cor: {colour}",
         "eo": "Koloro: {colour}",
-        "es": "Color: {colour}"
+        "es": "Color: {colour}",
+        "ca": "Color: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -406,7 +419,8 @@
             "fi": "Väri: ruskea",
             "pl": "Kolor: brązowy",
             "pt": "Cor: castanho",
-            "eo": "Koloro: bruna"
+            "eo": "Koloro: bruna",
+            "ca": "Color: marró"
           }
         },
         {
@@ -427,7 +441,8 @@
             "pl": "Kolor: zielony",
             "pt": "Cor: verde",
             "eo": "Koloro: verda",
-            "es": "Color: verde"
+            "es": "Color: verde",
+            "ca": "Color: verd"
           }
         },
         {
@@ -448,7 +463,8 @@
             "pl": "Kolor: szary",
             "pt": "Cor: cinzento",
             "eo": "Koloro: griza",
-            "es": "Color: gris"
+            "es": "Color: gris",
+            "ca": "Color: gris"
           }
         },
         {
@@ -469,7 +485,8 @@
             "pl": "Kolor: biały",
             "pt": "Cor: branco",
             "eo": "Koloro: blanka",
-            "es": "Color: blanco"
+            "es": "Color: blanco",
+            "ca": "Color: blanc"
           }
         },
         {
@@ -490,7 +507,8 @@
             "pl": "Kolor: czerwony",
             "pt": "Cor: vermelho",
             "eo": "Koloro: ruĝa",
-            "es": "Color: rojo"
+            "es": "Color: rojo",
+            "ca": "Color: vermell"
           }
         },
         {
@@ -511,7 +529,8 @@
             "pl": "Kolor: czarny",
             "pt": "Cor: preto",
             "eo": "Koloro: nigra",
-            "es": "Color: negro"
+            "es": "Color: negro",
+            "ca": "Color: negre"
           }
         },
         {
@@ -532,7 +551,8 @@
             "pl": "Kolor: niebieski",
             "pt": "Cor: azul",
             "eo": "Koloro: blua",
-            "es": "Color: azul"
+            "es": "Color: azul",
+            "ca": "Color: blau"
           }
         },
         {
@@ -553,7 +573,8 @@
             "pl": "Kolor: żółty",
             "pt": "Cor: amarelo",
             "eo": "Koloro: flava",
-            "es": "Color: amarillo"
+            "es": "Color: amarillo",
+            "ca": "Color: groc"
           }
         }
       ],
@@ -619,7 +640,8 @@
         "pt_BR": "uma banco",
         "fi": "penkki",
         "pl": "Ławka",
-        "pt": "uma banco"
+        "pt": "uma banco",
+        "ca": "un banc"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -656,6 +678,7 @@
   "description": {
     "nl": "Deze laag toont zitbanken en enkele vragen over deze zitbanken",
     "en": "A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.",
-    "fr": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet."
+    "fr": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
+    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, ... dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen."
   }
 }

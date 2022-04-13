@@ -9,7 +9,8 @@
     "zh_Hant": "單車圖書館",
     "pt_BR": "Biblioteca de bicicleta",
     "de": "Fahrradbibliotheken",
-    "pt": "Biblioteca de bicicleta"
+    "pt": "Biblioteca de bicicleta",
+    "ca": "Biblioteca per a bicicletes"
   },
   "minzoom": 8,
   "source": {
@@ -25,7 +26,8 @@
       "zh_Hant": "單車圖書館",
       "pt_BR": "Biblioteca de bicicleta",
       "de": "Fahrradbibliothek",
-      "pt": "Biblioteca de bicicleta"
+      "pt": "Biblioteca de bicicleta",
+      "ca": "Biblioteca per a bicicletes"
     },
     "mappings": [
       {

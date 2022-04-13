@@ -9,7 +9,8 @@
     "it": "Acqua potabile",
     "ru": "Питьевая вода",
     "id": "Air minum",
-    "hu": "Ivóvíz"
+    "hu": "Ivóvíz",
+    "ca": "Aigua potable"
   },
   "title": {
     "render": {
@@ -21,7 +22,8 @@
       "it": "Acqua potabile",
       "ru": "Питьевая вода",
       "id": "Air minum",
-      "hu": "Ivóvíz"
+      "hu": "Ivóvíz",
+      "ca": "Aigua potable"
     }
   },
   "source": {

@@ -4,7 +4,8 @@
     "en": "Binoculars",
     "nl": "Verrekijkers",
     "de": "Ferngläser",
-    "ru": "Бинокль"
+    "ru": "Бинокль",
+    "ca": "Prismàtics"
   },
   "minzoom": 0,
   "title": {
@@ -12,14 +13,16 @@
       "en": "Binoculars",
       "nl": "Verrekijker",
       "de": "Ferngläser",
-      "ru": "Бинокль"
+      "ru": "Бинокль",
+      "ca": "Prismàtics"
     }
   },
   "description": {
     "en": "Binoculas",
     "nl": "Verrekijkers",
     "de": "Fernglas",
-    "ru": "Бинокли"
+    "ru": "Бинокли",
+    "ca": "Prismàtics"
   },
   "tagRenderings": [
     "images",
@@ -84,7 +87,8 @@
         "en": "a binoculars",
         "nl": "een verrekijker",
         "de": "eine ferngläser",
-        "ru": "бинокль"
+        "ru": "бинокль",
+        "ca": "uns prismàtics"
       },
       "description": {
         "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",

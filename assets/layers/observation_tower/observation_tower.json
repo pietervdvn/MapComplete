@@ -4,7 +4,8 @@
     "en": "Observation towers",
     "nl": "Uitkijktorens",
     "ru": "Смотровые башни",
-    "de": "Aussichtstürme"
+    "de": "Aussichtstürme",
+    "ca": "Torres d'observació"
   },
   "minzoom": 8,
   "title": {
@@ -12,7 +13,8 @@
       "en": "Observation tower",
       "nl": "Uitkijktoren",
       "ru": "Смотровая башня",
-      "de": "Beobachtungsturm"
+      "de": "Beobachtungsturm",
+      "ca": "Torre d'observació"
     },
     "mappings": [
       {
@@ -21,7 +23,8 @@
           "en": "<b>{name}</b>",
           "nl": "<b>{name}</b>",
           "ru": "<b>{name}</b>",
-          "de": "<b>{name}</b>"
+          "de": "<b>{name}</b>",
+          "ca": "<b>{name}</b>"
         }
       }
     ]
@@ -260,7 +263,8 @@
             "nl": " meter",
             "en": " meter",
             "ru": " метр",
-            "de": " Meter"
+            "de": " Meter",
+            "ca": " metre"
           }
         }
       ],

@@ -10,7 +10,8 @@
     "nb_NO": "Åpent klatrekart",
     "it": "Mappa aperta per le arrampicate",
     "fr": "Open Climbing Map",
-    "hu": "Mászótérkép"
+    "hu": "Mászótérkép",
+    "ca": "Open Climbing Map"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -183,7 +184,7 @@
             "sport=climbing"
           ],
           "title": {
-            "de": "eine eine kletter-organisation",
+            "de": "Eine Kletterorganisation",
             "en": "a climbing ngo",
             "nl": "een een klimorganisatie",
             "ja": "クライミングNGO",
@@ -665,7 +666,8 @@
               "nl": "Klimsite",
               "fr": "Site d’escalade",
               "de": "Klettergebiet",
-              "it": "Sito di arrampicata"
+              "it": "Sito di arrampicata",
+              "ca": "Llocs d'escalada"
             }
           },
           {
@@ -1034,7 +1036,9 @@
     }
   ],
   "overrideAll": {
-"allowMove":{"improveAccuracy": true},
+    "allowMove": {
+      "improveAccuracy": true
+    },
     "+titleIcons": [
       {
         "render": "<div class='flex' style='word-wrap: normal; padding-right: 0.25rem;'><img src='./assets/themes/climbing/height.svg' style='height: 1.75rem;'/>{climbing:length}m</div>",
@@ -1113,7 +1117,8 @@
               "de": " Meter",
               "eo": " metro",
               "it": " metri",
-              "ru": " метр"
+              "ru": " метр",
+              "ca": " metre"
             },
             "default": true
           },
@@ -1129,7 +1134,8 @@
               "fr": " pieds",
               "de": " Fuß",
               "eo": " futo",
-              "it": " piedi"
+              "it": " piedi",
+              "ca": " peus"
             }
           }
         ]
@@ -1242,7 +1248,8 @@
               "en": "Only customers",
               "fr": "Réservé aux clients",
               "de": "Nur für Kunden",
-              "it": "Riservato ai clienti"
+              "it": "Riservato ai clienti",
+              "ca": "Només clients"
             }
           },
           {
@@ -1252,7 +1259,8 @@
               "ru": "Только членам клуба",
               "fr": "Réservé aux membres",
               "de": "Nur für Vereinsmitglieder",
-              "it": "Riservato ai membri del club"
+              "it": "Riservato ai membri del club",
+              "ca": "Només membres del club"
             }
           },
           {

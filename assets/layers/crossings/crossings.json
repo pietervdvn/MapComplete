@@ -4,7 +4,8 @@
     "en": "Crossings",
     "nl": "Oversteekplaatsen",
     "de": "Kreuzungen",
-    "fr": "Traversée"
+    "fr": "Traversée",
+    "ca": "Encreuaments"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
@@ -26,7 +27,8 @@
       "en": "Crossing",
       "nl": "Oversteekplaats",
       "de": "Kreuzung",
-      "fr": "Traversée"
+      "fr": "Traversée",
+      "ca": "Encreuament"
     },
     "mappings": [
       {
@@ -36,7 +38,8 @@
           "nl": "Verkeerslicht",
           "ru": "Светофор",
           "de": "Ampel",
-          "fr": "Feu de signalisation"
+          "fr": "Feu de signalisation",
+          "ca": "Semàfor"
         }
       },
       {
@@ -56,7 +59,8 @@
         "en": "a crossing",
         "nl": "een oversteekplaats",
         "de": "eine kreuzung",
-        "fr": "une traversée"
+        "fr": "une traversée",
+        "ca": "un pas de vianants"
       },
       "tags": [
         "highway=crossing"
@@ -132,7 +136,8 @@
           "then": {
             "en": "Zebra crossing",
             "nl": "Zebrapad",
-            "de": "Zebrastreifen"
+            "de": "Zebrastreifen",
+            "ca": "Pas de zebra"
           },
           "hideInAnswer": true
         },

@@ -9,12 +9,14 @@
     "id": "Kafe dan pub",
     "zh_Hant": "咖啡廳與酒吧",
     "ru": "Кафе и пабы",
-    "hu": "Kávézók és kocsmák"
+    "hu": "Kávézók és kocsmák",
+    "ca": "Cafés i bars"
   },
   "description": {
     "en": "Pubs and bars",
     "nl": "Cafés, kroegen en drinkgelegenheden",
-    "de": "Kneipen und Bars"
+    "de": "Kneipen und Bars",
+    "ca": "Bars i pubs"
   },
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",

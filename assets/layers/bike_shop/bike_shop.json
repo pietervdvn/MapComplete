@@ -9,7 +9,8 @@
     "it": "Venditore/riparatore bici",
     "ru": "Обслуживание велосипедов/магазин",
     "pt_BR": "Reparo/loja de bicicletas",
-    "pt": "Reparo/loja de bicicletas"
+    "pt": "Reparo/loja de bicicletas",
+    "ca": "Botiga/reparació de bicicletes"
   },
   "minzoom": 13,
   "allowMove": true,
@@ -54,7 +55,8 @@
       "it": "Venditore/riparatore bici",
       "ru": "Обслуживание велосипедов/магазин",
       "pt_BR": "Reparo/loja de bicicletas",
-      "pt": "Reparo/loja de bicicletas"
+      "pt": "Reparo/loja de bicicletas",
+      "ca": "Botiga/reparació de bicicletes"
     },
     "mappings": [
       {
@@ -216,7 +218,8 @@
           "if": "shop=rental",
           "then": {
             "nl": "Deze zaak focust op verhuur",
-            "en": "Deze business focuses on rental"
+            "en": "Deze business focuses on rental",
+            "de": "Dieses Geschäft konzentriert sich auf die Vermietung"
           }
         }
       ]
@@ -311,7 +314,8 @@
     {
       "render": {
         "en": "Only accessible to {access}",
-        "nl": "Enkel voor {access}"
+        "nl": "Enkel voor {access}",
+        "de": "Nur zugänglich für {access}"
       },
       "freeform": {
         "key": "access"

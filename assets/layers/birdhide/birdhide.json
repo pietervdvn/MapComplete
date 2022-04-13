@@ -267,7 +267,8 @@
             "nl": "Rolstoeltoegankelijk",
             "en": "Wheelchair accessible",
             "de": "Zugänglich für Rollstuhlfahrer",
-            "fr": "Accessible aux fauteuils roulants"
+            "fr": "Accessible aux fauteuils roulants",
+            "ca": "Accessible per a cadires de rodes"
           },
           "osmTags": {
             "or": [

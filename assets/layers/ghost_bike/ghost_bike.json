@@ -18,7 +18,8 @@
     "ru": "Велосипед ghost",
     "sv": "Spökcykel",
     "zh_Hant": "幽靈單車",
-    "pt": "Bicicleta fantasma"
+    "pt": "Bicicleta fantasma",
+    "ca": "Bicicleta blanca"
   },
   "source": {
     "osmTags": "memorial=ghost_bike"
@@ -43,7 +44,8 @@
       "ru": "Велосипед Ghost",
       "sv": "Spökcykel",
       "zh_Hant": "幽靈單車",
-      "pt": "Bicicleta fantasma"
+      "pt": "Bicicleta fantasma",
+      "ca": "Bicicleta blanca"
     },
     "mappings": [
       {
