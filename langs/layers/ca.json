@@ -48,6 +48,16 @@
             "defibrillator-level": {
                 "question": "A quina planta està el desfibril·lador localitzat?",
                 "render": "Aquest desfibril·lador és a la planta {level}"
+            },
+            "defibrillator-opening_hours": {
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "defibrillator-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Comprovat avui!"
+                    }
+                }
             }
         },
         "title": {
@@ -59,7 +69,11 @@
             "ghost_bike-inscription": {
                 "render": "<i>{inscription}</i>"
             }
-        }
+        },
+        "title": {
+            "render": "Bicicleta blanca"
+        },
+        "name": "Bicicleta blanca"
     },
     "nature_reserve": {
         "tagRenderings": {
@@ -75,6 +89,28 @@
             },
             "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": "Sempre accessible--"
+                    }
+                }
+            }
+        },
+        "description": "Parcs infantils",
+        "name": "Parcs infantils",
+        "title": {
+            "render": "Parc infantil",
+            "mappings": {
+                "0": {
+                    "then": "Parc infantil <i>{name}</i>"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "un parc infantil"
             }
         }
     },
@@ -85,7 +121,747 @@
             },
             "shops-website": {
                 "render": "<a href='{website}'>{website}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "3": {
+                        "then": "Perruqueria"
+                    },
+                    "1": {
+                        "then": "Supermercat"
+                    },
+                    "4": {
+                        "then": "Fleca"
+                    }
+                }
+            },
+            "shops-opening_hours": {
+                "render": "{opening_hours_table(opening_hours)}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{shop}"
+                },
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Botiga"
+        },
+        "name": "Botiga"
+    },
+    "charging_station": {
+        "units": {
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            },
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "humanSingular": " minut",
+                        "human": " minuts"
+                    },
+                    "1": {
+                        "human": " hores",
+                        "humanSingular": " hora"
+                    },
+                    "2": {
+                        "human": " dies",
+                        "humanSingular": " dia"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Volts"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "quilovats"
+                    },
+                    "1": {
+                        "human": "megavats"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    }
+                }
+            }
+        },
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tots els connectors"
+                    }
+                }
+            }
+        },
+        "name": "Estacions de càrrega",
+        "title": {
+            "render": "Estació de càrrega"
+        }
+    },
+    "food": {
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Menjar ràpid"
+                },
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Lloc de menjar ràpid <i>{name}</i>"
+                }
+            },
+            "render": "Restaurant"
+        },
+        "presets": {
+            "0": {
+                "title": "un restaurant"
+            },
+            "1": {
+                "title": "un de menjar ràpid"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Obert ara"
+                    }
+                }
             }
         }
+    },
+    "artwork": {
+        "tagRenderings": {
+            "artwork-artwork_type": {
+                "mappings": {
+                    "4": {
+                        "then": "Estàtua"
+                    },
+                    "6": {
+                        "then": "Pedra"
+                    },
+                    "7": {
+                        "then": "Instal·lació"
+                    },
+                    "2": {
+                        "then": "Pintura"
+                    },
+                    "5": {
+                        "then": "Bust"
+                    },
+                    "8": {
+                        "then": "Grafiti"
+                    },
+                    "3": {
+                        "then": "Escultura"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "0": {
+                        "then": "Arquitectura"
+                    },
+                    "9": {
+                        "then": "Relleu"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Obra d'art"
+        },
+        "name": "Obres d'art"
+    },
+    "bench": {
+        "tagRenderings": {
+            "bench-backrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Respatller: sí"
+                    },
+                    "1": {
+                        "then": "Respatller: No"
+                    }
+                }
+            },
+            "bench-material": {
+                "mappings": {
+                    "1": {
+                        "then": "Material: metall"
+                    },
+                    "4": {
+                        "then": "Material: plàstic"
+                    },
+                    "5": {
+                        "then": "Material: acer"
+                    },
+                    "3": {
+                        "then": "Material: ciment"
+                    },
+                    "0": {
+                        "then": "Material: fusta"
+                    },
+                    "2": {
+                        "then": "Material: pedra"
+                    }
+                },
+                "render": "Material: {material}"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "2": {
+                        "then": "Color: gris"
+                    },
+                    "5": {
+                        "then": "Color: negre"
+                    },
+                    "1": {
+                        "then": "Color: verd"
+                    },
+                    "0": {
+                        "then": "Color: marró"
+                    },
+                    "6": {
+                        "then": "Color: blau"
+                    },
+                    "7": {
+                        "then": "Color: groc"
+                    },
+                    "4": {
+                        "then": "Color: vermell"
+                    },
+                    "3": {
+                        "then": "Color: blanc"
+                    }
+                },
+                "render": "Color: {colour}"
+            },
+            "bench-seats": {
+                "render": "{seats} seients"
+            }
+        },
+        "title": {
+            "render": "Banc"
+        },
+        "presets": {
+            "0": {
+                "title": "un banc"
+            }
+        },
+        "name": "Bancs"
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "render": "Banc"
+        }
+    },
+    "extinguisher": {
+        "title": {
+            "render": "Extintors"
+        }
+    },
+    "sport_pitch": {
+        "name": "Camps d'esports",
+        "title": {
+            "render": "Camp d'esports"
+        }
+    },
+    "entrance": {
+        "name": "Entrada",
+        "title": {
+            "render": "Entrada"
+        }
+    },
+    "cafe_pub": {
+        "presets": {
+            "0": {
+                "title": "un bar"
+            },
+            "1": {
+                "title": "un pub"
+            },
+            "2": {
+                "title": "un cafè"
+            }
+        },
+        "title": {
+            "render": "Bar",
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Obert ara"
+                    }
+                }
+            }
+        }
+    },
+    "crossings": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Semàfor"
+                }
+            },
+            "render": "Encreuament"
+        },
+        "presets": {
+            "0": {
+                "title": "un pas de vianants"
+            }
+        },
+        "name": "Encreuaments",
+        "tagRenderings": {
+            "crossing-type": {
+                "mappings": {
+                    "2": {
+                        "then": "Pas de zebra"
+                    }
+                }
+            }
+        }
+    },
+    "observation_tower": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            },
+            "render": "Torre d'observació"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metre"
+                    }
+                }
+            }
+        },
+        "name": "Torres d'observació"
+    },
+    "picnic_table": {
+        "title": {
+            "render": "Taula de pícnic"
+        },
+        "name": "Taules de pícnic"
+    },
+    "public_bookcase": {
+        "presets": {
+            "0": {
+                "title": "una bústia per a llibres"
+            }
+        },
+        "title": {
+            "render": "Bústia per llibres"
+        },
+        "name": "Bústies per llibres"
+    },
+    "recycling": {
+        "tagRenderings": {
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7"
+                    }
+                }
+            }
+        },
+        "name": "Residus"
+    },
+    "parking": {
+        "name": "Aparcament"
+    },
+    "bike_parking": {
+        "title": {
+            "render": "Aparcament per a bicicletes"
+        },
+        "tagRenderings": {
+            "Access": {
+                "render": "{access}",
+                "mappings": {
+                    "0": {
+                        "then": "Accessible al públic"
+                    }
+                }
+            },
+            "Bicycle parking type": {
+                "mappings": {
+                    "6": {
+                        "then": "Pilona"
+                    },
+                    "3": {
+                        "then": "Enganxament"
+                    },
+                    "0": {
+                        "then": "Bastidors de grapes"
+                    },
+                    "1": {
+                        "then": "Portarodes/bucles"
+                    },
+                    "2": {
+                        "then": "Suport de manillar"
+                    },
+                    "4": {
+                        "then": "De dos nivells"
+                    }
+                }
+            },
+            "Underground?": {
+                "mappings": {
+                    "2": {
+                        "then": "Aparcament al terrat"
+                    },
+                    "0": {
+                        "then": "Aparcament subterrani"
+                    }
+                }
+            }
+        },
+        "name": "Aparcament per a bicicletes"
+    },
+    "cycleways_and_roads": {
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Carril bici"
+                },
+                "4": {
+                    "then": "Carrer ciclista"
+                },
+                "0": {
+                    "then": "Via ciclista"
+                },
+                "1": {
+                    "then": "Carril compartit"
+                }
+            },
+            "render": "Vies ciclistes"
+        },
+        "tagRenderings": {
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "0": {
+                        "then": "Via ciclista obligatòria"
+                    },
+                    "2": {
+                        "then": "Via segregada a peu/ciclista"
+                    },
+                    "3": {
+                        "then": "Via no segregada a peu/ciclista"
+                    }
+                }
+            },
+            "cycleway-traffic-signs": {
+                "mappings": {
+                    "2": {
+                        "then": "Via segregada a peu/ciclista"
+                    },
+                    "4": {
+                        "then": "Via ciclista obligatòria"
+                    },
+                    "3": {
+                        "then": "Via no segregada a peu/ciclista"
+                    },
+                    "0": {
+                        "then": "Via ciclista obligatòria"
+                    }
+                }
+            }
+        }
+    },
+    "address": {
+        "description": "Adreces"
+    },
+    "barrier": {
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "4": {
+                        "then": "Pilona retràctil"
+                    },
+                    "1": {
+                        "then": "Pilona fixa"
+                    },
+                    "0": {
+                        "then": "Pilona desmuntable"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Barrera",
+            "mappings": {
+                "1": {
+                    "then": "Barrera ciclista"
+                },
+                "0": {
+                    "then": "Pilona"
+                }
+            }
+        },
+        "name": "Barreres",
+        "presets": {
+            "0": {
+                "title": "una pilona"
+            }
+        }
+    },
+    "drinking_water": {
+        "title": {
+            "render": "Aigua potable"
+        },
+        "name": "Aigua potable"
+    },
+    "bike_shop": {
+        "title": {
+            "render": "Botiga/reparació de bicicletes"
+        },
+        "name": "Botiga/reparació de bicicletes"
+    },
+    "birdhide": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible per a cadires de rodes"
+                    }
+                }
+            }
+        }
+    },
+    "map": {
+        "name": "Mapes",
+        "presets": {
+            "0": {
+                "title": "un mapa"
+            }
+        },
+        "title": {
+            "render": "Mapa"
+        }
+    },
+    "information_board": {
+        "title": {
+            "render": "Panell d'informació"
+        },
+        "name": "Panells d'informació"
+    },
+    "note": {
+        "title": {
+            "render": "Nota"
+        }
+    },
+    "surveillance_camera": {
+        "name": "Càmeres de videovigilància",
+        "title": {
+            "render": "Càmera de videovigilància"
+        }
+    },
+    "toilet": {
+        "title": {
+            "render": "Lavabo"
+        },
+        "name": "Lavabos"
+    },
+    "trail": {
+        "name": "Camins",
+        "title": {
+            "render": "Camí"
+        }
+    },
+    "tree_node": {
+        "presets": {
+            "2": {
+                "title": "un arbre"
+            }
+        },
+        "name": "Arbre",
+        "title": {
+            "render": "Arbre"
+        },
+        "tagRenderings": {
+            "tree-leaf_type": {
+                "mappings": {
+                    "1": {
+                        "then": "Amb fulles d'agulla"
+                    },
+                    "0": {
+                        "then": "De fulla ampla"
+                    }
+                }
+            },
+            "tree-decidouous": {
+                "mappings": {
+                    "1": {
+                        "then": "Perenne."
+                    }
+                }
+            }
+        }
+    },
+    "viewpoint": {
+        "name": "Mirador",
+        "presets": {
+            "0": {
+                "title": "un mirador"
+            }
+        },
+        "title": {
+            "render": "Mirador"
+        }
+    },
+    "visitor_information_centre": {
+        "title": {
+            "render": "{name}",
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        }
+    },
+    "waste_basket": {
+        "name": "Paperera",
+        "title": {
+            "render": "Paperera"
+        }
+    },
+    "hydrant": {
+        "title": {
+            "render": "Hidrant"
+        }
+    },
+    "direction": {
+        "name": "Direcció de la visualització"
+    },
+    "bicycle_rental": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "9": {
+                "rewrite": {
+                    "into": {
+                        "4": {
+                            "1": "bicicleta de muntanya"
+                        },
+                        "6": {
+                            "1": "tàndem"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "bicycle_library": {
+        "title": {
+            "render": "Biblioteca per a bicicletes"
+        },
+        "name": "Biblioteca per a bicicletes"
+    },
+    "bike_repair_station": {
+        "tagRenderings": {
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Bomba manual"
+                    },
+                    "1": {
+                        "then": "Bomba elèctrica"
+                    }
+                }
+            },
+            "bike_repair_station-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Sempre obert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Bomba trencada"
+                },
+                "4": {
+                    "then": "Bomba de bicicleta"
+                }
+            }
+        }
+    },
+    "bike_themed_object": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Pista ciclable"
+                }
+            }
+        }
+    },
+    "watermill": {
+        "name": "Molí d'aigua"
+    },
+    "binocular": {
+        "title": {
+            "render": "Prismàtics"
+        },
+        "description": "Prismàtics",
+        "name": "Prismàtics",
+        "presets": {
+            "0": {
+                "title": "uns prismàtics"
+            }
+        }
+    },
+    "bike_cafe": {
+        "title": {
+            "render": "Cafeteria per a bicicletes"
+        },
+        "name": "Cafeteria per a bicicletes"
     }
 }
