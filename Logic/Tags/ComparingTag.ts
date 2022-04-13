@@ -23,7 +23,7 @@ export default class ComparingTag implements TagsFilter {
         throw "A comparable tag can not be used as overpass filter"
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    shadows(other: TagsFilter): boolean {
         return other === this;
     }
 

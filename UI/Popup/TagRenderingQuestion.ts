@@ -248,7 +248,7 @@ export default class TagRenderingQuestion extends Combine {
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
-                return t0?.isEquivalent(t1) ?? false
+                return t0?.shadows(t1) ?? false
             },
             (indices) => {
                 if (indices.length === 0) {
@@ -370,7 +370,7 @@ export default class TagRenderingQuestion extends Combine {
         return new FixedInputElement(
             TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state),
             tagging,
-            (t0, t1) => t1.isEquivalent(t0));
+            (t0, t1) => t1.shadows(t0));
     }
 
     private static GenerateMappingContent(mapping: {
@@ -450,7 +450,7 @@ export default class TagRenderingQuestion extends Combine {
         })
 
         let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
-            input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
+            input, (a, b) => a === b || (a?.shadows(b) ?? false),
             pickString, toString
         );
 
