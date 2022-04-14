@@ -142,8 +142,8 @@
         {
           "icon": {
             "mappings": [
-              "if":"maxspeed~[1-9]0|1[0-2]0",
-              "then": "maxspeed_{maxspeed}.png"
+              "if":"maxspeed~[1-9]0|1[0-4]0",
+              "then": "maxspeed_{maxspeed}.svg"
             ]
           },
           "iconSize": {
