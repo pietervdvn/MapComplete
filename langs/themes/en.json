@@ -401,8 +401,15 @@
                             },
                             "1": {
                                 "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+                            },
+                            "2": {
+                                "then": "A climbing area with one or more climbing crags and/or boulders"
+                            },
+                            "3": {
+                                "then": "A tree which is suited for climbing"
                             }
-                        }
+                        },
+                        "question": "What kind of climbing opportunity is this?"
                     },
                     "name": {
                         "mappings": {
