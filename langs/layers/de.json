@@ -1394,6 +1394,194 @@
             }
         }
     },
+    "climbing": {
+        "description": "Eine Klettergelegenheit",
+        "name": "Klettermöglichkeiten",
+        "presets": {
+            "0": {
+                "description": "Eine Klettergelegenheit",
+                "title": "eine klettermöglichkeit"
+            }
+        },
+        "tagRenderings": {
+            "Contained routes hist": {
+                "render": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}"
+            },
+            "Contained routes length hist": {
+                "render": "<h3>Längenübersicht</h3>{histogram(_length_hist)}"
+            },
+            "Contained_climbing_routes": {
+                "render": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Kalkstein"
+                    }
+                },
+                "question": "Welchen Gesteinstyp gibt es hier?",
+                "render": "Der Gesteinstyp ist {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
+                    },
+                    "1": {
+                        "then": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Klettergelegenheit hat keinen Namen"
+                    }
+                },
+                "question": "Wie heißt diese Klettergelegenheit?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Klettergarten <b>{name}</b>"
+                },
+                "1": {
+                    "then": "Klettergebiet <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Klettergebiet"
+                },
+                "3": {
+                    "then": "Klettermöglichkeit <b>{name}</b>"
+                }
+            },
+            "render": "Klettermöglichkeit"
+        }
+    },
+    "climbing_club": {
+        "description": "Ein Kletterverein oder -organisation",
+        "name": "Klettervereine",
+        "presets": {
+            "0": {
+                "description": "Ein Kletterverein",
+                "title": "eine kletterverein"
+            },
+            "1": {
+                "description": "Eine Organisation, die sich mit dem Klettern beschäftigt",
+                "title": "Eine Kletterorganisation"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "Wie lautet der Name dieses Vereins oder Organisation?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kletter-Organisation"
+                }
+            },
+            "render": "Kletterverein"
+        }
+    },
+    "climbing_gym": {
+        "description": "Eine Kletterhalle",
+        "name": "Kletterhallen",
+        "tagRenderings": {
+            "name": {
+                "question": "Wie heißt diese Kletterhalle?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kletterhalle <strong>{name}</strong>"
+                }
+            },
+            "render": "Kletterhalle"
+        }
+    },
+    "climbing_opportunity": {
+        "description": "Eine Klettergelegenheit?",
+        "name": "Klettermöglichkeiten?",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kann geklettert werden"
+                    },
+                    "1": {
+                        "then": "Hier kann nicht geklettert werden"
+                    },
+                    "2": {
+                        "then": "Hier kann nicht geklettert werden"
+                    }
+                },
+                "question": "Kann hier geklettert werden?"
+            }
+        },
+        "title": {
+            "render": "Klettermöglichkeit?"
+        }
+    },
+    "climbing_route": {
+        "name": "Kletterrouten",
+        "presets": {
+            "0": {
+                "title": "eine kletterroute"
+            }
+        },
+        "tagRenderings": {
+            "Bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                    },
+                    "1": {
+                        "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                    }
+                },
+                "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+                "render": "Diese Kletterroute hat {climbing:bolts} Haken"
+            },
+            "Difficulty": {
+                "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
+                "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
+            },
+            "Length": {
+                "question": "Wie lang ist diese Kletterroute (in Metern)?",
+                "render": "Diese Route ist {canonical(climbing:length)} lang"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Kletterroute hat keinen Namen"
+                    }
+                },
+                "question": "Wie heißt diese Kletterroute?",
+                "render": "<strong>{name}</strong>"
+            },
+            "Rock type": {
+                "render": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kleterroute <strong>{name}</strong>"
+                }
+            },
+            "render": "Kleterroute"
+        }
+    },
     "crossings": {
         "description": "Übergänge für Fußgänger und Radfahrer",
         "name": "Kreuzungen",
@@ -2279,6 +2467,69 @@
             "Privacy notice": {
                 "render": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet."
             }
+        }
+    },
+    "hackerspace": {
+        "description": "Hackerspace",
+        "name": "Hackerspaces",
+        "presets": {
+            "0": {
+                "description": "Ein Hackerspace ist ein Ort, an dem sich Menschen treffen, die sich für Software interessieren",
+                "title": "eine hackerspace"
+            },
+            "1": {
+                "description": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
+                "title": "eine makerspace"
+            }
+        },
+        "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "Wie lautet der Name dieses Hackerspace?",
+                "render": "Dieser Hackerspace heißt <b>{name}</b>"
+            },
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet"
+                    }
+                },
+                "question": "Wann hat dieser Hackerspace geöffnet?",
+                "render": "{opening_hours_table()}"
+            },
+            "hackerspaces-start_date": {
+                "question": "Wann wurde dieser Hackerspace gegründet?",
+                "render": "Dieser Hackerspace wurde gegründet am {start_date}"
+            },
+            "hs-club-mate": {
+                "mappings": {
+                    "0": {
+                        "then": "In diesem Hackerspace gibt es Club Mate"
+                    },
+                    "1": {
+                        "then": "In diesem Hackerspace gibt es kein Club Mate"
+                    }
+                },
+                "question": "Gibt es in diesem Hackerspace Club Mate?"
+            },
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Makerspace"
+                    },
+                    "1": {
+                        "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
+                    }
+                },
+                "question": "Ist dies ein Hackerspace oder ein Makerspace?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Hackerspace"
         }
     },
     "hydrant": {
@@ -3543,5 +3794,68 @@
     },
     "watermill": {
         "name": "Wassermühle"
+    },
+    "windturbine": {
+        "name": "Windräder",
+        "presets": {
+            "0": {
+                "title": "ein Windrad"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
+                "render": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter."
+            },
+            "turbine-height": {
+                "question": "Wie hoch ist dieses Windrad (inklusive Rotorradius) in Metern?",
+                "render": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter."
+            },
+            "turbine-operator": {
+                "question": "Wer betreibt das Windrads?",
+                "render": "Die Windturbine wird betrieben von {operator}."
+            },
+            "turbine-output": {
+                "question": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)",
+                "render": "Das Windrad erzeugt {generator:output:electricity} Strom."
+            },
+            "turbine-start-date": {
+                "question": "Wann wurde das Windrad in Betrieb genommen?",
+                "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Windrad"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " Megawatt"
+                    },
+                    "1": {
+                        "human": " Kilowatt"
+                    },
+                    "2": {
+                        "human": " Watt"
+                    },
+                    "3": {
+                        "human": " Gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " Meter"
+                    }
+                }
+            }
+        }
     }
 }

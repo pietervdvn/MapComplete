@@ -7,6 +7,7 @@ function main(args: string[]){
         console.log("Extracts an inline layer from a theme and places it in it's own layer directory.")
         console.log("USAGE: ts-node scripts/extractLayerFromTheme.ts <themeid> <layerid>")
         console.log("(Invoke with only the themename to see which layers can be extracted)")
+        return
     }
     const themeId = args[0]
     const layerId = args[1]
@@ -30,7 +31,7 @@ function main(args: string[]){
 
     const layerConfig = layers.find(l => l.id === layerId)
     if(layerId === undefined || layerConfig === undefined){
-        if(layerConfig === undefined){
+        if(layerId !== undefined){
             console.error( "Layer "+layerId+" not found as inline layer")
         }
         console.log("Layers available for extraction are:")

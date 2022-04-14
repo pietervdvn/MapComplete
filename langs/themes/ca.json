@@ -49,50 +49,6 @@
         "title": "Estacions de càrrega"
     },
     "climbing": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "1": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "2": {
-                "tagRenderings": {
-                    "Name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "3": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "2": {
-                            "then": "Llocs d'escalada"
-                        }
-                    }
-                }
-            },
-            "4": {
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            }
-        },
         "overrideAll": {
             "tagRenderings+": {
                 "2": {
@@ -203,29 +159,6 @@
         },
         "title": "Botigues de patates"
     },
-    "hackerspaces": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "hackerspaces-opening_hours": {
-                        "mappings": {
-                            "0": {
-                                "then": "Obert 24/7"
-                            }
-                        },
-                        "render": "{opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": " {name}"
-                        }
-                    }
-                }
-            }
-        }
-    },
     "maps": {
         "title": "Un mapa de mapes"
     },
@@ -239,42 +172,6 @@
         "title": "Torres d'observació"
     },
     "openwindpowermap": {
-        "layers": {
-            "0": {
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name}"
-                        }
-                    }
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " megavats"
-                            },
-                            "1": {
-                                "human": " quilovats"
-                            },
-                            "2": {
-                                "human": " vats"
-                            },
-                            "3": {
-                                "human": " gigavats"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " metre"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "title": "OpenWindPowerMap"
     },
     "personal": {

@@ -1,0 +1,300 @@
+{
+  "id": "climbing",
+  "name": {
+    "nl": "Klimgelegenheden",
+    "de": "Klettermöglichkeiten",
+    "en": "Climbing opportunities",
+    "ja": "登坂教室",
+    "fr": "Opportunité d’escalade",
+    "it": "Opportunità di arrampicata"
+  },
+  "minzoom": 10,
+  "source": {
+    "osmTags": {
+      "and": [
+        "sport=climbing",
+        "climbing!~route",
+        "leisure!~sports_centre",
+        "climbing!=route_top",
+        "climbing!=route_bottom"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Climbing opportunity",
+      "nl": "Klimgelegenheid",
+      "de": "Klettermöglichkeit",
+      "ja": "登坂教室",
+      "nb_NO": "Klatremulighet",
+      "fr": "Opportunité d’escalade",
+      "it": "Opportunità di arrampicata"
+    },
+    "mappings": [
+      {
+        "if": "climbing=crag",
+        "then": {
+          "en": "Climbing crag <b>{name}</b>",
+          "fr": "Mur d’escalade <b>{name}</b>",
+          "it": "Muro da arrampicata <b>{name}</b>",
+          "de": "Klettergarten <b>{name}</b>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            {
+              "or": [
+                "climbing=area",
+                "climbing=site"
+              ]
+            },
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Climbing area <b>{name}</b>",
+          "nl": "Klimsite <b>{name}</b>",
+          "fr": "Zone d’escalade <b>{name}</b>",
+          "de": "Klettergebiet <b>{name}</b>",
+          "it": "Area di arrampicata <b>{name}</b>"
+        }
+      },
+      {
+        "if": {
+          "or": [
+            "climbing=site",
+            "climbing=area"
+          ]
+        },
+        "then": {
+          "en": "Climbing site",
+          "nl": "Klimsite",
+          "fr": "Site d’escalade",
+          "de": "Klettergebiet",
+          "it": "Sito di arrampicata",
+          "ca": "Llocs d'escalada"
+        }
+      },
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Klimgelegenheid <b>{name}</b>",
+          "en": "Climbing opportunity <b>{name}</b>",
+          "fr": "Opportunité d’escalade <b>{name}</b>",
+          "de": "Klettermöglichkeit <b>{name}</b>",
+          "it": "Opportunità di arrampicata <b>{name}</b>"
+        }
+      }
+    ]
+  },
+  "description": {
+    "nl": "Een klimgelegenheid",
+    "de": "Eine Klettergelegenheit",
+    "en": "A climbing opportunity",
+    "ja": "登坂教室",
+    "nb_NO": "En klatremulighet",
+    "fr": "Opportunité d’escalade",
+    "it": "Un’opportunità di arrampicata"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "minimap",
+      "render": "{minimap(18, id, _contained_climbing_route_ids): height: 9rem; overflow: hidden; border-radius:3rem; }"
+    },
+    {
+      "render": {
+        "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
+        "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}",
+        "de": "<h3>Längenübersicht</h3>{histogram(_length_hist)}",
+        "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}"
+      },
+      "condition": "_length_hist!~\\[\\]",
+      "id": "Contained routes length hist"
+    },
+    {
+      "render": {
+        "en": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}",
+        "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}",
+        "de": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}",
+        "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}"
+      },
+      "condition": "_difficulty_hist!~\\[\\]",
+      "id": "Contained routes hist"
+    },
+    {
+      "render": {
+        "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
+        "fr": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>",
+        "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>",
+        "de": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>"
+      },
+      "condition": "_contained_climbing_routes~*",
+      "id": "Contained_climbing_routes"
+    },
+    {
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing opportunity?",
+        "nl": "Wat is de naam van dit Klimgelegenheid?",
+        "de": "Wie heißt diese Klettergelegenheit?",
+        "ja": "この登坂教室の名前は何ですか?",
+        "fr": "Quel est le nom de ce site ?",
+        "it": "Qual è il nome di questa opportunità di arrampicata?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This climbing opportunity doesn't have a name",
+            "nl": "Dit Klimgelegenheid heeft geen naam",
+            "de": "Diese Klettergelegenheit hat keinen Namen",
+            "ja": "この登坂教室には名前がついていない",
+            "fr": "Ce site n’a pas de nom",
+            "it": "Questa opportunità di arrampicata non ha un nome"
+          }
+        }
+      ],
+      "id": "name"
+    },
+    {
+      "question": "What kind of climbing opportunity is this?",
+      "mappings": [
+        {
+          "if": "climbing=boulder",
+          "then": {
+            "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope",
+            "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde",
+            "de": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können",
+            "it": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)"
+          }
+        },
+        {
+          "if": "climbing=crag",
+          "then": {
+            "en": "A climbing crag - a single rock or cliff with at least a few climbing routes",
+            "fr": "Mur d’escalade, rocher avec plusieurs voies d’escalades",
+            "it": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)",
+            "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
+          }
+        },
+        {
+          "if": "climbing=area",
+          "then": "A climbing area with one or more climbing crags and/or boulders"
+        }
+      ],
+      "id": "Type"
+    },
+    {
+      "question": {
+        "en": "What is the rock type here?",
+        "fr": "Quel est le type de roche ?",
+        "de": "Welchen Gesteinstyp gibt es hier?",
+        "it": "Qual è il tipo di roccia qua?"
+      },
+      "render": {
+        "en": "The rock type is {rock}",
+        "fr": "La roche est du {rock}",
+        "de": "Der Gesteinstyp ist {rock}",
+        "it": "Il tipo di roccia è {rock}"
+      },
+      "freeform": {
+        "key": "rock"
+      },
+      "mappings": [
+        {
+          "if": "rock=limestone",
+          "then": {
+            "en": "Limestone",
+            "nl": "Kalksteen",
+            "fr": "Calcaire",
+            "de": "Kalkstein",
+            "it": "Calcare"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "climbing=crag",
+          "natural=cliff",
+          "natural=bare_rock"
+        ]
+      },
+      "id": "Rock type (crag/rock/cliff only)"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "sport=climbing"
+      ],
+      "title": {
+        "en": "a climbing opportunity",
+        "nl": "een klimgelegenheid",
+        "de": "eine klettermöglichkeit",
+        "ja": "登坂教室",
+        "nb_NO": "en klatremulighet",
+        "fr": "une opportunité d’escalade",
+        "it": "una opportunità di arrampicata"
+      },
+      "description": {
+        "nl": "Een klimgelegenheid",
+        "de": "Eine Klettergelegenheit",
+        "en": "A climbing opportunity",
+        "ja": "登坂教室",
+        "nb_NO": "En klatremulighet",
+        "fr": "Opportunité d’escalade",
+        "it": "Un’opportunità di arrampicata"
+      }
+    }
+  ],
+  "calculatedTags": [
+    "_contained_climbing_routes_properties=feat.overlapWith('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
+    "_contained_climbing_routes=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
+    "_contained_climbing_route_ids=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p.id)",
+    "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
+    "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
+    "_contained_climbing_routes_count=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').length"
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/climbing/climbing_no_rope.svg"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#d38d5fAA"
+      },
+      "width": {
+        "render": "8"
+      }
+    }
+  ]
+}
