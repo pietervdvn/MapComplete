@@ -2,8 +2,13 @@
   {
     "start_date": "2022-05-30",
     "end_date":"2022-06-05",
-    "message": "The 3rd of June is <b><a href='https://en.wikipedia.org/wiki/World_Bicycle_Day'>World Bicycle Day</a></b>. Go find a bike shop or bike pump nearby",
+    "message": "The 3rd of June is <b><a href='https://en.wikipedia.org/wiki/World_Bicycle_Day'>World Bicycle Day</a></b>X. Go find a bike shop or bike pump nearby",
     "featured_theme": "cyclofix"
+  },
+  {
+    "start_date": "2022-04-24",
+    "end_date": "2022-05-30",
+    "message": "Help translating MapComplete! If you have some free time, please translate MapComplete to your favourite language. <a href='https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/diary/398959'>Read the instructions here</a>"
   },
   {
     "start_date": "2022-04-18",
