@@ -57,22 +57,6 @@ function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
     //*/
 }
 
-function extractInlineLayer(theme: LayoutConfigJson){
-    for (let i = 0; i < theme.layers.length; i++){
-        const layer = theme.layers[i];
-        if(typeof layer === "string"){
-            continue
-        }
-        if(layer["override"] !== undefined){
-            continue
-        }
-        const l = <LayerConfigJson> layer
-        mkdirSync("./assets/layers/"+l.id)
-        writeFileSync("./assets/layers/"+l.id+"/"+l.id+".json", JSON.stringify(l, null, "    "))
-        theme.layers[i] = l.id
-    }
-}
-
 const layerFiles = ScriptUtils.getLayerFiles();
 for (const layerFile of layerFiles) {
     try {

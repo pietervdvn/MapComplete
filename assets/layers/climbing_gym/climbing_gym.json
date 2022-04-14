@@ -1,0 +1,114 @@
+{
+  "id": "climbing_gym",
+  "name": {
+    "de": "Kletterhallen",
+    "en": "Climbing gyms",
+    "nl": "Klimzalen",
+    "ja": "クライミングジム",
+    "fr": "Salle d’escalade",
+    "it": "Palestre di arrampicata",
+    "ru": "Комплексы скалолазания"
+  },
+  "minzoom": 10,
+  "source": {
+    "osmTags": {
+      "and": [
+        "sport=climbing",
+        "leisure=sports_centre"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "nl": "Klimzaal",
+      "de": "Kletterhalle",
+      "en": "Climbing gym",
+      "ja": "クライミングジム",
+      "fr": "Salle d’escalade",
+      "it": "Palestra di arrampicata",
+      "ru": "Комплекс скалолазания"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Klimzaal <strong>{name}</strong>",
+          "de": "Kletterhalle <strong>{name}</strong>",
+          "en": "Climbing gym <strong>{name}</strong>",
+          "ja": "クライミングジム<strong>{name}</strong>",
+          "fr": "Salle d’escalade <strong>{name}</strong>",
+          "it": "Palestra di arrampicata <strong>{name}</strong>"
+        }
+      }
+    ]
+  },
+  "description": {
+    "de": "Eine Kletterhalle",
+    "en": "A climbing gym",
+    "ja": "クライミングジム",
+    "nl": "Een klimzaal",
+    "fr": "Une salle d’escalade",
+    "it": "Una palestra di arrampicata",
+    "ru": "Комплекс скалолазания"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing gym?",
+        "nl": "Wat is de naam van dit Klimzaal?",
+        "de": "Wie heißt diese Kletterhalle?",
+        "ja": "このクライミングジムは何という名前ですか?",
+        "fr": "Quel est le nom de la salle d’escalade ?",
+        "it": "Qual è il nome di questa palestra di arrampicata?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    "website",
+    "phone",
+    "email",
+    "opening_hours"
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/climbing/climbing_gym.svg"
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
+    }
+  ]
+}

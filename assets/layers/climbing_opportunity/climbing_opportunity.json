@@ -1,0 +1,142 @@
+{
+  "id": "climbing_opportunity",
+  "name": {
+    "nl": "Klimgelegenheiden?",
+    "de": "Klettermöglichkeiten?",
+    "en": "Climbing opportunities?",
+    "ja": "登坂教室？",
+    "nb_NO": "Klatremuligheter?",
+    "fr": "Opportunités d’escalade ?",
+    "it": "Opportunità di arrampicata?"
+  },
+  "minzoom": 19,
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "leisure=sports_centre",
+            "barrier=wall",
+            "barrier=retaining_wall",
+            "natural=cliff",
+            "natural=rock",
+            "natural=stone"
+          ]
+        },
+        "climbing="
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Climbing opportunity?",
+      "nl": "Klimgelegenheid?",
+      "de": "Klettermöglichkeit?",
+      "ja": "登坂教室？",
+      "nb_NO": "Klatremulighet?",
+      "fr": "Opportunité d’escalade ?",
+      "it": "Opportunità di arrampicata?"
+    }
+  },
+  "description": {
+    "nl": "Een klimgelegenheid?",
+    "de": "Eine Klettergelegenheit?",
+    "en": "A climbing opportunity?",
+    "ja": "登坂教室？",
+    "nb_NO": "En klatremulighet?",
+    "fr": "Opportunité d’escalade ?",
+    "it": "Un’opportunità di arrampicata?"
+  },
+  "tagRenderings": [
+    {
+      "id": "climbing-opportunity-name",
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>"
+      },
+      "condition": "name~*"
+    },
+    {
+      "id": "climbing-possible",
+      "question": {
+        "en": "Is climbing possible here?",
+        "de": "Kann hier geklettert werden?",
+        "ja": "ここで登坂はできますか?",
+        "nb_NO": "Er klatring mulig her?",
+        "fr": "Est-il possible d’escalader ici ?",
+        "it": "È possibile arrampicarsi qua?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "sport=climbing"
+            ]
+          },
+          "then": {
+            "en": "Climbing is possible here",
+            "de": "Hier kann geklettert werden",
+            "ja": "ここでは登ることができる",
+            "nb_NO": "Klatring er mulig her",
+            "nl": "Klimmen is hier niet toegelaten",
+            "fr": "Escalader est possible",
+            "it": "È possibile arrampicarsi qua"
+          }
+        },
+        {
+          "if": "climbing=no",
+          "then": {
+            "en": "Climbing is not possible here",
+            "de": "Hier kann nicht geklettert werden",
+            "ja": "ここでは登ることができない",
+            "nb_NO": "Klatring er ikke mulig her",
+            "nl": "Klimmen is hier niet toegelaten",
+            "fr": "Escalader n’est pas possible",
+            "it": "Non è possibile arrampicarsi qua"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sport!~climbing"
+            ]
+          },
+          "then": {
+            "en": "Climbing is not possible here",
+            "de": "Hier kann nicht geklettert werden",
+            "ja": "ここでは登ることができない",
+            "nb_NO": "Klatring er ikke mulig her",
+            "nl": "Klimmen is hier niet mogelijk",
+            "fr": "Escalader n’est pas possible",
+            "it": "Non è possibile arrampicarsi qua"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "./assets/themes/climbing/climbing_unknown.svg",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#ddff55AA"
+      },
+      "width": {
+        "render": "2"
+      }
+    }
+  ]
+}

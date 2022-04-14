@@ -420,6 +420,48 @@
             }
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "name": {
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Llocs d'escalada"
+                }
+            }
+        }
+    },
+    "climbing_club": {
+        "tagRenderings": {
+            "climbing_club-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_gym": {
+        "tagRenderings": {
+            "name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_opportunity": {
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_route": {
+        "tagRenderings": {
+            "Name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
     "crossings": {
         "name": "Encreuaments",
         "presets": {
@@ -622,6 +664,25 @@
         },
         "title": {
             "render": "Bicicleta blanca"
+        }
+    },
+    "hackerspace": {
+        "tagRenderings": {
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Obert 24/7"
+                    }
+                },
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            }
         }
     },
     "hydrant": {
@@ -863,5 +924,39 @@
     },
     "watermill": {
         "name": "Molí d'aigua"
+    },
+    "windturbine": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megavats"
+                    },
+                    "1": {
+                        "human": " quilovats"
+                    },
+                    "2": {
+                        "human": " vats"
+                    },
+                    "3": {
+                        "human": " gigavats"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metre"
+                    }
+                }
+            }
+        }
     }
 }

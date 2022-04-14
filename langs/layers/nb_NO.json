@@ -174,6 +174,75 @@
             }
         }
     },
+    "climbing": {
+        "description": "En klatremulighet",
+        "presets": {
+            "0": {
+                "description": "En klatremulighet",
+                "title": "en klatremulighet"
+            }
+        },
+        "title": {
+            "render": "Klatremulighet"
+        }
+    },
+    "climbing_club": {
+        "description": "En klatreklubb eller organisasjoner",
+        "name": "Klatreklubb",
+        "presets": {
+            "0": {
+                "description": "En klatreklubb",
+                "title": "en klatreklubb"
+            }
+        },
+        "title": {
+            "render": "Klatreklubb"
+        }
+    },
+    "climbing_opportunity": {
+        "description": "En klatremulighet?",
+        "name": "Klatremuligheter?",
+        "tagRenderings": {
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Klatring er mulig her"
+                    },
+                    "1": {
+                        "then": "Klatring er ikke mulig her"
+                    },
+                    "2": {
+                        "then": "Klatring er ikke mulig her"
+                    }
+                },
+                "question": "Er klatring mulig her?"
+            }
+        },
+        "title": {
+            "render": "Klatremulighet?"
+        }
+    },
+    "climbing_route": {
+        "name": "Klatreruter",
+        "tagRenderings": {
+            "Length": {
+                "question": "Hvor mange meter er klatreruten?",
+                "render": "Denne ruten er {canonical(climbing:length)} lang"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne klatreruten har ikke noe navn"
+                    }
+                },
+                "question": "Hva er navnet på denne klatreruten?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "render": "Klatrerute"
+        }
+    },
     "extinguisher": {
         "description": "Kartlag for å vise brannslokkere.",
         "name": "Kart over brannhydranter",
@@ -244,6 +313,17 @@
                 "mappings": {
                     "5": {
                         "then": "Bilverksted"
+                    }
+                }
+            }
+        }
+    },
+    "windturbine": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": " kilowatt"
                     }
                 }
             }

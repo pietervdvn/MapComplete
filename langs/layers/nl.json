@@ -2311,6 +2311,154 @@
             }
         }
     },
+    "climbing": {
+        "description": "Een klimgelegenheid",
+        "name": "Klimgelegenheden",
+        "presets": {
+            "0": {
+                "description": "Een klimgelegenheid",
+                "title": "een klimgelegenheid"
+            }
+        },
+        "tagRenderings": {
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Kalksteen"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit Klimgelegenheid heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van dit Klimgelegenheid?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Klimsite <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Klimsite"
+                },
+                "3": {
+                    "then": "Klimgelegenheid <b>{name}</b>"
+                }
+            },
+            "render": "Klimgelegenheid"
+        }
+    },
+    "climbing_club": {
+        "description": "Een klimclub of organisatie",
+        "name": "Klimclub",
+        "presets": {
+            "0": {
+                "description": "Een klimclub",
+                "title": "een klimclub"
+            },
+            "1": {
+                "description": "Een VZW die werkt rond klimmen",
+                "title": "een een klimorganisatie"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "Wat is de naam van deze klimclub?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Klimorganisatie"
+                }
+            },
+            "render": "Klimclub"
+        }
+    },
+    "climbing_gym": {
+        "description": "Een klimzaal",
+        "name": "Klimzalen",
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van dit Klimzaal?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Klimzaal <strong>{name}</strong>"
+                }
+            },
+            "render": "Klimzaal"
+        }
+    },
+    "climbing_opportunity": {
+        "description": "Een klimgelegenheid?",
+        "name": "Klimgelegenheiden?",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Klimmen is hier niet toegelaten"
+                    },
+                    "1": {
+                        "then": "Klimmen is hier niet toegelaten"
+                    },
+                    "2": {
+                        "then": "Klimmen is hier niet mogelijk"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Klimgelegenheid?"
+        }
+    },
+    "climbing_route": {
+        "name": "Klimroute",
+        "presets": {
+            "0": {
+                "title": "een klimroute"
+            }
+        },
+        "tagRenderings": {
+            "Difficulty": {
+                "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
+                "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+            },
+            "Length": {
+                "question": "Hoe lang is deze klimroute (in meters)?",
+                "render": "Deze klimroute is {canonical(climbing:length)} lang"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klimroute heeft geen naam"
+                    }
+                },
+                "question": "Hoe heet deze klimroute?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Klimroute <strong>{name}</strong>"
+                }
+            },
+            "render": "Klimroute"
+        }
+    },
     "crab_address": {
         "tagRenderings": {
             "render_crab": {
@@ -5605,6 +5753,42 @@
                 }
             },
             "render": "Watermolens"
+        }
+    },
+    "windturbine": {
+        "name": "windturbine",
+        "presets": {
+            "0": {
+                "title": "een windturbine"
+            }
+        },
+        "title": {
+            "render": "windturbine"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatt"
+                    },
+                    "1": {
+                        "human": " kilowatt"
+                    },
+                    "2": {
+                        "human": " watt"
+                    },
+                    "3": {
+                        "human": " gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
         }
     }
 }

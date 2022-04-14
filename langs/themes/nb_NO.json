@@ -66,77 +66,6 @@
         "title": "Ladestasjoner"
     },
     "climbing": {
-        "layers": {
-            "0": {
-                "description": "En klatreklubb eller organisasjoner",
-                "name": "Klatreklubb",
-                "presets": {
-                    "0": {
-                        "description": "En klatreklubb",
-                        "title": "en klatreklubb"
-                    }
-                },
-                "title": {
-                    "render": "Klatreklubb"
-                }
-            },
-            "2": {
-                "name": "Klatreruter",
-                "tagRenderings": {
-                    "Length": {
-                        "question": "Hvor mange meter er klatreruten?",
-                        "render": "Denne ruten er {canonical(climbing:length)} lang"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Denne klatreruten har ikke noe navn"
-                            }
-                        },
-                        "question": "Hva er navnet på denne klatreruten?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "render": "Klatrerute"
-                }
-            },
-            "3": {
-                "description": "En klatremulighet",
-                "presets": {
-                    "0": {
-                        "description": "En klatremulighet",
-                        "title": "en klatremulighet"
-                    }
-                },
-                "title": {
-                    "render": "Klatremulighet"
-                }
-            },
-            "4": {
-                "description": "En klatremulighet?",
-                "name": "Klatremuligheter?",
-                "tagRenderings": {
-                    "climbing-possible": {
-                        "mappings": {
-                            "0": {
-                                "then": "Klatring er mulig her"
-                            },
-                            "1": {
-                                "then": "Klatring er ikke mulig her"
-                            },
-                            "2": {
-                                "then": "Klatring er ikke mulig her"
-                            }
-                        },
-                        "question": "Er klatring mulig her?"
-                    }
-                },
-                "title": {
-                    "render": "Klatremulighet?"
-                }
-            }
-        },
         "overrideAll": {
             "tagRenderings+": {
                 "7": {
@@ -239,21 +168,6 @@
     },
     "maps": {
         "title": "Et kart over kart"
-    },
-    "openwindpowermap": {
-        "layers": {
-            "0": {
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "1": {
-                                "human": " kilowatt"
-                            }
-                        }
-                    }
-                }
-            }
-        }
     },
     "parkings": {
         "shortDescription": "Dette kartet viser forskjellige parkeringsplasser",

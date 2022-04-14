@@ -1,0 +1,189 @@
+{
+  "id": "climbing_club",
+  "name": {
+    "de": "Klettervereine",
+    "nl": "Klimclub",
+    "en": "Climbing club",
+    "ru": "Клуб скалолазания",
+    "ja": "クライミングクラブ",
+    "zh_Hant": "攀岩社團",
+    "nb_NO": "Klatreklubb",
+    "fr": "Club d’escalade",
+    "it": "Club di arrampicata",
+    "hu": "Mászóegyesület"
+  },
+  "minzoom": 10,
+  "source": {
+    "osmTags": {
+      "or": [
+        "club=climbing",
+        {
+          "and": [
+            "sport=climbing",
+            {
+              "or": [
+                "office~*",
+                "club~*"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Climbing club",
+      "nl": "Klimclub",
+      "de": "Kletterverein",
+      "ru": "Клуб скалолазания",
+      "ja": "クライミングクラブ",
+      "zh_Hant": "攀岩社團",
+      "nb_NO": "Klatreklubb",
+      "fr": "Club d’escalade",
+      "it": "Club di arrampicata"
+    },
+    "mappings": [
+      {
+        "if": "office~*",
+        "then": {
+          "nl": "Klimorganisatie",
+          "en": "Climbing NGO",
+          "de": "Kletter-Organisation",
+          "ja": "クライミングNGO",
+          "zh_Hant": "攀岩 NGO",
+          "fr": "Association d’escalade",
+          "it": "Associazione di arrampicata",
+          "hu": "Mászószervezet"
+        }
+      }
+    ]
+  },
+  "description": {
+    "de": "Ein Kletterverein oder -organisation",
+    "nl": "Een klimclub of organisatie",
+    "en": "A climbing club or organisation",
+    "ja": "クライミングクラブや団体",
+    "zh_Hant": "攀岩社團或組織",
+    "nb_NO": "En klatreklubb eller organisasjoner",
+    "fr": "Club ou association d’escalade",
+    "it": "Un club o associazione di arrampacata",
+    "hu": "Mászóegyesület vagy -szervezet"
+  },
+  "tagRenderings": [
+    {
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "zh_Hant": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>",
+        "hu": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing club or NGO?",
+        "de": "Wie lautet der Name dieses Vereins oder Organisation?",
+        "nl": "Wat is de naam van deze klimclub?",
+        "ja": "この登山クラブやNGOの名前は何ですか?",
+        "fr": "Quel est le nom du club ou de l’association ?",
+        "it": "Qual è il nome di questo club o associazione di arrampicata?",
+        "hu": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "climbing_club-name"
+    },
+    "website",
+    "email",
+    "phone",
+    "opening_hours"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "club=sport",
+        "sport=climbing"
+      ],
+      "title": {
+        "de": "eine kletterverein",
+        "en": "a climbing club",
+        "nl": "een klimclub",
+        "ja": "クライミングクラブ",
+        "nb_NO": "en klatreklubb",
+        "ru": "Клуб скалолазания",
+        "fr": "une club d’escalade",
+        "it": "una club di arrampicata",
+        "hu": "Mászóegyesület"
+      },
+      "description": {
+        "de": "Ein Kletterverein",
+        "nl": "Een klimclub",
+        "en": "A climbing club",
+        "ja": "クライミングクラブ",
+        "nb_NO": "En klatreklubb",
+        "ru": "Клуб скалолазания",
+        "fr": "Un club d’escalade",
+        "it": "Un club di arrampicata",
+        "hu": "Egy mászóegyesület"
+      }
+    },
+    {
+      "tags": [
+        "office=ngo",
+        "sport=climbing"
+      ],
+      "title": {
+        "de": "Eine Kletterorganisation",
+        "en": "a climbing ngo",
+        "nl": "een een klimorganisatie",
+        "ja": "クライミングNGO",
+        "fr": "une association d’escalade",
+        "it": "una associazione di arrampicata",
+        "hu": "Mászószervezet"
+      },
+      "description": {
+        "de": "Eine Organisation, die sich mit dem Klettern beschäftigt",
+        "nl": "Een VZW die werkt rond klimmen",
+        "en": "An NGO working around climbing",
+        "ja": "登山に関わるNGO",
+        "fr": "Une association d’escalade",
+        "it": "Un’associazione che ha a che fare con l’arrampicata",
+        "hu": "Mászással foglalkozó civil szervezet"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/climbing/club.svg"
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
+    }
+  ]
+}

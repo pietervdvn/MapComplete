@@ -1,0 +1,246 @@
+{
+  "id": "climbing_route",
+  "name": {
+    "en": "Climbing routes",
+    "de": "Kletterrouten",
+    "nl": "Klimroute",
+    "ja": "登坂ルート",
+    "nb_NO": "Klatreruter",
+    "fr": "Voies d’escalade",
+    "it": "Vie di arrampicata"
+  },
+  "minzoom": 18,
+  "source": {
+    "osmTags": {
+      "and": [
+        "climbing=route"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "de": "Kleterroute",
+      "en": "Climbing route",
+      "nl": "Klimroute",
+      "ja": "登坂ルート",
+      "nb_NO": "Klatrerute",
+      "it": "Via di arrampicata",
+      "fr": "Voie d’escalade"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "de": "Kleterroute <strong>{name}</strong>",
+          "en": "Climbing route <strong>{name}</strong>",
+          "nl": "Klimroute <strong>{name}</strong>",
+          "ja": "登坂ルート<strong>{name}</strong>",
+          "it": "Via di arrampicata <strong>{name}</strong>",
+          "fr": "Voie d’escalade <strong>{name}</strong>"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>",
+        "nb_NO": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing route?",
+        "de": "Wie heißt diese Kletterroute?",
+        "nl": "Hoe heet deze klimroute?",
+        "ja": "この登坂ルートの名前は何ですか?",
+        "it": "Come si chiama questa via di arrampicata?",
+        "fr": "Quel est le nom de cette voie d’escalade ?",
+        "nb_NO": "Hva er navnet på denne klatreruten?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This climbing route doesn't have a name",
+            "de": "Diese Kletterroute hat keinen Namen",
+            "nl": "Deze klimroute heeft geen naam",
+            "ja": "この登坂ルートには名前がありません",
+            "it": "Questa via di arrampicata non ha un nome",
+            "fr": "Cette voie n’a pas de nom",
+            "nb_NO": "Denne klatreruten har ikke noe navn"
+          }
+        }
+      ],
+      "id": "Name"
+    },
+    {
+      "question": {
+        "en": "How long is this climbing route (in meters)?",
+        "nl": "Hoe lang is deze klimroute (in meters)?",
+        "it": "Quanto è lunga questa via di arrampicata (in metri)?",
+        "fr": "Quelle est la longueur de cette voie (en mètres) ?",
+        "de": "Wie lang ist diese Kletterroute (in Metern)?",
+        "nb_NO": "Hvor mange meter er klatreruten?"
+      },
+      "render": {
+        "de": "Diese Route ist {canonical(climbing:length)} lang",
+        "en": "This route is {canonical(climbing:length)} long",
+        "nl": "Deze klimroute is {canonical(climbing:length)} lang",
+        "ja": "このルート長は、 {canonical(climbing:length)} メーターです",
+        "nb_NO": "Denne ruten er {canonical(climbing:length)} lang",
+        "it": "Questo percorso è lungo {canonical(climbing:length)}",
+        "fr": "Cette voie fait {canonical(climbing:length)} de long"
+      },
+      "freeform": {
+        "key": "climbing:length",
+        "type": "pnat"
+      },
+      "id": "Length"
+    },
+    {
+      "question": {
+        "en": "What is the grade of this climbing route according to the french/belgian system?",
+        "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
+        "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
+        "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
+        "de": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?"
+      },
+      "render": {
+        "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
+        "en": "The grade is {climbing:grade:french} according to the french/belgian system",
+        "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です",
+        "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga",
+        "fr": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
+      },
+      "freeform": {
+        "key": "climbing:grade:french"
+      },
+      "id": "Difficulty"
+    },
+    {
+      "question": {
+        "en": "How many bolts does this route have before reaching the anchor?",
+        "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
+        "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+        "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?"
+      },
+      "render": {
+        "en": "This route has {climbing:bolts} bolts",
+        "fr": "Cette voie a {climbing:bolts} prises",
+        "de": "Diese Kletterroute hat {climbing:bolts} Haken",
+        "it": "Questo percorso ha {climbing:bolts} bulloni"
+      },
+      "freeform": {
+        "key": "climbing:bolts",
+        "type": "pnat",
+        "addExtraTag": [
+          "climbing:bolted=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "climbing:bolted=no",
+          "then": {
+            "en": "This route is not bolted",
+            "fr": "Cette voie n’a pas de prises",
+            "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
+            "it": "In questo percorso non sono presenti bulloni"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "climbing:bolted=no&climbing:bolts=",
+          "then": {
+            "en": "This route is not bolted",
+            "fr": "Cette voie n’a pas de prises",
+            "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
+            "it": "In questo percorso non sono presenti bulloni"
+          }
+        }
+      ],
+      "id": "Bolts"
+    },
+    {
+      "question": "Is there other relevant info?",
+      "render": "<h3>Description</h3><br/>{description}",
+      "freeform": {
+        "key": "description"
+      },
+      "id": "Description"
+    },
+    {
+      "render": {
+        "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>",
+        "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>",
+        "it": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>",
+        "de": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>"
+      },
+      "freeform": {
+        "key": "_embedding_features_with_rock:rock"
+      },
+      "id": "Rock type"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a climbing route",
+        "nl": "een klimroute",
+        "fr": "une voie d’escalade",
+        "de": "eine kletterroute",
+        "it": "una via di arrampicata"
+      },
+      "tags": [
+        "sport=climbing",
+        "climbing=route"
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
+      },
+      "iconSize": {
+        "render": "28,28,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
+    },
+    {
+      "color": {
+        "render": "#0f0"
+      },
+      "width": {
+        "render": "4"
+      }
+    }
+  ]
+}
