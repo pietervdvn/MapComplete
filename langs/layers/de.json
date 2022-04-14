@@ -2274,7 +2274,12 @@
         }
     },
     "gps_track": {
-        "name": "Zurückgelegte Strecke anzeigen"
+        "name": "Zurückgelegte Strecke anzeigen",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet."
+            }
+        }
     },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
