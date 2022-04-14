@@ -310,6 +310,27 @@
             "titleLong": "Did you go through the import process?",
             "wikipageIsMade": "The process is documented on the OSM-wiki (you'll need this link later)"
         },
+        "conflationChecker": {
+            "cacheExpired": "Cache was expired",
+            "downloadOverpassData": "Download the loaded geojson from overpass",
+            "importCandidatesCount": "The {count} red elements on the following map are all your import candidates.",
+            "loadedDataAge": "Loaded data is from the cache and is {age} old",
+            "mapShowingNearbyIntro": "The following map shows features to import which have an OSM-feature within ",
+            "nearbyWarn": "The {count} red elements on the following map will <b>not</b> be imported!",
+            "nothingLoaded": "No elements are loaded from OpenStreetMap which match the current layer {name}",
+            "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
+            "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
+            "states": {
+                "error": "Could not load latest data from overpass due to {error}",
+                "idle": "Checking local storage...",
+                "running": "Querying overpass...",
+                "unexpected": "Unexpected state {state}"
+            },
+            "title": "Compare with existing data",
+            "titleLive": "Live data on OSM",
+            "titleNearby": "Nearby features",
+            "zoomIn": "The live data is shown if the zoomlevel is at least {needed}. The current zoom level is {current}"
+        },
         "createNotes": {
             "creating": "Created <b>{count}</b> notes out of {total}",
             "done": "All {count} notes have been created!",

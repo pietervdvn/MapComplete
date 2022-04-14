@@ -1,5 +1,11 @@
 [
   {
+    "start_date": "2022-05-30",
+    "end_date":"2022-06-05",
+    "message": "The 3rd of June is <b><a href='https://en.wikipedia.org/wiki/World_Bicycle_Day'>World Bicycle Day</a></b>. Go find a bike shop or bike pump nearby",
+    "featured_theme": "cyclofix"
+  },
+  {
     "start_date": "2022-04-18",
     "end_date": "2022-04-24",
     "message": "The 23rd of april is <b><a href=https://en.wikipedia.org/wiki/World_Book_Day' target='_blank'>World Book Day</a></b>. Go grab a book in a public bookcase (which is a piece of street furniture containing books where books can be taken and exchanged). Or alternative, search and map all of them in your neighbourhood!",

@@ -36,7 +36,7 @@ export default class ImportHelperGui extends LeftIndex {
                .then(t.mapPreview, geojson => new MapPreview(state, geojson))
                .then(t.selectTheme, v => new SelectTheme(v))
                .then(t.compareToAlreadyExistingNotes, v => new CompareToAlreadyExistingNotes(state, v))
-               .then("Compare with existing data", v => new ConflationChecker(state, v))
+               .then(t.conflationChecker, v => new ConflationChecker(state, v))
                .then(t.confirmProcess, v  => new ConfirmProcess(v))
                .then(t.askMetadata, (v) => new AskMetadata(v))
                .finish(t.createNotes.title, v => new CreateNotes(state, v));
