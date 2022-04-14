@@ -771,7 +771,9 @@
           "id": "name"
         },
         {
-          "question": "What kind of climbing opportunity is this?",
+          "question": {
+            "en":"What kind of climbing opportunity is this?"
+          },
           "mappings": [
             {
               "if": "climbing=boulder",
@@ -793,7 +795,15 @@
             },
             {
               "if": "climbing=area",
-              "then": "A climbing area with one or more climbing crags and/or boulders"
+              "then": {
+                "en": "A climbing area with one or more climbing crags and/or boulders"
+              }
+            },
+            {
+              "if": "natural=tree",
+              "then": {
+                "en": "A tree which is suited for climbing"
+              }
             }
           ],
           "id": "Type"
