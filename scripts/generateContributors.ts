@@ -27,7 +27,7 @@ function main() {
                 author = "Pieter Vander Vennet"
             }
             let hist = codeContributors;
-            if (message.startsWith("Translated using Weblate")) {
+            if (message.startsWith("Translated using Weblate") || message.startsWith("Translated using Hosted Weblate")) {
                 hist = translationContributors
             }
             hist.set(author, 1 + (hist.get(author) ?? 0))
