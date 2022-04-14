@@ -119,6 +119,7 @@
             "title": "Download visible data",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
+        "error": "Something went wrong...",
         "example": "Example",
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
@@ -151,6 +152,7 @@
         "next": "Next",
         "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
+        "notValid": "Select a valid value to continue",
         "number": "number",
         "oneSkippedQuestion": "One question is skipped",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
@@ -276,6 +278,18 @@
         "willBePublished": "Your picture will be published "
     },
     "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "Download geojson",
+            "giveDescription": "Please, write a small description for someone who sees the note. A good note describes what the contributor has to do, e.g; <i>There might be a bench here. If you are around, could you please check and indicate if the bench exists or not?</i> (A link to MapComplete will be added automatically)",
+            "giveSource": "What is the source of this data? If 'source' is set in the feature, this value will be ignored",
+            "giveWikilink": "On what wikipage can one find more information about this import?",
+            "intro": "Before adding {count} notes, please provide some extra information.",
+            "orDownload": "Alternatively, you can download the dataset to import directly",
+            "shouldBeOsmWikilink": "Expected a link to a page on wiki.openstreetmap.org",
+            "shouldBeUrl": "Not a valid URL",
+            "shouldNotBeHomepage": "Nope, the home page isn't allowed either. Enter the URL of a proper wikipage documenting your import",
+            "title": "Set metadata"
+        },
         "compareToAlreadyExistingNotes": {
             "completelyImported": "All of the proposed points have (or had) an import note already",
             "loading": "Fetching notes from OSM",
@@ -288,13 +302,27 @@
             "titleLong": "Compare with already existing 'to-import'-notes",
             "wontBeImported": "These data points will <i>not</i> be imported and are shown as red dots on the map below"
         },
-        "inspectDidAutoDected": "Layer was chosen automatically",
+        "confirmProcess": {
+            "contactedCommunity": "I did contact the (local) community about this import",
+            "licenseIsCompatible": "The license of the data to import allows it to be imported into OSM. They are allowed to be redistributed commercially, with only minimal attribution",
+            "readImportGuidelines": "I have read the import guidelines on the OSM wiki",
+            "title": "License and community",
+            "titleLong": "Did you go through the import process?",
+            "wikipageIsMade": "The process is documented on the OSM-wiki (you'll need this link later)"
+        },
+        "createNotes": {
+            "creating": "Created <b>{count}</b> notes out of {total}",
+            "done": "All {count} notes have been created!",
+            "loading": "Hang on while we are loading...",
+            "openImportViewer": "Inspect the progress of your notes in the 'import_viewer'",
+            "title": "Note creation"
+        },
+        "gotoImportViewer": "Inspect your previous imports",
         "introduction": {
             "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
-            "importFormat": "A text in a note should have the following format in order to be picked up: <br/><div class='literal-code'>[A bit of introduction]<br/>https://mapcomplete.osm.be/[themename].html?[parameters such as lat and lon]#import<br/>[all tags of the feature] </div>",
+            "importFormat": "A text in a note should have the following format in order to be picked up",
             "title": "Introduction"
         },
-        "locked": "You need at least {importHelperUnlock} to use the import helper",
         "login": {
             "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
             "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
@@ -309,6 +337,11 @@
             "mismatch": "{count} features did not match the selected layer. Make sure that the tags to indicate the type are present, namely {tags}",
             "selectLayer": "Which layer does this import match with?",
             "title": "Map preview"
+        },
+        "noteParts": {
+            "datasource": "Original data from {source}",
+            "importEasily": "Add this point easily with MapComplete:",
+            "wikilink": "More information about this import can be found at {wikilink}"
         },
         "previewAttributes": {
             "allAttributesSame": "All features to import have this tag",
@@ -342,8 +375,8 @@
             "title": "Select a theme",
             "unmatchedTitle": "The following elements don't match any of the presets"
         },
-        "title": "Import helper",
-        "validateDataTitle": "Validate data"
+        "testMode": "Testmode - won't actually import notes",
+        "title": "Import helper"
     },
     "importInspector": {
         "title": "Inspect and manage import notes"

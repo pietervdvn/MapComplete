@@ -120,11 +120,11 @@ export class FlowPanel<T> extends Toggle {
                                 isError.setData(true)
                             }
                         }),
-                        "Select a valid value to continue",
+                        new SubtleButton(Svg.invalid_svg(), t.notValid),
                         initial.IsValid
                     ),
                     new Toggle(
-                        new FixedUiElement("Something went wrong...").SetClass("alert"),
+                        t.error.SetClass("alert"),
                         undefined,
                         isError),
                 ]).SetClass("flex w-full justify-end space-x-2"),
