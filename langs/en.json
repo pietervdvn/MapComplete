@@ -532,6 +532,7 @@
     },
     "translations": {
         "activateButton": "Help to translate MapComplete",
+        "allMissing": "No translations yet",
         "completeness": "Translations for {theme} in {language} are at {percentage}%: {translated} strings out of {total} are translated",
         "deactivate": "Disable translation buttons",
         "help": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
