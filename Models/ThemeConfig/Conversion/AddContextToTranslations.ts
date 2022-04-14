@@ -39,6 +39,39 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      * }
      * rewritten // => expected
      * 
+     * // should use the ID if one is present instead of the index
+     * const theme = {
+     *   layers: [
+     *       {
+     *           tagRenderings:[
+     *               
+     *               {id: "some-tr",
+     *               question:{
+     *                   en:"Question?"
+     *               }
+     *               }
+     *           ]
+     *       }
+     *   ]  
+     * }
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * const expected = {
+     *   layers: [
+     *       {
+     *           tagRenderings:[
+     *               
+     *               {id: "some-tr",
+     *               question:{
+     *                  _context: "prefix:context.layers.0.tagRenderings.some-tr.question"
+     *                   en:"Question?"
+     *               }
+     *               }
+     *           ]
+     *       }
+     *   ]  
+     * }
+     * rewritten // => expected
+     * 
      * // should preserve nulls
      * const theme = {
      *   layers: [
@@ -70,6 +103,17 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
                 return leaf
             }
             if (typeof leaf === "object") {
+                
+                // follow the path. If we encounter a number, check that there is no ID we can use instead
+                let breadcrumb = json;
+                for (let i = 0; i < path.length; i++) {
+                    const pointer = path[i]
+                    breadcrumb = breadcrumb[pointer]
+                    if(pointer.match("[0-9]+") && breadcrumb["id"] !== undefined){
+                        path[i] = breadcrumb["id"]
+                    }
+                }
+                
                 return {...leaf, _context: this._prefix + context + "." + path.join(".")}
             } else {
                 return leaf

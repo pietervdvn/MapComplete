@@ -8,47 +8,58 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
+import Translations from "../i18n/Translations";
 
 export class CreateNotes extends Combine {
+    
+    public static createNoteContents(feature: {properties: any, geometry: {coordinates: [number,number]}},
+                                     options: {wikilink: string; intro: string; source: string, theme: string }
+                                     ): string[]{
+        const src = feature.properties["source"] ?? feature.properties["src"] ?? options.source
+        delete feature.properties["source"]
+        delete feature.properties["src"]
+        let extraNote = ""
+        if (feature.properties["note"]) {
+            extraNote = feature.properties["note"] + "\n"
+            delete feature.properties["note"]
+        }
+
+        const tags: string [] = []
+        for (const key in feature.properties) {
+            if (feature.properties[key] === null || feature.properties[key] === undefined) {
+                console.warn("Null or undefined key for ", feature.properties)
+                continue
+            }
+            if (feature.properties[key] === "") {
+                continue
+            }
+            tags.push(key + "=" + (feature.properties[key]+"").replace(/=/, "\\=").replace(/;/g, "\\;").replace(/\n/g, "\\n"))
+        }
+        const lat = feature.geometry.coordinates[1]
+        const lon = feature.geometry.coordinates[0]
+        const note = Translations.t.importHelper.noteParts
+        return [
+            options.intro,
+            extraNote,
+            note.datasource.Subs({source: src}).txt,
+            note.wikilink.Subs(options).txt,
+            '',
+            note.importEasily.txt,
+            `https://mapcomplete.osm.be/${options.theme}.html?z=18&lat=${lat}&lon=${lon}#import`,
+            ...tags]
+    }
 
     constructor(state: { osmConnection: OsmConnection }, v: { features: any[]; wikilink: string; intro: string; source: string, theme: string }) {
-
+        const t = Translations.t.importHelper.createNotes;
         const createdNotes: UIEventSource<number[]> = new UIEventSource<number[]>([])
         const failed = new UIEventSource<string[]>([])
         const currentNote = createdNotes.map(n => n.length)
 
         for (const f of v.features) {
-
-            const src = f.properties["source"] ?? f.properties["src"] ?? v.source
-            delete f.properties["source"]
-            delete f.properties["src"]
-            let extraNote = ""
-            if (f.properties["note"]) {
-                extraNote = f.properties["note"] + "\n"
-                delete f.properties["note"]
-            }
-
-            const tags: string [] = []
-            for (const key in f.properties) {
-                if (f.properties[key] === null || f.properties[key] === undefined) {
-                    console.warn("Null or undefined key for ", f.properties)
-                    continue
-                }
-                if (f.properties[key] === "") {
-                    continue
-                }
-                tags.push(key + "=" + (f.properties[key]+"").replace(/=/, "\\=").replace(/;/g, "\\;").replace(/\n/g, "\\n"))
-            }
+            
             const lat = f.geometry.coordinates[1]
             const lon = f.geometry.coordinates[0]
-            const text = [v.intro,
-                extraNote,
-                "Source: " + src,
-                'More information at ' + v.wikilink,
-                '',
-                'Import this point easily with',
-                `https://mapcomplete.osm.be/${v.theme}.html?z=18&lat=${lat}&lon=${lon}#import`,
-                ...tags].join("\n")
+            const text = CreateNotes.createNoteContents(f, v).join("\n")
 
             state.osmConnection.openNote(
                 lat, lon, text)
@@ -62,13 +73,19 @@ export class CreateNotes extends Combine {
         }
 
         super([
-            new Title("Creating notes"),
-            "Hang on while we are importing...",
+            new Title(t.title),
+           t.loading           ,
             new Toggle(
-                new Loading(new VariableUiElement(currentNote.map(count => new FixedUiElement("Imported <b>" + count + "</b> out of " + v.features.length + " notes")))),
+                new Loading(new VariableUiElement(currentNote.map(count => t.creating.Subs({
+                    count, total: v.features.length
+                    }
+                    
+                )))),
                 new Combine([
-                        new FixedUiElement("All done!").SetClass("thanks"),
-                        new SubtleButton(Svg.note_svg(), "Inspect the progress of your notes in the 'import_viewer'", {
+                    Svg.party_svg().SetClass("w-24"),
+                    t.done.Subs(v.features.length).SetClass("thanks"),
+                        new SubtleButton(Svg.note_svg(), 
+                           t.openImportViewer , {
                             url: "import_viewer.html"
                         })
                     ]
