@@ -39,7 +39,7 @@
     },
     "general": {
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
-        "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Nutzen Sie MapComplete, um OpenStreetMap-Informationen zu einem <b>einzigen Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Der <b>Theme-Maintainer</b> definiert Elemente, Fragen und Sprachen dafür.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, aber das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Punkte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie <b>ein Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie <b>bei der Übersetzung helfen</b>? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie <b>Ihren Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Nutzen Sie MapComplete, um OpenStreetMap-Informationen zu einem <b>bestimmten Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Der <b>Theme-Maintainer</b> definiert Elemente, Fragen und Sprachen dafür.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, aber das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Punkte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie <b>ein Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie <b>bei der Übersetzung helfen</b>? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie <b>Ihren Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Füge {category} hinzu",
             "addNewMapLabel": "Hier klicken, um ein neues Element hinzuzufügen",
@@ -148,7 +148,7 @@
             "streetcomplete": "Eine ähnliche App ist <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Der Name dieser {category} ist $$$",
-        "next": "Nächstes",
+        "next": "Weiter",
         "noNameCategory": "{category} ohne Namen",
         "noTagsSelected": "Keine Tags ausgewählt",
         "number": "Zahl",
@@ -252,7 +252,8 @@
             },
             "searchWikidata": "Suche auf Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "notValid": "Gültigen Wert auswählen, um fortzufahren"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -306,13 +307,37 @@
             "fileFormatDescriptionGeoJson": "In der geojson-Datei sollten nur Punkte enthalten sein. Die Eigenschaften sollten genau die Eigenschaften sein, die in OpenStreetMap verwendet werden sollen",
             "loadedFilesAre": "Die Datei {file} ist geladen",
             "noFilesLoaded": "Keine Datei geladen",
-            "title": "Wähle eine Datei"
+            "title": "Datei auswählen"
         },
         "selectLayer": "Wähle eine Ebene...",
         "someHaveSame": "{count} der zu importierenden Objekte haben dieses Tag, das sind {percentage}% der Gesamtzahl",
         "title": "Import-Helfer",
         "userAccountTitle": "Wähle einen Benutzeraccount",
-        "validateDataTitle": "Bestätige Daten"
+        "validateDataTitle": "Bestätige Daten",
+        "introduction": {
+            "title": "Einführung",
+            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Importer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
+            "importFormat": "Der Hinweistext sollte das folgende Format haben, um aufgenommen zu werden"
+        },
+        "gotoImportViewer": "Vorherige Importe überprüfen",
+        "selectTheme": {
+            "title": "Thema auswählen"
+        },
+        "login": {
+            "loggedInWith": "Sie sind derzeit angemeldet als <b>{Name}</b> und haben {csCount} Änderungen vorgenommen",
+            "title": "Anmeldung",
+            "userAccountTitle": "Benutzerkonto auswählen",
+            "loginIsCorrect": "<b>{Name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden."
+        },
+        "conflationChecker": {
+            "title": "Mit vorhandenen Daten vergleichen"
+        },
+        "confirmProcess": {
+            "title": "Lizenz und Gemeinschaft"
+        },
+        "compareToAlreadyExistingNotes": {
+            "title": "Mit vorhandenen Hinweisen vergleichen"
+        }
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"
@@ -360,7 +385,7 @@
         "zoomInFurther": "Weiter vergrößern, um die Verschiebung zu bestätigen"
     },
     "multi_apply": {
-        "autoApply": "Wenn Sie die Attribute {attr_names} ändern, werden diese Attribute automatisch auch auf {count} anderen Objekten geändert"
+        "autoApply": "Wenn Sie die Attribute {attr_names} ändern, diese Änderung automatisch auch auf {count} andere Objekte angewendet"
     },
     "notes": {
         "addAComment": "Füge einen Kommentar hinzu",
@@ -485,7 +510,7 @@
             }
         },
         "indexPage": {
-            "button": "Erfahren Sie mehr über unsere Dienstleistungen",
+            "button": "Mehr über unsere Dienste erfahren",
             "hook": "Benötigen Sie professionelle Unterstützung?",
             "hookMore": "Wir können bei der Erstellung von Umfragen, Datenimporten und OpenStreetMap-Beratung helfen"
         },
