@@ -1156,7 +1156,32 @@
                 }
             }
         },
-        "name": "Orte zur Vogelbeobachtung"
+        "name": "Orte zur Vogelbeobachtung",
+        "tagRenderings": {
+            "birdhide-operator": {
+                "render": "Betrieben von {operator}",
+                "mappings": {
+                    "0": {
+                        "then": "Betrieben von Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Betrieben von einer Forst- bzw. Naturschutzbehörde"
+                    }
+                }
+            },
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "3": {
+                        "then": "Nicht zugänglich für Rollstuhlfahrer"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann"
+            }
+        }
     },
     "cafe_pub": {
         "filter": {
@@ -1171,18 +1196,38 @@
         "name": "Cafés und Kneipen",
         "presets": {
             "0": {
-                "title": "eine kneipe"
+                "title": "eine kneipe",
+                "description": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird"
             },
             "1": {
-                "title": "eine bar"
+                "title": "eine bar",
+                "description": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
             },
             "2": {
-                "title": "eine café"
+                "title": "eine café",
+                "description": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
             }
         },
         "tagRenderings": {
             "Classification": {
-                "question": "Was ist das für ein Café"
+                "question": "Was ist das für ein Café",
+                "mappings": {
+                    "1": {
+                        "then": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
+                    },
+                    "2": {
+                        "then": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
+                    },
+                    "4": {
+                        "then": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland"
+                    },
+                    "3": {
+                        "then": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann"
+                    },
+                    "0": {
+                        "then": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird"
+                    }
+                }
             },
             "Name": {
                 "question": "Wie heißt diese Kneipe?",
@@ -1194,8 +1239,17 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 }
+            },
+            "render": "Kneipe"
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} wurde dauerhaft geschlossen"
+                }
             }
-        }
+        },
+        "description": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften"
     },
     "charging_station": {
         "description": "Eine Ladestation",
@@ -2233,6 +2287,9 @@
             "wikipedia-etymology": {
                 "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
                 "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}"
             }
         }
     },
@@ -2437,7 +2494,7 @@
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
-                        "then": "Auf dem Fahrrad ist kein Name angegeben"
+                        "then": "Am Fahrrad ist kein Name angegeben"
                     }
                 },
                 "question": "An wen erinnert dieses Geisterrad?<span class='question-subtext'><br/>Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.</span>",
@@ -3033,7 +3090,96 @@
                 }
             }
         },
-        "name": "Recycling"
+        "name": "Recycling",
+        "tagRenderings": {
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Recycling-Container"
+                    },
+                    "1": {
+                        "then": "Dies ist ein Wertstoffhof"
+                    },
+                    "2": {
+                        "then": "Dies ist ein Abfallcontainer für Restmüll"
+                    }
+                },
+                "question": "Um welche Recyclingeinrichtung handelt es sich?"
+            },
+            "container-location": {
+                "mappings": {
+                    "2": {
+                        "then": "Dieser Container befindet sich im Freien"
+                    },
+                    "0": {
+                        "then": "Dies ist ein Unterflurcontainer"
+                    },
+                    "1": {
+                        "then": "Dieser Container befindet sich in einem Gebäude"
+                    }
+                },
+                "question": "Wo befindet sich dieser Container?"
+            },
+            "recycling-accepts": {
+                "question": "Was kann hier recycelt werden?",
+                "mappings": {
+                    "14": {
+                        "then": "Kunststoff kann hier recycelt werden"
+                    },
+                    "15": {
+                        "then": "Metallschrott kann hier recycelt werden"
+                    },
+                    "0": {
+                        "then": "Batterien können hier recycelt werden"
+                    },
+                    "1": {
+                        "then": "Getränkekartons können hier recycelt werden"
+                    },
+                    "2": {
+                        "then": "Dosen können hier recycelt werden"
+                    },
+                    "12": {
+                        "then": "Plastikflaschen können hier recycelt werden"
+                    },
+                    "16": {
+                        "then": "Schuhe können hier recycelt werden"
+                    },
+                    "19": {
+                        "then": "Nadeln können hier recycelt werden"
+                    },
+                    "8": {
+                        "then": "Glasflaschen können hier recycelt werden"
+                    },
+                    "3": {
+                        "then": "Kleidung kann hier recycelt werden"
+                    },
+                    "4": {
+                        "then": "Speiseöl kann hier recycelt werden"
+                    },
+                    "5": {
+                        "then": "Motoröl kann hier recycelt werden"
+                    },
+                    "6": {
+                        "then": "Grünabfälle können hier recycelt werden"
+                    },
+                    "9": {
+                        "then": "Glas kann hier recycelt werden"
+                    },
+                    "10": {
+                        "then": "Zeitungen können hier recycelt werden"
+                    },
+                    "11": {
+                        "then": "Papier kann hier recycelt werden"
+                    },
+                    "17": {
+                        "then": "Elektrokleingeräte können hier recycelt werden"
+                    }
+                }
+            },
+            "operator": {
+                "question": "Welches Unternehmen betreibt diese Recyclinganlage?"
+            }
+        }
     },
     "shops": {
         "description": "Ein Geschäft",
@@ -3857,5 +4003,17 @@
                 }
             }
         }
+    },
+    "waste_disposal": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nur öffentlich zugänglich"
+                    }
+                }
+            }
+        },
+        "name": "Mülleimer"
     }
 }
