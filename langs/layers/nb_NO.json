@@ -328,5 +328,26 @@
                 }
             }
         }
+    },
+    "address": {
+        "title": {
+            "render": "Kjent adresse"
+        },
+        "description": "Adresser",
+        "name": "Kjente adresser i OSM"
+    },
+    "ambulancestation": {
+        "presets": {
+            "0": {
+                "description": "Legg til en ambulansestasjon på kartet",
+                "title": "en ambulansestasjon"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-name": {
+                "question": "Hva er navnet på denne ambulansestasjonen?",
+                "render": "Denne stasjonen heter {name}."
+            }
+        }
     }
 }
