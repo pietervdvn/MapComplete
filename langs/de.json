@@ -253,7 +253,8 @@
             "searchWikidata": "Suche auf Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "notValid": "Gültigen Wert auswählen, um fortzufahren"
+        "notValid": "Gültigen Wert auswählen, um fortzufahren",
+        "error": "Etwas ist schief gelaufen"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -321,23 +322,95 @@
         },
         "gotoImportViewer": "Vorherige Importe überprüfen",
         "selectTheme": {
-            "title": "Thema auswählen"
+            "title": "Thema auswählen",
+            "needsTags": "{title} benötigt tags {tags}",
+            "notApplicable": "Voreinstellung {title} ist nicht anwendbar:",
+            "noMatchingPresets": "Dieses Thema hat keine Voreinstellungen geladen. Daher werden Importe hier nicht funktionieren",
+            "displayNonMatchingCount": "{length} Objekte stimmen nicht mit Voreinstellungen überein",
+            "intro": "Alle folgenden Themen zeigen die Importhinweise an. Die Notiz auf OpenStreetMap kann jedoch nur mit einem einzigen Thema verknüpft werden. Wählen Sie das Thema, mit dem die erstellten Notizen verknüpft werden sollen",
+            "misMatch": "Eigenschaft mit Schlüssel {k} hat nicht den erwarteten Wert {v}; stattdessen ist es {properties}",
+            "missing": "Erwartet $k}={v}, aber es fehlt komplett",
+            "unmatchedTitle": "Die folgenden Elemente stimmen mit keiner Voreinstellung überein"
         },
         "login": {
             "loggedInWith": "Sie sind derzeit angemeldet als <b>{Name}</b> und haben {csCount} Änderungen vorgenommen",
             "title": "Anmeldung",
             "userAccountTitle": "Benutzerkonto auswählen",
-            "loginIsCorrect": "<b>{Name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden."
+            "loginIsCorrect": "<b>{Name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
+            "lockNotice": "Diese Seite ist gesperrt. Zum Zugang werden {importHelperUnlock} Änderungssätze benötigt.",
+            "loginRequired": "Bitte anmelden, um fortzufahren"
         },
         "conflationChecker": {
-            "title": "Mit vorhandenen Daten vergleichen"
+            "title": "Mit vorhandenen Daten vergleichen",
+            "osmLoaded": "{count} Elemente werden aus OpenStreetMap geladen, die dem Layer <b>{name}</b> entsprechen.",
+            "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
+            "nearbyWarn": "Die {count} roten Elemente auf der folgenden Karte werden <b>nicht</b> importiert!",
+            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {aktuell}",
+            "states": {
+                "running": "Abfrage bei overpass...",
+                "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
+                "idle": "Lokalen Speicher überprüfen...",
+                "unexpected": "Unerwarteter Zustand {state}"
+            },
+            "cacheExpired": "Der Cache ist abgelaufen",
+            "downloadOverpassData": "Die geladene geojson Datei von overpass herunterladen",
+            "loadedDataAge": "Geladene Daten stammen aus dem Cache und sind {age} alt",
+            "nothingLoaded": "Es werden keine Elemente aus OpenStreetMap geladen, die dem aktuellen Layer {name} entsprechen",
+            "titleLive": "Live-Daten auf OSM",
+            "titleNearby": "Objekte in der Nähe",
+            "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten"
         },
         "confirmProcess": {
-            "title": "Lizenz und Gemeinschaft"
+            "title": "Lizenz und Gemeinschaft",
+            "contactedCommunity": "Ich habe die (lokale) Community wegen dieses Imports kontaktiert",
+            "licenseIsCompatible": "Die Lizenz der zu importierenden Daten erlaubt es, sie in OSM zu importieren. Sie dürfen kommerziell weiterverteilt werden, mit nur minimaler Namensnennung",
+            "titleLong": "Haben Sie den Importvorgang durchlaufen?",
+            "wikipageIsMade": "Der Vorgang ist im OSM-Wiki dokumentiert (diesen Link benötigen Sie später)",
+            "readImportGuidelines": "Ich habe die Importrichtlinien im OSM-Wiki gelesen"
         },
         "compareToAlreadyExistingNotes": {
-            "title": "Mit vorhandenen Hinweisen vergleichen"
-        }
+            "title": "Mit vorhandenen Hinweisen vergleichen",
+            "completelyImported": "Alle vorgeschlagenen Punkte haben (oder hatten) bereits eine Importnotiz",
+            "loading": "Notizen von OSM abrufen",
+            "loadingFailed": "Laden von Notizen fehlgeschlagen aufgrund von {error}",
+            "mapExplanation": "Die roten Elemente auf der nächsten Karte sind alle Datenpunkte aus Ihrem Datensatz. Es gibt <b>{length}</b> Elemente in Ihrem Datensatz.",
+            "noPreviousNotesFound": "Keine früheren Importnotizen gefunden",
+            "nothingNearby": "Alle vorgeschlagenen Punkte haben keine vorherige Importnotiz in der Nähe",
+            "someNearby": "{hasNearby} Punkte haben eine bereits eine Importnotiz innerhalb {distance} Meter",
+            "wontBeImported": "Diese Datenpunkte werden <i>nicht</i> importiert und sind als rote Punkte auf der Karte unten dargestellt"
+        },
+        "askMetadata": {
+            "giveSource": "Was ist die Quelle dieser Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
+            "shouldNotBeHomepage": "Nein, die Homepage ist auch nicht erlaubt. Geben Sie die URL einer geeigneten Wikiseite ein, die Ihren Import dokumentiert",
+            "title": "Metadaten angeben",
+            "intro": "Bevor Sie {count} Notizen hinzufügen, geben Sie bitte einige zusätzliche Informationen an.",
+            "giveDescription": "Bitte schreiben Sie eine kurze Beschreibung für jemanden, der die Notiz sieht. Eine gute Notiz beschreibt, was der Mitwirkende zu tun hat, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie in der Nähe sind, könnten Sie bitte überprüfen und angeben, ob die Bank existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
+            "downloadGeojson": "geojson herunterladen",
+            "giveWikilink": "Auf welcher Wikiseite gibt es weitere Informationen zu diesem Import?",
+            "orDownload": "Alternativ können Sie den Datensatz auch herunterladen und direkt importieren",
+            "shouldBeOsmWikilink": "Link zu einer Seite auf wiki.openstreetmap.org erwartet",
+            "shouldBeUrl": "Keine gültige URL"
+        },
+        "noteParts": {
+            "datasource": "Originaldaten von {source}",
+            "wikilink": "Weitere Informationen über diesen Import unter {wikilink}",
+            "importEasily": "Diesen Punkt einfach mit MapComplete hinzufügen:"
+        },
+        "previewAttributes": {
+            "inspectDataTitle": "Daten von {count} zu importierenden Objekten prüfen",
+            "someHaveSame": "{count} zu importierende Objekte haben diesen Tag, das sind {percentage}% der Gesamtanzahl",
+            "inspectLooksCorrect": "Diese Werte sehen korrekt aus",
+            "allAttributesSame": "Alle zu importierenden Objekte haben diesen Tag",
+            "title": "Attribute prüfen"
+        },
+        "createNotes": {
+            "creating": "<b>{count}</b> Notizen von {total} erstellt",
+            "openImportViewer": "Sehen Sie den Fortschritt Ihrer Notizen im 'import_viewer'",
+            "loading": "Bitte warten, Daten werden geladen...",
+            "title": "Notizerstellung",
+            "done": "Alle {count} Notizen wurden erstellt!"
+        },
+        "testMode": "Testmodus - Notizen werden nicht importiert"
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"
@@ -497,7 +570,8 @@
                     "li0": "die offene Lizenz würde verlangen, dass die Modifikationen offen wiederveröffentlicht werden…",
                     "li1": "...wohingegen die All-Rights-Reserved-Lizenz dies untersagen würde.",
                     "outro": "Folglich ist diese Art der Vermischung nicht erlaubt",
-                    "title": "Erstellung einer Karte aus verschiedenen Quellen"
+                    "title": "Erstellung einer Karte aus verschiedenen Quellen",
+                    "intro": "Man könnte zum Beispiel eine Karte mit allen Bänken in einer Stadt erstellen, die auf den von OpenStreetMap bekannten Bänken basiert. Diese gedruckte Karte muss einen klaren Hinweis enthalten, dass die Kartendaten auf OpenStreetMap basieren. Stellt der Kartenmacher fest, dass in einem bestimmten Gebiet Bänke fehlen, und fügt diese auf der gedruckten Karte hinzu, sind die Daten zu den fehlenden Bänken automatisch auch offene Daten. Das bedeutet, dass ein OpenStreetMap-Mitwirkender die gedruckte Karte nehmen und sie verwenden darf, um die fehlenden Bänke wieder in OpenStreetMap einzufügen. Dieser Mitwirkende hat auch das Recht, den Datensatz der fehlenden Bänke anzufordern, der ebenfalls bereitgestellt werden sollte.<p></p><p>Natürlich kann eine Karte nur mit Bänken langweilig sein. Der Kartenersteller könnte auch beschließen, eine Ebene mit Geschäften hinzuzufügen, die möglicherweise von einem anderen Geodatenanbieter unter einer anderen Lizenz bezogen werden. Dies ist zulässig, wenn auf der Karte deutlich angegeben wird, dass die Bänke von OSM (unter ODBL) stammen und die Geschäfte eine andere Quelle haben (eventuell mit einem \"All rights reserved\"). Wenn der Kartenersteller z. B. feststellt, dass OSM über ausgezeichnete Daten zu Bänken in einem Teil der Stadt verfügt und der Closed-Source-Anbieter über ausgezeichnete Daten zu Bänken in einem anderen Teil der Stadt, könnte die Zusammenführung dieser Datensätze zu einem einzigen problematisch sein: </p>"
                 }
             },
             "title": "Ein paar Nachteile, die Sie beachten sollten",
