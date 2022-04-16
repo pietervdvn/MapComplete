@@ -92,6 +92,15 @@
                 }
             },
             "question": "Hva er respektivt element på Wikipedia?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "Betaling utføres med et medlemskort"
+                    }
+                }
+            }
         }
     }
 }
