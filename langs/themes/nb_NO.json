@@ -193,5 +193,8 @@
         "description": "Kartlegg trærne.",
         "shortDescription": "Kartlegg alle trærne",
         "title": "Trær"
+    },
+    "bicycle_rental": {
+        "title": "Sykkelutleie"
     }
 }
