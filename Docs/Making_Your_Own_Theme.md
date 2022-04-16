@@ -22,7 +22,7 @@ or [Matrix](https://app.element.io/#/room/#MapComplete:matrix.org).
 The template
 ------------
 
-[A basic template is availalbe here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json)
+[A basic template is available here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json)
 
 The custom theme generator
 --------------------------
