@@ -336,7 +336,7 @@
             "loggedInWith": "Sie sind derzeit angemeldet als <b>{Name}</b> und haben {csCount} Änderungen vorgenommen",
             "title": "Anmeldung",
             "userAccountTitle": "Benutzerkonto auswählen",
-            "loginIsCorrect": "<b>{Name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
+            "loginIsCorrect": "<b>{name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
             "lockNotice": "Diese Seite ist gesperrt. Zum Zugang werden {importHelperUnlock} Änderungssätze benötigt.",
             "loginRequired": "Bitte anmelden, um fortzufahren"
         },
