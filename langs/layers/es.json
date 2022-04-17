@@ -1060,6 +1060,21 @@
                 }
             }
         },
-        "description": "Una capa"
+        "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes",
+        "presets": {
+            "0": {
+                "description": "Un bar, principalmente para beber cervezas en un interior templado y relajado"
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Abiert oahora"
+                    }
+                }
+            }
+        },
+        "name": "Cafeterías y bares"
     }
 }
