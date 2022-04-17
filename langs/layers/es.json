@@ -1059,6 +1059,7 @@
                     "explanation": "{title()} ha cerrado permanentemente"
                 }
             }
-        }
+        },
+        "description": "Una capa"
     }
 }
