@@ -18,8 +18,8 @@ function fixSection(section, referenceSection, language: string) {
             for (const subkey of Object.keys(referenceSection)) {
                 const subreference = referenceSection[subkey]
                 if(subreference[key] !== undefined){
-                    if(section[subkey][key] !== undefined) {
-                        console.log(`${subkey}${key} is alrady defined... Looking furhter`)
+                    if(section[subkey] !== undefined &&  section[subkey][key] !== undefined) {
+                        console.log(`${subkey}${key} is already defined... Looking furhter`)
                         continue
                     }
                     if(typeof section[subkey] === "string"){
