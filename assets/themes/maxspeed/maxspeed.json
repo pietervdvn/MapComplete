@@ -138,6 +138,7 @@
           ]
         }
       },
+	  "allowSplit":true
       "mapRendering": [
         {
           "icon": {
