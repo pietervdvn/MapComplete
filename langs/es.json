@@ -82,7 +82,7 @@
             "themeBy": "Tema mantenido por {author}",
             "editId": "Abre el editor en línea de OpenStreetMap aquí",
             "josmNotOpened": "No se pudo llegar a JSOM. Asegúrate de que esta abierto y que el control remoto esta activado",
-            "codeContributionsBy": "MapComplete ha sido construido por {contribuidores} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>",
+            "codeContributionsBy": "MapComplete ha sido construido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>",
             "josmOpened": "JOSM está abierto",
             "openIssueTracker": "Reportar un error",
             "openOsmcha": "Ver las últimas ediciones hechas con {theme}",
