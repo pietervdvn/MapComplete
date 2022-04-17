@@ -6,7 +6,8 @@
     "de": "Cafés und Kneipen",
     "fr": "Cafés et pubs",
     "zh_Hant": "咖啡廳與酒吧",
-    "hu": "Kávézók és kocsmák"
+    "hu": "Kávézók és kocsmák",
+    "es": "Cafeterías y bares"
   },
   "source": {
     "osmTags": {
@@ -33,7 +34,9 @@
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
-        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk"
+        "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
+        "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
+        "es": "Un bar, principalmente para beber cervezas en un interior templado y relajado"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -53,7 +56,8 @@
       },
       "description": {
         "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
-        "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
+        "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
+        "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -73,7 +77,8 @@
       },
       "description": {
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
-        "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
+        "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
+        "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -84,7 +89,8 @@
     "render": {
       "en": "Pub",
       "nl": "Café",
-      "ca": "Bar"
+      "ca": "Bar",
+      "de": "Kneipe"
     },
     "mappings": [
       {
@@ -137,35 +143,40 @@
           "if": "amenity=pub",
           "then": {
             "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
-            "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk"
+            "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
+            "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird"
           }
         },
         {
           "if": "amenity=bar",
           "then": {
             "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
-            "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek"
+            "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
+            "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
           }
         },
         {
           "if": "amenity=cafe",
           "then": {
             "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
-            "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen."
+            "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
+            "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
           }
         },
         {
           "if": "amenity=restaurant",
           "then": {
             "en": "A <b>restuarant</b> where one can get a proper meal",
-            "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt"
+            "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
+            "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann"
           }
         },
         {
           "if": "amenity=biergarten",
           "then": {
             "en": "An open space where beer is served, typically seen in Germany",
-            "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland"
+            "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland",
+            "de": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland"
           },
           "hideInAnswer": "_country!=de"
         }
@@ -192,7 +203,8 @@
             "de": "Derzeit geöffnet",
             "fr": "Ouvert maintenant",
             "hu": "Most nyitva van",
-            "ca": "Obert ara"
+            "ca": "Obert ara",
+            "es": "Abiert oahora"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -210,7 +222,9 @@
       {
         "explanation": {
           "nl": "{title()} is permanent gestopt",
-          "en": "{title()} has closed down permanently"
+          "en": "{title()} has closed down permanently",
+          "de": "{title()} wurde dauerhaft geschlossen",
+          "es": "{title()} ha cerrado permanentemente"
         },
         "changesetMessage": "shop_closed"
       }
@@ -251,6 +265,8 @@
   "description": {
     "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
     "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
-    "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen"
+    "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
+    "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
+    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes"
   }
 }

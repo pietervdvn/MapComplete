@@ -9,7 +9,8 @@
     "ru": "Парковка",
     "zh_Hant": "停車場",
     "id": "Tempat parkir",
-    "hu": "Parkolás"
+    "hu": "Parkolás",
+    "fr": "Stationnement"
   },
   "shortDescription": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -28,7 +29,8 @@
     "it": "Questa cartina mostra diversi posti dove parcheggiare",
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
-    "hu": "Ez a térkép különböző parkolókat jelenít meg"
+    "hu": "Ez a térkép különböző parkolókat jelenít meg",
+    "fr": "Cette carte affiche différents lieux de stationnement"
   },
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",

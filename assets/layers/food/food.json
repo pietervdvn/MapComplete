@@ -78,7 +78,8 @@
     "render": {
       "en": "Restaurant",
       "nl": "Eetgelegenheid",
-      "ca": "Restaurant"
+      "ca": "Restaurant",
+      "de": "Restaurant"
     },
     "mappings": [
       {
@@ -460,7 +461,8 @@
       "question": {
         "en": "Does this fries shop have vegetarian snacks?",
         "nl": "Heeft deze frituur vegetarische snacks?",
-        "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
+        "fr": "Cette friterie est-elle équipée de snacks végétariens ?",
+        "de": "Hat dieser Frittenladen vegetarische Snacks?"
       },
       "mappings": [
         {

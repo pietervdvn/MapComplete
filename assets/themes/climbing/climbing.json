@@ -569,7 +569,8 @@
               "ru": "Здесь можно заняться спортивным скалолазанием",
               "ja": "ここでスポーツクライミングができます",
               "it": "L’arrampicata sportiva è possibile qua",
-              "hu": "Itt lehetőség van sportmászásra"
+              "hu": "Itt lehetőség van sportmászásra",
+              "fr": "De l’escalade est possible ici"
             }
           },
           {
@@ -581,7 +582,8 @@
               "ru": "Спортивное скалолазание здесь невозможно",
               "ja": "ここではスポーツクライミングはできません",
               "it": "L’arrampicata sportiva non è possibile qua",
-              "hu": "Itt nincs lehetőség sportmászásra"
+              "hu": "Itt nincs lehetőség sportmászásra",
+              "fr": "L’escalade est impossible ici"
             }
           },
           {

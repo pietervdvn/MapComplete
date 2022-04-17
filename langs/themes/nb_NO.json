@@ -11,6 +11,9 @@
         "shortDescription": "Et benkekart",
         "title": "Benker"
     },
+    "bicycle_rental": {
+        "title": "Sykkelutleie"
+    },
     "bicyclelib": {
         "title": "Sykkelbibliotek"
     },
@@ -193,8 +196,5 @@
         "description": "Kartlegg trærne.",
         "shortDescription": "Kartlegg alle trærne",
         "title": "Trær"
-    },
-    "bicycle_rental": {
-        "title": "Sykkelutleie"
     }
 }

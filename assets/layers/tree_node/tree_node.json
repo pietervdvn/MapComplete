@@ -217,7 +217,8 @@
             "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
             "en": "The tree is a residential garden.",
             "it": "L’albero è un giardino residenziale.",
-            "fr": "Cet arbre est dans une cour résidentielle."
+            "fr": "Cet arbre est dans une cour résidentielle.",
+            "de": "Der Baum steht in einem Wohngarten."
           }
         },
         {
@@ -244,7 +245,8 @@
             "nl": "De boom staat in een woonkern.",
             "en": "The tree is an urban area.",
             "it": "L’albero si trova in un’area urbana.",
-            "fr": "L'arbre est une zone urbaine."
+            "fr": "L'arbre est une zone urbaine.",
+            "de": "Der Baum steht in einem städtischen Gebiet."
           }
         },
         {
@@ -467,7 +469,8 @@
         "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+        "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed Kennung: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
@@ -636,6 +639,7 @@
   ],
   "description": {
     "en": "A layer showing trees",
-    "nl": "Een laag die bomen toont"
+    "nl": "Een laag die bomen toont",
+    "de": "Eine Ebene, die Bäume zeigt"
   }
 }

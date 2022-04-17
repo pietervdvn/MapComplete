@@ -6,21 +6,14 @@
     "artwork": {
         "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo"
     },
-    "ghostbikes": {
-        "title": "Bicicleta blanca"
-    },
-    "personal": {
-        "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
-        "title": "Interficie personal"
-    },
     "benches": {
+        "description": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes.",
         "shortDescription": "Un mapa de bancos",
-        "title": "Bancos",
-        "description": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes."
+        "title": "Bancos"
     },
     "bicycle_rental": {
-        "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
         "description": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que son conocidas por OpenStreetMap",
+        "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
         "title": "Alquiler de bicicletas"
     },
     "cafes_and_pubs": {
@@ -51,14 +44,14 @@
                     },
                     "caravansites-internet": {
                         "mappings": {
+                            "0": {
+                                "then": "Hay acceso a internet"
+                            },
                             "1": {
                                 "then": "Hay acceso a internet"
                             },
                             "2": {
                                 "then": "No hay acceso a internet"
-                            },
-                            "0": {
-                                "then": "Hay acceso a internet"
                             }
                         },
                         "question": "¿Este lugar tiene acceso a internet?"
@@ -76,11 +69,11 @@
                     },
                     "caravansites-long-term": {
                         "mappings": {
-                            "2": {
-                                "then": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
-                            },
                             "1": {
                                 "then": "No, no hay huéspedes permanentes aquí"
+                            },
+                            "2": {
+                                "then": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
                             }
                         },
                         "question": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
@@ -88,5 +81,12 @@
                 }
             }
         }
+    },
+    "ghostbikes": {
+        "title": "Bicicleta blanca"
+    },
+    "personal": {
+        "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
+        "title": "Interficie personal"
     }
 }

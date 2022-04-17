@@ -20,39 +20,6 @@
             },
             "question": "¿Están permitidos los perros en este negocio?"
         },
-        "payment-options-advanced": {
-            "override": {
-                "mappings+": {
-                    "0": {
-                        "then": "El pago se realiza con una aplicación dedicada"
-                    },
-                    "1": {
-                        "then": "El pago se realiza con una tarjeta de membresía"
-                    }
-                }
-            }
-        },
-        "phone": {
-            "question": "¿Cuál es el número de teléfono de {title()}?"
-        },
-        "opening_hours": {
-            "render": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
-            "question": "¿Cuales son las horas de apertura de {title()}?"
-        },
-        "payment-options": {
-            "mappings": {
-                "0": {
-                    "then": "Aquí se acepta el pago en efectivo"
-                },
-                "1": {
-                    "then": "Aquí se acepta el pago por tarjeta"
-                }
-            },
-            "question": "¿Qué métodos de pago se aceptan aquí?"
-        },
-        "website": {
-            "question": "¿Cual es el sitio web de {title()}?"
-        },
         "email": {
             "question": "¿Cual es la direccióm de correo electrónico de {title()}?"
         },
@@ -74,38 +41,55 @@
             "question": "¿En qué nivel se encuentra esta característica?",
             "render": "Localizada en la {level}° planta"
         },
+        "opening_hours": {
+            "question": "¿Cuales son las horas de apertura de {title()}?",
+            "render": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Aquí se acepta el pago en efectivo"
+                },
+                "1": {
+                    "then": "Aquí se acepta el pago por tarjeta"
+                }
+            },
+            "question": "¿Qué métodos de pago se aceptan aquí?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "El pago se realiza con una aplicación dedicada"
+                    },
+                    "1": {
+                        "then": "El pago se realiza con una tarjeta de membresía"
+                    }
+                }
+            }
+        },
+        "phone": {
+            "question": "¿Cuál es el número de teléfono de {title()}?"
+        },
         "service:electricity": {
             "mappings": {
                 "0": {
                     "then": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos"
-                },
-                "3": {
-                    "then": "No hay enchufes domésticos disponibles para los clientes sentados en el interior"
                 },
                 "1": {
                     "then": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos"
                 },
                 "2": {
                     "then": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal"
+                },
+                "3": {
+                    "then": "No hay enchufes domésticos disponibles para los clientes sentados en el interior"
                 }
             },
             "question": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?"
         },
-        "wikipedia": {
-            "mappings": {
-                "0": {
-                    "then": "Todavía no se ha enlazado una página de wikipedia"
-                }
-            },
-            "question": "¿Cual es la entidad de Wikidata que se corresponde?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "No enlazado con Wikipedia"
-                }
-            },
-            "question": "¿Cual es el ítem correspondiente en Wikipedia?"
+        "website": {
+            "question": "¿Cual es el sitio web de {title()}?"
         },
         "wheelchair-access": {
             "mappings": {
@@ -123,6 +107,22 @@
                 }
             },
             "question": "¿Este lugar es accesible con una silla de ruedas?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Todavía no se ha enlazado una página de wikipedia"
+                }
+            },
+            "question": "¿Cual es la entidad de Wikidata que se corresponde?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "No enlazado con Wikipedia"
+                }
+            },
+            "question": "¿Cual es el ítem correspondiente en Wikipedia?"
         }
     }
 }

@@ -401,7 +401,8 @@
         "id": "Seniman mana yang menciptakan ini?",
         "pt": "Que artista criou isto?",
         "hu": "Melyik művész alkotása ezt?",
-        "pl": "Który artysta to stworzył?"
+        "pl": "Który artysta to stworzył?",
+        "es": "¿Que artista creó esto?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -416,7 +417,8 @@
         "id": "Dibuat oleh {artist_name}",
         "pt": "Criado por {artist_name}",
         "hu": "Alkotó: {artist_name}",
-        "pl": "Stworzone przez {artist_name}"
+        "pl": "Stworzone przez {artist_name}",
+        "es": "Creado por {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -437,7 +439,8 @@
         "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
         "pt": "Existe um site com mais informações sobre esta obra de arte?",
         "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
-        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?"
+        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
+        "es": "¿Hay un sitio web con más información sobre esta obra de arte?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -452,7 +455,8 @@
         "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>",
         "pt": "Mais informações <a href='{website}' target='_blank'>neste site</a>",
         "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>",
-        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>"
+        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>",
+        "es": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
       },
       "freeform": {
         "key": "website",
@@ -473,7 +477,8 @@
         "nb_NO": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
         "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
         "pt": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
-        "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?"
+        "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?",
+        "es": "¿Qué entrada de Wikidata se corresponde con <b>esta obra de arte</b>?"
       },
       "render": {
         "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
@@ -487,7 +492,8 @@
         "nb_NO": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
         "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
         "pt": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+        "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+        "es": "Se corresponde con <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
       },
       "freeform": {
         "key": "wikidata",

@@ -125,7 +125,7 @@
           "then": {
             "en": "No name is marked on the bike",
             "nl": "De naam is niet aangeduid op de fiets",
-            "de": "Auf dem Fahrrad ist kein Name angegeben",
+            "de": "Am Fahrrad ist kein Name angegeben",
             "it": "Nessun nome scritto sulla bici",
             "fr": "Aucun nom n'est marqué sur le vélo"
           }
@@ -227,6 +227,7 @@
   ],
   "description": {
     "en": "A layer showing memorials for cyclists, killed in road accidents",
-    "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont"
+    "nl": "Een laag die herdenkingsplaatsen voor verongelukte fietsers toont",
+    "de": "Eine Ebene mit Gedenkstätten für Radfahrer, die bei Verkehrsunfällen ums Leben gekommen sind"
   }
 }

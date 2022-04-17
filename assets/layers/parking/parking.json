@@ -13,12 +13,14 @@
   "title": {
     "render": {
       "nl": "Parking voor auto's",
-      "en": "Car parking"
+      "en": "Car parking",
+      "de": "Parkplatz"
     }
   },
   "description": {
     "en": "A layer showing car parkings",
-    "nl": "Deze laag toont autoparkings"
+    "nl": "Deze laag toont autoparkings",
+    "de": "Eine Ebene mit Parkplätzen"
   },
   "tagRenderings": [
     "images"
@@ -30,7 +32,8 @@
       ],
       "title": {
         "nl": "een parking voor auto's",
-        "en": "a car parking"
+        "en": "a car parking",
+        "de": "ein Parkplatz"
       }
     }
   ],

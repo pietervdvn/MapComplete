@@ -2,7 +2,8 @@
   "id": "note_import",
   "name": {
     "en": "Possible bookcases",
-    "nl": "Mogelijke publieke boekenkastjes"
+    "nl": "Mogelijke publieke boekenkastjes",
+    "de": "Mögliche Bücherschränke"
   },
   "description": "Template for note note imports.",
   "source": {
@@ -19,7 +20,8 @@
   "title": {
     "render": {
       "en": "Possible feature",
-      "nl": "Mogelijk object"
+      "nl": "Mogelijk object",
+      "de": "Mögliches Objekt"
     }
   },
   "calculatedTags": [

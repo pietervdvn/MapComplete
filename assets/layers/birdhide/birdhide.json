@@ -3,7 +3,8 @@
   "name": {
     "en": "Bird watching places",
     "nl": "Vogelkijkhutten",
-    "de": "Orte zur Vogelbeobachtung"
+    "de": "Orte zur Vogelbeobachtung",
+    "es": "Lugares para ver pájaros"
   },
   "minzoom": 14,
   "source": {
@@ -142,7 +143,8 @@
           },
           "then": {
             "en": "There are special provisions for wheelchair users",
-            "nl": "Er zijn speciale voorzieningen voor rolstoelen"
+            "nl": "Er zijn speciale voorzieningen voor rolstoelen",
+            "es": "Hay provisiones especiales para usuarios de sillas de ruedas"
           }
         },
         {
@@ -175,7 +177,9 @@
           },
           "then": {
             "en": "Not accessible to wheelchair users",
-            "nl": "Niet rolstoeltoegankelijk"
+            "nl": "Niet rolstoeltoegankelijk",
+            "de": "Nicht zugänglich für Rollstuhlfahrer",
+            "es": "No accesible a usuarios con sillas de ruedas"
           }
         }
       ]
@@ -183,7 +187,9 @@
     {
       "render": {
         "en": "Operated by {operator}",
-        "nl": "Beheer door {operator}"
+        "nl": "Beheer door {operator}",
+        "de": "Betrieben von {operator}",
+        "es": "Operado por {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -197,14 +203,17 @@
           "if": "operator=Natuurpunt",
           "then": {
             "en": "Operated by Natuurpunt",
-            "nl": "Beheer door Natuurpunt"
+            "nl": "Beheer door Natuurpunt",
+            "de": "Betrieben von Natuurpunt",
+            "es": "Operado por Natuurpunt"
           }
         },
         {
           "if": "operator=Agentschap Natuur en Bos",
           "then": {
             "en": "Operated by the Agency for Nature and Forests",
-            "nl": "Beheer door het Agentschap Natuur en Bos"
+            "nl": "Beheer door het Agentschap Natuur en Bos",
+            "de": "Betrieben von einer Forst- bzw. Naturschutzbehörde"
           }
         }
       ],
@@ -239,7 +248,9 @@
       },
       "description": {
         "en": "A covered shelter where one can watch birds comfortably",
-        "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
+        "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden",
+        "de": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
+        "es": "Un refugio cubierto donde se pueden ver pájaros confortablemente"
       }
     },
     {
@@ -254,7 +265,8 @@
       },
       "description": {
         "en": "A screen or wall with openings to watch birds",
-        "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
+        "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken",
+        "es": "Una pantalla o pared con aperturas para ver pájaros"
       }
     }
   ],
@@ -268,7 +280,8 @@
             "en": "Wheelchair accessible",
             "de": "Zugänglich für Rollstuhlfahrer",
             "fr": "Accessible aux fauteuils roulants",
-            "ca": "Accessible per a cadires de rodes"
+            "ca": "Accessible per a cadires de rodes",
+            "es": "Accesible con sillas de ruedas"
           },
           "osmTags": {
             "or": [

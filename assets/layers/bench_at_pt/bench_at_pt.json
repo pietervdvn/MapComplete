@@ -66,7 +66,8 @@
           "zh_Hant": "大眾運輸站點的長椅",
           "pt_BR": "Banco em ponto de transporte público",
           "pl": "Ławka na przystanku komunikacji miejskiej",
-          "pt": "Banco em ponto de transporte público"
+          "pt": "Banco em ponto de transporte público",
+          "es": "Banco en una parada de transporte público"
         }
       },
       {
@@ -156,7 +157,8 @@
             "en": "There is no bench here",
             "fr": "Il n'y a pas de banc ici",
             "de": "Hier gibt es keine Bank",
-            "nl": "Er is hier geen bank"
+            "nl": "Er is hier geen bank",
+            "es": "No hay ningún banco aquí"
           }
         }
       ]

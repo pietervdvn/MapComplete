@@ -10,7 +10,8 @@
     "ru": "Известные адреса в OSM",
     "id": "Alamat yang dikenal di OSM",
     "es": "Direcciones conocidas en OSM",
-    "zh_Hans": "OSM中已知的地址"
+    "zh_Hans": "OSM中已知的地址",
+    "nb_NO": "Kjente adresser i OSM"
   },
   "minzoom": 18,
   "source": {
@@ -38,7 +39,8 @@
       "ru": "Известный адрес",
       "es": "Domicilio conocido",
       "zh_Hans": "已知的地址",
-      "id": "Alamat yang diketahui"
+      "id": "Alamat yang diketahui",
+      "nb_NO": "Kjent adresse"
     }
   },
   "description": {
@@ -53,7 +55,8 @@
     "id": "Alamat",
     "es": "Direcciones",
     "zh_Hans": "地址",
-    "ca": "Adreces"
+    "ca": "Adreces",
+    "nb_NO": "Adresser"
   },
   "tagRenderings": [
     {

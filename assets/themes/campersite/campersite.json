@@ -161,7 +161,8 @@
             "zh_Hant": "這個地方收費嗎？",
             "nl": "Moet men betalen om deze camperplaats te gebruiken?",
             "pt_BR": "Este lugar cobra alguma taxa?",
-            "de": "Wird hier eine Gebühr erhoben?"
+            "de": "Wird hier eine Gebühr erhoben?",
+            "es": "¿Este lugar cobra una tarifa?"
           },
           "mappings": [
             {
@@ -180,7 +181,8 @@
                 "fr": "L’utilisation est payante",
                 "pt_BR": "Você precisa pagar para usar",
                 "de": "Sie müssen für die Nutzung bezahlen",
-                "id": "Anda perlu membayar untuk menggunakannya"
+                "id": "Anda perlu membayar untuk menggunakannya",
+                "es": "Necesitas pagar por su uso"
               }
             },
             {
@@ -201,7 +203,8 @@
                 "zh_Hant": "可以免費使用",
                 "nl": "Kan gratis gebruikt worden",
                 "pt_BR": "Pode ser usado de graça",
-                "de": "Nutzung kostenlos"
+                "de": "Nutzung kostenlos",
+                "es": "Se puede usar de manera gratuita"
               },
               "addExtraTags": [
                 "charge="
@@ -232,7 +235,8 @@
             "zh_Hant": "這個地方收多少費用？",
             "nl": "Hoeveel kost deze plaats?",
             "pt_BR": "Quanto este lugar cobra?",
-            "de": "Wie hoch ist die Gebühr an diesem Ort?"
+            "de": "Wie hoch ist die Gebühr an diesem Ort?",
+            "es": "¿Cuánto cobra este lugar?"
           },
           "freeform": {
             "key": "charge"
@@ -337,7 +341,8 @@
             "zh_Hant": "這個地方有提網路連線嗎？",
             "pt_BR": "Este lugar fornece acesso a internet?",
             "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
-            "nl": "Biedt deze plaats internettoegang?"
+            "nl": "Biedt deze plaats internettoegang?",
+            "es": "¿Este lugar tiene acceso a internet?"
           },
           "mappings": [
             {
@@ -357,7 +362,8 @@
                 "pt_BR": "Há acesso à internet",
                 "de": "Internetzugang ist vorhanden",
                 "nl": "Er is internettoegang",
-                "ca": "Hi ha accés a internet"
+                "ca": "Hi ha accés a internet",
+                "es": "Hay acceso a internet"
               }
             },
             {
@@ -377,7 +383,8 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à Internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang"
+                "nl": "Er is internettoegang",
+                "es": "Hay acceso a internet"
               },
               "hideInAnswer": true
             },
@@ -397,7 +404,8 @@
                 "fr": "Il n’y a pas d’accès internet",
                 "pt_BR": "Não há acesso à internet",
                 "de": "Kein Internetzugang vorhanden",
-                "nl": "Er is geen internettoegang"
+                "nl": "Er is geen internettoegang",
+                "es": "No hay acceso a internet"
               }
             }
           ]
@@ -413,7 +421,8 @@
             "fr": "L’accès internet est-il payant ?",
             "pt_BR": "Você tem que pagar pelo acesso à internet?",
             "de": "Ist der Internetzugang gebührenpflichtig?",
-            "nl": "Moet je betalen voor internettoegang?"
+            "nl": "Moet je betalen voor internettoegang?",
+            "es": "¿Tienes que pagar por el acceso a internet?"
           },
           "mappings": [
             {
@@ -431,7 +440,8 @@
                 "fr": "L’accès internet est en supplément",
                 "pt_BR": "Você precisa pagar um extra pelo acesso à internet",
                 "de": "Der Internetzugang ist gebührenpflichtig",
-                "nl": "Je moet extra betalen voor internettoegang"
+                "nl": "Je moet extra betalen voor internettoegang",
+                "es": "Tienes que pagar a mayores por el acceso a internet"
               }
             },
             {
@@ -449,7 +459,8 @@
                 "fr": "L’accès internet est inclus",
                 "pt_BR": "Você não precisa pagar um extra pelo acesso à internet",
                 "de": "Der Internetzugang ist kostenlos",
-                "nl": "Je hoeft niet extra te betalen voor internettoegang"
+                "nl": "Je hoeft niet extra te betalen voor internettoegang",
+                "es": "No tienes que pagar a mayores por el acceso a internet"
               }
             }
           ],
@@ -562,7 +573,8 @@
             "it": "Questo luogo offre spazi per il noleggio a lungo termine?",
             "fr": "Ce site permet-il la location longue durée ?",
             "pt_BR": "Este lugar oferece vagas para aluguel a longo prazo?",
-            "de": "Gibt es a diesem Ort Plätze für Dauercamper?"
+            "de": "Gibt es a diesem Ort Plätze für Dauercamper?",
+            "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
           },
           "mappings": [
             {
@@ -596,7 +608,8 @@
                 "it": "No, non ci sono ospiti a lungo termine qui",
                 "fr": "Non, il n’y a pas de résidents permanents",
                 "pt_BR": "Não, não há hóspedes permanentes aqui",
-                "de": "Nein, hier gibt es keine Dauergäste"
+                "de": "Nein, hier gibt es keine Dauergäste",
+                "es": "No, no hay huéspedes permanentes aquí"
               }
             },
             {
@@ -612,7 +625,8 @@
                 "zh_Hant": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)",
                 "it": "Puoi soggiornare qui solo se hai un contratto a lungo termine (se selezioni questa opzione, questo luogo sarà rimosso da questa mappa)",
                 "fr": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)",
-                "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
+                "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)",
+                "es": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
               }
             }
           ]
@@ -628,7 +642,8 @@
             "fr": "Plus de détails à propos du site : {description}",
             "pt_BR": "Mais detalhes sobre este lugar: {description}",
             "de": "Mehr Details über diesen Ort: {description}",
-            "nl": "Meer details over deze plaats: {description}"
+            "nl": "Meer details over deze plaats: {description}",
+            "es": "Más detalles sobre este lugar:{description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -638,7 +653,8 @@
             "it": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
             "fr": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
             "de": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
-            "nl": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)"
+            "nl": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
+            "es": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)"
           },
           "freeform": {
             "key": "description",

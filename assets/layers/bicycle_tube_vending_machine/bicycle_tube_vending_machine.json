@@ -78,7 +78,8 @@
         "de": "Ist dieser Automat noch in Betrieb?",
         "zh_Hant": "這個自動販賣機仍有運作嗎？",
         "pt_BR": "Esta máquina de venda automática ainda está operacional?",
-        "pt": "Esta máquina de venda automática ainda está operacional?"
+        "pt": "Esta máquina de venda automática ainda está operacional?",
+        "es": "¿Todavía es operacional esta máquina exprendedora?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
@@ -89,7 +90,8 @@
         "ru": "Рабочий статус: <i> {operational_status}</i>",
         "zh_Hant": "運作狀態是 <i>{operational_status}</i>",
         "pt_BR": "O estado operacional é: <i>{operational_status}</i>",
-        "pt": "O estado operacional é: <i>{operational_status}</i>"
+        "pt": "O estado operacional é: <i>{operational_status}</i>",
+        "es": "El estado operacional es <i>{operational_status}</i></i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -124,7 +126,8 @@
             "de": "Dieser Automat ist kaputt",
             "zh_Hant": "這個自動販賣機沒有運作了",
             "pt_BR": "Esta máquina de venda automática está quebrada",
-            "pt": "Esta máquina de venda automática está quebrada"
+            "pt": "Esta máquina de venda automática está quebrada",
+            "es": "Esta máquina exprendedora está rota"
           }
         },
         {
@@ -140,7 +143,8 @@
             "de": "Dieser Automat ist geschlossen",
             "zh_Hant": "這個自動販賣機已經關閉了",
             "pt_BR": "Esta máquina de venda automática está fechada",
-            "pt": "Esta máquina de venda automática está fechada"
+            "pt": "Esta máquina de venda automática está fechada",
+            "es": "Esta máquina exprendedora está cerrada"
           }
         }
       ],

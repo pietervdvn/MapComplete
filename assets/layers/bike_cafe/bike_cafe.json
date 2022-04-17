@@ -284,7 +284,8 @@
         "zh_Hans": "{name}的电话号码是什么？",
         "zh_Hant": "{name} 的電話號碼是？",
         "pt_BR": "Qual o número de telefone de {name}?",
-        "pt": "Qual é o número de telefone de {name}?"
+        "pt": "Qual é o número de telefone de {name}?",
+        "es": "¿Cual es el número de teléfono de {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -305,7 +306,8 @@
         "zh_Hans": "{name}的电子邮箱是什么？",
         "zh_Hant": "{name} 的電子郵件地址是？",
         "pt_BR": "Qual o endereço de email de {name}?",
-        "pt": "Qual o endereço de email de {name}?"
+        "pt": "Qual o endereço de email de {name}?",
+        "es": "¿Cual es la dirección de correo electrónico de {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
       "freeform": {
