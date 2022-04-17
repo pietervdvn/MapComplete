@@ -333,7 +333,7 @@
             "unmatchedTitle": "Die folgenden Elemente stimmen mit keiner Voreinstellung überein"
         },
         "login": {
-            "loggedInWith": "Sie sind derzeit angemeldet als <b>{Name}</b> und haben {csCount} Änderungen vorgenommen",
+            "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungen vorgenommen",
             "title": "Anmeldung",
             "userAccountTitle": "Benutzerkonto auswählen",
             "loginIsCorrect": "<b>{name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
@@ -345,7 +345,7 @@
             "osmLoaded": "{count} Elemente werden aus OpenStreetMap geladen, die dem Layer <b>{name}</b> entsprechen.",
             "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
             "nearbyWarn": "Die {count} roten Elemente auf der folgenden Karte werden <b>nicht</b> importiert!",
-            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {aktuell}",
+            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {current}",
             "states": {
                 "running": "Abfrage bei overpass...",
                 "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
