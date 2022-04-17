@@ -300,7 +300,7 @@ function transformTranslation(obj: any, path: string[] = [], languageWhitelist :
             
 
             if(value["en"] === undefined){
-                throw `At ${path.join(".")}: Missing 'en' translation for ${JSON.stringify(value)}`
+                throw `At ${path.join(".")}: Missing 'en' translation at path ${path.join(".")}.${key}\n\tThe translations in other languages are ${JSON.stringify(value)}`
             }
             const subParts : string[] = value["en"].match(/{[^}]*}/g)
             let expr = `return new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
