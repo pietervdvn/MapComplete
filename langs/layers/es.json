@@ -614,7 +614,7 @@
                     }
                 },
                 "question": "¿Quién puede utilizar este aparcamiento de bicicletas?",
-                "render": "{acceso}"
+                "render": "{access}"
             }
         },
         "title": {
@@ -741,7 +741,7 @@
                 "question": "¿Hay una bomba eléctrica para bicis?"
             },
             "bike_repair_station-operator": {
-                "render": "Mantenido por {operador}",
+                "render": "Mantenido por {operator}",
                 "question": "¿Quién mantiene esta bomba para bicicletas?"
             }
         },
