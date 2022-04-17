@@ -358,7 +358,8 @@
             "nothingLoaded": "Es werden keine Elemente aus OpenStreetMap geladen, die dem aktuellen Layer {name} entsprechen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten"
+            "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten",
+            "mapShowingNearbyIntro": "Die folgende Karte zeigt zu importierende Objekte, die ein OSM-Objekt enthalten "
         },
         "confirmProcess": {
             "title": "Lizenz und Gemeinschaft",
@@ -377,7 +378,8 @@
             "noPreviousNotesFound": "Keine früheren Importnotizen gefunden",
             "nothingNearby": "Alle vorgeschlagenen Punkte haben keine vorherige Importnotiz in der Nähe",
             "someNearby": "{hasNearby} Punkte haben eine bereits eine Importnotiz innerhalb {distance} Meter",
-            "wontBeImported": "Diese Datenpunkte werden <i>nicht</i> importiert und sind als rote Punkte auf der Karte unten dargestellt"
+            "wontBeImported": "Diese Datenpunkte werden <i>nicht</i> importiert und sind als rote Punkte auf der Karte unten dargestellt",
+            "titleLong": "Mit bereits vorhandenen 'zu-importieren'-Notizen vergleichen"
         },
         "askMetadata": {
             "giveSource": "Was ist die Quelle dieser Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
