@@ -8,7 +8,7 @@
         "title": "Freie Kunstwerk-Karte"
     },
     "benches": {
-        "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten.",
+        "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Konto können Sie neue Bänke eintragen oder Details existierender Bänke bearbeiten.",
         "shortDescription": "Eine Karte aller Sitzbänke",
         "title": "Sitzbänke"
     },
@@ -677,7 +677,7 @@
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte kann man alle Geisterräder sehen, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen lediglich einen (kostenlosen) OpenStreetMap-Account.",
+        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
         "title": "Geisterräder"
     },
     "grb": {

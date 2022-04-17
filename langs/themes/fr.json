@@ -335,6 +335,16 @@
                         }
                     },
                     "question": "Est-il possible d’escalader à la moulinette ?"
+                },
+                "9": {
+                    "mappings": {
+                        "0": {
+                            "then": "De l’escalade est possible ici"
+                        },
+                        "1": {
+                            "then": "L’escalade est impossible ici"
+                        }
+                    }
                 }
             },
             "units+": {
@@ -548,5 +558,38 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
+    },
+    "binoculars": {
+        "description": "Une carte des longue-vues fixes. Se trouve typiquement sur les sites touristiques, les points de vue, les tours panoramiques ou dans les réserves naturelles.",
+        "shortDescription": "Une carte de jumelles panoramiques",
+        "title": "Jumelles"
+    },
+    "cafes_and_pubs": {
+        "description": "Bars et pubs",
+        "title": "Cafés et pubs"
+    },
+    "charging_stations": {
+        "title": "Points de recharge",
+        "shortDescription": "Une carte mondiale des points de recharge",
+        "description": "Sur cette carte l’on trouve et ajoute des informations sur les points de recharge"
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "name": "Aménagements cyclables",
+                "title": {
+                    "render": "Aménagement cyclable"
+                }
+            }
+        },
+        "description": "Cette carte affiche les aménagements cyclables",
+        "title": "Aménagements cyclables"
+    },
+    "cycle_infra": {
+        "description": "Une carte montrant les aménagements cyclables et où l’on peut rajouter des informations. Réalisée durant #osoc21."
+    },
+    "parkings": {
+        "title": "Stationnement",
+        "description": "Cette carte affiche différents lieux de stationnement"
     }
 }

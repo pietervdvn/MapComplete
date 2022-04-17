@@ -12,5 +12,81 @@
     "personal": {
         "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
         "title": "Interficie personal"
+    },
+    "benches": {
+        "shortDescription": "Un mapa de bancos",
+        "title": "Bancos",
+        "description": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes."
+    },
+    "bicycle_rental": {
+        "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
+        "description": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que son conocidas por OpenStreetMap",
+        "title": "Alquiler de bicicletas"
+    },
+    "cafes_and_pubs": {
+        "description": "Pubs y bares",
+        "title": "Cafeterías y pubs"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "caravansites-charge": {
+                        "question": "¿Cuánto cobra este lugar?"
+                    },
+                    "caravansites-description": {
+                        "question": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)",
+                        "render": "Más detalles sobre este lugar:{description}"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Necesitas pagar por su uso"
+                            },
+                            "1": {
+                                "then": "Se puede usar de manera gratuita"
+                            }
+                        },
+                        "question": "¿Este lugar cobra una tarifa?"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "1": {
+                                "then": "Hay acceso a internet"
+                            },
+                            "2": {
+                                "then": "No hay acceso a internet"
+                            },
+                            "0": {
+                                "then": "Hay acceso a internet"
+                            }
+                        },
+                        "question": "¿Este lugar tiene acceso a internet?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tienes que pagar a mayores por el acceso a internet"
+                            },
+                            "1": {
+                                "then": "No tienes que pagar a mayores por el acceso a internet"
+                            }
+                        },
+                        "question": "¿Tienes que pagar por el acceso a internet?"
+                    },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "2": {
+                                "then": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
+                            },
+                            "1": {
+                                "then": "No, no hay huéspedes permanentes aquí"
+                            }
+                        },
+                        "question": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
+                    }
+                }
+            }
+        }
     }
 }

@@ -119,7 +119,7 @@
             "title": "Download visible data",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
-        "error": "Something went wrong...",
+        "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
