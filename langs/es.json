@@ -113,6 +113,7 @@
             "downloadGpxHelper": "Un archivo GPX puede ser utilizado con la mayor parte de dispositivos y aplicaciones de navegación",
             "exporting": "Exportando…",
             "includeMetaData": "Incluir metadatos (último editor, valores calculados, ...)",
+            "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la actribución <b>© contribuidores d e OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles.",
             "noDataLoaded": "Aún no se han cargado ningunos daos. La descarga estará disponible proximamente",
             "title": "Descargar los datos visibles",
             "uploadGpx": "Sube tu traza a OpenStreetMap"
@@ -238,6 +239,7 @@
         },
         "welcomeBack": "Has entrado, bienvenido.",
         "wikipedia": {
+            "doSearch": "Busca arriba para ver los resultados",
             "failed": "La carga de la entrada de Wikipedia falló",
             "loading": "Cargando Wikipedia...",
             "noResults": "No se encontró nada para <i>{search}</i>",
@@ -256,11 +258,13 @@
         "ccbExplanation": "La licencia CC-BY implica cualquiera podría utilizar tu fotografía para cualquier propósito, pero tienen que atribuirte",
         "ccbs": "bajo licencia CC-BY-SA",
         "cco": "en dominio público",
+        "ccoExplanation": "Añadir una fotografía en el dominio público implica que cualquiera puede hacer cualquier cosa con tu fotografía",
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
         "pleaseLogin": "Acceda para cargar una imagen",
         "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
+        "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
         "uploadDone": "Se ha añadido la imagen. Gracias por ayudar.",
         "uploadFailed": "No se pudo cargar la imagen. ¿Tiene Internet y se permiten las API de terceros? El navegador Brave o uMatrix podría bloquearlas.",
         "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar.",
@@ -269,6 +273,28 @@
         "willBePublished": "La imagen se publicará "
     },
     "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "Descargar geojson",
+            "giveDescription": "Por favor, escribe una pequeña descripción para alguien que vea la nota. Una buena nota describe lo que el contribuidor tiene que hacer, ej; <i>Puede que haya un banco aquí. Si estás por aquí, ¿Podrías por favor comprueba e indica si el banco existe o no?</i> (Un enlace a MapComplete se añadirá automáticamente)",
+            "giveWikilink": "¿En qué wikipágina puede encontrar uno más información sobre esta importación?",
+            "intro": "Antes de añadir {count} notas, por favor provee alguna información extra.",
+            "orDownload": "Alternativamente, puedes descargar el conjunto de datos para importar directamente",
+            "shouldBeOsmWikilink": "Se espera un enlace a una página en wiki.openstreetmap.org",
+            "shouldBeUrl": "No una URL válida",
+            "shouldNotBeHomepage": "No, tampoco se permite la página de inicio. Introduce la URL de una wikipágina de verdad para documentar tu importación",
+            "title": "Especificar metadatos"
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "Todos los puntos propuestos ya tienen (o tenían) una nota de importación",
+            "loading": "Cargando las notas desde OSM",
+            "loadingFailed": "La carga de las notas falló debido a {error}",
+            "mapExplanation": "Los elementos rojos en el siguiente mapa son todos los puntos de datos de tu conjunto de datos. Hay <b>{length}</b> elementos en tu conjunto de datos.",
+            "noPreviousNotesFound": "No se han encontrado notas de importación previas",
+            "nothingNearby": "Todos los puntos propuestos no tienen una nota de importación previa cerca",
+            "someNearby": "{hasNearby} puntos sí que tienen una nota de importación ya existente a menos de {distance} metros",
+            "title": "Comparar con notas existentes",
+            "wontBeImported": "Estos puntos de datos <i>no</i> serán importados y se muestran como puntos en el mapa de debajo"
+        },
         "mapPreview": {
             "title": "Previsualización de mapa"
         },
@@ -294,7 +320,7 @@
     },
     "notes": {
         "addComment": "Añadir comentario",
-        "anonymous": "Usuario anónimo",
+        "anonymous": "Usuarioi anónimo",
         "closeNote": "Cerrar nota",
         "reopenNote": "Reabrir nota"
     },
