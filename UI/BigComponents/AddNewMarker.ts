@@ -14,7 +14,7 @@ export default class AddNewMarker extends Combine {
             let last = undefined;
             for (const filteredLayer of filteredLayers) {
                 const layer = filteredLayer.layerDef;
-                if(layer.name === undefined){
+                if(layer.name === undefined && !filteredLayer.isDisplayed.data){
                     continue
                 }
                 for (const preset of filteredLayer.layerDef.presets) {
