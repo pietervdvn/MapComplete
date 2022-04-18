@@ -275,8 +275,7 @@
         "selectFile": {
             "title": "Seleccionar archivo"
         },
-        "title": "Ayudante de importación",
-        "validateDataTitle": "Validar datos"
+        "title": "Ayudante de importación"
     },
     "importLayer": {
         "layerName": "Posible {title}",

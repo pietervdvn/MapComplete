@@ -1,4 +1,4 @@
-import {Translation} from "../../UI/i18n/Translation";
+import {Translation, TypedTranslation} from "../../UI/i18n/Translation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
@@ -22,8 +22,8 @@ export default class TagRenderingConfig {
 
     public readonly id: string;
     public readonly group: string;
-    public readonly render?: Translation;
-    public readonly question?: Translation;
+    public readonly render?: TypedTranslation<object>;
+    public readonly question?: TypedTranslation<object>;
     public readonly condition?: TagsFilter;
 
     public readonly configuration_warnings: string[] = []
@@ -43,7 +43,7 @@ export default class TagRenderingConfig {
     public readonly mappings?: {
         readonly if: TagsFilter,
         readonly ifnot?: TagsFilter,
-        readonly then: Translation,
+        readonly then: TypedTranslation<object>,
         readonly icon: string,
         readonly iconClass: string
         readonly hideInAnswer: boolean | TagsFilter
@@ -110,12 +110,13 @@ export default class TagRenderingConfig {
             }
            const type = json.freeform.type ?? "string"
 
-            let placeholder = Translations.T(json.freeform.placeholder)
+            let placeholder: Translation = Translations.T(json.freeform.placeholder)
             if (placeholder === undefined) {
                 const typeDescription = Translations.t.validation[type]?.description
-                placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 if(typeDescription !== undefined){
-                    placeholder = placeholder.Subs({[type]: typeDescription})
+                    placeholder = Translations.T(json.freeform.key+" ("+type+")").Subs({[type]: typeDescription})
+                }else{
+                    placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 }
             }
 
@@ -383,7 +384,7 @@ export default class TagRenderingConfig {
         let freeformKeyDefined = this.freeform?.key !== undefined;
         let usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
-        const applicableMappings: { then: Translation, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+        const applicableMappings: { then: TypedTranslation<any>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping;
             }
@@ -404,7 +405,7 @@ export default class TagRenderingConfig {
             const leftovers = freeformValues.filter(v => !usedFreeformValues.has(v))
             for (const leftover of leftovers) {
                 applicableMappings.push({then: 
-                        this.render.replace("{"+this.freeform.key+"}", leftover)
+                        new TypedTranslation<object>(this.render.replace("{"+this.freeform.key+"}", leftover).translations) 
                 })
             }
         }
@@ -412,7 +413,7 @@ export default class TagRenderingConfig {
         return applicableMappings
     }
 
-    public GetRenderValue(tags: any, defltValue: any = undefined): Translation {
+    public GetRenderValue(tags: any, defltValue: any = undefined): TypedTranslation<any> {
         return this.GetRenderValueWithImage(tags, defltValue).then
     }
 
@@ -421,7 +422,7 @@ export default class TagRenderingConfig {
      * Not compatible with multiAnswer - use GetRenderValueS instead in that case
      * @constructor
      */
-    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: Translation, icon?: string } {
+    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: TypedTranslation<any>, icon?: string } {
         if (this.mappings !== undefined && !this.multiAnswer) {
             for (const mapping of this.mappings) {
                 if (mapping.if === undefined) {

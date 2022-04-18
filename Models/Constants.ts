@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.18.1";
+    public static vNumber = "0.18.2";
     
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
@@ -62,6 +62,13 @@ export default class Constants {
      */
     static distanceToChangeObjectBins = [25, 50, 100, 500, 1000, 5000, Number.MAX_VALUE]
     static themeOrder = ["personal", "cyclofix", "waste" , "etymology",  "food","cafes_and_pubs", "playgrounds", "hailhydrant", "toilets", "aed", "bookcases"];
+    /**
+     * Upon initialization, the GPS will search the location.
+     * If the location is found within the given timout, it'll automatically fly to it.
+     * 
+     * In seconds
+     */
+    static zoomToLocationTimeout = 60;
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

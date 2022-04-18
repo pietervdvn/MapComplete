@@ -4,7 +4,11 @@ export abstract class TagsFilter {
 
     abstract isUsableAsAnswer(): boolean;
 
-    abstract isEquivalent(other: TagsFilter): boolean;
+    /**
+     * Indicates some form of equivalency:
+     * if `this.shadows(t)`, then `this.matches(properties)` implies that `t.matches(properties)` for all possible properties
+     */
+    abstract shadows(other: TagsFilter): boolean;
 
     abstract matchesProperties(properties: any): boolean;
 
@@ -30,7 +34,7 @@ export abstract class TagsFilter {
      * Returns an optimized version (or self) of this tagsFilter
      */
     abstract optimize(): TagsFilter | boolean;
-
+    
     /**
      * Returns 'true' if the tagsfilter might select all features (i.e. the filter will return everything from OSM, except a few entries).
      * 

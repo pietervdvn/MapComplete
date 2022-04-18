@@ -51,7 +51,8 @@
   ],
   "overrideAll": {
     "allowMove": {
-      "improveAccuracy": true
+      "enableRelocation": false,
+      "enableImproveAccuracy": true
     },
     "+titleIcons": [
       {

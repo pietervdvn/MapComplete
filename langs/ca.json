@@ -276,23 +276,29 @@
         "willBePublished": "La teva foto serà publicada: "
     },
     "importHelper": {
-        "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
-        "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
-        "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>",
-        "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
-        "inspectDidAutoDected": "La capa es va seleccionar automàticament",
-        "inspectLooksCorrect": "Aquests valors semblen correctes",
-        "lockNotice": "Aquesta pàgina està bloquejada. Necessites {importHelperUnlock} conjunts de canvis per poder accedir aquí.",
-        "locked": "Necessites almenys {importHelperUnlock} per utilitzar l'ajudant d'importació",
-        "loggedInWith": "Actualment has entrat com a <b>{name}</b> i has fet {csCount} conjunts de canvis",
-        "loginIsCorrect": "<b>{name}</b> és el compte correcte per crear les notes d'importació.",
-        "loginRequired": "Has d'entrar per continuar",
+        "introduction": {
+            "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
+            "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>"
+        },
+        "login": {
+            "lockNotice": "Aquesta pàgina està bloquejada. Necessites {importHelperUnlock} conjunts de canvis per poder accedir aquí.",
+            "loggedInWith": "Actualment has entrat com a <b>{name}</b> i has fet {csCount} conjunts de canvis",
+            "loginIsCorrect": "<b>{name}</b> és el compte correcte per crear les notes d'importació.",
+            "loginRequired": "Has d'entrar per continuar",
+            "userAccountTitle": "Seleccionar compte d'usuari"
+        },
         "mapPreview": {
             "autodetected": "La capa es va deduir automàticament en funció de les propietats",
             "confirm": "Les característiques es troben a la ubicació correcta del mapa",
             "mismatch": "{count} característiques no coincideixen amb la capa seleccionada. Assegura't que hi hagi les etiquetes per indicar el tipus, és a dir, {tags}",
             "selectLayer": "Amb quina capa coincideix aquesta importació?",
             "title": "Vista prèvia del mapa"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
+            "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
+            "inspectLooksCorrect": "Aquests valors semblen correctes",
+            "someHaveSame": "{count} característiques per importar tenen aquesta etiqueta, això és un {percentage}% del total"
         },
         "selectFile": {
             "description": "Seleccionar un fitxer .csv o .geojson per començar",
@@ -308,11 +314,7 @@
             "noFilesLoaded": "No s'ha carregat cap arxiu",
             "title": "Seleccionar arxiu"
         },
-        "selectLayer": "Seleccionar capa...",
-        "someHaveSame": "{count} característiques per importar tenen aquesta etiqueta, això és un {percentage}% del total",
-        "title": "Ajuda de l'importador",
-        "userAccountTitle": "Seleccionar compte d'usuari",
-        "validateDataTitle": "Validar dades"
+        "title": "Ajuda de l'importador"
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"

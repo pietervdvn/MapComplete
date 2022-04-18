@@ -127,6 +127,7 @@ export default class LayerConfig extends WithContextLoader {
                 idKey: json.source["idKey"]
 
             },
+            Constants.priviliged_layers.indexOf(this.id) > 0,
             json.id
         );
 

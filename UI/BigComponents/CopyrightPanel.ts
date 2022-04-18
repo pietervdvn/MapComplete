@@ -22,7 +22,7 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
 import Img from "../Base/Img";
-import {Translation} from "../i18n/Translation";
+import {TypedTranslation} from "../i18n/Translation";
 import TranslatorsPanel from "./TranslatorsPanel";
 
 export class OpenIdEditor extends VariableUiElement {
@@ -198,7 +198,7 @@ export default class CopyrightPanel extends Combine {
         this.SetStyle("max-width:100%; width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
     }
 
-    private static CodeContributors(contributors, translation: Translation): BaseUIElement {
+    private static CodeContributors(contributors, translation: TypedTranslation<{contributors, hiddenCount}>): BaseUIElement {
 
         const total = contributors.contributors.length;
         let filtered = [...contributors.contributors]

@@ -89,7 +89,7 @@
     "libphonenumber-js": "^1.7.55",
     "lz-string": "^1.4.4",
     "mangrove-reviews": "^0.1.3",
-    "moment": "^2.29.0",
+    "moment": "^2.29.2",
     "opening_hours": "^3.6.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",

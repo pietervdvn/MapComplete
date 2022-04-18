@@ -43,29 +43,34 @@ export default class ElementsState extends FeatureSwitchState {
 
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse);
+        
+        
+            function localStorageSynced(key: string, deflt: number, docs: string ): UIEventSource<number>{
+                const localStorage = LocalStorageSource.Get(key)
+                const previousValue = localStorage.data
+                const src = UIEventSource.asFloat(
+                    QueryParameters.GetQueryParameter(
+                        key,
+                        "" + deflt,
+                        docs
+                    ).syncWith(localStorage)
+                );
+                
+                if(src.data === deflt){
+                    const prev = Number(previousValue)
+                    if(!isNaN(prev)){
+                        src.setData(prev)
+                    }
+                }
+                
+                return src;
+            }
 
             // -- Location control initialization
-            const zoom = UIEventSource.asFloat(
-                QueryParameters.GetQueryParameter(
-                    "z",
-                    "" + (layoutToUse?.startZoom ?? 1),
-                    "The initial/current zoom level"
-                ).syncWith(LocalStorageSource.Get("zoom"))
-            );
-            const lat = UIEventSource.asFloat(
-                QueryParameters.GetQueryParameter(
-                    "lat",
-                    "" + (layoutToUse?.startLat ?? 0),
-                    "The initial/current latitude"
-                ).syncWith(LocalStorageSource.Get("lat"))
-            );
-            const lon = UIEventSource.asFloat(
-                QueryParameters.GetQueryParameter(
-                    "lon",
-                    "" + (layoutToUse?.startLon ?? 0),
-                    "The initial/current longitude of the app"
-                ).syncWith(LocalStorageSource.Get("lon"))
-            );
+            const zoom = localStorageSynced("z",(layoutToUse?.startZoom ?? 1),"The initial/current zoom level")
+            const lat = localStorageSynced("lat",(layoutToUse?.startLat ?? 0),"The initial/current latitude")
+            const lon = localStorageSynced("lon",(layoutToUse?.startLon ?? 0),"The initial/current longitude of the app")
+
 
             this.locationControl.setData({
                 zoom: Utils.asFloat(zoom.data),
@@ -73,7 +78,7 @@ export default class ElementsState extends FeatureSwitchState {
                 lon: Utils.asFloat(lon.data),
             })
             this.locationControl.addCallback((latlonz) => {
-                // Sync th location controls
+                // Sync the location controls
                 zoom.setData(latlonz.zoom);
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);

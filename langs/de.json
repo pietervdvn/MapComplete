@@ -408,11 +408,10 @@
             "title": "Thema auswählen",
             "unmatchedTitle": "Die folgenden Elemente stimmen mit keiner Voreinstellung überein"
         },
-        "someHaveSame": "{count} der zu importierenden Objekte haben dieses Tag, das sind {percentage}% der Gesamtzahl",
         "testMode": "Testmodus - Notizen werden nicht importiert",
-        "title": "Import-Helfer",
         "userAccountTitle": "Wähle einen Benutzeraccount",
-        "validateDataTitle": "Bestätige Daten"
+        "validateDataTitle": "Bestätige Daten",
+        "title": "Import-Helfer"
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"

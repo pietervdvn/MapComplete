@@ -90,10 +90,10 @@ export default class MoreScreen extends Combine {
         }
 
         let hash = ""
-        if(layout.definition !== undefined){
-            hash = "#"+btoa(JSON.stringify(layout.definition))
+        if (layout.definition !== undefined) {
+            hash = "#" + btoa(JSON.stringify(layout.definition))
         }
-        
+
         const linkText = currentLocation?.map(currentLocation => {
             const params = [
                 ["z", currentLocation?.zoom],
@@ -106,11 +106,10 @@ export default class MoreScreen extends Combine {
         }) ?? new UIEventSource<string>(`${linkPrefix}`)
 
 
-
         return new SubtleButton(layout.icon,
             new Combine([
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:"+layout.id+".title" : undefined),
+                new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined),
                 `</dt>`,
                 `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
                 new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
@@ -128,15 +127,13 @@ export default class MoreScreen extends Combine {
     }
 
     private static createUnofficialButtonFor(state: UserRelatedState, id: string): BaseUIElement {
-        const allPreferences = state.osmConnection.preferencesHandler.preferences.data;
-        const length = Number(allPreferences[id + "-length"])
-        let str = "";
-        for (let i = 0; i < length; i++) {
-            str += allPreferences[id + "-" + i]
-        }
-        if(str === undefined || str === "undefined"){
+        const pref = state.osmConnection.GetLongPreference(id)
+        const str = pref.data
+        if (str === undefined || str === "undefined" || str === "") {
+            pref.setData(null)
             return undefined
         }
+
         try {
             const value: {
                 id: string
@@ -149,7 +146,8 @@ export default class MoreScreen extends Combine {
             value.isOfficial = false
             return MoreScreen.createLinkButton(state, value, true)
         } catch (e) {
-            console.debug("Could not parse unofficial theme information for " + id, "The json is: ", str, e)
+            console.warn("Removing theme " + id + " as it could not be parsed from the preferences")
+            pref.setData(null)
             return undefined
         }
     }
@@ -163,16 +161,14 @@ export default class MoreScreen extends Combine {
 
                 for (const key in allPreferences) {
                     if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
-                        const id = key.substring(0, key.length - "-length".length)
+                        const id = key.substring("mapcomplete-".length, key.length - "-combined-length".length)
                         ids.push(id)
                     }
                 }
-
                 return ids
             });
 
         var stableIds = UIEventSource.ListStabilized<string>(currentIds)
-
         return new VariableUiElement(
             stableIds.map(ids => {
                 const allThemes: BaseUIElement[] = []
@@ -182,12 +178,11 @@ export default class MoreScreen extends Combine {
                         allThemes.push(link.SetClass(buttonClass))
                     }
                 }
-
                 if (allThemes.length <= 0) {
                     return undefined;
                 }
                 return new Combine([
-                    Translations.t.general.customThemeIntro.Clone(),
+                    Translations.t.general.customThemeIntro,
                     new Combine(allThemes).SetClass(themeListClasses)
                 ]);
             }));
