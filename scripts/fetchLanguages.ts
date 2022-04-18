@@ -93,12 +93,15 @@ function extract(data){
 
 function getNativeList(langs: Map<string, Map<string, string>>){
     const native = {}
-    langs.forEach((translations, key ) =>{
+    const keys: string[] = Array.from(langs.keys())
+    keys.sort()
+    for (const key of keys) {
+        const translations: Map<string, string> = langs.get(key)
         if(!usedLanguages.has(key)){
-            return
+            continue
         }
         native[key] = translations.get(key)
-    })
+    }
     return native
 }
 
