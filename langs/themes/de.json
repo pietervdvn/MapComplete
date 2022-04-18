@@ -797,7 +797,7 @@
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Ein Hinweis ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzern und Text gesucht werden.",
+        "description": "Eine Notiz ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzer und Text gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {
