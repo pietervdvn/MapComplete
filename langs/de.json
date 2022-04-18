@@ -278,7 +278,6 @@
         "willBePublished": "Ihr Bild wird veröffentlicht "
     },
     "importHelper": {
-        "allAttributesSame": "Alle zu importierenden Objekte haben diesen Tag",
         "askMetadata": {
             "downloadGeojson": "geojson herunterladen",
             "giveDescription": "Bitte schreiben Sie eine kurze Beschreibung für jemanden, der die Notiz sieht. Eine gute Notiz beschreibt, was der Mitwirkende zu tun hat, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie in der Nähe sind, könnten Sie bitte überprüfen und angeben, ob die Bank existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
@@ -339,20 +338,12 @@
             "openImportViewer": "Sehen Sie den Fortschritt Ihrer Notizen im 'import_viewer'",
             "title": "Notizerstellung"
         },
-        "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer der vorhandenen MapComplete-Ebenen übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird ein einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
         "gotoImportViewer": "Vorherige Importe überprüfen",
-        "importFormat": "Der Hinweistext sollte folgendes Format haben, um aufgenommen zu werden: <br><div class=\"literal-code\">[Eine kleine Einführung]<br>https://mapcomplete.osm.be/[themenname].html?[Parameter wie lat und lon]#import<br>[alle Tags des Objekts] </div>",
-        "inspectDataTitle": "Daten von {count} zu importierenden Objekten prüfen",
-        "inspectDidAutoDected": "Ebene wurde automatisch ausgewählt",
-        "inspectLooksCorrect": "Die Werte sehen richtig aus",
         "introduction": {
             "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Importer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
             "importFormat": "Der Hinweistext sollte das folgende Format haben, um aufgenommen zu werden",
             "title": "Einführung"
         },
-        "lockNotice": "Diese Seite ist gesperrt. Du brauchst die Änderungen {importHelperUnlock} bevor du die Seite öffnen kannst.",
-        "locked": "Du benötigst mindestens {importHelperUnlock} um die Importhilfe zu benutzen",
-        "loggedInWith": "Du bist eingeloggt als <b>{name}</b> und hast {csCount} Änderungen",
         "login": {
             "lockNotice": "Diese Seite ist gesperrt. Zum Zugang werden {importHelperUnlock} Änderungssätze benötigt.",
             "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungen vorgenommen",
@@ -361,8 +352,6 @@
             "title": "Anmeldung",
             "userAccountTitle": "Benutzerkonto auswählen"
         },
-        "loginIsCorrect": "<b>{name}</b> ist der richtige Account um Importnotizen zu erstellen.",
-        "loginRequired": "Sie müssen eingeloggt sein, um fortzufahren",
         "mapPreview": {
             "autodetected": "Die Ebene wurde anhand der Eigenschaften automatisch abgezogen",
             "confirm": "Die Objekte befinden sich an der richtigen Stelle auf der Karte",
@@ -396,7 +385,6 @@
             "noFilesLoaded": "Keine Datei geladen",
             "title": "Datei auswählen"
         },
-        "selectLayer": "Wähle eine Ebene...",
         "selectTheme": {
             "displayNonMatchingCount": "{length} Objekte stimmen nicht mit Voreinstellungen überein",
             "intro": "Alle folgenden Themen zeigen die Importhinweise an. Die Notiz auf OpenStreetMap kann jedoch nur mit einem einzigen Thema verknüpft werden. Wählen Sie das Thema, mit dem die erstellten Notizen verknüpft werden sollen",
@@ -409,8 +397,6 @@
             "unmatchedTitle": "Die folgenden Elemente stimmen mit keiner Voreinstellung überein"
         },
         "testMode": "Testmodus - Notizen werden nicht importiert",
-        "userAccountTitle": "Wähle einen Benutzeraccount",
-        "validateDataTitle": "Bestätige Daten",
         "title": "Import-Helfer"
     },
     "importInspector": {
