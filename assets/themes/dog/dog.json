@@ -1,0 +1,338 @@
+{
+  "id": "dog",
+  "maintainer": "Niels Elgaard Larsen",
+  "version": "1",
+  "title": {
+    "en": "dog POIs",
+    "da": "hundesteder"
+  },
+  "description": {
+    "en": "Hundsteder",
+    "da": "Hundsteder"
+  },
+  "icon": "./assets/themes/dog/dog-park.svg",
+  "startZoom": 10,
+  "startLat": 55,
+  "startLon": 12,
+  "layers": [
+    {
+      "id": "dogpark",
+      "source": {
+        "osmTags": {
+          "#": "For a description on which tags are possible, see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md",
+          "or": [
+            "leisure=dog_park",
+            {
+              "and": [
+                "leisure=park",
+                "dog=unleashed"
+              ]
+            }
+          ]
+        }
+      },
+      "#": "The tagrenderings are everything that must be shown and/or asked. Use a full tag-rendering section OR a single string to call a builtin tagrendering (see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinQuestions.md)",
+      "minzoom": 10,
+      "name": {
+        "en": "dog parks",
+        "da": "hundeskove"
+      },
+      "title": {
+        "render": {
+          "en": "dog park",
+          "da": "hundeskov"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "*": "{name}"
+            }
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "#": "Rendering block of a mapping which is shown for points AND at the center point of a line/area",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "iconx": "./assets/themes/dog/dog-park.svg",
+          "icon": "./assets/themes/dog/dog-park.svg",
+          "iconSize": "40,40,center",
+          "label": {
+            "render": {
+              "en": "dogpark",
+              "da": "hundeskov"
+            },
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": {
+                  "*": "{name}"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "#": "Rendering of a line",
+          "color": "#ff0",
+          "width": 5
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "dogpark-fenced",
+          "mappings": [
+            {
+              "if": "barrier=fence",
+              "then": {
+                "en": "fenced: Yes",
+                "da": "indhegnet: Ja"
+              }
+            },
+            {
+              "if": "barrier=no",
+              "then": {
+                "en": "fenced: No",
+                "da": "indhegnet: Nej"
+              }
+            }
+          ],
+          "question": {
+            "en": "It this dog park fenced in?",
+            "da": "Er denne hundeskov indhegnet?"
+          }
+        },
+        {
+          "id": "dogarea",
+          "render": {
+            "en": "areal: {_surface:ha} ha",
+            "da": "areal: {_surface:ha} ha"
+          },
+          "condition": "_surface:ha!=0"
+        },
+        "reviews",
+        "images"
+      ]
+    },
+    {
+      "id": "dog_food",
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "amenity=restaurant",
+                "amenity=cafe"
+              ]
+            },
+            {
+              "or": [
+                "dog=unleashed",
+                "dog=leashed",
+                "dog=yes"
+              ]
+            }
+          ]
+        }
+      },
+      "minzoom": 11,
+      "name": {
+        "en": "dogfriendly eateries",
+        "da": "hundevenlige madsteder"
+      },
+      "title": {
+        "render": {
+          "en": "dog-friendly eatery",
+          "da": "hundevenligt spisested"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "*": "{name}"
+            }
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "icon": "./assets/themes/dog/dog-food.svg",
+          "iconSize": "30,30,center",
+          "label": {
+            "render": {
+              "en": "dog-friendly food",
+              "da": "hundevenligt madsted"
+            },
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": {
+                  "*": "{name}"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "#": "Rendering of a line",
+          "color": "#ff0",
+          "width": 5
+        }
+      ],
+      "tagRenderings": [
+        "website",
+        "reviews",
+        "phone",
+        "images"
+      ]
+    },
+    {
+      "id": "dogshop",
+      "source": {
+        "osmTags": {
+          "and": [
+            "shop~*",
+            {
+              "or": [
+                "dog=leashed",
+                "dog=yes",
+                "shop=pet"
+              ]
+            }
+          ]
+        }
+      },
+      "minzoom": 12,
+      "name": {
+        "en": "dogfriendly shop",
+        "da": "hundevenlig butik"
+      },
+      "title": {
+        "render": {
+          "en": "dog-friendly shop",
+          "da": "hundevenlig butik"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "*": "{name}"
+            }
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "icon": {
+            "render": "./assets/themes/dog/dogshop.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "shop=pet"
+                  ]
+                },
+                "then": "./assets/themes/dog/petshop.svg"
+              }
+            ]
+          },
+          "iconSize": "30,30,center",
+          "label": {
+            "render": {
+              "en": "dog friendly shop",
+              "da": "hundevenlig butik"
+            },
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": {
+                  "*": "{name}"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "#": "Rendering of a line",
+          "color": "#ff0",
+          "width": 5
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "shoptype",
+          "render": {
+            "en": "sells {shop}",
+            "da": "s&aelig;lger {shop}"
+          },
+          "condition": "shop!=pet"
+        },
+        "website",
+        "reviews",
+        "phone",
+        "images"
+      ]
+    },
+    {
+      "id": "veterinary",
+      "source": {
+        "osmTags": {
+          "or": [
+            "amenity=veterinary"
+          ]
+        }
+      },
+      "minzoom": 10,
+      "name": {
+        "en": "veterinary",
+        "da": "dyrl&aelig;ge"
+      },
+      "title": {
+        "render": {
+          "en": "Veterinary",
+          "da": "dyrl&aelig;ge"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "*": "{name}"
+            }
+          }
+        ]
+      },
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "icon": "./assets/themes/dog/Veterinary-First-Aid.svg",
+          "iconSize": "30,30,center"
+        },
+        {
+          "#": "Rendering of a line",
+          "color": "#ff0",
+          "width": 5
+        }
+      ],
+      "tagRenderings": [
+        "website",
+        "reviews",
+        "phone"
+      ]
+    }
+  ]
+}
