@@ -424,7 +424,7 @@ class UrlTextfieldDef extends TextFieldDef {
     reformat(str: string): string {
         try {
             let url: URL
-            str = str.toLowerCase()
+            // str = str.toLowerCase() // URLS are case sensitive. Lowercasing them might break some URLS. See #763
             if (!str.startsWith("http://") && !str.startsWith("https://") && !str.startsWith("http:")) {
                 url = new URL("https://" + str)
             } else {
