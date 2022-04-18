@@ -115,7 +115,8 @@
             "includeMetaData": "Incluir metadatos (último editor, valores calculados, ...)",
             "noDataLoaded": "Aún no se han cargado ningunos daos. La descarga estará disponible proximamente",
             "title": "Descargar los datos visibles",
-            "uploadGpx": "Sube tu traza a OpenStreetMap"
+            "uploadGpx": "Sube tu traza a OpenStreetMap",
+            "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la actribución <b>© contribuidores d e OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles."
         },
         "error": "Algo fue mal",
         "example": "Ejemplo",
@@ -247,7 +248,8 @@
                 "died": "Murió: {value}"
             },
             "searchWikidata": "Buscar en Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
+            "wikipediaboxTitle": "Wikipedia",
+            "doSearch": "Busca arriba para ver los resultados"
         }
     },
     "image": {
@@ -266,7 +268,9 @@
         "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar.",
         "uploadingMultiple": "Cargando {count} imágenes…",
         "uploadingPicture": "Cargando la imagen…",
-        "willBePublished": "La imagen se publicará "
+        "willBePublished": "La imagen se publicará ",
+        "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
+        "ccoExplanation": "Añadir una fotografía en el dominio público implica que cualquiera puede hacer cualquier cosa con tu fotografía"
     },
     "importHelper": {
         "mapPreview": {
@@ -276,7 +280,29 @@
             "title": "Seleccionar archivo"
         },
         "title": "Ayudante de importación",
-        "validateDataTitle": "Validar datos"
+        "validateDataTitle": "Validar datos",
+        "askMetadata": {
+            "downloadGeojson": "Descargar geojson",
+            "orDownload": "Alternativamente, puedes descargar el conjunto de datos para importar directamente",
+            "shouldBeUrl": "No una URL válida",
+            "intro": "Antes de añadir {count} notas, por favor provee alguna información extra.",
+            "shouldBeOsmWikilink": "Se espera un enlace a una página en wiki.openstreetmap.org",
+            "giveDescription": "Por favor, escribe una pequeña descripción para alguien que vea la nota. Una buena nota describe lo que el contribuidor tiene que hacer, ej; <i>Puede que haya un banco aquí. Si estás por aquí, ¿Podrías por favor comprueba e indica si el banco existe o no?</i> (Un enlace a MapComplete se añadirá automáticamente)",
+            "giveWikilink": "¿En qué wikipágina puede encontrar uno más información sobre esta importación?",
+            "shouldNotBeHomepage": "No, tampoco se permite la página de inicio. Introduce la URL de una wikipágina de verdad para documentar tu importación",
+            "title": "Especificar metadatos"
+        },
+        "compareToAlreadyExistingNotes": {
+            "nothingNearby": "Todos los puntos propuestos no tienen una nota de importación previa cerca",
+            "loading": "Cargando las notas desde OSM",
+            "title": "Comparar con notas existentes",
+            "completelyImported": "Todos los puntos propuestos ya tienen (o tenían) una nota de importación",
+            "wontBeImported": "Estos puntos de datos <i>no</i> serán importados y se muestran como puntos en el mapa de debajo",
+            "loadingFailed": "La carga de las notas falló debido a {error}",
+            "mapExplanation": "Los elementos rojos en el siguiente mapa son todos los puntos de datos de tu conjunto de datos. Hay <b>{length}</b> elementos en tu conjunto de datos.",
+            "noPreviousNotesFound": "No se han encontrado notas de importación previas",
+            "someNearby": "{hasNearby} puntos sí que tienen una nota de importación ya existente a menos de {distance} metros"
+        }
     },
     "importLayer": {
         "layerName": "Posible {title}",
