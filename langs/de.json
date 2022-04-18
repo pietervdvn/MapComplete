@@ -276,23 +276,29 @@
         "willBePublished": "Ihr Bild wird veröffentlicht "
     },
     "importHelper": {
-        "allAttributesSame": "Alle zu importierenden Objekte haben diesen Tag",
-        "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer der vorhandenen MapComplete-Ebenen übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird ein einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
-        "importFormat": "Der Hinweistext sollte folgendes Format haben, um aufgenommen zu werden: <br><div class=\"literal-code\">[Eine kleine Einführung]<br>https://mapcomplete.osm.be/[themenname].html?[Parameter wie lat und lon]#import<br>[alle Tags des Objekts] </div>",
-        "inspectDataTitle": "Daten von {count} zu importierenden Objekten prüfen",
-        "inspectDidAutoDected": "Ebene wurde automatisch ausgewählt",
-        "inspectLooksCorrect": "Die Werte sehen richtig aus",
-        "lockNotice": "Diese Seite ist gesperrt. Du brauchst die Änderungen {importHelperUnlock} bevor du die Seite öffnen kannst.",
-        "locked": "Du benötigst mindestens {importHelperUnlock} um die Importhilfe zu benutzen",
-        "loggedInWith": "Du bist eingeloggt als <b>{name}</b> und hast {csCount} Änderungen",
-        "loginIsCorrect": "<b>{name}</b> ist der richtige Account um Importnotizen zu erstellen.",
-        "loginRequired": "Sie müssen eingeloggt sein, um fortzufahren",
+        "introduction": {
+            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer der vorhandenen MapComplete-Ebenen übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird ein einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
+            "importFormat": "Der Hinweistext sollte folgendes Format haben, um aufgenommen zu werden: <br><div class=\"literal-code\">[Eine kleine Einführung]<br>https://mapcomplete.osm.be/[themenname].html?[Parameter wie lat und lon]#import<br>[alle Tags des Objekts] </div>"
+        },
+        "login": {
+            "lockNotice": "Diese Seite ist gesperrt. Du brauchst die Änderungen {importHelperUnlock} bevor du die Seite öffnen kannst.",
+            "loggedInWith": "Du bist eingeloggt als <b>{name}</b> und hast {csCount} Änderungen",
+            "loginIsCorrect": "<b>{name}</b> ist der richtige Account um Importnotizen zu erstellen.",
+            "loginRequired": "Sie müssen eingeloggt sein, um fortzufahren",
+            "userAccountTitle": "Wähle einen Benutzeraccount"
+        },
         "mapPreview": {
             "autodetected": "Die Ebene wurde anhand der Eigenschaften automatisch abgezogen",
             "confirm": "Die Objekte befinden sich an der richtigen Stelle auf der Karte",
             "mismatch": "{count} Objekte stimmen nicht mit der ausgewählten Ebene überein. Stellen Sie sicher, dass die Tags zur Angabe des Typs vorhanden sind, nämlich {tags}",
             "selectLayer": "Zu welcher Ebene passt dieser Import?",
             "title": "Kartenvorschau"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Alle zu importierenden Objekte haben diesen Tag",
+            "inspectDataTitle": "Daten von {count} zu importierenden Objekten prüfen",
+            "inspectLooksCorrect": "Die Werte sehen richtig aus",
+            "someHaveSame": "{count} der zu importierenden Objekte haben dieses Tag, das sind {percentage}% der Gesamtzahl"
         },
         "selectFile": {
             "description": "Wähle eine .csv oder .geojson Datei um anzufangen",
@@ -308,11 +314,7 @@
             "noFilesLoaded": "Keine Datei geladen",
             "title": "Wähle eine Datei"
         },
-        "selectLayer": "Wähle eine Ebene...",
-        "someHaveSame": "{count} der zu importierenden Objekte haben dieses Tag, das sind {percentage}% der Gesamtzahl",
-        "title": "Import-Helfer",
-        "userAccountTitle": "Wähle einen Benutzeraccount",
-        "validateDataTitle": "Bestätige Daten"
+        "title": "Import-Helfer"
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"
