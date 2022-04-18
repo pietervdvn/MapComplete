@@ -303,7 +303,7 @@ async function main(): Promise<void> {
         if (theme !== undefined && layoutConfigJson.id !== theme) {
             continue
         }
-        const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
+        const layout = new LayoutConfig(layoutConfigJson, true)
         const layoutName = layout.id
         if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
             console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);

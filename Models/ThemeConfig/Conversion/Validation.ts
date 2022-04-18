@@ -68,7 +68,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         const warnings = []
         const information = []
 
-        const theme = new LayoutConfig(json, true, "test")
+        const theme = new LayoutConfig(json, true)
 
         {
             // Legacy format checks  

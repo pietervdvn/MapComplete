@@ -203,6 +203,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'Add to home screen' button in the URL bar to do this.",
             "copiedToClipboard": "Link copied to clipboard",
+            "downloadCustomTheme": "Download the configuration for this theme",
+            "downloadCustomThemeHelp": "An experienced contributor can use this file to improve your theme",
             "editThemeDescription": "Add or change questions to this map theme",
             "editThisTheme": "Edit this theme",
             "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
