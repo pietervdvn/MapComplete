@@ -9,12 +9,14 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import Translations from "../i18n/Translations";
+import {Translation} from "../i18n/Translation";
 
 export class CreateNotes extends Combine {
     
-    public static createNoteContents(feature: {properties: any, geometry: {coordinates: [number,number]}},
-                                     options: {wikilink: string; intro: string; source: string, theme: string }
-                                     ): string[]{
+
+    public static createNoteContentsUi(feature: {properties: any, geometry: {coordinates: [number,number]}},
+        options: {wikilink: string; intro: string; source: string, theme: string }
+    ): (Translation | string)[]{
         const src = feature.properties["source"] ?? feature.properties["src"] ?? options.source
         delete feature.properties["source"]
         delete feature.properties["src"]
@@ -41,13 +43,25 @@ export class CreateNotes extends Combine {
         return [
             options.intro,
             extraNote,
-            note.datasource.Subs({source: src}).txt,
-            note.wikilink.Subs(options).txt,
+            note.datasource.Subs({source: src}),
+            note.wikilink.Subs(options),
             '',
-            note.importEasily.txt,
+            note.importEasily,
             `https://mapcomplete.osm.be/${options.theme}.html?z=18&lat=${lat}&lon=${lon}#import`,
             ...tags]
     }
+
+    public static createNoteContents(feature: {properties: any, geometry: {coordinates: [number,number]}},
+                                     options: {wikilink: string; intro: string; source: string, theme: string }
+    ): string[]{
+        return CreateNotes.createNoteContentsUi(feature, options).map(trOrStr => {
+            if(typeof trOrStr === "string"){
+                return trOrStr
+            }
+            return trOrStr.txt
+        })
+    }
+
 
     constructor(state: { osmConnection: OsmConnection }, v: { features: any[]; wikilink: string; intro: string; source: string, theme: string }) {
         const t = Translations.t.importHelper.createNotes;
@@ -83,7 +97,7 @@ export class CreateNotes extends Combine {
                 )))),
                 new Combine([
                     Svg.party_svg().SetClass("w-24"),
-                    t.done.Subs(v.features.length).SetClass("thanks"),
+                    t.done.Subs({count: v.features.length}).SetClass("thanks"),
                         new SubtleButton(Svg.note_svg(), 
                            t.openImportViewer , {
                             url: "import_viewer.html"

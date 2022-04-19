@@ -217,7 +217,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             new Title(t.titleLive),
             t.importCandidatesCount.Subs({count:toImport.features.length }),
              new VariableUiElement(geojson.map(geojson => {
-                 if(geojson?.features?.length === undefined && geojson?.features?.length === 0){
+                 if(geojson?.features?.length === undefined || geojson?.features?.length === 0){
                     return t.nothingLoaded.Subs(layer).SetClass("alert")
                  }
                  return new Combine([
@@ -233,7 +233,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             new Combine([t.mapShowingNearbyIntro, nearbyCutoff]).SetClass("flex"),
             new VariableUiElement(toImportWithNearby.features.map(feats => 
                 t.nearbyWarn.Subs({count: feats.length}).SetClass("alert"))),
-            ,t.setRangeToZero,
+            t.setRangeToZero,
             matchedFeaturesMap]).SetClass("flex flex-col")
 
         super([
@@ -246,7 +246,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                     return new Loading(t.states.running)
                 }
                 if (d["error"] !== undefined) {
-                    return t.states.error.Subs(d).SetClass("alert")
+                    return t.states.error.Subs({error: d["error"]}).SetClass("alert")
                 }
 
                 if (d === "cached") {
