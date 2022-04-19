@@ -446,3 +446,12 @@ Instead, make one layer for one kind of object and change the icon based on attr
 There are a few advanced features to do fancy stuff available, which are documented only in the spec above - for
 example, reusing background images and substituting the colours or HTML rendering. If you need advanced stuff, read it
 through!
+
+### Forgetting adjacent concepts
+
+Some new contributors might add a POI to indicate something that resembles it, but quite isn't.
+
+For example, if they are only offered a layer with public bookcases, they might map their local library with a public bookcase.
+The perfect solution for this is to provide both the library-layer and public bookcases layer - but this requires having both layers.
+
+A good solution is to clearly explain what a certain feature is and what it is not.
