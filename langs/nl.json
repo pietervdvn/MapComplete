@@ -314,7 +314,15 @@
             "noFilesLoaded": "Geen bestand ingeladen op dit moment",
             "title": "Selecteer bestand"
         },
-        "title": "Importeer-helper"
+        "title": "Importeer-helper",
+        "compareToAlreadyExistingNotes": {
+            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt"
+        },
+        "noteParts": {
+            "datasource": "Oorspronkelijke data van {source}",
+            "wikilink": "Meer informatie over deze import: {wikilink}",
+            "importEasily": "Voeg dit punt eenvoudig toe met MapComplete:"
+        }
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
