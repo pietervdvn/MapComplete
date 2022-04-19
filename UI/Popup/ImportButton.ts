@@ -194,7 +194,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                         importFlow,
                         isImported
                     ),
-                    t.zoomInMore.SetClass("alert"),
+                    t.zoomInMore.SetClass("alert block"),
                     state.locationControl.map(l => l.zoom >= 18)
                 ),
                 pleaseLoginButton,

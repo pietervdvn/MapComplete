@@ -138,16 +138,16 @@ export class ImageUploadFlow extends Toggle {
                 if (l == 0) {
                     return undefined
                 }
-                return t.uploadFailed.Clone().SetClass("alert");
+                return new Loading(t.uploadFailed).SetClass("alert");
             })),
             new VariableUiElement(uploadedCount.map(l => {
                 if (l == 0) {
                     return undefined;
                 }
                 if (l == 1) {
-                    return t.uploadDone.Clone().SetClass("thanks");
+                    return t.uploadDone.Clone().SetClass("thanks block");
                 }
-                return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks")
+                return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks block")
             })),
 
             fileSelector,
