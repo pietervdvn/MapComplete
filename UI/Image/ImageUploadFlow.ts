@@ -15,6 +15,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {Changes} from "../../Logic/Osm/Changes";
+import Loading from "../Base/Loading";
 
 export class ImageUploadFlow extends Toggle {
 
