@@ -469,7 +469,7 @@
         "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
-        "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
+        "_osm_obj:source:date=(feat.get('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
         "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
         "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
         "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
