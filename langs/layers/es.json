@@ -12,10 +12,12 @@
                         "then": "Esta edificación no tiene número"
                     }
                 },
-                "question": "¿Cuál es el número de esta casa?"
+                "question": "¿Cuál es el número de esta casa?",
+                "render": "La numeración de la casa es <b>{addr:housenumber}</b>"
             },
             "street": {
-                "question": "¿En qué calle se encuentra esta dirección?"
+                "question": "¿En qué calle se encuentra esta dirección?",
+                "render": "La dirección está en la calle <b>{addr:street}</b>"
             }
         },
         "title": {
@@ -50,6 +52,9 @@
                     },
                     "2": {
                         "then": "La estación la opera un grupo formal de voluntarios."
+                    },
+                    "3": {
+                        "then": "La estación es de gestión privada."
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
@@ -106,6 +111,18 @@
                     },
                     "8": {
                         "then": "Grafiti"
+                    },
+                    "6": {
+                        "then": "Piedra"
+                    },
+                    "11": {
+                        "then": "Cerámica"
+                    },
+                    "10": {
+                        "then": "Azulejo (azulejos decorativos españoles)"
+                    },
+                    "9": {
+                        "then": "Relieve"
                     }
                 },
                 "question": "¿Qué tipo de obra es esta pieza?",
