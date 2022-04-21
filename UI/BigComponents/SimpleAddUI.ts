@@ -191,7 +191,7 @@ export default class SimpleAddUI extends Toggle {
             preset.icon(),
             new Combine([
                 title.SetClass("font-bold"),
-                Translations.WT(preset.description)?.FirstSentence()
+                preset.description?.FirstSentence()
             ]).SetClass("flex flex-col")
         )
     }

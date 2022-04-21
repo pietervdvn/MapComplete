@@ -86,7 +86,7 @@ export default class MoveWizard extends Toggle {
             moveReason.setData(reason)
             moveButton = new SubtleButton(
                 reason.icon.SetStyle("height: 1.5rem; width: 1.5rem;"),
-                Translations.WT(reason.invitingText)
+                Translations.T(reason.invitingText)
             ).onClick(() => {
                 currentStep.setData("pick_location")
             })

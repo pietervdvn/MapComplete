@@ -161,8 +161,8 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]): P
         console.log(icon)
         throw "Icon is not an svg for " + layout.id
     }
-    const ogTitle = Translations.WT(layout.title).txt;
-    const ogDescr = Translations.WT(layout.description ?? "").txt;
+    const ogTitle = Translations.T(layout.title).txt;
+    const ogDescr = Translations.T(layout.description ?? "").txt;
 
     const manifest = {
         name: name,
@@ -186,8 +186,8 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
 
     Locale.language.setData(layout.language[0]);
     const targetLanguage = layout.language[0]
-    const ogTitle = Translations.WT(layout.title).textFor(targetLanguage).replace(/"/g, '\\"');
-    const ogDescr = Translations.WT(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap").textFor(targetLanguage).replace(/"/g, '\\"');
+    const ogTitle = Translations.T(layout.title).textFor(targetLanguage).replace(/"/g, '\\"');
+    const ogDescr = Translations.T(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap").textFor(targetLanguage).replace(/"/g, '\\"');
     let ogImage = layout.socialImage;
     let twitterImage = ogImage
     if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
