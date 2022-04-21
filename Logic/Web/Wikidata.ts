@@ -147,6 +147,26 @@ export default class Wikidata {
         Wikidata._cache.set(key, src)
         return src;
     }
+    
+    public static async searchAdvanced(text: string, options: WikidataSearchoptions & {
+        instanceOf: number}){
+        const sparql = `SELECT * WHERE {
+            SERVICE wikibase:mwapi {
+                bd:serviceParam wikibase:api "EntitySearch" .
+                    bd:serviceParam wikibase:endpoint "www.wikidata.org" .
+                    bd:serviceParam mwapi:search "${text}" .
+                    bd:serviceParam mwapi:language "${options.lang}" .
+                    ?item wikibase:apiOutputItem mwapi:item .
+                    ?num wikibase:apiOrdinal true .
+            }
+                ?item (wdt:P279|wdt:P31) wd:Q${options.instanceOf}
+        } ORDER BY ASC(?num) LIMIT ${options.maxCount}`
+        const url = wds.sparqlQuery(sparql)
+
+        const result = await Utils.downloadJson(url, {"User-Agent": "MapComplete script"})
+        return result.results.bindings
+        
+    }
 
     public static async search(
         search: string,

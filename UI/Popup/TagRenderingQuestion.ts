@@ -207,7 +207,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.WT(mapping.then)
+                        shown: Translations.T(mapping.then)
                     }
                 })
             )
