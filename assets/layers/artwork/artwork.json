@@ -286,7 +286,8 @@
             "pt": "Pedra",
             "hu": "Kő",
             "pl": "Skała",
-            "ca": "Pedra"
+            "ca": "Pedra",
+            "es": "Piedra"
           }
         },
         {
@@ -345,7 +346,8 @@
             "pt": "Relevo",
             "hu": "Dombormű",
             "pl": "Płaskorzeźba",
-            "ca": "Relleu"
+            "ca": "Relleu",
+            "es": "Relieve"
           }
         },
         {
@@ -363,7 +365,8 @@
             "id": "Azulejo (ubin dekoratif Spanyol)",
             "pt": "Azulejo (azulejo decorativo espanhol e português)",
             "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
-            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)"
+            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
+            "es": "Azulejo (azulejos decorativos españoles)"
           }
         },
         {
@@ -381,7 +384,8 @@
             "pt": "Ladrilhos",
             "hu": "Csempe",
             "pl": "Płyta ceramiczna (fliza)",
-            "ca": "Enrajolat"
+            "ca": "Enrajolat",
+            "es": "Cerámica"
           }
         }
       ],

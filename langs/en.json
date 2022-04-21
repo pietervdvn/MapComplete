@@ -298,7 +298,7 @@
             "loadingFailed": "Loading notes failed due to {error}",
             "mapExplanation": "The red elements on the next map are all the data points from your dataset. There are <b>{length}</b> elements in your dataset.",
             "noPreviousNotesFound": "No previous import notes found",
-            "nothingNearby": "All of the proposed points have don't have a previous import note nearby",
+            "nothingNearby": "None of the proposed points have an import note nearby",
             "someNearby": "{hasNearby} points do have an already existing import note within {distance} meter",
             "title": "Compare with existing notes",
             "titleLong": "Compare with already existing 'to-import'-notes",
@@ -321,6 +321,7 @@
             "nearbyWarn": "The {count} red elements on the following map will <b>not</b> be imported!",
             "nothingLoaded": "No elements are loaded from OpenStreetMap which match the current layer {name}",
             "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
+            "reloadTheCache": "Clear the cache and query overpass again",
             "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
             "states": {
                 "error": "Could not load latest data from overpass due to {error}",

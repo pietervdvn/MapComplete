@@ -70,7 +70,8 @@
         "pl": "Numer tego domu to <b>{addr:housenumber}</b>",
         "ru": "Номер дома <b>{addr:housenumber}</b>",
         "zh_Hans": "门牌号是<b>{addr:housenumber}</b>",
-        "id": "Nomor rumah ini <b>{addr:housenumber}</b>"
+        "id": "Nomor rumah ini <b>{addr:housenumber}</b>",
+        "es": "La numeración de la casa es <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -122,7 +123,8 @@
         "fr": "Le nom de la voie est <b>{addr:street}</b>",
         "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
         "zh_Hans": "这个地址位于<b>{addr:street}</b>街",
-        "id": "Alamat ini ada di jalan <b>{addr:street}</b>"
+        "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
+        "es": "La dirección está en la calle <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",

@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import {TagUtils} from "../Logic/Tags/TagUtils";
 import {writeFileSync} from "fs";
+import {TagsFilter} from "../Logic/Tags/TagsFilter";
 
 function main(args) {
     if (args.length < 2) {
@@ -13,7 +14,13 @@ function main(args) {
     const output = args[2]
 
     const data = JSON.parse(fs.readFileSync(path, "UTF8"))
-    const filter = TagUtils.Tag(JSON.parse(spec))
+    let filter : TagsFilter ;
+    try{
+       filter = TagUtils.Tag(JSON.parse(spec))
+        
+    }catch(e){
+        filter = TagUtils.Tag(spec)
+    }
     const features = data.features.filter(f => filter.matchesProperties(f.properties))
 
     if(features.length === 0){

@@ -47,6 +47,27 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
         const toImport: {features: any[]} = params;
         let overpassStatus = new UIEventSource<{ error: string } | "running" | "success" | "idle" | "cached">("idle")
         const cacheAge = new UIEventSource<number>(undefined);
+        
+        
+        function loadDataFromOverpass(){
+            // Load the data!
+            const url = Constants.defaultOverpassUrls[1]
+            const relationTracker = new RelationsTracker()
+            const overpass = new Overpass(params.layer.source.osmTags, [], url, new UIEventSource<number>(180), relationTracker, true)
+            console.log("Loading from overpass!")
+            overpassStatus.setData("running")
+            overpass.queryGeoJson(bbox).then(
+                ([data, date]) => {
+                    console.log("Received overpass-data: ", data.features.length, "features are loaded at ", date);
+                    overpassStatus.setData("success")
+                    fromLocalStorage.setData([data, date])
+                },
+                (error) => {
+                    overpassStatus.setData({error})
+                })
+        }
+        
+        
         const fromLocalStorage = IdbLocalStorage.Get<[any, Date]>("importer-overpass-cache-" + layer.id, {
             
             whenLoaded: (v) => {
@@ -63,22 +84,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                     }
                     cacheAge.setData(-1)
                 }
-                // Load the data!
-                const url = Constants.defaultOverpassUrls[1]
-                const relationTracker = new RelationsTracker()
-                const overpass = new Overpass(params.layer.source.osmTags, [], url, new UIEventSource<number>(180), relationTracker, true)
-                console.log("Loading from overpass!")
-                overpassStatus.setData("running")
-                overpass.queryGeoJson(bbox).then(
-                    ([data, date]) => {
-                        console.log("Received overpass-data: ", data.features.length, "features are loaded at ", date);
-                        overpassStatus.setData("success")
-                        fromLocalStorage.setData([data, date])
-                    },
-                    (error) => {
-                        overpassStatus.setData({error})
-                    })
-
+                loadDataFromOverpass()
             }
         });
 
@@ -166,7 +172,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             return osmData.features.filter(f =>
                 toImport.features.some(imp =>
                     maxDist >= GeoOperations.distanceBetween(imp.geometry.coordinates, GeoOperations.centerpointCoordinates(f))))
-        }, [nearbyCutoff.GetValue()]), false);
+        }, [nearbyCutoff.GetValue().stabilized(500)]), false);
         const paritionedImport = ImportUtils.partitionFeaturesIfNearby(toImport, geojson, nearbyCutoff.GetValue().map(Number));
 
         // Featuresource showing OSM-features which are nearby a toImport-feature 
@@ -211,7 +217,11 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                 if (age < 0) {
                     return t.cacheExpired
                 }
-                return t.loadedDataAge.Subs({age: Utils.toHumanTime(age)})
+                return new Combine([t.loadedDataAge.Subs({age: Utils.toHumanTime(age)}),
+                new SubtleButton(Svg.reload_svg().SetClass("h-8"), t.reloadTheCache)
+                    .onClick(loadDataFromOverpass)
+                    .SetClass("h-12")
+                ])
             })),
 
             new Title(t.titleLive),
