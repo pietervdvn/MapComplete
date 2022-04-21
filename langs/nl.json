@@ -244,7 +244,7 @@
             "doSearch": "Zoek hierboven om resultaten te zien",
             "failed": "Het Wikipedia-artikel inladen is mislukt",
             "loading": "Wikipedia aan het laden...",
-            "noResults": "Niet gevonden voor <i>{search}</i>",
+            "noResults": "Geen relevante items gevonden voor <i>{search}</i>",
             "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel",
             "previewbox": {
                 "born": "Geboren: {value}",
