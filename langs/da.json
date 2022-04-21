@@ -399,7 +399,9 @@
         },
         "services": {
             "title": "MapComplete tjenester",
-            "li0": "Opsætning af et tema skræddersyet efter dine behov"
+            "li0": "Opsætning af et tema skræddersyet efter dine behov",
+            "intro": "Udviklerne af MapComplete kan hjælpe dig med følgende tjenester:",
+            "li1": "Hjælp med opsætning af internt data flow til integration med OpenStreetMap"
         },
         "aboutMc": {
             "survey": {
@@ -577,7 +579,8 @@
         "popupTitle": "Mulig {title}",
         "layerName": "Mulig {title}",
         "description": "Et lag som importerer poster for {title}",
-        "notFound": "Jeg kunne ikke finde {title} - fjern det"
+        "notFound": "Jeg kunne ikke finde {title} - fjern det",
+        "alreadyMapped": "Der er allerede en anden {title} på kortet - dette punkt er en dublet"
     },
     "index": {
         "featuredThemeTitle": "Fremhævet denne uge",
