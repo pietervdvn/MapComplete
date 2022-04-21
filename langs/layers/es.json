@@ -106,23 +106,23 @@
                     "5": {
                         "then": "Busto"
                     },
+                    "6": {
+                        "then": "Piedra"
+                    },
                     "7": {
                         "then": "Instalación"
                     },
                     "8": {
                         "then": "Grafiti"
                     },
-                    "6": {
-                        "then": "Piedra"
-                    },
-                    "11": {
-                        "then": "Cerámica"
+                    "9": {
+                        "then": "Relieve"
                     },
                     "10": {
                         "then": "Azulejo (azulejos decorativos españoles)"
                     },
-                    "9": {
-                        "then": "Relieve"
+                    "11": {
+                        "then": "Cerámica"
                     }
                 },
                 "question": "¿Qué tipo de obra es esta pieza?",

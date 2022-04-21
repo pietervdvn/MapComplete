@@ -276,6 +276,9 @@
         "willBePublished": "Jouw foto wordt gepubliceerd "
     },
     "importHelper": {
+        "compareToAlreadyExistingNotes": {
+            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt"
+        },
         "introduction": {
             "description": "De importeer-helper converteert een externe dataset in OSM-kaartnotas. De externe data moet overeenkomen met een bestaande MapComplete-laag. Voor elk item wordt er een kaartnota gemaakt. Deze notas worden dan samen met de relevante POI getoond en kunnen dan (via MapComplete) snel en eenvoudig toegevoegd worden.",
             "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>"
@@ -293,6 +296,11 @@
             "mismatch": "{count} objecten hebben niet de juiste tags. Zorg ervoor dat de juiste tags om het type aan te geven aanwezig zijn, namelijk {tags}",
             "selectLayer": "Met welke laag komt deze te importeren dataset overeen?",
             "title": "Voorbeeldkaart"
+        },
+        "noteParts": {
+            "datasource": "Oorspronkelijke data van {source}",
+            "importEasily": "Voeg dit punt eenvoudig toe met MapComplete:",
+            "wikilink": "Meer informatie over deze import: {wikilink}"
         },
         "previewAttributes": {
             "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag",
@@ -314,15 +322,7 @@
             "noFilesLoaded": "Geen bestand ingeladen op dit moment",
             "title": "Selecteer bestand"
         },
-        "title": "Importeer-helper",
-        "compareToAlreadyExistingNotes": {
-            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt"
-        },
-        "noteParts": {
-            "datasource": "Oorspronkelijke data van {source}",
-            "wikilink": "Meer informatie over deze import: {wikilink}",
-            "importEasily": "Voeg dit punt eenvoudig toe met MapComplete:"
-        }
+        "title": "Importeer-helper"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
