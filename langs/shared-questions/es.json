@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Localizado en la primera planta"
+                },
+                "4": {
+                    "then": "Situado en el primer nivel del sótano"
                 }
             },
             "question": "¿En qué nivel se encuentra esta característica?",

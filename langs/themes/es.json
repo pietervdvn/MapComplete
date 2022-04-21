@@ -25,7 +25,8 @@
             "0": {
                 "tagRenderings": {
                     "caravansites-charge": {
-                        "question": "¿Cuánto cobra este lugar?"
+                        "question": "¿Cuánto cobra este lugar?",
+                        "render": "Este lugar cobra {charge}"
                     },
                     "caravansites-description": {
                         "question": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)",
@@ -74,13 +75,54 @@
                             },
                             "2": {
                                 "then": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
+                            },
+                            "0": {
+                                "then": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días"
                             }
                         },
                         "question": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
+                    },
+                    "caravansites-capacity": {
+                        "question": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)",
+                        "render": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo"
+                    },
+                    "caravansites-name": {
+                        "question": "¿Cómo se llama este lugar?",
+                        "render": "Este lugar se llama {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Este lugar tiene un vertedero sanitario"
+                            },
+                            "1": {
+                                "then": "Este lugar no tiene vertedero sanitario"
+                            }
+                        },
+                        "question": "¿Este lugar tiene un vertedero sanitario?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Este lugar cuenta con sanitarios"
+                            },
+                            "1": {
+                                "then": "Este lugar no tiene sanitarios"
+                            }
+                        }
+                    }
+                },
+                "description": "Sitios de acampada",
+                "name": "Sitios de Acampada",
+                "presets": {
+                    "0": {
+                        "description": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. ",
+                        "title": "Un camping"
                     }
                 }
             }
-        }
+        },
+        "description": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas. Este es un sitio web y una aplicación web. Los datos se almacenan en OpenStreetMap, por lo que serán gratuitos para siempre y podrán ser reutilizados por cualquier aplicación."
     },
     "ghostbikes": {
         "title": "Bicicleta blanca"
@@ -88,5 +130,14 @@
     "personal": {
         "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
         "title": "Interficie personal"
+    },
+    "bookcases": {
+        "description": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías. Puedes descubrir nuevas librerías cercanas y, con una cuenta gratuita de OpenStreetMap, añadir rápidamente tus librerías favoritas.",
+        "title": "Mapa de Librerías Abiertas"
+    },
+    "binoculars": {
+        "shortDescription": "Un mapa con prismáticos fijos",
+        "title": "Binoculares",
+        "description": "Un mapa con prismáticos fijos en un poste. Suele encontrarse en lugares turísticos, miradores, en lo alto de torres panorámicas u ocasionalmente en una reserva natural."
     }
 }
