@@ -315,6 +315,34 @@
       }
     },
     {
+      "id": "tree-species-wikidata",
+      "question": {
+        "en": "What species is this tree?"
+      },
+      "render": {
+        "*":"{wikipedia(species:wikidata):max-height: 25rem}" 
+      },
+      "freeform": {
+        "key": "species:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "species",
+          {
+          "instanceOf": [10884, 16521]
+        }]
+      }
+    },
+    {
+      "id": "tree-wikipedia",
+      "#": "If this tree has a wikipedia article, show it. People can _only_ set the species though!",
+      "render": {
+        "*":"{wikipedia()}"
+      },
+      "condition": {
+        "or": ["wikipedia~*","wikidata~*"]
+      }
+    },
+    {
       "render": {
         "nl": "Naam: {name}",
         "en": "Name: {name}",

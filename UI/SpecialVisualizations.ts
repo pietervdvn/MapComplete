@@ -46,6 +46,8 @@ import {LoginToggle} from "./Popup/LoginButton";
 import {start} from "repl";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
 import {TextField} from "./Input/TextField";
+import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
+import {Translation} from "./i18n/Translation";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -159,19 +161,19 @@ class CloseNoteButton implements SpecialVisualization {
                     tags.ping()
                 })
         })
-        
-        if((params.minZoom??"") !== "" && !isNaN(Number(params.minZoom))){
-          closeButton =  new Toggle(
+
+        if ((params.minZoom ?? "") !== "" && !isNaN(Number(params.minZoom))) {
+            closeButton = new Toggle(
                 closeButton,
                 params.zoomButton ?? "",
-                state.  locationControl.map(l => l.zoom >= Number(params.minZoom))
+                state.locationControl.map(l => l.zoom >= Number(params.minZoom))
             )
         }
-        
+
         return new LoginToggle(new Toggle(
             t.isClosed.SetClass("thanks"),
             closeButton,
-            
+
             isClosed
         ), t.loginToClose, state)
     }
@@ -180,7 +182,7 @@ class CloseNoteButton implements SpecialVisualization {
 
 export default class SpecialVisualizations {
 
-    public static specialVisualizations : SpecialVisualization[] = SpecialVisualizations.init()
+    public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.init()
 
     public static HelpMessage() {
 
@@ -207,28 +209,28 @@ export default class SpecialVisualizations {
             ));
 
         return new Combine([
-            new Combine([
-                
-                new Title("Special tag renderings", 1),
-                
-                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
-                new Title("Using expanded syntax",4),
-                `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write`,
-                new FixedUiElement(JSON.stringify({
-                    render: {
-                        special:{
-                            type: "some_special_visualisation",
-                            "argname": "some_arg",
-                            "message":{
-                                en:"some other really long message",
-                                nl: "een boodschap in een andere taal"
-                            },
-                            "other_arg_name":"more args"
+                new Combine([
+
+                    new Title("Special tag renderings", 1),
+
+                    "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
+                    "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                    new Title("Using expanded syntax", 4),
+                    `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write`,
+                    new FixedUiElement(JSON.stringify({
+                        render: {
+                            special: {
+                                type: "some_special_visualisation",
+                                "argname": "some_arg",
+                                "message": {
+                                    en: "some other really long message",
+                                    nl: "een boodschap in een andere taal"
+                                },
+                                "other_arg_name": "more args"
+                            }
                         }
-                    }
-                })).SetClass("code")
-            ]).SetClass("flex flex-col"),
+                    })).SetClass("code")
+                ]).SetClass("flex flex-col"),
                 ...helpTexts
             ]
         ).SetClass("flex flex-col");
@@ -296,6 +298,32 @@ export default class SpecialVisualizations {
                                 })
                         )
 
+                },
+                {
+                    funcName: "wikidata_label",
+                    docs: "Shows the label of the corresponding wikidata-item",
+                    args: [
+                        {
+                            name: "keyToShowWikidataFor",
+                            doc: "Use the wikidata entry from this key to show the label",
+                            defaultValue: "wikidata"
+                        }
+                    ],
+                    example: "`{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself",
+                    constr: (_, tagsSource, args) =>
+                        new VariableUiElement(
+                            tagsSource.map(tags => tags[args[0]])
+                                .map(wikidata => {
+                                    wikidata = Utils.NoEmpty(wikidata?.split(";")?.map(wd => wd.trim()) ?? [])[0]
+                                    const entry = Wikidata.LoadWikidataEntry(wikidata)
+                                    return new VariableUiElement(entry.map(e => {
+                                        if (e === undefined || e["success"] === undefined) {
+                                            return wikidata
+                                        }
+                                        const response = <WikidataResponse>e["success"]
+                                        return Translation.fromMap(response.labels)
+                                    }))
+                                }))
                 },
                 {
                     funcName: "minimap",
@@ -482,7 +510,7 @@ export default class SpecialVisualizations {
                     docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
                     example: "{live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}",
                     args: [{
-                        name: "Url", 
+                        name: "Url",
                         doc: "The URL to load",
                         required: true
                     }, {
@@ -783,7 +811,7 @@ export default class SpecialVisualizations {
                         const textField = new TextField(
                             {
                                 placeholder: t.addCommentPlaceholder,
-                            inputStyle: "width: 100%; height: 6rem;",
+                                inputStyle: "width: 100%; height: 6rem;",
                                 textAreaRows: 3,
                                 htmlType: "area"
                             }
@@ -846,7 +874,7 @@ export default class SpecialVisualizations {
                                 textField,
                                 new Combine([
                                     stateButtons.SetClass("sm:mr-2"),
-                                    new Toggle(addCommentButton, 
+                                    new Toggle(addCommentButton,
                                         new Combine([t.typeText]).SetClass("flex items-center h-full subtle"),
                                         textField.GetValue().map(t => t !== undefined && t.length >= 1)).SetClass("sm:mr-2")
                                 ]).SetClass("sm:flex sm:justify-between sm:items-stretch")
@@ -947,7 +975,7 @@ export default class SpecialVisualizations {
             ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
-        
+
         return specialVisualizations;
     }
 

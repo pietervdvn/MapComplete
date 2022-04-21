@@ -17,14 +17,20 @@ export default class WikidataSearchBox extends InputElement<string> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly wikidataId: UIEventSource<string>
     private readonly searchText: UIEventSource<string>
+    private readonly instanceOf?: number[];
+    private readonly notInstanceOf?: number[];
 
     constructor(options?: {
         searchText?: UIEventSource<string>,
-        value?: UIEventSource<string>
+        value?: UIEventSource<string>,
+        notInstanceOf?: number[],
+        instanceOf?: number[]
     }) {
         super();
         this.searchText = options?.searchText
         this.wikidataId = options?.value ?? new UIEventSource<string>(undefined);
+        this.instanceOf = options?.instanceOf
+        this.notInstanceOf = options?.notInstanceOf
     }
 
     GetValue(): UIEventSource<string> {
@@ -59,7 +65,9 @@ export default class WikidataSearchBox extends InputElement<string> {
             if (promise === undefined) {
                 promise = Wikidata.searchAndFetch(searchText, {
                         lang,
-                        maxCount: 5
+                        maxCount: 5,
+                        notInstanceOf: this.notInstanceOf,
+                        instanceOf: this.instanceOf
                     }
                 )
                 WikidataSearchBox._searchCache.set(key, promise)
@@ -75,13 +83,15 @@ export default class WikidataSearchBox extends InputElement<string> {
                 return new Combine([Translations.t.general.wikipedia.failed.Clone().SetClass("alert"), searchFailMessage.data])
             }
 
+            if (searchField.GetValue().data.length === 0) {
+                return Translations.t.general.wikipedia.doSearch
+            }
+
             if (searchResults.length === 0) {
                 return Translations.t.general.wikipedia.noResults.Subs({search: searchField.GetValue().data ?? ""})
             }
 
-            if (searchResults.length === 0) {
-                return Translations.t.general.wikipedia.doSearch
-            }
+
 
             return new Combine(searchResults.map(wikidataresponse => {
                 const el = WikidataPreviewBox.WikidataResponsePreview(wikidataresponse).SetClass("rounded-xl p-1 sm:p-2 md:p-3 m-px border-2 sm:border-4 transition-colors")

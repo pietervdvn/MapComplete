@@ -52,6 +52,7 @@
         "helperArgs": [
           "name",
           {
+            "notInstanceOf": ["Q79007","Q22698"],
             "removePostfixes": [
               "steenweg",
               "heirbaan",
@@ -70,7 +71,9 @@
               "wegel",
               "kerk",
               "church",
-              "kaai"
+              "kaai",
+              "park",
+              "parque"
             ]
           }
         ]
