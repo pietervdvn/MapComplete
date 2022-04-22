@@ -151,7 +151,7 @@
             ]
           },
           "iconSize": {
-            "render": "20,20,center"
+            "render": "32,32,center"
           },
           "location": [
             "point",
