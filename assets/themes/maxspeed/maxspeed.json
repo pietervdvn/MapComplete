@@ -16,7 +16,7 @@
     "en": "Complete the maxspeed properties of a way."
   },
   "maintainer": "",
-  "icon": "maxspeed_logo.svg",
+  "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -138,50 +138,16 @@
           ]
         }
       },
-	  "allowSplit":true
-	  "units": {
-		  "appliesTo": ["maxspeed"]}
-    "applicableUnits": [
-    {
-"canonicalDenomination": "km/h",
-"alternativeDenomination": ["km/u", "kmh", "kph"]
-"default": true,
-"human": {
-"en": "kilometers/hour",
-"ca": "quilòmetres/hora",
-"es": "kilómetros/hora",
-"nl": "kilometers/uur"
-},
-"humanShort": {
-"en": "km/h",
-"ca": "km/h",
-"es": "km/h",
-"nl": "km/u"
-}
-},
-{
-"canonicalDenomination": "mph",
-"alternativeDenomination": ["m/u", "mh", "m/ph"]
-"default": false,
-"human": {
-"en": "miles/hour",
-"ca": "milles/hora",
-"es": "millas/hora",
-"nl": "miles/uur"
-},
-"humanShort": {
-"en": "mph",
-"ca": "mph",
-"es": "mph",
-"nl": "mph"
-}
-},
+      "allowSplit": true,
       "mapRendering": [
         {
           "icon": {
+            "render": null,
             "mappings": [
-              "if":"maxspeed~[1-9]0|1[0-4]0",
-              "then": "maxspeed_{maxspeed}.svg"
+              {
+                "if": "maxspeed~[1-9]0|1[0-4]0",
+                "then": "./assets/themes/maxspeed/maxspeed_{maxspeed}.svg"
+              }
             ]
           },
           "iconSize": {
@@ -205,6 +171,55 @@
           "width": {
             "render": "3"
           }
+        }
+      ],
+      "units": [
+        {
+          "applicableUnits": [
+            {
+              "#": "km/h is the default for a maxspeed; should be empty string",
+              "canonicalDenomination": "",
+              "alternativeDenomination": [
+                "km/u",
+                "kmh",
+                "kph"
+              ],
+              "default": true,
+              "human": {
+                "en": "kilometers/hour",
+                "ca": "quilòmetres/hora",
+                "es": "kilómetros/hora",
+                "nl": "kilometers/uur"
+              },
+              "humanShort": {
+                "en": "km/h",
+                "ca": "km/h",
+                "es": "km/h",
+                "nl": "km/u"
+              }
+            },
+            {
+              "canonicalDenomination": "mph",
+              "alternativeDenomination": [
+                "m/u",
+                "mh",
+                "m/ph"
+              ],
+              "human": {
+                "en": "miles/hour",
+                "ca": "milles/hora",
+                "es": "millas/hora",
+                "nl": "miles/uur"
+              },
+              "humanShort": {
+                "en": "mph",
+                "ca": "mph",
+                "es": "mph",
+                "nl": "mph"
+              }
+            }
+          ],
+          "appliesToKey": [ "maxspeed"]
         }
       ]
     }
