@@ -31,7 +31,7 @@
     "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können."
   },
   "tagRenderings": [
-  "images",
+    "images",
     {
       "id": "waste-basket-waste-types",
       "question": {

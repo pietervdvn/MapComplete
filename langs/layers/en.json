@@ -5454,6 +5454,9 @@
                 },
                 "question": "Is this a broadleaved or needleleaved tree?"
             },
+            "tree-species-wikidata": {
+                "question": "What species is this tree?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
