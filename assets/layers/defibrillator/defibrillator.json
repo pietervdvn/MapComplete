@@ -477,7 +477,8 @@
         "it": "{opening_hours_table(opening_hours)}",
         "ru": "{opening_hours_table(opening_hours)}",
         "de": "{opening_hours_table(opening_hours)}",
-        "sl": "{opening_hours_table(opening_hours)}"
+        "sl": "{opening_hours_table(opening_hours)}",
+        "ca": "{opening_hours_table(opening_hours)}"
       },
       "question": {
         "en": "At what times is this defibrillator available?",
@@ -563,7 +564,8 @@
             "it": "Verificato oggi!",
             "ru": "Проверено сегодня!",
             "de": "Heute überprüft!",
-            "sl": "Preverjeno danes!"
+            "sl": "Preverjeno danes!",
+            "ca": "Comprovat avui!"
           }
         }
       ],

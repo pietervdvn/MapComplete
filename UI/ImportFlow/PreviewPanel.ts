@@ -12,16 +12,16 @@ import List from "../Base/List";
 import CheckBoxes from "../Input/Checkboxes";
 
 /**
- * Shows the data to import on a map, asks for the correct layer to be selected
+ * Shows the attributes by value, requests to check them of
  */
-export class PreviewPanel extends Combine implements FlowStep<{ features: { properties: any, geometry: { coordinates: [number, number] } }[] }> {
+export class PreviewAttributesPanel extends Combine implements FlowStep<{ features: { properties: any, geometry: { coordinates: [number, number] } }[] }> {
     public readonly IsValid: UIEventSource<boolean>;
     public readonly Value: UIEventSource<{ features: { properties: any, geometry: { coordinates: [number, number] } }[] }>
 
     constructor(
         state: UserRelatedState,
         geojson: { features: { properties: any, geometry: { coordinates: [number, number] } }[] }) {
-        const t = Translations.t.importHelper;
+        const t = Translations.t.importHelper.previewAttributes;
         
         const propertyKeys = new Set<string>()
         for (const f of geojson.features) {

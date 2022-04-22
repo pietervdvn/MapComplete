@@ -2302,6 +2302,194 @@
             }
         }
     },
+    "climbing": {
+        "description": "A climbing opportunity",
+        "name": "Climbing opportunities",
+        "presets": {
+            "0": {
+                "description": "A climbing opportunity",
+                "title": "a climbing opportunity"
+            }
+        },
+        "tagRenderings": {
+            "Contained routes hist": {
+                "render": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}"
+            },
+            "Contained routes length hist": {
+                "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
+            },
+            "Contained_climbing_routes": {
+                "render": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Limestone"
+                    }
+                },
+                "question": "What is the rock type here?",
+                "render": "The rock type is {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
+                    },
+                    "1": {
+                        "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "This climbing opportunity doesn't have a name"
+                    }
+                },
+                "question": "What is the name of this climbing opportunity?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing crag <b>{name}</b>"
+                },
+                "1": {
+                    "then": "Climbing area <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Climbing site"
+                },
+                "3": {
+                    "then": "Climbing opportunity <b>{name}</b>"
+                }
+            },
+            "render": "Climbing opportunity"
+        }
+    },
+    "climbing_club": {
+        "description": "A climbing club or organisation",
+        "name": "Climbing club",
+        "presets": {
+            "0": {
+                "description": "A climbing club",
+                "title": "a climbing club"
+            },
+            "1": {
+                "description": "An NGO working around climbing",
+                "title": "a climbing ngo"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "What is the name of this climbing club or NGO?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing NGO"
+                }
+            },
+            "render": "Climbing club"
+        }
+    },
+    "climbing_gym": {
+        "description": "A climbing gym",
+        "name": "Climbing gyms",
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this climbing gym?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing gym <strong>{name}</strong>"
+                }
+            },
+            "render": "Climbing gym"
+        }
+    },
+    "climbing_opportunity": {
+        "description": "A climbing opportunity?",
+        "name": "Climbing opportunities?",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "Climbing is not possible here"
+                    }
+                },
+                "question": "Is climbing possible here?"
+            }
+        },
+        "title": {
+            "render": "Climbing opportunity?"
+        }
+    },
+    "climbing_route": {
+        "name": "Climbing routes",
+        "presets": {
+            "0": {
+                "title": "a climbing route"
+            }
+        },
+        "tagRenderings": {
+            "Bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "This route is not bolted"
+                    },
+                    "1": {
+                        "then": "This route is not bolted"
+                    }
+                },
+                "question": "How many bolts does this route have before reaching the anchor?",
+                "render": "This route has {climbing:bolts} bolts"
+            },
+            "Difficulty": {
+                "question": "What is the grade of this climbing route according to the french/belgian system?",
+                "render": "The grade is {climbing:grade:french} according to the french/belgian system"
+            },
+            "Length": {
+                "question": "How long is this climbing route (in meters)?",
+                "render": "This route is {canonical(climbing:length)} long"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "This climbing route doesn't have a name"
+                    }
+                },
+                "question": "What is the name of this climbing route?",
+                "render": "<strong>{name}</strong>"
+            },
+            "Rock type": {
+                "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing route <strong>{name}</strong>"
+                }
+            },
+            "render": "Climbing route"
+        }
+    },
     "crossings": {
         "description": "Crossings for pedestrians and cyclists",
         "name": "Crossings",
@@ -3234,7 +3422,7 @@
                 "title": "a fastfood"
             },
             "2": {
-                "description": "A fastfood-buisiness focused on french fries",
+                "description": "A fastfood-business focused on french fries",
                 "title": "a fries shop"
             }
         },
@@ -3492,6 +3680,69 @@
     },
     "grass_in_parks": {
         "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'\""
+    },
+    "hackerspace": {
+        "description": "Hackerspace",
+        "name": "Hackerspace",
+        "presets": {
+            "0": {
+                "description": "A hackerspace is an area where people interested in software gather",
+                "title": "a hackerspace"
+            },
+            "1": {
+                "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
+                "title": "a makerspace"
+            }
+        },
+        "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "What is the name of this hackerspace?",
+                "render": "This hackerspace is named <b>{name}</b>"
+            },
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Opened 24/7"
+                    }
+                },
+                "question": "When is this hackerspace opened?",
+                "render": "{opening_hours_table()}"
+            },
+            "hackerspaces-start_date": {
+                "question": "When was this hackerspace founded?",
+                "render": "This hackerspace was founded at {start_date}"
+            },
+            "hs-club-mate": {
+                "mappings": {
+                    "0": {
+                        "then": "This hackerspace serves club mate"
+                    },
+                    "1": {
+                        "then": "This hackerspace does not serve club mate"
+                    }
+                },
+                "question": "Does this hackerspace serve Club Mate?"
+            },
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a makerspace"
+                    },
+                    "1": {
+                        "then": "This is a traditional (software oriented) hackerspace"
+                    }
+                },
+                "question": "Is this a hackerspace or a makerspace?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Hackerspace"
+        }
     },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
@@ -5203,6 +5454,9 @@
                 },
                 "question": "Is this a broadleaved or needleleaved tree?"
             },
+            "tree-species-wikidata": {
+                "question": "What species is this tree?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
@@ -5417,5 +5671,69 @@
     },
     "watermill": {
         "name": "Watermill"
+    },
+    "windturbine": {
+        "description": "Modern windmills generating electricity",
+        "name": "wind turbine",
+        "presets": {
+            "0": {
+                "title": "a wind turbine"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "What is the rotor diameter of this wind turbine, in metres?",
+                "render": "The rotor diameter of this wind turbine is {rotor:diameter} metres."
+            },
+            "turbine-height": {
+                "question": "What is the total height of this wind turbine (including rotor radius), in metres?",
+                "render": "The total height (including rotor radius) of this wind turbine is {height} metres."
+            },
+            "turbine-operator": {
+                "question": "Who operates this wind turbine?",
+                "render": "This wind turbine is operated by {operator}."
+            },
+            "turbine-output": {
+                "question": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
+                "render": "The power output of this wind turbine is {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "When did this wind turbine go into operation?",
+                "render": "This wind turbine went into operation on/in {start_date}."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "wind turbine"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatts"
+                    },
+                    "1": {
+                        "human": " kilowatts"
+                    },
+                    "2": {
+                        "human": " watts"
+                    },
+                    "3": {
+                        "human": " gigawatts"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
     }
 }

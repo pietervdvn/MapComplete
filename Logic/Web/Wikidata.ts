@@ -1,6 +1,6 @@
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
-import * as wds from "wikibase-sdk"
+import * as wds from "wikidata-sdk"
 
 export class WikidataResponse {
     public readonly id: string
@@ -126,13 +126,22 @@ export interface WikidataSearchoptions {
     maxCount?: 20 | number
 }
 
+export interface WikidataAdvancedSearchoptions extends WikidataSearchoptions {
+    instanceOf?: number[];
+    notInstanceOf?: number[]
+}
+
+
 /**
  * Utility functions around wikidata
  */
 export default class Wikidata {
 
     private static readonly _identifierPrefixes = ["Q", "L"].map(str => str.toLowerCase())
-    private static readonly _prefixesToRemove = ["https://www.wikidata.org/wiki/Lexeme:", "https://www.wikidata.org/wiki/", "Lexeme:"].map(str => str.toLowerCase())
+    private static readonly _prefixesToRemove = ["https://www.wikidata.org/wiki/Lexeme:", 
+        "https://www.wikidata.org/wiki/",
+        "http://www.wikidata.org/entity/",
+        "Lexeme:"].map(str => str.toLowerCase())
 
 
     private static readonly _cache = new Map<string, UIEventSource<{ success: WikidataResponse } | { error: any }>>()
@@ -146,6 +155,52 @@ export default class Wikidata {
         const src = UIEventSource.FromPromiseWithErr(Wikidata.LoadWikidataEntryAsync(key))
         Wikidata._cache.set(key, src)
         return src;
+    }
+
+    /**
+     * Given a search text, searches for the relevant wikidata entries, excluding pages "outside of the main tree", e.g. disambiguation pages.
+     * Optionally, an 'instance of' can be given to limit the scope, e.g. instanceOf:5 (humans) will only search for humans
+     */
+    public static async searchAdvanced(text: string, options: WikidataAdvancedSearchoptions): Promise<{
+        id: string,
+        relevance?: number,
+        label: string,
+        description?: string
+    }[]> {
+        let instanceOf = ""
+        if (options?.instanceOf !== undefined && options.instanceOf.length > 0) {
+           const phrases = options.instanceOf.map(q => `{ ?item wdt:P31/wdt:P279* wd:Q${q}. }`)
+            instanceOf = "{"+ phrases.join(" UNION ") + "}"
+        }
+        const forbidden = (options?.notInstanceOf ?? [])
+            .concat([17379835]) // blacklist 'wikimedia pages outside of the main knowledge tree', e.g. disambiguation pages
+        const minusPhrases = forbidden.map(q => `MINUS {?item wdt:P31/wdt:P279* wd:Q${q} .}`)
+        const sparql = `SELECT * WHERE {
+            SERVICE wikibase:mwapi {
+                bd:serviceParam wikibase:api "EntitySearch" .
+                bd:serviceParam wikibase:endpoint "www.wikidata.org" .
+                bd:serviceParam mwapi:search "${text}" .
+                bd:serviceParam mwapi:language "${options.lang}" .
+                ?item wikibase:apiOutputItem mwapi:item .
+                ?num wikibase:apiOrdinal true .
+                bd:serviceParam wikibase:limit ${Math.round((options.maxCount ?? 20) * 1.5) /*Some padding for disambiguation pages */} .
+                ?label wikibase:apiOutput mwapi:label .
+                ?description wikibase:apiOutput "@description" .
+            } 
+            ${instanceOf}
+            ${minusPhrases.join("\n    ")}
+        } ORDER BY ASC(?num) LIMIT ${options.maxCount ?? 20}`
+        const url = wds.sparqlQuery(sparql)
+
+        const result = await Utils.downloadJson(url)
+        /*The full uri of the wikidata-item*/
+
+        return result.results.bindings.map(({item, label, description, num}) => ({
+            relevance: num?.value,
+            id: item?.value,
+            label: label?.value,
+            description: description?.value
+        }))
     }
 
     public static async search(
@@ -195,39 +250,28 @@ export default class Wikidata {
 
     public static async searchAndFetch(
         search: string,
-        options?: WikidataSearchoptions
+        options?: WikidataAdvancedSearchoptions
     ): Promise<WikidataResponse[]> {
-        const maxCount = options.maxCount
         // We provide some padding to filter away invalid values
-        options.maxCount = Math.ceil((options.maxCount ?? 20) * 1.5)
-        const searchResults = await Wikidata.search(search, options)
-        const maybeResponses = await Promise.all(searchResults.map(async r => {
-            try {
-                return await Wikidata.LoadWikidataEntry(r.id).AsPromise()
-            } catch (e) {
-                console.error(e)
-                return undefined;
-            }
-        }))
-        const responses = maybeResponses
-            .map(r => <WikidataResponse>r["success"])
-            .filter(wd => {
-                if (wd === undefined) {
-                    return false;
+        const searchResults = await Wikidata.searchAdvanced(search, options)
+        const maybeResponses = await Promise.all(
+            searchResults.map(async r => {
+                try {
+                    console.log("Loading ", r.id)
+                    return await Wikidata.LoadWikidataEntry(r.id).AsPromise()
+                } catch (e) {
+                    console.error(e)
+                    return undefined;
                 }
-                if (wd.claims.get("P31" /*Instance of*/)?.has("Q4167410"/* Wikimedia Disambiguation page*/)) {
-                    return false;
-                }
-                return true;
-            })
-        responses.splice(maxCount, responses.length - maxCount)
-        return responses
+            }))
+        return Utils.NoNull(maybeResponses.map(r => <WikidataResponse>r["success"]))
     }
 
     /**
      * Gets the 'key' segment from a URL
-     * 
+     *
      * Wikidata.ExtractKey("https://www.wikidata.org/wiki/Lexeme:L614072") // => "L614072"
+     * Wikidata.ExtractKey("http://www.wikidata.org/entity/Q55008046") // => "Q55008046"
      */
     public static ExtractKey(value: string | number): string {
         if (typeof value === "number") {
@@ -269,6 +313,35 @@ export default class Wikidata {
         }
 
         return undefined;
+    }
+
+    /**
+     * Converts 'Q123' into 123, returns undefined if invalid
+     *
+     * Wikidata.QIdToNumber("Q123") // => 123
+     * Wikidata.QIdToNumber("  Q123  ") // => 123
+     *  Wikidata.QIdToNumber("  X123  ") // => undefined
+     * Wikidata.QIdToNumber("  Q123X  ") // => undefined
+     * Wikidata.QIdToNumber(undefined) // => undefined
+     * Wikidata.QIdToNumber(123) // => 123
+     */
+    public static QIdToNumber(q: string | number): number | undefined {
+        if(q === undefined || q === null){
+            return
+        }
+        if(typeof q === "number"){
+            return q
+        }
+        q = q.trim()
+        if (!q.startsWith("Q")) {
+            return
+        }
+        q = q.substr(1)
+        const n = Number(q)
+        if (isNaN(n)) {
+            return
+        }
+        return n
     }
 
     public static IdToArticle(id: string) {

@@ -6,7 +6,8 @@
     "it": "Mappe",
     "ru": "Карты",
     "fr": "Cartes",
-    "de": "Karten"
+    "de": "Karten",
+    "ca": "Mapes"
   },
   "minzoom": 12,
   "source": {
@@ -24,7 +25,8 @@
       "it": "Mappa",
       "ru": "Карта",
       "fr": "Carte",
-      "de": "Karte"
+      "de": "Karte",
+      "ca": "Mapa"
     }
   },
   "description": {
@@ -177,7 +179,8 @@
         "it": "una mappa",
         "ru": "Карта",
         "fr": "une carte",
-        "de": "eine karte"
+        "de": "eine karte",
+        "ca": "un mapa"
       },
       "description": {
         "en": "Add a missing map",

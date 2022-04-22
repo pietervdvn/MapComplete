@@ -7,7 +7,8 @@
     "fr": "Microbibliothèque",
     "ru": "Книжные шкафы",
     "it": "Microbiblioteche",
-    "hu": "Könyvespolcok"
+    "hu": "Könyvespolcok",
+    "ca": "Bústies per llibres"
   },
   "description": {
     "en": "A streetside cabinet with books, accessible to anyone",
@@ -30,7 +31,8 @@
       "fr": "Microbibliothèque",
       "ru": "Книжный шкаф",
       "it": "Microbiblioteca",
-      "hu": "Könyvespolc"
+      "hu": "Könyvespolc",
+      "ca": "Bústia per llibres"
     },
     "mappings": [
       {
@@ -56,7 +58,8 @@
         "fr": "une microbibliothèque",
         "ru": "Книжный шкаф",
         "it": "una microbiblioteca",
-        "hu": "Könyvespolc"
+        "hu": "Könyvespolc",
+        "ca": "una bústia per a llibres"
       },
       "tags": [
         "amenity=public_bookcase"

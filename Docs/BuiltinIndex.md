@@ -65,6 +65,9 @@
   - birdhide
   - cafe_pub
   - charging_station
+  - climbing
+  - climbing_gym
+  - climbing_route
   - defibrillator
   - drinking_water
   - entrance
@@ -94,6 +97,7 @@
   - viewpoint
   - village_green
   - watermill
+  - windturbine
 
 
 
@@ -108,7 +112,10 @@
   - bicycle_rental
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
+  - hackerspace
   - nature_reserve
   - observation_tower
   - playground
@@ -127,7 +134,10 @@
   - bicycle_rental
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
+  - hackerspace
   - recycling
 
 
@@ -143,7 +153,10 @@
   - bicycle_rental
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
+  - hackerspace
   - recycling
 
 
@@ -160,6 +173,8 @@
   - bike_shop
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
 
 
@@ -251,6 +266,7 @@
   - cafe_pub
   - defibrillator
   - food
+  - hackerspace
   - observation_tower
 
 

@@ -9,7 +9,8 @@ export default class InputElementWrapper<T> extends InputElement<T> {
     private readonly _inputElement: InputElement<T>;
     private readonly _renderElement: BaseUIElement
 
-    constructor(inputElement: InputElement<T>, translation: Translation, key: string, tags: UIEventSource<any>, state: FeaturePipelineState) {
+    constructor(inputElement: InputElement<T>, translation: Translation, key: string, 
+                tags: UIEventSource<any>, state: FeaturePipelineState) {
         super()
         this._inputElement = inputElement;
         const mapping = new Map<string, BaseUIElement>()

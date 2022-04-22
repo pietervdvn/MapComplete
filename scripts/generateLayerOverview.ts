@@ -203,16 +203,22 @@ class LayerOverviewUtils {
             const themePath = themeInfo.path
 
             new PrevalidateTheme().convertStrict(themeFile, themePath)
-            themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
-
-            if(knownImagePaths === undefined){
-                throw "Could not load known images/licenses"
+            try{
+                
+                themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
+    
+                if(knownImagePaths === undefined){
+                    throw "Could not load known images/licenses"
+                }
+                new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
+                    .convertStrict(themeFile, themePath)
+    
+                this.writeTheme(themeFile)
+                fixed.set(themeFile.id, themeFile)
+            }catch(e){
+                console.error("ERROR: could not prepare theme "+themePath+" due to "+e)
+                throw e;
             }
-            new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
-                .convertStrict(themeFile, themePath)
-
-            this.writeTheme(themeFile)
-            fixed.set(themeFile.id, themeFile)
         }
 
         this.writeSmallOverview(themeFiles.map(tf => {

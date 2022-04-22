@@ -194,7 +194,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                         importFlow,
                         isImported
                     ),
-                    t.zoomInMore.SetClass("alert"),
+                    t.zoomInMore.SetClass("alert block"),
                     state.locationControl.map(l => l.zoom >= 18)
                 ),
                 pleaseLoginButton,
@@ -613,7 +613,7 @@ export class ImportPointButton extends AbstractImportButton {
             icon: () => new Img(args.icon),
             layerToAddTo: state.filteredLayers.data.filter(l => l.layerDef.id === args.targetLayer)[0],
             name: args.text,
-            title: Translations.WT(args.text),
+            title: Translations.T(args.text),
             preciseInput: preciseInputSpec, // must be explicitely assigned, if 'undefined' won't work otherwise
             boundsFactor: 3
         }

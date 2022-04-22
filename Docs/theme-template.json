@@ -22,9 +22,8 @@
   "#": "For more options and configuration, see the documentation in LayoutConfig.json",
   "#layers": "The list of layers is where most of the content will be. Either reuse an already existing layer by simply calling it's ID or define a whole new layer. An overview of builtin layers is at https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md#normal-layers",
   "layers": [
-    "bench",
     {
-      "id": "a singular nound describing the feature, in english",
+      "id": "a singular noun describing the feature, in english",
       "source": {
         "osmTags": {
           "#": "For a description on which tags are possible, see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md",

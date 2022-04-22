@@ -127,12 +127,16 @@ export default class LayerConfig extends WithContextLoader {
                 idKey: json.source["idKey"]
 
             },
+            Constants.priviliged_layers.indexOf(this.id) > 0,
             json.id
         );
 
 
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, translationContext + ".name");
+        if(json.units!==undefined && !Array.isArray(json.units)){
+            throw "At "+context+".units: the 'units'-section should be a list; you probably have an object there"
+        }
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {

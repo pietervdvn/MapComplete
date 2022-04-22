@@ -155,7 +155,7 @@
           },
           "location": [
             "point",
-            "centroid"
+            "projected_centerpoint"
           ]
         },
         {

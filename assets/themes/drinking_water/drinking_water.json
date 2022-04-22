@@ -10,7 +10,8 @@
     "it": "Acqua potabile",
     "de": "Trinkwasserstellen",
     "nb_NO": "Drikkevann",
-    "hu": "Ivóvíz"
+    "hu": "Ivóvíz",
+    "ca": "Aigua potable"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",

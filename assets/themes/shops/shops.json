@@ -10,7 +10,8 @@
     "it": "Mappa dei negozi",
     "nb_NO": "Kart over åpne butikker",
     "hu": "Bolttérkép",
-    "nl": "Winkels"
+    "nl": "Winkels",
+    "ca": "Open Shop Map"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",

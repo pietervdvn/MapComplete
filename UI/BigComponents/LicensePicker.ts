@@ -17,7 +17,10 @@ export default class LicensePicker extends DropDown<string> {
                 {value: LicensePicker.ccbysa, shown: Translations.t.image.ccbs.Clone()},
                 {value: LicensePicker.ccby, shown: Translations.t.image.ccb.Clone()}
             ],
-            state?.osmConnection?.GetPreference("pictures-license") ?? new UIEventSource<string>("CC0")
+            state?.osmConnection?.GetPreference("pictures-license") ?? new UIEventSource<string>("CC0"),
+            {
+                select_class:"w-min bg-indigo-100 p-1 rounded hover:bg-indigo-200"
+            }
         )
         this.SetClass("flex flex-col sm:flex-row").SetStyle("float:left");
     }

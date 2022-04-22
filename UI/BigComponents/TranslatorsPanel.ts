@@ -14,7 +14,9 @@ import Title from "../Base/Title";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
-
+import * as native_languages from "../../assets/language_native.json"
+import * as used_languages from "../../assets/generated/used_languages.json"
+import BaseUIElement from "../BaseUIElement";
 
 class TranslatorsPanelContent extends Combine {
     constructor(layout: LayoutConfig, isTranslator: UIEventSource<boolean>) {
@@ -24,36 +26,53 @@ class TranslatorsPanelContent extends Combine {
 
         const seed = t.completeness
         for (const ln of Array.from(completeness.keys())) {
-            if(ln === "*"){
+            if (ln === "*") {
                 continue
             }
             if (seed.translations[ln] === undefined) {
                 seed.translations[ln] = seed.translations["en"]
             }
         }
-        
+
         const completenessTr = {}
         const completenessPercentage = {}
         seed.SupportedLanguages().forEach(ln => {
-            completenessTr[ln] = ""+(completeness.get(ln) ?? 0)
-            completenessPercentage[ln] = ""+Math.round(100 * (completeness.get(ln) ?? 0) / total)
+            completenessTr[ln] = "" + (completeness.get(ln) ?? 0)
+            completenessPercentage[ln] = "" + Math.round(100 * (completeness.get(ln) ?? 0) / total)
         })
 
-        const missingTranslationsFor = (ln: string) => Utils.NoNull(untranslated.get(ln) ?? [])
-            .filter(ctx => ctx.indexOf(":") >= 0)
-            .map(ctx => ctx.replace(/note_import_[a-zA-Z0-9_]*/, "note_import"))
-            .map(context => new Link(context, LinkToWeblate.hrefToWeblate(ln, context), true))
+        function missingTranslationsFor(language: string): BaseUIElement[] {
+            // e.g. "themes:<themename>.layers.0.tagRenderings..., or "layers:<layername>.description
+            const missingKeys = Utils.NoNull(untranslated.get(language) ?? [])
+                .filter(ctx => ctx.indexOf(":") >= 0)
+                .map(ctx => ctx.replace(/note_import_[a-zA-Z0-9_]*/, "note_import"))
+
+            const hasMissingTheme = missingKeys.some(k => k.startsWith("themes:"))
+            const missingLayers = Utils.Dedup( missingKeys.filter(k => k.startsWith("layers:"))
+                .map(k => k.slice("layers:".length).split(".")[0]))
+
+            console.log("Getting untranslated string for",language,"raw:",missingKeys,"hasMissingTheme:",hasMissingTheme,"missingLayers:",missingLayers)
+            return [
+                hasMissingTheme ? new Link("themes:" + layout.id + ".* (zen mode)", LinkToWeblate.hrefToWeblateZen(language, "themes", layout.id), true) : undefined,
+                ...missingLayers.map(id => new Link("layer:" + id + ".* (zen mode)", LinkToWeblate.hrefToWeblateZen(language, "layers", id), true)),
+                ...missingKeys.map(context => new Link(context, LinkToWeblate.hrefToWeblate(language, context), true))
+            ]
+        }
 
 
+        //
+        // 
         // "translationCompleteness": "Translations for {theme} in {language} are at {percentage}: {translated} out of {total}",
-        const translated = seed.Subs({total, theme: layout.title,
+        const translated = seed.Subs({
+            total, theme: layout.title,
             percentage: new Translation(completenessPercentage),
-            translated: new Translation(completenessTr)
+            translated: new Translation(completenessTr),
+            language: seed.OnEveryLanguage((_, lng) => native_languages[lng] ?? lng)
         })
-        
+
         super([
             new Title(
-            Translations.t.translations.activateButton,
+                Translations.t.translations.activateButton,
             ),
             new Toggle(t.isTranslator.SetClass("thanks block"), undefined, isTranslator),
             t.help,
@@ -63,15 +82,18 @@ class TranslatorsPanelContent extends Combine {
                 .onClick(() => {
                     Locale.showLinkToWeblate.setData(false)
                 }),
-            
-            new VariableUiElement(Locale.language.map(ln => {
 
+            new VariableUiElement(Locale.language.map(ln => {
                 const missing = missingTranslationsFor(ln)
                 if (missing.length === 0) {
                     return undefined
                 }
+                let title = Translations.t.translations.allMissing;
+                if(untranslated.get(ln) !== undefined){
+                    title = Translations.t.translations.missing.Subs({count: untranslated.get(ln).length})
+                }
                 return new Toggleable(
-                    new Title(Translations.t.translations.missing.Subs({count: missing.length})),
+                    new Title(title),
                     new Combine(missing).SetClass("flex flex-col")
                 )
             }))
@@ -83,38 +105,37 @@ class TranslatorsPanelContent extends Combine {
 
 export default class TranslatorsPanel extends Toggle {
 
-    
+
     constructor(state: { layoutToUse: LayoutConfig, isTranslator: UIEventSource<boolean> }, iconStyle?: string) {
         const t = Translations.t.translations
         super(
-                new Lazy(() => new TranslatorsPanelContent(state.layoutToUse, state.isTranslator)
+            new Lazy(() => new TranslatorsPanelContent(state.layoutToUse, state.isTranslator)
             ).SetClass("flex flex-col"),
             new SubtleButton(Svg.translate_ui().SetStyle(iconStyle), t.activateButton).onClick(() => Locale.showLinkToWeblate.setData(true)),
-            Locale.showLinkToWeblate 
+            Locale.showLinkToWeblate
         )
         this.SetClass("hidden-on-mobile")
-        
+
     }
 
 
-    public static MissingTranslationsFor(layout: LayoutConfig) : {completeness: Map<string, number>, untranslated: Map<string, string[]>, total: number} {
+    public static MissingTranslationsFor(layout: LayoutConfig): { completeness: Map<string, number>, untranslated: Map<string, string[]>, total: number } {
         let total = 0
         const completeness = new Map<string, number>()
         const untranslated = new Map<string, string[]>()
+
         Utils.WalkObject(layout, (o, path) => {
             const translation = <Translation><any>o;
-            if(translation.translations["*"] !== undefined){
+            if (translation.translations["*"] !== undefined) {
                 return
             }
-            if(translation.context === undefined || translation.context.indexOf(":") < 0){
+            if (translation.context === undefined || translation.context.indexOf(":") < 0) {
                 // no source given - lets ignore
                 return
             }
-
-            for (const lang of translation.SupportedLanguages()) {
-                completeness.set(lang, 1 + (completeness.get(lang) ?? 0))
-            }
-            layout.title.SupportedLanguages().forEach(ln => {
+            
+            total ++
+            used_languages.languages.forEach(ln => {
                 const trans = translation.translations
                 if (trans["*"] !== undefined) {
                     return;
@@ -124,11 +145,11 @@ export default class TranslatorsPanel extends Toggle {
                         untranslated.set(ln, [])
                     }
                     untranslated.get(ln).push(translation.context)
+                }else{
+                    completeness.set(ln, 1 + (completeness.get(ln) ?? 0))
                 }
             })
-            if(translation.translations["*"] === undefined){
-                total++
-            }
+           
         }, o => {
             if (o === undefined || o === null) {
                 return false;

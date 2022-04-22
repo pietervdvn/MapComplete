@@ -158,6 +158,20 @@ export class On<P, T> extends DesugaringStep<T> {
     }
 }
 
+export class Pass<T> extends Conversion<T, T> {
+    constructor(message?: string) {
+        super(message??"Does nothing, often to swap out steps in testing", [], "Pass");
+    }
+
+
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+        return {
+            result: json
+        };
+    }
+    
+}
+
 export class Concat<X, T> extends Conversion<X[], T[]> {
     private readonly _step: Conversion<X, T[]>;
 
@@ -202,13 +216,18 @@ export class Fuse<T> extends DesugaringStep<T> {
         const information = []
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
-            let r = step.convert(json, "While running step " + step.name + ": " + context)
-            errors.push(...r.errors ?? [])
-            warnings.push(...r.warnings ?? [])
-            information.push(...r.information ?? [])
-            json = r.result
-            if (errors.length > 0) {
-                break;
+            try{
+                let r = step.convert(json, "While running step " + step.name + ": " + context)
+                errors.push(...r.errors ?? [])
+                warnings.push(...r.warnings ?? [])
+                information.push(...r.information ?? [])
+                json = r.result
+                if (errors.length > 0) {
+                    break;
+                }
+            }catch(e){
+                console.error("Step "+step.name+" failed due to "+e);
+                throw e
             }
         }
         return {

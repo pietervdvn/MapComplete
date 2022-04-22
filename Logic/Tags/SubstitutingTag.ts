@@ -35,7 +35,7 @@ export default class SubstitutingTag implements TagsFilter {
         throw "A variable with substitution can not be used to query overpass"
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    shadows(other: TagsFilter): boolean {
         if (!(other instanceof SubstitutingTag)) {
             return false;
         }

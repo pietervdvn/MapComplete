@@ -18,7 +18,7 @@ function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shor
 |name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
-|descr= A MapComplete theme: ${Translations.WT(layout.shortDescription)
+|descr= A MapComplete theme: ${Translations.T(layout.shortDescription)
         .textFor("en")
         .replace("<a href='", "[[")
         .replace(/'>.*<\/a>/, "]]")

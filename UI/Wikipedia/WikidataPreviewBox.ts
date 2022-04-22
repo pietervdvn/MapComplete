@@ -1,7 +1,7 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Wikidata, {WikidataResponse} from "../../Logic/Web/Wikidata";
-import {Translation} from "../i18n/Translation";
+import {Translation, TypedTranslation} from "../i18n/Translation";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Loading from "../Base/Loading";
 import Translations from "../i18n/Translations";
@@ -22,7 +22,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
     private static extraProperties: {
         requires?: { p: number, q?: number }[],
         property: string,
-        display: Translation | Map<string, string | (() => BaseUIElement) /*If translation: Subs({value: * })  */>
+        display: TypedTranslation<{value}> | Map<string, string | (() => BaseUIElement) /*If translation: Subs({value: * })  */>
     }[] = [
         {
             requires: WikidataPreviewBox.isHuman,

@@ -35,7 +35,8 @@
       "nl": "Fietspaden",
       "de": "Radwege",
       "ru": "Велосипедные дорожки",
-      "fr": "Pistes cyclables"
+      "fr": "Pistes cyclables",
+      "ca": "Vies ciclistes"
     },
     "mappings": [
       {
@@ -50,7 +51,8 @@
           "en": "Cycleway",
           "de": "Radweg",
           "ru": "Велосипедная дорожка",
-          "fr": "Piste cyclable"
+          "fr": "Piste cyclable",
+          "ca": "Via ciclista"
         }
       },
       {
@@ -59,7 +61,8 @@
           "nl": "Fietssuggestiestrook",
           "en": "Shared lane",
           "de": "Gemeinsame Fahrspur",
-          "fr": "Voie partagée"
+          "fr": "Voie partagée",
+          "ca": "Carril compartit"
         }
       },
       {
@@ -68,7 +71,8 @@
           "nl": "Fietsstrook",
           "en": "Bike lane",
           "de": "Fahrradspur",
-          "fr": "Bande cyclable"
+          "fr": "Bande cyclable",
+          "ca": "Carril bici"
         }
       },
       {
@@ -86,7 +90,8 @@
           "nl": "Fietsstraat",
           "en": "Cyclestreet",
           "de": "Fahrradstraße",
-          "fr": "Vélorue"
+          "fr": "Vélorue",
+          "ca": "Carrer ciclista"
         }
       }
     ]
@@ -817,7 +822,8 @@
             "en": "Compulsory cycleway",
             "nl": "Verplicht fietspad",
             "de": "Vorgeschriebener Radweg",
-            "id": "Jalur sepeda wajib"
+            "id": "Jalur sepeda wajib",
+            "ca": "Via ciclista obligatòria"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -845,7 +851,8 @@
             "en": "Segregated foot/cycleway",
             "nl": "Afgescheiden voet-/fietspad",
             "de": "Getrennter Fuß-/Radweg",
-            "id": "Jalur pejalan kaki/sepeda terpisah"
+            "id": "Jalur pejalan kaki/sepeda terpisah",
+            "ca": "Via segregada a peu/ciclista"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -863,7 +870,8 @@
             "en": "Unsegregated foot/cycleway",
             "nl": "Gedeeld voet-/fietspad",
             "de": "Gemeinsamer Fuß-/Radweg",
-            "id": "Jalur pejalan kaki/sepeda tidak terpisah"
+            "id": "Jalur pejalan kaki/sepeda tidak terpisah",
+            "ca": "Via no segregada a peu/ciclista"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -916,7 +924,8 @@
             "en": "Compulsory cycleway",
             "nl": "Verplicht fietspad",
             "de": "Vorgeschriebener Radweg",
-            "id": "Jalur sepeda wajib"
+            "id": "Jalur sepeda wajib",
+            "ca": "Via ciclista obligatòria"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -948,7 +957,8 @@
           "then": {
             "en": "Segregated foot/cycleway",
             "nl": "Afgescheiden voet-/fietspad",
-            "de": "Getrennter Fuß-/Radweg"
+            "de": "Getrennter Fuß-/Radweg",
+            "ca": "Via segregada a peu/ciclista"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -969,7 +979,8 @@
           "then": {
             "en": "Unsegregated foot/cycleway",
             "nl": "Gedeeld voet-/fietspad",
-            "de": "Gemeinsamer Fuß-/Radweg"
+            "de": "Gemeinsamer Fuß-/Radweg",
+            "ca": "Via no segregada a peu/ciclista"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -989,7 +1000,8 @@
           "if": "traffic_sign=NL:G11",
           "then": {
             "en": "Compulsory cycleway",
-            "nl": "Verplicht fietspad"
+            "nl": "Verplicht fietspad",
+            "ca": "Via ciclista obligatòria"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [

@@ -10,7 +10,8 @@
     "zh_Hant": "露營地點",
     "pt_BR": "Locais de acampamento",
     "de": "Wohnmobilstellplätze",
-    "hu": "Lakóautós megállóhelyek"
+    "hu": "Lakóautós megállóhelyek",
+    "ca": "Llocs d'acampada"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -33,7 +34,8 @@
     "nl": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
     "fr": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis. C’est un site et une application. Les données sont stockées sur OpenStreetMap, elles seront toujours gratuites et peuvent être réutilisées par n’importe quelle application.",
     "de": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
-    "hu": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket."
+    "hu": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
+    "es": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas. Este es un sitio web y una aplicación web. Los datos se almacenan en OpenStreetMap, por lo que serán gratuitos para siempre y podrán ser reutilizados por cualquier aplicación."
   },
   "maintainer": "joost schouppe",
   "icon": "./assets/themes/campersite/caravan.svg",
@@ -57,7 +59,9 @@
         "pt_BR": "Locais de acampamento",
         "de": "Wohnmobilstellplätze",
         "hu": "Lakóautós megállóhely",
-        "id": "Tempat camping"
+        "id": "Tempat camping",
+        "ca": "Llocs d'acampada",
+        "es": "Sitios de Acampada"
       },
       "minzoom": 10,
       "source": {
@@ -113,7 +117,9 @@
         "pt_BR": "Locais de acampamento",
         "de": "Wohnmobilstellplätze",
         "hu": "Lakóautós megállóhelyek",
-        "id": "Tempat camping"
+        "id": "Tempat camping",
+        "ca": "llocs d'acampada",
+        "es": "Sitios de acampada"
       },
       "tagRenderings": [
         "images",
@@ -128,7 +134,8 @@
             "nl": "Deze plaats heet {name}",
             "pt_BR": "Este lugar é chamado de {name}",
             "de": "Dieser Ort heißt {name}",
-            "id": "Tempat ini disebut {name}"
+            "id": "Tempat ini disebut {name}",
+            "es": "Este lugar se llama {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -140,7 +147,8 @@
             "zh_Hant": "這個地方叫做什麼？",
             "nl": "Wat is de naam van deze plaats?",
             "pt_BR": "Qual o nome deste lugar?",
-            "de": "Wie heißt dieser Ort?"
+            "de": "Wie heißt dieser Ort?",
+            "es": "¿Cómo se llama este lugar?"
           },
           "freeform": {
             "key": "name"
@@ -158,7 +166,8 @@
             "zh_Hant": "這個地方收費嗎？",
             "nl": "Moet men betalen om deze camperplaats te gebruiken?",
             "pt_BR": "Este lugar cobra alguma taxa?",
-            "de": "Wird hier eine Gebühr erhoben?"
+            "de": "Wird hier eine Gebühr erhoben?",
+            "es": "¿Este lugar cobra una tarifa?"
           },
           "mappings": [
             {
@@ -177,7 +186,8 @@
                 "fr": "L’utilisation est payante",
                 "pt_BR": "Você precisa pagar para usar",
                 "de": "Sie müssen für die Nutzung bezahlen",
-                "id": "Anda perlu membayar untuk menggunakannya"
+                "id": "Anda perlu membayar untuk menggunakannya",
+                "es": "Necesitas pagar por su uso"
               }
             },
             {
@@ -198,7 +208,8 @@
                 "zh_Hant": "可以免費使用",
                 "nl": "Kan gratis gebruikt worden",
                 "pt_BR": "Pode ser usado de graça",
-                "de": "Nutzung kostenlos"
+                "de": "Nutzung kostenlos",
+                "es": "Se puede usar de manera gratuita"
               },
               "addExtraTags": [
                 "charge="
@@ -217,7 +228,8 @@
             "nl": "Deze plaats vraagt {charge}",
             "fr": "Ce site fait payer {charge}",
             "pt_BR": "Este lugar cobra {charge}",
-            "de": "Die Gebühr beträgt {charge}"
+            "de": "Die Gebühr beträgt {charge}",
+            "es": "Este lugar cobra {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -229,7 +241,8 @@
             "zh_Hant": "這個地方收多少費用？",
             "nl": "Hoeveel kost deze plaats?",
             "pt_BR": "Quanto este lugar cobra?",
-            "de": "Wie hoch ist die Gebühr an diesem Ort?"
+            "de": "Wie hoch ist die Gebühr an diesem Ort?",
+            "es": "¿Cuánto cobra este lugar?"
           },
           "freeform": {
             "key": "charge"
@@ -252,7 +265,8 @@
             "fr": "Ce site possède-t’il un lieu de vidange ?",
             "pt_BR": "Este local tem uma estação de aterro sanitário?",
             "de": "Hat dieser Ort eine sanitäre Entsorgungsstation?",
-            "id": "Apakah tempat ini memiliki tempat pembuangan sanitasi?"
+            "id": "Apakah tempat ini memiliki tempat pembuangan sanitasi?",
+            "es": "¿Este lugar tiene un vertedero sanitario?"
           },
           "mappings": [
             {
@@ -270,7 +284,8 @@
                 "zh_Hant": "這個地方有衛生設施",
                 "pt_BR": "Este local tem uma estação de aterro sanitário",
                 "de": "Dieser Ort hat eine sanitäre Entsorgungsstation",
-                "id": "Tempat ini memiliki tempat pembuangan sanitasi"
+                "id": "Tempat ini memiliki tempat pembuangan sanitasi",
+                "es": "Este lugar tiene un vertedero sanitario"
               }
             },
             {
@@ -288,7 +303,8 @@
                 "fr": "Ce site ne possède pas de lieu de vidange",
                 "pt_BR": "Este local não tem uma estação de aterro sanitário",
                 "de": "Dieser Ort hat keine sanitäre Entsorgungsstation",
-                "id": "Tempat ini tidak memiliki tempat pembuangan sampah sanitasi"
+                "id": "Tempat ini tidak memiliki tempat pembuangan sampah sanitasi",
+                "es": "Este lugar no tiene vertedero sanitario"
               }
             }
           ]
@@ -303,7 +319,8 @@
             "fr": "{capacity} personnes peuvent utiliser cet espace en même temps",
             "pt_BR": "{capacity} campistas podem usar este lugar ao mesmo tempo",
             "de": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen",
-            "nl": "{capacity} campers kunnen deze plaats tegelijk gebruiken"
+            "nl": "{capacity} campers kunnen deze plaats tegelijk gebruiken",
+            "es": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -314,7 +331,8 @@
             "fr": "Combien de personnes peuvent camper ici ? (Passez s’il n’y a pas de places délimitées)",
             "pt_BR": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
             "de": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
-            "nl": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)"
+            "nl": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
+            "es": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)"
           },
           "freeform": {
             "key": "capacity",
@@ -334,7 +352,8 @@
             "zh_Hant": "這個地方有提網路連線嗎？",
             "pt_BR": "Este lugar fornece acesso a internet?",
             "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
-            "nl": "Biedt deze plaats internettoegang?"
+            "nl": "Biedt deze plaats internettoegang?",
+            "es": "¿Este lugar tiene acceso a internet?"
           },
           "mappings": [
             {
@@ -353,7 +372,9 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang"
+                "nl": "Er is internettoegang",
+                "ca": "Hi ha accés a internet",
+                "es": "Hay acceso a internet"
               }
             },
             {
@@ -373,7 +394,8 @@
                 "fr": "Il y a un accès internet",
                 "pt_BR": "Há acesso à Internet",
                 "de": "Internetzugang ist vorhanden",
-                "nl": "Er is internettoegang"
+                "nl": "Er is internettoegang",
+                "es": "Hay acceso a internet"
               },
               "hideInAnswer": true
             },
@@ -393,7 +415,8 @@
                 "fr": "Il n’y a pas d’accès internet",
                 "pt_BR": "Não há acesso à internet",
                 "de": "Kein Internetzugang vorhanden",
-                "nl": "Er is geen internettoegang"
+                "nl": "Er is geen internettoegang",
+                "es": "No hay acceso a internet"
               }
             }
           ]
@@ -408,7 +431,9 @@
             "zh_Hant": "你需要為網路連線付費嗎？",
             "fr": "L’accès internet est-il payant ?",
             "pt_BR": "Você tem que pagar pelo acesso à internet?",
-            "de": "Ist der Internetzugang gebührenpflichtig?"
+            "de": "Ist der Internetzugang gebührenpflichtig?",
+            "nl": "Moet je betalen voor internettoegang?",
+            "es": "¿Tienes que pagar por el acceso a internet?"
           },
           "mappings": [
             {
@@ -425,7 +450,9 @@
                 "zh_Hant": "你需要額外付費來使用網路連線",
                 "fr": "L’accès internet est en supplément",
                 "pt_BR": "Você precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist gebührenpflichtig"
+                "de": "Der Internetzugang ist gebührenpflichtig",
+                "nl": "Je moet extra betalen voor internettoegang",
+                "es": "Tienes que pagar a mayores por el acceso a internet"
               }
             },
             {
@@ -442,7 +469,9 @@
                 "zh_Hant": "你不需要額外付費來使用網路連線",
                 "fr": "L’accès internet est inclus",
                 "pt_BR": "Você não precisa pagar um extra pelo acesso à internet",
-                "de": "Der Internetzugang ist kostenlos"
+                "de": "Der Internetzugang ist kostenlos",
+                "nl": "Je hoeft niet extra te betalen voor internettoegang",
+                "es": "No tienes que pagar a mayores por el acceso a internet"
               }
             }
           ],
@@ -486,7 +515,8 @@
                 "pt_BR": "Este lugar tem banheiros",
                 "de": "Dieser Ort verfügt über Toiletten",
                 "nl": "Deze plaats heeft toiletten",
-                "hu": "Itt van WC"
+                "hu": "Itt van WC",
+                "es": "Este lugar cuenta con sanitarios"
               }
             },
             {
@@ -507,7 +537,8 @@
                 "pt_BR": "Este lugar não tem banheiros",
                 "de": "Dieser Ort verfügt nicht über Toiletten",
                 "nl": "Deze plaats heeft geen toiletten",
-                "hu": "Itt nincs WC"
+                "hu": "Itt nincs WC",
+                "es": "Este lugar no tiene sanitarios"
               }
             }
           ]
@@ -555,7 +586,8 @@
             "it": "Questo luogo offre spazi per il noleggio a lungo termine?",
             "fr": "Ce site permet-il la location longue durée ?",
             "pt_BR": "Este lugar oferece vagas para aluguel a longo prazo?",
-            "de": "Gibt es a diesem Ort Plätze für Dauercamper?"
+            "de": "Gibt es a diesem Ort Plätze für Dauercamper?",
+            "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
           },
           "mappings": [
             {
@@ -572,7 +604,8 @@
                 "it": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata",
                 "fr": "Oui, mais il est possible d’y passer seulement une nuit",
                 "pt_BR": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária",
-                "de": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben"
+                "de": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben",
+                "es": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días"
               }
             },
             {
@@ -589,7 +622,8 @@
                 "it": "No, non ci sono ospiti a lungo termine qui",
                 "fr": "Non, il n’y a pas de résidents permanents",
                 "pt_BR": "Não, não há hóspedes permanentes aqui",
-                "de": "Nein, hier gibt es keine Dauergäste"
+                "de": "Nein, hier gibt es keine Dauergäste",
+                "es": "No, no hay huéspedes permanentes aquí"
               }
             },
             {
@@ -605,7 +639,8 @@
                 "zh_Hant": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)",
                 "it": "Puoi soggiornare qui solo se hai un contratto a lungo termine (se selezioni questa opzione, questo luogo sarà rimosso da questa mappa)",
                 "fr": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)",
-                "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
+                "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)",
+                "es": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
               }
             }
           ]
@@ -621,7 +656,8 @@
             "fr": "Plus de détails à propos du site : {description}",
             "pt_BR": "Mais detalhes sobre este lugar: {description}",
             "de": "Mehr Details über diesen Ort: {description}",
-            "nl": "Meer details over deze plaats: {description}"
+            "nl": "Meer details over deze plaats: {description}",
+            "es": "Más detalles sobre este lugar:{description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -631,7 +667,8 @@
             "it": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
             "fr": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
             "de": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
-            "nl": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)"
+            "nl": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
+            "es": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)"
           },
           "freeform": {
             "key": "description",
@@ -657,7 +694,9 @@
             "pt_BR": "uma local de acampamento",
             "de": "eine wohnmobilstellplatz",
             "nl": "een camperplaats",
-            "hu": "lakóautós megállóhely"
+            "hu": "lakóautós megállóhely",
+            "ca": "un lloc d'acampada",
+            "es": "Un camping"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
@@ -668,7 +707,8 @@
             "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
             "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
             "zh_Hant": "新增正式露營地點，通常是設計給過夜的露營者的地點。看起來像是真的露營地或是一般的停車場，而且也許沒有任何指標，但在城鎮被定議地點。如果一般給露營者的停車場並不是用來過夜，則不是露營地點 ",
-            "hu": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. "
+            "hu": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
+            "es": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. "
           }
         }
       ],

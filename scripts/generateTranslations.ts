@@ -297,7 +297,20 @@ function transformTranslation(obj: any, path: string[] = [], languageWhitelist :
                 }
                 value = nv;
             }
-            values += `${Utils.Times((_) => "  ", path.length + 1)}get ${key}() { return new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}") },
+            
+
+            if(value["en"] === undefined){
+                throw `At ${path.join(".")}: Missing 'en' translation at path ${path.join(".")}.${key}\n\tThe translations in other languages are ${JSON.stringify(value)}`
+            }
+            const subParts : string[] = value["en"].match(/{[^}]*}/g)
+            let expr = `return new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
+            if(subParts !== null){
+                // convert '{to_substitute}' into 'to_substitute'
+                const types = Utils.Dedup( subParts.map(tp => tp.substring(1, tp.length - 1)))
+                expr = `return new TypedTranslation<{ ${types.join(", ")} }>(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
+            }
+            
+            values += `${Utils.Times((_) => "  ", path.length + 1)}get ${key}() { ${expr} },
 `
         } else {
             values += (Utils.Times((_) => "  ", path.length + 1)) + key + ": " + transformTranslation(value, [...path, key], languageWhitelist) + ",\n"
@@ -340,7 +353,7 @@ function genTranslations() {
     const translations = JSON.parse(fs.readFileSync("./assets/generated/translations.json", "utf-8"))
     const transformed =  transformTranslation(translations);
 
-    let module = `import {Translation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`;
+    let module = `import {Translation, TypedTranslation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`;
     module += " public static t = " + transformed;
     module += "\n    }"
 
@@ -569,14 +582,12 @@ if (!themeOverwritesWeblate) {
 genTranslations()
 const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
 for (const path of allTranslationFiles) {
-    console.log("Formatting ", path)
     formatFile(path)
 }
-
 
 // Some validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
 TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
 TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
 TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")
-
+console.log("All done!")

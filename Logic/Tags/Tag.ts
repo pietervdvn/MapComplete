@@ -88,14 +88,23 @@ export class Tag extends TagsFilter {
         return true;
     }
 
-    isEquivalent(other: TagsFilter): boolean {
-        if (other instanceof Tag) {
-            return this.key === other.key && this.value === other.value;
+    /**
+     * // should handle advanced regexes
+     * new Tag("key", "aaa").shadows(new RegexTag("key", /a+/)) // => true
+     * new Tag("key","value").shadows(new RegexTag("key", /^..*$/, true)) // => false
+     * new Tag("key","value").shadows(new Tag("key","value")) // => true
+     * new Tag("key","some_other_value").shadows(new RegexTag("key", "value", true)) // => true
+     * new Tag("key","value").shadows(new RegexTag("key", "value", true)) // => false
+     * new Tag("key","value").shadows(new RegexTag("otherkey", "value", true)) // => false
+     * new Tag("key","value").shadows(new RegexTag("otherkey", "value", false)) // => false
+     */
+    shadows(other: TagsFilter): boolean {
+        if(other["key"] !== undefined){
+            if(other["key"] !== this.key){
+                return false
+            }
         }
-        if (other instanceof RegexTag) {
-            other.isEquivalent(this);
-        }
-        return false;
+        return other.matchesProperties({[this.key]: this.value});
     }
 
     usedKeys(): string[] {
