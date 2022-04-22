@@ -271,7 +271,7 @@ export default class Wikidata {
      * Gets the 'key' segment from a URL
      *
      * Wikidata.ExtractKey("https://www.wikidata.org/wiki/Lexeme:L614072") // => "L614072"
-     * Wikidata.ExtractKey("http://www.wikidata.org/entity/Q55008046") // => "QQ55008046"
+     * Wikidata.ExtractKey("http://www.wikidata.org/entity/Q55008046") // => "Q55008046"
      */
     public static ExtractKey(value: string | number): string {
         if (typeof value === "number") {
