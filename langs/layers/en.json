@@ -5673,6 +5673,7 @@
         "name": "Watermill"
     },
     "windturbine": {
+        "description": "Modern windmills generating electricity",
         "name": "wind turbine",
         "presets": {
             "0": {

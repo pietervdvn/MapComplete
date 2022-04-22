@@ -1093,5 +1093,125 @@
                 "question": "¿Se puede visitar esta torre?"
             }
         }
+    },
+    "tree_node": {
+        "description": "Una capa que muestra árboles",
+        "name": "Árbol",
+        "presets": {
+            "0": {
+                "description": "Un árbol de hojas como el Roble o el Álamo.",
+                "title": "árbol de hoja ancha"
+            },
+            "1": {
+                "description": "Un árbol de hojas agujas, como el Pino o el Abeto.",
+                "title": "Árbol tipo Conífera"
+            },
+            "2": {
+                "description": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
+                "title": "un árbol"
+            }
+        },
+        "tagRenderings": {
+            "tree-decidouous": {
+                "mappings": {
+                    "0": {
+                        "then": "Caduco o Deciduo: el árbol pierde las hojas en un período del año"
+                    },
+                    "1": {
+                        "then": "Siempreverde."
+                    }
+                },
+                "question": "¿El árbol es Siempreverde o Caduco?"
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "0": {
+                        "then": "El árbol es notable debido a su tamaño o ubicación prominente. Es útil para la navegación."
+                    },
+                    "1": {
+                        "then": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa."
+                    },
+                    "2": {
+                        "then": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto."
+                    },
+                    "3": {
+                        "then": "El árbol está en un parque o similar (cementerio, recinto escolar, ...)."
+                    },
+                    "4": {
+                        "then": "El árbol está en un jardín privado o residencial."
+                    },
+                    "5": {
+                        "then": "El árbol está en bandejón de una avenida."
+                    },
+                    "6": {
+                        "then": "El árbol está en un zona urbana."
+                    },
+                    "7": {
+                        "then": "El árbol está fuera de una zona urbana."
+                    }
+                },
+                "question": "¿Qué importancia tiene este árbol? Elige la primera respuesta que corresponda."
+            },
+            "tree-height": {
+                "mappings": {
+                    "0": {
+                        "then": "Altura: {height}&nbsp;m"
+                    }
+                },
+                "render": "Altura: {height}"
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes"
+                    },
+                    "1": {
+                        "then": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas"
+                    },
+                    "2": {
+                        "then": "Registrado como patrimonio por una organización diferente"
+                    },
+                    "3": {
+                        "then": "No registrado como patrimonio"
+                    },
+                    "4": {
+                        "then": "Registrado como patrimonio por un organización diferente"
+                    }
+                },
+                "question": "¿Este árbol es patrimonio registrado?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Latifoliada"
+                    },
+                    "1": {
+                        "then": "Hoja aguja"
+                    },
+                    "2": {
+                        "then": "Permanentemente sin hojas"
+                    }
+                },
+                "question": "¿Es un árbol de hoja ancha o de hoja aguja?"
+            },
+            "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "No identificas la especie."
+                    }
+                },
+                "question": "El árbol no tiene nombre?."
+            },
+            "tree_node-ref:OnroerendErfgoed": {
+                "question": "¿Cuál es la identificación emitida por Onroerend Erfgoed Flandes?"
+            },
+            "tree_node-wikidata": {
+                "question": "¿Cuál es el ID de Wikidata para este árbol?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+            }
+        },
+        "title": {
+            "render": "Árbol"
+        }
     }
 }
