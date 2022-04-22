@@ -14,6 +14,8 @@ import BaseLayer from "../../Models/BaseLayer";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {InputElement} from "../Input/InputElement";
 import CheckBoxes, {CheckBox} from "../Input/Checkboxes";
+import {SubtleButton} from "../Base/SubtleButton";
+import LZString from "lz-string";
 
 export default class ShareScreen extends Combine {
 
@@ -23,14 +25,6 @@ export default class ShareScreen extends Combine {
 
         const optionCheckboxes: InputElement<boolean>[] = []
         const optionParts: (UIEventSource<string>)[] = [];
-
-        function check() {
-            return Svg.checkmark_svg().SetStyle("width: 1.5em; display:inline-block;");
-        }
-
-        function nocheck() {
-            return Svg.no_checkmark_svg().SetStyle("width: 1.5em; display: inline-block;");
-        }
 
         const includeLocation = new CheckBox(tr.fsIncludeCurrentLocation, true)
         optionCheckboxes.push(includeLocation);
@@ -49,6 +43,7 @@ export default class ShareScreen extends Combine {
             } else {
                 return null;
             }
+           
         }, [currentLocation]));
 
 
@@ -119,6 +114,9 @@ export default class ShareScreen extends Combine {
 
         }
 
+        if(layout.definitionRaw !== undefined){
+            optionParts.push(new UIEventSource("userlayout="+(layout.definedAtUrl ?? layout.id)))
+        }
 
         const options = new Combine(optionCheckboxes).SetClass("flex flex-col")
         const url = (currentLocation ?? new UIEventSource(undefined)).map(() => {
@@ -126,13 +124,21 @@ export default class ShareScreen extends Combine {
             const host = window.location.host;
             let path = window.location.pathname;
             path = path.substr(0, path.lastIndexOf("/"));
-            let literalText = `https://${host}${path}/${layout.id.toLowerCase()}`
+            let id = layout.id.toLowerCase()
+            if(layout.definitionRaw !== undefined){
+                id="theme.html"
+            }
+            let literalText = `https://${host}${path}/${id}`
 
+            let hash = ""
+            if(layout.definedAtUrl === undefined && layout.definitionRaw !== undefined){
+               hash = "#"+ LZString.compressToBase64( Utils.MinifyJSON(layout.definitionRaw))
+            }
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
             if (parts.length === 0) {
-                return literalText;
+                return literalText + hash;
             }
-            return literalText + "?" + parts.join("&");
+            return literalText + "?" + parts.join("&") + hash;
         }, optionParts);
 
 
@@ -184,13 +190,27 @@ export default class ShareScreen extends Combine {
 
         });
 
+        
+        let downloadThemeConfig: BaseUIElement = undefined;
+        if(layout.definitionRaw !== undefined){
+            downloadThemeConfig = new SubtleButton(Svg.download_svg(), new Combine([
+                tr.downloadCustomTheme,
+                tr.downloadCustomThemeHelp.SetClass("subtle")
+            ]).onClick(() => {
+                Utils.offerContentsAsDownloadableFile(layout.definitionRaw, layout.id+".mapcomplete-theme-definition.json", {
+                    mimetype:"application/json"
+                })
+            })
+                .SetClass("flex flex-col"))
+        }
 
         super([
-            tr.intro.Clone(),
+            tr.intro,
             link,
             new VariableUiElement(linkStatus),
-            tr.addToHomeScreen.Clone(),
-            tr.embedIntro.Clone(),
+            downloadThemeConfig,
+            tr.addToHomeScreen,
+            tr.embedIntro,
             options,
             iframeCode,
         ])

@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 106,
+      "commits": 115,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -9,7 +9,7 @@
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 47,
+      "commits": 58,
       "contributor": "kjon"
     },
     {
@@ -37,6 +37,14 @@
       "contributor": "Anonymous"
     },
     {
+      "commits": 16,
+      "contributor": "el_libre como el chaval"
+    },
+    {
+      "commits": 16,
+      "contributor": "Robin van der Linde"
+    },
+    {
       "commits": 15,
       "contributor": "WaldiS"
     },
@@ -61,16 +69,16 @@
       "contributor": "Irina"
     },
     {
-      "commits": 10,
-      "contributor": "Robin van der Linde"
-    },
-    {
       "commits": 9,
       "contributor": "Jacque Fresco"
     },
     {
       "commits": 8,
       "contributor": "LeJun"
+    },
+    {
+      "commits": 7,
+      "contributor": "Win Olario"
     },
     {
       "commits": 6,
@@ -94,7 +102,7 @@
     },
     {
       "commits": 5,
-      "contributor": "el_libre como el chaval"
+      "contributor": "David Haberthür"
     },
     {
       "commits": 5,
@@ -127,10 +135,6 @@
     {
       "commits": 4,
       "contributor": "Polgár Sándor"
-    },
-    {
-      "commits": 4,
-      "contributor": "David Haberthür"
     },
     {
       "commits": 4,
@@ -179,6 +183,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "paunofu"
     },
     {
       "commits": 2,
@@ -231,6 +239,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "deep map"
     },
     {
       "commits": 1,

@@ -250,13 +250,15 @@ class WikidataTextField extends TextFieldDef {
                                 ["subarg", "doc"],
                                 [["removePrefixes", "remove these snippets of text from the start of the passed string to search"],
                                     ["removePostfixes", "remove these snippets of text from the end of the passed string to search"],
+                                    ["instanceOf","A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans"],
+                                        ["notInstanceof","A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results"]
                                 ]
                             )])
                         ]]),
                 new Title("Example usage"),
                 `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
-\`\`\`
+\`\`\`json
 "freeform": {
     "key": "name:etymology:wikidata",
     "type": "wikidata",
@@ -269,11 +271,29 @@ class WikidataTextField extends TextFieldDef {
                 "path",
                 "square",
                 "plaza",
-            ]
+            ],
+            "#": "Remove streets and parks from the search results:"
+             "notInstanceOf": ["Q79007","Q22698"] 
         }
+        
     ]
 }
-\`\`\``
+\`\`\`
+
+Another example is to search for species and trees:
+
+\`\`\`json
+ "freeform": {
+        "key": "species:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "species",
+          {
+          "instanceOf": [10884, 16521]
+        }]
+      }
+\`\`\`
+`
             ]));
     }
 
@@ -304,9 +324,9 @@ class WikidataTextField extends TextFieldDef {
         const args = inputHelperOptions.args ?? []
         const searchKey = args[0] ?? "name"
 
-        let searchFor = <string>inputHelperOptions.feature?.properties[searchKey]?.toLowerCase()
+        let searchFor = <string>(inputHelperOptions.feature?.properties[searchKey]?.toLowerCase() ?? "")
 
-        const options = args[1]
+        const options: any = args[1]
         if (searchFor !== undefined && options !== undefined) {
             const prefixes = <string[]>options["removePrefixes"]
             const postfixes = <string[]>options["removePostfixes"]
@@ -325,10 +345,18 @@ class WikidataTextField extends TextFieldDef {
             }
 
         }
+        
+        let instanceOf : number[] =  Utils.NoNull((options?.instanceOf ?? []).map(i => Wikidata.QIdToNumber(i)))
+        let notInstanceOf : number[] = Utils.NoNull((options?.notInstanceOf ?? []).map(i => Wikidata.QIdToNumber(i)))
 
+        console.log("Instance of", instanceOf)
+        
+        
         return new WikidataSearchBox({
             value: currentValue,
-            searchText: new UIEventSource<string>(searchFor)
+            searchText: new UIEventSource<string>(searchFor),
+            instanceOf,
+            notInstanceOf
         })
     }
 }
@@ -424,7 +452,7 @@ class UrlTextfieldDef extends TextFieldDef {
     reformat(str: string): string {
         try {
             let url: URL
-            str = str.toLowerCase()
+            // str = str.toLowerCase() // URLS are case sensitive. Lowercasing them might break some URLS. See #763
             if (!str.startsWith("http://") && !str.startsWith("https://") && !str.startsWith("http:")) {
                 url = new URL("https://" + str)
             } else {

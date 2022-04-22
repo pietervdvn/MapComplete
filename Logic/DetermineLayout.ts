@@ -14,7 +14,6 @@ import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 import * as known_layers from "../assets/generated/known_layers.json"
-import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import * as licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
@@ -43,10 +42,6 @@ export default class DetermineLayout {
         }
 
         let layoutId: string = undefined
-        if (location.href.indexOf("buurtnatuur.be") >= 0) {
-            layoutId = "buurtnatuur"
-        }
-
 
         const path = window.location.pathname.split("/").slice(-1)[0];
         if (path !== "theme.html" && path !== "") {
@@ -72,7 +67,7 @@ export default class DetermineLayout {
 
     public static LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
-    ): (LayoutConfig & {definition: LayoutConfigJson}) | null {
+    ): LayoutConfig | null {
         let hash = location.hash.substr(1);
         let json: any;
 
@@ -113,9 +108,7 @@ export default class DetermineLayout {
 
             const layoutToUse = DetermineLayout.prepCustomTheme(json)
             userLayoutParam.setData(layoutToUse.id);
-            const config = new LayoutConfig(layoutToUse, false);
-            config["definition"] = json
-            return <any> config
+            return layoutToUse
         } catch (e) {
             console.error(e)
             if (hash === undefined || hash.length < 10) {
@@ -144,7 +137,7 @@ export default class DetermineLayout {
             .AttachTo("centermessage");
     }
 
-    private static prepCustomTheme(json: any): LayoutConfigJson {
+    private static prepCustomTheme(json: any, sourceUrl?: string): LayoutConfig {
         
         if(json.layers === undefined && json.tagRenderings !== undefined){
             const iconTr = json.mapRendering.map(mr => mr.icon).find(icon => icon !== undefined)
@@ -161,7 +154,6 @@ export default class DetermineLayout {
             }
         }
         
-        
         const knownLayersDict = new Map<string, LayerConfigJson>()
         for (const key in known_layers.layers) {
             const layer = known_layers.layers[key]
@@ -172,10 +164,17 @@ export default class DetermineLayout {
             sharedLayers: knownLayersDict
         }
         json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
+        const raw = json;
+
         json = new FixImages(DetermineLayout._knownImages).convertStrict(json, "While fixing the images")
         json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
         console.log("The layoutconfig is ", json)
-        return json
+        
+        
+        return new LayoutConfig(json, false, {
+            definitionRaw: JSON.stringify(raw, null, "  "),
+            definedAtUrl: sourceUrl
+        })
     }
 
     private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
@@ -190,8 +189,7 @@ export default class DetermineLayout {
             try {
                 parsed.id = link;
                 console.log("Loaded remote link:", link)
-                const layoutToUse = DetermineLayout.prepCustomTheme(parsed)
-                return new LayoutConfig(layoutToUse, false)
+                return DetermineLayout.prepCustomTheme(parsed, link)
             } catch (e) {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(

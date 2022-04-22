@@ -49,7 +49,7 @@ export default abstract class BaseUIElement {
      */
     public SetClass(clss: string) {
         if (clss == undefined) {
-            return
+            return this
         }
         const all = clss.split(" ").map(clsName => clsName.trim());
         let recordedChange = false;

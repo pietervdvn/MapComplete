@@ -3,47 +3,284 @@
         "description": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
         "title": "Mapa obert de desfibril·ladors (DEA)"
     },
-    "climbing": {
+    "artwork": {
+        "description": "Benvingut a Open Artwork Map, un mapa d'estàtues, busts, grafitis i altres obres d'art del tot el món",
+        "title": "Open Artwork Map"
+    },
+    "benches": {
+        "description": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic. Amb un compte d'OpenStreetMap pots afegir nous bancs o editar detalls dels existents.",
+        "shortDescription": "Un mapa de bancs",
+        "title": "Bancs"
+    },
+    "bicycle_rental": {
+        "title": "Lloguer de bicicletes"
+    },
+    "bookcases": {
+        "title": "Open Bookcase Map"
+    },
+    "cafes_and_pubs": {
+        "description": "Bars i pubs",
+        "title": "Cafés i bars"
+    },
+    "campersite": {
         "layers": {
             "0": {
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "render": "<strong>{name}</strong>"
+                "description": "llocs d'acampada",
+                "name": "Llocs d'acampada",
+                "presets": {
+                    "0": {
+                        "title": "un lloc d'acampada"
                     }
-                }
-            },
-            "1": {
+                },
                 "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "2": {
-                "tagRenderings": {
-                    "Name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "3": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "4": {
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Hi ha accés a internet"
+                            }
+                        }
                     }
                 }
             }
+        },
+        "title": "Llocs d'acampada"
+    },
+    "charging_stations": {
+        "title": "Estacions de càrrega"
+    },
+    "climbing": {
+        "overrideAll": {
+            "tagRenderings+": {
+                "2": {
+                    "mappings": {
+                        "2": {
+                            "then": "Només clients"
+                        },
+                        "3": {
+                            "then": "Només membres del club"
+                        }
+                    }
+                }
+            },
+            "units+": {
+                "0": {
+                    "applicableUnits": {
+                        "0": {
+                            "human": " metre"
+                        },
+                        "1": {
+                            "human": " peus"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Open Climbing Map"
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "name": "vies ciclistes",
+                "title": {
+                    "render": "via ciclista"
+                }
+            }
+        },
+        "title": "Vies ciclistes"
+    },
+    "cycle_infra": {
+        "title": "Infraestructura per a bicicletes"
+    },
+    "cyclenodes": {
+        "layers": {
+            "1": {
+                "name": "nodes"
+            }
         }
+    },
+    "cyclestreets": {
+        "layers": {
+            "0": {
+                "name": "Carrers ciclistes"
+            },
+            "1": {
+                "name": "Futur carrer ciclista",
+                "title": {
+                    "render": "Futur carrer ciclista"
+                }
+            },
+            "2": {
+                "name": "Tots els carrers",
+                "title": {
+                    "render": "Carrer"
+                }
+            }
+        },
+        "shortDescription": "Un mapa de carrers ciclistes",
+        "title": "Carrers ciclistes"
+    },
+    "drinking_water": {
+        "title": "Aigua potable"
+    },
+    "entrances": {
+        "title": "Entrades"
+    },
+    "etymology": {
+        "title": "Open Etymology Map"
+    },
+    "facadegardens": {
+        "layers": {
+            "0": {
+                "description": "Jardins verticals",
+                "name": "Jardins verticals",
+                "presets": {
+                    "0": {
+                        "description": "Afegeix un jardí vertical",
+                        "title": "un jardí vertical"
+                    }
+                },
+                "title": {
+                    "render": "Jardí vertical"
+                }
+            }
+        },
+        "title": "Jardins verticals"
+    },
+    "food": {
+        "title": "Restaurants i menjar ràpid"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "Botigues de patates"
+                }
+            }
+        },
+        "title": "Botigues de patates"
+    },
+    "maps": {
+        "title": "Un mapa de mapes"
+    },
+    "nature": {
+        "title": "A la natura"
+    },
+    "notes": {
+        "title": "Notes a OpenStreetMap"
+    },
+    "observation_towers": {
+        "title": "Torres d'observació"
+    },
+    "openwindpowermap": {
+        "title": "OpenWindPowerMap"
     },
     "personal": {
         "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
         "title": "Interfície personal"
+    },
+    "playgrounds": {
+        "shortDescription": "Un mapa de parcs infantils",
+        "title": "Parcs infantils"
+    },
+    "postal_codes": {
+        "description": "Codis postals",
+        "layers": {
+            "0": {
+                "name": "codis postals"
+            },
+            "2": {
+                "name": "ajuntaments"
+            }
+        },
+        "shortDescription": "Codis postals",
+        "title": "Codis postals"
+    },
+    "postboxes": {
+        "layers": {
+            "0": {
+                "name": "Bústies",
+                "presets": {
+                    "0": {
+                        "title": "una bústia"
+                    }
+                },
+                "title": {
+                    "render": "Bústia"
+                }
+            },
+            "1": {
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Actualment obert"
+                            }
+                        }
+                    }
+                },
+                "name": "Oficines de correus",
+                "presets": {
+                    "0": {
+                        "title": "una oficina de correus"
+                    }
+                },
+                "title": {
+                    "render": "Oficina de correus"
+                }
+            }
+        }
+    },
+    "shops": {
+        "title": "Open Shop Map"
+    },
+    "sidewalks": {
+        "description": "Petició experimental",
+        "layers": {
+            "0": {
+                "name": "Voreres",
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Mapejat de voreres",
+        "title": "Voreres"
+    },
+    "sport_pitches": {
+        "title": "Camps d'esports"
+    },
+    "street_lighting": {
+        "layers": {
+            "1": {
+                "name": "Il·luminació de carrers",
+                "title": {
+                    "render": "Il·luminació del carrer"
+                }
+            },
+            "2": {
+                "name": "Tots els carrers",
+                "title": {
+                    "render": "Carrer"
+                }
+            }
+        },
+        "title": "Il·luminació als carrers"
+    },
+    "surveillance": {
+        "title": "Vigilància sota vigilància"
+    },
+    "toilets": {
+        "title": "Open Toilet Map"
+    },
+    "trees": {
+        "description": "Mapeja tots els arbres.",
+        "shortDescription": "Mapeja tots els arbres",
+        "title": "Arbres"
+    },
+    "waste": {
+        "title": "Brossa"
+    },
+    "waste_basket": {
+        "title": "Papepera"
     }
 }

@@ -6,7 +6,8 @@
     "it": "Pannelli informativi",
     "fr": "Panneaux d'informations",
     "de": "Informationstafeln",
-    "ru": "Информационные щиты"
+    "ru": "Информационные щиты",
+    "ca": "Panells d'informació"
   },
   "minzoom": 12,
   "source": {
@@ -23,7 +24,8 @@
       "it": "Pannello informativo",
       "fr": "Panneau d'informations",
       "de": "Informationstafel",
-      "ru": "Информационный щит"
+      "ru": "Информационный щит",
+      "ca": "Panell d'informació"
     }
   },
   "tagRenderings": [
@@ -80,6 +82,7 @@
   ],
   "description": {
     "en": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, ...)",
-    "nl": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)"
+    "nl": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
+    "de": "Eine Ebene mit touristischen, straßenseitigen Informationstafeln (z. B. mit Informationen über die Landschaft, ein Gebäude, ein Merkmal, eine Karte, ...)"
   }
 }

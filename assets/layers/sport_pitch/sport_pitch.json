@@ -6,7 +6,8 @@
     "en": "Sport pitches",
     "ru": "Спортивные площадки",
     "it": "Campi sportivi",
-    "de": "Sportplätze"
+    "de": "Sportplätze",
+    "ca": "Camps d'esports"
   },
   "minzoom": 12,
   "source": {
@@ -26,7 +27,8 @@
       "en": "Sport pitch",
       "ru": "Спортивная площадка",
       "it": "Campo sportivo",
-      "de": "Sportplatz"
+      "de": "Sportplatz",
+      "ca": "Camp d'esports"
     }
   },
   "description": {

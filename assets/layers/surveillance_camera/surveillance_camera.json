@@ -6,7 +6,8 @@
     "ru": "Камеры наблюдения",
     "fr": "Caméras de surveillance",
     "it": "Videocamere di sorveglianza",
-    "de": "Überwachungskameras"
+    "de": "Überwachungskameras",
+    "ca": "Càmeres de videovigilància"
   },
   "minzoom": 12,
   "source": {
@@ -30,7 +31,8 @@
       "ru": "Камера наблюдения",
       "fr": "Caméra de surveillance",
       "it": "Videocamera di sorveglianza",
-      "de": "Überwachungskamera"
+      "de": "Überwachungskamera",
+      "ca": "Càmera de videovigilància"
     }
   },
   "tagRenderings": [
@@ -104,7 +106,8 @@
         "en": "Films to a compass heading of {camera:direction}",
         "nl": "Filmt in kompasrichting {camera:direction}",
         "fr": "Filme dans une direction {camera:direction}",
-        "it": "Punta in direzione {camera:direction}"
+        "it": "Punta in direzione {camera:direction}",
+        "de": "filmt in Himmelsrichtung {camera:direction}"
       },
       "condition": {
         "or": [
@@ -135,7 +138,8 @@
             "en": "Films to a compass heading of {direction}",
             "nl": "Filmt in kompasrichting {direction}",
             "fr": "Filme dans une direction {direction}",
-            "it": "Punta in direzione {direction}"
+            "it": "Punta in direzione {direction}",
+            "de": "filmt in Himmelsrichtung {direction}"
           },
           "hideInAnswer": true
         }
@@ -305,11 +309,11 @@
         "key": "surveillance:zone"
       },
       "render": {
-        "en": " Surveills a {surveillance:zone}",
+        "en": "Surveills a {surveillance:zone}",
         "nl": "Bewaakt een {surveillance:zone}",
-        "fr": " Surveille un(e) {surveillance:zone}",
+        "fr": "Surveille un(e) {surveillance:zone}",
         "it": " Sorveglia una {surveillance:zone}",
-        "de": " Überwacht ein/e {surveillance:zone}"
+        "de": "Überwacht ein/e {surveillance:zone}"
       },
       "mappings": [
         {
@@ -461,7 +465,8 @@
       ],
       "title": {
         "en": "a surveillance camera",
-        "nl": "een bewakingscamera"
+        "nl": "een bewakingscamera",
+        "de": "eine Überwachungskamera"
       }
     },
     {
@@ -472,7 +477,8 @@
       ],
       "title": {
         "en": "a surveillance camera mounted on a wall",
-        "nl": "een bewakingscamera gemonteerd op een muur"
+        "nl": "een bewakingscamera gemonteerd op een muur",
+        "de": "eine an einer Wand montierte Überwachungskamera"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"
@@ -541,6 +547,7 @@
   ],
   "description": {
     "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
-    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen"
+    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
+    "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen"
   }
 }

@@ -4,8 +4,12 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import Title from "../Base/Title";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
+import Translations from "../i18n/Translations";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import {SubtleButton} from "../Base/SubtleButton";
+import Svg from "../../Svg";
+import {Utils} from "../../Utils";
 
 export class AskMetadata extends Combine implements FlowStep<{
     features: any[],
@@ -25,7 +29,7 @@ export class AskMetadata extends Combine implements FlowStep<{
     public readonly IsValid: UIEventSource<boolean>;
 
     constructor(params: ({ features: any[], theme: string })) {
-
+        const t = Translations.t.importHelper.askMetadata
         const introduction = ValidatedTextField.ForType("text").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-introduction-text"),
             inputStyle: "width: 100%"
@@ -42,28 +46,39 @@ export class AskMetadata extends Combine implements FlowStep<{
         })
 
         super([
-            new Title("Set metadata"),
-            "Before adding " + params.features.length + " notes, please provide some extra information.",
-            "Please, write an introduction for someone who sees the note",
+            new Title(t.title),
+            t.intro.Subs({count: params.features.length}),
+           t.giveDescription,
             introduction.SetClass("w-full border border-black"),
-            "What is the source of this data? If 'source' is set in the feature, this value will be ignored",
-            source.SetClass("w-full border border-black"),
-            "On what wikipage can one find more information about this import?",
+             t.giveSource,
+             source.SetClass("w-full border border-black"),
+            t.giveWikilink            ,
             wikilink.SetClass("w-full border border-black"),
             new VariableUiElement(wikilink.GetValue().map(wikilink => {
                 try{
                     const url = new URL(wikilink)
                     if(url.hostname.toLowerCase() !== "wiki.openstreetmap.org"){
-                        return new FixedUiElement("Expected a link to wiki.openstreetmap.org").SetClass("alert");
+                        return t.shouldBeOsmWikilink.SetClass("alert");
                     }
 
                     if(url.pathname.toLowerCase() === "/wiki/main_page"){
-                        return new FixedUiElement("Nope, the home page isn't allowed either. Enter the URL of a proper wikipage documenting your import").SetClass("alert");
+                        return t.shouldNotBeHomepage.SetClass("alert");
                     }
                 }catch(e){
-                    return new FixedUiElement("Not a valid URL").SetClass("alert")
+                    return t.shouldBeUrl.SetClass("alert")
                 }
-            }))
+            })),
+            t.orDownload,
+            new SubtleButton(Svg.download_svg(), t.downloadGeojson).OnClickWithLoading("Preparing your download",
+                async ( ) => {
+                    const geojson = {
+                        type:"FeatureCollection",
+                        features: params.features
+                    }
+                    Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "prepared_import_"+params.theme+".geojson",{
+                        mimetype: "application/vnd.geo+json"
+                    })
+                })
         ]);
         this.SetClass("flex flex-col")
 

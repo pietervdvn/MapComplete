@@ -2,45 +2,31 @@ import Combine from "../Base/Combine";
 import {FlowStep} from "./FlowStep";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Link from "../Base/Link";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import CheckBoxes from "../Input/Checkboxes";
 import Title from "../Base/Title";
-import {SubtleButton} from "../Base/SubtleButton";
-import Svg from "../../Svg";
-import {Utils} from "../../Utils";
+import Translations from "../i18n/Translations";
 
 export class ConfirmProcess extends Combine implements FlowStep<{ features: any[], theme: string }> {
 
     public IsValid: UIEventSource<boolean>
-    public Value: UIEventSource<{ features: any[],theme: string  }>
+    public Value: UIEventSource<{ features: any[], theme: string }>
 
-    constructor(v: { features: any[], theme: string  }) {
+    constructor(v: { features: any[], theme: string }) {
+        const t = Translations.t.importHelper.confirmProcess;
+        const elements = [
+            new Link(t.readImportGuidelines, "https://wiki.openstreetmap.org/wiki/Import_guidelines", true),
+            t.contactedCommunity,
+            t.licenseIsCompatible,
+            t.wikipageIsMade
+        ]
+        const toConfirm = new CheckBoxes(elements);
 
-        const toConfirm = [
-            new Combine(["I have read the ", new Link("import guidelines on the OSM wiki", "https://wiki.openstreetmap.org/wiki/Import_guidelines", true)]),
-            new FixedUiElement("I did contact the (local) community about this import"),
-            new FixedUiElement("The license of the data to import allows it to be imported into OSM. They are allowed to be redistributed commercially, with only minimal attribution"),
-            new FixedUiElement("The process is documented on the OSM-wiki (you'll need this link later)")
-        ];
-
-        const licenseClear = new CheckBoxes(toConfirm)
         super([
-            new Title("Did you go through the import process?"),
-            licenseClear,
-            new FixedUiElement("Alternatively, you can download the dataset to import directly"),
-            new SubtleButton(Svg.download_svg(), "Download geojson").OnClickWithLoading("Preparing your download", 
-                async ( ) => {
-                const geojson = {
-                    type:"FeatureCollection",
-                    features: v.features
-                }
-                Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "prepared_import_"+v.theme+".geojson",{
-                    mimetype: "application/vnd.geo+json"
-                })
-            })
+            new Title(t.titleLong),
+            toConfirm,
         ]);
         this.SetClass("link-underline")
-        this.IsValid = licenseClear.GetValue().map(selected => toConfirm.length == selected.length)
+        this.IsValid = toConfirm.GetValue().map(selected => elements.length == selected.length)
         this.Value = new UIEventSource<{ features: any[], theme: string }>(v)
     }
 }

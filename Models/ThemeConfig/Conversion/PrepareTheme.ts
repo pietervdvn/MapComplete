@@ -1,4 +1,4 @@
-import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, SetDefault} from "./Conversion";
+import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, Pass, SetDefault} from "./Conversion";
 import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import {PrepareLayer} from "./PrepareLayer";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
@@ -474,7 +474,9 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
 }
 
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
-    constructor(state: DesugaringContext) {
+    constructor(state: DesugaringContext, options?: {
+        skipDefaultLayers: false | boolean
+    }) {
         super(
             "Fully prepares and expands a theme",
 
@@ -489,7 +491,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new ApplyOverrideAll(),
             // And then we prepare all the layers _again_ in case that an override all contained unexpanded tagrenderings!
             new On("layers", new Each(new PrepareLayer(state))),
-            new AddDefaultLayers(state),
+            options?.skipDefaultLayers ? new Pass("AddDefaultLayers is disabled due to the set flag") : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
             new AddImportLayers(),
             new On("layers", new Each(new AddMiniMap(state)))

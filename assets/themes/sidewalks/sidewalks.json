@@ -4,14 +4,19 @@
     "en": "Sidewalks",
     "ru": "Тротуары",
     "nl": "Voetpaden",
-    "de": "Gehwege"
+    "de": "Gehwege",
+    "ca": "Voreres"
   },
   "shortDescription": {
-    "en": "Sidewalk mapping"
+    "en": "Sidewalk mapping",
+    "ca": "Mapejat de voreres",
+    "de": "Kartierung von Bürgersteigen"
   },
   "description": {
     "en": "Experimental theme",
-    "ru": "Экспериментальная тема"
+    "ru": "Экспериментальная тема",
+    "ca": "Petició experimental",
+    "de": "Experimentelles Thema"
   },
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -27,7 +32,8 @@
       "name": {
         "en": "Sidewalks",
         "ru": "Тротуары",
-        "de": "Gehweg"
+        "de": "Gehweg",
+        "ca": "Voreres"
       },
       "minzoom": 12,
       "source": {
@@ -44,7 +50,8 @@
         "render": {
           "en": "{name}",
           "ru": "{name}",
-          "de": "{name}"
+          "de": "{name}",
+          "ca": "{name}"
         },
         "mappings": [
           {
@@ -54,13 +61,15 @@
         ]
       },
       "description": {
-        "en": "Layer showing sidewalks of highways"
+        "en": "Layer showing sidewalks of highways",
+        "de": "Ebene mit Bürgersteigen"
       },
       "tagRenderings": [
         {
           "id": "streetname",
           "render": {
-            "en": "This street is named {name}"
+            "en": "This street is named {name}",
+            "de": "Diese Straße heißt {name}"
           }
         },
         {

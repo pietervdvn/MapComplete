@@ -25,7 +25,8 @@
       "de": "{name}",
       "ru": "{name}",
       "eo": "{name}",
-      "fr": "{name}"
+      "fr": "{name}",
+      "ca": "{name}"
     },
     "mappings": [
       {
@@ -50,7 +51,8 @@
           "de": "{name}",
           "ru": "{name}",
           "eo": "{name}",
-          "fr": "{name}"
+          "fr": "{name}",
+          "ca": "{name}"
         }
       }
     ]

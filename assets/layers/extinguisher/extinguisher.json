@@ -6,7 +6,7 @@
     "nb_NO": "Kart over brannhydranter",
     "ru": "Карта огнетушителей.",
     "fr": "Couche des extincteurs.",
-    "de": "Feuerlöscher anzeigen",
+    "de": "Feuerlöscher anzeigen.",
     "it": "Cartina degli estintori.",
     "nl": "Kaart van brandblussers."
   },
@@ -27,7 +27,8 @@
       "fr": "Exctincteurs",
       "de": "Feuerlöscher",
       "it": "Estintori",
-      "nl": "Brandblussers"
+      "nl": "Brandblussers",
+      "ca": "Extintors"
     }
   },
   "description": {

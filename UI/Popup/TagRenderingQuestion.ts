@@ -11,7 +11,7 @@ import {SaveButton} from "./SaveButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "../i18n/Translation";
+import {Translation, TypedTranslation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
@@ -51,7 +51,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const applicableMappingsSrc =
             UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
+                const applicableMappings: { if: TagsFilter, icon?: string, then: TypedTranslation<object>, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -158,7 +158,7 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateInputElement(
         state,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
+        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
@@ -168,7 +168,7 @@ export default class TagRenderingQuestion extends Combine {
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
        
-        const hasImages = applicableMappings.findIndex(mapping => mapping.then.icon !== undefined) >= 0
+        const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
@@ -207,7 +207,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.WT(mapping.then)
+                        shown: mapping.then.Subs(tagsSource.data)
                     }
                 })
             )
@@ -248,7 +248,7 @@ export default class TagRenderingQuestion extends Combine {
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
-                return t0?.isEquivalent(t1) ?? false
+                return t0?.shadows(t1) ?? false
             },
             (indices) => {
                 if (indices.length === 0) {
@@ -370,7 +370,7 @@ export default class TagRenderingQuestion extends Combine {
         return new FixedInputElement(
             TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state),
             tagging,
-            (t0, t1) => t1.isEquivalent(t0));
+            (t0, t1) => t1.shadows(t0));
     }
 
     private static GenerateMappingContent(mapping: {
@@ -450,7 +450,7 @@ export default class TagRenderingQuestion extends Combine {
         })
 
         let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
-            input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
+            input, (a, b) => a === b || (a?.shadows(b) ?? false),
             pickString, toString
         );
 

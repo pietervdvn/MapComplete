@@ -5,7 +5,8 @@
     "nl": "Wandeltochten",
     "ru": "Тропы",
     "de": "Wanderwege",
-    "fr": "Sentiers"
+    "fr": "Sentiers",
+    "ca": "Camins"
   },
   "minzoom": 12,
   "source": {
@@ -28,7 +29,8 @@
       "nl": "Wandeltocht",
       "ru": "Тропа",
       "de": "Wanderweg",
-      "fr": "Sentier"
+      "fr": "Sentier",
+      "ca": "Camí"
     },
     "mappings": [
       {

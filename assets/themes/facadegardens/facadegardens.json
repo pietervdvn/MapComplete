@@ -8,7 +8,8 @@
     "it": "Giardini verticali",
     "fr": "Facade gardens",
     "de": "Fassadengärten",
-    "hu": "Homlokzati kertek"
+    "hu": "Homlokzati kertek",
+    "ca": "Jardins verticals"
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
@@ -47,7 +48,8 @@
         "fr": "Jardins muraux",
         "de": "Fassadengärten",
         "it": "Giardini verticali",
-        "hu": "Homlokzati kertek"
+        "hu": "Homlokzati kertek",
+        "ca": "Jardins verticals"
       },
       "minzoom": 12,
       "source": {
@@ -67,7 +69,8 @@
           "fr": "Jardin mural",
           "de": "Fassadengarten",
           "it": "Giardino verticale",
-          "hu": "Homlokzati kert"
+          "hu": "Homlokzati kert",
+          "ca": "Jardí vertical"
         }
       },
       "description": {
@@ -78,7 +81,8 @@
         "fr": "Jardins muraux",
         "de": "Fassadengärten",
         "it": "Giardini verticali",
-        "hu": "Homlokzati kertek"
+        "hu": "Homlokzati kertek",
+        "ca": "Jardins verticals"
       },
       "tagRenderings": [
         "images",
@@ -400,7 +404,8 @@
             "it": "una giardino verticale",
             "fr": "une jardin mural",
             "de": "eine fassadengarten",
-            "hu": "homlokzatkert"
+            "hu": "homlokzatkert",
+            "ca": "un jardí vertical"
           },
           "description": {
             "nl": "Voeg geveltuintje toe",
@@ -409,7 +414,8 @@
             "it": "Aggiungi un giardino verticale",
             "fr": "Ajouter un jardin mural",
             "de": "Einen Fassadengarten hinzufügen",
-            "hu": "Homlokzatkert hozzáadása"
+            "hu": "Homlokzatkert hozzáadása",
+            "ca": "Afegeix un jardí vertical"
           }
         }
       ],

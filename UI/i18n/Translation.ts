@@ -1,9 +1,6 @@
 import Locale from "./Locale";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
-import Link from "../Base/Link";
-import Svg from "../../Svg";
-import {VariableUiElement} from "../Base/VariableUIElement";
 import LinkToWeblate from "../Base/LinkToWeblate";
 
 export class Translation extends BaseUIElement {
@@ -164,25 +161,7 @@ export class Translation extends BaseUIElement {
     public AllValues(): string[] {
         return this.SupportedLanguages().map(lng => this.translations[lng]);
     }
-
-    /**
-     * Substitutes text in a translation.
-     * If a translation is passed, it'll be fused
-     * 
-     * // Should replace simple keys
-     * new Translation({"en": "Some text {key}"}).Subs({key: "xyz"}).textFor("en") // => "Some text xyz"
-     * 
-     * // Should fuse translations
-     * const subpart = new Translation({"en": "subpart","nl":"onderdeel"})
-     * const tr = new Translation({"en": "Full sentence with {part}", nl: "Volledige zin met {part}"})
-     * const subbed = tr.Subs({part: subpart})
-     * subbed.textFor("en") // => "Full sentence with subpart"
-     * subbed.textFor("nl") // => "Volledige zin met onderdeel"
-     */
-    public Subs(text: any, context?: string): Translation {
-        return this.OnEveryLanguage((template, lang) => Utils.SubstituteKeys(template, text, lang), context)
-    }
-
+    
     public OnEveryLanguage(f: (s: string, language: string) => string, context?: string): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
@@ -278,5 +257,28 @@ export class Translation extends BaseUIElement {
         return this.txt
     }
     
+}
 
+export class TypedTranslation<T> extends Translation {
+    constructor(translations: object, context?: string) {
+        super(translations, context);
+    }
+
+    /**
+     * Substitutes text in a translation.
+     * If a translation is passed, it'll be fused
+     *
+     * // Should replace simple keys
+     * new TypedTranslation<object>({"en": "Some text {key}"}).Subs({key: "xyz"}).textFor("en") // => "Some text xyz"
+     *
+     * // Should fuse translations
+     * const subpart = new Translation({"en": "subpart","nl":"onderdeel"})
+     * const tr = new TypedTranslation<object>({"en": "Full sentence with {part}", nl: "Volledige zin met {part}"})
+     * const subbed = tr.Subs({part: subpart})
+     * subbed.textFor("en") // => "Full sentence with subpart"
+     * subbed.textFor("nl") // => "Volledige zin met onderdeel"
+     */
+    Subs(text: T, context?: string): Translation {
+        return this.OnEveryLanguage((template, lang) => Utils.SubstituteKeys(template, text, lang), context)
+    }
 }

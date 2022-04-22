@@ -9,7 +9,8 @@
     "de": "Fahrradstraßen",
     "it": "Strade ciclabili",
     "nb_NO": "Sykkelgater",
-    "hu": "Kerékpárosutcák"
+    "hu": "Kerékpárosutcák",
+    "ca": "Carrers ciclistes"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -19,7 +20,8 @@
     "nb_NO": "Et kart over sykkelveier",
     "de": "Eine Karte von Fahrradstraßen",
     "it": "Una cartina per le strade ciclabili",
-    "hu": "Kerékpárosutcák térképe"
+    "hu": "Kerékpárosutcák térképe",
+    "ca": "Un mapa de carrers ciclistes"
   },
   "description": {
     "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
@@ -52,7 +54,8 @@
         "de": "Fahrradstraßen",
         "nb_NO": "Sykkelgater",
         "ru": "Cyclestreets",
-        "hu": "Kerékpárosutcák"
+        "hu": "Kerékpárosutcák",
+        "ca": "Carrers ciclistes"
       },
       "minzoom": 7,
       "source": {
@@ -106,7 +109,8 @@
         "nb_NO": "Fremtidig sykkelvei",
         "it": "Futura strada ciclabile",
         "de": "Zukünftige Fahrradstraßen",
-        "hu": "Jövőbeli kerékpárosutca"
+        "hu": "Jövőbeli kerékpárosutca",
+        "ca": "Futur carrer ciclista"
       },
       "description": {
         "nl": "Deze straat wordt binnenkort een fietsstraat",
@@ -129,7 +133,8 @@
           "nb_NO": "Fremtidig sykkelvei",
           "it": "Futura strada ciclabile",
           "de": "Zukünftige Fahrradstraße",
-          "hu": "Jövőbeli kerékpárosutca"
+          "hu": "Jövőbeli kerékpárosutca",
+          "ca": "Futur carrer ciclista"
         },
         "mappings": [
           {
@@ -173,7 +178,8 @@
         "ru": "Все улицы",
         "de": "Alle Straßen",
         "eo": "Ĉiuj stratoj",
-        "hu": "Minden utca"
+        "hu": "Minden utca",
+        "ca": "Tots els carrers"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -204,7 +210,8 @@
           "de": "Straße",
           "eo": "Strato",
           "nb_NO": "Gate",
-          "hu": "Utca"
+          "hu": "Utca",
+          "ca": "Carrer"
         },
         "mappings": [
           {

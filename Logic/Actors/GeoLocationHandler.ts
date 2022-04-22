@@ -101,7 +101,6 @@ export default class GeoLocationHandler extends VariableUiElement {
         const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
         const willFocus = lastClick.map(lastUserRequest => {
             const timeDiffInited = (new Date().getTime() - initedAt.getTime()) / 1000
-            console.log("TimeDiff with initedAtt is ", timeDiffInited)
             if (!latLonGiven && !autozoomDone && timeDiffInited < Constants.zoomToLocationTimeout) {
                 return true
             }
@@ -109,7 +108,6 @@ export default class GeoLocationHandler extends VariableUiElement {
                 return false;
             }
             const timeDiff = (new Date().getTime() - lastUserRequest.getTime()) / 1000
-            console.log("TimeDiff with lastClick is ", timeDiff)
             return timeDiff <= Constants.zoomToLocationTimeout
         })
 
@@ -202,7 +200,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             self.init(true, true);
         });
 
-     
+
         const doAutoZoomToLocation = !latLonGiven && state.featureSwitchGeolocation.data && state.selectedElement.data !== undefined
         this.init(false, doAutoZoomToLocation);
 
@@ -363,14 +361,9 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
         }
         if (!inRange) {
-            console.log(
-                "Not zooming to GPS location: out of bounds",
-                b,
-                location
-            );
+            console.log("Not zooming to GPS location: out of bounds", b, location);
         } else {
             const currentZoom = this._leafletMap.data.getZoom()
-
             this._leafletMap.data.setView([location.latitude, location.longitude], Math.max(targetZoom ?? 0, currentZoom));
         }
     }

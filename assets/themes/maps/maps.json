@@ -10,7 +10,8 @@
     "de": "Eine Karte der Karten",
     "eo": "Mapo de mapoj",
     "it": "Una mappa di mappe",
-    "nb_NO": "Et kart over kart"
+    "nb_NO": "Et kart over kart",
+    "ca": "Un mapa de mapes"
   },
   "shortDescription": {
     "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",

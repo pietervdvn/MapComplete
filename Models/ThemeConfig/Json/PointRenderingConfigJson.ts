@@ -13,9 +13,10 @@ export default interface PointRenderingConfigJson {
 
     /**
      * All the locations that this point should be rendered at.
-     * Using `location: ["point", "centroid"] will always render centerpoint
+     * Using `location: ["point", "centroid"] will always render centerpoint.
+     * 'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)
      */
-    location: ("point" | "centroid" | "start" | "end" | string)[]
+    location: ("point" | "centroid" | "start" | "end" | "projected_centerpoint" | string)[]
 
     /**
      * The icon for an element.

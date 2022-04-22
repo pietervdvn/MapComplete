@@ -2,7 +2,7 @@ import * as fs from "fs";
 
 function main(args) {
     if (args.length < 2) {
-        console.log("Given a single geojson file, generates the partitions for every found property")
+        console.log("Given a single geojson file and an attribute-key, will generate a new file for every value of the partition.")
         console.log("USAGE: perProperty `file.geojson` `property-key`")
         return
     }
@@ -35,11 +35,4 @@ function main(args) {
 
 }
 
-let args = [...process.argv]
-args.splice(0, 2)
-try {
-    main(args)
-} catch (e) {
-    console.error("Error building cache:", e)
-}
-console.log("All done!")
+main(process.argv.slice(2))

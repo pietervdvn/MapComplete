@@ -7,7 +7,7 @@ import MinimapImplementation from "../Base/MinimapImplementation";
 import Translations from "../i18n/Translations";
 import {FlowPanelFactory} from "./FlowStep";
 import {RequestFile} from "./RequestFile";
-import {PreviewPanel} from "./PreviewPanel";
+import {PreviewAttributesPanel} from "./PreviewPanel";
 import ConflationChecker from "./ConflationChecker";
 import {AskMetadata} from "./AskMetadata";
 import {ConfirmProcess} from "./ConfirmProcess";
@@ -26,20 +26,20 @@ import SelectTheme from "./SelectTheme";
 export default class ImportHelperGui extends LeftIndex {
     constructor() {
         const state = new UserRelatedState(undefined)
-
+        const t =  Translations.t.importHelper;
         const {flow, furthestStep, titles} =
             FlowPanelFactory
-                .start("Introduction", new Introdution())
-                .then("Login", _ => new LoginToImport(state))
-               .then("Select file", _ => new RequestFile())
-               .then("Inspect attributes", geojson => new PreviewPanel(state, geojson))
-               .then("Inspect data", geojson => new MapPreview(state, geojson))
-               .then("Select theme", v => new SelectTheme(v))
-               .then("Compare with open notes", v => new CompareToAlreadyExistingNotes(state, v))
-               .then("Compare with existing data", v => new ConflationChecker(state, v))
-               .then("License and community check", v  => new ConfirmProcess(v))
-               .then("Metadata", (v) => new AskMetadata(v))
-               .finish("Note creation", v => new CreateNotes(state, v));
+                .start(t.introduction, new Introdution())
+                .then(t.login, _ => new LoginToImport(state))
+               .then(t.selectFile, _ => new RequestFile())
+               .then(t.previewAttributes, geojson => new PreviewAttributesPanel(state, geojson))
+               .then(t.mapPreview, geojson => new MapPreview(state, geojson))
+               .then(t.selectTheme, v => new SelectTheme(v))
+               .then(t.compareToAlreadyExistingNotes, v => new CompareToAlreadyExistingNotes(state, v))
+               .then(t.conflationChecker, v => new ConflationChecker(state, v))
+               .then(t.confirmProcess, v  => new ConfirmProcess(v))
+               .then(t.askMetadata, (v) => new AskMetadata(v))
+               .finish(t.createNotes.title, v => new CreateNotes(state, v));
 
         const toc = new List(
             titles.map((title, i) => new VariableUiElement(furthestStep.map(currentStep => {
@@ -58,11 +58,11 @@ export default class ImportHelperGui extends LeftIndex {
             , true)
 
         const leftContents: BaseUIElement[] = [
-            new SubtleButton(undefined, "Inspect your preview imports", {
+            new SubtleButton(undefined, t.gotoImportViewer, {
                 url: "import_viewer.html"
             }),
             toc,
-            new Toggle(new FixedUiElement("Testmode - won't actually import notes").SetClass("alert"), undefined, state.featureSwitchIsTesting),
+            new Toggle(t.testMode.SetClass("block alert"), undefined, state.featureSwitchIsTesting),
             LanguagePicker.CreateLanguagePicker(Translations.t.importHelper.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
 

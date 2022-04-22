@@ -6,7 +6,8 @@
     "fr": "Visualisation de la direction",
     "it": "Visualizzazione della direzione",
     "ru": "Визуализация направления",
-    "de": "Aufnahmewinkel der Kamera anzeigen"
+    "de": "Aufnahmewinkel der Kamera anzeigen",
+    "ca": "Direcció de la visualització"
   },
   "minzoom": 16,
   "source": {
