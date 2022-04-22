@@ -11,7 +11,7 @@ import {SaveButton} from "./SaveButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "../i18n/Translation";
+import {Translation, TypedTranslation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
@@ -51,7 +51,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const applicableMappingsSrc =
             UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, icon?: string, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
+                const applicableMappings: { if: TagsFilter, icon?: string, then: TypedTranslation<object>, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -158,7 +158,7 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateInputElement(
         state,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: any, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
+        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
@@ -207,7 +207,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.T(mapping.then)
+                        shown: mapping.then.Subs(tagsSource.data)
                     }
                 })
             )
