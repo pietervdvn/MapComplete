@@ -139,5 +139,10 @@
     "personal": {
         "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
         "title": "Interficie personal"
+    },
+    "trees": {
+        "description": "Mapa de todos los Árboles",
+        "shortDescription": "Mapa de los Árboles",
+        "title": "Árboles"
     }
 }
