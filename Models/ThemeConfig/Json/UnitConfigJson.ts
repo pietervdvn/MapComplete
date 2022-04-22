@@ -18,9 +18,12 @@ export default interface UnitConfigJson {
 
 export interface ApplicableUnitJson {
     /**
-     * The canonical value which will be added to the text.
+     * The canonical value which will be added to the value in OSM.
      * e.g. "m" for meters
-     * If the user inputs '42', the canonical value will be added and it'll become '42m'
+     * If the user inputs '42', the canonical value will be added and it'll become '42m'.
+     * 
+     * Important: often, _no_ canonical values are expected, e.g. in the case of 'maxspeed' where 'km/h' is the default.
+     * In this case, an empty string should be used
      */
     canonicalDenomination: string,
     /**
