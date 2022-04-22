@@ -479,6 +479,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
     }) {
         super(
             "Fully prepares and expands a theme",
+
             new AddContextToTransltionsInLayout(),
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),
