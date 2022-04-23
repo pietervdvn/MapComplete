@@ -84,21 +84,24 @@
       "question": {
         "en": "Can this tower be visited?",
         "nl": "Is deze toren publiek toegankelijk?",
-        "es": "¿Se puede visitar esta torre?"
+        "es": "¿Se puede visitar esta torre?",
+        "de": "Kann dieser Turm besichtigt werden?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "en": "This tower is publicly accessible",
-            "nl": "Deze toren is publiek toegankelijk"
+            "nl": "Deze toren is publiek toegankelijk",
+            "de": "Dieser Turm ist öffentlich zugänglich"
           }
         },
         {
           "if": "access=guided",
           "then": {
             "en": "This tower can only be visited with a guide",
-            "nl": "Deze toren can enkel bezocht worden met een gids"
+            "nl": "Deze toren can enkel bezocht worden met een gids",
+            "de": "Dieser Turm kann nur mit einem Führer besichtigt werden"
           }
         }
       ]
@@ -160,7 +163,8 @@
       "id": "step_count",
       "question": {
         "en": "How much individual steps does one have to climb to reach the top of this tower?",
-        "nl": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?"
+        "nl": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?",
+        "de": "Wie viele einzelne Stufen muss man erklimmen, um die Spitze des Turms zu erreichen?"
       },
       "freeform": {
         "key": "step_count",
@@ -168,7 +172,8 @@
       },
       "render": {
         "en": "This tower has {step_count} steps to reach the top",
-        "nl": "Deze toren heeft {step_count} traptredes"
+        "nl": "Deze toren heeft {step_count} traptredes",
+        "de": "Dieser Turm hat {step_count} Stufen, um die Spitze zu erreichen"
       },
       "condition": {
         "or": [
@@ -181,21 +186,24 @@
       "id": "elevator",
       "question": {
         "en": "Does this tower have an elevator?",
-        "nl": "Heeft deze toren een lift?"
+        "nl": "Heeft deze toren een lift?",
+        "de": "Hat dieser Turm einen Aufzug?"
       },
       "mappings": [
         {
           "if": "elevator=yes",
           "then": {
             "en": "This tower has an elevator which takes visitors to the top",
-            "nl": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt"
+            "nl": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt",
+            "de": "Dieser Turm verfügt über einen Aufzug, der die Besucher nach oben bringt"
           }
         },
         {
           "if": "elevator=no",
           "then": {
             "en": "This tower does not have an elevator",
-            "nl": "Deze toren heeft geen lift"
+            "nl": "Deze toren heeft geen lift",
+            "de": "Dieser Turm hat keinen Aufzug"
           }
         }
       ],

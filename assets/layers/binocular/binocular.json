@@ -14,7 +14,8 @@
       "nl": "Verrekijker",
       "de": "Ferngläser",
       "ru": "Бинокль",
-      "ca": "Prismàtics"
+      "ca": "Prismàtics",
+      "es": "Binoculares"
     }
   },
   "description": {
@@ -51,12 +52,14 @@
       "render": {
         "en": "Using these binoculars costs {charge}",
         "nl": "Deze verrekijker gebruiken kost {charge}",
-        "de": "Die Benutzung dieses Fernglases kostet {charge}"
+        "de": "Die Benutzung dieses Fernglases kostet {charge}",
+        "es": "Utilizar estos binoculares cuesta {charge}"
       },
       "question": {
         "en": "How much does one have to pay to use these binoculars?",
         "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?",
-        "de": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?"
+        "de": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?",
+        "es": "¿Cuánto hay que pagar para utilizar estos binoculares?"
       },
       "id": "binocular-charge"
     },
@@ -64,12 +67,14 @@
       "question": {
         "en": "When looking through this binocular, in what direction does one look?",
         "nl": "Welke richting kijkt men uit als men door deze verrekijker kijkt?",
-        "de": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?"
+        "de": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?",
+        "es": "¿Cuándo uno mira a través de este binocular, en qué dirección lo hace?"
       },
       "render": {
         "en": "Looks towards {direction}°",
         "nl": "Kijkt richting {direction}°",
-        "de": "Blick in Richtung {direction}°"
+        "de": "Blick in Richtung {direction}°",
+        "es": "Mira hacia {direction}º"
       },
       "freeform": {
         "key": "direction",

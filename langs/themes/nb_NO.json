@@ -11,6 +11,9 @@
         "shortDescription": "Et benkekart",
         "title": "Benker"
     },
+    "bicycle_rental": {
+        "title": "Sykkelutleie"
+    },
     "bicyclelib": {
         "title": "Sykkelbibliotek"
     },

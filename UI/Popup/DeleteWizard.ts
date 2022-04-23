@@ -202,7 +202,7 @@ export default class DeleteWizard extends Toggle {
     private static generateDeleteTagRenderingConfig(softDeletionTags: TagsFilter,
                                                     nonDeleteOptions: { if: TagsFilter; then: Translation }[],
                                                     extraDeleteReasons: { explanation: Translation; changesetMessage: string }[],
-                                                    currentTags: any) {
+                                                    currentTags: any): TagRenderingConfig {
         const t = Translations.t.delete
         nonDeleteOptions = nonDeleteOptions ?? []
         let softDeletionTagsStr = []

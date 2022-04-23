@@ -321,7 +321,8 @@
         "zh_Hant": "這個長椅 (座位) 是什麼做的？",
         "pt_BR": "De que é feito o banco (assento)?",
         "pl": "Z czego wykonana jest ławka (siedzisko)?",
-        "pt": "De que é feito o banco (assento)?"
+        "pt": "De que é feito o banco (assento)?",
+        "es": "¿De que está hecho el banco (asiento)?"
       },
       "id": "bench-material"
     },
@@ -353,7 +354,8 @@
         "zh_Hant": "當坐在長椅時，那個人朝向 {direction}°。",
         "pl": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
         "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
-        "pt": "Ao sentar-se no banco, olha-se para {direction} °."
+        "pt": "Ao sentar-se no banco, olha-se para {direction} °.",
+        "es": "¿Cuando está sentado en el banco, uno mira hacia {direction}º."
       },
       "freeform": {
         "key": "direction",
@@ -420,7 +422,8 @@
             "pl": "Kolor: brązowy",
             "pt": "Cor: castanho",
             "eo": "Koloro: bruna",
-            "ca": "Color: marró"
+            "ca": "Color: marró",
+            "es": "Color: marrón"
           }
         },
         {
@@ -592,7 +595,8 @@
         "zh_Hant": "上一次探察長椅是什麼時候？",
         "pt_BR": "Quando esta bancada foi pesquisada pela última vez?",
         "pl": "Kiedy ostatnio badano tę ławkę?",
-        "pt": "Quando esta bancada foi pesquisada pela última vez?"
+        "pt": "Quando esta bancada foi pesquisada pela última vez?",
+        "es": "¿Cuándo fue la última vez que se inspeccionó este banco?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
@@ -605,7 +609,8 @@
         "zh_Hant": "這個長椅最後是在 {survey:date} 探查的",
         "pt_BR": "Esta bancada foi pesquisada pela última vez em {survey:date}",
         "pl": "Ławka ta była ostatnio badana w dniu {survey:date}",
-        "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}"
+        "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
+        "es": "Este banco se inspeccionó por última vez el {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -679,6 +684,7 @@
     "nl": "Deze laag toont zitbanken en enkele vragen over deze zitbanken",
     "en": "A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.",
     "fr": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
-    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, ... dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen."
+    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, ... dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
+    "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y preguntan algunas preguntas sobre ellos."
   }
 }

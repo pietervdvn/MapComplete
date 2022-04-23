@@ -3422,7 +3422,7 @@
                 "title": "a fastfood"
             },
             "2": {
-                "description": "A fastfood-buisiness focused on french fries",
+                "description": "A fastfood-business focused on french fries",
                 "title": "a fries shop"
             }
         },
@@ -5454,6 +5454,9 @@
                 },
                 "question": "Is this a broadleaved or needleleaved tree?"
             },
+            "tree-species-wikidata": {
+                "question": "What species is this tree?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
@@ -5670,6 +5673,7 @@
         "name": "Watermill"
     },
     "windturbine": {
+        "description": "Modern windmills generating electricity",
         "name": "wind turbine",
         "presets": {
             "0": {

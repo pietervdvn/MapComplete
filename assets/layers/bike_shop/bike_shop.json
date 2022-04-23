@@ -104,7 +104,8 @@
           "ru": "Прокат велосипедов <i>{name}</i>",
           "de": "Fahrradverleih<i>{name}</i>",
           "pt_BR": "Aluguel de bicicletas <i>{name}</i>",
-          "pt": "Aluguel de bicicletas <i>{name}</i>"
+          "pt": "Aluguel de bicicletas <i>{name}</i>",
+          "es": "Alquiler de bicicletas <i>{name}</i>"
         }
       },
       {
@@ -123,7 +124,8 @@
           "it": "Riparazione biciclette <i>{name}</i>",
           "ru": "Ремонт велосипедов <i>{name}</i>",
           "pt_BR": "Reparo de bicicletas <i>{name}</i>",
-          "pt": "Reparo de bicicletas <i>{name}</i>"
+          "pt": "Reparo de bicicletas <i>{name}</i>",
+          "es": "Reparación de bicis <i>{name}</i>"
         }
       },
       {
@@ -141,7 +143,8 @@
           "it": "Negozio di biciclette <i>{name}</i>",
           "ru": "Магазин велосипедов <i>{name}</i>",
           "pt_BR": "Loja de bicicletas <i>{name}</i>",
-          "pt": "Loja de bicicletas <i>{name}</i>"
+          "pt": "Loja de bicicletas <i>{name}</i>",
+          "es": "Tienda de bicis <i>{name}</i>"
         }
       },
       {
@@ -191,7 +194,8 @@
     "ru": "Магазин, специализирующийся на продаже велосипедов или сопутствующих товаров",
     "pt_BR": "Uma loja que vende especificamente bicicletas ou itens relacionados",
     "de": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
-    "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados"
+    "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados",
+    "es": "Una tiene que vende específicamente bicis u objetos relacionados"
   },
   "tagRenderings": [
     "images",
@@ -211,7 +215,8 @@
         "it": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette",
         "pt_BR": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas",
         "de": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig",
-        "pt": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
+        "pt": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas",
+        "es": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas"
       },
       "mappings": [
         {
@@ -234,7 +239,8 @@
         "it": "Qual è il nome di questo negozio di biciclette?",
         "ru": "Как называется магазин велосипедов?",
         "pt_BR": "Qual o nome desta loja de bicicletas?",
-        "pt": "Qual o nome desta loja de bicicletas?"
+        "pt": "Qual o nome desta loja de bicicletas?",
+        "es": "¿Cual es el nombre de esta tienda de bicicletas?"
       },
       "render": {
         "en": "This bicycle shop is called {name}",
@@ -245,7 +251,8 @@
         "it": "Questo negozio di biciclette è chiamato {name}",
         "ru": "Этот магазин велосипедов называется {name}",
         "pt_BR": "Esta loja de bicicletas se chama {name}",
-        "pt": "Esta loja de bicicletas se chama {name}"
+        "pt": "Esta loja de bicicletas se chama {name}",
+        "es": "Esta tienda de bicicletas se llama {name}"
       },
       "freeform": {
         "key": "name"
@@ -263,7 +270,8 @@
         "id": "URL {name} apa?",
         "de": "Was ist die Webseite von {name}?",
         "pt_BR": "Qual o website de {name}?",
-        "pt": "Qual o website de {name}?"
+        "pt": "Qual o website de {name}?",
+        "es": "¿Cual es el sitio web de {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -282,7 +290,8 @@
         "ru": "Какой номер телефона у {name}?",
         "de": "Wie lautet die Telefonnummer von {name}?",
         "pt_BR": "Qual o número de telefone de {name}?",
-        "pt": "Qual é o número de telefone de {name}?"
+        "pt": "Qual é o número de telefone de {name}?",
+        "es": "¿Cual es el número de teléfono de {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -301,7 +310,8 @@
         "ru": "Какой адрес электронной почты у {name}?",
         "de": "Wie lautet die E-Mail-Adresse von {name}?",
         "pt_BR": "Qual o endereço de email de {name}?",
-        "pt": "Qual o endereço de email de {name}?"
+        "pt": "Qual o endereço de email de {name}?",
+        "es": "¿Cual es la dirección de correo electrónico de {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
       "freeform": {
@@ -315,7 +325,8 @@
       "render": {
         "en": "Only accessible to {access}",
         "nl": "Enkel voor {access}",
-        "de": "Nur zugänglich für {access}"
+        "de": "Nur zugänglich für {access}",
+        "es": "Solo accesible a {access}"
       },
       "freeform": {
         "key": "access"
@@ -333,7 +344,8 @@
         "it": "Questo negozio vende bici?",
         "ru": "Продаются ли велосипеды в этом магазине?",
         "pt_BR": "Esta loja vende bicicletas?",
-        "pt": "Esta loja vende bicicletas?"
+        "pt": "Esta loja vende bicicletas?",
+        "es": "¿Vende bicis esta tienda?"
       },
       "mappings": [
         {
@@ -347,7 +359,8 @@
             "it": "Questo negozio vende bici",
             "ru": "В этом магазине продаются велосипеды",
             "pt_BR": "Esta loja vende bicicletas",
-            "pt": "Esta loja vende bicicletas"
+            "pt": "Esta loja vende bicicletas",
+            "es": "Esta tienda vende bicis"
           }
         },
         {
@@ -361,7 +374,8 @@
             "it": "Questo negozio non vende bici",
             "ru": "В этом магазине не продают велосипеды",
             "pt_BR": "Esta loja não vende bicicletas",
-            "pt": "Esta loja não vende bicicletas"
+            "pt": "Esta loja não vende bicicletas",
+            "es": "Esta tienda no vende bicis"
           }
         }
       ]
@@ -377,7 +391,8 @@
         "it": "Questo negozio ripara bici?",
         "ru": "В этом магазине ремонтируют велосипеды?",
         "pt_BR": "Esta loja conserta bicicletas?",
-        "pt": "Esta loja conserta bicicletas?"
+        "pt": "Esta loja conserta bicicletas?",
+        "es": "¿Repara bicis esta tienda?"
       },
       "mappings": [
         {
@@ -391,7 +406,8 @@
             "it": "Questo negozio ripara bici",
             "ru": "Этот магазин ремонтирует велосипеды",
             "pt_BR": "Esta loja conserta bicicletas",
-            "pt": "Esta loja conserta bicicletas"
+            "pt": "Esta loja conserta bicicletas",
+            "es": "Esta tienda repara bicis"
           }
         },
         {
@@ -405,7 +421,8 @@
             "it": "Questo negozio non ripara bici",
             "ru": "Этот магазин не ремонтирует велосипеды",
             "pt_BR": "Esta loja não conserta bicicletas",
-            "pt": "Esta loja não conserta bicicletas"
+            "pt": "Esta loja não conserta bicicletas",
+            "es": "Esta tienda no repara bicis"
           }
         },
         {
@@ -419,7 +436,8 @@
             "it": "Questo negozio ripara solo le bici che sono state acquistate qua",
             "ru": "Этот магазин ремонтирует только велосипеды, купленные здесь",
             "pt_BR": "Esta loja conserta bicicletas compradas aqui",
-            "pt": "Esta loja conserta bicicletas compradas aqui"
+            "pt": "Esta loja conserta bicicletas compradas aqui",
+            "es": "Esta tienda solo repara bicis compradas aquí"
           }
         },
         {
@@ -433,7 +451,8 @@
             "it": "Questo negozio ripara solo le biciclette di una certa marca",
             "ru": "В этом магазине обслуживают велосипеды определённого бренда",
             "pt_BR": "Esta loja conserta bicicletas de uma certa marca",
-            "pt": "Esta loja conserta bicicletas de uma certa marca"
+            "pt": "Esta loja conserta bicicletas de uma certa marca",
+            "es": "Esta tienda solo repara bicis de una cierta marca"
           }
         }
       ]
@@ -450,7 +469,8 @@
         "it": "Questo negozio noleggia le bici?",
         "ru": "Этот магазин сдает велосипеды в аренду?",
         "pt_BR": "Esta loja aluga bicicletas?",
-        "pt": "Esta loja aluga bicicletas?"
+        "pt": "Esta loja aluga bicicletas?",
+        "es": "¿Alquila bicicis esta tienda?"
       },
       "mappings": [
         {
@@ -464,7 +484,8 @@
             "it": "Questo negozio noleggia le bici",
             "ru": "Этот магазин сдает велосипеды в аренду",
             "pt_BR": "Esta loja aluga bicicletas",
-            "pt": "Esta loja aluga bicicletas"
+            "pt": "Esta loja aluga bicicletas",
+            "es": "Esta tienda alquila bicis"
           }
         },
         {
@@ -478,7 +499,8 @@
             "it": "Questo negozio non noleggia le bici",
             "ru": "Этот магазин не сдает велосипеды напрокат",
             "pt_BR": "Esta loja não aluga bicicletas",
-            "pt": "Esta loja não aluga bicicletas"
+            "pt": "Esta loja não aluga bicicletas",
+            "es": "Esta tienda no alquila bicis"
           }
         }
       ]
@@ -493,7 +515,8 @@
         "gl": "Esta tenda vende bicicletas de segunda man?",
         "de": "Verkauft dieses Geschäft gebrauchte Fahrräder?",
         "it": "Questo negozio vende bici usate?",
-        "ru": "В этом магазине продаются подержанные велосипеды?"
+        "ru": "В этом магазине продаются подержанные велосипеды?",
+        "es": "¿Vende bicis de segunda mano esta tienda?"
       },
       "mappings": [
         {
@@ -505,7 +528,8 @@
             "gl": "Esta tenda vende bicicletas de segunda man",
             "de": "Dieses Geschäft verkauft gebrauchte Fahrräder",
             "it": "Questo negozio vende bici usate",
-            "ru": "В этом магазине продаются подержанные велосипеды"
+            "ru": "В этом магазине продаются подержанные велосипеды",
+            "es": "Esta tienda vende bicis de segunda mano"
           }
         },
         {
@@ -517,7 +541,8 @@
             "gl": "Esta tenda non vende bicicletas de segunda man",
             "de": "Dieses Geschäft verkauft keine gebrauchten Fahrräder",
             "it": "Questo negozio non vende bici usate",
-            "ru": "В этом магазине не продаются подержанные велосипеды"
+            "ru": "В этом магазине не продаются подержанные велосипеды",
+            "es": "Esta tienda no vende bicis de segunda mano"
           }
         },
         {
@@ -529,7 +554,8 @@
             "gl": "Esta tenda só vende bicicletas de segunda man",
             "de": "Dieses Geschäft verkauft nur gebrauchte Fahrräder",
             "it": "Questo negozio vende solamente bici usate",
-            "ru": "В этом магазине продаются только подержанные велосипеды"
+            "ru": "В этом магазине продаются только подержанные велосипеды",
+            "es": "Esta tienda solo vende bicis de segunda mano"
           }
         }
       ]
@@ -543,7 +569,8 @@
         "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?",
         "de": "Bietet dieses Geschäft eine Fahrradpumpe zur Benutzung für alle an?",
         "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?",
-        "ru": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?"
+        "ru": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?",
+        "es": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
       },
       "mappings": [
         {
@@ -555,7 +582,8 @@
             "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa",
             "de": "Dieses Geschäft bietet eine Fahrradpumpe für alle an",
             "it": "Questo negozio offre l’uso pubblico di una pompa per bici",
-            "ru": "В этом магазине есть велосипедный насос для всеобщего пользования"
+            "ru": "В этом магазине есть велосипедный насос для всеобщего пользования",
+            "es": "Esta tienda ofrece una bomba para cualquiera"
           }
         },
         {
@@ -567,7 +595,8 @@
             "gl": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa",
             "de": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an",
             "it": "Questo negozio non offre l’uso pubblico di una pompa per bici",
-            "ru": "В этом магазине нет велосипедного насоса для всеобщего пользования"
+            "ru": "В этом магазине нет велосипедного насоса для всеобщего пользования",
+            "es": "Esta tienda no ofrece una bomba para cualquiera"
           }
         },
         {
@@ -577,7 +606,8 @@
             "nl": "Er is een fietspomp, deze is apart aangeduid",
             "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé ",
             "it": "C’è una pompa per bici, è mostrata come punto separato ",
-            "de": "Es gibt eine Fahrradpumpe, sie wird als separater Punkt angezeigt "
+            "de": "Es gibt eine Fahrradpumpe, sie wird als separater Punkt angezeigt ",
+            "es": "Hay una bomba para bicicletas, se muestra como un punto separado "
           }
         }
       ]
@@ -591,7 +621,8 @@
         "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
         "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
         "it": "Sono presenti degli attrezzi per riparare la propria bici?",
-        "ru": "Есть ли здесь инструменты для починки собственного велосипеда?"
+        "ru": "Есть ли здесь инструменты для починки собственного велосипеда?",
+        "es": "¿Hay herramientas para reparar tu propia bici?"
       },
       "mappings": [
         {
@@ -637,7 +668,8 @@
         "fr": "Lave-t-on les vélos ici ?",
         "it": "Vengono lavate le bici qua?",
         "ru": "Здесь моют велосипеды?",
-        "de": "Werden hier Fahrräder gewaschen?"
+        "de": "Werden hier Fahrräder gewaschen?",
+        "es": "¿Aquí se lavan bicicletas?"
       },
       "mappings": [
         {
@@ -648,7 +680,8 @@
             "fr": "Ce magasin lave les vélos",
             "it": "Questo negozio lava le biciclette",
             "de": "Dieses Geschäft reinigt Fahrräder",
-            "ru": "В этом магазине оказываются услуги мойки/чистки велосипедов"
+            "ru": "В этом магазине оказываются услуги мойки/чистки велосипедов",
+            "es": "Esta tienda limpia bicicletas"
           }
         },
         {
@@ -658,7 +691,8 @@
             "nl": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken",
             "fr": "Ce magasin a une installation pour laver soi même des vélos",
             "it": "Questo negozio ha una struttura dove è possibile pulire la propria bici",
-            "de": "Dieser Laden hat eine Anlage, in der man Fahrräder selbst reinigen kann"
+            "de": "Dieser Laden hat eine Anlage, in der man Fahrräder selbst reinigen kann",
+            "es": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo"
           }
         },
         {
@@ -669,7 +703,8 @@
             "fr": "Ce magasin ne fait pas le nettoyage de vélo",
             "it": "Questo negozio non offre la pulizia della bicicletta",
             "de": "Dieser Laden bietet keine Fahrradreinigung an",
-            "ru": "В этом магазине нет услуг мойки/чистки велосипедов"
+            "ru": "В этом магазине нет услуг мойки/чистки велосипедов",
+            "es": "Esta tienda no ofrece limpieza de bicicletas"
           }
         }
       ]

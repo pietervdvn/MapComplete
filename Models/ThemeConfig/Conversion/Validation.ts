@@ -68,7 +68,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         const warnings = []
         const information = []
 
-        const theme = new LayoutConfig(json, true, "test")
+        const theme = new LayoutConfig(json, true)
 
         {
             // Legacy format checks  
@@ -217,12 +217,17 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson>{
     
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
         const warnings = []
+        const errors = []
+        if(json.id !== "personal" && (json.layers === undefined || json.layers.length === 0)){
+            errors.push("The theme "+json.id+" has no 'layers' defined ("+context+")")
+        }
         if(json.socialImage === ""){
             warnings.push("Social image for theme "+json.id+" is the emtpy string")
         }
         return {
             result :json,
-            warnings
+            warnings,
+            errors
         };
     }
 }
@@ -231,8 +236,8 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
     constructor() {
         super("Various consistency checks on the raw JSON",
-            new OverrideShadowingCheck(),
-            new MiscThemeChecks()
+            new MiscThemeChecks(),
+            new OverrideShadowingCheck()
         );
 
     }

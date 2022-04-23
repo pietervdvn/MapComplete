@@ -582,14 +582,12 @@ if (!themeOverwritesWeblate) {
 genTranslations()
 const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
 for (const path of allTranslationFiles) {
-    console.log("Formatting ", path)
     formatFile(path)
 }
-
 
 // Some validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
 TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
 TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
 TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")
-
+console.log("All done!")

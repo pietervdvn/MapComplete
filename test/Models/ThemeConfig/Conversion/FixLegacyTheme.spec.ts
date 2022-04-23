@@ -145,7 +145,7 @@ describe("FixLegacyTheme", () => {
                 <any> walking_node_theme,
                 "While testing")
             expect(fixed.errors, "Could not fix the legacy theme").empty
-            const theme = new LayoutConfig(fixed.result, false,"test")
+            const theme = new LayoutConfig(fixed.result, false)
             expect(theme).not.undefined
 
     })

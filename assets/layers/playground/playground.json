@@ -304,7 +304,8 @@
           "if": "fee=yes",
           "then": {
             "en": "This is a <b>paid</b> playground",
-            "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken"
+            "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken",
+            "de": "Dies ist ein <b>gebührenpflichtiger</b> Spielplatz"
           },
           "addExtraTags": [
             "access=customers"

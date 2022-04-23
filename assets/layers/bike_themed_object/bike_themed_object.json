@@ -5,7 +5,8 @@
     "nl": "Fietsgerelateerd object",
     "fr": "Objet cycliste",
     "de": "Weitere fahrradbezogene Objekte",
-    "it": "Oggetto relativo alle bici"
+    "it": "Oggetto relativo alle bici",
+    "es": "Objeto relacionada con bicis"
   },
   "minzoom": 13,
   "source": {
@@ -29,7 +30,8 @@
       "nl": "Fietsgerelateerd object",
       "fr": "Objet cycliste",
       "de": "Mit Fahrrad zusammenhängendes Objekt",
-      "it": "Oggetto relativo alle bici"
+      "it": "Oggetto relativo alle bici",
+      "es": "Objeto relacionado con bicis"
     },
     "mappings": [
       {
@@ -45,7 +47,8 @@
           "it": "Pista ciclabile",
           "de": "Radweg",
           "ru": "Велотрек",
-          "ca": "Pista ciclable"
+          "ca": "Pista ciclable",
+          "es": "Carril bici"
         }
       }
     ]
@@ -84,6 +87,7 @@
   "description": {
     "en": "A layer with bike-themed objects but who don't match any other layer",
     "nl": "Een laag met fietsgerelateerde diensten, die in geen enkele andere laag konden ondergebracht worden",
-    "de": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen"
+    "de": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen",
+    "es": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa"
   }
 }
