@@ -330,12 +330,19 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _state: DesugaringContext;
 
     constructor(state: DesugaringContext,) {
-        super("If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)", ["layers"], "AddDependencyLayersToTheme");
+        super(
+            `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)
+            
+            Note that these layers are added _at the start_ of the layer list, meaning that they will see _every_ feature.
+            Furthermore, \`passAllFeatures\` will be set, so that they won't steal away features from further layers.
+            Some layers (e.g. \`all_buildings_and_walls\' or \'streets_with_a_name\') are invisible, so by default, \'force_load\' is set too.
+            `, ["layers"], "AddDependencyLayersToTheme");
         this._state = state;
     }
 
-    private static CalculateDependencies(alreadyLoaded: LayerConfigJson[], allKnownLayers: Map<string, LayerConfigJson>, themeId: string): LayerConfigJson[] {
-        const dependenciesToAdd: LayerConfigJson[] = []
+    private static CalculateDependencies(alreadyLoaded: LayerConfigJson[], allKnownLayers: Map<string, LayerConfigJson>, themeId: string):
+        {config: LayerConfigJson, reason: string}[] {
+        const dependenciesToAdd:  {config: LayerConfigJson, reason: string}[]  = []
         const loadedLayerIds: Set<string> = new Set<string>(alreadyLoaded.map(l => l.id));
 
         // Verify cross-dependencies
@@ -361,35 +368,39 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             }
 
             // During the generate script, builtin layers are verified but not loaded - so we have to add them manually here
-            // Their existance is checked elsewhere, so this is fine
+            // Their existence is checked elsewhere, so this is fine
             unmetDependencies = dependencies.filter(dep => !loadedLayerIds.has(dep.neededLayer))
             for (const unmetDependency of unmetDependencies) {
                 if (loadedLayerIds.has(unmetDependency.neededLayer)) {
                     continue
                 }
-                const dep = allKnownLayers.get(unmetDependency.neededLayer)
+                const dep = Utils.Clone(allKnownLayers.get(unmetDependency.neededLayer))
+                const reason =  "This layer is needed by " + unmetDependency.neededBy +" because " +
+                    unmetDependency.reason + " (at " + unmetDependency.context + ")";
                 if (dep === undefined) {
                     const message =
                         ["Loading a dependency failed: layer " + unmetDependency.neededLayer + " is not found, neither as layer of " + themeId + " nor as builtin layer.",
-                            "This layer is needed by " + unmetDependency.neededBy,
-                            unmetDependency.reason + " (at " + unmetDependency.context + ")",
+                            reason,
                             "Loaded layers are: " + alreadyLoaded.map(l => l.id).join(",")
 
                         ]
                     throw message.join("\n\t");
                 }
-                dependenciesToAdd.unshift(dep)
+                
+                dep.forceLoad = true;
+                dep.passAllFeatures = true;
+                dep.description = reason;
+                dependenciesToAdd.unshift({
+                    config: dep,
+                    reason
+                })
                 loadedLayerIds.add(dep.id);
                 unmetDependencies = unmetDependencies.filter(d => d.neededLayer !== unmetDependency.neededLayer)
             }
 
         } while (unmetDependencies.length > 0)
 
-        return dependenciesToAdd.map(dep => {
-            dep = Utils.Clone(dep);
-            dep.forceLoad = true
-            return dep
-        });
+        return dependenciesToAdd
     }
 
     convert(theme: LayoutConfigJson, context: string): { result: LayoutConfigJson; information: string[] } {
@@ -404,11 +415,16 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         })
 
         const dependencies = AddDependencyLayersToTheme.CalculateDependencies(layers, allKnownLayers, theme.id);
-        if (dependencies.length > 0) {
-
-            information.push(context + ": added " + dependencies.map(d => d.id).join(", ") + " to the theme as they are needed")
+        for (const dependency of dependencies) {
+            
         }
-        layers.unshift(...dependencies);
+        if (dependencies.length > 0) {
+            for (const dependency of dependencies) {
+            information.push(context + ": added " + dependency.config.id + " to the theme. "+dependency.reason)
+                
+            }
+        }
+        layers.unshift(...dependencies.map(l => l.config));
 
         return {
             result: {

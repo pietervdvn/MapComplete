@@ -81,7 +81,7 @@ export default class DependencyCalculator {
 
                     // The important line: steal the dependencies!
                     deps.push({
-                        neededLayer: layerId, reason: "A calculated tag loads features from this layer",
+                        neededLayer: layerId, reason: "a calculated tag loads features from this layer",
                         context: "calculatedTag[" + currentLine + "] which calculates the value for " + currentKey,
                         neededBy: layer.id
                     })

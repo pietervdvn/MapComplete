@@ -161,7 +161,11 @@ export default class LayerConfig extends WithContextLoader {
             this.calculatedTags = [];
             for (const kv of json.calculatedTags) {
                 const index = kv.indexOf("=");
-                let key = kv.substring(0, index);
+                let key = kv.substring(0, index).trim();
+                const r = "[a-z_][a-z0-9:]*"
+                if(key.match(r) === null){
+                    throw "At "+context+" invalid key for calculated tag: "+key+"; it should match "+r
+                }
                 const isStrict = key.endsWith(':')
                 if (isStrict) {
                     key = key.substr(0, key.length - 1)

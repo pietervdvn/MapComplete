@@ -55,15 +55,7 @@
     "images",
     {
       "render": {
-        "en": "<strong>{name}</strong>",
-        "nl": "<strong>{name}</strong>",
-        "de": "<strong>{name}</strong>",
-        "ca": "<strong>{name}</strong>",
-        "fr": "<strong>{name}</strong>",
-        "id": "<strong>{name}</strong>",
-        "ru": "<strong>{name}</strong>",
-        "ja": "<strong>{name}</strong>",
-        "it": "<strong>{name}</strong>"
+        "*": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing gym?",
@@ -81,7 +73,65 @@
     "website",
     "phone",
     "email",
-    "opening_hours"
+    {
+      "builtin": ["climbing.fee"]
+    },
+    "opening_hours",
+    {
+      "builtin":     
+      ["climbing.average_length","climbing.min_difficulty","climbing.max_difficulty",
+        "climbing.bouldering",
+      "climbing.sportclimbing"]
+    },
+    {
+      "builtin": "climbing.max_bolts",
+      "override": {
+        "condition": "climbing:sport=yes"
+      }
+    },
+    {
+      "id": "Speed climbing?",
+      "question": {
+        "de": "Gibt es hier eine Speedkletter-Wand?",
+        "en": "Is there a speed climbing wall?",
+        "nl": "Is er een snelklimmuur (speed climbing)?",
+        "ja": "スピードクライミングウォールはありますか?",
+        "it": "È presente una prete per l’arrampicata di velocità?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:speed=yes",
+          "then": {
+            "de": "Hier gibt es eine Speedkletter-Wand",
+            "en": "There is a speed climbing wall",
+            "nl": "Er is een snelklimmuur voor speed climbing",
+            "ja": "スピードクライミングウォールがある",
+            "it": "È presente una parete per l’arrampicata di velocità"
+          }
+        },
+        {
+          "if": "climbing:speed=no",
+          "then": {
+            "de": "Hier gibt es keine Speedkletter-Wand",
+            "en": "There is no speed climbing wall",
+            "nl": "Er is geen snelklimmuur voor speed climbing",
+            "ja": "スピードクライミングウォールがない",
+            "it": "Non è presente una parete per l’arrampicata di velocità"
+          }
+        },
+        {
+          "if": "climbing:speed~*",
+          "then": {
+            "de": "Hier gibt es {climbing:speed} Speedkletter-Routen",
+            "en": "There are {climbing:speed} speed climbing walls",
+            "nl": "Er zijn hier {climbing:speed} snelklimmuren",
+            "ja": "{climbing:speed} のスピードクライミングウォールがある",
+            "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
   ],
   "mapRendering": [
     {

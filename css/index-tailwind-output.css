@@ -1144,14 +1144,14 @@ video {
   width: 2.75rem;
 }
 
-.w-16 {
-  width: 4rem;
-}
-
 .w-min {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-auto {
@@ -1985,6 +1985,16 @@ a {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+}
+
+.rounded-left-full {
+  border-bottom-left-radius: 999rem;
+  border-top-left-radius: 999rem;
+}
+
+.rounded-right-full {
+  border-bottom-right-radius: 999rem;
+  border-top-right-radius: 999rem;
 }
 
 .w-16-imp {

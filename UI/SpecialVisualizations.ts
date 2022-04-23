@@ -85,6 +85,10 @@ export class AllTagsPanel extends VariableUiElement {
                 if (value === undefined) {
                     continue
                 }
+                let type = "";
+                if(typeof value !== "string"){
+                    type = " <i>"+(typeof value)+"</i>"
+                }
                 parts.push(["<i>" + key + "</i>", value])
             }
 

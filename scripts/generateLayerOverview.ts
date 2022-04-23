@@ -156,6 +156,9 @@ class LayerOverviewUtils {
         }
 
         this.checkAllSvgs()
+
+        const green = s => '\x1b[92m' + s + '\x1b[0m'
+        console.log(green("All done!"))
     }
 
     private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {

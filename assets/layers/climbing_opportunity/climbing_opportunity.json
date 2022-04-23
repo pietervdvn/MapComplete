@@ -9,6 +9,9 @@
     "fr": "Opportunités d’escalade ?",
     "it": "Opportunità di arrampicata?"
   },
+  "description": {
+    "en": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added"
+  },
   "minzoom": 19,
   "source": {
     "osmTags": {
@@ -37,15 +40,6 @@
       "fr": "Opportunité d’escalade ?",
       "it": "Opportunità di arrampicata?"
     }
-  },
-  "description": {
-    "nl": "Een klimgelegenheid?",
-    "de": "Eine Klettergelegenheit?",
-    "en": "A climbing opportunity?",
-    "ja": "登坂教室？",
-    "nb_NO": "En klatremulighet?",
-    "fr": "Opportunité d’escalade ?",
-    "it": "Un’opportunità di arrampicata?"
   },
   "tagRenderings": [
     {
