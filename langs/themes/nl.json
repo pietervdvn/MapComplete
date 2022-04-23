@@ -275,115 +275,31 @@
     "climbing": {
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
         "descriptionTail": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
-                },
-                "1": {
-                    "mappings": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
                         "0": {
-                            "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
-                        },
-                        "1": {
-                            "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
-                        }
-                    }
-                },
-                "4": {
-                    "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
-                    "render": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang"
-                },
-                "5": {
-                    "question": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
-                    "render": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem"
-                },
-                "6": {
-                    "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
-                    "render": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "Bolderen kan hier"
-                        },
-                        "1": {
-                            "then": "Bolderen kan hier niet"
-                        },
-                        "2": {
-                            "then": "Bolderen kan hier, maar er zijn niet zoveel routes"
-                        },
-                        "3": {
-                            "then": "Er zijn hier {climbing:boulder} bolderroutes"
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+                                }
+                            }
                         }
                     },
-                    "question": "Is het mogelijk om hier te bolderen?"
-                },
-                "8": {
-                    "mappings": {
+                    "units+": {
                         "0": {
-                            "then": "Toprope-klimmen kan hier"
-                        },
-                        "1": {
-                            "then": "Toprope-klimmen kan hier niet"
-                        },
-                        "2": {
-                            "then": "Er zijn hier {climbing:toprope} toprope routes"
-                        }
-                    },
-                    "question": "Is het mogelijk om hier te toprope-klimmen?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Sportklimmen/voorklimmen kan hier"
-                        },
-                        "1": {
-                            "then": "Sportklimmen/voorklimmen kan hier niet"
-                        },
-                        "2": {
-                            "then": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes"
-                        }
-                    },
-                    "question": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "Traditioneel klimmen kan hier"
-                        },
-                        "1": {
-                            "then": "Traditioneel klimmen kan hier niet"
-                        },
-                        "2": {
-                            "then": "Er zijn hier {climbing:traditional} traditionele klimroutes"
-                        }
-                    },
-                    "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "Er is een snelklimmuur voor speed climbing"
-                        },
-                        "1": {
-                            "then": "Er is geen snelklimmuur voor speed climbing"
-                        },
-                        "2": {
-                            "then": "Er zijn hier {climbing:speed} snelklimmuren"
-                        }
-                    },
-                    "question": "Is er een snelklimmuur (speed climbing)?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " meter"
-                        },
-                        "1": {
-                            "human": " voet"
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " meter"
+                                },
+                                "1": {
+                                    "human": " voet"
+                                }
+                            }
                         }
                     }
                 }

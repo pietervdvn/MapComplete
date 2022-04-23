@@ -474,6 +474,20 @@
             }
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Itt lehetőség van sportmászásra"
+                    },
+                    "1": {
+                        "then": "Itt nincs lehetőség sportmászásra"
+                    }
+                }
+            }
+        }
+    },
     "climbing_club": {
         "description": "Mászóegyesület vagy -szervezet",
         "name": "Mászóegyesület",

@@ -227,34 +227,25 @@
     "climbing": {
         "description": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
         "descriptionTail": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?"
-                },
-                "2": {
-                    "mappings": {
-                        "3": {
-                            "then": "Только членам клуба"
-                        }
-                    }
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Здесь можно заняться спортивным скалолазанием"
-                        },
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
                         "1": {
-                            "then": "Спортивное скалолазание здесь невозможно"
+                            "mappings": {
+                                "3": {
+                                    "then": "Только членам клуба"
+                                }
+                            }
                         }
-                    }
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
+                    },
+                    "units+": {
                         "0": {
-                            "human": " метр"
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " метр"
+                                }
+                            }
                         }
                     }
                 }

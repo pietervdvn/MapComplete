@@ -269,138 +269,54 @@
     "climbing": {
         "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
         "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Daten und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
-                },
-                "1": {
-                    "mappings": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
                         "0": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
+                                }
+                            }
                         },
                         "1": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
-                        },
-                        "2": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
-                        },
-                        "3": {
-                            "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
-                        }
-                    }
-                },
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Öffentlich zugänglich für jedermann"
-                        },
-                        "1": {
-                            "then": "Zugang nur mit Genehmigung"
-                        },
-                        "2": {
-                            "then": "Nur für Kunden"
-                        },
-                        "3": {
-                            "then": "Nur für Vereinsmitglieder"
-                        }
-                    },
-                    "question": "Wer hat hier Zugang?"
-                },
-                "4": {
-                    "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
-                    "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang"
-                },
-                "5": {
-                    "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-                    "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
-                },
-                "6": {
-                    "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-                    "render": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "Hier kann gebouldert werden"
-                        },
-                        "1": {
-                            "then": "Hier kann nicht gebouldert werden"
-                        },
-                        "2": {
-                            "then": "Bouldern ist hier nur an wenigen Routen möglich"
-                        },
-                        "3": {
-                            "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
+                            "mappings": {
+                                "0": {
+                                    "then": "Öffentlich zugänglich für jedermann"
+                                },
+                                "1": {
+                                    "then": "Zugang nur mit Genehmigung"
+                                },
+                                "2": {
+                                    "then": "Nur für Kunden"
+                                },
+                                "3": {
+                                    "then": "Nur für Vereinsmitglieder"
+                                }
+                            },
+                            "question": "Wer hat hier Zugang?"
                         }
                     },
-                    "question": "Kann hier gebouldert werden?"
-                },
-                "8": {
-                    "mappings": {
+                    "units+": {
                         "0": {
-                            "then": "Toprope-Klettern ist hier möglich"
-                        },
-                        "1": {
-                            "then": "Toprope-Climbing ist hier nicht möglich"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
-                        }
-                    },
-                    "question": "Ist Toprope-Klettern hier möglich?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Sportklettern ist hier möglich"
-                        },
-                        "1": {
-                            "then": "Sportklettern ist hier nicht möglich"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
-                        }
-                    },
-                    "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "Traditionelles Klettern ist hier möglich"
-                        },
-                        "1": {
-                            "then": "Traditionelles Klettern ist hier nicht möglich"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
-                        }
-                    },
-                    "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "Hier gibt es eine Speedkletter-Wand"
-                        },
-                        "1": {
-                            "then": "Hier gibt es keine Speedkletter-Wand"
-                        },
-                        "2": {
-                            "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
-                        }
-                    },
-                    "question": "Gibt es hier eine Speedkletter-Wand?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " Meter"
-                        },
-                        "1": {
-                            "human": " Fuß"
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " Meter"
+                                },
+                                "1": {
+                                    "human": " Fuß"
+                                }
+                            }
                         }
                     }
                 }
@@ -723,68 +639,6 @@
         "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
-    },
-    "mapcomplete-changes": {
-        "description": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
-        "layers": {
-            "0": {
-                "description": "Zeigt alle MapComplete Änderungen",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themenname enthält {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Erstellt von {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Nicht</b> erstellt von {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Schwerpunkte von Änderungssätzen",
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Änderung wurde von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a> gemacht"
-                    },
-                    "render_id": {
-                        "render": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Änderungen für {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Zeigt Änderungen von MapComplete",
-        "title": "Änderungen mit MapComplete"
     },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",

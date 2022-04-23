@@ -2303,7 +2303,102 @@
         }
     },
     "climbing": {
-        "description": "A climbing opportunity",
+        "description": "A dummy layer which contains tagrenderings, shared among the climbing layers",
+        "tagRenderings": {
+            "average_length": {
+                "question": "What is the (average) length of the routes in meters?",
+                "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Bouldering is possible here"
+                    },
+                    "1": {
+                        "then": "Bouldering is not possible here"
+                    },
+                    "2": {
+                        "then": "Bouldering is possible, allthough there are only a few routes"
+                    },
+                    "3": {
+                        "then": "There are {climbing:boulder} boulder routes"
+                    }
+                },
+                "question": "Is bouldering possible here?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Climbing here is free of charge"
+                    },
+                    "1": {
+                        "then": "Paying a fee is required to climb here"
+                    }
+                },
+                "question": "Is a fee required to climb here?",
+                "render": "A fee of {charge} should be paid for climbing here"
+            },
+            "max_bolts": {
+                "question": "How many bolts do routes in {title()} have at most?",
+                "render": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+            },
+            "max_difficulty": {
+                "question": "What is the highest grade route here, according to the french classification system?",
+                "render": "The highest grade is {climbing:grade:french:max} according to the french/belgian system"
+            },
+            "min_difficulty": {
+                "question": "What is the grade of the easiest route here, according to the french classification system?",
+                "render": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Sport climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Sport climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "There are {climbing:sport} sport climbing routes"
+                    }
+                },
+                "question": "Is sport climbing possible here on fixed anchors?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Toprope climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Toprope climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "There are {climbing:toprope} toprope routes"
+                    }
+                },
+                "question": "Is toprope climbing possible here?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Traditional climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Traditional climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "There are {climbing:traditional} traditional climbing routes"
+                    }
+                },
+                "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+            },
+            "website": {
+                "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
+            }
+        }
+    },
+    "climbing_area": {
+        "description": "An area where climbing is possible, e.g. a crag, site, boulder, ... Contains aggregation of routes",
         "name": "Climbing opportunities",
         "presets": {
             "0": {
@@ -2400,9 +2495,22 @@
         "description": "A climbing gym",
         "name": "Climbing gyms",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a speed climbing wall"
+                    },
+                    "1": {
+                        "then": "There is no speed climbing wall"
+                    },
+                    "2": {
+                        "then": "There are {climbing:speed} speed climbing walls"
+                    }
+                },
+                "question": "Is there a speed climbing wall?"
+            },
             "name": {
-                "question": "What is the name of this climbing gym?",
-                "render": "<strong>{name}</strong>"
+                "question": "What is the name of this climbing gym?"
             }
         },
         "title": {
@@ -2415,7 +2523,7 @@
         }
     },
     "climbing_opportunity": {
-        "description": "A climbing opportunity?",
+        "description": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
         "name": "Climbing opportunities?",
         "tagRenderings": {
             "climbing-opportunity-name": {
@@ -2441,6 +2549,7 @@
         }
     },
     "climbing_route": {
+        "description": "A single climbing route and its properties. Some properties are derived from the containing features",
         "name": "Climbing routes",
         "presets": {
             "0": {
@@ -2448,18 +2557,6 @@
             }
         },
         "tagRenderings": {
-            "Bolts": {
-                "mappings": {
-                    "0": {
-                        "then": "This route is not bolted"
-                    },
-                    "1": {
-                        "then": "This route is not bolted"
-                    }
-                },
-                "question": "How many bolts does this route have before reaching the anchor?",
-                "render": "This route has {climbing:bolts} bolts"
-            },
             "Difficulty": {
                 "question": "What is the grade of this climbing route according to the french/belgian system?",
                 "render": "The grade is {climbing:grade:french} according to the french/belgian system"
@@ -2477,8 +2574,17 @@
                 "question": "What is the name of this climbing route?",
                 "render": "<strong>{name}</strong>"
             },
-            "Rock type": {
+            "Rock type via embedded feature": {
                 "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
+            },
+            "bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "This route is not bolted"
+                    }
+                },
+                "question": "How many bolts does this route have before reaching the anchor?",
+                "render": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
             }
         },
         "title": {

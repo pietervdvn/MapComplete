@@ -792,7 +792,84 @@
         }
     },
     "climbing": {
-        "description": "Un’opportunità di arrampicata",
+        "tagRenderings": {
+            "average_length": {
+                "question": "Quale è la lunghezza (media) delle vie in metri?",
+                "render": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "L’arrampicata su massi è possibile qua"
+                    },
+                    "1": {
+                        "then": "L’arrampicata su massi non è possibile qua"
+                    },
+                    "2": {
+                        "then": "L’arrampicata su massi è possibile anche se su poche vie"
+                    },
+                    "3": {
+                        "then": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
+                    }
+                },
+                "question": "È possibile praticare ‘bouldering’ qua?"
+            },
+            "max_difficulty": {
+                "question": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
+                "render": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
+            },
+            "min_difficulty": {
+                "question": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
+                "render": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "L’arrampicata sportiva è possibile qua"
+                    },
+                    "1": {
+                        "then": "L’arrampicata sportiva non è possibile qua"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
+                    }
+                },
+                "question": "È possibile arrampicarsi qua con ancoraggi fissi?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "È possibile arrampicarsi con moulinette qua"
+                    },
+                    "1": {
+                        "then": "Non è possibile arrampicarsi con moulinette qua"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:toprope} vie con moulinette"
+                    }
+                },
+                "question": "È possibile arrampicarsi con la corda dall’alto qua?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "L’arrampicata tradizionale è possibile qua"
+                    },
+                    "1": {
+                        "then": "L’arrampicata tradizionale non è possibile qua"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
+                    }
+                },
+                "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
+            },
+            "website": {
+                "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
+            }
+        }
+    },
+    "climbing_area": {
         "name": "Opportunità di arrampicata",
         "presets": {
             "0": {
@@ -889,9 +966,22 @@
         "description": "Una palestra di arrampicata",
         "name": "Palestre di arrampicata",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "È presente una parete per l’arrampicata di velocità"
+                    },
+                    "1": {
+                        "then": "Non è presente una parete per l’arrampicata di velocità"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
+                    }
+                },
+                "question": "È presente una prete per l’arrampicata di velocità?"
+            },
             "name": {
-                "question": "Qual è il nome di questa palestra di arrampicata?",
-                "render": "<strong>{name}</strong>"
+                "question": "Qual è il nome di questa palestra di arrampicata?"
             }
         },
         "title": {
@@ -904,7 +994,6 @@
         }
     },
     "climbing_opportunity": {
-        "description": "Un’opportunità di arrampicata?",
         "name": "Opportunità di arrampicata?",
         "tagRenderings": {
             "climbing-opportunity-name": {
@@ -937,18 +1026,6 @@
             }
         },
         "tagRenderings": {
-            "Bolts": {
-                "mappings": {
-                    "0": {
-                        "then": "In questo percorso non sono presenti bulloni"
-                    },
-                    "1": {
-                        "then": "In questo percorso non sono presenti bulloni"
-                    }
-                },
-                "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
-                "render": "Questo percorso ha {climbing:bolts} bulloni"
-            },
             "Difficulty": {
                 "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
                 "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
@@ -966,8 +1043,17 @@
                 "question": "Come si chiama questa via di arrampicata?",
                 "render": "<strong>{name}</strong>"
             },
-            "Rock type": {
+            "Rock type via embedded feature": {
                 "render": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>"
+            },
+            "bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "In questo percorso non sono presenti bulloni"
+                    }
+                },
+                "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
+                "render": "Questo percorso ha {climbing:bolts} bulloni"
             }
         },
         "title": {

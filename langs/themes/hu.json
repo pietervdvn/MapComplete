@@ -93,20 +93,6 @@
     "climbing": {
         "description": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
         "descriptionTail": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
-        "overrideAll": {
-            "tagRenderings+": {
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Itt lehetőség van sportmászásra"
-                        },
-                        "1": {
-                            "then": "Itt nincs lehetőség sportmászásra"
-                        }
-                    }
-                }
-            }
-        },
         "title": "Mászótérkép"
     },
     "cycle_infra": {

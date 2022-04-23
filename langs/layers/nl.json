@@ -2312,7 +2312,84 @@
         }
     },
     "climbing": {
-        "description": "Een klimgelegenheid",
+        "tagRenderings": {
+            "average_length": {
+                "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
+                "render": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Bolderen kan hier"
+                    },
+                    "1": {
+                        "then": "Bolderen kan hier niet"
+                    },
+                    "2": {
+                        "then": "Bolderen kan hier, maar er zijn niet zoveel routes"
+                    },
+                    "3": {
+                        "then": "Er zijn hier {climbing:boulder} bolderroutes"
+                    }
+                },
+                "question": "Is het mogelijk om hier te bolderen?"
+            },
+            "max_difficulty": {
+                "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
+                "render": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem"
+            },
+            "min_difficulty": {
+                "question": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
+                "render": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Sportklimmen/voorklimmen kan hier"
+                    },
+                    "1": {
+                        "then": "Sportklimmen/voorklimmen kan hier niet"
+                    },
+                    "2": {
+                        "then": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes"
+                    }
+                },
+                "question": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Toprope-klimmen kan hier"
+                    },
+                    "1": {
+                        "then": "Toprope-klimmen kan hier niet"
+                    },
+                    "2": {
+                        "then": "Er zijn hier {climbing:toprope} toprope routes"
+                    }
+                },
+                "question": "Is het mogelijk om hier te toprope-klimmen?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Traditioneel klimmen kan hier"
+                    },
+                    "1": {
+                        "then": "Traditioneel klimmen kan hier niet"
+                    },
+                    "2": {
+                        "then": "Er zijn hier {climbing:traditional} traditionele klimroutes"
+                    }
+                },
+                "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
+            },
+            "website": {
+                "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
+            }
+        }
+    },
+    "climbing_area": {
         "name": "Klimgelegenheden",
         "presets": {
             "0": {
@@ -2385,9 +2462,22 @@
         "description": "Een klimzaal",
         "name": "Klimzalen",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is een snelklimmuur voor speed climbing"
+                    },
+                    "1": {
+                        "then": "Er is geen snelklimmuur voor speed climbing"
+                    },
+                    "2": {
+                        "then": "Er zijn hier {climbing:speed} snelklimmuren"
+                    }
+                },
+                "question": "Is er een snelklimmuur (speed climbing)?"
+            },
             "name": {
-                "question": "Wat is de naam van dit Klimzaal?",
-                "render": "<strong>{name}</strong>"
+                "question": "Wat is de naam van dit Klimzaal?"
             }
         },
         "title": {
@@ -2400,7 +2490,6 @@
         }
     },
     "climbing_opportunity": {
-        "description": "Een klimgelegenheid?",
         "name": "Klimgelegenheiden?",
         "tagRenderings": {
             "climbing-opportunity-name": {
