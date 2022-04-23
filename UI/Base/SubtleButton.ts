@@ -13,14 +13,18 @@ import Loading from "./Loading";
 export class SubtleButton extends UIElement {
     private readonly imageUrl: string | BaseUIElement;
     private readonly message: string | BaseUIElement;
-    private readonly linkTo: { url: string | UIEventSource<string>; newTab?: boolean };
+    private readonly options: { url?: string | UIEventSource<string>; newTab?: boolean ; imgSize?: string};
 
 
-    constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined) {
+    constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, options: { 
+        url?: string | UIEventSource<string>, 
+        newTab?: boolean,
+        imgSize?: "h-11 w-11" | string
+    } = undefined) {
         super();
         this.imageUrl = imageUrl;
         this.message = message;
-        this.linkTo = linkTo;
+        this.options = options;
     }
 
     protected InnerRender(): string | BaseUIElement {
@@ -34,7 +38,7 @@ export class SubtleButton extends UIElement {
         } else {
             img = this.imageUrl;
         }
-        const image = new Combine([img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")])
+        const image = new Combine([img?.SetClass("block flex items-center justify-center "+(this.options?.imgSize ?? "h-11 w-11")+" flex-shrink0 mr-4")])
             .SetClass("flex-shrink-0");
 
         message?.SetClass("block overflow-ellipsis no-images")
@@ -44,7 +48,7 @@ export class SubtleButton extends UIElement {
             message
         ]).SetClass("flex group w-full")
 
-        if (this.linkTo == undefined) {
+        if (this.options?.url == undefined) {
             this.SetClass(classes)
             return button
         }
@@ -52,8 +56,8 @@ export class SubtleButton extends UIElement {
 
         return new Link(
             button,
-            this.linkTo.url,
-            this.linkTo.newTab ?? false
+            this.options.url,
+            this.options.newTab ?? false
         ).SetClass(classes)
 
     }

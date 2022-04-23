@@ -144,8 +144,11 @@
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
             "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes.",
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
+            "noMatchingThemes": "No themes matched your search criteria",
+            "noSearch": "Show all themes",
             "previouslyHiddenTitle": "Previously visited hidden themes",
             "requestATheme": "If you want a custom-built theme, request it in the issue tracker",
+            "searchForATheme": "Search for a theme",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "The name of this {category} is $$$",

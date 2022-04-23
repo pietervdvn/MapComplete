@@ -16,6 +16,9 @@ import {Utils} from "../../Utils";
 import Title from "../Base/Title";
 import * as themeOverview from "../../assets/generated/theme_overview.json"
 import {Translation} from "../i18n/Translation";
+import {TextField} from "../Input/TextField";
+import FilteredCombine from "../Base/FilteredCombine";
+import Locale from "../i18n/Locale";
 
 export default class MoreScreen extends Combine {
 
@@ -32,12 +35,30 @@ export default class MoreScreen extends Combine {
             themeListStyle = "md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-g4 gap-4"
         }
 
-        super([
-            MoreScreen.createOfficialThemesList(state, themeButtonStyle).SetClass(themeListStyle),
-            MoreScreen.createPreviouslyVistedHiddenList(state, themeButtonStyle, themeListStyle),
-            MoreScreen.createUnofficialThemeList(themeButtonStyle, state, themeListStyle),
+        const search = new TextField({
+            placeholder:  tr.searchForATheme,
+        })
+        search.GetValue().addCallbackAndRun(d => console.log("Search is ", d))
+        const searchBar = new Combine([Svg.search_svg().SetClass("w-8"), search.SetClass("mr-4 w-full")])
+            .SetClass("flex rounded-full border-2 border-black w-max items-center my-2 w-1/2")
+
+
+            super([
+                new Combine([searchBar]).SetClass("flex justify-center"),  
+            MoreScreen.createOfficialThemesList(state, themeButtonStyle, themeListStyle, search.GetValue()),
+            MoreScreen.createPreviouslyVistedHiddenList(state, themeButtonStyle, themeListStyle, search.GetValue()),
+            MoreScreen.createUnofficialThemeList(themeButtonStyle, state, themeListStyle, search.GetValue()),
             tr.streetcomplete.Clone().SetClass("block text-base mx-10 my-3 mb-10")
         ]);
+    }
+    
+    private static NothingFound(search: UIEventSource<string>): BaseUIElement{
+        const t  = Translations.t.general.morescreen;
+        return new Combine([
+            new Title(t.noMatchingThemes, 5).SetClass("w-max font-bold"),
+         new SubtleButton(Svg.search_disable_ui(), t.noSearch,{imgSize: "h-8"}).SetClass("h-12 w-max")
+             .onClick( () => search.setData(""))
+        ]).SetClass("flex flex-col items-center w-full")
     }
 
     /**
@@ -152,7 +173,7 @@ export default class MoreScreen extends Combine {
         }
     }
 
-    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses): BaseUIElement {
+    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search : UIEventSource<string>): BaseUIElement {
         const prefix = "mapcomplete-unofficial-theme-";
 
         var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
@@ -171,11 +192,11 @@ export default class MoreScreen extends Combine {
         var stableIds = UIEventSource.ListStabilized<string>(currentIds)
         return new VariableUiElement(
             stableIds.map(ids => {
-                const allThemes: BaseUIElement[] = []
+                const allThemes: { element: BaseUIElement, predicate?: (s:string) => boolean }[] = []
                 for (const id of ids) {
                     const link = this.createUnofficialButtonFor(state, id)
                     if (link !== undefined) {
-                        allThemes.push(link.SetClass(buttonClass))
+                        allThemes.push({element: link.SetClass(buttonClass), predicate : s => id.toLowerCase().indexOf(s) >= 0})
                     }
                 }
                 if (allThemes.length <= 0) {
@@ -183,12 +204,15 @@ export default class MoreScreen extends Combine {
                 }
                 return new Combine([
                     Translations.t.general.customThemeIntro,
-                    new Combine(allThemes).SetClass(themeListClasses)
+                    new FilteredCombine(allThemes, search, {
+                        innerClasses: themeListClasses,
+                        onEmpty: MoreScreen.NothingFound(search)
+                    })
                 ]);
             }));
     }
 
-    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string) {
+    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string, search: UIEventSource<string>) : BaseUIElement{
         const t = Translations.t.general.morescreen
         const prefix = "mapcomplete-hidden-theme-"
         const hiddenThemes = themeOverview["default"].filter(layout => layout.hideFromOverview)
@@ -206,9 +230,15 @@ export default class MoreScreen extends Combine {
                     }
 
                     const knownThemeDescriptions = hiddenThemes.filter(theme => knownThemes.has(theme.id))
-                        .map(theme => MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass));
+                        .map(theme => ({element: MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass),
+                        predicate: MoreScreen.MatchesLayoutFunc(theme)
+                        }));
 
-                    const knownLayouts = new Combine(knownThemeDescriptions).SetClass(themeListStyle)
+                    const knownLayouts = new FilteredCombine(knownThemeDescriptions,
+                        search,
+                        {innerClasses: themeListStyle,
+                            onEmpty: MoreScreen.NothingFound(search)}
+                        )
 
                     return new Combine([
                         new Title(t.previouslyHiddenTitle),
@@ -228,10 +258,50 @@ export default class MoreScreen extends Combine {
 
     }
 
-    private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string): BaseUIElement {
-        let officialThemes = themeOverview["default"];
+    private static MatchesLayoutFunc(layout: {
+        id: string,
+        title: any,
+        shortDescription: any
+    }) {
+        return (search: string) => {
+            search = search.toLocaleLowerCase()
+            if (layout.id.toLowerCase().indexOf(search) >= 0) {
+                return true;
+            }
+            for (const lang in layout.shortDescription) {
+                if (Locale.language.data !== lang) {
+                    continue
+                }
+                if (layout.shortDescription[lang].toLowerCase()?.indexOf(search) >= 0) {
+                    return true
+                }
+            }
 
-        let buttons = officialThemes.map((layout) => {
+            for (const lang in layout.title) {
+                if (Locale.language.data !== lang) {
+                    continue
+                }
+                if (layout.title[lang].toLowerCase()?.indexOf(search) >= 0) {
+                    return true
+                }
+            }
+
+            return false;
+        }
+    }
+
+    private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string, themeListStyle: string, search: UIEventSource<string>):BaseUIElement {
+        let officialThemes: {
+            id: string,
+            icon: string,
+            title: any,
+            shortDescription: any,
+            definition?: any,
+            mustHaveLanguage?: boolean,
+            hideFromOverview: boolean
+        }[] = themeOverview["default"];
+
+        let buttons: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = officialThemes.map((layout) => {
             if (layout === undefined) {
                 console.trace("Layout is undefined")
                 return undefined
@@ -241,7 +311,7 @@ export default class MoreScreen extends Combine {
             }
             const button = MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass);
             if (layout.id === personal.id) {
-                return new VariableUiElement(
+                const element = new VariableUiElement(
                     state.osmConnection.userDetails.map(userdetails => userdetails.csCount)
                         .map(csCount => {
                             if (csCount < Constants.userJourney.personalLayoutUnlock) {
@@ -251,15 +321,22 @@ export default class MoreScreen extends Combine {
                             }
                         })
                 )
+                return {element}
             }
-            return button;
+
+
+            return {element: button, predicate: MoreScreen.MatchesLayoutFunc(layout)};
         })
 
         const professional = MoreScreen.CreateProffessionalSerivesButton();
         const customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
-        buttons.splice(0, 0, customGeneratorLink, professional);
-
-        return new Combine(buttons)
+        buttons.splice(0, 0,
+            {element: customGeneratorLink},
+            {element: professional});
+        return new FilteredCombine(buttons, search, {
+            innerClasses: themeListStyle,
+            onEmpty: MoreScreen.NothingFound(search)
+        });
     }
 
     /*

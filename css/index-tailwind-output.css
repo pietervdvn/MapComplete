@@ -1144,24 +1144,28 @@ video {
   width: 2.75rem;
 }
 
-.w-16 {
-  width: 4rem;
-}
-
 .w-min {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
 
-.w-auto {
-  width: auto;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-max {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .min-w-min {

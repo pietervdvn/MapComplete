@@ -44,7 +44,7 @@ export class TextField extends InputElement<string> {
             el.type = options.htmlType ?? "text"
             el.inputMode = options.inputMode
             el.placeholder = placeholder
-            el.style.cssText = options.inputStyle
+            el.style.cssText = options.inputStyle ?? "width: 100%;"
             inputEl = el
         }
 
