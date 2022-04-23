@@ -608,7 +608,7 @@
         "deactivate": "Slå oversættelsesknapper fra",
         "missing": "{count} uoversatte strenge",
         "allMissing": "Ingen oversættelser endnu",
-        "completeness": "Oversættelser for {tema} i {sprog} er på {procent}%: {oversatte} strenge ud af {total} er oversat",
+        "completeness": "Oversættelser for {theme} i {language} er på {percentage}%: {translated} strenge ud af {total} er oversat",
         "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage",
         "isTranslator": "Oversættelsestilstanden er slået til, da dit brugernavn svarer til navnet på en tidligere oversætter"
     },
