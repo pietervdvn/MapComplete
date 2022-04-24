@@ -112,7 +112,7 @@ export class ImageUploadFlow extends Toggle {
             }
 
 
-            const title = matchingLayer?.title?.GetRenderValue(tags)?.ConstructElement()?.innerText ?? tags.name ?? "Unknown area";
+            const title = matchingLayer?.title?.GetRenderValue(tags)?.Subs(tags)?.ConstructElement()?.innerText ?? tags.name ?? "https//osm.org/"+tags.id;
             const description = [
                 "author:" + state.osmConnection.userDetails.data.name,
                 "license:" + license,
