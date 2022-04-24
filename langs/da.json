@@ -62,9 +62,9 @@
             "openLayerControl": "Åben kontrolboksen for lag",
             "pleaseLogin": "Log venligst ind for at tilføje et nyt punkt",
             "presetInfo": "Det nye POI vil have {tags}",
-            "stillLoading": "Data indlæses stadig. Vent venligt lidt for du tilføjet et nyt punkt.",
+            "stillLoading": "Data indlæses stadig. Vent venligt lidt før du tilføjer et nyt punkt.",
             "title": "Tilføj et nyt punkt?",
-            "warnVisibleForEveryone": "Til tilføjelse vil være synlig for alle",
+            "warnVisibleForEveryone": "Din tilføjelse vil være synlig for alle",
             "wrongType": "Dette element er ikke et punkt eller en vej og kan ikke importeres",
             "zoomInFurther": "Zoom mere ind fore at tilføje et punkt.",
             "zoomInMore": "Zoom mere ind for at importere dette element"
@@ -216,7 +216,9 @@
             "fsUserbadge": "Slå loginknappen til",
             "fsWelcomeMessage": "Vis velkomstbeskeden og tilknyttede faner",
             "intro": "<h3>Del dette kort</h3>Del dette kort ved at kopiere linket nedenunder og send det til venner og familie:",
-            "thanksForSharing": "Tak for at dele!"
+            "thanksForSharing": "Tak for at dele!",
+            "downloadCustomTheme": "Download opsætningen for dette tema",
+            "downloadCustomThemeHelp": "En erfaren bidragyder kan bruge denne fil til at forbedre dit tema"
         },
         "skip": "Spring over dette spørgsmål",
         "skippedQuestions": "Nogle spørgsmål er sprunget over",
@@ -328,7 +330,8 @@
             "title": "Sammenlign med eksisterende data",
             "titleLive": "Live data på OSM",
             "titleNearby": "Elementer i nærheden",
-            "zoomIn": "Live data bliver vist på zoomniveau mindst {needed}. Det aktuelle zoomniveau er {current}"
+            "zoomIn": "Live data bliver vist på zoomniveau mindst {needed}. Det aktuelle zoomniveau er {current}",
+            "reloadTheCache": "Ryd cachen, og forespørg overpass igen"
         },
         "createNotes": {
             "creating": "Oprettede <b>{count}</b> noter ud af {total}",
@@ -378,14 +381,21 @@
             "errPointsOnly": "Den indlæste JSON-fil skal kun indeholde punkter",
             "fileFormatDescription": "Vælg en <b class=\"code\">.csv</b> eller en <b class=\"code\">.geojson</b> fil",
             "noFilesLoaded": "Ingen fil er indlæst",
-            "title": "Vælg fil"
+            "title": "Vælg fil",
+            "loadedFilesAre": "Den aktuelt indlæste fil er {file}",
+            "fileFormatDescriptionCsv": "I CSV-filen skal der være en kolonne <span class=\"literal-code\">lat</span> og <span class=\"literal-code\">lon</span> med koordinaterne i WGS84. Der bør være en ekstra kolonne for hver attribut.",
+            "fileFormatDescriptionGeoJson": "I geojson-filen skal der kun være punkter. Egenskaberne skal være præcis de egenskaber, der skal indgå i OpenStreetMap"
         },
         "selectTheme": {
             "displayNonMatchingCount": "{length} objekter passer ikke med nogen forudindstillinger",
             "missing": "Forventede $k}={v}, men det mangler helt",
             "needsTags": "{title} skal have mærker {tags}",
             "notApplicable": "Forudindstillet {title} kan ikke anvendes:",
-            "title": "Vælg et tema"
+            "title": "Vælg et tema",
+            "misMatch": "Egenskaben med nøglen {k} har ikke den forventede værdi {v}; i stedet er den {properties}",
+            "unmatchedTitle": "Følgende elementer passer ikke til nogen af forudindstillingerne",
+            "noMatchingPresets": "Dette tema har ingen forudindstillinger indlæst. Derfor vil importering ikke fungere her",
+            "intro": "Alle følgende temaer viser importnoterne. Noten på OpenStreetMap kan dog kun linke til et enkelt tema. Vælg, hvilket tema de oprettede noter skal linke til"
         },
         "testMode": "Testmodus - vil ikke faktisk importere noter",
         "title": "Importeringshjælper"
@@ -398,12 +408,16 @@
         "description": "Et lag som importerer poster for {title}",
         "layerName": "Mulig {title}",
         "notFound": "Jeg kunne ikke finde {title} - fjern det",
-        "popupTitle": "Mulig {title}"
+        "popupTitle": "Mulig {title}",
+        "importHandled": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+        "importButton": "import_button({layerId}, _tags, Jeg har fundet en {title} her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)"
     },
     "index": {
         "featuredThemeTitle": "Fremhævet denne uge",
         "pickTheme": "Vælg et tema nedenfor for at komme i gang.",
-        "title": "Velkommen til MapComplete"
+        "title": "Velkommen til MapComplete",
+        "#": "Disse tekster vises over tema-knapperne, når der ikke er indlæst noget tema",
+        "intro": "MapComplete er en OpenStreetMap-viser og editor, som viser dig oplysninger om elementer i et specifikt tema og gør det muligt at opdatere det."
     },
     "move": {
         "cancel": "Afbryd flytning",
@@ -419,7 +433,14 @@
         "pointIsMoved": "Dette punkt er blevet flyttet",
         "selectReason": "Hvorfor flytter du dette objekt?",
         "whyMove": "Hvorfor vil du flytte dette punkt?",
-        "zoomInFurther": "Zoom mere ind for bekræfte denne flytning"
+        "zoomInFurther": "Zoom mere ind for bekræfte denne flytning",
+        "partOfRelation": "Dette element er en del af en relation. Brug en anden editor til at flytte den.",
+        "isRelation": "Dette element er en relation og kan ikke flyttes",
+        "partOfAWay": "Dette element er en del af en anden vej. Brug en anden editor til at flytte den.",
+        "reasons": {
+            "reasonInaccurate": "Placeringen af dette objekt er unøjagtig og bør flyttes et par meter"
+        },
+        "isWay": "Dette element er en vej. Brug en anden OpenStreetMap-editor til at flytte den."
     },
     "notes": {
         "addAComment": "Tilføj en kommentar",
@@ -442,46 +463,73 @@
         "reopenNote": "Genåbn note",
         "reopenNoteAndComment": "Genåbn note og kommenter",
         "textNeeded": "Indtast en beskrivende tekst for at oprette en note",
-        "typeText": "Indtast noget tekst for at tilføje en kommentar"
+        "typeText": "Indtast noget tekst for at tilføje en kommentar",
+        "warnAnonymous": "Du er ikke logget ind. Vi vil ikke kunne kontakte dig for at løse dit problem.",
+        "noteLayerNotEnabled": "Laget, der viser noter, er ikke slået til. Dette lag skal være slået til for at tilføje en ny note",
+        "createNoteIntro": "Er der noget galt eller mangler der noget på kortet? Opret en note her. Disse vil blive kontrolleret af frivillige.",
+        "notesLayerMustBeEnabled": "'note'-laget er slået fra. Slå det til for at tilføje en note"
     },
     "privacy": {
         "geodataTitle": "Din placering",
         "miscCookiesTitle": "Andre cookies",
         "title": "Privatlivspolitik",
         "trackingTitle": "Statistisk data",
-        "whileYoureHere": "Sætter du pris på privatliv?"
+        "whileYoureHere": "Sætter du pris på privatliv?",
+        "editingTitle": "Når du foretager ændringer",
+        "geodata": "Når MapComplete får din geolokalisering, forbliver din geolokalisering og tidligere besøgte steder på din enhed. Dine lokaliseringsdata sendes aldrig automatisk til andre steder - medmindre en funktionalitet klart angiver noget andet.",
+        "miscCookies": "MapComplete integreres med forskellige andre tjenester, især til at hente billeder af elementer. Billederne er hostet på forskellige tredjepartsservere, som måske selv sætter cookies.",
+        "editing": "Når du foretager en ændring på kortet, registreres ændringen på OpenStreetMap og er offentligt tilgængelig for alle. Et ændringssæt, der er foretaget med MapComplete, indeholder følgende data: <ul><li>De ændringer, du har foretaget</li><li>Dit brugernavn</li><li>Hvornår denne ændring er foretaget</li><li>Det tema, du brugte, mens du foretog ændringen</li><li></li><li>Sproget i brugergrænsefladen</li><li>En angivelse af, hvor tæt du var på ændrede objekter. Andre kortlæggere kan bruge disse oplysninger til at afgøre, om en ændring blev foretaget på baggrund af en kortlægning på stedet eller på baggrund af fjernundersøgelser</li></ul> Se <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">privatlivspolitikken på OpenStreetMap.org</a> for detaljerede oplysninger. Vi minder dig om, at du kan bruge et fiktivt navn, når du tilmelder dig.",
+        "intro": "Privatliv er vigtigt - både for den enkelte og for samfundet. MapComplete forsøger at respektere dit privatliv så meget som muligt - så vidt muligt uden et irriterende cookie-banner. Vi vil dog stadig gerne informere dig om, hvilke oplysninger der indsamles og deles, under hvilke omstændigheder, og hvorfor disse afvejninger foretages.",
+        "surveillance": "Eftersom du læser denne privatlivspolitik, lægger du sikkert vægt på beskyttelse af personlige oplysninger - det gør vi også! Vi har endda lavet <a href=\"https://mapcomplete.osm.be/surveillance\">et tema, der viser overvågningskameraer.</a> Du er velkommen til at kortlægge dem alle!",
+        "tracking": "For at få et indblik i, hvem der besøger vores websted, indsamles der nogle tekniske oplysninger. Det drejer sig bl.a. om det land, du besøgte websiden fra, hvilket websted der henviste dig til MapComplete, typen af din enhed og skærmstørrelsen. Der placeres en cookie på din enhed for at angive, at du har besøgt MapComplete tidligere i dag. Disse data er ikke detaljerede nok til at identificere dig personligt. Disse statistikker er for alle kun tilgængelige i aggregeret form og er <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">offentligt tilgængelige for alle</a>"
     },
     "professional": {
         "aboutMc": {
             "internalUse": {
-                "title": "Brug af data i interne processer"
+                "title": "Brug af data i interne processer",
+                "intro": "<p>Når først dataene er i OpenStreetMap, vil du sandsynligvis også gerne bruge dem. Dit MapComplete-tema kan have en praktisk <i>eksport</i>-knap, der tilbyder at downloade dataene i mange åbne formater, der kan bruges i QGis, ArcGis, Excel, LibreOffice-calc, ...</p><p>En person med grundlæggende regneark-færdigheder kan således nemt skabe grafer og indsigter om dataene, mens GIS-eksperter i din organisation nemt kan arbejde med disse data i deres foretrukne program.</p><p></p><p>Hvis der er behov for en automatiseret opsætning, er der et gratis API, der kan bruges af fællesskabet.</p><p></p>"
             },
             "layers": {
-                "title": "Hvilke data kan blive vist med MapComplete?"
+                "title": "Hvilke data kan blive vist med MapComplete?",
+                "intro": "<p>MapComplete har et kraftfuldt skabelonsystem, som gør det muligt hurtigt at oprette et kort, der viser netop de funktioner, du har brug for, og viser relevante attributter i popups.</p> <p>Disse data kan hentes direkte fra <b>OpenStreetMap</b>, men MapComplete kan også bruge <b>eksterne datasæt</b> - f.eks. til at sammenligne OpenStreetMap med et andet datasæt eller til at vise data, der ikke er egnede til OpenStreetMap (planlagte aktiviteter, statistik, ...)</p>"
             },
             "survey": {
-                "title": "Kortlægningsmuligheder"
+                "title": "Kortlægningsmuligheder",
+                "intro": "<p>MapComplete er et brugervenligt <i>kortlægningsværktøj</i>. Det er ideelt til at indsamle det nødvendige med få klik, både på desktop og på mobil. Disse data bidrager direkte til OpenStreetMap.</p><p></p><p>Vi kan opsætte et <b>brugerdefineret kortlægningsværktøj</b>, der spørger om præcis de data, du har brug for, på en fremtidssikret måde.</p><p></p><p>Har du et datasæt, der skal (gen)kortlægges? Det er det perfekte tidspunkt at skifte til OpenStreetMap. MapComplete kan vise dit datasæt og OpenStreetMap på samme tid, hvilket gør det lettere at besøge alle stederne og se, hvad fællesskabet allerede har bidraget med.</p>\n"
             },
-            "title": "Brug MapComplete i din organisation"
+            "title": "Brug MapComplete i din organisation",
+            "text0": "Hvis du har et eksisterende MapComplete-tema, er du velkommen til at bruge det eller integrere det på dit websted. Indlejring af de offentlige temaer er gratis og vil altid være det.",
+            "text1": "Har du brug for nogle andre data, men findes temaet ikke endnu? MapComplete-udviklerne kan <b>lave det for dig</b> indenfor et rimeligt budget. Kontakt os via <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> eller <a href=\"https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet\">send en besked via osm.org</a>",
+            "text2": "Hvis du stadig er usikker, er mulighederne beskrevet nedenfor. Desuden besvares nogle almindelige spørgsmål"
         },
         "aboutOsm": {
             "aboutOsm": {
                 "li3": "og meget, meget mere…",
-                "title": "Hvad er OpenStreetMap?"
+                "title": "Hvad er OpenStreetMap?",
+                "li1": "Butikker og andre faciliteter kan have åbningstider, et telefonnummer, et link til hjemmesiden, hvilke betalingsmetoder der understøttes, hvad de sælger, hvilke tjenester de tilbyder, …",
+                "li2": "Toiletterne kan have oplysninger om adgang for kørestolsbrugere, et puslebord, om der skal betales, …",
+                "intro": "OpenStreetMap er en fælles, global database, der er opbygget af frivillige. Alle geodata kan bidrage til OpenStreetMap, så længe <b>de kan verificeres på stedet</b>.<br> OpenStreetMap er vokset til at være et meget bredt og dybt datasæt, da det indeholder data om tusindvis af kategorier af objekter.Et enkelt objekt kan også have et væld af attributter, der giver en masse nuancer, f.eks:",
+                "li0": "Veje har geometri, men kan også indeholde oplysninger om hastighedsgrænser, belægning, om de er belyste, deres navn, et link til Wikipedia, et link til det, de er opkaldt efter, hvilke vandre-, cykel- og busruter der går der, …"
             },
             "benefits": {
-                "title": "Fordele ved OSM økosystemet"
+                "title": "Fordele ved OSM økosystemet",
+                "li1": "Dine data vil nå ud til et større publikum end nogensinde før via Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, næsten alle cykel-apps, …",
+                "intro": "Det kan være meget svært at opgive sit eget datasæt, da opbygningen af dette datasæt ofte har krævet tid og kræfter.<br>Men fordelene ved at skifte til OSM er enorme:",
+                "li0": "Du er ikke længere alene om at indsamle og vedligeholde dette datasæt - et helt fællesskab er ved din side",
+                "li2": "Mange statslige organisationer og kommuner bruger også OpenStreetMap på deres websteder"
             },
             "license": {
                 "li0": "Et produkt, der bruger OpenStreetMap data, skal kreditere.",
                 "outro": "Licensen har nogle få konsekvenser - Disse er forklaret nedenfor.",
-                "title": "Licensen"
+                "title": "Licensen",
+                "intro": "OpenStreetMap er licenseret under Open Database Licensen. Den <a href=\"https://osm.org/copyright\" target=\"_blank\">fulde copyright-tekst</a> kan sammenfattes som følger:"
             },
             "vandalism": {
                 "intro": "Eftersom alle kan redigere data, er det faktisk muligt, at der forekommer en ondsindet ændring. Det er imidlertid ekstremt sjælden af nogle få årsager:",
                 "li0": "den tekniske barriere for at foretage ændringer er høj",
                 "li4": "I Belgien (og visse andre lande), bliver den første ændring af ny bidragsyder systematisk checket og hvis nødvendigt, rettet.",
-                "title": "Hvad med vandalisme?"
+                "title": "Hvad med vandalisme?",
+                "li2": "en ændring med stor virkning bliver hurtigt bemærket og tilbageført, da så mange mennesker bruger disse data"
             }
         },
         "drawbacks": {
@@ -489,17 +537,27 @@
                 "li0": "Al data kan bruges til ethvert formål - deriblandt kommercielle formål",
                 "title": "Konsekvenser af ODbL: nogle use cases",
                 "usecaseGatheringOpenData": {
-                    "title": "Indsamle åben data"
+                    "title": "Indsamle åben data",
+                    "intro": "MapComplete er en fremragende måde at skabe åbne data på, også for myndigheder. Som standard vil disse data kunne videredistribueres frit under ODbL. Hvis der imidlertid er et krav om at offentliggøre de indsamlede data under en <i>public domain</i>-licens (hvor <b>alle</b>rettigheder gives til offentligheden, og der ikke kræves kreditering), er ODbL for restriktiv. I dette tilfælde kan man bede bidragyderne om at tilføje data som Public Domain (f.eks. ved at informere dem i mapcomplete-temaet)."
                 },
                 "usecaseMapDifferentSources": {
                     "li1": "...hvorimod alle-rettigheder-forbeholdes licenserne ville forbyde dette.",
-                    "title": "Dannelse af kort fra forskellige kilder"
-                }
+                    "title": "Dannelse af kort fra forskellige kilder",
+                    "outro": "Som følge heraf er denne form for blanding ikke tilladt",
+                    "intro": "<p>For eksempel kunne man lave et kort med alle bænke i en by, baseret på de bænke, der er kendt af OpenStreetMap. Dette trykte kort har brug for en klar erklæring om, at kortdataene er baseret på OpenStreetMap. Det er tilladt at sælge disse kort. Hvis kortmageren bemærker, at bænkene mangler i et eller andet område og tilføjer dem på det trykte kort, er dataene på de manglende bænke automatisk også åbne data. Det betyder, at en OpenStreetMap-bidragyder har lov til at tage papirkortet og bruge det til at tilføje de manglende bænke tilbage til OpenStreetMap.</p> <p>Denne bidragyder har også ret til at bede om datasættet for de manglende bænke, som også bør stilles til rådighed.</p> <p>Hvis kortmageren bemærker, at bænkene mangler i et eller andet område og tilføjer dem på det trykte kort, er dataene på de manglende bænke automatisk også åbne data. Det betyder, at en OpenStreetMap-bidragyder har lov til at tage papirkortet og bruge det til at tilføje de manglende bænke tilbage til OpenStreetMap. Denne bidragyder har også ret til at bede om datasættet for de manglende bænke, som også bør stilles til rådighed.</p> <p>Selvfølgelig kan et kort med kun bænke være kedeligt. Kortproducenten kan også beslutte at tilføje et lag med butikker, muligvis hentet fra en anden geodataudbyder under en anden licens. Dette er tilladt, hvis kortet klart angiver, at bænkene stammer fra OSM (under ODBL), og butikkerne har en anden kilde (eventuelt med en alle rettigheder forbeholdt).</p> <p>Det er dog muligvis ikke tilladt at blande to datasæt i ét lag, der ikke kan skelnes. For eksempel kunne kortmageren mene, at OSM har fremragende data om bænke i en del af byen, og at den lukkede kildeudbyder har fremragende data om bænke i en anden del af byen, men at flette disse datasæt sammen til et kan være problematisk: </p>"
+                },
+                "intro": "OpenStreetMap er licenseret under Open Database Licensen, som siger, at:",
+                "li1": "Applikationer eller produkter, der bruger OpenStreetMap, bør give en klar ophavsretsmeddelelse",
+                "li2": "Ethvert datasæt eller produkt, der indeholder OpenStreetMap-data, skal også genudgives under ODbL, herunder ændringer af dette datasæt og i et brugbart format.",
+                "outro": "Dette har nogle få konsekvenser, som bør overvejes i forbindelse med visse brugssituationer, som forklaret nedenfor"
             },
             "title": "Nogle få ulemper at holde sig for øje",
             "unsuitedData": {
-                "title": "Data uegnet for OpenStreetMap"
-            }
+                "title": "Data uegnet for OpenStreetMap",
+                "li1": "Begivenheder registreres ikke, og det samme gælder vejarbejder, der kun varer nogle få dage.",
+                "li0": "Subjektive data (som f.eks. anmeldelser) er ikke egnede til OpenStreetMap. MapComplete har imidlertid en integration med <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a>, et åbent licenseret anmeldelseswebsted"
+            },
+            "intro": "Selvom det er forbundet med enorme fordele at deltage i dette fællesskab, er der nogle få emner, som du skal overveje nøje."
         },
         "indexPage": {
             "button": "Opdag vore tjenester",
@@ -509,9 +567,17 @@
             "intro": "Udviklerne af MapComplete kan hjælpe dig med følgende tjenester:",
             "li0": "Opsætning af et tema skræddersyet efter dine behov",
             "li1": "Hjælp med opsætning af internt data flow til integration med OpenStreetMap",
-            "title": "MapComplete tjenester"
+            "title": "MapComplete tjenester",
+            "li2": "Træning i, hvordan du bidrager med data med MapComplete",
+            "li3": "Avanceret træning (f.eks. for GIS-teamet) i, hvordan du tilføjer avancerede data til OpenStreetMap",
+            "li4": "Træning i hvordan man downloader filtrerede data fra OpenStreetMap",
+            "outro": "Disse tjenester tilbydes til konkurrencedygtige priser. Et simpelt tema uden ekstra support kan opsættes for så lidt € 2000 og en lille ekstra årlig hostingomkostning."
         },
-        "title": "Professionel støtte med MapComplete"
+        "title": "Professionel støtte med MapComplete",
+        "osmTitle": "Hvad kan OpenStreetMap og MapComplete gøre for din organisation?",
+        "intro": "Udvikleren af MapComplete tilbyder professionel support. Dette dokument beskriver nogle af mulighederne, almindelige spørgsmål og begrænsninger for MapComplete",
+        "text1": "<p>MapComplete er editoren, der gør det nemt at bidrage med data til OpenStreetMap.</p>",
+        "text0": "<p>Det er svært, fejlbehæftet og dyrt at vedligeholde et sæt opdaterede geodata.<br>For at føje spot til skade, ender mange organisationer med at indsamle de samme data uafhængigt af hinanden - hvilket resulterer i dobbeltarbejde, ikke-standardiserede dataformater og mange ufuldstændige, uvedligeholdte datasæt.</p><p>Samtidig er der et enormt fællesskab, som samler en masse geodata i én fælles, global og standardiseret database - nemlig OpenStreetMap.org.</p>"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Tilknyttet anmeldelse)",
@@ -522,17 +588,29 @@
         "saving_review": "Gemmer…",
         "title": "{count} Anmeldelser",
         "title_singular": "En anmeldelse",
-        "write_a_comment": "Skriv en anmeldelse…"
+        "write_a_comment": "Skriv en anmeldelse…",
+        "i_am_affiliated": "<span>Jeg er tilknyttet dette objekt</span><br><span class=\"subtle\">Tjek, om du er ejer, skaber, ansat, ...</span>",
+        "tos": "Hvis du opretter en anmeldelse, accepterer du <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviews' servicevilkår og privatlivspolitik</a>",
+        "name_required": "Der kræves et navn for at vise og oprette anmeldelser",
+        "attribution": "Anmeldelserne er baseret på <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgængelige under <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
+        "no_reviews_yet": "Der er ingen anmeldelser endnu. Vær den første til at skrive en og hjælpe åbne data og forretningen!"
     },
     "split": {
         "cancel": "Afbryd",
         "hasBeenSplit": "Denne vej er blevet opdelt",
-        "split": "Opdel"
+        "split": "Opdel",
+        "loginToSplit": "Du skal være logget ind for at opdele en vej",
+        "splitTitle": "Vælg på kortet, hvor du vil opdele denne vej",
+        "inviteToSplit": "Opdel denne vej i mindre dele. Det giver mulighed for at give forskellige egenskaber til dele af vejen."
     },
     "translations": {
         "activateButton": "Hjælp med at oversætte MapComplete",
         "deactivate": "Slå oversættelsesknapper fra",
-        "missing": "{count} uoversatte strenge"
+        "missing": "{count} uoversatte strenge",
+        "allMissing": "Ingen oversættelser endnu",
+        "completeness": "Oversættelser for {theme} i {language} er på {percentage}%: {translated} strenge ud af {total} er oversat",
+        "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage",
+        "isTranslator": "Oversættelsestilstanden er slået til, da dit brugernavn svarer til navnet på en tidligere oversætter"
     },
     "validation": {
         "color": {
@@ -588,6 +666,13 @@
         },
         "wikidata": {
             "description": "En Wikidata identifier"
-        }
+        },
+        "direction": {
+            "description": "En retning"
+        },
+        "tooLong": "Teksten er for lang, der må højst være 255 tegn. Du har {count} tegn nu"
+    },
+    "multi_apply": {
+        "autoApply": "Når du ændrer attributterne {attr_names}, vil disse attributter automatisk også blive ændret på {count} andre objekter"
     }
 }
