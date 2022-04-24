@@ -116,7 +116,8 @@
             "licenseInfo": "<h3>Ophavsretsmeddelelse</h3>De leverede data er tilgængelige under ODbL. Genbrug til alle formål er gratis, men <ul><li>tilskrivningen <b>© OpenStreetMap contributors</b> kræves</li><li>Enhver ændring skal bruge licensen</li></ul> Læs venligst hele <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">ophavsretsmeddelelsen</a> for detaljer.",
             "noDataLoaded": "Der er endnu ikke indlæst noget data. Nedhentning vil snart være tilgængelig",
             "title": "Hent synligt data",
-            "uploadGpx": "Upload dit spor til OpenStreetMap"
+            "uploadGpx": "Upload dit spor til OpenStreetMap",
+            "downloadAsSvgHelper": "Kompatibel Inkscape eller Adobe Illustrator; skal behandles yderligere  "
         },
         "error": "Noget gik galt",
         "example": "Eksempel",
@@ -417,7 +418,8 @@
         "pickTheme": "Vælg et tema nedenfor for at komme i gang.",
         "title": "Velkommen til MapComplete",
         "#": "Disse tekster vises over tema-knapperne, når der ikke er indlæst noget tema",
-        "intro": "MapComplete er en OpenStreetMap-viser og editor, som viser dig oplysninger om elementer i et specifikt tema og gør det muligt at opdatere det."
+        "intro": "MapComplete er en OpenStreetMap-viser og editor, som viser dig oplysninger om elementer i et specifikt tema og gør det muligt at opdatere det.",
+        "logIn": "Log ind for at se andre temaer, du tidligere har besøgt"
     },
     "move": {
         "cancel": "Afbryd flytning",
@@ -425,7 +427,8 @@
         "confirmMove": "Flyt her",
         "inviteToMove": {
             "generic": "Flyt dette punkt",
-            "reasonInaccurate": "Forbedr nøjagtigheden for dette punkt"
+            "reasonInaccurate": "Forbedr nøjagtigheden for dette punkt",
+            "reasonRelocation": "Skift placering for dette objekt, fordi det er flyttet"
         },
         "inviteToMoveAgain": "Flyt dette punkt igen",
         "loginToMove": "Du skal være logget ind for at flytte et punkt",
@@ -438,7 +441,8 @@
         "isRelation": "Dette element er en relation og kan ikke flyttes",
         "partOfAWay": "Dette element er en del af en anden vej. Brug en anden editor til at flytte den.",
         "reasons": {
-            "reasonInaccurate": "Placeringen af dette objekt er unøjagtig og bør flyttes et par meter"
+            "reasonInaccurate": "Placeringen af dette objekt er unøjagtig og bør flyttes et par meter",
+            "reasonRelocation": "Objektet er blevet flyttet til et helt andet sted"
         },
         "isWay": "Dette element er en vej. Brug en anden OpenStreetMap-editor til at flytte den."
     },
@@ -522,14 +526,17 @@
                 "li0": "Et produkt, der bruger OpenStreetMap data, skal kreditere.",
                 "outro": "Licensen har nogle få konsekvenser - Disse er forklaret nedenfor.",
                 "title": "Licensen",
-                "intro": "OpenStreetMap er licenseret under Open Database Licensen. Den <a href=\"https://osm.org/copyright\" target=\"_blank\">fulde copyright-tekst</a> kan sammenfattes som følger:"
+                "intro": "OpenStreetMap er licenseret under Open Database Licensen. Den <a href=\"https://osm.org/copyright\" target=\"_blank\">fulde copyright-tekst</a> kan sammenfattes som følger:",
+                "li1": "OpenStreetMap-data skal forblive <i>åbne</i>. Det betyder, at data fra et kort, der indeholder OpenStreetMap-data, kan kopieres igen."
             },
             "vandalism": {
                 "intro": "Eftersom alle kan redigere data, er det faktisk muligt, at der forekommer en ondsindet ændring. Det er imidlertid ekstremt sjælden af nogle få årsager:",
                 "li0": "den tekniske barriere for at foretage ændringer er høj",
                 "li4": "I Belgien (og visse andre lande), bliver den første ændring af ny bidragsyder systematisk checket og hvis nødvendigt, rettet.",
                 "title": "Hvad med vandalisme?",
-                "li2": "en ændring med stor virkning bliver hurtigt bemærket og tilbageført, da så mange mennesker bruger disse data"
+                "li2": "en ændring med stor virkning bliver hurtigt bemærket og tilbageført, da så mange mennesker bruger disse data",
+                "li3": "alle ændringer spores og knyttes til en enkelt bruger. En gentagende gerningsmand bliver hurtigt udelukket",
+                "li1": "en lille ondsindet ændring har kun en lille indvirkning og er derfor ikke særlig givende for en hærværksmand"
             }
         },
         "drawbacks": {
@@ -544,7 +551,8 @@
                     "li1": "...hvorimod alle-rettigheder-forbeholdes licenserne ville forbyde dette.",
                     "title": "Dannelse af kort fra forskellige kilder",
                     "outro": "Som følge heraf er denne form for blanding ikke tilladt",
-                    "intro": "<p>For eksempel kunne man lave et kort med alle bænke i en by, baseret på de bænke, der er kendt af OpenStreetMap. Dette trykte kort har brug for en klar erklæring om, at kortdataene er baseret på OpenStreetMap. Det er tilladt at sælge disse kort. Hvis kortmageren bemærker, at bænkene mangler i et eller andet område og tilføjer dem på det trykte kort, er dataene på de manglende bænke automatisk også åbne data. Det betyder, at en OpenStreetMap-bidragyder har lov til at tage papirkortet og bruge det til at tilføje de manglende bænke tilbage til OpenStreetMap.</p> <p>Denne bidragyder har også ret til at bede om datasættet for de manglende bænke, som også bør stilles til rådighed.</p> <p>Hvis kortmageren bemærker, at bænkene mangler i et eller andet område og tilføjer dem på det trykte kort, er dataene på de manglende bænke automatisk også åbne data. Det betyder, at en OpenStreetMap-bidragyder har lov til at tage papirkortet og bruge det til at tilføje de manglende bænke tilbage til OpenStreetMap. Denne bidragyder har også ret til at bede om datasættet for de manglende bænke, som også bør stilles til rådighed.</p> <p>Selvfølgelig kan et kort med kun bænke være kedeligt. Kortproducenten kan også beslutte at tilføje et lag med butikker, muligvis hentet fra en anden geodataudbyder under en anden licens. Dette er tilladt, hvis kortet klart angiver, at bænkene stammer fra OSM (under ODBL), og butikkerne har en anden kilde (eventuelt med en alle rettigheder forbeholdt).</p> <p>Det er dog muligvis ikke tilladt at blande to datasæt i ét lag, der ikke kan skelnes. For eksempel kunne kortmageren mene, at OSM har fremragende data om bænke i en del af byen, og at den lukkede kildeudbyder har fremragende data om bænke i en anden del af byen, men at flette disse datasæt sammen til et kan være problematisk: </p>"
+                    "intro": "<p>For eksempel kunne man lave et kort med alle bænke i en by, baseret på de bænke, der er kendt af OpenStreetMap. Dette trykte kort har brug for en klar erklæring om, at kortdataene er baseret på OpenStreetMap. Det er tilladt at sælge disse kort. Hvis kortmageren bemærker, at bænkene mangler i et eller andet område og tilføjer dem på det trykte kort, er dataene på de manglende bænke automatisk også åbne data. Det betyder, at en OpenStreetMap-bidragyder har lov til at tage papirkortet og bruge det til at tilføje de manglende bænke tilbage til OpenStreetMap.</p> <p>Denne bidragyder har også ret til at bede om datasættet for de manglende bænke, som også bør stilles til rådighed.</p> <p>Hvis kortmageren bemærker, at bænkene mangler i et eller andet område og tilføjer dem på det trykte kort, er dataene på de manglende bænke automatisk også åbne data. Det betyder, at en OpenStreetMap-bidragyder har lov til at tage papirkortet og bruge det til at tilføje de manglende bænke tilbage til OpenStreetMap. Denne bidragyder har også ret til at bede om datasættet for de manglende bænke, som også bør stilles til rådighed.</p> <p>Selvfølgelig kan et kort med kun bænke være kedeligt. Kortproducenten kan også beslutte at tilføje et lag med butikker, muligvis hentet fra en anden geodataudbyder under en anden licens. Dette er tilladt, hvis kortet klart angiver, at bænkene stammer fra OSM (under ODBL), og butikkerne har en anden kilde (eventuelt med en alle rettigheder forbeholdt).</p> <p>Det er dog muligvis ikke tilladt at blande to datasæt i ét lag, der ikke kan skelnes. For eksempel kunne kortmageren mene, at OSM har fremragende data om bænke i en del af byen, og at den lukkede kildeudbyder har fremragende data om bænke i en anden del af byen, men at flette disse datasæt sammen til et kan være problematisk: </p>",
+                    "li0": "den åbne licens vil kræve, at ændringerne skal genudgives åbent…"
                 },
                 "intro": "OpenStreetMap er licenseret under Open Database Licensen, som siger, at:",
                 "li1": "Applikationer eller produkter, der bruger OpenStreetMap, bør give en klar ophavsretsmeddelelse",
@@ -555,13 +563,16 @@
             "unsuitedData": {
                 "title": "Data uegnet for OpenStreetMap",
                 "li1": "Begivenheder registreres ikke, og det samme gælder vejarbejder, der kun varer nogle få dage.",
-                "li0": "Subjektive data (som f.eks. anmeldelser) er ikke egnede til OpenStreetMap. MapComplete har imidlertid en integration med <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a>, et åbent licenseret anmeldelseswebsted"
+                "li0": "Subjektive data (som f.eks. anmeldelser) er ikke egnede til OpenStreetMap. MapComplete har imidlertid en integration med <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a>, et åbent licenseret anmeldelseswebsted",
+                "intro": "Den grundlæggende regel for OpenStreetMap er, at alle data skal være <b>verificerbare på stedet</b> og være nogenlunde permanente. Dette indebærer, at nogle data <i>ikke kan</i> sendes direkte til OpenStreetMap - men der findes måder at løse det på.",
+                "li2": "Tidsmæssige data (f.eks. statistikker om luftkvalitet, trafikintensitet, ...) kan ikke gemmes på OpenStreetMap, da de er svære at kontrollere af en frivillig. Bemærk, at hvis disse data er tilgængelige andre steder, kan de stadig visualiseres i MapComplete som et ekstra lag."
             },
             "intro": "Selvom det er forbundet med enorme fordele at deltage i dette fællesskab, er der nogle få emner, som du skal overveje nøje."
         },
         "indexPage": {
             "button": "Opdag vore tjenester",
-            "hook": "Brug for professionel støtte?"
+            "hook": "Brug for professionel støtte?",
+            "hookMore": "Vi kan hjælpe med opsætning af undersøgelser, dataimport og OpenStreetMap-konsulentbistand"
         },
         "services": {
             "intro": "Udviklerne af MapComplete kan hjælpe dig med følgende tjenester:",
@@ -610,7 +621,8 @@
         "allMissing": "Ingen oversættelser endnu",
         "completeness": "Oversættelser for {theme} i {language} er på {percentage}%: {translated} strenge ud af {total} er oversat",
         "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage",
-        "isTranslator": "Oversættelsestilstanden er slået til, da dit brugernavn svarer til navnet på en tidligere oversætter"
+        "isTranslator": "Oversættelsestilstanden er slået til, da dit brugernavn svarer til navnet på en tidligere oversætter",
+        "help": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op."
     },
     "validation": {
         "color": {
