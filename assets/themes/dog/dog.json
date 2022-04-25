@@ -395,7 +395,8 @@
             "da": "EN hundevenlig butik"
           },
           "tags": [
-              "dog=yes"
+            "dog=yes",
+            "shop=yes"
           ],
           "description": {
             "en": "A shop whery you can bring a dog almost everywhere",
