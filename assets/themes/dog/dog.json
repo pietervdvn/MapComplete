@@ -217,95 +217,72 @@
       }
     },
     {
+      "builtin": "shops",
       "id": "dogshop",
-      "source": {
-        "osmTags": {
-          "and": [
-            "shop~*",
+      "override": {
+        "id": "dogshop",
+        "name": {
+          "en": "dog-friendly shop",
+          "da": "hundevenlig butik"
+        },
+        "title": {
+          "render": {
+            "en": "dog-friendly shop",
+            "da": "hundevenlig butik"
+          },
+          "mappings": [
             {
+              "if": "name~*",
+              "then": {
+              "*": "{name}"
+              }
+            }
+          ]
+        },
+        "mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": {
+              "render": "./assets/themes/dog/dogshop.svg",
+              "mappings": [
+                {
+                  "if": {
+                    "and": [
+                      "shop=pet"
+                    ]
+                  },
+                  "then": "./assets/themes/dog/petshop.svg"
+              }
+              ]
+            },
+            "iconSize": "30,30,center"
+           
+          },
+          {
+            "#": "Rendering of a line",
+            "color": "#ff0",
+            "width": 5
+          }
+        ],
+        "=presets": [],
+        "source": {
+          "=osmTags": {
+            "and": [
+              "shop~*",
+              {
               "or": [
                 "dog=leashed",
                 "dog=yes",
                 "shop=pet"
               ]
-            }
+              }
           ]
-        }
-      },
-      "minzoom": 12,
-      "name": {
-        "en": "dogfriendly shop",
-        "da": "hundevenlig butik"
-      },
-      "title": {
-        "render": {
-          "en": "dog-friendly shop",
-          "da": "hundevenlig butik"
-        },
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": {
-              "*": "{name}"
-            }
           }
-        ]
-      },
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": {
-            "render": "./assets/themes/dog/dogshop.svg",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "shop=pet"
-                  ]
-                },
-                "then": "./assets/themes/dog/petshop.svg"
-              }
-            ]
-          },
-          "iconSize": "30,30,center",
-          "label": {
-            "render": {
-              "en": "dog friendly shop",
-              "da": "hundevenlig butik"
-            },
-            "mappings": [
-              {
-                "if": "name~*",
-                "then": {
-                  "*": "{name}"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "#": "Rendering of a line",
-          "color": "#ff0",
-          "width": 5
         }
-      ],
-      "tagRenderings": [
-        {
-          "id": "shoptype",
-          "render": {
-            "en": "sells {shop}",
-            "da": "s&aelig;lger {shop}"
-          },
-          "condition": "shop!=pet"
-        },
-        "website",
-        "reviews",
-        "phone",
-        "images"
-      ]
+      }
     },
     {
       "id": "veterinary",
@@ -387,6 +364,14 @@
     },
     {
       "builtin": "food",
+      "override": {
+        "minzoom": 19,
+        "filter": null,
+        "name": null
+      }
+    },
+    {
+      "builtin": "shops",
       "override": {
         "minzoom": 19,
         "filter": null,
