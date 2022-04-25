@@ -274,6 +274,7 @@
             "width": 5
           }
         ],
+        "presets": [],
         "source": {
           "=osmTags": {
             "and": [
