@@ -43,7 +43,7 @@
           ],
           "description": {
             "en": "A place for dogs, where they can run unleashed",
-            "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be unden snor"
+            "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor"
           }
         }
       ],
@@ -67,28 +67,12 @@
       },
       "mapRendering": [
         {
-          "#": "Rendering block of a mapping which is shown for points AND at the center point of a line/area",
           "location": [
             "point",
             "centroid"
           ],
-          "iconx": "./assets/themes/dog/dog-park.svg",
           "icon": "./assets/themes/dog/dog-park.svg",
-          "iconSize": "40,40,center",
-          "label": {
-            "render": {
-              "en": "dogpark",
-              "da": "hundeskov"
-            },
-            "mappings": [
-              {
-                "if": "name~*",
-                "then": {
-                  "*": "{name}"
-                }
-              }
-            ]
-          }
+          "iconSize": "40,40,center"
         },
         {
           "#": "Rendering of a line",
@@ -121,13 +105,36 @@
           }
         },
         {
+          "id": "bin",
+          "mappings": [
+            {
+              "if": "bin=yes",
+              "then": {
+                "en": "waste bin: Yes",
+                "da": "skraldespand: Ja"
+              }
+            },
+            {
+              "if": "bin=no",
+              "then": {
+                "en": "waste bin: No",
+                "da": "skraldespand: Nej"
+              }
+            }
+          ],
+          "question": {
+            "en": "Does this dog park have a waste bin?",
+            "da": "Har denne hundeskov en skraldespand?"
+          }
+        },
+        {
           "id": "smalldogs",
           "mappings": [
             {
               "if": "small_dog=separate",
               "then": {
-                "en": "Have separate area for small dogs and puppies",
-                "da": "Har en indhegning til sm&aring; hunde og hvalpe"
+                "en": "Have separate area for puppies and small dogs",
+                "da": "Har en indhegning til hvalpe og sm&aring; hunde "
               }
             },
             {
@@ -170,9 +177,23 @@
       ]
     },
     {
-      "id": "dog_food",
-      "source": {
-        "osmTags": {
+      "builtin": "food",
+      "override": {
+        "id": "dogfoodb",
+        "name": {
+          "en": "Dog friendly eateries",
+          "da": "Hundevenlige madsteder"
+        },
+        "icon": "./assets/themes/dog/dog-food.svg",
+        "=iconBadges": [
+          {
+            "render": "circle:white;./assets/themes/dog/dog-food.svg"
+          }
+        ],
+        "iconSize": "30,30,center",
+        "=presets": [],
+        "source": {
+          "=osmTags": {
           "and": [
             {
               "or": [
@@ -188,62 +209,9 @@
               ]
             }
           ]
-        }
-      },
-      "minzoom": 11,
-      "name": {
-        "en": "dogfriendly eateries",
-        "da": "hundevenlige madsteder"
-      },
-      "title": {
-        "render": {
-          "en": "dog-friendly eatery",
-          "da": "hundevenligt spisested"
-        },
-        "mappings": [
-          {
-            "if": "name~*",
-            "then": {
-              "*": "{name}"
-            }
           }
-        ]
-      },
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": "./assets/themes/dog/dog-food.svg",
-          "iconSize": "30,30,center",
-          "label": {
-            "render": {
-              "en": "dog-friendly food",
-              "da": "hundevenligt madsted"
-            },
-            "mappings": [
-              {
-                "if": "name~*",
-                "then": {
-                  "*": "{name}"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "#": "Rendering of a line",
-          "color": "#ff0",
-          "width": 5
         }
-      ],
-      "tagRenderings": [
-        "website",
-        "reviews",
-        "phone",
-        "images"
-      ]
+      }
     },
     {
       "id": "dogshop",
@@ -390,7 +358,6 @@
           "iconSize": "30,30,center"
         },
         {
-          "#": "Rendering of a line",
           "color": "#ff0",
           "width": 5
         }
@@ -411,9 +378,17 @@
           "freeform": {
             "key": "name"
           },
-          "id": "Name"
+          "id": "vetName"
         }
       ]
+    },
+    {
+      "builtin": "food",
+      "override": {
+        "minzoom": 19,
+        "filter": null,
+        "name": null
+      }
     }
   ]
 }
