@@ -184,10 +184,13 @@
           "en": "Dog friendly eateries",
           "da": "Hundevenlige madsteder"
         },
-        "icon": "./assets/themes/dog/dog-food.svg",
-        "=iconBadges": [
+        "=mapRendering": [
           {
-            "render": "circle:white;./assets/themes/dog/dog-food.svg"
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": "./assets/themes/dog/dog-food.svg"
           }
         ],
         "iconSize": "30,30,center",
