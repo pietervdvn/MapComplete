@@ -756,7 +756,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Triggers a 'download file' popup which will download the contents
      */
     public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt",
-                                                  options?: { mimetype: string | "text/plain" | "text/csv" | "application/vnd.geo+json" | "{gpx=application/gpx+xml}" }) {
+                                                  options?: { mimetype: string | "text/plain" | "text/csv" | "application/vnd.geo+json" | "{gpx=application/gpx+xml}" | "application/json" }) {
         const element = document.createElement("a");
         let file;
         if (typeof (contents) === "string") {

@@ -56,9 +56,17 @@ export default class LayoutConfig {
     public readonly usedImages: string[]
     public readonly extraLink?: ExtraLinkConfig
     
-    constructor(json: LayoutConfigJson, official = true, context?: string) {
+    public readonly definedAtUrl? : string;
+    public readonly definitionRaw?: string;
+    
+    constructor(json: LayoutConfigJson, official = true,options?: {
+        definedAtUrl?: string,
+        definitionRaw?: string
+    }) {
         this.official = official;
         this.id = json.id;
+        this.definedAtUrl = options?.definedAtUrl
+        this.definitionRaw = options?.definitionRaw
         if (official) {
             if (json.id.toLowerCase() !== json.id) {
                 throw "The id of a theme should be lowercase: " + json.id
@@ -67,11 +75,7 @@ export default class LayoutConfig {
                 throw "The id of a theme should match [a-z0-9-_]*: " + json.id
             }
         }
-        if(context === undefined){
-            context = this.id
-        }else{
-            context = context + "." + this.id;
-        }
+         const   context = this.id
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;

@@ -66,7 +66,7 @@
         "cuisine=friture"
       ],
       "description": {
-        "en": "A fastfood-buisiness focused on french fries",
+        "en": "A fastfood-business focused on french fries",
         "nl": "Een fastfood-zaak waar je frieten koopt"
       },
       "preciseInput": {
@@ -78,7 +78,8 @@
     "render": {
       "en": "Restaurant",
       "nl": "Eetgelegenheid",
-      "ca": "Restaurant"
+      "ca": "Restaurant",
+      "de": "Restaurant"
     },
     "mappings": [
       {
@@ -460,7 +461,8 @@
       "question": {
         "en": "Does this fries shop have vegetarian snacks?",
         "nl": "Heeft deze frituur vegetarische snacks?",
-        "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
+        "fr": "Cette friterie est-elle équipée de snacks végétariens ?",
+        "de": "Hat dieser Frittenladen vegetarische Snacks?"
       },
       "mappings": [
         {

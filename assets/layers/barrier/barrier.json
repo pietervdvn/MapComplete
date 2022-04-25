@@ -81,7 +81,8 @@
         "nl": "Een paaltje in de weg",
         "de": "Ein Poller auf der Straße",
         "hu": "Terelőoszlop az úton",
-        "fr": "Un potelet sur le chemin"
+        "fr": "Un potelet sur le chemin",
+        "es": "Un bolardo en la carretera"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -161,7 +162,8 @@
             "hu": "Ez egyetlen oszlop az úton",
             "nl": "Dit is een enkel paaltje in de weg",
             "fr": "C'est un plot unique sur la route",
-            "de": "Dies ist ein einzelner Poller auf der Straße"
+            "de": "Dies ist ein einzelner Poller auf der Straße",
+            "es": "Este es un único bolardo en la carretera"
           }
         },
         {
@@ -171,7 +173,8 @@
             "nl": "Dit zijn fietshekjes die fietsers afremmen",
             "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat",
             "fr": "C'est une barrière visant à ralentir les vélos",
-            "de": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst"
+            "de": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst",
+            "es": "Esta es una barrera ciclista que ralentiza a los ciclistas"
           }
         }
       ]
@@ -252,7 +255,8 @@
         "nl": "Wat voor fietshekjes zijn dit?",
         "de": "Um welche Art Fahrradhindernis handelt es sich?",
         "hu": "Milyen fajta kerékpárakadály ez?",
-        "fr": "Quel est ce type de barrière cyclable ?"
+        "fr": "Quel est ce type de barrière cyclable ?",
+        "es": "¿Qué tipo de barrera ciclista es esta?"
       },
       "condition": "barrier=cycle_barrier",
       "mappings": [
@@ -321,14 +325,16 @@
         "nl": "Maximumbreedte: {maxwidth:physical} m",
         "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
         "fr": "Largeur maximale: {maxwidth:physical} m",
-        "hu": "Legnagyobb szélesség: {maxwidth:physical} m"
+        "hu": "Legnagyobb szélesség: {maxwidth:physical} m",
+        "es": "Anchura máxima: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",
         "nl": "Hoe breed is de ruimte naast de barrière?",
         "de": "Welche Durchfahrtsbreite hat das Hindernis?",
         "hu": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?",
-        "fr": "Quelle est la largeur du passage ?"
+        "fr": "Quelle est la largeur du passage ?",
+        "es": "¿Cómo de ancho es el hueco dejado fuera de la barrera?"
       },
       "condition": {
         "and": [
@@ -352,14 +358,16 @@
         "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
         "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m",
         "hu": "A korlátok közötti távolság (az út irányában): {width:separation} m",
-        "fr": "Espace entre deux barrières successives : {width:separation} m"
+        "fr": "Espace entre deux barrières successives : {width:separation} m",
+        "es": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
         "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
         "de": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
         "hu": "Mekkora távolság van a korlátok között (az út irányában)?",
-        "fr": "Combien d’espace sépare deux barrières successives ?"
+        "fr": "Combien d’espace sépare deux barrières successives ?",
+        "es": "¿Cuánto espacio hay entre las barreras (a lo largo de la longitud de la carretera)?"
       },
       "condition": {
         "or": [
@@ -383,14 +391,16 @@
         "nl": "Breedte van de opening: {width:opening} m",
         "de": "Breite der Öffnung: {width:opening} m",
         "fr": "Largeur de l'ouverture : {width:opening} m",
-        "hu": "Nyílás szélessége: {width:opening} m"
+        "hu": "Nyílás szélessége: {width:opening} m",
+        "es": "Anchura de la apertura: {width:opening} m"
       },
       "question": {
         "en": "How wide is the smallest opening next to the barriers?",
         "nl": "Hoe breed is de smalste opening naast de barrières?",
         "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
         "hu": "Milyen széles a korlátok melletti legkisebb nyílás?",
-        "fr": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?"
+        "fr": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?",
+        "es": "¿Cómo de año es la apertura más pequeña al lado de las barreras?"
       },
       "condition": {
         "or": [
@@ -414,14 +424,16 @@
         "de": "Überschneidung: {overlap} m",
         "hu": "Átfedés: {overlap} m",
         "fr": "Chevauchement : {overlap} m",
-        "nl": "Overlap: {overlap} m"
+        "nl": "Overlap: {overlap} m",
+        "es": "Solapado: {overlap} m"
       },
       "question": {
         "en": "How much overlap do the barriers have?",
         "nl": "Hoeveel overlappen de barrières?",
         "de": "Wie stark überschneiden sich die Barrieren?",
         "hu": "Mekkora a korlátok átfedése?",
-        "fr": "Quel est le chevauchement des barrières ?"
+        "fr": "Quel est le chevauchement des barrières ?",
+        "es": "¿Cuánto se solapan las barreras?"
       },
       "condition": {
         "or": [

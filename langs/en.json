@@ -119,7 +119,7 @@
             "title": "Download visible data",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
-        "error": "Something went wrong...",
+        "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
@@ -203,6 +203,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'Add to home screen' button in the URL bar to do this.",
             "copiedToClipboard": "Link copied to clipboard",
+            "downloadCustomTheme": "Download the configuration for this theme",
+            "downloadCustomThemeHelp": "An experienced contributor can use this file to improve your theme",
             "editThemeDescription": "Add or change questions to this map theme",
             "editThisTheme": "Edit this theme",
             "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
@@ -296,7 +298,7 @@
             "loadingFailed": "Loading notes failed due to {error}",
             "mapExplanation": "The red elements on the next map are all the data points from your dataset. There are <b>{length}</b> elements in your dataset.",
             "noPreviousNotesFound": "No previous import notes found",
-            "nothingNearby": "All of the proposed points have don't have a previous import note nearby",
+            "nothingNearby": "None of the proposed points have an import note nearby",
             "someNearby": "{hasNearby} points do have an already existing import note within {distance} meter",
             "title": "Compare with existing notes",
             "titleLong": "Compare with already existing 'to-import'-notes",
@@ -319,6 +321,7 @@
             "nearbyWarn": "The {count} red elements on the following map will <b>not</b> be imported!",
             "nothingLoaded": "No elements are loaded from OpenStreetMap which match the current layer {name}",
             "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
+            "reloadTheCache": "Clear the cache and query overpass again",
             "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
             "states": {
                 "error": "Could not load latest data from overpass due to {error}",

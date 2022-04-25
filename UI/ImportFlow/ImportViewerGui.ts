@@ -44,6 +44,47 @@ interface NoteState {
     status: "imported" | "already_mapped" | "invalid" | "closed" | "not_found" | "open" | "has_comments"
 }
 
+class DownloadStatisticsButton extends SubtleButton {
+    constructor(states: NoteState[][]) {
+        super(Svg.statistics_svg(), "Download statistics");
+        this.onClick(() => {
+            
+            const st: NoteState[] = [].concat(...states)
+            
+            const fields = [
+                "id",
+                "status",
+                "theme",
+                "date_created",
+                "date_closed",
+                "days_open",
+                "intro",
+                "...comments"
+            ]
+            const values : string[][] = st.map(note => {
+                
+                
+                return [note.props.id+"",
+                    note.status,
+                    note.theme,
+                    note.props.date_created?.substr(0, note.props.date_created.length - 3),
+                    note.props.closed_at?.substr(0, note.props.closed_at.length - 3) ?? "",
+                     JSON.stringify(  note.intro),
+                    ...note.props.comments.map(c => JSON.stringify(c.user)+": "+JSON.stringify(c.text))
+                ]
+            })
+            
+            Utils.offerContentsAsDownloadableFile(
+                [fields, ...values].map(c => c.join(", ")).join("\n"),
+                "mapcomplete_import_notes_overview.csv",
+                {
+                    mimetype: "text/csv"
+                }
+            )
+        })
+    }
+}
+
 class MassAction extends Combine {
     constructor(state: UserRelatedState, props: NoteProperties[]) {
         const textField = ValidatedTextField.ForType("text").ConstructInputElement()
@@ -303,7 +344,9 @@ class ImportInspector extends VariableUiElement {
             contents.push(accordeon)
             const content = new Combine(contents)
             return new LeftIndex(
-                [new TableOfContents(content, {noTopLevel: true, maxDepth: 1}).SetClass("subtle")],
+                [new TableOfContents(content, {noTopLevel: true, maxDepth: 1}).SetClass("subtle"),
+                new DownloadStatisticsButton(perBatch)
+                ],
                 content
             )
 

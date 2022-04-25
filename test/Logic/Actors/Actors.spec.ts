@@ -47,7 +47,7 @@ Utils.injectJsonDownloadForTests(
 )
 
 it("should download the latest version",  () => {
-    const state = new UserRelatedState(new LayoutConfig(<any> bookcaseJson, true, "tests"))
+    const state = new UserRelatedState(new LayoutConfig(<any> bookcaseJson, true))
     const feature = {
         "type": "Feature",
         "id": "node/5568693115",

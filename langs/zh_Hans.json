@@ -1,1 +1,29 @@
-{}
+{
+    "centerMessage": {
+        "loadingData": "加载数据中……",
+        "ready": "完成！",
+        "retrying": "加载数据失败。将在 {count} 秒后重试……",
+        "zoomIn": "放大以查看或编辑数据"
+    },
+    "delete": {
+        "cancel": "取消",
+        "delete": "删除",
+        "explanations": {
+            "hardDelete": "这个点将在OpenStreetMap中被删除。它可以被有经验的贡献者恢复"
+        },
+        "notEnoughExperience": "这个点由其他人创建。",
+        "onlyEditedByLoggedInUser": "这个点仅被您所编辑，您可以安全的删除它。",
+        "useSomethingElse": "使用其他OpenStreetMap编辑器来删除它",
+        "whyDelete": "为什么这个点需要被删除？"
+    },
+    "favourite": {
+        "reload": "重新加载数据"
+    },
+    "general": {
+        "aboutMapcomplete": "<h3>关于MapComplete</h3><p>使用它在<b>特定主题</b>上追加OpenStreetMap信息。 Answer questions, and within minutes your contributions are available everywhere. <b>主题维护者</b>为它定义元素、问题和语言。</p><h3>发现更多</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.</p><ul><li>当嵌入在网站的时候，iframe连接到一个全屏的MapComplete</li><li>全屏版本提供OpenStreetMap信息</li><li>无需登录即可查看，但编辑需要一个OSM账号。</li><li>若您未登录则将被要求登录</li><li>每次当您回答一条问题，您都可以向地图添加新的点</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul><p></p><br><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">the source code</a> or<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a></p><p>想要查看<b>您的进度</b>？查阅<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>上的编辑计数。</p>",
+        "add": {
+            "disableFilters": "禁用所有过滤器",
+            "hasBeenImported": "这个点已经被导入过了"
+        }
+    }
+}

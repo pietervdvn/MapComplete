@@ -294,7 +294,8 @@
         "ru": "<a href='mailto:{email}'>{email}</a>",
         "ja": "<a href='mailto:{email}'>{email}</a>",
         "eo": "<a href='mailto:{email}'>{email}</a>",
-        "nl": "<a href='mailto:{email}'>{email}</a>"
+        "nl": "<a href='mailto:{email}'>{email}</a>",
+        "de": "<a href='mailto:{email}'>{email}</a>"
       },
       "question": {
         "en": "What is the email address of this shop?",
@@ -318,7 +319,8 @@
         "ru": "{opening_hours_table(opening_hours)}",
         "ja": "{opening_hours_table(opening_hours)}",
         "nl": "{opening_hours_table(opening_hours)}",
-        "ca": "{opening_hours_table(opening_hours)}"
+        "ca": "{opening_hours_table(opening_hours)}",
+        "de": "{opening_hours_table(opening_hours)}"
       },
       "question": {
         "en": "What are the opening hours of this shop?",
@@ -374,7 +376,8 @@
       {
         "explanation": {
           "nl": "{title()} is permanent gestopt",
-          "en": "{title()} has closed down permanently"
+          "en": "{title()} has closed down permanently",
+          "de": "{title()} wurde dauerhaft geschlossen"
         },
         "changesetMessage": "shop_closed"
       }

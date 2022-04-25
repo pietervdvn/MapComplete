@@ -122,7 +122,8 @@
         "nb_NO": "Sykkelleie koster {charge}",
         "zh_Hant": "租借單車需要 {charge}",
         "pt_BR": "Custos de empréstimo de bicicleta {charge}",
-        "pt": "Custos de empréstimo de bicicleta {charge}"
+        "pt": "Custos de empréstimo de bicicleta {charge}",
+        "es": "Alquilar una bicicleta cuesta {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -203,7 +204,8 @@
             "ru": "Доступны детские велосипеды",
             "zh_Hant": "提供兒童單車",
             "pt_BR": "Bicicletas para crianças disponíveis",
-            "pt": "Bicicletas para crianças disponíveis"
+            "pt": "Bicicletas para crianças disponíveis",
+            "es": "Bicicletas para niños disponibles"
           }
         },
         {
@@ -217,7 +219,8 @@
             "ru": "Доступны велосипеды для взрослых",
             "zh_Hant": "有提供成人單車",
             "pt_BR": "Bicicletas para adulto disponíveis",
-            "pt": "Bicicletas para adulto disponíveis"
+            "pt": "Bicicletas para adulto disponíveis",
+            "es": "Bicicletas para adultos disponibles"
           }
         },
         {
@@ -231,7 +234,8 @@
             "ru": "Доступны велосипеды для людей с ограниченными возможностями",
             "zh_Hant": "有提供行動不便人士的單車",
             "pt_BR": "Bicicletas para deficientes físicos disponíveis",
-            "pt": "Bicicletas para deficientes físicos disponíveis"
+            "pt": "Bicicletas para deficientes físicos disponíveis",
+            "es": "Bicicletas para discapacitados disponibles"
           }
         }
       ]

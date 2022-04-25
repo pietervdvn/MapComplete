@@ -6,11 +6,143 @@
     "artwork": {
         "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo"
     },
+    "benches": {
+        "description": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes.",
+        "shortDescription": "Un mapa de bancos",
+        "title": "Bancos"
+    },
+    "bicycle_rental": {
+        "description": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que son conocidas por OpenStreetMap",
+        "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
+        "title": "Alquiler de bicicletas"
+    },
+    "binoculars": {
+        "description": "Un mapa con prismáticos fijos en un poste. Suele encontrarse en lugares turísticos, miradores, en lo alto de torres panorámicas u ocasionalmente en una reserva natural.",
+        "shortDescription": "Un mapa con prismáticos fijos",
+        "title": "Binoculares"
+    },
+    "bookcases": {
+        "description": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías. Puedes descubrir nuevas librerías cercanas y, con una cuenta gratuita de OpenStreetMap, añadir rápidamente tus librerías favoritas.",
+        "title": "Mapa de Librerías Abiertas"
+    },
+    "cafes_and_pubs": {
+        "description": "Pubs y bares",
+        "title": "Cafeterías y pubs"
+    },
+    "campersite": {
+        "description": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas. Este es un sitio web y una aplicación web. Los datos se almacenan en OpenStreetMap, por lo que serán gratuitos para siempre y podrán ser reutilizados por cualquier aplicación.",
+        "layers": {
+            "0": {
+                "description": "Sitios de acampada",
+                "name": "Sitios de Acampada",
+                "presets": {
+                    "0": {
+                        "description": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. ",
+                        "title": "Un camping"
+                    }
+                },
+                "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)",
+                        "render": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo"
+                    },
+                    "caravansites-charge": {
+                        "question": "¿Cuánto cobra este lugar?",
+                        "render": "Este lugar cobra {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)",
+                        "render": "Más detalles sobre este lugar:{description}"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Necesitas pagar por su uso"
+                            },
+                            "1": {
+                                "then": "Se puede usar de manera gratuita"
+                            }
+                        },
+                        "question": "¿Este lugar cobra una tarifa?"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Hay acceso a internet"
+                            },
+                            "1": {
+                                "then": "Hay acceso a internet"
+                            },
+                            "2": {
+                                "then": "No hay acceso a internet"
+                            }
+                        },
+                        "question": "¿Este lugar tiene acceso a internet?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tienes que pagar a mayores por el acceso a internet"
+                            },
+                            "1": {
+                                "then": "No tienes que pagar a mayores por el acceso a internet"
+                            }
+                        },
+                        "question": "¿Tienes que pagar por el acceso a internet?"
+                    },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "0": {
+                                "then": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días"
+                            },
+                            "1": {
+                                "then": "No, no hay huéspedes permanentes aquí"
+                            },
+                            "2": {
+                                "then": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
+                            }
+                        },
+                        "question": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
+                    },
+                    "caravansites-name": {
+                        "question": "¿Cómo se llama este lugar?",
+                        "render": "Este lugar se llama {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Este lugar tiene un vertedero sanitario"
+                            },
+                            "1": {
+                                "then": "Este lugar no tiene vertedero sanitario"
+                            }
+                        },
+                        "question": "¿Este lugar tiene un vertedero sanitario?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Este lugar cuenta con sanitarios"
+                            },
+                            "1": {
+                                "then": "Este lugar no tiene sanitarios"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "ghostbikes": {
         "title": "Bicicleta blanca"
     },
     "personal": {
         "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
         "title": "Interficie personal"
+    },
+    "trees": {
+        "description": "Mapa de todos los Árboles",
+        "shortDescription": "Mapa de los Árboles",
+        "title": "Árboles"
     }
 }

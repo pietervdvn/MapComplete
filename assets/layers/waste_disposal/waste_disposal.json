@@ -2,11 +2,13 @@
   "id": "waste_disposal",
   "name": {
     "en": "Waste Disposal Bins",
-    "nl": "Afvalcontainers voor huishoudelijk afval"
+    "nl": "Afvalcontainers voor huishoudelijk afval",
+    "de": "Mülleimer"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
-    "nl": "Een grote afvalcontainer voor (huishoudelijk) afval"
+    "nl": "Een grote afvalcontainer voor (huishoudelijk) afval",
+    "de": "Entsorgungsbehälter, mittlerer bis großer Behälter zur Entsorgung von (Haushalts-)Abfällen"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -16,7 +18,8 @@
   "title": {
     "render": {
       "en": "Waste Disposal",
-      "nl": "Afvalbak"
+      "nl": "Afvalbak",
+      "de": "Abfallentsorgung"
     }
   },
   "mapRendering": [
@@ -32,14 +35,16 @@
     {
       "title": {
         "en": "a waste disposal bin",
-        "nl": "Een afvalcontainer"
+        "nl": "Een afvalcontainer",
+        "de": "ein Abfalleimer"
       },
       "tags": [
         "amenity=waste_disposal"
       ],
       "description": {
         "en": "Medium to large bin for disposal of (household) waste",
-        "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval"
+        "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval",
+        "de": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen"
       }
     }
   ],
@@ -48,11 +53,13 @@
       "id": "access",
       "render": {
         "en": "Access: {access}",
-        "nl": "Toegankelijk voor {access}"
+        "nl": "Toegankelijk voor {access}",
+        "de": "Zugang: {access}"
       },
       "question": {
         "en": "Who can use this waste disposal bin?",
-        "nl": "Wie mag deze afvalcontainer gebruiken?"
+        "nl": "Wie mag deze afvalcontainer gebruiken?",
+        "de": "Wer kann diese Mülltonne benutzen?"
       },
       "freeform": {
         "key": "access",
@@ -63,21 +70,24 @@
           "if": "access=yes",
           "then": {
             "en": "This bin can be used by anyone",
-            "nl": "Iedereen mag deze afvalcontainer gebruiken"
+            "nl": "Iedereen mag deze afvalcontainer gebruiken",
+            "de": "Dieser Behälter kann von jedem benutzt werden"
           }
         },
         {
           "if": "access=no",
           "then": {
             "en": "This bin is private",
-            "nl": "Deze afvalcontainer is enkel voor privaat gebruik"
+            "nl": "Deze afvalcontainer is enkel voor privaat gebruik",
+            "de": "Dieser Behälter ist privat"
           }
         },
         {
           "if": "access=residents",
           "then": {
             "en": "This bin is only for residents",
-            "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken"
+            "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken",
+            "de": "Diese Mülltonne ist nur für Anwohner"
           }
         }
       ]
@@ -86,28 +96,32 @@
       "id": "disposal-location",
       "question": {
         "en": "Where is this container located?",
-        "nl": "Waar bevindt deze container zich?"
+        "nl": "Waar bevindt deze container zich?",
+        "de": "Wo befindet sich dieser Container?"
       },
       "mappings": [
         {
           "if": "location=underground",
           "then": {
             "en": "This is an underground container",
-            "nl": "Dit is een ondergrondse container"
+            "nl": "Dit is een ondergrondse container",
+            "de": "Dies ist ein unterirdischer Container"
           }
         },
         {
           "if": "location=indoor",
           "then": {
             "en": "This container is located indoors",
-            "nl": "Deze container bevindt zich binnen"
+            "nl": "Deze container bevindt zich binnen",
+            "de": "Dieser Container befindet sich in einem Gebäude"
           }
         },
         {
           "if": "location=",
           "then": {
             "en": "This container is located outdoors",
-            "nl": "Deze container is buiten"
+            "nl": "Deze container is buiten",
+            "de": "Dieser Container befindet sich im Freien"
           }
         }
       ]
@@ -120,7 +134,8 @@
         {
           "question": {
             "en": "Only public access",
-            "nl": "Enkel publiek toegankelijke afvalcontainers"
+            "nl": "Enkel publiek toegankelijke afvalcontainers",
+            "de": "Nur öffentlich zugänglich"
           },
           "osmTags": "access=yes"
         }

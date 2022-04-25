@@ -39,7 +39,7 @@
     },
     "general": {
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
-        "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Nutzen Sie MapComplete, um OpenStreetMap-Informationen zu einem <b>einzigen Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Der <b>Theme-Maintainer</b> definiert Elemente, Fragen und Sprachen dafür.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, aber das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Punkte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie <b>ein Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie <b>bei der Übersetzung helfen</b>? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie <b>Ihren Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Nutzen Sie MapComplete, um OpenStreetMap-Informationen zu einem <b>bestimmten Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Der <b>Theme-Maintainer</b> definiert Elemente, Fragen und Sprachen dafür.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, aber das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Punkte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie <b>ein Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie <b>bei der Übersetzung helfen</b>? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie <b>Ihren Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Füge {category} hinzu",
             "addNewMapLabel": "Hier klicken, um ein neues Element hinzuzufügen",
@@ -119,6 +119,7 @@
             "title": "Sichtbare Daten herunterladen",
             "uploadGpx": "Lade deinen Track auf OpenStreetMap hoch"
         },
+        "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
         "examples": "Beispiele",
         "fewChangesBefore": "Bitte beantworten Sie ein paar Fragen zu bestehenden Punkten, bevor Sie einen neuen Punkt hinzufügen.",
@@ -148,9 +149,10 @@
             "streetcomplete": "Eine ähnliche App ist <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Der Name dieser {category} ist $$$",
-        "next": "Nächstes",
+        "next": "Weiter",
         "noNameCategory": "{category} ohne Namen",
         "noTagsSelected": "Keine Tags ausgewählt",
+        "notValid": "Gültigen Wert auswählen, um fortzufahren",
         "number": "Zahl",
         "oneSkippedQuestion": "Eine Frage wurde übersprungen",
         "openStreetMapIntro": "<h3>Eine offene Karte</h3><p>Eine Karte, die jeder frei nutzen und bearbeiten kann. Ein einziger Ort, um alle Geoinformationen zu speichern. Unterschiedliche, kleine, inkompatible und veraltete Karten werden nirgendwo gebraucht.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> ist nicht die feindliche Karte. Die Kartendaten können frei verwendet werden (mit <a href=\"https://osm.org/copyright\" target=\"_blank\">Benennung und Veröffentlichung von Änderungen an diesen Daten</a>). Jeder kann neue Daten hinzufügen und Fehler korrigieren. Diese Webseite nutzt OpenStreetMap. Alle Daten stammen von dort, und Ihre Antworten und Korrekturen werden überall verwendet.</p><p>Viele Menschen und Anwendungen nutzen bereits OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>; auch die Kartendaten von Facebook, Instagram, Apple-maps und Bing-maps stammen (teilweise) von OpenStreetMap.</p>",
@@ -276,16 +278,79 @@
         "willBePublished": "Ihr Bild wird veröffentlicht "
     },
     "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "geojson herunterladen",
+            "giveDescription": "Bitte schreiben Sie eine kurze Beschreibung für jemanden, der die Notiz sieht. Eine gute Notiz beschreibt, was der Mitwirkende zu tun hat, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie in der Nähe sind, könnten Sie bitte überprüfen und angeben, ob die Bank existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
+            "giveSource": "Was ist die Quelle dieser Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
+            "giveWikilink": "Auf welcher Wikiseite gibt es weitere Informationen zu diesem Import?",
+            "intro": "Bevor Sie {count} Notizen hinzufügen, geben Sie bitte einige zusätzliche Informationen an.",
+            "orDownload": "Alternativ können Sie den Datensatz auch herunterladen und direkt importieren",
+            "shouldBeOsmWikilink": "Link zu einer Seite auf wiki.openstreetmap.org erwartet",
+            "shouldBeUrl": "Keine gültige URL",
+            "shouldNotBeHomepage": "Nein, die Homepage ist auch nicht erlaubt. Geben Sie die URL einer geeigneten Wikiseite ein, die Ihren Import dokumentiert",
+            "title": "Metadaten angeben"
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "Alle vorgeschlagenen Punkte haben (oder hatten) bereits eine Importnotiz",
+            "loading": "Notizen von OSM abrufen",
+            "loadingFailed": "Laden von Notizen fehlgeschlagen aufgrund von {error}",
+            "mapExplanation": "Die roten Elemente auf der nächsten Karte sind alle Datenpunkte aus Ihrem Datensatz. Es gibt <b>{length}</b> Elemente in Ihrem Datensatz.",
+            "noPreviousNotesFound": "Keine früheren Importnotizen gefunden",
+            "nothingNearby": "Alle vorgeschlagenen Punkte haben keine vorherige Importnotiz in der Nähe",
+            "someNearby": "{hasNearby} Punkte haben eine bereits eine Importnotiz innerhalb {distance} Meter",
+            "title": "Mit vorhandenen Hinweisen vergleichen",
+            "titleLong": "Mit bereits vorhandenen 'zu-importieren'-Notizen vergleichen",
+            "wontBeImported": "Diese Datenpunkte werden <i>nicht</i> importiert und sind als rote Punkte auf der Karte unten dargestellt"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "Ich habe die (lokale) Community wegen dieses Imports kontaktiert",
+            "licenseIsCompatible": "Die Lizenz der zu importierenden Daten erlaubt es, sie in OSM zu importieren. Sie dürfen kommerziell weiterverteilt werden, mit nur minimaler Namensnennung",
+            "readImportGuidelines": "Ich habe die Importrichtlinien im OSM-Wiki gelesen",
+            "title": "Lizenz und Gemeinschaft",
+            "titleLong": "Haben Sie den Importvorgang durchlaufen?",
+            "wikipageIsMade": "Der Vorgang ist im OSM-Wiki dokumentiert (diesen Link benötigen Sie später)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "Der Cache ist abgelaufen",
+            "downloadOverpassData": "Die geladene geojson Datei von overpass herunterladen",
+            "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
+            "loadedDataAge": "Geladene Daten stammen aus dem Cache und sind {age} alt",
+            "mapShowingNearbyIntro": "Die folgende Karte zeigt zu importierende Objekte, die ein OSM-Objekt enthalten ",
+            "nearbyWarn": "Die {count} roten Elemente auf der folgenden Karte werden <b>nicht</b> importiert!",
+            "nothingLoaded": "Es werden keine Elemente aus OpenStreetMap geladen, die dem aktuellen Layer {name} entsprechen",
+            "osmLoaded": "{count} Elemente werden aus OpenStreetMap geladen, die dem Layer <b>{name}</b> entsprechen.",
+            "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten",
+            "states": {
+                "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
+                "idle": "Lokalen Speicher überprüfen...",
+                "running": "Abfrage bei overpass...",
+                "unexpected": "Unerwarteter Zustand {state}"
+            },
+            "title": "Mit vorhandenen Daten vergleichen",
+            "titleLive": "Live-Daten auf OSM",
+            "titleNearby": "Objekte in der Nähe",
+            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {current}"
+        },
+        "createNotes": {
+            "creating": "<b>{count}</b> Notizen von {total} erstellt",
+            "done": "Alle {count} Notizen wurden erstellt!",
+            "loading": "Bitte warten, Daten werden geladen...",
+            "openImportViewer": "Sehen Sie den Fortschritt Ihrer Notizen im 'import_viewer'",
+            "title": "Notizerstellung"
+        },
+        "gotoImportViewer": "Vorherige Importe überprüfen",
         "introduction": {
-            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer der vorhandenen MapComplete-Ebenen übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird ein einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
-            "importFormat": "Der Hinweistext sollte folgendes Format haben, um aufgenommen zu werden: <br><div class=\"literal-code\">[Eine kleine Einführung]<br>https://mapcomplete.osm.be/[themenname].html?[Parameter wie lat und lon]#import<br>[alle Tags des Objekts] </div>"
+            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Importer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
+            "importFormat": "Der Hinweistext sollte das folgende Format haben, um aufgenommen zu werden",
+            "title": "Einführung"
         },
         "login": {
-            "lockNotice": "Diese Seite ist gesperrt. Du brauchst die Änderungen {importHelperUnlock} bevor du die Seite öffnen kannst.",
-            "loggedInWith": "Du bist eingeloggt als <b>{name}</b> und hast {csCount} Änderungen",
-            "loginIsCorrect": "<b>{name}</b> ist der richtige Account um Importnotizen zu erstellen.",
-            "loginRequired": "Sie müssen eingeloggt sein, um fortzufahren",
-            "userAccountTitle": "Wähle einen Benutzeraccount"
+            "lockNotice": "Diese Seite ist gesperrt. Zum Zugang werden {importHelperUnlock} Änderungssätze benötigt.",
+            "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungen vorgenommen",
+            "loginIsCorrect": "<b>{name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
+            "loginRequired": "Bitte anmelden, um fortzufahren",
+            "title": "Anmeldung",
+            "userAccountTitle": "Benutzerkonto auswählen"
         },
         "mapPreview": {
             "autodetected": "Die Ebene wurde anhand der Eigenschaften automatisch abgezogen",
@@ -294,11 +359,17 @@
             "selectLayer": "Zu welcher Ebene passt dieser Import?",
             "title": "Kartenvorschau"
         },
+        "noteParts": {
+            "datasource": "Originaldaten von {source}",
+            "importEasily": "Diesen Punkt einfach mit MapComplete hinzufügen:",
+            "wikilink": "Weitere Informationen über diesen Import unter {wikilink}"
+        },
         "previewAttributes": {
             "allAttributesSame": "Alle zu importierenden Objekte haben diesen Tag",
             "inspectDataTitle": "Daten von {count} zu importierenden Objekten prüfen",
-            "inspectLooksCorrect": "Die Werte sehen richtig aus",
-            "someHaveSame": "{count} der zu importierenden Objekte haben dieses Tag, das sind {percentage}% der Gesamtzahl"
+            "inspectLooksCorrect": "Diese Werte sehen korrekt aus",
+            "someHaveSame": "{count} zu importierende Objekte haben diesen Tag, das sind {percentage}% der Gesamtanzahl",
+            "title": "Attribute prüfen"
         },
         "selectFile": {
             "description": "Wähle eine .csv oder .geojson Datei um anzufangen",
@@ -312,8 +383,20 @@
             "fileFormatDescriptionGeoJson": "In der geojson-Datei sollten nur Punkte enthalten sein. Die Eigenschaften sollten genau die Eigenschaften sein, die in OpenStreetMap verwendet werden sollen",
             "loadedFilesAre": "Die Datei {file} ist geladen",
             "noFilesLoaded": "Keine Datei geladen",
-            "title": "Wähle eine Datei"
+            "title": "Datei auswählen"
         },
+        "selectTheme": {
+            "displayNonMatchingCount": "{length} Objekte stimmen nicht mit Voreinstellungen überein",
+            "intro": "Alle folgenden Themen zeigen die Importhinweise an. Die Notiz auf OpenStreetMap kann jedoch nur mit einem einzigen Thema verknüpft werden. Wählen Sie das Thema, mit dem die erstellten Notizen verknüpft werden sollen",
+            "misMatch": "Eigenschaft mit Schlüssel {k} hat nicht den erwarteten Wert {v}; stattdessen ist es {properties}",
+            "missing": "Erwartet $k}={v}, aber es fehlt komplett",
+            "needsTags": "{title} benötigt tags {tags}",
+            "noMatchingPresets": "Dieses Thema hat keine Voreinstellungen geladen. Daher werden Importe hier nicht funktionieren",
+            "notApplicable": "Voreinstellung {title} ist nicht anwendbar:",
+            "title": "Thema auswählen",
+            "unmatchedTitle": "Die folgenden Elemente stimmen mit keiner Voreinstellung überein"
+        },
+        "testMode": "Testmodus - Notizen werden nicht importiert",
         "title": "Import-Helfer"
     },
     "importInspector": {
@@ -362,7 +445,7 @@
         "zoomInFurther": "Weiter vergrößern, um die Verschiebung zu bestätigen"
     },
     "multi_apply": {
-        "autoApply": "Wenn Sie die Attribute {attr_names} ändern, werden diese Attribute automatisch auch auf {count} anderen Objekten geändert"
+        "autoApply": "Wenn Sie die Attribute {attr_names} ändern, diese Änderung automatisch auch auf {count} andere Objekte angewendet"
     },
     "notes": {
         "addAComment": "Füge einen Kommentar hinzu",
@@ -471,6 +554,7 @@
                     "title": "Sammeln offener Daten"
                 },
                 "usecaseMapDifferentSources": {
+                    "intro": "Man könnte zum Beispiel eine Karte mit allen Bänken in einer Stadt erstellen, die auf den von OpenStreetMap bekannten Bänken basiert. Diese gedruckte Karte muss einen klaren Hinweis enthalten, dass die Kartendaten auf OpenStreetMap basieren. Stellt der Kartenmacher fest, dass in einem bestimmten Gebiet Bänke fehlen, und fügt diese auf der gedruckten Karte hinzu, sind die Daten zu den fehlenden Bänken automatisch auch offene Daten. Das bedeutet, dass ein OpenStreetMap-Mitwirkender die gedruckte Karte nehmen und sie verwenden darf, um die fehlenden Bänke wieder in OpenStreetMap einzufügen. Dieser Mitwirkende hat auch das Recht, den Datensatz der fehlenden Bänke anzufordern, der ebenfalls bereitgestellt werden sollte.<p></p><p>Natürlich kann eine Karte nur mit Bänken langweilig sein. Der Kartenersteller könnte auch beschließen, eine Ebene mit Geschäften hinzuzufügen, die möglicherweise von einem anderen Geodatenanbieter unter einer anderen Lizenz bezogen werden. Dies ist zulässig, wenn auf der Karte deutlich angegeben wird, dass die Bänke von OSM (unter ODBL) stammen und die Geschäfte eine andere Quelle haben (eventuell mit einem \"All rights reserved\"). Wenn der Kartenersteller z. B. feststellt, dass OSM über ausgezeichnete Daten zu Bänken in einem Teil der Stadt verfügt und der Closed-Source-Anbieter über ausgezeichnete Daten zu Bänken in einem anderen Teil der Stadt, könnte die Zusammenführung dieser Datensätze zu einem einzigen problematisch sein: </p>",
                     "li0": "die offene Lizenz würde verlangen, dass die Modifikationen offen wiederveröffentlicht werden…",
                     "li1": "...wohingegen die All-Rights-Reserved-Lizenz dies untersagen würde.",
                     "outro": "Folglich ist diese Art der Vermischung nicht erlaubt",
@@ -487,7 +571,7 @@
             }
         },
         "indexPage": {
-            "button": "Erfahren Sie mehr über unsere Dienstleistungen",
+            "button": "Mehr über unsere Dienste erfahren",
             "hook": "Benötigen Sie professionelle Unterstützung?",
             "hookMore": "Wir können bei der Erstellung von Umfragen, Datenimporten und OpenStreetMap-Beratung helfen"
         },

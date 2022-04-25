@@ -209,7 +209,8 @@
       "id": "Opening-hours",
       "question": {
         "en": "When are these toilets opened?",
-        "nl": "Wanneer zijn deze toiletten open?"
+        "nl": "Wanneer zijn deze toiletten open?",
+        "de": "Wann sind diese Toiletten geöffnet?"
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -221,7 +222,8 @@
           "if": "opening_hours=24/7",
           "then": {
             "en": "Opened 24/7",
-            "nl": "Altijd open"
+            "nl": "Altijd open",
+            "de": "Durchgehend geöffnet"
           }
         }
       ]
@@ -445,7 +447,8 @@
           "if": "toilets:paper_supplied=yes",
           "then": {
             "en": "This toilet is equipped with toilet paper",
-            "nl": "Deze toilet is voorzien van toiletpapier"
+            "nl": "Deze toilet is voorzien van toiletpapier",
+            "de": "Diese Toilette ist mit Toilettenpapier ausgestattet"
           }
         },
         {
@@ -579,6 +582,7 @@
   ],
   "description": {
     "en": "A layer showing (public) toilets",
-    "nl": "Een laag die publieke toiletten toont"
+    "nl": "Een laag die publieke toiletten toont",
+    "de": "Eine Ebene mit (öffentlichen) Toiletten"
   }
 }

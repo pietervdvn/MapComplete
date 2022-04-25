@@ -13,7 +13,9 @@
     "pt_BR": "Bancadas",
     "id": "Bangku",
     "hu": "Padok",
-    "ca": "Bancs"
+    "ca": "Bancs",
+    "es": "Bancos",
+    "zh_Hans": "长椅"
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -28,11 +30,13 @@
     "pt_BR": "Um mapa de bancadas",
     "hu": "Padtérkép",
     "id": "Peta bangku",
-    "ca": "Un mapa de bancs"
+    "ca": "Un mapa de bancs",
+    "es": "Un mapa de bancos",
+    "zh_Hans": "长椅地图"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
-    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten.",
+    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Konto können Sie neue Bänke eintragen oder Details existierender Bänke bearbeiten.",
     "fr": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
     "nl": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account kan je informatie verbeteren en nieuwe zitbanken toevoegen.",
     "it": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
@@ -40,7 +44,8 @@
     "ja": "このマップには、OpenStreetMapに記録されているすべてのベンチが表示されます。個々のベンチ、および公共交通機関の停留所または避難場所に属するベンチです。OpenStreetMapアカウントを使用すると、新しいベンチをマップしたり、既存のベンチの詳細を編集したりできます。",
     "zh_Hant": "這份地圖顯示開放街圖上所有記錄的長椅：單獨的長椅，屬於大眾運輸站點或涼亭的長椅。只要有開放街圖帳號，你可以新增長椅或是編輯既有長椅的詳細內容。",
     "hu": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit.",
-    "ca": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic. Amb un compte d'OpenStreetMap pots afegir nous bancs o editar detalls dels existents."
+    "ca": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic. Amb un compte d'OpenStreetMap pots afegir nous bancs o editar detalls dels existents.",
+    "es": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes."
   },
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",
