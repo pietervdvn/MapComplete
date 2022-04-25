@@ -39,7 +39,7 @@
             "da": "en hundeskov"
           },
           "tags": [
-              "leisure=dog_park"
+            "leisure=dog_park"
           ],
           "description": {
             "en": "A place for dogs, where they can run unleashed",
@@ -205,21 +205,21 @@
         "=presets": [],
         "source": {
           "=osmTags": {
-          "and": [
-            {
-              "or": [
-                "amenity=restaurant",
-                "amenity=cafe"
-              ]
-            },
-            {
-              "or": [
-                "dog=unleashed",
-                "dog=leashed",
-                "dog=yes"
-              ]
-            }
-          ]
+            "and": [
+              {
+                "or": [
+                  "amenity=restaurant",
+                  "amenity=cafe"
+                ]
+              },
+              {
+                "or": [
+                  "dog=unleashed",
+                  "dog=leashed",
+                  "dog=yes"
+                ]
+              }
+            ]
           }
         }
       }
@@ -242,7 +242,7 @@
             {
               "if": "name~*",
               "then": {
-              "*": "{name}"
+                "*": "{name}"
               }
             }
           ]
@@ -263,7 +263,7 @@
                     ]
                   },
                   "then": "./assets/themes/dog/petshop.svg"
-              }
+                }
               ]
             },
             "iconSize": "30,30,center"
@@ -274,19 +274,26 @@
             "width": 5
           }
         ],
-        "presets": [],
+        "presets": [
+          {
+            "tags": [
+              "shop=yes",
+              "dog=yes"
+            ]
+          }
+        ],
         "source": {
           "=osmTags": {
             "and": [
               "shop~*",
               {
-              "or": [
-                "dog=leashed",
-                "dog=yes",
-                "shop=pet"
-              ]
+                "or": [
+                  "dog=leashed",
+                  "dog=yes",
+                  "shop=pet"
+                ]
               }
-          ]
+            ]
           }
         }
       }
@@ -398,20 +405,21 @@
         "minzoom": 19,
         "filter": null,
         "presets": [
-        {
-          "title": {
-            "en": "dog-friendly shop",
-            "da": "EN hundevenlig butik"
-          },
-          "tags": [
-            "dog=yes",
-            "shop=yes"
-          ],
-          "description": {
-            "en": "A shop whery you can bring a dog almost everywhere",
-            "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt"
+          {
+            "title": {
+              "en": "dog-friendly shop",
+              "da": "EN hundevenlig butik"
+            },
+            "tags": [
+              "dog=yes",
+              "shop=yes"
+            ],
+            "description": {
+              "en": "A shop whery you can bring a dog almost everywhere",
+              "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt"
+            }
           }
-        }],
+        ],
         "name": null
       }
     }
