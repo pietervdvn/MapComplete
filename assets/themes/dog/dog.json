@@ -142,14 +142,14 @@
               "if": "small_dog=separate",
               "then": {
                 "en": "Have separate area for puppies and small dogs",
-                "da": "Har en indhegning til hvalpe og sm&aring; hunde "
+                "da": "Har en indhegning til hvalpe og sm&aring; hunde"
               }
             },
             {
               "if": "small_dog=shared",
               "then": {
-                "en": "fenced: No",
-                "da": "indhegnet: Nej"
+                "en": "Does <strong>not</strong> have a separate area for puppies and small dogs",
+                "da": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde"
               }
             }
           ],
