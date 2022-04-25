@@ -198,10 +198,10 @@
               "point",
               "centroid"
             ],
-            "icon": "./assets/themes/dog/dog-food.svg"
+            "icon": "./assets/themes/dog/dog-food.svg",
+            "iconSize": "30,30,center"
           }
         ],
-        "iconSize": "30,30,center",
         "=presets": [],
         "source": {
           "=osmTags": {
@@ -342,6 +342,14 @@
           ],
           "icon": "./assets/themes/dog/Veterinary-First-Aid.svg",
           "iconSize": "30,30,center",
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
+          },
           "iconBadges": [
             {
               "if": "opening_hours~*",
