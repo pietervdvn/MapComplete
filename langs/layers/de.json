@@ -467,6 +467,12 @@
                             "1": "Tandems"
                         }
                     }
+                },
+                "renderings": {
+                    "0": {
+                        "question": "Wie viele type_plural können hier gemietet werden? ",
+                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
+                    }
                 }
             },
             "bicycle-types": {
