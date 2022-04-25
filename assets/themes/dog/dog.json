@@ -72,7 +72,15 @@
             "centroid"
           ],
           "icon": "./assets/themes/dog/dog-park.svg",
-          "iconSize": "40,40,center"
+          "iconSize": "40,40,center",
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
+          }
         },
         {
           "#": "Rendering of a line",
