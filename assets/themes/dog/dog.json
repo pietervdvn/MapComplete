@@ -184,7 +184,7 @@
           "en": "Dog friendly eateries",
           "da": "Hundevenlige madsteder"
         },
-        "=mapRendering": [
+        "mapRendering": [
           {
             "location": [
               "point",
@@ -259,7 +259,6 @@
               ]
             },
             "iconSize": "30,30,center"
-           
           },
           {
             "#": "Rendering of a line",
@@ -267,7 +266,6 @@
             "width": 5
           }
         ],
-        "=presets": [],
         "source": {
           "=osmTags": {
             "and": [
@@ -335,7 +333,13 @@
             "centroid"
           ],
           "icon": "./assets/themes/dog/Veterinary-First-Aid.svg",
-          "iconSize": "30,30,center"
+          "iconSize": "30,30,center",
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen"
+            }
+          ]
         },
         {
           "color": "#ff0",
@@ -346,6 +350,7 @@
         "website",
         "reviews",
         "phone",
+        "opening_hours",
         {
           "question": {
             "en": "What is the name of this veterinarian?",
@@ -375,6 +380,20 @@
       "override": {
         "minzoom": 19,
         "filter": null,
+        "presets": [
+        {
+          "title": {
+            "en": "dog-friendly shop",
+            "da": "EN hundevenlig butik"
+          },
+          "tags": [
+              "dog=yes"
+          ],
+          "description": {
+            "en": "A shop whery you can bring a dog almost everywhere",
+            "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt"
+          }
+        }],
         "name": null
       }
     }
