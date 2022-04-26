@@ -624,7 +624,8 @@
         "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
         "missing": "{count} unübersetzte Zeichenfolgen",
-        "notImmediate": "Die Übersetzungen werden nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
+        "notImmediate": "Die Übersetzungen werden nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage",
+        "allMissing": "Noch keine Übersetzungen"
     },
     "validation": {
         "color": {
