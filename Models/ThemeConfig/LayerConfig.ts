@@ -27,7 +27,6 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import {And} from "../../Logic/Tags/And";
 import {Overpass} from "../../Logic/Osm/Overpass";
 import Constants from "../Constants";
-import undefinedError = Mocha.utils.undefinedError;
 
 export default class LayerConfig extends WithContextLoader {
 
