@@ -519,7 +519,7 @@
             "0": {
                 "tagRenderings": {
                     "facadegardens-description": {
-                        "render": "Más detalles: {descripción}",
+                        "render": "Más detalles: {description}",
                         "question": "Información descriptiva complementaria sobre el jardín (si es necesaria pero no se describe arriba)"
                     },
                     "facadegardens-start_date": {
