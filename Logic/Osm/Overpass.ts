@@ -4,8 +4,6 @@ import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as osmtogeojson from "osmtogeojson";
-// @ts-ignore
-import {Tag} from "../Tags/Tag"; // used in doctest
 
 /**
  * Interfaces overpass to get all the latest data
@@ -58,6 +56,10 @@ export class Overpass {
     }
 
     /**
+     * Constructs the actual script
+     * 
+     * import {Tag} from "../Tags/Tag";
+     * 
      * new Overpass(new Tag("key","value"), [], "").buildScript("{{bbox}}") // => `[out:json][timeout:90]{{bbox}};(nwr["key"="value"];);out body;out meta;>;out skel qt;`
      */
     public buildScript(bbox: string, postCall: string = "", pretty = false): string {
