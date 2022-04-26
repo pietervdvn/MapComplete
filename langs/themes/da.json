@@ -93,7 +93,7 @@
                         "question": "Har dette sted toiletter?"
                     },
                     "caravansites-capacity": {
-                        "render": "{kapacitet} campister kan bruge dette sted på samme tid",
+                        "render": "{capacity} campister kan bruge dette sted på samme tid",
                         "question": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)"
                     },
                     "caravansites-description": {
