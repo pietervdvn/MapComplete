@@ -348,7 +348,7 @@
             },
             "bicycle_library-name": {
                 "question": "Hvad hedder dette cykelbibliotek?",
-                "render": "Dette cykelbibliotek hedder {navn}"
+                "render": "Dette cykelbibliotek hedder {name}"
             }
         },
         "title": {
