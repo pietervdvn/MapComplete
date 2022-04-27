@@ -4,10 +4,6 @@ import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as osmtogeojson from "osmtogeojson";
-<<<<<<< HEAD
-
-=======
->>>>>>> b54b5061cc72488ceb007177275fb600cce0a0dd
 
 /**
  * Interfaces overpass to get all the latest data
