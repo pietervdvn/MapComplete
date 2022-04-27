@@ -4,8 +4,6 @@ import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as osmtogeojson from "osmtogeojson";
-// @ts-ignore
-import {Tag} from "../Tags/Tag"; // used in doctest
 
 /**
  * Interfaces overpass to get all the latest data
