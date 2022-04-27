@@ -24,7 +24,6 @@ import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import WikipediaBox from "./Wikipedia/WikipediaBox";
-import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import MultiApply from "./Popup/MultiApply";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import {SubtleButton} from "./Base/SubtleButton";
@@ -48,6 +47,7 @@ import {SubstitutedTranslation} from "./SubstitutedTranslation";
 import {TextField} from "./Input/TextField";
 import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import {Translation} from "./i18n/Translation";
+import {AllTagsPanel} from "./AllTagsPanel";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -56,49 +56,6 @@ export interface SpecialVisualization {
     example?: string,
     args: { name: string, defaultValue?: string, doc: string, required?: false | boolean }[],
     getLayerDependencies?: (argument: string[]) => string[]
-}
-
-export class AllTagsPanel extends VariableUiElement {
-
-    constructor(tags: UIEventSource<any>, state?) {
-
-        const calculatedTags = [].concat(
-            SimpleMetaTagger.lazyTags,
-            ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
-
-
-        super(tags.map(tags => {
-            const parts = [];
-            for (const key in tags) {
-                if (!tags.hasOwnProperty(key)) {
-                    continue
-                }
-                let v = tags[key]
-                if (v === "") {
-                    v = "<b>empty string</b>"
-                }
-                parts.push([key, v ?? "<b>undefined</b>"]);
-            }
-
-            for (const key of calculatedTags) {
-                const value = tags[key]
-                if (value === undefined) {
-                    continue
-                }
-                let type = "";
-                if(typeof value !== "string"){
-                    type = " <i>"+(typeof value)+"</i>"
-                }
-                parts.push(["<i>" + key + "</i>", value])
-            }
-
-            return new Table(
-                ["key", "value"],
-                parts
-            )
-                .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
-        }))
-    }
 }
 
 class CloseNoteButton implements SpecialVisualization {
@@ -347,6 +304,9 @@ export default class SpecialVisualizations {
                     example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
                     constr: (state, tagSource, args, _) => {
 
+                        if(state === undefined){
+                            return undefined
+                        }
                         const keys = [...args]
                         keys.splice(0, 1)
                         const featureStore = state.allElements.ContainingFeatures
@@ -655,7 +615,7 @@ export default class SpecialVisualizations {
                                 if (value === undefined) {
                                     return undefined
                                 }
-                                const allUnits = [].concat(...state.layoutToUse.layers.map(lyr => lyr.units))
+                                const allUnits = [].concat(...(state?.layoutToUse?.layers?.map(lyr => lyr.units) ?? []))
                                 const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
                                 if (unit === undefined) {
                                     return value;

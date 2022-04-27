@@ -16,7 +16,7 @@ export class VariableUiElement extends BaseUIElement {
     }
 
     AsMarkdown(): string {
-        const d = this._contents.data;
+        const d = this._contents?.data;
         if (typeof d === "string") {
             return d;
         }
@@ -29,7 +29,7 @@ export class VariableUiElement extends BaseUIElement {
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span");
         const self = this;
-        this._contents.addCallbackAndRun((contents) => {
+        this._contents?.addCallbackAndRun((contents) => {
             if (self.isDestroyed) {
                 return true;
             }

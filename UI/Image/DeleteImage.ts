@@ -55,7 +55,7 @@ export default class DeleteImage extends Toggle {
                 tags.map(tags => (tags[key] ?? "") !== "")
             ),
             undefined /*Login (and thus editing) is disabled*/,
-            state.osmConnection.isLoggedIn
+            state?.osmConnection?.isLoggedIn
         )
         this.SetClass("cursor-pointer")
     }

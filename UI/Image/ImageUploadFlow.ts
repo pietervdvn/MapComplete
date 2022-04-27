@@ -169,7 +169,7 @@ export class ImageUploadFlow extends Toggle {
                 state?.osmConnection?.isLoggedIn
             ),
             undefined /* Nothing as the user badge is disabled*/,
-            state.featureSwitchUserbadge
+            state?.featureSwitchUserbadge
         )
 
     }

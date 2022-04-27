@@ -13,7 +13,7 @@ export default class Toggle extends VariableUiElement {
 
     constructor(showEnabled: string | BaseUIElement, showDisabled: string | BaseUIElement, isEnabled: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
         super(
-            isEnabled.map(isEnabled => isEnabled ? showEnabled : showDisabled)
+            isEnabled?.map(isEnabled => isEnabled ? showEnabled : showDisabled)
         );
         this.isEnabled = isEnabled
     }
