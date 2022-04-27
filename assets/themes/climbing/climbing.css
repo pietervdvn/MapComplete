@@ -4,6 +4,9 @@
     /*Fallback in case of unrecognized difficulty*/
     background: white;
     border: 1px solid black;
+    
+    background: repeating-linear-gradient( -45deg, #a7b9ae, #a7b9ae 10px, #f7f7f7 10px, #f7f7f7 20px );
+    
 }
 
 .climbing-2 {
@@ -11,11 +14,11 @@
 }
 
 .climbing-3 {
-    background: #a2ff00;
+    background: yellow;
 }
 
 .climbing-4 {
-    background: yellow;
+    background: orange;
 }
 
 .climbing-5 {
@@ -29,7 +32,7 @@
 }
 
 .climbing-7 {
-    background: fuchsia;
+    background: #ef47ec;
 }
 
 .climbing-8 {
@@ -38,7 +41,8 @@
 }
 
 .climbing-9 {
-    background: black;
-    color: white;
+    background: white;
+    color: black;
+    border: 1px solid black;
 }
 
