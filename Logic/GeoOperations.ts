@@ -24,6 +24,10 @@ export class GeoOperations {
         return newFeature;
     }
 
+    /**
+     * Returns [lon,lat] coordinates
+     * @param feature
+     */
     static centerpointCoordinates(feature: any): [number, number] {
         return <[number, number]>turf.center(feature).geometry.coordinates;
     }
