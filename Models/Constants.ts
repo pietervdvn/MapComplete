@@ -69,6 +69,7 @@ export default class Constants {
      * In seconds
      */
     static zoomToLocationTimeout = 60;
+    static countryCoderEndpoint: string = "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country";
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

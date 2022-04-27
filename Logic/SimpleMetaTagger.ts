@@ -7,6 +7,7 @@ import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {CountryCoder} from "latlon2country"
+import Constants from "../Models/Constants";
 
 
 export class SimpleMetaTagger {
@@ -40,7 +41,7 @@ export class SimpleMetaTagger {
 }
 
 export class CountryTagger extends SimpleMetaTagger {
-    private static readonly coder = new CountryCoder("https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country", Utils.downloadJson);
+    private static readonly coder = new CountryCoder(Constants.countryCoderEndpoint, Utils.downloadJson);
     public runningTasks: Set<any>;
 
     constructor() {
@@ -217,7 +218,7 @@ export default class SimpleMetaTaggers {
 
         },
         ((feature, _, __, state) => {
-            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
+            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units )?? []));
             if (units.length == 0) {
                 return;
             }
