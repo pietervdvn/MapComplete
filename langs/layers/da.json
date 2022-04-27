@@ -1242,7 +1242,7 @@
                         "then": "Oprindelsen af dette navn er ukendt i al litteratur"
                     }
                 },
-                "render": "Opkaldt efter {name:etymologi}"
+                "render": "Opkaldt efter {name:etymology}"
             }
         }
     },
