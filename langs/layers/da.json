@@ -270,7 +270,7 @@
                     }
                 },
                 "question": "Hvad er bænken (sædet) lavet af?",
-                "render": "Materiale: {materiale}"
+                "render": "Materiale: {material}"
             },
             "bench-seats": {
                 "question": "Hvor mange pladser har denne bænk?",
