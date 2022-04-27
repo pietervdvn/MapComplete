@@ -42,16 +42,17 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 1.5,
+  "customCss": "./assets/themes/climbing/climbing.css",
   "layers": [
     {
       "builtin": [
-    "climbing_club",
-    "climbing_gym",
-    "climbing_route",
-    "climbing_area",
-    "climbing_opportunity"
+        "climbing_club",
+        "climbing_gym",
+        "climbing_route",
+        "climbing_area",
+        "climbing_opportunity"
       ],
-      "override":  {
+      "override": {
         "allowMove": {
           "enableRelocation": false,
           "enableImproveAccuracy": true
@@ -76,93 +77,15 @@
           {
             "id": "Min difficulty",
             "condition": "__difficulty_min~*",
-            "then": "<div class='w-8 flex justify-center rounded-left-full border border-black' style='margin-right: -5px; background-color:#ebf224'> {__difficulty_min}</div>",
-
-            "mappings": [
-              {
-                "if": "__difficulty_min~(2|3).*",
-                "then": "<div class='w-8 flex justify-center rounded-left-full' style='margin-right: -5px; background-color:#ebf224'> {__difficulty_min}</div>"
-              },
-              {
-                "if": "__difficulty_min~4.*",
-                "then": "<div class='w-8 flex justify-center rounded-left-full' style='margin-right: -5px; background-color:#7af224'> {__difficulty_min}</div>"
-              },
-              {
-                "if": "__difficulty_min~5.*",
-                "then": "<div class='w-8 flex justify-center rounded-left-full' style='margin-right: -5px; background-color:#f24a24'> {__difficulty_min}</div>"
-              },
-              {
-                "if": "__difficulty_min~6.*",
-                "then": "<div class='w-8 flex justify-center rounded-left-full' style='margin-right: -5px; background-color:#244af2'> {__difficulty_min}</div>"
-              },
-              {
-                "if": "__difficulty_min~(7|8).*",
-                "then": "<div class='w-8 flex justify-center rounded-left-full' style='margin-right: -5px; background-color:#e904ed'> {__difficulty_min}</div>"
-              },
-              {
-                "if": "__difficulty_min~*",
-                "then": "<div class='w-8 flex justify-center rounded-left-full' style='margin-right: -5px; background-colour:black'> {__difficulty_min}</div>"
-              }
-            ]
+            "render": "<div class='w-8 flex justify-center rounded-left-full climbing-{__difficulty_min:char}' style='margin-right: -5px;'> {__difficulty_min}</div>"
           },
           {
             "id": "max difficulty",
             "condition": "__difficulty_max~*",
-            "then": "<div class='w-8 flex justify-center rounded-right-full border border-black' style='background-color:#ebf224'> {__difficulty_max}</div>",
-            "mappings": [
-              {
-                "if": "__difficulty_max~(2|3).*",
-                "then": "<div class='w-8 flex justify-center rounded-right-full' style='background-color:#ebf224'> {__difficulty_max}</div>"
-              },
-              {
-                "if": "__difficulty_max~4.*",
-                "then": "<div class='w-8 flex justify-center rounded-right-full' style='background-color:#7af224'> {__difficulty_max}</div>"
-              },
-              {
-                "if": "__difficulty_max~5.*",
-                "then": "<div class='w-8 flex justify-center rounded-right-full' style='background-color:#f24a24'> {__difficulty_max}</div>"
-              },
-              {
-                "if": "__difficulty_max~6.*",
-                "then": "<div class='w-8 flex justify-center rounded-right-full' style='background-color:#244af2'> {__difficulty_max}</div>"
-              },
-              {
-                "if": "__difficulty_max~(7|8).*",
-                "then": "<div class='w-8 flex justify-center rounded-right-full' style='background-color:#e904ed'> {__difficulty_max}</div>"
-              },
-              {
-                "if": "__difficulty_max~*",
-                "then": "<div class='w-8 flex justify-center rounded-right-full' style='background-colour:black'> {__difficulty_max}</div>"
-              }
-            ]
+            "render": "<div class='w-8 flex justify-center rounded-right-full climbing-{__difficulty_max:char}'> {__difficulty_max}</div>"
           },
           {
-            "mappings": [
-              {
-                "if": "climbing:grade:french~3.*",
-                "then": "<div class='rounded-full px-1' style='background-color:#ebf224'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~4.*",
-                "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#7af224'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~5.*",
-                "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#f24a24'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~6.*",
-                "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#244af2'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~7.*",
-                "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#e904ed'> {climbing:grade:french}</div>"
-              },
-              {
-                "if": "climbing:grade:french~*",
-                "then": "<div class='text-white rounded-full px-2' style='background-colour:black'> {climbing:grade:french}</div>"
-              }
-            ]
+            "render": "<div class='flex justify-center rounded-full pl-1 pr-1 climbing-{__difficulty:char}'> {climbing:grade:french}</div>"
           }
         ],
         "+calculatedTags": [
@@ -176,6 +99,9 @@
           "_embedding_feature:id=feat.get('_embedding_features_with_access')?.id",
           "__difficulty_max= feat.properties['climbing:grade:french:max'] ?? feat.properties['_difficulty_max']",
           "__difficulty_min= feat.properties['climbing:grade:french:min'] ?? feat.properties['_difficulty_min']",
+          "__difficulty_max:char= feat.properties['__difficulty_max']?.at(0)",
+          "__difficulty_min:char= feat.properties['__difficulty_min']?.at(0)",
+          "__difficulty:char= feat.properties['climbing:grade:french']?.at(0)",
           "__bolts_max= feat.get('climbing:bolts:max') ?? feat.get('climbing:bolts') ?? feat.get('_bolts_max')"
         ],
         "units+": [

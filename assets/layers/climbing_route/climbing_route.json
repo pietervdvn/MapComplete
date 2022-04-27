@@ -218,8 +218,17 @@
       "label": {
         "mappings": [
           {
+            "if": {
+              "and": [
+              "climbing:grade:french~*",
+                "name~*"
+              ]
+            },
+            "then": "<div class='w-max p-1 rounded-xl' style='background: white;'>{name} <span class='climbing-{__difficulty:char}'>{climbing:grade:french}</span></div>"
+          },
+          {
             "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+            "then": "<div  class='w-max p-1 rounded-xl' style='background: white;'>{name}</div>"
           }
         ]
       }

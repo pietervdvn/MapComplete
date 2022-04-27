@@ -1,0 +1,48 @@
+/* a few extra colours, mostly colours difficulties. Debuggable in css-test.html */
+
+.climbing- {
+    /*Fallback in case of unrecognized difficulty*/
+    background: white;
+    border: 1px solid black;
+    
+    background: repeating-linear-gradient( -45deg, #a7b9ae, #a7b9ae 10px, #f7f7f7 10px, #f7f7f7 20px );
+    
+}
+
+.climbing-2 {
+    background: #a2ff00;
+}
+
+.climbing-3 {
+    background: yellow;
+}
+
+.climbing-4 {
+    background: orange;
+}
+
+.climbing-5 {
+    background: blue;
+    color: white;
+}
+
+.climbing-6 {
+    background: red;
+    color: white;
+}
+
+.climbing-7 {
+    background: #ef47ec;
+}
+
+.climbing-8 {
+    background: black;
+    color: white;
+}
+
+.climbing-9 {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
