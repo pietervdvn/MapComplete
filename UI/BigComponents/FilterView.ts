@@ -92,9 +92,9 @@ export default class FilterView extends VariableUiElement {
         if (filteredLayer.layerDef.name === undefined) {
             // Name is not defined: we hide this one
             return new Toggle(
-                filteredLayer.layerDef.description.Clone().SetClass("subtle")                ,
+                filteredLayer?.layerDef?.description?.Clone()?.SetClass("subtle")                ,
                 undefined,
-                state.featureSwitchIsDebugging
+                state?.featureSwitchIsDebugging
             );
         }
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
