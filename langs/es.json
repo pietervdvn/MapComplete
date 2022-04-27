@@ -306,7 +306,16 @@
         "selectFile": {
             "title": "Seleccionar archivo"
         },
-        "title": "Ayudante de importación"
+        "title": "Ayudante de importación",
+        "conflationChecker": {
+            "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
+            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!"
+        },
+        "confirmProcess": {
+            "title": "Licencia y comunidad",
+            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)",
+            "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM"
+        }
     },
     "importLayer": {
         "layerName": "Posible {title}",
