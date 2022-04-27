@@ -362,7 +362,7 @@ export default class Wikidata {
         const id = Wikidata.ExtractKey(value)
         if (id === undefined) {
             console.warn("Could not extract a wikidata entry from", value)
-            throw "Could not extract a wikidata entry from " + value
+            return undefined
         }
 
         const url = "https://www.wikidata.org/wiki/Special:EntityData/" + id + ".json";
