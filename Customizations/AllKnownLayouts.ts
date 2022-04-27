@@ -20,6 +20,11 @@ export class AllKnownLayouts {
     public static AllPublicLayers() {
         const allLayers: LayerConfig[] = []
         const seendIds = new Set<string>()
+        AllKnownLayouts.sharedLayers.forEach((layer, key) => {
+            seendIds.add(key)
+            allLayers.push(layer)
+        })
+        
         const publicLayouts = AllKnownLayouts.layoutsList.filter(l => !l.hideFromOverview)
         for (const layout of publicLayouts) {
             if (layout.hideFromOverview) {
@@ -34,6 +39,8 @@ export class AllKnownLayouts {
             }
 
         }
+        
+        
         return allLayers
     }
 
