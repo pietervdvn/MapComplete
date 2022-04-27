@@ -32,7 +32,7 @@
             },
             "ambulance-name": {
                 "question": "Hvad hedder denne ambulancestation?",
-                "render": "Denne station hedder {navn}."
+                "render": "Denne station hedder {name}."
             },
             "ambulance-operator-type": {
                 "mappings": {
@@ -521,7 +521,7 @@
             },
             "bike_cafe-name": {
                 "question": "Hvad hedder denne cykelcafé?",
-                "render": "Denne cykelcafé hedder {navn}"
+                "render": "Denne cykelcafé hedder {name}"
             }
         },
         "title": {
@@ -773,7 +773,7 @@
                     }
                 },
                 "question": "Hvilke ventiler understøttes?",
-                "render": "Denne pumpe understøtter følgende ventiler: {ventiler}"
+                "render": "Denne pumpe understøtter følgende ventiler: {valves}"
             },
             "bike_repair_station-phone": {
                 "question": "Hvad er telefonnummeret på vedligeholderen?"
@@ -885,7 +885,7 @@
                 "render": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler"
             },
             "bike_shop-name": {
-                "render": "Denne cykelbutik hedder {navn}",
+                "render": "Denne cykelbutik hedder {name}",
                 "question": "Hvad hedder denne cykelbutik?"
             },
             "bike_shop-phone": {
@@ -1073,7 +1073,7 @@
             },
             "Name": {
                 "question": "Hvad hedder denne pub?",
-                "render": "Denne pub hedder {navn}"
+                "render": "Denne pub hedder {name}"
             }
         },
         "title": {
