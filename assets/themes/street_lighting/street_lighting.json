@@ -16,7 +16,8 @@
     "nl": "Op deze kaart vind je alles over straatlantaarns",
     "zh_Hant": "在這份地圖你可以找到任何有關路燈的事情",
     "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
-    "de": "Eine Karte für alles zum Thema Straßenbeleuchtung"
+    "de": "Eine Karte für alles zum Thema Straßenbeleuchtung",
+    "es": "En este mapa puedes encontrar todo sobre la iluminación callejera"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -32,7 +33,8 @@
         "zh_Hant": "有照明的道路",
         "hu": "Kivilágított utcák",
         "de": "Beleuchtete Straßen",
-        "ca": "Il·luminació de carrers"
+        "ca": "Il·luminació de carrers",
+        "es": "Calles iluminadas"
       },
       "source": {
         "osmTags": {
@@ -51,8 +53,9 @@
           "nl": "Verlichte straat",
           "zh_Hant": "照明道路",
           "hu": "Kivilágított utca",
-          "de": "Bleuchtete Straße",
-          "ca": "Il·luminació del carrer"
+          "de": "Beleuchtete Straße",
+          "ca": "Il·luminació del carrer",
+          "es": "Calle iluminada"
         },
         "mappings": [
           {
@@ -74,7 +77,8 @@
             "nl": "Is deze straat verlicht?",
             "zh_Hant": "這道路有路燈嗎？",
             "hu": "Ki van-e világítva ez az utca?",
-            "de": "Ist diese Straße beleuchtet?"
+            "de": "Ist diese Straße beleuchtet?",
+            "es": "¿Está iluminada esta calle?"
           },
           "mappings": [
             {
@@ -84,7 +88,8 @@
                 "nl": "Deze straat is verlicht",
                 "zh_Hant": "這個道路有照明",
                 "hu": "Ezen az utcán van közvilágítás",
-                "de": "Diese Straße ist beleuchtet"
+                "de": "Diese Straße ist beleuchtet",
+                "es": "Esta calle está iluminada"
               }
             },
             {
@@ -94,7 +99,8 @@
                 "nl": "Deze straat is niet verlicht",
                 "zh_Hant": "這個道路沒有照明",
                 "hu": "Ezen az utcán nincs közvilágítás",
-                "de": "Diese Straße ist nicht beleuchtet"
+                "de": "Diese Straße ist nicht beleuchtet",
+                "es": "Esta calle no está iluminada"
               }
             },
             {
@@ -104,7 +110,8 @@
                 "nl": "Deze straat is 's nachts verlicht",
                 "zh_Hant": "這個道路晚上有照明",
                 "hu": "Ez az utca éjszaka ki van világítva",
-                "de": "Diese Straße ist nachts beleuchtet"
+                "de": "Diese Straße ist nachts beleuchtet",
+                "es": "Esta calle está iluminada por la noche"
               },
               "hideInAnswer": true
             },
@@ -115,7 +122,8 @@
                 "nl": "Deze straat is 24/7 verlicht",
                 "zh_Hant": "這個道路 24/7 有照明",
                 "hu": "Ez az utca éjjel-nappal ki van világítva",
-                "de": "Diese Straße ist durchgehend beleuchtet"
+                "de": "Diese Straße ist durchgehend beleuchtet",
+                "es": "Esta calle está iluminada todo el día"
               }
             }
           ]
@@ -132,7 +140,8 @@
         "zh_Hant": "所有道路",
         "hu": "Minden utca",
         "de": "Alle Straßen",
-        "ca": "Tots els carrers"
+        "ca": "Tots els carrers",
+        "es": "Todas las calles"
       },
       "source": {
         "osmTags": {
@@ -192,7 +201,8 @@
                 "nl": "Deze straat is verlicht",
                 "zh_Hant": "這道路有照明",
                 "hu": "Ez az utca ki van világítva",
-                "de": "Diese Straße ist beleuchtet"
+                "de": "Diese Straße ist beleuchtet",
+                "es": "Esta calle está iluminada"
               }
             },
             {
@@ -202,7 +212,8 @@
                 "nl": "Deze straat is niet verlicht",
                 "zh_Hant": "這道路沒有照明",
                 "hu": "Ez az utca nincs kivilágítva",
-                "de": "Diese Straße ist nicht beleuchtet"
+                "de": "Diese Straße ist nicht beleuchtet",
+                "es": "Esta calle no está iluminada"
               }
             },
             {

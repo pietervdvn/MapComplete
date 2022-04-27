@@ -14,7 +14,8 @@
     "zh_Hant": "大眾運輸站點的長椅",
     "pt_BR": "Bancos em pontos de transporte público",
     "pl": "Ławki na przystankach komunikacji miejskiej",
-    "pt": "Bancos em pontos de transporte público"
+    "pt": "Bancos em pontos de transporte público",
+    "da": "Bænke ved stoppesteder for offentlig transport"
   },
   "minzoom": 14,
   "source": {
@@ -43,7 +44,8 @@
       "fi": "Penkki",
       "pl": "Ławka",
       "pt": "Banco",
-      "ca": "Banc"
+      "ca": "Banc",
+      "da": "Bænk"
     },
     "mappings": [
       {
@@ -67,7 +69,8 @@
           "pt_BR": "Banco em ponto de transporte público",
           "pl": "Ławka na przystanku komunikacji miejskiej",
           "pt": "Banco em ponto de transporte público",
-          "es": "Banco en una parada de transporte público"
+          "es": "Banco en una parada de transporte público",
+          "da": "Bænk ved offentlig stoppested"
         }
       },
       {
@@ -112,7 +115,8 @@
         "pt": "{name}",
         "eo": "{name}",
         "es": "{name}",
-        "ca": "{name}"
+        "ca": "{name}",
+        "da": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -126,7 +130,8 @@
         "nl": "Wat voor soort bank is dit?",
         "de": "Was ist das für eine Bank?",
         "es": "¿Qué tipo de banco es este?",
-        "fr": "Quel type de banc est-ce ?"
+        "fr": "Quel type de banc est-ce ?",
+        "da": "Hvilken slags bænk er dette?"
       },
       "mappings": [
         {
@@ -135,7 +140,8 @@
             "en": "There is a normal, sit-down bench here",
             "fr": "Il y a un banc normal pour s'asseoir ici",
             "de": "Hier gibt es eine normale Sitzbank",
-            "nl": "Er is hier een normale zitbank"
+            "nl": "Er is hier een normale zitbank",
+            "da": "Der er en normal siddebænk her"
           }
         },
         {
@@ -148,7 +154,8 @@
             "it": "Panca in piedi",
             "zh_Hans": "站立长凳",
             "ru": "Встаньте на скамейке",
-            "zh_Hant": "站立長椅"
+            "zh_Hant": "站立長椅",
+            "da": "Stå-op bænk"
           }
         },
         {
@@ -158,7 +165,8 @@
             "fr": "Il n'y a pas de banc ici",
             "de": "Hier gibt es keine Bank",
             "nl": "Er is hier geen bank",
-            "es": "No hay ningún banco aquí"
+            "es": "No hay ningún banco aquí",
+            "da": "Der er ingen bænk her"
           }
         }
       ]
@@ -190,6 +198,7 @@
     "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
     "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
     "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
-    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen"
+    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
+    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk"
   }
 }

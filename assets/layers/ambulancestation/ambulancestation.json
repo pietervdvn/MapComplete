@@ -11,7 +11,8 @@
     "nl": "Kaart van ambulancestations",
     "zh_Hans": "救护车站地图",
     "id": "Peta stasiun ambulans",
-    "es": "Mapa de estaciones de ambulancias"
+    "es": "Mapa de estaciones de ambulancias",
+    "da": "Kort over ambulancestationer"
   },
   "minzoom": 12,
   "source": {
@@ -31,7 +32,8 @@
       "it": "Stazione delle ambulanze",
       "hu": "Mentőállomás",
       "nl": "Ambulancestation",
-      "es": "Estación de Ambulancias"
+      "es": "Estación de Ambulancias",
+      "da": "Ambulancestation"
     }
   },
   "description": {
@@ -61,7 +63,8 @@
         "hu": "Mi a neve ennek a menőtállomásnak?",
         "nl": "Hoe heet dit ambulancestation?",
         "es": "¿Cual es el nombre de esta estación de ambulancias?",
-        "nb_NO": "Hva er navnet på denne ambulansestasjonen?"
+        "nb_NO": "Hva er navnet på denne ambulansestasjonen?",
+        "da": "Hvad hedder denne ambulancestation?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -73,7 +76,8 @@
         "hu": "A mentőállomás neve: {name}.",
         "nl": "Dit station heet {name}.",
         "es": "Esta estación se llama {name}.",
-        "nb_NO": "Denne stasjonen heter {name}."
+        "nb_NO": "Denne stasjonen heter {name}.",
+        "da": "Denne station hedder {name}."
       }
     },
     {
@@ -90,7 +94,8 @@
         "de": " Wie lautet der Name der Straße, in der sich die Rettungswache befindet?",
         "hu": " Mi a neve annak az utcának, amelyben az állomás található?",
         "nl": " In welke straat ligt dit station?",
-        "es": " ¿Cual es el nombre de la calle en la que se encuentra la estación?"
+        "es": " ¿Cual es el nombre de la calle en la que se encuentra la estación?",
+        "da": " Hvad er vejnavnet, hvor stationen ligger?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -101,7 +106,8 @@
         "de": "Dieser Bahnhof liegt an der Straße {addr:street}.",
         "hu": "Ez az állomás a következő utcában van: {addr:street}.",
         "nl": "Straat waar dit station ligt: {addr:street}",
-        "es": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
+        "es": "Esta estación se encuentra al lado de una autovía llamada {addr:street}.",
+        "da": "Denne station ligger langs en vej, der hedder {addr:street}."
       }
     },
     {
@@ -128,7 +134,8 @@
         "de": "Diese Rettungswache befindet sich in {addr:place}.",
         "hu": "Ez az állomás itt található: {addr:place}.",
         "nl": "Dit station ligt in {addr:place}.",
-        "es": "Esta estación se encuentra en {addr:place}."
+        "es": "Esta estación se encuentra en {addr:place}.",
+        "da": "Denne station findes i {addr:place}."
       }
     },
     {
@@ -153,7 +160,8 @@
         "hu": "Az állomás üzemeltetője: {operator}.",
         "ru": "Эта станция управляется {operator}.",
         "nl": "Dit station wordt beheerd door {operator}.",
-        "es": "Esta estación la opera {operator}."
+        "es": "Esta estación la opera {operator}.",
+        "da": "Denne station drives af {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -201,7 +209,8 @@
             "hu": "A mentőállomást a kormány üzemelteti.",
             "ru": "Станция управляется правительством.",
             "nl": "Dit station wordt beheerd door de overheid.",
-            "es": "La estación la opera el govierno."
+            "es": "La estación la opera el govierno.",
+            "da": "Stationen drives af staten."
           }
         },
         {
@@ -236,7 +245,8 @@
             "de": "Die Rettungswache wird von einer Freiwilligenorganisation betrieben.",
             "hu": "A mentőállomást egy önkéntesekből álló hivatalos csoport működteti.",
             "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
-            "es": "La estación la opera un grupo formal de voluntarios."
+            "es": "La estación la opera un grupo formal de voluntarios.",
+            "da": "Stationen drives af en formel gruppe af frivillige."
           }
         },
         {
@@ -277,7 +287,8 @@
         "zh_Hans": "救护车站",
         "id": "Stasiun ambulans",
         "es": "una estación de ambulancias",
-        "nb_NO": "en ambulansestasjon"
+        "nb_NO": "en ambulansestasjon",
+        "da": "en ambulancestation"
       },
       "description": {
         "en": "Add an ambulance station to the map",
@@ -291,7 +302,8 @@
         "zh_Hans": "向地图中添加一个救护车站",
         "id": "Tambahkan stasiun ambulans ke peta",
         "es": "Añadir una estación de ambulancias al mapa",
-        "nb_NO": "Legg til en ambulansestasjon på kartet"
+        "nb_NO": "Legg til en ambulansestasjon på kartet",
+        "da": "Tilføj en ambulancestation til kortet"
       }
     }
   ],

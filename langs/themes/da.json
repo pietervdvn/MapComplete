@@ -7,11 +7,14 @@
         "title": "Bænke"
     },
     "bicycle_rental": {
-        "title": "Cykeludlejning",
-        "description": "På dette kort finder du de mange cykeludlejningsstationer, som OpenStreetMap kender dem"
+        "description": "På dette kort finder du de mange cykeludlejningsstationer, som OpenStreetMap kender dem",
+        "title": "Cykeludlejning"
     },
     "binoculars": {
         "title": "Kikkerter"
+    },
+    "bookcases": {
+        "description": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser."
     },
     "cafes_and_pubs": {
         "description": "Pubber og barer",
@@ -27,9 +30,16 @@
                     }
                 },
                 "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)",
+                        "render": "{capacity} campister kan bruge dette sted på samme tid"
+                    },
                     "caravansites-charge": {
-                        "render": "Dette sted koster {charge}",
-                        "question": "Hvor meget koster dette sted?"
+                        "question": "Hvor meget koster dette sted?",
+                        "render": "Dette sted koster {charge}"
+                    },
+                    "caravansites-description": {
+                        "render": "Flere oplysninger om dette sted: {description}"
                     },
                     "caravansites-fee": {
                         "mappings": {
@@ -46,22 +56,22 @@
                             "0": {
                                 "then": "Der er internetadgang"
                             },
-                            "2": {
-                                "then": "Der er ingen internetadgang"
-                            },
                             "1": {
                                 "then": "Der er internetadgang"
+                            },
+                            "2": {
+                                "then": "Der er ingen internetadgang"
                             }
                         },
                         "question": "Er der internetadgang på dette sted?"
                     },
                     "caravansites-internet-fee": {
                         "mappings": {
-                            "1": {
-                                "then": "Man behøver ikke at betale ekstra for internetadgang"
-                            },
                             "0": {
                                 "then": "Man skal betale ekstra for internetadgang"
+                            },
+                            "1": {
+                                "then": "Man behøver ikke at betale ekstra for internetadgang"
                             }
                         },
                         "question": "Skal man betale for internetadgang?"
@@ -83,27 +93,17 @@
                     },
                     "caravansites-toilets": {
                         "mappings": {
-                            "1": {
-                                "then": "Dette sted har ikke toiletter"
-                            },
                             "0": {
                                 "then": "Dette sted har toiletter"
+                            },
+                            "1": {
+                                "then": "Dette sted har ikke toiletter"
                             }
                         },
                         "question": "Har dette sted toiletter?"
-                    },
-                    "caravansites-capacity": {
-                        "render": "{capacity} campister kan bruge dette sted på samme tid",
-                        "question": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)"
-                    },
-                    "caravansites-description": {
-                        "render": "Flere oplysninger om dette sted: {description}"
                     }
                 }
             }
         }
-    },
-    "bookcases": {
-        "description": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser."
     }
 }

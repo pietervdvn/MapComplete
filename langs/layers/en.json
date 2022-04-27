@@ -3409,6 +3409,20 @@
                         "question": "Has a halal menu"
                     }
                 }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
             }
         },
         "name": "Restaurants and fast food",
@@ -4677,6 +4691,20 @@
                 "options": {
                     "0": {
                         "question": "Only show shops with name {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
                     }
                 }
             }

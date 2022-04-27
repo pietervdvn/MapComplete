@@ -11,7 +11,8 @@
     "id": "Alamat yang dikenal di OSM",
     "es": "Direcciones conocidas en OSM",
     "zh_Hans": "OSM中已知的地址",
-    "nb_NO": "Kjente adresser i OSM"
+    "nb_NO": "Kjente adresser i OSM",
+    "da": "Kendte adresser i OSM"
   },
   "minzoom": 18,
   "source": {
@@ -40,7 +41,8 @@
       "es": "Domicilio conocido",
       "zh_Hans": "已知的地址",
       "id": "Alamat yang diketahui",
-      "nb_NO": "Kjent adresse"
+      "nb_NO": "Kjent adresse",
+      "da": "Kendt adresse"
     }
   },
   "description": {
@@ -56,7 +58,8 @@
     "es": "Direcciones",
     "zh_Hans": "地址",
     "ca": "Adreces",
-    "nb_NO": "Adresser"
+    "nb_NO": "Adresser",
+    "da": "Adresser"
   },
   "tagRenderings": [
     {
@@ -71,7 +74,8 @@
         "ru": "Номер дома <b>{addr:housenumber}</b>",
         "zh_Hans": "门牌号是<b>{addr:housenumber}</b>",
         "id": "Nomor rumah ini <b>{addr:housenumber}</b>",
-        "es": "La numeración de la casa es <b>{addr:housenumber}</b>"
+        "es": "La numeración de la casa es <b>{addr:housenumber}</b>",
+        "da": "Husnummeret er <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -83,7 +87,8 @@
         "ru": "Какой номер у этого дома?",
         "es": "¿Cuál es el número de esta casa?",
         "zh_Hans": "这个屋子的门牌号是多少？",
-        "id": "Berapa nomor rumah ini?"
+        "id": "Berapa nomor rumah ini?",
+        "da": "Hvad er nummeret på dette hus?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -108,7 +113,8 @@
             "ru": "У этого здания нет номера",
             "id": "Bangunan ini tidak memiliki nomor rumah",
             "es": "Esta edificación no tiene número",
-            "zh_Hans": "这个建筑物没有门牌号"
+            "zh_Hans": "这个建筑物没有门牌号",
+            "da": "Denne bygning har intet husnummer"
           }
         }
       ]
@@ -124,7 +130,8 @@
         "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
         "zh_Hans": "这个地址位于<b>{addr:street}</b>街",
         "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
-        "es": "La dirección está en la calle <b>{addr:street}</b>"
+        "es": "La dirección está en la calle <b>{addr:street}</b>",
+        "da": "Denne adresse er på gaden <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -136,7 +143,8 @@
         "ru": "Какая эта улица?",
         "es": "¿En qué calle se encuentra esta dirección?",
         "zh_Hans": "这个地址位于哪条街道？",
-        "id": "Alamat ini di jalan apa?"
+        "id": "Alamat ini di jalan apa?",
+        "da": "Hvilken gade ligger denne adresse på?"
       },
       "freeform": {
         "key": "addr:street"
@@ -177,7 +185,8 @@
         "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan",
         "es": "¿Qué debe corregirse aquí? Expóngalo",
         "nl": "Wat moet hier gecorrigeerd worden? Leg het uit",
-        "zh_Hans": "这里应被如何修复？请做出解释"
+        "zh_Hans": "这里应被如何修复？请做出解释",
+        "da": "Hvad skal rettes her? Forklar venligst"
       },
       "freeform": {
         "key": "fixme"

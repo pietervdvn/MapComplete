@@ -1,31 +1,37 @@
 {
     "address": {
         "description": "Adresser",
+        "name": "Kendte adresser i OSM",
         "tagRenderings": {
+            "fixme": {
+                "question": "Hvad skal rettes her? Forklar venligst"
+            },
             "housenumber": {
-                "question": "Hvad er nummeret på dette hus?",
-                "render": "Husnummeret er <b>{addr:housenumber}</b>",
                 "mappings": {
                     "0": {
                         "then": "Denne bygning har intet husnummer"
                     }
-                }
+                },
+                "question": "Hvad er nummeret på dette hus?",
+                "render": "Husnummeret er <b>{addr:housenumber}</b>"
             },
             "street": {
-                "render": "Denne adresse er på gaden <b>{addr:street}</b>",
-                "question": "Hvilken gade ligger denne adresse på?"
-            },
-            "fixme": {
-                "question": "Hvad skal rettes her? Forklar venligst"
+                "question": "Hvilken gade ligger denne adresse på?",
+                "render": "Denne adresse er på gaden <b>{addr:street}</b>"
             }
         },
-        "name": "Kendte adresser i OSM",
         "title": {
             "render": "Kendt adresse"
         }
     },
     "ambulancestation": {
         "name": "Kort over ambulancestationer",
+        "presets": {
+            "0": {
+                "description": "Tilføj en ambulancestation til kortet",
+                "title": "en ambulancestation"
+            }
+        },
         "tagRenderings": {
             "ambulance-agency": {
                 "render": "Denne station drives af {operator}."
@@ -52,18 +58,18 @@
                 "render": "Denne station ligger langs en vej, der hedder {addr:street}."
             }
         },
-        "presets": {
-            "0": {
-                "description": "Tilføj en ambulancestation til kortet",
-                "title": "en ambulancestation"
-            }
-        },
         "title": {
             "render": "Ambulancestation"
         }
     },
     "artwork": {
+        "description": "Forskellige kunstværker",
         "name": "Kunstværker",
+        "presets": {
+            "0": {
+                "title": "et kunstværk"
+            }
+        },
         "tagRenderings": {
             "artwork-artist_name": {
                 "question": "Hvilken kunstner har lavet dette?",
@@ -71,6 +77,21 @@
             },
             "artwork-artwork_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Arkitektur"
+                    },
+                    "1": {
+                        "then": "Vægmaleri"
+                    },
+                    "2": {
+                        "then": "Maleri"
+                    },
+                    "3": {
+                        "then": "Skulptur"
+                    },
+                    "4": {
+                        "then": "Statue"
+                    },
                     "5": {
                         "then": "Buste"
                     },
@@ -83,47 +104,26 @@
                     "8": {
                         "then": "Graffiti"
                     },
-                    "0": {
-                        "then": "Arkitektur"
-                    },
-                    "1": {
-                        "then": "Vægmaleri"
-                    },
-                    "3": {
-                        "then": "Skulptur"
-                    },
-                    "2": {
-                        "then": "Maleri"
-                    },
-                    "4": {
-                        "then": "Statue"
-                    },
                     "9": {
                         "then": "Relief"
                     }
                 },
                 "question": "Hvilken slags kunstværk er det?"
             },
-            "artwork-wikidata": {
-                "question": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?"
-            },
             "artwork-website": {
                 "question": "Er der et websted med mere information om dette kunstværk?"
+            },
+            "artwork-wikidata": {
+                "question": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?"
             }
         },
-        "description": "Forskellige kunstværker",
         "title": {
-            "render": "Kunstværk",
             "mappings": {
                 "0": {
                     "then": "Kunstværk <i>{name}</i>"
                 }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "et kunstværk"
-            }
+            },
+            "render": "Kunstværk"
         }
     },
     "barrier": {
@@ -204,7 +204,6 @@
         },
         "tagRenderings": {
             "bench-backrest": {
-                "question": "Har denne bænk et ryglæn?",
                 "mappings": {
                     "0": {
                         "then": "Ryglæn: Ja"
@@ -212,18 +211,19 @@
                     "1": {
                         "then": "Ryglæn: Nej"
                     }
-                }
+                },
+                "question": "Har denne bænk et ryglæn?"
             },
             "bench-colour": {
                 "mappings": {
                     "0": {
                         "then": "Farve: brun"
                     },
-                    "2": {
-                        "then": "Farve: grå"
-                    },
                     "1": {
                         "then": "Farve: grøn"
+                    },
+                    "2": {
+                        "then": "Farve: grå"
                     },
                     "3": {
                         "then": "Farve: hvid"
@@ -245,8 +245,8 @@
                 "render": "Farve: {colour}"
             },
             "bench-direction": {
-                "render": "Når man sidder på bænken, kigger man i retningen {direction}°.",
-                "question": "I hvilken retning kigger du, når du sidder på bænken?"
+                "question": "I hvilken retning kigger du, når du sidder på bænken?",
+                "render": "Når man sidder på bænken, kigger man i retningen {direction}°."
             },
             "bench-material": {
                 "mappings": {
@@ -256,6 +256,9 @@
                     "1": {
                         "then": "Materiale: metal"
                     },
+                    "2": {
+                        "then": "Materiale: sten"
+                    },
                     "3": {
                         "then": "Materiale: beton"
                     },
@@ -264,9 +267,6 @@
                     },
                     "5": {
                         "then": "Materiale: stål"
-                    },
-                    "2": {
-                        "then": "Materiale: sten"
                     }
                 },
                 "question": "Hvad er bænken (sædet) lavet af?",
@@ -325,11 +325,11 @@
         "tagRenderings": {
             "bicycle-library-target-group": {
                 "mappings": {
-                    "1": {
-                        "then": "Cykler til voksne til rådighed"
-                    },
                     "0": {
                         "then": "Cykler til børn til rådighed"
+                    },
+                    "1": {
+                        "then": "Cykler til voksne til rådighed"
                     },
                     "2": {
                         "then": "Cykler til handicappede til rådighed"
@@ -382,11 +382,11 @@
             "9": {
                 "rewrite": {
                     "into": {
-                        "1": {
-                            "1": "elektriske cykler"
-                        },
                         "0": {
                             "1": "bycykler"
+                        },
+                        "1": {
+                            "1": "elektriske cykler"
                         },
                         "2": {
                             "1": "børnecykler"
@@ -414,6 +414,9 @@
                     "1": {
                         "then": "El-cykler kan lejes her"
                     },
+                    "2": {
+                        "then": "BMX cykler kan lejes her"
+                    },
                     "3": {
                         "then": "Mountainbikes kan lejes her"
                     },
@@ -425,9 +428,6 @@
                     },
                     "6": {
                         "then": "Racercykler kan lejes her"
-                    },
-                    "2": {
-                        "then": "BMX cykler kan lejes her"
                     }
                 },
                 "question": "Hvilken slags cykler og tilbehør udlejes her?",
@@ -458,6 +458,7 @@
         }
     },
     "bicycle_tube_vending_machine": {
+        "description": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, ...)",
         "name": "Automat til salg af cykelslanger",
         "presets": {
             "0": {
@@ -482,14 +483,23 @@
         },
         "title": {
             "render": "Automat til salg af cykelslanger"
-        },
-        "description": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, ...)"
+        }
     },
     "bike_cafe": {
+        "description": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, ...",
         "name": "Cykelcafé",
+        "presets": {
+            "0": {
+                "title": "en cykelcafé"
+            }
+        },
         "tagRenderings": {
             "bike_cafe-email": {
                 "question": "Hvad er e-mailadressen på {name}?"
+            },
+            "bike_cafe-name": {
+                "question": "Hvad hedder denne cykelcafé?",
+                "render": "Denne cykelcafé hedder {name}"
             },
             "bike_cafe-phone": {
                 "question": "Hvad er telefonnummeret til {name}?"
@@ -518,10 +528,6 @@
             },
             "bike_cafe-website": {
                 "question": "Hvad er webstedet for {name}?"
-            },
-            "bike_cafe-name": {
-                "question": "Hvad hedder denne cykelcafé?",
-                "render": "Denne cykelcafé hedder {name}"
             }
         },
         "title": {
@@ -531,13 +537,7 @@
                 }
             },
             "render": "Cykelcafé"
-        },
-        "presets": {
-            "0": {
-                "title": "en cykelcafé"
-            }
-        },
-        "description": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, ..."
+        }
     },
     "bike_cleaning": {
         "description": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
@@ -628,11 +628,11 @@
             },
             "Is covered?": {
                 "mappings": {
-                    "1": {
-                        "then": "Denne parkeringsplads er ikke overdækket"
-                    },
                     "0": {
                         "then": "Denne parkeringsplads er overdækket (den har et tag)"
+                    },
+                    "1": {
+                        "then": "Denne parkeringsplads er ikke overdækket"
                     }
                 }
             },
@@ -667,6 +667,9 @@
             }
         },
         "tagRenderings": {
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>"
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -689,10 +692,10 @@
                     "2": {
                         "then": "Kun for kunder"
                     },
-                    "4": {
+                    "3": {
                         "then": "Ikke tilgængelig for offentligheden"
                     },
-                    "3": {
+                    "4": {
                         "then": "Ikke tilgængelig for offentligheden"
                     }
                 },
@@ -735,7 +738,6 @@
                 "question": "Har denne cykelstation en krog til at hænge din cykel på eller et stativ til at hæve den?"
             },
             "bike_repair_station-electrical_pump": {
-                "question": "Er dette en elektrisk cykelpumpe?",
                 "mappings": {
                     "0": {
                         "then": "Manuel pumpe"
@@ -743,7 +745,8 @@
                     "1": {
                         "then": "Elektrisk pumpe"
                     }
-                }
+                },
+                "question": "Er dette en elektrisk cykelpumpe?"
             },
             "bike_repair_station-email": {
                 "question": "Hvad er e-mailadressen på vedligeholderen?"
@@ -760,6 +763,9 @@
                 "question": "Hvem vedligeholder denne cykluspumpe?",
                 "render": "Vedligeholdt af {operator}"
             },
+            "bike_repair_station-phone": {
+                "question": "Hvad er telefonnummeret på vedligeholderen?"
+            },
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
@@ -774,16 +780,13 @@
                 },
                 "question": "Hvilke ventiler understøttes?",
                 "render": "Denne pumpe understøtter følgende ventiler: {valves}"
-            },
-            "bike_repair_station-phone": {
-                "question": "Hvad er telefonnummeret på vedligeholderen?"
-            },
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>"
             }
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Cykelreparationsstation"
+                },
                 "1": {
                     "then": "Cykelreparationsstation"
                 },
@@ -795,9 +798,6 @@
                 },
                 "4": {
                     "then": "Cykelpumpe"
-                },
-                "0": {
-                    "then": "Cykelreparationsstation"
                 }
             },
             "render": "Cykelstation (pumpe og reparation)"
@@ -820,8 +820,22 @@
                 },
                 "question": "Vaskes cykler her?"
             },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik udlejer cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik udlejer ikke cykler"
+                    }
+                },
+                "question": "Udlejer denne butik cykler?"
+            },
             "bike_repair_repairs-bikes": {
                 "mappings": {
+                    "0": {
+                        "then": "Denne butik reparerer cykler"
+                    },
                     "1": {
                         "then": "Denne butik reparerer ikke cykler"
                     },
@@ -830,9 +844,6 @@
                     },
                     "3": {
                         "then": "Dette værksted reparerer kun cykler af et bestemt mærke"
-                    },
-                    "0": {
-                        "then": "Denne butik reparerer cykler"
                     }
                 },
                 "question": "Reparerer denne butik cykler?"
@@ -885,32 +896,18 @@
                 "render": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler"
             },
             "bike_shop-name": {
-                "render": "Denne cykelbutik hedder {name}",
-                "question": "Hvad hedder denne cykelbutik?"
+                "question": "Hvad hedder denne cykelbutik?",
+                "render": "Denne cykelbutik hedder {name}"
             },
             "bike_shop-phone": {
                 "question": "Hvad er telefonnummeret på {name}?"
             },
             "bike_shop-website": {
                 "question": "Hvad er webstedet for {name}?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik udlejer cykler"
-                    },
-                    "1": {
-                        "then": "Denne butik udlejer ikke cykler"
-                    }
-                },
-                "question": "Udlejer denne butik cykler?"
             }
         },
         "title": {
             "mappings": {
-                "5": {
-                    "then": "Cykelværksted<i>{name}</i>"
-                },
                 "2": {
                     "then": "Cykeludlejning <i>{name}</i>"
                 },
@@ -919,21 +916,42 @@
                 },
                 "4": {
                     "then": "Cykelforretning <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Cykelværksted<i>{name}</i>"
                 }
             },
             "render": "Cykelværksted/butik"
         }
     },
+    "bike_themed_object": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Cykelsti"
+                }
+            },
+            "render": "Cykelrelateret objekt"
+        }
+    },
     "binocular": {
+        "description": "Kikkerter",
+        "name": "Kikkert",
+        "presets": {
+            "0": {
+                "description": "Et teleskop eller en kikkert monteret på en stang, som offentligheden kan se sig omkring med. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "en kikkert"
+            }
+        },
         "tagRenderings": {
             "binocular-charge": {
-                "question": "Hvor meget koster det at bruge denne kikkert?",
-                "render": "Brug af denne kikkert koster {charge}",
                 "mappings": {
                     "0": {
                         "then": "Gratis at bruge"
                     }
-                }
+                },
+                "question": "Hvor meget koster det at bruge denne kikkert?",
+                "render": "Brug af denne kikkert koster {charge}"
             },
             "binocular-direction": {
                 "question": "I hvilken retning kigger man, når man ser gennem denne kikkert?",
@@ -942,30 +960,22 @@
         },
         "title": {
             "render": "Kikkert"
-        },
-        "description": "Kikkerter",
-        "name": "Kikkert",
-        "presets": {
-            "0": {
-                "title": "en kikkert",
-                "description": "Et teleskop eller en kikkert monteret på en stang, som offentligheden kan se sig omkring med. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
-            }
         }
     },
     "birdhide": {
         "description": "Et fugleskjul",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Kun overdækkede fugleskjul"
-                    }
-                }
-            },
             "0": {
                 "options": {
                     "0": {
                         "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Kun overdækkede fugleskjul"
                     }
                 }
             }
@@ -1086,6 +1096,7 @@
         }
     },
     "charging_station": {
+        "description": "En ladestation",
         "filter": {
             "0": {
                 "options": {
@@ -1107,22 +1118,21 @@
                     }
                 }
             }
-        },
-        "description": "En ladestation"
+        }
     },
     "climbing_route": {
         "tagRenderings": {
+            "Length": {
+                "question": "Hvor lang er denne klatrerute (i meter)?"
+            },
             "Name": {
                 "mappings": {
                     "0": {
                         "then": "Denne klatrerute har ikke et navn"
                     }
                 },
-                "render": "<strong>{name}</strong>",
-                "question": "Hvad hedder denne klatrerute?"
-            },
-            "Length": {
-                "question": "Hvor lang er denne klatrerute (i meter)?"
+                "question": "Hvad hedder denne klatrerute?",
+                "render": "<strong>{name}</strong>"
             }
         },
         "title": {
@@ -1136,10 +1146,11 @@
     },
     "crossings": {
         "description": "Overgange for fodgængere og cyklister",
+        "name": "Overgange",
         "presets": {
             "0": {
-                "title": "en overgang",
-                "description": "Overgang for fodgængere og/eller cyklister"
+                "description": "Overgang for fodgængere og/eller cyklister",
+                "title": "en overgang"
             },
             "1": {
                 "description": "Trafiksignal på en vej",
@@ -1158,18 +1169,17 @@
                 },
                 "question": "Er denne overgang også for cykler?"
             }
-        },
-        "name": "Overgange"
+        }
     },
     "cycleways_and_roads": {
         "tagRenderings": {
             "is lit?": {
                 "mappings": {
-                    "2": {
-                        "then": "Denne vej er belyst om natten"
-                    },
                     "1": {
                         "then": "Denne vej er ikke belyst"
+                    },
+                    "2": {
+                        "then": "Denne vej er belyst om natten"
                     },
                     "3": {
                         "then": "Denne vej er belyst døgnet rundt"
@@ -1193,6 +1203,15 @@
         }
     },
     "defibrillator": {
+        "name": "Hjertestartere",
+        "presets": {
+            "0": {
+                "title": "en hjertestarter"
+            },
+            "1": {
+                "title": "en hjertestarter monteret på en væg"
+            }
+        },
         "tagRenderings": {
             "defibrillator-access": {
                 "mappings": {
@@ -1207,25 +1226,16 @@
             },
             "defibrillator-defibrillator": {
                 "mappings": {
-                    "2": {
-                        "then": "Dette er en normal automatisk hjertestarter"
-                    },
                     "1": {
                         "then": "Dette er en manuel hjertestarter til professionelle"
+                    },
+                    "2": {
+                        "then": "Dette er en normal automatisk hjertestarter"
                     },
                     "3": {
                         "then": "Dette er en særlig type hjertestarter: {defibrillator}"
                     }
                 }
-            }
-        },
-        "name": "Hjertestartere",
-        "presets": {
-            "1": {
-                "title": "en hjertestarter monteret på en væg"
-            },
-            "0": {
-                "title": "en hjertestarter"
             }
         }
     },
@@ -1247,6 +1257,7 @@
         }
     },
     "extinguisher": {
+        "description": "Kortlag til visning af ildslukkere.",
         "presets": {
             "0": {
                 "description": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
@@ -1265,11 +1276,9 @@
                 },
                 "question": "Hvor er den placeret?"
             }
-        },
-        "description": "Kortlag til visning af ildslukkere."
+        }
     },
     "food": {
-        "name": "Restauranter og fastfood",
         "filter": {
             "3": {
                 "options": {
@@ -1278,16 +1287,7 @@
                     }
                 }
             }
-        }
-    },
-    "bike_themed_object": {
-        "title": {
-            "mappings": {
-                "1": {
-                    "then": "Cykelsti"
-                }
-            },
-            "render": "Cykelrelateret objekt"
-        }
+        },
+        "name": "Restauranter og fastfood"
     }
 }

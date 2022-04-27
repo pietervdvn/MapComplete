@@ -119,7 +119,8 @@
         "hu": "Lakóautós megállóhelyek",
         "id": "Tempat camping",
         "ca": "llocs d'acampada",
-        "es": "Sitios de acampada"
+        "es": "Sitios de acampada",
+        "da": "autocamperpladser"
       },
       "tagRenderings": [
         "images",
@@ -135,7 +136,8 @@
             "pt_BR": "Este lugar é chamado de {name}",
             "de": "Dieser Ort heißt {name}",
             "id": "Tempat ini disebut {name}",
-            "es": "Este lugar se llama {name}"
+            "es": "Este lugar se llama {name}",
+            "da": "Dette sted hedder {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -148,7 +150,8 @@
             "nl": "Wat is de naam van deze plaats?",
             "pt_BR": "Qual o nome deste lugar?",
             "de": "Wie heißt dieser Ort?",
-            "es": "¿Cómo se llama este lugar?"
+            "es": "¿Cómo se llama este lugar?",
+            "da": "Hvad hedder dette sted?"
           },
           "freeform": {
             "key": "name"
@@ -187,7 +190,8 @@
                 "pt_BR": "Você precisa pagar para usar",
                 "de": "Sie müssen für die Nutzung bezahlen",
                 "id": "Anda perlu membayar untuk menggunakannya",
-                "es": "Necesitas pagar por su uso"
+                "es": "Necesitas pagar por su uso",
+                "da": "Du skal betale for brug"
               }
             },
             {
@@ -209,7 +213,8 @@
                 "nl": "Kan gratis gebruikt worden",
                 "pt_BR": "Pode ser usado de graça",
                 "de": "Nutzung kostenlos",
-                "es": "Se puede usar de manera gratuita"
+                "es": "Se puede usar de manera gratuita",
+                "da": "Kan bruges gratis"
               },
               "addExtraTags": [
                 "charge="
@@ -229,7 +234,8 @@
             "fr": "Ce site fait payer {charge}",
             "pt_BR": "Este lugar cobra {charge}",
             "de": "Die Gebühr beträgt {charge}",
-            "es": "Este lugar cobra {charge}"
+            "es": "Este lugar cobra {charge}",
+            "da": "Dette sted koster {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -241,8 +247,9 @@
             "zh_Hant": "這個地方收多少費用？",
             "nl": "Hoeveel kost deze plaats?",
             "pt_BR": "Quanto este lugar cobra?",
-            "de": "Wie hoch ist die Gebühr an diesem Ort?",
-            "es": "¿Cuánto cobra este lugar?"
+            "de": "Wie hoch sind die Gebühren hier?",
+            "es": "¿Cuánto cobra este lugar?",
+            "da": "Hvor meget koster dette sted?"
           },
           "freeform": {
             "key": "charge"
@@ -320,7 +327,8 @@
             "pt_BR": "{capacity} campistas podem usar este lugar ao mesmo tempo",
             "de": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen",
             "nl": "{capacity} campers kunnen deze plaats tegelijk gebruiken",
-            "es": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo"
+            "es": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo",
+            "da": "{capacity} campister kan bruge dette sted på samme tid"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -332,7 +340,8 @@
             "pt_BR": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
             "de": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
             "nl": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
-            "es": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)"
+            "es": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)",
+            "da": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)"
           },
           "freeform": {
             "key": "capacity",
@@ -353,7 +362,8 @@
             "pt_BR": "Este lugar fornece acesso a internet?",
             "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
             "nl": "Biedt deze plaats internettoegang?",
-            "es": "¿Este lugar tiene acceso a internet?"
+            "es": "¿Este lugar tiene acceso a internet?",
+            "da": "Er der internetadgang på dette sted?"
           },
           "mappings": [
             {
@@ -374,7 +384,8 @@
                 "de": "Internetzugang ist vorhanden",
                 "nl": "Er is internettoegang",
                 "ca": "Hi ha accés a internet",
-                "es": "Hay acceso a internet"
+                "es": "Hay acceso a internet",
+                "da": "Der er internetadgang"
               }
             },
             {
@@ -395,7 +406,8 @@
                 "pt_BR": "Há acesso à Internet",
                 "de": "Internetzugang ist vorhanden",
                 "nl": "Er is internettoegang",
-                "es": "Hay acceso a internet"
+                "es": "Hay acceso a internet",
+                "da": "Der er internetadgang"
               },
               "hideInAnswer": true
             },
@@ -416,7 +428,8 @@
                 "pt_BR": "Não há acesso à internet",
                 "de": "Kein Internetzugang vorhanden",
                 "nl": "Er is geen internettoegang",
-                "es": "No hay acceso a internet"
+                "es": "No hay acceso a internet",
+                "da": "Der er ingen internetadgang"
               }
             }
           ]
@@ -433,7 +446,8 @@
             "pt_BR": "Você tem que pagar pelo acesso à internet?",
             "de": "Ist der Internetzugang gebührenpflichtig?",
             "nl": "Moet je betalen voor internettoegang?",
-            "es": "¿Tienes que pagar por el acceso a internet?"
+            "es": "¿Tienes que pagar por el acceso a internet?",
+            "da": "Skal man betale for internetadgang?"
           },
           "mappings": [
             {
@@ -452,7 +466,8 @@
                 "pt_BR": "Você precisa pagar um extra pelo acesso à internet",
                 "de": "Der Internetzugang ist gebührenpflichtig",
                 "nl": "Je moet extra betalen voor internettoegang",
-                "es": "Tienes que pagar a mayores por el acceso a internet"
+                "es": "Tienes que pagar a mayores por el acceso a internet",
+                "da": "Man skal betale ekstra for internetadgang"
               }
             },
             {
@@ -471,7 +486,8 @@
                 "pt_BR": "Você não precisa pagar um extra pelo acesso à internet",
                 "de": "Der Internetzugang ist kostenlos",
                 "nl": "Je hoeft niet extra te betalen voor internettoegang",
-                "es": "No tienes que pagar a mayores por el acceso a internet"
+                "es": "No tienes que pagar a mayores por el acceso a internet",
+                "da": "Man behøver ikke at betale ekstra for internetadgang"
               }
             }
           ],
@@ -494,7 +510,8 @@
             "pt_BR": "Este lugar tem banheiros?",
             "de": "Verfügt dieser Ort über Toiletten?",
             "nl": "Heeft deze plaats toiletten?",
-            "hu": "Van-e itt WC?"
+            "hu": "Van-e itt WC?",
+            "da": "Har dette sted toiletter?"
           },
           "mappings": [
             {
@@ -516,7 +533,8 @@
                 "de": "Dieser Ort verfügt über Toiletten",
                 "nl": "Deze plaats heeft toiletten",
                 "hu": "Itt van WC",
-                "es": "Este lugar cuenta con sanitarios"
+                "es": "Este lugar cuenta con sanitarios",
+                "da": "Dette sted har toiletter"
               }
             },
             {
@@ -538,7 +556,8 @@
                 "de": "Dieser Ort verfügt nicht über Toiletten",
                 "nl": "Deze plaats heeft geen toiletten",
                 "hu": "Itt nincs WC",
-                "es": "Este lugar no tiene sanitarios"
+                "es": "Este lugar no tiene sanitarios",
+                "da": "Dette sted har ikke toiletter"
               }
             }
           ]
@@ -587,7 +606,8 @@
             "fr": "Ce site permet-il la location longue durée ?",
             "pt_BR": "Este lugar oferece vagas para aluguel a longo prazo?",
             "de": "Gibt es a diesem Ort Plätze für Dauercamper?",
-            "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
+            "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?",
+            "da": "Tilbyder dette sted pladser til langtidsleje?"
           },
           "mappings": [
             {
@@ -623,7 +643,8 @@
                 "fr": "Non, il n’y a pas de résidents permanents",
                 "pt_BR": "Não, não há hóspedes permanentes aqui",
                 "de": "Nein, hier gibt es keine Dauergäste",
-                "es": "No, no hay huéspedes permanentes aquí"
+                "es": "No, no hay huéspedes permanentes aquí",
+                "da": "Nej, der er ingen faste gæster her"
               }
             },
             {
@@ -640,7 +661,8 @@
                 "it": "Puoi soggiornare qui solo se hai un contratto a lungo termine (se selezioni questa opzione, questo luogo sarà rimosso da questa mappa)",
                 "fr": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)",
                 "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)",
-                "es": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
+                "es": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)",
+                "da": "Det er kun muligt at bo her, hvis du har en langtidskontrakt (dette sted forsvinder fra kortet, hvis du vælger dette)"
               }
             }
           ]
@@ -657,7 +679,8 @@
             "pt_BR": "Mais detalhes sobre este lugar: {description}",
             "de": "Mehr Details über diesen Ort: {description}",
             "nl": "Meer details over deze plaats: {description}",
-            "es": "Más detalles sobre este lugar:{description}"
+            "es": "Más detalles sobre este lugar:{description}",
+            "da": "Flere oplysninger om dette sted: {description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -696,7 +719,8 @@
             "nl": "een camperplaats",
             "hu": "lakóautós megállóhely",
             "ca": "un lloc d'acampada",
-            "es": "Un camping"
+            "es": "Un camping",
+            "da": "en autocamperplads"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",

@@ -20,7 +20,8 @@
     "de": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
     "it": "Una cartina per la visione e la modifica delle turbine eoliche.",
     "zh_Hant": "顯示與編輯風機的地圖。",
-    "hu": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép."
+    "hu": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
+    "es": "Un para mostrar y editar turbinas de viento"
   },
   "version": "2021-06-18",
   "startLat": 50.52,

@@ -9,7 +9,8 @@
     "de": "Defibrillatoren",
     "it": "Defibrillatori",
     "ru": "Дефибрилляторы",
-    "sl": "Defibrilatorji"
+    "sl": "Defibrilatorji",
+    "da": "Hjertestartere"
   },
   "source": {
     "osmTags": "emergency=defibrillator"
@@ -43,7 +44,8 @@
         "de": "eine defibrillator",
         "it": "una defibrillatore",
         "ru": "Дефибриллятор",
-        "sl": "Defibrilator"
+        "sl": "Defibrilator",
+        "da": "en hjertestarter"
       },
       "tags": [
         "emergency=defibrillator"
@@ -53,7 +55,8 @@
       "title": {
         "en": "a defibrillator mounted on a wall",
         "nl": "een defibrillator die aan een muur hangt",
-        "sl": "defibrilator je pritrjen na steno"
+        "sl": "defibrilator je pritrjen na steno",
+        "da": "en hjertestarter monteret på en væg"
       },
       "tags": [
         "emergency=defibrillator"
@@ -117,7 +120,8 @@
         "nl": "Is deze defibrillator vrij toegankelijk?",
         "de": "Ist dieser Defibrillator frei zugänglich?",
         "it": "Questo defibrillatore è liberamente accessibile?",
-        "sl": "Ali je ta defibrilator prosto dostopen?"
+        "sl": "Ali je ta defibrilator prosto dostopen?",
+        "da": "Er denne hjertestarter frit tilgængelig?"
       },
       "render": {
         "en": "Access is {access}",
@@ -147,7 +151,8 @@
             "de": "Öffentlich zugänglich",
             "it": "Pubblicamente accessibile",
             "ru": "Общедоступный",
-            "sl": "Javno dostopen"
+            "sl": "Javno dostopen",
+            "da": "Offentligt tilgængelig"
           }
         },
         {
@@ -161,7 +166,8 @@
             "de": "Öffentlich zugänglich",
             "it": "Pubblicamente accessibile",
             "ru": "Общедоступный",
-            "sl": "Javno dostopen"
+            "sl": "Javno dostopen",
+            "da": "Offentligt tilgængelig"
           },
           "hideInAnswer": true
         },
@@ -241,7 +247,8 @@
             "fr": "C'est un défibrillateur manuel pour professionnel",
             "it": "Questo è un defibrillatore manuale per professionisti",
             "de": "Dies ist ein manueller Defibrillator für den professionellen Einsatz",
-            "sl": "To je ročni defibrilator za poklicne reševalce"
+            "sl": "To je ročni defibrilator za poklicne reševalce",
+            "da": "Dette er en manuel hjertestarter til professionelle"
           }
         },
         {
@@ -253,7 +260,8 @@
             "it": "È un normale defibrillatore automatico",
             "ru": "Это обычный автоматический дефибриллятор",
             "de": "Dies ist ein normaler automatischer Defibrillator",
-            "sl": "To je normalen avtomatski defibrilator"
+            "sl": "To je normalen avtomatski defibrilator",
+            "da": "Dette er en normal automatisk hjertestarter"
           }
         },
         {
@@ -261,7 +269,8 @@
           "then": {
             "en": "This is a special type of defibrillator: {defibrillator}",
             "nl": "Dit is een speciaal type defibrillator: {defibrillator}",
-            "sl": "To je posebna vrsta defibrilatorja: {defibrillator}"
+            "sl": "To je posebna vrsta defibrilatorja: {defibrillator}",
+            "da": "Dette er en særlig type hjertestarter: {defibrillator}"
           },
           "hideInAnswer": true
         }

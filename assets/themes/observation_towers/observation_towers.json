@@ -8,7 +8,8 @@
     "ru": "Смотровые башни",
     "zh_Hant": "觀景塔",
     "hu": "Kilátótornyok",
-    "ca": "Torres d'observació"
+    "ca": "Torres d'observació",
+    "es": "Torres de observación"
   },
   "shortDescription": {
     "en": "Publicly accessible towers to enjoy the view",
@@ -16,7 +17,8 @@
     "de": "Öffentlich zugänglicher Aussichtsturm",
     "it": "Torri pubblicamente accessibili per godere della vista",
     "zh_Hant": "開發可及能觀景的高塔",
-    "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban"
+    "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
+    "es": "Torres accesibles públicamente para disfrutar de la vista"
   },
   "description": {
     "nl": "Publieke uitkijktorens om van het panorama te genieten",
@@ -24,7 +26,8 @@
     "de": "Eine Karte mit öffentlich zugänglichen Aussichtstürmen",
     "it": "Torri pubblicamente accessibili per godere della vista",
     "zh_Hant": "開放可及能觀景的高塔",
-    "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban"
+    "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
+    "es": "Torres accesibles públicamente para disfrutar de la vista"
   },
   "maintainer": "",
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",

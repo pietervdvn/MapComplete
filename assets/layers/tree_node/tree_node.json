@@ -228,7 +228,7 @@
           },
           "then": {
             "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
-            "en": "The tree is a residential garden.",
+            "en": "The tree is in a residential garden.",
             "it": "L’albero è un giardino residenziale.",
             "fr": "Cet arbre est dans une cour résidentielle.",
             "es": "El árbol está en un jardín privado o residencial.",
@@ -258,7 +258,7 @@
           },
           "then": {
             "nl": "De boom staat in een woonkern.",
-            "en": "The tree is an urban area.",
+            "en": "The tree is in an urban area.",
             "it": "L’albero si trova in un’area urbana.",
             "fr": "L'arbre est une zone urbaine.",
             "es": "El árbol está en un zona urbana.",

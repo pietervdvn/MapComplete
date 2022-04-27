@@ -18,7 +18,8 @@
     "it": "Qual è l’origine di un toponimo?",
     "zh_Hant": "地名的由來是？",
     "hu": "Mi az eredete egy helynévnek?",
-    "fr": "Quelle est l'origine de ce toponyme ?"
+    "fr": "Quelle est l'origine de ce toponyme ?",
+    "es": "¿Cual es el origen de un topónimo?"
   },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",

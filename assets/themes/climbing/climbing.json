@@ -150,7 +150,8 @@
               "de": " Fuß",
               "eo": " futo",
               "it": " piedi",
-              "ca": " peus"
+              "ca": " peus",
+              "es": " pies"
             }
           }
         ]
@@ -236,7 +237,8 @@
           "en": "Who can access here?",
           "fr": "Qui peut y accéder ?",
           "de": "Wer hat hier Zugang?",
-          "it": "Chi può accedervi?"
+          "it": "Chi può accedervi?",
+          "es": "¿Quién pueden acceder aquí?"
         },
         "mappings": [
           {
@@ -245,7 +247,8 @@
               "en": "Publicly accessible to anyone",
               "fr": "Libre d’accès",
               "de": "Öffentlich zugänglich für jedermann",
-              "it": "Pubblicamente accessibile a chiunque"
+              "it": "Pubblicamente accessibile a chiunque",
+              "es": "Accesible públicamente a cualquiera"
             }
           },
           {
@@ -254,7 +257,8 @@
               "en": "You need a permit to access here",
               "fr": "Une autorisation est nécessaire",
               "de": "Zugang nur mit Genehmigung",
-              "it": "È necessario avere un’autorizzazione per entrare"
+              "it": "È necessario avere un’autorizzazione per entrare",
+              "es": "Necesitas una autorización para acceder aquí"
             }
           },
           {
@@ -264,7 +268,8 @@
               "fr": "Réservé aux clients",
               "de": "Nur für Kunden",
               "it": "Riservato ai clienti",
-              "ca": "Només clients"
+              "ca": "Només clients",
+              "es": "Solo clientes"
             }
           },
           {
@@ -275,7 +280,8 @@
               "fr": "Réservé aux membres",
               "de": "Nur für Vereinsmitglieder",
               "it": "Riservato ai membri del club",
-              "ca": "Només membres del club"
+              "ca": "Només membres del club",
+              "es": "Solo miembros del club"
             }
           },
           {
@@ -318,7 +324,8 @@
           "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
           "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
           "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
-          "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
+          "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
+          "es": "Las rotas tienen una longitud media de <b>{canonical(climbing:length)}</b>"
         },
         "condition": {
           "and": [
@@ -342,7 +349,8 @@
           "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
           "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
           "fr": "Quelle est la longueur moyenne des voies en mètres ?",
-          "it": "Quale è la lunghezza (media) delle vie in metri?"
+          "it": "Quale è la lunghezza (media) delle vie in metri?",
+          "es": "¿Cuál es la longitud (media) de la ruta en metros?"
         },
         "freeform": {
           "key": "climbing:length",
@@ -357,7 +365,8 @@
           "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
           "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
           "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
-          "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?"
+          "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
+          "es": "¿Cual es el nivel de la ruta más fácil aquí, de acuerdo con el sistema de clasificación francés?"
         },
         "render": {
           "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
@@ -392,7 +401,8 @@
           "nl": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
           "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
           "fr": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
-          "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?"
+          "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
+          "es": "¿Cual es la ruta de mayor nivel aquí, de acuerdo al sistema de clasificación francés?"
         },
         "render": {
           "de": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)",

@@ -443,6 +443,12 @@
         },
         "tagRenderings": {
             "9": {
+                "renderings": {
+                    "0": {
+                        "question": "Wie viele type_plural können hier gemietet werden? ",
+                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
+                    }
+                },
                 "rewrite": {
                     "into": {
                         "0": {
@@ -466,12 +472,6 @@
                         "6": {
                             "1": "Tandems"
                         }
-                    }
-                },
-                "renderings": {
-                    "0": {
-                        "question": "Wie viele type_plural können hier gemietet werden? ",
-                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
                     }
                 }
             },
@@ -1146,6 +1146,7 @@
         }
     },
     "birdhide": {
+        "description": "Ein Vogelbeobachtungsturm",
         "filter": {
             "0": {
                 "options": {
@@ -1170,6 +1171,13 @@
             }
         },
         "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "1": {
+                        "then": "Vogelbeobachtungsturm"
+                    }
+                }
+            },
             "bird-hide-wheelchair": {
                 "mappings": {
                     "3": {
@@ -1187,16 +1195,8 @@
                     }
                 },
                 "render": "Betrieben von {operator}"
-            },
-            "bird-hide-shelter-or-wall": {
-                "mappings": {
-                    "1": {
-                        "then": "Vogelbeobachtungsturm"
-                    }
-                }
             }
-        },
-        "description": "Ein Vogelbeobachtungsturm"
+        }
     },
     "cafe_pub": {
         "deletion": {

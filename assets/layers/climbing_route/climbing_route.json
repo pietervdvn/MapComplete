@@ -25,7 +25,8 @@
       "ja": "登坂ルート",
       "nb_NO": "Klatrerute",
       "it": "Via di arrampicata",
-      "fr": "Voie d’escalade"
+      "fr": "Voie d’escalade",
+      "da": "Klatrerute"
     },
     "mappings": [
       {
@@ -36,7 +37,8 @@
           "nl": "Klimroute <strong>{name}</strong>",
           "ja": "登坂ルート<strong>{name}</strong>",
           "it": "Via di arrampicata <strong>{name}</strong>",
-          "fr": "Voie d’escalade <strong>{name}</strong>"
+          "fr": "Voie d’escalade <strong>{name}</strong>",
+          "da": "Klatrerute <strong>{name}</strong>"
         }
       }
     ]
@@ -54,7 +56,8 @@
         "ru": "<strong>{name}</strong>",
         "ja": "<strong>{name}</strong>",
         "it": "<strong>{name}</strong>",
-        "nb_NO": "<strong>{name}</strong>"
+        "nb_NO": "<strong>{name}</strong>",
+        "da": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing route?",
@@ -63,7 +66,8 @@
         "ja": "この登坂ルートの名前は何ですか?",
         "it": "Come si chiama questa via di arrampicata?",
         "fr": "Quel est le nom de cette voie d’escalade ?",
-        "nb_NO": "Hva er navnet på denne klatreruten?"
+        "nb_NO": "Hva er navnet på denne klatreruten?",
+        "da": "Hvad hedder denne klatrerute?"
       },
       "freeform": {
         "key": "name"
@@ -83,7 +87,8 @@
             "ja": "この登坂ルートには名前がありません",
             "it": "Questa via di arrampicata non ha un nome",
             "fr": "Cette voie n’a pas de nom",
-            "nb_NO": "Denne klatreruten har ikke noe navn"
+            "nb_NO": "Denne klatreruten har ikke noe navn",
+            "da": "Denne klatrerute har ikke et navn"
           }
         }
       ],
@@ -96,7 +101,8 @@
         "it": "Quanto è lunga questa via di arrampicata (in metri)?",
         "fr": "Quelle est la longueur de cette voie (en mètres) ?",
         "de": "Wie lang ist diese Kletterroute (in Metern)?",
-        "nb_NO": "Hvor mange meter er klatreruten?"
+        "nb_NO": "Hvor mange meter er klatreruten?",
+        "da": "Hvor lang er denne klatrerute (i meter)?"
       },
       "render": {
         "de": "Diese Route ist {canonical(climbing:length)} lang",

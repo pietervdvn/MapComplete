@@ -94,7 +94,8 @@
             "fr": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)",
             "de": "Ausrichtung: {direction} (wobei 0=N und 90=O)",
             "it": "Orientamento: {direction} (0 per il Nord e 90 per l’Est)",
-            "hu": "Tájolás: {direction} (0=észak, 90=kelet stb.)"
+            "hu": "Tájolás: {direction} (0=észak, 90=kelet stb.)",
+            "es": "Orientación: {direction} (donde 0=N y 90=O)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
@@ -103,7 +104,8 @@
             "fr": "Quelle est l’orientation du jardin ?",
             "de": "Wie ist der Garten ausgerichtet?",
             "it": "Com’è orientato questo giardino?",
-            "hu": "Milyen a kert tájolása?"
+            "hu": "Milyen a kert tájolása?",
+            "es": "¿Cual es la orientación del jardín?"
           },
           "freeform": {
             "type": "direction",
@@ -127,7 +129,8 @@
                 "it": "Il giardino è completamente illuminato dal sole",
                 "fr": "Le jardin est en plein soleil",
                 "de": "Der Garten liegt in voller Sonne",
-                "hu": "A kert teljesen a napon van"
+                "hu": "A kert teljesen a napon van",
+                "es": "El jardín está completamente al sol"
               }
             },
             {
@@ -144,7 +147,8 @@
                 "it": "Il giardino è parzialmente in ombra",
                 "fr": "Le jardin est partiellement ensoleillé",
                 "de": "Der Garten liegt im Halbschatten",
-                "hu": "A kert részben árnyékban van"
+                "hu": "A kert részben árnyékban van",
+                "es": "El jardín está parcialmente a la sombra"
               }
             },
             {
@@ -160,7 +164,8 @@
                 "it": "Il giardino è in ombra",
                 "fr": "Le jardin est à l’ombre",
                 "de": "Der Garten liegt im Schatten",
-                "hu": "A kert árnyékban van"
+                "hu": "A kert árnyékban van",
+                "es": "El jardín está a la sombra"
               }
             }
           ],
@@ -172,7 +177,8 @@
             "ru": "Сад расположен на солнечной стороне или в тени?",
             "fr": "Quel est l’ensoleillement du jardin ?",
             "de": "Ist der Garten schattig oder sonnig?",
-            "hu": "Árnyékban vagy napon van a kert?"
+            "hu": "Árnyékban vagy napon van a kert?",
+            "es": "¿El jardín está al sol o a la sombra?"
           }
         },
         {
@@ -235,7 +241,8 @@
             "it": "Data di realizzazione del giardino: {start_date}",
             "fr": "Date de construction du jardin : {start_date}",
             "de": "Errichtungsdatum des Gartens: {start_date}",
-            "hu": "A kert építésének időpontja: {start_date}"
+            "hu": "A kert építésének időpontja: {start_date}",
+            "es": "Fecha de construcción del jardín: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
@@ -244,7 +251,8 @@
             "it": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
             "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
             "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
-            "hu": "Mikor épült a kert? (Év megadása is elegendő)"
+            "hu": "Mikor épült a kert? (Év megadása is elegendő)",
+            "es": "¿Cuándo se construyó el jardín? (un año es suficiente)"
           },
           "freeform": {
             "key": "start_date",
@@ -268,7 +276,8 @@
                 "it": "Ci sono piante commestibili",
                 "fr": "Il y a des plantes comestibles",
                 "de": "Es gibt essbare Pflanzen",
-                "hu": "Van benne ehető növény"
+                "hu": "Van benne ehető növény",
+                "es": "Hay plantas comestibles"
               }
             },
             {
@@ -284,7 +293,8 @@
                 "it": "Non ci sono piante commestibili",
                 "fr": "Il n’y a pas de plantes comestibles",
                 "de": "Es gibt keine essbaren Pflanzen",
-                "hu": "Nincs benne ehető növény"
+                "hu": "Nincs benne ehető növény",
+                "es": "No hay plantas comestibles"
               }
             }
           ],
@@ -295,7 +305,8 @@
             "it": "Ci sono piante commestibili?",
             "fr": "Y-a-t’il des plantes comestibles ?",
             "de": "Gibt es essbare Pflanzen?",
-            "hu": "Van-e benne ehető növény?"
+            "hu": "Van-e benne ehető növény?",
+            "es": "¿Hay alguna planta comestible?"
           }
         },
         {
@@ -308,7 +319,8 @@
             "ru": "Какие виды растений обитают здесь?",
             "fr": "Quel type de plantes pousse ici ?",
             "de": "Welche Pflanzen wachsen hier?",
-            "hu": "Milyen jellegű növények nőnek benne?"
+            "hu": "Milyen jellegű növények nőnek benne?",
+            "es": "¿Qué tipo de plantas crecen aquí?"
           },
           "mappings": [
             {
@@ -372,7 +384,8 @@
             "fr": "Plus de détails : {description}",
             "de": "Weitere Details: {description}",
             "eo": "Pliaj detaloj: {description}",
-            "hu": "További részletek: {description}"
+            "hu": "További részletek: {description}",
+            "es": "Más detalles: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
@@ -382,7 +395,8 @@
             "ru": "Дополнительная информация о саде (если требуется или еще не указана выше)",
             "fr": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
             "de": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
-            "hu": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)"
+            "hu": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)",
+            "es": "Información descriptiva complementaria sobre el jardín (si es necesaria pero no se describe arriba)"
           },
           "freeform": {
             "key": "description",

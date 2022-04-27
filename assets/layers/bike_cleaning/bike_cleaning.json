@@ -10,7 +10,8 @@
     "pt_BR": "Serviço de limpeza de bicicletas",
     "pt": "Serviço de limpeza de bicicletas",
     "ru": "Услуги по чистке велосипедов",
-    "es": "Servicio de limpieza de bicis"
+    "es": "Servicio de limpieza de bicis",
+    "da": "Cykelrengøring"
   },
   "title": {
     "render": {
@@ -116,7 +117,8 @@
             "en": "Free to use",
             "de": "Kostenlose Nutzung",
             "nl": "Gratis te gebruiken",
-            "es": "Gratis"
+            "es": "Gratis",
+            "da": "Gratis at bruge"
           },
           "hideInAnswer": true
         },
@@ -174,7 +176,8 @@
             "en": "Free to use",
             "de": "Kostenlose Nutzung",
             "nl": "Gratis te gebruiken",
-            "es": "Gratis"
+            "es": "Gratis",
+            "da": "Gratis at bruge"
           },
           "hideInAnswer": true
         },
@@ -235,6 +238,7 @@
     "en": "A layer showing facilities where one can clean their bike",
     "nl": "Een laag die plaatsen toont waar je je fiets kunt wassen",
     "de": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
-    "es": "Una capa que muestra facilidades en las que uno puede limpiar su bici"
+    "es": "Una capa que muestra facilidades en las que uno puede limpiar su bici",
+    "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel"
   }
 }

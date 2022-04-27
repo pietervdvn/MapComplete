@@ -24,11 +24,11 @@
                 "1": {
                     "then": "Beliggende i stueetagen"
                 },
-                "3": {
-                    "then": "Beliggende på første sal"
-                },
                 "2": {
                     "then": "Beliggende i stueetagen"
+                },
+                "3": {
+                    "then": "Beliggende på første sal"
                 }
             },
             "render": "Beliggende på {level}. etage"
@@ -61,6 +61,9 @@
         },
         "service:electricity": {
             "mappings": {
+                "0": {
+                    "then": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+                },
                 "1": {
                     "then": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
                 },
@@ -69,9 +72,6 @@
                 },
                 "3": {
                     "then": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs"
-                },
-                "0": {
-                    "then": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
                 }
             }
         },
@@ -80,14 +80,14 @@
                 "0": {
                     "then": "Dette sted er specielt indrettet til kørestolsbrugere"
                 },
-                "3": {
-                    "then": "Dette sted er ikke tilgængeligt med kørestol"
-                },
                 "1": {
                     "then": "Dette sted er let tilgængeligt med en kørestol"
                 },
                 "2": {
                     "then": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let"
+                },
+                "3": {
+                    "then": "Dette sted er ikke tilgængeligt med kørestol"
                 }
             },
             "question": "Er stedet tilgængeligt med en kørestol?"

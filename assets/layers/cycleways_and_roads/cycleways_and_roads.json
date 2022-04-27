@@ -52,7 +52,8 @@
           "de": "Radweg",
           "ru": "Велосипедная дорожка",
           "fr": "Piste cyclable",
-          "ca": "Via ciclista"
+          "ca": "Via ciclista",
+          "da": "Cykelsti"
         }
       },
       {
@@ -81,7 +82,8 @@
           "en": "Cycleway next to the road",
           "nl": "Fietsweg naast de weg",
           "de": "Radweg neben der Straße",
-          "fr": "Piste cyclable séparée de la route"
+          "fr": "Piste cyclable séparée de la route",
+          "da": "Cykelsti ved siden af vejen"
         }
       },
       {
@@ -91,7 +93,8 @@
           "en": "Cyclestreet",
           "de": "Fahrradstraße",
           "fr": "Vélorue",
-          "ca": "Carrer ciclista"
+          "ca": "Carrer ciclista",
+          "da": "Cykelgade"
         }
       }
     ]
@@ -171,7 +174,8 @@
       "question": {
         "en": "Is this street lit?",
         "nl": "Is deze weg verlicht?",
-        "de": "Ist diese Straße beleuchtet?"
+        "de": "Ist diese Straße beleuchtet?",
+        "da": "Er denne gade belyst?"
       },
       "mappings": [
         {
@@ -187,7 +191,8 @@
           "then": {
             "en": "This road is not lit",
             "nl": "Deze weg is niet verlicht",
-            "de": "Diese Straße ist nicht beleuchtet"
+            "de": "Diese Straße ist nicht beleuchtet",
+            "da": "Denne vej er ikke belyst"
           }
         },
         {
@@ -195,7 +200,8 @@
           "then": {
             "en": "This road is lit at night",
             "nl": "Deze weg is 's nachts verlicht",
-            "de": "Diese Straße ist nachts beleuchtet"
+            "de": "Diese Straße ist nachts beleuchtet",
+            "da": "Denne vej er belyst om natten"
           },
           "hideInAnswer": true
         },
@@ -204,7 +210,8 @@
           "then": {
             "en": "This road is lit 24/7",
             "nl": "Deze weg is 24/7 verlicht",
-            "de": "Diese Straße ist durchgehend beleuchtet"
+            "de": "Diese Straße ist durchgehend beleuchtet",
+            "da": "Denne vej er belyst døgnet rundt"
           }
         }
       ],

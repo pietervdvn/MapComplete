@@ -203,6 +203,7 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
+            "downloadCustomTheme": "Herunterladen der Konfiguration für diese Karte",
             "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
             "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
@@ -217,8 +218,7 @@
             "fsUserbadge": "Anmeldeschaltfläche aktivieren",
             "fsWelcomeMessage": "Begrüßungsfenster und zugehörige Registerkarten anzeigen",
             "intro": "<h3>Diese Karte teilen</h3> Teilen Sie diese Karte, indem Sie den folgenden Link kopieren und an Freunde und Familie schicken:",
-            "thanksForSharing": "Danke für das Teilen!",
-            "downloadCustomTheme": "Herunterladen der Konfiguration für diese Karte"
+            "thanksForSharing": "Danke für das Teilen!"
         },
         "skip": "Frage überspringen",
         "skippedQuestions": "Einige Fragen wurden übersprungen",
@@ -320,6 +320,7 @@
             "nearbyWarn": "Die {count} roten Elemente auf der folgenden Karte werden <b>nicht</b> importiert!",
             "nothingLoaded": "Es werden keine Elemente aus OpenStreetMap geladen, die dem aktuellen Layer {name} entsprechen",
             "osmLoaded": "{count} Elemente werden aus OpenStreetMap geladen, die dem Layer <b>{name}</b> entsprechen.",
+            "reloadTheCache": "Cache löschen und Overpass erneut abfragen",
             "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten",
             "states": {
                 "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
@@ -330,8 +331,7 @@
             "title": "Mit vorhandenen Daten vergleichen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {current}",
-            "reloadTheCache": "Cache löschen und Overpass erneut abfragen"
+            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {current}"
         },
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",
@@ -619,13 +619,13 @@
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
+        "allMissing": "Noch keine Übersetzungen",
         "completeness": "Die Übersetzungen für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
         "deactivate": "Schaltflächen für die Übersetzung deaktivieren",
         "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
         "missing": "{count} unübersetzte Zeichenfolgen",
-        "notImmediate": "Die Übersetzungen werden nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage",
-        "allMissing": "Noch keine Übersetzungen"
+        "notImmediate": "Die Übersetzungen werden nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
     },
     "validation": {
         "color": {

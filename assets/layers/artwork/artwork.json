@@ -15,7 +15,8 @@
     "pt": "Obras de arte",
     "hu": "Műalkotások",
     "pl": "Dzieła sztuki",
-    "ca": "Obres d'art"
+    "ca": "Obres d'art",
+    "da": "Kunstværker"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -40,7 +41,8 @@
       "pt": "Obra de arte",
       "pt_BR": "Obra de arte",
       "sv": "Konstverk",
-      "ca": "Obra d'art"
+      "ca": "Obra d'art",
+      "da": "Kunstværk"
     },
     "mappings": [
       {
@@ -63,7 +65,8 @@
           "pl": "Dzieło sztuki <i>{name}</i>",
           "pt": "Obra de arte <i>{name}</i>",
           "pt_BR": "Obra de arte <i>{name}</i>",
-          "sv": "Konstverk <i>{name}</i>"
+          "sv": "Konstverk <i>{name}</i>",
+          "da": "Kunstværk <i>{name}</i>"
         }
       }
     ]
@@ -80,7 +83,8 @@
     "zh_Hant": "不同類型的藝術品",
     "id": "Beragam karya seni",
     "pt": "Diversas obras de arte",
-    "hu": "Különféle műalkotások"
+    "hu": "Különféle műalkotások",
+    "da": "Forskellige kunstværker"
   },
   "minzoom": 12,
   "presets": [
@@ -106,7 +110,8 @@
         "pl": "Dzieło sztuki",
         "pt": "uma obra de arte",
         "pt_BR": "uma obra de arte",
-        "sv": "Konstverk"
+        "sv": "Konstverk",
+        "da": "et kunstværk"
       }
     }
   ],
@@ -143,7 +148,8 @@
         "id": "Apa jenis karya seni ini?",
         "pt": "Qual é o tipo desta obra de arte?",
         "hu": "Milyen fajta műalkotás ez?",
-        "pl": "Jakiego rodzaju jest to dzieło sztuki?"
+        "pl": "Jakiego rodzaju jest to dzieło sztuki?",
+        "da": "Hvilken slags kunstværk er det?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -169,7 +175,8 @@
             "hu": "Építészet",
             "pl": "Architektura",
             "es": "Arquitectura",
-            "ca": "Arquitectura"
+            "ca": "Arquitectura",
+            "da": "Arkitektur"
           }
         },
         {
@@ -189,7 +196,8 @@
             "hu": "Falfestmény",
             "pl": "Mural",
             "es": "Mural",
-            "ca": "Mural"
+            "ca": "Mural",
+            "da": "Vægmaleri"
           }
         },
         {
@@ -209,7 +217,8 @@
             "hu": "Festmény",
             "pl": "Obraz",
             "es": "Pintura",
-            "ca": "Pintura"
+            "ca": "Pintura",
+            "da": "Maleri"
           }
         },
         {
@@ -229,7 +238,8 @@
             "hu": "Absztrakt szobor",
             "pl": "Rzeźba",
             "es": "Escultura",
-            "ca": "Escultura"
+            "ca": "Escultura",
+            "da": "Skulptur"
           }
         },
         {
@@ -248,7 +258,8 @@
             "hu": "Szobor",
             "pl": "Posąg",
             "es": "Estatua",
-            "ca": "Estàtua"
+            "ca": "Estàtua",
+            "da": "Statue"
           }
         },
         {
@@ -267,7 +278,8 @@
             "hu": "Mellszobor",
             "pl": "Popiersie",
             "es": "Busto",
-            "ca": "Bust"
+            "ca": "Bust",
+            "da": "Buste"
           }
         },
         {
@@ -287,7 +299,8 @@
             "hu": "Kő",
             "pl": "Skała",
             "ca": "Pedra",
-            "es": "Piedra"
+            "es": "Piedra",
+            "da": "Sten"
           }
         },
         {
@@ -307,7 +320,8 @@
             "hu": "Installáció",
             "pl": "Instalacja artystyczna",
             "es": "Instalación",
-            "ca": "Instal·lació"
+            "ca": "Instal·lació",
+            "da": "Installation"
           }
         },
         {
@@ -327,7 +341,8 @@
             "hu": "Graffiti",
             "pl": "Graffiti",
             "es": "Grafiti",
-            "ca": "Grafiti"
+            "ca": "Grafiti",
+            "da": "Graffiti"
           }
         },
         {
@@ -347,7 +362,8 @@
             "hu": "Dombormű",
             "pl": "Płaskorzeźba",
             "ca": "Relleu",
-            "es": "Relieve"
+            "es": "Relieve",
+            "da": "Relief"
           }
         },
         {
@@ -406,7 +422,8 @@
         "pt": "Que artista criou isto?",
         "hu": "Melyik művész alkotása ezt?",
         "pl": "Który artysta to stworzył?",
-        "es": "¿Que artista creó esto?"
+        "es": "¿Que artista creó esto?",
+        "da": "Hvilken kunstner har lavet dette?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -422,7 +439,8 @@
         "pt": "Criado por {artist_name}",
         "hu": "Alkotó: {artist_name}",
         "pl": "Stworzone przez {artist_name}",
-        "es": "Creado por {artist_name}"
+        "es": "Creado por {artist_name}",
+        "da": "Lavet af {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -444,7 +462,8 @@
         "pt": "Existe um site com mais informações sobre esta obra de arte?",
         "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
         "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
-        "es": "¿Hay un sitio web con más información sobre esta obra de arte?"
+        "es": "¿Hay un sitio web con más información sobre esta obra de arte?",
+        "da": "Er der et websted med mere information om dette kunstværk?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -482,7 +501,8 @@
         "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
         "pt": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
         "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?",
-        "es": "¿Qué entrada de Wikidata se corresponde con <b>esta obra de arte</b>?"
+        "es": "¿Qué entrada de Wikidata se corresponde con <b>esta obra de arte</b>?",
+        "da": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?"
       },
       "render": {
         "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",

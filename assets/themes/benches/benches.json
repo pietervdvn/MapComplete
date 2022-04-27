@@ -15,7 +15,8 @@
     "hu": "Padok",
     "ca": "Bancs",
     "es": "Bancos",
-    "zh_Hans": "长椅"
+    "zh_Hans": "长椅",
+    "da": "Bænke"
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -32,7 +33,8 @@
     "id": "Peta bangku",
     "ca": "Un mapa de bancs",
     "es": "Un mapa de bancos",
-    "zh_Hans": "长椅地图"
+    "zh_Hans": "长椅地图",
+    "da": "Et kort over bænke"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",

@@ -3,7 +3,8 @@
   "name": {
     "nl": "Eetgelegenheden",
     "en": "Restaurants and fast food",
-    "de": "Restaurants und Fast Food"
+    "de": "Restaurants und Fast Food",
+    "da": "Restauranter og fastfood"
   },
   "source": {
     "osmTags": {
@@ -662,7 +663,8 @@
           "question": {
             "en": "Has a halal menu",
             "nl": "Heeft een halal menu",
-            "de": "Halal Gerichte im Angebot"
+            "de": "Halal Gerichte im Angebot",
+            "da": "Har en halalmenu"
           },
           "osmTags": {
             "or": [

@@ -2,11 +2,13 @@
   "id": "cyclenodes",
   "title": {
     "en": "Cycle Node Networks",
-    "de": "Fahrrad-Knotenpunktnetzwerke"
+    "de": "Fahrrad-Knotenpunktnetzwerke",
+    "es": "Redes de Nodos Ciclistas"
   },
   "description": {
     "en": "This map shows cycle node networks and allows you to add new nodes easily",
-    "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen"
+    "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
+    "es": "Este mapa muestra redes de nodos ciclistas y te permita añadir nodos nuevos de manera sencilla"
   },
   "maintainer": "Sebastian Kürten",
   "icon": "./assets/themes/cyclenodes/logo.svg",
@@ -25,7 +27,8 @@
       "id": "node2node",
       "name": {
         "en": "node to node links",
-        "de": "Knotenpunktverbindungen"
+        "de": "Knotenpunktverbindungen",
+        "es": "enlaces nodo a nodo"
       },
       "source": {
         "osmTags": {
@@ -40,14 +43,16 @@
       "title": {
         "render": {
           "en": "node to node link",
-          "de": "Knotenpunktverbindung"
+          "de": "Knotenpunktverbindung",
+          "es": "enlace nodo a nodo"
         },
         "mappings": [
           {
             "if": "ref~*",
             "then": {
               "en": "node to node link <strong>{ref}</strong>",
-              "de": "Knotenpunktverbindung <strong>{ref}</strong>"
+              "de": "Knotenpunktverbindung <strong>{ref}</strong>",
+              "es": "enlace nodo a nodo <strong>{ref}</strong>"
             }
           }
         ]
@@ -66,11 +71,13 @@
         {
           "question": {
             "en": "When was this node to node link last surveyed?",
-            "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?"
+            "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
+            "es": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?"
           },
           "render": {
             "en": "This node to node link was last surveyed on {survey:date}",
-            "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft"
+            "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
+            "es": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -92,7 +99,8 @@
       "name": {
         "en": "nodes",
         "de": "Knotenpunkte",
-        "ca": "nodes"
+        "ca": "nodes",
+        "es": "nodos"
       },
       "source": {
         "osmTags": {
@@ -125,18 +133,21 @@
       "title": {
         "render": {
           "en": "cycle node <strong>{rcn_ref}</strong>",
-          "de": "Knotenpunkt <strong>{rcn_ref}</strong>"
+          "de": "Knotenpunkt <strong>{rcn_ref}</strong>",
+          "es": "nodo ciclista <strong>{rcn_ref}</strong>"
         }
       },
       "tagRenderings": [
         {
           "question": {
             "en": "When was this cycle node last surveyed?",
-            "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?"
+            "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
+            "es": "¿Cuándo fue sondeado este nodo ciclista por última vez?"
           },
           "render": {
             "en": "This cycle node was last surveyed on {survey:date}",
-            "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}"
+            "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}",
+            "es": "Este nodo ciclista se sondeó por última vez el {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -153,7 +164,8 @@
         {
           "question": {
             "en": "How many other cycle nodes does this node link to?",
-            "de": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?"
+            "de": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
+            "es": "¿A cuántos otros nodos ciclistas enlaza este nodo?"
           },
           "render": {
             "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",

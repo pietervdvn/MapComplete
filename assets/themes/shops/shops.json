@@ -19,7 +19,8 @@
     "ja": "基本的なショップ情報を含む編集可能なマップ",
     "de": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
     "it": "Una cartina modificabile con informazioni di base dei negozi",
-    "hu": "Szerkeszthető térkép üzletek alapvető adataival"
+    "hu": "Szerkeszthető térkép üzletek alapvető adataival",
+    "es": "Un mapa editable con información básica sobre tiendas"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
@@ -28,7 +29,8 @@
     "zh_Hant": "這份地圖上，你可以標記商家基本資訊，新增營業時間以及聯絡電話",
     "de": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
     "it": "In questa cartina è possibile aggiungere informazioni di base di un negozio, orari di apertura e numeri di telefono",
-    "hu": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat."
+    "hu": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat.",
+    "es": "En este mapa, se puede marcar información básica sobre tiendas, añadir horarios de apertura y números de teléfono"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",
