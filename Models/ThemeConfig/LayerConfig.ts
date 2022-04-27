@@ -27,7 +27,6 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import {And} from "../../Logic/Tags/And";
 import {Overpass} from "../../Logic/Osm/Overpass";
 import Constants from "../Constants";
-import undefinedError = Mocha.utils.undefinedError;
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -338,11 +337,12 @@ export default class LayerConfig extends WithContextLoader {
         return TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
     }
 
-    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
+    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy?: Map<string, string[]>, dependencies: {
         context?: string;
         reason: string;
         neededLayer: string;
-    }[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
+    }[] = []
+                                 , addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
         
         extraProps.push("This layer is shown at zoomlevel **"+this.minzoom+"** and higher")
