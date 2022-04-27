@@ -98,10 +98,10 @@
                     "caravansites-long-term": {
                         "mappings": {
                             "0": {
-                                "then": "Yes, there are some spots for long term rental, but you can also stay on a daily basis"
+                                "then": "There are some spots for long term rental, but you can also stay on a daily basis"
                             },
                             "1": {
-                                "then": "No, there are no permanent guests here"
+                                "then": "There are no permanent guests here"
                             },
                             "2": {
                                 "then": "It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)"
