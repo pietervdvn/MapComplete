@@ -41,17 +41,21 @@ export default class PerLayerFeatureSourceSplitter {
             }
 
             for (const f of features) {
+                let foundALayer = false;
                 for (const layer of layers.data) {
                     if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         // We have found our matching layer!
                         featuresPerLayer.get(layer.layerDef.id).push(f)
+                        foundALayer = true;
                         if (!layer.layerDef.passAllFeatures) {
                             // If not 'passAllFeatures', we are done for this feature
-                            break;
+                           break
                         }
                     }
                 }
-                noLayerFound.push(f)
+                if(!foundALayer){
+                    noLayerFound.push(f)
+                }
             }
 
             // At this point, we have our features per layer as a list
