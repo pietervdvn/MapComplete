@@ -1,6 +1,7 @@
 {
   "ca": {
     "ca": "català",
+    "da": "catalansk",
     "de": "Katalanisch",
     "en": "Catalan",
     "eo": "kataluna lingvo",
@@ -23,8 +24,34 @@
     "zh_Hans": "加泰罗尼亚语",
     "zh_Hant": "加泰隆尼亞語"
   },
+  "da": {
+    "ca": "danès",
+    "da": "dansk",
+    "de": "Dänisch",
+    "en": "Danish",
+    "eo": "dana lingvo",
+    "es": "danés",
+    "fi": "tanska",
+    "fr": "danois",
+    "gl": "lingua dinamarquesa",
+    "hu": "dán",
+    "id": "Bahasa Denmark",
+    "it": "danese",
+    "ja": "デンマーク語",
+    "nb_NO": "dansk",
+    "nl": "Deens",
+    "pl": "język duński",
+    "pt": "dinamarquês",
+    "pt_BR": "dinamarquês",
+    "ru": "датский язык",
+    "sl": "Danščina",
+    "sv": "danska",
+    "zh_Hans": "丹麦语",
+    "zh_Hant": "丹麥語"
+  },
   "de": {
     "ca": "alemany",
+    "da": "tysk",
     "de": "Deutsch",
     "en": "German",
     "eo": "germana lingvo",
@@ -49,6 +76,7 @@
   },
   "en": {
     "ca": "anglès",
+    "da": "engelsk",
     "de": "Englisch",
     "en": "English",
     "eo": "angla lingvo",
@@ -73,6 +101,7 @@
   },
   "eo": {
     "ca": "esperanto",
+    "da": "esperanto",
     "de": "Esperanto",
     "en": "Esperanto",
     "eo": "Esperanto",
@@ -97,6 +126,7 @@
   },
   "es": {
     "ca": "castellà",
+    "da": "spansk",
     "de": "Spanisch",
     "en": "Spanish",
     "eo": "hispana lingvo",
@@ -121,6 +151,7 @@
   },
   "fi": {
     "ca": "finès",
+    "da": "finsk",
     "de": "Finnisch",
     "en": "Finnish",
     "eo": "finna lingvo",
@@ -145,6 +176,7 @@
   },
   "fil": {
     "ca": "filipí",
+    "da": "Filippinsk",
     "de": "Filipino",
     "en": "Filipino",
     "eo": "filipina lingvo",
@@ -165,6 +197,7 @@
   },
   "fr": {
     "ca": "francès",
+    "da": "fransk",
     "de": "Französisch",
     "en": "French",
     "eo": "franca lingvo",
@@ -189,6 +222,7 @@
   },
   "gl": {
     "ca": "gallec",
+    "da": "galicisk",
     "de": "Galicisch",
     "en": "Galician",
     "eo": "galega lingvo",
@@ -212,6 +246,7 @@
   },
   "hu": {
     "ca": "hongarès",
+    "da": "ungarsk",
     "de": "Ungarisch",
     "en": "Hungarian",
     "eo": "hungara lingvo",
@@ -235,6 +270,7 @@
   },
   "id": {
     "ca": "indonesi",
+    "da": "indonesisk",
     "de": "Indonesisch",
     "en": "Indonesian",
     "eo": "indonezia lingvo",
@@ -259,6 +295,7 @@
   },
   "it": {
     "ca": "italià",
+    "da": "italiensk",
     "de": "Italienisch",
     "en": "Italian",
     "eo": "itala lingvo",
@@ -283,6 +320,7 @@
   },
   "ja": {
     "ca": "japonès",
+    "da": "japansk",
     "de": "Japanisch",
     "en": "Japanese",
     "eo": "japana lingvo",
@@ -307,6 +345,7 @@
   },
   "nb_NO": {
     "ca": "bokmål",
+    "da": "bokmål",
     "de": "Bokmål",
     "en": "Bokmål",
     "eo": "Bokmål",
@@ -329,6 +368,7 @@
   },
   "nl": {
     "ca": "neerlandès",
+    "da": "nederlandsk",
     "de": "Niederländisch",
     "en": "Dutch",
     "eo": "nederlanda lingvo",
@@ -353,6 +393,7 @@
   },
   "pl": {
     "ca": "polonès",
+    "da": "polsk",
     "de": "Polnisch",
     "en": "Polish",
     "eo": "pola lingvo",
@@ -377,6 +418,7 @@
   },
   "pt": {
     "ca": "portuguès",
+    "da": "portugisisk",
     "de": "Portugiesisch",
     "en": "Portuguese",
     "eo": "portugala lingvo",
@@ -401,6 +443,7 @@
   },
   "pt_BR": {
     "ca": "portuguès brasiler",
+    "da": "brasiliansk portugisisk",
     "de": "brasilianisches Portugiesisch",
     "en": "Brazilian Portuguese",
     "eo": "brazilportugala lingvo",
@@ -424,6 +467,7 @@
   },
   "ru": {
     "ca": "rus",
+    "da": "russisk",
     "de": "Russisch",
     "en": "Russian",
     "eo": "rusa lingvo",
@@ -448,6 +492,7 @@
   },
   "sl": {
     "ca": "eslovè",
+    "da": "slovensk",
     "de": "Slowenisch",
     "en": "Slovene",
     "eo": "slovena lingvo",
@@ -471,6 +516,7 @@
   },
   "sv": {
     "ca": "suec",
+    "da": "svensk",
     "de": "Schwedisch",
     "en": "Swedish",
     "eo": "sveda lingvo",
@@ -494,6 +540,7 @@
   },
   "zh_Hant": {
     "ca": "xinès simplificat",
+    "da": "forenklet kinesisk",
     "de": "vereinfachtes Chinesisch",
     "en": "Simplified Chinese",
     "eo": "simpligita ĉina skribsistemo",
