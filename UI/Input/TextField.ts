@@ -7,8 +7,10 @@ export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined);
     private readonly value: UIEventSource<string>;
     private _element: HTMLElement;
+    private _actualField : HTMLElement
     private readonly _isValid: (s: string) => boolean;
     private _rawValue: UIEventSource<string> 
+    private _isFocused = false;
     
     constructor(options?: {
         placeholder?: string | BaseUIElement,
@@ -60,7 +62,6 @@ export class TextField extends InputElement<string> {
 
         const field = inputEl;
 
-
         this.value.addCallbackAndRunD(value => {
             // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
             field["value"] = value;
@@ -99,7 +100,6 @@ export class TextField extends InputElement<string> {
                 ) {
                 newCursorPos--;
             }
-            // @ts-ignore
             TextField.SetCursorPosition(field, newCursorPos);
         };
 
@@ -110,6 +110,12 @@ export class TextField extends InputElement<string> {
                 self.enterPressed.setData(field.value);
             }
         });
+        
+        if(this._isFocused){
+            field.focus()
+        }
+        
+        this._actualField = field;
 
 
     }
@@ -147,4 +153,11 @@ export class TextField extends InputElement<string> {
         return this._element;
     }
 
+    public focus() {
+        if(this._actualField === undefined){
+            this._isFocused = true
+        }else{
+            this._actualField.focus()
+        }
+    }
 }

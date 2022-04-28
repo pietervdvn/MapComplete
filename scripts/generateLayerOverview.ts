@@ -13,22 +13,35 @@ import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingC
 import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import LayerConfigJsonJSC from "../Docs/Schemas/LayerConfigJsonJSC";
+import {Utils} from "../Utils";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
 class LayerOverviewUtils {
 
-    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean, mustHaveLanguage: boolean }[]) {
+    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean, mustHaveLanguage: boolean, layers: (LayerConfigJson | string | {builtin})[] }[]) {
         const perId = new Map<string, any>();
         for (const theme of themes) {
+            
+            const keywords : {}[] = []
+            for (const layer of (theme.layers ?? [])) {
+                const l = <LayerConfigJson> layer;
+                keywords.push({"*": l.id})
+                keywords.push(l.title)
+                keywords.push(l.description)
+            }
+            
             const data = {
                 id: theme.id,
                 title: theme.title,
                 shortDescription: theme.shortDescription,
                 icon: theme.icon,
                 hideFromOverview: theme.hideFromOverview,
-                mustHaveLanguage: theme.mustHaveLanguage
+                mustHaveLanguage: theme.mustHaveLanguage,
+                keywords: Utils.NoNull(keywords)
             }
             perId.set(theme.id, data);
         }
@@ -215,13 +228,12 @@ class LayerOverviewUtils {
             fixed.set(themeFile.id, themeFile)
         }
 
-        this.writeSmallOverview(themeFiles.map(tf => {
-            const t = tf.parsed;
+        this.writeSmallOverview(Array.from(fixed.values()).map(t => {
             return {
                 ...t,
                 hideFromOverview: t.hideFromOverview ?? false,
                 shortDescription: t.shortDescription ?? new Translation(t.description).FirstSentence().translations,
-                mustHaveLanguage: t.mustHaveLanguage?.length > 0
+                mustHaveLanguage: t.mustHaveLanguage?.length > 0,
             }
         }));
         return fixed;

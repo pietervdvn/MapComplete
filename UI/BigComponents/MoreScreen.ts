@@ -36,28 +36,39 @@ export default class MoreScreen extends Combine {
         }
 
         const search = new TextField({
-            placeholder:  tr.searchForATheme,
+            placeholder: tr.searchForATheme,
         })
-        search.GetValue().addCallbackAndRun(d => console.log("Search is ", d))
+
+        if (onMainScreen) {
+            search.focus()
+        }
+        document.addEventListener("keydown", function (event) {
+            console.log("Got a key event: ", event)
+            if (event.ctrlKey && event.code === "KeyF") {
+                search.focus()
+                event.preventDefault();
+            }
+        });
+
         const searchBar = new Combine([Svg.search_svg().SetClass("w-8"), search.SetClass("mr-4 w-full")])
-            .SetClass("flex rounded-full border-2 border-black w-max items-center my-2 w-1/2")
+            .SetClass("flex rounded-full border-2 border-black items-center my-2 w-1/2")
 
 
-            super([
-                new Combine([searchBar]).SetClass("flex justify-center"),  
+        super([
+            new Combine([searchBar]).SetClass("flex justify-center"),
             MoreScreen.createOfficialThemesList(state, themeButtonStyle, themeListStyle, search.GetValue()),
             MoreScreen.createPreviouslyVistedHiddenList(state, themeButtonStyle, themeListStyle, search.GetValue()),
             MoreScreen.createUnofficialThemeList(themeButtonStyle, state, themeListStyle, search.GetValue()),
             tr.streetcomplete.Clone().SetClass("block text-base mx-10 my-3 mb-10")
         ]);
     }
-    
-    private static NothingFound(search: UIEventSource<string>): BaseUIElement{
-        const t  = Translations.t.general.morescreen;
+
+    private static NothingFound(search: UIEventSource<string>): BaseUIElement {
+        const t = Translations.t.general.morescreen;
         return new Combine([
             new Title(t.noMatchingThemes, 5).SetClass("w-max font-bold"),
-         new SubtleButton(Svg.search_disable_ui(), t.noSearch,{imgSize: "h-8"}).SetClass("h-12 w-max")
-             .onClick( () => search.setData(""))
+            new SubtleButton(Svg.search_disable_ui(), t.noSearch, {imgSize: "h-6"}).SetClass("h-12 w-max")
+                .onClick(() => search.setData(""))
         ]).SetClass("flex flex-col items-center w-full")
     }
 
@@ -173,7 +184,7 @@ export default class MoreScreen extends Combine {
         }
     }
 
-    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search : UIEventSource<string>): BaseUIElement {
+    private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search: UIEventSource<string>): BaseUIElement {
         const prefix = "mapcomplete-unofficial-theme-";
 
         var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
@@ -192,11 +203,14 @@ export default class MoreScreen extends Combine {
         var stableIds = UIEventSource.ListStabilized<string>(currentIds)
         return new VariableUiElement(
             stableIds.map(ids => {
-                const allThemes: { element: BaseUIElement, predicate?: (s:string) => boolean }[] = []
+                const allThemes: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = []
                 for (const id of ids) {
                     const link = this.createUnofficialButtonFor(state, id)
                     if (link !== undefined) {
-                        allThemes.push({element: link.SetClass(buttonClass), predicate : s => id.toLowerCase().indexOf(s) >= 0})
+                        allThemes.push({
+                            element: link.SetClass(buttonClass),
+                            predicate: s => id.toLowerCase().indexOf(s) >= 0
+                        })
                     }
                 }
                 if (allThemes.length <= 0) {
@@ -212,7 +226,7 @@ export default class MoreScreen extends Combine {
             }));
     }
 
-    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string, search: UIEventSource<string>) : BaseUIElement{
+    private static createPreviouslyVistedHiddenList(state: UserRelatedState, buttonClass: string, themeListStyle: string, search: UIEventSource<string>): BaseUIElement {
         const t = Translations.t.general.morescreen
         const prefix = "mapcomplete-hidden-theme-"
         const hiddenThemes = themeOverview["default"].filter(layout => layout.hideFromOverview)
@@ -230,15 +244,18 @@ export default class MoreScreen extends Combine {
                     }
 
                     const knownThemeDescriptions = hiddenThemes.filter(theme => knownThemes.has(theme.id))
-                        .map(theme => ({element: MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass),
-                        predicate: MoreScreen.MatchesLayoutFunc(theme)
+                        .map(theme => ({
+                            element: MoreScreen.createLinkButton(state, theme)?.SetClass(buttonClass),
+                            predicate: MoreScreen.MatchesLayoutFunc(theme)
                         }));
 
                     const knownLayouts = new FilteredCombine(knownThemeDescriptions,
                         search,
-                        {innerClasses: themeListStyle,
-                            onEmpty: MoreScreen.NothingFound(search)}
-                        )
+                        {
+                            innerClasses: themeListStyle,
+                            onEmpty: MoreScreen.NothingFound(search)
+                        }
+                    )
 
                     return new Combine([
                         new Title(t.previouslyHiddenTitle),
@@ -261,36 +278,28 @@ export default class MoreScreen extends Combine {
     private static MatchesLayoutFunc(layout: {
         id: string,
         title: any,
-        shortDescription: any
+        shortDescription: any,
+        keywords?: any[]
     }) {
         return (search: string) => {
             search = search.toLocaleLowerCase()
             if (layout.id.toLowerCase().indexOf(search) >= 0) {
                 return true;
             }
-            for (const lang in layout.shortDescription) {
-                if (Locale.language.data !== lang) {
-                    continue
-                }
-                if (layout.shortDescription[lang].toLowerCase()?.indexOf(search) >= 0) {
+            const entitiesToSearch = [layout.shortDescription, layout.title, ...layout.keywords]
+            for (const entity of entitiesToSearch) {
+                const term = entity["*"] ?? entity[Locale.language.data]
+                if (term?.toLowerCase()?.indexOf(search) >= 0) {
                     return true
                 }
             }
 
-            for (const lang in layout.title) {
-                if (Locale.language.data !== lang) {
-                    continue
-                }
-                if (layout.title[lang].toLowerCase()?.indexOf(search) >= 0) {
-                    return true
-                }
-            }
 
             return false;
         }
     }
 
-    private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string, themeListStyle: string, search: UIEventSource<string>):BaseUIElement {
+    private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string, themeListStyle: string, search: UIEventSource<string>): BaseUIElement {
         let officialThemes: {
             id: string,
             icon: string,
