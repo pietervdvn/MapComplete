@@ -203,6 +203,7 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
+            "downloadCustomTheme": "Herunterladen der Konfiguration für diese Karte",
             "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
             "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
@@ -296,7 +297,7 @@
             "loadingFailed": "Laden von Notizen fehlgeschlagen aufgrund von {error}",
             "mapExplanation": "Die roten Elemente auf der nächsten Karte sind alle Datenpunkte aus Ihrem Datensatz. Es gibt <b>{length}</b> Elemente in Ihrem Datensatz.",
             "noPreviousNotesFound": "Keine früheren Importnotizen gefunden",
-            "nothingNearby": "Alle vorgeschlagenen Punkte haben keine vorherige Importnotiz in der Nähe",
+            "nothingNearby": "Keiner der vorgeschlagenen Punkte hat eine Importnotiz in der Nähe",
             "someNearby": "{hasNearby} Punkte haben eine bereits eine Importnotiz innerhalb {distance} Meter",
             "title": "Mit vorhandenen Hinweisen vergleichen",
             "titleLong": "Mit bereits vorhandenen 'zu-importieren'-Notizen vergleichen",
@@ -319,6 +320,7 @@
             "nearbyWarn": "Die {count} roten Elemente auf der folgenden Karte werden <b>nicht</b> importiert!",
             "nothingLoaded": "Es werden keine Elemente aus OpenStreetMap geladen, die dem aktuellen Layer {name} entsprechen",
             "osmLoaded": "{count} Elemente werden aus OpenStreetMap geladen, die dem Layer <b>{name}</b> entsprechen.",
+            "reloadTheCache": "Cache löschen und Overpass erneut abfragen",
             "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten",
             "states": {
                 "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
@@ -617,6 +619,7 @@
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
+        "allMissing": "Noch keine Übersetzungen",
         "completeness": "Die Übersetzungen für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
         "deactivate": "Schaltflächen für die Übersetzung deaktivieren",
         "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",

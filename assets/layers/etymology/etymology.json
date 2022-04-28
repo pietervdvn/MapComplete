@@ -100,7 +100,8 @@
       "render": {
         "en": "Named after {name:etymology}",
         "nl": "Vernoemd naar {name:etymology}",
-        "de": "Benannt nach {name:etymology}"
+        "de": "Benannt nach {name:etymology}",
+        "da": "Opkaldt efter {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology"
@@ -111,7 +112,8 @@
           "then": {
             "en": "The origin of this name is unknown in all literature",
             "nl": "De oorsprong van deze naam is onbekend in de literatuur",
-            "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
+            "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt",
+            "da": "Oprindelsen af dette navn er ukendt i al litteratur"
           }
         }
       ],

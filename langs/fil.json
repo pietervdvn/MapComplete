@@ -34,6 +34,7 @@
     },
     "favourite": {
         "loginNeeded": "<h3>Mag log-in</h3>Ang personal na pagkakaayos ay para lang sa mga gumagamit ng OpenStreetMap",
+        "panelIntro": "<h3>Pangsariling tikha</h3>Gawing aktibo ang mga paborito galing sa mga tikhang opisyal",
         "reload": "Muling pasanin ang datos"
     },
     "general": {
@@ -47,7 +48,10 @@
             "disableFiltersExplanation": "May mga tampók na maaring nai-tago ng filter",
             "hasBeenImported": "Ang bukóng ito ay nai-angkat na",
             "import": {
-                "hasBeenImported": "Ang object na ito ay nai-angkat na"
+                "hasBeenImported": "Ang object na ito ay nai-angkat na",
+                "howToTest": "Para subukan, i-dagdag <b>test=true</b> o <b>backend=osm-test</b> kasama ng URL. Ang changeset ay ililimbag sa console. Mag-padala ng pull request (PR) para gawing opisyal ang tikha, at magamit ang pindutang pang-angkat.",
+                "importTags": "Ang elemento ay tatanggap ng {tags}",
+                "officialThemesOnly": "Ang pindutang pang-angkat ay di pinapagana sa mga hindi opisyal na tikha (themes), para maiwasan ang abala"
             }
         }
     }

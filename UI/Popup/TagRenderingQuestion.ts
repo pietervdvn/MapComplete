@@ -51,7 +51,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const applicableMappingsSrc =
             UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
+                const applicableMappings: { if: TagsFilter, icon?: string, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -158,7 +158,7 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateInputElement(
         state,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
+        applicableMappings: { if: TagsFilter, then: any, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
@@ -168,7 +168,7 @@ export default class TagRenderingQuestion extends Combine {
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
        
-        const hasImages = applicableMappings.findIndex(mapping => mapping.then.icon !== undefined) >= 0
+        const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
@@ -207,7 +207,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.WT(mapping.then)
+                        shown: Translations.T(mapping.then)
                     }
                 })
             )

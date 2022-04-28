@@ -12,7 +12,8 @@
     "hu": "Kávézók és kocsmák",
     "ca": "Cafés i bars",
     "es": "Cafeterías y pubs",
-    "fr": "Cafés et pubs"
+    "fr": "Cafés et pubs",
+    "da": "Caféer og pubber"
   },
   "description": {
     "en": "Pubs and bars",
@@ -20,7 +21,8 @@
     "de": "Kneipen und Bars",
     "ca": "Bars i pubs",
     "es": "Pubs y bares",
-    "fr": "Bars et pubs"
+    "fr": "Bars et pubs",
+    "da": "Pubber og barer"
   },
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",

@@ -8,12 +8,14 @@
     "nb_NO": "Restauranter og søppelmat",
     "zh_Hant": "餐廳與快餐店",
     "hu": "Éttermek és büfék",
-    "ca": "Restaurants i menjar ràpid"
+    "ca": "Restaurants i menjar ràpid",
+    "es": "Restaurantes y comida rápida"
   },
   "description": {
     "nl": "Restaurants en fast food",
     "en": "Restaurants and fast food",
-    "de": "Restaurants und Schnellimbisse"
+    "de": "Restaurants und Schnellimbisse",
+    "es": "Restaurantes y comida rápida"
   },
   "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",

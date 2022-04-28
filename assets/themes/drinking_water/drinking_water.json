@@ -11,7 +11,8 @@
     "de": "Trinkwasserstellen",
     "nb_NO": "Drikkevann",
     "hu": "Ivóvíz",
-    "ca": "Aigua potable"
+    "ca": "Aigua potable",
+    "es": "Agua Potable"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",
@@ -23,7 +24,8 @@
     "ru": "На этой карте показываются и могут быть легко добавлены общедоступные точки питьевой воды",
     "de": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
     "nb_NO": "Offentlig tilgjengelig drikkevannssteder",
-    "hu": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén"
+    "hu": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
+    "es": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/drinking_water/logo.svg",

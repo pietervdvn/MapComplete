@@ -8,7 +8,8 @@
     "hu": "Akadályok",
     "fr": "Barrières",
     "es": "Barreras",
-    "ca": "Barreres"
+    "ca": "Barreres",
+    "da": "Barrierer"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
@@ -46,7 +47,8 @@
           "ru": "Прикол",
           "fr": "Bollard",
           "es": "Bolardo",
-          "ca": "Pilona"
+          "ca": "Pilona",
+          "da": "Pullert"
         }
       },
       {
@@ -71,7 +73,8 @@
         "fr": "une bollard",
         "hu": "Terelőoszlop",
         "es": "una bolardo",
-        "ca": "una pilona"
+        "ca": "una pilona",
+        "da": "en pullert"
       },
       "tags": [
         "barrier=bollard"
@@ -82,7 +85,8 @@
         "de": "Ein Poller auf der Straße",
         "hu": "Terelőoszlop az úton",
         "fr": "Un potelet sur le chemin",
-        "es": "Un bolardo en la carretera"
+        "es": "Un bolardo en la carretera",
+        "da": "En pullert på vejen"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -98,7 +102,8 @@
         "nl": "een fietsbarrière",
         "de": "eine fahrradhindernis",
         "hu": "Kerékpárakadály",
-        "fr": "une barrière cyclable"
+        "fr": "une barrière cyclable",
+        "da": "en stibom"
       },
       "tags": [
         "barrier=cycle_barrier"
@@ -108,7 +113,8 @@
         "nl": "Fietshekjes, voor het afremmen van fietsers",
         "de": "Fahrradhindernis, das Radfahrer abbremst",
         "hu": "A kerékpáros sebességét csökkentő kerékpárakadály",
-        "fr": "Barrières cyclables, ralentissant les cyclistes"
+        "fr": "Barrières cyclables, ralentissant les cyclistes",
+        "da": "Stibomme, der fartdæmper cyklister"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -136,7 +142,8 @@
             "nl": "Een fietser kan hier langs.",
             "de": "Ein Radfahrer kann hindurchfahren.",
             "fr": "Un cycliste peut franchir ceci.",
-            "hu": "Kerékpárral át lehet hajtani."
+            "hu": "Kerékpárral át lehet hajtani.",
+            "da": "En cyklist kan cykle forbi denne."
           }
         },
         {
@@ -146,7 +153,8 @@
             "nl": "Een fietser kan hier niet langs.",
             "de": "Ein Radfahrer kann nicht hindurchfahren.",
             "fr": "Un cycliste ne peut pas franchir ceci.",
-            "hu": "Kerékpárral nem lehet áthajtani."
+            "hu": "Kerékpárral nem lehet áthajtani.",
+            "da": "En cyklist kan ikke cykle forbi denne."
           }
         }
       ],
@@ -163,7 +171,8 @@
             "nl": "Dit is een enkel paaltje in de weg",
             "fr": "C'est un plot unique sur la route",
             "de": "Dies ist ein einzelner Poller auf der Straße",
-            "es": "Este es un único bolardo en la carretera"
+            "es": "Este es un único bolardo en la carretera",
+            "da": "Dette er en enkelt pullert på vejen"
           }
         },
         {
@@ -186,7 +195,8 @@
         "de": "Um was für einen Poller handelt es sich?",
         "fr": "Quel est le type de bollard (borne) ?",
         "hu": "Milyen fajta terelőoszlop ez?",
-        "es": "¿Qué tipo de bolardo es este?"
+        "es": "¿Qué tipo de bolardo es este?",
+        "da": "Hvilken slags pullert er dette?"
       },
       "condition": "barrier=bollard",
       "mappings": [
@@ -198,7 +208,8 @@
             "de": "Entfernbarer Poller",
             "fr": "Bollard amovible",
             "hu": "Eltávolítható terelőoszlop",
-            "ca": "Pilona desmuntable"
+            "ca": "Pilona desmuntable",
+            "da": "Aftagelig pullert"
           }
         },
         {
@@ -210,7 +221,8 @@
             "fr": "Bollard fixe",
             "hu": "Rögzített terelőoszlop",
             "es": "Bolardo fijo",
-            "ca": "Pilona fixa"
+            "ca": "Pilona fixa",
+            "da": "Fast pullert"
           }
         },
         {
@@ -220,7 +232,8 @@
             "nl": "Paal die platgevouwen kan worden",
             "de": "Umlegbarer Poller",
             "fr": "Bollard qui peut être couché",
-            "hu": "Lehajtható terelőoszlop"
+            "hu": "Lehajtható terelőoszlop",
+            "da": "Pullert, der kan klappes ned"
           }
         },
         {
@@ -231,7 +244,8 @@
             "de": "Flexibler Poller, meist aus Kunststoff",
             "fr": "Bollard flexible, généralement en plastique",
             "hu": "Rugalmas (általában műanyag) terelőoszlop",
-            "es": "Bolardo flexible, normalmente plástico"
+            "es": "Bolardo flexible, normalmente plástico",
+            "da": "Fleksibel pullert, normalt plast"
           }
         },
         {
@@ -243,7 +257,8 @@
             "fr": "Bollard rétractable",
             "hu": "Felemelkedő terelőoszlop",
             "es": "Bolardo levadizo",
-            "ca": "Pilona retràctil"
+            "ca": "Pilona retràctil",
+            "da": "Opstigende pullert"
           }
         }
       ],
@@ -326,7 +341,8 @@
         "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
         "fr": "Largeur maximale: {maxwidth:physical} m",
         "hu": "Legnagyobb szélesség: {maxwidth:physical} m",
-        "es": "Anchura máxima: {maxwidth:physical} m"
+        "es": "Anchura máxima: {maxwidth:physical} m",
+        "da": "Maksimal bredde: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",
@@ -392,7 +408,8 @@
         "de": "Breite der Öffnung: {width:opening} m",
         "fr": "Largeur de l'ouverture : {width:opening} m",
         "hu": "Nyílás szélessége: {width:opening} m",
-        "es": "Anchura de la apertura: {width:opening} m"
+        "es": "Anchura de la apertura: {width:opening} m",
+        "da": "Bredde af åbning: {width:opening} m"
       },
       "question": {
         "en": "How wide is the smallest opening next to the barriers?",
@@ -425,7 +442,8 @@
         "hu": "Átfedés: {overlap} m",
         "fr": "Chevauchement : {overlap} m",
         "nl": "Overlap: {overlap} m",
-        "es": "Solapado: {overlap} m"
+        "es": "Solapado: {overlap} m",
+        "da": "Overlapning: {overlap} m"
       },
       "question": {
         "en": "How much overlap do the barriers have?",

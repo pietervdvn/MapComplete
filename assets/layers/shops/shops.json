@@ -458,6 +458,28 @@
           }
         }
       ]
+    },
+    {
+      "id": "accepts-cash",
+      "options": [
+        {
+          "osmTags": "payment:cash=yes",
+          "question": {
+            "en": "Accepts cash"
+          }
+        }
+      ]
+    },
+    {
+      "id": "accepts-cards",
+      "options": [
+        {
+          "osmTags": "payment:cards=yes",
+          "question": {
+            "en": "Accepts payment cards"
+          }
+        }
+      ]
     }
   ]
 }

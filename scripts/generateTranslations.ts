@@ -189,7 +189,7 @@ class TranslationPart {
      */
     validate(path = []): {error: string, path: string[]} [] {
         const errors : {error: string, path: string[]} []= []
-        const neededSubparts = new Set<string>()
+        const neededSubparts = new Set<{ part: string, usedByLanguage: string }>()
         
         let isLeaf : boolean = undefined
         this.contents.forEach((value, key) => {
@@ -206,9 +206,14 @@ class TranslationPart {
 
             let subparts: string[] = value.match(/{[^}]*}/g)
             if (subparts !== null) {
+                let [_, __, weblatepart, lang] = key.split("/")
+                if (lang === undefined) {
+                    // This is a core translation, it has one less path segment
+                    lang = weblatepart
+                }
                 subparts = subparts.map(p => p.split(/\(.*\)/)[0])
                 for (const subpart of subparts) {
-                    neededSubparts.add(subpart)
+                    neededSubparts.add({part: subpart, usedByLanguage: lang})
                 }
             }
         })
@@ -216,7 +221,7 @@ class TranslationPart {
 
         // Actually check for the needed sub-parts, e.g. that {key} isn't translated into {sleutel}
         this.contents.forEach((value, key) => {
-            neededSubparts.forEach(part => {
+            neededSubparts.forEach(({part, usedByLanguage}) => {
                 if (typeof value !== "string") {
                     return;
                 }
@@ -239,12 +244,14 @@ class TranslationPart {
                         lang = weblatepart
                         weblatepart = "core"
                     }
-                    errors.push({
-                        error: `The translation for ${key} does not have the required subpart ${part}.
-\tThe full translation is ${value}
-\tFix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${path.join(".")}%22`,
-                        path: path
-                    })
+                    if(lang === "en" || usedByLanguage === "en"){
+                        errors.push({
+                            error: `The translation for ${key} does not have the required subpart ${part}.
+    \tThe full translation is ${value}
+    \tFix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent( path.join("."))}%22`,
+                            path: path
+                        })
+                    }
                 }
             })
         })
@@ -582,14 +589,12 @@ if (!themeOverwritesWeblate) {
 genTranslations()
 const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
 for (const path of allTranslationFiles) {
-    console.log("Formatting ", path)
     formatFile(path)
 }
-
 
 // Some validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
 TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
 TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
 TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")
-
+console.log("All done!")

@@ -44,10 +44,12 @@ async function fetchRegularLanguages() {
     const zh_hant = await fetchSpecial(18130932, "zh_Hant")
     const zh_hans = await fetchSpecial(13414913, "zh_Hant")
     const pt_br = await fetchSpecial( 750553, "pt_BR")
-    
+    const fil = await fetchSpecial( 33298, "fil")
+
     bindings.push(...zh_hant)
     bindings.push(...zh_hans)
     bindings.push(...pt_br)
+    bindings.push(...fil)
     
     return result.results.bindings
 

@@ -110,7 +110,8 @@
           "render": "The building type is <b>{building}</b>",
           "question": {
             "en": "What kind of building is this?",
-            "de": "Was ist das für ein Gebäude?"
+            "de": "Was ist das für ein Gebäude?",
+            "es": "¿Qué tipo de este edificio es este?"
           },
           "mappings": [
             {

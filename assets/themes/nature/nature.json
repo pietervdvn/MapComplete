@@ -9,12 +9,14 @@
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
     "nl": "Deze kaart bevat informatie voor natuurliefhebbers",
-    "de": "Eine Karte für Naturliebhaber, mit interessanten Orten"
+    "de": "Eine Karte für Naturliebhaber, mit interessanten Orten",
+    "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes"
   },
   "description": {
     "en": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
     "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
-    "de": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. "
+    "de": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
+    "es": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza, como "
   },
   "maintainer": "",
   "icon": "./assets/themes/nature/logo.svg",

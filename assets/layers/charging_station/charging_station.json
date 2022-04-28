@@ -67,7 +67,8 @@
   "description": {
     "en": "A charging station",
     "nl": "Oplaadpunten",
-    "de": "Eine Ladestation"
+    "de": "Eine Ladestation",
+    "da": "En ladestation"
   },
   "tagRenderings": [
     "images",
@@ -2993,7 +2994,8 @@
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs {socket:tesla_destination:voltage} volt",
-        "nl": "<div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
+        "nl": "<div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt",
+        "de": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt"
       },
       "freeform": {
         "key": "socket:tesla_destination:voltage",
@@ -3127,11 +3129,13 @@
       "group": "technical",
       "question": {
         "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> offer?",
-        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>",
+        "de": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs {socket:USB-A:voltage} volt",
-        "nl": "<div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft een spanning van {socket:USB-A:voltage} volt"
+        "nl": "<div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft een spanning van {socket:USB-A:voltage} volt",
+        "de": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert {socket:USB-A:voltage} Volt"
       },
       "freeform": {
         "key": "socket:USB-A:voltage",
@@ -3142,7 +3146,8 @@
           "if": "socket:USB-A:voltage=5 V",
           "then": {
             "en": "<b>USB</b> to charge phones and small electronics outputs 5 volt",
-            "nl": "<b>USB</b> om GSMs en kleine electronica op te laden heeft een spanning van 5 volt"
+            "nl": "<b>USB</b> om GSMs en kleine electronica op te laden heeft een spanning van 5 volt",
+            "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten liefert 5 Volt"
           },
           "icon": {
             "path": "./assets/layers/charging_station/usb_port.svg",
@@ -3254,7 +3259,8 @@
       "group": "technical",
       "question": {
         "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> offer?",
-        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+        "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>",
+        "de": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> outputs {socket:bosch_3pin:voltage} volt",
@@ -4099,7 +4105,8 @@
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
             "de": "Ladestationen für alle Fahrzeugtypen",
-            "fr": "Tout type de véhicule"
+            "fr": "Tout type de véhicule",
+            "da": "Alle køretøjstyper"
           }
         },
         {
@@ -4107,7 +4114,8 @@
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
             "de": "Ladestationen für Fahrräder",
-            "fr": "Station de charge pour vélos"
+            "fr": "Station de charge pour vélos",
+            "da": "Ladestation til cykler"
           },
           "osmTags": "bicycle=yes"
         },
@@ -4116,7 +4124,8 @@
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
             "de": "Ladestationen für Autos",
-            "fr": "Station de charge pour automobiles"
+            "fr": "Station de charge pour automobiles",
+            "da": "Ladestation til biler"
           },
           "osmTags": {
             "or": [
@@ -4134,7 +4143,8 @@
           "question": {
             "en": "Only working charging stations",
             "nl": "Enkel werkende oplaadpunten",
-            "de": "Nur Ladestationen in Betrieb"
+            "de": "Nur Ladestationen in Betrieb",
+            "da": "Kun fungerende ladestationer"
           },
           "osmTags": {
             "and": [

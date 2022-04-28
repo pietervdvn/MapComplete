@@ -8,7 +8,8 @@
     "fr": "Location de vélos",
     "ca": "Lloguer de bicicletes",
     "es": "Alquiler de bicicletas",
-    "nb_NO": "Sykkelutleie"
+    "nb_NO": "Sykkelutleie",
+    "da": "Cykeludlejning"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
@@ -23,7 +24,8 @@
     "nl": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken",
     "de": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
     "fr": "Vous trouverez sur cette carte toutes les stations de location de vélo telles qu'elles sont référencées dans OpenStreetMap",
-    "es": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que son conocidas por OpenStreetMap"
+    "es": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que son conocidas por OpenStreetMap",
+    "da": "På dette kort finder du de mange cykeludlejningsstationer, som OpenStreetMap kender dem"
   },
   "maintainer": "",
   "icon": "./assets/themes/bicycle_rental/logo.svg",

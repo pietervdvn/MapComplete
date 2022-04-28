@@ -339,7 +339,7 @@ class ImportInspector extends VariableUiElement {
                     status = "already_mapped"
                 } else if (lastComment.indexOf("invalid") >= 0 || lastComment.indexOf("incorrecto") >= 0) {
                     status = "invalid"
-                } else if (lastComment.indexOf("imported") >= 0) {
+                } else if (["imported","erbij","toegevoegd","added"].some(keyword => lastComment.toLowerCase().indexOf(keyword) >= 0)) {
                     status = "imported"
                 } else {
                     status = "closed"

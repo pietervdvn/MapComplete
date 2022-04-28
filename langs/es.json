@@ -201,6 +201,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Añadir a la pantalla de inicio</h3>Puedes añadir esta web en la pantalla de inicio de tu smartphone para que se vea más nativo. Aprieta el botón 'añadir a inicio' en la barra de direcciones URL para hacerlo.",
             "copiedToClipboard": "Enlace copiado en el portapapeles",
+            "downloadCustomTheme": "Descargar la configuración para este tema",
+            "downloadCustomThemeHelp": "Un contributor con experiencia puede utilizar este archivo para mejorar tu tema",
             "editThemeDescription": "Añadir o cambiar preguntas de este reto",
             "editThisTheme": "Editar este reto",
             "embedIntro": "<h3>Inclúyelo en tu página web</h3>Incluye este mapa en tu página web. <br/> Te animamos a que lo hagas, no hace falta que pidas permiso. <br/> Es gratis, y siempre lo será. A más gente que lo use más valioso será.",
@@ -219,6 +221,7 @@
         },
         "skip": "Saltar esta pregunta",
         "skippedQuestions": "Has ignorado algunas preguntas",
+        "testing": "Probando - los cambios no se guardarán",
         "weekdays": {
             "abbreviations": {
                 "friday": "Vie",
@@ -239,6 +242,7 @@
         },
         "welcomeBack": "Has entrado, bienvenido.",
         "wikipedia": {
+            "createNewWikidata": "Crear un ítem de Wikidata nuevo",
             "doSearch": "Busca arriba para ver los resultados",
             "failed": "La carga de la entrada de Wikipedia falló",
             "loading": "Cargando Wikipedia...",
@@ -257,6 +261,7 @@
         "ccb": "bajo licencia CC-BY",
         "ccbExplanation": "La licencia CC-BY implica cualquiera podría utilizar tu fotografía para cualquier propósito, pero tienen que atribuirte",
         "ccbs": "bajo licencia CC-BY-SA",
+        "ccbsExplanation": "La licencia CC-BY-SA implica que cualquiera puede utilizar tu fotografía para cualquier propósito, pero que tienen que atribuirte y que las modificaciones de la fotografía deberán de publicarse bajo la misma licencia",
         "cco": "en dominio público",
         "ccoExplanation": "Añadir una fotografía en el dominio público implica que cualquiera puede hacer cualquier cosa con tu fotografía",
         "doDelete": "Borrar imagen",

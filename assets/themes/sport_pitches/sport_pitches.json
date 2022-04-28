@@ -10,7 +10,8 @@
     "de": "Sportplätze",
     "it": "Campi sportivi",
     "hu": "Sportpályák",
-    "ca": "Camps d'esports"
+    "ca": "Camps d'esports",
+    "es": "Pistas de deportes"
   },
   "shortDescription": {
     "nl": "Deze kaart toont sportvelden",
@@ -21,7 +22,8 @@
     "ru": "Карта, отображающая спортивные площадки",
     "de": "Eine Karte mit Sportplätzen",
     "it": "Una cartina che mostra i campi sportivi",
-    "hu": "Sportpályatérkép"
+    "hu": "Sportpályatérkép",
+    "es": "Un mapa que muestra pistas de deportes"
   },
   "description": {
     "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -32,7 +34,8 @@
     "de": "Ein Sportplatz ist eine Fläche, auf der Sportarten gespielt werden",
     "it": "Un campo sportivo è un'area dove vengono praticati sport",
     "hu": "A sportpálya egy olyan terület, amelyen valamilyen sportot űznek",
-    "ru": "Спортивная площадка - пространство для занятий спортом"
+    "ru": "Спортивная площадка - пространство для занятий спортом",
+    "es": "Una pista de deportes es una área donde so practican deportes"
   },
   "maintainer": "",
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",

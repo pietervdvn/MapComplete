@@ -9,7 +9,8 @@
     "ru": "Торговый автомат для велосипедистов",
     "zh_Hant": "自行車內胎自動售貨機",
     "pt_BR": "Máquina de venda automática de tubos de bicicleta",
-    "pt": "Máquina de venda automática de tubos de bicicleta"
+    "pt": "Máquina de venda automática de tubos de bicicleta",
+    "da": "Automat til salg af cykelslanger"
   },
   "title": {
     "render": {
@@ -21,7 +22,8 @@
       "ru": "Торговый автомат для велосипедистов",
       "zh_Hant": "自行車內胎自動售貨機",
       "pt_BR": "Máquina de venda automática de tubos de bicicleta",
-      "pt": "Máquina de venda automática de tubos de bicicleta"
+      "pt": "Máquina de venda automática de tubos de bicicleta",
+      "da": "Automat til salg af cykelslanger"
     },
     "mappings": [
       {
@@ -57,7 +59,8 @@
         "ru": "Торговый автомат для велосипедистов",
         "zh_Hant": "自行車內胎自動售貨機",
         "pt_BR": "uma máquina de venda automática de tubos de bicicleta",
-        "pt": "uma máquina de venda automática de tubos de bicicleta"
+        "pt": "uma máquina de venda automática de tubos de bicicleta",
+        "da": "en automat til salg af cykelslanger"
       },
       "tags": [
         "amenity=vending_machine",
@@ -79,7 +82,8 @@
         "zh_Hant": "這個自動販賣機仍有運作嗎？",
         "pt_BR": "Esta máquina de venda automática ainda está operacional?",
         "pt": "Esta máquina de venda automática ainda está operacional?",
-        "es": "¿Todavía es operacional esta máquina exprendedora?"
+        "es": "¿Todavía es operacional esta máquina exprendedora?",
+        "da": "Er denne salgsautomat stadig i drift?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
@@ -110,7 +114,8 @@
             "de": "Dieser Automat funktioniert",
             "zh_Hant": "這個自動販賣機仍運作",
             "pt_BR": "Esta máquina de venda automática funciona",
-            "pt": "Esta máquina de venda automática funciona"
+            "pt": "Esta máquina de venda automática funciona",
+            "da": "Denne salgsautomat virker"
           }
         },
         {
@@ -127,7 +132,8 @@
             "zh_Hant": "這個自動販賣機沒有運作了",
             "pt_BR": "Esta máquina de venda automática está quebrada",
             "pt": "Esta máquina de venda automática está quebrada",
-            "es": "Esta máquina exprendedora está rota"
+            "es": "Esta máquina exprendedora está rota",
+            "da": "Denne salgsautomat er i stykker"
           }
         },
         {
@@ -144,7 +150,8 @@
             "zh_Hant": "這個自動販賣機已經關閉了",
             "pt_BR": "Esta máquina de venda automática está fechada",
             "pt": "Esta máquina de venda automática está fechada",
-            "es": "Esta máquina exprendedora está cerrada"
+            "es": "Esta máquina exprendedora está cerrada",
+            "da": "Denne salgsautomat er lukket"
           }
         }
       ],
@@ -292,6 +299,7 @@
   "description": {
     "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)",
     "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
-    "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, ...)"
+    "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, ...)",
+    "da": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, ...)"
   }
 }

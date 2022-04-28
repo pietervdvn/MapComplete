@@ -443,6 +443,12 @@
         },
         "tagRenderings": {
             "9": {
+                "renderings": {
+                    "0": {
+                        "question": "Wie viele type_plural können hier gemietet werden? ",
+                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
+                    }
+                },
                 "rewrite": {
                     "into": {
                         "0": {
@@ -1140,6 +1146,7 @@
         }
     },
     "birdhide": {
+        "description": "Ein Vogelbeobachtungsturm",
         "filter": {
             "0": {
                 "options": {
@@ -1159,10 +1166,18 @@
         "name": "Orte zur Vogelbeobachtung",
         "presets": {
             "0": {
-                "description": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann"
+                "description": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
+                "title": "ein Vogelbeobachtungsturm"
             }
         },
         "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "1": {
+                        "then": "Vogelbeobachtungsturm"
+                    }
+                }
+            },
             "bird-hide-wheelchair": {
                 "mappings": {
                     "3": {
@@ -1598,9 +1613,6 @@
                 "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> sind hier vorhanden?",
                 "render": "Hier sind <b class='text-xl'>{socket:typee}</b> Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> vorhanden"
             },
-            "voltage-14": {
-                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
-            },
             "voltage-12": {
                 "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt"
             },
@@ -1610,8 +1622,11 @@
                         "then": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten liefert 5 Volt"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert {socket:USB-A:voltage} Volt",
-                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?"
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert {socket:USB-A:voltage} Volt"
+            },
+            "voltage-14": {
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
             }
         }
     },

@@ -23,7 +23,8 @@
     "render": {
       "en": "Entrance",
       "nl": "Ingang",
-      "ca": "Entrada"
+      "ca": "Entrada",
+      "da": "Indgang"
     }
   },
   "tagRenderings": [

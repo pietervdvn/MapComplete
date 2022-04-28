@@ -7,7 +7,8 @@
     "fr": "Cafés et pubs",
     "zh_Hant": "咖啡廳與酒吧",
     "hu": "Kávézók és kocsmák",
-    "es": "Cafeterías y bares"
+    "es": "Cafeterías y bares",
+    "da": "Caféer og pubber"
   },
   "source": {
     "osmTags": {
@@ -30,13 +31,15 @@
         "de": "eine kneipe",
         "ru": "паб",
         "hu": "kocsma",
-        "ca": "un bar"
+        "ca": "un bar",
+        "da": "en pub"
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
         "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
         "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
-        "es": "Un bar, principalmente para beber cervezas en un interior templado y relajado"
+        "es": "Un bar, principalmente para beber cervezas en un interior templado y relajado",
+        "da": "En pub, mest et sted at drikke øl i et varme, afslappede omgivelser"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -52,12 +55,14 @@
         "de": "eine bar",
         "ru": "бар",
         "hu": "bár",
-        "ca": "un pub"
+        "ca": "un pub",
+        "da": "en bar"
       },
       "description": {
         "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
         "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
-        "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
+        "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
+        "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -73,12 +78,14 @@
         "de": "eine café",
         "ru": "кафе",
         "hu": "kávézó",
-        "ca": "un cafè"
+        "ca": "un cafè",
+        "da": "en cafe"
       },
       "description": {
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
         "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
-        "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
+        "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
+        "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -90,7 +97,8 @@
       "en": "Pub",
       "nl": "Café",
       "ca": "Bar",
-      "de": "Kneipe"
+      "de": "Kneipe",
+      "da": "Pub"
     },
     "mappings": [
       {
@@ -104,7 +112,8 @@
           "en": "<i>{name}</i>",
           "de": "<i>{name}</i>",
           "ru": "<i>{name}</i>",
-          "ca": "<i>{name}</i>"
+          "ca": "<i>{name}</i>",
+          "da": "<i>{name}</i>"
         }
       }
     ]
@@ -117,14 +126,16 @@
         "en": "What is the name of this pub?",
         "de": "Wie heißt diese Kneipe?",
         "fr": "Quel est le nom de ce pub ?",
-        "hu": "Mi a neve ennek a kocsmának?"
+        "hu": "Mi a neve ennek a kocsmának?",
+        "da": "Hvad hedder denne pub?"
       },
       "render": {
         "nl": "De naam van dit café is {name}",
         "en": "This pub is named {name}",
         "de": "Diese Kneipe heißt {name}",
         "fr": "Ce pub se nomme {name}",
-        "hu": "A kocsma neve: {name}"
+        "hu": "A kocsma neve: {name}",
+        "da": "Denne pub hedder {name}"
       },
       "freeform": {
         "key": "name"
@@ -136,7 +147,8 @@
         "en": "What kind of cafe is this",
         "nl": "Welk soort café is dit?",
         "de": "Was ist das für ein Café",
-        "hu": "Milyen fajta kávézó ez?"
+        "hu": "Milyen fajta kávézó ez?",
+        "da": "Hvilken slags cafe er dette"
       },
       "mappings": [
         {
@@ -152,7 +164,8 @@
           "then": {
             "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
             "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
-            "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
+            "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
+            "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
           }
         },
         {
@@ -160,7 +173,8 @@
           "then": {
             "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
             "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
-            "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
+            "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
+            "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
           }
         },
         {
@@ -168,7 +182,8 @@
           "then": {
             "en": "A <b>restuarant</b> where one can get a proper meal",
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
-            "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann"
+            "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
+            "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid"
           }
         },
         {
@@ -176,7 +191,8 @@
           "then": {
             "en": "An open space where beer is served, typically seen in Germany",
             "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland",
-            "de": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland"
+            "de": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland",
+            "da": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland"
           },
           "hideInAnswer": "_country!=de"
         }
@@ -204,7 +220,8 @@
             "fr": "Ouvert maintenant",
             "hu": "Most nyitva van",
             "ca": "Obert ara",
-            "es": "Abiert oahora"
+            "es": "Abiert oahora",
+            "da": "Åbent nu"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -224,7 +241,8 @@
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
-          "es": "{title()} ha cerrado permanentemente"
+          "es": "{title()} ha cerrado permanentemente",
+          "da": "{title()} er lukket permanent"
         },
         "changesetMessage": "shop_closed"
       }
@@ -267,6 +285,7 @@
     "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
     "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
     "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes"
+    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes",
+    "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål"
   }
 }

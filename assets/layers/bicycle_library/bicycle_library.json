@@ -27,7 +27,8 @@
       "pt_BR": "Biblioteca de bicicleta",
       "de": "Fahrradbibliothek",
       "pt": "Biblioteca de bicicleta",
-      "ca": "Biblioteca per a bicicletes"
+      "ca": "Biblioteca per a bicicletes",
+      "da": "Cykelbibliotek"
     },
     "mappings": [
       {
@@ -74,7 +75,8 @@
         "zh_Hant": "這個單車圖書館的名稱是？",
         "pt_BR": "Qual o nome desta biblioteca de bicicleta?",
         "de": "Wie lautet der Name dieser Fahrradbibliothek?",
-        "pt": "Qual o nome desta biblioteca de bicicleta?"
+        "pt": "Qual o nome desta biblioteca de bicicleta?",
+        "da": "Hvad hedder dette cykelbibliotek?"
       },
       "render": {
         "en": "This bicycle library is called {name}",
@@ -86,7 +88,8 @@
         "zh_Hant": "這個單車圖書館叫做 {name}",
         "pt_BR": "Esta biblioteca de bicicleta é chamada de {name}",
         "de": "Diese Fahrradbibliothek heißt {name}",
-        "pt": "Esta biblioteca de bicicleta é chamada de {name}"
+        "pt": "Esta biblioteca de bicicleta é chamada de {name}",
+        "da": "Dette cykelbibliotek hedder {name}"
       },
       "freeform": {
         "key": "name"
@@ -109,7 +112,8 @@
         "nb_NO": "Hvor mye koster det å leie en sykkel?",
         "zh_Hant": "租用單車的費用多少？",
         "pt_BR": "Quanto custa um empréstimo de bicicleta?",
-        "pt": "Quanto custa um empréstimo de bicicleta?"
+        "pt": "Quanto custa um empréstimo de bicicleta?",
+        "da": "Hvor meget koster det at leje en cykel?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -123,7 +127,8 @@
         "zh_Hant": "租借單車需要 {charge}",
         "pt_BR": "Custos de empréstimo de bicicleta {charge}",
         "pt": "Custos de empréstimo de bicicleta {charge}",
-        "es": "Alquilar una bicicleta cuesta {charge}"
+        "es": "Alquilar una bicicleta cuesta {charge}",
+        "da": "Cykelleje koster {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -150,7 +155,8 @@
             "nb_NO": "Det er gratis å leie en sykkel",
             "zh_Hant": "租借單車免費",
             "pt_BR": "Emprestar uma bicicleta é grátis",
-            "pt": "Emprestar uma bicicleta é grátis"
+            "pt": "Emprestar uma bicicleta é grátis",
+            "da": "Det er gratis at låne en cykel"
           }
         },
         {
@@ -188,7 +194,8 @@
         "ru": "Кто здесь может арендовать велосипед?",
         "zh_Hant": "誰可以在這裡租單車？",
         "pt_BR": "Quem pode emprestar bicicletas aqui?",
-        "pt": "Quem pode emprestar bicicletas aqui?"
+        "pt": "Quem pode emprestar bicicletas aqui?",
+        "da": "Hvem kan låne cykler her?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -205,7 +212,8 @@
             "zh_Hant": "提供兒童單車",
             "pt_BR": "Bicicletas para crianças disponíveis",
             "pt": "Bicicletas para crianças disponíveis",
-            "es": "Bicicletas para niños disponibles"
+            "es": "Bicicletas para niños disponibles",
+            "da": "Cykler til børn til rådighed"
           }
         },
         {
@@ -220,7 +228,8 @@
             "zh_Hant": "有提供成人單車",
             "pt_BR": "Bicicletas para adulto disponíveis",
             "pt": "Bicicletas para adulto disponíveis",
-            "es": "Bicicletas para adultos disponibles"
+            "es": "Bicicletas para adultos disponibles",
+            "da": "Cykler til voksne til rådighed"
           }
         },
         {
@@ -235,7 +244,8 @@
             "zh_Hant": "有提供行動不便人士的單車",
             "pt_BR": "Bicicletas para deficientes físicos disponíveis",
             "pt": "Bicicletas para deficientes físicos disponíveis",
-            "es": "Bicicletas para discapacitados disponibles"
+            "es": "Bicicletas para discapacitados disponibles",
+            "da": "Cykler til handicappede til rådighed"
           }
         }
       ]
@@ -254,7 +264,8 @@
         "pt_BR": "uma biblioteca de bicicletas",
         "de": "eine fahrradbibliothek",
         "pt": "uma biblioteca de bicicletas",
-        "eo": "Fietsbibliotheek"
+        "eo": "Fietsbibliotheek",
+        "da": "et cykelbibliotek"
       },
       "tags": [
         "amenity=bicycle_library"

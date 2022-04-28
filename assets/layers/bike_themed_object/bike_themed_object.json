@@ -31,7 +31,8 @@
       "fr": "Objet cycliste",
       "de": "Mit Fahrrad zusammenhängendes Objekt",
       "it": "Oggetto relativo alle bici",
-      "es": "Objeto relacionado con bicis"
+      "es": "Objeto relacionado con bicis",
+      "da": "Cykelrelateret objekt"
     },
     "mappings": [
       {
@@ -48,7 +49,8 @@
           "de": "Radweg",
           "ru": "Велотрек",
           "ca": "Pista ciclable",
-          "es": "Carril bici"
+          "es": "Carril bici",
+          "da": "Cykelsti"
         }
       }
     ]

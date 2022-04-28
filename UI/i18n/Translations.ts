@@ -22,6 +22,25 @@ export default class Translations {
         return s;
     }
 
+    /**
+     * Converts a string or an object into a typed translation.
+     * Translation objects ('Translation' and 'TypedTranslation') are converted/returned
+     * 
+     * Translations.T("some text") // => new TypedTranslation({"*": "some text"})
+     * Translations.T("some text").txt // => "some text"
+     *
+     * const t = new Translation({"nl": "vertaling", "en": "translation"})
+     * Translations.T(t) // => new TypedTranslation<object>({"nl": "vertaling", "en": "translation"})
+     * 
+     * const t = new TypedTranslation({"nl": "vertaling", "en": "translation"})
+     * Translations.T(t) // => t
+     * 
+     * const json: any = {"en": "English", "nl": "Nederlands"};
+     * const translation = Translations.T(new Translation(json));
+     * translation.textFor("en") // => "English"
+     * translation.textFor("nl") // => "Nederlands"
+     * 
+     */
     static T(t: string | any, context = undefined): TypedTranslation<object> {
         if (t === undefined || t === null) {
             return undefined;
@@ -30,7 +49,7 @@ export default class Translations {
             t = "" + t
         }
         if (typeof t === "string") {
-            return new TypedTranslation({"*": t}, context);
+            return new TypedTranslation<object>({"*": t}, context);
         }
         if (t.render !== undefined) {
             const msg = "Creating a translation, but this object contains a 'render'-field. Use the translation directly"
@@ -40,30 +59,12 @@ export default class Translations {
         if (t instanceof TypedTranslation) {
             return t;
         }
-        return new TypedTranslation(t, context);
+        if(t instanceof Translation){
+            return new TypedTranslation<object>(t.translations)
+        }
+        return new TypedTranslation<object>(t, context);
     }
 
-    /**
-     * 'Wrap Translation': given an object containing translations OR a string, returns a translation object
-     * 
-     * const json: any = {"en": "English", "nl": "Nederlands"};
-     * const translation = Translations.WT(new Translation(json));
-     * translation.textFor("en") // => "English"
-     * translation.textFor("nl") // => "Nederlands"
-     */
-    public static WT(s: string | Translation): Translation {
-        if (s === undefined || s === null) {
-            return undefined;
-        }
-        if (typeof (s) === "string") {
-            return new Translation({'*': s});
-        }
-        if (s instanceof Translation) {
-            return s.Clone() /* MUST CLONE HERE! */;
-        }
-        console.error("Trying to Translation.WT, but got ", s)
-        throw "??? Not a valid translation"
-    }
 
     public static CountTranslations() {
         const queue: any = [Translations.t];

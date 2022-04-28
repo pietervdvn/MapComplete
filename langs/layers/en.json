@@ -3409,6 +3409,20 @@
                         "question": "Has a halal menu"
                     }
                 }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
             }
         },
         "name": "Restaurants and fast food",
@@ -4679,6 +4693,20 @@
                         "question": "Only show shops with name {search}"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
             }
         },
         "name": "Shop",
@@ -5398,13 +5426,13 @@
                         "then": "The tree is in a park or similar (cemetery, school grounds, …)."
                     },
                     "4": {
-                        "then": "The tree is a residential garden."
+                        "then": "The tree is in a residential garden."
                     },
                     "5": {
                         "then": "This is a tree along an avenue."
                     },
                     "6": {
-                        "then": "The tree is an urban area."
+                        "then": "The tree is in an urban area."
                     },
                     "7": {
                         "then": "The tree is outside of an urban area."
@@ -5670,6 +5698,7 @@
         "name": "Watermill"
     },
     "windturbine": {
+        "description": "Modern windmills generating electricity",
         "name": "wind turbine",
         "presets": {
             "0": {

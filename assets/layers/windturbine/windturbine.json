@@ -9,6 +9,9 @@
     "zh_Hant": "風機",
     "hu": "Szélerőmű"
   },
+  "description": {
+    "en": "Modern windmills generating electricity"
+  },
   "source": {
     "osmTags": "generator:source=wind"
   },

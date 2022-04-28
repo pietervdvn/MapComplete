@@ -5,21 +5,24 @@
     "id": "Kode pos",
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
-    "ca": "Codis postals"
+    "ca": "Codis postals",
+    "es": "Códigos postales"
   },
   "shortDescription": {
     "en": "Postal codes",
     "id": "Kode pos",
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
-    "ca": "Codis postals"
+    "ca": "Codis postals",
+    "es": "Códigos postales"
   },
   "description": {
     "en": "Postal codes",
     "id": "Kode pos",
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
-    "ca": "Codis postals"
+    "ca": "Codis postals",
+    "es": "Códigos postales"
   },
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
@@ -39,7 +42,8 @@
         "id": "kode pos",
         "hu": "irányítószámok",
         "de": "Postleitzahlen",
-        "ca": "codis postals"
+        "ca": "codis postals",
+        "es": "códigos postales"
       },
       "minzoom": 8,
       "title": {
@@ -47,7 +51,8 @@
           "en": "Postal code {postal_code}",
           "id": "Kode pos {postal_code}",
           "hu": "Irányítószám: {postal_code}",
-          "de": "Postleitzahl {postal_code}"
+          "de": "Postleitzahl {postal_code}",
+          "es": "Código postal {postal_code}"
         }
       },
       "description": {},
@@ -58,7 +63,8 @@
             "en": "The postal code is {postal_code}",
             "id": "Kode posnya adalah {postal_code}",
             "hu": "Irányítószám: {postal_code}",
-            "de": "Die Postleitzahl lautet {postal_code}"
+            "de": "Die Postleitzahl lautet {postal_code}",
+            "es": "El código postal es {postal_code}"
           }
         }
       ],

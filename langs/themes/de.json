@@ -23,12 +23,12 @@
     },
     "binoculars": {
         "description": "Eine Karte für festinstallierte Ferngläsern. Man findet sie meist an touristischen Orten, Aussichtspunkten, Aussichtstürmen oder gelegentlich in Naturschutzgebieten.",
-        "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
+        "shortDescription": "Eine Karte festinstallierter Ferngläsern",
         "title": "Ferngläser"
     },
     "bookcases": {
         "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
-        "title": "Öffentliche Bücherschränke Karte"
+        "title": "Karte öffentlicher Bücherschränke"
     },
     "cafes_and_pubs": {
         "description": "Kneipen und Bars",
@@ -52,7 +52,7 @@
                         "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
                     },
                     "caravansites-charge": {
-                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
+                        "question": "Wie hoch sind die Gebühren hier?",
                         "render": "Die Gebühr beträgt {charge}"
                     },
                     "caravansites-description": {
@@ -855,7 +855,7 @@
                 "name": "Briefkästen",
                 "presets": {
                     "0": {
-                        "title": "eine briefkasten"
+                        "title": "ein Briefkasten"
                     }
                 },
                 "title": {
@@ -876,7 +876,7 @@
                 "name": "Poststellen",
                 "presets": {
                     "0": {
-                        "title": "eine poststelle"
+                        "title": "eine Poststelle"
                     }
                 },
                 "tagRenderings": {
@@ -908,7 +908,7 @@
         "layers": {
             "0": {
                 "description": "Ebene mit Bürgersteigen",
-                "name": "Gehweg",
+                "name": "Gehwege",
                 "tagRenderings": {
                     "streetname": {
                         "render": "Diese Straße heißt {name}"
@@ -952,7 +952,7 @@
                     }
                 },
                 "title": {
-                    "render": "Bleuchtete Straße"
+                    "render": "Beleuchtete Straße"
                 }
             },
             "2": {
