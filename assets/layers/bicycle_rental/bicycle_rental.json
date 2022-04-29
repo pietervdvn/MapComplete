@@ -83,12 +83,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "service:bicycle:rental=yes",
-              "shop=bicycle"
-            ]
-          },
+          "if": "shop=rental",
           "then": {
             "en": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
             "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
@@ -98,7 +93,12 @@
           }
         },
         {
-          "if": "bicycle_rental=docking_station",
+          "if": {
+            "and": [
+              "service:bicycle:rental=yes",
+              "shop=bicycle"
+            ]
+          },
           "then": {
             "en": "This is a shop which sells or repairs bicycles, but also rents out bicycles",
             "nl": "Dit is een fietsenmaker of fietswinkel die ook fietsen verhuurt",
@@ -108,7 +108,7 @@
           }
         },
         {
-          "if": "bicycle_rental=key_dispensing_machine",
+          "if": "bicycle_rental=docking_station",
           "then": {
             "en": "This is an automated docking station, where a bicycle is mechanically locked into a structure",
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
@@ -117,12 +117,19 @@
           }
         },
         {
-          "if": "bicycle_rental=dropoff_point",
+          "if": "bicycle_rental=key_dispensing_machine",
           "then": {
             "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
             "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
             "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
             "de": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+          }
+        },
+        {
+          "if": "bicycle_rental=dropoff_point",
+          "then": {
+            "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only",
+            "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur "
           }
         }
       ],
