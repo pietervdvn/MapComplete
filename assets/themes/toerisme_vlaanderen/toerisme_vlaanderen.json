@@ -247,7 +247,7 @@
       ]
     }
   ],
-  "hideFromOverview": false,
+  "hideFromOverview": true,
   "enableMoreQuests": false,
   "enableShareScreen": false
 }
