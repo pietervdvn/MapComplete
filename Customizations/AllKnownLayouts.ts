@@ -229,5 +229,16 @@ export class AllKnownLayouts {
         }
         return dict;
     }
+    
+    public static GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement{
+        return new Combine([
+            new Title(new Combine([theme.title, "(",theme.id+")"]), 2),
+            theme.description,
+            "This theme contains the following layers:",
+            new List(theme.layers.map(l => l.id)),
+            "Available languages:",
+            new List(theme.language)
+        ])
+    }
 
 }
