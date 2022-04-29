@@ -13,6 +13,7 @@ import Link from "../../UI/Base/Link";
 import List from "../../UI/Base/List";
 import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
+import {Paragraph} from "../../UI/Base/Paragraph";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -514,7 +515,10 @@ export default class TagRenderingConfig {
             withRender = [
                 `This rendering asks information about the property `,
                 Link.OsmWiki(this.freeform.key),
-                `\nThis is rendered with \`${this.render.txt}\``
+                new Paragraph(new Combine([
+                    "This is rendered with",
+                    new FixedUiElement(this.render.txt).SetClass("literalcode bold")
+                ]))
 
             ]
         }
@@ -522,17 +526,25 @@ export default class TagRenderingConfig {
         let mappings: BaseUIElement = undefined;
         if (this.mappings !== undefined) {
             mappings = new List(
-                this.mappings.map(m => {
-                        let txt = "**" + m.then.txt + "** corresponds with " + m.if.asHumanString(true, false, {});
+                [].concat(...this.mappings.map(m => {
+                        const msgs: (string| BaseUIElement)[] = [
+                            new Combine(
+                                [
+                            new FixedUiElement(m.then.txt).SetClass("bold"),
+                                    "corresponds with",
+                                    m.if.asHumanString(true, false, {})
+                                ]
+                            )
+                        ]
                         if (m.hideInAnswer === true) {
-                            txt += "_This option cannot be chosen as answer_"
+                            msgs.push(new FixedUiElement("This option cannot be chosen as answer").SetClass("italic"))
                         }
                         if (m.ifnot !== undefined) {
-                            txt += "Unselecting this answer will add " + m.ifnot.asHumanString(true, false, {})
+                            msgs.push( "Unselecting this answer will add " + m.ifnot.asHumanString(true, false, {}))
                         }
-                        return txt;
+                        return msgs;
                     }
-                )
+                ))
             )
         }
         
@@ -559,7 +571,11 @@ export default class TagRenderingConfig {
         }
         return new Combine([
             new Title(this.id, 3),
-            this.question !== undefined ? "The question is **" + this.question.txt + "**" : "_This tagrendering has no question and is thus read-only_",
+            this.question !== undefined ?
+                new Combine([ "The question is " , new FixedUiElement( this.question.txt).SetClass("bold")]) : 
+                new FixedUiElement(
+                "This tagrendering has no question and is thus read-only"
+                ).SetClass("italic"),
             new Combine(withRender),
             mappings,
             condition,

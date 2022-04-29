@@ -211,5 +211,5 @@ export default class LayoutConfig {
         }
         return undefined
     }
-
+    
 }

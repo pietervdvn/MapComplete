@@ -27,6 +27,7 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import {And} from "../../Logic/Tags/And";
 import {Overpass} from "../../Logic/Osm/Overpass";
 import Constants from "../Constants";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -416,7 +417,8 @@ export default class LayerConfig extends WithContextLoader {
         let quickOverview: BaseUIElement = undefined;
         if (tableRows.length > 0) {
             quickOverview = new Combine([
-                "**Warning** This quick overview is incomplete",
+                new FixedUiElement("Warning: ").SetClass("bold"),
+                "this quick overview is incomplete",
                 new Table(["attribute", "type", "values which are supported by this layer"], tableRows)
             ]).SetClass("flex-col flex")
         }
