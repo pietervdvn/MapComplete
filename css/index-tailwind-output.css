@@ -1144,22 +1144,12 @@ video {
   width: 2.75rem;
 }
 
-.w-16 {
-  width: 4rem;
-}
-
 .w-min {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
 
-.w-16 {
-  width: 4rem;
-}
-
-.w-auto {
-  width: auto;
 .w-1\/2 {
   width: 50%;
 }
@@ -1396,12 +1386,12 @@ video {
   border-bottom-left-radius: 0.25rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-4 {
