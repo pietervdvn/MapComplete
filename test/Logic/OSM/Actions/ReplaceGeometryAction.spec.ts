@@ -6,6 +6,8 @@ import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig";
 import State from "../../../../State";
 import {BBox} from "../../../../Logic/BBox";
 import ReplaceGeometryAction from "../../../../Logic/Osm/Actions/ReplaceGeometryAction";
+import ShowDataLayerImplementation from "../../../../UI/ShowDataLayer/ShowDataLayerImplementation";
+import ShowDataLayer from "../../../../UI/ShowDataLayer/ShowDataLayer";
 
 describe("ReplaceGeometryAction", () => {
 
@@ -874,7 +876,7 @@ it("should move nodes accordingly", async () => {
 
 
     const layout = new LayoutConfig(<any>grbStripped)
-
+    ShowDataLayer.actualContstructor = (_) => undefined;
 
     const state = new State(layout)
     State.state = state;

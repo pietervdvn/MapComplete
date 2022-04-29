@@ -250,6 +250,7 @@
             "createNewWikidata": "Create a new Wikidata item",
             "doSearch": "Search above to see results",
             "failed": "Loading the Wikipedia entry failed",
+            "fromWikipedia": "From Wikipedia, the free encyclopedia",
             "loading": "Loading Wikipedia...",
             "noResults": "Nothing found for <i>{search}</i>",
             "noWikipediaPage": "This Wikidata item has no corresponding Wikipedia page yet.",

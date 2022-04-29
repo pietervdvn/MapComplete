@@ -254,6 +254,14 @@
             "es": "Aquí se pueden alquilar bicicletas de carreras",
             "da": "Racercykler kan lejes her"
           }
+        },
+        {
+          "if": "rental=bike_helmet",
+          "then": {
+            "en": "Bike helmets can be rented here",
+            "nl": "Fietshelmpen kunnen hier gehuurd worden",
+            "es": "Aquí se pueden alquilar cascos"
+        }
         }
       ]
     },
