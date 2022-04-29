@@ -1,0 +1,162 @@
+{
+  "id": "berlin_emergency_water_pumps",
+  "title": {
+    "de": "Berliner Pumpen"
+  },
+  "description": {
+    "de": "Die Karte zeigt die Funktionsfähigkeit und Position der Berliner Straßenbrunnen."
+  },
+  "maintainer": "MapComplete",
+  "icon": "./assets/themes/drinking_water/logo.svg",
+  "version": "0",
+  "startLat": 50.8465573,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "startLon": 4.351697,
+  "startZoom": 16,
+  "widenFactor": 2,
+  "layers": [
+    {
+      "id": "berlin_emergency_water_pump_layer",
+      "name": {
+        "de": "Berliner Straßenbrunnen"
+      },
+      "title": {
+        "render": {
+          "de": "Berliner Straßenbrunnen"
+        }
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "man_made=water_well",
+            "network=Berliner Straßenbrunnen"
+          ]
+        }
+      },
+      "minzoom": 13,
+      "presets": [
+        {
+          "title": {
+            "de": "ein Berliner Straßenbrunnen"
+          },
+          "tags": [
+            "man_made=water_well"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        "images",
+        {
+          "question": {
+            "de": "Ist dieser Straßenbrunnen funktionsfähig?"
+          },
+          "render": {
+            "de": "Status <i>{pump:status}</i>"
+          },
+          "freeform": {
+            "key": "pump:status"
+          },
+          "mappings": [
+            {
+              "if": "pump:status=ok",
+              "then": {
+                "de": "Dieser Straßenbrunnen funktioniert (20x pumpen produziert Wasser)"
+              }
+            },
+            {
+              "if": "pump:status=broken",
+              "then": {
+                "de": "Auch nach längerem Pumpen (20x-30x) fließt kein Wasser oder die Pumpe ist aus anderen, nicht weiter ausgeführten Gründen dauerhaft nicht funktionsfähig."
+              }
+            },
+            {
+              "if": "pump:status=missing_beam",
+              "then": {
+                "de": "Es fehlt der Handschwengel zum pumpen; die Pumpe kann daher nicht betätigt werden."
+              }
+            },
+            {
+              "if": "pump:status=out_of_order",
+              "then": {
+                "de": "Die Pumpe wurde (z.B. von einer Behörde bzw. der Senatsverwaltung) außer Betrieb gesetzt."
+              }
+            },
+            {
+              "if": "pump:status=locked",
+              "then": {
+                "de": "Die Pumpe ist z.B. mit einer Kette verschlossen."
+              }
+            },
+            {
+              "if": "pump:status=blocked",
+              "then": {
+                "de": "Der Zugang zur Pumpe ist blockiert (z.B. durch eine Baustelle)."
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "de": "Wann wurde die Funktionsfähigkeit dieser Pumpe zuletzt überprüft?"
+          },
+          "render": {
+            "de": "Die Funktionsfähigkeit wurde zuletzt geprüft am {check_date}"
+          },
+          "freeform": {
+            "key": "check_date",
+            "type": "date"
+          },
+          "mappings": [
+            {
+              "if": "check_date:={_now:date}",
+              "then": "Surveyed today!"
+            }
+          ],
+          "id": "bench-check_date"
+        }
+      ],
+      "deletion": {
+        "softDeletionTags": {
+          "and": [
+            "razed:man_made:={man_made}",
+            "man_made="
+          ]
+        },
+        "neededChangesets": 1
+      },
+      "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuraccy": true
+      },
+      "mapRendering": [
+        {
+          "icon": {
+            "render": "pin:#6BC4F7;./assets/layers/drinking_water/drips.svg"
+          },
+          "iconBadges": [
+            {
+              "if": {
+                "or": [
+                  "pump:status=broken",
+                  "pump:status=missing_beam",
+                  "pump:status=out_of_order",
+                  "pump:status=locked",
+                  "pump:status=blocked"
+                ]
+              },
+              "then": "close:#c33"
+            }
+          ],
+          "iconSize": "40,40,bottom",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ],
+      "description": {
+        "de": "Berliner Straßenbrunnen Layer"
+      }
+    }
+  ]
+}
