@@ -12,6 +12,8 @@ import 'leaflet-polylineoffset'
 import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
 import AvailableBaseLayersImplementation from "../../Logic/Actors/AvailableBaseLayersImplementation";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
+import ShowDataLayerImplementation from "../ShowDataLayer/ShowDataLayerImplementation";
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0;
@@ -50,6 +52,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     public static initialize() {
         AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
         Minimap.createMiniMap = options => new MinimapImplementation(options)
+        ShowDataLayer.actualContstructor = options => new ShowDataLayerImplementation(options)
     }
 
     public installBounds(factor: number | BBox, showRange?: boolean) {

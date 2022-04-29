@@ -465,7 +465,7 @@ export class OH {
             lat: tags._lat,
             lon: tags._lon,
             address: {
-                country_code: tags._country
+                country_code: tags._country.toLowerCase()
             },
         }, {tag_key: "opening_hours"});
     }
