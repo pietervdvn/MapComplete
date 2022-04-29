@@ -196,7 +196,21 @@
         }
     },
     "climbing": {
-        "description": "En klatremulighet",
+        "tagRenderings": {
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Buldring er mulig her"
+                    },
+                    "1": {
+                        "then": "Buldring er ikke mulig her"
+                    }
+                },
+                "question": "Er buldring mulig her?"
+            }
+        }
+    },
+    "climbing_area": {
         "presets": {
             "0": {
                 "description": "En klatremulighet",
@@ -221,7 +235,6 @@
         }
     },
     "climbing_opportunity": {
-        "description": "En klatremulighet?",
         "name": "Klatremuligheter?",
         "tagRenderings": {
             "climbing-possible": {

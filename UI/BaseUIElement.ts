@@ -94,7 +94,7 @@ export default abstract class BaseUIElement {
      * The same as 'Render', but creates a HTML element instead of the HTML representation
      */
     public ConstructElement(): HTMLElement {
-        if (Utils.runningFromConsole) {
+        if (typeof window === undefined) {
             return undefined;
         }
 

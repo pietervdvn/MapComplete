@@ -32,6 +32,28 @@
     },
     "mappings": [
       {
+        "if": {
+          "and": ["name~*","species:wikidata~*"]
+        },
+        "then": {
+          "*": "{name} ({wikidata_label(species:wikidata)})"
+        }
+      },
+      {
+        "if": {
+          "and": ["name~*"]
+        },
+        "then": {
+          "*": "{name}"
+        }
+      },
+      {
+        "if": "species:wikidata~*",
+        "then": {
+          "*": "{wikidata_label(species:wikidata)}"
+        }
+      },
+      {
         "if": "species~*",
         "then": {
           "*": "<i>{species}</i>"
@@ -331,6 +353,41 @@
       "condition": {
         "and": [
           "leaf_type!~^leafless$"
+        ]
+      }
+    },
+    {
+      "id": "tree-species-wikidata",
+      "question": {
+        "en": "What species is this tree?"
+      },
+      "render": {
+        "*": "{wikipedia(species:wikidata):max-height: 25rem}"
+      },
+      "freeform": {
+        "key": "species:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "species",
+          {
+            "instanceOf": [
+              10884,
+              16521
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "tree-wikipedia",
+      "#": "If this tree has a wikipedia article, show it. People can _only_ set the species though!",
+      "render": {
+        "*": "{wikipedia()}"
+      },
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
         ]
       }
     },

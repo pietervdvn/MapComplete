@@ -54,7 +54,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                         }
                         const viz = proto.special;
                         try {
-                            return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
+                            return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state)?.SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func.funcName}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
@@ -80,7 +80,7 @@ export class SubstitutedTranslation extends VariableUiElement {
         }
     }[] {
 
-        for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
+        for (const knownSpecial of extraMappings.concat(SpecialVisualizations.specialVisualizations)) {
 
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
             const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`);

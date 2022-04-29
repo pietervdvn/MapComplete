@@ -20,6 +20,7 @@ import {QueryParameters} from "../../Logic/Web/QueryParameters";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {InputElement} from "../Input/InputElement";
 import {DropDown} from "../Input/DropDown";
+import {UIElement} from "../UIElement";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>, 
@@ -33,7 +34,7 @@ export default class FilterView extends VariableUiElement {
             filteredLayer.map((filteredLayers) => {
                     // Create the views which toggle layers (and filters them) ...
                     let elements = filteredLayers
-                        ?.map(l => FilterView.createOneFilteredLayerElement(l)?.SetClass("filter-panel"))
+                        ?.map(l => FilterView.createOneFilteredLayerElement(l, State.state)?.SetClass("filter-panel"))
                         ?.filter(l => l !== undefined)
                     elements[0].SetClass("first-filter-panel")
                 
@@ -87,10 +88,14 @@ export default class FilterView extends VariableUiElement {
         );
     }
 
-    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer) {
+    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer, state: {featureSwitchIsDebugging: UIEventSource<boolean>}) {
         if (filteredLayer.layerDef.name === undefined) {
             // Name is not defined: we hide this one
-            return undefined;
+            return new Toggle(
+                filteredLayer?.layerDef?.description?.Clone()?.SetClass("subtle")                ,
+                undefined,
+                state?.featureSwitchIsDebugging
+            );
         }
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
 

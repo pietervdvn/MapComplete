@@ -42,699 +42,234 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 1.5,
+  "customCss": "./assets/themes/climbing/climbing.css",
   "layers": [
-    "climbing_club",
-    "climbing_gym",
-    "climbing_route",
-    "climbing",
-    "climbing_opportunity"
-  ],
-  "overrideAll": {
-    "allowMove": {
-      "enableRelocation": false,
-      "enableImproveAccuracy": true
-    },
-    "+titleIcons": [
-      {
-        "render": "<div class='flex' style='word-wrap: normal; padding-right: 0.25rem;'><img src='./assets/themes/climbing/height.svg' style='height: 1.75rem;'/>{climbing:length}m</div>",
-        "condition": "climbing:length~*"
-      },
-      {
-        "mappings": [
+    {
+      "builtin": [
+        "climbing_club",
+        "climbing_gym",
+        "climbing_route",
+        "climbing_area",
+        "climbing_opportunity"
+      ],
+      "override": {
+        "allowMove": {
+          "enableRelocation": false,
+          "enableImproveAccuracy": true
+        },
+        "+titleIcons": [
           {
-            "if": "climbing:bolts~*",
-            "then": "<div class='flex' style='padding-right: 0.25rem;'><img src='./assets/themes/climbing/carabiner.svg' style='width: 1rem;'/>{climbing:bolts}</div>"
+            "render": "<div class='flex' style='word-wrap: normal; padding-right: 0.25rem;'><img src='./assets/themes/climbing/height.svg' style='height: 1.75rem;'/>{climbing:length}m</div>",
+            "condition": "climbing:length~*"
           },
           {
-            "if": "climbing:bolted=yes",
-            "then": "<img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>"
+            "mappings": [
+              {
+                "if": "__bolts_max~*",
+                "then": "<div class='flex' style='padding-right: 0.25rem;'><img src='./assets/themes/climbing/carabiner.svg' style='width: 1rem;'/>{__bolts_max}</div>"
+              },
+              {
+                "if": "climbing:bolted=yes",
+                "then": "<img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>"
+              }
+            ]
+          },
+          {
+            "id": "Min difficulty",
+            "condition": "__difficulty_min~*",
+            "render": "<div class='w-8 flex justify-center rounded-left-full climbing-{__difficulty_min:char}' style='margin-right: -5px;'> {__difficulty_min}</div>"
+          },
+          {
+            "id": "max difficulty",
+            "condition": "__difficulty_max~*",
+            "render": "<div class='w-8 flex justify-center rounded-right-full climbing-{__difficulty_max:char}'> {__difficulty_max}</div>"
+          },
+          {
+            "render": "<div class='flex justify-center rounded-full pl-1 pr-1 climbing-{__difficulty:char}'> {climbing:grade:french}</div>"
           }
-        ]
-      },
-      {
-        "mappings": [
-          {
-            "if": "climbing:grade:french~3.*",
-            "then": "<div class='rounded-full px-1' style='background-color:#ebf224'> {climbing:grade:french}</div>"
-          },
-          {
-            "if": "climbing:grade:french~4.*",
-            "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#7af224'> {climbing:grade:french}</div>"
-          },
-          {
-            "if": "climbing:grade:french~5.*",
-            "then": "<div class='rounded-full pl-2 pr-2' style='background-color:#f24a24'> {climbing:grade:french}</div>"
-          },
-          {
-            "if": "climbing:grade:french~6.*",
-            "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#244af2'> {climbing:grade:french}</div>"
-          },
-          {
-            "if": "climbing:grade:french~7.*",
-            "then": "<div class='text-white rounded-full pl-2 pr-2' style='background-color:#e904ed'> {climbing:grade:french}</div>"
-          },
-          {
-            "if": "climbing:grade:french~*",
-            "then": "<div class='text-white rounded-full px-2' style='background-colour:black'> {climbing:grade:french}</div>"
-          }
-        ]
-      }
-    ],
-    "+calculatedTags": [
-      "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
-      "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
-      "_embedding_feature_with_rock=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.rock !== undefined)[0] ?? '{}'",
-      "_embedding_features_with_rock:rock=JSON.parse(feat.properties._embedding_feature_with_rock ?? '{}')?.rock",
-      "_embedding_features_with_rock:id=JSON.parse(feat.properties._embedding_feature_with_rock ?? '{}')?.id",
-      "_embedding_feature:access=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').access",
-      "_embedding_feature:access:description=JSON.parse(feat.properties._embedding_features_with_access ?? '{}')['access:description']",
-      "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id"
-    ],
-    "units+": [
-      {
-        "appliesToKey": [
-          "climbing:length",
-          "climbing:length:min",
-          "climbing:length:max"
         ],
-        "applicableUnits": [
+        "+calculatedTags": [
+          "_embedding_feature_properties=feat.overlapWith('climbing_area').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
+          "_embedding_features_with_access=feat.get('_embedding_feature_properties')?.filter(p => p.access !== undefined)?.at(0)",
+          "_embedding_feature_with_rock=feat.get('_embedding_feature_properties')?.filter(p => p.rock !== undefined)?.at(0)",
+          "_embedding_features_with_rock:rock=feat.get('_embedding_feature_with_rock')?.rock",
+          "_embedding_features_with_rock:id=feat.get('_embedding_feature_with_rock')?.id",
+          "_embedding_feature:access=feat.get('_embedding_features_with_access')?.access",
+          "_embedding_feature:access:description=(feat.get('_embedding_features_with_access')??{})['access:description']",
+          "_embedding_feature:id=feat.get('_embedding_features_with_access')?.id",
+          "__difficulty_max= feat.properties['climbing:grade:french:max'] ?? feat.properties['_difficulty_max']",
+          "__difficulty_min= feat.properties['climbing:grade:french:min'] ?? feat.properties['_difficulty_min']",
+          "__difficulty_max:char= feat.properties['__difficulty_max']?.at(0)",
+          "__difficulty_min:char= feat.properties['__difficulty_min']?.at(0)",
+          "__difficulty:char= feat.properties['climbing:grade:french']?.at(0)",
+          "__bolts_max= feat.get('climbing:bolts:max') ?? feat.get('climbing:bolts') ?? feat.get('_bolts_max')"
+        ],
+        "units+": [
           {
-            "canonicalDenomination": "",
-            "alternativeDenomination": [
-              "m",
-              "meter",
-              "meters"
+            "appliesToKey": [
+              "climbing:length",
+              "climbing:length:min",
+              "climbing:length:max"
             ],
-            "human": {
-              "en": " meter",
-              "nl": " meter",
-              "fr": " mètres",
-              "de": " Meter",
-              "eo": " metro",
-              "it": " metri",
-              "ru": " метр",
-              "ca": " metre"
-            },
-            "default": true
-          },
+            "applicableUnits": [
+              {
+                "canonicalDenomination": "",
+                "alternativeDenomination": [
+                  "m",
+                  "meter",
+                  "meters"
+                ],
+                "human": {
+                  "en": " meter",
+                  "nl": " meter",
+                  "fr": " mètres",
+                  "de": " Meter",
+                  "eo": " metro",
+                  "it": " metri",
+                  "ru": " метр",
+                  "ca": " metre"
+                },
+                "default": true
+              },
+              {
+                "canonicalDenomination": "ft",
+                "alternativeDenomination": [
+                  "feet",
+                  "voet"
+                ],
+                "human": {
+                  "en": " feet",
+                  "nl": " voet",
+                  "fr": " pieds",
+                  "de": " Fuß",
+                  "eo": " futo",
+                  "it": " piedi",
+                  "ca": " peus"
+                }
+              }
+            ]
+          }
+        ],
+        "tagRenderings+": [
           {
-            "canonicalDenomination": "ft",
-            "alternativeDenomination": [
-              "feet",
-              "voet"
+            "id": "Access from containing feature",
+            "mappings": [
+              {
+                "if": "_embedding_feature:access=yes",
+                "then": {
+                  "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}",
+                  "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
+                  "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}",
+                  "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}",
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                }
+              },
+              {
+                "if": "_embedding_feature:access=permit",
+                "then": {
+                  "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}",
+                  "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}",
+                  "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}",
+                  "it": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}",
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
+                }
+              },
+              {
+                "if": "_embedding_feature:access=customers",
+                "then": {
+                  "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}",
+                  "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}",
+                  "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}",
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
+                }
+              },
+              {
+                "if": "_embedding_feature:access=members",
+                "then": {
+                  "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}",
+                  "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}",
+                  "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}",
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
+                }
+              },
+              {
+                "if": "_embedding_feature:access=no",
+                "then": "Not accessible as stated by <a href='#{_embedding_feature:id}'>the containing feature</a>"
+              }
             ],
-            "human": {
-              "en": " feet",
-              "nl": " voet",
-              "fr": " pieds",
-              "de": " Fuß",
-              "eo": " futo",
-              "it": " piedi",
-              "ca": " peus",
-              "es": " pies"
-            }
-          }
-        ]
-      }
-    ],
-    "tagRenderings+": [
-      {
-        "id": "Website",
-        "question": {
-          "en": "Is there a (unofficial) website with more informations (e.g. topos)?",
-          "de": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?",
-          "ja": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?",
-          "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?",
-          "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?",
-          "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?",
-          "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
-        },
-        "condition": {
-          "and": [
-            "leisure!~sports_centre",
-            "sport=climbing",
-            "office=",
-            "club="
-          ]
-        },
-        "render": "<a href='{url}' target='_blank'>{url}</a>",
-        "freeform": {
-          "key": "url",
-          "type": "url"
-        }
-      },
-      {
-        "id": "Access from containing feature",
-        "mappings": [
-          {
-            "if": "_embedding_feature:access=yes",
-            "then": {
-              "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}",
-              "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
-              "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}",
-              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
-            }
+            "condition": "_embedding_feature:access~*"
           },
           {
-            "if": "_embedding_feature:access=permit",
-            "then": {
-              "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}",
-              "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}",
-              "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}",
-              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
-            }
-          },
-          {
-            "if": "_embedding_feature:access=customers",
-            "then": {
-              "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}",
-              "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}",
-              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
-            }
-          },
-          {
-            "if": "_embedding_feature:access=members",
-            "then": {
-              "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}",
-              "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}",
-              "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}",
-              "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
-            }
-          },
-          {
-            "if": "_embedding_feature:access=no",
-            "then": "Not accessible as stated by <a href='#{_embedding_feature:id}'>the containing feature</a>"
-          }
-        ],
-        "condition": "_embedding_feature:access~*"
-      },
-      {
-        "id": "Access",
-        "question": {
-          "en": "Who can access here?",
-          "fr": "Qui peut y accéder ?",
-          "de": "Wer hat hier Zugang?",
-          "it": "Chi può accedervi?",
-          "es": "¿Quién pueden acceder aquí?"
-        },
-        "mappings": [
-          {
-            "if": "access=yes",
-            "then": {
-              "en": "Publicly accessible to anyone",
-              "fr": "Libre d’accès",
-              "de": "Öffentlich zugänglich für jedermann",
-              "it": "Pubblicamente accessibile a chiunque",
-              "es": "Accesible públicamente a cualquiera"
-            }
-          },
-          {
-            "if": "access=permit",
-            "then": {
-              "en": "You need a permit to access here",
-              "fr": "Une autorisation est nécessaire",
-              "de": "Zugang nur mit Genehmigung",
-              "it": "È necessario avere un’autorizzazione per entrare",
-              "es": "Necesitas una autorización para acceder aquí"
-            }
-          },
-          {
-            "if": "access=customers",
-            "then": {
-              "en": "Only customers",
-              "fr": "Réservé aux clients",
-              "de": "Nur für Kunden",
-              "it": "Riservato ai clienti",
-              "ca": "Només clients",
-              "es": "Solo clientes"
-            }
-          },
-          {
-            "if": "access=members",
-            "then": {
-              "en": "Only club members",
-              "ru": "Только членам клуба",
-              "fr": "Réservé aux membres",
-              "de": "Nur für Vereinsmitglieder",
-              "it": "Riservato ai membri del club",
-              "ca": "Només membres del club",
-              "es": "Solo miembros del club"
-            }
-          },
-          {
-            "if": "access=no",
-            "then": "Not accessible"
-          }
-        ],
-        "condition": {
-          "and": [
-            "climbing!=no",
-            "office=",
-            "club=",
-            {
-              "or": [
-                "sport=climbing",
-                "climbing:sport=yes"
-              ]
+            "id": "access",
+            "question": {
+              "en": "Who can access here?",
+              "fr": "Qui peut y accéder ?",
+              "de": "Wer hat hier Zugang?",
+              "it": "Chi può accedervi?"
             },
-            {
+            "mappings": [
+              {
+                "if": "access=yes",
+                "then": {
+                  "en": "Publicly accessible to anyone",
+                  "fr": "Libre d’accès",
+                  "de": "Öffentlich zugänglich für jedermann",
+                  "it": "Pubblicamente accessibile a chiunque"
+                }
+              },
+              {
+                "if": "access=permit",
+                "then": {
+                  "en": "You need a permit to access here",
+                  "fr": "Une autorisation est nécessaire",
+                  "de": "Zugang nur mit Genehmigung",
+                  "it": "È necessario avere un’autorizzazione per entrare"
+                }
+              },
+              {
+                "if": "access=customers",
+                "then": {
+                  "en": "Only customers",
+                  "fr": "Réservé aux clients",
+                  "de": "Nur für Kunden",
+                  "it": "Riservato ai clienti",
+                  "ca": "Només clients"
+                }
+              },
+              {
+                "if": "access=members",
+                "then": {
+                  "en": "Only club members",
+                  "ru": "Только членам клуба",
+                  "fr": "Réservé aux membres",
+                  "de": "Nur für Vereinsmitglieder",
+                  "it": "Riservato ai membri del club",
+                  "ca": "Només membres del club"
+                }
+              },
+              {
+                "if": "access=no",
+                "then": "Not accessible"
+              }
+            ],
+            "condition": {
               "or": [
                 "access~*",
                 "_embedding_feature:access="
               ]
             }
-          ]
-        }
-      },
-      {
-        "id": "Access description (without _embedding_feature:access:description)",
-        "render": "{access:description}",
-        "freeform": {
-          "key": "access:description"
-        }
-      },
-      {
-        "id": "Avg length?",
-        "render": {
-          "de": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
-          "en": "The routes are <b>{canonical(climbing:length)}</b> long on average",
-          "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
-          "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
-          "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
-          "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
-          "es": "Las rotas tienen una longitud media de <b>{canonical(climbing:length)}</b>"
-        },
-        "condition": {
-          "and": [
-            "climbing!~route",
-            "office=",
-            "club=",
-            "climbing:toprope!=no",
-            {
-              "or": [
-                "sport=climbing",
-                "climbing:sport=yes",
-                "climbing=traditional",
-                "climbing=gym"
-              ]
-            }
-          ]
-        },
-        "question": {
-          "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
-          "en": "What is the (average) length of the routes in meters?",
-          "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
-          "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
-          "fr": "Quelle est la longueur moyenne des voies en mètres ?",
-          "it": "Quale è la lunghezza (media) delle vie in metri?",
-          "es": "¿Cuál es la longitud (media) de la ruta en metros?"
-        },
-        "freeform": {
-          "key": "climbing:length",
-          "type": "pnat"
-        }
-      },
-      {
-        "id": "Difficulty-min",
-        "question": {
-          "de": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-          "en": "What is the grade of the easiest route here, according to the french classification system?",
-          "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
-          "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
-          "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
-          "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
-          "es": "¿Cual es el nivel de la ruta más fácil aquí, de acuerdo con el sistema de clasificación francés?"
-        },
-        "render": {
-          "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
-          "en": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system",
-          "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
-          "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です",
-          "fr": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge",
-          "it": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
-        },
-        "freeform": {
-          "key": "climbing:grade:french:min"
-        },
-        "condition": {
-          "and": [
-            "climbing!~route",
-            "office=",
-            "club=",
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": "Difficulty-max",
-        "question": {
-          "de": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-          "en": "What is the highest grade route here, according to the french classification system?",
-          "nl": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
-          "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
-          "fr": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
-          "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
-          "es": "¿Cual es la ruta de mayor nivel aquí, de acuerdo al sistema de clasificación francés?"
-        },
-        "render": {
-          "de": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)",
-          "en": "The highest grade is {climbing:grade:french:max} according to the french/belgian system",
-          "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
-          "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",
-          "fr": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge",
-          "it": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
-        },
-        "freeform": {
-          "key": "climbing:grade:french:max"
-        },
-        "condition": {
-          "and": [
-            "climbing!~route",
-            "office=",
-            "club=",
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": "Boldering?",
-        "question": {
-          "de": "Kann hier gebouldert werden?",
-          "en": "Is bouldering possible here?",
-          "nl": "Is het mogelijk om hier te bolderen?",
-          "ja": "ここでボルダリングはできますか?",
-          "nb_NO": "Er buldring mulig her?",
-          "fr": "L’escalade de bloc est-elle possible ici ?",
-          "it": "È possibile praticare ‘bouldering’ qua?"
-        },
-        "mappings": [
-          {
-            "if": "climbing:boulder=yes",
-            "then": {
-              "de": "Hier kann gebouldert werden",
-              "en": "Bouldering is possible here",
-              "nl": "Bolderen kan hier",
-              "ja": "ボルダリングはここで可能です",
-              "nb_NO": "Buldring er mulig her",
-              "fr": "L’escalade de bloc est possible",
-              "it": "L’arrampicata su massi è possibile qua"
-            }
           },
           {
-            "if": "climbing:boulder=no",
-            "then": {
-              "de": "Hier kann nicht gebouldert werden",
-              "en": "Bouldering is not possible here",
-              "nl": "Bolderen kan hier niet",
-              "ja": "ここではボルダリングはできません",
-              "nb_NO": "Buldring er ikke mulig her",
-              "fr": "L’escalade de bloc n’est pas possible",
-              "it": "L’arrampicata su massi non è possibile qua"
+            "id": "Access description (without _embedding_feature:access:description)",
+            "render": "{access:description}",
+            "freeform": {
+              "key": "access:description"
             }
           },
-          {
-            "if": "climbing:boulder=limited",
-            "then": {
-              "de": "Bouldern ist hier nur an wenigen Routen möglich",
-              "en": "Bouldering is possible, allthough there are only a few routes",
-              "nl": "Bolderen kan hier, maar er zijn niet zoveel routes",
-              "ja": "ボルダリングは可能ですが、少しのルートしかありません",
-              "fr": "L’escalade de bloc est possible sur des voies précises",
-              "it": "L’arrampicata su massi è possibile anche se su poche vie"
-            }
-          },
-          {
-            "if": "climbing:boulder~*",
-            "then": {
-              "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
-              "en": "There are {climbing:boulder} boulder routes",
-              "nl": "Er zijn hier {climbing:boulder} bolderroutes",
-              "ja": "{climbing:boulder} ボルダールートがある",
-              "fr": "Il y a {climbing:boulder} voies d’escalade de bloc",
-              "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
-            },
-            "hideInAnswer": true
-          }
-        ],
-        "condition": {
-          "and": [
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            },
-            "office=",
-            "club="
-          ]
-        }
-      },
-      {
-        "id": "Toproping?",
-        "question": {
-          "de": "Ist Toprope-Klettern hier möglich?",
-          "en": "Is toprope climbing possible here?",
-          "nl": "Is het mogelijk om hier te toprope-klimmen?",
-          "ja": "ここでtoprope登坂はできますか?",
-          "fr": "Est-il possible d’escalader à la moulinette ?",
-          "it": "È possibile arrampicarsi con la corda dall’alto qua?"
-        },
-        "mappings": [
-          {
-            "if": "climbing:toprope=yes",
-            "then": {
-              "de": "Toprope-Klettern ist hier möglich",
-              "en": "Toprope climbing is possible here",
-              "nl": "Toprope-klimmen kan hier",
-              "ja": "ここでToprope登坂ができます",
-              "fr": "L’escalade à la moulinette est possible",
-              "it": "È possibile arrampicarsi con moulinette qua"
-            }
-          },
-          {
-            "if": "climbing:toprope=no",
-            "then": {
-              "de": "Toprope-Climbing ist hier nicht möglich",
-              "en": "Toprope climbing is not possible here",
-              "nl": "Toprope-klimmen kan hier niet",
-              "ja": "ここではToprope登坂はできません",
-              "fr": "L’escalade à la moulinette n’est pas possible",
-              "it": "Non è possibile arrampicarsi con moulinette qua"
-            }
-          },
-          {
-            "if": "climbing:toprope~*",
-            "then": {
-              "de": "Hier gibt es {climbing:toprope} Toprope-Routen",
-              "en": "There are {climbing:toprope} toprope routes",
-              "nl": "Er zijn hier {climbing:toprope} toprope routes",
-              "ja": "{climbing:toprope} 登坂ルートがある",
-              "fr": "{climbing:toprope} voies sont équipées de moulinettes",
-              "it": "Sono presenti {climbing:toprope} vie con moulinette"
-            },
-            "hideInAnswer": true
-          }
-        ],
-        "condition": {
-          "and": [
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            },
-            "office=",
-            "club="
-          ]
-        }
-      },
-      {
-        "id": "Sportclimbing?",
-        "question": {
-          "de": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
-          "en": "Is sport climbing possible here on fixed anchors?",
-          "nl": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?",
-          "ja": "ここでは固定アンカー式のスポーツクライミングはできますか?",
-          "it": "È possibile arrampicarsi qua con ancoraggi fissi?"
-        },
-        "mappings": [
-          {
-            "if": "climbing:sport=yes",
-            "then": {
-              "de": "Sportklettern ist hier möglich",
-              "en": "Sport climbing is possible here",
-              "nl": "Sportklimmen/voorklimmen kan hier",
-              "ru": "Здесь можно заняться спортивным скалолазанием",
-              "ja": "ここでスポーツクライミングができます",
-              "it": "L’arrampicata sportiva è possibile qua",
-              "hu": "Itt lehetőség van sportmászásra",
-              "fr": "De l’escalade est possible ici"
-            }
-          },
-          {
-            "if": "climbing:sport=no",
-            "then": {
-              "de": "Sportklettern ist hier nicht möglich",
-              "en": "Sport climbing is not possible here",
-              "nl": "Sportklimmen/voorklimmen kan hier niet",
-              "ru": "Спортивное скалолазание здесь невозможно",
-              "ja": "ここではスポーツクライミングはできません",
-              "it": "L’arrampicata sportiva non è possibile qua",
-              "hu": "Itt nincs lehetőség sportmászásra",
-              "fr": "L’escalade est impossible ici"
-            }
-          },
-          {
-            "if": "climbing:sport~*",
-            "then": {
-              "de": "Hier gibt es {climbing:sport} Sportkletter-Routen",
-              "en": "There are {climbing:sport} sport climbing routes",
-              "nl": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes",
-              "ja": "スポーツクライミングの {climbing:sport} ルートがある",
-              "it": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
-            },
-            "hideInAnswer": true
-          }
-        ],
-        "condition": {
-          "and": [
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            },
-            "office=",
-            "club="
-          ]
-        }
-      },
-      {
-        "id": "Traditional climbing?",
-        "question": {
-          "de": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
-          "en": "Is traditional climbing possible here (using own gear e.g. chocks)?",
-          "nl": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>",
-          "ja": "伝統的な登山はここで可能ですか(例えば、チョックのような独自のギアを使用して)？",
-          "it": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
-        },
-        "mappings": [
-          {
-            "if": "climbing:traditional=yes",
-            "then": {
-              "de": "Traditionelles Klettern ist hier möglich",
-              "en": "Traditional climbing is possible here",
-              "nl": "Traditioneel klimmen kan hier",
-              "ja": "ここでは伝統的な登山が可能です",
-              "it": "L’arrampicata tradizionale è possibile qua"
-            }
-          },
-          {
-            "if": "climbing:traditional=no",
-            "then": {
-              "de": "Traditionelles Klettern ist hier nicht möglich",
-              "en": "Traditional climbing is not possible here",
-              "nl": "Traditioneel klimmen kan hier niet",
-              "ja": "伝統的な登山はここではできない",
-              "it": "L’arrampicata tradizionale non è possibile qua"
-            }
-          },
-          {
-            "if": "climbing:traditional~*",
-            "then": {
-              "de": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern",
-              "en": "There are {climbing:traditional} traditional climbing routes",
-              "nl": "Er zijn hier {climbing:traditional} traditionele klimroutes",
-              "ja": "{climbing:traditional} の伝統的な登山ルートがある",
-              "it": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
-            },
-            "hideInAnswer": true
-          }
-        ],
-        "condition": {
-          "and": [
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            },
-            "office=",
-            "club="
-          ]
-        }
-      },
-      {
-        "id": "Speed climbing?",
-        "question": {
-          "de": "Gibt es hier eine Speedkletter-Wand?",
-          "en": "Is there a speed climbing wall?",
-          "nl": "Is er een snelklimmuur (speed climbing)?",
-          "ja": "スピードクライミングウォールはありますか?",
-          "it": "È presente una prete per l’arrampicata di velocità?"
-        },
-        "condition": {
-          "and": [
-            "leisure=sports_centre",
-            {
-              "or": [
-                "climbing:sport=yes",
-                "sport=climbing"
-              ]
-            },
-            "office=",
-            "club="
-          ]
-        },
-        "mappings": [
-          {
-            "if": "climbing:speed=yes",
-            "then": {
-              "de": "Hier gibt es eine Speedkletter-Wand",
-              "en": "There is a speed climbing wall",
-              "nl": "Er is een snelklimmuur voor speed climbing",
-              "ja": "スピードクライミングウォールがある",
-              "it": "È presente una parete per l’arrampicata di velocità"
-            }
-          },
-          {
-            "if": "climbing:speed=no",
-            "then": {
-              "de": "Hier gibt es keine Speedkletter-Wand",
-              "en": "There is no speed climbing wall",
-              "nl": "Er is geen snelklimmuur voor speed climbing",
-              "ja": "スピードクライミングウォールがない",
-              "it": "Non è presente una parete per l’arrampicata di velocità"
-            }
-          },
-          {
-            "if": "climbing:speed~*",
-            "then": {
-              "de": "Hier gibt es {climbing:speed} Speedkletter-Routen",
-              "en": "There are {climbing:speed} speed climbing walls",
-              "nl": "Er zijn hier {climbing:speed} snelklimmuren",
-              "ja": "{climbing:speed} のスピードクライミングウォールがある",
-              "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
-            },
-            "hideInAnswer": true
-          }
+          "questions",
+          "reviews"
         ]
-      },
-      "questions",
-      "reviews"
-    ]
-  }
+      }
+    }
+  ]
 }

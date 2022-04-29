@@ -420,7 +420,7 @@
             }
         }
     },
-    "climbing": {
+    "climbing_area": {
         "tagRenderings": {
             "name": {
                 "render": "<strong>{name}</strong>"
@@ -437,13 +437,6 @@
     "climbing_club": {
         "tagRenderings": {
             "climbing_club-name": {
-                "render": "<strong>{name}</strong>"
-            }
-        }
-    },
-    "climbing_gym": {
-        "tagRenderings": {
-            "name": {
                 "render": "<strong>{name}</strong>"
             }
         }

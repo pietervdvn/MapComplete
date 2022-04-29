@@ -269,138 +269,54 @@
     "climbing": {
         "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
         "descriptionTail": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
-                },
-                "1": {
-                    "mappings": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
                         "0": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+                                }
+                            }
                         },
                         "1": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
-                        },
-                        "2": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
-                        },
-                        "3": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
-                        }
-                    }
-                },
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Publicly accessible to anyone"
-                        },
-                        "1": {
-                            "then": "You need a permit to access here"
-                        },
-                        "2": {
-                            "then": "Only customers"
-                        },
-                        "3": {
-                            "then": "Only club members"
-                        }
-                    },
-                    "question": "Who can access here?"
-                },
-                "4": {
-                    "question": "What is the (average) length of the routes in meters?",
-                    "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
-                },
-                "5": {
-                    "question": "What is the grade of the easiest route here, according to the french classification system?",
-                    "render": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system"
-                },
-                "6": {
-                    "question": "What is the highest grade route here, according to the french classification system?",
-                    "render": "The highest grade is {climbing:grade:french:max} according to the french/belgian system"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "Bouldering is possible here"
-                        },
-                        "1": {
-                            "then": "Bouldering is not possible here"
-                        },
-                        "2": {
-                            "then": "Bouldering is possible, allthough there are only a few routes"
-                        },
-                        "3": {
-                            "then": "There are {climbing:boulder} boulder routes"
+                            "mappings": {
+                                "0": {
+                                    "then": "Publicly accessible to anyone"
+                                },
+                                "1": {
+                                    "then": "You need a permit to access here"
+                                },
+                                "2": {
+                                    "then": "Only customers"
+                                },
+                                "3": {
+                                    "then": "Only club members"
+                                }
+                            },
+                            "question": "Who can access here?"
                         }
                     },
-                    "question": "Is bouldering possible here?"
-                },
-                "8": {
-                    "mappings": {
+                    "units+": {
                         "0": {
-                            "then": "Toprope climbing is possible here"
-                        },
-                        "1": {
-                            "then": "Toprope climbing is not possible here"
-                        },
-                        "2": {
-                            "then": "There are {climbing:toprope} toprope routes"
-                        }
-                    },
-                    "question": "Is toprope climbing possible here?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Sport climbing is possible here"
-                        },
-                        "1": {
-                            "then": "Sport climbing is not possible here"
-                        },
-                        "2": {
-                            "then": "There are {climbing:sport} sport climbing routes"
-                        }
-                    },
-                    "question": "Is sport climbing possible here on fixed anchors?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "Traditional climbing is possible here"
-                        },
-                        "1": {
-                            "then": "Traditional climbing is not possible here"
-                        },
-                        "2": {
-                            "then": "There are {climbing:traditional} traditional climbing routes"
-                        }
-                    },
-                    "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "There is a speed climbing wall"
-                        },
-                        "1": {
-                            "then": "There is no speed climbing wall"
-                        },
-                        "2": {
-                            "then": "There are {climbing:speed} speed climbing walls"
-                        }
-                    },
-                    "question": "Is there a speed climbing wall?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " meter"
-                        },
-                        "1": {
-                            "human": " feet"
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " meter"
+                                },
+                                "1": {
+                                    "human": " feet"
+                                }
+                            }
                         }
                     }
                 }

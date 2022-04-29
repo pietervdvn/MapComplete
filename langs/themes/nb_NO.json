@@ -69,21 +69,6 @@
         "title": "Ladestasjoner"
     },
     "climbing": {
-        "overrideAll": {
-            "tagRenderings+": {
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "Buldring er mulig her"
-                        },
-                        "1": {
-                            "then": "Buldring er ikke mulig her"
-                        }
-                    },
-                    "question": "Er buldring mulig her?"
-                }
-            }
-        },
         "title": "Åpent klatrekart"
     },
     "cycle_infra": {

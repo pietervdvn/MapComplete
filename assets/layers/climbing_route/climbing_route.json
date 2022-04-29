@@ -9,6 +9,9 @@
     "fr": "Voies d’escalade",
     "it": "Vie di arrampicata"
   },
+  "description": {
+    "en": "A single climbing route and its properties. Some properties are derived from the containing features"
+  },
   "minzoom": 18,
   "source": {
     "osmTags": {
@@ -141,6 +144,7 @@
       "id": "Difficulty"
     },
     {
+      "id": "bolts",
       "question": {
         "en": "How many bolts does this route have before reaching the anchor?",
         "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
@@ -148,7 +152,7 @@
         "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?"
       },
       "render": {
-        "en": "This route has {climbing:bolts} bolts",
+        "en": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
         "fr": "Cette voie a {climbing:bolts} prises",
         "de": "Diese Kletterroute hat {climbing:bolts} Haken",
         "it": "Questo percorso ha {climbing:bolts} bulloni"
@@ -158,7 +162,8 @@
         "type": "pnat",
         "addExtraTag": [
           "climbing:bolted=yes"
-        ]
+        ],
+        "inline": true
       },
       "mappings": [
         {
@@ -169,29 +174,15 @@
             "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
             "it": "In questo percorso non sono presenti bulloni"
           },
-          "hideInAnswer": true
-        },
-        {
-          "if": "climbing:bolted=no&climbing:bolts=",
-          "then": {
-            "en": "This route is not bolted",
-            "fr": "Cette voie n’a pas de prises",
-            "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
-            "it": "In questo percorso non sono presenti bulloni"
-          }
+          "addExtraTags": [
+            "climbing:bolts="
+          ]
         }
-      ],
-      "id": "Bolts"
+      ]
     },
+    "description",
     {
-      "question": "Is there other relevant info?",
-      "render": "<h3>Description</h3><br/>{description}",
-      "freeform": {
-        "key": "description"
-      },
-      "id": "Description"
-    },
-    {
+      "id": "Rock type via embedded feature",
       "render": {
         "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>",
         "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>",
@@ -200,8 +191,7 @@
       },
       "freeform": {
         "key": "_embedding_features_with_rock:rock"
-      },
-      "id": "Rock type"
+      }
     }
   ],
   "presets": [
@@ -234,8 +224,17 @@
       "label": {
         "mappings": [
           {
+            "if": {
+              "and": [
+              "climbing:grade:french~*",
+                "name~*"
+              ]
+            },
+            "then": "<div class='w-max p-1 rounded-xl' style='background: white;'>{name} <span class='climbing-{__difficulty:char}'>{climbing:grade:french}</span></div>"
+          },
+          {
             "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+            "then": "<div  class='w-max p-1 rounded-xl' style='background: white;'>{name}</div>"
           }
         ]
       }

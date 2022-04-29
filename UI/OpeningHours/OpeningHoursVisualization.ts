@@ -4,7 +4,6 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {OH} from "./OpeningHours";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
-import opening_hours from "opening_hours";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -24,7 +23,6 @@ export default class OpeningHoursVisualization extends Toggle {
     ]
 
     constructor(tags: UIEventSource<any>, state: { osmConnection?: OsmConnection }, key: string, prefix = "", postfix = "") {
-        const tagsDirect = tags.data;
         const ohTable = new VariableUiElement(tags
             .map(tags => {
                 const value: string = tags[key];
@@ -41,16 +39,8 @@ export default class OpeningHoursVisualization extends Toggle {
                         return new FixedUiElement("No opening hours defined with key " + key).SetClass("alert")
                     }
                     try {
-                        // noinspection JSPotentiallyInvalidConstructorUsage
-                        const oh = new opening_hours(ohtext, {
-                            lat: tagsDirect._lat,
-                            lon: tagsDirect._lon,
-                            address: {
-                                country_code: tagsDirect._country
-                            },
-                        }, {tag_key: "opening_hours"});
-
-                        return OpeningHoursVisualization.CreateFullVisualisation(oh)
+                        return OpeningHoursVisualization.CreateFullVisualisation(
+                            OH.CreateOhObject(tags.data, ohtext))
                     } catch (e) {
                         console.warn(e, e.stack);
                         return new Combine([Translations.t.general.opening_hours.error_loading,
@@ -78,7 +68,7 @@ export default class OpeningHoursVisualization extends Toggle {
 
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        const lastMonday = OpeningHoursVisualization.getMonday(today);
+        const lastMonday = OH.getMondayBefore(today);
         const nextSunday = new Date(lastMonday);
         nextSunday.setDate(nextSunday.getDate() + 7);
 
@@ -283,11 +273,5 @@ export default class OpeningHoursVisualization extends Toggle {
         return Translations.t.general.opening_hours.closed_until.Subs({date: willOpenAt})
     }
 
-    private static getMonday(d) {
-        d = new Date(d);
-        const day = d.getDay();
-        const diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
-        return new Date(d.setDate(diff));
-    }
-
+   
 }

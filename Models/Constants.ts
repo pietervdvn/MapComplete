@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.18.2";
+    public static vNumber = "0.19.0-alpha";
     
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
@@ -69,6 +69,7 @@ export default class Constants {
      * In seconds
      */
     static zoomToLocationTimeout = 60;
+    static countryCoderEndpoint: string = "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country";
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

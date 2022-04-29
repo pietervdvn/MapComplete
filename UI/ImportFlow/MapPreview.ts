@@ -21,9 +21,9 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {FlowStep} from "./FlowStep";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
-import {AllTagsPanel} from "../SpecialVisualizations";
 import Title from "../Base/Title";
 import CheckBoxes from "../Input/Checkboxes";
+import {AllTagsPanel} from "../AllTagsPanel";
 
 class PreviewPanel extends ScrollableFullScreen {
 

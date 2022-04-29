@@ -1631,7 +1631,84 @@
         }
     },
     "climbing": {
-        "description": "Eine Klettergelegenheit",
+        "tagRenderings": {
+            "average_length": {
+                "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
+                "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kann gebouldert werden"
+                    },
+                    "1": {
+                        "then": "Hier kann nicht gebouldert werden"
+                    },
+                    "2": {
+                        "then": "Bouldern ist hier nur an wenigen Routen möglich"
+                    },
+                    "3": {
+                        "then": "Hier gibt es {climbing:boulder} Boulder-Routen"
+                    }
+                },
+                "question": "Kann hier gebouldert werden?"
+            },
+            "max_difficulty": {
+                "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
+                "render": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)"
+            },
+            "min_difficulty": {
+                "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
+                "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Sportklettern ist hier möglich"
+                    },
+                    "1": {
+                        "then": "Sportklettern ist hier nicht möglich"
+                    },
+                    "2": {
+                        "then": "Hier gibt es {climbing:sport} Sportkletter-Routen"
+                    }
+                },
+                "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Toprope-Klettern ist hier möglich"
+                    },
+                    "1": {
+                        "then": "Toprope-Climbing ist hier nicht möglich"
+                    },
+                    "2": {
+                        "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
+                    }
+                },
+                "question": "Ist Toprope-Klettern hier möglich?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Traditionelles Klettern ist hier möglich"
+                    },
+                    "1": {
+                        "then": "Traditionelles Klettern ist hier nicht möglich"
+                    },
+                    "2": {
+                        "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
+                    }
+                },
+                "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
+            },
+            "website": {
+                "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
+            }
+        }
+    },
+    "climbing_area": {
         "name": "Klettermöglichkeiten",
         "presets": {
             "0": {
@@ -1728,9 +1805,22 @@
         "description": "Eine Kletterhalle",
         "name": "Kletterhallen",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier gibt es eine Speedkletter-Wand"
+                    },
+                    "1": {
+                        "then": "Hier gibt es keine Speedkletter-Wand"
+                    },
+                    "2": {
+                        "then": "Hier gibt es {climbing:speed} Speedkletter-Routen"
+                    }
+                },
+                "question": "Gibt es hier eine Speedkletter-Wand?"
+            },
             "name": {
-                "question": "Wie heißt diese Kletterhalle?",
-                "render": "<strong>{name}</strong>"
+                "question": "Wie heißt diese Kletterhalle?"
             }
         },
         "title": {
@@ -1743,7 +1833,6 @@
         }
     },
     "climbing_opportunity": {
-        "description": "Eine Klettergelegenheit?",
         "name": "Klettermöglichkeiten?",
         "tagRenderings": {
             "climbing-opportunity-name": {
@@ -1776,18 +1865,6 @@
             }
         },
         "tagRenderings": {
-            "Bolts": {
-                "mappings": {
-                    "0": {
-                        "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                    },
-                    "1": {
-                        "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
-                    }
-                },
-                "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-                "render": "Diese Kletterroute hat {climbing:bolts} Haken"
-            },
             "Difficulty": {
                 "question": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
                 "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
@@ -1805,8 +1882,17 @@
                 "question": "Wie heißt diese Kletterroute?",
                 "render": "<strong>{name}</strong>"
             },
-            "Rock type": {
+            "Rock type via embedded feature": {
                 "render": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>"
+            },
+            "bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "Auf dieser Kletterroute sind keine Haken vorhanden"
+                    }
+                },
+                "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
+                "render": "Diese Kletterroute hat {climbing:bolts} Haken"
             }
         },
         "title": {

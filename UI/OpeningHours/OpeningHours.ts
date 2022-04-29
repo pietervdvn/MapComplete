@@ -1,4 +1,5 @@
 import {Utils} from "../../Utils";
+import opening_hours from "opening_hours";
 
 export interface OpeningHour {
     weekday: number, // 0 is monday, 1 is tuesday, ...
@@ -458,6 +459,17 @@ export class OH {
         return [changeHours, changeHourText]
     }
 
+    public static CreateOhObject(tags: object & {_lat: number, _lon: number, _country?: string}, textToParse: string){
+        // noinspection JSPotentiallyInvalidConstructorUsage
+        return new opening_hours(textToParse, {
+            lat: tags._lat,
+            lon: tags._lon,
+            address: {
+                country_code: tags._country
+            },
+        }, {tag_key: "opening_hours"});
+    }
+    
     /*
  Calculates when the business is opened (or on holiday) between two dates.
  Returns a matrix of ranges, where [0] is a list of ranges when it is opened on monday, [1] is a list of ranges for tuesday, ...
@@ -598,6 +610,12 @@ export class OH {
             }
         }
         return ohs;
+    }
+    public static getMondayBefore(d) {
+        d = new Date(d);
+        const day = d.getDay();
+        const diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+        return new Date(d.setDate(diff));
     }
 
 }

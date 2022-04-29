@@ -1,4 +1,3 @@
-// @ts-ignore
 import osmAuth from "osm-auth";
 import {UIEventSource} from "../UIEventSource";
 import {OsmPreferences} from "./OsmPreferences";
@@ -222,7 +221,7 @@ export class OsmConnection {
         });
     }
 
-    public closeNote(id: number | string, text?: string): Promise<any> {
+    public closeNote(id: number | string, text?: string): Promise<void> {
         let textSuffix = ""
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
@@ -249,7 +248,7 @@ export class OsmConnection {
 
     }
 
-    public reopenNote(id: number | string, text?: string): Promise<any> {
+    public reopenNote(id: number | string, text?: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
             return new Promise((ok, error) => {
@@ -313,7 +312,7 @@ export class OsmConnection {
 
     }
     
-    public addCommentToNode(id: number | string, text: string): Promise<any> {
+    public addCommentToNode(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
             return new Promise((ok, error) => {

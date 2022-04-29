@@ -263,138 +263,54 @@
     "climbing": {
         "description": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
         "descriptionTail": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
-                },
-                "1": {
-                    "mappings": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
                         "0": {
-                            "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}"
+                                }
+                            }
                         },
                         "1": {
-                            "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}"
-                        },
-                        "2": {
-                            "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}"
-                        },
-                        "3": {
-                            "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}"
-                        }
-                    }
-                },
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Pubblicamente accessibile a chiunque"
-                        },
-                        "1": {
-                            "then": "È necessario avere un’autorizzazione per entrare"
-                        },
-                        "2": {
-                            "then": "Riservato ai clienti"
-                        },
-                        "3": {
-                            "then": "Riservato ai membri del club"
-                        }
-                    },
-                    "question": "Chi può accedervi?"
-                },
-                "4": {
-                    "question": "Quale è la lunghezza (media) delle vie in metri?",
-                    "render": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
-                },
-                "5": {
-                    "question": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
-                    "render": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
-                },
-                "6": {
-                    "question": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
-                    "render": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "L’arrampicata su massi è possibile qua"
-                        },
-                        "1": {
-                            "then": "L’arrampicata su massi non è possibile qua"
-                        },
-                        "2": {
-                            "then": "L’arrampicata su massi è possibile anche se su poche vie"
-                        },
-                        "3": {
-                            "then": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
+                            "mappings": {
+                                "0": {
+                                    "then": "Pubblicamente accessibile a chiunque"
+                                },
+                                "1": {
+                                    "then": "È necessario avere un’autorizzazione per entrare"
+                                },
+                                "2": {
+                                    "then": "Riservato ai clienti"
+                                },
+                                "3": {
+                                    "then": "Riservato ai membri del club"
+                                }
+                            },
+                            "question": "Chi può accedervi?"
                         }
                     },
-                    "question": "È possibile praticare ‘bouldering’ qua?"
-                },
-                "8": {
-                    "mappings": {
+                    "units+": {
                         "0": {
-                            "then": "È possibile arrampicarsi con moulinette qua"
-                        },
-                        "1": {
-                            "then": "Non è possibile arrampicarsi con moulinette qua"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:toprope} vie con moulinette"
-                        }
-                    },
-                    "question": "È possibile arrampicarsi con la corda dall’alto qua?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "L’arrampicata sportiva è possibile qua"
-                        },
-                        "1": {
-                            "then": "L’arrampicata sportiva non è possibile qua"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
-                        }
-                    },
-                    "question": "È possibile arrampicarsi qua con ancoraggi fissi?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "L’arrampicata tradizionale è possibile qua"
-                        },
-                        "1": {
-                            "then": "L’arrampicata tradizionale non è possibile qua"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
-                        }
-                    },
-                    "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "È presente una parete per l’arrampicata di velocità"
-                        },
-                        "1": {
-                            "then": "Non è presente una parete per l’arrampicata di velocità"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
-                        }
-                    },
-                    "question": "È presente una prete per l’arrampicata di velocità?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " metri"
-                        },
-                        "1": {
-                            "human": " piedi"
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " metri"
+                                },
+                                "1": {
+                                    "human": " piedi"
+                                }
+                            }
                         }
                     }
                 }

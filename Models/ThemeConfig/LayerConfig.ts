@@ -27,7 +27,6 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import {And} from "../../Logic/Tags/And";
 import {Overpass} from "../../Logic/Osm/Overpass";
 import Constants from "../Constants";
-import undefinedError = Mocha.utils.undefinedError;
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -134,6 +133,9 @@ export default class LayerConfig extends WithContextLoader {
 
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, translationContext + ".name");
+        if(json.units!==undefined && !Array.isArray(json.units)){
+            throw "At "+context+".units: the 'units'-section should be a list; you probably have an object there"
+        }
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {
@@ -158,7 +160,11 @@ export default class LayerConfig extends WithContextLoader {
             this.calculatedTags = [];
             for (const kv of json.calculatedTags) {
                 const index = kv.indexOf("=");
-                let key = kv.substring(0, index);
+                let key = kv.substring(0, index).trim();
+                const r = "[a-z_][a-z0-9:]*"
+                if(key.match(r) === null){
+                    throw "At "+context+" invalid key for calculated tag: "+key+"; it should match "+r
+                }
                 const isStrict = key.endsWith(':')
                 if (isStrict) {
                     key = key.substr(0, key.length - 1)
@@ -331,11 +337,12 @@ export default class LayerConfig extends WithContextLoader {
         return TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
     }
 
-    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
+    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy?: Map<string, string[]>, dependencies: {
         context?: string;
         reason: string;
         neededLayer: string;
-    }[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
+    }[] = []
+                                 , addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
         
         extraProps.push("This layer is shown at zoomlevel **"+this.minzoom+"** and higher")

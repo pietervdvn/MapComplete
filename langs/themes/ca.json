@@ -49,27 +49,31 @@
         "title": "Estacions de càrrega"
     },
     "climbing": {
-        "overrideAll": {
-            "tagRenderings+": {
-                "2": {
-                    "mappings": {
-                        "2": {
-                            "then": "Només clients"
-                        },
-                        "3": {
-                            "then": "Només membres del club"
-                        }
-                    }
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " metre"
-                        },
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
                         "1": {
-                            "human": " peus"
+                            "mappings": {
+                                "2": {
+                                    "then": "Només clients"
+                                },
+                                "3": {
+                                    "then": "Només membres del club"
+                                }
+                            }
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " metre"
+                                },
+                                "1": {
+                                    "human": " peus"
+                                }
+                            }
                         }
                     }
                 }
