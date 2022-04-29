@@ -63,9 +63,13 @@
       },
       "allowMove": true,
       "deletion": {
-        "softDeletionTags": [
-          "disused:key:={key}"
-        ]
+        "softDeletionTags": {
+          "and": [
+            "razed:tourism=artwork",
+            "tourism="
+          ]
+        },
+        "neededChangesets": 5
       },
       "#2": "The maprenderings describe how a feature is shown on the map",
       "mapRendering": [
