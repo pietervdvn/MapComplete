@@ -175,8 +175,8 @@
         {
           "id": "dogarea",
           "render": {
-            "en": "areal: {_surface:ha} ha",
-            "da": "areal: {_surface:ha} ha"
+            "en": "This dogpark is {_surface:ha} ha big",
+            "da": "Denne hundeskov er på {_surface:ha} hektar"
           },
           "condition": "_surface:ha!=0"
         },
