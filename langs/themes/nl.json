@@ -235,6 +235,20 @@
                         },
                         "question": "Moet je betalen voor internettoegang?"
                     },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "0": {
+                                "then": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
+                            },
+                            "1": {
+                                "then": "Hier wonen geen permanente gasten"
+                            },
+                            "2": {
+                                "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)"
+                            }
+                        },
+                        "question": "Kan men hier plekken huren voor langere termijn?"
+                    },
                     "caravansites-name": {
                         "question": "Wat is de naam van deze plaats?",
                         "render": "Deze plaats heet {name}"
@@ -253,20 +267,6 @@
                     "caravansites-website": {
                         "question": "Heeft deze plaats een website?",
                         "render": "Officiële website: : <a href='{website}'>{website}</a>"
-                    },
-                    "caravansites-long-term": {
-                        "mappings": {
-                            "0": {
-                                "then": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
-                            },
-                            "1": {
-                                "then": "Hier wonen geen permanente gasten"
-                            },
-                            "2": {
-                                "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)"
-                            }
-                        },
-                        "question": "Kan men hier plekken huren voor langere termijn?"
                     }
                 },
                 "title": {

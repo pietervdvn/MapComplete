@@ -607,7 +607,8 @@
             "pt_BR": "Este lugar oferece vagas para aluguel a longo prazo?",
             "de": "Gibt es a diesem Ort Plätze für Dauercamper?",
             "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?",
-            "da": "Tilbyder dette sted pladser til langtidsleje?"
+            "da": "Tilbyder dette sted pladser til langtidsleje?",
+            "nl": "Kan men hier plekken huren voor langere termijn?"
           },
           "mappings": [
             {
@@ -617,7 +618,7 @@
                 ]
               },
               "then": {
-                "en": "Yes, there are some spots for long term rental, but you can also stay on a daily basis",
+                "en": "There are some spots for long term rental, but you can also stay on a daily basis",
                 "ru": "Да, здесь есть места для долгосрочной аренды, но вы можете остановиться и на сутки",
                 "ja": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます",
                 "zh_Hant": "有，這個地方有提供長期租用，但你也可以用天計算費用",
@@ -625,7 +626,8 @@
                 "fr": "Oui, mais il est possible d’y passer seulement une nuit",
                 "pt_BR": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária",
                 "de": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben",
-                "es": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días"
+                "es": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días",
+                "nl": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
               }
             },
             {
@@ -635,7 +637,7 @@
                 ]
               },
               "then": {
-                "en": "No, there are no permanent guests here",
+                "en": "There are no permanent guests here",
                 "ru": "Нет, здесь нет постоянных гостей",
                 "ja": "いいえ、ここには長期滞在者はいません",
                 "zh_Hant": "沒有，這裡沒有永久的客戶",
@@ -644,7 +646,8 @@
                 "pt_BR": "Não, não há hóspedes permanentes aqui",
                 "de": "Nein, hier gibt es keine Dauergäste",
                 "es": "No, no hay huéspedes permanentes aquí",
-                "da": "Nej, der er ingen faste gæster her"
+                "da": "Nej, der er ingen faste gæster her",
+                "nl": "Hier wonen geen permanente gasten"
               }
             },
             {
@@ -662,7 +665,8 @@
                 "fr": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)",
                 "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)",
                 "es": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)",
-                "da": "Det er kun muligt at bo her, hvis du har en langtidskontrakt (dette sted forsvinder fra kortet, hvis du vælger dette)"
+                "da": "Det er kun muligt at bo her, hvis du har en langtidskontrakt (dette sted forsvinder fra kortet, hvis du vælger dette)",
+                "nl": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)"
               }
             }
           ]

@@ -331,7 +331,8 @@
             "de": "Ebenerdiges Parken",
             "zh_Hant": "地面層停車場",
             "pt_BR": "Estacionamento ao nível da superfície",
-            "pt": "Estacionamento ao nível da superfície"
+            "pt": "Estacionamento ao nível da superfície",
+            "es": "Aparcamiento a nivel de calle"
           },
           "hideInAnswer": true
         }

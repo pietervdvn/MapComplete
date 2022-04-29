@@ -300,22 +300,22 @@
             "title": "Comparar con notas existentes",
             "wontBeImported": "Estos puntos de datos <i>no</i> serán importados y se muestran como puntos en el mapa de debajo"
         },
+        "confirmProcess": {
+            "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM",
+            "title": "Licencia y comunidad",
+            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)"
+        },
+        "conflationChecker": {
+            "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
+            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!"
+        },
         "mapPreview": {
             "title": "Previsualización de mapa"
         },
         "selectFile": {
             "title": "Seleccionar archivo"
         },
-        "title": "Ayudante de importación",
-        "conflationChecker": {
-            "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
-            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!"
-        },
-        "confirmProcess": {
-            "title": "Licencia y comunidad",
-            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)",
-            "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM"
-        }
+        "title": "Ayudante de importación"
     },
     "importLayer": {
         "layerName": "Posible {title}",
@@ -330,19 +330,19 @@
     },
     "move": {
         "cancel": "Cancelar movida",
+        "cannotBeMoved": "Esta característica no se puede mover.",
         "confirmMove": "Mover aquí",
-        "isRelation": "Esta característica es una relación y no se puede mover",
         "inviteToMove": {
-            "reasonInaccurate": "Mejorar la precisión de este punto",
-            "generic": "Mover este punto"
+            "generic": "Mover este punto",
+            "reasonInaccurate": "Mejorar la precisión de este punto"
         },
+        "inviteToMoveAgain": "Mover este punto otra vez",
+        "isRelation": "Esta característica es una relación y no se puede mover",
         "isWay": "Esta característica es una vía. Utiliza otro editor de OpenStreetMap para moverlo.",
         "loginToMove": "Debes de iniciar sesión para mover un punto",
         "moveTitle": "Mover este punto",
         "partOfAWay": "Esta característica es parte de otra vía. Utiliza otro editor para moverla.",
-        "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla.",
-        "inviteToMoveAgain": "Mover este punto otra vez",
-        "cannotBeMoved": "Esta característica no se puede mover."
+        "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla."
     },
     "notes": {
         "addComment": "Añadir comentario",
