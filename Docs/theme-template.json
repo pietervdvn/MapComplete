@@ -1,10 +1,10 @@
 {
-  "#": "This JSON file is a small template to get you started developing a theme",
-  "#": "All lines starting with '#' are comments and can be removed in the theme if you don't need the explanation anymore",
-  "#": "Make sure to join our chat channel at https://app.element.io/#/room/#MapComplete:matrix.org for questions, sharing your theme, ...",
-  "#": "To actually load your theme: on linux: run a local webserver (e.g. `webfsd`) and go to https://mapcomplete.osm.be/theme?userlayout=http://127.0.0.1:8080/path-to-your-theme.json",
-  "#": "If you don't know how to run a webserver: go to https://www.base64encode.org/ , copy paste this entire document in the 'encode' field and encode it;",
-  "#": "Then, go to https://mapcomplete.osm.be/theme?userlayout=true#your-base64-encoded-file",
+  "#1": "This JSON file is a small template to get you started developing a theme",
+  "#2": "All lines starting with '#' are comments and can be removed in the theme if you don't need the explanation anymore",
+  "#3": "Make sure to join our chat channel at https://app.element.io/#/room/#MapComplete:matrix.org for questions, sharing your theme, ...",
+  "#4": "To actually load your theme: on linux: run a local webserver (e.g. `webfsd`) and go to https://mapcomplete.osm.be/theme?userlayout=http://127.0.0.1:8080/path-to-your-theme.json",
+  "#5": "If you don't know how to run a webserver: go to https://www.base64encode.org/ , copy paste this entire document in the 'encode' field and encode it;",
+  "#6": "Then, go to https://mapcomplete.osm.be/theme?userlayout=true#your-base64-encoded-file",
   "id": "template",
   "maintainer": "Write your name here",
   "version": "2022-03-12",
@@ -41,7 +41,7 @@
           ]
         }
       },
-      "#": "Minzoom: only download and show if zoom >= minzoom",
+      "#4": "Minzoom: only download and show if zoom >= minzoom",
       "minzoom": 12,
       "name": {
         "en": "Name of the layer, as shown in the layer selection"
@@ -67,17 +67,17 @@
           "disused:key:={key}"
         ]
       },
-      "#": "The maprenderings describe how a feature is shown on the map",
+      "#2": "The maprenderings describe how a feature is shown on the map",
       "mapRendering": [
         {
-          "#": "Rendering block of a mapping which is shown for points AND at the center point of a line/area",
+          "#1": "Rendering block of a mapping which is shown for points AND at the center point of a line/area",
           "location": [
             "point",
             "centroid"
           ],
           "icon": "circle:white;URL or path to icon.svg",
-          "iconSize": "30,30,center"
-          "#": "Note: all these values can be tagrenderings too, e.g.:",
+          "iconSize": "30,30,center",
+          "#2": "Note: all these values can be tagrenderings too, e.g.:",
           "label": {
             "render": {
               "en": "Item"
@@ -93,12 +93,12 @@
           }
         },
         {
-          "#": "Rendering of a line",
+          "#1": "Rendering of a line",
           "color": "#ff0",
           "width": 5
         }
       ],
-      "#": "Presets describe which new items can be added on click. Delete this block if adding a new point is not relevant",
+      "#3": "Presets describe which new items can be added on click. Delete this block if adding a new point is not relevant",
       "presets": [
         {
           "title": {
@@ -116,7 +116,7 @@
           ]
         }
       ],
-      "#": "The tagrenderings are everything that must be shown and/or asked. Use a full tag-rendering section OR a single string to call a builtin tagrendering (see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinQuestions.md)",
+      "#1": "The tagrenderings are everything that must be shown and/or asked. Use a full tag-rendering section OR a single string to call a builtin tagrendering (see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinQuestions.md)",
       "tagRenderings": [
         {
           "render": {
