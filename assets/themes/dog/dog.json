@@ -325,8 +325,8 @@
             "point",
             "centroid"
           ],
-          "icon": "./assets/themes/dog/Veterinary-First-Aid.svg",
-          "iconSize": "30,30,center",
+          "icon": "./assets/themes/dog/vet.svg",
+          "iconSize": "30,40,center",
           "label": {
             "mappings": [
               {
