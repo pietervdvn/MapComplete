@@ -8848,6 +8848,16 @@
   {
     "path": [
       "layers",
+      "filter",
+      "options",
+      "fields",
+      "name"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
       "deletion"
     ],
     "type": [
