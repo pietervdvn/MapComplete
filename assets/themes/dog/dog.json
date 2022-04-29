@@ -95,15 +95,15 @@
             {
               "if": "barrier=fence",
               "then": {
-                "en": "fenced: Yes",
-                "da": "indhegnet: Ja"
+                "en": "This dogpark is fenced all around",
+                "da": "Denne hundskov er indhegnet"
               }
             },
             {
               "if": "barrier=no",
               "then": {
-                "en": "fenced: No",
-                "da": "indhegnet: Nej"
+                "en": "This dogpark is not fenced all around",
+                "da": "Denne hundskov er ikke indhegnet"
               }
             }
           ],
