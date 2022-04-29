@@ -596,6 +596,9 @@
                     },
                     "2": {
                         "then": "Aparcamiento de azotea"
+                    },
+                    "3": {
+                        "then": "Aparcamiento a nivel de calle"
                     }
                 },
                 "question": "¿Cual es la localización relativa de este aparcamiento de bicicletas?"
@@ -969,6 +972,9 @@
         "presets": {
             "0": {
                 "description": "Un bar, principalmente para beber cervezas en un interior templado y relajado"
+            },
+            "1": {
+                "title": "un bar"
             }
         }
     },
