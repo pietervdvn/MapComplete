@@ -28,12 +28,12 @@ export default class WikidataPreviewBox extends VariableUiElement {
             requires: WikidataPreviewBox.isHuman,
             property: "P21",
             display: new Map([
-                ['Q6581097', () => Svg.gender_male_ui().SetStyle("width: 1rem; height: auto")],
-                ['Q6581072', () => Svg.gender_female_ui().SetStyle("width: 1rem; height: auto")],
-                ['Q1097630', () => Svg.gender_inter_ui().SetStyle("width: 1rem; height: auto")],
-                ['Q1052281', () => Svg.gender_trans_ui().SetStyle("width: 1rem; height: auto")/*'transwomen'*/],
-                ['Q2449503', () => Svg.gender_trans_ui().SetStyle("width: 1rem; height: auto")/*'transmen'*/],
-                ['Q48270', () => Svg.gender_queer_ui().SetStyle("width: 1rem; height: auto")]
+                ['Q6581097', () => Svg.gender_male_svg().SetStyle("width: 1rem; height: auto")],
+                ['Q6581072', () => Svg.gender_female_svg().SetStyle("width: 1rem; height: auto")],
+                ['Q1097630', () => Svg.gender_inter_svg().SetStyle("width: 1rem; height: auto")],
+                ['Q1052281', () => Svg.gender_trans_svg().SetStyle("width: 1rem; height: auto")/*'transwomen'*/],
+                ['Q2449503', () => Svg.gender_trans_svg().SetStyle("width: 1rem; height: auto")/*'transmen'*/],
+                ['Q48270', () => Svg.gender_queer_svg().SetStyle("width: 1rem; height: auto")]
             ])
         },
         {
@@ -84,7 +84,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         let link = new Link(
             new Combine([
                 wikidata.id,
-                Svg.wikidata_ui().SetStyle("width: 2.5rem").SetClass("block")
+                Svg.wikidata_svg().SetStyle("width: 2.5rem").SetClass("block")
             ]).SetClass("flex"),
             Wikidata.IdToArticle(wikidata.id), true)?.SetClass("must-link")
 
