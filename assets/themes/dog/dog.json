@@ -113,29 +113,6 @@
           }
         },
         {
-          "id": "bin",
-          "mappings": [
-            {
-              "if": "bin=yes",
-              "then": {
-                "en": "waste bin: Yes",
-                "da": "skraldespand: Ja"
-              }
-            },
-            {
-              "if": "bin=no",
-              "then": {
-                "en": "waste bin: No",
-                "da": "skraldespand: Nej"
-              }
-            }
-          ],
-          "question": {
-            "en": "Does this dog park have a waste bin?",
-            "da": "Har denne hundeskov en skraldespand?"
-          }
-        },
-        {
           "id": "smalldogs",
           "mappings": [
             {
@@ -395,6 +372,14 @@
       "builtin": "food",
       "override": {
         "minzoom": 19,
+        "filter": null,
+        "name": null
+      }
+    },
+    {
+      "builtin": "waste_basket",
+      "override": {
+        "minzoom": 16,
         "filter": null,
         "name": null
       }
