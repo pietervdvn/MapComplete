@@ -43,7 +43,6 @@ export default class MoreScreen extends Combine {
             search.focus()
         }
         document.addEventListener("keydown", function (event) {
-            console.log("Got a key event: ", event)
             if (event.ctrlKey && event.code === "KeyF") {
                 search.focus()
                 event.preventDefault();
