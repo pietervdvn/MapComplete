@@ -50,12 +50,33 @@ export default class MoreScreen extends Combine {
             placeholder: tr.searchForATheme,
         })
         search.enterPressed.addCallbackD(searchTerm => {
+            searchTerm = searchTerm.toLowerCase()
+            if(searchTerm === "personal"){
+                window.location.href = MoreScreen.createUrlFor({id: "personal"}, false, state).data
+            }
+            if(searchTerm === "bugs") {
+                window.location.href = "https://github.com/pietervdvn/MapComplete/issues"
+            }
+            if(searchTerm === "source") {
+                window.location.href = "https://github.com/pietervdvn/MapComplete"
+            }
+            if(searchTerm === "docs") {
+                window.location.href = "https://github.com/pietervdvn/MapComplete/tree/develop/Docs"
+            }
+            if(searchTerm === "osmcha" || searchTerm === "stats"){
+                window.location.href = Utils.OsmChaLinkFor(7)
+            }
             // Enter pressed -> search the first _official_ matchin theme and open it
-            const publicTheme = MoreScreen.officialThemes.find(th => th.hideFromOverview == false && MoreScreen.MatchesLayoutFunc(th)(searchTerm))
+            const publicTheme = MoreScreen.officialThemes.find(th => 
+                th.hideFromOverview == false && 
+                th.id !== "personal" &&
+                MoreScreen.MatchesLayoutFunc(th)(searchTerm))
             if (publicTheme !== undefined) {
                 window.location.href = MoreScreen.createUrlFor(publicTheme, false, state).data
             }
-            const hiddenTheme = MoreScreen.officialThemes.find(th => MoreScreen.MatchesLayoutFunc(th)(searchTerm))
+            const hiddenTheme = MoreScreen.officialThemes.find(th => 
+                th.id !== "personal" &&
+                MoreScreen.MatchesLayoutFunc(th)(searchTerm))
             if (hiddenTheme !== undefined) {
                 window.location.href = MoreScreen.createUrlFor(hiddenTheme, false, state).data
             }
