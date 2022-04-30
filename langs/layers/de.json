@@ -497,6 +497,9 @@
                     },
                     "6": {
                         "then": "Rennräder können hier gemietet werden"
+                    },
+                    "7": {
+                        "then": "Hier können Fahrradhelme ausgeliehen werden"
                     }
                 },
                 "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
@@ -518,6 +521,9 @@
                     },
                     "4": {
                         "then": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+                    },
+                    "5": {
+                        "then": "Es handelt sich um einen Rückgabepunkt, z. B. einen reservierten Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
                     }
                 },
                 "question": "Was ist das für ein Fahrradverleih?"
@@ -1168,6 +1174,9 @@
             "0": {
                 "description": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
                 "title": "ein Vogelbeobachtungsturm"
+            },
+            "1": {
+                "description": "Ein Schirm oder eine Wand mit Öffnungen zum Beobachten von Vögeln"
             }
         },
         "tagRenderings": {
@@ -2649,6 +2658,20 @@
                         "question": "Halal Gerichte im Angebot"
                     }
                 }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kartenzahlung"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Bargeld"
+                    }
+                }
             }
         },
         "name": "Restaurants und Fast Food",
@@ -2662,7 +2685,8 @@
                 "title": "eine schnellimbiss"
             },
             "2": {
-                "title": "eine pommesbude"
+                "title": "eine pommesbude",
+                "description": "Eine Pommesbude"
             }
         },
         "tagRenderings": {
@@ -2676,13 +2700,57 @@
                     },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
+                    },
+                    "3": {
+                        "then": "Das ist ein Dönerladen"
+                    },
+                    "11": {
+                        "then": "Hier werden griechische Gerichte serviert"
+                    },
+                    "6": {
+                        "then": "Hier wird Sushi serviert"
+                    },
+                    "14": {
+                        "then": "Hier werden thailändische Gerichte serviert"
+                    },
+                    "10": {
+                        "then": "Hier werden chinesische Gerichte serviert"
+                    },
+                    "8": {
+                        "then": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)"
+                    },
+                    "12": {
+                        "then": "Hier werden indische Gerichte serviert"
+                    },
+                    "13": {
+                        "then": "Hier werden türkische Gerichte serviert"
+                    },
+                    "9": {
+                        "then": "Hier werden französische Gerichte serviert"
+                    },
+                    "7": {
+                        "then": "Hier wird Kaffee serviert"
+                    },
+                    "5": {
+                        "then": "Hier werden Burger serviert"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Sandwichladen"
                     }
                 },
                 "question": "Welches Essen gibt es hier?",
                 "render": "An diesem Ort gibt es hauptsächlich {cuisine}"
             },
             "Fastfood vs restaurant": {
-                "question": "Um was für ein Geschäft handelt es sich?"
+                "question": "Um was für ein Geschäft handelt es sich?",
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um ein Schnellrestaurant, das sich auf schnelle Bedienung konzentriert. Eventuelle Sitzgelegenheiten sind eher begrenzt und funktional."
+                    },
+                    "1": {
+                        "then": "Ein <b>Restaurant</b>, das sich darauf konzentriert, ein schönes Erlebnis zu schaffen, bei dem man am Tisch bedient wird"
+                    }
+                }
             },
             "Name": {
                 "question": "Wie heißt dieses Restaurant?",
@@ -2703,7 +2771,21 @@
                 "question": "Ist an diesem Ort Mitnahme möglich?"
             },
             "Vegetarian (no friture)": {
-                "question": "Gibt es im das Restaurant vegetarische Speisen?"
+                "question": "Gibt es im das Restaurant vegetarische Speisen?",
+                "mappings": {
+                    "1": {
+                        "then": "Einige vegetarische Optionen sind verfügbar"
+                    },
+                    "3": {
+                        "then": "Alle Gerichte sind vegetarisch"
+                    },
+                    "2": {
+                        "then": "Vegetarische Optionen sind verfügbar"
+                    },
+                    "0": {
+                        "then": "Es sind keine vegetarischen Optionen verfügbar"
+                    }
+                }
             },
             "friture-take-your-container": {
                 "mappings": {
@@ -2720,7 +2802,18 @@
                 "question": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
             },
             "friture-vegetarian": {
-                "question": "Hat dieser Frittenladen vegetarische Snacks?"
+                "question": "Hat dieser Frittenladen vegetarische Snacks?",
+                "mappings": {
+                    "2": {
+                        "then": "Es sind keine vegetarischen Snacks erhältlich"
+                    },
+                    "1": {
+                        "then": "Nur eine kleine Auswahl an Snacks ist vegetarisch"
+                    },
+                    "0": {
+                        "then": "Vegetarische Snacks sind erhältlich"
+                    }
+                }
             },
             "halal (no friture)": {
                 "mappings": {
@@ -2738,6 +2831,48 @@
                     }
                 },
                 "question": "Gibt es im das Restaurant halal Speisen?"
+            },
+            "friture-vegan": {
+                "question": "Gibt es in dieser Pommesbude auch vegane Snacks?",
+                "mappings": {
+                    "0": {
+                        "then": "Vegane Snacks sind erhältlich"
+                    },
+                    "2": {
+                        "then": "Es sind keine veganen Snacks verfügbar"
+                    },
+                    "1": {
+                        "then": "Eine kleine Auswahl an veganen Snacks ist verfügbar"
+                    }
+                }
+            },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "3": {
+                        "then": "Alle Gerichte sind vegan"
+                    },
+                    "2": {
+                        "then": "Vegane Optionen sind verfügbar"
+                    },
+                    "0": {
+                        "then": "Keine veganen Optionen verfügbar"
+                    },
+                    "1": {
+                        "then": "Einige vegane Optionen sind verfügbar"
+                    }
+                },
+                "question": "Gibt es in diesem Geschäft auch vegane Gerichte?"
+            },
+            "friture-oil": {
+                "question": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?",
+                "mappings": {
+                    "1": {
+                        "then": "Tierisches Fett"
+                    },
+                    "0": {
+                        "then": "Pflanzliches Fett"
+                    }
+                }
             }
         },
         "title": {
@@ -2753,6 +2888,14 @@
                 }
             },
             "render": "Restaurant"
+        },
+        "description": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} wurde dauerhaft geschlossen"
+                }
+            }
         }
     },
     "ghost_bike": {
@@ -3301,7 +3444,8 @@
         }
     },
     "pedestrian_path": {
-        "name": "Fußgängerwege"
+        "name": "Fußgängerwege",
+        "description": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene"
     },
     "picnic_table": {
         "description": "Die Ebene zeigt Picknicktische an",
@@ -3800,6 +3944,20 @@
                 "options": {
                     "0": {
                         "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kartenzahlung"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Bargeld"
                     }
                 }
             }
@@ -4593,6 +4751,9 @@
             "tree_node-wikidata": {
                 "question": "Was ist das passende Wikidata Element zu diesem Baum?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+            },
+            "tree-species-wikidata": {
+                "question": "Um welche Baumart handelt es sich?"
             }
         },
         "title": {
@@ -4602,8 +4763,19 @@
     "veterinary": {
         "tagRenderings": {
             "vetName": {
-                "render": "Denne dyrl&aelig; hedder {name}"
+                "render": "Denne dyrl&aelig; hedder {name}",
+                "question": "Wie lautet der Name dieses Tierarztes?"
             }
+        },
+        "presets": {
+            "0": {
+                "description": "ein Tierarzt, der Hunde behandelt",
+                "title": "ein Tierarzt"
+            }
+        },
+        "name": "Tierarzt",
+        "title": {
+            "render": "Tierarzt"
         }
     },
     "viewpoint": {
@@ -4860,6 +5032,10 @@
                     }
                 }
             }
-        }
+        },
+        "description": "Moderne Windmühlen zur Stromerzeugung"
+    },
+    "grass_in_parks": {
+        "description": "Sucht nach allen zugänglichen Grasflächen in öffentlichen Parks - dies sind 'Grünzonen'\""
     }
 }
