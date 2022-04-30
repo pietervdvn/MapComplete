@@ -175,7 +175,7 @@ export default class LayerConfig extends WithContextLoader {
                 try {
                     new Function("feat", "return " + code + ";");
                 } catch (e) {
-                    throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`
+                    throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
                 }
 
 
