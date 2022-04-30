@@ -173,7 +173,25 @@
         "amenity="
       ]
     },
-    "neededChangesets": 1
+    "neededChangesets": 1,
+    "nonDeleteMappings": [
+      {
+        "if": {
+          "and": ["drinking_water=no","amenity=fountain"]
+        },
+        "then": {
+          "en": "This is a decorative fountain of which the water is not drinkable by humans"
+        }
+      },
+      {
+        "if": {
+          "and": ["drinking_water=no","amenity=","man_made=water_tap"]
+        },
+        "then": {
+          "en": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps to tap water for nearby plants</div>"
+        }
+      }
+    ]
   },
   "allowMove": {
     "enableRelocation": false,
