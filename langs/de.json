@@ -218,7 +218,8 @@
             "fsUserbadge": "Anmeldeschaltfläche aktivieren",
             "fsWelcomeMessage": "Begrüßungsfenster und zugehörige Registerkarten anzeigen",
             "intro": "<h3>Diese Karte teilen</h3> Teilen Sie diese Karte, indem Sie den folgenden Link kopieren und an Freunde und Familie schicken:",
-            "thanksForSharing": "Danke für das Teilen!"
+            "thanksForSharing": "Danke für das Teilen!",
+            "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern"
         },
         "skip": "Frage überspringen",
         "skippedQuestions": "Einige Fragen wurden übersprungen",
