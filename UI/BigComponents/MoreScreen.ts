@@ -20,9 +20,20 @@ import {TextField} from "../Input/TextField";
 import FilteredCombine from "../Base/FilteredCombine";
 import Locale from "../i18n/Locale";
 
+
 export default class MoreScreen extends Combine {
 
-
+    private static readonly officialThemes: {
+        id: string,
+        icon: string,
+        title: any,
+        shortDescription: any,
+        definition?: any,
+        mustHaveLanguage?: boolean,
+        hideFromOverview: boolean,
+        keywors?: any[]
+    }[] = themeOverview["default"];
+    
     constructor(state: UserRelatedState & {
         locationControl?: UIEventSource<Loc>,
         layoutToUse?: LayoutConfig
@@ -37,6 +48,17 @@ export default class MoreScreen extends Combine {
 
         const search = new TextField({
             placeholder: tr.searchForATheme,
+        })
+        search.enterPressed.addCallbackD(searchTerm => {
+            // Enter pressed -> search the first _official_ matchin theme and open it
+            const publicTheme = MoreScreen.officialThemes.find(th => th.hideFromOverview == false && MoreScreen.MatchesLayoutFunc(th)(searchTerm))
+            if (publicTheme !== undefined) {
+                window.location.href = MoreScreen.createUrlFor(publicTheme, false, state).data
+            }
+            const hiddenTheme = MoreScreen.officialThemes.find(th => MoreScreen.MatchesLayoutFunc(th)(searchTerm))
+            if (hiddenTheme !== undefined) {
+                window.location.href = MoreScreen.createUrlFor(hiddenTheme, false, state).data
+            }
         })
 
         if (onMainScreen) {
@@ -71,24 +93,10 @@ export default class MoreScreen extends Combine {
         ]).SetClass("flex flex-col items-center w-full")
     }
 
-    /**
-     * Creates a button linking to the given theme
-     * @private
-     */
-    public static createLinkButton(
-        state: {
-            locationControl?: UIEventSource<Loc>,
-            layoutToUse?: LayoutConfig
-        }, layout: {
-            id: string,
-            icon: string,
-            title: any,
-            shortDescription: any,
-            definition?: any,
-            mustHaveLanguage?: boolean
-        }, isCustom: boolean = false
-    ):
-        BaseUIElement {
+    private static createUrlFor(layout: { id: string, definition?: string },
+                                isCustom: boolean,
+                                state?: { locationControl?: UIEventSource<{ lat, lon, zoom }>, layoutToUse?: { id } }
+    ): UIEventSource<string> {
         if (layout === undefined) {
             return undefined;
         }
@@ -125,7 +133,7 @@ export default class MoreScreen extends Combine {
             hash = "#" + btoa(JSON.stringify(layout.definition))
         }
 
-        const linkText = currentLocation?.map(currentLocation => {
+        return currentLocation?.map(currentLocation => {
             const params = [
                 ["z", currentLocation?.zoom],
                 ["lat", currentLocation?.lat],
@@ -137,6 +145,28 @@ export default class MoreScreen extends Combine {
         }) ?? new UIEventSource<string>(`${linkPrefix}`)
 
 
+    }
+
+    /**
+     * Creates a button linking to the given theme
+     * @private
+     */
+    public static createLinkButton(
+        state: {
+            locationControl?: UIEventSource<Loc>,
+            layoutToUse?: LayoutConfig
+        }, layout: {
+            id: string,
+            icon: string,
+            title: any,
+            shortDescription: any,
+            definition?: any,
+            mustHaveLanguage?: boolean
+        }, isCustom: boolean = false
+    ):
+        BaseUIElement {
+
+        const url = MoreScreen.createUrlFor(layout, isCustom, state)
         return new SubtleButton(layout.icon,
             new Combine([
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
@@ -145,7 +175,7 @@ export default class MoreScreen extends Combine {
                 `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
                 new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
                 `</dd>`,
-            ]), {url: linkText, newTab: false});
+            ]), {url, newTab: false});
     }
 
     public static CreateProffessionalSerivesButton() {
@@ -279,37 +309,33 @@ export default class MoreScreen extends Combine {
         title: any,
         shortDescription: any,
         keywords?: any[]
-    }) {
+    }): ((search: string) => boolean) {
         return (search: string) => {
             search = search.toLocaleLowerCase()
             if (layout.id.toLowerCase().indexOf(search) >= 0) {
                 return true;
             }
-            const entitiesToSearch = [layout.shortDescription, layout.title, ...layout.keywords]
+            const entitiesToSearch = [layout.shortDescription, layout.title, ...(layout.keywords ?? [])]
             for (const entity of entitiesToSearch) {
+                if (entity === undefined) {
+                    continue
+                }
                 const term = entity["*"] ?? entity[Locale.language.data]
                 if (term?.toLowerCase()?.indexOf(search) >= 0) {
                     return true
                 }
             }
 
-
             return false;
         }
     }
 
     private static createOfficialThemesList(state: { osmConnection: OsmConnection, locationControl?: UIEventSource<Loc> }, buttonClass: string, themeListStyle: string, search: UIEventSource<string>): BaseUIElement {
-        let officialThemes: {
-            id: string,
-            icon: string,
-            title: any,
-            shortDescription: any,
-            definition?: any,
-            mustHaveLanguage?: boolean,
-            hideFromOverview: boolean
-        }[] = themeOverview["default"];
 
-        let buttons: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = officialThemes.map((layout) => {
+
+
+        let buttons: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = MoreScreen.officialThemes.map((layout) => {
+
             if (layout === undefined) {
                 console.trace("Layout is undefined")
                 return undefined
