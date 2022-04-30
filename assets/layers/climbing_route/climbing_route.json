@@ -226,7 +226,7 @@
           {
             "if": {
               "and": [
-              "climbing:grade:french~*",
+                "climbing:grade:french~*",
                 "name~*"
               ]
             },

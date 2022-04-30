@@ -33,7 +33,10 @@
     "mappings": [
       {
         "if": {
-          "and": ["name~*","species:wikidata~*"]
+          "and": [
+            "name~*",
+            "species:wikidata~*"
+          ]
         },
         "then": {
           "*": "{name} ({wikidata_label(species:wikidata)})"
@@ -41,7 +44,9 @@
       },
       {
         "if": {
-          "and": ["name~*"]
+          "and": [
+            "name~*"
+          ]
         },
         "then": {
           "*": "{name}"

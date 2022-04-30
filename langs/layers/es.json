@@ -404,6 +404,9 @@
                     },
                     "6": {
                         "then": "Aquí se pueden alquilar bicicletas de carreras"
+                    },
+                    "7": {
+                        "then": "Aquí se pueden alquilar cascos"
                     }
                 },
                 "question": "¿Qué tipo de bicicletas y accesorios se alquilan aquí?",

@@ -497,6 +497,9 @@
                     },
                     "6": {
                         "then": "Race bicycles can be rented here"
+                    },
+                    "7": {
+                        "then": "Bike helmets can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
@@ -518,6 +521,9 @@
                     },
                     "4": {
                         "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
+                    },
+                    "5": {
+                        "then": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only"
                     }
                 },
                 "question": "What kind of bicycle rental is this?"
