@@ -3230,6 +3230,49 @@
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
+    "dogpark": {
+        "name": "dog parks",
+        "presets": {
+            "0": {
+                "description": "A place for dogs, where they can run unleashed",
+                "title": "a dog park"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "What is the name of this dog park?",
+                "render": "The name of this dog park is {name}"
+            },
+            "dogarea": {
+                "render": "This dogpark is {_surface:ha} ha big"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "This dogpark is fenced all around"
+                    },
+                    "1": {
+                        "then": "This dogpark is not fenced all around"
+                    }
+                },
+                "question": "It this dog park fenced in?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Have separate area for puppies and small dogs"
+                    },
+                    "1": {
+                        "then": "Does <strong>not</strong> have a separate area for puppies and small dogs"
+                    }
+                },
+                "question": "Does this dog park have a separate fenced in area for small dogs and puppies?"
+            }
+        },
+        "title": {
+            "render": "dog park"
+        }
+    },
     "drinking_water": {
         "description": "A layer showing drinking water fountains",
         "name": "Drinking water",
@@ -5617,6 +5660,24 @@
         },
         "title": {
             "render": "Tree"
+        }
+    },
+    "veterinary": {
+        "name": "veterinary",
+        "presets": {
+            "0": {
+                "description": "a veterianarian, that treats dogs",
+                "title": "a veterianarian"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "What is the name of this veterinarian?",
+                "render": "The name of this veterinarian is {name}"
+            }
+        },
+        "title": {
+            "render": "Veterinary"
         }
     },
     "viewpoint": {

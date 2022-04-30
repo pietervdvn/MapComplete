@@ -2494,6 +2494,13 @@
         "description": "Diese Ebene visualisiert Richtungen",
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
+    "dogpark": {
+        "tagRenderings": {
+            "Name": {
+                "render": "Denne hundeskov hedder {name}"
+            }
+        }
+    },
     "drinking_water": {
         "name": "Trinkwasserstellen",
         "presets": {
@@ -4590,6 +4597,13 @@
         },
         "title": {
             "render": "Baum"
+        }
+    },
+    "veterinary": {
+        "tagRenderings": {
+            "vetName": {
+                "render": "Denne dyrl&aelig; hedder {name}"
+            }
         }
     },
     "viewpoint": {

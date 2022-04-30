@@ -10,7 +10,7 @@
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
     "da": "Hundsteder"
   },
-  "icon": "./assets/themes/dog/dog-park.svg",
+  "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
   "startLat": 55,
   "startLon": 12,
@@ -30,7 +30,7 @@
               "point",
               "centroid"
             ],
-            "icon": "./assets/themes/dog/dog-food.svg",
+            "icon": "./assets/themes/pets/dog-food.svg",
             "iconSize": "30,30,center"
           }
         ],
@@ -86,7 +86,7 @@
               "centroid"
             ],
             "icon": {
-              "render": "./assets/themes/dog/dogshop.svg",
+              "render": "./assets/themes/pets/dogshop.svg",
               "mappings": [
                 {
                   "if": {
@@ -94,7 +94,7 @@
                       "shop=pet"
                     ]
                   },
-                  "then": "./assets/themes/dog/petshop.svg"
+                  "then": "./assets/themes/pets/petshop.svg"
                 }
               ]
             },

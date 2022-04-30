@@ -1239,6 +1239,48 @@
             }
         }
     },
+    "dogpark": {
+        "name": "hundeskove",
+        "presets": {
+            "0": {
+                "description": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor",
+                "title": "en hundeskov"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "Hvad hedder denne hundeskov?"
+            },
+            "dogarea": {
+                "render": "Denne hundeskov er på {_surface:ha} hektar"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne hundskov er indhegnet"
+                    },
+                    "1": {
+                        "then": "Denne hundskov er ikke indhegnet"
+                    }
+                },
+                "question": "Er denne hundeskov indhegnet?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Har en indhegning til hvalpe og sm&aring; hunde"
+                    },
+                    "1": {
+                        "then": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde"
+                    }
+                },
+                "question": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?"
+            }
+        },
+        "title": {
+            "render": "hundeskov"
+        }
+    },
     "entrance": {
         "title": {
             "render": "Indgang"
@@ -1289,5 +1331,22 @@
             }
         },
         "name": "Restauranter og fastfood"
+    },
+    "veterinary": {
+        "name": "dyrl&aelig;ge",
+        "presets": {
+            "0": {
+                "description": "En dyrl&aelig;ge, der behandler hunde",
+                "title": "en dyrl&aelig;ge"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Hvad hedder denne dyrl&aelig;?"
+            }
+        },
+        "title": {
+            "render": "dyrl&aelig;ge"
+        }
     }
 }

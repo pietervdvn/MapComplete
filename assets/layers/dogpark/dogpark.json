@@ -53,7 +53,7 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/themes/dog/dog-park.svg",
+      "icon": "./assets/layers/dogpark/dog-park.svg",
       "iconSize": "40,40,center",
       "label": {
         "mappings": [

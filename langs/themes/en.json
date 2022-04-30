@@ -734,6 +734,35 @@
         "description": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
         "title": "Personal theme"
     },
+    "pets": {
+        "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Dog friendly eateries"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "dog-friendly shop",
+                    "title": {
+                        "render": "dog-friendly shop"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "A shop whery you can bring a dog almost everywhere",
+                            "title": "dog-friendly shop"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Veterinarians, dog parks and other pet-amenities"
+    },
     "playgrounds": {
         "description": "On this map, you find playgrounds and can add more information",
         "shortDescription": "A map with playgrounds",

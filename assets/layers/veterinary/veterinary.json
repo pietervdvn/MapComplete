@@ -48,7 +48,7 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/themes/dog/vet.svg",
+      "icon": "./assets/layers/veterinary/vet.svg",
       "iconSize": "30,40,center",
       "label": {
         "mappings": [
