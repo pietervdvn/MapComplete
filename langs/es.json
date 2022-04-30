@@ -303,11 +303,14 @@
         "confirmProcess": {
             "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM",
             "title": "Licencia y comunidad",
-            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)"
+            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)",
+            "contactedCommunity": "He contactado a la comunidad (local) sobre esta importación"
         },
         "conflationChecker": {
             "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
-            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!"
+            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
+            "downloadOverpassData": "Descarga el geojson cargado desde overpass",
+            "cacheExpired": "La caché ha expirado"
         },
         "mapPreview": {
             "title": "Previsualización de mapa"
