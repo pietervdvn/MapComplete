@@ -133,48 +133,6 @@
             }
         }
     },
-    "climbing": {
-        "overrideAll": {
-            "tagRenderings+": {
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Accesible públicamente a cualquiera"
-                        },
-                        "1": {
-                            "then": "Necesitas una autorización para acceder aquí"
-                        },
-                        "2": {
-                            "then": "Solo clientes"
-                        },
-                        "3": {
-                            "then": "Solo miembros del club"
-                        }
-                    },
-                    "question": "¿Quién pueden acceder aquí?"
-                },
-                "4": {
-                    "question": "¿Cuál es la longitud (media) de la ruta en metros?",
-                    "render": "Las rotas tienen una longitud media de <b>{canonical(climbing:length)}</b>"
-                },
-                "5": {
-                    "question": "¿Cual es el nivel de la ruta más fácil aquí, de acuerdo con el sistema de clasificación francés?"
-                },
-                "6": {
-                    "question": "¿Cual es la ruta de mayor nivel aquí, de acuerdo al sistema de clasificación francés?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "1": {
-                            "human": " pies"
-                        }
-                    }
-                }
-            }
-        }
-    },
     "cycle_infra": {
         "description": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
         "shortDescription": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista.",

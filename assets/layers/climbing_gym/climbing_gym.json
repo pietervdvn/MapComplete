@@ -74,14 +74,19 @@
     "phone",
     "email",
     {
-      "builtin": ["climbing.fee"]
+      "builtin": [
+        "climbing.fee"
+      ]
     },
     "opening_hours",
     {
-      "builtin":     
-      ["climbing.average_length","climbing.min_difficulty","climbing.max_difficulty",
+      "builtin": [
+        "climbing.average_length",
+        "climbing.min_difficulty",
+        "climbing.max_difficulty",
         "climbing.bouldering",
-      "climbing.sportclimbing"]
+        "climbing.sportclimbing"
+      ]
     },
     {
       "builtin": "climbing.max_bolts",

@@ -497,6 +497,9 @@
                     },
                     "6": {
                         "then": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden"
+                    },
+                    "7": {
+                        "then": "Fietshelmpen kunnen hier gehuurd worden"
                     }
                 },
                 "question": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
@@ -518,6 +521,9 @@
                     },
                     "4": {
                         "then": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd"
+                    },
+                    "5": {
+                        "then": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur "
                     }
                 },
                 "question": "Wat voor fietsverhuur is dit?"
