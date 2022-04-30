@@ -287,7 +287,8 @@
             "shouldBeOsmWikilink": "Se espera un enlace a una página en wiki.openstreetmap.org",
             "shouldBeUrl": "No una URL válida",
             "shouldNotBeHomepage": "No, tampoco se permite la página de inicio. Introduce la URL de una wikipágina de verdad para documentar tu importación",
-            "title": "Especificar metadatos"
+            "title": "Especificar metadatos",
+            "giveSource": "¿Cual es la fuente de estos datos? Si se especifica 'source' en la característica, se ignorará este valor"
         },
         "compareToAlreadyExistingNotes": {
             "completelyImported": "Todos los puntos propuestos ya tienen (o tenían) una nota de importación",
@@ -310,7 +311,16 @@
             "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
             "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
             "downloadOverpassData": "Descarga el geojson cargado desde overpass",
-            "cacheExpired": "La caché ha expirado"
+            "cacheExpired": "La caché ha expirado",
+            "osmLoaded": "{count} elementos se cargan desde OpenStreetMap que coinciden con la capa <b>{name}</b>.",
+            "setRangeToZero": "Especificar el rango en 0 o 1 si quieres importarlos todos",
+            "states": {
+                "error": "No se pudieron cargar los últimos datos de overpass debido a {error}",
+                "unexpected": "Estado inesperado {state}",
+                "idle": "Comprobando almacenamiento local..."
+            },
+            "title": "Comparar con los datos existentes",
+            "titleNearby": "Características cercanas"
         },
         "mapPreview": {
             "title": "Previsualización de mapa"
@@ -318,7 +328,11 @@
         "selectFile": {
             "title": "Seleccionar archivo"
         },
-        "title": "Ayudante de importación"
+        "title": "Ayudante de importación",
+        "createNotes": {
+            "creating": "Creadas <b>{count}</b> notas de {total}",
+            "done": "¡Todas las {count} notas han sido creadas!"
+        }
     },
     "importLayer": {
         "layerName": "Posible {title}",
