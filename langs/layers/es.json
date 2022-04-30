@@ -154,7 +154,8 @@
                 "title": "una bolardo"
             },
             "1": {
-                "title": "una barrera para bicicletas"
+                "title": "una barrera para bicicletas",
+                "description": "Una barrera ciclista, que ralentiza a los ciclistas"
             }
         },
         "tagRenderings": {
@@ -171,6 +172,9 @@
                     },
                     "2": {
                         "then": "Bolardo abatible"
+                    },
+                    "0": {
+                        "then": "Bolardo extraíble"
                     }
                 },
                 "question": "¿Qué tipo de bolardo es este?"
@@ -186,6 +190,9 @@
                     },
                     "2": {
                         "then": "Triple, tres barreras una detrás de la otra"
+                    },
+                    "1": {
+                        "then": "Doble, dos barreras una detrás de otra"
                     }
                 }
             },
