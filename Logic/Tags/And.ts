@@ -51,9 +51,6 @@ export class And extends TagsFilter {
 
     /**
      *
-     * import {Tag} from "./Tag";
-     * import {RegexTag} from "./RegexTag";
-     *
      * const and = new And([new Tag("boundary","protected_area"), new RegexTag("protect_class","98",true)])
      * and.asOverpass() // => [ "[\"boundary\"=\"protected_area\"][\"protect_class\"!=\"98\"]" ]
      */
