@@ -113,7 +113,7 @@
             "downloadGpxHelper": "Un archivo GPX puede ser utilizado con la mayor parte de dispositivos y aplicaciones de navegación",
             "exporting": "Exportando…",
             "includeMetaData": "Incluir metadatos (último editor, valores calculados, ...)",
-            "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la actribución <b>© contribuidores d e OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles.",
+            "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la atribución <b>© contribuidores de OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles.",
             "noDataLoaded": "Aún no se han cargado ningunos daos. La descarga estará disponible proximamente",
             "title": "Descargar los datos visibles",
             "uploadGpx": "Sube tu traza a OpenStreetMap"
