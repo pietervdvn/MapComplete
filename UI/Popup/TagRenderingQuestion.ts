@@ -30,6 +30,7 @@ import Img from "../Base/Img";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import Title from "../Base/Title";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {GeoOperations} from "../../Logic/GeoOperations";
 
 /**
  * Shows the question element.
@@ -414,9 +415,10 @@ export default class TagRenderingQuestion extends Combine {
 
         const tagsData = tags.data;
         const feature = state.allElements.ContainingFeatures.get(tagsData.id)
+        const center = GeoOperations.centerpointCoordinates(feature)
         const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type).ConstructInputElement({
             country: () => tagsData._country,
-            location: [tagsData._lat, tagsData._lon],
+            location: [center[1], center[0]],
             mapBackgroundLayer: state.backgroundLayer,
             unit: applicableUnit,
             args: configuration.freeform.helperArgs,
