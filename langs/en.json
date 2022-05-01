@@ -11,6 +11,8 @@
         "delete": "Delete",
         "explanations": {
             "hardDelete": "This point will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
+            "retagNoOtherThemes": "This feature will be reclassified and hidden from this application",
+            "retagOtherThemes": "This feature will be retagged and visible in {othterThemes}",
             "selectReason": "Please, select why this feature should be deleted",
             "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
         },

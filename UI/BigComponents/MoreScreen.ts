@@ -54,7 +54,7 @@ export default class MoreScreen extends Combine {
             if(searchTerm === "personal"){
                 window.location.href = MoreScreen.createUrlFor({id: "personal"}, false, state).data
             }
-            if(searchTerm === "bugs") {
+            if(searchTerm === "bugs" || searchTerm === "issues") {
                 window.location.href = "https://github.com/pietervdvn/MapComplete/issues"
             }
             if(searchTerm === "source") {

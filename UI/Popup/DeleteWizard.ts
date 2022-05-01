@@ -5,23 +5,26 @@ import Svg from "../../Svg";
 import DeleteAction from "../../Logic/Osm/Actions/DeleteAction";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import TagRenderingQuestion from "./TagRenderingQuestion";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
 import BaseUIElement from "../BaseUIElement";
 import Constants from "../../Models/Constants";
-import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
-import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import DeleteConfig from "../../Models/ThemeConfig/DeleteConfig";
 import {OsmObject} from "../../Logic/Osm/OsmObject";
-import {ElementStorage} from "../../Logic/ElementStorage";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {Changes} from "../../Logic/Osm/Changes";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction";
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
+import {InputElement} from "../Input/InputElement";
+import {RadioButton} from "../Input/RadioButton";
+import {FixedInputElement} from "../Input/FixedInputElement";
+import Title from "../Base/Title";
+import {SubstitutedTranslation} from "../SubstitutedTranslation";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
+import TagRenderingQuestion from "./TagRenderingQuestion";
 
 export default class DeleteWizard extends Toggle {
+
     /**
      * The UI-element which triggers 'deletion' (either soft or hard).
      *
@@ -42,12 +45,7 @@ export default class DeleteWizard extends Toggle {
      * @param options softDeletionTags: the tags to apply if the user doesn't have permission to delete, e.g. 'disused:amenity=public_bookcase', 'amenity='. After applying, the element should not be picked up on the map anymore. If undefined, the wizard will only show up if the point can be (hard) deleted
      */
     constructor(id: string,
-                state: {
-                    osmConnection: OsmConnection;
-                    allElements: ElementStorage,
-                    layoutToUse?: LayoutConfig,
-                    changes?: Changes
-                },
+                state: FeaturePipelineState,
                 options: DeleteConfig) {
 
 
@@ -60,70 +58,88 @@ export default class DeleteWizard extends Toggle {
         const confirm = new UIEventSource<boolean>(false)
 
 
-        function doDelete(selected: TagsFilter) {
-            // Selected == the reasons, not the tags of the object
-            const tgs = selected.asChange(tagsSource.data)
-            const deleteReasonMatch = tgs.filter(kv => kv.k === "_delete_reason")
-            if (deleteReasonMatch.length === 0) {
-                return;
+        /**
+         * This function is the actual delete function
+         */
+        function doDelete(selected: { deleteReason: string } | { retagTo: TagsFilter }) {
+            let actionToTake: OsmChangeAction;
+            if (selected["retagTo"] !== undefined) {
+                // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
+                actionToTake = new ChangeTagAction(
+                    id,
+                    selected["retagTo"],
+                    tagsSource.data,
+                    {
+                        theme: state?.layoutToUse?.id ?? "unkown",
+                        changeType: "special-delete"
+                    }
+                )
+            } else {
+                
+                actionToTake = new DeleteAction(id,
+                    options.softDeletionTags,
+                    {
+                        theme: state?.layoutToUse?.id ?? "unkown",
+                        specialMotivation: selected["deleteReason"]
+                    },
+                    deleteAbility.canBeDeleted.data.canBeDeleted
+                )
             }
-            const deleteAction = new DeleteAction(id,
-                options.softDeletionTags,
-                {
-                    theme: state?.layoutToUse?.id ?? "unkown",
-                    specialMotivation: deleteReasonMatch[0]?.v
-                },
-                deleteAbility.canBeDeleted.data.canBeDeleted
-            )
-            state.changes?.applyAction(deleteAction)
+            state.changes?.applyAction(actionToTake)
             isDeleted.setData(true)
 
         }
 
 
         const t = Translations.t.delete
-        const cancelButton = t.cancel.Clone().SetClass("block btn btn-secondary").onClick(() => confirm.setData(false));
-        const question = new VariableUiElement(tagsSource.map(currentTags => {
-            const config = DeleteWizard.generateDeleteTagRenderingConfig(options.softDeletionTags, options.nonDeleteMappings, options.extraDeleteReasons, currentTags)
-            return new TagRenderingQuestion(
-                tagsSource,
-                config,
-                state,
-                {
-                    cancelButton,
-                    /*Using a custom save button constructor erases all logic to actually save, so we have to listen for the click!*/
-                    saveButtonConstr: (v) => DeleteWizard.constructConfirmButton(v).onClick(() => {
-                        doDelete(v.data)
-                    }),
-                    bottomText: (v) => DeleteWizard.constructExplanation(v, deleteAbility)
-                }
-            )
-        }))
-
+        const cancelButton = t.cancel.SetClass("block btn btn-secondary").onClick(() => confirm.setData(false));
 
         /**
          * The button which is shown first. Opening it will trigger the check for deletions
          */
         const deleteButton = new SubtleButton(
-            Svg.delete_icon_svg().SetStyle("width: 1.5rem; height: 1.5rem;"), t.delete.Clone()).onClick(
-            () => {
-                deleteAbility.CheckDeleteability(true)
-                confirm.setData(true);
-            }
-        )
+            Svg.delete_icon_svg().SetStyle("width: 1.5rem; height: 1.5rem;"), t.delete)
+            .onClick(
+                () => {
+                    deleteAbility.CheckDeleteability(true)
+                    confirm.setData(true);
+                }
+            )
 
-        const isShown = new UIEventSource<boolean>(id.indexOf("-") < 0)
+        const isShown: UIEventSource<boolean> = tagsSource.map(tgs => tgs.id.indexOf("-") < 0)
+
+        const deleteOptionPicker = DeleteWizard.constructMultipleChoice(options, tagsSource, state);
+        const deleteDialog = new Combine([
+
+
+            new Title(new SubstitutedTranslation(t.whyDelete, tagsSource, state)
+                .SetClass("question-text"), 3),
+            deleteOptionPicker,
+            new Combine([
+                DeleteWizard.constructExplanation(deleteOptionPicker.GetValue(), deleteAbility, tagsSource, state),
+                new Combine([
+                    
+                cancelButton,
+                DeleteWizard.constructConfirmButton(deleteOptionPicker.GetValue())
+                    .onClick(() => doDelete(deleteOptionPicker.GetValue().data))
+                ]).SetClass("flex justify-end flex-wrap-reverse")
+                
+            ]).SetClass("flex mt-2 justify-between")
+
+
+        ]).SetClass("question")
+
 
         super(
             new Toggle(
                 new Combine([Svg.delete_icon_svg().SetClass("h-16 w-16 p-2 m-2 block bg-gray-300 rounded-full"),
-                    t.isDeleted.Clone()]).SetClass("flex m-2 rounded-full"),
+                    t.isDeleted]).SetClass("flex m-2 rounded-full"),
                 new Toggle(
                     new Toggle(
                         new Toggle(
                             new Toggle(
-                                question,
-                                new SubtleButton(Svg.envelope_ui(), t.readMessages.Clone()),
+                                deleteDialog,
+                                new SubtleButton(Svg.envelope_ui(), t.readMessages),
                                 state.osmConnection.userDetails.map(ud => ud.csCount > Constants.userJourney.addNewPointWithUnreadMessagesUnlock || ud.unreadMessages == 0)
                             ),
 
@@ -134,16 +150,16 @@ export default class DeleteWizard extends Toggle {
                             new Combine([
                                 Svg.delete_not_allowed_svg().SetStyle("height: 2rem; width: auto").SetClass("mr-2"),
                                 new Combine([
-                                    t.cannotBeDeleted.Clone(),
-                                    cbd.reason.Clone().SetClass("subtle"),
-                                    t.useSomethingElse.Clone().SetClass("subtle")]).SetClass("flex flex-col")
+                                    t.cannotBeDeleted,
+                                    cbd.reason.SetClass("subtle"),
+                                    t.useSomethingElse.SetClass("subtle")]).SetClass("flex flex-col")
                             ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200 bg-gray-200")))
 
 
                         ,
                         deleteAbility.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
 
-                    t.loginToDelete.Clone().onClick(state.osmConnection.AttemptLogin),
+                    t.loginToDelete.onClick(state.osmConnection.AttemptLogin),
                     state.osmConnection.isLoggedIn
                 ),
                 isDeleted),
@@ -153,17 +169,17 @@ export default class DeleteWizard extends Toggle {
     }
 
 
-    private static constructConfirmButton(deleteReasons: UIEventSource<TagsFilter>): BaseUIElement {
+    private static constructConfirmButton(deleteReasons: UIEventSource<any | undefined>): BaseUIElement {
         const t = Translations.t.delete;
         const btn = new Combine([
             Svg.delete_icon_ui().SetClass("w-6 h-6 mr-3 block"),
-            t.delete.Clone()
+            t.delete
         ]).SetClass("flex btn bg-red-500")
 
 
         const btnNonActive = new Combine([
             Svg.delete_icon_ui().SetClass("w-6 h-6 mr-3 block"),
-            t.delete.Clone()
+            t.delete
         ]).SetClass("flex btn btn-disabled bg-red-200")
 
         return new Toggle(
@@ -175,110 +191,82 @@ export default class DeleteWizard extends Toggle {
     }
 
 
-    private static constructExplanation(tags: UIEventSource<TagsFilter>, deleteAction: DeleteabilityChecker) {
+    private static constructExplanation(selectedOption: UIEventSource<
+        {deleteReason: string} | {retagTo: TagsFilter}>, deleteAction: DeleteabilityChecker,
+                                        currentTags: UIEventSource<object>,
+                                        state?: {osmConnection?: OsmConnection}) {
         const t = Translations.t.delete;
-        return new VariableUiElement(tags.map(
-            currentTags => {
-                const cbd = deleteAction.canBeDeleted.data;
-                if (currentTags === undefined) {
-                    return t.explanations.selectReason.Clone().SetClass("subtle");
+        return new VariableUiElement(selectedOption.map(
+            selectedOption => {
+                if (selectedOption === undefined) {
+                    return t.explanations.selectReason.SetClass("subtle");
                 }
 
-                const hasDeletionTag = currentTags.asChange(currentTags).some(kv => kv.k === "_delete_reason")
-
-                if (cbd.canBeDeleted && hasDeletionTag) {
-                    return t.explanations.hardDelete.Clone()
+                const retag: TagsFilter | undefined = selectedOption["retagTo"]
+                if(retag !== undefined) {
+                    // This is a retagging, not a deletion of any kind
+                    return new Combine([t.explanations.retagNoOtherThemes,
+                    TagRenderingQuestion.CreateTagExplanation(new UIEventSource<TagsFilter>(retag),
+                        currentTags, state
+                        ).SetClass("subtle")
+                    ])
                 }
-                return new Combine([t.explanations.softDelete.Subs({reason: cbd.reason}),
-                    new FixedUiElement(currentTags.asHumanString(false, true, currentTags)).SetClass("subtle")
-                ]).SetClass("flex flex-col")
 
+                const deleteReason = selectedOption["deleteReason"];
+                if(deleteReason !== undefined){
+                    return new VariableUiElement(deleteAction.canBeDeleted.map(({
+                        canBeDeleted, reason
+                    }) => {
+                        if(canBeDeleted){
+                            // This is a hard delete for which we give an explanation
+                            return t.explanations.hardDelete;
+                        }
+                        // This is a soft deletion: we explain _why_ the deletion is soft
+                        return  t.explanations.softDelete.Subs({reason: reason})
 
+                    }))
+                    
+                }
             }
             , [deleteAction.canBeDeleted]
         )).SetClass("block")
     }
 
-    private static generateDeleteTagRenderingConfig(softDeletionTags: TagsFilter,
-                                                    nonDeleteOptions: { if: TagsFilter; then: Translation }[],
-                                                    extraDeleteReasons: { explanation: Translation; changesetMessage: string }[],
-                                                    currentTags: any): TagRenderingConfig {
-        const t = Translations.t.delete
-        nonDeleteOptions = nonDeleteOptions ?? []
-        let softDeletionTagsStr = []
-        if (softDeletionTags !== undefined) {
-            softDeletionTags.asChange(currentTags)
-        }
-        const extraOptionsStr: { if: AndOrTagConfigJson, then: any }[] = []
-        for (const nonDeleteOption of nonDeleteOptions) {
-            const newIf: string[] = nonDeleteOption.if.asChange({}).map(kv => kv.k + "=" + kv.v)
+    private static constructMultipleChoice(config: DeleteConfig, tagsSource: UIEventSource<object>, state: FeaturePipelineState):
+        InputElement<{ deleteReason: string } | { retagTo: TagsFilter }> {
 
-            extraOptionsStr.push({
-                if: {and: newIf},
-                then: nonDeleteOption.then
-            })
+        const elements: InputElement<{ deleteReason: string } | { retagTo: TagsFilter }>[ ] = []
+
+        for (const nonDeleteOption of config.nonDeleteMappings) {
+            elements.push(new FixedInputElement(
+                new SubstitutedTranslation(nonDeleteOption.then, tagsSource, state),
+                {
+                    retagTo: nonDeleteOption.if
+                }
+            ))
         }
 
-        for (const extraDeleteReason of (extraDeleteReasons ?? [])) {
-            extraOptionsStr.push({
-                if: {and: ["_delete_reason=" + extraDeleteReason.changesetMessage]},
-                then: extraDeleteReason.explanation
-            })
+        for (const extraDeleteReason of (config.extraDeleteReasons ?? [])) {
+            elements.push(new FixedInputElement(
+                new SubstitutedTranslation(extraDeleteReason.explanation, tagsSource, state),
+                {
+                    deleteReason: extraDeleteReason.changesetMessage
+                }
+            ))
         }
-        return new TagRenderingConfig(
-            {
-                question: t.whyDelete,
-                render: "Deleted because {_delete_reason}",
-                freeform: {
-                    key: "_delete_reason",
-                    addExtraTags: softDeletionTagsStr
-                },
-                mappings: [
 
-                    ...extraOptionsStr,
+        for (const extraDeleteReason of DeleteConfig.defaultDeleteReasons) {
+            elements.push(new FixedInputElement(
+                extraDeleteReason.explanation.Clone(/*Must clone here, as this explanation might be used on many locations*/),
+                {
+                    deleteReason: extraDeleteReason.changesetMessage
+                }
+            ))
+        }
 
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=testing point",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.test
-                    },
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=disused",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.disused
-                    },
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=not found",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.notFound
-                    },
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=duplicate",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.duplicate
-                    }
-                ]
-
-
-            }, "Delete wizard"
-        )
+        return new RadioButton(elements, {selectFirstAsDefault: false});
     }
+
 
 }
 

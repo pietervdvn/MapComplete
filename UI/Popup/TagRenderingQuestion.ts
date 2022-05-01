@@ -29,6 +29,7 @@ import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import Title from "../Base/Title";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 /**
  * Shows the question element.
@@ -118,24 +119,7 @@ export default class TagRenderingQuestion extends Combine {
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
         } else {
-            bottomTags = new VariableUiElement(
-                inputElement.GetValue().map(
-                    (tagsFilter: TagsFilter) => {
-                        const csCount = state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
-                        if (csCount < Constants.userJourney.tagsVisibleAt) {
-                            return "";
-                        }
-                        if (tagsFilter === undefined) {
-                            return Translations.t.general.noTagsSelected.SetClass("subtle");
-                        }
-                        if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                            const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
-                            return new FixedUiElement(tagsStr).SetClass("subtle");
-                        }
-                        return tagsFilter.asHumanString(true, true, tags.data);
-                    }
-                )
-            ).SetClass("block break-all")
+            bottomTags = TagRenderingQuestion.CreateTagExplanation(inputElement.GetValue(), tags, state)
         }
         super([
             question,
@@ -464,6 +448,29 @@ export default class TagRenderingQuestion extends Combine {
 
         return inputTagsFilter;
 
+    }
+    
+    public static CreateTagExplanation(selectedValue: UIEventSource<TagsFilter>,
+                                       tags: UIEventSource<object>,
+                                       state?: {osmConnection?: OsmConnection}){
+        return new VariableUiElement(
+            selectedValue.map(
+                (tagsFilter: TagsFilter) => {
+                    const csCount = state?.osmConnection?.userDetails?.data?.csCount ?? Constants.userJourney.tagsVisibleAndWikiLinked + 1;
+                    if (csCount < Constants.userJourney.tagsVisibleAt) {
+                        return "";
+                    }
+                    if (tagsFilter === undefined) {
+                        return Translations.t.general.noTagsSelected.SetClass("subtle");
+                    }
+                    if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
+                        const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
+                        return new FixedUiElement(tagsStr).SetClass("subtle");
+                    }
+                    return tagsFilter.asHumanString(true, true, tags.data);
+                }
+            )
+        ).SetClass("block break-all")
     }
 
 }
