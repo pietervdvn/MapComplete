@@ -37,7 +37,7 @@
         "source": {
           "=osmTags": {
             "and": [
-              "cuisine=friture",
+              "cuisine~(.*;)?friture(;.*)?",
               {
                 "or": [
                   "amenity=fast_food",
