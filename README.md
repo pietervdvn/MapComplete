@@ -1,6 +1,14 @@
 # MapComplete
 
 > Let a thousand flowers bloom
+ 
+<p align=center>
+<a href="https://liberapay.com/pietervdvn/">
+  <img src="https://img.shields.io/liberapay/patrons/Pietervdvn.svg?logo=liberapay">
+  <img src="https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay">
+</a>
+</p>
+
 
 **MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit
 and add new features to the map. It can be seen as a
