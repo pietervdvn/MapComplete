@@ -26,7 +26,7 @@ Devcontainer (see more details later).
 
 To develop and build MapComplete, you
 
-0. Make a fork and clone the repository.
+0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
 0. Install the nodejs version specified in [.tool-versions](./.tool-versions)
     - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
       then install node with `n install <node-version>`
