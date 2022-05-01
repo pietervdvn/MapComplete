@@ -30,6 +30,12 @@ describe("Tag optimalization", () => {
             const opt = t.optimize()
             expect(opt).eq(true)
         })
+        
+        it("should return false on conflicting tags", () => {
+            const t = new And([new Tag("key","a"), new Tag("key","b")])
+            const opt = t.optimize()
+            expect(opt).eq(false)
+        })
 
         it("with nested ors and common property should be extracted", () => {
 

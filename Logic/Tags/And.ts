@@ -1,16 +1,19 @@
 import {TagsFilter} from "./TagsFilter";
 import {Or} from "./Or";
 import {TagUtils} from "./TagUtils";
+import {Tag} from "./Tag";
+import {RegexTag} from "./RegexTag";
 
 export class And extends TagsFilter {
     public and: TagsFilter[]
+
     constructor(and: TagsFilter[]) {
         super();
         this.and = and
     }
-    
-    public static construct(and: TagsFilter[]): TagsFilter{
-        if(and.length === 1){
+
+    public static construct(and: TagsFilter[]): TagsFilter {
+        if (and.length === 1) {
             return and[0]
         }
         return new And(and)
@@ -50,7 +53,7 @@ export class And extends TagsFilter {
      *
      * import {Tag} from "./Tag";
      * import {RegexTag} from "./RegexTag";
-     * 
+     *
      * const and = new And([new Tag("boundary","protected_area"), new RegexTag("protect_class","98",true)])
      * and.asOverpass() // => [ "[\"boundary\"=\"protected_area\"][\"protect_class\"!=\"98\"]" ]
      */
@@ -142,7 +145,7 @@ export class And extends TagsFilter {
     usedKeys(): string[] {
         return [].concat(...this.and.map(subkeys => subkeys.usedKeys()));
     }
-    
+
     usedTags(): { key: string; value: string }[] {
         return [].concat(...this.and.map(subkeys => subkeys.usedTags()));
     }
@@ -161,97 +164,134 @@ export class And extends TagsFilter {
      *        ^---------^
      * When the evaluation hits (A=B & X=Y), we know _for sure_ that X=Y does _not_ match, as it would have matched the first clause otherwise.
      * This means that the entire 'AND' is considered FALSE
-     * 
+     *
      * new And([ new Tag("key","value") ,new Tag("other_key","value")]).removePhraseConsideredKnown(new Tag("key","value"), true) // => new Tag("other_key","value")
      * new And([ new Tag("key","value") ,new Tag("other_key","value")]).removePhraseConsideredKnown(new Tag("key","value"), false) // => false
      * new And([ new RegexTag("key",/^..*$/) ,new Tag("other_key","value")]).removePhraseConsideredKnown(new Tag("key","value"), true) // => new Tag("other_key","value")
      * new And([ new Tag("key","value") ]).removePhraseConsideredKnown(new Tag("key","value"), true) // => true
-     * 
+     *
      * // should remove 'club~*' if we know that 'club=climbing'
      * const expr = <And> TagUtils.Tag({and: ["sport=climbing", {or:["club~*", "office~*"]}]} )
      * expr.removePhraseConsideredKnown(new Tag("club","climbing"), true) // => new Tag("sport","climbing")
-     * 
+     *
      * const expr = <And> TagUtils.Tag({and: ["sport=climbing", {or:["club~*", "office~*"]}]} )
      * expr.removePhraseConsideredKnown(new Tag("club","climbing"), false) // => expr
      */
     removePhraseConsideredKnown(knownExpression: TagsFilter, value: boolean): TagsFilter | boolean {
         const newAnds: TagsFilter[] = []
         for (const tag of this.and) {
-            if(tag instanceof And){
+            if (tag instanceof And) {
                 throw "Optimize expressions before using removePhraseConsideredKnown"
             }
-            if(tag instanceof Or){
+            if (tag instanceof Or) {
                 const r = tag.removePhraseConsideredKnown(knownExpression, value)
-                if(r === true){
+                if (r === true) {
                     continue
                 }
-                if(r === false){
+                if (r === false) {
                     return false;
                 }
                 newAnds.push(r)
                 continue
             }
-            if(value && knownExpression.shadows(tag)){
+            if (value && knownExpression.shadows(tag)) {
                 /**
                  * At this point, we do know that 'knownExpression' is true in every case
                  * As `shadows` does define that 'tag' MUST be true if 'knownExpression' is true,
                  * we can be sure that 'tag' is true as well.
-                 * 
+                 *
                  * "True" is the neutral element in an AND, so we can skip the tag
                  */
                 continue
             }
-            if(!value && tag.shadows(knownExpression)){
+            if (!value && tag.shadows(knownExpression)) {
 
                 /**
                  * We know that knownExpression is unmet.
                  * if the tag shadows 'knownExpression' (which is the case when control flows gets here),
                  * then tag CANNOT be met too, as known expression is not met.
-                 * 
+                 *
                  * This implies that 'tag' must be false too!
                  */
 
                 // false is the element which absorbs all
                 return false
             }
-            
+
             newAnds.push(tag)
         }
-        if(newAnds.length === 0){
+        if (newAnds.length === 0) {
             return true
         }
         return And.construct(newAnds)
     }
 
     optimize(): TagsFilter | boolean {
-        if(this.and.length === 0){
+        if (this.and.length === 0) {
             return true
         }
         const optimizedRaw = this.and.map(t => t.optimize())
-            .filter(t => t !== true /* true is the neutral element in an AND, we drop them*/ )
-        if(optimizedRaw.some(t => t === false)){
+            .filter(t => t !== true /* true is the neutral element in an AND, we drop them*/)
+        if (optimizedRaw.some(t => t === false)) {
             // We have an AND with a contained false: this is always 'false'
             return false;
         }
-        const optimized = <TagsFilter[]> optimizedRaw;
-        
-        const newAnds : TagsFilter[] = []
-        
-        let containedOrs : Or[] = []
+        const optimized = <TagsFilter[]>optimizedRaw;
+
+        {
+            // Conflicting keys do return false
+            const properties: object =  {}
+            for (const opt of optimized) {
+                if (opt instanceof Tag) {
+                    properties[opt.key] = opt.value
+                }
+            }
+             for (const opt of optimized) {
+                 if(opt instanceof Tag ){
+                     const k = opt.key
+                     const v = properties[k]
+                     if(v === undefined){
+                         continue
+                     }
+                     if(v !== opt.value){
+                         // detected an internal conflict 
+                         return false
+                     }
+                 }
+                 if(opt instanceof RegexTag ){
+                     const k = opt.key
+                     if(typeof k !== "string"){
+                         continue
+                     }
+                     const v = properties[k]
+                     if(v === undefined){
+                         continue
+                     }
+                     if(v !== opt.value){
+                         // detected an internal conflict 
+                         return false
+                     }
+                 }
+             }
+        }
+
+        const newAnds: TagsFilter[] = []
+
+        let containedOrs: Or[] = []
         for (const tf of optimized) {
-            if(tf instanceof And){
+            if (tf instanceof And) {
                 newAnds.push(...tf.and)
-            }else if(tf instanceof Or){
+            } else if (tf instanceof Or) {
                 containedOrs.push(tf)
             } else {
                 newAnds.push(tf)
             }
         }
-        
+
         {
             let dirty = false;
             do {
-                const cleanedContainedOrs : Or[] = []
+                const cleanedContainedOrs: Or[] = []
                 outer: for (let containedOr of containedOrs) {
                     for (const known of newAnds) {
                         // input for optimazation: (K=V & (X=Y | K=V))
@@ -278,10 +318,10 @@ export class And extends TagsFilter {
                     cleanedContainedOrs.push(containedOr)
                 }
                 containedOrs = cleanedContainedOrs
-            } while(dirty)
+            } while (dirty)
         }
-        
-        
+
+
         containedOrs = containedOrs.filter(ca => {
             const isShadowed = TagUtils.containsEquivalents(newAnds, ca.or)
             // If 'isShadowed', then at least one part of the 'OR' is matched by the outer and, so this means that this OR isn't needed at all
@@ -290,51 +330,51 @@ export class And extends TagsFilter {
         })
 
         // Extract common keys from the OR
-        if(containedOrs.length === 1){
+        if (containedOrs.length === 1) {
             newAnds.push(containedOrs[0])
-        }else if(containedOrs.length > 1){
-            let commonValues : TagsFilter [] = containedOrs[0].or
-            for (let i = 1; i < containedOrs.length && commonValues.length > 0; i++){
+        } else if (containedOrs.length > 1) {
+            let commonValues: TagsFilter [] = containedOrs[0].or
+            for (let i = 1; i < containedOrs.length && commonValues.length > 0; i++) {
                 const containedOr = containedOrs[i];
                 commonValues = commonValues.filter(cv => containedOr.or.some(candidate => candidate.shadows(cv)))
             }
-            if(commonValues.length === 0){
+            if (commonValues.length === 0) {
                 newAnds.push(...containedOrs)
-            }else{
+            } else {
                 const newOrs: TagsFilter[] = []
                 for (const containedOr of containedOrs) {
                     const elements = containedOr.or
                         .filter(candidate => !commonValues.some(cv => cv.shadows(candidate)))
                     newOrs.push(Or.construct(elements))
                 }
-                
+
                 commonValues.push(And.construct(newOrs))
                 const result = new Or(commonValues).optimize()
-                if(result === false){
+                if (result === false) {
                     return false
-                }else if(result === true){
+                } else if (result === true) {
                     // neutral element: skip
-                }else{
+                } else {
                     newAnds.push(result)
                 }
             }
         }
-        if(newAnds.length === 0){
+        if (newAnds.length === 0) {
             return true
         }
 
-        if(TagUtils.ContainsOppositeTags(newAnds)){
+        if (TagUtils.ContainsOppositeTags(newAnds)) {
             return false
         }
-        
+
         TagUtils.sortFilters(newAnds, true)
-        
+
         return And.construct(newAnds)
     }
-    
+
     isNegative(): boolean {
         return !this.and.some(t => !t.isNegative());
     }
-    
-    
+
+
 }
