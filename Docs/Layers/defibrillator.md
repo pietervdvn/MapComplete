@@ -12,33 +12,9 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 
 
 
-## Table of contents
-
-1. [defibrillator](#defibrillator)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [defibrillator-indoors](#defibrillator-indoors)
-    + [defibrillator-access](#defibrillator-access)
-    + [defibrillator-defibrillator](#defibrillator-defibrillator)
-    + [defibrillator-level](#defibrillator-level)
-    + [defibrillator-defibrillator:location](#defibrillator-defibrillatorlocation)
-    + [defibrillator-defibrillator:location:en](#defibrillator-defibrillatorlocation:en)
-    + [defibrillator-defibrillator:location:fr](#defibrillator-defibrillatorlocation:fr)
-    + [wheelchair-access](#wheelchair-access)
-    + [defibrillator-ref](#defibrillator-ref)
-    + [defibrillator-email](#defibrillator-email)
-    + [defibrillator-phone](#defibrillator-phone)
-    + [defibrillator-opening_hours](#defibrillator-opening_hours)
-    + [defibrillator-description](#defibrillator-description)
-    + [defibrillator-survey:date](#defibrillator-surveydate)
-    + [defibrillator-fixme](#defibrillator-fixme)
 
 
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
@@ -54,8 +30,6 @@ A layer showing defibrillators which can be used in case of emergency. This cont
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/defibrillator/defibrillator.json)
-
 
 
  Basic tags for this layer 
@@ -69,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22emergency%22%3D%22defibrillator%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -164,6 +140,8 @@ The question is **Is this a a regular automatic defibrillator or a manual defibr
   - **This is a special type of defibrillator: {defibrillator}** corresponds with defibrillator~^..*$_This option cannot be chosen as answer_
 
 
+Only visible if `access=no` is shown
+
 
 
 ### defibrillator-level 
@@ -180,6 +158,8 @@ This is rendered with `This defibrillator is on floor {level}`
   - **This defibrillator is on the <b>ground floor</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
   - **This defibrillator is on the <b>first floor</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
 
+
+Only visible if `indoor=yes` is shown
 
 
 

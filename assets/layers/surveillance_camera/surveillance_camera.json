@@ -6,7 +6,8 @@
     "ru": "Камеры наблюдения",
     "fr": "Caméras de surveillance",
     "it": "Videocamere di sorveglianza",
-    "de": "Überwachungskameras"
+    "de": "Überwachungskameras",
+    "ca": "Càmeres de videovigilància"
   },
   "minzoom": 12,
   "source": {
@@ -30,7 +31,8 @@
       "ru": "Камера наблюдения",
       "fr": "Caméra de surveillance",
       "it": "Videocamera di sorveglianza",
-      "de": "Überwachungskamera"
+      "de": "Überwachungskamera",
+      "ca": "Càmera de videovigilància"
     }
   },
   "tagRenderings": [
@@ -104,7 +106,8 @@
         "en": "Films to a compass heading of {camera:direction}",
         "nl": "Filmt in kompasrichting {camera:direction}",
         "fr": "Filme dans une direction {camera:direction}",
-        "it": "Punta in direzione {camera:direction}"
+        "it": "Punta in direzione {camera:direction}",
+        "de": "filmt in Himmelsrichtung {camera:direction}"
       },
       "condition": {
         "or": [
@@ -135,7 +138,8 @@
             "en": "Films to a compass heading of {direction}",
             "nl": "Filmt in kompasrichting {direction}",
             "fr": "Filme dans une direction {direction}",
-            "it": "Punta in direzione {direction}"
+            "it": "Punta in direzione {direction}",
+            "de": "filmt in Himmelsrichtung {direction}"
           },
           "hideInAnswer": true
         }
@@ -196,7 +200,7 @@
             "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, ...)",
             "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée, etc.)",
             "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)",
-            "de": "Ein privater Außenbereich wird überwacht (z. B. ein Parkplatz, eine Tankstelle, ein Innenhof, ein Eingang, eine private Einfahrt, ...)"
+            "de": "Ein privater Außenbereich wird überwacht (Parkplatz, Tankstelle, Innenhof, Eingang, private Einfahrt, ...)"
           }
         },
         {
@@ -305,11 +309,11 @@
         "key": "surveillance:zone"
       },
       "render": {
-        "en": " Surveills a {surveillance:zone}",
+        "en": "Surveills a {surveillance:zone}",
         "nl": "Bewaakt een {surveillance:zone}",
-        "fr": " Surveille un(e) {surveillance:zone}",
+        "fr": "Surveille un(e) {surveillance:zone}",
         "it": " Sorveglia una {surveillance:zone}",
-        "de": " Überwacht ein/e {surveillance:zone}"
+        "de": "Überwacht ein/e {surveillance:zone}"
       },
       "mappings": [
         {
@@ -410,7 +414,7 @@
       },
       "render": {
         "en": "Mounting method: {camera:mount}",
-        "nl": "Montage: {camera:mount}",
+        "nl": "Ophanging: {camera:mount}",
         "fr": "Méthode de montage : {camera:mount}",
         "it": "Metodo di montaggio: {camera:mount}",
         "de": "Montageart: {camera:mount}"
@@ -460,7 +464,9 @@
         "surveillance:type=camera"
       ],
       "title": {
-        "en": "surveillance camera"
+        "en": "a surveillance camera",
+        "nl": "een bewakingscamera",
+        "de": "eine Überwachungskamera"
       }
     },
     {
@@ -470,7 +476,9 @@
         "camera:mount=wall"
       ],
       "title": {
-        "en": "surveillance camera mounted on a wall"
+        "en": "a surveillance camera mounted on a wall",
+        "nl": "een bewakingscamera gemonteerd op een muur",
+        "de": "eine an einer Wand montierte Überwachungskamera"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"
@@ -538,6 +546,8 @@
     }
   ],
   "description": {
-    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+    "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
+    "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
+    "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen"
   }
 }

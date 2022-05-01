@@ -1,4 +1,4 @@
-import {DesugaringStep, Fuse, OnEvery} from "./Conversion";
+import {DesugaringStep, Each, Fuse, On} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import LayerConfig from "../LayerConfig";
 import {Utils} from "../../../Utils";
@@ -13,14 +13,16 @@ import ScriptUtils from "../../../scripts/ScriptUtils";
 import {And} from "../../../Logic/Tags/And";
 import Translations from "../../../UI/i18n/Translations";
 import Svg from "../../../Svg";
+import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson";
 
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
+    
     private readonly _languages: string[];
 
     constructor(...languages: string[]) {
         super("Checks that the given object is fully translated in the specified languages", [], "ValidateLanguageCompleteness");
-        this._languages = languages;
+        this._languages = languages ?? ["en"];
     }
 
     convert(obj: any, context: string): { result: LayerConfig; errors: string[] } {
@@ -28,7 +30,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         const translations = Translation.ExtractAllTranslationsFrom(
             obj
         )
-        for (const neededLanguage of this._languages ?? ["en"]) {
+        for (const neededLanguage of this._languages) {
             translations
                 .filter(t => t.tr.translations[neededLanguage] === undefined && t.tr.translations["*"] === undefined)
                 .forEach(missing => {
@@ -66,7 +68,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         const warnings = []
         const information = []
 
-        const theme = new LayoutConfig(json, true, "test")
+        const theme = new LayoutConfig(json, true)
 
         {
             // Legacy format checks  
@@ -99,7 +101,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                     
                     if(Svg.All[image + ".svg"] !== undefined){
                         // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                        continue;
+                        continue;// =>
                     }
                 }
 
@@ -172,7 +174,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Validates a theme and the contained layers",
             new ValidateTheme(knownImagePaths, path, isBuiltin, sharedTagRenderings),
-            new OnEvery("layers", new ValidateLayer(undefined, false))
+            new On("layers", new Each(new ValidateLayer(undefined, false)))
         );
     }
 }
@@ -215,12 +217,17 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson>{
     
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
         const warnings = []
+        const errors = []
+        if(json.id !== "personal" && (json.layers === undefined || json.layers.length === 0)){
+            errors.push("The theme "+json.id+" has no 'layers' defined ("+context+")")
+        }
         if(json.socialImage === ""){
             warnings.push("Social image for theme "+json.id+" is the emtpy string")
         }
         return {
             result :json,
-            warnings
+            warnings,
+            errors
         };
     }
 }
@@ -229,24 +236,78 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
 
     constructor() {
         super("Various consistency checks on the raw JSON",
-            new OverrideShadowingCheck(),
-            new MiscThemeChecks()
+            new MiscThemeChecks(),
+            new OverrideShadowingCheck()
         );
 
     }
 
 }
 
-export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
-    constructor() {
+export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+    private readonly _calculatedTagNames: string[];
+    constructor(layerConfig?: LayerConfigJson) {
         super("Checks that the mappings don't shadow each other", [], "DetectShadowedMappings");
+        this._calculatedTagNames = DetectShadowedMappings.extractCalculatedTagNames(layerConfig);
     }
 
-    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    /**
+     * 
+     * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc:=js()"]}) // => ["_abc"]
+     * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc=js()"]}) // => ["_abc"]
+     */
+    private static extractCalculatedTagNames(layerConfig?: LayerConfigJson | {calculatedTags : string []}){
+        return layerConfig?.calculatedTags?.map(ct => {
+            if(ct.indexOf(':=') >= 0){
+                return ct.split(':=')[0]
+            }
+            return ct.split("=")[0]
+        }) ?? []
+        
+    }
+
+    /**
+     * 
+     * // should detect a simple shadowed mapping
+     * const tr = {mappings: [
+     *            {
+     *                if: {or: ["key=value", "x=y"]},
+     *                then: "Case A"
+     *            },
+     *            {
+     *                if: "key=value",
+     *                then: "Shadowed"
+     *            }
+     *        ]
+     *    }
+     * const r = new DetectShadowedMappings().convert(tr, "test");
+     * r.errors.length // => 1
+     * r.errors[0].indexOf("The mapping key=value is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     *
+     * const tr = {mappings: [
+     *         {
+     *             if: {or: ["key=value", "x=y"]},
+     *             then: "Case A"
+     *         },
+     *         {
+     *             if: {and: ["key=value", "x=y"]},
+     *             then: "Shadowed"
+     *         }
+     *     ]
+     * }
+     * const r = new DetectShadowedMappings().convert(tr, "test");
+     * r.errors.length // => 1
+     * r.errors[0].indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
+     */
+    convert(json: QuestionableTagRenderingConfigJson, context: string): { result: QuestionableTagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
+        }
+        const defaultProperties = {}
+        for (const calculatedTagName of this._calculatedTagNames) {
+            defaultProperties[calculatedTagName] = "some_calculated_tag_value_for_"+calculatedTagName
         }
         const parsedConditions = json.mappings.map(m => {
             const ifTags = TagUtils.Tag(m.if);
@@ -263,7 +324,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                 // Yes, it might be shadowed, but running this check is to difficult right now
                 continue
             }
-            const keyValues = parsedConditions[i].asChange({});
+            const keyValues = parsedConditions[i].asChange(defaultProperties);
             const properties = {}
             keyValues.forEach(({k, v}) => {
                 properties[k] = v
@@ -276,16 +337,18 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
     The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
     
-    Move the mapping up to fix this problem
+    To fix this problem, you can try to:
+    - Move the shadowed mapping up
+    - Use "addExtraTags": ["key=value", ...] in order to avoid a different rendering
+         (e.g. [{"if": "fee=no",                     "then": "Free to use", "hideInAnswer":true},
+                {"if": {"and":["fee=no","charge="]}, "then": "Free to use"}]
+          can be replaced by
+               [{"if":"fee=no", "then": "Free to use", "addExtraTags": ["charge="]}]
 `)
                 }
             }
 
         }
-
-        // TODO make this errors again
-        warnings.push(...errors)
-        errors.splice(0, errors.length)
 
         return {
             errors,
@@ -300,6 +363,26 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
     }
 
+    /**
+     * const r = new DetectMappingsWithImages().convert({
+     *     "mappings": [
+     *         {
+     *             "if": "bicycle_parking=stands",
+     *             "then": {
+     *                 "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "hu": "Korlát <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+     *                 "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+     *             }
+     *         }]
+     * }, "test");
+     * r.errors.length > 0 // => true
+     * r.errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0) // => true
+     */
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[], information?: string[] } {
         const errors = []
         const warnings = []
@@ -335,9 +418,9 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
-    constructor() {
+    constructor(layerConfig: LayerConfigJson) {
         super("Various validation on tagRenderingConfigs",
-            new DetectShadowedMappings(),
+            new DetectShadowedMappings( layerConfig),
             new DetectMappingsWithImages()    
         );
     }
@@ -377,6 +460,15 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        {
+            // duplicate ids in tagrenderings check
+          const duplicates = Utils.Dedup(Utils.Dupiclates( Utils.NoNull((json.tagRenderings ?? []).map(tr => tr["id"]))))
+              .filter(dupl => dupl !== "questions")
+            if(duplicates.length > 0){
+                errors.push("At "+context+": some tagrenderings have a duplicate id: "+duplicates.join(", "))
+            }
+        }
+        
         try {
             {
                 // Some checks for legacy elements
@@ -394,7 +486,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             {
-                // CHeck location of layer file
+                // Check location of layer file
                 const expected: string = `assets/layers/${json.id}/${json.id}.json`
                 if (this._path != undefined && this._path.indexOf(expected) < 0) {
                     errors.push("Layer is in an incorrect place. The path is " + this._path + ", but expected " + expected)
@@ -433,7 +525,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             if (json.tagRenderings !== undefined) {
-               const r = new OnEvery("tagRenderings", new ValidateTagRenderings()).convert(json, context)
+               const r = new On("tagRenderings", new Each(new ValidateTagRenderings(json))).convert(json, context)
                 warnings.push(...(r.warnings??[]))
                 errors.push(...(r.errors??[]))
                 information.push(...(r.information??[]))

@@ -8,6 +8,7 @@ import {ExtractImages} from "./Conversion/FixImages";
 import ExtraLinkConfig from "./ExtraLinkConfig";
 
 export default class LayoutConfig {
+    public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string;
     public readonly maintainer: string;
     public readonly credits?: string;
@@ -54,10 +55,18 @@ export default class LayoutConfig {
 
     public readonly usedImages: string[]
     public readonly extraLink?: ExtraLinkConfig
-
-    constructor(json: LayoutConfigJson, official = true, context?: string) {
+    
+    public readonly definedAtUrl? : string;
+    public readonly definitionRaw?: string;
+    
+    constructor(json: LayoutConfigJson, official = true,options?: {
+        definedAtUrl?: string,
+        definitionRaw?: string
+    }) {
         this.official = official;
         this.id = json.id;
+        this.definedAtUrl = options?.definedAtUrl
+        this.definitionRaw = options?.definitionRaw
         if (official) {
             if (json.id.toLowerCase() !== json.id) {
                 throw "The id of a theme should be lowercase: " + json.id
@@ -66,7 +75,7 @@ export default class LayoutConfig {
                 throw "The id of a theme should match [a-z0-9-_]*: " + json.id
             }
         }
-        context = (context ?? "") + "." + this.id;
+         const   context = this.id
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;
@@ -98,15 +107,15 @@ export default class LayoutConfig {
                 throw "Got undefined layers for " + json.id + " at " + context
             }
         }
-        this.title = new Translation(json.title, context + ".title");
-        this.description = new Translation(json.description, context + ".description");
-        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, context + ".descriptionTail");
+        this.title = new Translation(json.title, "themes:"+context + ".title");
+        this.description = new Translation(json.description, "themes:"+context + ".description");
+        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, "themes:"+context + ".shortdescription");
+        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, "themes:"+context + ".descriptionTail");
         this.icon = json.icon;
-        this.socialImage = json.socialImage;
-        if (this.socialImage === null || this.socialImage === "" || this.socialImage === undefined) {
+        this.socialImage = json.socialImage ?? LayoutConfig.defaultSocialImage;
+        if (this.socialImage === "") {
             if (official) {
-                throw "Theme " + json.id + " has no social image defined"
+                throw "Theme " + json.id + " has empty string as social image"
             }
         }
         this.startZoom = json.startZoom;
@@ -124,7 +133,7 @@ export default class LayoutConfig {
             href: "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
             newTab: true,
             requirements: ["iframe","no-welcome-message"]
-        }, context)
+        }, context+".extraLink")
     
 
         this.clustering = {
@@ -202,5 +211,5 @@ export default class LayoutConfig {
         }
         return undefined
     }
-
+    
 }

@@ -1,0 +1,169 @@
+{
+  "id": "climbing_gym",
+  "name": {
+    "de": "Kletterhallen",
+    "en": "Climbing gyms",
+    "nl": "Klimzalen",
+    "ja": "クライミングジム",
+    "fr": "Salle d’escalade",
+    "it": "Palestre di arrampicata",
+    "ru": "Комплексы скалолазания"
+  },
+  "minzoom": 10,
+  "source": {
+    "osmTags": {
+      "and": [
+        "sport=climbing",
+        "leisure=sports_centre"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "nl": "Klimzaal",
+      "de": "Kletterhalle",
+      "en": "Climbing gym",
+      "ja": "クライミングジム",
+      "fr": "Salle d’escalade",
+      "it": "Palestra di arrampicata",
+      "ru": "Комплекс скалолазания"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Klimzaal <strong>{name}</strong>",
+          "de": "Kletterhalle <strong>{name}</strong>",
+          "en": "Climbing gym <strong>{name}</strong>",
+          "ja": "クライミングジム<strong>{name}</strong>",
+          "fr": "Salle d’escalade <strong>{name}</strong>",
+          "it": "Palestra di arrampicata <strong>{name}</strong>"
+        }
+      }
+    ]
+  },
+  "description": {
+    "de": "Eine Kletterhalle",
+    "en": "A climbing gym",
+    "ja": "クライミングジム",
+    "nl": "Een klimzaal",
+    "fr": "Une salle d’escalade",
+    "it": "Una palestra di arrampicata",
+    "ru": "Комплекс скалолазания"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "*": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing gym?",
+        "nl": "Wat is de naam van dit Klimzaal?",
+        "de": "Wie heißt diese Kletterhalle?",
+        "ja": "このクライミングジムは何という名前ですか?",
+        "fr": "Quel est le nom de la salle d’escalade ?",
+        "it": "Qual è il nome di questa palestra di arrampicata?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    "website",
+    "phone",
+    "email",
+    {
+      "builtin": [
+        "climbing.fee"
+      ]
+    },
+    "opening_hours",
+    {
+      "builtin": [
+        "climbing.average_length",
+        "climbing.min_difficulty",
+        "climbing.max_difficulty",
+        "climbing.bouldering",
+        "climbing.sportclimbing"
+      ]
+    },
+    {
+      "builtin": "climbing.max_bolts",
+      "override": {
+        "condition": "climbing:sport=yes"
+      }
+    },
+    {
+      "id": "Speed climbing?",
+      "question": {
+        "de": "Gibt es hier eine Speedkletter-Wand?",
+        "en": "Is there a speed climbing wall?",
+        "nl": "Is er een snelklimmuur (speed climbing)?",
+        "ja": "スピードクライミングウォールはありますか?",
+        "it": "È presente una prete per l’arrampicata di velocità?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:speed=yes",
+          "then": {
+            "de": "Hier gibt es eine Speedkletter-Wand",
+            "en": "There is a speed climbing wall",
+            "nl": "Er is een snelklimmuur voor speed climbing",
+            "ja": "スピードクライミングウォールがある",
+            "it": "È presente una parete per l’arrampicata di velocità"
+          }
+        },
+        {
+          "if": "climbing:speed=no",
+          "then": {
+            "de": "Hier gibt es keine Speedkletter-Wand",
+            "en": "There is no speed climbing wall",
+            "nl": "Er is geen snelklimmuur voor speed climbing",
+            "ja": "スピードクライミングウォールがない",
+            "it": "Non è presente una parete per l’arrampicata di velocità"
+          }
+        },
+        {
+          "if": "climbing:speed~*",
+          "then": {
+            "de": "Hier gibt es {climbing:speed} Speedkletter-Routen",
+            "en": "There are {climbing:speed} speed climbing walls",
+            "nl": "Er zijn hier {climbing:speed} snelklimmuren",
+            "ja": "{climbing:speed} のスピードクライミングウォールがある",
+            "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/climbing/climbing_gym.svg"
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
+    }
+  ]
+}

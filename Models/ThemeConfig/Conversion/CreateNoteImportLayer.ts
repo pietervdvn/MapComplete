@@ -46,15 +46,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         if(firstRender === undefined){
             throw `Layer ${layerJson.id} does not have a pointRendering: `+context
         }
-        const icon = firstRender.icon
-        const iconBadges = []
         const title = layer.presets[0].title
-        if (icon !== undefined) {
-            iconBadges.push({
-                if: {and: []},
-                then: icon
-            })
-        }
 
         const importButton = {}
         {
@@ -123,7 +115,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             "tagRenderings": [
                 {
                     "id": "Intro",
-                    "render": "{_intro}"
+                    render: "{_intro}"
                 },
                 {
                     "id": "conversation",
@@ -138,12 +130,12 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 {
                     "id": "close_note_",
                     "render": embed(
-                        "{close_note(", t.notFound.Subs({title}), ", ./assets/svg/close.svg, id, This feature does not exist)}"),
+                        "{close_note(", t.notFound.Subs({title}), ", ./assets/svg/close.svg, id, This feature does not exist, 18)}"),
                     condition: "closed_at="
                 },
                 {
                     "id": "close_note_mapped",
-                    "render": embed("{close_note(", t.alreadyMapped.Subs({title}), ", ./assets/svg/checkmark.svg, id, Already mapped)}"),
+                    "render": embed("{close_note(", t.alreadyMapped.Subs({title}), ", ./assets/svg/duplicate.svg, id, Already mapped, 18)}"),
                     condition: "closed_at="
                 },
                 {
@@ -172,7 +164,6 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                             then: "circle:white;checkmark:black"
                         }]
                     },
-                    iconBadges,
                     "iconSize": "40,40,center"
                 }
             ]

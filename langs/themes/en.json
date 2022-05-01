@@ -43,7 +43,7 @@
                 "presets": {
                     "0": {
                         "description": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
-                        "title": "camper site"
+                        "title": "a camper site"
                     }
                 },
                 "tagRenderings": {
@@ -98,10 +98,10 @@
                     "caravansites-long-term": {
                         "mappings": {
                             "0": {
-                                "then": "Yes, there are some spots for long term rental, but you can also stay on a daily basis"
+                                "then": "There are some spots for long term rental, but you can also stay on a daily basis"
                             },
                             "1": {
-                                "then": "No, there are no permanent guests here"
+                                "then": "There are no permanent guests here"
                             },
                             "2": {
                                 "then": "It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)"
@@ -155,7 +155,7 @@
                 "presets": {
                     "0": {
                         "description": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
-                        "title": "sanitary dump station"
+                        "title": "a sanitary dump station"
                     }
                 },
                 "tagRenderings": {
@@ -271,326 +271,52 @@
         "descriptionTail": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
         "layers": {
             "0": {
-                "description": "A climbing club or organisation",
-                "name": "Climbing club",
-                "presets": {
-                    "0": {
-                        "description": "A climbing club",
-                        "title": "Climbing club"
-                    },
-                    "1": {
-                        "description": "An NGO working around climbing",
-                        "title": "Climbing NGO"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "What is the name of this climbing club or NGO?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
+                "override": {
+                    "tagRenderings+": {
                         "0": {
-                            "then": "Climbing NGO"
-                        }
-                    },
-                    "render": "Climbing club"
-                }
-            },
-            "1": {
-                "description": "A climbing gym",
-                "name": "Climbing gyms",
-                "tagRenderings": {
-                    "name": {
-                        "question": "What is the name of this climbing gym?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Climbing gym <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Climbing gym"
-                }
-            },
-            "2": {
-                "name": "Climbing routes",
-                "presets": {
-                    "0": {
-                        "title": "Climbing route"
-                    }
-                },
-                "tagRenderings": {
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "This route is not bolted"
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Publicly accessible to anyone"
+                                },
+                                "1": {
+                                    "then": "You need a permit to access here"
+                                },
+                                "2": {
+                                    "then": "Only customers"
+                                },
+                                "3": {
+                                    "then": "Only club members"
+                                }
                             },
-                            "1": {
-                                "then": "This route is not bolted"
+                            "question": "Who can access here?"
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " meter"
+                                },
+                                "1": {
+                                    "human": " feet"
+                                }
                             }
-                        },
-                        "question": "How many bolts does this route have before reaching the anchor?",
-                        "render": "This route has {climbing:bolts} bolts"
-                    },
-                    "Difficulty": {
-                        "question": "What is the grade of this climbing route according to the french/belgian system?",
-                        "render": "The grade is {climbing:grade:french} according to the french/belgian system"
-                    },
-                    "Length": {
-                        "question": "How long is this climbing route (in meters)?",
-                        "render": "This route is {canonical(climbing:length)} long"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "This climbing route doesn't have a name"
-                            }
-                        },
-                        "question": "What is the name of this climbing route?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "Rock type": {
-                        "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Climbing route <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Climbing route"
-                }
-            },
-            "3": {
-                "description": "A climbing opportunity",
-                "name": "Climbing opportunities",
-                "presets": {
-                    "0": {
-                        "description": "A climbing opportunity",
-                        "title": "Climbing opportunity"
-                    }
-                },
-                "tagRenderings": {
-                    "Contained routes hist": {
-                        "render": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}"
-                    },
-                    "Contained routes length hist": {
-                        "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
-                    },
-                    "Contained_climbing_routes": {
-                        "render": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
-                    },
-                    "Rock type (crag/rock/cliff only)": {
-                        "mappings": {
-                            "0": {
-                                "then": "Limestone"
-                            }
-                        },
-                        "question": "What is the rock type here?",
-                        "render": "The rock type is {rock}"
-                    },
-                    "Type": {
-                        "mappings": {
-                            "0": {
-                                "then": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
-                            },
-                            "1": {
-                                "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
-                            }
-                        }
-                    },
-                    "name": {
-                        "mappings": {
-                            "0": {
-                                "then": "This climbing opportunity doesn't have a name"
-                            }
-                        },
-                        "question": "What is the name of this climbing opportunity?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Climbing crag <b>{name}</b>"
-                        },
-                        "1": {
-                            "then": "Climbing area <b>{name}</b>"
-                        },
-                        "2": {
-                            "then": "Climbing site"
-                        },
-                        "3": {
-                            "then": "Climbing opportunity <b>{name}</b>"
-                        }
-                    },
-                    "render": "Climbing opportunity"
-                }
-            },
-            "4": {
-                "description": "A climbing opportunity?",
-                "name": "Climbing opportunities?",
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "climbing-possible": {
-                        "mappings": {
-                            "0": {
-                                "then": "Climbing is not possible here"
-                            },
-                            "1": {
-                                "then": "Climbing is possible here"
-                            },
-                            "2": {
-                                "then": "Climbing is not possible here"
-                            }
-                        },
-                        "question": "Is climbing possible here?"
-                    }
-                },
-                "title": {
-                    "render": "Climbing opportunity?"
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
-                        },
-                        "1": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
-                        },
-                        "2": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
-                        },
-                        "3": {
-                            "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
-                        }
-                    }
-                },
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Publicly accessible to anyone"
-                        },
-                        "1": {
-                            "then": "You need a permit to access here"
-                        },
-                        "2": {
-                            "then": "Only customers"
-                        },
-                        "3": {
-                            "then": "Only club members"
-                        }
-                    },
-                    "question": "Who can access here?"
-                },
-                "4": {
-                    "question": "What is the (average) length of the routes in meters?",
-                    "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
-                },
-                "5": {
-                    "question": "What is the grade of the easiest route here, according to the french classification system?",
-                    "render": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system"
-                },
-                "6": {
-                    "question": "What is the highest grade route here, according to the french classification system?",
-                    "render": "The highest grade is {climbing:grade:french:max} according to the french/belgian system"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "Bouldering is possible here"
-                        },
-                        "1": {
-                            "then": "Bouldering is not possible here"
-                        },
-                        "2": {
-                            "then": "Bouldering is possible, allthough there are only a few routes"
-                        },
-                        "3": {
-                            "then": "There are {climbing:boulder} boulder routes"
-                        }
-                    },
-                    "question": "Is bouldering possible here?"
-                },
-                "8": {
-                    "mappings": {
-                        "0": {
-                            "then": "Toprope climbing is possible here"
-                        },
-                        "1": {
-                            "then": "Toprope climbing is not possible here"
-                        },
-                        "2": {
-                            "then": "There are {climbing:toprope} toprope routes"
-                        }
-                    },
-                    "question": "Is toprope climbing possible here?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Sport climbing is possible here"
-                        },
-                        "1": {
-                            "then": "Sport climbing is not possible here"
-                        },
-                        "2": {
-                            "then": "There are {climbing:sport} sport climbing routes"
-                        }
-                    },
-                    "question": "Is sport climbing possible here on fixed anchors?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "Traditional climbing is possible here"
-                        },
-                        "1": {
-                            "then": "Traditional climbing is not possible here"
-                        },
-                        "2": {
-                            "then": "There are {climbing:traditional} traditional climbing routes"
-                        }
-                    },
-                    "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "There is a speed climbing wall"
-                        },
-                        "1": {
-                            "then": "There is no speed climbing wall"
-                        },
-                        "2": {
-                            "then": "There are {climbing:speed} speed climbing walls"
-                        }
-                    },
-                    "question": "Is there a speed climbing wall?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " meter"
-                        },
-                        "1": {
-                            "human": " feet"
                         }
                     }
                 }
@@ -739,6 +465,26 @@
                 "override": {
                     "=name": "Education institutions without etymology information"
                 }
+            },
+            "4": {
+                "override": {
+                    "=name": "Cultural places without etymology information"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Toursistic places without etymology information"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Health and social places without etymology information"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Sport places without etymology information"
+                }
             }
         },
         "shortDescription": "What is the origin of a toponym?",
@@ -753,7 +499,7 @@
                 "presets": {
                     "0": {
                         "description": "Add a facade garden",
-                        "title": "facade garden"
+                        "title": "a facade garden"
                     }
                 },
                 "tagRenderings": {
@@ -859,6 +605,17 @@
                         "question": "What kind of building is this?"
                     }
                 }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Did not yet calculate the metatags... Reopen this popup"
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -875,78 +632,13 @@
     },
     "hackerspaces": {
         "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
-        "layers": {
-            "0": {
-                "description": "Hackerspace",
-                "name": "Hackerspace",
-                "presets": {
-                    "0": {
-                        "description": "A hackerspace is an area where people interested in software gather",
-                        "title": "Hackerspace"
-                    },
-                    "1": {
-                        "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
-                        "title": "Makerspace"
-                    }
-                },
-                "tagRenderings": {
-                    "hackerspaces-name": {
-                        "question": "What is the name of this hackerspace?",
-                        "render": "This hackerspace is named <b>{name}</b>"
-                    },
-                    "hackerspaces-opening_hours": {
-                        "mappings": {
-                            "0": {
-                                "then": "Opened 24/7"
-                            }
-                        },
-                        "question": "When is this hackerspace opened?",
-                        "render": "{opening_hours_table()}"
-                    },
-                    "hackerspaces-start_date": {
-                        "question": "When was this hackerspace founded?",
-                        "render": "This hackerspace was founded at {start_date}"
-                    },
-                    "hs-club-mate": {
-                        "mappings": {
-                            "0": {
-                                "then": "This hackerspace serves club mate"
-                            },
-                            "1": {
-                                "then": "This hackerspace does not serve club mate"
-                            }
-                        },
-                        "question": "Does this hackerspace serve Club Mate?"
-                    },
-                    "is_makerspace": {
-                        "mappings": {
-                            "0": {
-                                "then": "This is a makerspace"
-                            },
-                            "1": {
-                                "then": "This is a traditional (software oriented) hackerspace"
-                            }
-                        },
-                        "question": "Is this a hackerspace or a makerspace?"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": " {name}"
-                        }
-                    },
-                    "render": "Hackerspace"
-                }
-            }
-        },
         "shortDescription": "A map of hackerspaces",
         "title": "Hackerspaces"
     },
     "hailhydrant": {
         "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
-        "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations."
+        "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations"
     },
     "mapcomplete-changes": {
         "description": "This maps shows all the changes made with MapComplete",
@@ -1031,71 +723,6 @@
     },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
-        "layers": {
-            "0": {
-                "name": "wind turbine",
-                "presets": {
-                    "0": {
-                        "title": "wind turbine"
-                    }
-                },
-                "tagRenderings": {
-                    "turbine-diameter": {
-                        "question": "What is the rotor diameter of this wind turbine, in metres?",
-                        "render": "The rotor diameter of this wind turbine is {rotor:diameter} metres."
-                    },
-                    "turbine-height": {
-                        "question": "What is the total height of this wind turbine (including rotor radius), in metres?",
-                        "render": "The total height (including rotor radius) of this wind turbine is {height} metres."
-                    },
-                    "turbine-operator": {
-                        "question": "Who operates this wind turbine?",
-                        "render": "This wind turbine is operated by {operator}."
-                    },
-                    "turbine-output": {
-                        "question": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
-                        "render": "The power output of this wind turbine is {generator:output:electricity}."
-                    },
-                    "turbine-start-date": {
-                        "question": "When did this wind turbine go into operation?",
-                        "render": "This wind turbine went into operation on/in {start_date}."
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "wind turbine"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " megawatts"
-                            },
-                            "1": {
-                                "human": " kilowatts"
-                            },
-                            "2": {
-                                "human": " watts"
-                            },
-                            "3": {
-                                "human": " gigawatts"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " meter"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "title": "OpenWindPowerMap"
     },
     "parkings": {
@@ -1106,6 +733,35 @@
     "personal": {
         "description": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
         "title": "Personal theme"
+    },
+    "pets": {
+        "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Dog friendly eateries"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "dog-friendly shop",
+                    "title": {
+                        "render": "dog-friendly shop"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "A shop whery you can bring a dog almost everywhere",
+                            "title": "dog-friendly shop"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Veterinarians, dog parks and other pet-amenities"
     },
     "playgrounds": {
         "description": "On this map, you find playgrounds and can add more information",
@@ -1144,7 +800,7 @@
                 "name": "Postboxes",
                 "presets": {
                     "0": {
-                        "title": "postbox"
+                        "title": "a postbox"
                     }
                 },
                 "title": {
@@ -1173,7 +829,7 @@
                 "name": "Post offices",
                 "presets": {
                     "0": {
-                        "title": "Post Office"
+                        "title": "a post office"
                     }
                 },
                 "tagRenderings": {

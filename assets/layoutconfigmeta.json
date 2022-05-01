@@ -166,7 +166,44 @@
     "path": [
       "layers"
     ],
-    "type": "array"
+    "type": [
+      {
+        "$ref": "#/definitions/LayerConfigJson"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "builtin": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "override": {},
+          "hideTagRenderingsWithLabels": {
+            "description": "TagRenderings with any of these labels will be removed from the layer.\nNote that the 'id' and 'group' are considered labels too",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "builtin",
+          "override"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
   },
   {
     "path": [
@@ -348,13 +385,6 @@
     "path": [
       "layers",
       "isShown",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
       "condition"
     ],
     "type": [
@@ -382,67 +412,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -528,50 +497,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "isShown",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -658,13 +583,6 @@
     "path": [
       "layers",
       "title",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "title",
       "condition"
     ],
     "type": [
@@ -692,67 +610,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -838,50 +695,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "title",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -961,13 +774,6 @@
     "path": [
       "layers",
       "titleIcons",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
       "condition"
     ],
     "type": [
@@ -995,67 +801,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -1145,46 +890,29 @@
   {
     "path": [
       "layers",
-      "titleIcons",
-      "mappings",
-      "hideInAnswer"
+      "mapRendering"
     ],
     "type": [
       {
-        "$ref": "#/definitions/AndOrTagConfigJson"
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/default_4"
+            },
+            {
+              "$ref": "#/definitions/default_5"
+            },
+            {
+              "$ref": "#/definitions/default<default|default|default[]|default[]>"
+            }
+          ]
+        }
       },
       {
-        "type": [
-          "string",
-          "boolean"
-        ]
+        "type": "null"
       }
     ]
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "titleIcons",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -1266,14 +994,6 @@
       "layers",
       "mapRendering",
       "icon",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
       "condition"
     ],
     "type": [
@@ -1303,74 +1023,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -1462,53 +1114,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "icon",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -1590,15 +1195,6 @@
       "mapRendering",
       "iconBadges",
       "then",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
       "condition"
     ],
     "type": [
@@ -1630,81 +1226,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -1802,56 +1323,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconBadges",
-      "then",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -1917,14 +1388,6 @@
       "layers",
       "mapRendering",
       "iconSize",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
       "condition"
     ],
     "type": [
@@ -1954,74 +1417,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -2113,53 +1508,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "iconSize",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -2225,14 +1573,6 @@
       "layers",
       "mapRendering",
       "rotation",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
       "condition"
     ],
     "type": [
@@ -2262,74 +1602,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -2421,53 +1693,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "rotation",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -2533,14 +1758,6 @@
       "layers",
       "mapRendering",
       "label",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
       "condition"
     ],
     "type": [
@@ -2570,74 +1787,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -2729,53 +1878,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "label",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -2848,14 +1950,6 @@
       "layers",
       "mapRendering",
       "color",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
       "condition"
     ],
     "type": [
@@ -2885,74 +1979,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -3044,53 +2070,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "color",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -3159,14 +2138,6 @@
       "layers",
       "mapRendering",
       "width",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
       "condition"
     ],
     "type": [
@@ -3196,74 +2167,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -3355,53 +2258,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "width",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -3467,14 +2323,6 @@
       "layers",
       "mapRendering",
       "dashArray",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
       "condition"
     ],
     "type": [
@@ -3504,74 +2352,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -3663,53 +2443,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "dashArray",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -3775,14 +2508,6 @@
       "layers",
       "mapRendering",
       "lineCap",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
       "condition"
     ],
     "type": [
@@ -3812,74 +2537,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -3971,53 +2628,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "lineCap",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -4087,14 +2697,6 @@
       "layers",
       "mapRendering",
       "fill",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
       "condition"
     ],
     "type": [
@@ -4124,74 +2726,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -4283,53 +2817,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fill",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -4395,14 +2882,6 @@
       "layers",
       "mapRendering",
       "fillColor",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
       "condition"
     ],
     "type": [
@@ -4432,74 +2911,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -4591,53 +3002,6 @@
       "class"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "mappings",
-      "hideInAnswer"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": [
-          "string",
-          "boolean"
-        ]
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "mappings",
-      "ifnot"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "fillColor",
-      "mappings",
-      "addExtraTags"
-    ],
-    "type": "array"
   },
   {
     "path": [
@@ -4703,14 +3067,6 @@
       "layers",
       "mapRendering",
       "offset",
-      "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
       "condition"
     ],
     "type": [
@@ -4740,74 +3096,6 @@
       "key"
     ],
     "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "freeform",
-      "type"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "freeform",
-      "placeholder"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "freeform",
-      "helperArgs"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "freeform",
-      "addExtraTags"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "freeform",
-      "inline"
-    ],
-    "type": "boolean"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "freeform",
-      "default"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "mapRendering",
-      "offset",
-      "multiAnswer"
-    ],
-    "type": "boolean"
   },
   {
     "path": [
@@ -4903,20 +3191,41 @@
   {
     "path": [
       "layers",
-      "mapRendering",
-      "offset",
-      "mappings",
-      "hideInAnswer"
+      "mapRendering"
     ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "location"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon"
+    ],
+    "typeHint": "icon",
     "type": [
       {
-        "$ref": "#/definitions/AndOrTagConfigJson"
+        "$ref": "#/definitions/TagRenderingConfigJson"
       },
       {
-        "type": [
-          "string",
-          "boolean"
-        ]
+        "type": "string"
       }
     ]
   },
@@ -4924,9 +3233,58 @@
     "path": [
       "layers",
       "mapRendering",
-      "offset",
-      "mappings",
-      "ifnot"
+      "renderings",
+      "icon"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "condition"
     ],
     "type": [
       {
@@ -4941,11 +3299,4817 @@
     "path": [
       "layers",
       "mapRendering",
-      "offset",
-      "mappings",
-      "addExtraTags"
+      "renderings",
+      "icon",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings"
     ],
     "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "number"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "color",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": [
+          "string",
+          "number"
+        ]
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "width",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "dashArray",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "lineCap",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fill",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "fillColor",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "offset",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "location"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "icon",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconBadges",
+      "then",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "iconSize",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "rotation",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/TagRenderingConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "freeform"
+    ],
+    "type": "object"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "freeform",
+      "key"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "if"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "then"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "icon"
+    ],
+    "typeHint": "icon",
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "The path to the icon\nType: icon",
+            "type": "string"
+          },
+          "class": {
+            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "class",
+          "path"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "icon",
+      "path"
+    ],
+    "typeHint": "icon",
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "mapRendering",
+      "renderings",
+      "label",
+      "mappings",
+      "icon",
+      "class"
+    ],
+    "type": "string"
   },
   {
     "path": [
@@ -5099,7 +8263,30 @@
       "layers",
       "tagRenderings"
     ],
-    "type": "array"
+    "type": [
+      {
+        "$ref": "#/definitions/QuestionableTagRenderingConfigJson"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "builtin": {
+            "type": "string"
+          },
+          "override": {}
+        },
+        "required": [
+          "builtin",
+          "override"
+        ]
+      },
+      {
+        "$ref": "#/definitions/default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:any;})[]>"
+      },
+      {
+        "type": "string"
+      }
+    ]
   },
   {
     "path": [
@@ -5112,54 +8299,7 @@
     "path": [
       "layers",
       "tagRenderings",
-      "id"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "group"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "labels"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "render"
-    ],
-    "typeHint": "rendered"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
       "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "condition"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
     ]
   },
   {
@@ -5169,15 +8309,6 @@
       "freeform"
     ],
     "type": "object"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "freeform",
-      "key"
-    ],
-    "type": "string"
   },
   {
     "path": [
@@ -5253,22 +8384,6 @@
       "layers",
       "tagRenderings",
       "mappings",
-      "if"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "mappings",
       "then"
     ],
     "typeHint": "rendered"
@@ -5286,11 +8401,11 @@
         "type": "object",
         "properties": {
           "path": {
-            "description": "The path to the icon\nType: icon",
+            "description": "The path to the  icon\nType: icon",
             "type": "string"
           },
           "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "description": "Size of the image",
             "type": "string"
           }
         },
@@ -5368,6 +8483,60 @@
       "addExtraTags"
     ],
     "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings"
+    ],
+    "type": "object"
   },
   {
     "path": [
@@ -5382,59 +8551,7 @@
       "layers",
       "tagRenderings",
       "renderings",
-      "id"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "group"
-    ],
-    "type": "string"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "labels"
-    ],
-    "type": "array"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "render"
-    ],
-    "typeHint": "rendered"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
       "question"
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "condition"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
     ]
   },
   {
@@ -5445,16 +8562,6 @@
       "freeform"
     ],
     "type": "object"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "freeform",
-      "key"
-    ],
-    "type": "string"
   },
   {
     "path": [
@@ -5539,23 +8646,6 @@
       "tagRenderings",
       "renderings",
       "mappings",
-      "if"
-    ],
-    "type": [
-      {
-        "$ref": "#/definitions/AndOrTagConfigJson"
-      },
-      {
-        "type": "string"
-      }
-    ]
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "mappings",
       "then"
     ],
     "typeHint": "rendered"
@@ -5574,11 +8664,11 @@
         "type": "object",
         "properties": {
           "path": {
-            "description": "The path to the icon\nType: icon",
+            "description": "The path to the  icon\nType: icon",
             "type": "string"
           },
           "class": {
-            "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+            "description": "Size of the image",
             "type": "string"
           }
         },
@@ -5661,6 +8751,58 @@
       "addExtraTags"
     ],
     "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "id"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "group"
+    ],
+    "type": "string"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "labels"
+    ],
+    "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "render"
+    ],
+    "typeHint": "rendered"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "condition"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/AndOrTagConfigJson"
+      },
+      {
+        "type": "string"
+      }
+    ]
   },
   {
     "path": [
@@ -5702,6 +8844,16 @@
       "options"
     ],
     "type": "array"
+  },
+  {
+    "path": [
+      "layers",
+      "filter",
+      "options",
+      "fields",
+      "name"
+    ],
+    "type": "string"
   },
   {
     "path": [

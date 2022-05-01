@@ -26,6 +26,22 @@
     "sources": []
   },
   {
+    "path": "SocialImageTemplate.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "SocialImageTemplateWide.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "generic_osm_background.png",
     "license": "CC-BY-SA",
     "authors": [

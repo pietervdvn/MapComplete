@@ -3,7 +3,8 @@
   "name": {
     "nl": "Eetgelegenheden",
     "en": "Restaurants and fast food",
-    "de": "Restaurants und Fast Food"
+    "de": "Restaurants und Fast Food",
+    "da": "Restauranter og fastfood"
   },
   "source": {
     "osmTags": {
@@ -17,10 +18,11 @@
   "presets": [
     {
       "title": {
-        "en": "restaurant",
-        "nl": "restaurant",
+        "en": "a restaurant",
+        "nl": "een restaurant",
         "ru": "ресторан",
-        "de": "Restaurant"
+        "de": "eine restaurant",
+        "ca": "un restaurant"
       },
       "tags": [
         "amenity=restaurant"
@@ -36,10 +38,11 @@
     },
     {
       "title": {
-        "en": "fastfood",
-        "nl": "fastfood-zaak",
+        "en": "a fastfood",
+        "nl": "een fastfood-zaak",
         "ru": "быстрое питание",
-        "de": "Schnellimbiss"
+        "de": "eine schnellimbiss",
+        "ca": "un de menjar ràpid"
       },
       "tags": [
         "amenity=fast_food"
@@ -55,16 +58,16 @@
     },
     {
       "title": {
-        "en": "fries shop",
-        "nl": "frituur",
-        "de": "Pommesbude"
+        "en": "a fries shop",
+        "nl": "een frituur",
+        "de": "eine pommesbude"
       },
       "tags": [
         "amenity=fast_food",
         "cuisine=friture"
       ],
       "description": {
-        "en": "A fastfood-buisiness focused on french fries",
+        "en": "A fastfood-business focused on french fries",
         "nl": "Een fastfood-zaak waar je frieten koopt"
       },
       "preciseInput": {
@@ -75,7 +78,9 @@
   "title": {
     "render": {
       "en": "Restaurant",
-      "nl": "Eetgelegenheid"
+      "nl": "Eetgelegenheid",
+      "ca": "Restaurant",
+      "de": "Restaurant"
     },
     "mappings": [
       {
@@ -88,7 +93,8 @@
         "then": {
           "nl": "Restaurant <i>{name}</i>",
           "en": "Restaurant <i>{name}</i>",
-          "de": "Restaurant <i>{name}</i>"
+          "de": "Restaurant <i>{name}</i>",
+          "ca": "Restaurant <i>{name}</i>"
         }
       },
       {
@@ -101,7 +107,8 @@
         "then": {
           "nl": "Fastfood-zaak <i>{name}</i>",
           "en": "Fastfood <i>{name}</i>",
-          "de": "Schnellrestaurant<i>{name}</i>"
+          "de": "Schnellrestaurant<i>{name}</i>",
+          "ca": "Lloc de menjar ràpid <i>{name}</i>"
         }
       },
       {
@@ -113,7 +120,8 @@
         "then": {
           "nl": "Fastfood-zaak",
           "en": "Fastfood",
-          "de": "Schnellrestaurant"
+          "de": "Schnellrestaurant",
+          "ca": "Menjar ràpid"
         }
       }
     ]
@@ -353,7 +361,7 @@
         {
           "if": "diet:vegetarian=yes",
           "then": {
-            "en": "No vegetarian options are available",
+            "en": "Vegetarian options are available",
             "nl": "Vegetarische opties zijn beschikbaar"
           }
         },
@@ -454,7 +462,8 @@
       "question": {
         "en": "Does this fries shop have vegetarian snacks?",
         "nl": "Heeft deze frituur vegetarische snacks?",
-        "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
+        "fr": "Cette friterie est-elle équipée de snacks végétariens ?",
+        "de": "Hat dieser Frittenladen vegetarische Snacks?"
       },
       "mappings": [
         {
@@ -602,7 +611,8 @@
           "question": {
             "en": "Opened now",
             "nl": "Nu geopened",
-            "de": "Aktuell geöffnet"
+            "de": "Aktuell geöffnet",
+            "ca": "Obert ara"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -615,7 +625,7 @@
           "question": {
             "en": "Has a vegetarian menu",
             "nl": "Heeft een vegetarisch menu",
-            "de": "Hat vegetarische Speisen"
+            "de": "Vegetarische Gerichte im Angebot"
           },
           "osmTags": {
             "or": [
@@ -635,7 +645,7 @@
           "question": {
             "en": "Has a vegan menu",
             "nl": "Heeft een veganistisch menu",
-            "de": "Bietet vegan Speisen an"
+            "de": "Vegane Gerichte im Angebot"
           },
           "osmTags": {
             "or": [
@@ -653,13 +663,36 @@
           "question": {
             "en": "Has a halal menu",
             "nl": "Heeft een halal menu",
-            "de": "Hat halal Speisen"
+            "de": "Halal Gerichte im Angebot",
+            "da": "Har en halalmenu"
           },
           "osmTags": {
             "or": [
               "diet:halal=yes",
               "diet:halal=only"
             ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "accepts-cash",
+      "options": [
+        {
+          "osmTags": "payment:cash=yes",
+          "question": {
+            "en": "Accepts cash"
+          }
+        }
+      ]
+    },
+    {
+      "id": "accepts-cards",
+      "options": [
+        {
+          "osmTags": "payment:cards=yes",
+          "question": {
+            "en": "Accepts payment cards"
           }
         }
       ]
@@ -671,7 +704,16 @@
         "amenity=",
         "disused:amenity:={amenity}"
       ]
-    }
+    },
+    "extraDeleteReasons": [
+      {
+        "explanation": {
+          "nl": "{title()} is permanent gestopt",
+          "en": "{title()} has closed down permanently"
+        },
+        "changesetMessage": "shop_closed"
+      }
+    ]
   },
   "allowMove": true,
   "mapRendering": [
@@ -726,6 +768,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
+    "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
+    "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)"
   }
 }

@@ -382,6 +382,14 @@
     ]
   },
   {
+    "path": "duplicate.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "envelope.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -908,6 +916,16 @@
     ]
   },
   {
+    "path": "party.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
     "path": "payment_card.svg",
     "license": "CC0",
     "authors": [
@@ -1131,6 +1149,16 @@
   },
   {
     "path": "speech_bubble.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji"
+    ],
+    "sources": [
+      "https://github.com/twitter/twemoji"
+    ]
+  },
+  {
+    "path": "speech_bubble_black_outline.svg",
     "license": "CC-BY 4.0",
     "authors": [
       "Twemoji"

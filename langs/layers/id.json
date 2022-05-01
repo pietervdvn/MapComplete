@@ -11,7 +11,25 @@
                     "0": {
                         "then": "Bangunan ini tidak memiliki nomor rumah"
                     }
-                }
+                },
+                "question": "Berapa nomor rumah ini?",
+                "render": "Nomor rumah ini <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Alamat ini di jalan apa?",
+                "render": "Alamat ini ada di jalan <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Alamat yang diketahui"
+        }
+    },
+    "ambulancestation": {
+        "name": "Peta stasiun ambulans",
+        "presets": {
+            "0": {
+                "description": "Tambahkan stasiun ambulans ke peta",
+                "title": "Stasiun ambulans"
             }
         }
     },
@@ -130,6 +148,34 @@
         "tagRenderings": {
             "bike_shop-website": {
                 "question": "URL {name} apa?"
+            }
+        }
+    },
+    "climbing_area": {
+        "tagRenderings": {
+            "name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_club": {
+        "tagRenderings": {
+            "climbing_club-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_opportunity": {
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_route": {
+        "tagRenderings": {
+            "Name": {
+                "render": "<strong>{name}</strong>"
             }
         }
     },
@@ -377,5 +423,53 @@
     },
     "watermill": {
         "name": "Kincir Air"
+    },
+    "windturbine": {
+        "tagRenderings": {
+            "turbine-operator": {
+                "render": "Turbin angin ini dioperasikan oleh {operator}."
+            },
+            "turbine-output": {
+                "question": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
+                "render": "Output daya dari turbin angin ini adalah {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Kapan turbin angin ini mulai beroperasi?",
+                "render": "Turbin angin ini mulai beroperasi pada/dalam {start_date}."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "turbin angin"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawat"
+                    },
+                    "1": {
+                        "human": " kilowat"
+                    },
+                    "2": {
+                        "human": " watt"
+                    },
+                    "3": {
+                        "human": " gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
     }
 }

@@ -6,7 +6,8 @@
     "fr": "Toilettes",
     "nl": "Toiletten",
     "ru": "Туалеты",
-    "it": "Servizi igienici"
+    "it": "Servizi igienici",
+    "ca": "Lavabos"
   },
   "minzoom": 12,
   "source": {
@@ -19,18 +20,19 @@
       "fr": "Toilettes",
       "nl": "Toilet",
       "ru": "Туалет",
-      "it": "Servizi igienici"
+      "it": "Servizi igienici",
+      "ca": "Lavabo"
     }
   },
   "presets": [
     {
       "title": {
-        "en": "public toilet",
-        "de": "öffentlich zugängliche Toilette",
-        "fr": "toilette publique",
-        "nl": "publiek toilet",
+        "en": "a public toilet",
+        "de": "eine öffentlich zugängliche toilette",
+        "fr": "une toilette publique",
+        "nl": "een publiek toilet",
         "ru": "общественный туалет ",
-        "it": "servizi igienici aperti al pubblico"
+        "it": "una servizi igienici aperti al pubblico"
       },
       "tags": [
         "amenity=toilets"
@@ -38,11 +40,11 @@
     },
     {
       "title": {
-        "en": "toilets with wheelchair accessible toilet",
-        "de": "toiletten mit rollstuhlgerechter Toilette",
-        "fr": "toilettes accessible aux personnes à mobilité réduite",
-        "nl": "rolstoeltoegankelijke, publiek toilet",
-        "it": "servizi igienici accessibili per persone in sedia a rotelle",
+        "en": "a toilets with wheelchair accessible toilet",
+        "de": "eine toiletten mit rollstuhlgerechter toilette",
+        "fr": "une toilettes accessible aux personnes à mobilité réduite",
+        "nl": "een rolstoeltoegankelijke, publiek toilet",
+        "it": "una servizi igienici accessibili per persone in sedia a rotelle",
         "ru": "tуалет с доступом для пользователей кресел-колясок"
       },
       "tags": [
@@ -207,7 +209,8 @@
       "id": "Opening-hours",
       "question": {
         "en": "When are these toilets opened?",
-        "nl": "Wanneer zijn deze toiletten open?"
+        "nl": "Wanneer zijn deze toiletten open?",
+        "de": "Wann sind diese Toiletten geöffnet?"
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -219,7 +222,8 @@
           "if": "opening_hours=24/7",
           "then": {
             "en": "Opened 24/7",
-            "nl": "Altijd open"
+            "nl": "Altijd open",
+            "de": "Durchgehend geöffnet"
           }
         }
       ]
@@ -443,7 +447,8 @@
           "if": "toilets:paper_supplied=yes",
           "then": {
             "en": "This toilet is equipped with toilet paper",
-            "nl": "Deze toilet is voorzien van toiletpapier"
+            "nl": "Deze toilet is voorzien van toiletpapier",
+            "de": "Diese Toilette ist mit Toilettenpapier ausgestattet"
           }
         },
         {
@@ -486,7 +491,7 @@
           "question": {
             "en": "Has a changing table",
             "nl": "Heeft een luiertafel",
-            "de": "Hat einen Wickeltisch"
+            "de": "Wickeltisch vorhanden"
           },
           "osmTags": "changing_table=yes"
         }
@@ -517,7 +522,8 @@
         {
           "question": {
             "nl": "Nu geopened",
-            "en": "Opened now"
+            "en": "Opened now",
+            "de": "Derzeit geöffnet"
           },
           "osmTags": {
             "or": [
@@ -576,6 +582,7 @@
   ],
   "description": {
     "en": "A layer showing (public) toilets",
-    "nl": "Een laag die publieke toiletten toont"
+    "nl": "Een laag die publieke toiletten toont",
+    "de": "Eine Ebene mit (öffentlichen) Toiletten"
   }
 }

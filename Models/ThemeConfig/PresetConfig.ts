@@ -2,7 +2,7 @@ import {Translation} from "../../UI/i18n/Translation";
 import {Tag} from "../../Logic/Tags/Tag";
 
 export interface PreciseInput {
-    preferredBackground?: string[],
+    preferredBackground?: ("map" | "photo" | "osmbasedmap" | "historicphoto" | string)[],
     snapToLayers?: string[],
     maxSnapDistance?: number
 }

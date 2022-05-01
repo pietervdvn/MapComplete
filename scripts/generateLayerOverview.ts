@@ -13,21 +13,35 @@ import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingC
 import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import LayerConfigJsonJSC from "../Docs/Schemas/LayerConfigJsonJSC";
+import {Utils} from "../Utils";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
 class LayerOverviewUtils {
 
-    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean }[]) {
+    writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean, mustHaveLanguage: boolean, layers: (LayerConfigJson | string | {builtin})[] }[]) {
         const perId = new Map<string, any>();
         for (const theme of themes) {
+            
+            const keywords : {}[] = []
+            for (const layer of (theme.layers ?? [])) {
+                const l = <LayerConfigJson> layer;
+                keywords.push({"*": l.id})
+                keywords.push(l.title)
+                keywords.push(l.description)
+            }
+            
             const data = {
                 id: theme.id,
                 title: theme.title,
                 shortDescription: theme.shortDescription,
                 icon: theme.icon,
-                hideFromOverview: theme.hideFromOverview
+                hideFromOverview: theme.hideFromOverview,
+                mustHaveLanguage: theme.mustHaveLanguage,
+                keywords: Utils.NoNull(keywords)
             }
             perId.set(theme.id, data);
         }
@@ -73,6 +87,7 @@ class LayerOverviewUtils {
                 continue
             }
             questions[key].id = key;
+            questions[key]["source"] = "shared-questions"
             dict.set(key, <TagRenderingConfigJson>questions[key])
         }
         for (const key in icons["default"]) {
@@ -102,6 +117,9 @@ class LayerOverviewUtils {
             .filter(path => !path.startsWith("./assets/generated"))
         let errCount = 0;
         for (const path of allSvgs) {
+            if(path.indexOf("assets/SocialImageTemplate") >= 0){
+                continue
+            }
             const contents = readFileSync(path, "UTF8")
             if (contents.indexOf("data:image/png;") < 0) {
                 continue;
@@ -151,6 +169,9 @@ class LayerOverviewUtils {
         }
 
         this.checkAllSvgs()
+
+        const green = s => '\x1b[92m' + s + '\x1b[0m'
+        console.log(green("All done!"))
     }
 
     private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {
@@ -198,24 +219,30 @@ class LayerOverviewUtils {
             const themePath = themeInfo.path
 
             new PrevalidateTheme().convertStrict(themeFile, themePath)
-            themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
-
-            if(knownImagePaths === undefined){
-                throw "Could not load known images/licenses"
+            try{
+                
+                themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
+    
+                if(knownImagePaths === undefined){
+                    throw "Could not load known images/licenses"
+                }
+                new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
+                    .convertStrict(themeFile, themePath)
+    
+                this.writeTheme(themeFile)
+                fixed.set(themeFile.id, themeFile)
+            }catch(e){
+                console.error("ERROR: could not prepare theme "+themePath+" due to "+e)
+                throw e;
             }
-            new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
-                .convertStrict(themeFile, themePath)
-
-            this.writeTheme(themeFile)
-            fixed.set(themeFile.id, themeFile)
         }
 
-        this.writeSmallOverview(themeFiles.map(tf => {
-            const t = tf.parsed;
+        this.writeSmallOverview(Array.from(fixed.values()).map(t => {
             return {
                 ...t,
                 hideFromOverview: t.hideFromOverview ?? false,
-                shortDescription: t.shortDescription ?? new Translation(t.description).FirstSentence().translations
+                shortDescription: t.shortDescription ?? new Translation(t.description).FirstSentence().translations,
+                mustHaveLanguage: t.mustHaveLanguage?.length > 0,
             }
         }));
         return fixed;

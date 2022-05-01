@@ -31,9 +31,10 @@ export default class Wikipedia {
 
     public static GetArticle(options: {
         pageName: string,
-        language?: "en" | string
+        language?: "en" | string,
+        firstParagraphOnly?: false | boolean
     }): UIEventSource<{ success: string } | { error: any }> {
-        const key = (options.language ?? "en") + ":" + options.pageName
+        const key = (options.language ?? "en") + ":" + options.pageName + ":" + (options.firstParagraphOnly ?? false)
         const cached = Wikipedia._cache.get(key)
         if (cached !== undefined) {
             return cached
@@ -43,14 +44,21 @@ export default class Wikipedia {
         return v;
     }
 
+    public static getDataUrl(options: {language?: "en" | string, pageName: string}): string{
+        return `https://${options.language ?? "en"}.wikipedia.org/w/api.php?action=parse&format=json&origin=*&prop=text&page=` + options.pageName
+    }
+
+    public static getPageUrl(options: {language?: "en" | string, pageName: string}): string{
+        return `https://${options.language ?? "en"}.wikipedia.org/wiki/` + options.pageName
+    }
+    
     public static async GetArticleAsync(options: {
         pageName: string,
-        language?: "en" | string
+        language?: "en" | string,
+        firstParagraphOnly?: false | boolean
     }): Promise<string> {
 
-        const language = options.language ?? "en"
-        const url = `https://${language}.wikipedia.org/w/api.php?action=parse&format=json&origin=*&prop=text&page=` + options.pageName
-        const response = await Utils.downloadJson(url)
+        const response = await Utils.downloadJson(Wikipedia.getDataUrl(options))
         const html = response["parse"]["text"]["*"];
 
         const div = document.createElement("div")
@@ -73,11 +81,16 @@ export default class Wikipedia {
         const links = Array.from(content.getElementsByTagName("a"))
 
         // Rewrite relative links to absolute links + open them in a new tab
+        const language = options.language ?? "en"
         links.filter(link => link.getAttribute("href")?.startsWith("/") ?? false).forEach(link => {
             link.target = '_blank'
             // note: link.getAttribute("href") gets the textual value, link.href is the rewritten version which'll contain the host for relative paths
             link.href = `https://${language}.wikipedia.org${link.getAttribute("href")}`;
         })
+
+        if (options?.firstParagraphOnly) {
+            return content.getElementsByTagName("p").item(0).innerHTML
+        }
 
         return content.innerHTML
     }

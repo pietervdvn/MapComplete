@@ -1,5 +1,5 @@
 /**
- * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indiciates with what renderConfig it should be rendered.
+ * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indicates with what renderConfig it should be rendered.
  */
 import {UIEventSource} from "../../UIEventSource";
 import {GeoOperations} from "../../GeoOperations";
@@ -11,22 +11,25 @@ export default class RenderingMultiPlexerFeatureSource {
     public readonly features: UIEventSource<(any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined })[]>;
 
     constructor(upstream: FeatureSource, layer: LayerConfig) {
+        
+        const pointRenderObjects: { rendering: PointRenderingConfig, index: number }[] = layer.mapRendering.map((r, i) => ({
+            rendering: r,
+            index: i
+        }))
+        const pointRenderings = pointRenderObjects.filter(r => r.rendering.location.has("point"))
+        const centroidRenderings = pointRenderObjects.filter(r => r.rendering.location.has("centroid"))
+        const projectedCentroidRenderings = pointRenderObjects.filter(r => r.rendering.location.has("projected_centerpoint"))
+        const startRenderings = pointRenderObjects.filter(r => r.rendering.location.has("start"))
+        const endRenderings = pointRenderObjects.filter(r => r.rendering.location.has("end"))
+        const hasCentroid = centroidRenderings.length > 0 || projectedCentroidRenderings.length > 0
+        const lineRenderObjects = layer.lineRendering
+        
         this.features = upstream.features.map(
             features => {
                 if (features === undefined) {
                     return;
                 }
 
-                const pointRenderObjects: { rendering: PointRenderingConfig, index: number }[] = layer.mapRendering.map((r, i) => ({
-                    rendering: r,
-                    index: i
-                }))
-                const pointRenderings = pointRenderObjects.filter(r => r.rendering.location.has("point"))
-                const centroidRenderings = pointRenderObjects.filter(r => r.rendering.location.has("centroid"))
-                const startRenderings = pointRenderObjects.filter(r => r.rendering.location.has("start"))
-                const endRenderings = pointRenderObjects.filter(r => r.rendering.location.has("end"))
-
-                const lineRenderObjects = layer.lineRendering
 
                 const withIndex: (any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined, multiLineStringIndex: number | undefined })[] = [];
 
@@ -55,12 +58,25 @@ export default class RenderingMultiPlexerFeatureSource {
                         }
                     } else {
                         // This is a a line: add the centroids
-                        for (const rendering of centroidRenderings) {
-                            addAsPoint(feat, rendering, GeoOperations.centerpointCoordinates(feat))
+                        let centerpoint: [number, number] = undefined;
+                        let projectedCenterPoint : [number, number] = undefined
+                        if(hasCentroid){
+                            centerpoint  = GeoOperations.centerpointCoordinates(feat)
+                            if(projectedCentroidRenderings.length > 0){
+                                projectedCenterPoint = <[number,number]> GeoOperations.nearestPoint(feat, centerpoint).geometry.coordinates
+                            }
                         }
+                        for (const rendering of centroidRenderings) {
+                            addAsPoint(feat, rendering, centerpoint)
+                        }
+                        
 
                         if (feat.geometry.type === "LineString") {
 
+                            for (const rendering of projectedCentroidRenderings) {
+                                addAsPoint(feat, rendering, projectedCenterPoint)
+                            }
+                            
                             // Add start- and endpoints
                             const coordinates = feat.geometry.coordinates
                             for (const rendering of startRenderings) {
@@ -71,6 +87,10 @@ export default class RenderingMultiPlexerFeatureSource {
                                 addAsPoint(feat, rendering, coordinate)
                             }
 
+                        }else{
+                            for (const rendering of projectedCentroidRenderings) {
+                                addAsPoint(feat, rendering, centerpoint)
+                            }
                         }
 
                         // AT last, add it 'as is' to what we should render 

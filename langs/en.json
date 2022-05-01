@@ -11,6 +11,8 @@
         "delete": "Delete",
         "explanations": {
             "hardDelete": "This point will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
+            "retagNoOtherThemes": "This feature will be reclassified and hidden from this application",
+            "retagOtherThemes": "This feature will be retagged and visible in {othterThemes}",
             "selectReason": "Please, select why this feature should be deleted",
             "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
         },
@@ -19,7 +21,7 @@
         "loading": "Inspecting properties to check if this feature can be deleted.",
         "loginToDelete": "You must be logged in to delete a point",
         "notEnoughExperience": "This point was made by someone else.",
-        "onlyEditedByLoggedInUser": "This point has only be edited by yourself, you can safely delete it.",
+        "onlyEditedByLoggedInUser": "This point has only been edited by yourself, you can safely delete it.",
         "partOfOthers": "This point is part of some way or relation and can not be deleted directly.",
         "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback",
         "reasons": {
@@ -41,7 +43,7 @@
         "about": "Easily edit and add OpenStreetMap for a certain theme",
         "aboutMapcomplete": "<h3>About MapComplete</h3><p>Use it to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete</li><li>The fullscreen version offers info about OpenStreetMap</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new points to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
-            "addNew": "Add a new {category}",
+            "addNew": "Add {category}",
             "addNewMapLabel": "Click here to add a new item",
             "confirmButton": "Add a {category}<br/><div class='alert'>Your addition is visible for everyone</div>",
             "confirmIntro": "<h3>Add a {title}?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
@@ -102,6 +104,8 @@
         "download": {
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",
+            "downloadAsSvg": "Download an SVG of the current map",
+            "downloadAsSvgHelper": "Compatible Inkscape or Adobe Illustrator; will need further processing  ",
             "downloadCSV": "Download visible data as CSV",
             "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Download as GeoJson-file",
@@ -117,6 +121,7 @@
             "title": "Download visible data",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
+        "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
@@ -141,14 +146,18 @@
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
             "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes.",
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
+            "noMatchingThemes": "No themes matched your search criteria",
+            "noSearch": "Show all themes",
             "previouslyHiddenTitle": "Previously visited hidden themes",
             "requestATheme": "If you want a custom-built theme, request it in the issue tracker",
+            "searchForATheme": "Search for a theme",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "The name of this {category} is $$$",
         "next": "Next",
         "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
+        "notValid": "Select a valid value to continue",
         "number": "number",
         "oneSkippedQuestion": "One question is skipped",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
@@ -189,6 +198,7 @@
         "removeLocationHistory": "Delete the location history",
         "returnToTheMap": "Return to the map",
         "save": "Save",
+        "screenToSmall": "Open {theme} in a new window",
         "search": {
             "error": "Something went wrong…",
             "nothing": "Nothing found…",
@@ -198,6 +208,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'Add to home screen' button in the URL bar to do this.",
             "copiedToClipboard": "Link copied to clipboard",
+            "downloadCustomTheme": "Download the configuration for this theme",
+            "downloadCustomThemeHelp": "An experienced contributor can use this file to improve your theme",
             "editThemeDescription": "Add or change questions to this map theme",
             "editThisTheme": "Edit this theme",
             "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
@@ -240,9 +252,14 @@
             "createNewWikidata": "Create a new Wikidata item",
             "doSearch": "Search above to see results",
             "failed": "Loading the Wikipedia entry failed",
+            "fromWikipedia": "From Wikipedia, the free encyclopedia",
             "loading": "Loading Wikipedia...",
             "noResults": "Nothing found for <i>{search}</i>",
             "noWikipediaPage": "This Wikidata item has no corresponding Wikipedia page yet.",
+            "previewbox": {
+                "born": "Born: {value}",
+                "died": "Died: {value}"
+            },
             "searchWikidata": "Search on Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         }
@@ -269,22 +286,99 @@
         "willBePublished": "Your picture will be published "
     },
     "importHelper": {
-        "allAttributesSame": "All features to import have this tag",
-        "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
-        "importFormat": "A text in a note should have the following format in order to be picked up: <br/><div class='literal-code'>[A bit of introduction]<br/>https://mapcomplete.osm.be/[themename].html?[parameters such as lat and lon]#import<br/>[all tags of the feature] </div>",
-        "inspectDataTitle": "Inspect data of {count} features to import",
-        "inspectDidAutoDected": "Layer was chosen automatically",
-        "inspectLooksCorrect": "These values look correct",
-        "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
-        "locked": "You need at least {importHelperUnlock} to use the import helper",
-        "loggedInWith": "You are currently logged in as {name} and have made {csCount} changesets",
-        "loginRequired": "You have to be logged in to continue",
+        "askMetadata": {
+            "downloadGeojson": "Download geojson",
+            "giveDescription": "Please, write a small description for someone who sees the note. A good note describes what the contributor has to do, e.g; <i>There might be a bench here. If you are around, could you please check and indicate if the bench exists or not?</i> (A link to MapComplete will be added automatically)",
+            "giveSource": "What is the source of this data? If 'source' is set in the feature, this value will be ignored",
+            "giveWikilink": "On what wikipage can one find more information about this import?",
+            "intro": "Before adding {count} notes, please provide some extra information.",
+            "orDownload": "Alternatively, you can download the dataset to import directly",
+            "shouldBeOsmWikilink": "Expected a link to a page on wiki.openstreetmap.org",
+            "shouldBeUrl": "Not a valid URL",
+            "shouldNotBeHomepage": "Nope, the home page isn't allowed either. Enter the URL of a proper wikipage documenting your import",
+            "title": "Set metadata"
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "All of the proposed points have (or had) an import note already",
+            "loading": "Fetching notes from OSM",
+            "loadingFailed": "Loading notes failed due to {error}",
+            "mapExplanation": "The red elements on the next map are all the data points from your dataset. There are <b>{length}</b> elements in your dataset.",
+            "noPreviousNotesFound": "No previous import notes found",
+            "nothingNearby": "None of the proposed points have an import note nearby",
+            "someNearby": "{hasNearby} points do have an already existing import note within {distance} meter",
+            "title": "Compare with existing notes",
+            "titleLong": "Compare with already existing 'to-import'-notes",
+            "wontBeImported": "These data points will <i>not</i> be imported and are shown as red dots on the map below"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "I did contact the (local) community about this import",
+            "licenseIsCompatible": "The license of the data to import allows it to be imported into OSM. They are allowed to be redistributed commercially, with only minimal attribution",
+            "readImportGuidelines": "I have read the import guidelines on the OSM wiki",
+            "title": "License and community",
+            "titleLong": "Did you go through the import process?",
+            "wikipageIsMade": "The process is documented on the OSM-wiki (you'll need this link later)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "Cache was expired",
+            "downloadOverpassData": "Download the loaded geojson from overpass",
+            "importCandidatesCount": "The {count} red elements on the following map are all your import candidates.",
+            "loadedDataAge": "Loaded data is from the cache and is {age} old",
+            "mapShowingNearbyIntro": "The following map shows features to import which have an OSM-feature within ",
+            "nearbyWarn": "The {count} red elements on the following map will <b>not</b> be imported!",
+            "nothingLoaded": "No elements are loaded from OpenStreetMap which match the current layer {name}",
+            "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
+            "reloadTheCache": "Clear the cache and query overpass again",
+            "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
+            "states": {
+                "error": "Could not load latest data from overpass due to {error}",
+                "idle": "Checking local storage...",
+                "running": "Querying overpass...",
+                "unexpected": "Unexpected state {state}"
+            },
+            "title": "Compare with existing data",
+            "titleLive": "Live data on OSM",
+            "titleNearby": "Nearby features",
+            "zoomIn": "The live data is shown if the zoomlevel is at least {needed}. The current zoom level is {current}"
+        },
+        "createNotes": {
+            "creating": "Created <b>{count}</b> notes out of {total}",
+            "done": "All {count} notes have been created!",
+            "loading": "Hang on while we are loading...",
+            "openImportViewer": "Inspect the progress of your notes in the 'import_viewer'",
+            "title": "Note creation"
+        },
+        "gotoImportViewer": "Inspect your previous imports",
+        "introduction": {
+            "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
+            "importFormat": "A text in a note should have the following format in order to be picked up",
+            "title": "Introduction"
+        },
+        "login": {
+            "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
+            "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
+            "loginIsCorrect": "<b>{name}</b> is the correct account to create the import notes with.",
+            "loginRequired": "You have to be logged in to continue",
+            "title": "Login",
+            "userAccountTitle": "Select user account"
+        },
         "mapPreview": {
             "autodetected": "The layer was automatically deducted based on the properties",
             "confirm": "The features are on the right location on the map",
             "mismatch": "{count} features did not match the selected layer. Make sure that the tags to indicate the type are present, namely {tags}",
             "selectLayer": "Which layer does this import match with?",
             "title": "Map preview"
+        },
+        "noteParts": {
+            "datasource": "Original data from {source}",
+            "importEasily": "Add this point easily with MapComplete:",
+            "wikilink": "More information about this import can be found at {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "All features to import have this tag",
+            "inspectDataTitle": "Inspect data of {count} features to import",
+            "inspectLooksCorrect": "These values look correct",
+            "someHaveSame": "{count} features to import have this tag, this is {percentage}% of the total",
+            "title": "Inspect attributes"
         },
         "selectFile": {
             "description": "Select a .csv or .geojson file to get started",
@@ -300,11 +394,19 @@
             "noFilesLoaded": "No file is currently loaded",
             "title": "Select file"
         },
-        "selectLayer": "Select a layer...",
-        "someHaveSame": "{count} features to import have this tag, this is {percentage}% of the total",
-        "title": "Import helper",
-        "userAccountTitle": "Select user account",
-        "validateDataTitle": "Validate data"
+        "selectTheme": {
+            "displayNonMatchingCount": "{length} objects dont match any presets",
+            "intro": "All of the following themes will show the import notes. However, the note on OpenStreetMap can link to only one single theme. Choose which theme that the created notes will link to",
+            "misMatch": "Property with key {k} does not have expected value {v}; instead it is {properties}",
+            "missing": "Expected $k}={v}, but it is completely missing",
+            "needsTags": "{title} needs tags {tags}",
+            "noMatchingPresets": "This theme has no presets loaded. As a result, imports won't work here",
+            "notApplicable": "Preset {title} is not applicable:",
+            "title": "Select a theme",
+            "unmatchedTitle": "The following elements don't match any of the presets"
+        },
+        "testMode": "Testmode - won't actually import notes",
+        "title": "Import helper"
     },
     "importInspector": {
         "title": "Inspect and manage import notes"
@@ -355,13 +457,14 @@
         "autoApply": "When changing the attributes {attr_names}, these attributes will automatically be changed on {count} other objects too"
     },
     "notes": {
+        "addAComment": "Add a comment",
         "addComment": "Add comment",
         "addCommentAndClose": "Add comment and close",
         "addCommentPlaceholder": "Add a comment...",
         "anonymous": "Anonymous user",
         "closeNote": "Close note",
         "createNote": "Create a new note",
-        "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers",
+        "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers.",
         "createNoteTitle": "Create a new note here",
         "disableAllNoteFilters": "Disable all filters",
         "isClosed": "This note is resolved",
@@ -377,6 +480,7 @@
         "reopenNote": "Reopen note",
         "reopenNoteAndComment": "Reopen note and comment",
         "textNeeded": "Enter a descriptive text to create a note",
+        "typeText": "Type some text to add a comment",
         "warnAnonymous": "You are not logged in. We won't be able to contact you to resolve your issue."
     },
     "privacy": {
@@ -408,7 +512,7 @@
                 "title": "Survey possibilities"
             },
             "text0": "If an existing MapComplete theme is what you, feel free to use it or embed it on your website. Embedding the public themes is free and always will be.",
-            "text1": "Do you need some other data, but does the theme not exist yet? The MapComplete-developers can <b>build it for you</b> on a decent budget. Get in touch via <a href='mailto:pietervdvn@posteo.net'>email</a>, <a href='https://github.com/pietervdvn/MapComplete/issues'>github</a> or <a href'https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>send a message via osm.org</a>",
+            "text1": "Do you need some other data, but does the theme not exist yet? The MapComplete-developers can <b>build it for you</b> on a decent budget. Get in touch via <a href='mailto:pietervdvn@posteo.net'>email</a>, <a href='https://github.com/pietervdvn/MapComplete/issues'>github</a> or <a href='https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>send a message via osm.org</a>",
             "text2": "If you still feel unsure, the possibilities are outlined below. Additionally, some common questions are answered",
             "title": "Using MapComplete in your organization"
         },
@@ -448,7 +552,7 @@
         "drawbacks": {
             "intro": "While joining this community has tremendous benefits, there are a few topics to carefully consider.",
             "licenseNuances": {
-                "intro": "OpenStreetMap is licensed unter the Open Database License which states that:",
+                "intro": "OpenStreetMap is licensed under the Open Database License which states that:",
                 "li0": "All data can be reused for any purpose - including commercial purposes",
                 "li1": "Applications or products using OpenStreetMap should give a clear copyright notice",
                 "li2": "Any dataset or product which contains OpenStreetMap-data must be republished under ODbL too, including modifications to this dataset and in a usable format.",
@@ -470,7 +574,7 @@
             "unsuitedData": {
                 "intro": "The basic rule for OpenStreetMap is that all data must be <b>verifiable on the ground</b> and are somewhat permanent. This implies that some data <i>cannot</i> be sent to OpenStreetMap directly - but some workarounds exist.",
                 "li0": "Subjective data (such as reviews) are not suited for OpenStreetMap. However, MapComplete has an integration with <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, an openly licensed review website",
-                "li1": "Events of a few days, road works that are planned next month are thus <i>not</i> recorded, neither are road works which only last a few days.",
+                "li1": "Events are <i>not</i> recorded, neither are road works which only last a few days.",
                 "li2": "Temporal data (e.g. statistics of air quality, traffic intensity, ...) can not stored on OpenStreetMap as they are hard to verify by a volunteer. Note that, if this data is available elsewhere, it can still be visualized within MapComplete as extra layer.",
                 "title": "Data not suited for OpenStreetMap"
             }
@@ -520,7 +624,29 @@
         "split": "Split",
         "splitTitle": "Choose on the map where to split this road"
     },
+    "translations": {
+        "activateButton": "Help to translate MapComplete",
+        "allMissing": "No translations yet",
+        "completeness": "Translations for {theme} in {language} are at {percentage}%: {translated} strings out of {total} are translated",
+        "deactivate": "Disable translation buttons",
+        "help": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
+        "isTranslator": "Translation mode is active as your username matches the name of a previous translator",
+        "missing": "{count} untranslated strings",
+        "notImmediate": "Translations are not updated directly. This typically takes a few days"
+    },
     "validation": {
+        "color": {
+            "description": "A color or hexcode"
+        },
+        "date": {
+            "description": "A date, starting with the year"
+        },
+        "decimal": {
+            "description": "A number"
+        },
+        "direction": {
+            "description": "An orientation"
+        },
         "email": {
             "description": "email-adres",
             "feedback": "This is not a valid email address",
@@ -539,6 +665,9 @@
             "mustBeWhole": "Only whole numbers are allowed",
             "notANumber": "Enter a number"
         },
+        "opening_hours": {
+            "description": "Opening hours"
+        },
         "pfloat": {
             "description": "a positive number"
         },
@@ -547,16 +676,22 @@
             "feedback": "This is not a valid phone number"
         },
         "pnat": {
-            "description": "a positive, whone number",
+            "description": "a positive, whole number",
             "noZero": "Zero is not allowed"
         },
         "string": {
+            "description": "a piece of text"
+        },
+        "text": {
             "description": "a piece of text"
         },
         "tooLong": "Text is to long, at most 255 characters are allowed. You do have {count} characters now",
         "url": {
             "description": "link to a website",
             "feedback": "This is not a valid web address"
+        },
+        "wikidata": {
+            "description": "A Wikidata identifier"
         }
     }
 }

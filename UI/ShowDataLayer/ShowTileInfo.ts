@@ -56,7 +56,6 @@ export default class ShowTileInfo {
             leafletMap: options.leafletMap,
             doShowLayer: options.doShowLayer,
             state: State.state,
-            popup: undefined
         })
 
     }

@@ -1,13 +1,13 @@
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../../../Utils";
-import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
 import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
+import {QuestionableTagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 
 
 function colonSplit(value: string): string[] {
-    return value.split(";").map(v => v.replace(/"/g, '').trim().toLowerCase()).filter(s => s !== "");
+    return value.split(";").map(v => v.replace(/"/g, '').trim()).filter(s => s !== "");
 }
 
 function loadCsv(file): {
@@ -57,8 +57,8 @@ function loadCsv(file): {
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: (TagRenderingConfigJson & { "id": string })[] = []
-    const technicalQuestions: (TagRenderingConfigJson & { "id": string })[] = []
+    const questions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
+    const technicalQuestions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -176,7 +176,7 @@ function run(file, protojson) {
             },
             mappings: e.commonVoltages.map(voltage => {
                 return {
-                    if: `socket:${e.key}:voltage=${voltage} V`,
+                    if: `${e.key}:voltage=${voltage} V`,
                     then: {
                         en: `${e.description.get("en")} outputs ${voltage} volt`,
                         nl: `${e.description.get("nl")} heeft een spanning van ${voltage} volt`
@@ -210,7 +210,7 @@ function run(file, protojson) {
             },
             mappings: e.commonCurrents.map(current => {
                 return {
-                    if: `socket:${e.key}:current=${current} A`,
+                    if: `${e.key}:current=${current} A`,
                     then: {
                         en: `${e.description.get("en")} outputs at most ${current} A`,
                         nl: `${e.description.get("nl")} levert een stroom van maximaal ${current} A`
@@ -244,7 +244,7 @@ function run(file, protojson) {
             },
             mappings: e.commonOutputs.map(output => {
                 return {
-                    if: `socket:${e.key}:output=${output}`,
+                    if: `${e.key}:output=${output}`,
                     then: {
                         en: `${e.description.get("en")} outputs at most ${output} A`,
                         nl: `${e.description.get("nl")} levert een vermogen van maximaal ${output} A`

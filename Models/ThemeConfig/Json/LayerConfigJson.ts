@@ -6,6 +6,8 @@ import UnitConfigJson from "./UnitConfigJson";
 import MoveConfigJson from "./MoveConfigJson";
 import PointRenderingConfigJson from "./PointRenderingConfigJson";
 import LineRenderingConfigJson from "./LineRenderingConfigJson";
+import {QuestionableTagRenderingConfigJson} from "./QuestionableTagRenderingConfigJson";
+import RewritableConfigJson from "./RewritableConfigJson";
 
 /**
  * Configuration for a single layer
@@ -40,7 +42,7 @@ export interface LayerConfigJson {
      * Every source _must_ define which tags _must_ be present in order to be picked up.
      *
      */
-    source: 
+    source:
         ({
             /**
              * Every source must set which tags have to be present in order to load the given layer.
@@ -58,40 +60,40 @@ export interface LayerConfigJson {
             */
             overpassScript?: string
         } |
-        {
-            /**
-             * The actual source of the data to load, if loaded via geojson.
-             *
-             * # A single geojson-file
-             * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
-             *  fetches a geojson from a third party source
-             *
-             * # A tiled geojson source
-             * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
-             *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
-             *
-             * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
-             */
-            geoJson: string,
-            /**
-             * To load a tiled geojson layer, set the zoomlevel of the tiles
-             */
-            geoJsonZoomLevel?: number,
-            /**
-             * Indicates that the upstream geojson data is OSM-derived.
-             * Useful for e.g. merging or for scripts generating this cache
-             */
-            isOsmCache?: boolean,
-            /**
-             * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
-             */
-            mercatorCrs?: boolean,
-            /**
-             * Some API's have an id-field, but give it a different name.
-             * Setting this key will rename this field into 'id'
-             */
-            idKey?: string
-        })
+            {
+                /**
+                 * The actual source of the data to load, if loaded via geojson.
+                 *
+                 * # A single geojson-file
+                 * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
+                 *  fetches a geojson from a third party source
+                 *
+                 * # A tiled geojson source
+                 * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
+                 *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
+                 *
+                 * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+                 */
+                geoJson: string,
+                /**
+                 * To load a tiled geojson layer, set the zoomlevel of the tiles
+                 */
+                geoJsonZoomLevel?: number,
+                /**
+                 * Indicates that the upstream geojson data is OSM-derived.
+                 * Useful for e.g. merging or for scripts generating this cache
+                 */
+                isOsmCache?: boolean,
+                /**
+                 * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
+                 */
+                mercatorCrs?: boolean,
+                /**
+                 * Some API's have an id-field, but give it a different name.
+                 * Setting this key will rename this field into 'id'
+                 */
+                idKey?: string
+            })
 
     /**
      *
@@ -174,8 +176,10 @@ export interface LayerConfigJson {
      */
     titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"];
 
-
-    mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson)[]
+    /**
+     * Visualisation of the items on the map
+     */
+    mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson | RewritableConfigJson<LineRenderingConfigJson | PointRenderingConfigJson | LineRenderingConfigJson[] | PointRenderingConfigJson[]>)[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.
@@ -199,6 +203,11 @@ export interface LayerConfigJson {
     presets?: {
         /**
          * The title - shown on the 'add-new'-button.
+         * 
+         * This should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.
+         * This text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.
+         * 
+         * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          */
         title: string | any,
         /**
@@ -230,7 +239,7 @@ export interface LayerConfigJson {
             /**
              * The type of background picture
              */
-            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string | string [],
+            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string | string[],
             /**
              * If specified, these layers will be shown to and the new point will be snapped towards it
              */
@@ -253,20 +262,24 @@ export interface LayerConfigJson {
      *
      * Note that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,
      * where a few very general questions are defined e.g. website, phone number, ...
-     *
+     * Furthermore, _all_ the questions of another layer can be reused with `otherlayer.*`
+     * If you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`
+     * If one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`
+     * Remark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.
+     * If they are not wanted, remove them with an override
+     * 
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
      * At last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.
      * This is mainly create questions for a 'left' and a 'right' side of the road.
      * These will be grouped and questions will be asked together
      */
-    tagRenderings?: (string | { builtin: string, override: any } | TagRenderingConfigJson | {
-        rewrite: {
-            sourceString: string[],
-            into: (string | any)[][]
-        },
-        renderings: (string | { builtin: string, override: any } | TagRenderingConfigJson)[]
-    }) [],
+    tagRenderings?:
+        (string
+            | { builtin: string, override: any }
+            | QuestionableTagRenderingConfigJson
+            | RewritableConfigJson<(string | { builtin: string, override: any } | QuestionableTagRenderingConfigJson)[]>
+            ) [],
 
 
     /**
@@ -401,7 +414,7 @@ export interface LayerConfigJson {
 
     /**
      * If set, synchronizes wether or not this layer is selected.
-     * 
+     *
      * no: Do not sync at all, always revert to default
      * local: keep selection on local storage
      * theme-only: sync via OSM, but this layer will only be toggled in this theme

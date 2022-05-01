@@ -1,0 +1,110 @@
+{
+    "shared_questions": {
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Hunde er tilladt"
+                },
+                "1": {
+                    "then": "Hunde er <b>ikke </b> tilladt"
+                },
+                "2": {
+                    "then": "Hunde er tilladt, men de skal være i snor"
+                },
+                "3": {
+                    "then": "Hunde er tilladt og kan løbe frit rundt"
+                }
+            }
+        },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Placeret under jorden"
+                },
+                "1": {
+                    "then": "Beliggende i stueetagen"
+                },
+                "2": {
+                    "then": "Beliggende i stueetagen"
+                },
+                "3": {
+                    "then": "Beliggende på første sal"
+                }
+            },
+            "render": "Beliggende på {level}. etage"
+        },
+        "opening_hours": {
+            "question": "Hvad er åbningstiderne for {title()}?",
+            "render": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Her modtages kontanter"
+                },
+                "1": {
+                    "then": "Betalingskort accepteres her"
+                }
+            }
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Betaling sker ved hjælp af en dedikeret app"
+                    },
+                    "1": {
+                        "then": "Betaling sker med medlemskort"
+                    }
+                }
+            }
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+                },
+                "1": {
+                    "then": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+                },
+                "2": {
+                    "then": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det"
+                },
+                "3": {
+                    "then": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs"
+                }
+            }
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Dette sted er specielt indrettet til kørestolsbrugere"
+                },
+                "1": {
+                    "then": "Dette sted er let tilgængeligt med en kørestol"
+                },
+                "2": {
+                    "then": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let"
+                },
+                "3": {
+                    "then": "Dette sted er ikke tilgængeligt med kørestol"
+                }
+            },
+            "question": "Er stedet tilgængeligt med en kørestol?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Der er endnu ikke linket til nogen Wikipedia-side"
+                }
+            }
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Ikke linket til Wikipedia"
+                }
+            }
+        }
+    }
+}

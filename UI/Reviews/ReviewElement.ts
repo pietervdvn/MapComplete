@@ -25,7 +25,7 @@ export default class ReviewElement extends VariableUiElement {
                         SingleReview.GenStars(avg),
                         new Link(
                             revs.length === 1 ? Translations.t.reviews.title_singular.Clone() :
-                                Translations.t.reviews.title.Clone()
+                                Translations.t.reviews.title
                                     .Subs({count: "" + revs.length}),
                             `https://mangrove.reviews/search?sub=${encodeURIComponent(subject)}`,
                             true

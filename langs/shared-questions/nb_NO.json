@@ -54,6 +54,15 @@
             },
             "question": "Hvilke betalingsmetoder godtas her?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "Betaling utføres med et medlemskort"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "Hva er telefonnummeret til {title()}?"
         },

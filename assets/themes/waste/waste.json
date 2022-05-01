@@ -2,17 +2,16 @@
   "id": "waste",
   "maintainer": "",
   "version": "2022-01-19",
-  "language": [
-    "en",
-    "nl"
-  ],
   "title": {
     "en": "Waste",
-    "nl": "Afval"
+    "nl": "Afval",
+    "de": "Abfall",
+    "ca": "Brossa"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",
-    "nl": "Kaart met afvalbakken en recyclingfaciliteiten."
+    "nl": "Kaart met afvalbakken en recyclingfaciliteiten.",
+    "de": "Die Karte zeigt Abfalleimer und Recyclinganlagen."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

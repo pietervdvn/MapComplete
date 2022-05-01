@@ -3,11 +3,14 @@
   "title": {
     "nl": "Friturenkaart",
     "en": "Fries shops",
-    "fr": "Carte des friteries"
+    "fr": "Carte des friteries",
+    "de": "Pommes-frites-Läden",
+    "ca": "Botigues de patates"
   },
   "description": {
     "en": "On this map, you'll find your favourite fries shop!",
-    "nl": "Op deze kaart vind je je favoriete frituur!"
+    "nl": "Op deze kaart vind je je favoriete frituur!",
+    "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!"
   },
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
@@ -27,7 +30,8 @@
           "fr": "Friteries",
           "de": "Pommesbude",
           "it": "Friggitoria",
-          "hu": "Sültkrumplievő-hely"
+          "hu": "Sültkrumplievő-hely",
+          "ca": "Botigues de patates"
         },
         "=presets": [],
         "source": {

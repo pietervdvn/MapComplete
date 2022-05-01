@@ -15,6 +15,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {Changes} from "../../Logic/Osm/Changes";
+import Loading from "../Base/Loading";
 
 export class ImageUploadFlow extends Toggle {
 
@@ -111,7 +112,7 @@ export class ImageUploadFlow extends Toggle {
             }
 
 
-            const title = matchingLayer?.title?.GetRenderValue(tags)?.ConstructElement()?.innerText ?? tags.name ?? "Unknown area";
+            const title = matchingLayer?.title?.GetRenderValue(tags)?.Subs(tags)?.ConstructElement()?.innerText ?? tags.name ?? "https//osm.org/"+tags.id;
             const description = [
                 "author:" + state.osmConnection.userDetails.data.name,
                 "license:" + license,
@@ -138,16 +139,16 @@ export class ImageUploadFlow extends Toggle {
                 if (l == 0) {
                     return undefined
                 }
-                return t.uploadFailed.Clone().SetClass("alert");
+                return new Loading(t.uploadFailed).SetClass("alert");
             })),
             new VariableUiElement(uploadedCount.map(l => {
                 if (l == 0) {
                     return undefined;
                 }
                 if (l == 1) {
-                    return t.uploadDone.Clone().SetClass("thanks");
+                    return t.uploadDone.Clone().SetClass("thanks block");
                 }
-                return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks")
+                return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks block")
             })),
 
             fileSelector,
@@ -168,7 +169,7 @@ export class ImageUploadFlow extends Toggle {
                 state?.osmConnection?.isLoggedIn
             ),
             undefined /* Nothing as the user badge is disabled*/,
-            state.featureSwitchUserbadge
+            state?.featureSwitchUserbadge
         )
 
     }

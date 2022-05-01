@@ -9,6 +9,8 @@
 
 1. [URL-parameters and URL-hash](#url-parameters-and-url-hash)
   - [What is a URL parameter?](#what-is-a-url-parameter)
+  - [language](#language)
+  - [fs-translation-mode](#fs-translation-mode)
   - [fs-userbadge](#fs-userbadge)
   - [fs-search](#fs-search)
   - [fs-background](#fs-background)
@@ -57,6 +59,20 @@ For example, if the url is `https://mapcomplete.osm.be/cyclofix?lat=51.0&lon=4.3
 
 
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
+
+
+
+ language 
+----------
+
+ The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the specified language does not exist, it will default to the first language in the theme. No default value set
+
+
+
+ fs-translation-mode 
+---------------------
+
+ If set, will show a translation button next to every string. The default value is _false_
 
 
 

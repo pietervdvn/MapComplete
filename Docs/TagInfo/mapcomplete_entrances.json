@@ -12,22 +12,22 @@
   "tags": [
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "footway"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "path"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "corridor"
     },
     {
       "key": "highway",
-      "description": "The MapComplete theme Entrances has a layer Pedestrain paths showing features with this tag",
+      "description": "The MapComplete theme Entrances has a layer Pedestrian paths showing features with this tag",
       "value": "steps"
     },
     {
@@ -207,7 +207,7 @@
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "serviced_on_button_press"
     },
     {
@@ -218,11 +218,6 @@
     {
       "key": "width",
       "description": "Layer 'Entrance' shows and asks freeform values for key 'width' (in the MapComplete.osm.be theme 'Entrances')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Entrances has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

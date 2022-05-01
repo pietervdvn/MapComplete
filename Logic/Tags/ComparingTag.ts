@@ -23,7 +23,7 @@ export default class ComparingTag implements TagsFilter {
         throw "A comparable tag can not be used as overpass filter"
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    shadows(other: TagsFilter): boolean {
         return other === this;
     }
 
@@ -31,6 +31,15 @@ export default class ComparingTag implements TagsFilter {
         return false;
     }
 
+    /**
+     * Checks if the properties match
+     * 
+     * const t = new ComparingTag("key", (x => Number(x) < 42))
+     * t.matchesProperties({key: 42}) // => false
+     * t.matchesProperties({key: 41}) // => true
+     * t.matchesProperties({key: 0}) // => true
+     * t.matchesProperties({differentKey: 42}) // => false
+     */
     matchesProperties(properties: any): boolean {
         return this._predicate(properties[this._key]);
     }
@@ -38,9 +47,20 @@ export default class ComparingTag implements TagsFilter {
     usedKeys(): string[] {
         return [this._key];
     }
+    
+    usedTags(): { key: string; value: string }[] {
+        return [];
+    }
 
     AsJson() {
         return this.asHumanString(false, false, {})
     }
 
+    optimize(): TagsFilter | boolean {
+        return this;
+    }
+    
+    isNegative(): boolean {
+        return true;
+    }
 }

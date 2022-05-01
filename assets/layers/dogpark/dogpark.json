@@ -1,0 +1,144 @@
+{
+  "id": "dogpark",
+  "source": {
+    "osmTags": {
+      "or": [
+        "leisure=dog_park",
+        {
+          "and": [
+            "leisure=park",
+            "dog=unleashed"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 10,
+  "presets": [
+    {
+      "title": {
+        "en": "a dog park",
+        "da": "en hundeskov"
+      },
+      "tags": [
+        "leisure=dog_park"
+      ],
+      "description": {
+        "en": "A place for dogs, where they can run unleashed",
+        "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor"
+      }
+    }
+  ],
+  "name": {
+    "en": "dog parks",
+    "da": "hundeskove"
+  },
+  "title": {
+    "render": {
+      "en": "dog park",
+      "da": "hundeskov"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ]
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/dogpark/dog-park.svg",
+      "iconSize": "40,40,center",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
+    },
+    {
+      "color": "#ff0",
+      "width": 5
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "dogpark-fenced",
+      "mappings": [
+        {
+          "if": "barrier=fence",
+          "then": {
+            "en": "This dogpark is fenced all around",
+            "da": "Denne hundskov er indhegnet"
+          }
+        },
+        {
+          "if": "barrier=no",
+          "then": {
+            "en": "This dogpark is not fenced all around",
+            "da": "Denne hundskov er ikke indhegnet"
+          }
+        }
+      ],
+      "question": {
+        "en": "It this dog park fenced in?",
+        "da": "Er denne hundeskov indhegnet?"
+      }
+    },
+    {
+      "id": "smalldogs",
+      "mappings": [
+        {
+          "if": "small_dog=separate",
+          "then": {
+            "en": "Have separate area for puppies and small dogs",
+            "da": "Har en indhegning til hvalpe og sm&aring; hunde"
+          }
+        },
+        {
+          "if": "small_dog=shared",
+          "then": {
+            "en": "Does <strong>not</strong> have a separate area for puppies and small dogs",
+            "da": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this dog park have a separate fenced in area for small dogs and puppies?",
+        "da": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the name of this dog park?",
+        "da": "Hvad hedder denne hundeskov?"
+      },
+      "render": {
+        "en": "The name of this dog park is {name}",
+        "de": "Denne hundeskov hedder {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "Name"
+    },
+    {
+      "id": "dogarea",
+      "render": {
+        "en": "This dogpark is {_surface:ha} ha big",
+        "da": "Denne hundeskov er på {_surface:ha} hektar"
+      },
+      "condition": "_surface:ha!=0"
+    },
+    "reviews",
+    "images"
+  ]
+}

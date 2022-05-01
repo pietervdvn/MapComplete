@@ -54,8 +54,8 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     // In _most_ of the cases, this means that this _isn't_ a new object
                     // However, when a point is snapped to an already existing point, we have to create a representation for this point!
                     // For this, we introspect the change
-                    if (allElementStorage.has(change.id)) {
-                        // const currentTags = allElementStorage.getEventSourceById(change.id).data
+                    if (allElementStorage.has(change.type + "/" + change.id)) {
+                        // The current point already exists, we don't have to do anything here
                         continue;
                     }
                     console.debug("Detected a reused point")

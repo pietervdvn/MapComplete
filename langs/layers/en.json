@@ -30,7 +30,7 @@
         "presets": {
             "0": {
                 "description": "Add an ambulance station to the map",
-                "title": "Ambulance station"
+                "title": "an ambulance station"
             }
         },
         "tagRenderings": {
@@ -78,7 +78,7 @@
         "name": "Artworks",
         "presets": {
             "0": {
-                "title": "Artwork"
+                "title": "an artwork"
             }
         },
         "tagRenderings": {
@@ -152,11 +152,11 @@
         "presets": {
             "0": {
                 "description": "A bollard in the road",
-                "title": "Bollard"
+                "title": "a bollard"
             },
             "1": {
                 "description": "Cycle barrier, slowing down cyclists",
-                "title": "Cycle barrier"
+                "title": "a cycle barrier"
             }
         },
         "tagRenderings": {
@@ -252,7 +252,7 @@
         "name": "Benches",
         "presets": {
             "0": {
-                "title": "bench"
+                "title": "a bench"
             }
         },
         "tagRenderings": {
@@ -378,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "A bicycle library has a collection of bikes which can be lent",
-                "title": "Fietsbibliotheek"
+                "title": "a bicycle library"
             }
         },
         "tagRenderings": {
@@ -418,19 +418,31 @@
         }
     },
     "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore"
+                }
+            }
+        },
         "description": "Bicycle rental stations",
         "name": "Bicycle rental",
         "presets": {
             "0": {
                 "description": "A manned shop which focuses on bicycle rental",
-                "title": "bicycle rental shop"
+                "title": "a bicycle rental shop"
             },
             "1": {
-                "title": "bicycle rental"
+                "title": "a bicycle rental"
             }
         },
         "tagRenderings": {
-            "8": {
+            "9": {
                 "renderings": {
                     "0": {
                         "question": "How much type_plural can be rented here? ",
@@ -456,6 +468,9 @@
                         },
                         "5": {
                             "1": "bicycle panniers"
+                        },
+                        "6": {
+                            "1": "tandem"
                         }
                     }
                 }
@@ -476,6 +491,15 @@
                     },
                     "4": {
                         "then": "Bikes for childs can be rented here"
+                    },
+                    "5": {
+                        "then": "Tandem bicycles can be rented here"
+                    },
+                    "6": {
+                        "then": "Race bicycles can be rented here"
+                    },
+                    "7": {
+                        "then": "Bike helmets can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
@@ -499,7 +523,7 @@
                         "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
                     },
                     "5": {
-                        "then": "This is a dropoff point: a designated bicycle parking for this cycle rental"
+                        "then": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only"
                     }
                 },
                 "question": "What kind of bicycle rental is this?"
@@ -519,7 +543,7 @@
         "name": "Bicycle tube vending machine",
         "presets": {
             "0": {
-                "title": "Bicycle tube vending machine"
+                "title": "a bicycle tube vending machine"
             }
         },
         "tagRenderings": {
@@ -548,7 +572,7 @@
         "name": "Bike cafe",
         "presets": {
             "0": {
-                "title": "Bike cafe"
+                "title": "a bike cafe"
             }
         },
         "tagRenderings": {
@@ -616,7 +640,7 @@
         "name": "Bike cleaning service",
         "presets": {
             "0": {
-                "title": "Bike cleaning service"
+                "title": "a bike cleaning service"
             }
         },
         "tagRenderings": {
@@ -665,7 +689,7 @@
         "name": "Bike parking",
         "presets": {
             "0": {
-                "title": "Bike parking"
+                "title": "a bike parking"
             }
         },
         "tagRenderings": {
@@ -775,15 +799,15 @@
         "presets": {
             "0": {
                 "description": "A device to inflate your tires on a fixed location in the public space.",
-                "title": "bike pump"
+                "title": "a bike pump"
             },
             "1": {
                 "description": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
-                "title": "bike repair station and pump"
+                "title": "a bike repair station and pump"
             },
             "2": {
                 "description": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
-                "title": "bike repair station without pump"
+                "title": "a bike repair station without pump"
             }
         },
         "tagRenderings": {
@@ -942,7 +966,7 @@
         "name": "Bike repair/shop",
         "presets": {
             "0": {
-                "title": "Bike repair/shop"
+                "title": "a bike repair/shop"
             }
         },
         "tagRenderings": {
@@ -1041,10 +1065,18 @@
                 },
                 "question": "Are there tools here to repair your own bike?"
             },
+            "bike_shop-access": {
+                "render": "Only accessible to {access}"
+            },
             "bike_shop-email": {
                 "question": "What is the email address of {name}?"
             },
             "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze business focuses on rental"
+                    }
+                },
                 "render": "This shop is specialized in selling {shop} and does bicycle related activities"
             },
             "bike_shop-name": {
@@ -1097,7 +1129,7 @@
         "presets": {
             "0": {
                 "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "binoculars"
+                "title": "a binoculars"
             }
         },
         "tagRenderings": {
@@ -1141,11 +1173,11 @@
         "presets": {
             "0": {
                 "description": "A covered shelter where one can watch birds comfortably",
-                "title": "Birdhide"
+                "title": "a birdhide"
             },
             "1": {
                 "description": "A screen or wall with openings to watch birds",
-                "title": "Bird blind"
+                "title": "a bird blind"
             }
         },
         "tagRenderings": {
@@ -1209,6 +1241,13 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
         "filter": {
             "0": {
@@ -1223,15 +1262,15 @@
         "presets": {
             "0": {
                 "description": "A pub, mostly for drinking beers in a warm, relaxed interior",
-                "title": "pub"
+                "title": "a pub"
             },
             "1": {
                 "description": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
-                "title": "bar"
+                "title": "a bar"
             },
             "2": {
                 "description": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
-                "title": "cafe"
+                "title": "a cafe"
             }
         },
         "tagRenderings": {
@@ -1351,10 +1390,10 @@
         "name": "Charging stations",
         "presets": {
             "0": {
-                "title": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
+                "title": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
             },
             "1": {
-                "title": "charging station for cars"
+                "title": "a charging station for cars"
             }
         },
         "tagRenderings": {
@@ -1584,6 +1623,9 @@
                         "then": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>"
                     },
                     "3": {
+                        "then": "A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>"
+                    },
+                    "4": {
                         "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
                     }
                 },
@@ -1766,13 +1808,13 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "Free to use"
-                    },
-                    "1": {
                         "then": "Free to use (without authenticating)"
                     },
-                    "2": {
+                    "1": {
                         "then": "Free to use, but one has to authenticate"
+                    },
+                    "2": {
+                        "then": "Free to use"
                     },
                     "3": {
                         "then": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
@@ -2266,17 +2308,311 @@
             }
         }
     },
+    "climbing": {
+        "description": "A dummy layer which contains tagrenderings, shared among the climbing layers",
+        "tagRenderings": {
+            "average_length": {
+                "question": "What is the (average) length of the routes in meters?",
+                "render": "The routes are <b>{canonical(climbing:length)}</b> long on average"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Bouldering is possible here"
+                    },
+                    "1": {
+                        "then": "Bouldering is not possible here"
+                    },
+                    "2": {
+                        "then": "Bouldering is possible, allthough there are only a few routes"
+                    },
+                    "3": {
+                        "then": "There are {climbing:boulder} boulder routes"
+                    }
+                },
+                "question": "Is bouldering possible here?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Climbing here is free of charge"
+                    },
+                    "1": {
+                        "then": "Paying a fee is required to climb here"
+                    }
+                },
+                "question": "Is a fee required to climb here?",
+                "render": "A fee of {charge} should be paid for climbing here"
+            },
+            "max_bolts": {
+                "question": "How many bolts do routes in {title()} have at most?",
+                "render": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+            },
+            "max_difficulty": {
+                "question": "What is the highest grade route here, according to the french classification system?",
+                "render": "The highest grade is {climbing:grade:french:max} according to the french/belgian system"
+            },
+            "min_difficulty": {
+                "question": "What is the grade of the easiest route here, according to the french classification system?",
+                "render": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Sport climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Sport climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "There are {climbing:sport} sport climbing routes"
+                    }
+                },
+                "question": "Is sport climbing possible here on fixed anchors?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Toprope climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Toprope climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "There are {climbing:toprope} toprope routes"
+                    }
+                },
+                "question": "Is toprope climbing possible here?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Traditional climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Traditional climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "There are {climbing:traditional} traditional climbing routes"
+                    }
+                },
+                "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+            },
+            "website": {
+                "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
+            }
+        }
+    },
+    "climbing_area": {
+        "description": "An area where climbing is possible, e.g. a crag, site, boulder, ... Contains aggregation of routes",
+        "name": "Climbing opportunities",
+        "presets": {
+            "0": {
+                "description": "A climbing opportunity",
+                "title": "a climbing opportunity"
+            }
+        },
+        "tagRenderings": {
+            "Contained routes hist": {
+                "render": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}"
+            },
+            "Contained routes length hist": {
+                "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
+            },
+            "Contained_climbing_routes": {
+                "render": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Limestone"
+                    }
+                },
+                "question": "What is the rock type here?",
+                "render": "The rock type is {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
+                    },
+                    "1": {
+                        "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "This climbing opportunity doesn't have a name"
+                    }
+                },
+                "question": "What is the name of this climbing opportunity?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing crag <b>{name}</b>"
+                },
+                "1": {
+                    "then": "Climbing area <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Climbing site"
+                },
+                "3": {
+                    "then": "Climbing opportunity <b>{name}</b>"
+                }
+            },
+            "render": "Climbing opportunity"
+        }
+    },
+    "climbing_club": {
+        "description": "A climbing club or organisation",
+        "name": "Climbing club",
+        "presets": {
+            "0": {
+                "description": "A climbing club",
+                "title": "a climbing club"
+            },
+            "1": {
+                "description": "An NGO working around climbing",
+                "title": "a climbing ngo"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "What is the name of this climbing club or NGO?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing NGO"
+                }
+            },
+            "render": "Climbing club"
+        }
+    },
+    "climbing_gym": {
+        "description": "A climbing gym",
+        "name": "Climbing gyms",
+        "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a speed climbing wall"
+                    },
+                    "1": {
+                        "then": "There is no speed climbing wall"
+                    },
+                    "2": {
+                        "then": "There are {climbing:speed} speed climbing walls"
+                    }
+                },
+                "question": "Is there a speed climbing wall?"
+            },
+            "name": {
+                "question": "What is the name of this climbing gym?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing gym <strong>{name}</strong>"
+                }
+            },
+            "render": "Climbing gym"
+        }
+    },
+    "climbing_opportunity": {
+        "description": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
+        "name": "Climbing opportunities?",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Climbing is possible here"
+                    },
+                    "1": {
+                        "then": "Climbing is not possible here"
+                    },
+                    "2": {
+                        "then": "Climbing is not possible here"
+                    }
+                },
+                "question": "Is climbing possible here?"
+            }
+        },
+        "title": {
+            "render": "Climbing opportunity?"
+        }
+    },
+    "climbing_route": {
+        "description": "A single climbing route and its properties. Some properties are derived from the containing features",
+        "name": "Climbing routes",
+        "presets": {
+            "0": {
+                "title": "a climbing route"
+            }
+        },
+        "tagRenderings": {
+            "Difficulty": {
+                "question": "What is the grade of this climbing route according to the french/belgian system?",
+                "render": "The grade is {climbing:grade:french} according to the french/belgian system"
+            },
+            "Length": {
+                "question": "How long is this climbing route (in meters)?",
+                "render": "This route is {canonical(climbing:length)} long"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "This climbing route doesn't have a name"
+                    }
+                },
+                "question": "What is the name of this climbing route?",
+                "render": "<strong>{name}</strong>"
+            },
+            "Rock type via embedded feature": {
+                "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
+            },
+            "bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "This route is not bolted"
+                    }
+                },
+                "question": "How many bolts does this route have before reaching the anchor?",
+                "render": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Climbing route <strong>{name}</strong>"
+                }
+            },
+            "render": "Climbing route"
+        }
+    },
     "crossings": {
         "description": "Crossings for pedestrians and cyclists",
         "name": "Crossings",
         "presets": {
             "0": {
                 "description": "Crossing for pedestrians and/or cyclists",
-                "title": "Crossing"
+                "title": "a crossing"
             },
             "1": {
                 "description": "Traffic signal on a road",
-                "title": "Traffic signal"
+                "title": "a traffic signal"
             }
         },
         "tagRenderings": {
@@ -2675,6 +3011,15 @@
                         "then": "Unsegregated foot/cycleway"
                     },
                     "4": {
+                        "then": "Compulsory cycleway"
+                    },
+                    "5": {
+                        "then": "Compulsory (moped)cycleway"
+                    },
+                    "6": {
+                        "then": "Non-compulsory cycleway"
+                    },
+                    "7": {
                         "then": "No traffic sign present"
                     }
                 },
@@ -2704,7 +3049,7 @@
                         "then": "No supplementary traffic sign present"
                     }
                 },
-                "question": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
+                "question": "Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?"
             },
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "How wide is the gap between the cycleway and the road?",
@@ -2758,10 +3103,10 @@
         "name": "Defibrillators",
         "presets": {
             "0": {
-                "title": "Defibrillator"
+                "title": "a defibrillator"
             },
             "1": {
-                "title": "defibrillator mounted on a wall"
+                "title": "a defibrillator mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -2885,12 +3230,65 @@
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
+    "dogpark": {
+        "name": "dog parks",
+        "presets": {
+            "0": {
+                "description": "A place for dogs, where they can run unleashed",
+                "title": "a dog park"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "What is the name of this dog park?",
+                "render": "The name of this dog park is {name}"
+            },
+            "dogarea": {
+                "render": "This dogpark is {_surface:ha} ha big"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "This dogpark is fenced all around"
+                    },
+                    "1": {
+                        "then": "This dogpark is not fenced all around"
+                    }
+                },
+                "question": "It this dog park fenced in?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Have separate area for puppies and small dogs"
+                    },
+                    "1": {
+                        "then": "Does <strong>not</strong> have a separate area for puppies and small dogs"
+                    }
+                },
+                "question": "Does this dog park have a separate fenced in area for small dogs and puppies?"
+            }
+        },
+        "title": {
+            "render": "dog park"
+        }
+    },
     "drinking_water": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This is a decorative fountain of which the water is not drinkable by humans"
+                },
+                "1": {
+                    "then": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>"
+                }
+            }
+        },
         "description": "A layer showing drinking water fountains",
         "name": "Drinking water",
         "presets": {
             "0": {
-                "title": "drinking water"
+                "title": "a drinking water"
             }
         },
         "tagRenderings": {
@@ -3059,12 +3457,12 @@
         }
     },
     "extinguisher": {
-        "description": "Map layer to show fire hydrants.",
+        "description": "Map layer to show fire extinguishers.",
         "name": "Map of fire extinguishers.",
         "presets": {
             "0": {
                 "description": "A fire extinguisher is a small, portable device used to stop a fire",
-                "title": "Fire extinguisher"
+                "title": "a fire extinguisher"
             }
         },
         "tagRenderings": {
@@ -3091,7 +3489,7 @@
         "presets": {
             "0": {
                 "description": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
-                "title": "Fire station"
+                "title": "a fire station"
             }
         },
         "tagRenderings": {
@@ -3140,6 +3538,13 @@
         }
     },
     "food": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
             "0": {
@@ -3169,21 +3574,35 @@
                         "question": "Has a halal menu"
                     }
                 }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
             }
         },
         "name": "Restaurants and fast food",
         "presets": {
             "0": {
                 "description": "A formal eating place with sit-down facilities selling full meals served by waiters",
-                "title": "restaurant"
+                "title": "a restaurant"
             },
             "1": {
                 "description": "A food business concentrating on fast counter-only service and take-away food",
-                "title": "fastfood"
+                "title": "a fastfood"
             },
             "2": {
-                "description": "A fastfood-buisiness focused on french fries",
-                "title": "fries shop"
+                "description": "A fastfood-business focused on french fries",
+                "title": "a fries shop"
             }
         },
         "tagRenderings": {
@@ -3293,7 +3712,7 @@
                         "then": "Some vegetarian options are available"
                     },
                     "2": {
-                        "then": "No vegetarian options are available"
+                        "then": "Vegetarian options are available"
                     },
                     "3": {
                         "then": "All dishes are vegetarian"
@@ -3392,7 +3811,7 @@
         "name": "Ghost bikes",
         "presets": {
             "0": {
-                "title": "Ghost bike"
+                "title": "a ghost bike"
             }
         },
         "tagRenderings": {
@@ -3441,13 +3860,76 @@
     "grass_in_parks": {
         "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'\""
     },
+    "hackerspace": {
+        "description": "Hackerspace",
+        "name": "Hackerspace",
+        "presets": {
+            "0": {
+                "description": "A hackerspace is an area where people interested in software gather",
+                "title": "a hackerspace"
+            },
+            "1": {
+                "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
+                "title": "a makerspace"
+            }
+        },
+        "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "What is the name of this hackerspace?",
+                "render": "This hackerspace is named <b>{name}</b>"
+            },
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Opened 24/7"
+                    }
+                },
+                "question": "When is this hackerspace opened?",
+                "render": "{opening_hours_table()}"
+            },
+            "hackerspaces-start_date": {
+                "question": "When was this hackerspace founded?",
+                "render": "This hackerspace was founded at {start_date}"
+            },
+            "hs-club-mate": {
+                "mappings": {
+                    "0": {
+                        "then": "This hackerspace serves club mate"
+                    },
+                    "1": {
+                        "then": "This hackerspace does not serve club mate"
+                    }
+                },
+                "question": "Does this hackerspace serve Club Mate?"
+            },
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a makerspace"
+                    },
+                    "1": {
+                        "then": "This is a traditional (software oriented) hackerspace"
+                    }
+                },
+                "question": "Is this a hackerspace or a makerspace?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Hackerspace"
+        }
+    },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
         "name": "Map of hydrants",
         "presets": {
             "0": {
                 "description": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
-                "title": "Fire hydrant"
+                "title": "a fire hydrant"
             }
         },
         "tagRenderings": {
@@ -3511,7 +3993,7 @@
         "name": "Information boards",
         "presets": {
             "0": {
-                "title": "information board"
+                "title": "an information board"
             }
         },
         "title": {
@@ -3524,7 +4006,7 @@
         "presets": {
             "0": {
                 "description": "Add a missing map",
-                "title": "Map"
+                "title": "a map"
             }
         },
         "tagRenderings": {
@@ -3590,7 +4072,7 @@
         "presets": {
             "0": {
                 "description": "Add a missing nature reserve",
-                "title": "nature reserve"
+                "title": "a nature reserve"
             }
         },
         "tagRenderings": {
@@ -3701,21 +4183,21 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Opened by {search}"
+                        "question": "Opened by contributor {search}"
                     }
                 }
             },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Not</b> opened by {search}"
+                        "question": "<b>Not</b> opened by contributor {search}"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Opened before {search}"
+                        "question": "Last edited by contributor {search}"
                     }
                 }
             },
@@ -3729,18 +4211,32 @@
             "6": {
                 "options": {
                     "0": {
-                        "question": "Opened by anonymous user"
+                        "question": "Created before {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Only show open notes"
+                        "question": "Created after {search}"
                     }
                 }
             },
             "8": {
+                "options": {
+                    "0": {
+                        "question": "Only show notes opened by an anonymous contributor"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Only show open notes"
+                    }
+                }
+            },
+            "10": {
                 "options": {
                     "0": {
                         "question": "Hide import notes"
@@ -3852,7 +4348,7 @@
         "name": "Parking",
         "presets": {
             "0": {
-                "title": "car parking"
+                "title": "a car parking"
             }
         },
         "title": {
@@ -3861,14 +4357,14 @@
     },
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
-        "name": "Pedestrain paths"
+        "name": "Pedestrian paths"
     },
     "picnic_table": {
         "description": "The layer showing picnic tables",
         "name": "Picnic tables",
         "presets": {
             "0": {
-                "title": "picnic table"
+                "title": "a picnic table"
             }
         },
         "tagRenderings": {
@@ -3894,7 +4390,7 @@
         "name": "Playgrounds",
         "presets": {
             "0": {
-                "title": "playground"
+                "title": "a playground"
             }
         },
         "tagRenderings": {
@@ -3918,12 +4414,15 @@
                         "then": "Accessible to the general public"
                     },
                     "1": {
-                        "then": "Only accessible for clients of the operating business"
+                        "then": "This is a <b>paid</b> playground"
                     },
                     "2": {
-                        "then": "Only accessible to students of the school"
+                        "then": "Only accessible for clients of the operating business"
                     },
                     "3": {
+                        "then": "Only accessible to students of the school"
+                    },
+                    "4": {
                         "then": "Not accessible"
                     }
                 },
@@ -4025,7 +4524,7 @@
         "name": "Bookcases",
         "presets": {
             "0": {
-                "title": "Bookcase"
+                "title": "a bookcase"
             }
         },
         "tagRenderings": {
@@ -4196,10 +4695,10 @@
         "name": "Recycling",
         "presets": {
             "0": {
-                "title": "recycling container"
+                "title": "a recycling container"
             },
             "1": {
-                "title": "recycling centre"
+                "title": "a recycling centre"
             }
         },
         "tagRenderings": {
@@ -4289,6 +4788,9 @@
                         "then": "Small electrical appliances can be recycled here"
                     },
                     "19": {
+                        "then": "Needles can be recycled here"
+                    },
+                    "20": {
                         "then": "Residual waste can be recycled here"
                     }
                 },
@@ -4324,7 +4826,7 @@
                     "then": "Recycling centre"
                 },
                 "1": {
-                    "then": "Recycling container"
+                    "then": "Recycling centre"
                 },
                 "2": {
                     "then": "Recycling container"
@@ -4334,12 +4836,49 @@
         }
     },
     "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} has closed down permanently"
+                }
+            }
+        },
         "description": "A shop",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Only show shops selling {search}"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Only show shops with name {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
+            }
+        },
         "name": "Shop",
         "presets": {
             "0": {
                 "description": "Add a new shop",
-                "title": "Shop"
+                "title": "a shop"
             }
         },
         "tagRenderings": {
@@ -4441,10 +4980,10 @@
         "name": "Sport pitches",
         "presets": {
             "0": {
-                "title": "Tabletennis table"
+                "title": "a tabletennis table"
             },
             "1": {
-                "title": "Sport pitch"
+                "title": "a sport pitch"
             }
         },
         "tagRenderings": {
@@ -4551,7 +5090,7 @@
         "name": "Street Lamps",
         "presets": {
             "0": {
-                "title": "street lamp"
+                "title": "a street lamp"
             }
         },
         "tagRenderings": {
@@ -4700,10 +5239,10 @@
         "name": "Surveillance camera's",
         "presets": {
             "0": {
-                "title": "surveillance camera"
+                "title": "a surveillance camera"
             },
             "1": {
-                "title": "surveillance camera mounted on a wall"
+                "title": "a surveillance camera mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -4765,7 +5304,7 @@
                     }
                 },
                 "question": "What exactly is surveilled here?",
-                "render": " Surveills a {surveillance:zone}"
+                "render": "Surveills a {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
@@ -4845,11 +5384,11 @@
         "name": "Toilets",
         "presets": {
             "0": {
-                "title": "public toilet"
+                "title": "a public toilet"
             },
             "1": {
                 "description": "A restroom which has at least one wheelchair-accessible toilet",
-                "title": "toilets with wheelchair accessible toilet"
+                "title": "a toilets with wheelchair accessible toilet"
             }
         },
         "tagRenderings": {
@@ -5014,15 +5553,15 @@
         "presets": {
             "0": {
                 "description": "A tree of a species with leaves, such as oak or populus.",
-                "title": "Broadleaved tree"
+                "title": "a broadleaved tree"
             },
             "1": {
                 "description": "A tree of a species with needles, such as pine or spruce.",
-                "title": "Needleleaved tree"
+                "title": "a needleleaved tree"
             },
             "2": {
                 "description": "If you're not sure whether it's a broadleaved or needleleaved tree.",
-                "title": "Tree"
+                "title": "a tree"
             }
         },
         "tagRenderings": {
@@ -5052,13 +5591,13 @@
                         "then": "The tree is in a park or similar (cemetery, school grounds, …)."
                     },
                     "4": {
-                        "then": "The tree is a residential garden."
+                        "then": "The tree is in a residential garden."
                     },
                     "5": {
                         "then": "This is a tree along an avenue."
                     },
                     "6": {
-                        "then": "The tree is an urban area."
+                        "then": "The tree is in an urban area."
                     },
                     "7": {
                         "then": "The tree is outside of an urban area."
@@ -5108,6 +5647,9 @@
                 },
                 "question": "Is this a broadleaved or needleleaved tree?"
             },
+            "tree-species-wikidata": {
+                "question": "What species is this tree?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
@@ -5130,12 +5672,30 @@
             "render": "Tree"
         }
     },
+    "veterinary": {
+        "name": "veterinary",
+        "presets": {
+            "0": {
+                "description": "a veterianarian, that treats dogs",
+                "title": "a veterianarian"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "What is the name of this veterinarian?",
+                "render": "The name of this veterinarian is {name}"
+            }
+        },
+        "title": {
+            "render": "Veterinary"
+        }
+    },
     "viewpoint": {
         "description": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
         "name": "Viewpoint",
         "presets": {
             "0": {
-                "title": "Viewpoint"
+                "title": "a viewpoint"
             }
         },
         "tagRenderings": {
@@ -5148,7 +5708,7 @@
         }
     },
     "village_green": {
-        "description": "A layer showing village-green (which are communal green areas, but not quite parks\""
+        "description": "A layer showing village-green (which are communal green areas, but not quite parks)"
     },
     "visitor_information_centre": {
         "description": "A visitor center offers information about a specific attraction or place of interest where it is located.",
@@ -5218,7 +5778,7 @@
         "name": "Waste Basket",
         "presets": {
             "0": {
-                "title": "Waste Basket"
+                "title": "a waste basket"
             }
         },
         "tagRenderings": {
@@ -5282,7 +5842,7 @@
         "presets": {
             "0": {
                 "description": "Medium to large bin for disposal of (household) waste",
-                "title": "Waste Disposal Bin"
+                "title": "a waste disposal bin"
             }
         },
         "tagRenderings": {
@@ -5322,5 +5882,69 @@
     },
     "watermill": {
         "name": "Watermill"
+    },
+    "windturbine": {
+        "description": "Modern windmills generating electricity",
+        "name": "wind turbine",
+        "presets": {
+            "0": {
+                "title": "a wind turbine"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "What is the rotor diameter of this wind turbine, in metres?",
+                "render": "The rotor diameter of this wind turbine is {rotor:diameter} metres."
+            },
+            "turbine-height": {
+                "question": "What is the total height of this wind turbine (including rotor radius), in metres?",
+                "render": "The total height (including rotor radius) of this wind turbine is {height} metres."
+            },
+            "turbine-operator": {
+                "question": "Who operates this wind turbine?",
+                "render": "This wind turbine is operated by {operator}."
+            },
+            "turbine-output": {
+                "question": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
+                "render": "The power output of this wind turbine is {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "When did this wind turbine go into operation?",
+                "render": "This wind turbine went into operation on/in {start_date}."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "wind turbine"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatts"
+                    },
+                    "1": {
+                        "human": " kilowatts"
+                    },
+                    "2": {
+                        "human": " watts"
+                    },
+                    "3": {
+                        "human": " gigawatts"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
     }
 }

@@ -2,7 +2,9 @@
   "id": "entrance",
   "name": {
     "en": "Entrance",
-    "nl": "Toegang"
+    "nl": "Toegang",
+    "de": "Eingänge",
+    "ca": "Entrada"
   },
   "description": {
     "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)",
@@ -19,7 +21,10 @@
   "minzoom": 14,
   "title": {
     "render": {
-      "en": "Entrance"
+      "en": "Entrance",
+      "nl": "Ingang",
+      "ca": "Entrada",
+      "da": "Indgang"
     }
   },
   "tagRenderings": [
@@ -264,7 +269,8 @@
     {
       "id": "width",
       "render": {
-        "en": "This door has a width of {canonical(width)} meter"
+        "en": "This door has a width of {canonical(width)} meter",
+        "nl": "Deze deur heeft een breedte van {canonical(width)} meter"
       },
       "question": {
         "en": "What is the width of this door/entrance?",
@@ -295,7 +301,9 @@
   ],
   "presets": [
     {
-      "title": "entrance",
+      "title": {
+        "*": "entrance"
+      },
       "preciseInput": {
         "preferredBackground": "photo",
         "snapToLayer": [

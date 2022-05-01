@@ -12,32 +12,9 @@ A layer showing (public) toilets
 
 
 
-## Table of contents
-
-1. [toilet](#toilet)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [toilet-access](#toilet-access)
-    + [toilets-fee](#toilets-fee)
-    + [toilet-charge](#toilet-charge)
-    + [payment-options](#payment-options)
-    + [Opening-hours](#opening-hours)
-    + [toilets-wheelchair](#toilets-wheelchair)
-    + [toilets-type](#toilets-type)
-    + [toilets-changing-table](#toilets-changing-table)
-    + [toilet-changing_table:location](#toilet-changing_tablelocation)
-    + [toilet-handwashing](#toilet-handwashing)
-    + [toilet-has-paper](#toilet-has-paper)
-    + [level](#level)
-    + [description](#description)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -53,8 +30,6 @@ A layer showing (public) toilets
   - [toilets](https://mapcomplete.osm.be/toilets)
 
 
-[Go to the source code](../assets/layers/toilet/toilet.json)
-
 
 
  Basic tags for this layer 
@@ -68,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22toilets%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -153,6 +130,8 @@ The question is **How much does one have to pay for these toilets?**
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 This is rendered with `The fee is {charge}`
 
+Only visible if `fee=yes` is shown
+
 
 
 ### payment-options 
@@ -168,6 +147,8 @@ The question is **Which methods of payment are accepted here?**
   - **Cash is accepted here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - **Payment cards are accepted here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
+
+Only visible if `fee=yes` is shown
 
 
 
@@ -253,6 +234,8 @@ This is rendered with `The changing table is located at {changing_table:location
   - **The changing table is in the toilet for wheelchair users. ** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
   - **The changing table is in a dedicated room. ** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
 
+
+Only visible if `changing_table=yes` is shown
 
 
 

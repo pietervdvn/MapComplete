@@ -30,7 +30,7 @@
         "presets": {
             "0": {
                 "description": "Ajouter une station d’ambulances à la carte",
-                "title": "Station d’ambulances"
+                "title": "une station d’ambulances"
             }
         },
         "tagRenderings": {
@@ -78,7 +78,7 @@
         "name": "Œuvres d'art",
         "presets": {
             "0": {
-                "title": "Œuvre d'art"
+                "title": "une œuvre d'art"
             }
         },
         "tagRenderings": {
@@ -152,11 +152,11 @@
         "presets": {
             "0": {
                 "description": "Un potelet sur le chemin",
-                "title": "Bollard"
+                "title": "une bollard"
             },
             "1": {
                 "description": "Barrières cyclables, ralentissant les cyclistes",
-                "title": "Barrière cyclable"
+                "title": "une barrière cyclable"
             }
         },
         "tagRenderings": {
@@ -210,7 +210,18 @@
                 "render": "Espace entre deux barrières successives : {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
+                "question": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?",
                 "render": "Largeur de l'ouverture : {width:opening} m"
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un plot unique sur la route"
+                    },
+                    "1": {
+                        "then": "C'est une barrière visant à ralentir les vélos"
+                    }
+                }
             },
             "bicycle=yes/no": {
                 "mappings": {
@@ -220,7 +231,8 @@
                     "1": {
                         "then": "Un cycliste ne peut pas franchir ceci."
                     }
-                }
+                },
+                "question": "Est-ce qu'un vélo peut franchir cette barrière ?"
             }
         },
         "title": {
@@ -236,10 +248,11 @@
         }
     },
     "bench": {
+        "description": "Un banc est une surface en bois, métal, pierre... sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
         "name": "Bancs",
         "presets": {
             "0": {
-                "title": "banc"
+                "title": "une banc"
             }
         },
         "tagRenderings": {
@@ -326,6 +339,7 @@
         }
     },
     "bench_at_pt": {
+        "description": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
         "name": "Bancs des arrêts de transport en commun",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -339,7 +353,8 @@
                     "2": {
                         "then": "Il n'y a pas de banc ici"
                     }
-                }
+                },
+                "question": "Quel type de banc est-ce ?"
             },
             "bench_at_pt-name": {
                 "render": "{name}"
@@ -363,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
-                "title": "Vélothèque"
+                "title": "une vélothèque"
             }
         },
         "tagRenderings": {
@@ -402,11 +417,33 @@
             "render": "Vélothèque"
         }
     },
+    "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} a était fermé de façon permanente"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant"
+                }
+            }
+        },
+        "description": "Station de location de vélo",
+        "name": "Location de vélo",
+        "presets": {
+            "0": {
+                "description": "Un magasin qui priorise la location de vélos",
+                "title": "une magasin de location de vélos"
+            }
+        }
+    },
     "bicycle_tube_vending_machine": {
         "name": "Distributeur automatique de chambre à air de vélo",
         "presets": {
             "0": {
-                "title": "Distributeur automatique de chambre à air de vélo"
+                "title": "une distributeur automatique de chambre à air de vélo"
             }
         },
         "tagRenderings": {
@@ -434,7 +471,7 @@
         "name": "Café vélo",
         "presets": {
             "0": {
-                "title": "Café Vélo"
+                "title": "une café vélo"
             }
         },
         "tagRenderings": {
@@ -501,7 +538,7 @@
         "name": "Service de nettoyage de vélo",
         "presets": {
             "0": {
-                "title": "Service de nettoyage de vélo"
+                "title": "une service de nettoyage de vélo"
             }
         },
         "title": {
@@ -517,7 +554,7 @@
         "name": "Parking à vélo",
         "presets": {
             "0": {
-                "title": "Parking à vélo"
+                "title": "une parking à vélo"
             }
         },
         "tagRenderings": {
@@ -626,14 +663,14 @@
         "presets": {
             "0": {
                 "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
-                "title": "pompe à vélo"
+                "title": "une pompe à vélo"
             },
             "1": {
                 "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
-                "title": "point de réparation vélo avec pompe"
+                "title": "une point de réparation vélo avec pompe"
             },
             "2": {
-                "title": "point de réparation vélo sans pompe"
+                "title": "une point de réparation vélo sans pompe"
             }
         },
         "tagRenderings": {
@@ -769,7 +806,7 @@
         "name": "Magasin ou réparateur de vélo",
         "presets": {
             "0": {
-                "title": "Magasin et réparateur de vélo"
+                "title": "une magasin et réparateur de vélo"
             }
         },
         "tagRenderings": {
@@ -998,17 +1035,259 @@
             }
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "average_length": {
+                "question": "Quelle est la longueur moyenne des voies en mètres ?",
+                "render": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "L’escalade de bloc est possible"
+                    },
+                    "1": {
+                        "then": "L’escalade de bloc n’est pas possible"
+                    },
+                    "2": {
+                        "then": "L’escalade de bloc est possible sur des voies précises"
+                    },
+                    "3": {
+                        "then": "Il y a {climbing:boulder} voies d’escalade de bloc"
+                    }
+                },
+                "question": "L’escalade de bloc est-elle possible ici ?"
+            },
+            "max_difficulty": {
+                "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
+                "render": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge"
+            },
+            "min_difficulty": {
+                "question": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
+                "render": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "De l’escalade est possible ici"
+                    },
+                    "1": {
+                        "then": "L’escalade est impossible ici"
+                    }
+                }
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "L’escalade à la moulinette est possible"
+                    },
+                    "1": {
+                        "then": "L’escalade à la moulinette n’est pas possible"
+                    },
+                    "2": {
+                        "then": "{climbing:toprope} voies sont équipées de moulinettes"
+                    }
+                },
+                "question": "Est-il possible d’escalader à la moulinette ?"
+            },
+            "website": {
+                "question": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
+            }
+        }
+    },
+    "climbing_area": {
+        "name": "Opportunité d’escalade",
+        "presets": {
+            "0": {
+                "description": "Opportunité d’escalade",
+                "title": "une opportunité d’escalade"
+            }
+        },
+        "tagRenderings": {
+            "Contained routes hist": {
+                "render": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}"
+            },
+            "Contained routes length hist": {
+                "render": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}"
+            },
+            "Contained_climbing_routes": {
+                "render": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Calcaire"
+                    }
+                },
+                "question": "Quel est le type de roche ?",
+                "render": "La roche est du {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde"
+                    },
+                    "1": {
+                        "then": "Mur d’escalade, rocher avec plusieurs voies d’escalades"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce site n’a pas de nom"
+                    }
+                },
+                "question": "Quel est le nom de ce site ?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Mur d’escalade <b>{name}</b>"
+                },
+                "1": {
+                    "then": "Zone d’escalade <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Site d’escalade"
+                },
+                "3": {
+                    "then": "Opportunité d’escalade <b>{name}</b>"
+                }
+            },
+            "render": "Opportunité d’escalade"
+        }
+    },
+    "climbing_club": {
+        "description": "Club ou association d’escalade",
+        "name": "Club d’escalade",
+        "presets": {
+            "0": {
+                "description": "Un club d’escalade",
+                "title": "une club d’escalade"
+            },
+            "1": {
+                "description": "Une association d’escalade",
+                "title": "une association d’escalade"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "Quel est le nom du club ou de l’association ?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Association d’escalade"
+                }
+            },
+            "render": "Club d’escalade"
+        }
+    },
+    "climbing_gym": {
+        "description": "Une salle d’escalade",
+        "name": "Salle d’escalade",
+        "tagRenderings": {
+            "name": {
+                "question": "Quel est le nom de la salle d’escalade ?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Salle d’escalade <strong>{name}</strong>"
+                }
+            },
+            "render": "Salle d’escalade"
+        }
+    },
+    "climbing_opportunity": {
+        "name": "Opportunités d’escalade ?",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "Escalader est possible"
+                    },
+                    "1": {
+                        "then": "Escalader n’est pas possible"
+                    },
+                    "2": {
+                        "then": "Escalader n’est pas possible"
+                    }
+                },
+                "question": "Est-il possible d’escalader ici ?"
+            }
+        },
+        "title": {
+            "render": "Opportunité d’escalade ?"
+        }
+    },
+    "climbing_route": {
+        "name": "Voies d’escalade",
+        "presets": {
+            "0": {
+                "title": "une voie d’escalade"
+            }
+        },
+        "tagRenderings": {
+            "Difficulty": {
+                "question": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
+                "render": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}"
+            },
+            "Length": {
+                "question": "Quelle est la longueur de cette voie (en mètres) ?",
+                "render": "Cette voie fait {canonical(climbing:length)} de long"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette voie n’a pas de nom"
+                    }
+                },
+                "question": "Quel est le nom de cette voie d’escalade ?",
+                "render": "<strong>{name}</strong>"
+            },
+            "Rock type via embedded feature": {
+                "render": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>"
+            },
+            "bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette voie n’a pas de prises"
+                    }
+                },
+                "question": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
+                "render": "Cette voie a {climbing:bolts} prises"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Voie d’escalade <strong>{name}</strong>"
+                }
+            },
+            "render": "Voie d’escalade"
+        }
+    },
     "crossings": {
         "description": "Traversée pour piétons et cyclistes",
         "name": "Traversée",
         "presets": {
             "0": {
                 "description": "Traversée pour piétons et/ou cyclistes",
-                "title": "Traversée"
+                "title": "une traversée"
             },
             "1": {
                 "description": "Feu de signalisation sur la voie",
-                "title": "Feu de signalisation"
+                "title": "une feu de signalisation"
             }
         },
         "title": {
@@ -1050,7 +1329,7 @@
         "name": "Défibrillateurs",
         "presets": {
             "0": {
-                "title": "Défibrillateur"
+                "title": "une défibrillateur"
             }
         },
         "tagRenderings": {
@@ -1175,7 +1454,7 @@
         "name": "Eau potable",
         "presets": {
             "0": {
-                "title": "eau potable"
+                "title": "une eau potable"
             }
         },
         "tagRenderings": {
@@ -1219,7 +1498,7 @@
         "presets": {
             "0": {
                 "description": "Un extincteur est un appareil portatif servant à éteindre un feu",
-                "title": "Extincteur"
+                "title": "une extincteur"
             }
         },
         "tagRenderings": {
@@ -1246,7 +1525,7 @@
         "presets": {
             "0": {
                 "description": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
-                "title": "Caserne de pompiers"
+                "title": "une caserne de pompiers"
             }
         },
         "tagRenderings": {
@@ -1355,7 +1634,7 @@
         "name": "Vélos fantômes",
         "presets": {
             "0": {
-                "title": "Vélo fantôme"
+                "title": "une vélo fantôme"
             }
         },
         "tagRenderings": {
@@ -1399,7 +1678,7 @@
         "presets": {
             "0": {
                 "description": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
-                "title": "Borne incendie"
+                "title": "une borne incendie"
             }
         },
         "tagRenderings": {
@@ -1462,7 +1741,7 @@
         "name": "Panneaux d'informations",
         "presets": {
             "0": {
-                "title": "panneau d'informations"
+                "title": "une panneau d'informations"
             }
         },
         "title": {
@@ -1475,7 +1754,7 @@
         "presets": {
             "0": {
                 "description": "Ajouter une carte manquante",
-                "title": "Carte"
+                "title": "une carte"
             }
         },
         "tagRenderings": {
@@ -1550,7 +1829,7 @@
         "name": "Tables de pique-nique",
         "presets": {
             "0": {
-                "title": "table de pique-nique"
+                "title": "une table de pique-nique"
             }
         },
         "tagRenderings": {
@@ -1576,7 +1855,7 @@
         "name": "Aire de jeu",
         "presets": {
             "0": {
-                "title": "terrain de jeux"
+                "title": "une terrain de jeux"
             }
         },
         "tagRenderings": {
@@ -1599,13 +1878,13 @@
                     "0": {
                         "then": "Accessible au public"
                     },
-                    "1": {
+                    "2": {
                         "then": "Réservée aux clients"
                     },
-                    "2": {
+                    "3": {
                         "then": "Réservée aux élèves de l’école"
                     },
-                    "3": {
+                    "4": {
                         "then": "Non accessible"
                     }
                 },
@@ -1698,7 +1977,7 @@
         "name": "Microbibliothèque",
         "presets": {
             "0": {
-                "title": "Microbibliothèque"
+                "title": "une microbibliothèque"
             }
         },
         "tagRenderings": {
@@ -1803,7 +2082,7 @@
         "presets": {
             "0": {
                 "description": "Ajouter un nouveau magasin",
-                "title": "Magasin"
+                "title": "une magasin"
             }
         },
         "tagRenderings": {
@@ -1904,10 +2183,10 @@
         "name": "Terrains de sport",
         "presets": {
             "0": {
-                "title": "Table de ping-pong"
+                "title": "une table de ping-pong"
             },
             "1": {
-                "title": "Terrain de sport"
+                "title": "une terrain de sport"
             }
         },
         "tagRenderings": {
@@ -2070,7 +2349,7 @@
                     }
                 },
                 "question": "Qu'est-ce qui est surveillé ici ?",
-                "render": " Surveille un(e) {surveillance:zone}"
+                "render": "Surveille un(e) {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
@@ -2119,11 +2398,11 @@
         "name": "Toilettes",
         "presets": {
             "0": {
-                "title": "toilette publique"
+                "title": "une toilette publique"
             },
             "1": {
                 "description": "Toilettes avec au moins un WC accessible aux personnes à mobilité réduite",
-                "title": "toilettes accessible aux personnes à mobilité réduite"
+                "title": "une toilettes accessible aux personnes à mobilité réduite"
             }
         },
         "tagRenderings": {
@@ -2236,15 +2515,15 @@
         "presets": {
             "0": {
                 "description": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
-                "title": "Arbre feuillu"
+                "title": "une arbre feuillu"
             },
             "1": {
                 "description": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
-                "title": "Arbre résineux"
+                "title": "une arbre résineux"
             },
             "2": {
                 "description": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
-                "title": "Arbre"
+                "title": "une arbre"
             }
         },
         "tagRenderings": {
@@ -2357,7 +2636,7 @@
         "name": "Point de vue",
         "presets": {
             "0": {
-                "title": "Point de vue"
+                "title": "une point de vue"
             }
         },
         "tagRenderings": {
@@ -2381,5 +2660,68 @@
     },
     "watermill": {
         "name": "Moulin à eau"
+    },
+    "windturbine": {
+        "name": "Éolienne",
+        "presets": {
+            "0": {
+                "title": "une éolienne"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "Quel est le diamètre du rotor en mètres ?",
+                "render": "Le diamètre du rotor est de {rotor:diameter} mètres."
+            },
+            "turbine-height": {
+                "question": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
+                "render": "La hauteur totale, incluant les pales, est de {height} mètres."
+            },
+            "turbine-operator": {
+                "question": "Qui est l’exploitant de cette éolienne ?",
+                "render": "Cette éolienne est opérée par {operator}."
+            },
+            "turbine-output": {
+                "question": "Quel est la puissance générée par cette éolienne ?",
+                "render": "La puissance générée par cette éolienne est de {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Depuis quand l’éolienne est-elle en fonctionnement ?",
+                "render": "L’éolienne est active depuis {start_date}."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "éolienne"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatts"
+                    },
+                    "1": {
+                        "human": " kilowatts"
+                    },
+                    "2": {
+                        "human": " watts"
+                    },
+                    "3": {
+                        "human": " gigawatts"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " mètres"
+                    }
+                }
+            }
+        }
     }
 }

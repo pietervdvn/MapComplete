@@ -3,7 +3,6 @@ import {FlowStep} from "./FlowStep";
 import {BBox} from "../../Logic/BBox";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {DesugaringContext} from "../../Models/ThemeConfig/Conversion/Conversion";
 import CreateNoteImportLayer from "../../Models/ThemeConfig/Conversion/CreateNoteImportLayer";
 import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import GeoJsonSource from "../../Logic/FeatureSource/Sources/GeoJsonSource";
@@ -17,29 +16,29 @@ import {ImportUtils} from "./ImportUtils";
 import * as import_candidate from "../../assets/layers/import_candidate/import_candidate.json";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import Title from "../Base/Title";
-import Toggle from "../Input/Toggle";
 import Loading from "../Base/Loading";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import * as known_layers from "../../assets/generated/known_layers.json"
 import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson";
+import Translations from "../i18n/Translations";
 
 /**
  * Filters out points for which the import-note already exists, to prevent duplicates
  */
-export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }> {
+export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, features: any[], theme: string }> {
 
     public IsValid: UIEventSource<boolean>
-    public Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, geojson: any }>
+    public Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, features: any[], theme: string }>
 
 
-    constructor(state, params: { bbox: BBox, layer: LayerConfig, geojson: { features: any[] } }) {
-
+    constructor(state, params: { bbox: BBox, layer: LayerConfig, features: any[], theme: string }) {
+        const t = Translations.t.importHelper.compareToAlreadyExistingNotes
         const layerConfig = known_layers.layers.filter(l => l.id === params.layer.id)[0]
         if (layerConfig === undefined) {
             console.error("WEIRD: layer not found in the builtin layer overview")
         }
-        const importLayerJson = new CreateNoteImportLayer(365).convertStrict(<LayerConfigJson>layerConfig, "CompareToAlreadyExistingNotes")
+        const importLayerJson = new CreateNoteImportLayer(150).convertStrict(<LayerConfigJson>layerConfig, "CompareToAlreadyExistingNotes")
         const importLayer = new LayerConfig(importLayerJson, "import-layer-dynamic")
         const flayer: FilteredLayer = {
             appliedFilters: new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>()),
@@ -47,12 +46,13 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             layerDef: importLayer
         }
         const allNotesWithinBbox = new GeoJsonSource(flayer, params.bbox.padAbsolute(0.0001))
+
         allNotesWithinBbox.features.map(f => MetaTagging.addMetatags(
                 f,
                 {
                     memberships: new RelationsTracker(),
-                    getFeaturesWithin: (layerId, bbox: BBox) => [],
-                    getFeatureById: (id: string) => undefined
+                    getFeaturesWithin: () => [],
+                    getFeatureById: () => undefined
                 },
                 importLayer,
                 state,
@@ -64,7 +64,6 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             )
         )
         const alreadyOpenImportNotes = new FilteringFeatureSource(state, undefined, allNotesWithinBbox)
-        alreadyOpenImportNotes.features.addCallbackD(features => console.log("Loaded and filtered features are", features))
         const map = Minimap.createMiniMap()
         map.SetClass("w-full").SetStyle("height: 500px")
 
@@ -84,9 +83,9 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
         })
 
 
-        const maxDistance = new UIEventSource<number>(5)
+        const maxDistance = new UIEventSource<number>(10)
 
-        const partitionedImportPoints = ImportUtils.partitionFeaturesIfNearby(params.geojson, alreadyOpenImportNotes.features
+        const partitionedImportPoints = ImportUtils.partitionFeaturesIfNearby(params, alreadyOpenImportNotes.features
             .map(ff => ({features: ff.map(ff => ff.feature)})), maxDistance)
 
 
@@ -100,37 +99,59 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
         })
 
         super([
-            new Title("Compare with already existing 'to-import'-notes"),
+            new Title(t.titleLong),
             new VariableUiElement(
                 alreadyOpenImportNotes.features.map(notesWithImport => {
+                    if (allNotesWithinBbox.state.data !== undefined && allNotesWithinBbox.state.data["error"] !== undefined) {
+                        t.loadingFailed.Subs(allNotesWithinBbox.state.data)
+                    }
                     if (allNotesWithinBbox.features.data === undefined || allNotesWithinBbox.features.data.length === 0) {
-                        return new Loading("Fetching notes from OSM")
+                        return new Loading(t.loading)
                     }
                     if (notesWithImport.length === 0) {
-                        return new FixedUiElement("No previous note to import found").SetClass("thanks")
+                        return t.noPreviousNotesFound.SetClass("thanks")
                     }
                     return new Combine([
+                        t.mapExplanation.Subs(params.features),
                         map,
-                        "The following (red) elements are elements to import which are nearby a matching element that is already up for import. These won't be imported",
 
-                        new Toggle(
-                            new FixedUiElement("All of the proposed points have (or had) an import note already").SetClass("alert w-full block").SetStyle("padding: 0.5rem"),
-                            new VariableUiElement(partitionedImportPoints.map(({noNearby}) => noNearby.length + " elements can be imported")).SetClass("thanks p-8"),
-                            partitionedImportPoints.map(({noNearby}) => noNearby.length === 0)
-                        ).SetClass("w-full"),
-                        comparisonMap,
+                        new VariableUiElement(partitionedImportPoints.map(({noNearby, hasNearby}) => {
+
+                            if (noNearby.length === 0) {
+                                // Nothing can be imported
+                                return t.completelyImported.SetClass("alert w-full block").SetStyle("padding: 0.5rem")
+                            }
+
+                            if (hasNearby.length === 0) {
+                                // All points can be imported
+                                return t.nothingNearby.SetClass("thanks w-full block").SetStyle("padding: 0.5rem")
+
+                            }
+
+                            return new Combine([
+                                t.someNearby.Subs({
+                                    hasNearby: hasNearby.length,
+                                    distance: maxDistance.data
+                                }).SetClass("alert"),
+                                t.wontBeImported,
+                                comparisonMap.SetClass("w-full")
+                            ]).SetClass("w-full")
+                        }))
+
+
                     ]).SetClass("flex flex-col")
 
-                }, [allNotesWithinBbox.features])
+                }, [allNotesWithinBbox.features, allNotesWithinBbox.state])
             ),
 
 
         ]);
         this.SetClass("flex flex-col")
         this.Value = partitionedImportPoints.map(({noNearby}) => ({
-            geojson: {features: noNearby, type: "FeatureCollection"},
+            features: noNearby,
             bbox: params.bbox,
-            layer: params.layer
+            layer: params.layer,
+            theme: params.theme
         }))
 
         this.IsValid = alreadyOpenImportNotes.features.map(ff => {

@@ -71,6 +71,110 @@ export interface ChangeDescription {
 
 export class ChangeDescriptionTools {
 
+    /**
+     * Rewrites all the ids in a changeDescription
+     *
+     * // should rewrite the id of the changed object
+     * const change = <ChangeDescription> {
+     *             id: -1234,
+     *             type: "node",
+     *             meta:{
+     *                 theme:"test",
+     *                 changeType: "answer"
+     *             },
+     *             tags:[
+     *                 {
+     *                     k: "key",
+     *                     v: "value"
+     *                 }
+     *             ]
+     *         }
+     * }
+     * const mapping = new Map<string, string>([["node/-1234", "node/42"]])
+     * const rewritten = ChangeDescriptionTools.rewriteIds(change, mapping)
+     * rewritten.id // => 42
+     *
+     * // should rewrite ids in nodes of a way
+     * const change = <ChangeDescription> {
+     *     type: "way",
+     *     id: 789,
+     *     changes: {
+     *         nodes: [-1, -2, -3, 68453],
+     *         coordinates: []
+     *     },
+     *     meta:{
+     *         theme:"test",
+     *         changeType: "create"
+     *     }
+     * }
+     * const mapping = new Map<string, string>([["node/-1", "node/42"],["node/-2", "node/43"],["node/-3", "node/44"]])
+     * const rewritten = ChangeDescriptionTools.rewriteIds(change, mapping)
+     * rewritten.id // => 789
+     * rewritten.changes["nodes"] // => [42,43,44, 68453]
+     * 
+     * // should rewrite ids in relationship members
+     * const change = <ChangeDescription> {
+     *     type: "way",
+     *     id: 789,
+     *     changes: {
+     *         members: [{type: "way", ref: -1, role: "outer"},{type: "way", ref: 48, role: "outer"}],
+     *     },
+     *     meta:{
+     *         theme:"test",
+     *         changeType: "create"
+     *     }
+     * }
+     * const mapping = new Map<string, string>([["way/-1", "way/42"],["node/-2", "node/43"],["node/-3", "node/44"]])
+     * const rewritten = ChangeDescriptionTools.rewriteIds(change, mapping)
+     * rewritten.id // => 789
+     * rewritten.changes["members"] // => [{type: "way", ref: 42, role: "outer"},{type: "way", ref: 48, role: "outer"}]
+     *
+     */
+    public static rewriteIds(change: ChangeDescription, mappings: Map<string, string>): ChangeDescription {
+        const key = change.type + "/" + change.id
+
+        const wayHasChangedNode = ((change.changes ?? {})["nodes"] ?? []).some(id => mappings.has("node/" + id));
+        const relationHasChangedMembers = ((change.changes ?? {})["members"] ?? [])
+            .some((obj:{type: string, ref: number}) => mappings.has(obj.type+"/" + obj.ref));
+
+        const hasSomeChange = mappings.has(key)
+            || wayHasChangedNode || relationHasChangedMembers
+        if(hasSomeChange){
+            change = {...change}
+        }
+        
+        if (mappings.has(key)) {
+            const [_, newId] = mappings.get(key).split("/")
+            change.id = Number.parseInt(newId)
+        }
+        if(wayHasChangedNode){
+            change.changes = {...change.changes}
+            change.changes["nodes"] = change.changes["nodes"].map(id => {
+                const key = "node/"+id
+                if(!mappings.has(key)){
+                    return id
+                }
+                const [_, newId] = mappings.get(key).split("/")
+                return Number.parseInt(newId)
+            })
+        }
+        if(relationHasChangedMembers){
+            change.changes = {...change.changes}
+            change.changes["members"] = change.changes["members"].map(
+                (obj:{type: string, ref: number}) => {
+                    const key = obj.type+"/"+obj.ref;
+                    if(!mappings.has(key)){
+                        return obj
+                    }
+                    const [_, newId] = mappings.get(key).split("/")
+                    return {...obj, ref: Number.parseInt(newId)}
+                }
+            )
+        }
+
+        return change
+    }
+
     public static getGeojsonGeometry(change: ChangeDescription): any {
         switch (change.type) {
             case "node":

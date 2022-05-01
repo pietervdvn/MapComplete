@@ -1,96 +1,150 @@
-windturbine
+
+
+ windturbine 
 =============
 
 
 
 <img src='https://mapcomplete.osm.be/./assets/themes/openwindpowermap/wind_turbine.svg' height="100px"> 
 
-## Table of contents
-
-1. [windturbine](#windturbine)
-    * [Themes using this layer](#themes-using-this-layer)
-
-- [Basic tags for this layer](#basic-tags-for-this-layer)
-- [Supported attributes](#supported-attributes)
-    + [turbine-output](#turbine-output)
-    + [turbine-operator](#turbine-operator)
-    + [turbine-height](#turbine-height)
-    + [turbine-diameter](#turbine-diameter)
-    + [turbine-start-date](#turbine-start-date)
-    + [images](#images)
-
-#### Themes using this layer
-
-- [openwindpowermap](https://mapcomplete.osm.be/openwindpowermap)
-
-[Go to the source code](../assets/layers/windturbine/windturbine.json)
 
 
 
-Basic tags for this layer
+
+
+  - This layer is shown at zoomlevel **10** and higher
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [openwindpowermap](https://mapcomplete.osm.be/openwindpowermap)
+
+
+
+
+ Basic tags for this layer 
 ---------------------------
 
 
 
 Elements must have the all of following tags to be shown on this layer:
 
-- <a href='https://wiki.openstreetmap.org/wiki/Key:generator:source' target='_blank'>generator:source</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:generator:source%3Dwind' target='_blank'>wind</a>
 
-Supported attributes
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:generator:source' target='_blank'>generator:source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:generator:source%3Dwind' target='_blank'>wind</a>
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22generator%3Asource%22%3D%22wind%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
+
+
+ Supported attributes 
 ----------------------
 
 
 
 **Warning** This quick overview is incomplete
 
+
+
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/generator:output:electricity#values) [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity) | [pfloat](../SpecialInputElements.md#pfloat) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rotor:diameter#values) [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) | [float](../SpecialInputElements.md#float) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) |
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/generator:output:electricity#values) [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rotor:diameter#values) [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) | [float](../SpecialInputElements.md#float) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
 
-### turbine-output
+
+
+
+### turbine-output 
+
+
 
 The question is **What is the power output of this wind turbine? (e.g. 2.3 MW)**
 
-This rendering asks information about the
-property  [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity)
+This rendering asks information about the property  [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity) 
 This is rendered with `The power output of this wind turbine is {generator:output:electricity}.`
 
-### turbine-operator
+
+
+### turbine-operator 
+
+
 
 The question is **Who operates this wind turbine?**
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 This is rendered with `This wind turbine is operated by {operator}.`
 
-### turbine-height
+
+
+### turbine-height 
+
+
 
 The question is **What is the total height of this wind turbine (including rotor radius), in metres?**
 
-This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height)
+This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) 
 This is rendered with `The total height (including rotor radius) of this wind turbine is {height} metres.`
 
-### turbine-diameter
+
+
+### turbine-diameter 
+
+
 
 The question is **What is the rotor diameter of this wind turbine, in metres?**
 
-This rendering asks information about the
-property  [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter)
+This rendering asks information about the property  [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) 
 This is rendered with `The rotor diameter of this wind turbine is {rotor:diameter} metres.`
 
-### turbine-start-date
+
+
+### turbine-start-date 
+
+
 
 The question is **When did this wind turbine go into operation?**
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
+This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
 This is rendered with `This wind turbine went into operation on/in {start_date}.`
 
-### images
+
+
+### images 
+
+
 
 _This tagrendering has no question and is thus read-only_
 
-This document is autogenerated from assets/layers/windturbine/windturbine.json
+
+
+
+
+### questions 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### minimap 
+
+
+
+_This tagrendering has no question and is thus read-only_
+
+ 
+
+This document is autogenerated from [assets/themes/openwindpowermap/openwindpowermap.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/openwindpowermap/openwindpowermap.json)

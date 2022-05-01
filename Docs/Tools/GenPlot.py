@@ -35,7 +35,10 @@ def createBar(options):
     keys = genKeys(data, options["interpetKeysAs"])
     values = list(map(lambda kv: kv["value"], data))
 
-    pyplot.bar(keys, values, label=options["name"])
+    color = None
+    if "color" in options["plot"]:
+    	color = options["plot"]["color"] 
+    pyplot.bar(keys, values, label=options["name"], color=color)
     pyplot.legend()
 
 

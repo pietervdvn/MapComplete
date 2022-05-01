@@ -209,11 +209,6 @@
     {
       "key": "description",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Open Toilet Map')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open Toilet Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

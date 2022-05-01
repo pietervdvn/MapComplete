@@ -189,7 +189,6 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 console.log("Constructing the snap-to layer", this._snapTo)
                 new ShowDataMultiLayer({
                         features: new StaticFeatureSource(this._snapTo, true),
-                        popup: undefined,
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
                         layers: State.state.filteredLayers
@@ -204,7 +203,6 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 })
                 new ShowDataLayer({
                     features: new StaticFeatureSource(matchPoint, true),
-                    popup: undefined,
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,

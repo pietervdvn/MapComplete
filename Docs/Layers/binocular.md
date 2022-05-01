@@ -12,21 +12,9 @@ Binoculas
 
 
 
-## Table of contents
-
-1. [binocular](#binocular)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [binocular-charge](#binocular-charge)
-    + [binocular-direction](#binocular-direction)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **0** and higher
 
 
 
@@ -41,8 +29,6 @@ Binoculas
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/binocular/binocular.json)
-
 
 
  Basic tags for this layer 
@@ -56,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbinoculars' target='_blank'>binoculars</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22binoculars%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

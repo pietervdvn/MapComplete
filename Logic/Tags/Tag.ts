@@ -22,6 +22,22 @@ export class Tag extends TagsFilter {
     }
 
 
+    /**
+     * const tag = new Tag("key","value")
+     * tag.matchesProperties({"key": "value"}) // =>  true
+     * tag.matchesProperties({"key": "z"}) // =>  false
+     * tag.matchesProperties({"key": ""}) // => false
+     * tag.matchesProperties({"other_key": ""}) // => false
+     * tag.matchesProperties({"other_key": "value"}) // =>  false
+     * 
+     * const isEmpty = new Tag("key","")
+     * isEmpty.matchesProperties({"key": "value"}) // => false
+     * isEmpty.matchesProperties({"key": ""}) // => true
+     * isEmpty.matchesProperties({"other_key": ""}) // => true
+     * isEmpty.matchesProperties({"other_key": "value"}) // => true
+     * isEmpty.matchesProperties({"key": undefined}) // => true
+     * 
+     */
     matchesProperties(properties: any): boolean {
         const foundValue = properties[this.key]
         if (foundValue === undefined && (this.value === "" || this.value === undefined)) {
@@ -41,12 +57,18 @@ export class Tag extends TagsFilter {
         return [`["${this.key}"="${this.value}"]`];
     }
 
+    /**
+     
+     const t = new Tag("key", "value")
+     t.asHumanString() // => "key=value"
+     t.asHumanString(true) // => "<a href='https://wiki.openstreetmap.org/wiki/Key:key' target='_blank'>key</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:key%3Dvalue' target='_blank'>value</a>"
+     */
     asHumanString(linkToWiki?: boolean, shorten?: boolean, currentProperties?: any) {
         let v = this.value;
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25);
         }
-        if (v === "" || v === undefined) {
+        if (v === "" || v === undefined && currentProperties !== undefined) {
             // This tag will be removed if in the properties, so we indicate this with special rendering
             if (currentProperties !== undefined && (currentProperties[this.key] ?? "") === "") {
                 // This tag is not present in the current properties, so this tag doesn't change anything
@@ -66,25 +88,45 @@ export class Tag extends TagsFilter {
         return true;
     }
 
-    isEquivalent(other: TagsFilter): boolean {
-        if (other instanceof Tag) {
-            return this.key === other.key && this.value === other.value;
+    /**
+     * // should handle advanced regexes
+     * new Tag("key", "aaa").shadows(new RegexTag("key", /a+/)) // => true
+     * new Tag("key","value").shadows(new RegexTag("key", /^..*$/, true)) // => false
+     * new Tag("key","value").shadows(new Tag("key","value")) // => true
+     * new Tag("key","some_other_value").shadows(new RegexTag("key", "value", true)) // => true
+     * new Tag("key","value").shadows(new RegexTag("key", "value", true)) // => false
+     * new Tag("key","value").shadows(new RegexTag("otherkey", "value", true)) // => false
+     * new Tag("key","value").shadows(new RegexTag("otherkey", "value", false)) // => false
+     */
+    shadows(other: TagsFilter): boolean {
+        if(other["key"] !== undefined){
+            if(other["key"] !== this.key){
+                return false
+            }
         }
-        if (other instanceof RegexTag) {
-            other.isEquivalent(this);
-        }
-        return false;
+        return other.matchesProperties({[this.key]: this.value});
     }
 
     usedKeys(): string[] {
         return [this.key];
     }
 
+    usedTags(): { key: string; value: string }[] {
+        if(this.value == ""){
+            return []
+        }
+        return [this]
+    }
+
     asChange(properties: any): { k: string; v: string }[] {
         return [{k: this.key, v: this.value}];
     }
 
-    AsJson() {
-        return this.asHumanString(false, false)
+    optimize(): TagsFilter | boolean {
+        return this;
+    }
+    
+    isNegative(): boolean {
+        return false;
     }
 }

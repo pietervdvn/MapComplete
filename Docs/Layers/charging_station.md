@@ -12,105 +12,9 @@ A charging station
 
 
 
-## Table of contents
-
-1. [charging_station](#charging_station)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Type](#type)
-    + [access](#access)
-    + [capacity](#capacity)
-    + [Available_charging_stations (generated)](#available_charging_stations-(generated))
-    + [plugs-0](#plugs-0)
-    + [plugs-1](#plugs-1)
-    + [plugs-2](#plugs-2)
-    + [plugs-3](#plugs-3)
-    + [plugs-4](#plugs-4)
-    + [plugs-5](#plugs-5)
-    + [plugs-6](#plugs-6)
-    + [plugs-7](#plugs-7)
-    + [plugs-8](#plugs-8)
-    + [plugs-9](#plugs-9)
-    + [plugs-10](#plugs-10)
-    + [plugs-11](#plugs-11)
-    + [plugs-12](#plugs-12)
-    + [plugs-13](#plugs-13)
-    + [plugs-14](#plugs-14)
-    + [plugs-15](#plugs-15)
-    + [voltage-0](#voltage-0)
-    + [current-0](#current-0)
-    + [power-output-0](#power-output-0)
-    + [voltage-1](#voltage-1)
-    + [current-1](#current-1)
-    + [power-output-1](#power-output-1)
-    + [voltage-2](#voltage-2)
-    + [current-2](#current-2)
-    + [power-output-2](#power-output-2)
-    + [voltage-3](#voltage-3)
-    + [current-3](#current-3)
-    + [power-output-3](#power-output-3)
-    + [voltage-4](#voltage-4)
-    + [current-4](#current-4)
-    + [power-output-4](#power-output-4)
-    + [voltage-5](#voltage-5)
-    + [current-5](#current-5)
-    + [power-output-5](#power-output-5)
-    + [voltage-6](#voltage-6)
-    + [current-6](#current-6)
-    + [power-output-6](#power-output-6)
-    + [voltage-7](#voltage-7)
-    + [current-7](#current-7)
-    + [power-output-7](#power-output-7)
-    + [voltage-8](#voltage-8)
-    + [current-8](#current-8)
-    + [power-output-8](#power-output-8)
-    + [voltage-9](#voltage-9)
-    + [current-9](#current-9)
-    + [power-output-9](#power-output-9)
-    + [voltage-10](#voltage-10)
-    + [current-10](#current-10)
-    + [power-output-10](#power-output-10)
-    + [voltage-11](#voltage-11)
-    + [current-11](#current-11)
-    + [power-output-11](#power-output-11)
-    + [voltage-12](#voltage-12)
-    + [current-12](#current-12)
-    + [power-output-12](#power-output-12)
-    + [voltage-13](#voltage-13)
-    + [current-13](#current-13)
-    + [power-output-13](#power-output-13)
-    + [voltage-14](#voltage-14)
-    + [current-14](#current-14)
-    + [power-output-14](#power-output-14)
-    + [voltage-15](#voltage-15)
-    + [current-15](#current-15)
-    + [power-output-15](#power-output-15)
-    + [OH](#oh)
-    + [fee](#fee)
-    + [charge](#charge)
-    + [payment-options-advanced](#payment-options-advanced)
-    + [Authentication](#authentication)
-    + [Auth phone](#auth-phone)
-    + [maxstay](#maxstay)
-    + [Network](#network)
-    + [Operator](#operator)
-    + [phone](#phone)
-    + [email](#email)
-    + [website](#website)
-    + [level](#level)
-    + [ref](#ref)
-    + [Operational status](#operational-status)
-    + [Parking:fee](#parkingfee)
-    + [questions](#questions)
-    + [questions](#questions)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **10** and higher
 
 
 
@@ -124,8 +28,6 @@ A charging station
   - [charging_stations](https://mapcomplete.osm.be/charging_stations)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](../assets/layers/charging_station/charging_station.json)
 
 
 
@@ -141,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Dcharging_station' target='_blank'>charging_station</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:planned:amenity' target='_blank'>planned:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station' target='_blank'>charging_station</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:construction:amenity' target='_blank'>construction:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:construction:amenity%3Dcharging_station' target='_blank'>charging_station</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22charging_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22construction%3Aamenity%22%3D%22charging_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22disused%3Aamenity%22%3D%22charging_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22planned%3Aamenity%22%3D%22charging_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -154,7 +58,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko#values) [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee#values) [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) | [pnat](../SpecialInputElements.md#pnat) | 
@@ -172,48 +76,48 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A#values) [socket:USB-A](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_3pin#values) [socket:bosch_3pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_5pin#values) [socket:bosch_5pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin) | [pnat](../SpecialInputElements.md#pnat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko:voltage#values) [socket:schuko:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko:current#values) [socket:schuko:current](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko:output#values) [socket:schuko:output](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee:voltage#values) [socket:typee:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee:current#values) [socket:typee:current](https://wiki.openstreetmap.org/wiki/Key:socket:typee:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee:output#values) [socket:typee:output](https://wiki.openstreetmap.org/wiki/Key:socket:typee:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:chademo:voltage#values) [socket:chademo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:chademo:current#values) [socket:chademo:current](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:chademo:output#values) [socket:chademo:output](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_cable:voltage#values) [socket:type1_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_cable:current#values) [socket:type1_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_cable:output#values) [socket:type1_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1:voltage#values) [socket:type1:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1:current#values) [socket:type1:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1:output#values) [socket:type1:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_combo:voltage#values) [socket:type1_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_combo:current#values) [socket:type1_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_combo:output#values) [socket:type1_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:voltage#values) [socket:tesla_supercharger:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:current#values) [socket:tesla_supercharger:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:output#values) [socket:tesla_supercharger:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2:voltage#values) [socket:type2:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2:current#values) [socket:type2:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2:output#values) [socket:type2:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_combo:voltage#values) [socket:type2_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_combo:current#values) [socket:type2_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_combo:output#values) [socket:type2_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_cable:voltage#values) [socket:type2_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_cable:current#values) [socket:type2_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_cable:output#values) [socket:type2_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:voltage#values) [socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:current#values) [socket:tesla_supercharger_ccs:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:output#values) [socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values) [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values) [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values) [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values) [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values) [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values) [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A:voltage#values) [socket:USB-A:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A:current#values) [socket:USB-A:current](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A:output#values) [socket:USB-A:output](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko:voltage#values) [socket:schuko:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:voltage%3D230 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko:current#values) [socket:schuko:current](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:current%3D16 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:schuko:output#values) [socket:schuko:output](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.6 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:output%3D3.6 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee:voltage#values) [socket:typee:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:voltage%3D230 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee:current#values) [socket:typee:current](https://wiki.openstreetmap.org/wiki/Key:socket:typee:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:current%3D16 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:typee:output#values) [socket:typee:output](https://wiki.openstreetmap.org/wiki/Key:socket:typee:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D3 kw) [22 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D22 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:chademo:voltage#values) [socket:chademo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [500 V](https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:voltage%3D500 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:chademo:current#values) [socket:chademo:current](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current) | [pfloat](../SpecialInputElements.md#pfloat) | [120 A](https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:current%3D120 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:chademo:output#values) [socket:chademo:output](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:output%3D50 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_cable:voltage#values) [socket:type1_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [200 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D200 V) [240 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D240 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_cable:current#values) [socket:type1_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current) | [pfloat](../SpecialInputElements.md#pfloat) | [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:current%3D32 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_cable:output#values) [socket:type1_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.7 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D3.7 kw) [7 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D7 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1:voltage#values) [socket:type1:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [200 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D200 V) [240 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D240 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1:current#values) [socket:type1:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1:current) | [pfloat](../SpecialInputElements.md#pfloat) | [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:current%3D32 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1:output#values) [socket:type1:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.7 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D3.7 kw) [6.6 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D6.6 kw) [7 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7 kw) [7.2 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7.2 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_combo:voltage#values) [socket:type1_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D400 V) [1000 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D1000 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_combo:current#values) [socket:type1_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current) | [pfloat](../SpecialInputElements.md#pfloat) | [50 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D50 A) [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D125 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type1_combo:output#values) [socket:type1_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D50 kw) [62.5 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D62.5 kw) [150 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D150 kw) [350 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D350 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:voltage#values) [socket:tesla_supercharger:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [480 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:voltage%3D480 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:current#values) [socket:tesla_supercharger:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D350 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:output#values) [socket:tesla_supercharger:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output) | [pfloat](../SpecialInputElements.md#pfloat) | [120 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D120 kw) [150 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D150 kw) [250 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D250 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2:voltage#values) [socket:type2:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D230 V) [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D400 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2:current#values) [socket:type2:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D16 A) [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D32 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2:output#values) [socket:type2:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2:output) | [pfloat](../SpecialInputElements.md#pfloat) | [11 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D11 kw) [22 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D22 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_combo:voltage#values) [socket:type2_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [500 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D500 V) [920 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D920 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_combo:current#values) [socket:type2_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D350 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_combo:output#values) [socket:type2_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:output%3D50 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_cable:voltage#values) [socket:type2_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D230 V) [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D400 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_cable:current#values) [socket:type2_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D16 A) [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D32 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:type2_cable:output#values) [socket:type2_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output) | [pfloat](../SpecialInputElements.md#pfloat) | [11 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D11 kw) [22 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D22 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:voltage#values) [socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [500 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D500 V) [920 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D920 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:current#values) [socket:tesla_supercharger_ccs:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D350 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:output#values) [socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:output%3D50 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values) [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [480 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D480 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values) [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D350 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values) [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) | [pfloat](../SpecialInputElements.md#pfloat) | [120 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D120 kw) [150 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D150 kw) [250 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D250 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values) [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D230 V) [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D400 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values) [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D16 A) [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D32 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values) [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) | [pfloat](../SpecialInputElements.md#pfloat) | [11 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D11 kw) [22 kw](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D22 kw)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A:voltage#values) [socket:USB-A:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [5 V](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:voltage%3D5 V)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A:current#values) [socket:USB-A:current](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current) | [pfloat](../SpecialInputElements.md#pfloat) | [1 A](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D1 A) [2 A](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D2 A)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:USB-A:output#values) [socket:USB-A:output](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output) | [pfloat](../SpecialInputElements.md#pfloat) | [5w](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D5w) [10w](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D10w)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:voltage#values) [socket:bosch_3pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:current#values) [socket:bosch_3pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:output#values) [socket:bosch_3pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
@@ -281,6 +185,7 @@ This is rendered with `Access is {access}`
   - **Anyone can use this charging station (payment might be needed)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
   - **Anyone can use this charging station (payment might be needed)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>_This option cannot be chosen as answer_
   - **Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - **A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
   - **Not accessible to the general public (e.g. only accessible to the owners, employees, ...)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
@@ -307,38 +212,38 @@ The question is **Which charging connections are available here?**
 
 
 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko' target='_blank'>socket:schuko</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/CEE7_4F.svg'/> <span><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</span></div>** corresponds with socket:schuko~^..*$&socket:schuko!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>European wall plug</b> with ground pin (CEE7/4 type E)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee' target='_blank'>socket:typee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/TypeE.svg'/> <span><b>European wall plug</b> with ground pin (CEE7/4 type E)</span></div>** corresponds with socket:typee~^..*$&socket:typee!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo' target='_blank'>socket:chademo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Chademo_type4.svg'/> <span><b>Chademo</b></span></div>** corresponds with socket:chademo~^..*$&socket:chademo!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 with cable</b> (J1772)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable' target='_blank'>socket:type1_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 with cable</b> (J1772)</span></div>** corresponds with socket:type1_cable~^..*$&socket:type1_cable!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>without</i> cable</b> (J1772)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1' target='_blank'>socket:type1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1_J1772.svg'/> <span><b>Type 1 <i>without</i> cable</b> (J1772)</span></div>** corresponds with socket:type1~^..*$&socket:type1!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (aka Type 1 Combo)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo' target='_blank'>socket:type1_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type1-ccs.svg'/> <span><b>Type 1 CCS</b> (aka Type 1 Combo)</span></div>** corresponds with socket:type1_combo~^..*$&socket:type1_combo!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger' target='_blank'>socket:tesla_supercharger</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger</b></span></div>** corresponds with socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2' target='_blank'>socket:type2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_socket.svg'/> <span><b>Type 2</b> (mennekes)</span></div>** corresponds with socket:type2~^..*$&socket:type2!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo' target='_blank'>socket:type2_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Type 2 CCS</b> (mennekes)</span></div>** corresponds with socket:type2_combo~^..*$&socket:type2_combo!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 with cable</b> (mennekes)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable' target='_blank'>socket:type2_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Type 2 with cable</b> (mennekes)</span></div>** corresponds with socket:type2_cable~^..*$&socket:type2_cable!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (a branded type2_css)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs' target='_blank'>socket:tesla_supercharger_ccs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_CCS.svg'/> <span><b>Tesla Supercharger CCS</b> (a branded type2_css)</span></div>** corresponds with socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/> <span><b>Tesla Supercharger (destination)</b></span></div>** corresponds with socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dus' target='_blank'>us</a>_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/Type2_tethered.svg'/> <span><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</span></div>** corresponds with socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&_country!~^us$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A' target='_blank'>socket:USB-A</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/usb_port.svg'/> <span><b>USB</b> to charge phones and small electronics</span></div>** corresponds with socket:USB-A~^..*$&socket:USB-A!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect with 3 pins</b> and cable</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin' target='_blank'>socket:bosch_3pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_3pin%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-3pin.svg'/> <span><b>Bosch Active Connect with 3 pins</b> and cable</span></div>** corresponds with socket:bosch_3pin~^..*$&socket:bosch_3pin!~^1$_This option cannot be chosen as answer_
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin' target='_blank'>socket:bosch_5pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_5pin%3D1' target='_blank'>1</a>Unselecting this answer will add 
-  - **<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/bosch-5pin.svg'/> <span><b>Bosch Active Connect with 5 pins</b> and cable</span></div>** corresponds with socket:bosch_5pin~^..*$&socket:bosch_5pin!~^1$_This option cannot be chosen as answer_
+  - **<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko' target='_blank'>socket:schuko</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)** corresponds with socket:schuko~^..*$&socket:schuko!~^1$_This option cannot be chosen as answer_
+  - **<b>European wall plug</b> with ground pin (CEE7/4 type E)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee' target='_blank'>socket:typee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>European wall plug</b> with ground pin (CEE7/4 type E)** corresponds with socket:typee~^..*$&socket:typee!~^1$_This option cannot be chosen as answer_
+  - **<b>Chademo</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo' target='_blank'>socket:chademo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Chademo</b>** corresponds with socket:chademo~^..*$&socket:chademo!~^1$_This option cannot be chosen as answer_
+  - **<b>Type 1 with cable</b> (J1772)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable' target='_blank'>socket:type1_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Type 1 with cable</b> (J1772)** corresponds with socket:type1_cable~^..*$&socket:type1_cable!~^1$_This option cannot be chosen as answer_
+  - **<b>Type 1 <i>without</i> cable</b> (J1772)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1' target='_blank'>socket:type1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Type 1 <i>without</i> cable</b> (J1772)** corresponds with socket:type1~^..*$&socket:type1!~^1$_This option cannot be chosen as answer_
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo' target='_blank'>socket:type1_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo)** corresponds with socket:type1_combo~^..*$&socket:type1_combo!~^1$_This option cannot be chosen as answer_
+  - **<b>Tesla Supercharger</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger' target='_blank'>socket:tesla_supercharger</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Tesla Supercharger</b>** corresponds with socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^1$_This option cannot be chosen as answer_
+  - **<b>Type 2</b> (mennekes)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2' target='_blank'>socket:type2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Type 2</b> (mennekes)** corresponds with socket:type2~^..*$&socket:type2!~^1$_This option cannot be chosen as answer_
+  - **<b>Type 2 CCS</b> (mennekes)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo' target='_blank'>socket:type2_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Type 2 CCS</b> (mennekes)** corresponds with socket:type2_combo~^..*$&socket:type2_combo!~^1$_This option cannot be chosen as answer_
+  - **<b>Type 2 with cable</b> (mennekes)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable' target='_blank'>socket:type2_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Type 2 with cable</b> (mennekes)** corresponds with socket:type2_cable~^..*$&socket:type2_cable!~^1$_This option cannot be chosen as answer_
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs' target='_blank'>socket:tesla_supercharger_ccs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css)** corresponds with socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^1$_This option cannot be chosen as answer_
+  - **<b>Tesla Supercharger (destination)</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Tesla Supercharger (destination)</b>** corresponds with socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dus' target='_blank'>us</a>_This option cannot be chosen as answer_
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)** corresponds with socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&_country!~^us$_This option cannot be chosen as answer_
+  - **<b>USB</b> to charge phones and small electronics** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A' target='_blank'>socket:USB-A</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>USB</b> to charge phones and small electronics** corresponds with socket:USB-A~^..*$&socket:USB-A!~^1$_This option cannot be chosen as answer_
+  - **<b>Bosch Active Connect with 3 pins</b> and cable** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin' target='_blank'>socket:bosch_3pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_3pin%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Bosch Active Connect with 3 pins</b> and cable** corresponds with socket:bosch_3pin~^..*$&socket:bosch_3pin!~^1$_This option cannot be chosen as answer_
+  - **<b>Bosch Active Connect with 5 pins</b> and cable** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin' target='_blank'>socket:bosch_5pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_5pin%3D1' target='_blank'>1</a>Unselecting this answer will add 
+  - **<b>Bosch Active Connect with 5 pins</b> and cable** corresponds with socket:bosch_5pin~^..*$&socket:bosch_5pin!~^1$_This option cannot be chosen as answer_
 
 
 
@@ -352,6 +257,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) 
 This is rendered with `There are <b class='text-xl'>{socket:schuko}</b> plugs of type <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> available here`
 
+Only visible if `socket:schuko~^..*$&socket:schuko!~^0$` is shown
+
 
 
 ### plugs-1 
@@ -362,6 +269,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) 
 This is rendered with `There are <b class='text-xl'>{socket:typee}</b> plugs of type <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> available here`
+
+Only visible if `socket:typee~^..*$&socket:typee!~^0$` is shown
 
 
 
@@ -374,6 +283,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:chademo](https://wiki.openstreetmap.org/wiki/Key:socket:chademo) 
 This is rendered with `There are <b class='text-xl'>{socket:chademo}</b> plugs of type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> available here`
 
+Only visible if `socket:chademo~^..*$&socket:chademo!~^0$` is shown
+
 
 
 ### plugs-3 
@@ -384,6 +295,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:type1_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable) 
 This is rendered with `There are <b class='text-xl'>{socket:type1_cable}</b> plugs of type <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> available here`
+
+Only visible if `socket:type1_cable~^..*$&socket:type1_cable!~^0$` is shown
 
 
 
@@ -396,6 +309,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:type1](https://wiki.openstreetmap.org/wiki/Key:socket:type1) 
 This is rendered with `There are <b class='text-xl'>{socket:type1}</b> plugs of type <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> available here`
 
+Only visible if `socket:type1~^..*$&socket:type1!~^0$` is shown
+
 
 
 ### plugs-5 
@@ -406,6 +321,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:type1_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo) 
 This is rendered with `There are <b class='text-xl'>{socket:type1_combo}</b> plugs of type <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> available here`
+
+Only visible if `socket:type1_combo~^..*$&socket:type1_combo!~^0$` is shown
 
 
 
@@ -418,6 +335,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:tesla_supercharger](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger) 
 This is rendered with `There are <b class='text-xl'>{socket:tesla_supercharger}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> available here`
 
+Only visible if `socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^0$` is shown
+
 
 
 ### plugs-7 
@@ -428,6 +347,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:type2](https://wiki.openstreetmap.org/wiki/Key:socket:type2) 
 This is rendered with `There are <b class='text-xl'>{socket:type2}</b> plugs of type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> available here`
+
+Only visible if `socket:type2~^..*$&socket:type2!~^0$` is shown
 
 
 
@@ -440,6 +361,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:type2_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo) 
 This is rendered with `There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> available here`
 
+Only visible if `socket:type2_combo~^..*$&socket:type2_combo!~^0$` is shown
+
 
 
 ### plugs-9 
@@ -450,6 +373,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:type2_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable) 
 This is rendered with `There are <b class='text-xl'>{socket:type2_cable}</b> plugs of type <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here`
+
+Only visible if `socket:type2_cable~^..*$&socket:type2_cable!~^0$` is shown
 
 
 
@@ -462,6 +387,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:tesla_supercharger_ccs](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs) 
 This is rendered with `There are <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> available here`
 
+Only visible if `socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^0$` is shown
+
 
 
 ### plugs-11 
@@ -472,6 +399,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) 
 This is rendered with `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> available here`
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
 
 
 
@@ -484,6 +413,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) 
 This is rendered with `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> available here`
 
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
 
 
 ### plugs-13 
@@ -494,6 +425,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:USB-A](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A) 
 This is rendered with `There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> available here`
+
+Only visible if `socket:USB-A~^..*$&socket:USB-A!~^0$` is shown
 
 
 
@@ -506,6 +439,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 This rendering asks information about the property  [socket:bosch_3pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin) 
 This is rendered with `There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> available here`
 
+Only visible if `socket:bosch_3pin~^..*$&socket:bosch_3pin!~^0$` is shown
+
 
 
 ### plugs-15 
@@ -516,6 +451,8 @@ The question is **How much plugs of type <div style='display: inline-block'><b><
 
 This rendering asks information about the property  [socket:bosch_5pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin) 
 This is rendered with `There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> available here`
+
+Only visible if `socket:bosch_5pin~^..*$&socket:bosch_5pin!~^0$` is shown
 
 
 
@@ -530,8 +467,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Schuko wall plug
 
 
 
-  - **<div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:schuko:voltage' target='_blank'>socket:socket:schuko:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:schuko:voltage%3D230 V' target='_blank'>230 V</a>
+  - **<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage' target='_blank'>socket:schuko:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:voltage%3D230 V' target='_blank'>230 V</a>
 
+
+Only visible if `socket:schuko~^..*$&socket:schuko!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -546,8 +487,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Schuko wall plug
 
 
 
-  - **<div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:schuko:current' target='_blank'>socket:socket:schuko:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:schuko:current%3D16 A' target='_blank'>16 A</a>
+  - **<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current' target='_blank'>socket:schuko:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:current%3D16 A' target='_blank'>16 A</a>
 
+
+Only visible if `socket:schuko~^..*$&socket:schuko!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -562,8 +507,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Schuko wall plug
 
 
 
-  - **<div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> outputs at most 3.6 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:schuko:output' target='_blank'>socket:socket:schuko:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:schuko:output%3D3.6 kw' target='_blank'>3.6 kw</a>
+  - **<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output' target='_blank'>socket:schuko:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:output%3D3.6 kw' target='_blank'>3.6 kw</a>
 
+
+Only visible if `socket:schuko~^..*$&socket:schuko!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -578,8 +527,12 @@ This is rendered with `<div style='display: inline-block'><b><b>European wall pl
 
 
 
-  - **<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:typee:voltage' target='_blank'>socket:socket:typee:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:typee:voltage%3D230 V' target='_blank'>230 V</a>
+  - **<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage' target='_blank'>socket:typee:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:voltage%3D230 V' target='_blank'>230 V</a>
 
+
+Only visible if `socket:typee~^..*$&socket:typee!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -594,8 +547,12 @@ This is rendered with `<div style='display: inline-block'><b><b>European wall pl
 
 
 
-  - **<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:typee:current' target='_blank'>socket:socket:typee:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:typee:current%3D16 A' target='_blank'>16 A</a>
+  - **<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:current' target='_blank'>socket:typee:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:current%3D16 A' target='_blank'>16 A</a>
 
+
+Only visible if `socket:typee~^..*$&socket:typee!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -610,9 +567,13 @@ This is rendered with `<div style='display: inline-block'><b><b>European wall pl
 
 
 
-  - **<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs at most 3 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:typee:output' target='_blank'>socket:socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:typee:output%3D3 kw' target='_blank'>3 kw</a>
-  - **<div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> outputs at most 22 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:typee:output' target='_blank'>socket:socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:typee:output%3D22 kw' target='_blank'>22 kw</a>
+  - **<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D3 kw' target='_blank'>3 kw</a>
+  - **<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D22 kw' target='_blank'>22 kw</a>
 
+
+Only visible if `socket:typee~^..*$&socket:typee!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -627,8 +588,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Chademo</b></b> 
 
 
 
-  - **<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs 500 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:chademo:voltage' target='_blank'>socket:socket:chademo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:chademo:voltage%3D500 V' target='_blank'>500 V</a>
+  - **<b>Chademo</b> outputs 500 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage' target='_blank'>socket:chademo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:voltage%3D500 V' target='_blank'>500 V</a>
 
+
+Only visible if `socket:chademo~^..*$&socket:chademo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -643,8 +608,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Chademo</b></b> 
 
 
 
-  - **<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs at most 120 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:chademo:current' target='_blank'>socket:socket:chademo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:chademo:current%3D120 A' target='_blank'>120 A</a>
+  - **<b>Chademo</b> outputs at most 120 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current' target='_blank'>socket:chademo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:current%3D120 A' target='_blank'>120 A</a>
 
+
+Only visible if `socket:chademo~^..*$&socket:chademo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -659,8 +628,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Chademo</b></b> 
 
 
 
-  - **<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs at most 50 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:chademo:output' target='_blank'>socket:socket:chademo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:chademo:output%3D50 kw' target='_blank'>50 kw</a>
+  - **<b>Chademo</b> outputs at most 50 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output' target='_blank'>socket:chademo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:output%3D50 kw' target='_blank'>50 kw</a>
 
+
+Only visible if `socket:chademo~^..*$&socket:chademo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -675,9 +648,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 with cabl
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 200 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_cable:voltage' target='_blank'>socket:socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_cable:voltage%3D200 V' target='_blank'>200 V</a>
-  - **<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 240 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_cable:voltage' target='_blank'>socket:socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_cable:voltage%3D240 V' target='_blank'>240 V</a>
+  - **<b>Type 1 with cable</b> (J1772) outputs 200 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D200 V' target='_blank'>200 V</a>
+  - **<b>Type 1 with cable</b> (J1772) outputs 240 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D240 V' target='_blank'>240 V</a>
 
+
+Only visible if `socket:type1_cable~^..*$&socket:type1_cable!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -692,8 +669,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 with cabl
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_cable:current' target='_blank'>socket:socket:type1_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_cable:current%3D32 A' target='_blank'>32 A</a>
+  - **<b>Type 1 with cable</b> (J1772) outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current' target='_blank'>socket:type1_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:current%3D32 A' target='_blank'>32 A</a>
 
+
+Only visible if `socket:type1_cable~^..*$&socket:type1_cable!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -708,9 +689,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 with cabl
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 3.7 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_cable:output' target='_blank'>socket:socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_cable:output%3D3.7 kw' target='_blank'>3.7 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 7 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_cable:output' target='_blank'>socket:socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_cable:output%3D7 kw' target='_blank'>7 kw</a>
+  - **<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D3.7 kw' target='_blank'>3.7 kw</a>
+  - **<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D7 kw' target='_blank'>7 kw</a>
 
+
+Only visible if `socket:type1_cable~^..*$&socket:type1_cable!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -725,9 +710,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 <i>withou
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 200 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:voltage' target='_blank'>socket:socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:voltage%3D200 V' target='_blank'>200 V</a>
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs 240 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:voltage' target='_blank'>socket:socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:voltage%3D240 V' target='_blank'>240 V</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D200 V' target='_blank'>200 V</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D240 V' target='_blank'>240 V</a>
 
+
+Only visible if `socket:type1~^..*$&socket:type1!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -742,8 +731,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 <i>withou
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:current' target='_blank'>socket:socket:type1:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:current%3D32 A' target='_blank'>32 A</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:current' target='_blank'>socket:type1:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:current%3D32 A' target='_blank'>32 A</a>
 
+
+Only visible if `socket:type1~^..*$&socket:type1!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -758,11 +751,15 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 <i>withou
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 3.7 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:output' target='_blank'>socket:socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:output%3D3.7 kw' target='_blank'>3.7 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 6.6 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:output' target='_blank'>socket:socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:output%3D6.6 kw' target='_blank'>6.6 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 7 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:output' target='_blank'>socket:socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:output%3D7 kw' target='_blank'>7 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> outputs at most 7.2 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1:output' target='_blank'>socket:socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1:output%3D7.2 kw' target='_blank'>7.2 kw</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D3.7 kw' target='_blank'>3.7 kw</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D6.6 kw' target='_blank'>6.6 kw</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7 kw' target='_blank'>7 kw</a>
+  - **<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7.2 kw' target='_blank'>7.2 kw</a>
 
+
+Only visible if `socket:type1~^..*$&socket:type1!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -777,9 +774,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 CCS</b> (
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:voltage' target='_blank'>socket:socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:voltage%3D400 V' target='_blank'>400 V</a>
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs 1000 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:voltage' target='_blank'>socket:socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:voltage%3D1000 V' target='_blank'>1000 V</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D400 V' target='_blank'>400 V</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D1000 V' target='_blank'>1000 V</a>
 
+
+Only visible if `socket:type1_combo~^..*$&socket:type1_combo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -794,9 +795,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 CCS</b> (
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 50 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:current' target='_blank'>socket:socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:current%3D50 A' target='_blank'>50 A</a>
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:current' target='_blank'>socket:socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:current%3D125 A' target='_blank'>125 A</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D50 A' target='_blank'>50 A</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D125 A' target='_blank'>125 A</a>
 
+
+Only visible if `socket:type1_combo~^..*$&socket:type1_combo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -811,11 +816,15 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 1 CCS</b> (
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 50 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:output' target='_blank'>socket:socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:output%3D50 kw' target='_blank'>50 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 62.5 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:output' target='_blank'>socket:socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:output%3D62.5 kw' target='_blank'>62.5 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 150 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:output' target='_blank'>socket:socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:output%3D150 kw' target='_blank'>150 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> outputs at most 350 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type1_combo:output' target='_blank'>socket:socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type1_combo:output%3D350 kw' target='_blank'>350 kw</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D50 kw' target='_blank'>50 kw</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D62.5 kw' target='_blank'>62.5 kw</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D150 kw' target='_blank'>150 kw</a>
+  - **<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D350 kw' target='_blank'>350 kw</a>
 
+
+Only visible if `socket:type1_combo~^..*$&socket:type1_combo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -830,8 +839,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs 480 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger:voltage' target='_blank'>socket:socket:tesla_supercharger:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger:voltage%3D480 V' target='_blank'>480 V</a>
+  - **<b>Tesla Supercharger</b> outputs 480 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage' target='_blank'>socket:tesla_supercharger:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:voltage%3D480 V' target='_blank'>480 V</a>
 
+
+Only visible if `socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -846,9 +859,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger:current' target='_blank'>socket:socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger:current%3D125 A' target='_blank'>125 A</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger:current' target='_blank'>socket:socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger:current%3D350 A' target='_blank'>350 A</a>
+  - **<b>Tesla Supercharger</b> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D125 A' target='_blank'>125 A</a>
+  - **<b>Tesla Supercharger</b> outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D350 A' target='_blank'>350 A</a>
 
+
+Only visible if `socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -863,10 +880,14 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 120 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger:output' target='_blank'>socket:socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger:output%3D120 kw' target='_blank'>120 kw</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 150 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger:output' target='_blank'>socket:socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger:output%3D150 kw' target='_blank'>150 kw</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 250 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger:output' target='_blank'>socket:socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger:output%3D250 kw' target='_blank'>250 kw</a>
+  - **<b>Tesla Supercharger</b> outputs at most 120 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D120 kw' target='_blank'>120 kw</a>
+  - **<b>Tesla Supercharger</b> outputs at most 150 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D150 kw' target='_blank'>150 kw</a>
+  - **<b>Tesla Supercharger</b> outputs at most 250 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D250 kw' target='_blank'>250 kw</a>
 
+
+Only visible if `socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -881,9 +902,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2</b> (menn
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2:voltage' target='_blank'>socket:socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2:voltage%3D230 V' target='_blank'>230 V</a>
-  - **<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2:voltage' target='_blank'>socket:socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2:voltage%3D400 V' target='_blank'>400 V</a>
+  - **<b>Type 2</b> (mennekes) outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D230 V' target='_blank'>230 V</a>
+  - **<b>Type 2</b> (mennekes) outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D400 V' target='_blank'>400 V</a>
 
+
+Only visible if `socket:type2~^..*$&socket:type2!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -898,9 +923,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2</b> (menn
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2:current' target='_blank'>socket:socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2:current%3D16 A' target='_blank'>16 A</a>
-  - **<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2:current' target='_blank'>socket:socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2:current%3D32 A' target='_blank'>32 A</a>
+  - **<b>Type 2</b> (mennekes) outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D16 A' target='_blank'>16 A</a>
+  - **<b>Type 2</b> (mennekes) outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D32 A' target='_blank'>32 A</a>
 
+
+Only visible if `socket:type2~^..*$&socket:type2!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -915,9 +944,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2</b> (menn
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 11 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2:output' target='_blank'>socket:socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2:output%3D11 kw' target='_blank'>11 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> outputs at most 22 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2:output' target='_blank'>socket:socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2:output%3D22 kw' target='_blank'>22 kw</a>
+  - **<b>Type 2</b> (mennekes) outputs at most 11 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D11 kw' target='_blank'>11 kw</a>
+  - **<b>Type 2</b> (mennekes) outputs at most 22 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D22 kw' target='_blank'>22 kw</a>
 
+
+Only visible if `socket:type2~^..*$&socket:type2!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -932,9 +965,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2 CCS</b> (
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 500 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_combo:voltage' target='_blank'>socket:socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_combo:voltage%3D500 V' target='_blank'>500 V</a>
-  - **<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 920 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_combo:voltage' target='_blank'>socket:socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_combo:voltage%3D920 V' target='_blank'>920 V</a>
+  - **<b>Type 2 CCS</b> (mennekes) outputs 500 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D500 V' target='_blank'>500 V</a>
+  - **<b>Type 2 CCS</b> (mennekes) outputs 920 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D920 V' target='_blank'>920 V</a>
 
+
+Only visible if `socket:type2_combo~^..*$&socket:type2_combo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -949,9 +986,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2 CCS</b> (
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_combo:current' target='_blank'>socket:socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_combo:current%3D125 A' target='_blank'>125 A</a>
-  - **<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_combo:current' target='_blank'>socket:socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_combo:current%3D350 A' target='_blank'>350 A</a>
+  - **<b>Type 2 CCS</b> (mennekes) outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D125 A' target='_blank'>125 A</a>
+  - **<b>Type 2 CCS</b> (mennekes) outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D350 A' target='_blank'>350 A</a>
 
+
+Only visible if `socket:type2_combo~^..*$&socket:type2_combo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -966,8 +1007,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2 CCS</b> (
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 50 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_combo:output' target='_blank'>socket:socket:type2_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_combo:output%3D50 kw' target='_blank'>50 kw</a>
+  - **<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output' target='_blank'>socket:type2_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:output%3D50 kw' target='_blank'>50 kw</a>
 
+
+Only visible if `socket:type2_combo~^..*$&socket:type2_combo!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -982,9 +1027,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2 with cabl
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_cable:voltage' target='_blank'>socket:socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_cable:voltage%3D230 V' target='_blank'>230 V</a>
-  - **<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_cable:voltage' target='_blank'>socket:socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_cable:voltage%3D400 V' target='_blank'>400 V</a>
+  - **<b>Type 2 with cable</b> (mennekes) outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D230 V' target='_blank'>230 V</a>
+  - **<b>Type 2 with cable</b> (mennekes) outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D400 V' target='_blank'>400 V</a>
 
+
+Only visible if `socket:type2_cable~^..*$&socket:type2_cable!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -999,9 +1048,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2 with cabl
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_cable:current' target='_blank'>socket:socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_cable:current%3D16 A' target='_blank'>16 A</a>
-  - **<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_cable:current' target='_blank'>socket:socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_cable:current%3D32 A' target='_blank'>32 A</a>
+  - **<b>Type 2 with cable</b> (mennekes) outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D16 A' target='_blank'>16 A</a>
+  - **<b>Type 2 with cable</b> (mennekes) outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D32 A' target='_blank'>32 A</a>
 
+
+Only visible if `socket:type2_cable~^..*$&socket:type2_cable!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1016,9 +1069,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Type 2 with cabl
 
 
 
-  - **<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_cable:output' target='_blank'>socket:socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_cable:output%3D11 kw' target='_blank'>11 kw</a>
-  - **<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:type2_cable:output' target='_blank'>socket:socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:type2_cable:output%3D22 kw' target='_blank'>22 kw</a>
+  - **<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D11 kw' target='_blank'>11 kw</a>
+  - **<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D22 kw' target='_blank'>22 kw</a>
 
+
+Only visible if `socket:type2_cable~^..*$&socket:type2_cable!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1033,9 +1090,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 500 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger_ccs:voltage%3D500 V' target='_blank'>500 V</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs 920 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger_ccs:voltage%3D920 V' target='_blank'>920 V</a>
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D500 V' target='_blank'>500 V</a>
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D920 V' target='_blank'>920 V</a>
 
+
+Only visible if `socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1050,9 +1111,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger_ccs:current' target='_blank'>socket:socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger_ccs:current%3D125 A' target='_blank'>125 A</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger_ccs:current' target='_blank'>socket:socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger_ccs:current%3D350 A' target='_blank'>350 A</a>
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D125 A' target='_blank'>125 A</a>
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D350 A' target='_blank'>350 A</a>
 
+
+Only visible if `socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1067,8 +1132,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most 50 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_supercharger_ccs:output' target='_blank'>socket:socket:tesla_supercharger_ccs:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_supercharger_ccs:output%3D50 kw' target='_blank'>50 kw</a>
+  - **<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output' target='_blank'>socket:tesla_supercharger_ccs:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:output%3D50 kw' target='_blank'>50 kw</a>
 
+
+Only visible if `socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1083,8 +1152,12 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs 480 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:voltage' target='_blank'>socket:socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:voltage%3D480 V' target='_blank'>480 V</a>
+  - **<b>Tesla Supercharger (destination)</b> outputs 480 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D480 V' target='_blank'>480 V</a>
 
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1099,9 +1172,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:current' target='_blank'>socket:socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:current%3D125 A' target='_blank'>125 A</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:current' target='_blank'>socket:socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:current%3D350 A' target='_blank'>350 A</a>
+  - **<b>Tesla Supercharger (destination)</b> outputs at most 125 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D125 A' target='_blank'>125 A</a>
+  - **<b>Tesla Supercharger (destination)</b> outputs at most 350 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D350 A' target='_blank'>350 A</a>
 
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1116,10 +1193,14 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla Supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 120 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:output' target='_blank'>socket:socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:output%3D120 kw' target='_blank'>120 kw</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 150 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:output' target='_blank'>socket:socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:output%3D150 kw' target='_blank'>150 kw</a>
-  - **<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most 250 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:output' target='_blank'>socket:socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:output%3D250 kw' target='_blank'>250 kw</a>
+  - **<b>Tesla Supercharger (destination)</b> outputs at most 120 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D120 kw' target='_blank'>120 kw</a>
+  - **<b>Tesla Supercharger (destination)</b> outputs at most 150 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D150 kw' target='_blank'>150 kw</a>
+  - **<b>Tesla Supercharger (destination)</b> outputs at most 250 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D250 kw' target='_blank'>250 kw</a>
 
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1134,9 +1215,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:voltage' target='_blank'>socket:socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:voltage%3D230 V' target='_blank'>230 V</a>
-  - **<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:voltage' target='_blank'>socket:socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:voltage%3D400 V' target='_blank'>400 V</a>
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D230 V' target='_blank'>230 V</a>
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D400 V' target='_blank'>400 V</a>
 
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1151,9 +1236,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:current' target='_blank'>socket:socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:current%3D16 A' target='_blank'>16 A</a>
-  - **<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:current' target='_blank'>socket:socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:current%3D32 A' target='_blank'>32 A</a>
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D16 A' target='_blank'>16 A</a>
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D32 A' target='_blank'>32 A</a>
 
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1168,9 +1257,13 @@ This is rendered with `<div style='display: inline-block'><b><b>Tesla supercharg
 
 
 
-  - **<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 11 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:output' target='_blank'>socket:socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:output%3D11 kw' target='_blank'>11 kw</a>
-  - **<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most 22 kw** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:tesla_destination:output' target='_blank'>socket:socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:tesla_destination:output%3D22 kw' target='_blank'>22 kw</a>
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D11 kw' target='_blank'>11 kw</a>
+  - **<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kw A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D22 kw' target='_blank'>22 kw</a>
 
+
+Only visible if `socket:tesla_destination~^..*$&socket:tesla_destination!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1185,8 +1278,12 @@ This is rendered with `<div style='display: inline-block'><b><b>USB</b> to charg
 
 
 
-  - **<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs 5 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:USB-A:voltage' target='_blank'>socket:socket:USB-A:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:USB-A:voltage%3D5 V' target='_blank'>5 V</a>
+  - **<b>USB</b> to charge phones and small electronics outputs 5 volt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage' target='_blank'>socket:USB-A:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:voltage%3D5 V' target='_blank'>5 V</a>
 
+
+Only visible if `socket:USB-A~^..*$&socket:USB-A!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1201,9 +1298,13 @@ This is rendered with `<div style='display: inline-block'><b><b>USB</b> to charg
 
 
 
-  - **<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 1 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:USB-A:current' target='_blank'>socket:socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:USB-A:current%3D1 A' target='_blank'>1 A</a>
-  - **<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 2 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:USB-A:current' target='_blank'>socket:socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:USB-A:current%3D2 A' target='_blank'>2 A</a>
+  - **<b>USB</b> to charge phones and small electronics outputs at most 1 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D1 A' target='_blank'>1 A</a>
+  - **<b>USB</b> to charge phones and small electronics outputs at most 2 A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D2 A' target='_blank'>2 A</a>
 
+
+Only visible if `socket:USB-A~^..*$&socket:USB-A!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1218,9 +1319,13 @@ This is rendered with `<div style='display: inline-block'><b><b>USB</b> to charg
 
 
 
-  - **<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 5w** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:USB-A:output' target='_blank'>socket:socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:USB-A:output%3D5w' target='_blank'>5w</a>
-  - **<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most 10w** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:socket:USB-A:output' target='_blank'>socket:socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:socket:USB-A:output%3D10w' target='_blank'>10w</a>
+  - **<b>USB</b> to charge phones and small electronics outputs at most 5w A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D5w' target='_blank'>5w</a>
+  - **<b>USB</b> to charge phones and small electronics outputs at most 10w A** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D10w' target='_blank'>10w</a>
 
+
+Only visible if `socket:USB-A~^..*$&socket:USB-A!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1238,6 +1343,10 @@ This is rendered with `<div style='display: inline-block'><b><b>Bosch Active Con
 
 
 
+Only visible if `socket:bosch_3pin~^..*$&socket:bosch_3pin!~^0$` is shown
+
+This tagrendering is part of group  `technical`
+
 
 
 ### current-14 
@@ -1253,6 +1362,10 @@ This is rendered with `<div style='display: inline-block'><b><b>Bosch Active Con
 
 
 
+
+Only visible if `socket:bosch_3pin~^..*$&socket:bosch_3pin!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1270,6 +1383,10 @@ This is rendered with `<div style='display: inline-block'><b><b>Bosch Active Con
 
 
 
+Only visible if `socket:bosch_3pin~^..*$&socket:bosch_3pin!~^0$` is shown
+
+This tagrendering is part of group  `technical`
+
 
 
 ### voltage-15 
@@ -1285,6 +1402,10 @@ This is rendered with `<div style='display: inline-block'><b><b>Bosch Active Con
 
 
 
+
+Only visible if `socket:bosch_5pin~^..*$&socket:bosch_5pin!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1302,6 +1423,10 @@ This is rendered with `<div style='display: inline-block'><b><b>Bosch Active Con
 
 
 
+Only visible if `socket:bosch_5pin~^..*$&socket:bosch_5pin!~^0$` is shown
+
+This tagrendering is part of group  `technical`
+
 
 
 ### power-output-15 
@@ -1317,6 +1442,10 @@ This is rendered with `<div style='display: inline-block'><b><b>Bosch Active Con
 
 
 
+
+Only visible if `socket:bosch_5pin~^..*$&socket:bosch_5pin!~^0$` is shown
+
+This tagrendering is part of group  `technical`
 
 
 
@@ -1346,9 +1475,9 @@ The question is **Does one have to pay to use this charging station?**
 
 
 
-  - **Free to use** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>_This option cannot be chosen as answer_
   - **Free to use (without authenticating)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>
   - **Free to use, but one has to authenticate** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
+  - **Free to use** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>_This option cannot be chosen as answer_
   - **Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee:conditional' target='_blank'>fee:conditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee:conditional%3Dno @ customers' target='_blank'>no @ customers</a>
   - **Paid use** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
@@ -1363,6 +1492,8 @@ The question is **How much does one have to pay to use this charging station?**
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 This is rendered with `Using this charging station costs <b>{charge}</b>`
+
+Only visible if `fee=yes` is shown
 
 
 
@@ -1381,6 +1512,8 @@ The question is **Which methods of payment are accepted here?**
   - **Payment is done using a dedicated app** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
   - **Payment is done using a membership card** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
+
+Only visible if `fee=yes|charge~^..*$` is shown
 
 
 
@@ -1415,6 +1548,8 @@ The question is **What's the phone number for authentication call or SMS?**
 This rendering asks information about the property  [authentication:phone_call:number](https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call:number) 
 This is rendered with `Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>`
 
+Only visible if `authentication:phone_call=yes|authentication:short_message=yes` is shown
+
 
 
 ### maxstay 
@@ -1430,6 +1565,8 @@ This is rendered with `One can stay at most <b>{canonical(maxstay)}</b>`
 
   - **No timelimit on leaving your vehicle here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
 
+
+Only visible if `maxstay~^..*$|motorcar=yes|hgv=yes|bus=yes` is shown
 
 
 
@@ -1534,6 +1671,8 @@ The question is **What is the reference number of this charging station?**
 This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
 This is rendered with `Reference number is <b>{ref}</b>`
 
+Only visible if `network~^..*$` is shown
+
 
 
 ### Operational status 
@@ -1587,6 +1726,8 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 
- 
+
+
+This tagrendering is part of group  `technical` 
 
 This document is autogenerated from [assets/layers/charging_station/charging_station.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/charging_station/charging_station.json)

@@ -24,7 +24,6 @@ import ShowDataMultiLayer from "./ShowDataLayer/ShowDataMultiLayer";
 import Minimap from "./Base/Minimap";
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
 import WikipediaBox from "./Wikipedia/WikipediaBox";
-import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import MultiApply from "./Popup/MultiApply";
 import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
 import {SubtleButton} from "./Base/SubtleButton";
@@ -39,65 +38,112 @@ import * as left_right_style_json from "../assets/layers/left_right_style/left_r
 import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
 import Toggle from "./Input/Toggle";
 import Img from "./Base/Img";
-import ValidatedTextField from "./Input/ValidatedTextField";
 import NoteCommentElement from "./Popup/NoteCommentElement";
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
 import FileSelectorButton from "./Input/FileSelectorButton";
 import {LoginToggle} from "./Popup/LoginButton";
 import {start} from "repl";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
+import {TextField} from "./Input/TextField";
+import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
+import {Translation} from "./i18n/Translation";
+import {AllTagsPanel} from "./AllTagsPanel";
 
 export interface SpecialVisualization {
     funcName: string,
     constr: ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
     docs: string,
     example?: string,
-    args: { name: string, defaultValue?: string, doc: string }[],
+    args: { name: string, defaultValue?: string, doc: string, required?: false | boolean }[],
     getLayerDependencies?: (argument: string[]) => string[]
 }
 
-export class AllTagsPanel extends VariableUiElement {
+class CloseNoteButton implements SpecialVisualization {
+    public readonly funcName = "close_note"
+    public readonly docs = "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text."
+    public readonly args = [
+        {
+            name: "text",
+            doc: "Text to show on this button",
+            required: true
+        },
+        {
+            name: "icon",
+            doc: "Icon to show",
+            defaultValue: "checkmark.svg"
+        },
+        {
+            name: "idkey",
+            doc: "The property name where the ID of the note to close can be found",
+            defaultValue: "id"
+        },
+        {
+            name: "comment",
+            doc: "Text to add onto the note when closing",
+        },
+        {
+            name: "minZoom",
+            doc: "If set, only show the closenote button if zoomed in enough"
+        },
+        {
+            name: "zoomButton",
+            doc: "Text to show if not zoomed in enough"
+        }
+    ]
 
-    constructor(tags: UIEventSource<any>, state?) {
+    public constr(state: FeaturePipelineState, tags, args): BaseUIElement {
+        const t = Translations.t.notes;
 
-        const calculatedTags = [].concat(
-            SimpleMetaTagger.lazyTags,
-            ...(state?.layoutToUse?.layers?.map(l => l.calculatedTags?.map(c => c[0]) ?? []) ?? []))
+        const params: {
+            text: string,
+            icon: string,
+            idkey: string,
+            comment: string,
+            minZoom: string,
+            zoomButton: string
+        } = Utils.ParseVisArgs(this.args, args)
 
+        let icon = Svg.checkmark_svg()
+        if (params.icon !== "checkmark.svg" && (args[2] ?? "") !== "") {
+            icon = new Img(args[1])
+        }
+        let textToShow = t.closeNote;
+        if ((params.text ?? "") !== "") {
+            textToShow = Translations.T(args[0])
+        }
 
-        super(tags.map(tags => {
-            const parts = [];
-            for (const key in tags) {
-                if (!tags.hasOwnProperty(key)) {
-                    continue
-                }
-                let v = tags[key]
-                if (v === "") {
-                    v = "<b>empty string</b>"
-                }
-                parts.push([key, v ?? "<b>undefined</b>"]);
-            }
+        let closeButton: BaseUIElement = new SubtleButton(icon, textToShow)
+        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
+        closeButton.onClick(() => {
+            const id = tags.data[args[2] ?? "id"]
+            state.osmConnection.closeNote(id, args[3])
+                ?.then(_ => {
+                    tags.data["closed_at"] = new Date().toISOString();
+                    tags.ping()
+                })
+        })
 
-            for (const key of calculatedTags) {
-                const value = tags[key]
-                if (value === undefined) {
-                    continue
-                }
-                parts.push(["<i>" + key + "</i>", value])
-            }
-
-            return new Table(
-                ["key", "value"],
-                parts
+        if ((params.minZoom ?? "") !== "" && !isNaN(Number(params.minZoom))) {
+            closeButton = new Toggle(
+                closeButton,
+                params.zoomButton ?? "",
+                state.locationControl.map(l => l.zoom >= Number(params.minZoom))
             )
-                .SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;").SetClass("zebra-table")
-        }))
+        }
+
+        return new LoginToggle(new Toggle(
+            t.isClosed.SetClass("thanks"),
+            closeButton,
+
+            isClosed
+        ), t.loginToClose, state)
     }
+
 }
 
 export default class SpecialVisualizations {
 
-    public static specialVisualizations = SpecialVisualizations.init()
+    public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.init()
 
     public static HelpMessage() {
 
@@ -124,9 +170,28 @@ export default class SpecialVisualizations {
             ));
 
         return new Combine([
-                new Title("Special tag renderings", 1),
-                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                new Combine([
+
+                    new Title("Special tag renderings", 1),
+
+                    "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
+                    "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                    new Title("Using expanded syntax", 4),
+                    `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write`,
+                    new FixedUiElement(JSON.stringify({
+                        render: {
+                            special: {
+                                type: "some_special_visualisation",
+                                "argname": "some_arg",
+                                "message": {
+                                    en: "some other really long message",
+                                    nl: "een boodschap in een andere taal"
+                                },
+                                "other_arg_name": "more args"
+                            }
+                        }
+                    })).SetClass("code")
+                ]).SetClass("flex flex-col"),
                 ...helpTexts
             ]
         ).SetClass("flex flex-col");
@@ -145,9 +210,9 @@ export default class SpecialVisualizations {
                     funcName: "image_carousel",
                     docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
                     args: [{
-                        name: "image key/prefix (multiple values allowed if comma-seperated)",
+                        name: "image_key",
                         defaultValue: AllImageProviders.defaultKeys.join(","),
-                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
+                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated "
                     }],
                     constr: (state, tags, args) => {
                         let imagePrefixes: string[] = undefined;
@@ -196,6 +261,32 @@ export default class SpecialVisualizations {
 
                 },
                 {
+                    funcName: "wikidata_label",
+                    docs: "Shows the label of the corresponding wikidata-item",
+                    args: [
+                        {
+                            name: "keyToShowWikidataFor",
+                            doc: "Use the wikidata entry from this key to show the label",
+                            defaultValue: "wikidata"
+                        }
+                    ],
+                    example: "`{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself",
+                    constr: (_, tagsSource, args) =>
+                        new VariableUiElement(
+                            tagsSource.map(tags => tags[args[0]])
+                                .map(wikidata => {
+                                    wikidata = Utils.NoEmpty(wikidata?.split(";")?.map(wd => wd.trim()) ?? [])[0]
+                                    const entry = Wikidata.LoadWikidataEntry(wikidata)
+                                    return new VariableUiElement(entry.map(e => {
+                                        if (e === undefined || e["success"] === undefined) {
+                                            return wikidata
+                                        }
+                                        const response = <WikidataResponse>e["success"]
+                                        return Translation.fromMap(response.labels)
+                                    }))
+                                }))
+                },
+                {
                     funcName: "minimap",
                     docs: "A small map showing the selected feature.",
                     args: [
@@ -213,6 +304,9 @@ export default class SpecialVisualizations {
                     example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
                     constr: (state, tagSource, args, _) => {
 
+                        if(state === undefined){
+                            return undefined
+                        }
                         const keys = [...args]
                         keys.splice(0, 1)
                         const featureStore = state.allElements.ContainingFeatures
@@ -268,7 +362,6 @@ export default class SpecialVisualizations {
                         new ShowDataMultiLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                popup: undefined,
                                 zoomToFeatures: true,
                                 layers: state.filteredLayers,
                                 features: new StaticFeatureSource(featuresToShow, true)
@@ -287,6 +380,7 @@ export default class SpecialVisualizations {
                         {
                             doc: "The side to show, either `left` or `right`",
                             name: "side",
+                            required: true
                         }
                     ],
                     example: "`{sided_minimap(left)}`",
@@ -314,7 +408,6 @@ export default class SpecialVisualizations {
                         new ShowDataLayer(
                             {
                                 leafletMap: minimap["leafletMap"],
-                                popup: undefined,
                                 zoomToFeatures: true,
                                 layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
                                 features: new StaticFeatureSource([copy], false),
@@ -381,12 +474,15 @@ export default class SpecialVisualizations {
                     docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
                     example: "{live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}",
                     args: [{
-                        name: "Url", doc: "The URL to load"
+                        name: "Url",
+                        doc: "The URL to load",
+                        required: true
                     }, {
                         name: "Shorthands",
                         doc: "A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;"
                     }, {
-                        name: "path", doc: "The path (or shorthand) that should be returned"
+                        name: "path",
+                        doc: "The path (or shorthand) that should be returned"
                     }],
                     constr: (state, tagSource: UIEventSource<any>, args) => {
                         const url = args[0];
@@ -403,7 +499,8 @@ export default class SpecialVisualizations {
                     args: [
                         {
                             name: "key",
-                            doc: "The key to be read and to generate a histogram from"
+                            doc: "The key to be read and to generate a histogram from",
+                            required: true
                         },
                         {
                             name: "title",
@@ -508,7 +605,8 @@ export default class SpecialVisualizations {
                     example: "{canonical(length)} will give 42 metre (in french)",
                     args: [{
                         name: "key",
-                        doc: "The key of the tag to give the canonical text for"
+                        doc: "The key of the tag to give the canonical text for",
+                        required: true
                     }],
                     constr: (state, tagSource, args) => {
                         const key = args [0]
@@ -517,7 +615,7 @@ export default class SpecialVisualizations {
                                 if (value === undefined) {
                                     return undefined
                                 }
-                                const allUnits = [].concat(...state.layoutToUse.layers.map(lyr => lyr.units))
+                                const allUnits = [].concat(...(state?.layoutToUse?.layers?.map(lyr => lyr.units) ?? []))
                                 const unit = allUnits.filter(unit => unit.isApplicableToKey(key))[0]
                                 if (unit === undefined) {
                                     return value;
@@ -538,16 +636,19 @@ export default class SpecialVisualizations {
                         {name: "feature_ids", doc: "A JSON-serialized list of IDs of features to apply the tagging on"},
                         {
                             name: "keys",
-                            doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features."
+                            doc: "One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features.",
+                            required: true
                         },
                         {name: "text", doc: "The text to show on the button"},
                         {
                             name: "autoapply",
-                            doc: "A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown"
+                            doc: "A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown",
+                            required: true
                         },
                         {
                             name: "overwrite",
-                            doc: "If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change"
+                            doc: "If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change",
+                            required: true
                         }
                     ],
                     example: "{multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}",
@@ -657,58 +758,7 @@ export default class SpecialVisualizations {
                         })
                     }
                 },
-                {
-                    funcName: "close_note",
-                    docs: "Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text.",
-                    args: [
-                        {
-                            name: "text",
-                            doc: "Text to show on this button",
-                        },
-                        {
-                            name: "icon",
-                            doc: "Icon to show",
-                            defaultValue: "checkmark.svg"
-                        },
-                        {
-                            name: "Id-key",
-                            doc: "The property name where the ID of the note to close can be found",
-                            defaultValue: "id"
-                        },
-                        {
-                            name: "comment",
-                            doc: "Text to add onto the note when closing",
-                        }
-                    ],
-                    constr: (state, tags, args) => {
-                        const t = Translations.t.notes;
-
-                        let icon = Svg.checkmark_svg()
-                        if (args[1] !== "checkmark.svg" && (args[2] ?? "") !== "") {
-                            icon = new Img(args[1])
-                        }
-                        let textToShow = t.closeNote;
-                        if ((args[0] ?? "") !== "") {
-                            textToShow = Translations.T(args[0])
-                        }
-
-                        const closeButton = new SubtleButton(icon, textToShow)
-                        const isClosed = tags.map(tags => (tags["closed_at"] ?? "") !== "");
-                        closeButton.onClick(() => {
-                            const id = tags.data[args[2] ?? "id"]
-                            state.osmConnection.closeNote(id, args[3])
-                                ?.then(_ => {
-                                    tags.data["closed_at"] = new Date().toISOString();
-                                    tags.ping()
-                                })
-                        })
-                        return new LoginToggle(new Toggle(
-                            t.isClosed.SetClass("thanks"),
-                            closeButton,
-                            isClosed
-                        ), t.loginToClose, state)
-                    }
-                },
+                new CloseNoteButton(),
                 {
                     funcName: "add_note_comment",
                     docs: "A textfield to add a comment to a node (with the option to close the note).",
@@ -722,7 +772,14 @@ export default class SpecialVisualizations {
                     constr: (state, tags, args) => {
 
                         const t = Translations.t.notes;
-                        const textField = ValidatedTextField.ForType("text").ConstructInputElement({placeholder: t.addCommentPlaceholder})
+                        const textField = new TextField(
+                            {
+                                placeholder: t.addCommentPlaceholder,
+                                inputStyle: "width: 100%; height: 6rem;",
+                                textAreaRows: 3,
+                                htmlType: "area"
+                            }
+                        )
                         textField.SetClass("rounded-l border border-grey")
                         const txt = textField.GetValue()
 
@@ -777,11 +834,14 @@ export default class SpecialVisualizations {
 
                         return new LoginToggle(
                             new Combine([
-                                new Title("Add a comment"),
+                                new Title(t.addAComment),
                                 textField,
                                 new Combine([
-                                    new Toggle(addCommentButton, undefined, textField.GetValue().map(t => t !==undefined && t.length > 1)).SetClass("mr-2")
-                                    , stateButtons]).SetClass("flex justify-end")
+                                    stateButtons.SetClass("sm:mr-2"),
+                                    new Toggle(addCommentButton,
+                                        new Combine([t.typeText]).SetClass("flex items-center h-full subtle"),
+                                        textField.GetValue().map(t => t !== undefined && t.length >= 1)).SetClass("sm:mr-2")
+                                ]).SetClass("sm:flex sm:justify-between sm:items-stretch")
                             ]).SetClass("border-2 border-black rounded-xl p-4 block"),
                             t.loginToAddComment, state)
                     }
@@ -862,15 +922,15 @@ export default class SpecialVisualizations {
 
                 },
                 {
-                    funcName:"title",
+                    funcName: "title",
                     args: [],
-                    docs:"Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
-                    example:"`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                    constr: (state, tagsSource, args, guistate) =>
+                    docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
+                    example: "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
+                    constr: (state, tagsSource) =>
                         new VariableUiElement(tagsSource.map(tags => {
                             const layer = state.layoutToUse.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
-                            if(title === undefined){
+                            if (title === undefined) {
                                 return undefined
                             }
                             return new SubstitutedTranslation(title, tagsSource, state)

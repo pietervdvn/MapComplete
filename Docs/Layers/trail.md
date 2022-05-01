@@ -12,27 +12,21 @@ Aangeduide wandeltochten
 
 
 
-## Table of contents
 
-1. [trail](#trail)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [trail-length](#trail-length)
-    + [Name](#name)
-    + [Operator tag](#operator-tag)
-    + [Color](#color)
-    + [Wheelchair access](#wheelchair-access)
-    + [pushchair access](#pushchair-access)
+
+  - This layer is shown at zoomlevel **12** and higher
+
+
+
+
+#### Themes using this layer 
 
 
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
 
-
-
-[Go to the source code](../assets/layers/trail/trail.json)
 
 
 
@@ -47,6 +41,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - route~^.*foot.*$|route~^.*hiking.*$|route~^.*bycicle.*$|route~^.*horse.*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22route%22~%22%5E.*foot.*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E.*hiking.*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E.*bycicle.*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E.*horse.*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -112,8 +108,8 @@ This is rendered with `Beheer door {operator}`
 
 
 
-  - **<img src="./assets/themes/buurtnatuur/Natuurpunt.jpg" style="width:1.5em">Dit gebied wordt beheerd door Natuurpunt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-  - **<img src="./assets/themes/buurtnatuur/Natuurpunt.jpg" style="width:1.5em">Dit gebied wordt beheerd door {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen as answer_
+  - **Dit gebied wordt beheerd door Natuurpunt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+  - **Dit gebied wordt beheerd door {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen as answer_
 
 
 

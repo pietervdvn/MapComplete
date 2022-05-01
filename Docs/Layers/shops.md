@@ -12,28 +12,9 @@ A shop
 
 
 
-## Table of contents
-
-1. [shops](#shops)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [shops-name](#shops-name)
-    + [shops-shop](#shops-shop)
-    + [shops-phone](#shops-phone)
-    + [shops-website](#shops-website)
-    + [shops-email](#shops-email)
-    + [shops-opening_hours](#shops-opening_hours)
-    + [payment-options](#payment-options)
-    + [questions](#questions)
-    + [reviews](#reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -48,8 +29,6 @@ A shop
   - [shops](https://mapcomplete.osm.be/shops)
 
 
-[Go to the source code](../assets/layers/shops/shops.json)
-
 
 
  Basic tags for this layer 
@@ -63,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - shop~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22shop%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

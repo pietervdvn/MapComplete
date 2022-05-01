@@ -7,18 +7,20 @@ export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined);
     private readonly value: UIEventSource<string>;
     private _element: HTMLElement;
-    private readonly _isValid: (s: string, country?: () => string) => boolean;
+    private _actualField : HTMLElement
+    private readonly _isValid: (s: string) => boolean;
     private _rawValue: UIEventSource<string> 
+    private _isFocused = false;
     
     constructor(options?: {
         placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
-        htmlType?: string,
+        htmlType?: "area" | "text" | "time" | string,
         inputMode?: string,
         label?: BaseUIElement,
         textAreaRows?: number,
         inputStyle?: string,
-        isValid?: ((s: string, country?: () => string) => boolean)
+        isValid?: (s: string) => boolean
     }) {
         super();
         const self = this;
@@ -44,7 +46,7 @@ export class TextField extends InputElement<string> {
             el.type = options.htmlType ?? "text"
             el.inputMode = options.inputMode
             el.placeholder = placeholder
-            el.style.cssText = options.inputStyle
+            el.style.cssText = options.inputStyle ?? "width: 100%;"
             inputEl = el
         }
 
@@ -59,7 +61,6 @@ export class TextField extends InputElement<string> {
         this._element = form;
 
         const field = inputEl;
-
 
         this.value.addCallbackAndRunD(value => {
             // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
@@ -99,7 +100,6 @@ export class TextField extends InputElement<string> {
                 ) {
                 newCursorPos--;
             }
-            // @ts-ignore
             TextField.SetCursorPosition(field, newCursorPos);
         };
 
@@ -110,6 +110,12 @@ export class TextField extends InputElement<string> {
                 self.enterPressed.setData(field.value);
             }
         });
+        
+        if(this._isFocused){
+            field.focus()
+        }
+        
+        this._actualField = field;
 
 
     }
@@ -140,11 +146,18 @@ export class TextField extends InputElement<string> {
         if (t === undefined || t === null) {
             return false
         }
-        return this._isValid(t, undefined);
+        return this._isValid(t);
     }
 
     protected InnerConstructElement(): HTMLElement {
         return this._element;
     }
 
+    public focus() {
+        if(this._actualField === undefined){
+            this._isFocused = true
+        }else{
+            this._actualField.focus()
+        }
+    }
 }

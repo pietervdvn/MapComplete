@@ -60,7 +60,40 @@ export class Denomination {
         )
     }
 
-    public canonicalValue(value: string, actAsDefault?: boolean) {
+    /**
+     * Create a representation of the given value
+     * @param value: the value from OSM
+     * @param actAsDefault: if set and the value can be parsed as number, will be parsed and trimmed
+     * 
+     * const unit = new Denomination({
+     *               canonicalDenomination: "m",
+     *               alternativeDenomination: ["meter"],
+     *               'default': true,
+     *               human: {
+     *                   en: "meter"
+     *               }
+     *           }, "test")
+     * unit.canonicalValue("42m") // =>"42 m"
+     * unit.canonicalValue("42") // =>"42 m"
+     * unit.canonicalValue("42 m") // =>"42 m"
+     * unit.canonicalValue("42 meter") // =>"42 m"
+     * 
+     * 
+     * // Should be trimmed if canonical is empty
+     * const unit = new Denomination({
+     *               canonicalDenomination: "",
+     *               alternativeDenomination: ["meter","m"],
+     *               'default': true,
+     *               human: {
+     *                   en: "meter"
+     *               }
+     *           }, "test")
+     * unit.canonicalValue("42m") // =>"42"
+     * unit.canonicalValue("42") // =>"42"
+     * unit.canonicalValue("42 m") // =>"42"
+     * unit.canonicalValue("42 meter") // =>"42"
+     */
+    public canonicalValue(value: string, actAsDefault?: boolean) : string {
         if (value === undefined) {
             return undefined;
         }
@@ -69,9 +102,9 @@ export class Denomination {
             return null;
         }
         if (stripped === "1" && this._canonicalSingular !== undefined) {
-            return "1 " + this._canonicalSingular
+            return ("1 " + this._canonicalSingular).trim()
         }
-        return stripped + " " + this.canonical;
+        return (stripped + " " + this.canonical).trim();
     }
 
     /**

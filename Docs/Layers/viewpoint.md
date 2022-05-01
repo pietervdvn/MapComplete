@@ -12,22 +12,21 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
-## Table of contents
 
-1. [viewpoint](#viewpoint)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [viewpoint-description](#viewpoint-description)
+
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
+
+#### Themes using this layer 
 
 
 
 
 
-[Go to the source code](../assets/layers/viewpoint/viewpoint.json)
+  - [personal](https://mapcomplete.osm.be/personal)
+
 
 
 
@@ -42,6 +41,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dviewpoint' target='_blank'>viewpoint</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22tourism%22%3D%22viewpoint%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

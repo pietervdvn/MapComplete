@@ -24,6 +24,7 @@ import {ElementStorage} from "../../Logic/ElementStorage";
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 import BaseLayer from "../../Models/BaseLayer";
 import Loading from "../Base/Loading";
+import Hash from "../../Logic/Web/Hash";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -92,6 +93,7 @@ export default class SimpleAddUI extends Toggle {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            Hash.hash.setData(newElementAction.newElementId)
         }
 
         const addUi = new VariableUiElement(
@@ -115,7 +117,7 @@ export default class SimpleAddUI extends Toggle {
                         selectedPreset.setData(undefined)
                     }
 
-                    const message = Translations.t.general.add.addNew.Subs({category: preset.name});
+                    const message = Translations.t.general.add.addNew.Subs({category: preset.name}, preset.name["context"]);
                     return new ConfirmLocationOfPoint(state, filterViewIsOpened, preset,
                         message,
                         state.LastClickLocation.data,
@@ -182,13 +184,14 @@ export default class SimpleAddUI extends Toggle {
 
     private static CreatePresetSelectButton(preset: PresetInfo) {
 
+        const title = Translations.t.general.add.addNew.Subs({
+            category: preset.name
+        }, preset.name["context"])
         return new SubtleButton(
             preset.icon(),
             new Combine([
-                Translations.t.general.add.addNew.Subs({
-                    category: preset.name
-                }).SetClass("font-bold"),
-                Translations.WT(preset.description)?.FirstSentence()
+                title.SetClass("font-bold"),
+                preset.description?.FirstSentence()
             ]).SetClass("flex flex-col")
         )
     }
@@ -205,15 +208,20 @@ export default class SimpleAddUI extends Toggle {
         const allButtons = [];
         for (const layer of state.filteredLayers.data) {
 
-            if (layer.isDisplayed.data === false && !state.featureSwitchFilter.data) {
-                // The layer is not displayed and we cannot enable the layer control -> we skip
-                continue;
+            if (layer.isDisplayed.data === false) {
+                // The layer is not displayed...
+                if(!state.featureSwitchFilter.data){
+                    // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
+                    continue;
+                }
+
+                if (layer.layerDef.name === undefined) {
+                    // this layer can never be toggled on in any case, so we skip the presets
+                    continue;
+                }
             }
 
-            if (layer.layerDef.name === undefined) {
-                // this is a parlty hidden layer
-                continue;
-            }
+
 
             const presets = layer.layerDef.presets;
             for (const preset of presets) {

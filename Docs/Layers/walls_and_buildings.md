@@ -12,17 +12,9 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 
 
-## Table of contents
-
-1. [walls_and_buildings](#walls_and_buildings)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer is not visible by default and must be enabled in the filter by the user. 
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
@@ -45,8 +37,6 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 
-[Go to the source code](../assets/layers/walls_and_buildings/walls_and_buildings.json)
-
 
 
  Basic tags for this layer 
@@ -60,6 +50,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dwall' target='_blank'>wall</a>|building~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22barrier%22%3D%22wall%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22building%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

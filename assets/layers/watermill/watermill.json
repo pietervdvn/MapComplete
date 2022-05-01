@@ -6,7 +6,8 @@
     "de": "Wassermühle",
     "ru": "Водяная мельница",
     "id": "Kincir Air",
-    "fr": "Moulin à eau"
+    "fr": "Moulin à eau",
+    "ca": "Molí d'aigua"
   },
   "minzoom": 12,
   "source": {

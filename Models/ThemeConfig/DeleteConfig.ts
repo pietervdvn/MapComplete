@@ -1,23 +1,43 @@
-import {Translation} from "../../UI/i18n/Translation";
+import {Translation, TypedTranslation} from "../../UI/i18n/Translation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {DeleteConfigJson} from "./Json/DeleteConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 export default class DeleteConfig {
+    public static readonly defaultDeleteReasons : {changesetMessage: string, explanation: Translation} [] = [
+        {
+            changesetMessage: "testing point",
+            explanation: Translations.t.delete.reasons.test
+        },
+        {
+            changesetMessage:"disused",
+            explanation: Translations.t.delete.reasons.disused
+        },
+        {
+            changesetMessage: "not found",
+            explanation: Translations.t.delete.reasons.notFound
+        },
+        {
+            changesetMessage: "duplicate",
+            explanation:Translations.t.delete.reasons.duplicate
+        }
+    ]
+
+
     public readonly extraDeleteReasons?: {
-        explanation: Translation,
+        explanation: TypedTranslation<object>,
         changesetMessage: string
     }[]
 
-    public readonly nonDeleteMappings?: { if: TagsFilter, then: Translation }[]
+    public readonly nonDeleteMappings?: { if: TagsFilter, then: TypedTranslation<object> }[]
 
     public readonly softDeletionTags?: TagsFilter
     public readonly neededChangesets?: number
 
     constructor(json: DeleteConfigJson, context: string) {
 
-        this.extraDeleteReasons = json.extraDeleteReasons?.map((reason, i) => {
+        this.extraDeleteReasons = (json.extraDeleteReasons ?? []).map((reason, i) => {
             const ctx = `${context}.extraDeleteReasons[${i}]`
             if ((reason.changesetMessage ?? "").length <= 5) {
                 throw `${ctx}.explanation is too short, needs at least 4 characters`
@@ -27,7 +47,7 @@ export default class DeleteConfig {
                 changesetMessage: reason.changesetMessage
             }
         })
-        this.nonDeleteMappings = json.nonDeleteMappings?.map((nonDelete, i) => {
+        this.nonDeleteMappings = (json.nonDeleteMappings??[]).map((nonDelete, i) => {
             const ctx = `${context}.extraDeleteReasons[${i}]`
             return {
                 if: TagUtils.Tag(nonDelete.if, ctx + ".if"),

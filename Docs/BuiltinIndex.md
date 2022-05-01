@@ -18,6 +18,7 @@
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
     + [level](#level)
+    + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
     + [wheelchair-access](#wheelchair-access)
     + [service:electricity](#serviceelectricity)
@@ -26,6 +27,7 @@
     + [questions](#questions)
     + [reviews](#reviews)
     + [export_as_gpx](#export_as_gpx)
+    + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
     + [wikipedia](#wikipedia)
 
@@ -51,6 +53,7 @@
   - bench
   - bench_at_pt
   - bicycle_library
+  - bicycle_rental
   - bicycle_tube_vending_machine
   - bike_cafe
   - bike_cleaning
@@ -62,6 +65,9 @@
   - birdhide
   - cafe_pub
   - charging_station
+  - climbing
+  - climbing_gym
+  - climbing_route
   - defibrillator
   - drinking_water
   - entrance
@@ -80,6 +86,7 @@
   - play_forest
   - playground
   - public_bookcase
+  - recycling
   - shops
   - slow_roads
   - sport_pitch
@@ -90,6 +97,7 @@
   - viewpoint
   - village_green
   - watermill
+  - windturbine
 
 
 
@@ -104,8 +112,14 @@
   - bicycle_rental
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
+  - hackerspace
+  - nature_reserve
   - observation_tower
+  - playground
+  - recycling
 
 
 
@@ -120,7 +134,11 @@
   - bicycle_rental
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
+  - hackerspace
+  - recycling
 
 
 
@@ -135,7 +153,11 @@
   - bicycle_rental
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
+  - hackerspace
+  - recycling
 
 
 
@@ -148,8 +170,11 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_shop
   - bike_themed_object
   - cafe_pub
+  - climbing_club
+  - climbing_gym
   - food
 
 
@@ -210,6 +235,17 @@
 
 
 
+### bicycle_rental.*bicycle_rental 
+
+
+
+
+
+  - bike_shop
+
+
+
+
 ### bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge 
 
 
@@ -230,6 +266,7 @@
   - cafe_pub
   - defibrillator
   - food
+  - hackerspace
   - observation_tower
 
 
@@ -298,6 +335,17 @@
 
 
 ### export_as_gpx 
+
+
+
+
+
+  - gps_track
+
+
+
+
+### export_as_geojson 
 
 
 

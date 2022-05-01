@@ -12,17 +12,9 @@ This layer visualizes directions
 
 
 
-## Table of contents
-
-1. [direction](#direction)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
   - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
 
 
@@ -38,8 +30,6 @@ This layer visualizes directions
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 
-[Go to the source code](../assets/layers/direction/direction.json)
-
 
 
  Basic tags for this layer 
@@ -53,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - camera:direction~^..*$|direction~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22camera%3Adirection%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22direction%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

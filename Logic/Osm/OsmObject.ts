@@ -69,7 +69,7 @@ export abstract class OsmObject {
         return rawData.elements[0].tags
     }
 
-    static async DownloadObjectAsync(id: string): Promise<OsmObject> {
+    static async DownloadObjectAsync(id: string): Promise<OsmObject | undefined> {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
@@ -80,6 +80,9 @@ export abstract class OsmObject {
         const full = (id.startsWith("way")) ? "/full" : "";
         const url = `${OsmObject.backendURL}api/0.6/${id}${full}`;
         const rawData = await Utils.downloadJsonCached(url, 1000)
+        if(rawData === undefined){
+            return undefined
+        }
         // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
         const parsed = OsmObject.ParseObjects(rawData.elements);
         // Lets fetch the object we need

@@ -12,25 +12,9 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
 
 
 
-## Table of contents
-
-1. [bicycle_tube_vending_machine](#bicycle_tube_vending_machine)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Still in use?](#still-in-use)
-    + [bicycle_tube_vending_machine-charge](#bicycle_tube_vending_machine-charge)
-    + [vending-machine-payment-methods](#vending-machine-payment-methods)
-    + [bicycle_tube_vending_machine-brand](#bicycle_tube_vending_machine-brand)
-    + [bicycle_tube_vending_machine-operator](#bicycle_tube_vending_machine-operator)
-    + [bicycle_tube_vending_maching-other-items](#bicycle_tube_vending_maching-other-items)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -44,8 +28,6 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](../assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json)
 
 
 
@@ -61,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
   - vending~^.*bicycle_tube.*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22~%22%5E.*bicycle_tube.*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

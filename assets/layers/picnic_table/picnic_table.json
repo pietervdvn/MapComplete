@@ -6,7 +6,8 @@
     "it": "Tavoli da picnic",
     "ru": "Столы для пикника",
     "fr": "Tables de pique-nique",
-    "de": "Picknick-Tische"
+    "de": "Picknick-Tische",
+    "ca": "Taules de pícnic"
   },
   "minzoom": 12,
   "source": {
@@ -19,7 +20,8 @@
       "it": "Tavolo da picnic",
       "ru": "Стол для пикника",
       "fr": "Table de pique-nique",
-      "de": "Picknick-Tisch"
+      "de": "Picknick-Tisch",
+      "ca": "Taula de pícnic"
     }
   },
   "description": {
@@ -85,12 +87,12 @@
         "leisure=picnic_table"
       ],
       "title": {
-        "en": "picnic table",
-        "nl": "picnic-tafel",
-        "it": "tavolo da picnic",
+        "en": "a picnic table",
+        "nl": "een picknicktafel",
+        "it": "una tavolo da picnic",
         "ru": "стол для пикника",
-        "de": "picknicktisch",
-        "fr": "table de pique-nique"
+        "de": "eine picknicktisch",
+        "fr": "une table de pique-nique"
       }
     }
   ],

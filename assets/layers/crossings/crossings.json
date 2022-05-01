@@ -4,13 +4,16 @@
     "en": "Crossings",
     "nl": "Oversteekplaatsen",
     "de": "Kreuzungen",
-    "fr": "Traversée"
+    "fr": "Traversée",
+    "ca": "Encreuaments",
+    "da": "Overgange"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
     "nl": "Oversteekplaatsen voor voetgangers en fietsers",
     "de": "Übergänge für Fußgänger und Radfahrer",
-    "fr": "Traversée pour piétons et cyclistes"
+    "fr": "Traversée pour piétons et cyclistes",
+    "da": "Overgange for fodgængere og cyklister"
   },
   "source": {
     "osmTags": {
@@ -26,7 +29,8 @@
       "en": "Crossing",
       "nl": "Oversteekplaats",
       "de": "Kreuzung",
-      "fr": "Traversée"
+      "fr": "Traversée",
+      "ca": "Encreuament"
     },
     "mappings": [
       {
@@ -36,7 +40,8 @@
           "nl": "Verkeerslicht",
           "ru": "Светофор",
           "de": "Ampel",
-          "fr": "Feu de signalisation"
+          "fr": "Feu de signalisation",
+          "ca": "Semàfor"
         }
       },
       {
@@ -53,10 +58,12 @@
   "presets": [
     {
       "title": {
-        "en": "Crossing",
-        "nl": "Oversteekplaats",
-        "de": "Kreuzung",
-        "fr": "Traversée"
+        "en": "a crossing",
+        "nl": "een oversteekplaats",
+        "de": "eine kreuzung",
+        "fr": "une traversée",
+        "ca": "un pas de vianants",
+        "da": "en overgang"
       },
       "tags": [
         "highway=crossing"
@@ -65,7 +72,8 @@
         "en": "Crossing for pedestrians and/or cyclists",
         "nl": "Oversteekplaats voor voetgangers en/of fietsers",
         "de": "Kreuzung für Fußgänger und/oder Radfahrer",
-        "fr": "Traversée pour piétons et/ou cyclistes"
+        "fr": "Traversée pour piétons et/ou cyclistes",
+        "da": "Overgang for fodgængere og/eller cyklister"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -77,11 +85,12 @@
     },
     {
       "title": {
-        "en": "Traffic signal",
-        "nl": "Verkeerslicht",
+        "en": "a traffic signal",
+        "nl": "een verkeerslicht",
         "ru": "Светофор",
-        "de": "Ampel",
-        "fr": "Feu de signalisation"
+        "de": "eine ampel",
+        "fr": "une feu de signalisation",
+        "da": "et trafiksignal"
       },
       "tags": [
         "highway=traffic_signals"
@@ -90,7 +99,8 @@
         "en": "Traffic signal on a road",
         "nl": "Verkeerslicht op een weg",
         "de": "Ampel an einer Straße",
-        "fr": "Feu de signalisation sur la voie"
+        "fr": "Feu de signalisation sur la voie",
+        "da": "Trafiksignal på en vej"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -132,7 +142,8 @@
           "then": {
             "en": "Zebra crossing",
             "nl": "Zebrapad",
-            "de": "Zebrastreifen"
+            "de": "Zebrastreifen",
+            "ca": "Pas de zebra"
           },
           "hideInAnswer": true
         },
@@ -177,7 +188,8 @@
       "question": {
         "en": "Is this crossing also for bicycles?",
         "nl": "Is deze oversteekplaats ook voor fietsers",
-        "de": "Können Radfahrer diese Kreuzung nutzen?"
+        "de": "Können Radfahrer diese Kreuzung nutzen?",
+        "da": "Er denne overgang også for cykler?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -186,7 +198,8 @@
           "then": {
             "en": "A cyclist can use this crossing",
             "nl": "Een fietser kan deze oversteekplaats gebruiken",
-            "de": "Radfahrer können diese Kreuzung nutzen"
+            "de": "Radfahrer können diese Kreuzung nutzen",
+            "da": "En cyklist kan benytte denne overgang"
           }
         },
         {
@@ -194,7 +207,8 @@
           "then": {
             "en": "A cyclist can not use this crossing",
             "nl": "Een fietser kan deze oversteekplaats niet gebruiken",
-            "de": "Radfahrer können diese Kreuzung nicht nutzen"
+            "de": "Radfahrer können diese Kreuzung nicht nutzen",
+            "da": "En cyklist kan ikke benytte denne overgang"
           }
         }
       ]

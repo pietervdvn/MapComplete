@@ -8,7 +8,15 @@
         "title": "Buka Peta Karya Seni"
     },
     "benches": {
+        "shortDescription": "Peta bangku",
         "title": "Bangku"
+    },
+    "bicycle_rental": {
+        "shortDescription": "Peta dengan stasiun persewaan sepeda dan toko penyewaan sepeda",
+        "title": "Sewa sepeda"
+    },
+    "bicyclelib": {
+        "title": "Perpustakaan sepeda"
     },
     "cafes_and_pubs": {
         "title": "Kafe dan pub"
@@ -100,96 +108,7 @@
     "charging_stations": {
         "title": "Stasiun pengisian daya"
     },
-    "climbing": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "1": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "2": {
-                "tagRenderings": {
-                    "Name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "3": {
-                "tagRenderings": {
-                    "name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            },
-            "4": {
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
-                    }
-                }
-            }
-        }
-    },
     "openwindpowermap": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "turbine-operator": {
-                        "render": "Turbin angin ini dioperasikan oleh {operator}."
-                    },
-                    "turbine-output": {
-                        "question": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
-                        "render": "Output daya dari turbin angin ini adalah {generator:output:electricity}."
-                    },
-                    "turbine-start-date": {
-                        "question": "Kapan turbin angin ini mulai beroperasi?",
-                        "render": "Turbin angin ini mulai beroperasi pada/dalam {start_date}."
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "turbin angin"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " megawat"
-                            },
-                            "1": {
-                                "human": " kilowat"
-                            },
-                            "2": {
-                                "human": " watt"
-                            },
-                            "3": {
-                                "human": " gigawatt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " meter"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "title": "OpenWindPowerMap"
     },
     "parkings": {

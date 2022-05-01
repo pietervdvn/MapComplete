@@ -10,6 +10,8 @@ import FileSelectorButton from "../Input/FileSelectorButton";
 import {FlowStep} from "./FlowStep";
 import {parse} from "papaparse";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {del} from "idb-keyval";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 class FileSelector extends InputElementMap<FileList, { name: string, contents: Promise<string> }> {
     constructor(label: BaseUIElement) {
@@ -34,13 +36,13 @@ class FileSelector extends InputElementMap<FileList, { name: string, contents: P
 /**
  * The first step in the import flow: load a file and validate that it is a correct geojson or CSV file
  */
-export class RequestFile extends Combine implements FlowStep<any> {
+export class RequestFile extends Combine implements FlowStep<{features: any[]}> {
 
     public readonly IsValid: UIEventSource<boolean>
     /**
      * The loaded GeoJSON
      */
-    public readonly Value: UIEventSource<any>
+    public readonly Value: UIEventSource<{features: any[]}>
 
     constructor() {
         const t = Translations.t.importHelper.selectFile;
@@ -72,6 +74,17 @@ export class RequestFile extends Combine implements FlowStep<any> {
                 if (parsed.features.some(f => f.geometry.type != "Point")) {
                     return {error: t.errPointsOnly}
                 }
+                parsed.features.forEach(f => {
+                    const props = f.properties
+                    for (const key in props) {
+                        if(props[key] === undefined || props[key] === null || props[key] === ""){
+                            delete props[key]
+                        } 
+                    if(!TagUtils.isValidKey(key)){
+                        return {error: "Probably an invalid key: "+key}
+                    }
+                    }
+                })
                 return parsed;
 
             } catch (e) {

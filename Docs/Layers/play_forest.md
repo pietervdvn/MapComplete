@@ -12,27 +12,21 @@ Een speelbos is een vrij toegankelijke zone in een bos
 
 
 
-## Table of contents
 
-1. [play_forest](#play_forest)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [play_forest-operator](#play_forest-operator)
-    + [play_forest-opening_hours](#play_forest-opening_hours)
-    + [play_forest-email](#play_forest-email)
-    + [play_forest-phone](#play_forest-phone)
-    + [questions](#questions)
-    + [play_forest-reviews](#play_forest-reviews)
+
+  - This layer is shown at zoomlevel **13** and higher
+
+
+
+
+#### Themes using this layer 
 
 
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
 
-
-
-[Go to the source code](../assets/layers/play_forest/play_forest.json)
 
 
 
@@ -47,6 +41,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dforest' target='_blank'>forest</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22playground%22%3D%22forest%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

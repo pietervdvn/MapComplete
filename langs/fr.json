@@ -11,7 +11,8 @@
         "delete": "Supprimer",
         "explanations": {
             "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
-            "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé"
+            "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
+            "softDelete": "Cet objet sera mis à jour et caché de l'application. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Cet objet est supprimé",
         "isntAPoint": "Seul les points peuvent être supprimés, l'objet sélectionné est une ligne, un polygone ou une relation.",
@@ -40,13 +41,18 @@
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
         "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponible dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'&lt;i&gt;iframe&lt;/i&gt; pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou l'&lt;i&gt;<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a>&lt;/i&gt; </p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
-            "addNew": "Ajouter un/une {category} ici",
+            "addNew": "Ajouter {category}",
             "addNewMapLabel": "Cliquez ici pour ajouter un élément",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "confirmIntro": "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que ce point existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
             "hasBeenImported": "Ce point a déjà été importé",
+            "import": {
+                "hasBeenImported": "Cet objet a été importé",
+                "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
+                "importTags": "L'objet recevra {tags}"
+            },
             "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
             "openLayerControl": "Ouvrir la panneau de contrôle",
@@ -156,7 +162,7 @@
             "searching": "Chargement…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Ajouter à votre page d'accueil</h3>Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le bouton 'ajouter à l'écran d'accueil' dans la barre d'adresse pour effectuer cette tâche.",
+            "addToHomeScreen": "<h3>Ajouter à votre page d'accueil</h3> Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le bouton 'ajouter à l'écran d'accueil' dans la barre d'adresse pour effectuer cette tâche.",
             "copiedToClipboard": "Lien copié dans le presse-papier",
             "editThemeDescription": "Ajouter ou modifier des questions à ce thème",
             "editThisTheme": "Editer ce thème",

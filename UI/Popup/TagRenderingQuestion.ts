@@ -11,7 +11,7 @@ import {SaveButton} from "./SaveButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "../i18n/Translation";
+import {Translation, TypedTranslation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
@@ -29,6 +29,7 @@ import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import Title from "../Base/Title";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 /**
  * Shows the question element.
@@ -51,7 +52,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const applicableMappingsSrc =
             UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
+                const applicableMappings: { if: TagsFilter, icon?: string, then: TypedTranslation<object>, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -118,24 +119,7 @@ export default class TagRenderingQuestion extends Combine {
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
         } else {
-            bottomTags = new VariableUiElement(
-                inputElement.GetValue().map(
-                    (tagsFilter: TagsFilter) => {
-                        const csCount = state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
-                        if (csCount < Constants.userJourney.tagsVisibleAt) {
-                            return "";
-                        }
-                        if (tagsFilter === undefined) {
-                            return Translations.t.general.noTagsSelected.SetClass("subtle");
-                        }
-                        if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                            const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
-                            return new FixedUiElement(tagsStr).SetClass("subtle");
-                        }
-                        return tagsFilter.asHumanString(true, true, tags.data);
-                    }
-                )
-            ).SetClass("block break-all")
+            bottomTags = TagRenderingQuestion.CreateTagExplanation(inputElement.GetValue(), tags, state)
         }
         super([
             question,
@@ -158,7 +142,7 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateInputElement(
         state,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
+        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
@@ -168,7 +152,7 @@ export default class TagRenderingQuestion extends Combine {
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
        
-        const hasImages = applicableMappings.findIndex(mapping => mapping.then.icon !== undefined) >= 0
+        const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
@@ -207,7 +191,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.WT(mapping.then)
+                        shown: mapping.then.Subs(tagsSource.data)
                     }
                 })
             )
@@ -248,7 +232,7 @@ export default class TagRenderingQuestion extends Combine {
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
-                return t0?.isEquivalent(t1) ?? false
+                return t0?.shadows(t1) ?? false
             },
             (indices) => {
                 if (indices.length === 0) {
@@ -370,7 +354,7 @@ export default class TagRenderingQuestion extends Combine {
         return new FixedInputElement(
             TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state),
             tagging,
-            (t0, t1) => t1.isEquivalent(t0));
+            (t0, t1) => t1.shadows(t0));
     }
 
     private static GenerateMappingContent(mapping: {
@@ -450,13 +434,13 @@ export default class TagRenderingQuestion extends Combine {
         })
 
         let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
-            input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
+            input, (a, b) => a === b || (a?.shadows(b) ?? false),
             pickString, toString
         );
 
         if (freeform.inline) {
 
-            inputTagsFilter.SetClass("w-16-imp")
+            inputTagsFilter.SetClass("w-48-imp")
             inputTagsFilter = new InputElementWrapper(inputTagsFilter, configuration.render, freeform.key, tags, state)
             inputTagsFilter.SetClass("block")
 
@@ -464,6 +448,29 @@ export default class TagRenderingQuestion extends Combine {
 
         return inputTagsFilter;
 
+    }
+    
+    public static CreateTagExplanation(selectedValue: UIEventSource<TagsFilter>,
+                                       tags: UIEventSource<object>,
+                                       state?: {osmConnection?: OsmConnection}){
+        return new VariableUiElement(
+            selectedValue.map(
+                (tagsFilter: TagsFilter) => {
+                    const csCount = state?.osmConnection?.userDetails?.data?.csCount ?? Constants.userJourney.tagsVisibleAndWikiLinked + 1;
+                    if (csCount < Constants.userJourney.tagsVisibleAt) {
+                        return "";
+                    }
+                    if (tagsFilter === undefined) {
+                        return Translations.t.general.noTagsSelected.SetClass("subtle");
+                    }
+                    if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
+                        const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
+                        return new FixedUiElement(tagsStr).SetClass("subtle");
+                    }
+                    return tagsFilter.asHumanString(true, true, tags.data);
+                }
+            )
+        ).SetClass("block break-all")
     }
 
 }

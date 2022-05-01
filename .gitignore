@@ -2,9 +2,11 @@ dist/*
 node_modules
 .cache/*
 .idea/*
+.vscode/*
 scratch
 assets/editor-layer-index.json
 assets/generated/*
+assets/generated/images/*
 /*.webmanifest
 /*.html
 !/index.html
@@ -19,3 +21,5 @@ Svg.ts
 data/
 Folder.DotSettings.user
 index_*.ts
+.~lock.*
+*.doctest.ts

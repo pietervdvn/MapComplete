@@ -5,7 +5,8 @@
     "nl": "Vuilnisbak",
     "ru": "Контейнер для мусора",
     "de": "Abfalleimer",
-    "eo": "Rubujo"
+    "eo": "Rubujo",
+    "ca": "Paperera"
   },
   "minzoom": 17,
   "source": {
@@ -20,7 +21,8 @@
       "en": "Waste Basket",
       "nl": "Vuilnisbak",
       "ru": "Контейнер для мусора",
-      "de": "Abfalleimer"
+      "de": "Abfalleimer",
+      "ca": "Paperera"
     }
   },
   "description": {
@@ -29,6 +31,7 @@
     "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können."
   },
   "tagRenderings": [
+    "images",
     {
       "id": "waste-basket-waste-types",
       "question": {
@@ -156,10 +159,10 @@
         "amenity=waste_basket"
       ],
       "title": {
-        "en": "Waste Basket",
-        "nl": "Vuilnisbak",
+        "en": "a waste basket",
+        "nl": "een vuilnisbak",
         "ru": "Контейнер для мусора",
-        "de": "Abfalleimer",
+        "de": "eine abfalleimer",
         "eo": "Rubujo"
       },
       "presiceInput": {

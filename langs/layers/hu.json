@@ -362,7 +362,7 @@
         "tagRenderings": {
             "bicycle_rental_type": {
                 "mappings": {
-                    "5": {
+                    "4": {
                         "then": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója"
                     }
                 }
@@ -474,6 +474,47 @@
             }
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Itt lehetőség van sportmászásra"
+                    },
+                    "1": {
+                        "then": "Itt nincs lehetőség sportmászásra"
+                    }
+                }
+            }
+        }
+    },
+    "climbing_club": {
+        "description": "Mászóegyesület vagy -szervezet",
+        "name": "Mászóegyesület",
+        "presets": {
+            "0": {
+                "description": "Egy mászóegyesület",
+                "title": "Mászóegyesület"
+            },
+            "1": {
+                "description": "Mászással foglalkozó civil szervezet",
+                "title": "Mászószervezet"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Mászószervezet"
+                }
+            }
+        }
+    },
     "drinking_water": {
         "description": "Ivóvizet adó kutakat megjelenítő réteg",
         "name": "Ivóvíz",
@@ -526,6 +567,41 @@
         },
         "title": {
             "render": "Emlékkerékpár"
+        }
+    },
+    "hackerspace": {
+        "description": "Hackerspace",
+        "name": "Hackerspace",
+        "presets": {
+            "0": {
+                "description": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
+                "title": "Hackerspace"
+            },
+            "1": {
+                "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips.",
+                "title": "Makerspace"
+            }
+        },
+        "tagRenderings": {
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez egy makerspace"
+                    },
+                    "1": {
+                        "then": "Ez egy hagyományos (szoftverekkel foglalkozó) hackerspace"
+                    }
+                },
+                "question": "Ez hackerspace vagy makerspace?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Hackerspace"
         }
     },
     "public_bookcase": {
@@ -647,6 +723,64 @@
                 "mappings": {
                     "5": {
                         "then": "Autószerelő"
+                    }
+                }
+            }
+        }
+    },
+    "windturbine": {
+        "name": "Szélerőmű",
+        "presets": {
+            "0": {
+                "title": "Szélerőmű"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "Hány méter a rotorátmérője ennek a szélturbinának?",
+                "render": "A szélturbina rotorátmérője: {rotor:diameter} méter."
+            },
+            "turbine-height": {
+                "question": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
+                "render": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter."
+            },
+            "turbine-operator": {
+                "question": "Ki üzemelteti ezt a szélturbinát?",
+                "render": "Ennek a szélerőműnek az üzemeltetője: {operator}."
+            },
+            "turbine-output": {
+                "question": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
+                "render": "A szélerőmű teljesítménye: {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Mikor helyezték üzembe ezt a szélerőművet?",
+                "render": "A szélerőmű üzembe helyezése: {start_date}."
+            }
+        },
+        "title": {
+            "render": "szélerőmű"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatt"
+                    },
+                    "1": {
+                        "human": " kilowatt"
+                    },
+                    "2": {
+                        "human": " watt"
+                    },
+                    "3": {
+                        "human": " gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " méter"
                     }
                 }
             }

@@ -78,7 +78,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Natuurreservaat"
+            "nl": "een natuurreservaat"
           },
           "description": {
             "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
@@ -198,7 +198,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Park"
+            "nl": "een park"
           },
           "description": {
             "nl": "Voeg een ontbrekend park toe"
@@ -306,7 +306,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Bos"
+            "nl": "een bos"
           },
           "description": {
             "nl": "Voeg een ontbrekend bos toe aan de kaart"
@@ -504,9 +504,9 @@
               ]
             },
             "then": {
-              "nl": "Dit gebied wordt beheerd door Natuurpunt",
-              "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
-            }
+              "nl": "Dit gebied wordt beheerd door Natuurpunt"
+            },
+            "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
           },
           {
             "if": {
@@ -515,9 +515,9 @@
               ]
             },
             "then": {
-              "nl": "Dit gebied wordt beheerd door {operator}",
-              "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
+              "nl": "Dit gebied wordt beheerd door {operator}"
             },
+            "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
             "hideInAnswer": true
           },
           {
@@ -527,9 +527,9 @@
               ]
             },
             "then": {
-              "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos",
-              "icon": "./assets/themes/buurtnatuur/ANB.jpg"
-            }
+              "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+            },
+            "icon": "./assets/themes/buurtnatuur/ANB.jpg"
           },
           {
             "if": {
@@ -538,16 +538,9 @@
               ]
             },
             "then": "Beheer door een privépersoon",
-            "hideInAnswer": true
-          },
-          {
-            "if": {
-              "and": [
-                "operator:type=private",
-                "operator="
-              ]
-            },
-            "then": "Beheer door een privépersoon"
+            "addExtraTags": [
+              "operator="
+            ]
           }
         ],
         "condition": {

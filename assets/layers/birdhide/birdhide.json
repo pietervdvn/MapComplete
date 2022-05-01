@@ -2,7 +2,10 @@
   "id": "birdhide",
   "name": {
     "en": "Bird watching places",
-    "nl": "Vogelkijkhutten"
+    "nl": "Vogelkijkhutten",
+    "de": "Orte zur Vogelbeobachtung",
+    "es": "Lugares para ver pájaros",
+    "da": "Steder til fugleobservation"
   },
   "minzoom": 14,
   "source": {
@@ -43,7 +46,8 @@
         },
         "then": {
           "en": "Bird hide {name}",
-          "nl": "Vogelkijkhut {name}"
+          "nl": "Vogelkijkhut {name}",
+          "da": "Fugleskjul {name}"
         }
       },
       {
@@ -61,7 +65,9 @@
   },
   "description": {
     "en": "A birdhide",
-    "nl": "Een vogelkijkhut"
+    "nl": "Een vogelkijkhut",
+    "da": "Et fugleskjul",
+    "de": "Ein Vogelbeobachtungsturm"
   },
   "tagRenderings": [
     "images",
@@ -95,7 +101,9 @@
           },
           "then": {
             "en": "Bird hide",
-            "nl": "Vogelkijkhut"
+            "nl": "Vogelkijkhut",
+            "da": "Fugleskjul",
+            "de": "Vogelbeobachtungsturm"
           }
         },
         {
@@ -130,7 +138,8 @@
       "id": "bird-hide-wheelchair",
       "question": {
         "en": "Is this bird hide accessible to wheelchair users?",
-        "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?"
+        "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?",
+        "da": "Er dette fugleskjul tilgængeligt for kørestolsbrugere?"
       },
       "mappings": [
         {
@@ -141,7 +150,8 @@
           },
           "then": {
             "en": "There are special provisions for wheelchair users",
-            "nl": "Er zijn speciale voorzieningen voor rolstoelen"
+            "nl": "Er zijn speciale voorzieningen voor rolstoelen",
+            "es": "Hay provisiones especiales para usuarios de sillas de ruedas"
           }
         },
         {
@@ -152,7 +162,8 @@
           },
           "then": {
             "en": "A wheelchair can easily use this birdhide",
-            "nl": "Een rolstoel raakt er vlot"
+            "nl": "Een rolstoel raakt er vlot",
+            "da": "En kørestolsbruger kan sagtens bruge dette fugleskjul"
           }
         },
         {
@@ -163,7 +174,8 @@
           },
           "then": {
             "en": "This birdhide is reachable by wheelchair, but it is not easy",
-            "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk"
+            "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk",
+            "da": "Dette fugleskjul kan nås med kørestol, men det er ikke nemt"
           }
         },
         {
@@ -174,7 +186,10 @@
           },
           "then": {
             "en": "Not accessible to wheelchair users",
-            "nl": "Niet rolstoeltoegankelijk"
+            "nl": "Niet rolstoeltoegankelijk",
+            "de": "Nicht zugänglich für Rollstuhlfahrer",
+            "es": "No accesible a usuarios con sillas de ruedas",
+            "da": "Ikke tilgængelig for kørestolsbrugere"
           }
         }
       ]
@@ -182,28 +197,36 @@
     {
       "render": {
         "en": "Operated by {operator}",
-        "nl": "Beheer door {operator}"
+        "nl": "Beheer door {operator}",
+        "de": "Betrieben von {operator}",
+        "es": "Operado por {operator}",
+        "da": "Drives af {operator}"
       },
       "freeform": {
         "key": "operator"
       },
       "question": {
         "en": "Who operates this birdhide?",
-        "nl": "Wie beheert deze vogelkijkplaats?"
+        "nl": "Wie beheert deze vogelkijkplaats?",
+        "da": "Hvem driver dette fugleskjul?"
       },
       "mappings": [
         {
           "if": "operator=Natuurpunt",
           "then": {
             "en": "Operated by Natuurpunt",
-            "nl": "Beheer door Natuurpunt"
+            "nl": "Beheer door Natuurpunt",
+            "de": "Betrieben von Natuurpunt",
+            "es": "Operado por Natuurpunt",
+            "da": "Drives af Natuurpunt"
           }
         },
         {
           "if": "operator=Agentschap Natuur en Bos",
           "then": {
             "en": "Operated by the Agency for Nature and Forests",
-            "nl": "Beheer door het Agentschap Natuur en Bos "
+            "nl": "Beheer door het Agentschap Natuur en Bos",
+            "de": "Betrieben von einer Forst- bzw. Naturschutzbehörde"
           }
         }
       ],
@@ -233,12 +256,17 @@
         "amenity=shelter"
       ],
       "title": {
-        "en": "Birdhide",
-        "nl": "vogelkijkhut"
+        "en": "a birdhide",
+        "nl": "een vogelkijkhut",
+        "da": "et fugleskjul",
+        "de": "ein Vogelbeobachtungsturm"
       },
       "description": {
         "en": "A covered shelter where one can watch birds comfortably",
-        "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden"
+        "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden",
+        "de": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
+        "es": "Un refugio cubierto donde se pueden ver pájaros confortablemente",
+        "da": "Et overdækket ly, hvor man kan se fugle i ro og mag"
       }
     },
     {
@@ -248,12 +276,14 @@
         "shelter=no"
       ],
       "title": {
-        "en": "Bird blind",
-        "nl": "vogelkijkwand"
+        "en": "a bird blind",
+        "nl": "een vogelkijkwand"
       },
       "description": {
         "en": "A screen or wall with openings to watch birds",
-        "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken"
+        "nl": "Een vogelkijkwand waarachter men kan staan om vogels te kijken",
+        "es": "Una pantalla o pared con aperturas para ver pájaros",
+        "da": "En skærm eller væg med åbninger til at se på fugle"
       }
     }
   ],
@@ -266,7 +296,10 @@
             "nl": "Rolstoeltoegankelijk",
             "en": "Wheelchair accessible",
             "de": "Zugänglich für Rollstuhlfahrer",
-            "fr": "Accessible aux fauteuils roulants"
+            "fr": "Accessible aux fauteuils roulants",
+            "ca": "Accessible per a cadires de rodes",
+            "es": "Accesible con sillas de ruedas",
+            "da": "Tilgængelig for kørestolsbrugere"
           },
           "osmTags": {
             "or": [
@@ -284,7 +317,9 @@
         {
           "question": {
             "en": "Only covered birdhides",
-            "nl": "Enkel overdekte kijkhutten"
+            "nl": "Enkel overdekte kijkhutten",
+            "de": "Nur überdachte Vogelbeobachtungsstellen",
+            "da": "Kun overdækkede fugleskjul"
           },
           "osmTags": {
             "and": [

@@ -121,7 +121,7 @@ export default class MultiApply extends Toggle {
         const p = params
         const t = Translations.t.multi_apply
 
-
+        
         const featureId = p.tagsSource.data.id
 
         if (featureId === undefined) {

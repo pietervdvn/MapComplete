@@ -12,27 +12,9 @@ A layer showing trees
 
 
 
-## Table of contents
-
-1. [tree_node](#tree_node)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [tree-height](#tree-height)
-    + [tree-leaf_type](#tree-leaf_type)
-    + [tree-denotation](#tree-denotation)
-    + [tree-decidouous](#tree-decidouous)
-    + [tree_node-name](#tree_node-name)
-    + [tree-heritage](#tree-heritage)
-    + [tree_node-ref:OnroerendErfgoed](#tree_node-refonroerenderfgoed)
-    + [tree_node-wikidata](#tree_node-wikidata)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -47,8 +29,6 @@ A layer showing trees
   - [trees](https://mapcomplete.osm.be/trees)
 
 
-[Go to the source code](../assets/layers/tree_node/tree_node.json)
-
 
 
  Basic tags for this layer 
@@ -62,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22natural%22%3D%22tree%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -111,6 +93,8 @@ _This tagrendering has no question and is thus read-only_
   - **Height: {height}&nbsp;m** corresponds with height~^[0-9.]+$
 
 
+Only visible if `height~^..*$` is shown
+
 
 
 ### tree-leaf_type 
@@ -123,9 +107,9 @@ The question is **Is this a broadleaved or needleleaved tree?**
 
 
 
-  - **<img src="./assets/themes/trees/broadleaved.svg" style="width:1.5em;height:1.5em" alt=""/> Broadleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
-  - **<img src="./assets/themes/trees/needleleaved.svg" style="width:1.5em;height:1.5em" alt=""/> Needleleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
-  - **<img src="./assets/themes/trees/leafless.svg" style="width:1.5em;height:1.5em" alt=""/> Permanently leafless** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>_This option cannot be chosen as answer_
+  - **Broadleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
+  - **Needleleaved** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
+  - **Permanently leafless** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>_This option cannot be chosen as answer_
 
 
 
@@ -182,6 +166,8 @@ This is rendered with `Name: {name}`
   - **The tree does not have a name.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
 
+Only visible if `denotation=landmark|denotation=natural_monument|name~^..*$` is shown
+
 
 
 ### tree-heritage 
@@ -194,12 +180,14 @@ The question is **Is this tree registered heritage?**
 
 
 
-  - **<img src="./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg" style="width:0.85em;height:1em;vertical-align:middle" alt=""/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
+  - **Registered as heritage by <i>Onroerend Erfgoed</i> Flanders** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
   - **Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3Daatl' target='_blank'>aatl</a>
   - **Registered as heritage by a different organisation** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes' target='_blank'>yes</a>
   - **Not registered as heritage** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno' target='_blank'>no</a>
   - **Registered as heritage by a different organisation** corresponds with heritage~^..*$_This option cannot be chosen as answer_
 
+
+Only visible if `denotation=landmark|denotation=natural_monument` is shown
 
 
 
@@ -212,6 +200,8 @@ The question is **What is the ID issued by Onroerend Erfgoed Flanders?**
 This rendering asks information about the property  [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) 
 This is rendered with `<img src="./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg" style="width:0.85em;height:1em;vertical-align:middle" alt=""/> Onroerend Erfgoed ID: <a href="https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}">{ref:OnroerendErfgoed}</a>`
 
+Only visible if `heritage=4&heritage:operator=OnroerendErfgoed` is shown
+
 
 
 ### tree_node-wikidata 
@@ -221,6 +211,8 @@ This is rendered with `<img src="./assets/layers/tree_node/Onroerend_Erfgoed_log
 The question is **What is the Wikidata ID for this tree?**
 
 This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) 
-This is rendered with `<img src="./assets/svg/wikidata.svg" style="width:1em;height:0.56em;vertical-align:middle" alt=""/> Wikidata: <a href="http://www.wikidata.org/entity/{wikidata}">{wikidata}</a>` 
+This is rendered with `<img src="./assets/svg/wikidata.svg" style="width:1em;height:0.56em;vertical-align:middle" alt=""/> Wikidata: <a href="http://www.wikidata.org/entity/{wikidata}">{wikidata}</a>`
+
+Only visible if `denotation=landmark|denotation=natural_monument|wikidata~^..*$` is shown 
 
 This document is autogenerated from [assets/layers/tree_node/tree_node.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/tree_node/tree_node.json)

@@ -11,7 +11,7 @@ export class SlideShow extends BaseUIElement {
     constructor(embeddedElements: UIEventSource<BaseUIElement[]>) {
         super()
         this.embeddedElements = embeddedElements;
-        this.SetStyle("scroll-snap-type: x mandatory; overflow-x: scroll")
+        this.SetStyle("scroll-snap-type: x mandatory; overflow-x: auto")
     }
 
     protected InnerConstructElement(): HTMLElement {

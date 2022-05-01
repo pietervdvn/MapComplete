@@ -13,6 +13,7 @@ The following items can be easily reused in your layers
     + [questions](#questions)
     + [images](#images)
     + [export_as_gpx](#export_as_gpx)
+    + [export_as_geojson](#export_as_geojson)
     + [wikipedia](#wikipedia)
     + [reviews](#reviews)
     + [minimap](#minimap)
@@ -70,6 +71,16 @@ Read-only tagrendering
 
 
 
+### export_as_geojson 
+
+
+
+{export_as_geojson()}
+
+Read-only tagrendering
+
+
+
 ### wikipedia 
 
 
@@ -111,7 +122,7 @@ Read-only tagrendering
 
 <a href='tel:{phone}'>{phone}</a>
 
-What is the phone number of {name}?
+What is the phone number of {title()}?
 
 
 
@@ -157,7 +168,7 @@ Read-only tagrendering
 
 <a href='mailto:{email}' target='_blank'>{email}</a>
 
-What is the email address of {name}?
+What is the email address of {title()}?
 
 
 
@@ -172,7 +183,7 @@ What is the email address of {name}?
 
 <a href='{website}' target='_blank'>{website}</a>
 
-What is the website of {name}?
+What is the website of {title()}?
 
 
 
@@ -229,7 +240,7 @@ Is there still something relevant you couldn't give in the previous questions? A
 
 <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
-What are the opening hours of {name}?
+What are the opening hours of {title()}?
 
 
 

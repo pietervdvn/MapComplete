@@ -405,11 +405,22 @@
             "render": "Велосипедное кафе"
         }
     },
-    "bike_parking": {
-        "name": "Велопарковка",
+    "bike_cleaning": {
+        "name": "Услуги по чистке велосипедов",
         "presets": {
             "0": {
-                "title": "Велопарковка"
+                "title": "Услуги по чистке велосипедов"
+            }
+        },
+        "title": {
+            "render": "Услуги по чистке велосипедов"
+        }
+    },
+    "bike_parking": {
+        "name": "Велосипедная парковка",
+        "presets": {
+            "0": {
+                "title": "Велосипедная парковка"
             }
         },
         "tagRenderings": {
@@ -460,13 +471,17 @@
             }
         },
         "title": {
-            "render": "Велопарковка"
+            "render": "Велосипедная парковка"
         }
     },
     "bike_repair_station": {
+        "name": "Велостанции (ремонт, накачка шин или сразу всё)",
         "presets": {
             "0": {
                 "title": "bелосипедный насос"
+            },
+            "2": {
+                "title": "Станция обслуживания велосипедов без накачки (насоса)"
             }
         },
         "tagRenderings": {
@@ -527,8 +542,14 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Станция обслуживания велосипедов"
+                },
+                "1": {
+                    "then": "Станция обслуживания велосипедов"
+                },
                 "2": {
-                    "then": "Сломанный насос"
+                    "then": "Насос сломан"
                 },
                 "3": {
                     "then": "Велосипедный насос <i>{name}</i>"
@@ -536,7 +557,8 @@
                 "4": {
                     "then": "Велосипедный насос"
                 }
-            }
+            },
+            "render": "Велостанция (накачка шин и ремонт)"
         }
     },
     "bike_shop": {
@@ -663,6 +685,15 @@
             "render": "Обслуживание велосипедов/магазин"
         }
     },
+    "bike_themed_object": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Велотрек"
+                }
+            }
+        }
+    },
     "binocular": {
         "description": "Бинокли",
         "name": "Бинокль",
@@ -729,6 +760,68 @@
                         "human": "мегаватт"
                     }
                 }
+            }
+        }
+    },
+    "climbing": {
+        "tagRenderings": {
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "Здесь можно заняться спортивным скалолазанием"
+                    },
+                    "1": {
+                        "then": "Спортивное скалолазание здесь невозможно"
+                    }
+                }
+            },
+            "website": {
+                "question": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?"
+            }
+        }
+    },
+    "climbing_area": {
+        "tagRenderings": {
+            "name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_club": {
+        "name": "Клуб скалолазания",
+        "presets": {
+            "0": {
+                "description": "Клуб скалолазания",
+                "title": "Клуб скалолазания"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "render": "Клуб скалолазания"
+        }
+    },
+    "climbing_gym": {
+        "description": "Комплекс скалолазания",
+        "name": "Комплексы скалолазания",
+        "title": {
+            "render": "Комплекс скалолазания"
+        }
+    },
+    "climbing_opportunity": {
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_route": {
+        "tagRenderings": {
+            "Name": {
+                "render": "<strong>{name}</strong>"
             }
         }
     },
@@ -807,6 +900,7 @@
         }
     },
     "direction": {
+        "description": "Этот слой визуализирует направление",
         "name": "Визуализация направления"
     },
     "drinking_water": {
@@ -917,6 +1011,33 @@
             "render": "Велосипед Ghost"
         }
     },
+    "hackerspace": {
+        "description": "Хакерспейс",
+        "name": "Хакерспейс",
+        "presets": {
+            "0": {
+                "title": "Хакерспейс"
+            }
+        },
+        "tagRenderings": {
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Открыто 24/7"
+                    }
+                },
+                "render": "{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Хакерспейс"
+        }
+    },
     "hydrant": {
         "description": "Слой карты, отображающий пожарные гидранты.",
         "name": "Карта пожарных гидрантов",
@@ -983,6 +1104,7 @@
         "name": "Карты",
         "presets": {
             "0": {
+                "description": "Добавить отсутствующую карту",
                 "title": "Карта"
             }
         },
@@ -1078,7 +1200,7 @@
             },
             "playground-access": {
                 "mappings": {
-                    "3": {
+                    "4": {
                         "then": "Недоступно"
                     }
                 }
@@ -1592,5 +1714,39 @@
     },
     "watermill": {
         "name": "Водяная мельница"
+    },
+    "windturbine": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " мегаватт"
+                    },
+                    "1": {
+                        "human": " киловатт"
+                    },
+                    "2": {
+                        "human": " ватт"
+                    },
+                    "3": {
+                        "human": " гигаватт"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " метр"
+                    }
+                }
+            }
+        }
     }
 }

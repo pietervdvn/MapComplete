@@ -6,7 +6,8 @@
     "ru": "Детские площадки",
     "de": "Spielplätze",
     "it": "Campi da gioco",
-    "fr": "Aire de jeu"
+    "fr": "Aire de jeu",
+    "ca": "Parcs infantils"
   },
   "minzoom": 13,
   "source": {
@@ -26,7 +27,8 @@
     "it": "Parchi giochi",
     "ru": "Детские площадки",
     "de": "Spielplätze",
-    "fr": "Aire de jeu"
+    "fr": "Aire de jeu",
+    "ca": "Parcs infantils"
   },
   "title": {
     "render": {
@@ -35,7 +37,8 @@
       "it": "Parco giochi",
       "ru": "Детская площадка",
       "de": "Spielplatz",
-      "fr": "Aire de jeu"
+      "fr": "Aire de jeu",
+      "ca": "Parc infantil"
     },
     "mappings": [
       {
@@ -46,7 +49,8 @@
           "it": "Parco giochi <i>{name}</i>",
           "ru": "Детская площадка <i>{name}</i>",
           "de": "Spielplatz <i>{name}</i>",
-          "fr": "Aire de jeu <i>{name}</i>"
+          "fr": "Aire de jeu <i>{name}</i>",
+          "ca": "Parc infantil <i>{name}</i>"
         }
       }
     ]
@@ -291,7 +295,21 @@
             "it": "Accessibile pubblicamente",
             "de": "Zugänglich für die Allgemeinheit",
             "fr": "Accessible au public"
-          }
+          },
+          "addExtraTags": [
+            "fee=no"
+          ]
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "This is a <b>paid</b> playground",
+            "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken",
+            "de": "Dies ist ein <b>gebührenpflichtiger</b> Spielplatz"
+          },
+          "addExtraTags": [
+            "access=customers"
+          ]
         },
         {
           "if": "access=customers",
@@ -301,7 +319,10 @@
             "it": "Accessibile solamente ai clienti dell’attività che lo gestisce",
             "de": "Nur für Kunden des Betreibers zugänglich",
             "fr": "Réservée aux clients"
-          }
+          },
+          "addExtraTags": [
+            "fee=no"
+          ]
         },
         {
           "if": "access=students",
@@ -312,7 +333,10 @@
             "de": "Nur für Schüler der Schule zugänglich",
             "fr": "Réservée aux élèves de l’école"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "addExtraTags": [
+            "fee=no"
+          ]
         },
         {
           "if": "access=private",
@@ -327,6 +351,7 @@
         }
       ]
     },
+    "website",
     {
       "question": {
         "nl": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
@@ -455,7 +480,8 @@
             "fr": "Toujours accessible",
             "ru": "Всегда доступен",
             "it": "Si può sempre accedere",
-            "de": "Immer zugänglich"
+            "de": "Immer zugänglich",
+            "ca": "Sempre accessible--"
           }
         }
       ],
@@ -473,12 +499,13 @@
         "leisure=playground"
       ],
       "title": {
-        "nl": "speeltuin",
-        "en": "playground",
+        "nl": "een speeltuin",
+        "en": "a playground",
         "ru": "Детская площадка",
-        "fr": "terrain de jeux",
-        "it": "campetto",
-        "de": "spielplatz"
+        "fr": "une terrain de jeux",
+        "it": "una campetto",
+        "de": "eine spielplatz",
+        "ca": "un parc infantil"
       }
     }
   ],

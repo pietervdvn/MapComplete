@@ -15,7 +15,8 @@
       "id": "Privacy notice",
       "render": {
         "en": "This is the path you've travelled since this website is opened. Don't worry - this is only visible to you and no one else. Your location data is never sent off-device.",
-        "nl": "Dit is waar je was sinds je deze website hebt geopened. Dit is enkel zichtbaar voor jou en niemand anders, je locatie wordt niet verstuurd"
+        "nl": "Dit is waar je was sinds je deze website hebt geopened. Dit is enkel zichtbaar voor jou en niemand anders, je locatie wordt niet verstuurd",
+        "de": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet."
       }
     },
     "export_as_gpx",
@@ -28,7 +29,8 @@
   ],
   "name": {
     "en": "Your travelled track",
-    "nl": "Jouw afgelegde route"
+    "nl": "Jouw afgelegde route",
+    "de": "Zurückgelegte Strecke anzeigen"
   },
   "mapRendering": [
     {

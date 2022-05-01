@@ -35,7 +35,7 @@ export default class SubstitutingTag implements TagsFilter {
         throw "A variable with substitution can not be used to query overpass"
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    shadows(other: TagsFilter): boolean {
         if (!(other instanceof SubstitutingTag)) {
             return false;
         }
@@ -46,6 +46,14 @@ export default class SubstitutingTag implements TagsFilter {
         return !this._invert;
     }
 
+    /**
+     * const assign = new SubstitutingTag("survey:date", "{_date:now}")
+     * assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-03-29"}) // => true
+     * assign.matchesProperties({"survey:date": "2021-03-29", "_date:now": "2021-01-01"}) // => false
+     * assign.matchesProperties({"survey:date": "2021-03-29"}) // => false
+     * assign.matchesProperties({"_date:now": "2021-03-29"}) // => false
+     * assign.matchesProperties({"some_key": "2021-03-29"}) // => false
+     */
     matchesProperties(properties: any): boolean {
         const value = properties[this._key];
         if (value === undefined || value === "") {
@@ -57,6 +65,10 @@ export default class SubstitutingTag implements TagsFilter {
 
     usedKeys(): string[] {
         return [this._key];
+    }
+
+    usedTags(): { key: string; value: string }[] {
+        return []
     }
 
     asChange(properties: any): { k: string; v: string }[] {
@@ -72,5 +84,13 @@ export default class SubstitutingTag implements TagsFilter {
 
     AsJson() {
         return this._key + (this._invert ? '!' : '') + "=" + this._value
+    }
+    
+    optimize(): TagsFilter | boolean {
+        return this;
+    }
+    
+    isNegative(): boolean {
+        return false;
     }
 }

@@ -6,7 +6,8 @@
     "en": "Sport pitches",
     "ru": "Спортивные площадки",
     "it": "Campi sportivi",
-    "de": "Sportplätze"
+    "de": "Sportplätze",
+    "ca": "Camps d'esports"
   },
   "minzoom": 12,
   "source": {
@@ -26,7 +27,8 @@
       "en": "Sport pitch",
       "ru": "Спортивная площадка",
       "it": "Campo sportivo",
-      "de": "Sportplatz"
+      "de": "Sportplatz",
+      "ca": "Camp d'esports"
     }
   },
   "description": {
@@ -425,12 +427,12 @@
   "presets": [
     {
       "title": {
-        "nl": "Ping-pong tafel",
-        "fr": "Table de ping-pong",
-        "en": "Tabletennis table",
-        "it": "Tavolo da tennistavolo",
+        "nl": "een ping-pong tafel",
+        "fr": "une table de ping-pong",
+        "en": "a tabletennis table",
+        "it": "una tavolo da tennistavolo",
         "ru": "Стол для настольного тенниса",
-        "de": "Tischtennisplatte"
+        "de": "eine tischtennisplatte"
       },
       "tags": [
         "leisure=pitch",
@@ -439,12 +441,12 @@
     },
     {
       "title": {
-        "nl": "Sportterrein",
-        "fr": "Terrain de sport",
-        "en": "Sport pitch",
+        "nl": "een sportterrein",
+        "fr": "une terrain de sport",
+        "en": "a sport pitch",
         "ru": "Спортивная площадка",
-        "it": "Campo sportivo",
-        "de": "Sportplatz"
+        "it": "una campo sportivo",
+        "de": "eine sportplatz"
       },
       "tags": [
         "leisure=pitch",

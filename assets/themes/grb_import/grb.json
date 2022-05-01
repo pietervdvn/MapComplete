@@ -9,7 +9,8 @@
   "description": {
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.",
-    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
+    "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
+    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
   },
   "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/grb_import/logo.svg",
@@ -128,15 +129,11 @@
             },
             {
               "if": "building=apartments",
-              "then": "An apartment building - highrise for living"
+              "then": "An apartment building (highrise building for living)"
             },
             {
               "if": "building=office",
               "then": "An office building - highrise for work"
-            },
-            {
-              "if": "building=apartments",
-              "then": "An apartment building"
             },
             {
               "if": "building=shed",
@@ -377,7 +374,15 @@
         "tagRenderings+": [
           {
             "id": "render_embedded",
-            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>"
+            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>",
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden"
+                }
+              }
+            ]
           },
           {
             "id": "embedded_address",
@@ -412,16 +417,29 @@
           },
           {
             "id": "import-button",
-            "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,osm-buildings,5)}",
-            "condition": {
-              "and": [
-                "_embedding_id!=",
-                {
-                  "or": [
-                    "_embedding_street!:={STRAATNM}",
-                    "_embedding_nr!:={_HNRLABEL}"
-                  ]
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "address",
+                "tags": "addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL",
+                "text": {
+                  "nl": "Voeg dit adres als een nieuw adrespunt toe"
+                },
+                "snap_onto_layers": "osm-buildings"
+              }
+            },
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
                 }
+              }
+            ],
+            "condition": {
+              "or": [
+                "_embedding_street!:={STRAATNM}",
+                "_embedding_nr!:={_HNRLABEL}"
               ]
             }
           }
@@ -451,7 +469,7 @@
         "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
-        "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
+        "_osm_obj:source:date=(feat.get('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
         "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
         "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
         "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
@@ -472,6 +490,14 @@
           "id": "Import-button",
           "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
+            {
+              "#": "Failsafe",
+              "if": "_grb_ref=",
+              "then": {
+                "en": "Did not yet calculate the metatags... Reopen this popup",
+                "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen"
+              }
+            },
             {
               "#": "Actually the same as below, except that the text shows 'add the address' too",
               "if": {

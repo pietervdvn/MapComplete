@@ -4,7 +4,7 @@
   "name": {
     "en": "Has etymolgy",
     "nl": "Heeft etymology info",
-    "de": "Hat eine Namensherkunft"
+    "de": "Objekte mit Informationen zur Namensherkunft"
   },
   "minzoom": 12,
   "source": {
@@ -52,6 +52,64 @@
         "helperArgs": [
           "name",
           {
+            "notInstanceOf": [
+              "Q79007",
+              "Q22698"
+            ],
+            "removePrefixes": [
+              "allée du",
+              "allée",
+              "autoroute du",
+              "autoroute",
+              "avenue du",
+              "avenue",
+              "bibliothèque du",
+              "bibliothèque",
+              "boulevard du",
+              "boulevard",
+              "centre du",
+              "centre",
+              "centre culturel du",
+              "centre culturel",
+              "chaussée du",
+              "chaussée",
+              "chemin du",
+              "chemin",
+              "collège du",
+              "collège",
+              "complexe sportif du",
+              "complexe sportif",
+              "école du",
+              "école",
+              "école élémentaire du",
+              "école élémentaire",
+              "école maternelle du",
+              "école maternelle",
+              "école primaire du",
+              "école primaire",
+              "esplanade du",
+              "esplanade",
+              "groupe scolaire du",
+              "groupe scolaire",
+              "gymnase du",
+              "gymnase",
+              "lycée du",
+              "lycée",
+              "mail du",
+              "mail",
+              "médiathèque du",
+              "médiathèque",
+              "musée du",
+              "musée",
+              "parc du",
+              "parc",
+              "rue du",
+              "rue",
+              "square du",
+              "square",
+              "stade du",
+              "stade"
+            ],
             "removePostfixes": [
               "steenweg",
               "heirbaan",
@@ -70,7 +128,9 @@
               "wegel",
               "kerk",
               "church",
-              "kaai"
+              "kaai",
+              "park",
+              "parque"
             ]
           }
         ]
@@ -94,13 +154,14 @@
       "id": "simple etymology",
       "question": {
         "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
-        "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</subtle>",
+        "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
         "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>"
       },
       "render": {
         "en": "Named after {name:etymology}",
         "nl": "Vernoemd naar {name:etymology}",
-        "de": "Benannt nach {name:etymology}"
+        "de": "Benannt nach {name:etymology}",
+        "da": "Opkaldt efter {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology"
@@ -111,7 +172,8 @@
           "then": {
             "en": "The origin of this name is unknown in all literature",
             "nl": "De oorsprong van deze naam is onbekend in de literatuur",
-            "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
+            "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt",
+            "da": "Oprindelsen af dette navn er ukendt i al litteratur"
           }
         }
       ],
@@ -139,14 +201,17 @@
     {
       "id": "etymology_multi_apply",
       "render": {
-        "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+        "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
+        "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}",
+        "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}"
       }
     },
     {
       "id": "wikipedia",
       "#": "Note that this is a _read_only_ option, to prevent people entering a 'wikidata'-link instead of 'name:etymology:wikidata'",
       "render": {
-        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}"
+        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}",
+        "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

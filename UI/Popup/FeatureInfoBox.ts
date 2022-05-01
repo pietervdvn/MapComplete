@@ -15,13 +15,8 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {Utils} from "../../Utils";
 import MoveWizard from "./MoveWizard";
 import Toggle from "../Input/Toggle";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
-import {Changes} from "../../Logic/Osm/Changes";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {ElementStorage} from "../../Logic/ElementStorage";
-import FilteredLayer from "../../Models/FilteredLayer";
-import BaseLayer from "../../Models/BaseLayer";
 import Lazy from "../Base/Lazy";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -29,18 +24,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     public constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
-        state: {
-            filteredLayers: UIEventSource<FilteredLayer[]>;
-            backgroundLayer: UIEventSource<BaseLayer>;
-            featureSwitchIsTesting: UIEventSource<boolean>;
-            featureSwitchIsDebugging: UIEventSource<boolean>;
-            featureSwitchShowAllQuestions: UIEventSource<boolean>;
-            osmConnection: OsmConnection,
-            featureSwitchUserbadge: UIEventSource<boolean>,
-            changes: Changes,
-            layoutToUse: LayoutConfig,
-            allElements: ElementStorage
-        },
+        state: FeaturePipelineState,
         hashToShow?: string,
         isShown?: UIEventSource<boolean>,
     ) {
@@ -64,8 +48,10 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), state)
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2 text-2xl");
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, state,
-                "block w-8 h-8 max-h-8 align-baseline box-content sm:p-0.5 w-10",)
+            layerConfig.titleIcons.map(icon => {
+                    return new TagRenderingAnswer(tags, icon, state,
+                        "block h-8 max-h-8 align-baseline box-content sm:p-0.5").SetClass("flex");
+                }
             ))
             .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
 
@@ -76,18 +62,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig,
-                                   state: {
-                                       filteredLayers: UIEventSource<FilteredLayer[]>;
-                                       backgroundLayer: UIEventSource<BaseLayer>;
-                                       featureSwitchIsTesting: UIEventSource<boolean>;
-                                       featureSwitchIsDebugging: UIEventSource<boolean>;
-                                       featureSwitchShowAllQuestions: UIEventSource<boolean>;
-                                       osmConnection: OsmConnection,
-                                       featureSwitchUserbadge: UIEventSource<boolean>,
-                                       changes: Changes,
-                                       layoutToUse: LayoutConfig,
-                                       allElements: ElementStorage
-                                   }): BaseUIElement {
+                                   state: FeaturePipelineState): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>();
 
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map(tr => tr.group))
@@ -177,7 +152,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     private static createEditElements(questionBoxes: Map<string, QuestionBox>,
                                       layerConfig: LayerConfig,
                                       tags: UIEventSource<any>,
-                                      state: { filteredLayers: UIEventSource<FilteredLayer[]>; backgroundLayer: UIEventSource<BaseLayer>; featureSwitchIsTesting: UIEventSource<boolean>; featureSwitchIsDebugging: UIEventSource<boolean>; featureSwitchShowAllQuestions: UIEventSource<boolean>; osmConnection: OsmConnection; featureSwitchUserbadge: UIEventSource<boolean>; changes: Changes; layoutToUse: LayoutConfig; allElements: ElementStorage })
+                                      state: FeaturePipelineState)
         : BaseUIElement {
         let editElements: BaseUIElement[] = []
         questionBoxes.forEach(questionBox => {

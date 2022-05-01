@@ -12,26 +12,9 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 
 
-## Table of contents
-
-1. [surveillance_camera](#surveillance_camera)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Camera type: fixed; panning; dome](#camera-type-fixed;-panning;-dome)
-    + [camera_direction](#camera_direction)
-    + [Operator](#operator)
-    + [Surveillance type: public, outdoor, indoor](#surveillance-type-public,-outdoor,-indoor)
-    + [is_indoor](#is_indoor)
-    + [Level](#level)
-    + [Surveillance:zone](#surveillancezone)
-    + [camera:mount](#cameramount)
 
 
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
 
@@ -47,8 +30,6 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
 
-[Go to the source code](../assets/layers/surveillance_camera/surveillance_camera.json)
-
 
 
  Basic tags for this layer 
@@ -63,6 +44,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a>
   - <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DANPR' target='_blank'>ANPR</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22man_made%22%3D%22surveillance%22%5D%5B%22surveillance%3Atype%22%3D%22camera%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22man_made%22%3D%22surveillance%22%5D%5B%22surveillance%3Atype%22%3D%22ALPR%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22man_made%22%3D%22surveillance%22%5D%5B%22surveillance%3Atype%22%3D%22ANPR%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -175,6 +158,8 @@ The question is **Is the public space surveilled by this camera an indoor or out
   - **This camera is probably located outdoors** corresponds with _This option cannot be chosen as answer_
 
 
+Only visible if `surveillance:type=public` is shown
+
 
 
 ### Level 
@@ -185,6 +170,8 @@ The question is **On which level is this camera located?**
 
 This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
 This is rendered with `Located on level {level}`
+
+Only visible if `indoor=yes|surveillance:type=ye` is shown
 
 
 

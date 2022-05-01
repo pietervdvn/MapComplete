@@ -49,6 +49,29 @@ export class ElementStorage {
         return this._elements.has(id);
     }
 
+    addAlias(oldId: string, newId: string){
+        if (newId === undefined) {
+            // We removed the node/way/relation with type 'type' and id 'oldId' on openstreetmap!
+            const element = this.getEventSourceById(oldId);
+            element.data._deleted = "yes"
+            element.ping();
+            return;
+        }
+        
+        if (oldId == newId) {
+            return undefined;
+        }
+        const element = this.getEventSourceById( oldId);
+        if (element === undefined) {
+            // Element to rewrite not found, probably a node or relation that is not rendered
+            return undefined
+        }
+        element.data.id = newId;
+        this.addElementById(newId, element);
+        this.ContainingFeatures.set(newId, this.ContainingFeatures.get( oldId))
+        element.ping();
+    }
+    
     private addOrGetById(elementId: string, newProperties: any): UIEventSource<any> {
         if (!this._elements.has(elementId)) {
             const eventSource = new UIEventSource<any>(newProperties, "tags of " + elementId);

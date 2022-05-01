@@ -5,7 +5,7 @@
     "description": "On this map, one can find and mark nearby defibrillators",
     "project_url": "https://mapcomplete.osm.be/aed",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-    "icon_url": "https://mapcomplete.osm.be/assets/themes/aed/logo.svg",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/aed/aed.svg",
     "contact_name": "Pieter Vander Vennet, MapComplete",
     "contact_email": "pietervdvn@posteo.net"
   },
@@ -172,11 +172,6 @@
     {
       "key": "fixme",
       "description": "Layer 'Defibrillators' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Open AED Map')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open AED Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

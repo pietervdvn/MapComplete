@@ -7,25 +7,14 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/hailhydrant/Twemoji12_1f9ef.svg' height="100px"> 
 
-Map layer to show fire hydrants.
-
-
-
-
-## Table of contents
-
-1. [extinguisher](#extinguisher)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [extinguisher-location](#extinguisher-location)
-    + [images](#images)
+Map layer to show fire extinguishers.
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -40,8 +29,6 @@ Map layer to show fire hydrants.
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/extinguisher/extinguisher.json)
-
 
 
  Basic tags for this layer 
@@ -55,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_extinguisher' target='_blank'>fire_extinguisher</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22emergency%22%3D%22fire_extinguisher%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

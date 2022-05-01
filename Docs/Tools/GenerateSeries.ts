@@ -1,4 +1,4 @@
-import {existsSync, readdirSync, readFileSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from "fs";
 import ScriptUtils from "../../scripts/ScriptUtils";
 import {Utils} from "../../Utils";
 import {exec} from "child_process"
@@ -10,7 +10,8 @@ class StatsDownloader {
 
     private readonly startYear = 2020
     private readonly startMonth = 5;
-    private readonly urlTemplate = "https://osmcha.org/api/v1/changesets/?date__gte={start_date}&date__lte={end_date}&page={page}&editor=mapcomplete&page_size=100"
+    private readonly urlTemplate = "https://osmcha.org/api/v1/changesets/?date__gte={start_date}&date__lte={end_date}&page={page}&comment=%23mapcomplete&page_size=100"
+
     private readonly _targetDirectory: string;
 
 
@@ -176,6 +177,14 @@ class ChangesetDataTools {
         if (cs.properties.modify + cs.properties.delete + cs.properties.create == 0) {
             cs.properties.metadata.theme = "EMPTY CS"
         }
+        try {
+            cs.properties.metadata.host = new URL(cs.properties.metadata.host).host
+        } catch (e) {
+
+        }
+        if(cs.properties.metadata["answer"] > 100){
+            console.log("Lots of answers for https://osm.org/changeset/"+cs.id)
+        }
         return cs
     }
 
@@ -191,18 +200,18 @@ interface PlotSpec {
         type: "stacked-bar"
         count: {
             label: string,
-            values: { key: string | Date, value: number }[]
+            values: { key: string | Date, value: number }[],
+            color?: string
         }[]
     },
 
-    render()
+    render(): Promise<void>
 }
-
 
 function createGraph(
     title: string,
-    ...options: PlotSpec[]) {
-    console.log("Creating graph",title,"...")
+    ...options: PlotSpec[]): Promise<void> {
+    console.log("Creating graph", title, "...")
     const process = exec("python3 GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
         console.log("Python: ", stdout)
         if (error !== null) {
@@ -218,6 +227,11 @@ function createGraph(
         process.stdin._write(d, "utf-8", undefined)
     }
     process.stdin._write("\n", "utf-8", undefined)
+
+
+    return new Promise((resolve) => {
+        process.on("exit", () => resolve())
+    })
 
 }
 
@@ -412,16 +426,18 @@ class Histogram<K> {
             },
             render: undefined
         }
-        graph.render = () => createGraph(graph.name, graph)
+        graph.render = async () => await createGraph(graph.name, graph)
         return graph;
     }
 
     public asBar(options: {
         name: string
-        compare?: (a: K, b: K) => number
+        compare?: (a: K, b: K) => number,
+        color?: string
     }): PlotSpec {
         const spec = this.asPie(options)
         spec.plot.type = "bar"
+        spec.plot["color"] = options.color
         return spec;
     }
 
@@ -436,6 +452,10 @@ class Histogram<K> {
 
 }
 
+/**
+ * A group keeps track of a matrix of changes, e.g.
+ * 'All contributors per day'. This will be stored internally, e.g. as {'2022-03-16' --> ['Pieter Vander Vennet', 'Pieter Vander Vennet', 'Joost Schouppe', 'Pieter Vander Vennet', 'dentonny', ...]}
+ */
 class Group<K, V> {
 
     public groups: Map<K, V[]> = new Map<K, V[]>()
@@ -495,6 +515,11 @@ class Group<K, V> {
         return hist
     }
 
+    /**
+     * Given a group, creates a kind of histogram.
+     * E.g: if the Group is {'2022-03-16' --> ['Pieter Vander Vennet', 'Pieter Vander Vennet', 'Seppe Santens']}, the resulting 'groupedHists' will be:
+     * [['Pieter Vander Vennet', {'2022-03-16' --> 2}],['Seppe Santens', {'2022-03-16' --> 1}]]
+     */
     asGroupedHists(): [V, Histogram<K>][] {
 
         const allHists = new Map<V, Histogram<K>>()
@@ -518,6 +543,10 @@ class Group<K, V> {
     }
 }
 
+/**
+ *
+ * @param hists
+ */
 function stackHists<K, V>(hists: [V, Histogram<K>][]): [V, Histogram<K>][] {
     const runningTotals = new Histogram<K>()
     const result: [V, Histogram<K>][] = []
@@ -532,25 +561,93 @@ function stackHists<K, V>(hists: [V, Histogram<K>][]): [V, Histogram<K>][] {
     return result
 }
 
+/**
+ * Given histograms which should be shown as bars on top of each other, creates a new list of histograms with adjusted heights in order to create a coherent sum
+ * e.g.: for a given day, there are 2 deletions, 3 additions and 5 answers, this will be ordered as 2, 5 and 10 in order to mimic a coherent bar
+ * @param hists
+ */
+function stackHistsSimple<K>(hists: Histogram<K>[]): Histogram<K>[] {
+    const runningTotals = new Histogram<K>()
+    const result: Histogram<K>[] = []
+    for (const hist of hists) {
+        const clone = hist.Clone()
+        clone.bumpHist(runningTotals) // "Copies" one histogram into the other
+        runningTotals.bumpHist(hist)
+        result.push(clone)
+    }
+    result.reverse(/* Changes in place, safe copy*/)
+    return result
+}
 
-function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: string) {
+function createActualChangesGraph(allFeatures: ChangeSetData[], appliedFilterDescription: string) {
+    const metadataOptions = {
+        "answer": "#5b5bdc",
+        "create": "#46ea46",
+        "move": "#ffa600",
+        "deletion": "#ff0000",
+        "soft-delete": "#ff8888",
+        "add-image": "#8888ff",
+        "import": "#00ff00",
+        "conflation": "#ffff00",
+        "split": "#000000",
+        "relation-fix": "#cccccc",
+        "delete-image": "#ff00ff"
+    }
+
+    const metadataKeys: string[] = Object.keys(metadataOptions)
+    const histograms: Map<string, Histogram<string>> = new Map<string, Histogram<string>>() // {metakey --> Histogram<date>}
+    allFeatures.forEach(f => {
+        const day = f.properties.date.substr(0, 10)
+
+        for (const key of metadataKeys) {
+            const v = f.properties.metadata[key]
+            if (v === undefined) {
+                continue
+            }
+            const count = Number(v)
+            if (isNaN(count)) {
+                continue
+            }
+            if (!histograms.has(key)) {
+                histograms.set(key, new Histogram<string>())
+            }
+            histograms.get(key).bump(day, count)
+        }
+
+    })
+
+
+    const entries = stackHists(Array.from(histograms.entries()))
+
+    const allGraphs = entries.map(([name, stackedHist]) => {
+            const hist = histograms.get(name)
+            return stackedHist
+                .keyToDate(true)
+                .asBar({name: `${name} (${hist.total()})`, color: metadataOptions[name]});
+        }
+    )
+
+    createGraph("Actual changes" + appliedFilterDescription, ...allGraphs)
+}
+
+async function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: string, cutoff = undefined) {
     const hist = new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
-    hist
-        .createOthersCategory("other", 20)
+    await hist
+        .createOthersCategory("other", cutoff ?? 20)
         .addCountToName()
         .asBar({name: "Changesets per theme (bar)" + appliedFilterDescription})
-    .render()
+        .render()
 
 
-    new Histogram<string>(allFeatures.map(f => f.properties.user))
+    await new Histogram<string>(allFeatures.map(f => f.properties.user))
         .binPerCount()
         .stringifyName()
-        .createOthersCategory("25 or more", (key, _) => Number(key) >= 25).asBar(
-        {
-            compare: (a, b) => Number(a) - Number(b),
-            name: "Contributors per changeset count" + appliedFilterDescription
-        })
-    .render()
+        .createOthersCategory("25 or more", (key, _) => Number(key) >= (cutoff ?? 25)).asBar(
+            {
+                compare: (a, b) => Number(a) - Number(b),
+                name: "Contributors per changeset count" + appliedFilterDescription
+            })
+        .render()
 
 
     const csPerDay = new Histogram<string>(allFeatures.map(f => f.properties.date.substr(0, 10)))
@@ -570,12 +667,12 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         }
         return keys
     })
-        .keyToDate()
+        .keyToDate(true)
         .asLine({
-        compare: (a, b) => a.getTime() - b.getTime(),
-        name: "Rolling 7 day average" + appliedFilterDescription
-    })
-    
+            compare: (a, b) => a.getTime() - b.getTime(),
+            name: "Rolling 7 day average" + appliedFilterDescription
+        })
+
     const perDayAvgMonth = csPerDay.asRunningAverages(key => {
         const keys = []
         for (let i = 0; i < 31; i++) {
@@ -586,19 +683,20 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
     })
         .keyToDate()
         .asLine({
-        compare: (a, b) => a.getTime() - b.getTime(),
-        name: "Rolling 31 day average" + appliedFilterDescription
-    })
-    
-    createGraph("Changesets per day (line)" + appliedFilterDescription, perDayLine, perDayAvg, perDayAvgMonth)
+            compare: (a, b) => a.getTime() - b.getTime(),
+            name: "Rolling 31 day average" + appliedFilterDescription
+        })
 
-    new Histogram<string>(allFeatures.map(f => f.properties.metadata.host))
+    await createGraph("Changesets per day (line)" + appliedFilterDescription, perDayLine, perDayAvg, perDayAvgMonth)
+
+
+    await new Histogram<string>(allFeatures.map(f => f.properties.metadata.host))
         .asPie({
             name: "Changesets per host" + appliedFilterDescription
         }).render()
 
-    new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
-        .createOthersCategory("< 25 changesets", 25)
+    await new Histogram<string>(allFeatures.map(f => f.properties.metadata.theme))
+        .createOthersCategory("< 25 changesets", (cutoff ?? 25))
         .addCountToName()
         .asPie({
             name: "Changesets per theme (pie)" + appliedFilterDescription
@@ -608,33 +706,34 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
         "Changesets per theme" + appliedFilterDescription,
         allFeatures,
         f => f.properties.metadata.theme,
-        25
+        cutoff ?? 25
     )
+
 
     Group.createStackedBarChartPerDay(
         "Changesets per version number" + appliedFilterDescription,
         allFeatures,
-        f => f.properties.editor.substr("MapComplete ".length, 6).replace(/[a-zA-Z-/]/g, ''),
-        1
+        f => f.properties.editor?.substr("MapComplete ".length, 6)?.replace(/[a-zA-Z-/]/g, '') ?? "UNKNOWN",
+        cutoff ?? 1
     )
-    
+
     Group.createStackedBarChartPerDay(
         "Changesets per minor version number" + appliedFilterDescription,
         allFeatures,
         f => {
-        	const base = f.properties.editor.substr("MapComplete ".length).replace(/[a-zA-Z-/]/g, '')
-        	const [major, minor, patch] = base.split(".")
-        	return major+"."+minor
-        
+            const base = f.properties.editor?.substr("MapComplete ".length)?.replace(/[a-zA-Z-/]/g, '') ?? "UNKNOWN"
+            const [major, minor, patch] = base.split(".")
+            return major + "." + minor
+
         },
-        1
+        cutoff ?? 1
     )
 
     Group.createStackedBarChartPerDay(
         "Deletion-changesets per theme" + appliedFilterDescription,
         allFeatures.filter(f => f.properties.delete > 0),
         f => f.properties.metadata.theme,
-        1
+        cutoff ?? 1
     )
 
     {
@@ -652,7 +751,7 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
             }
         })
         const total = new Set(allFeatures.map(f => f.properties.user)).size
-        createGraph(
+        await createGraph(
             `Contributors per day${appliedFilterDescription}`,
             contributorCountPerDay
                 .asHist(true)
@@ -668,14 +767,14 @@ function createGraphs(allFeatures: ChangeSetData[], appliedFilterDescription: st
                 }),
         )
 
-
+        await createActualChangesGraph(allFeatures, appliedFilterDescription);
     }
 
 
 }
 
-function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]) {
-    new Histogram(emptyCS.map(f => f.properties.date)).keyToDate().asBar({
+async function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]) {
+    await new Histogram(emptyCS.map(f => f.properties.date)).keyToDate().asBar({
         name: "Empty changesets by date"
     }).render()
     const geojson = {
@@ -689,33 +788,52 @@ function createMiscGraphs(allFeatures: ChangeSetData[], emptyCS: ChangeSetData[]
                     for (const key in f.properties.metadata) {
                         point.properties[key] = f.properties.metadata[key]
                     }
-                    
+
                     return point
                 } catch (e) {
                     console.error("Could not create center point: ", e, f)
                     return undefined
                 }
-        }))
+            }))
     }
     writeFileSync("centerpoints.geojson", JSON.stringify(geojson, undefined, 2))
 }
 
-async function main(): Promise<void>{
-    await new StatsDownloader("stats").DownloadStats()
+async function main(): Promise<void> {
+    if (!existsSync("graphs")) {
+        mkdirSync("graphs")
+    }
+
+    if (process.argv.indexOf("--no-download") < 0) {
+        await new StatsDownloader("stats").DownloadStats()
+    }
     const allPaths = readdirSync("stats")
         .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
     let allFeatures: ChangeSetData[] = [].concat(...allPaths
         .map(path => JSON.parse(readFileSync("stats/" + path, "utf-8")).features
             .map(cs => ChangesetDataTools.cleanChangesetData(cs))));
+    allFeatures = allFeatures.filter(f => f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete"))
 
     const emptyCS = allFeatures.filter(f => f.properties.metadata.theme === "EMPTY CS")
     allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
 
-    createMiscGraphs(allFeatures, emptyCS)
-    createGraphs(allFeatures, "")
-    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
-    // createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
-    createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+    const noEditor = allFeatures.filter(f => f.properties.editor === null).map(f => "https://www.osm.org/changeset/" + f.id)
+    writeFileSync("missing_editor.json", JSON.stringify(noEditor, null, "  "));
+
+    if (process.argv.indexOf("--no-graphs") >= 0) {
+        return
+    }
+    await createMiscGraphs(allFeatures, emptyCS)
+
+    const grbOnly = allFeatures.filter(f => f.properties.metadata.theme === "grb")
+    allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "grb")
+    await createGraphs(allFeatures, "")
+    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
+    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+    await createGraphs(allFeatures.filter(f => f.properties.metadata.theme === "toerisme_vlaanderen"), " met pin je punt", 0)
+    await createGraphs(grbOnly, " with the GRB import tool", 0)
+
 }
 
 main().then(_ => console.log("All done!"))

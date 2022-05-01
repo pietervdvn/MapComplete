@@ -71,7 +71,7 @@ export default class NewNoteUi extends Toggle {
             new Combine([new Toggle(undefined, t.warnAnonymous.SetClass("alert"), state?.osmConnection?.isLoggedIn), 
                 new Toggle(postNote,
                     t.textNeeded.SetClass("alert"),
-                    text.GetValue().map(txt => txt.length > 3)
+                    text.GetValue().map(txt => txt?.length > 3)
                     )
             
             ]).SetClass("flex justify-end items-center")

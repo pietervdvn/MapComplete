@@ -274,9 +274,15 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                         // Evaluate all the calculated tags strictly
                         const calculatedTagKeys = tile.layer.layerDef.calculatedTags.map(ct => ct[0])
                         featureCount++
+                        const props = feature.feature.properties
                         for (const calculatedTagKey of calculatedTagKeys) {
-                            const strict = feature.feature.properties[calculatedTagKey]
-                            feature.feature.properties[calculatedTagKey] = strict
+                            const strict = props[calculatedTagKey]
+                            
+                            if(props.hasOwnProperty(calculatedTagKey)){
+                                delete props[calculatedTagKey]
+                            }
+
+                            props[calculatedTagKey] = strict
                             strictlyCalculated++;
                             if (strictlyCalculated % 100 === 0) {
                                 console.log("Strictly calculated ", strictlyCalculated, "values for tile", tileIndex, ": now at ", featureCount, "/", filteredTile.features.data.length, "examle value: ", strict)

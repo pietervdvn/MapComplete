@@ -158,10 +158,11 @@ export class UIEventSource<T> {
         )
     }
 
-    public AsPromise(): Promise<T> {
+    public AsPromise(condition?: ((t: T )=> boolean)): Promise<T> {
         const self = this;
+        condition = condition ?? (t => t !== undefined)
         return new Promise((resolve, reject) => {
-            if (self.data !== undefined) {
+            if (condition(self.data)) {
                 resolve(self.data)
             } else {
                 self.addCallbackD(data => {

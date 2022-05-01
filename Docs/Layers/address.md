@@ -12,23 +12,22 @@ Addresses
 
 
 
-## Table of contents
-
-1. [address](#address)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [housenumber](#housenumber)
-    + [street](#street)
-    + [fixme](#fixme)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_3_street_names)
 
 
-[Go to the source code](../assets/layers/address/address.json)
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
+
 
 
 
@@ -43,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - addr:housenumber~^..*$|addr:street~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22addr%3Ahousenumber%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22addr%3Astreet%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

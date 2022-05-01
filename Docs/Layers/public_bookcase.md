@@ -12,28 +12,9 @@ A streetside cabinet with books, accessible to anyone
 
 
 
-## Table of contents
-
-1. [public_bookcase](#public_bookcase)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [public_bookcase-name](#public_bookcase-name)
-    + [public_bookcase-capacity](#public_bookcase-capacity)
-    + [bookcase-booktypes](#bookcase-booktypes)
-    + [bookcase-is-indoors](#bookcase-is-indoors)
-    + [bookcase-is-accessible](#bookcase-is-accessible)
-    + [public_bookcase-operator](#public_bookcase-operator)
-    + [public_bookcase-brand](#public_bookcase-brand)
-    + [public_bookcase-ref](#public_bookcase-ref)
-    + [public_bookcase-start_date](#public_bookcase-start_date)
-    + [public_bookcase-website](#public_bookcase-website)
 
 
-
-
-
+  - This layer is shown at zoomlevel **10** and higher
   - This layer is needed as dependency for layer [note_import](#note_import)
 
 
@@ -49,8 +30,6 @@ A streetside cabinet with books, accessible to anyone
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/public_bookcase/public_bookcase.json)
-
 
 
  Basic tags for this layer 
@@ -64,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpublic_bookcase' target='_blank'>public_bookcase</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22public_bookcase%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -177,6 +158,8 @@ The question is **Is this public bookcase freely accessible?**
   - **Only accessible to customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
 
 
+Only visible if `indoor=yes` is shown
+
 
 
 ### public_bookcase-operator 
@@ -220,6 +203,8 @@ This is rendered with `The reference number of this public bookcase within {bran
 
   - **This bookcase is not part of a bigger network** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
 
+
+Only visible if `brand~^..*$` is shown
 
 
 

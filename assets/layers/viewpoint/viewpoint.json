@@ -8,7 +8,8 @@
     "it": "Punto panoramico",
     "ru": "Смотровая площадка",
     "id": "Sudut pandang",
-    "eo": "Vidpunkto"
+    "eo": "Vidpunkto",
+    "ca": "Mirador"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
@@ -25,13 +26,14 @@
   "presets": [
     {
       "title": {
-        "en": "Viewpoint",
-        "nl": "Uitzicht",
-        "de": "Aussichtspunkt",
-        "fr": "Point de vue",
+        "en": "a viewpoint",
+        "nl": "een uitzichtpunt",
+        "de": "eine aussichtspunkt",
+        "fr": "une point de vue",
         "ru": "Смотровая площадка",
-        "it": "Punto panoramico",
-        "id": "Sudut pandang"
+        "it": "una punto panoramico",
+        "id": "Sudut pandang",
+        "ca": "un mirador"
       },
       "tags": [
         "tourism=viewpoint"
@@ -47,7 +49,8 @@
       "ru": "Смотровая площадка",
       "it": "Punto panoramico",
       "id": "Sudut pandang",
-      "eo": "Vidpunkto"
+      "eo": "Vidpunkto",
+      "ca": "Mirador"
     }
   },
   "tagRenderings": [

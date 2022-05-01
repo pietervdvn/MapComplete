@@ -12,33 +12,9 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 
 
-## Table of contents
-
-1. [bike_repair_station](#bike_repair_station)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_repair_station-available-services](#bike_repair_station-available-services)
-    + [Operational status](#operational-status)
-    + [bike_repair_station-opening_hours](#bike_repair_station-opening_hours)
-    + [access](#access)
-    + [bike_repair_station-operator](#bike_repair_station-operator)
-    + [bike_repair_station-email](#bike_repair_station-email)
-    + [bike_repair_station-phone](#bike_repair_station-phone)
-    + [bike_repair_station-bike-chain-tool](#bike_repair_station-bike-chain-tool)
-    + [bike_repair_station-bike-stand](#bike_repair_station-bike-stand)
-    + [Email maintainer](#email-maintainer)
-    + [bike_repair_station-valves](#bike_repair_station-valves)
-    + [bike_repair_station-electrical_pump](#bike_repair_station-electrical_pump)
-    + [bike_repair_station-manometer](#bike_repair_station-manometer)
-    + [level](#level)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -53,8 +29,6 @@ A layer showing bicycle pumps and bicycle repair tool stands
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_repair_station/bike_repair_station.json)
-
 
 
  Basic tags for this layer 
@@ -68,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_repair_station' target='_blank'>bicycle_repair_station</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_repair_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -140,6 +116,8 @@ The question is **Is the bike pump still operational?**
   - **The bike pump is operational** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational' target='_blank'>operational</a>
 
 
+Only visible if `service:bicycle:pump=yes` is shown
+
 
 
 ### bike_repair_station-opening_hours 
@@ -186,6 +164,8 @@ The question is **Who maintains this cycle pump?**
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 This is rendered with `Maintained by {operator}`
 
+This tagrendering has labels  `operator-info`
+
 
 
 ### bike_repair_station-email 
@@ -197,6 +177,8 @@ The question is **What is the email address of the maintainer?**
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 This is rendered with `<a href='mailto:{email}'>{email}</a>`
 
+This tagrendering has labels  `operator-info`
+
 
 
 ### bike_repair_station-phone 
@@ -207,6 +189,8 @@ The question is **What is the phone number of the maintainer?**
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+
+This tagrendering has labels  `operator-info`
 
 
 
@@ -224,6 +208,8 @@ The question is **Does this bike repair station have a special tool to repair yo
   - **There is no chain tool** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno' target='_blank'>no</a>
 
 
+Only visible if `service:bicycle:tools=yes` is shown
+
 
 
 ### bike_repair_station-bike-stand 
@@ -240,6 +226,8 @@ The question is **Does this bike station have a hook to hang your bike on or a s
   - **There is no hook or stand** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno' target='_blank'>no</a>
 
 
+Only visible if `service:bicycle:tools=yes` is shown
+
 
 
 ### Email maintainer 
@@ -249,6 +237,8 @@ The question is **Does this bike station have a hook to hang your bike on or a s
 _This tagrendering has no question and is thus read-only_
 
 
+
+Only visible if `email~^..*$&service:bicycle:pump:operational_status=broken` is shown
 
 
 
@@ -284,6 +274,8 @@ The question is **Is this an electric bike pump?**
   - **Electrical pump** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno' target='_blank'>no</a>
 
 
+Only visible if `service:bicycle:pump=yes` is shown
+
 
 
 ### bike_repair_station-manometer 
@@ -300,6 +292,8 @@ The question is **Does the pump have a pressure indicator or manometer?**
   - **There is no manometer** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno' target='_blank'>no</a>
   - **There is manometer but it is broken** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken' target='_blank'>broken</a>
 
+
+Only visible if `service:bicycle:pump=yes` is shown
 
 
 

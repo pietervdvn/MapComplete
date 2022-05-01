@@ -1,0 +1,175 @@
+{
+  "id": "pets",
+  "maintainer": "Niels Elgaard Larsen",
+  "version": "1",
+  "title": {
+    "en": "Veterinarians, dog parks and other pet-amenities",
+    "da": "hundesteder"
+  },
+  "description": {
+    "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
+    "da": "Hundsteder"
+  },
+  "icon": "./assets/layers/dogpark/dog-park.svg",
+  "startZoom": 10,
+  "startLat": 55,
+  "startLon": 12,
+  "layers": [
+    "dogpark",
+    {
+      "builtin": "food",
+      "override": {
+        "id": "dogfoodb",
+        "name": {
+          "en": "Dog friendly eateries",
+          "da": "Hundevenlige madsteder"
+        },
+        "mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": "./assets/themes/pets/dog-food.svg",
+            "iconSize": "30,30,center"
+          }
+        ],
+        "=presets": [],
+        "source": {
+          "=osmTags": {
+            "and": [
+              {
+                "or": [
+                  "amenity=restaurant",
+                  "amenity=cafe"
+                ]
+              },
+              {
+                "or": [
+                  "dog=unleashed",
+                  "dog=leashed",
+                  "dog=yes"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "shops",
+      "id": "dogshop",
+      "override": {
+        "id": "dogshop",
+        "name": {
+          "en": "dog-friendly shop",
+          "da": "hundevenlig butik"
+        },
+        "title": {
+          "render": {
+            "en": "dog-friendly shop",
+            "da": "hundevenlig butik"
+          },
+          "mappings": [
+            {
+              "if": "name~*",
+              "then": {
+                "*": "{name}"
+              }
+            }
+          ]
+        },
+        "mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": {
+              "render": "./assets/themes/pets/dogshop.svg",
+              "mappings": [
+                {
+                  "if": {
+                    "and": [
+                      "shop=pet"
+                    ]
+                  },
+                  "then": "./assets/themes/pets/petshop.svg"
+                }
+              ]
+            },
+            "iconSize": "30,30,center"
+          },
+          {
+            "#": "Rendering of a line",
+            "color": "#ff0",
+            "width": 5
+          }
+        ],
+        "presets": [
+          {
+            "tags": [
+              "shop=yes",
+              "dog=yes"
+            ]
+          }
+        ],
+        "source": {
+          "=osmTags": {
+            "and": [
+              "shop~*",
+              {
+                "or": [
+                  "dog=leashed",
+                  "dog=yes",
+                  "shop=pet"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "veterinary",
+    {
+      "builtin": "food",
+      "override": {
+        "minzoom": 19,
+        "filter": null,
+        "name": null
+      }
+    },
+    {
+      "builtin": "waste_basket",
+      "override": {
+        "minzoom": 16,
+        "filter": null,
+        "name": null
+      }
+    },
+    {
+      "builtin": "shops",
+      "override": {
+        "minzoom": 19,
+        "filter": null,
+        "presets": [
+          {
+            "title": {
+              "en": "dog-friendly shop",
+              "da": "EN hundevenlig butik"
+            },
+            "tags": [
+              "dog=yes",
+              "shop=yes"
+            ],
+            "description": {
+              "en": "A shop whery you can bring a dog almost everywhere",
+              "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt"
+            }
+          }
+        ],
+        "name": null
+      }
+    }
+  ]
+}

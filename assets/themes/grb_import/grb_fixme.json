@@ -110,7 +110,8 @@
           "render": "The building type is <b>{building}</b>",
           "question": {
             "en": "What kind of building is this?",
-            "de": "Was ist das für ein Gebäude?"
+            "de": "Was ist das für ein Gebäude?",
+            "es": "¿Qué tipo de este edificio es este?"
           },
           "mappings": [
             {
@@ -127,15 +128,11 @@
             },
             {
               "if": "building=apartments",
-              "then": "An apartment building - highrise for living"
+              "then": "An apartment building (a highrise building for living)"
             },
             {
               "if": "building=office",
               "then": "An office building - highrise for work"
-            },
-            {
-              "if": "building=apartments",
-              "then": "An apartment building"
             },
             {
               "if": "building=shed",

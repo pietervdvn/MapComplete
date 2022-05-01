@@ -81,11 +81,11 @@
             "mappings": [
               {
                 "if": "theme=aed",
-                "then": "./assets/themes/aed/logo.svg"
+                "then": "./assets/themes/aed/aed.svg"
               },
               {
                 "if": "theme=aed_brugge",
-                "then": "./assets/themes/aed/logo.svg"
+                "then": "./assets/themes/aed/aed.svg"
               },
               {
                 "if": "theme=artwork",
@@ -240,6 +240,10 @@
                 "then": "./assets/svg/addSmall.svg"
               },
               {
+                "if": "theme=pets",
+                "then": "./assets/layers/dogpark/dog-park.svg"
+              },
+              {
                 "if": "theme=play_forests",
                 "then": "./assets/layers/play_forest/icon.svg"
               },
@@ -383,7 +387,7 @@
             "render": "{histogram(_embedded_cs:themes, Themename, Number of changesets)}"
           },
           {
-            "id": "hist_themes",
+            "id": "hist_users",
             "render": "{histogram(_embedded_cs:users, Contributor, Number of changesets)}"
           }
         ],

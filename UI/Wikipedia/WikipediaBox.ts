@@ -14,9 +14,14 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Link from "../Base/Link";
 import WikidataPreviewBox from "./WikidataPreviewBox";
+import {Paragraph} from "../Base/Paragraph";
 
 export default class WikipediaBox extends Combine {
 
+    public static configuration = {
+        onlyFirstParagaph: false,
+        addHeader: false
+    }
 
     constructor(wikidataIds: string[]) {
 
@@ -27,9 +32,9 @@ export default class WikipediaBox extends Combine {
             const page = pages[0]
             mainContents.push(
                 new Combine([
-                    new Combine([Svg.wikipedia_ui()
-                        .SetStyle("width: 1.5rem").SetClass("inline-block mr-3"), page.titleElement])
-                        .SetClass("flex"),
+                    new Combine([
+                        Svg.wikipedia_svg().SetStyle("width: 1.5rem").SetClass("inline-block mr-3"),
+                        page.titleElement]).SetClass("flex"),
                     page.linkElement
                 ]).SetClass("flex justify-between align-middle"),
             )
@@ -52,7 +57,7 @@ export default class WikipediaBox extends Combine {
                 }),
                 0,
                 {
-                    leftOfHeader: Svg.wikipedia_ui().SetStyle("width: 1.5rem; align-self: center;").SetClass("mr-4"),
+                    leftOfHeader: Svg.wikipedia_svg().SetStyle("width: 1.5rem; align-self: center;").SetClass("mr-4"),
                     styleHeader: header => header.SetClass("subtle-background").SetStyle("height: 3.3rem")
                 }
             )
@@ -141,7 +146,7 @@ export default class WikipediaBox extends Combine {
                 return new Title(pagetitle, 3)
             }
             //return new Title(Translations.t.general.wikipedia.wikipediaboxTitle.Clone(), 2)
-            return new Title(wikidataId, 3)
+            return new Link(new Title(wikidataId, 3), "https://www.wikidata.org/wiki/"+wikidataId, true)
 
         }))
 
@@ -150,13 +155,13 @@ export default class WikipediaBox extends Combine {
                 const [pagetitle, language] = state
                 if (pagetitle === "no page") {
                     const wd = <WikidataResponse>state[1]
-                    return new Link(Svg.pop_out_ui().SetStyle("width: 1.2rem").SetClass("block  "),
+                    return new Link(Svg.pop_out_svg().SetStyle("width: 1.2rem").SetClass("block  "),
                         "https://www.wikidata.org/wiki/" + wd.id
                         , true)
                 }
 
                 const url = `https://${language}.wikipedia.org/wiki/${pagetitle}`
-                return new Link(Svg.pop_out_ui().SetStyle("width: 1.2rem").SetClass("block  "), url, true)
+                return new Link(Svg.pop_out_svg().SetStyle("width: 1.2rem").SetClass("block  "), url, true)
             }
             return undefined
         }))
@@ -172,15 +177,14 @@ export default class WikipediaBox extends Combine {
 
     /**
      * Returns the actual content in a scrollable way
-     * @param pagename
-     * @param language
-     * @private
      */
     private static createContents(pagename: string, language: string, wikidata: WikidataResponse): BaseUIElement {
-        const htmlContent = Wikipedia.GetArticle({
+        const wpOptions = {
             pageName: pagename,
-            language: language
-        })
+            language: language,
+            firstParagraphOnly: WikipediaBox.configuration.onlyFirstParagaph
+        }
+        const htmlContent = Wikipedia.GetArticle(wpOptions)
         const wp = Translations.t.general.wikipedia
         const quickFacts = WikidataPreviewBox.QuickFacts(wikidata);
         const contents: UIEventSource<string | BaseUIElement> = htmlContent.map(htmlContent => {
@@ -189,7 +193,20 @@ export default class WikipediaBox extends Combine {
                 return new Loading(wp.loading.Clone())
             }
             if (htmlContent["success"] !== undefined) {
-                return new FixedUiElement(htmlContent["success"]).SetClass("wikipedia-article")
+                let content: BaseUIElement = new FixedUiElement(htmlContent["success"]);
+                if(WikipediaBox.configuration.addHeader){
+                    content = new Combine(
+                        [
+                            new Paragraph(
+                            new Link(wp.fromWikipedia, Wikipedia.getPageUrl(wpOptions), true),
+                            ),
+                            new Paragraph(
+                                content
+                            )
+                        ]
+                    )
+                }
+                return content.SetClass("wikipedia-article")
             }
             if (htmlContent["error"]) {
                 console.warn("Loading wikipage failed due to", htmlContent["error"])

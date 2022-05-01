@@ -2,7 +2,8 @@
   "id": "nature_reserve",
   "name": {
     "en": "Nature reserve",
-    "nl": "Natuurgebied"
+    "nl": "Natuurgebied",
+    "de": "Naturschutzgebiete"
   },
   "minzoom": 12,
   "source": {
@@ -25,7 +26,8 @@
   "title": {
     "render": {
       "nl": "Natuurgebied",
-      "en": "Nature reserve"
+      "en": "Nature reserve",
+      "de": "Naturschutzgebiet"
     },
     "mappings": [
       {
@@ -50,11 +52,13 @@
     {
       "render": {
         "en": "Accessin this nature reserve: {access:description}",
-        "nl": "De toegankelijkheid van dit gebied is: {access:description}"
+        "nl": "De toegankelijkheid van dit gebied is: {access:description}",
+        "de": "Zugang zu diesem Naturschutzgebiet: {access:description}"
       },
       "question": {
         "en": "Is this nature reserve accessible to the public?",
-        "nl": "Is dit gebied toegankelijk?"
+        "nl": "Is dit gebied toegankelijk?",
+        "de": "Ist dieses Naturschutzgebiet für die Öffentlichkeit zugänglich?"
       },
       "freeform": {
         "key": "access:description"
@@ -69,7 +73,8 @@
           },
           "then": {
             "en": "Publicly accessible",
-            "nl": "Vrij toegankelijk"
+            "nl": "Vrij toegankelijk",
+            "de": "Öffentlich zugänglich"
           }
         },
         {
@@ -81,7 +86,8 @@
           },
           "then": {
             "en": "Not accessible",
-            "nl": "Niet toegankelijk"
+            "nl": "Niet toegankelijk",
+            "de": "Nicht zugänglich"
           }
         },
         {
@@ -93,7 +99,8 @@
           },
           "then": {
             "en": "Not accessible as this is a private area",
-            "nl": "Niet toegankelijk, want privégebied"
+            "nl": "Niet toegankelijk, want privégebied",
+            "de": "Nicht zugänglich, da dies ein privater Bereich ist"
           }
         },
         {
@@ -105,7 +112,8 @@
           },
           "then": {
             "en": "Accessible despite being a privately owned area",
-            "nl": "Toegankelijk, ondanks dat het privegebied is"
+            "nl": "Toegankelijk, ondanks dat het privegebied is",
+            "de": "Zugänglich, obwohl es sich um ein privates Gebiet handelt"
           }
         },
         {
@@ -117,7 +125,8 @@
           },
           "then": {
             "en": "Only accessible with a guide or during organised activities",
-            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
+            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit",
+            "de": "Nur mit einem Führer oder bei organisierten Aktivitäten zugänglich"
           }
         },
         {
@@ -129,7 +138,8 @@
           },
           "then": {
             "en": "Accessible with fee",
-            "nl": "Toegankelijk mits betaling"
+            "nl": "Toegankelijk mits betaling",
+            "de": "Zugänglich gegen Gebühr"
           }
         }
       ],
@@ -138,11 +148,13 @@
     {
       "render": {
         "en": "Operated by {operator}",
-        "nl": "Beheer door {operator}"
+        "nl": "Beheer door {operator}",
+        "de": "Betrieben von {operator}"
       },
       "question": {
         "en": "Who operates this area?",
-        "nl": "Wie beheert dit gebied?"
+        "nl": "Wie beheert dit gebied?",
+        "de": "Wer betreibt dieses Gebiet?"
       },
       "freeform": {
         "key": "operator"
@@ -156,7 +168,8 @@
           },
           "then": {
             "en": "Operated by Natuurpunt",
-            "nl": "Dit gebied wordt beheerd door Natuurpunt"
+            "nl": "Dit gebied wordt beheerd door Natuurpunt",
+            "de": "Betrieben von Natuurpunt"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
         },
@@ -168,7 +181,8 @@
           },
           "then": {
             "en": "Operated by {operator}",
-            "nl": "Dit gebied wordt beheerd door {operator}"
+            "nl": "Dit gebied wordt beheerd door {operator}",
+            "de": "Betrieben von {operator}"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg",
           "hideInAnswer": true
@@ -181,7 +195,8 @@
           },
           "then": {
             "en": "Operated by <i>Agentschap Natuur en Bos</i>",
-            "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+            "nl": "Dit gebied wordt beheerd door het <i>Agentschap Natuur en Bos</i>",
+            "de": "Betrieben von <i>Agentschap Natuur en Bos</i>"
           },
           "icon": "./assets/layers/nature_reserve/ANB.jpg"
         }
@@ -191,11 +206,13 @@
     {
       "render": {
         "nl": "Dit gebied heet {name}",
-        "en": "This area is named {name}"
+        "en": "This area is named {name}",
+        "de": "Dieses Gebiet heißt {name}"
       },
       "question": {
         "nl": "Wat is de naam van dit gebied?",
-        "en": "What is the name of this area?"
+        "en": "What is the name of this area?",
+        "de": "Wie heißt dieses Gebiet?"
       },
       "freeform": {
         "key": "name",
@@ -218,7 +235,8 @@
           },
           "then": {
             "en": "This area doesn't have a name",
-            "nl": "Dit gebied heeft geen naam"
+            "nl": "Dit gebied heeft geen naam",
+            "de": "Dieses Gebiet hat keinen Namen"
           }
         }
       ],
@@ -339,7 +357,8 @@
     {
       "render": {
         "en": "Extra information: <i>{description}</i>",
-        "nl": "Extra info: <i>{description}</i>"
+        "nl": "Extra info: <i>{description}</i>",
+        "de": "Zusätzliche Informationen: <i>{description}</i>"
       },
       "freeform": {
         "key": "description"
@@ -349,11 +368,13 @@
     {
       "question": {
         "en": "Is there some extra info?",
-        "nl": "Is er extra info die je kwijt wil?"
+        "nl": "Is er extra info die je kwijt wil?",
+        "de": "Gibt es zusätzliche Informationen?"
       },
       "render": {
         "en": "Extra info: <i>{description:0}</i>",
-        "nl": "Extra info: <i>{description:0}</i>"
+        "nl": "Extra info: <i>{description:0}</i>",
+        "de": "Zusätzliche Informationen: <i>{description:0}</i>"
       },
       "freeform": {
         "key": "description:0"
@@ -380,12 +401,14 @@
         "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
       ],
       "title": {
-        "en": "nature reserve",
-        "nl": "natuurreservaat"
+        "en": "a nature reserve",
+        "nl": "een natuurreservaat",
+        "de": "ein Naturschutzgebiet"
       },
       "description": {
         "en": "Add a missing nature reserve",
-        "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+        "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
+        "de": "Ein fehlendes Naturschutzgebiet hinzufügen"
       }
     }
   ],
@@ -396,7 +419,8 @@
         {
           "question": {
             "en": "Freely accesible",
-            "nl": "Vrij te bezoeken"
+            "nl": "Vrij te bezoeken",
+            "de": "Frei zugänglich"
           },
           "osmTags": "access=yes"
         }
@@ -408,20 +432,23 @@
         {
           "question": {
             "en": "All nature reserves",
-            "nl": "Alle natuurgebieden"
+            "nl": "Alle natuurgebieden",
+            "de": "Alle Naturschutzgebiete"
           }
         },
         {
           "question": {
             "en": "Dogs are allowed to roam freely",
-            "nl": "Honden mogen vrij rondlopen"
+            "nl": "Honden mogen vrij rondlopen",
+            "de": "Hunde dürfen frei herumlaufen"
           },
           "osmTags": "dog=yes"
         },
         {
           "question": {
             "en": "Dogs are allowed if they are leashed",
-            "nl": "Honden welkom aan de leiband"
+            "nl": "Honden welkom aan de leiband",
+            "de": "Hunde nur erlaubt, wenn sie angeleint sind"
           },
           "osmTags": {
             "or": [

@@ -4,11 +4,12 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import Title from "../Base/Title";
-import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
-import {DropDown} from "../Input/DropDown";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {SubtleButton} from "../Base/SubtleButton";
+import Svg from "../../Svg";
+import {Utils} from "../../Utils";
 
 export class AskMetadata extends Combine implements FlowStep<{
     features: any[],
@@ -27,14 +28,14 @@ export class AskMetadata extends Combine implements FlowStep<{
     }>;
     public readonly IsValid: UIEventSource<boolean>;
 
-    constructor(params: ({ features: any[], layer: LayerConfig })) {
-
+    constructor(params: ({ features: any[], theme: string })) {
+        const t = Translations.t.importHelper.askMetadata
         const introduction = ValidatedTextField.ForType("text").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-introduction-text"),
             inputStyle: "width: 100%"
         })
 
-        const wikilink = ValidatedTextField.ForType("string").ConstructInputElement({
+        const wikilink = ValidatedTextField.ForType("url").ConstructInputElement({
             value: LocalStorageSource.Get("import-helper-wikilink-text"),
             inputStyle: "width: 100%"
         })
@@ -44,36 +45,40 @@ export class AskMetadata extends Combine implements FlowStep<{
             inputStyle: "width: 100%"
         })
 
-        let options: { value: string, shown: BaseUIElement }[] = AllKnownLayouts.layoutsList
-            .filter(th => th.layers.some(l => l.id === params.layer.id))
-            .filter(th => th.id !== "personal")
-            .map(th => ({
-                value: th.id,
-                shown: th.title
-            }))
-
-        options.splice(0, 0, {
-            shown: new FixedUiElement("Select a theme"),
-            value: undefined
-        })
-
-        const theme = new DropDown("Which theme should be linked in the note?", options)
-
-        ValidatedTextField.ForType("string").ConstructInputElement({
-            value: LocalStorageSource.Get("import-helper-theme-text"),
-            inputStyle: "width: 100%"
-        })
-
         super([
-            new Title("Set metadata"),
-            "Before adding " + params.features.length + " notes, please provide some extra information.",
-            "Please, write an introduction for someone who sees the note",
+            new Title(t.title),
+            t.intro.Subs({count: params.features.length}),
+           t.giveDescription,
             introduction.SetClass("w-full border border-black"),
-            "What is the source of this data? If 'source' is set in the feature, this value will be ignored",
-            source.SetClass("w-full border border-black"),
-            "On what wikipage can one find more information about this import?",
+             t.giveSource,
+             source.SetClass("w-full border border-black"),
+            t.giveWikilink            ,
             wikilink.SetClass("w-full border border-black"),
-            theme
+            new VariableUiElement(wikilink.GetValue().map(wikilink => {
+                try{
+                    const url = new URL(wikilink)
+                    if(url.hostname.toLowerCase() !== "wiki.openstreetmap.org"){
+                        return t.shouldBeOsmWikilink.SetClass("alert");
+                    }
+
+                    if(url.pathname.toLowerCase() === "/wiki/main_page"){
+                        return t.shouldNotBeHomepage.SetClass("alert");
+                    }
+                }catch(e){
+                    return t.shouldBeUrl.SetClass("alert")
+                }
+            })),
+            t.orDownload,
+            new SubtleButton(Svg.download_svg(), t.downloadGeojson).OnClickWithLoading("Preparing your download",
+                async ( ) => {
+                    const geojson = {
+                        type:"FeatureCollection",
+                        features: params.features
+                    }
+                    Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson), "prepared_import_"+params.theme+".geojson",{
+                        mimetype: "application/vnd.geo+json"
+                    })
+                })
         ]);
         this.SetClass("flex flex-col")
 
@@ -83,16 +88,29 @@ export class AskMetadata extends Combine implements FlowStep<{
                 wikilink: wikilink.GetValue().data,
                 intro,
                 source: source.GetValue().data,
-                theme: theme.GetValue().data
-
+                theme: params.theme
             }
-        }, [wikilink.GetValue(), source.GetValue(), theme.GetValue()])
+        }, [wikilink.GetValue(), source.GetValue()])
 
         this.IsValid = this.Value.map(obj => {
             if (obj === undefined) {
                 return false;
             }
-            return obj.theme !== undefined && obj.features !== undefined && obj.wikilink !== undefined && obj.intro !== undefined && obj.source !== undefined;
+            if ([ obj.features, obj.intro, obj.wikilink, obj.source].some(v => v === undefined)){
+                return false;
+            }
+            
+            try{
+                const url = new URL(obj.wikilink)
+                if(url.hostname.toLowerCase() !== "wiki.openstreetmap.org"){
+                    return false;
+                }
+            }catch(e){
+                return false
+            }
+            
+            return true;
+                
         })
     }
 

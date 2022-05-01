@@ -44,38 +44,37 @@ export default class SearchAndGo extends Combine {
         );
 
         // Triggered by 'enter' or onclick
-        function runSearch() {
+        async function runSearch() {
             const searchString = searchField.GetValue().data;
             if (searchString === undefined || searchString === "") {
                 return;
             }
             searchField.GetValue().setData("");
             placeholder.setData(Translations.t.general.search.searching);
-            Geocoding.Search(
-                searchString,
-                (result) => {
-                    console.log("Search result", result);
-                    if (result.length == 0) {
-                        placeholder.setData(Translations.t.general.search.nothing);
-                        return;
-                    }
+            try {
 
-                    const poi = result[0];
-                    const bb = poi.boundingbox;
-                    const bounds: [[number, number], [number, number]] = [
-                        [bb[0], bb[2]],
-                        [bb[1], bb[3]],
-                    ];
-                    state.selectedElement.setData(undefined);
-                    Hash.hash.setData(poi.osm_type + "/" + poi.osm_id);
-                    state.leafletMap.data.fitBounds(bounds);
-                    placeholder.setData(Translations.t.general.search.search);
-                },
-                () => {
-                    searchField.GetValue().setData("");
-                    placeholder.setData(Translations.t.general.search.error);
+                const result = await Geocoding.Search(searchString);
+
+                console.log("Search result", result);
+                if (result.length == 0) {
+                    placeholder.setData(Translations.t.general.search.nothing);
+                    return;
                 }
-            );
+
+                const poi = result[0];
+                const bb = poi.boundingbox;
+                const bounds: [[number, number], [number, number]] = [
+                    [bb[0], bb[2]],
+                    [bb[1], bb[3]],
+                ];
+                state.selectedElement.setData(undefined);
+                Hash.hash.setData(poi.osm_type + "/" + poi.osm_id);
+                state.leafletMap.data.fitBounds(bounds);
+                placeholder.setData(Translations.t.general.search.search)
+            }catch(e){
+                searchField.GetValue().setData("");
+                placeholder.setData(Translations.t.general.search.error);
+            }
         }
 
         searchField.enterPressed.addCallback(runSearch);

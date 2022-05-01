@@ -1,0 +1,93 @@
+{
+  "id": "veterinary",
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=veterinary"
+      ]
+    }
+  },
+  "minzoom": 10,
+  "presets": [
+    {
+      "title": {
+        "en": "a veterianarian",
+        "da": "en dyrl&aelig;ge"
+      },
+      "tags": [
+        "amenity=veterinary",
+        "pet=dog"
+      ],
+      "description": {
+        "en": "a veterianarian, that treats dogs",
+        "da": "En dyrl&aelig;ge, der behandler hunde"
+      }
+    }
+  ],
+  "name": {
+    "en": "veterinary",
+    "da": "dyrl&aelig;ge"
+  },
+  "title": {
+    "render": {
+      "en": "Veterinary",
+      "da": "dyrl&aelig;ge"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ]
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/veterinary/vet.svg",
+      "iconSize": "30,40,center",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ]
+    },
+    {
+      "color": "#ff0",
+      "width": 5
+    }
+  ],
+  "tagRenderings": [
+    "website",
+    "reviews",
+    "phone",
+    "opening_hours",
+    {
+      "question": {
+        "en": "What is the name of this veterinarian?",
+        "da": "Hvad hedder denne dyrl&aelig;?"
+      },
+      "render": {
+        "en": "The name of this veterinarian is {name}",
+        "de": "Denne dyrl&aelig; hedder {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "vetName"
+    }
+  ]
+}

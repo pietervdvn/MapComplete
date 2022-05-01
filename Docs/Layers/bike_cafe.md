@@ -12,27 +12,9 @@ A bike café is a café geared towards cyclists, for example with services such 
 
 
 
-## Table of contents
-
-1. [bike_cafe](#bike_cafe)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_cafe-name](#bike_cafe-name)
-    + [bike_cafe-bike-pump](#bike_cafe-bike-pump)
-    + [bike_cafe-repair-tools](#bike_cafe-repair-tools)
-    + [bike_cafe-repair-service](#bike_cafe-repair-service)
-    + [bike_cafe-website](#bike_cafe-website)
-    + [bike_cafe-phone](#bike_cafe-phone)
-    + [bike_cafe-email](#bike_cafe-email)
-    + [bike_cafe-opening_hours](#bike_cafe-opening_hours)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -47,8 +29,6 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)
-
 
 
  Basic tags for this layer 
@@ -61,8 +41,10 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dbicycle' target='_blank'>bicycle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dbicycle' target='_blank'>bicycle</a>|service:bicycle:.*~^..*$
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dbicycle' target='_blank'>bicycle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dbicycle' target='_blank'>bicycle</a>|^service:bicycle:.*$~~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

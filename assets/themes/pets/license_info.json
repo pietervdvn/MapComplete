@@ -1,0 +1,37 @@
+[
+  {
+    "path": "dog-food.svg",
+    "license": "PD",
+    "authors": [
+      "Public Domain Symbols",
+      "Jean Victor Balin ",
+      "Niels Elgaard Larsen"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/260714/dogpark15",
+      "https://openclipart.org/detail/25719/aiga-restaurant"
+    ]
+  },
+  {
+    "path": "dogshop.svg",
+    "license": "CC0 1.0",
+    "authors": [
+      "Public Domain Symbols",
+      "Niels Elgaard Larsen"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/260714/dogpark15"
+    ]
+  },
+  {
+    "path": "petshop.svg",
+    "license": "CC0 1.0",
+    "authors": [
+      "Niels Elgaard Larsen",
+      "Public Domain Symbols"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/260857/veterinary15"
+    ]
+  }
+]

@@ -93,49 +93,6 @@
     "climbing": {
         "description": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
         "descriptionTail": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
-        "layers": {
-            "0": {
-                "description": "Mászóegyesület vagy -szervezet",
-                "name": "Mászóegyesület",
-                "presets": {
-                    "0": {
-                        "description": "Egy mászóegyesület",
-                        "title": "Mászóegyesület"
-                    },
-                    "1": {
-                        "description": "Mászással foglalkozó civil szervezet",
-                        "title": "Mászószervezet"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Mászószervezet"
-                        }
-                    }
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "Itt lehetőség van sportmászásra"
-                        },
-                        "1": {
-                            "then": "Itt nincs lehetőség sportmászásra"
-                        }
-                    }
-                }
-            }
-        },
         "title": "Mászótérkép"
     },
     "cycle_infra": {
@@ -336,43 +293,6 @@
     },
     "hackerspaces": {
         "description": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni",
-        "layers": {
-            "0": {
-                "description": "Hackerspace",
-                "name": "Hackerspace",
-                "presets": {
-                    "0": {
-                        "description": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
-                        "title": "Hackerspace"
-                    },
-                    "1": {
-                        "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips.",
-                        "title": "Makerspace"
-                    }
-                },
-                "tagRenderings": {
-                    "is_makerspace": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ez egy makerspace"
-                            },
-                            "1": {
-                                "then": "Ez egy hagyományos (szoftverekkel foglalkozó) hackerspace"
-                            }
-                        },
-                        "question": "Ez hackerspace vagy makerspace?"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": " {name}"
-                        }
-                    },
-                    "render": "Hackerspace"
-                }
-            }
-        },
         "shortDescription": "Hackerspace-ek térképe",
         "title": "Hackerspace-ek"
     },
@@ -392,66 +312,6 @@
     },
     "openwindpowermap": {
         "description": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
-        "layers": {
-            "0": {
-                "name": "Szélerőmű",
-                "presets": {
-                    "0": {
-                        "title": "Szélerőmű"
-                    }
-                },
-                "tagRenderings": {
-                    "turbine-diameter": {
-                        "question": "Hány méter a rotorátmérője ennek a szélturbinának?",
-                        "render": "A szélturbina rotorátmérője: {rotor:diameter} méter."
-                    },
-                    "turbine-height": {
-                        "question": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
-                        "render": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter."
-                    },
-                    "turbine-operator": {
-                        "question": "Ki üzemelteti ezt a szélturbinát?",
-                        "render": "Ennek a szélerőműnek az üzemeltetője: {operator}."
-                    },
-                    "turbine-output": {
-                        "question": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
-                        "render": "A szélerőmű teljesítménye: {generator:output:electricity}."
-                    },
-                    "turbine-start-date": {
-                        "question": "Mikor helyezték üzembe ezt a szélerőművet?",
-                        "render": "A szélerőmű üzembe helyezése: {start_date}."
-                    }
-                },
-                "title": {
-                    "render": "szélerőmű"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " megawatt"
-                            },
-                            "1": {
-                                "human": " kilowatt"
-                            },
-                            "2": {
-                                "human": " watt"
-                            },
-                            "3": {
-                                "human": " gigawatt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " méter"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "title": "OpenWindPowerMap"
     },
     "parkings": {

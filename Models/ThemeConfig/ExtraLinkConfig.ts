@@ -11,7 +11,7 @@ export default class ExtraLinkConfig {
 
     constructor(configJson: ExtraLinkConfigJson, context) {
         this.icon = configJson.icon
-        this.text = Translations.T(configJson.text)
+        this.text = Translations.T(configJson.text, "themes:"+context+".text")
         this.href = configJson.href
         this.newTab = configJson.newTab
         this.requirements = new Set(configJson.requirements)

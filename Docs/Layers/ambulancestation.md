@@ -12,24 +12,9 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
 
 
 
-## Table of contents
-
-1. [ambulancestation](#ambulancestation)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [ambulance-name](#ambulance-name)
-    + [ambulance-street](#ambulance-street)
-    + [ambulance-place](#ambulance-place)
-    + [ambulance-agency](#ambulance-agency)
-    + [ambulance-operator-type](#ambulance-operator-type)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -44,8 +29,6 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/ambulancestation/ambulancestation.json)
-
 
 
  Basic tags for this layer 
@@ -59,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dambulance_station' target='_blank'>ambulance_station</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22emergency%22%3D%22ambulance_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

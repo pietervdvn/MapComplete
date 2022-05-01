@@ -12,24 +12,21 @@ All carfree roads
 
 
 
-## Table of contents
 
-1. [slow_roads](#slow_roads)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [explanation](#explanation)
-    + [slow_roads-surface](#slow_roads-surface)
-    + [slow_road_is_lit](#slow_road_is_lit)
 
+  - This layer is shown at zoomlevel **16** and higher
+
+
+
+
+#### Themes using this layer 
 
 
 
 
 
+  - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](../assets/layers/slow_roads/slow_roads.json)
 
 
 
@@ -46,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
   - access!~^no$
   - access!~^private$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22highway%22%3D%22pedestrian%22%5D%5B%22access%22!~%22%5Eno%24%22%5D%5B%22access%22!~%22%5Eprivate%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22footway%22%5D%5B%22access%22!~%22%5Eno%24%22%5D%5B%22access%22!~%22%5Eprivate%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22path%22%5D%5B%22access%22!~%22%5Eno%24%22%5D%5B%22access%22!~%22%5Eprivate%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22bridleway%22%5D%5B%22access%22!~%22%5Eno%24%22%5D%5B%22access%22!~%22%5Eprivate%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22living_street%22%5D%5B%22access%22!~%22%5Eno%24%22%5D%5B%22access%22!~%22%5Eprivate%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22track%22%5D%5B%22access%22!~%22%5Eno%24%22%5D%5B%22access%22!~%22%5Eprivate%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -87,7 +86,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-  - **<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
+  - **<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
   - **Dit is een brede, autovrije straat** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian' target='_blank'>pedestrian</a>
   - **Dit is een voetpaadje** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a>
   - **Dit is een wegeltje of bospad** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>

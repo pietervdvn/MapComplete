@@ -1,20 +1,26 @@
 import BaseUIElement from "../BaseUIElement";
 import {Utils} from "../../Utils";
 import Translations from "../i18n/Translations";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export default class Table extends BaseUIElement {
 
     private readonly _header: BaseUIElement[];
     private readonly _contents: BaseUIElement[][];
     private readonly _contentStyle: string[][];
-
+    private readonly _sortable: boolean;
+    
     constructor(header: (BaseUIElement | string)[],
                 contents: (BaseUIElement | string)[][],
-                contentStyle?: string[][]) {
+                options?: {
+                    contentStyle?: string[][],
+                    sortable?: false | boolean
+                }) {
         super();
-        this._contentStyle = contentStyle ?? [["min-width: 9rem"]];
+        this._contentStyle = options?.contentStyle ?? [["min-width: 9rem"]];
         this._header = header?.map(Translations.W);
         this._contents = contents.map(row => row.map(Translations.W));
+        this._sortable = options?.sortable ?? false
     }
 
     AsMarkdown(): string {
@@ -30,7 +36,25 @@ export default class Table extends BaseUIElement {
     protected InnerConstructElement(): HTMLElement {
         const table = document.createElement("table")
 
-        const headerElems = Utils.NoNull((this._header ?? []).map(elems => elems.ConstructElement()))
+        /**
+         * Sortmode: i: sort column i ascending; 
+         * if i is negative : sort column (-i - 1) descending
+         */
+        const sortmode = new UIEventSource<number>(undefined);
+        const self = this;
+        const headerElems = Utils.NoNull((this._header ?? []).map((elem, i) => {
+            if(self._sortable){
+                elem.onClick(() => {
+                    const current = sortmode.data
+                    if(current == i){
+                        sortmode.setData(- 1 - i )
+                    }else{
+                        sortmode.setData(i)
+                    }
+                })
+            }
+            return elem.ConstructElement();
+        }))
         if (headerElems.length > 0) {
 
             const thead = document.createElement("thead")
@@ -73,6 +97,31 @@ export default class Table extends BaseUIElement {
             }
             table.appendChild(tr)
         }
+        
+        sortmode.addCallback(sortCol => {
+            if(sortCol === undefined){
+                return
+            }
+            const descending = sortCol < 0
+            const col = descending ?  - sortCol - 1: sortCol;
+            let rows: HTMLTableRowElement[] = Array.from(table.rows)
+            rows.splice(0,1) // remove header row
+            rows = rows.sort((a, b) => {
+                const ac = a.cells[col]?.innerText?.toLowerCase()
+                const bc = b.cells[col]?.innerText?.toLowerCase()
+                if(ac === bc){
+                    return 0
+                }
+                return( ac < bc !== descending) ? -1 : 1;
+            })
+            for (let j = rows.length ; j > 1; j--) {
+                table.deleteRow(j)
+            }
+            for (const row of rows) {
+                table.appendChild(row)
+            }
+        })
+     
 
         return table;
     }

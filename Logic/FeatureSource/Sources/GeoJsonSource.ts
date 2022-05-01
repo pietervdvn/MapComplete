@@ -13,6 +13,7 @@ import {GeoOperations} from "../../GeoOperations";
 export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
 
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public readonly state = new UIEventSource<undefined | {error: string} | "loaded">(undefined)
     public readonly name;
     public readonly isOsmCache: boolean
     public readonly layer: FilteredLayer;
@@ -80,6 +81,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         const self = this;
         Utils.downloadJson(url)
             .then(json => {
+                self.state.setData("loaded")
                 if (json.features === undefined || json.features === null) {
                     return;
                 }
@@ -135,7 +137,10 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
 
                 eventSource.setData(eventSource.data.concat(newFeatures))
 
-            }).catch(msg => console.debug("Could not load geojson layer", url, "due to", msg))
+            }).catch(msg => {
+            console.debug("Could not load geojson layer", url, "due to", msg);
+            self.state.setData({error: msg})
+        })
     }
 
 }

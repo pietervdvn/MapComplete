@@ -16,7 +16,7 @@ export default class TitleHandler {
         const currentTitle: UIEventSource<string> = state.selectedElement.map(
             selected => {
                 const layout = state.layoutToUse
-                const defaultTitle = Translations.WT(layout?.title)?.txt ?? "MapComplete"
+                const defaultTitle = layout?.title?.txt ?? "MapComplete"
 
                 if (selected === undefined) {
                     return defaultTitle

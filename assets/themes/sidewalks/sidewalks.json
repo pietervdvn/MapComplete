@@ -2,14 +2,24 @@
   "id": "sidewalks",
   "title": {
     "en": "Sidewalks",
-    "ru": "Тротуары"
+    "ru": "Тротуары",
+    "nl": "Voetpaden",
+    "de": "Gehwege",
+    "ca": "Voreres",
+    "es": "Aceras"
   },
   "shortDescription": {
-    "en": "Sidewalk mapping"
+    "en": "Sidewalk mapping",
+    "ca": "Mapejat de voreres",
+    "de": "Kartierung von Bürgersteigen",
+    "es": "Mapeo de aceras"
   },
   "description": {
     "en": "Experimental theme",
-    "ru": "Экспериментальная тема"
+    "ru": "Экспериментальная тема",
+    "ca": "Petició experimental",
+    "de": "Experimentelles Thema",
+    "es": "Tema experimental"
   },
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -24,7 +34,10 @@
       "id": "sidewalks",
       "name": {
         "en": "Sidewalks",
-        "ru": "Тротуары"
+        "ru": "Тротуары",
+        "de": "Gehwege",
+        "ca": "Voreres",
+        "es": "Aceras"
       },
       "minzoom": 12,
       "source": {
@@ -40,7 +53,10 @@
       "title": {
         "render": {
           "en": "{name}",
-          "ru": "{name}"
+          "ru": "{name}",
+          "de": "{name}",
+          "ca": "{name}",
+          "es": "{name}"
         },
         "mappings": [
           {
@@ -50,13 +66,17 @@
         ]
       },
       "description": {
-        "en": "Layer showing sidewalks of highways"
+        "en": "Layer showing sidewalks of highways",
+        "de": "Ebene mit Bürgersteigen",
+        "es": "Una capa que muestra aceras de autovías"
       },
       "tagRenderings": [
         {
           "id": "streetname",
           "render": {
-            "en": "This street is named {name}"
+            "en": "This street is named {name}",
+            "de": "Diese Straße heißt {name}",
+            "es": "Esta calle se llama {name}"
           }
         },
         {

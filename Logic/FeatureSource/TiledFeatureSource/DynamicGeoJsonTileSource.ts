@@ -1,7 +1,6 @@
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
-import Loc from "../../../Models/Loc";
 import DynamicTileSource from "./DynamicTileSource";
 import {Utils} from "../../../Utils";
 import GeoJsonSource from "../Sources/GeoJsonSource";
@@ -14,7 +13,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
     constructor(layer: FilteredLayer,
                 registerLayer: (layer: FeatureSourceForLayer & Tiled) => void,
                 state: {
-                    locationControl: UIEventSource<Loc>
+                    locationControl?: UIEventSource<{zoom?: number}>
                     currentBounds: UIEventSource<BBox>
                 }) {
         const source = layer.layerDef.source

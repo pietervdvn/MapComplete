@@ -41,7 +41,7 @@
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
         "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
         "add": {
-            "addNew": "Voeg een {category} toe",
+            "addNew": "Voeg {category} toe",
             "addNewMapLabel": "Klik hier om een item toe te voegen",
             "confirmButton": "Voeg een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
             "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het punt dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
@@ -54,13 +54,13 @@
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "zoomInMore": "Zoom verder in om dit kaart-object te kunnen importeren"
+                "zoomInMore": "Zoom verder in om dit object af te handelen"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
             "openLayerControl": "Open de laag-instellingen",
-            "pleaseLogin": "Gelieve je aan te melden om een punt to te voegen",
+            "pleaseLogin": "Gelieve je aan te melden om een punt toe te voegen",
             "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
             "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
             "title": "Nieuw punt toevoegen?",
@@ -90,23 +90,20 @@
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
-            "themeBy": "Thema gemaakt door {author}"
+            "themeBy": "Thema gemaakt door {author}",
+            "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
         },
         "back": "Vorige",
         "backToMapcomplete": "Terug naar het themaoverzicht",
         "backgroundMap": "Achtergrondkaart",
         "cancel": "Annuleren",
-        "centerMessage": {
-            "loadingData": "Data wordt geladen…",
-            "ready": "Klaar!",
-            "retrying": "Data inladen mislukt. Opnieuw proberen over {count} seconden…",
-            "zoomIn": "Zoom in om de data te zien en te bewerken"
-        },
         "confirm": "Bevestigen",
         "customThemeIntro": "<h3>Onofficiële thema's</h3>De onderstaande thema's heb je eerder bezocht en zijn gemaakt door andere OpenStreetMappers.",
         "download": {
             "downloadAsPdf": "Download een PDF van de huidig zichtbare kaart",
             "downloadAsPdfHelper": "Perfect om de huidige kaart af te printen",
+            "downloadAsSvg": "Download de huidige kaart als SVG",
+            "downloadAsSvgHelper": "Compatibel met Inkscape of Adobe Illustrator; deze data moeten nog verder verwerkt worden…  ",
             "downloadCSV": "Download de zichtbare data als CSV",
             "downloadCSVHelper": "Compatibel met LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Downloaden als GeoJson bestand",
@@ -131,18 +128,13 @@
         "histogram": {
             "error_loading": "Kan het histogram niet laden"
         },
-        "index": {
-            "#": "Deze teksten worden getoond boven de themaknoppen als er geen thema is geladen",
-            "intro": "MapComplete is een OpenStreetMap applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
-            "pickTheme": "Kies hieronder een thema om te beginnen.",
-            "title": "Welkom bij MapComplete"
-        },
         "layerSelection": {
             "title": "Selecteer lagen",
             "zoomInToSeeThisLayer": "Vergroot de kaart om deze laag te zien"
         },
         "loading": "Aan het laden...",
         "loadingTheme": "{theme} wordt geladen...",
+        "loginFailed": "Het inloggen op OpenStreetMap is gefaald",
         "loginOnlyNeededToEdit": "als je de kaart wilt aanpassen",
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
@@ -198,23 +190,8 @@
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
         "returnToTheMap": "Ga terug naar de kaart",
-        "reviews": {
-            "affiliated_reviewer_warning": "(Review door betrokkene)",
-            "attribution": "De beoordelingen worden voorzien door <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> en zijn beschikbaar onder de<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0-licentie</a>.",
-            "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
-            "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
-            "no_rating": "Geen score bekend",
-            "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf!",
-            "plz_login": "Meld je aan om een beoordeling te geven",
-            "posting_as": "Ingelogd als",
-            "saved": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>",
-            "saving_review": "Opslaan…",
-            "title": "{count} beoordelingen",
-            "title_singular": "Eén beoordeling",
-            "tos": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
-            "write_a_comment": "Schrijf een beoordeling…"
-        },
         "save": "Opslaan",
+        "screenToSmall": "Open {theme} in een nieuw venster",
         "search": {
             "error": "Niet gelukt...",
             "nothing": "Niet gevonden...",
@@ -267,8 +244,12 @@
             "doSearch": "Zoek hierboven om resultaten te zien",
             "failed": "Het Wikipedia-artikel inladen is mislukt",
             "loading": "Wikipedia aan het laden...",
-            "noResults": "Niet gevonden voor <i>{search}</i>",
+            "noResults": "Geen relevante items gevonden voor <i>{search}</i>",
             "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel",
+            "previewbox": {
+                "born": "Geboren: {value}",
+                "died": "Gestorven: {value}"
+            },
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         }
@@ -293,6 +274,58 @@
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
         "uploadingPicture": "Bezig met een foto te uploaden…",
         "willBePublished": "Jouw foto wordt gepubliceerd "
+    },
+    "importHelper": {
+        "compareToAlreadyExistingNotes": {
+            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt"
+        },
+        "introduction": {
+            "description": "De importeer-helper converteert een externe dataset in OSM-kaartnotas. De externe data moet overeenkomen met een bestaande MapComplete-laag. Voor elk item wordt er een kaartnota gemaakt. Deze notas worden dan samen met de relevante POI getoond en kunnen dan (via MapComplete) snel en eenvoudig toegevoegd worden.",
+            "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>"
+        },
+        "login": {
+            "lockNotice": "Deze pagina is afgeschermd. Je hebt minstens {importHelperUnlock} changesets nodig voor je deze pagina mag gebruiken.",
+            "loggedInWith": "Je bent momenteel aangemeld als <b>{name}</b> and maakte {csCount} eerdere wijzigingen",
+            "loginIsCorrect": "<b>{name}</b> is de correcte account om de import-nota's mee te maken.",
+            "loginRequired": "Je moet ingelogd zijn om verder te gaan",
+            "userAccountTitle": "Selecteer een account"
+        },
+        "mapPreview": {
+            "autodetected": "Deze laag was automatisch gekozen gebaseerd op de aanwezige eigenschappen",
+            "confirm": "De objecten bevinden zich op de juiste locatie",
+            "mismatch": "{count} objecten hebben niet de juiste tags. Zorg ervoor dat de juiste tags om het type aan te geven aanwezig zijn, namelijk {tags}",
+            "selectLayer": "Met welke laag komt deze te importeren dataset overeen?",
+            "title": "Voorbeeldkaart"
+        },
+        "noteParts": {
+            "datasource": "Oorspronkelijke data van {source}",
+            "importEasily": "Voeg dit punt eenvoudig toe met MapComplete:",
+            "wikilink": "Meer informatie over deze import: {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag",
+            "inspectDataTitle": "Bekijk de data van {count} te importeren objecten",
+            "inspectLooksCorrect": "Deze waardes zien er correct uit",
+            "someHaveSame": "{count} te importeren objecten hebben dit attribuut, dit is {percentage}% van het totaal"
+        },
+        "selectFile": {
+            "description": "Selecteer een .csv of .geojson-bestand",
+            "errDuplicate": "Sommige kolommen hebben dezelfde naam",
+            "errNoLatOrLon": "Geen enkele kolom heet `lat` of `lon`",
+            "errNoName": "De naam van sommige kolommen ontbreken",
+            "errNotFeatureCollection": "Het ingeladen JSON-bestand is geen geojson-featurecollection",
+            "errPointsOnly": "Het ingeladen JSON-bestand mag enkel punten bevatten",
+            "fileFormatDescription": "Selecteer een <b class=\"code\">.csv</b>- of een <b class=\"code\">.geojson</b>bestand",
+            "fileFormatDescriptionCsv": "Het CSV-bestand moet een kolom <span class=\"literal-code\">lat</span> en <span class=\"literal-code\">lon</span> bevatten die de coordinaten in WGS84 beschrijft. Bovendien moet er voor elk attribuut nog een kolom zijn..",
+            "fileFormatDescriptionGeoJson": "Het geojson-bestand mag enkel punten bevatten. De attributen moeten dezelfde zijn zoals in OpenStreetMap",
+            "loadedFilesAre": "{file} werd ingeladen",
+            "noFilesLoaded": "Geen bestand ingeladen op dit moment",
+            "title": "Selecteer bestand"
+        },
+        "title": "Importeer-helper"
+    },
+    "importInspector": {
+        "title": "Inspecteer en beheer importeer-notas"
     },
     "importLayer": {
         "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
@@ -339,6 +372,33 @@
     "multi_apply": {
         "autoApply": "Wijzigingen aan eigenschappen {attr_names} zullen ook worden uitgevoerd op {count} andere objecten."
     },
+    "notes": {
+        "addAComment": "Voeg een commentaar toe",
+        "addComment": "Voeg commentaar toe",
+        "addCommentAndClose": "Voeg een commentaar toe en sluit de nota",
+        "addCommentPlaceholder": "Voeg een commentaar toe...",
+        "anonymous": "Anonieme bijdrager",
+        "closeNote": "Sluit deze nota",
+        "createNote": "Maak een nieuwe kaartnota",
+        "createNoteIntro": "Ontbreekt hier iets? Is hier iets mis met de kaart? Maak hier dan een kaartnota, deze zal door vrijwilligers verwerkt worden.",
+        "createNoteTitle": "Voeg hier een nieuwe kaartnota toe",
+        "disableAllNoteFilters": "Schakel alle filters uit",
+        "isClosed": "Deze nota is gesloten",
+        "isCreated": "Je kaarnota werd gemaakt!",
+        "loginToAddComment": "Log in om een commentaar toe te voegen",
+        "loginToAddPicture": "Log in om een afbeelding toe te voegen",
+        "loginToClose": "Login om deze kaartnota te sluiten",
+        "noteIsPublic": "Dit zal voor iedereen zichtbaar zijn",
+        "noteLayerDoEnable": "Schakel de laat met kaartnota's in",
+        "noteLayerHasFilters": "Sommige kaartnota's kunnen verborgen zijn door een filter",
+        "noteLayerNotEnabled": "De laat met kaartnota's staat af. Zet deze aan om een nieuwe kaartnota toe te voegen",
+        "notesLayerMustBeEnabled": "De laat met kaartnota's staat af. Zet deze aan om een nieuwe kaartnota toe te voegen",
+        "reopenNote": "Heropen de kaartnota",
+        "reopenNoteAndComment": "Heropen de kaartnota en voeg commentaar toe",
+        "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
+        "typeText": "Typ eerst een commentaar om deze toe te voegen",
+        "warnAnonymous": "Je bent niet aangemeld. We gaan je niet kunnen contacteren om deze kaartnota te verwerken."
+    },
     "privacy": {
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
         "editingTitle": "Wanneer je wijzigingen maakt",
@@ -368,7 +428,7 @@
                 "title": "Mogelijkheden om data te verzamelen"
             },
             "text0": "Als je een bestaand MapComplete-thema wilt gebruiken of in je website wilt embedden, dan mag je dit gratis doen. Dit is gratis en zal dat altijd zijn.",
-            "text1": "Wil je andere data visualiseren, maar bestaat er nog geen geschikte kaart voor? De MapComplete-ontwikkelaars kunnen dit <b>op maat bouwen</b> voor een schappelijk budget. Stuur je vraag via <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> of <a>een bericht op osm.org</a>",
+            "text1": "Wil je andere data visualiseren, maar bestaat er nog geen geschikte kaart voor? De MapComplete-ontwikkelaars kunnen dit <b>op maat bouwen</b> voor een schappelijk budget. Stuur je vraag via <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> of <a href=\"https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet\">een bericht op osm.org</a>",
             "text2": "Twijfel je nog? We sommen de mogelijkheden hieronder op en beantwoorden enkele veelvoorkomende vragen",
             "title": "MapComplete gebruiken in je eigen organisatie"
         },
@@ -405,8 +465,30 @@
                 "title": "Is vandalisme een probleem?"
             }
         },
+        "drawbacks": {
+            "intro": "Aansluiten bij de OpenStreetMap-community heeft veel voordelen, toch zijn er enkele punten om rekening mee te houden.",
+            "licenseNuances": {
+                "intro": "OpenStreetMap wordt verspreid met de Open Database License. Deze houdt in dat:",
+                "li0": "Alle data mag hergebruikt worden voor alle doeleinden - inclusief commercieel gebruik",
+                "li1": "Applicaties en producten die OpenStreetMap gebruiken moeten een attributie tonen",
+                "li2": "Een dataset of kaartproduct die OpenStreetMap-data bevat moet deze data herpubliceren onder de ODbL, inclusief aanpassingen aan de data in een algemeen bruikbaar formaat.",
+                "outro": "Dit heeft enkele gevolgen voor sommige toepassingen zoals hieronder uitgelegd",
+                "title": "Gevolgen van de ODbL voor enkele toepassingen",
+                "usecaseGatheringOpenData": {
+                    "title": "Het verzamelen van Open Data"
+                }
+            },
+            "title": "Enkele nadelen om rekening mee te houden",
+            "unsuitedData": {
+                "intro": "De basisregel is dat alle gegevens <b>ter plaatse verifieerbaar</b> moeten en ietwat <b>permanent</b> moeten zijn. Dit betekent dat sommige data <i>niet</i> in OpenStreetMap opgeslaan mogen worden - al bestaan hier oplossingen voor.",
+                "li0": "Subjectieve data (zoals reviews) zijn niet geschikt voor OpenStreetMap. MapComplete heeft een integratie met <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> waar iedereen reviews kan geven. Deze ratings en reviews worden met een open licentie gepubliceerd",
+                "li1": "Gebeurtenissen horen <i>niet</i> thuis in OpenStreetMap, net zoals kortstondige wegenwerken van enkele dagen of weken.",
+                "li2": "Tijdsgebonden data (bv. statistieken van luchtkwaliteit, verkeersintensiteit, ...) kunnen niet bewaard worden op OpenStreetMap. Merk echter op dat MapComplete dit soort data kan visualiseren indien deze op een andere locatie opgeslaan is.",
+                "title": "Data die niet geschikt is voor OpenStreetMap"
+            }
+        },
         "indexPage": {
-            "button": "Ontdek onze services",
+            "button": "Ontdek onze dienstverlening",
             "hook": "Professionele ondersteuning nodig?",
             "hookMore": "We kunnen helpen bij het opzetten van terreinwerk, integreren van datasets en algemene OpenStreetMap-consultancy"
         },
@@ -447,7 +529,28 @@
         "split": "Knip weg",
         "splitTitle": "Duid op de kaart aan waar de weg geknipt moet worden"
     },
+    "translations": {
+        "activateButton": "Help met het vertalen van MapComplete",
+        "completeness": "Vertalingen voor {theme} in {language} zijn momenteel op {percentage}%: van {total} teksten zijn er reeds {translated} vertaald",
+        "deactivate": "Verberg de vertaalknoppen",
+        "help": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
+        "isTranslator": "Vertaalmode is actief: je gebruikersnaam is dezelfde als van een vertaler. We gaan er dus vanuit dat jij die vertaler bent",
+        "missing": "{count} niet-vertaalde teksten",
+        "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
+    },
     "validation": {
+        "color": {
+            "description": "Een kleur of hexadecimale code voor een kleur"
+        },
+        "date": {
+            "description": "Een datum (beginnend met het jaar)"
+        },
+        "decimal": {
+            "description": "Een getal"
+        },
+        "direction": {
+            "description": "Een orientatie"
+        },
         "email": {
             "description": "email-adres",
             "feedback": "Dit is geen geldig email-adres",
@@ -466,6 +569,9 @@
             "mustBeWhole": "Enkele gehele getallen zijn toegelaten",
             "notANumber": "Dit is geen getal"
         },
+        "opening_hours": {
+            "description": "Openingsuren"
+        },
         "pfloat": {
             "description": "een positief getal"
         },
@@ -480,10 +586,16 @@
         "string": {
             "description": "een stukje tekst"
         },
+        "text": {
+            "description": "Een stukje tekst"
+        },
         "tooLong": "Deze tekst is te lang. De tekst heeft {count} lettertekens, er mogen maximaal 255 letters zijn",
         "url": {
             "description": "een link naar een webpagina",
             "feedback": "Dit is geen geldige link"
+        },
+        "wikidata": {
+            "description": "Een Wikidata-code"
         }
     }
 }

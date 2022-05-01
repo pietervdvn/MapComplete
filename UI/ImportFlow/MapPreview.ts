@@ -21,13 +21,13 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {FlowStep} from "./FlowStep";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
-import {AllTagsPanel} from "../SpecialVisualizations";
 import Title from "../Base/Title";
 import CheckBoxes from "../Input/Checkboxes";
+import {AllTagsPanel} from "../AllTagsPanel";
 
 class PreviewPanel extends ScrollableFullScreen {
 
-    constructor(tags, layer) {
+    constructor(tags: UIEventSource<any>, layer) {
         super(
             _ => new FixedUiElement("Element to import"),
             _ => new Combine(["The tags are:",
@@ -42,9 +42,9 @@ class PreviewPanel extends ScrollableFullScreen {
 /**
  * Shows the data to import on a map, asks for the correct layer to be selected
  */
-export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }> {
+export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, features: any[] }> {
     public readonly IsValid: UIEventSource<boolean>;
-    public readonly Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, geojson: any }>
+    public readonly Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, features: any[] }>
 
     constructor(
         state: UserRelatedState,
@@ -153,7 +153,7 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
         this.Value = bbox.map(bbox =>
             ({
                 bbox,
-                geojson,
+                features: geojson.features,
                 layer: layerPicker.GetValue().data
             }), [layerPicker.GetValue()])
 

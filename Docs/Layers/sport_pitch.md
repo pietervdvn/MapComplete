@@ -12,28 +12,9 @@ A sport pitch
 
 
 
-## Table of contents
-
-1. [sport_pitch](#sport_pitch)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [sport_pitch-sport](#sport_pitch-sport)
-    + [sport_pitch-surface](#sport_pitch-surface)
-    + [sport-pitch-access](#sport-pitch-access)
-    + [sport-pitch-reservation](#sport-pitch-reservation)
-    + [sport_pitch-phone](#sport_pitch-phone)
-    + [sport_pitch-email](#sport_pitch-email)
-    + [sport_pitch-opening_hours](#sport_pitch-opening_hours)
-    + [questions](#questions)
-    + [sport-pitch-reviews](#sport-pitch-reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -48,8 +29,6 @@ A sport pitch
   - [sport_pitches](https://mapcomplete.osm.be/sport_pitches)
 
 
-[Go to the source code](../assets/layers/sport_pitch/sport_pitch.json)
-
 
 
  Basic tags for this layer 
@@ -63,6 +42,8 @@ Elements must have the all of following tags to be shown on this layer:
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a>
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22leisure%22%3D%22pitch%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -211,6 +192,8 @@ This is rendered with `Openingsuren: {opening_hours_table()}`
   - **24/7 toegankelijk** corresponds with _This option cannot be chosen as answer_
   - **Always accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
+
+Only visible if `access~^..*$` is shown
 
 
 

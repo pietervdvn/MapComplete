@@ -882,11 +882,6 @@
     {
       "key": "climbing:speed",
       "description": "Layer 'Climbing opportunities?' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open Climbing Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

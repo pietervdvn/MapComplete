@@ -1,0 +1,49 @@
+# What do I want to tell at SOTM '22?
+
+4 main topics:
+
+The MapComplete Editor:
+
+- What is MapComplete? The vision
+   + Simple to use viewer
+   + Simple to contribute
+   + Packed with features under the hood (where applicable)
+   + Pareto frontier
+- Projects
+   - some highlights from the stats (etymology, cyclofix)
+   - pin je punt
+- Imports
+   + STart with AEDs in Brugge
+   + GRB
+   + Pin je punt: map notes
+- MapComplete and community
+   + Little "drag" on older contributors (allthough they did a lot of cartographic work)
+   + Pitfall: eternal september (themes must be good!)
+   + Pitfall: "obligated mapping"
+   + Pitfall: should not lose the ghost of OSM
+   + Small but relatively active community around MC
+- Build your own theme
+- Future
+   + More funded projects?
+   + Donations welcome
+   + Move to more traditional satnav?
+   
+MapComplete: introduction, retrospective, projects and community
+   
+## Introduction
+
+MapComplete is a simple to use OSM-map viewer and map editor. This web-based application has seen a few successful projects and makes on-the-go mapping easy and accessible.
+
+In this talk, the MapComplete developer will talk about the vision behind mapcomplete, do a retrospective of the first two years; highlight some successful projects (which included data imports) and the impact on the OSM-community in Belgium and beyond.
+
+
+
+
+
+
+# Building your own theme
+
+## Intro
+
+What does it take to build a successful and easy to use editor? How can phrasing, order of question, presenting filters, ... be used to prevent mapping errors?
+   

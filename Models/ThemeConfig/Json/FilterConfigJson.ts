@@ -16,6 +16,9 @@ export default interface FilterConfigJson {
         osmTags?: AndOrTagConfigJson | string,
         default?: boolean,
         fields?: {
+            /**
+             * If name is `search`, use  "_first_comment~.*{search}.*" as osmTags
+             */
             name: string,
             type?: string | "string"
         }[]

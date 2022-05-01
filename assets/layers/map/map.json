@@ -6,7 +6,8 @@
     "it": "Mappe",
     "ru": "Карты",
     "fr": "Cartes",
-    "de": "Karten"
+    "de": "Karten",
+    "ca": "Mapes"
   },
   "minzoom": 12,
   "source": {
@@ -24,7 +25,8 @@
       "it": "Mappa",
       "ru": "Карта",
       "fr": "Carte",
-      "de": "Karte"
+      "de": "Karte",
+      "ca": "Mapa"
     }
   },
   "description": {
@@ -93,7 +95,7 @@
           },
           "then": {
             "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
-            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" ",
+            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelfs met vermelding van \"ODBL\"",
             "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL",
             "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz",
             "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL"
@@ -172,19 +174,21 @@
         "tourism=map"
       ],
       "title": {
-        "en": "Map",
-        "nl": "Kaart",
-        "it": "Mappa",
+        "en": "a map",
+        "nl": "een kaart",
+        "it": "una mappa",
         "ru": "Карта",
-        "fr": "Carte",
-        "de": "Karte"
+        "fr": "une carte",
+        "de": "eine karte",
+        "ca": "un mapa"
       },
       "description": {
         "en": "Add a missing map",
         "nl": "Voeg een ontbrekende kaart toe",
         "it": "Aggiungi una mappa mancante",
         "fr": "Ajouter une carte manquante",
-        "de": "Fehlende Karte hinzufügen"
+        "de": "Fehlende Karte hinzufügen",
+        "ru": "Добавить отсутствующую карту"
       }
     }
   ],

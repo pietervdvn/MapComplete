@@ -1,6 +1,5 @@
-import {Translation} from "../../UI/i18n/Translation";
+import {Translation, TypedTranslation} from "../../UI/i18n/Translation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
@@ -12,6 +11,9 @@ import Combine from "../../UI/Base/Combine";
 import Title from "../../UI/Base/Title";
 import Link from "../../UI/Base/Link";
 import List from "../../UI/Base/List";
+import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
+import {Paragraph} from "../../UI/Base/Paragraph";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -21,8 +23,8 @@ export default class TagRenderingConfig {
 
     public readonly id: string;
     public readonly group: string;
-    public readonly render?: Translation;
-    public readonly question?: Translation;
+    public readonly render?: TypedTranslation<object>;
+    public readonly question?: TypedTranslation<object>;
     public readonly condition?: TagsFilter;
 
     public readonly configuration_warnings: string[] = []
@@ -42,7 +44,7 @@ export default class TagRenderingConfig {
     public readonly mappings?: {
         readonly if: TagsFilter,
         readonly ifnot?: TagsFilter,
-        readonly then: Translation,
+        readonly then: TypedTranslation<object>,
         readonly icon: string,
         readonly iconClass: string
         readonly hideInAnswer: boolean | TagsFilter
@@ -50,11 +52,10 @@ export default class TagRenderingConfig {
     }[]
     public readonly labels: string[]
 
-    constructor(json: string | TagRenderingConfigJson, context?: string) {
+    constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }
-
         if (json === "questions") {
             // Very special value
             this.render = null;
@@ -70,9 +71,23 @@ export default class TagRenderingConfig {
             json = "" + json
         }
 
+        let translationKey = context;
+        if(json["id"] !== undefined){
+            const layerId = context.split(".")[0]
+            if(json["source"]){
+                let src = json["source"]+":"
+                if(json["source"] === "shared-questions"){
+                    src += "shared_questions."
+                }
+                translationKey = `${src}${json["id"] ?? ""}`
+            }else{
+                translationKey = `layers:${layerId}.tagRenderings.${json["id"] ?? ""}`
+            }
+        }
+
 
         if (typeof json === "string") {
-            this.render = Translations.T(json, context + ".render");
+            this.render = Translations.T(json, translationKey + ".render");
             this.multiAnswer = false;
             return;
         }
@@ -86,8 +101,8 @@ export default class TagRenderingConfig {
 
         this.group = json.group ?? "";
         this.labels = json.labels ?? []
-        this.render = Translations.T(json.render, context + ".render");
-        this.question = Translations.T(json.question, context + ".question");
+        this.render = Translations.T(json.render, translationKey + ".render");
+        this.question = Translations.T(json.question, translationKey + ".question");
         this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (json.freeform) {
 
@@ -96,12 +111,13 @@ export default class TagRenderingConfig {
             }
            const type = json.freeform.type ?? "string"
 
-            let placeholder = Translations.T(json.freeform.placeholder)
+            let placeholder: Translation = Translations.T(json.freeform.placeholder)
             if (placeholder === undefined) {
                 const typeDescription = Translations.t.validation[type]?.description
-                placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 if(typeDescription !== undefined){
-                    placeholder = placeholder.Fuse(typeDescription, type)
+                    placeholder = Translations.T(json.freeform.key+" ("+type+")").Subs({[type]: typeDescription})
+                }else{
+                    placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 }
             }
 
@@ -155,7 +171,7 @@ export default class TagRenderingConfig {
 
             this.mappings = json.mappings.map((mapping, i) => {
 
-                const ctx = `${context}.mapping[${i}]`
+                const ctx = `${translationKey}.mappings.${i}`
                 if (mapping.then === undefined) {
                     throw `${ctx}: Invalid mapping: if without body`
                 }
@@ -366,33 +382,39 @@ export default class TagRenderingConfig {
 
         // A flag to check that the freeform key isn't matched multiple times 
         // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
-        let freeformKeyUsed = this.freeform?.key === undefined;
+        let freeformKeyDefined = this.freeform?.key !== undefined;
+        let usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
-        const applicableMappings: { then: Translation, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+        const applicableMappings: { then: TypedTranslation<any>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping;
             }
             if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
-                if (!freeformKeyUsed) {
-                    if (mapping.if.usedKeys().indexOf(this.freeform.key) >= 0) {
-                        // This mapping matches the freeform key - we mark the freeform key to be ignored!
-                        freeformKeyUsed = true;
-                    }
+                if (freeformKeyDefined && mapping.if.isUsableAsAnswer()) {
+                    // THe freeform key is defined: what value does it use though?
+                    // We mark the value to see if we have any leftovers
+                    const value = mapping.if.asChange({}).find(kv => kv.k === this.freeform.key).v
+                    usedFreeformValues.add(value)
                 }
                 return mapping;
             }
             return undefined;
         }))
 
-
-        if (!freeformKeyUsed
-            && tags[this.freeform.key] !== undefined) {
-            applicableMappings.push({then: this.render})
+        if(freeformKeyDefined && tags[this.freeform.key] !== undefined){
+            const freeformValues = tags[this.freeform.key].split(";")
+            const leftovers = freeformValues.filter(v => !usedFreeformValues.has(v))
+            for (const leftover of leftovers) {
+                applicableMappings.push({then: 
+                        new TypedTranslation<object>(this.render.replace("{"+this.freeform.key+"}", leftover).translations) 
+                })
+            }
         }
+        
         return applicableMappings
     }
 
-    public GetRenderValue(tags: any, defltValue: any = undefined): Translation {
+    public GetRenderValue(tags: any, defltValue: any = undefined): TypedTranslation<any> {
         return this.GetRenderValueWithImage(tags, defltValue).then
     }
 
@@ -401,7 +423,7 @@ export default class TagRenderingConfig {
      * Not compatible with multiAnswer - use GetRenderValueS instead in that case
      * @constructor
      */
-    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: Translation, icon?: string } {
+    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: TypedTranslation<any>, icon?: string } {
         if (this.mappings !== undefined && !this.multiAnswer) {
             for (const mapping of this.mappings) {
                 if (mapping.if === undefined) {
@@ -493,7 +515,10 @@ export default class TagRenderingConfig {
             withRender = [
                 `This rendering asks information about the property `,
                 Link.OsmWiki(this.freeform.key),
-                `\nThis is rendered with \`${this.render.txt}\``
+                new Paragraph(new Combine([
+                    "This is rendered with",
+                    new FixedUiElement(this.render.txt).SetClass("literalcode bold")
+                ]))
 
             ]
         }
@@ -501,25 +526,61 @@ export default class TagRenderingConfig {
         let mappings: BaseUIElement = undefined;
         if (this.mappings !== undefined) {
             mappings = new List(
-                this.mappings.map(m => {
-                        let txt = "**" + m.then.txt + "** corresponds with " + m.if.asHumanString(true, false, {});
+                [].concat(...this.mappings.map(m => {
+                        const msgs: (string| BaseUIElement)[] = [
+                            new Combine(
+                                [
+                            new FixedUiElement(m.then.txt).SetClass("bold"),
+                                    "corresponds with",
+                                    m.if.asHumanString(true, false, {})
+                                ]
+                            )
+                        ]
                         if (m.hideInAnswer === true) {
-                            txt += "_This option cannot be chosen as answer_"
+                            msgs.push(new FixedUiElement("This option cannot be chosen as answer").SetClass("italic"))
                         }
                         if (m.ifnot !== undefined) {
-                            txt += "Unselecting this answer will add " + m.ifnot.asHumanString(true, false, {})
+                            msgs.push( "Unselecting this answer will add " + m.ifnot.asHumanString(true, false, {}))
                         }
-                        return txt;
+                        return msgs;
                     }
-                )
+                ))
             )
         }
-
+        
+        let condition : BaseUIElement = undefined
+        if(this.condition !== undefined && !this.condition?.matchesProperties({})){
+            condition = new Combine(["Only visible if",
+                new FixedUiElement( this.condition.asHumanString(false, false, {})
+                ).SetClass("code")
+                 , "is shown"])
+        }
+        
+        let group : BaseUIElement = undefined
+        if(this.group !== undefined && this.group !== ""){
+            group = new Combine([
+                "This tagrendering is part of group ", new FixedUiElement(this.group).SetClass("code")
+            ])
+        }
+        let labels : BaseUIElement = undefined
+        if(this.labels?.length > 0){
+            labels = new Combine([
+                "This tagrendering has labels ",
+                ...this.labels.map(label => new FixedUiElement(label).SetClass("code"))
+            ])
+        }
         return new Combine([
             new Title(this.id, 3),
-            this.question !== undefined ? "The question is **" + this.question.txt + "**" : "_This tagrendering has no question and is thus read-only_",
+            this.question !== undefined ?
+                new Combine([ "The question is " , new FixedUiElement( this.question.txt).SetClass("bold")]) : 
+                new FixedUiElement(
+                "This tagrendering has no question and is thus read-only"
+                ).SetClass("italic"),
             new Combine(withRender),
-            mappings
+            mappings,
+            condition,
+            group,
+            labels
         ]).SetClass("flex-col");
     }
 }

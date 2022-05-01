@@ -10,7 +10,7 @@
     "de": "Persönliches Thema",
     "ja": "個人的なテーマ",
     "zh_Hant": "個人化主題",
-    "it": "Tema personalizzato",
+    "it": "Tema personale",
     "nb_NO": "Personlig tema",
     "id": "Tema pribadi"
   },
@@ -37,10 +37,10 @@
   "startLon": 0,
   "startZoom": 0,
   "widenFactor": 1.2,
-  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the overrideAll",
+  "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the minzzom in overrideAll",
   "overpassMaxZoom": 15,
   "overrideAll": {
-    "minZoom": 16,
+    "minzoom": 17,
     "syncSelection": "theme",
     "shownByDefault": false
   },

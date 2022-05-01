@@ -12,7 +12,7 @@ export class RadioButton<T> extends InputElement<T> {
     constructor(
         elements: InputElement<T>[],
         options?: {
-            selectFirstAsDefault?: boolean,
+            selectFirstAsDefault?: true | boolean,
             dontStyle?: boolean
         }
     ) {
