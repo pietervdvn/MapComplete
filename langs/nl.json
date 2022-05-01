@@ -328,13 +328,13 @@
         "title": "Inspecteer en beheer importeer-notas"
     },
     "importLayer": {
-        "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
+        "alreadyMapped": "Er staat hier reeds {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
         "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
         "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
-        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
-        "popupTitle": "Is hier een {title}?"
+        "notFound": "Ik kon hier g{title} vinden - verwijder deze van de kaart",
+        "popupTitle": "Is hier {title}?"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
