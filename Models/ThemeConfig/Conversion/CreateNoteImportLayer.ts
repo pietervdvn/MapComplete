@@ -3,7 +3,7 @@ import LayerConfig from "../LayerConfig";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import Translations from "../../../UI/i18n/Translations";
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson";
-import {Translation} from "../../../UI/i18n/Translation";
+import {Translation, TypedTranslation} from "../../../UI/i18n/Translation";
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**
@@ -50,9 +50,13 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
 
         const importButton = {}
         {
-            const translations = t.importButton.Subs({layerId: layer.id, title: layer.presets[0].title}).translations
+            const translations = trs(t.importButton,{layerId: layer.id, title: layer.presets[0].title})
             for (const key in translations) {
-                importButton[key] = "{" + translations[key] + "}"
+                if(key !== "_context"){
+                    importButton[key] = "{" + translations[key] + "}"
+                }else{
+                    importButton[key] = translations[key]
+                }
             }
         }
 
@@ -61,13 +65,22 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             for (const language in translation.translations) {
                 result[language] = prefix + translation.translations[language] + postfix
             }
+            result["_context"] = translation.context
             return result
+        }
+        
+        function tr(translation: Translation){
+            return{ ...translation.translations, "_context": translation.context}
+        }
+
+        function trs<T>(translation: TypedTranslation<T>, subs: T) : object{
+            return {...translation.Subs(subs).translations, "_context": translation.context}
         }
 
         const result: LayerConfigJson = {
             "id": "note_import_" + layer.id,
             // By disabling the name, the import-layers won't pollute the filter view "name": t.layerName.Subs({title: layer.title.render}).translations,
-            "description": t.description.Subs({title: layer.title.render}).translations,
+            "description": trs(t.description , {title: layer.title.render}),
             "source": {
                 "osmTags": {
                     "and": [
@@ -80,7 +93,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             },
             "minzoom": Math.min(12, layerJson.minzoom - 2),
             "title": {
-                "render": t.popupTitle.Subs({title}).translations
+                "render": trs( t.popupTitle, {title})
             },
             "calculatedTags": [
                 "_first_comment=feat.get('comments')[0].text.toLowerCase()",
@@ -140,7 +153,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 },
                 {
                     "id": "handled",
-                    "render": t.importHandled.translations,
+                    "render": tr(t.importHandled),
                     condition: "closed_at~*"
                 },
                 {

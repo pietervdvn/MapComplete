@@ -279,6 +279,11 @@ export class TypedTranslation<T> extends Translation {
      * subbed.textFor("nl") // => "Volledige zin met onderdeel"
      */
     Subs(text: T, context?: string): Translation {
-        return this.OnEveryLanguage((template, lang) => Utils.SubstituteKeys(template, text, lang), context)
+        return this.OnEveryLanguage((template, lang) => {
+            if(lang === "_context"){
+                return template
+            }
+            return Utils.SubstituteKeys(template, text, lang);
+        }, context)
     }
 }
