@@ -34,6 +34,13 @@
     },
     "mappings": [
       {
+        "if": "wikipedia~*",
+        "then": {
+          "*": "{wikipedia():max-height:25rem}"
+        },
+        "hideInAnswer": true
+      },
+      {
         "if": "wikidata=",
         "then": {
           "en": "No Wikipedia page has been linked yet",

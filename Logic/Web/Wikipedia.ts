@@ -51,6 +51,23 @@ export default class Wikipedia {
     public static getPageUrl(options: {language?: "en" | string, pageName: string}): string{
         return `https://${options.language ?? "en"}.wikipedia.org/wiki/` + options.pageName
     }
+
+    /**
+     * Tries to extract the language and article name from the given string
+     * 
+     * Wikipedia.extractLanguageAndName("qsdf") // => undefined
+     * Wikipedia.extractLanguageAndName("nl:Warandeputten") // => {lang: "nl", article: "Warandeputten"}
+     */
+    public static extractLanguageAndName(input: string):{language: string, pageName: string} {
+        const matched = input.match("([^:]+):(.*)")
+        if(matched === undefined || matched === null){
+            return undefined
+        }
+        const [_ , language, pageName] = matched
+        return {
+            language, pageName
+        }
+    }
     
     public static async GetArticleAsync(options: {
         pageName: string,

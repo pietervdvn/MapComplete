@@ -244,20 +244,25 @@ export default class SpecialVisualizations {
                     args: [
                         {
                             name: "keyToShowWikipediaFor",
-                            doc: "Use the wikidata entry from this key to show the wikipedia article for",
-                            defaultValue: "wikidata"
+                            doc: "Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used",
+                            defaultValue: "wikidata;wikipedia"
                         }
                     ],
                     example: "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
-                    constr: (_, tagsSource, args) =>
-                        new VariableUiElement(
-                            tagsSource.map(tags => tags[args[0]])
+                    constr: (_, tagsSource, args) => {
+                        const keys = args[0].split(";").map(k => k.trim())
+                        return new VariableUiElement(
+                            tagsSource.map(tags => {
+                                const key = keys.find(k => tags[k] !== undefined && tags[k] !== "")
+                                return tags[key];
+                            })
                                 .map(wikidata => {
                                     const wikidatas: string[] =
                                         Utils.NoEmpty(wikidata?.split(";")?.map(wd => wd.trim()) ?? [])
                                     return new WikipediaBox(wikidatas)
                                 })
-                        )
+                        );
+                    }
 
                 },
                 {
