@@ -410,13 +410,13 @@
         "title": "Inspect and manage import notes"
     },
     "importLayer": {
-        "alreadyMapped": "There already is another {title} on the map - this point is a duplicate",
+        "alreadyMapped": "There already is {title} on the map - this point is a duplicate",
         "description": "A layer which imports entries for {title}",
         "importButton": "import_button({layerId}, _tags, I have found a {title} here - add it to the map,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
         "layerName": "Possible {title}",
         "notFound": "I could not find {title} - remove it",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "There might be {title} here"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
