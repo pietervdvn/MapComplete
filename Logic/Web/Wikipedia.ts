@@ -56,7 +56,7 @@ export default class Wikipedia {
      * Tries to extract the language and article name from the given string
      * 
      * Wikipedia.extractLanguageAndName("qsdf") // => undefined
-     * Wikipedia.extractLanguageAndName("nl:Warandeputten") // => {lang: "nl", article: "Warandeputten"}
+     * Wikipedia.extractLanguageAndName("nl:Warandeputten") // => {language: "nl", pageName: "Warandeputten"}
      */
     public static extractLanguageAndName(input: string):{language: string, pageName: string} {
         const matched = input.match("([^:]+):(.*)")
