@@ -3274,6 +3274,16 @@
         }
     },
     "drinking_water": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This is a decorative fountain of which the water is not drinkable by humans"
+                },
+                "1": {
+                    "then": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>"
+                }
+            }
+        },
         "description": "A layer showing drinking water fountains",
         "name": "Drinking water",
         "presets": {

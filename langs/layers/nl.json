@@ -3190,6 +3190,16 @@
         "name": "Richtingsvisualisatie"
     },
     "drinking_water": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen"
+                },
+                "1": {
+                    "then": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div"
+                }
+            }
+        },
         "description": "Deze laag toont drinkwaterpunten",
         "name": "Drinkbaar water",
         "presets": {
