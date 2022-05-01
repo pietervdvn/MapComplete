@@ -775,14 +775,6 @@
                     }
                 },
                 "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Postfiliale im Einzelhandel"
-                        },
-                        "1": {
-                            "then": "Postfiliale im {name}"
-                        }
-                    },
                     "render": "Briefkasten"
                 }
             },
@@ -815,6 +807,14 @@
                     }
                 },
                 "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Postfiliale im Einzelhandel"
+                        },
+                        "1": {
+                            "then": "Postfiliale im {name}"
+                        }
+                    },
                     "render": "Poststelle"
                 }
             }

@@ -804,14 +804,6 @@
                     }
                 },
                 "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Post partner at a shop"
-                        },
-                        "1": {
-                            "then": "Post partner at {name}"
-                        }
-                    },
                     "render": "Postbox"
                 }
             },
@@ -945,6 +937,14 @@
                     }
                 },
                 "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Post partner at a shop"
+                        },
+                        "1": {
+                            "then": "Post partner at {name}"
+                        }
+                    },
                     "render": "Post Office"
                 }
             },

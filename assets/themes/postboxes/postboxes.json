@@ -63,36 +63,10 @@
           "zh_Hant": "郵筒",
           "id": "Kotak pos",
           "hu": "Postaláda",
-          "nl": "Brievenbus",
           "ca": "Bústia",
-          "es": "Buzón de correo"
-        },
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "post_office=post_partner",
-                "name="
-              ]
-            },
-            "then": {
-              "en": "Post partner at a shop",
-              "de": "Postfiliale im Einzelhandel"
-            }
-          },
-          {
-            "if": {
-              "and": [
-                "post_office=post_partner",
-                "name~*"
-              ]
-            },
-            "then": {
-              "en": "Post partner at {name}",
-              "de": "Postfiliale im {name}"
-            }
-          }
-        ]
+          "es": "Buzón de correo",
+          "nl": "Brievenbus"
+        }
       },
       "description": {
         "en": "The layer showing postboxes.",
@@ -192,7 +166,34 @@
           "nl": "Postkantoor",
           "ca": "Oficina de correus",
           "es": "Oficina de Correo"
-        }
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "post_office=post_partner",
+                "name="
+              ]
+            },
+            "then": {
+              "en": "Post partner at a shop",
+              "de": "Postfiliale im Einzelhandel",
+              "nl": "Postpartner in een winkel"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "post_office=post_partner",
+                "name~*"
+              ]
+            },
+            "then": {
+              "en": "Post partner at {name}",
+              "de": "Postfiliale im {name}"
+            }
+          }
+        ]
       },
       "description": {
         "en": "A layer showing post offices.",
@@ -528,6 +529,10 @@
             {
               "if": "opening_hours~*",
               "then": "isOpen"
+            },
+            {
+              "if": "shop~*",
+              "then": "./assets/themes/shops/shop.svg"
             }
           ],
           "iconSize": {
