@@ -4483,15 +4483,15 @@
         "presets": {
             "0": {
                 "description": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
-                "title": "eine laubbaum"
+                "title": "ein Laubbaum"
             },
             "1": {
                 "description": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
-                "title": "eine nadelbaum"
+                "title": "ein Nadelbaum"
             },
             "2": {
                 "description": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
-                "title": "eine baum"
+                "title": "ein Baum"
             }
         },
         "tagRenderings": {
