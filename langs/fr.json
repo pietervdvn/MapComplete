@@ -288,5 +288,10 @@
         "loginToSplit": "Vous devez être connecté pour couper une route",
         "split": "Couper",
         "splitTitle": "Choisissez sur la carte où couper cette route"
+    },
+    "professional": {
+        "indexPage": {
+            "button": "Découvrez nos offres"
+        }
     }
 }
