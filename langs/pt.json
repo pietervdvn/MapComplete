@@ -57,7 +57,11 @@
             "title": "Adicionar um novo ponto?",
             "warnVisibleForEveryone": "A sua adição será visível para todos",
             "zoomInFurther": "Amplie mais para adicionar um ponto.",
-            "zoomInMore": "Amplie mais para importar este elemento"
+            "zoomInMore": "Amplie mais para importar este elemento",
+            "import": {
+                "hasBeenImported": "Este objeto foi importado",
+                "importTags": "Este elemento irá receber {tags}"
+            }
         },
         "attribution": {
             "attributionContent": "<p>Todos os dados são fornecidos pelo <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a> e são livremente reutilizáveis sob a licença <a href=\"https://osm.org/copyright\" target=\"_blank\">the Open DataBase License</a>.</p>",
