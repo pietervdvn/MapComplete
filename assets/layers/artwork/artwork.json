@@ -154,7 +154,7 @@
       "freeform": {
         "key": "artwork_type",
         "addExtraTags": [
-          "fixme=Artowrk type was added with the freeform, might need another check"
+          "fixme=Freeform field used for artwork type - doublecheck the value"
         ]
       },
       "mappings": [
