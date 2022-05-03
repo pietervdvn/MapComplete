@@ -281,12 +281,25 @@
     {
       "id": "no_imports",
       "options": [
+         {
+          "question": {
+            "en": "All Notes",
+            "nl": "Alle Notes"
+          }
+        },
         {
           "osmTags": "_is_import_note=",
           "question": {
             "en": "Hide import notes",
             "nl": "Verberg import Notes",
             "de": "Importnotizen ausblenden"
+          }
+        },
+        {
+          "osmTags": "_is_import_note~*",
+          "question": {
+            "en": "Show only import Notes",
+            "nl": "Toon enkel import Notes"
           }
         }
       ]
