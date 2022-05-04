@@ -436,7 +436,7 @@
         {
           "if": "camera:mount=pole",
           "then": {
-            "en": "This camera is placed one a pole",
+            "en": "This camera is placed on a pole",
             "nl": "Deze camera staat op een paal",
             "fr": "Cette caméra est placée sur un poteau",
             "it": "Questa telecamera è posizionata su un palo",
@@ -451,6 +451,26 @@
             "fr": "Cette caméra est placée au plafond",
             "it": "Questa telecamera è posizionata sul soffitto",
             "de": "Diese Kamera ist an der Decke montiert"
+          }
+        },
+        {
+          "if": "camera:mount=street_lamp",
+          "then": {
+            "en": "This camera is placed on a street light",
+            "nl": "Deze camera staat op een straatlantaarn",
+            "fr": "Cette caméra est placée sur un lampadaire",
+            "it": "Questa telecamera è posizionata su un lampione",
+            "de": "Diese Kamera befindet sich an einer Straßenlaterne"
+          }
+        },
+        {
+          "if": "camera:mount=tree",
+          "then": {
+            "en": "This camera is placed on a tree",
+            "nl": "Deze camera staat op een boom",
+            "fr": "Cette caméra est placée sur un arbre",
+            "it": "Questa telecamera è posizionata su un albero",
+            "de": "Diese Kamera ist an einem Baum angebracht"
           }
         }
       ],
