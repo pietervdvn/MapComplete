@@ -23,7 +23,7 @@
     },
     "binoculars": {
         "description": "Eine Karte fest installierter Ferngläser. Man findet sie meist an touristischen Zielen, Aussichtspunkten, Aussichtstürmen oder gelegentlich in Naturschutzgebieten.",
-        "shortDescription": "Eine Karte festinstallierter Ferngläsern",
+        "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
         "title": "Ferngläser"
     },
     "bookcases": {
@@ -593,7 +593,7 @@
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
+        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
         "title": "Geisterräder"
     },
     "grb": {
@@ -709,7 +709,7 @@
     },
     "nature": {
         "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
-        "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
+        "shortDescription": "Eine Karte mit interessanten Orten für Naturliebhaber",
         "title": "In die Natur"
     },
     "notes": {
@@ -718,7 +718,7 @@
     },
     "observation_towers": {
         "description": "Eine Karte mit öffentlich zugänglichen Aussichtstürmen",
-        "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
+        "shortDescription": "Öffentlich zugängliche Türme zum Genießen der Aussicht",
         "title": "Aussichtstürme"
     },
     "openwindpowermap": {
