@@ -1129,7 +1129,7 @@
         "presets": {
             "0": {
                 "description": "Ein fest installiertes Teleskop oder Fernglas, für die öffentliche Nutzung. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "eine ferngläser"
+                "title": "ein Fernglas"
             }
         },
         "tagRenderings": {
@@ -2682,10 +2682,10 @@
             },
             "1": {
                 "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
-                "title": "eine schnellimbiss"
+                "title": "Ein Schnellimbiss"
             },
             "2": {
-                "title": "eine pommesbude",
+                "title": "eine Pommesbude",
                 "description": "Eine Pommesbude"
             }
         },
