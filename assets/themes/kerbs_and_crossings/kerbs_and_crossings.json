@@ -1,0 +1,21 @@
+{
+  "id": "kerbs_and_crossings",
+  "maintainer": "Robin van der Linde",
+  "version": "20211215",
+  "title": {
+    "en": "Crossings and Kerbs",
+    "nl": "Oversteekplaatsen en stoepranden"
+  },
+  "description": {
+    "en": "A map showing kerbs and crossings.",
+    "nl": "Een kaart met stoepranden en oversteekplaatsen."
+  },
+  "icon": "./assets/layers/kerbs/KerbIcon.svg",
+  "startZoom": 19,
+  "startLat": 53.23776,
+  "startLon": 6.53812,
+  "layers": [
+    "crossings",
+    "kerbs"
+  ]
+}

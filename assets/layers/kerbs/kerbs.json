@@ -1,0 +1,92 @@
+{
+  "id": "kerbs",
+  "name": {
+    "en": "Kerbs",
+    "nl": "Stoepranden"
+  },
+  "description": {
+    "en": "A layer showing kerbs.",
+    "nl": "Een laag met stoepranden."
+  },
+  "source": {
+    "osmTags": "barrier=kerb"
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Kerb",
+      "nl": "Stoeprand"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/kerbs/KerbIcon.svg",
+      "iconBadges": [
+        {
+          "if": "kerb=raised",
+          "then": "square:#f44e42"
+        },
+        {
+          "if": "kerb=lowered",
+          "then": "triangle:#11ff00"
+        },
+        {
+          "if": "kerb=flush",
+          "then": "circle:#11ff00"
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "kerb-type",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?"
+      },
+      "mappings": [
+        {
+          "if": "kerb=raised",
+          "then": {
+            "en": "Raised (>3 cm)",
+            "nl": "Hoog (>3 cm)"
+          }
+        },
+        {
+          "if": "kerb=lowered",
+          "then": {
+            "en": "Lowered (~3 cm)",
+            "nl": "Verlaagd (~3 cm)"
+          }
+        },
+        {
+          "if": "kerb=flush",
+          "then": {
+            "en": "Flush (0cm)",
+            "nl": "Vlak (0cm)"
+          }
+        },
+        {
+          "if": "kerb=no",
+          "then": {
+            "en": "None",
+            "nl": "Geen"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "kerb=yes",
+          "then": {
+            "en": "Yes",
+            "nl": "Ja"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
+  ]
+}
