@@ -162,6 +162,7 @@
           "fixme=Freeform tag `books` used, to be doublechecked"
         ]
       },
+      "multiAnswer": true
       "mappings": [
         {
           "if": "books=children",
@@ -185,18 +186,6 @@
             "ru": "В основном книги для взрослых",
             "it": "Principalmente libri per persone in età adulta",
             "hu": "Többnyire felnőtteknek szóló könyvek"
-          }
-        },
-        {
-          "if": "books=children;adults",
-          "then": {
-            "en": "Both books for kids and adults",
-            "nl": "Boeken voor zowel kinderen als volwassenen",
-            "de": "Sowohl Bücher für Kinder als auch für Erwachsene",
-            "fr": "Livres pour enfants et adultes également",
-            "it": "Sia libri per l'infanzia, sia per l'età adulta",
-            "ru": "Книги и для детей, и для взрослых",
-            "hu": "Gyerekeknek és felnőtteknek szóló könyvek egyaránt"
           }
         }
       ]
