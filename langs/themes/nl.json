@@ -818,7 +818,8 @@
         "title": "Brievenbussen en postkantoren"
     },
     "shops": {
-        "title": "Winkels"
+        "title": "Winkels",
+        "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels"
     },
     "sidewalks": {
         "title": "Voetpaden"
@@ -969,6 +970,25 @@
         "description": "Deze kaart toont fietssnelwegen"
     },
     "cyclenodes": {
-        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
+        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "node-survey:date": {
+                        "question": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
+                        "render": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}"
+                    },
+                    "node-expected_rcn_route_relations": {
+                        "render": "Dit knooppunt verbindt met {expected_rcn_route_relation} andere fietsknooppunten.",
+                        "question": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?"
+                    }
+                },
+                "title": {
+                    "render": "fietsknooppunt <strong>{rcn_ref}</strong>"
+                },
+                "name": "knooppunten"
+            }
+        },
+        "title": "Fietsknooppuntennetwerken"
     }
 }
