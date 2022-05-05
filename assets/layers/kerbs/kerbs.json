@@ -21,10 +21,10 @@
   "mapRendering": [
     {
       "location": [
-        "point",
-        "centroid"
+        "point"
       ],
       "icon": "./assets/layers/kerbs/KerbIcon.svg",
+      "iconSize": "25,23,center",
       "iconBadges": [
         {
           "if": "kerb=raised",
@@ -39,6 +39,10 @@
           "then": "circle:#11ff00"
         }
       ]
+    },
+    {
+      "color": "#f44e42",
+      "width": "8"
     }
   ],
   "tagRenderings": [
@@ -87,6 +91,26 @@
           "hideInAnswer": true
         }
       ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a kerb",
+        "nl": "een stoeprand"
+      },
+      "tags": [
+        "barrier=kerb"
+      ],
+      "description": {
+        "en": "Kerb in a footway",
+        "nl": "Stoeprand in een voetpad"
+      },
+      "preciseInput": {
+        "maxSnapDistance": 10,
+        "preferredBackground": "photo",
+        "snapToLayer": ["cycleways_and_roads", "kerbs"]
+      }
     }
   ]
 }

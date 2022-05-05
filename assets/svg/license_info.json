@@ -1282,6 +1282,14 @@
     ]
   },
   {
+    "path": "triangle.svg",
+    "license": "CC0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
     "path": "up.svg",
     "license": "CC0; trivial",
     "authors": [],

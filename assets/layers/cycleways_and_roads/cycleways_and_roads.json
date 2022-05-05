@@ -20,6 +20,12 @@
         "highway=unclassified",
         "highway=primary",
         "highway=secondary",
+        "highway=tertiary_link",
+        "highway=primary_link",
+        "highway=secondary_link",
+        "highway=service",
+        "highway=footway",
+        "highway=pedestrian",
         {
           "and": [
             "highway=path",
@@ -109,7 +115,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "mappings": [
@@ -226,7 +233,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "mappings": [
@@ -280,7 +288,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "mappings": [
@@ -776,7 +785,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "render": {
