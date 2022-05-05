@@ -81,7 +81,7 @@
         },
         "wikipedia": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Nessuna pagina Wikipedia è ancora stata collegata"
                 }
             },

@@ -4000,6 +4000,35 @@
             "render": "Information board"
         }
     },
+    "kerbs": {
+        "description": "A layer showing kerbs.",
+        "name": "Kerbs",
+        "tagRenderings": {
+            "kerb-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Raised (>3 cm)"
+                    },
+                    "1": {
+                        "then": "Lowered (~3 cm)"
+                    },
+                    "2": {
+                        "then": "Flush (0cm)"
+                    },
+                    "3": {
+                        "then": "None"
+                    },
+                    "4": {
+                        "then": "Yes"
+                    }
+                },
+                "question": "What is the height of this kerb?"
+            }
+        },
+        "title": {
+            "render": "Kerb"
+        }
+    },
     "map": {
         "description": "A map, meant for tourists which is permanently installed in the public space",
         "name": "Maps",
@@ -4239,7 +4268,13 @@
             "10": {
                 "options": {
                     "0": {
+                        "question": "All Notes"
+                    },
+                    "1": {
                         "question": "Hide import notes"
+                    },
+                    "2": {
+                        "question": "Show only import Notes"
                     }
                 }
             }
@@ -5312,10 +5347,16 @@
                         "then": "This camera is placed against a wall"
                     },
                     "1": {
-                        "then": "This camera is placed one a pole"
+                        "then": "This camera is placed on a pole"
                     },
                     "2": {
                         "then": "This camera is placed on the ceiling"
+                    },
+                    "3": {
+                        "then": "This camera is placed on a street light"
+                    },
+                    "4": {
+                        "then": "This camera is placed on a tree"
                     }
                 },
                 "question": "How is this camera placed?",

@@ -98,7 +98,7 @@
         },
         "wikipedia": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Link do strony Wikipedii nie został jeszcze określony"
                 }
             },

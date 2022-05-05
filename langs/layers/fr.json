@@ -2361,6 +2361,12 @@
                     },
                     "2": {
                         "then": "Cette caméra est placée au plafond"
+                    },
+                    "3": {
+                        "then": "Cette caméra est placée sur un lampadaire"
+                    },
+                    "4": {
+                        "then": "Cette caméra est placée sur un arbre"
                     }
                 },
                 "question": "Comment cette caméra est-elle placée ?",
