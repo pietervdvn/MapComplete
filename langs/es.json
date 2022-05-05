@@ -323,27 +323,84 @@
             "titleNearby": "Características cercanas"
         },
         "mapPreview": {
-            "title": "Previsualización de mapa"
+            "title": "Previsualización de mapa",
+            "selectLayer": "¿Con qué capa coincide esta importación?",
+            "confirm": "Las características están en la dirección derecha del en el mapa",
+            "autodetected": "La capa se dedujo automáticamente basándose en las propiedades",
+            "mismatch": "{count} características no coincidieron con la capa seleccionada. Asegúrate de que las etiquetas para indicar el tipo están presentes, concretamente {tags}"
         },
         "selectFile": {
-            "title": "Seleccionar archivo"
+            "title": "Seleccionar archivo",
+            "description": "Selecciona un archivo .csv o .geojson para empezar",
+            "errDuplicate": "Algunas columnas tienen el mismo nombre",
+            "errNoLatOrLon": "La cabecera no contiene `lat` o `lon`",
+            "errNotFeatureCollection": "El archivo JSON seleccionado no es una geojson-featurecollection",
+            "fileFormatDescription": "Seleccionar un archivo <b class=\"code\">.csv</b> o <b class=\"code\">.geojson</b>",
+            "fileFormatDescriptionCsv": "En el archivo CSV, debe de haber una columna <span class=\"literal-code\">lat</span> y <span class=\"literal-code\">lon</span> con las coordenadas en WGS84. Debe de haber una columna adicional para cada atributo.",
+            "fileFormatDescriptionGeoJson": "En el archivo geojson, solo debe de haber puntos. Las propiedades deben de ser exactamente aquellas propiedades que deben de ir en OpenStreetMap",
+            "loadedFilesAre": "El archivo actualmente cargado es {file}",
+            "noFilesLoaded": "Actualmente no hay ningún archivo cargado",
+            "errPointsOnly": "El archivo JSON cargado solo contiene puntos",
+            "errNoName": "Algunas columnas no tienen un nombre"
         },
         "title": "Ayudante de importación",
         "createNotes": {
             "creating": "Creadas <b>{count}</b> notas de {total}",
-            "done": "¡Todas las {count} notas han sido creadas!"
+            "done": "¡Todas las {count} notas han sido creadas!",
+            "title": "Creación de notas",
+            "openImportViewer": "Inspeccionar el progreso de tus notas en el 'import_viewer'"
+        },
+        "gotoImportViewer": "Inspeccionar tus importaciones anteriores",
+        "login": {
+            "loggedInWith": "Actualmente has iniciado sesión como <b>{name}</b> y has hecho {csCount} conjuntos de cambios",
+            "loginIsCorrect": "<b>{name}</b> es la cuenta correcta con la que crear las notas de importación.",
+            "loginRequired": "Tienes que iniciar sesión para continuar",
+            "userAccountTitle": "Seleccionar una cuenta de usuario",
+            "title": "Iniciar sesión",
+            "lockNotice": "Esta página está bloqueada. Necesitas {importHelperUnlock} conjuntos de cambios antes de poder acceder aquí."
+        },
+        "introduction": {
+            "title": "Introducción",
+            "description": "El ayudante de importación convierte un conjunto de datos externos a notas. El conjunto de datos deberá de coincidir con una de las capas de MapComplete existentes. Para cada ítem que pongas en el importador, se creará una única nota. Estas notas se mostrarán junto con las características relevantes en estos mapas para añadirlas fácilmente.",
+            "importFormat": "Un texto en una nota deberá de tener el siguiente formato para ser incluida"
+        },
+        "noteParts": {
+            "datasource": "Datos originarios de {source}",
+            "wikilink": "Puedes encontrar más información sobre esta importación en {wikilink}",
+            "importEasily": "Añadir este punto a MapComplete fácilmente:"
+        },
+        "previewAttributes": {
+            "inspectLooksCorrect": "Estos valores parecen correctos",
+            "someHaveSame": "{count} características a importar tienen esta etiqueta, esto es el {percentage}% del total",
+            "title": "Inspeccionar atributos",
+            "inspectDataTitle": "Inspeccionar datos de {count} características a importar",
+            "allAttributesSame": "Todas las características a importar tienen esta etiqueta"
+        },
+        "selectTheme": {
+            "intro": "Todos los siguientes temas mostrarán las notas de importación. De todas formas, la nota en OpenStreetMap solo puede enlazar a un tema. Selecciona a qué tema enlazarán las notas creadas",
+            "misMatch": "La propiedad con la llave {k} no tiene un valor esperado {v}; por lo contrario es {properties}",
+            "notApplicable": "El preajuste {title} no es aplicable:",
+            "displayNonMatchingCount": "{length} objetos no coinciden con ningún preajuste",
+            "noMatchingPresets": "Este tema no tiene ningún preajuste cargado. Por ello, las importaciones no funcionarán aquí",
+            "unmatchedTitle": "Los siguientes temas no coinciden con ninguno de los preajustes",
+            "title": "Selecciona un tema",
+            "needsTags": "{title} necesita las etiquetas {tags}"
         }
     },
     "importLayer": {
         "layerName": "Posible {title}",
-        "popupTitle": "Posible {title}"
+        "popupTitle": "Posible {title}",
+        "notFound": "No he podido encontrar {title} - eliminarlo",
+        "alreadyMapped": "{title} ya está en el mapa - este punto es un duplicado",
+        "description": "Una capa que importar entradas para {title}"
     },
     "index": {
         "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "featuredThemeTitle": "Esta semana destacamos",
         "intro": "MapComplete a un visor y editor de OpenStreetMap, que te muestra información sobre un tema específico.",
         "pickTheme": "Elige un tema de abajo para empezar.",
-        "title": "Le damos la bienvenida a MapComplete"
+        "title": "Le damos la bienvenida a MapComplete",
+        "logIn": "Inicia sesión para ver otros temas que visitaste anteriormente"
     },
     "move": {
         "cancel": "Cancelar movida",
@@ -359,24 +416,64 @@
         "loginToMove": "Debes de iniciar sesión para mover un punto",
         "moveTitle": "Mover este punto",
         "partOfAWay": "Esta característica es parte de otra vía. Utiliza otro editor para moverla.",
-        "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla."
+        "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla.",
+        "reasons": {
+            "reasonInaccurate": "La localización de este objeto no es precisa y debe de ser movida algunos metros",
+            "reasonRelocation": "El objeto a sido relocalizado a una localización completamente diferente"
+        },
+        "selectReason": "¿Por qué has movido este objeto?",
+        "whyMove": "¿Por qué quieres mover este punto?",
+        "zoomInFurther": "Acercar más para confirmar este movimiento",
+        "pointIsMoved": "Este punto ha sido eliminado"
     },
     "notes": {
         "addComment": "Añadir comentario",
         "anonymous": "Usuarioi anónimo",
         "closeNote": "Cerrar nota",
-        "reopenNote": "Reabrir nota"
+        "reopenNote": "Reabrir nota",
+        "createNote": "Crear una nota nueva",
+        "addAComment": "Añadir un comentario",
+        "addCommentPlaceholder": "Añadir un comentario...",
+        "createNoteIntro": "¿Hay algo erróneo o que falta en el mapa? Crea una nota aquí. Estás serán comprobadas por voluntarios.",
+        "createNoteTitle": "Crear una nueva nota aquí",
+        "disableAllNoteFilters": "Deshabilitar todos los filtros",
+        "isClosed": "Esta nota está resuelta",
+        "isCreated": "¡Tu nota ha sido creada!",
+        "loginToAddComment": "Inicia sesión para añadir un comentario",
+        "loginToAddPicture": "Inicia sesión para añadir una imagen",
+        "loginToClose": "Inicia sesión para cerrar esta nota",
+        "noteIsPublic": "Esto será visible para cualquiera",
+        "noteLayerDoEnable": "Habilitar la capa que muestra las notas",
+        "noteLayerHasFilters": "Algunas notas pueden estar ocultas por un filtro",
+        "noteLayerNotEnabled": "La capa que muestra las notas no está habilitada. Esta capa debe de habilitarse para añadir una nota nueva",
+        "reopenNoteAndComment": "Reabrir la nota y comentar",
+        "textNeeded": "Introduce un texto descriptivo para crear una nota",
+        "typeText": "Teclea algún texto para añadir un comentario",
+        "warnAnonymous": "No has iniciado sesión. No podremos contactarte para resolver tu problema.",
+        "addCommentAndClose": "Añadir un comentario y cerrar"
     },
     "privacy": {
         "geodataTitle": "Tu geoubicación",
         "miscCookiesTitle": "Otras cookies",
         "title": "Política de privacidad",
-        "trackingTitle": "Datos estadísticos"
+        "trackingTitle": "Datos estadísticos",
+        "geodata": "Cuando MapComplete consigue tu geolocalización, tu geolocalización y las localizaciones previamente visitadas se mantienen en tu dispositivo. Tus datos de localización nunca se envían automáticamente a ningún otro sitio - a menos que alguna funcionalidad mencione otra cosa claramente.",
+        "miscCookies": "MapComplete se integra con varios otros servicios, especialmente para cargar imágenes de características. Las imágenes se alojan en varios servidores de terceros, que puede que establezcan cookies por si mismos.",
+        "whileYoureHere": "¿Te importa la privacidad?",
+        "surveillance": "Ya que estás leyendo la política de privacidad, probablemente te importe la privacidad - ¡también a nosotros! Incluso hemos hecho <a href=\"https://mapcomplete.osm.be/surveillance\">un tema que muestra cámaras de seguridad.</a> ¡Siéntete libre de mapearlas todas!",
+        "editing": "Cuando efectúas un cambio al mapa, este cambio se grabas en OpenStreetMap y está disponible públicamente a cualquiera. Un conjunto de cambios hecho con MapComplete incluye los siguientes datos: <ul><li> Los cambios que has hecho</li><li>Tu nombre de usuario</li><li>Cuándo se efectuó el cambio</li><li>El tema que utilizaste mientras que hacías el cambio</li><li>El idioma de la interfaz de usuario</li><li>Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota</li></ul> Por favor ve a ",
+        "intro": "La privacidad es importante - tanto para el individual como para la sociedad. MapComplete intenta respetar tu privacidad tanto como sea posible - hasta el punto de que no se necesita ningún banner de cookies molesto es necesario. De todas formas, nos gustaría informarte de qué información se recolecta y se comparte, bajo que circunstancias y por qué se hacen estos compromisos."
     },
     "professional": {
         "aboutMc": {
             "survey": {
                 "title": "Posibilidades de estudio"
+            },
+            "internalUse": {
+                "title": "Utilizando los datos en procesos internos"
+            },
+            "layers": {
+                "title": "¿Qué datos se pueden mostrar con MapComplete?"
             }
         },
         "aboutOsm": {
@@ -421,5 +518,8 @@
         "opening_hours": {
             "description": "Horarios de apertura"
         }
+    },
+    "importInspector": {
+        "title": "Inspeccionar y dirigir las notas de importación"
     }
 }
