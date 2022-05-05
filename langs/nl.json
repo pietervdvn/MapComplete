@@ -43,7 +43,7 @@
         "add": {
             "addNew": "Voeg {category} toe",
             "addNewMapLabel": "Klik hier om een item toe te voegen",
-            "confirmButton": "Voeg een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
+            "confirmButton": "Voeg een {category} toe<br><div class=\"alert\">Je toevoeging is voor iedereen zichtbaar</div>",
             "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het punt dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
@@ -141,11 +141,11 @@
         "logout": "Afmelden",
         "morescreen": {
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
-            "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt",
-            "intro": "<h3>Meer thematische kaarten</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer kaartthemas.",
+            "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt.",
+            "intro": "<h3>Meer thematische kaarten?</h3>Vind je het leuk om geodata te verzamelen? <br> Hier vind je meer kaartthema's.",
             "previouslyHiddenTitle": "Eerder bezochte verborgen themas",
-            "requestATheme": "Wil je een eigen kaartthema, vraag dit in de issue tracker.",
-            "streetcomplete": "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
+            "requestATheme": "Als je een eigen kaartthema wil, vraag dit dan in de issue tracker.",
+            "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
         "next": "Volgende",
@@ -184,7 +184,7 @@
             "emailOf": "Wat is het email-adres van {category}?",
             "phoneNumberIs": "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
-            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
+            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Wat is de website van {category}?"
         },
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
@@ -193,10 +193,10 @@
         "save": "Opslaan",
         "screenToSmall": "Open {theme} in een nieuw venster",
         "search": {
-            "error": "Niet gelukt...",
-            "nothing": "Niet gevonden...",
+            "error": "Niet gelukt…",
+            "nothing": "Niets gevonden…",
             "search": "Zoek naar een locatie",
-            "searching": "Aan het zoeken..."
+            "searching": "Aan het zoeken…"
         },
         "sharescreen": {
             "addToHomeScreen": "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",

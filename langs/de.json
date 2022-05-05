@@ -352,7 +352,7 @@
             "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungen vorgenommen",
             "loginIsCorrect": "<b>{name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
             "loginRequired": "Bitte anmelden, um fortzufahren",
-            "title": "Anmeldung",
+            "title": "Anmelden",
             "userAccountTitle": "Benutzerkonto auswählen"
         },
         "mapPreview": {
