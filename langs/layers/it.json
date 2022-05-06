@@ -1986,6 +1986,12 @@
                     },
                     "2": {
                         "then": "Questa telecamera è posizionata sul soffitto"
+                    },
+                    "3": {
+                        "then": "Questa telecamera è posizionata su un lampione"
+                    },
+                    "4": {
+                        "then": "Questa telecamera è posizionata su un albero"
                     }
                 },
                 "question": "Com'è posizionata questa telecamera?",

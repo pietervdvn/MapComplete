@@ -2,7 +2,8 @@
   "id": "climbing",
   "title": null,
   "description": {
-    "en": "A dummy layer which contains tagrenderings, shared among the climbing layers"
+    "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
+    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen"
   },
   "minzoom": 25,
   "source": {

@@ -36,8 +36,13 @@
                 },
                 "3": {
                     "then": "I andre etasje"
+                },
+                "4": {
+                    "then": "Er å finne på første kjellernivå"
                 }
-            }
+            },
+            "question": "Hvilken etasje befinner funksjonen seg i?",
+            "render": "Ligger i {level} etasje"
         },
         "opening_hours": {
             "question": "Hva er åpningstidene for {title()})",
@@ -57,6 +62,9 @@
         "payment-options-advanced": {
             "override": {
                 "mappings+": {
+                    "0": {
+                        "then": "Betaling utføres med et eget program"
+                    },
                     "1": {
                         "then": "Betaling utføres med et medlemskort"
                     }
@@ -88,7 +96,7 @@
         },
         "wikipedia": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Ingen Wikipedia-side lenket enda"
                 }
             },

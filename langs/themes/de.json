@@ -22,8 +22,8 @@
         "title": "Fahrradbibliotheken"
     },
     "binoculars": {
-        "description": "Eine Karte für festinstallierte Ferngläsern. Man findet sie meist an touristischen Orten, Aussichtspunkten, Aussichtstürmen oder gelegentlich in Naturschutzgebieten.",
-        "shortDescription": "Eine Karte festinstallierter Ferngläsern",
+        "description": "Eine Karte fest installierter Ferngläser. Man findet sie meist an touristischen Zielen, Aussichtspunkten, Aussichtstürmen oder gelegentlich in Naturschutzgebieten.",
+        "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
         "title": "Ferngläser"
     },
     "bookcases": {
@@ -42,7 +42,7 @@
                 "name": "Wohnmobilstellplätze",
                 "presets": {
                     "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
                         "title": "eine wohnmobilstellplatz"
                     }
                 },
@@ -98,10 +98,10 @@
                     "caravansites-long-term": {
                         "mappings": {
                             "0": {
-                                "then": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben"
+                                "then": "Es gibt einige Plätze für Langzeitmieten, aber auch eine tageweise Anmietung ist möglich"
                             },
                             "1": {
-                                "then": "Nein, hier gibt es keine Dauergäste"
+                                "then": "Hier gibt es keine Dauergäste"
                             },
                             "2": {
                                 "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
@@ -488,7 +488,7 @@
             }
         },
         "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
-        "title": "Open Etymology Map"
+        "title": "Karte zur Herkunft der Namen"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -593,7 +593,7 @@
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
-        "description": "Ein <b>Geisterrad</b> ist ein weißes Fahrrad, dass zum Gedenken eines tödlich verunglückten Radfahrers vor Ort aufgestellt wurde.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
+        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
         "title": "Geisterräder"
     },
     "grb": {
@@ -709,7 +709,7 @@
     },
     "nature": {
         "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
-        "shortDescription": "Eine Karte für Naturliebhaber, mit interessanten Orten",
+        "shortDescription": "Eine Karte mit interessanten Orten für Naturliebhaber",
         "title": "In die Natur"
     },
     "notes": {
@@ -718,7 +718,7 @@
     },
     "observation_towers": {
         "description": "Eine Karte mit öffentlich zugänglichen Aussichtstürmen",
-        "shortDescription": "Öffentlich zugänglicher Aussichtsturm",
+        "shortDescription": "Öffentlich zugängliche Türme zum Genießen der Aussicht",
         "title": "Aussichtstürme"
     },
     "openwindpowermap": {
@@ -733,6 +733,35 @@
     "personal": {
         "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
         "title": "Persönliches Thema"
+    },
+    "pets": {
+        "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Hundefreundliche Restaurants"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "hundefreundliches Geschäft",
+                    "title": {
+                        "render": "hundefreundliches Geschäft"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Ein Geschäft, in das man seinen Hund fast überall mitnehmen kann",
+                            "title": "hundefreundliches Geschäft"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Tierärzte, Hundeparks und andere Einrichtungen für Haustiere"
     },
     "playgrounds": {
         "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",

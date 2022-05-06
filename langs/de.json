@@ -204,6 +204,7 @@
             "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
             "downloadCustomTheme": "Herunterladen der Konfiguration für diese Karte",
+            "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern",
             "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
             "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
@@ -351,7 +352,7 @@
             "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungen vorgenommen",
             "loginIsCorrect": "<b>{name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
             "loginRequired": "Bitte anmelden, um fortzufahren",
-            "title": "Anmeldung",
+            "title": "Anmelden",
             "userAccountTitle": "Benutzerkonto auswählen"
         },
         "mapPreview": {

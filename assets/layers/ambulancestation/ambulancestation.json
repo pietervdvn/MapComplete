@@ -86,7 +86,7 @@
         "key": "addr:street"
       },
       "question": {
-        "en": " What is the street name where the station located?",
+        "en": "What is the street name where the station located?",
         "ja": " 救急ステーションの所在地はどこですか?",
         "ru": " По какому адресу расположена эта станция?",
         "fr": " Quel est le nom de la rue où la station se situe ?",

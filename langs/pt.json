@@ -48,6 +48,10 @@
             "disableFilters": "Desativar todos os filtros",
             "disableFiltersExplanation": "Alguns elementos podem estar escondidos por um filtro",
             "hasBeenImported": "Este ponto já foi importado",
+            "import": {
+                "hasBeenImported": "Este objeto foi importado",
+                "importTags": "Este elemento irá receber {tags}"
+            },
             "intro": "Clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está ativada. Ative esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controlo da camada",

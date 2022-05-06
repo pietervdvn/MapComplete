@@ -113,7 +113,7 @@
             "downloadGpxHelper": "Un archivo GPX puede ser utilizado con la mayor parte de dispositivos y aplicaciones de navegación",
             "exporting": "Exportando…",
             "includeMetaData": "Incluir metadatos (último editor, valores calculados, ...)",
-            "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la actribución <b>© contribuidores d e OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles.",
+            "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la atribución <b>© contribuidores de OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles.",
             "noDataLoaded": "Aún no se han cargado ningunos daos. La descarga estará disponible proximamente",
             "title": "Descargar los datos visibles",
             "uploadGpx": "Sube tu traza a OpenStreetMap"
@@ -281,6 +281,7 @@
         "askMetadata": {
             "downloadGeojson": "Descargar geojson",
             "giveDescription": "Por favor, escribe una pequeña descripción para alguien que vea la nota. Una buena nota describe lo que el contribuidor tiene que hacer, ej; <i>Puede que haya un banco aquí. Si estás por aquí, ¿Podrías por favor comprueba e indica si el banco existe o no?</i> (Un enlace a MapComplete se añadirá automáticamente)",
+            "giveSource": "¿Cual es la fuente de estos datos? Si se especifica 'source' en la característica, se ignorará este valor",
             "giveWikilink": "¿En qué wikipágina puede encontrar uno más información sobre esta importación?",
             "intro": "Antes de añadir {count} notas, por favor provee alguna información extra.",
             "orDownload": "Alternativamente, puedes descargar el conjunto de datos para importar directamente",
@@ -301,13 +302,29 @@
             "wontBeImported": "Estos puntos de datos <i>no</i> serán importados y se muestran como puntos en el mapa de debajo"
         },
         "confirmProcess": {
+            "contactedCommunity": "He contactado a la comunidad (local) sobre esta importación",
             "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM",
             "title": "Licencia y comunidad",
             "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)"
         },
         "conflationChecker": {
+            "cacheExpired": "La caché ha expirado",
+            "downloadOverpassData": "Descarga el geojson cargado desde overpass",
             "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
-            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!"
+            "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
+            "osmLoaded": "{count} elementos se cargan desde OpenStreetMap que coinciden con la capa <b>{name}</b>.",
+            "setRangeToZero": "Especificar el rango en 0 o 1 si quieres importarlos todos",
+            "states": {
+                "error": "No se pudieron cargar los últimos datos de overpass debido a {error}",
+                "idle": "Comprobando almacenamiento local...",
+                "unexpected": "Estado inesperado {state}"
+            },
+            "title": "Comparar con los datos existentes",
+            "titleNearby": "Características cercanas"
+        },
+        "createNotes": {
+            "creating": "Creadas <b>{count}</b> notas de {total}",
+            "done": "¡Todas las {count} notas han sido creadas!"
         },
         "mapPreview": {
             "title": "Previsualización de mapa"

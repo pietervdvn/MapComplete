@@ -788,7 +788,9 @@
             "fil": "Binabayaran gamit ang sariling app",
             "es": "El pago se realiza con una aplicación dedicada",
             "zh_Hans": "使用专用APP支付",
-            "da": "Betaling sker ved hjælp af en dedikeret app"
+            "da": "Betaling sker ved hjælp af en dedikeret app",
+            "nb_NO": "Betaling utføres med et eget program",
+            "pt": "O pagamento é feito utilizando uma aplicação dedicada"
           }
         },
         {
@@ -808,7 +810,8 @@
             "es": "El pago se realiza con una tarjeta de membresía",
             "nb_NO": "Betaling utføres med et medlemskort",
             "zh_Hans": "使用会员卡支付",
-            "da": "Betaling sker med medlemskort"
+            "da": "Betaling sker med medlemskort",
+            "pt": "O pagamento é feito usando um cartão de membro"
           }
         }
       ]
@@ -841,7 +844,8 @@
       "sv": "På vilken nivå finns den här funktionen?",
       "ja": "この機能は何階にあるのでしょうか？",
       "fil": "Anong palapag matatagpuan ang tampók?",
-      "es": "¿En qué nivel se encuentra esta característica?"
+      "es": "¿En qué nivel se encuentra esta característica?",
+      "nb_NO": "Hvilken etasje befinner funksjonen seg i?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -862,7 +866,8 @@
       "sl": "Nahaja se v {level}. nadstropju",
       "fil": "Natagpuan sa ika-{level} na palapag",
       "es": "Localizada en la {level}° planta",
-      "da": "Beliggende på {level}. etage"
+      "da": "Beliggende på {level}. etage",
+      "nb_NO": "Ligger i {level} etasje"
     },
     "freeform": {
       "key": "level",
@@ -987,7 +992,8 @@
           "sl": "Nahaja se v prvi kletni etaži",
           "ca": "Localitzat a la planta base",
           "fil": "Nasa silong",
-          "es": "Situado en el primer nivel del sótano"
+          "es": "Situado en el primer nivel del sótano",
+          "nb_NO": "Er å finne på første kjellernivå"
         }
       }
     ]

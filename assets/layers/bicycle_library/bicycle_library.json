@@ -10,7 +10,8 @@
     "pt_BR": "Biblioteca de bicicleta",
     "de": "Fahrradbibliotheken",
     "pt": "Biblioteca de bicicleta",
-    "ca": "Biblioteca per a bicicletes"
+    "ca": "Biblioteca per a bicicletes",
+    "es": "Biblioteca de bicicletas"
   },
   "minzoom": 8,
   "source": {
@@ -28,7 +29,8 @@
       "de": "Fahrradbibliothek",
       "pt": "Biblioteca de bicicleta",
       "ca": "Biblioteca per a bicicletes",
-      "da": "Cykelbibliotek"
+      "da": "Cykelbibliotek",
+      "es": "Biblioteca de bicicletas"
     },
     "mappings": [
       {
@@ -60,7 +62,8 @@
     "zh_Hant": "能夠長期租用單車的設施",
     "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
     "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
-    "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos"
+    "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+    "es": "Una instalación en la que se pueden prestar las bicicletas durante un periodo de tiempo más largo"
   },
   "tagRenderings": [
     "images",
@@ -76,7 +79,8 @@
         "pt_BR": "Qual o nome desta biblioteca de bicicleta?",
         "de": "Wie lautet der Name dieser Fahrradbibliothek?",
         "pt": "Qual o nome desta biblioteca de bicicleta?",
-        "da": "Hvad hedder dette cykelbibliotek?"
+        "da": "Hvad hedder dette cykelbibliotek?",
+        "es": "¿Cuál es el nombre de esta biblioteca de bicicletas?"
       },
       "render": {
         "en": "This bicycle library is called {name}",
@@ -89,7 +93,8 @@
         "pt_BR": "Esta biblioteca de bicicleta é chamada de {name}",
         "de": "Diese Fahrradbibliothek heißt {name}",
         "pt": "Esta biblioteca de bicicleta é chamada de {name}",
-        "da": "Dette cykelbibliotek hedder {name}"
+        "da": "Dette cykelbibliotek hedder {name}",
+        "es": "Esta biblioteca de bicicletas se llama  {name}."
       },
       "freeform": {
         "key": "name"
@@ -113,7 +118,8 @@
         "zh_Hant": "租用單車的費用多少？",
         "pt_BR": "Quanto custa um empréstimo de bicicleta?",
         "pt": "Quanto custa um empréstimo de bicicleta?",
-        "da": "Hvor meget koster det at leje en cykel?"
+        "da": "Hvor meget koster det at leje en cykel?",
+        "es": "¿Cuánto cuesta el préstamo de una bicicleta?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -156,7 +162,8 @@
             "zh_Hant": "租借單車免費",
             "pt_BR": "Emprestar uma bicicleta é grátis",
             "pt": "Emprestar uma bicicleta é grátis",
-            "da": "Det er gratis at låne en cykel"
+            "da": "Det er gratis at låne en cykel",
+            "es": "El préstamo de bicicletas es gratuito"
           }
         },
         {
@@ -175,7 +182,8 @@
             "zh_Hant": "租借單車價錢 €20/year 與 €20 保證金",
             "ru": "Прокат велосипеда стоит €20/год и €20 залог",
             "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
-            "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
+            "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
+            "es": "Prestar una bicicleta cuesta 20 euros al año y 20 euros de garantía"
           }
         }
       ],
@@ -195,7 +203,8 @@
         "zh_Hant": "誰可以在這裡租單車？",
         "pt_BR": "Quem pode emprestar bicicletas aqui?",
         "pt": "Quem pode emprestar bicicletas aqui?",
-        "da": "Hvem kan låne cykler her?"
+        "da": "Hvem kan låne cykler her?",
+        "es": "¿Quién puede prestar bicicletas aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -265,7 +274,8 @@
         "de": "eine fahrradbibliothek",
         "pt": "uma biblioteca de bicicletas",
         "eo": "Fietsbibliotheek",
-        "da": "et cykelbibliotek"
+        "da": "et cykelbibliotek",
+        "es": "una biblioteca de bicicletas"
       },
       "tags": [
         "amenity=bicycle_library"
@@ -277,7 +287,8 @@
         "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
         "ru": "В велосипедной библиотеке есть велосипеды для аренды",
         "zh_Hant": "單車圖書館有一大批單車供人租借",
-        "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können"
+        "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
+        "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar"
       }
     }
   ],

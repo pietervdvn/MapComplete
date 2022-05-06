@@ -21,7 +21,7 @@
     }
   },
   "description": {
-    "en": "Binoculas",
+    "en": "Binoculars",
     "nl": "Verrekijkers",
     "de": "Fernglas",
     "ru": "Бинокли",
@@ -97,9 +97,9 @@
         "amenity=binoculars"
       ],
       "title": {
-        "en": "a binoculars",
+        "en": "a binocular",
         "nl": "een verrekijker",
-        "de": "eine ferngläser",
+        "de": "ein Fernglas",
         "ru": "бинокль",
         "ca": "uns prismàtics",
         "da": "en kikkert"

@@ -2318,6 +2318,7 @@
         }
     },
     "climbing": {
+        "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
         "tagRenderings": {
             "average_length": {
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
@@ -4092,7 +4093,13 @@
             "10": {
                 "options": {
                     "0": {
+                        "question": "Alle Notes"
+                    },
+                    "1": {
                         "question": "Verberg import Notes"
+                    },
+                    "2": {
+                        "question": "Toon enkel import Notes"
                     }
                 }
             }
@@ -5211,6 +5218,12 @@
                     },
                     "2": {
                         "then": "Deze camera hangt aan het plafond"
+                    },
+                    "3": {
+                        "then": "Deze camera staat op een straatlantaarn"
+                    },
+                    "4": {
+                        "then": "Deze camera staat op een boom"
                     }
                 },
                 "question": "Hoe is deze camera geplaatst?",

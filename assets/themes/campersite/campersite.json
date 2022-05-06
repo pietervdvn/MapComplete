@@ -625,7 +625,7 @@
                 "it": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata",
                 "fr": "Oui, mais il est possible d’y passer seulement une nuit",
                 "pt_BR": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária",
-                "de": "Ja, es gibt einige Plätze für Langzeitmieten, aber Sie können auch tageweise bleiben",
+                "de": "Es gibt einige Plätze für Langzeitmieten, aber auch eine tageweise Anmietung ist möglich",
                 "es": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días",
                 "nl": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
               }
@@ -644,7 +644,7 @@
                 "it": "No, non ci sono ospiti a lungo termine qui",
                 "fr": "Non, il n’y a pas de résidents permanents",
                 "pt_BR": "Não, não há hóspedes permanentes aqui",
-                "de": "Nein, hier gibt es keine Dauergäste",
+                "de": "Hier gibt es keine Dauergäste",
                 "es": "No, no hay huéspedes permanentes aquí",
                 "da": "Nej, der er ingen faste gæster her",
                 "nl": "Hier wonen geen permanente gasten"
@@ -732,7 +732,7 @@
             "ja": "新しい公式キャンプサイトを追加します。お客様のキャンピングカーで一泊する指定の場所です。本物のキャンプのように見えるかもしれないし、単なる駐車場のように見えるかもしれない。それらは全く署名されていないかもしれませんが、自治体の決定で定義されているだけです。夜を過ごすことが予想されないキャンパー向けの通常の駐車場は、キャンプサイトではない ",
             "it": "Aggiungi una nuova area di sosta ufficiale per camper. Si tratta di aree destinate alla sosta notturna dei camper. Potrebbe trattarsi di luoghi di campeggio o semplici parcheggi. Potrebbero anche non essere segnalati sul posto, ma semplicemente indicati in una delibera comunale. Un parcheggio destinato ai camper in cui non è però consentito trascorrere la notte -non- va considerato un'area di sosta per camper. ",
             "fr": "Ajouter une nouvelle aire  officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
-            "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, ist kein Wohnmobilstellplatz. ",
+            "de": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
             "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
             "zh_Hant": "新增正式露營地點，通常是設計給過夜的露營者的地點。看起來像是真的露營地或是一般的停車場，而且也許沒有任何指標，但在城鎮被定議地點。如果一般給露營者的停車場並不是用來過夜，則不是露營地點 ",
             "hu": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
@@ -849,7 +849,8 @@
             "fr": "Ce site est-il payant ?",
             "pt_BR": "Este lugar cobra alguma taxa?",
             "de": "Wird hier eine Gebühr erhoben?",
-            "zh_Hant": "這個地方需要付費嗎？"
+            "zh_Hant": "這個地方需要付費嗎？",
+            "nl": "Vraagt deze plaats een vergoeding?"
           },
           "mappings": [
             {
@@ -883,7 +884,8 @@
                 "fr": "Ce site ne demande pas de paiement",
                 "pt_BR": "Pode ser usado gratuitamente",
                 "de": "Nutzung kostenlos",
-                "zh_Hant": "這裡可以免費使用"
+                "zh_Hant": "這裡可以免費使用",
+                "nl": "Kan gratis gebruikt worden"
               }
             }
           ]
@@ -1087,7 +1089,8 @@
                 "it": "Servono una chiave o un codice di accesso",
                 "fr": "Un code est nécessaire",
                 "de": "Sie benötigen einen Schlüssel/Code zur Benutzung",
-                "zh_Hant": "你需要網路鑰匙/密碼來使用這個設施"
+                "zh_Hant": "你需要網路鑰匙/密碼來使用這個設施",
+                "nl": "Netwerksleutel of -code nodig om dit te gebruiken"
               }
             },
             {
@@ -1102,7 +1105,8 @@
                 "it": "È obbligatorio essere un cliente di questo campeggio o di questa area camper",
                 "fr": "Le site est réservés aux clients",
                 "de": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können",
-                "zh_Hant": "你需要是露營/露營地的客戶才能使用這一地方"
+                "zh_Hant": "你需要是露營/露營地的客戶才能使用這一地方",
+                "nl": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
               }
             },
             {
@@ -1157,7 +1161,8 @@
             "ru": "К какой сети относится эта станция? (пропустите, если неприменимо)",
             "fr": "De quel réseau fait-elle partie ? (Passer si aucun)",
             "de": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
-            "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)"
+            "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)",
+            "nl": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)"
           },
           "freeform": {
             "key": "network"
@@ -1244,7 +1249,8 @@
           "it": "Questo luogo fornisce corrente elettrica?",
           "fr": "Ce site a-t’il une source d’électricité ?",
           "de": "Hat dieser Ort eine Stromversorgung?",
-          "hu": "Van-e itt elektromos áram?"
+          "hu": "Van-e itt elektromos áram?",
+          "nl": "Beschikt deze plaats over stroomvoorziening?"
         },
         "mappings": [
           {
@@ -1274,7 +1280,8 @@
               "ja": "この場所には電源がありません",
               "it": "Questo luogo non fornisce corrente elettrica",
               "fr": "Ce site n’a pas de source d’alimentation",
-              "de": "Dieser Ort hat keine Stromversorgung"
+              "de": "Dieser Ort hat keine Stromversorgung",
+              "nl": "Deze plaats beschikt niet over stroomvoorziening"
             }
           }
         ]
