@@ -4239,7 +4239,13 @@
             "10": {
                 "options": {
                     "0": {
+                        "question": "All Notes"
+                    },
+                    "1": {
                         "question": "Hide import notes"
+                    },
+                    "2": {
+                        "question": "Show only import Notes"
                     }
                 }
             }
@@ -5312,10 +5318,16 @@
                         "then": "This camera is placed against a wall"
                     },
                     "1": {
-                        "then": "This camera is placed one a pole"
+                        "then": "This camera is placed on a pole"
                     },
                     "2": {
                         "then": "This camera is placed on the ceiling"
+                    },
+                    "3": {
+                        "then": "This camera is placed on a street light"
+                    },
+                    "4": {
+                        "then": "This camera is placed on a tree"
                     }
                 },
                 "question": "How is this camera placed?",

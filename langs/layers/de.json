@@ -3329,7 +3329,7 @@
             },
             "10": {
                 "options": {
-                    "0": {
+                    "1": {
                         "question": "Importnotizen ausblenden"
                     }
                 }
@@ -4407,6 +4407,12 @@
                     },
                     "2": {
                         "then": "Diese Kamera ist an der Decke montiert"
+                    },
+                    "3": {
+                        "then": "Diese Kamera befindet sich an einer Straßenlaterne"
+                    },
+                    "4": {
+                        "then": "Diese Kamera ist an einem Baum angebracht"
                     }
                 },
                 "question": "Wie ist diese Kamera montiert?",
