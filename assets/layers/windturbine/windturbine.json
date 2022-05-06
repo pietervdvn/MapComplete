@@ -10,7 +10,8 @@
     "hu": "Szélerőmű"
   },
   "description": {
-    "en": "Modern windmills generating electricity"
+    "en": "Modern windmills generating electricity",
+    "de": "Moderne Windmühlen zur Stromerzeugung"
   },
   "source": {
     "osmTags": "generator:source=wind"

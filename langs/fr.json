@@ -265,6 +265,11 @@
     "multi_apply": {
         "autoApply": "En changeant les attributs {attr_names}, ceux-ci seront automatiquement changés sur {count} autres éléments"
     },
+    "professional": {
+        "indexPage": {
+            "button": "Découvrez nos offres"
+        }
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(Avis affilié)",
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -288,10 +293,5 @@
         "loginToSplit": "Vous devez être connecté pour couper une route",
         "split": "Couper",
         "splitTitle": "Choisissez sur la carte où couper cette route"
-    },
-    "professional": {
-        "indexPage": {
-            "button": "Découvrez nos offres"
-        }
     }
 }

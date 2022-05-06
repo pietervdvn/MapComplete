@@ -62,11 +62,11 @@
         "payment-options-advanced": {
             "override": {
                 "mappings+": {
-                    "1": {
-                        "then": "Betaling utføres med et medlemskort"
-                    },
                     "0": {
                         "then": "Betaling utføres med et eget program"
+                    },
+                    "1": {
+                        "then": "Betaling utføres med et medlemskort"
                     }
                 }
             }

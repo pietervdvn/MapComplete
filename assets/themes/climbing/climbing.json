@@ -205,7 +205,8 @@
               "en": "Who can access here?",
               "fr": "Qui peut y accéder ?",
               "de": "Wer hat hier Zugang?",
-              "it": "Chi può accedervi?"
+              "it": "Chi può accedervi?",
+              "nl": "Wie heeft hier toegang toe?"
             },
             "mappings": [
               {
@@ -214,7 +215,8 @@
                   "en": "Publicly accessible to anyone",
                   "fr": "Libre d’accès",
                   "de": "Öffentlich zugänglich für jedermann",
-                  "it": "Pubblicamente accessibile a chiunque"
+                  "it": "Pubblicamente accessibile a chiunque",
+                  "nl": "Voor iedereen publiek toegankelijk"
                 }
               },
               {
@@ -223,7 +225,8 @@
                   "en": "You need a permit to access here",
                   "fr": "Une autorisation est nécessaire",
                   "de": "Zugang nur mit Genehmigung",
-                  "it": "È necessario avere un’autorizzazione per entrare"
+                  "it": "È necessario avere un’autorizzazione per entrare",
+                  "nl": "Je hebt een vergunning nodig om hier toegang te kregen"
                 }
               },
               {
@@ -233,7 +236,8 @@
                   "fr": "Réservé aux clients",
                   "de": "Nur für Kunden",
                   "it": "Riservato ai clienti",
-                  "ca": "Només clients"
+                  "ca": "Només clients",
+                  "nl": "Enkel klanten"
                 }
               },
               {
@@ -244,7 +248,8 @@
                   "fr": "Réservé aux membres",
                   "de": "Nur für Vereinsmitglieder",
                   "it": "Riservato ai membri del club",
-                  "ca": "Només membres del club"
+                  "ca": "Només membres del club",
+                  "nl": "Enkel clubleden"
                 }
               },
               {

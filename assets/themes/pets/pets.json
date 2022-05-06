@@ -4,11 +4,13 @@
   "version": "1",
   "title": {
     "en": "Veterinarians, dog parks and other pet-amenities",
-    "da": "hundesteder"
+    "da": "hundesteder",
+    "de": "Tierärzte, Hundeparks und andere Einrichtungen für Haustiere"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
-    "da": "Hundsteder"
+    "da": "Hundsteder",
+    "de": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -22,7 +24,8 @@
         "id": "dogfoodb",
         "name": {
           "en": "Dog friendly eateries",
-          "da": "Hundevenlige madsteder"
+          "da": "Hundevenlige madsteder",
+          "de": "Hundefreundliche Restaurants"
         },
         "mapRendering": [
           {
@@ -63,12 +66,14 @@
         "id": "dogshop",
         "name": {
           "en": "dog-friendly shop",
-          "da": "hundevenlig butik"
+          "da": "hundevenlig butik",
+          "de": "hundefreundliches Geschäft"
         },
         "title": {
           "render": {
             "en": "dog-friendly shop",
-            "da": "hundevenlig butik"
+            "da": "hundevenlig butik",
+            "de": "hundefreundliches Geschäft"
           },
           "mappings": [
             {
@@ -156,7 +161,8 @@
           {
             "title": {
               "en": "dog-friendly shop",
-              "da": "EN hundevenlig butik"
+              "da": "EN hundevenlig butik",
+              "de": "hundefreundliches Geschäft"
             },
             "tags": [
               "dog=yes",
@@ -164,7 +170,8 @@
             ],
             "description": {
               "en": "A shop whery you can bring a dog almost everywhere",
-              "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt"
+              "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt",
+              "de": "Ein Geschäft, in das man seinen Hund fast überall mitnehmen kann"
             }
           }
         ],

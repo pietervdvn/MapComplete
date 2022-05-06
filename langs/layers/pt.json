@@ -1,4 +1,8 @@
 {
+    "address": {
+        "description": "Endereços",
+        "name": "Endereços conhecidos no OSM"
+    },
     "artwork": {
         "description": "Diversas obras de arte",
         "name": "Obras de arte",
@@ -595,9 +599,5 @@
                 }
             }
         }
-    },
-    "address": {
-        "name": "Endereços conhecidos no OSM",
-        "description": "Endereços"
     }
 }

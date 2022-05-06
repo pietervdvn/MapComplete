@@ -5,7 +5,8 @@
     "de": "Radschnellwege",
     "it": "Strade per velocipedi",
     "ca": "Vies ciclistes",
-    "fr": "Aménagements cyclables"
+    "fr": "Aménagements cyclables",
+    "nl": "Fietssnelwegen"
   },
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
@@ -16,7 +17,8 @@
     "en": "This map shows cycle highways",
     "de": "Diese Karte zeigt Radschnellwege",
     "it": "Questa cartina mostra le strade per velocipedi",
-    "fr": "Cette carte affiche les aménagements cyclables"
+    "fr": "Cette carte affiche les aménagements cyclables",
+    "nl": "Deze kaart toont fietssnelwegen"
   },
   "version": "2021-08-23",
   "startLat": 51.1599,
@@ -104,7 +106,8 @@
         "en": "cycle highways",
         "de": "Radschnellwege",
         "ca": "vies ciclistes",
-        "fr": "Aménagements cyclables"
+        "fr": "Aménagements cyclables",
+        "nl": "fietssnelwegen"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -115,7 +118,8 @@
           "en": "cycle highway",
           "de": "Radschnellweg",
           "ca": "via ciclista",
-          "fr": "Aménagement cyclable"
+          "fr": "Aménagement cyclable",
+          "nl": "fietssnelweg"
         }
       },
       "filter": [
