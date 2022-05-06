@@ -8,7 +8,7 @@
         "title": "Open AED-kaart - Brugge edition"
     },
     "artwork": {
-        "description": "Welkom op de open kunstwerken-kaart, een kaart van standbeelden, bustes, graffiti en andere kunstwerken over de hele wereld",
+        "description": "Welkom op de open kunstwerken-kaart, een kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
         "title": "Open kunstwerken-kaart"
     },
     "benches": {
@@ -277,14 +277,52 @@
                     },
                     "render": "Camperplaats {name}"
                 }
+            },
+            "1": {
+                "tagRenderings": {
+                    "dumpstations-fee": {
+                        "question": "Vraagt deze plaats een vergoeding?",
+                        "mappings": {
+                            "1": {
+                                "then": "Kan gratis gebruikt worden"
+                            }
+                        }
+                    },
+                    "dumpstations-access": {
+                        "mappings": {
+                            "1": {
+                                "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                            },
+                            "0": {
+                                "then": "Netwerksleutel of -code nodig om dit te gebruiken"
+                            }
+                        }
+                    },
+                    "dumpstations-network": {
+                        "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)"
+                    }
+                }
             }
         },
         "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
-        "title": "Camperplaatsen"
+        "title": "Camperplaatsen",
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "1": {
+                            "then": "Deze plaats beschikt niet over stroomvoorziening"
+                        }
+                    },
+                    "question": "Beschikt deze plaats over stroomvoorziening?"
+                }
+            }
+        }
     },
     "charging_stations": {
         "shortDescription": "Een wereldwijde kaart van oplaadpunten",
-        "title": "Oplaadpunten"
+        "title": "Oplaadpunten",
+        "description": "Met deze kaart kan je informatie over oplaadpunten vinden en toevoegen"
     },
     "climbing": {
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -302,6 +340,23 @@
                                     "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
                                 }
                             }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Voor iedereen publiek toegankelijk"
+                                },
+                                "1": {
+                                    "then": "Je hebt een vergunning nodig om hier toegang te kregen"
+                                },
+                                "2": {
+                                    "then": "Enkel klanten"
+                                },
+                                "3": {
+                                    "then": "Enkel clubleden"
+                                }
+                            },
+                            "question": "Wie heeft hier toegang toe?"
                         }
                     },
                     "units+": {
@@ -330,7 +385,7 @@
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
         "layers": {
             "0": {
-                "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
+                "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
                 "name": "Fietsstraten"
             },
             "1": {
@@ -390,7 +445,8 @@
         "title": "Drinkwaterpunten"
     },
     "entrances": {
-        "title": "Toegangsdeuren"
+        "title": "Toegangsdeuren",
+        "description": "Een kaart die alle toegangen toont,"
     },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
@@ -701,7 +757,8 @@
         "title": "Uitkijktorens"
     },
     "openwindpowermap": {
-        "title": "Windmolens"
+        "title": "Windmolens",
+        "description": "Een kaart om windturbines te tonen en te bewerken."
     },
     "parkings": {
         "description": "Deze kaart toont verschillende parkeerplekken",
@@ -898,5 +955,20 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "fietssnelweg"
+                },
+                "name": "fietssnelwegen"
+            }
+        },
+        "title": "Fietssnelwegen",
+        "description": "Deze kaart toont fietssnelwegen"
+    },
+    "cyclenodes": {
+        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
     }
 }

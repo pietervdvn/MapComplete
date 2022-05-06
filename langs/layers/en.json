@@ -65,7 +65,7 @@
                 "render": "This station is found within {addr:place}."
             },
             "ambulance-street": {
-                "question": " What is the street name where the station located?",
+                "question": "What is the street name where the station located?",
                 "render": "This station is along a highway called {addr:street}."
             }
         },
@@ -1113,7 +1113,7 @@
     },
     "bike_themed_object": {
         "description": "A layer with bike-themed objects but who don't match any other layer",
-        "name": "Bike related object",
+        "name": "Bike-related object",
         "title": {
             "mappings": {
                 "1": {
@@ -1124,12 +1124,12 @@
         }
     },
     "binocular": {
-        "description": "Binoculas",
+        "description": "Binoculars",
         "name": "Binoculars",
         "presets": {
             "0": {
                 "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "a binoculars"
+                "title": "a binocular"
             }
         },
         "tagRenderings": {

@@ -595,5 +595,9 @@
                 }
             }
         }
+    },
+    "address": {
+        "name": "Endereços conhecidos no OSM",
+        "description": "Endereços"
     }
 }

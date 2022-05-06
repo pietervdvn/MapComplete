@@ -111,6 +111,18 @@
                 }
             },
             "question": "Qual é o item correspondente na Wikipédia?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "O pagamento é feito usando um cartão de membro"
+                    },
+                    "0": {
+                        "then": "O pagamento é feito utilizando uma aplicação dedicada"
+                    }
+                }
+            }
         }
     }
 }
