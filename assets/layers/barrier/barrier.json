@@ -16,7 +16,8 @@
     "nl": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
     "de": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
     "hu": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
-    "fr": "Obstacles à vélo, tels que des potelets ou des barrières"
+    "fr": "Obstacles à vélo, tels que des potelets ou des barrières",
+    "es": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas"
   },
   "source": {
     "osmTags": {
@@ -58,7 +59,8 @@
           "nl": "Fietshekjes",
           "de": "Barriere für Radfahrer",
           "fr": "Barrière cyclable",
-          "ca": "Barrera ciclista"
+          "ca": "Barrera ciclista",
+          "es": "Barrera ciclista"
         }
       }
     ]
@@ -103,7 +105,8 @@
         "de": "eine fahrradhindernis",
         "hu": "Kerékpárakadály",
         "fr": "une barrière cyclable",
-        "da": "en stibom"
+        "da": "en stibom",
+        "es": "una barrera para bicicletas"
       },
       "tags": [
         "barrier=cycle_barrier"
@@ -114,7 +117,8 @@
         "de": "Fahrradhindernis, das Radfahrer abbremst",
         "hu": "A kerékpáros sebességét csökkentő kerékpárakadály",
         "fr": "Barrières cyclables, ralentissant les cyclistes",
-        "da": "Stibomme, der fartdæmper cyklister"
+        "da": "Stibomme, der fartdæmper cyklister",
+        "es": "Una barrera ciclista, que ralentiza a los ciclistas"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -132,7 +136,8 @@
         "nl": "Kan een fietser langs deze barrière?",
         "de": "Kann ein Radfahrer das Hindernis passieren?",
         "hu": "Át lehet-e menni rajta kerékpárral?",
-        "fr": "Est-ce qu'un vélo peut franchir cette barrière ?"
+        "fr": "Est-ce qu'un vélo peut franchir cette barrière ?",
+        "es": "¿Puede un ciclista pasar esta barrera?"
       },
       "mappings": [
         {
@@ -143,7 +148,8 @@
             "de": "Ein Radfahrer kann hindurchfahren.",
             "fr": "Un cycliste peut franchir ceci.",
             "hu": "Kerékpárral át lehet hajtani.",
-            "da": "En cyklist kan cykle forbi denne."
+            "da": "En cyklist kan cykle forbi denne.",
+            "es": "Un ciclista puede pasar por aquí."
           }
         },
         {
@@ -154,7 +160,8 @@
             "de": "Ein Radfahrer kann nicht hindurchfahren.",
             "fr": "Un cycliste ne peut pas franchir ceci.",
             "hu": "Kerékpárral nem lehet áthajtani.",
-            "da": "En cyklist kan ikke cykle forbi denne."
+            "da": "En cyklist kan ikke cykle forbi denne.",
+            "es": "Un ciclista no puede pasar por aquí."
           }
         }
       ],
@@ -209,7 +216,8 @@
             "fr": "Bollard amovible",
             "hu": "Eltávolítható terelőoszlop",
             "ca": "Pilona desmuntable",
-            "da": "Aftagelig pullert"
+            "da": "Aftagelig pullert",
+            "es": "Bolardo extraíble"
           }
         },
         {
@@ -233,7 +241,8 @@
             "de": "Umlegbarer Poller",
             "fr": "Bollard qui peut être couché",
             "hu": "Lehajtható terelőoszlop",
-            "da": "Pullert, der kan klappes ned"
+            "da": "Pullert, der kan klappes ned",
+            "es": "Bolardo abatible"
           }
         },
         {
@@ -282,7 +291,8 @@
             "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen",
             "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum",
             "hu": "Egyszeres: csak két korlát, közöttük térköz",
-            "fr": "Simple, deux barrières côte à côte"
+            "fr": "Simple, deux barrières côte à côte",
+            "es": "Simple, sólo dos barreras con un espacio entre ellas"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_single.png",
@@ -296,7 +306,8 @@
             "nl": "Dubbel, twee hekjes achter elkaar",
             "de": "Doppelt, zwei Barrieren hintereinander",
             "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után",
-            "fr": "Double, deux barrières successives"
+            "fr": "Double, deux barrières successives",
+            "es": "Doble, dos barreras una detrás de otra"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_double.svg",
@@ -310,7 +321,8 @@
             "nl": "Drievoudig, drie hekjes achter elkaar",
             "de": "Dreifach, drei Barrieren hintereinander",
             "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után",
-            "fr": "Triple, trois barrières successives"
+            "fr": "Triple, trois barrières successives",
+            "es": "Triple, tres barreras una detrás de la otra"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_triple.png",
@@ -324,7 +336,8 @@
             "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem",
             "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten",
             "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul",
-            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol"
+            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol",
+            "es": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_squeeze.png",

@@ -12,7 +12,8 @@
     {
       "title": {
         "en": "a veterianarian",
-        "da": "en dyrl&aelig;ge"
+        "da": "en dyrl&aelig;ge",
+        "de": "ein Tierarzt"
       },
       "tags": [
         "amenity=veterinary",
@@ -20,18 +21,21 @@
       ],
       "description": {
         "en": "a veterianarian, that treats dogs",
-        "da": "En dyrl&aelig;ge, der behandler hunde"
+        "da": "En dyrl&aelig;ge, der behandler hunde",
+        "de": "ein Tierarzt, der Hunde behandelt"
       }
     }
   ],
   "name": {
     "en": "veterinary",
-    "da": "dyrl&aelig;ge"
+    "da": "dyrl&aelig;ge",
+    "de": "Tierarzt"
   },
   "title": {
     "render": {
       "en": "Veterinary",
-      "da": "dyrl&aelig;ge"
+      "da": "dyrl&aelig;ge",
+      "de": "Tierarzt"
     },
     "mappings": [
       {
@@ -78,7 +82,8 @@
     {
       "question": {
         "en": "What is the name of this veterinarian?",
-        "da": "Hvad hedder denne dyrl&aelig;?"
+        "da": "Hvad hedder denne dyrl&aelig;?",
+        "de": "Wie lautet der Name dieses Tierarztes?"
       },
       "render": {
         "en": "The name of this veterinarian is {name}",

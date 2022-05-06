@@ -19,7 +19,8 @@
   "title": {},
   "description": {
     "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
-    "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag"
+    "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
+    "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene"
   },
   "mapRendering": [
     {

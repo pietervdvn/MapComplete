@@ -280,23 +280,23 @@
             },
             "1": {
                 "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "0": {
+                                "then": "Netwerksleutel of -code nodig om dit te gebruiken"
+                            },
+                            "1": {
+                                "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                            }
+                        }
+                    },
                     "dumpstations-fee": {
-                        "question": "Vraagt deze plaats een vergoeding?",
                         "mappings": {
                             "1": {
                                 "then": "Kan gratis gebruikt worden"
                             }
-                        }
-                    },
-                    "dumpstations-access": {
-                        "mappings": {
-                            "1": {
-                                "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
-                            },
-                            "0": {
-                                "then": "Netwerksleutel of -code nodig om dit te gebruiken"
-                            }
-                        }
+                        },
+                        "question": "Vraagt deze plaats een vergoeding?"
                     },
                     "dumpstations-network": {
                         "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)"
@@ -304,8 +304,6 @@
                 }
             }
         },
-        "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
-        "title": "Camperplaatsen",
         "overrideAll": {
             "tagRenderings+": {
                 "1": {
@@ -317,12 +315,14 @@
                     "question": "Beschikt deze plaats over stroomvoorziening?"
                 }
             }
-        }
+        },
+        "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
+        "title": "Camperplaatsen"
     },
     "charging_stations": {
+        "description": "Met deze kaart kan je informatie over oplaadpunten vinden en toevoegen",
         "shortDescription": "Een wereldwijde kaart van oplaadpunten",
-        "title": "Oplaadpunten",
-        "description": "Met deze kaart kan je informatie over oplaadpunten vinden en toevoegen"
+        "title": "Oplaadpunten"
     },
     "climbing": {
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -376,10 +376,25 @@
         },
         "title": "Open klimkaart"
     },
+    "cycle_highways": {
+        "description": "Deze kaart toont fietssnelwegen",
+        "layers": {
+            "0": {
+                "name": "fietssnelwegen",
+                "title": {
+                    "render": "fietssnelweg"
+                }
+            }
+        },
+        "title": "Fietssnelwegen"
+    },
     "cycle_infra": {
         "description": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21.",
         "shortDescription": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken.",
         "title": "Fietsinfrastructuur"
+    },
+    "cyclenodes": {
+        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
     },
     "cyclestreets": {
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
@@ -445,8 +460,8 @@
         "title": "Drinkwaterpunten"
     },
     "entrances": {
-        "title": "Toegangsdeuren",
-        "description": "Een kaart die alle toegangen toont,"
+        "description": "Een kaart die alle toegangen toont,",
+        "title": "Toegangsdeuren"
     },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
@@ -757,8 +772,8 @@
         "title": "Uitkijktorens"
     },
     "openwindpowermap": {
-        "title": "Windmolens",
-        "description": "Een kaart om windturbines te tonen en te bewerken."
+        "description": "Een kaart om windturbines te tonen en te bewerken.",
+        "title": "Windmolens"
     },
     "parkings": {
         "description": "Deze kaart toont verschillende parkeerplekken",
@@ -955,20 +970,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "cycle_highways": {
-        "layers": {
-            "0": {
-                "title": {
-                    "render": "fietssnelweg"
-                },
-                "name": "fietssnelwegen"
-            }
-        },
-        "title": "Fietssnelwegen",
-        "description": "Deze kaart toont fietssnelwegen"
-    },
-    "cyclenodes": {
-        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
     }
 }

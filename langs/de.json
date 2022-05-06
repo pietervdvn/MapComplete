@@ -204,6 +204,7 @@
             "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "copiedToClipboard": "Link in die Zwischenablage kopiert",
             "downloadCustomTheme": "Herunterladen der Konfiguration für diese Karte",
+            "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern",
             "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
             "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
@@ -218,8 +219,7 @@
             "fsUserbadge": "Anmeldeschaltfläche aktivieren",
             "fsWelcomeMessage": "Begrüßungsfenster und zugehörige Registerkarten anzeigen",
             "intro": "<h3>Diese Karte teilen</h3> Teilen Sie diese Karte, indem Sie den folgenden Link kopieren und an Freunde und Familie schicken:",
-            "thanksForSharing": "Danke für das Teilen!",
-            "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern"
+            "thanksForSharing": "Danke für das Teilen!"
         },
         "skip": "Frage überspringen",
         "skippedQuestions": "Einige Fragen wurden übersprungen",

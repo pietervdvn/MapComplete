@@ -90,7 +90,8 @@
           "ru": "Скамейка в укрытии",
           "zh_Hant": "涼亭內的長椅",
           "pt_BR": "Banco em abrigo",
-          "pt": "Banco em abrigo"
+          "pt": "Banco em abrigo",
+          "es": "Banco en el refugio"
         }
       }
     ]
@@ -141,7 +142,8 @@
             "fr": "Il y a un banc normal pour s'asseoir ici",
             "de": "Hier gibt es eine normale Sitzbank",
             "nl": "Er is hier een normale zitbank",
-            "da": "Der er en normal siddebænk her"
+            "da": "Der er en normal siddebænk her",
+            "es": "Aquí hay un banco normal para sentarse"
           }
         },
         {
@@ -155,7 +157,8 @@
             "zh_Hans": "站立长凳",
             "ru": "Встаньте на скамейке",
             "zh_Hant": "站立長椅",
-            "da": "Stå-op bænk"
+            "da": "Stå-op bænk",
+            "es": "Banco de pie"
           }
         },
         {

@@ -734,6 +734,35 @@
         "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
         "title": "Persönliches Thema"
     },
+    "pets": {
+        "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Hundefreundliche Restaurants"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "hundefreundliches Geschäft",
+                    "title": {
+                        "render": "hundefreundliches Geschäft"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Ein Geschäft, in das man seinen Hund fast überall mitnehmen kann",
+                            "title": "hundefreundliches Geschäft"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Tierärzte, Hundeparks und andere Einrichtungen für Haustiere"
+    },
     "playgrounds": {
         "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",
         "shortDescription": "Eine Karte mit Spielplätzen",
@@ -921,34 +950,5 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "pets": {
-        "layers": {
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "hundefreundliches Geschäft",
-                            "description": "Ein Geschäft, in das man seinen Hund fast überall mitnehmen kann"
-                        }
-                    }
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "hundefreundliches Geschäft",
-                    "title": {
-                        "render": "hundefreundliches Geschäft"
-                    }
-                }
-            },
-            "1": {
-                "override": {
-                    "name": "Hundefreundliche Restaurants"
-                }
-            }
-        },
-        "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
-        "title": "Tierärzte, Hundeparks und andere Einrichtungen für Haustiere"
     }
 }

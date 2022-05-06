@@ -364,7 +364,8 @@
     {
       "id": "tree-species-wikidata",
       "question": {
-        "en": "What species is this tree?"
+        "en": "What species is this tree?",
+        "de": "Um welche Baumart handelt es sich?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -626,7 +627,7 @@
         "it": "una albero latifoglia",
         "fr": "une arbre feuillu",
         "ru": "Лиственное дерево",
-        "de": "eine laubbaum",
+        "de": "ein Laubbaum",
         "es": "árbol de hoja ancha"
       },
       "description": {
@@ -652,7 +653,7 @@
         "it": "una albero aghifoglia",
         "ru": "Хвойное дерево",
         "fr": "une arbre résineux",
-        "de": "eine nadelbaum",
+        "de": "ein Nadelbaum",
         "es": "Árbol tipo Conífera"
       },
       "description": {
@@ -679,7 +680,7 @@
         "ru": "Дерево",
         "fr": "une arbre",
         "id": "Pohon",
-        "de": "eine baum",
+        "de": "ein Baum",
         "ca": "un arbre",
         "es": "un árbol"
       },
