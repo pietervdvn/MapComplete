@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 3540,
+      "commits": 3715,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -9,20 +9,24 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 39,
+      "commits": 43,
       "contributor": "Tobias"
+    },
+    {
+      "commits": 33,
+      "contributor": "Win Olario"
     },
     {
       "commits": 33,
       "contributor": "Christian Neumann"
     },
     {
-      "commits": 32,
-      "contributor": "Win Olario"
-    },
-    {
       "commits": 31,
       "contributor": "Pieter Fiers"
+    },
+    {
+      "commits": 26,
+      "contributor": "Joost"
     },
     {
       "commits": 26,
@@ -34,11 +38,11 @@
     },
     {
       "commits": 20,
-      "contributor": "Joost"
+      "contributor": "riQQ"
     },
     {
       "commits": 19,
-      "contributor": "riQQ"
+      "contributor": "Niels Elgaard Larsen"
     },
     {
       "commits": 19,
@@ -77,7 +81,7 @@
       "contributor": "LiamSimons"
     },
     {
-      "commits": 8,
+      "commits": 9,
       "contributor": "dependabot[bot]"
     },
     {
@@ -118,6 +122,14 @@
     },
     {
       "commits": 3,
+      "contributor": "Codain"
+    },
+    {
+      "commits": 3,
+      "contributor": "Thierry1030"
+    },
+    {
+      "commits": 3,
       "contributor": "Weblate (bot)"
     },
     {
@@ -126,7 +138,11 @@
     },
     {
       "commits": 2,
-      "contributor": "Codain"
+      "contributor": "pdassori"
+    },
+    {
+      "commits": 2,
+      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 2,
@@ -159,6 +175,18 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "kjonosm"
+    },
+    {
+      "commits": 1,
+      "contributor": "OliNau"
+    },
+    {
+      "commits": 1,
+      "contributor": "danieldegroot2"
     },
     {
       "commits": 1,
@@ -199,10 +227,6 @@
     {
       "commits": 1,
       "contributor": "Allan Nordhøy"
-    },
-    {
-      "commits": 1,
-      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 1,

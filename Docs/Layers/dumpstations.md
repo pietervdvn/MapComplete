@@ -52,7 +52,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -75,7 +77,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -85,14 +87,14 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **Does this place charge a fee?**
+The question is  Does this place charge a fee?
 
 
 
 
 
-  - **You need to pay for use** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
-  - **Can be used for free** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+  - You need to pay for use corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - Can be used for free corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
 
 
 
@@ -101,10 +103,13 @@ The question is **Does this place charge a fee?**
 
 
 
-The question is **How much does this place charge?**
+The question is  How much does this place charge?
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-This is rendered with `This place charges {charge}`
+
+This is rendered with This place charges {charge}
+
+
 
 Only visible if `fee=yes` is shown
 
@@ -114,14 +119,14 @@ Only visible if `fee=yes` is shown
 
 
 
-The question is **Does this place have a water point?**
+The question is  Does this place have a water point?
 
 
 
 
 
-  - **This place has a water point** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dyes' target='_blank'>yes</a>
-  - **This place does not have a water point** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dno' target='_blank'>no</a>
+  - This place has a water point corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dyes' target='_blank'>yes</a>
+  - This place does not have a water point corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dno' target='_blank'>no</a>
 
 
 
@@ -130,14 +135,14 @@ The question is **Does this place have a water point?**
 
 
 
-The question is **Can you dispose of grey water here?**
+The question is  Can you dispose of grey water here?
 
 
 
 
 
-  - **You can dispose of grey water here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dyes' target='_blank'>yes</a>
-  - **You cannot dispose of gray water here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dno' target='_blank'>no</a>
+  - You can dispose of grey water here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dyes' target='_blank'>yes</a>
+  - You cannot dispose of gray water here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dno' target='_blank'>no</a>
 
 
 
@@ -146,14 +151,14 @@ The question is **Can you dispose of grey water here?**
 
 
 
-The question is **Can you dispose of chemical toilet waste here?**
+The question is  Can you dispose of chemical toilet waste here?
 
 
 
 
 
-  - **You can dispose of chemical toilet waste here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes' target='_blank'>yes</a>
-  - **You cannot dispose of chemical toilet waste here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno' target='_blank'>no</a>
+  - You can dispose of chemical toilet waste here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes' target='_blank'>yes</a>
+  - You cannot dispose of chemical toilet waste here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno' target='_blank'>no</a>
 
 
 
@@ -162,16 +167,17 @@ The question is **Can you dispose of chemical toilet waste here?**
 
 
 
-The question is **Who can use this dump station?**
+The question is  Who can use this dump station?
 
 
 
 
 
-  - **You need a network key/code to use this** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork' target='_blank'>network</a>
-  - **You need to be a customer of camping/campersite to use this place** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - **Anyone can use this dump station** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>_This option cannot be chosen as answer_
-  - **Anyone can use this dump station** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - You need a network key/code to use this corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork' target='_blank'>network</a>
+  - You need to be a customer of camping/campersite to use this place corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - Anyone can use this dump station corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+  - This option cannot be chosen as answer
+  - Anyone can use this dump station corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -180,10 +186,13 @@ The question is **Who can use this dump station?**
 
 
 
-The question is **What network is this place a part of? (skip if none)**
+The question is  What network is this place a part of? (skip if none)
 
 This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) 
-This is rendered with `This station is part of network {network}`
+
+This is rendered with This station is part of network {network}
+
+
 
 
 
@@ -191,10 +200,13 @@ This is rendered with `This station is part of network {network}`
 
 
 
-The question is **Who operates this place?**
+The question is  Who operates this place?
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-This is rendered with `This place is operated by {operator}`
+
+This is rendered with This place is operated by {operator}
+
+
 
 
 
@@ -202,14 +214,14 @@ This is rendered with `This place is operated by {operator}`
 
 
 
-The question is **Does this place have a power supply?**
+The question is  Does this place have a power supply?
 
 
 
 
 
-  - **This place has a power supply** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
-  - **This place does not have power supply** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
+  - This place has a power supply corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
+  - This place does not have power supply corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
 
 
 
@@ -218,7 +230,7 @@ The question is **Does this place have a power supply?**
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -228,7 +240,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

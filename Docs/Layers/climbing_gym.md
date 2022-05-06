@@ -15,7 +15,6 @@ A climbing gym
 
 
   - This layer is shown at zoomlevel **10** and higher
-  - This layer will automatically load  [climbing](./climbing.md)  into the layout as it depends on it:  A calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _embedding_feature_properties)
 
 
 
@@ -27,6 +26,7 @@ A climbing gym
 
 
   - [climbing](https://mapcomplete.osm.be/climbing)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 
@@ -53,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -63,18 +65,14 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/url#values) [url](https://wiki.openstreetmap.org/wiki/Key:url) | [url](../SpecialInputElements.md#url) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_embedding_feature:access#values) [_embedding_feature:access](https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dyes) [permit](https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dpermit) [customers](https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dcustomers) [members](https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dmembers) [no](https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [permit](https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermit) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access:description#values) [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:length#values) [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:length#values) [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:grade:french:min#values) [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:grade:french:max#values) [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:boulder#values) [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:toprope#values) [climbing:toprope](https://wiki.openstreetmap.org/wiki/Key:climbing:toprope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:sport#values) [climbing:sport](https://wiki.openstreetmap.org/wiki/Key:climbing:sport) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:traditional#values) [climbing:traditional](https://wiki.openstreetmap.org/wiki/Key:climbing:traditional) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:bolts:max#values) [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:speed#values) [climbing:speed](https://wiki.openstreetmap.org/wiki/Key:climbing:speed) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno)
 
 
@@ -84,7 +82,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -94,10 +92,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the name of this climbing gym?**
+The question is  What is the name of this climbing gym?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-This is rendered with `<strong>{name}</strong>`
+
+This is rendered with <strong>{name}</strong>
+
+
 
 
 
@@ -105,14 +106,18 @@ This is rendered with `<strong>{name}</strong>`
 
 
 
-The question is **What is the website of {title()}?**
+The question is  What is the website of {title()}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+
+This is rendered with <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This option cannot be chosen as answer_
+
+
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with contact:website~^..*$
+  - This option cannot be chosen as answer
 
 
 
@@ -121,14 +126,18 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the phone number of {title()}?**
+The question is  What is the phone number of {title()}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+
+This is rendered with <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - **<a href='tel:{contact:phone}'>{contact:phone}</a>** corresponds with contact:phone~^..*$_This option cannot be chosen as answer_
+
+
+  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with contact:phone~^..*$
+  - This option cannot be chosen as answer
 
 
 
@@ -137,15 +146,41 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What is the email address of {title()}?**
+The question is  What is the email address of {title()}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
+
+This is rendered with <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - **<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>** corresponds with contact:email~^..*$_This option cannot be chosen as answer_
 
+
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with contact:email~^..*$
+  - This option cannot be chosen as answer
+
+
+
+
+### fee 
+
+
+
+The question is  Is a fee required to climb here?
+
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
+
+This is rendered with A fee of {charge} should be paid for climbing here
+
+
+
+
+
+  - Climbing here is free of charge corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+  - Paying a fee is required to climb here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+
+
+Only visible if `sport=climbing` is shown
 
 
 
@@ -153,192 +188,118 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **What are the opening hours of {title()}?**
+The question is  What are the opening hours of {title()}?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
-
-
-### Website 
-
-
-
-The question is **Is there a (unofficial) website with more informations (e.g. topos)?**
-
-This rendering asks information about the property  [url](https://wiki.openstreetmap.org/wiki/Key:url) 
-This is rendered with `<a href='{url}' target='_blank'>{url}</a>`
-
-Only visible if `leisure!~^sports_centre$&sport=climbing` is shown
-
-
-
-### Access from containing feature 
-
-
-
-_This tagrendering has no question and is thus read-only_
+This is rendered with <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 
 
 
-  - **<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access' target='_blank'>_embedding_feature:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dyes' target='_blank'>yes</a>
-  - **<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access' target='_blank'>_embedding_feature:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dpermit' target='_blank'>permit</a>
-  - **<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access' target='_blank'>_embedding_feature:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dcustomers' target='_blank'>customers</a>
-  - **<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access' target='_blank'>_embedding_feature:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dmembers' target='_blank'>members</a>
-  - **Not accessible as stated by <a href='#{_embedding_feature:id}'>the containing feature</a>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_feature:access' target='_blank'>_embedding_feature:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_feature:access%3Dno' target='_blank'>no</a>
-
-
-Only visible if `_embedding_feature:access~^..*$` is shown
+### average_length 
 
 
 
-### Access 
-
-
-
-The question is **Who can access here?**
-
-
-
-
-
-  - **Publicly accessible to anyone** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - **You need a permit to access here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermit' target='_blank'>permit</a>
-  - **Only customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - **Only club members** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
-  - **Not accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
-
-
-Only visible if `climbing!~^no$&sport=climbing|climbing:sport=yes&access~^..*$|` is shown
-
-
-
-### Access description (without _embedding_feature:access:description) 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-This rendering asks information about the property  [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) 
-This is rendered with `{access:description}`
-
-
-
-### Avg length? 
-
-
-
-The question is **What is the (average) length of the routes in meters?**
+The question is  What is the (average) length of the routes in meters?
 
 This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
-This is rendered with `The routes are <b>{canonical(climbing:length)}</b> long on average`
 
-Only visible if `climbing!~^route$&climbing:toprope!~^no$&sport=climbing|climbing:sport=yes|climbing=traditional|climbing=gym` is shown
-
-
-
-### Difficulty-min 
+This is rendered with The routes are <b>{canonical(climbing:length)}</b> long on average
 
 
 
-The question is **What is the grade of the easiest route here, according to the french classification system?**
+Only visible if `sport=climbing` is shown
+
+
+
+### min_difficulty 
+
+
+
+The question is  What is the grade of the easiest route here, according to the french classification system?
 
 This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) 
-This is rendered with `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
 
-Only visible if `climbing!~^route$&climbing:sport=yes|sport=climbing` is shown
-
-
-
-### Difficulty-max 
+This is rendered with The lowest grade is {climbing:grade:french:min} according to the french/belgian system
 
 
 
-The question is **What is the highest grade route here, according to the french classification system?**
+Only visible if `sport=climbing` is shown
+
+
+
+### max_difficulty 
+
+
+
+The question is  What is the highest grade route here, according to the french classification system?
 
 This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) 
-This is rendered with `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
 
-Only visible if `climbing!~^route$&climbing:sport=yes|sport=climbing` is shown
-
-
-
-### Boldering? 
+This is rendered with The highest grade is {climbing:grade:french:max} according to the french/belgian system
 
 
 
-The question is **Is bouldering possible here?**
+Only visible if `climbing!~^route$&climbing:sport=yes|sport=climbing&sport=climbing` is shown
 
 
 
-
-
-  - **Bouldering is possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
-  - **Bouldering is not possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
-  - **Bouldering is possible, allthough there are only a few routes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
-  - **There are {climbing:boulder} boulder routes** corresponds with climbing:boulder~^..*$_This option cannot be chosen as answer_
-
-
-Only visible if `climbing:sport=yes|sport=climbing` is shown
+### bouldering 
 
 
 
-### Toproping? 
-
-
-
-The question is **Is toprope climbing possible here?**
+The question is  Is bouldering possible here?
 
 
 
 
 
-  - **Toprope climbing is possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes' target='_blank'>yes</a>
-  - **Toprope climbing is not possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>
-  - **There are {climbing:toprope} toprope routes** corresponds with climbing:toprope~^..*$_This option cannot be chosen as answer_
+  - Bouldering is possible here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
+  - Bouldering is not possible here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
+  - Bouldering is possible, allthough there are only a few routes corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
+  - There are {climbing:boulder} boulder routes corresponds with climbing:boulder~^..*$
+  - This option cannot be chosen as answer
 
 
-Only visible if `climbing:sport=yes|sport=climbing` is shown
-
-
-
-### Sportclimbing? 
-
-
-
-The question is **Is sport climbing possible here on fixed anchors?**
+Only visible if `sport=climbing` is shown
 
 
 
-
-
-  - **Sport climbing is possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>
-  - **Sport climbing is not possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>
-  - **There are {climbing:sport} sport climbing routes** corresponds with climbing:sport~^..*$_This option cannot be chosen as answer_
-
-
-Only visible if `climbing:sport=yes|sport=climbing` is shown
+### sportclimbing 
 
 
 
-### Traditional climbing? 
-
-
-
-The question is **Is traditional climbing possible here (using own gear e.g. chocks)?**
+The question is  Is sport climbing possible here on fixed anchors?
 
 
 
 
 
-  - **Traditional climbing is possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:traditional' target='_blank'>climbing:traditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dyes' target='_blank'>yes</a>
-  - **Traditional climbing is not possible here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:traditional' target='_blank'>climbing:traditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dno' target='_blank'>no</a>
-  - **There are {climbing:traditional} traditional climbing routes** corresponds with climbing:traditional~^..*$_This option cannot be chosen as answer_
+  - Sport climbing is possible here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>
+  - Sport climbing is not possible here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>
+  - There are {climbing:sport} sport climbing routes corresponds with climbing:sport~^..*$
+  - This option cannot be chosen as answer
 
 
-Only visible if `climbing:sport=yes|sport=climbing` is shown
+Only visible if `sport=climbing` is shown
+
+
+
+### max_bolts 
+
+
+
+The question is  How many bolts do routes in {title()} have at most?
+
+This rendering asks information about the property  [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) 
+
+This is rendered with The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>
+
+
+
+Only visible if `climbing:sport=yes` is shown
 
 
 
@@ -346,57 +307,16 @@ Only visible if `climbing:sport=yes|sport=climbing` is shown
 
 
 
-The question is **Is there a speed climbing wall?**
+The question is  Is there a speed climbing wall?
 
 
 
 
 
-  - **There is a speed climbing wall** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>
-  - **There is no speed climbing wall** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>
-  - **There are {climbing:speed} speed climbing walls** corresponds with climbing:speed~^..*$_This option cannot be chosen as answer_
-
-
-Only visible if `leisure=sports_centre&climbing:sport=yes|sport=climbing` is shown
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### reviews 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### questions 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### minimap 
-
-
-
-_This tagrendering has no question and is thus read-only_
-
+  - There is a speed climbing wall corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>
+  - There is no speed climbing wall corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>
+  - There are {climbing:speed} speed climbing walls corresponds with climbing:speed~^..*$
+  - This option cannot be chosen as answer
  
 
-This document is autogenerated from [assets/themes/climbing/climbing.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/climbing/climbing.json)
+This document is autogenerated from [assets/layers/climbing_gym/climbing_gym.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/climbing_gym/climbing_gym.json)
