@@ -115,6 +115,9 @@
             "mappings": {
                 "1": {
                     "then": "No Wikipedia page has been linked yet"
+                },
+                "1": {
+                    "then": "No Wikipedia page has been linked yet"
                 }
             },
             "question": "What is the corresponding Wikidata entity?"

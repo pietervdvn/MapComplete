@@ -3353,12 +3353,6 @@
             "render": "Notiz"
         }
     },
-    "note_import": {
-        "name": "Mögliche Bücherschränke",
-        "title": {
-            "render": "Mögliches Objekt"
-        }
-    },
     "observation_tower": {
         "description": "Türme zur Aussicht auf die umgebende Landschaft",
         "name": "Aussichtstürme",

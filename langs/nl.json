@@ -333,6 +333,7 @@
         "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
+        "nearbyImagesIntro": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
         "notFound": "Ik kon hier g{title} vinden - verwijder deze van de kaart",
         "popupTitle": "Is hier {title}?"
     },

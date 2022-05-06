@@ -48,6 +48,13 @@ import {TextField} from "./Input/TextField";
 import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import {Translation} from "./i18n/Translation";
 import {AllTagsPanel} from "./AllTagsPanel";
+import NearbyImages, {P4CPicture, SelectOneNearbyImage} from "./Popup/NearbyImages";
+import Lazy from "./Base/Lazy";
+import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
+import {Tag} from "../Logic/Tags/Tag";
+import {And} from "../Logic/Tags/And";
+import {SaveButton} from "./Popup/SaveButton";
+import {MapillaryLink} from "./BigComponents/MapillaryLink";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -139,6 +146,116 @@ class CloseNoteButton implements SpecialVisualization {
         ), t.loginToClose, state)
     }
 
+}
+
+class NearbyImageVis implements SpecialVisualization {
+    args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
+
+        {
+            name: "mode",
+            defaultValue: "expandable",
+            doc: "Indicates how this component is initialized. Options are: \n\n- `open`: always show and load the pictures\n- `collapsable`: show the pictures, but a user can collapse them\n- `expandable`: shown by default; but a user can collapse them."
+        },
+        {
+            name: "mapillary",
+            defaultValue: "true",
+            doc: "If 'true', includes a link to mapillary on this location."
+        }
+    ]
+    docs = "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature";
+    funcName = "nearby_images";
+
+    constr(state: FeaturePipelineState, tagSource: UIEventSource<any>, args: string[], guistate: DefaultGuiState): BaseUIElement {
+        const t = Translations.t.image.nearbyPictures
+        const mode: "open" | "expandable" | "collapsable" = <any>args[0]
+        const feature = state.allElements.ContainingFeatures.get(tagSource.data.id)
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+        const id: string = tagSource.data["id"]
+        const canBeEdited: boolean = !!(id?.match("(node|way|relation)/-?[0-9]+"))
+        const selectedImage = new UIEventSource<P4CPicture>(undefined);
+
+        const nearby = new Lazy(() => {
+            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
+            const options = {
+                lon, lat, radius: 50,
+                value: selectedImage,
+                blacklist: alreadyInTheImage
+            };
+            const slideshow = canBeEdited ? new SelectOneNearbyImage(options) : new NearbyImages(options);
+            return new Combine([slideshow, new MapillaryLinkVis().constr(state, tagSource, [])])
+        });
+
+        let withEdit: BaseUIElement = nearby;
+
+        if (canBeEdited) {
+            const confirmText: BaseUIElement = new SubstitutedTranslation(t.confirm, tagSource, state)
+
+            const onSave = async () => {
+                console.log("Selected a picture...", selectedImage.data)
+                const osmTags = selectedImage.data.osmTags
+                const tags: Tag[] = []
+                for (const key in osmTags) {
+                    tags.push(new Tag(key, osmTags[key]))
+                }
+                await state?.changes?.applyAction(
+                    new ChangeTagAction(
+                        id,
+                        new And(tags),
+                        tagSource,
+                        {
+                            theme: state?.layoutToUse.id,
+                            changeType: "link-image"
+                        }
+                    )
+                )
+            };
+
+            const saveButton = new SaveButton(selectedImage, state.osmConnection, confirmText, t.noImageSelected)
+                .onClick(onSave)
+
+            withEdit = new Combine([
+                t.hasMatchingPicture,
+                nearby,
+                saveButton
+                    .SetClass("flex justify-end")
+            ]).SetClass("flex flex-col")
+        }
+
+        if (mode === 'open') {
+            return withEdit
+        }
+        const toggleState = new UIEventSource<boolean>(mode === 'collapsable')
+        return new Toggle(
+            new Combine([new Title(t.title), withEdit]),
+            new Title(t.browseNearby).onClick(() => toggleState.setData(true)),
+            toggleState
+        )
+    }
+
+}
+
+export class MapillaryLinkVis implements SpecialVisualization {
+    funcName = "mapillary_link"
+    docs = "Adds a button to open mapillary on the specified location"
+    args = [{
+        name: "zoom",
+        doc: "The startzoom of mapillary",
+        defaultValue: "18"
+    }];
+
+    public constr(state, tagsSource, args) {
+        const feat = state.allElements.ContainingFeatures.get(tagsSource.data.id);
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feat);
+        let zoom = Number(args[0])
+        if (isNaN(zoom)) {
+            zoom = 18
+        }
+        return new MapillaryLink({
+            locationControl: new UIEventSource<Loc>({
+                lat, lon, zoom
+            })
+        })
+    }
 }
 
 export default class SpecialVisualizations {
@@ -309,7 +426,7 @@ export default class SpecialVisualizations {
                     example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
                     constr: (state, tagSource, args, _) => {
 
-                        if(state === undefined){
+                        if (state === undefined) {
                             return undefined
                         }
                         const keys = [...args]
@@ -940,7 +1057,9 @@ export default class SpecialVisualizations {
                             }
                             return new SubstitutedTranslation(title, tagsSource, state)
                         }))
-                }
+                },
+                new NearbyImageVis(),
+                new MapillaryLinkVis()
             ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))

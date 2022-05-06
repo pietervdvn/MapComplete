@@ -83,6 +83,9 @@
             "mappings": {
                 "1": {
                     "then": "Nessuna pagina Wikipedia è ancora stata collegata"
+                },
+                "1": {
+                    "then": "Nessuna pagina Wikipedia è ancora stata collegata"
                 }
             },
             "question": "Qual è l’elemento Wikidata corrispondente?"

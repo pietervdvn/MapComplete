@@ -115,6 +115,9 @@
             "mappings": {
                 "1": {
                     "then": "Pas encore de lien vers une page Wikipedia"
+                },
+                "1": {
+                    "then": "Pas encore de lien vers une page Wikipedia"
                 }
             },
             "question": "Quelle est l'entité Wikidata correspondante ?"

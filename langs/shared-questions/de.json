@@ -115,6 +115,9 @@
             "mappings": {
                 "1": {
                     "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
+                },
+                "1": {
+                    "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
                 }
             },
             "question": "Was ist das entsprechende Wikidata Element?"

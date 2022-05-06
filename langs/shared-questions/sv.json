@@ -100,6 +100,9 @@
             "mappings": {
                 "1": {
                     "then": "Ingen Wikipedia-sida har länkats än"
+                },
+                "1": {
+                    "then": "Ingen Wikipedia-sida har länkats än"
                 }
             },
             "question": "Vad är den motsvarande Wikidata-enheten?"

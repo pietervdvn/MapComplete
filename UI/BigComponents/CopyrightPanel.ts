@@ -24,6 +24,7 @@ import ContributorCount from "../../Logic/ContributorCount";
 import Img from "../Base/Img";
 import {TypedTranslation} from "../i18n/Translation";
 import TranslatorsPanel from "./TranslatorsPanel";
+import {MapillaryLink} from "./MapillaryLink";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
@@ -42,19 +43,6 @@ export class OpenIdEditor extends VariableUiElement {
         }));
     }
 
-}
-
-export class OpenMapillary extends VariableUiElement {
-    constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string) {
-        const t = Translations.t.general.attribution
-        super(state.locationControl.map(location => {
-            const mapillaryLink = `https://www.mapillary.com/app/?focus=map&lat=${location?.lat ?? 0}&lng=${location?.lon ?? 0}&z=${Math.max((location?.zoom ?? 2) - 1, 1)}`
-            return new SubtleButton(Svg.mapillary_black_ui().SetStyle(iconStyle), t.openMapillary, {
-                url: mapillaryLink,
-                newTab: true
-            })
-        }))
-    }
 }
 
 export class OpenJosm extends Combine {
@@ -132,7 +120,7 @@ export default class CopyrightPanel extends Combine {
                 newTab: true
             }),
             new OpenIdEditor(state, iconStyle),
-            new OpenMapillary(state, iconStyle),
+            new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle),
             new TranslatorsPanel(state, iconStyle)
           

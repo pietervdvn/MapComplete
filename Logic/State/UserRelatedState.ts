@@ -53,6 +53,10 @@ export default class UserRelatedState extends ElementsState {
             osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin
         })
+        const translationMode  = this.osmConnection.GetPreference("translation-mode").map(str => str === undefined ? undefined : str === "true", [], b => b === undefined ? undefined : b+"")
+            
+        translationMode.syncWith(Locale.showLinkToWeblate)
+        
         this.isTranslator = this.osmConnection.userDetails.map(ud => {
             if(!ud.loggedIn){
                 return false;
@@ -60,6 +64,7 @@ export default class UserRelatedState extends ElementsState {
             const name= ud.name.toLowerCase().replace(/\s+/g, '')
             return translators.contributors.some(c => c.contributor.toLowerCase().replace(/\s+/g, '') === name)
         })
+        
         this.isTranslator.addCallbackAndRunD(ud => {
             if(ud){
                 Locale.showLinkToWeblate.setData(true)

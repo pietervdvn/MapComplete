@@ -4122,12 +4122,6 @@
             "render": "Note"
         }
     },
-    "note_import": {
-        "name": "Mogelijke publieke boekenkastjes",
-        "title": {
-            "render": "Mogelijk object"
-        }
-    },
     "observation_tower": {
         "description": "Torens om van het uitzicht te genieten",
         "name": "Uitkijktorens",

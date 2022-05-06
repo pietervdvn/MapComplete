@@ -98,6 +98,9 @@
             "mappings": {
                 "1": {
                     "then": "Ingen Wikipedia-side lenket enda"
+                },
+                "1": {
+                    "then": "Ingen Wikipedia-side lenket enda"
                 }
             },
             "question": "Hva er respektivt Wikipedia-element?"

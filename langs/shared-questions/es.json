@@ -115,6 +115,9 @@
             "mappings": {
                 "1": {
                     "then": "Todavía no se ha enlazado una página de wikipedia"
+                },
+                "1": {
+                    "then": "Todavía no se ha enlazado una página de wikipedia"
                 }
             },
             "question": "¿Cual es la entidad de Wikidata que se corresponde?"

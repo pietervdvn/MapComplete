@@ -4,7 +4,10 @@
     "id": "questions"
   },
   "images": {
-    "render": "{image_carousel()}{image_upload()}"
+    "render": "{image_carousel()}{image_upload()}{nearby_images(expandable)}"
+  },
+  "mapillary": {
+    "render": "{mapillary()}"
   },
   "export_as_gpx": {
     "render": "{export_as_gpx()}"
@@ -36,7 +39,25 @@
       {
         "if": "wikipedia~*",
         "then": {
-          "*": "{wikipedia():max-height:25rem}"
+          "*": "{wikipedia():max-height:25rem}",
+          "ca": "No hi ha cap enllaça a Viquipèdia encara",
+          "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+          "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+          "en": "No Wikipedia page has been linked yet",
+          "es": "Todavía no se ha enlazado una página de wikipedia",
+          "fil": "Wala pang kawing ng Wikipedia page",
+          "fr": "Pas encore de lien vers une page Wikipedia",
+          "hu": "Még nincs Wikipédia-oldal belinkelve",
+          "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+          "ja": "ウィキペディアのページはまだリンクされていません",
+          "nb_NO": "Ingen Wikipedia-side lenket enda",
+          "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+          "pl": "Link do strony Wikipedii nie został jeszcze określony",
+          "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+          "ru": "Никакой страницы на Википедии не было прикреплено",
+          "sv": "Ingen Wikipedia-sida har länkats än",
+          "zh_Hans": "尚未有连接到的维基百科页面",
+          "zh_Hant": "還沒有連結到維基百科頁面"
         },
         "hideInAnswer": true
       },

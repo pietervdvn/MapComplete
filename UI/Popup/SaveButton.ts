@@ -2,10 +2,11 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Toggle from "../Input/Toggle";
+import BaseUIElement from "../BaseUIElement";
 
 export class SaveButton extends Toggle {
 
-    constructor(value: UIEventSource<any>, osmConnection: OsmConnection) {
+    constructor(value: UIEventSource<any>, osmConnection: OsmConnection, textEnabled ?: BaseUIElement, textDisabled ?: BaseUIElement) {
         if (value === undefined) {
             throw "No event source for savebutton, something is wrong"
         }
@@ -17,9 +18,9 @@ export class SaveButton extends Toggle {
 
         const isSaveable = value.map(v => v !== false && (v ?? "") !== "")
 
-        const text = Translations.t.general.save
-        const saveEnabled = text.Clone().SetClass(`btn`);
-        const saveDisabled = text.Clone().SetClass(`btn btn-disabled`);
+        const saveEnabled = (textEnabled ?? Translations.t.general.save.Clone()).SetClass(`btn`);
+        const saveDisabled = (textDisabled ?? Translations.t.general.save.Clone()).SetClass(`btn btn-disabled`);
+        
         const save = new Toggle(
             saveEnabled,
             saveDisabled,

@@ -9,7 +9,7 @@ import {exec} from "child_process";
  */
 function detectInCode(forbidden: string, reason: string) {
 
-    const excludedDirs = [".git", "node_modules", "dist", ".cache", ".parcel-cache", "assets"]
+    const excludedDirs = [".git", "node_modules", "dist", ".cache", ".parcel-cache", "assets", "vendor"]
 
     exec("grep -n \"" + forbidden + "\" -r . " + excludedDirs.map(d => "--exclude-dir=" + d).join(" "), ((error, stdout, stderr) => {
         if (error?.message?.startsWith("Command failed: grep")) {

@@ -112,6 +112,9 @@
             "mappings": {
                 "1": {
                     "then": "Ainda não foi vinculada nenhuma página da Wikipédia"
+                },
+                "1": {
+                    "then": "Ainda não foi vinculada nenhuma página da Wikipédia"
                 }
             },
             "question": "Qual é a entidade Wikidata correspondente?"

@@ -240,6 +240,14 @@
     "sources": []
   },
   {
+    "path": "confirm.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "copyright.svg",
     "license": "CC0",
     "authors": [
@@ -1115,11 +1123,15 @@
   },
   {
     "path": "search_disable.svg",
-    "license": "CC0",
+    "license": "MIT",
     "authors": [
+      "OOjs UI Team and other contributors",
       "Pieter Vander Vennet"
     ],
-    "sources": []
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:OOjs_UI_indicator_search-rtl.svg",
+      "https://phabricator.wikimedia.org/diffusion/GOJU/browse/master/AUTHORS.txt"
+    ]
   },
   {
     "path": "send_email.svg",

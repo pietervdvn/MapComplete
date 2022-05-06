@@ -100,6 +100,9 @@
             "mappings": {
                 "1": {
                     "then": "Link do strony Wikipedii nie został jeszcze określony"
+                },
+                "1": {
+                    "then": "Link do strony Wikipedii nie został jeszcze określony"
                 }
             },
             "question": "Jaki jest powiązany obiekt Wikidata?"

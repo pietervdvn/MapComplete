@@ -308,6 +308,8 @@ export interface LayoutConfigJson {
     /**
      * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
      * these notes will be shown if a relevant layer is present.
+     * 
+     * Default is true for official layers and false for unofficial (sideloaded) layers
      */
     enableNoteImports?: true | boolean;
 
