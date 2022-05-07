@@ -403,7 +403,7 @@
                         "render": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}"
                     },
                     "node-expected_rcn_route_relations": {
-                        "render": "Dit knooppunt verbindt met {expected_rcn_route_relation} andere fietsknooppunten.",
+                        "render": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten.",
                         "question": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?"
                     }
                 },
