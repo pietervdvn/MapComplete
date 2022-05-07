@@ -1,13 +1,9 @@
 # MapComplete
 
 > Let a thousand flowers bloom
- 
-<p align=center>
-<a href="https://liberapay.com/pietervdvn/">
-  <img src="https://img.shields.io/liberapay/patrons/Pietervdvn.svg?logo=liberapay">
-  <img src="https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay">
-</a>
-</p>
+
+[![](https://img.shields.io/liberapay/patrons/Pietervdvn.svg?logo=liberapay) ![](https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay)  ](https://liberapay.com/pietervdvn/)
+[![Matrix](https://img.shields.io/matrix/MapComplete:matrix.org)](https://matrix.to/#/#MapComplete:matrix.org?via=matrix.org)
 
 
 **MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit
