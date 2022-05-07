@@ -340,6 +340,10 @@
       "description": "Layer 'Nature reserve' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
+      "key": "wikipedia",
+      "description": "Layer 'Nature reserve' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
       "key": "wikidata",
       "description": "Layer 'Nature reserve' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key wikidata.",
       "value": ""

@@ -1,20 +1,24 @@
 {
   "contributors": [
     {
-      "commits": 115,
+      "commits": 136,
       "contributor": "Pieter Vander Vennet"
+    },
+    {
+      "commits": 71,
+      "contributor": "kjon"
     },
     {
       "commits": 60,
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 58,
-      "contributor": "kjon"
-    },
-    {
       "commits": 29,
       "contributor": "Artem"
+    },
+    {
+      "commits": 26,
+      "contributor": "Allan Nordhøy"
     },
     {
       "commits": 25,
@@ -29,12 +33,12 @@
       "contributor": "Marco"
     },
     {
-      "commits": 22,
-      "contributor": "Allan Nordhøy"
-    },
-    {
       "commits": 21,
       "contributor": "Anonymous"
+    },
+    {
+      "commits": 16,
+      "contributor": "SC"
     },
     {
       "commits": 16,
@@ -50,6 +54,10 @@
     },
     {
       "commits": 14,
+      "contributor": "Iago"
+    },
+    {
+      "commits": 14,
       "contributor": "Reza Almanda"
     },
     {
@@ -58,11 +66,15 @@
     },
     {
       "commits": 13,
-      "contributor": "SC"
+      "contributor": "Joost"
     },
     {
-      "commits": 12,
-      "contributor": "Joost"
+      "commits": 10,
+      "contributor": "Johannes Rössel"
+    },
+    {
+      "commits": 10,
+      "contributor": "LeJun"
     },
     {
       "commits": 10,
@@ -74,11 +86,15 @@
     },
     {
       "commits": 8,
-      "contributor": "LeJun"
+      "contributor": "Win Olario"
     },
     {
       "commits": 7,
-      "contributor": "Win Olario"
+      "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "pdassori"
     },
     {
       "commits": 6,
@@ -99,6 +115,10 @@
     {
       "commits": 6,
       "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 5,
@@ -186,6 +206,10 @@
     },
     {
       "commits": 2,
+      "contributor": "Olivier"
+    },
+    {
+      "commits": 2,
       "contributor": "paunofu"
     },
     {
@@ -203,10 +227,6 @@
     {
       "commits": 2,
       "contributor": "MeblIkea"
-    },
-    {
-      "commits": 2,
-      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 2,
@@ -242,6 +262,10 @@
     },
     {
       "commits": 1,
+      "contributor": "Jaime Marquínez Ferrándiz"
+    },
+    {
+      "commits": 1,
       "contributor": "deep map"
     },
     {
@@ -251,10 +275,6 @@
     {
       "commits": 1,
       "contributor": "Falk Rund"
-    },
-    {
-      "commits": 1,
-      "contributor": "pdassori"
     },
     {
       "commits": 1,

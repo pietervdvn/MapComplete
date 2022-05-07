@@ -33,7 +33,7 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^[0-9.]+$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "leaf_type",
@@ -72,7 +72,7 @@
     },
     {
       "key": "denotation",
-      "description": "Layer 'Tree' shows denotation=garden with a fixed text, namely 'The tree is a residential garden.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows denotation=garden with a fixed text, namely 'The tree is in a residential garden.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "garden"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "key": "denotation",
-      "description": "Layer 'Tree' shows denotation=urban with a fixed text, namely 'The tree is an urban area.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "description": "Layer 'Tree' shows denotation=urban with a fixed text, namely 'The tree is in an urban area.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "urban"
     },
     {
@@ -99,6 +99,10 @@
       "key": "leaf_cycle",
       "description": "Layer 'Tree' shows leaf_cycle=evergreen with a fixed text, namely 'Evergreen.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "evergreen"
+    },
+    {
+      "key": "species:wikidata",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'species:wikidata' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "name",

@@ -41,10 +41,10 @@ Elements must have the all of following tags to be shown on this layer:
 
   - name~^..*$
   - highway~^..*$
-  - highway!~^bus_stop$
+  - highway!=bus_stop
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22name%22%5D%5B%22highway%22%5D%5B%22highway%22!~%22%5Ebus_stop%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22name%22%5D%5B%22highway%22%5D%5B%22highway%22!%3D%22bus_stop%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -53,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -69,7 +71,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -79,10 +81,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the Wikidata-item that this object is named after?**
+The question is  What is the Wikidata-item that this object is named after?
 
 This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) 
-This is rendered with `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
+
+This is rendered with <h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}
+
+
 
 
 
@@ -90,7 +95,7 @@ This is rendered with `<h3>Wikipedia article of the name giver</h3>{wikipedia(na
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -100,14 +105,17 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>**
+The question is  What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>
 
 This rendering asks information about the property  [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) 
-This is rendered with `Named after {name:etymology}`
+
+This is rendered with Named after {name:etymology}
 
 
 
-  - **The origin of this name is unknown in all literature** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
+
+
+  - The origin of this name is unknown in all literature corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
 
 
 
@@ -116,7 +124,7 @@ This is rendered with `Named after {name:etymology}`
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -126,7 +134,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -136,7 +144,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -146,7 +154,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -156,7 +164,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 

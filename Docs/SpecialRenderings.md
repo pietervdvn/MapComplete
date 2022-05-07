@@ -31,6 +31,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of image_upload](#example-usage-of-image_upload)
     + [wikipedia](#wikipedia)
       * [Example usage of wikipedia](#example-usage-of-wikipedia)
+    + [wikidata_label](#wikidata_label)
+      * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
     + [minimap](#minimap)
       * [Example usage of minimap](#example-usage-of-minimap)
     + [sided_minimap](#sided_minimap)
@@ -129,12 +131,27 @@ label | Add image | The text to show on the button
 
 name | default | description
 ------ | --------- | -------------
-keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show the wikipedia article for
+keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
  
 
 #### Example usage of wikipedia 
 
  `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
+
+### wikidata_label 
+
+ Shows the label of the corresponding wikidata-item 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
+ 
+
+#### Example usage of wikidata_label 
+
+ `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
 
 
 

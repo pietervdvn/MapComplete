@@ -106,6 +106,8 @@ subarg | doc
 -------- | -----
 removePrefixes | remove these snippets of text from the start of the passed string to search
 removePostfixes | remove these snippets of text from the end of the passed string to search
+instanceOf | A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans
+notInstanceof | A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results
 
  
 
@@ -113,7 +115,7 @@ removePostfixes | remove these snippets of text from the end of the passed strin
 
  The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
-```
+```json
 "freeform": {
     "key": "name:etymology:wikidata",
     "type": "wikidata",
@@ -126,11 +128,29 @@ removePostfixes | remove these snippets of text from the end of the passed strin
                 "path",
                 "square",
                 "plaza",
-            ]
+            ],
+            "#": "Remove streets and parks from the search results:"
+             "notInstanceOf": ["Q79007","Q22698"] 
         }
+        
     ]
 }
 ```
+
+Another example is to search for species and trees:
+
+```json
+ "freeform": {
+        "key": "species:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "species",
+          {
+          "instanceOf": [10884, 16521]
+        }]
+      }
+```
+
 
 
 
