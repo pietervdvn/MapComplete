@@ -1,1 +1,10 @@
-{}
+{
+    "aed": {
+        "description": "Sa mapang ito, maaring makahapan o mag-mapa ng mga defibrillators",
+        "title": "Open AED Map"
+    },
+    "artwork": {
+        "description": "Malugod na pag-dating sa Open Artwork Map, ang mapa ng mga bantayog, graffiti, at iba pang likhang sining sa buong mundo",
+        "title": "Open Artwork Map"
+    }
+}

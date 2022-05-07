@@ -51,8 +51,13 @@
                 "hasBeenImported": "Ang object na ito ay nai-angkat na",
                 "howToTest": "Para subukan, i-dagdag <b>test=true</b> o <b>backend=osm-test</b> kasama ng URL. Ang changeset ay ililimbag sa console. Mag-padala ng pull request (PR) para gawing opisyal ang tikha, at magamit ang pindutang pang-angkat.",
                 "importTags": "Ang elemento ay tatanggap ng {tags}",
-                "officialThemesOnly": "Ang pindutang pang-angkat ay di pinapagana sa mga hindi opisyal na tikha (themes), para maiwasan ang abala"
-            }
+                "officialThemesOnly": "Ang pindutang pang-angkat ay di pinapagana sa mga hindi opisyal na tikha (themes), para maiwasan ang abala",
+                "wrongType": "Ang elementong ito ay hindi bukó o linya (way), at hindi mai-a-angkat",
+                "zoomInMore": "Lalo pang mag-zoom in para ma-angkat ang tampók na ito"
+            },
+            "importTags": "Ang bahaging ito ay magkakaroon ng {tags}",
+            "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
+            "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         }
     }
 }
