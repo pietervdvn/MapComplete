@@ -65,7 +65,7 @@
                 "render": "Diese Rettungswache befindet sich in {addr:place}."
             },
             "ambulance-street": {
-                "question": " Wie lautet der Name der Straße, in der sich die Rettungswache befindet?",
+                "question": "Wie lautet der Name der Straße, in der sich die Rettungswache befindet?",
                 "render": "Dieser Bahnhof liegt an der Straße {addr:street}."
             }
         },
