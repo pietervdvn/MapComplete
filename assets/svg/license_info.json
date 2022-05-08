@@ -1114,6 +1114,14 @@
     ]
   },
   {
+    "path": "search_disable.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "send_email.svg",
     "license": "CC0; trivial",
     "authors": [],
