@@ -96,7 +96,8 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "condition": "_geometry:type=Point"
     },
     {
       "id": "tactile-paving",
@@ -123,7 +124,8 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "condition": "_geometry:type=Point"
     }
   ],
   "presets": [
