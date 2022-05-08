@@ -1306,23 +1306,22 @@
         "name": "Pistes cyclables et routes",
         "title": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Piste cyclable"
                 },
-                "1": {
+                "3": {
                     "then": "Voie partagée"
                 },
-                "2": {
+                "5": {
                     "then": "Bande cyclable"
                 },
-                "3": {
+                "7": {
                     "then": "Piste cyclable séparée de la route"
                 },
-                "4": {
+                "9": {
                     "then": "Vélorue"
                 }
-            },
-            "render": "Pistes cyclables"
+            }
         }
     },
     "defibrillator": {

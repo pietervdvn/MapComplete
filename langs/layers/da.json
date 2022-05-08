@@ -1190,13 +1190,13 @@
         },
         "title": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Cykelsti"
                 },
-                "3": {
+                "7": {
                     "then": "Cykelsti ved siden af vejen"
                 },
-                "4": {
+                "9": {
                     "then": "Cykelgade"
                 }
             }

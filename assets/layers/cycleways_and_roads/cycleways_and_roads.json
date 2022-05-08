@@ -37,14 +37,23 @@
   },
   "title": {
     "render": {
-      "en": "Cycleways",
-      "nl": "Fietspaden",
-      "de": "Radwege",
-      "ru": "Велосипедные дорожки",
-      "fr": "Pistes cyclables",
-      "ca": "Vies ciclistes"
+      "en": "Way",
+      "nl": "Weg"
     },
     "mappings": [
+      {
+        "if": {
+          "and": [
+            "highway=cycleway",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Fietsweg {name}",
+          "en": "Cycleway {name}",
+          "de": "Radweg {name}"
+        }
+      },
       {
         "if": {
           "or": [
@@ -63,6 +72,18 @@
         }
       },
       {
+        "if": {
+          "and": [
+            "cycleway=shared_lane",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Weg met fietssugestiestrook {name}",
+          "en": "Road with shared lane {name}"
+        }
+      },
+      {
         "if": "cycleway=shared_lane",
         "then": {
           "nl": "Fietssuggestiestrook",
@@ -70,6 +91,18 @@
           "de": "Gemeinsame Fahrspur",
           "fr": "Voie partagée",
           "ca": "Carril compartit"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "cycleway=lane",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Weg met fietsstrook {name}",
+          "en": "Road with bike lane {name}"
         }
       },
       {
@@ -83,6 +116,18 @@
         }
       },
       {
+        "if": {
+          "and": [
+            "cycleway=track",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Weg met fietspad naast de weg {name}",
+          "en": "Road with cycleway next to the road {name}"
+        }
+      },
+      {
         "if": "cycleway=track",
         "then": {
           "en": "Cycleway next to the road",
@@ -90,6 +135,19 @@
           "de": "Radweg neben der Straße",
           "fr": "Piste cyclable séparée de la route",
           "da": "Cykelsti ved siden af vejen"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "cyclestreet=yes",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Fietsstraat {name}",
+          "en": "Cyclestreet {name}",
+          "de": "Fahrradstraße {name}"
         }
       },
       {
@@ -102,6 +160,10 @@
           "ca": "Carrer ciclista",
           "da": "Cykelgade"
         }
+      },
+      {
+        "if": "name~*",
+        "then": "{name}"
       }
     ]
   },

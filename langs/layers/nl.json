@@ -3040,22 +3040,37 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Fietsweg"
+                    "then": "Fietsweg {name}"
                 },
                 "1": {
-                    "then": "Fietssuggestiestrook"
+                    "then": "Fietsweg"
                 },
                 "2": {
-                    "then": "Fietsstrook"
+                    "then": "Weg met fietssugestiestrook {name}"
                 },
                 "3": {
-                    "then": "Fietsweg naast de weg"
+                    "then": "Fietssuggestiestrook"
                 },
                 "4": {
+                    "then": "Weg met fietsstrook {name}"
+                },
+                "5": {
+                    "then": "Fietsstrook"
+                },
+                "6": {
+                    "then": "Weg met fietspad naast de weg {name}"
+                },
+                "7": {
+                    "then": "Fietsweg naast de weg"
+                },
+                "8": {
+                    "then": "Fietsstraat {name}"
+                },
+                "9": {
                     "then": "Fietsstraat"
                 }
             },
-            "render": "Fietspaden"
+            "render": "Weg"
         }
     },
     "defibrillator": {

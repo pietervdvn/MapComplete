@@ -3080,22 +3080,37 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Cycleway"
+                    "then": "Cycleway {name}"
                 },
                 "1": {
-                    "then": "Shared lane"
+                    "then": "Cycleway"
                 },
                 "2": {
-                    "then": "Bike lane"
+                    "then": "Road with shared lane {name}"
                 },
                 "3": {
-                    "then": "Cycleway next to the road"
+                    "then": "Shared lane"
                 },
                 "4": {
+                    "then": "Road with bike lane {name}"
+                },
+                "5": {
+                    "then": "Bike lane"
+                },
+                "6": {
+                    "then": "Road with cycleway next to the road {name}"
+                },
+                "7": {
+                    "then": "Cycleway next to the road"
+                },
+                "8": {
+                    "then": "Cyclestreet {name}"
+                },
+                "9": {
                     "then": "Cyclestreet"
                 }
             },
-            "render": "Cycleways"
+            "render": "Way"
         }
     },
     "defibrillator": {
@@ -4029,6 +4044,20 @@
                     }
                 },
                 "question": "What is the height of this kerb?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "This kerb has tactile paving."
+                    },
+                    "1": {
+                        "then": "This kerb does not have tactile paving."
+                    },
+                    "2": {
+                        "then": "This kerb has tactile paving, but it is incorrect"
+                    }
+                },
+                "question": "Is there tactile paving at this kerb?"
             }
         },
         "title": {
