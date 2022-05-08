@@ -15,7 +15,15 @@
   "startLat": 53.23776,
   "startLon": 6.53812,
   "layers": [
-    "crossings",
+    {
+      "builtin": "crossings",
+      "override": {
+        "=presets": [],
+        "source": {
+          "osmTags": "highway=crossing"
+        }
+      }
+    },
     "kerbs"
   ]
 }

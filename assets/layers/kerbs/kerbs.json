@@ -23,22 +23,27 @@
       "location": [
         "point"
       ],
-      "icon": "./assets/layers/kerbs/KerbIcon.svg",
-      "iconSize": "25,23,center",
-      "iconBadges": [
-        {
-          "if": "kerb=raised",
-          "then": "square:#f44e42"
-        },
-        {
-          "if": "kerb=lowered",
-          "then": "triangle:#11ff00"
-        },
-        {
-          "if": "kerb=flush",
-          "then": "circle:#11ff00"
-        }
-      ]
+      "icon": {
+        "render": "./assets/layers/kerbs/KerbIcon.svg",
+        "mappings": [
+          {
+            "if": "kerb=raised",
+            "then": "./assets/layers/kerbs/raised.svg"
+          },
+          {
+            "if": "kerb=lowered",
+            "then": "./assets/layers/kerbs/lowered.svg"
+          },
+          {
+            "if": "kerb=flush",
+            "then": "./assets/layers/kerbs/flush.svg"
+          },
+          {
+            "if": "kerb=no",
+            "then": "./assets/layers/kerbs/no.svg"
+          }
+        ]
+      }
     },
     {
       "color": "#f44e42",
@@ -91,6 +96,33 @@
           "hideInAnswer": true
         }
       ]
+    },
+    {
+      "id": "tactile-paving",
+      "question": {
+        "en": "Is there tactile paving at this kerb?"
+      },
+      "mappings": [
+        {
+          "if": "tactile_paving=yes",
+          "then": {
+            "en": "This kerb has tactile paving."
+          }
+        },
+        {
+          "if": "tactile_paving=no",
+          "then": {
+            "en": "This kerb does not have tactile paving."
+          }
+        },
+        {
+          "if": "tactile_paving=incorrect",
+          "then": {
+            "en": "This kerb has tactile paving, but it is incorrect"
+          },
+          "hideInAnswer": true
+        }
+      ]
     }
   ],
   "presets": [
@@ -109,7 +141,10 @@
       "preciseInput": {
         "maxSnapDistance": 10,
         "preferredBackground": "photo",
-        "snapToLayer": ["cycleways_and_roads", "kerbs"]
+        "snapToLayer": [
+          "cycleways_and_roads",
+          "kerbs"
+        ]
       }
     }
   ]

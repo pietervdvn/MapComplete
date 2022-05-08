@@ -113,6 +113,9 @@
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "No Wikipedia page has been linked yet"
+                },
                 "1": {
                     "then": "No Wikipedia page has been linked yet"
                 }

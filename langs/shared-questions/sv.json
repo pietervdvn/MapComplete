@@ -98,6 +98,9 @@
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "Ingen Wikipedia-sida har länkats än"
+                },
                 "1": {
                     "then": "Ingen Wikipedia-sida har länkats än"
                 }

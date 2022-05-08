@@ -3852,6 +3852,12 @@
     "kerbs": {
         "description": "Een laag met stoepranden.",
         "name": "Stoepranden",
+        "presets": {
+            "0": {
+                "description": "Stoeprand in een voetpad",
+                "title": "een stoeprand"
+            }
+        },
         "tagRenderings": {
             "kerb-type": {
                 "mappings": {

@@ -113,6 +113,9 @@
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "No hi ha cap enllaça a Viquipèdia encara"
+                },
                 "1": {
                     "then": "No hi ha cap enllaça a Viquipèdia encara"
                 }

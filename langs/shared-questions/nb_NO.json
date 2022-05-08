@@ -96,6 +96,9 @@
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "Ingen Wikipedia-side lenket enda"
+                },
                 "1": {
                     "then": "Ingen Wikipedia-side lenket enda"
                 }

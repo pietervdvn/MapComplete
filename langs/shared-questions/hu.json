@@ -113,6 +113,9 @@
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "Még nincs Wikipédia-oldal belinkelve"
+                },
                 "1": {
                     "then": "Még nincs Wikipédia-oldal belinkelve"
                 }

@@ -293,7 +293,7 @@
     {
       "id": "no_imports",
       "options": [
-         {
+        {
           "question": {
             "en": "All Notes",
             "nl": "Alle Notes"

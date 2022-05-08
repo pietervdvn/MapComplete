@@ -113,6 +113,9 @@
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "Pas encore de lien vers une page Wikipedia"
+                },
                 "1": {
                     "then": "Pas encore de lien vers une page Wikipedia"
                 }

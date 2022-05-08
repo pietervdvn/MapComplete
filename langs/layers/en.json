@@ -4003,6 +4003,12 @@
     "kerbs": {
         "description": "A layer showing kerbs.",
         "name": "Kerbs",
+        "presets": {
+            "0": {
+                "description": "Kerb in a footway",
+                "title": "a kerb"
+            }
+        },
         "tagRenderings": {
             "kerb-type": {
                 "mappings": {
