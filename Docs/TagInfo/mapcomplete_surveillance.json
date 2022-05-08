@@ -172,6 +172,16 @@
       "key": "camera:mount",
       "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "ceiling"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=street_lamp with a fixed text, namely 'This camera is placed on a street light' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "value": "street_lamp"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=tree with a fixed text, namely 'This camera is placed on a tree' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "value": "tree"
     }
   ]
 }

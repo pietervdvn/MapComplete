@@ -2318,6 +2318,7 @@
         }
     },
     "climbing": {
+        "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
         "tagRenderings": {
             "average_length": {
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
@@ -4148,12 +4149,6 @@
                 }
             },
             "render": "Note"
-        }
-    },
-    "note_import": {
-        "name": "Mogelijke publieke boekenkastjes",
-        "title": {
-            "render": "Mogelijk object"
         }
     },
     "observation_tower": {

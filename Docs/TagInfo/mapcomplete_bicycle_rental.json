@@ -55,28 +55,33 @@
       "value": "shop"
     },
     {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "rental"
+    },
+    {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "yes"
     },
     {
       "key": "shop",
-      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes&shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "bicycle"
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked into a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "docking_station"
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked into a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "key_dispensing_machine"
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "dropoff_point"
     },
     {
@@ -175,6 +180,11 @@
       "key": "rental",
       "description": "Layer 'Bicycle rental' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "value": "bike_helmet"
     },
     {
       "key": "capacity:city_bike",

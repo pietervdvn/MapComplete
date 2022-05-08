@@ -3522,66 +3522,7 @@
                 style="opacity:0.6043478;fill:url(#linearGradient6595);fill-opacity:1;stroke:none"
                 d="M 131.1683,37.049946 C 171.82694,4.876587 209.3036,24.322024 208.95005,42.353247 C 208.5965,60.38447 152.38151,112.71037 132.58252,108.46773 C 112.78353,104.22509 107.12667,55.081169 131.1683,37.049946 z"
                 id="path6587"/>
-        <text
-                xml:space="preserve"
-                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:Sans;opacity:0.46086958;fill:url(#radialGradient6482);fill-opacity:1;stroke:none"
-                x="99.83886"
-                y="69.184349"
-                id="text6302-7"
-                transform="rotate(-8.8996237)"><tspan
-         sodipodi:role="line"
-         id="tspan6304-0"
-         x="99.83886"
-         y="69.184349"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1">01011001</tspan>
-            <tspan
-                    sodipodi:role="line"
-                    x="99.83886"
-                    y="93.934013"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-                    id="tspan6415-7">00110101</tspan>
-            <tspan
-                    sodipodi:role="line"
-                    x="99.83886"
-                    y="118.68368"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-                    id="tspan6417-1">10010011</tspan>
-            <tspan
-                    sodipodi:role="line"
-                    x="99.83886"
-                    y="143.43335"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-                    id="tspan6419-9"> </tspan></text>
-        <text
-                xml:space="preserve"
-                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:Sans;fill:url(#radialGradient6427);fill-opacity:1;stroke:none"
-                x="99.410172"
-                y="67.898323"
-                id="text6302"
-                transform="rotate(-8.8996237)"><tspan
-         sodipodi:role="line"
-         id="tspan6304"
-         x="99.410172"
-         y="67.898323"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1">01011001</tspan>
-            <tspan
-                    sodipodi:role="line"
-                    x="99.410172"
-                    y="92.647987"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-                    id="tspan6415">00110101</tspan>
-            <tspan
-                    sodipodi:role="line"
-                    x="99.410172"
-                    y="117.39765"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-                    id="tspan6417">10010011</tspan>
-            <tspan
-                    sodipodi:role="line"
-                    x="99.410172"
-                    y="142.14732"
-                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-                    id="tspan6419"> </tspan></text>
+     
         <path
                 style="opacity:0.76521738;fill:url(#linearGradient6614);fill-opacity:1;stroke:none"
                 d="M 219.46318,129.09019 C 192.66917,151.07299 177.65484,150.09749 181.38844,142.22816 C 185.12205,134.35887 223.71429,100.57298 232.83561,98.47996 C 241.95691,96.38695 235.11079,116.52117 219.46318,129.09019 z"

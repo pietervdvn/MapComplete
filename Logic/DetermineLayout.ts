@@ -167,6 +167,7 @@ export default class DetermineLayout {
         const raw = json;
 
         json = new FixImages(DetermineLayout._knownImages).convertStrict(json, "While fixing the images")
+        json.enableNoteImports = json.enableNoteImports ?? false;
         json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
         console.log("The layoutconfig is ", json)
         

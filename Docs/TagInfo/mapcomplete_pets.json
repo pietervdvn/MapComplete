@@ -1,0 +1,564 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Veterinarians, dog parks and other pet-amenities",
+    "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ",
+    "project_url": "https://mapcomplete.osm.be/pets",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/dogpark/dog-park.svg",
+    "contact_name": "Pieter Vander Vennet, Niels Elgaard Larsen",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog parks showing features with this tag",
+      "value": "dog_park"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog parks showing features with this tag",
+      "value": "park"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog parks showing features with this tag",
+      "value": "unleashed"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'dog parks' shows barrier=fence with a fixed text, namely 'This dogpark is fenced all around' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "fence"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'dog parks' shows barrier=no with a fixed text, namely 'This dogpark is not fenced all around' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "small_dog",
+      "description": "Layer 'dog parks' shows small_dog=separate with a fixed text, namely 'Have separate area for puppies and small dogs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "separate"
+    },
+    {
+      "key": "small_dog",
+      "description": "Layer 'dog parks' shows small_dog=shared with a fixed text, namely 'Does <strong>not</strong> have a separate area for puppies and small dogs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "shared"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'dog parks' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
+      "value": "restaurant"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
+      "value": "cafe"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
+      "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Dog friendly eateries' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Dog friendly eateries' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "restaurant"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Dog friendly eateries' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Dog friendly eateries' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Dog friendly eateries' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Dog friendly eateries' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Dog friendly eateries' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Dog friendly eateries' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Dog friendly eateries' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Dog friendly eateries' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Dog friendly eateries' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'cuisine' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=pizza with a fixed text, namely 'This is a pizzeria' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "pizza"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=friture with a fixed text, namely 'This is a friture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "friture"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=pasta with a fixed text, namely 'Mainly serves pasta' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "pasta"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=kebab with a fixed text, namely 'This is kebab shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "kebab"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=sandwich with a fixed text, namely 'This is a sandwichbar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "sandwich"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=burger with a fixed text, namely 'Burgers are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "burger"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=sushi with a fixed text, namely 'Sushi is served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "sushi"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=coffee with a fixed text, namely 'Coffee is served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "coffee"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=italian with a fixed text, namely 'This is an italian restaurant (which serves more then pasta and pizza)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "italian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=french with a fixed text, namely 'French dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "french"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=chinese with a fixed text, namely 'Chinese dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "chinese"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=greek with a fixed text, namely 'Greek dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "greek"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=indian with a fixed text, namely 'Indian dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "indian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=turkish with a fixed text, namely 'Turkish dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "turkish"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "thai"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Dog friendly eateries' shows takeaway=only with a fixed text, namely 'This is a take-away only business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Dog friendly eateries' shows takeaway=yes with a fixed text, namely 'Take-away is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Dog friendly eateries' shows takeaway=no with a fixed text, namely 'Take-away is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=limited with a fixed text, namely 'Some vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=only with a fixed text, namely 'All dishes are vegetarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=no with a fixed text, namely 'No vegan options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=limited with a fixed text, namely 'Some vegan options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=yes with a fixed text, namely 'Vegan options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=only with a fixed text, namely 'All dishes are vegan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Dog friendly eateries' shows diet:halal=no with a fixed text, namely 'There are no halal options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Dog friendly eateries' shows diet:halal=limited with a fixed text, namely 'There is a small halal menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Dog friendly eateries' shows diet:halal=yes with a fixed text, namely 'There is a halal menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Dog friendly eateries' shows diet:halal=only with a fixed text, namely 'Only halal options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=limited with a fixed text, namely 'Only a small selection of snacks are vegetarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=yes with a fixed text, namely 'Vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=limited with a fixed text, namely 'A small selection of vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Dog friendly eateries' shows friture:oil=vegetable with a fixed text, namely 'Vegetable oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "vegetable"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Dog friendly eateries' shows friture:oil=animal with a fixed text, namely 'Animal oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "animal"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Dog friendly eateries' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Dog friendly eateries' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Dog friendly eateries' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Dog friendly eateries' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Dog friendly eateries' shows service:electricity=limited with a fixed text, namely 'There are a few domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "limited"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Dog friendly eateries' shows service:electricity=ask with a fixed text, namely 'There are no sockets available indoors to customers, but charging might be possible if the staff is asked' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "ask"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Dog friendly eateries' shows service:electricity=no with a fixed text, namely 'There are a no domestic sockets available to customers seated indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog friendly eateries' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog friendly eateries' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog friendly eateries' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog friendly eateries' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "unleashed"
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog-friendly shop showing features with this tag"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog-friendly shop showing features with this tag",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog-friendly shop showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "shop",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer dog-friendly shop showing features with this tag",
+      "value": "pet"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'dog-friendly shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'dog-friendly shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'dog-friendly shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'dog-friendly shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'dog-friendly shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows and asks freeform values for key 'shop' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=convenience with a fixed text, namely 'Convenience store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "convenience"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "supermarket"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=clothes with a fixed text, namely 'Clothing store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "clothes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "hairdresser"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=bakery with a fixed text, namely 'Bakery' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "bakery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=car_repair with a fixed text, namely 'Car repair (garage)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "car_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'dog-friendly shop' shows shop=car with a fixed text, namely 'Car dealer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "car"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'dog-friendly shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'dog-friendly shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'dog-friendly shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'dog-friendly shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'dog-friendly shop' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'dog-friendly shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer veterinary showing features with this tag",
+      "value": "veterinary"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'veterinary' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'veterinary' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    }
+  ]
+}

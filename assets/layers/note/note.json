@@ -60,6 +60,18 @@
       "render": "{add_note_comment()}"
     },
     {
+      "id": "nearby-images",
+      "render": {
+        "before": {
+          "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note."
+        },
+        "special": {
+          "type": "nearby_images",
+          "mode": "open"
+        }
+      }
+    },
+    {
       "id": "report-contributor",
       "render": {
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} as spam</a>",

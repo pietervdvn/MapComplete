@@ -1,13 +1,19 @@
 {
   "id": "mapcomplete-changes",
   "title": {
-    "en": "Changes made with MapComplete"
+    "en": "Changes made with MapComplete",
+    "de": "Änderungen mit MapComplete",
+    "es": "Cambios hechos con MapComplete"
   },
   "shortDescription": {
-    "en": "Shows changes made by MapComplete"
+    "en": "Shows changes made by MapComplete",
+    "de": "Zeigt Änderungen von MapComplete",
+    "es": "Muestra los cambios hechos por MapComplete"
   },
   "description": {
-    "en": "This maps shows all the changes made with MapComplete"
+    "en": "This maps shows all the changes made with MapComplete",
+    "de": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
+    "es": "Este mapa muestra todos los cambios hechos con MapComplete"
   },
   "maintainer": "",
   "icon": "./assets/svg/logo.svg",
@@ -22,7 +28,9 @@
     {
       "id": "mapcomplete-changes",
       "name": {
-        "en": "Changeset centers"
+        "en": "Changeset centers",
+        "de": "Schwerpunkte von Änderungssätzen",
+        "es": "Centros de conjuntos de cambios"
       },
       "minzoom": 0,
       "source": {
@@ -36,35 +44,45 @@
       ],
       "title": {
         "render": {
-          "en": "Changeset for {theme}"
+          "en": "Changeset for {theme}",
+          "de": "Änderungen für {theme}",
+          "es": "Conjunto de cambios para {theme}"
         }
       },
       "description": {
-        "en": "Shows all MapComplete changes"
+        "en": "Shows all MapComplete changes",
+        "de": "Zeigt alle MapComplete Änderungen",
+        "es": "Muestra todos los cambios de MapComplete"
       },
       "tagRenderings": [
         {
           "id": "render_id",
           "render": {
-            "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "de": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "es": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
           "id": "contributor",
           "render": {
-            "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+            "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>",
+            "de": "Änderung wurde von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a> gemacht",
+            "es": "Cambio hecho por <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
           }
         },
         {
           "id": "theme",
           "render": {
-            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+            "de": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
           },
           "mappings": [
             {
               "if": "theme~http.*",
               "then": {
-                "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
+                "de": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
               }
             }
           ]
@@ -336,7 +354,8 @@
                 }
               ],
               "question": {
-                "en": "Themename contains {search}"
+                "en": "Themename contains {search}",
+                "de": "Themenname enthält {search}"
               }
             }
           ]
@@ -352,7 +371,9 @@
                 }
               ],
               "question": {
-                "en": "Made by contributor {search}"
+                "en": "Made by contributor {search}",
+                "de": "Erstellt von {search}",
+                "es": "Hecho por contributor/a {search}"
               }
             }
           ]
@@ -368,7 +389,9 @@
                 }
               ],
               "question": {
-                "en": "<b>Not</b> made by contributor {search}"
+                "en": "<b>Not</b> made by contributor {search}",
+                "de": "<b>Nicht</b> erstellt von {search}",
+                "es": "<b>No</b> hecho por contributor/a {search}"
               }
             }
           ]
@@ -383,7 +406,9 @@
           {
             "id": "link_to_more",
             "render": {
-              "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+              "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
+              "de": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
+              "es": "Se pueden encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
             }
           },
           {

@@ -23,9 +23,17 @@
     + [wheelchair-access](#wheelchair-access)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
+    + [climbing.website](#climbingwebsite)
+    + [climbing.fee](#climbingfee)
+    + [climbing.bouldering](#climbingbouldering)
+    + [climbing.average_length](#climbingaverage_length)
+    + [climbing.min_difficulty](#climbingmin_difficulty)
+    + [climbing.max_difficulty](#climbingmax_difficulty)
+    + [climbing.sportclimbing](#climbingsportclimbing)
+    + [climbing.max_bolts](#climbingmax_bolts)
     + [all_tags](#all_tags)
-    + [questions](#questions)
     + [reviews](#reviews)
+    + [questions](#questions)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
@@ -65,10 +73,11 @@
   - birdhide
   - cafe_pub
   - charging_station
-  - climbing
+  - climbing_area
   - climbing_gym
   - climbing_route
   - defibrillator
+  - dogpark
   - drinking_water
   - entrance
   - extinguisher
@@ -96,6 +105,7 @@
   - tree_node
   - viewpoint
   - village_green
+  - waste_basket
   - watermill
   - windturbine
 
@@ -120,6 +130,7 @@
   - observation_tower
   - playground
   - recycling
+  - veterinary
 
 
 
@@ -139,6 +150,7 @@
   - food
   - hackerspace
   - recycling
+  - veterinary
 
 
 
@@ -176,6 +188,7 @@
   - climbing_club
   - climbing_gym
   - food
+  - veterinary
 
 
 
@@ -189,6 +202,7 @@
   - bicycle_library
   - bike_shop
   - bike_themed_object
+  - climbing_route
   - toilet
 
 
@@ -296,6 +310,96 @@
 
 
 
+### climbing.website 
+
+
+
+
+
+  - climbing_area
+
+
+
+
+### climbing.fee 
+
+
+
+
+
+  - climbing_area
+  - climbing_gym
+
+
+
+
+### climbing.bouldering 
+
+
+
+
+
+  - climbing_area
+  - climbing_gym
+
+
+
+
+### climbing.average_length 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
+### climbing.min_difficulty 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
+### climbing.max_difficulty 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
+### climbing.sportclimbing 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
+### climbing.max_bolts 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
 ### all_tags 
 
 
@@ -303,6 +407,20 @@
 
 
   - cluster_style
+
+
+
+
+### reviews 
+
+
+
+
+
+  - dogpark
+  - food
+  - shops
+  - veterinary
 
 
 
@@ -318,18 +436,6 @@
   - playground
   - shops
   - sport_pitch
-
-
-
-
-### reviews 
-
-
-
-
-
-  - food
-  - shops
 
 
 

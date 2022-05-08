@@ -170,7 +170,13 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         super("For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)", ["layers"], "AddImportLayers");
     }
 
-    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[] } {
+    convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors?: string[], warnings?: string[] } {
+        if (!(json.enableNoteImports ?? true)) {
+            return {
+                warnings: ["Not creating a note import layers for theme "+json.id+" as they are disabled"],
+                result: json
+            };
+        }
         const errors = []
 
         json = {...json}
@@ -178,39 +184,37 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         json.layers = [...json.layers]
 
 
-        if (json.enableNoteImports ?? true) {
-            const creator = new CreateNoteImportLayer()
-            for (let i1 = 0; i1 < allLayers.length; i1++) {
-                const layer = allLayers[i1];
-                if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
-                    // Priviliged layers are skipped
-                    continue
-                }
+        const creator = new CreateNoteImportLayer()
+        for (let i1 = 0; i1 < allLayers.length; i1++) {
+            const layer = allLayers[i1];
+            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+                // Priviliged layers are skipped
+                continue
+            }
 
-                if (layer.source["geoJson"] !== undefined) {
-                    // Layer which don't get their data from OSM are skipped
-                    continue
-                }
+            if (layer.source["geoJson"] !== undefined) {
+                // Layer which don't get their data from OSM are skipped
+                continue
+            }
 
-                if (layer.title === undefined || layer.name === undefined) {
-                    // Anonymous layers and layers without popup are skipped
-                    continue
-                }
+            if (layer.title === undefined || layer.name === undefined) {
+                // Anonymous layers and layers without popup are skipped
+                continue
+            }
 
-                if (layer.presets === undefined || layer.presets.length == 0) {
-                    // A preset is needed to be able to generate a new point
-                    continue;
-                }
+            if (layer.presets === undefined || layer.presets.length == 0) {
+                // A preset is needed to be able to generate a new point
+                continue;
+            }
 
-                try {
+            try {
 
-                    const importLayerResult = creator.convert(layer, context + ".(noteimportlayer)[" + i1 + "]")
-                    if (importLayerResult.result !== undefined) {
-                        json.layers.push(importLayerResult.result)
-                    }
-                } catch (e) {
-                    errors.push("Could not generate an import-layer for " + layer.id + " due to " + e)
+                const importLayerResult = creator.convert(layer, context + ".(noteimportlayer)[" + i1 + "]")
+                if (importLayerResult.result !== undefined) {
+                    json.layers.push(importLayerResult.result)
                 }
+            } catch (e) {
+                errors.push("Could not generate an import-layer for " + layer.id + " due to " + e)
             }
         }
 
@@ -255,6 +259,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
                 if (!translation.hasOwnProperty(key)) {
                     continue
                 }
+                
                 const template = translation[key]
                 const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
                 const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")

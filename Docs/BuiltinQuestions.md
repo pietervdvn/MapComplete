@@ -91,6 +91,7 @@ What is the corresponding Wikidata entity?
 
 
 
+  - {wikipedia():max-height:25rem}
   - No Wikipedia page has been linked yet
 
 

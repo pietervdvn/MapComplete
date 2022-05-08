@@ -2,6 +2,10 @@
 
 > Let a thousand flowers bloom
 
+[![](https://img.shields.io/liberapay/patrons/Pietervdvn.svg?logo=liberapay) ![](https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay)  ](https://liberapay.com/pietervdvn/)
+[![Matrix](https://img.shields.io/matrix/MapComplete:matrix.org)](https://matrix.to/#/#MapComplete:matrix.org?via=matrix.org)
+
+
 **MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit
 and add new features to the map. It can be seen as a
 webversion [crossover of StreetComplete and MapContrib](Docs/MapComplete_vs_other_editors.md). It tries to be just as

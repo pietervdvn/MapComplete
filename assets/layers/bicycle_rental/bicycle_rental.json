@@ -5,7 +5,8 @@
     "nl": "Fietsverhuur",
     "fr": "Location de vélo",
     "de": "Fahrradverleih",
-    "da": "Cykeludlejning"
+    "da": "Cykeludlejning",
+    "es": "Alquiler de bicicletas"
   },
   "source": {
     "osmTags": {
@@ -129,7 +130,8 @@
           "if": "bicycle_rental=dropoff_point",
           "then": {
             "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only",
-            "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur "
+            "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur ",
+            "de": "Es handelt sich um einen Rückgabepunkt, z. B. einen reservierten Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
           }
         }
       ],
@@ -260,7 +262,8 @@
           "then": {
             "en": "Bike helmets can be rented here",
             "nl": "Fietshelmpen kunnen hier gehuurd worden",
-            "es": "Aquí se pueden alquilar cascos"
+            "es": "Aquí se pueden alquilar cascos",
+            "de": "Hier können Fahrradhelme ausgeliehen werden"
           }
         }
       ]
@@ -388,7 +391,8 @@
         "nl": "Een bemande winkel die focust op fietsverhuur",
         "fr": "Un magasin qui priorise la location de vélos",
         "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
-        "da": "En bemandet butik, der fokuserer på cykeludlejning"
+        "da": "En bemandet butik, der fokuserer på cykeludlejning",
+        "es": "Una tienda con personal que se dedica al alquiler de bicicletas"
       }
     },
     {
@@ -396,7 +400,8 @@
         "en": "a bicycle rental",
         "nl": "een fietsverhuur",
         "de": "Ein Fahrradverleih",
-        "da": "cykeludlejning"
+        "da": "cykeludlejning",
+        "es": "un alquiler de bicicletas"
       },
       "tags": [
         "amenity=bicycle_rental"

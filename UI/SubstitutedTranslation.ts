@@ -81,7 +81,7 @@ export class SubstitutedTranslation extends VariableUiElement {
     }[] {
 
         for (const knownSpecial of extraMappings.concat(SpecialVisualizations.specialVisualizations)) {
-
+            
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
             const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`);
             if (matched != null) {

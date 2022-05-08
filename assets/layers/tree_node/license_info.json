@@ -8,5 +8,45 @@
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Onroerend_Erfgoed_logo_without_text.svg"
     ]
+  },
+  {
+    "path": "broadleaved.svg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Midgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "leafless.svg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Midgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "needleleaved.svg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Midgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "unknown.svg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Midgard"
+    ],
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
   }
 ]

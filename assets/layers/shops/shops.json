@@ -465,7 +465,8 @@
         {
           "osmTags": "payment:cash=yes",
           "question": {
-            "en": "Accepts cash"
+            "en": "Accepts cash",
+            "de": "Akzeptiert Bargeld"
           }
         }
       ]
@@ -476,7 +477,8 @@
         {
           "osmTags": "payment:cards=yes",
           "question": {
-            "en": "Accepts payment cards"
+            "en": "Accepts payment cards",
+            "de": "Akzeptiert Kartenzahlung"
           }
         }
       ]

@@ -8,6 +8,7 @@ import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
 import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
 import {AddContextToTranslations} from "./AddContextToTranslations";
+import spec = Mocha.reporters.spec;
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -302,11 +303,6 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
 
 /**
  * Converts a 'special' translation into a regular translation which uses parameters
- * E.g.
- * 
- * const tr = <TagRenderingJson> {
- *     "special": 
- * }
  */
 export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
@@ -330,6 +326,11 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
      * r // => {"en": "{image_upload(,Add a picture to this object)}", "nl": "{image_upload(,Voeg een afbeelding toe)}" }
      * 
+     * // should handle special case with a prefix and postfix
+     * const spec = {"special": {"type":"image_upload" }, before: {"en": "PREFIX "}, after: {"en": " POSTFIX", nl: " Achtervoegsel"} }
+     * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
+     * r // => {"en": "PREFIX {image_upload(,)} POSTFIX", "nl": "PREFIX {image_upload(,)} Achtervoegsel" }
+     * 
      * // should warn for unexpected keys
      * const errors = []
      * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, errors, "test") // =>  {'*': "{image_carousel()}"}
@@ -352,7 +353,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             return input
         }
 
-        for (const wrongKey of Object.keys(input).filter(k => k !== "special")) {
+        for (const wrongKey of Object.keys(input).filter(k => k !== "special" && k !== "before" && k !== "after")) {
             errors.push(`At ${context}: Unexpected key in a special block: ${wrongKey}`)
         }
 
@@ -400,6 +401,16 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             }  
         }
         
+        const before = Translations.T(input.before)
+        const after = Translations.T(input.after)
+
+        for (const ln of Object.keys(before?.translations??{})) {
+            foundLanguages.add(ln)
+        }
+        for (const ln of Object.keys(after?.translations??{})) {
+            foundLanguages.add(ln)
+        }
+
         if(foundLanguages.size === 0){
            const args=   argNamesList.map(nm => special[nm] ?? "").join(",")
             return {'*': `{${type}(${args})}`
@@ -419,7 +430,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                     args.push(v)
                 }
             }
-            result[ln] = `{${type}(${args.join(",")})}`
+            const beforeText = before?.textFor(ln) ?? ""
+            const afterText = after?.textFor(ln) ?? ""
+            result[ln] = `${beforeText}{${type}(${args.join(",")})}${afterText}`
         }
         return result
     }
@@ -436,6 +449,13 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * }
      * const result = new RewriteSpecial().convert(tr,"test").result
      * const expected = {render:  {'*': "{image_carousel(image)}"}, mappings: [{if: "other_image_key", then:  {'*': "{image_carousel(other_image_key)}"}} ]}
+     * result // => expected
+     * 
+     * const tr = {
+     *     render: {special: {type: "image_carousel", image_key: "image"}, before: {en: "Some introduction"} },
+     * }
+     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const expected = {render:  {'en': "Some introduction{image_carousel(image)}"}}
      * result // => expected
      */
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {

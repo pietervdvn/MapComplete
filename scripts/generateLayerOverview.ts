@@ -121,17 +121,21 @@ class LayerOverviewUtils {
                 continue
             }
             const contents = readFileSync(path, "UTF8")
-            if (contents.indexOf("data:image/png;") < 0) {
-                continue;
+            if (contents.indexOf("data:image/png;") >= 0) {
+                console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
+                errCount++;
+                if (path.startsWith("./assets/svg")) {
+                    throw "A core SVG is actually a PNG. Don't do this!"
+                }
             }
-            console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
-            errCount++;
-            if (path.startsWith("./assets/svg")) {
-                throw "A core SVG is actually a PNG. Don't do this!"
+            if(contents.indexOf("<text")>0){
+                console.warn("The SVG at " + path + " contains a `text`-tag. This is highly discouraged. Every machine viewing your theme has their own font libary, and the font you choose might not be present, resulting in a different font being rendered. Solution: open your .svg in inkscape (or another program), select the text and convert it to a path")
+                errCount++;
+
             }
         }
         if (errCount > 0) {
-            throw `There are ${errCount} fake svgs`
+            throw `There are ${errCount} invalid svgs`
         }
     }
 

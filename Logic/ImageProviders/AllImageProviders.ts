@@ -19,8 +19,18 @@ export default class AllImageProviders {
         new GenericImageProvider(
             [].concat(...Imgur.defaultValuePrefix, ...WikimediaImageProvider.commonsPrefixes, ...Mapillary.valuePrefixes)
         )
-
     ]
+
+    private static providersByName= {
+        "imgur": Imgur.singleton,
+"mapillary":        Mapillary.singleton,
+     "wikidata":  WikidataImageProvider.singleton,
+       "wikimedia": WikimediaImageProvider.singleton
+    }
+    
+    public static byName(name: string){
+        return AllImageProviders.providersByName[name.toLowerCase()]
+    }
 
     public static defaultKeys = [].concat(AllImageProviders.ImageAttributionSource.map(provider => provider.defaultKeyPrefixes))
 

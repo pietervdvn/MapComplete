@@ -147,18 +147,29 @@
         }
     },
     "barrier": {
+        "description": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
         "name": "Barreras",
         "presets": {
             "0": {
                 "description": "Un bolardo en la carretera",
                 "title": "una bolardo"
+            },
+            "1": {
+                "description": "Una barrera ciclista, que ralentiza a los ciclistas",
+                "title": "una barrera para bicicletas"
             }
         },
         "tagRenderings": {
             "Bollard type": {
                 "mappings": {
+                    "0": {
+                        "then": "Bolardo extraíble"
+                    },
                     "1": {
                         "then": "Bolardo fijo"
+                    },
+                    "2": {
+                        "then": "Bolardo abatible"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -170,6 +181,20 @@
                 "question": "¿Qué tipo de bolardo es este?"
             },
             "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Simple, sólo dos barreras con un espacio entre ellas"
+                    },
+                    "1": {
+                        "then": "Doble, dos barreras una detrás de otra"
+                    },
+                    "2": {
+                        "then": "Triple, tres barreras una detrás de la otra"
+                    },
+                    "3": {
+                        "then": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior"
+                    }
+                },
                 "question": "¿Qué tipo de barrera ciclista es esta?"
             },
             "MaxWidth": {
@@ -197,12 +222,26 @@
                         "then": "Esta es una barrera ciclista que ralentiza a los ciclistas"
                     }
                 }
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede pasar por aquí."
+                    },
+                    "1": {
+                        "then": "Un ciclista no puede pasar por aquí."
+                    }
+                },
+                "question": "¿Puede un ciclista pasar esta barrera?"
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Bolardo"
+                },
+                "1": {
+                    "then": "Barrera ciclista"
                 }
             },
             "render": "Barrera"
@@ -305,6 +344,12 @@
         "tagRenderings": {
             "bench_at_pt-bench_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquí hay un banco normal para sentarse"
+                    },
+                    "1": {
+                        "then": "Banco de pie"
+                    },
                     "2": {
                         "then": "No hay ningún banco aquí"
                     }
@@ -319,12 +364,23 @@
             "mappings": {
                 "0": {
                     "then": "Banco en una parada de transporte público"
+                },
+                "1": {
+                    "then": "Banco en el refugio"
                 }
             },
             "render": "Banco"
         }
     },
     "bicycle_library": {
+        "description": "Una instalación en la que se pueden prestar las bicicletas durante un periodo de tiempo más largo",
+        "name": "Biblioteca de bicicletas",
+        "presets": {
+            "0": {
+                "description": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar",
+                "title": "una biblioteca de bicicletas"
+            }
+        },
         "tagRenderings": {
             "bicycle-library-target-group": {
                 "mappings": {
@@ -337,11 +393,28 @@
                     "2": {
                         "then": "Bicicletas para discapacitados disponibles"
                     }
-                }
+                },
+                "question": "¿Quién puede prestar bicicletas aquí?"
             },
             "bicycle_library-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "El préstamo de bicicletas es gratuito"
+                    },
+                    "1": {
+                        "then": "Prestar una bicicleta cuesta 20 euros al año y 20 euros de garantía"
+                    }
+                },
+                "question": "¿Cuánto cuesta el préstamo de una bicicleta?",
                 "render": "Alquilar una bicicleta cuesta {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
+                "render": "Esta biblioteca de bicicletas se llama  {name}."
             }
+        },
+        "title": {
+            "render": "Biblioteca de bicicletas"
         }
     },
     "bicycle_rental": {
@@ -358,9 +431,14 @@
             }
         },
         "description": "Estaciones de alquiler de bicicletas",
+        "name": "Alquiler de bicicletas",
         "presets": {
             "0": {
+                "description": "Una tienda con personal que se dedica al alquiler de bicicletas",
                 "title": "una tienda de alquiler de bicicletas"
+            },
+            "1": {
+                "title": "un alquiler de bicicletas"
             }
         },
         "tagRenderings": {

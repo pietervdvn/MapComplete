@@ -9,7 +9,8 @@ export default class ChangeTagAction extends OsmChangeAction {
     private readonly _currentTags: any;
     private readonly _meta: { theme: string, changeType: string };
 
-    constructor(elementId: string, tagsFilter: TagsFilter, currentTags: any, meta: {
+    constructor(elementId: string, 
+                tagsFilter: TagsFilter, currentTags: any, meta: {
         theme: string,
         changeType: "answer" | "soft-delete" | "add-image" | string
     }) {

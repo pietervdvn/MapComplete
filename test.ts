@@ -1,17 +1,19 @@
+import {SelectOneNearbyImage} from "./UI/Popup/NearbyImages";
+import Minimap from "./UI/Base/Minimap";
+import MinimapImplementation from "./UI/Base/MinimapImplementation";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import Loc from "./Models/Loc";
 import {UIEventSource} from "./Logic/UIEventSource";
-import Wikidata from "./Logic/Web/Wikidata";
-import Combine from "./UI/Base/Combine";
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-const result = UIEventSource.FromPromise(
-    Wikidata.searchAdvanced("WOlf", {
-        lang: "nl",
-        maxCount: 100,
-        instanceOf: 5
+MinimapImplementation.initialize()
+const map = Minimap.createMiniMap({
+    location: new UIEventSource<Loc>({
+        lon: 3.22457,
+        lat: 51.20876,
+        zoom: 18
     })
-)
-result.addCallbackAndRunD(r => console.log(r))
-new VariableUiElement(result.map(items =>new Combine( (items??[])?.map(i => 
-    new FixedUiElement(JSON.stringify(i, null, "  ")).SetClass("p-4 block")
-))  )).SetClass("flex flex-col").AttachTo("maindiv")
+})
+map.AttachTo("extradiv")
+map.SetStyle("height: 500px")
+
+new VariableUiElement(map.location.map( loc =>  new SelectOneNearbyImage( {...loc, radius: 50}))).AttachTo("maindiv")

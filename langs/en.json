@@ -89,6 +89,7 @@
             "josmOpened": "JOSM is opened",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
+            "mapillaryHelp": "<b>Mapillary</b> is an online service which gathers street-level pictures and offers them under a free license. Contributors are allowed to use these pictures to improve OpenStreetMap",
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
@@ -275,6 +276,15 @@
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",
+        "nearbyPictures": {
+            "browseNearby": "Browse nearby images...",
+            "confirm": "The selected image shows {title()}",
+            "hasMatchingPicture": "Does a picture match the object? Select it below",
+            "loading": "Loading nearby images...",
+            "noImageSelected": "Select an image to link it to the object",
+            "nothingFound": "No nearby images found...",
+            "title": "Nearby pictures"
+        },
         "pleaseLogin": "Please log in to add a picture",
         "respectPrivacy": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
@@ -412,13 +422,14 @@
         "title": "Inspect and manage import notes"
     },
     "importLayer": {
-        "alreadyMapped": "There already is another {title} on the map - this point is a duplicate",
+        "alreadyMapped": "There already is {title} on the map - this point is a duplicate",
         "description": "A layer which imports entries for {title}",
         "importButton": "import_button({layerId}, _tags, I have found a {title} here - add it to the map,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
         "layerName": "Possible {title}",
+        "nearbyImagesIntro": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
         "notFound": "I could not find {title} - remove it",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "There might be {title} here"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
