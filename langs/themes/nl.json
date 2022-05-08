@@ -749,7 +749,7 @@
     },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
-        "title": "Oversteekplaatsen en stoepranden"
+        "title": "Stoepranden en oversteekplaatsen"
     },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",

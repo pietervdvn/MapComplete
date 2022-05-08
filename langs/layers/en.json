@@ -4028,19 +4028,19 @@
             "kerb-type": {
                 "mappings": {
                     "0": {
-                        "then": "Raised (>3 cm)"
+                        "then": "This kerb is raised (>3 cm)"
                     },
                     "1": {
-                        "then": "Lowered (~3 cm)"
+                        "then": "This kerb is lowered (~3 cm)"
                     },
                     "2": {
-                        "then": "Flush (0cm)"
+                        "then": "This kerb is flush (~0cm)"
                     },
                     "3": {
-                        "then": "None"
+                        "then": "There is no kerb here"
                     },
                     "4": {
-                        "then": "Yes"
+                        "then": "There is a kerb of unknown height"
                     }
                 },
                 "question": "What is the height of this kerb?"

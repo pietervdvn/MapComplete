@@ -642,7 +642,7 @@
     },
     "kerbs_and_crossings": {
         "description": "A map showing kerbs and crossings.",
-        "title": "Crossings and Kerbs"
+        "title": "Kerbs and crossings"
     },
     "mapcomplete-changes": {
         "description": "This maps shows all the changes made with MapComplete",

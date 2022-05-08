@@ -3,8 +3,8 @@
   "maintainer": "Robin van der Linde",
   "version": "20211215",
   "title": {
-    "en": "Crossings and Kerbs",
-    "nl": "Oversteekplaatsen en stoepranden"
+    "en": "Kerbs and crossings",
+    "nl": "Stoepranden en oversteekplaatsen"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",

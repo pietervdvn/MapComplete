@@ -3877,19 +3877,19 @@
             "kerb-type": {
                 "mappings": {
                     "0": {
-                        "then": "Hoog (>3 cm)"
+                        "then": "Deze stoeprand is hoog (>3 cm)"
                     },
                     "1": {
-                        "then": "Verlaagd (~3 cm)"
+                        "then": "Deze stoeprand is verlaagd (~3 cm)"
                     },
                     "2": {
-                        "then": "Vlak (0cm)"
+                        "then": "Deze stoeprand is vlak (~0cm)"
                     },
                     "3": {
-                        "then": "Geen"
+                        "then": "Er is hier geen stoeprand"
                     },
                     "4": {
-                        "then": "Ja"
+                        "then": "Er is een stoeprand met onbekende hoogte"
                     }
                 },
                 "question": "Hoe hoog is deze stoeprand?"
