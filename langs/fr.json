@@ -56,7 +56,7 @@
             "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
             "openLayerControl": "Ouvrir la panneau de contrôle",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Vous devez vous connecter pour ajouter un point</a>",
+            "pleaseLogin": "Vous devez vous connecter pour ajouter un point",
             "presetInfo": "Le nouveau POI aura {tags}",
             "stillLoading": "Chargement des données en cours. Patientez un instant avant d'ajouter un nouveau point.",
             "title": "Ajouter un nouveau point ?",
