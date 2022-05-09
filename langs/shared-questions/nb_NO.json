@@ -109,6 +109,23 @@
                 }
             },
             "question": "Hva er respektivt element på Wikipedia?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin"
+                },
+                "1": {
+                    "then": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin"
+                },
+                "3": {
+                    "then": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs"
+                },
+                "2": {
+                    "then": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen"
+                }
+            },
+            "question": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?"
         }
     }
 }
