@@ -267,6 +267,17 @@
                     "caravansites-website": {
                         "question": "Heeft deze plaats een website?",
                         "render": "Officiële website: : <a href='{website}'>{website}</a>"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze plaats heeft een loosplaats"
+                            },
+                            "1": {
+                                "then": "Deze plaats heeft geen loosplaats"
+                            }
+                        },
+                        "question": "Heeft deze plaats een loosplaats?"
                     }
                 },
                 "title": {
@@ -287,19 +298,83 @@
                             },
                             "1": {
                                 "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                            },
+                            "2": {
+                                "then": "Deze loosplaats is voor iedereen toegankelijk"
+                            },
+                            "3": {
+                                "then": "Deze loosplaats is toegankelijk voor iedereen"
                             }
-                        }
+                        },
+                        "question": "Wie mag deze loosplaats gebruiken?"
                     },
                     "dumpstations-fee": {
                         "mappings": {
                             "1": {
                                 "then": "Kan gratis gebruikt worden"
+                            },
+                            "0": {
+                                "then": "Je moet betalen voor het gebruik"
                             }
                         },
                         "question": "Vraagt deze plaats een vergoeding?"
                     },
                     "dumpstations-network": {
-                        "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)"
+                        "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
+                        "render": "Deze loosplaats is deel van het {network} netwerk"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "question": "Mag je hier je chemisch toilet lozen?",
+                        "mappings": {
+                            "1": {
+                                "then": "Je kan hier geen chemisch toilet lozen"
+                            },
+                            "0": {
+                                "then": "Je kan hier een chemisch toilet lozen"
+                            }
+                        }
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Je kan hier grijs water lozen"
+                            },
+                            "1": {
+                                "then": "Je kan hier geen grijs water lozen"
+                            }
+                        },
+                        "question": "Mag je hier grijs water lozen?"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze loosplaats heeft een waterkraan om je camper bij te vullen"
+                            },
+                            "1": {
+                                "then": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen"
+                            }
+                        },
+                        "question": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?"
+                    },
+                    "dumpstations-charge": {
+                        "render": "Deze loosplaats rekent {charge} aan",
+                        "question": "Hoeveel kost het gebruik van deze loosplaats?"
+                    }
+                },
+                "description": "Loosplaatsen",
+                "name": "Loostplaatsen",
+                "presets": {
+                    "0": {
+                        "description": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
+                        "title": "een loosplaats"
+                    }
+                },
+                "title": {
+                    "render": "Loosplaats {name}",
+                    "mappings": {
+                        "0": {
+                            "then": "Loosplaats"
+                        }
                     }
                 }
             }
@@ -310,9 +385,16 @@
                     "mappings": {
                         "1": {
                             "then": "Deze plaats beschikt niet over stroomvoorziening"
+                        },
+                        "0": {
+                            "then": "Deze plaats heeft stroomvoorziening"
                         }
                     },
                     "question": "Beschikt deze plaats over stroomvoorziening?"
+                },
+                "0": {
+                    "question": "Wie beheert deze plaats?",
+                    "render": "Deze plaats wordt beheerd door {operator}"
                 }
             }
         },
@@ -338,6 +420,12 @@
                                 },
                                 "1": {
                                     "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}"
                                 }
                             }
                         },
@@ -411,6 +499,23 @@
                     "render": "fietsknooppunt <strong>{rcn_ref}</strong>"
                 },
                 "name": "knooppunten"
+            },
+            "0": {
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "render": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}",
+                        "question": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "node-naar-node verbinding <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "node-naar-node verbinding"
+                },
+                "name": "verbindingen van node naar node"
             }
         },
         "title": "Fietsknooppuntennetwerken"
@@ -480,7 +585,8 @@
     },
     "entrances": {
         "description": "Een kaart die alle toegangen toont,",
-        "title": "Toegangsdeuren"
+        "title": "Toegangsdeuren",
+        "shortDescription": "Breng ingangen in kaart om rolstoelnavigatie mogelijk te maken"
     },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
@@ -990,5 +1096,34 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "pets": {
+        "description": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Hondvriendelijke eetgelegenheden"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "hondvriendelijke winkels",
+                    "title": {
+                        "render": "hondvriendelijke winkels"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "Hondvriendelijke winkels",
+                            "description": "Een winkel waar je je hond in bijna heel de winkel mag meenemen"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen"
     }
 }
