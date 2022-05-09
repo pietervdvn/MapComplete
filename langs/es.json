@@ -60,7 +60,7 @@
             "intro": "Has marcado un lugar del que no conocemos los datos.<br>",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
             "openLayerControl": "Abrir el control de capas",
-            "pleaseLogin": "&lt;a class=\"activate-osm-authentication\"&gt;`Por favor inicia sesión para añadir un nuevo punto&lt;/a&gt;",
+            "pleaseLogin": "Por favor inicia sesión para añadir un nuevo punto",
             "presetInfo": "El nuevo POI tendrá {tags}",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
             "title": "Quieres añadir un punto?",
@@ -105,7 +105,7 @@
             "downloadAsSvg": "Descargar un SVG del mapa actual",
             "downloadCSV": "Descargar los datos visibles como CSV",
             "downloadCSVHelper": "Compatible con LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Descargar como un archivo GeoJson",
+            "downloadFeatureAsGeojson": "Descargar como un archivo GeoJSON",
             "downloadFeatureAsGpx": "Descargar como archivo GPX",
             "downloadGeoJsonHelper": "Compatible con QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Descargar los datos visibles como GeoJSON",
@@ -279,7 +279,7 @@
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "Descargar geojson",
+            "downloadGeojson": "Descargar GeoJSON",
             "giveDescription": "Por favor, escribe una pequeña descripción para alguien que vea la nota. Una buena nota describe lo que el contribuidor tiene que hacer, ej; <i>Puede que haya un banco aquí. Si estás por aquí, ¿Podrías por favor comprueba e indica si el banco existe o no?</i> (Un enlace a MapComplete se añadirá automáticamente)",
             "giveSource": "¿Cual es la fuente de estos datos? Si se especifica 'source' en la característica, se ignorará este valor",
             "giveWikilink": "¿En qué wikipágina puede encontrar uno más información sobre esta importación?",
@@ -309,7 +309,7 @@
         },
         "conflationChecker": {
             "cacheExpired": "La caché ha expirado",
-            "downloadOverpassData": "Descarga el geojson cargado desde overpass",
+            "downloadOverpassData": "Descarga el GeoJSON cargado desde overpass",
             "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
             "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
             "osmLoaded": "{count} elementos se cargan desde OpenStreetMap que coinciden con la capa <b>{name}</b>.",
