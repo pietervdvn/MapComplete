@@ -20,7 +20,7 @@
             "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controle da camada",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, faça o login para adicionar um novo ponto</a>",
+            "pleaseLogin": "Por favor, faça o login para adicionar um novo ponto",
             "stillLoading": "Os dados ainda estão sendo carregados. Aguarde um pouco antes de adicionar um novo ponto.",
             "title": "Adicionar um novo ponto?",
             "zoomInFurther": "Aumente mais o zoom para adicionar um ponto."
