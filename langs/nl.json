@@ -106,7 +106,7 @@
             "downloadAsSvgHelper": "Compatibel met Inkscape of Adobe Illustrator; deze data moeten nog verder verwerkt worden…  ",
             "downloadCSV": "Download de zichtbare data als CSV",
             "downloadCSVHelper": "Compatibel met LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Downloaden als GeoJson bestand",
+            "downloadFeatureAsGeojson": "Downloaden als GeoJSON bestand",
             "downloadFeatureAsGpx": "Downloaden als GPX-bestand",
             "downloadGeoJsonHelper": "Compatibel met QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Download de zichtbare data als GeoJSON",
