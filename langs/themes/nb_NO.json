@@ -42,6 +42,9 @@
                         "mappings": {
                             "1": {
                                 "then": "Kan brukes gratis"
+                            },
+                            "0": {
+                                "then": "Man må betale for bruk"
                             }
                         }
                     },
@@ -59,7 +62,43 @@
                     "caravansites-website": {
                         "question": "Har dette stedet en nettside?",
                         "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
+                    },
+                    "caravansites-name": {
+                        "render": "Dette stedet heter {name}",
+                        "question": "Hva heter dette stedet?"
                     }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "dumpstations-charge": {
+                        "render": "Dette stedet tar {charge}"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Man må betale for bruk"
+                            },
+                            "1": {
+                                "then": "Kan brukes gratis"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "1": {
+                            "then": "Dette stedet har ikke strømforsyning"
+                        },
+                        "0": {
+                            "then": "Dette stedet har strømforsyning"
+                        }
+                    },
+                    "question": "Har dette stedet strømforsyning?"
                 }
             }
         }
@@ -69,7 +108,40 @@
         "title": "Ladestasjoner"
     },
     "climbing": {
-        "title": "Åpent klatrekart"
+        "title": "Åpent klatrekart",
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Offentlig tilgjengelig for alle"
+                                },
+                                "2": {
+                                    "then": "Kun for kunder"
+                                },
+                                "3": {
+                                    "then": "Kun klubbmedlemmer"
+                                }
+                            }
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " meter"
+                                },
+                                "1": {
+                                    "human": " fot"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "cycle_infra": {
         "shortDescription": "Alt relatert til sykkelinfrastruktur.",
@@ -140,13 +212,20 @@
                                 "then": "Denne hagen er i delvis skygge"
                             }
                         }
+                    },
+                    "facadegardens-description": {
+                        "render": "Flere detaljer: {description}"
+                    },
+                    "facadegardens-plants": {
+                        "question": "Hva slags planter vokser her?"
                     }
                 }
             }
         }
     },
     "food": {
-        "title": "Restauranter og søppelmat"
+        "title": "Restauranter og søppelmat",
+        "description": "Restauranter og søppelmat"
     },
     "ghostbikes": {
         "title": "Spøkelsessykler"
@@ -169,17 +248,178 @@
         "title": "Lekeplasser"
     },
     "postboxes": {
-        "title": "Postboks og postkontor-kart"
+        "title": "Postboks og postkontor-kart",
+        "layers": {
+            "1": {
+                "presets": {
+                    "0": {
+                        "title": "et postkontor"
+                    }
+                },
+                "tagRenderings": {
+                    "OH": {
+                        "render": "Åpningstider: {opening_hours_table()}"
+                    }
+                }
+            },
+            "0": {
+                "name": "Postbokser",
+                "title": {
+                    "render": "Postboks"
+                }
+            }
+        }
     },
     "shops": {
         "title": "Kart over åpne butikker"
     },
     "toilets": {
-        "title": "Åpent toalettkart"
+        "title": "Åpent toalettkart",
+        "description": "Et kart over offentlige toaletter"
     },
     "trees": {
         "description": "Kartlegg trærne.",
         "shortDescription": "Kartlegg alle trærne",
         "title": "Trær"
+    },
+    "cyclenodes": {
+        "layers": {
+            "1": {
+                "title": {
+                    "render": "sykkelnode <strong>{rcn_ref}</strong>"
+                },
+                "name": "noder"
+            }
+        },
+        "title": "Sykkelnodenettverk"
+    },
+    "entrances": {
+        "title": "Innganger"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "Endringssettsenter",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Temanavn inneholder {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "render_id": {
+                        "render": "Endringssett <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Endringssett for {theme}"
+                }
+            }
+        },
+        "title": "Endringer utført med MapComplete",
+        "shortDescription": "Vis endringer utført med MapComplete"
+    },
+    "openwindpowermap": {
+        "title": "ÅpentVindkraftKart"
+    },
+    "notes": {
+        "title": "Notater på OpenStreetMap"
+    },
+    "postal_codes": {
+        "shortDescription": "Postkoder",
+        "title": "Postkoder",
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "Postkode {postal_code}"
+                },
+                "name": "postkoder"
+            }
+        }
+    },
+    "pets": {
+        "layers": {
+            "2": {
+                "override": {
+                    "name": "Hundevennlige butikker",
+                    "title": {
+                        "render": "Hundevennlige butikker"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "hundevennlig butikk"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "name": "Hundevennlige spisesteder"
+                }
+            }
+        }
+    },
+    "street_lighting": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Denne gaten er belyst"
+                            },
+                            "3": {
+                                "then": "Denne gaten er belyst døgnet rundt"
+                            },
+                            "2": {
+                                "then": "Denne gaten er belyst nattestid"
+                            }
+                        },
+                        "question": "Er denne gaten belyst?"
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "lit": {
+                        "question": "Er denne gaten belyst?",
+                        "mappings": {
+                            "2": {
+                                "then": "Denne gaten er belyst nattestid"
+                            },
+                            "3": {
+                                "then": "Denne gaten er belyst døgnet rundt"
+                            },
+                            "0": {
+                                "then": "Denne gaten er belyst"
+                            },
+                            "1": {
+                                "then": "Denne gaten er ikke belyst"
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Gate"
+                }
+            }
+        }
+    },
+    "waste": {
+        "title": "Avfall"
+    },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "name": "Fortau"
+            }
+        }
     }
 }
