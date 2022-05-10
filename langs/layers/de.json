@@ -1313,7 +1313,7 @@
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
                     },
                     "5": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772) <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker <i>ohne</i> Kabel</b>"
+                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/> Stecker <i>ohne</i> Kabel</b></div>"
                     },
                     "6": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
