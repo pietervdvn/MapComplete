@@ -108,7 +108,7 @@
             "downloadAsSvgHelper": "Compatible Inkscape or Adobe Illustrator; will need further processing  ",
             "downloadCSV": "Download visible data as CSV",
             "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Download as GeoJson-file",
+            "downloadFeatureAsGeojson": "Download as GeoJSON-file",
             "downloadFeatureAsGpx": "Download as GPX-file",
             "downloadGeoJsonHelper": "Compatible with QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Download visible data as GeoJSON",
@@ -287,7 +287,7 @@
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "Download geojson",
+            "downloadGeojson": "Download GeoJSON",
             "giveDescription": "Please, write a small description for someone who sees the note. A good note describes what the contributor has to do, e.g; <i>There might be a bench here. If you are around, could you please check and indicate if the bench exists or not?</i> (A link to MapComplete will be added automatically)",
             "giveSource": "What is the source of this data? If 'source' is set in the feature, this value will be ignored",
             "giveWikilink": "On what wikipage can one find more information about this import?",
@@ -320,7 +320,7 @@
         },
         "conflationChecker": {
             "cacheExpired": "Cache was expired",
-            "downloadOverpassData": "Download the loaded geojson from overpass",
+            "downloadOverpassData": "Download the loaded GeoJSON from overpass",
             "importCandidatesCount": "The {count} red elements on the following map are all your import candidates.",
             "loadedDataAge": "Loaded data is from the cache and is {age} old",
             "mapShowingNearbyIntro": "The following map shows features to import which have an OSM-feature within ",
@@ -358,7 +358,7 @@
             "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
             "loginIsCorrect": "<b>{name}</b> is the correct account to create the import notes with.",
             "loginRequired": "You have to be logged in to continue",
-            "title": "Login",
+            "title": "Log in",
             "userAccountTitle": "Select user account"
         },
         "mapPreview": {
@@ -469,8 +469,8 @@
         "disableAllNoteFilters": "Disable all filters",
         "isClosed": "This note is resolved",
         "isCreated": "Your note has been created!",
-        "loginToAddComment": "Login to add a comment",
-        "loginToAddPicture": "Login to add a picture",
+        "loginToAddComment": "Log in to add a comment",
+        "loginToAddPicture": "Log in to add a picture",
         "loginToClose": "Login to close this note",
         "noteIsPublic": "This will be visible to everyone",
         "noteLayerDoEnable": "Enable the layer showing notes",
@@ -685,7 +685,7 @@
         "text": {
             "description": "a piece of text"
         },
-        "tooLong": "Text is to long, at most 255 characters are allowed. You do have {count} characters now",
+        "tooLong": "The text is too long, at most 255 characters are allowed. You have {count} characters now.",
         "url": {
             "description": "link to a website",
             "feedback": "This is not a valid web address"
