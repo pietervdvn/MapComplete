@@ -406,7 +406,7 @@
         "title": "Importhinweise überprüfen und verwalten"
     },
     "importLayer": {
-        "alreadyMapped": "{title} befindet sich bereits auf der Karte – dieser Punkt ist ein Duplikat",
+        "alreadyMapped": "Es gibt bereits einen {title} auf der Karte - dieser Punkt ist ein Duplikat",
         "description": "Eine Ebene, die Einträge für {title} importiert",
         "importButton": "import_button({layerId}, _tags, Ich habe hier ein(en) {title} gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class=\"thanks\">Dieses Objekt wurde behandelt! Vielen Dank für Ihre Bemühungen</div>",
