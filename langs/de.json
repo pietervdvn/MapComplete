@@ -106,7 +106,7 @@
             "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; muss weiter bearbeitet werden  ",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Download als GeoJSON-Datei",
+            "downloadFeatureAsGeojson": "GeoJSON-Datei herunterladen",
             "downloadFeatureAsGpx": "Download als GPX Datei",
             "downloadGeoJsonHelper": "Kompatibel mit QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
@@ -406,13 +406,13 @@
         "title": "Importhinweise überprüfen und verwalten"
     },
     "importLayer": {
-        "alreadyMapped": "Es gibt bereits einen anderen {title} auf der Karte - dieser Punkt ist ein Duplikat",
+        "alreadyMapped": "{title} befindet sich bereits auf der Karte – dieser Punkt ist ein Duplikat",
         "description": "Eine Ebene, die Einträge für {title} importiert",
         "importButton": "import_button({layerId}, _tags, Ich habe hier ein(en) {title} gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class=\"thanks\">Dieses Objekt wurde behandelt! Vielen Dank für Ihre Bemühungen</div>",
         "layerName": "Möglicher {title}",
         "notFound": "Ich konnte {title} nicht finden - entferne es",
-        "popupTitle": "Möglicher {title}"
+        "popupTitle": "Möglicherweise gibt es hier {title}"
     },
     "index": {
         "#": "Dieser Text wird über die Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
@@ -463,8 +463,8 @@
         "disableAllNoteFilters": "Deaktiviere alle Filter",
         "isClosed": "Dieser Hinweis wurde geklärt",
         "isCreated": "Deine Notiz wurde erstellt!",
-        "loginToAddComment": "Einloggen um zu Kommentieren",
-        "loginToAddPicture": "Einloggen um ein Bild hinzuzufügen",
+        "loginToAddComment": "Anmelden, um einen Kommentar hinzuzufügen",
+        "loginToAddPicture": "Anmelden, um ein Bild hinzuzufügen",
         "loginToClose": "Einloggen um diesen Hinweis zu schließen",
         "noteIsPublic": "Es wird für alle sichtbar sein",
         "noteLayerDoEnable": "Aktivieren Sie die Ebene der Hinweise",
@@ -679,7 +679,7 @@
         "text": {
             "description": "ein Stück Text"
         },
-        "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben jetzt {count} Zeichen",
+        "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben bereits {count} Zeichen.",
         "url": {
             "description": "Link zu einer Website",
             "feedback": "Dies ist keine gültige Webadresse"
