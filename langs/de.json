@@ -106,7 +106,7 @@
             "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; muss weiter bearbeitet werden  ",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Download als GeoJson Datei",
+            "downloadFeatureAsGeojson": "Download als GeoJSON-Datei",
             "downloadFeatureAsGpx": "Download als GPX Datei",
             "downloadGeoJsonHelper": "Kompatibel mit QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
@@ -281,7 +281,7 @@
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "geojson herunterladen",
+            "downloadGeojson": "GeoJSON herunterladen",
             "giveDescription": "Bitte schreiben Sie eine kurze Beschreibung für jemanden, der die Notiz sieht. Eine gute Notiz beschreibt, was der Mitwirkende zu tun hat, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie in der Nähe sind, könnten Sie bitte überprüfen und angeben, ob die Bank existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
             "giveSource": "Was ist die Quelle dieser Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
             "giveWikilink": "Auf welcher Wikiseite gibt es weitere Informationen zu diesem Import?",
@@ -314,7 +314,7 @@
         },
         "conflationChecker": {
             "cacheExpired": "Der Cache ist abgelaufen",
-            "downloadOverpassData": "Die geladene geojson Datei von overpass herunterladen",
+            "downloadOverpassData": "Die geladene GeoJSON Datei von overpass herunterladen",
             "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
             "loadedDataAge": "Geladene Daten stammen aus dem Cache und sind {age} alt",
             "mapShowingNearbyIntro": "Die folgende Karte zeigt zu importierende Objekte, die ein OSM-Objekt enthalten ",
