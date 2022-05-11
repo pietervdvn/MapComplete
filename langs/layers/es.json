@@ -1056,19 +1056,11 @@
                 "title": "un pub"
             },
             "1": {
-                "title": "un bar",
-                "description": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                "description": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
+                "title": "un bar"
             },
             "2": {
                 "title": "una cafetería"
-            }
-        },
-        "title": {
-            "render": "Pub",
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
             }
         },
         "tagRenderings": {
@@ -1087,181 +1079,17 @@
                 "question": "¿Cual es el nombre de este pub?",
                 "render": "Este pub se llama {name}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Pub"
         }
     },
     "charging_station": {
-        "tagRenderings": {
-            "Authentication": {
-                "mappings": {
-                    "0": {
-                        "then": "Autenticación mediante tarjeta de membresía"
-                    },
-                    "1": {
-                        "then": "Autenticación mediante aplicación"
-                    },
-                    "2": {
-                        "then": "Autenticación mediante llamada telefónica disponible"
-                    },
-                    "3": {
-                        "then": "Autenticación mediante SMS disponible"
-                    },
-                    "4": {
-                        "then": "Autenticación mediante NFC disponible"
-                    },
-                    "5": {
-                        "then": "Autenticación mediante Money Card disponible"
-                    },
-                    "6": {
-                        "then": "Autenticación mediante tarjeta de débito disponible"
-                    }
-                }
-            },
-            "Network": {
-                "mappings": {
-                    "1": {
-                        "then": "No forma parte de una red mayor"
-                    },
-                    "0": {
-                        "then": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
-                    }
-                },
-                "question": "¿Esta estación de carga forma parte de una red?",
-                "render": "Parte de la red <b>{network}</b>"
-            },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Abre 24/7 (incluidos días festivos)"
-                    }
-                },
-                "question": "¿Cuándo abre esta estación de carga?"
-            },
-            "Type": {
-                "question": "¿A qué vehículos se permite la carga aquí?",
-                "mappings": {
-                    "1": {
-                        "then": "Aquí se pueden cargar <b>coches</b>"
-                    },
-                    "2": {
-                        "then": "Aquí se pueden cargar <b>scooters</b>"
-                    },
-                    "0": {
-                        "then": "Aquí se pueden cargar <b>bicicletas</b>"
-                    }
-                }
-            },
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "24": {
-                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
-                    },
-                    "6": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
-                    },
-                    "10": {
-                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
-                    },
-                    "11": {
-                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<b>Supercargador de Tesla</b>"
-                    },
-                    "14": {
-                        "then": "<b>Tipo 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<b>Tipo 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<b>CSS Tipo 2</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<b>CSS Tipo 2</b> (mennekes)"
-                    },
-                    "19": {
-                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
-                    },
-                    "22": {
-                        "then": "<b>Supercargador Tesla (destino</b>"
-                    },
-                    "26": {
-                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
-                    },
-                    "27": {
-                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
-                    },
-                    "25": {
-                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
-                    },
-                    "13": {
-                        "then": "<b>Supercargador de Tesla</b>"
-                    },
-                    "18": {
-                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
-                    },
-                    "20": {
-                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
-                    },
-                    "21": {
-                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
-                    },
-                    "23": {
-                        "then": "<b>Supercargador Tesla (destino)</b>"
-                    }
-                },
-                "question": "¿Qué tipo de conexiones de carga están disponibles aquí?"
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta estación de carga funciona"
-                    },
-                    "3": {
-                        "then": "Una estación de carga está construida aquí"
-                    },
-                    "1": {
-                        "then": "Esta estación de carga está rota"
-                    },
-                    "2": {
-                        "then": "Una estación de carga está planeada aquí"
-                    },
-                    "4": {
-                        "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
-                    }
-                },
-                "question": "¿Está en uso este punto de carga?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "De hecho, {operator} es la red"
-                    }
-                },
-                "question": "¿Quien es la operadora de esta estación de carga?",
-                "render": "Esta estación de carga la opera {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "No hay costes de aparcamiento adicionales mientras se carga"
-                    },
-                    "1": {
-                        "then": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga"
-                    }
-                },
-                "question": "¿Hay que pagar una tasa de aparcamiento mientras se carga?"
-            }
-        },
         "description": "Una estación de carga",
         "filter": {
             "0": {
@@ -1290,6 +1118,178 @@
                         "question": "Todos los conectores"
                     }
                 }
+            }
+        },
+        "tagRenderings": {
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Autenticación mediante tarjeta de membresía"
+                    },
+                    "1": {
+                        "then": "Autenticación mediante aplicación"
+                    },
+                    "2": {
+                        "then": "Autenticación mediante llamada telefónica disponible"
+                    },
+                    "3": {
+                        "then": "Autenticación mediante SMS disponible"
+                    },
+                    "4": {
+                        "then": "Autenticación mediante NFC disponible"
+                    },
+                    "5": {
+                        "then": "Autenticación mediante Money Card disponible"
+                    },
+                    "6": {
+                        "then": "Autenticación mediante tarjeta de débito disponible"
+                    }
+                }
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "6": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
+                    },
+                    "10": {
+                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<b>Supercargador de Tesla</b>"
+                    },
+                    "13": {
+                        "then": "<b>Supercargador de Tesla</b>"
+                    },
+                    "14": {
+                        "then": "<b>Tipo 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<b>Tipo 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<b>CSS Tipo 2</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<b>CSS Tipo 2</b> (mennekes)"
+                    },
+                    "18": {
+                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
+                    },
+                    "19": {
+                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
+                    },
+                    "20": {
+                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
+                    },
+                    "21": {
+                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
+                    },
+                    "22": {
+                        "then": "<b>Supercargador Tesla (destino</b>"
+                    },
+                    "23": {
+                        "then": "<b>Supercargador Tesla (destino)</b>"
+                    },
+                    "24": {
+                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
+                    },
+                    "25": {
+                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
+                    },
+                    "26": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+                    },
+                    "27": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+                    }
+                },
+                "question": "¿Qué tipo de conexiones de carga están disponibles aquí?"
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
+                    },
+                    "1": {
+                        "then": "No forma parte de una red mayor"
+                    }
+                },
+                "question": "¿Esta estación de carga forma parte de una red?",
+                "render": "Parte de la red <b>{network}</b>"
+            },
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Abre 24/7 (incluidos días festivos)"
+                    }
+                },
+                "question": "¿Cuándo abre esta estación de carga?"
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta estación de carga funciona"
+                    },
+                    "1": {
+                        "then": "Esta estación de carga está rota"
+                    },
+                    "2": {
+                        "then": "Una estación de carga está planeada aquí"
+                    },
+                    "3": {
+                        "then": "Una estación de carga está construida aquí"
+                    },
+                    "4": {
+                        "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
+                    }
+                },
+                "question": "¿Está en uso este punto de carga?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "De hecho, {operator} es la red"
+                    }
+                },
+                "question": "¿Quien es la operadora de esta estación de carga?",
+                "render": "Esta estación de carga la opera {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "No hay costes de aparcamiento adicionales mientras se carga"
+                    },
+                    "1": {
+                        "then": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga"
+                    }
+                },
+                "question": "¿Hay que pagar una tasa de aparcamiento mientras se carga?"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se pueden cargar <b>bicicletas</b>"
+                    },
+                    "1": {
+                        "then": "Aquí se pueden cargar <b>coches</b>"
+                    },
+                    "2": {
+                        "then": "Aquí se pueden cargar <b>scooters</b>"
+                    }
+                },
+                "question": "¿A qué vehículos se permite la carga aquí?"
             }
         }
     },

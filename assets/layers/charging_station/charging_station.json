@@ -68,7 +68,8 @@
     "en": "A charging station",
     "nl": "Oplaadpunten",
     "de": "Eine Ladestation",
-    "da": "En ladestation"
+    "da": "En ladestation",
+    "es": "Una estación de carga"
   },
   "tagRenderings": [
     "images",
@@ -89,7 +90,8 @@
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
             "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden",
-            "de": "<b>Fahrräder</b> können hier geladen werden"
+            "de": "<b>Fahrräder</b> können hier geladen werden",
+            "es": "Aquí se pueden cargar <b>bicicletas</b>"
           }
         },
         {
@@ -98,7 +100,8 @@
           "then": {
             "en": "<b>Cars</b> can be charged here",
             "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden",
-            "de": "<b>Autos</b> können hier geladen werden"
+            "de": "<b>Autos</b> können hier geladen werden",
+            "es": "Aquí se pueden cargar <b>coches</b>"
           }
         },
         {
@@ -107,7 +110,8 @@
           "then": {
             "en": "<b>Scooters</b> can be charged here",
             "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
-            "de": "<b>Roller</b> können hier geladen werden"
+            "de": "<b>Roller</b> können hier geladen werden",
+            "es": "Aquí se pueden cargar <b>scooters</b>"
           }
         },
         {
@@ -219,7 +223,8 @@
       "question": {
         "en": "Which charging connections are available here?",
         "nl": "Welke laadaansluitingen zijn hier beschikbaar?",
-        "de": "Welche Ladeanschlüsse gibt es hier?"
+        "de": "Welche Ladeanschlüsse gibt es hier?",
+        "es": "¿Qué tipo de conexiones de carga están disponibles aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -362,7 +367,8 @@
           "then": {
             "en": "<b>Type 1 with cable</b> (J1772)",
             "nl": "<b>Type 1 met kabel</b> (J1772)",
-            "de": "<b>Typ 1 mit Kabel</b> (J1772)"
+            "de": "<b>Typ 1 mit Kabel</b> (J1772)",
+            "es": "<b>Tipo 1 con cable</b> (J1772)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type1_J1772.svg",
@@ -405,7 +411,8 @@
           "then": {
             "en": "<b>Type 1 with cable</b> (J1772)",
             "nl": "<b>Type 1 met kabel</b> (J1772)",
-            "de": "<b>Typ 1 mit Kabel</b> (J1772)"
+            "de": "<b>Typ 1 mit Kabel</b> (J1772)",
+            "es": "<b>Tipo 1 con cable</b> (J1772)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -419,7 +426,8 @@
           "then": {
             "en": "<b>Type 1 <i>without</i> cable</b> (J1772)",
             "nl": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)",
-            "de": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
+            "de": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)",
+            "es": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type1_J1772.svg",
@@ -462,7 +470,8 @@
           "then": {
             "en": "<b>Type 1 <i>without</i> cable</b> (J1772)",
             "nl": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)",
-            "de": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
+            "de": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)",
+            "es": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -476,7 +485,8 @@
           "then": {
             "en": "<b>Type 1 CCS</b> (aka Type 1 Combo)",
             "nl": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)",
-            "de": "<b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)"
+            "de": "<b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)",
+            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type1-ccs.svg",
@@ -519,7 +529,8 @@
           "then": {
             "en": "<b>Type 1 CCS</b> (aka Type 1 Combo)",
             "nl": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)",
-            "de": "<b> Typ 1 CCS </b> (auch bekannt als Typ 1 Combo)"
+            "de": "<b> Typ 1 CCS </b> (auch bekannt als Typ 1 Combo)",
+            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -533,7 +544,8 @@
           "then": {
             "en": "<b>Tesla Supercharger</b>",
             "nl": "<b>Tesla Supercharger</b>",
-            "de": "<b>Tesla Supercharger</b>"
+            "de": "<b>Tesla Supercharger</b>",
+            "es": "<b>Supercargador de Tesla</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -576,7 +588,8 @@
           "then": {
             "en": "<b>Tesla Supercharger</b>",
             "nl": "<b>Tesla Supercharger</b>",
-            "de": "<b>Tesla Supercharger</b>"
+            "de": "<b>Tesla Supercharger</b>",
+            "es": "<b>Supercargador de Tesla</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -590,7 +603,8 @@
           "then": {
             "en": "<b>Type 2</b> (mennekes)",
             "nl": "<b>Type 2</b> (mennekes)",
-            "de": "<b>Typ 2</b> (mennekes)"
+            "de": "<b>Typ 2</b> (mennekes)",
+            "es": "<b>Tipo 2</b> (mennekes)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_socket.svg",
@@ -633,7 +647,8 @@
           "then": {
             "en": "<b>Type 2</b> (mennekes)",
             "nl": "<b>Type 2</b> (mennekes)",
-            "de": "<b>Typ 2</b> (mennekes)"
+            "de": "<b>Typ 2</b> (mennekes)",
+            "es": "<b>Tipo 2</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -647,7 +662,8 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes)",
             "nl": "<b>Type 2 CCS</b> (mennekes)",
-            "de": "<b>Typ 2 CCS</b> (mennekes)"
+            "de": "<b>Typ 2 CCS</b> (mennekes)",
+            "es": "<b>CSS Tipo 2</b> (mennekes)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -690,7 +706,8 @@
           "then": {
             "en": "<b>Type 2 CCS</b> (mennekes)",
             "nl": "<b>Type 2 CCS</b> (mennekes)",
-            "de": "<b>Typ 2 CCS</b> (mennekes)"
+            "de": "<b>Typ 2 CCS</b> (mennekes)",
+            "es": "<b>CSS Tipo 2</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -704,7 +721,8 @@
           "then": {
             "en": "<b>Type 2 with cable</b> (mennekes)",
             "nl": "<b>Type 2 met kabel</b> (J1772)",
-            "de": "<b>Typ 2 mit Kabel</b> (mennekes)"
+            "de": "<b>Typ 2 mit Kabel</b> (mennekes)",
+            "es": "<b>Tipo 2 con cable</b> (mennekes)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -747,7 +765,8 @@
           "then": {
             "en": "<b>Type 2 with cable</b> (mennekes)",
             "nl": "<b>Type 2 met kabel</b> (J1772)",
-            "de": "<b>Typ 2 mit Kabel</b> (mennekes)"
+            "de": "<b>Typ 2 mit Kabel</b> (mennekes)",
+            "es": "<b>Tipo 2 con cable</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -761,7 +780,8 @@
           "then": {
             "en": "<b>Tesla Supercharger CCS</b> (a branded type2_css)",
             "nl": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)",
-            "de": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)"
+            "de": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)",
+            "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_CCS.svg",
@@ -804,7 +824,8 @@
           "then": {
             "en": "<b>Tesla Supercharger CCS</b> (a branded type2_css)",
             "nl": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)",
-            "de": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)"
+            "de": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)",
+            "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -818,7 +839,8 @@
           "then": {
             "en": "<b>Tesla Supercharger (destination)</b>",
             "nl": "<b>Tesla Supercharger (destination)</b>",
-            "de": "<b>Tesla Supercharger (Destination)</b>"
+            "de": "<b>Tesla Supercharger (Destination)</b>",
+            "es": "<b>Supercargador Tesla (destino</b>"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -867,7 +889,8 @@
           "then": {
             "en": "<b>Tesla Supercharger (destination)</b>",
             "nl": "<b>Tesla Supercharger (destination)</b>",
-            "de": "<b>Tesla Supercharger (Destination)</b>"
+            "de": "<b>Tesla Supercharger (Destination)</b>",
+            "es": "<b>Supercargador Tesla (destino)</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -881,7 +904,8 @@
           "then": {
             "en": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)",
             "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)",
-            "de": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
+            "de": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)",
+            "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Type2_tethered.svg",
@@ -930,7 +954,8 @@
           "then": {
             "en": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)",
             "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)",
-            "de": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
+            "de": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)",
+            "es": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -944,7 +969,8 @@
           "then": {
             "en": "<b>USB</b> to charge phones and small electronics",
             "nl": "<b>USB</b> om GSMs en kleine electronica op te laden",
-            "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten"
+            "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
+            "es": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
           },
           "icon": {
             "path": "./assets/layers/charging_station/usb_port.svg",
@@ -961,7 +987,8 @@
           "then": {
             "en": "<b>USB</b> to charge phones and small electronics",
             "nl": "<b>USB</b> om GSMs en kleine electronica op te laden",
-            "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten"
+            "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
+            "es": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
           },
           "hideInAnswer": true,
           "icon": {
@@ -3711,7 +3738,8 @@
           "then": {
             "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
             "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt",
-            "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird"
+            "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird",
+            "es": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
           }
         },
         {
@@ -3767,12 +3795,14 @@
       "question": {
         "en": "Who is the operator of this charging station?",
         "nl": "Wie beheert dit oplaadpunt?",
-        "de": "Wer ist der Betreiber dieser Ladestation?"
+        "de": "Wer ist der Betreiber dieser Ladestation?",
+        "es": "¿Quien es la operadora de esta estación de carga?"
       },
       "render": {
         "en": "This charging station is operated by {operator}",
         "nl": "Wordt beheerd door {operator}",
-        "de": "Diese Ladestation wird betrieben von {operator}"
+        "de": "Diese Ladestation wird betrieben von {operator}",
+        "es": "Esta estación de carga la opera {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -3787,7 +3817,8 @@
           "then": {
             "en": "Actually, {operator} is the network",
             "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt",
-            "de": "Eigentlich ist {operator} das Netzwerk"
+            "de": "Eigentlich ist {operator} das Netzwerk",
+            "es": "De hecho, {operator} es la red"
           },
           "addExtraTags": [
             "operator="
@@ -3868,7 +3899,8 @@
       "question": {
         "en": "Is this charging point in use?",
         "nl": "Is dit oplaadpunt operationeel?",
-        "de": "Ist dieser Ladepunkt in Betrieb?"
+        "de": "Ist dieser Ladepunkt in Betrieb?",
+        "es": "¿Está en uso este punto de carga?"
       },
       "mappings": [
         {
@@ -3884,7 +3916,8 @@
           "then": {
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt",
-            "de": "Diese Ladestation ist in Betrieb"
+            "de": "Diese Ladestation ist in Betrieb",
+            "es": "Esta estación de carga funciona"
           }
         },
         {
@@ -3900,7 +3933,8 @@
           "then": {
             "en": "This charging station is broken",
             "nl": "Dit oplaadpunt is kapot",
-            "de": "Diese Ladestation ist defekt"
+            "de": "Diese Ladestation ist defekt",
+            "es": "Esta estación de carga está rota"
           }
         },
         {
@@ -3916,7 +3950,8 @@
           "then": {
             "en": "A charging station is planned here",
             "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
-            "de": "Hier ist eine Ladestation geplant"
+            "de": "Hier ist eine Ladestation geplant",
+            "es": "Una estación de carga está planeada aquí"
           }
         },
         {
@@ -3932,7 +3967,8 @@
           "then": {
             "en": "A charging station is constructed here",
             "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
-            "de": "Hier wird eine Ladestation errichtet"
+            "de": "Hier wird eine Ladestation errichtet",
+            "es": "Una estación de carga está construida aquí"
           }
         },
         {
@@ -3948,7 +3984,8 @@
           "then": {
             "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
             "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig",
-            "de": "Diese Ladestation wurde dauerhaft geschlossen und wird nicht mehr benutzt, ist aber noch sichtbar"
+            "de": "Diese Ladestation wurde dauerhaft geschlossen und wird nicht mehr benutzt, ist aber noch sichtbar",
+            "es": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
           }
         }
       ]
@@ -3958,7 +3995,8 @@
       "question": {
         "en": "Does one have to pay a parking fee while charging?",
         "nl": "Moet men parkeergeld betalen tijdens het opladen?",
-        "de": "Muss man während des Ladens eine Parkgebühr bezahlen?"
+        "de": "Muss man während des Ladens eine Parkgebühr bezahlen?",
+        "es": "¿Hay que pagar una tasa de aparcamiento mientras se carga?"
       },
       "mappings": [
         {
@@ -3966,7 +4004,8 @@
           "then": {
             "en": "No additional parking cost while charging",
             "nl": "Geen extra parkeerkost tijdens het opladen",
-            "de": "Keine zusätzlichen Parkkosten während des Ladens"
+            "de": "Keine zusätzlichen Parkkosten während des Ladens",
+            "es": "No hay costes de aparcamiento adicionales mientras se carga"
           }
         },
         {
@@ -3974,7 +4013,8 @@
           "then": {
             "en": "An additional parking fee should be paid while charging",
             "nl": "Tijdens het opladen moet er parkeergeld betaald worden",
-            "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten"
+            "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten",
+            "es": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga"
           }
         }
       ],
@@ -4106,7 +4146,8 @@
             "nl": "Alle voertuigen",
             "de": "Ladestationen für alle Fahrzeugtypen",
             "fr": "Tout type de véhicule",
-            "da": "Alle køretøjstyper"
+            "da": "Alle køretøjstyper",
+            "es": "Todo tipo de vehículos"
           }
         },
         {
@@ -4115,7 +4156,8 @@
             "nl": "Oplaadpunten voor fietsen",
             "de": "Ladestationen für Fahrräder",
             "fr": "Station de charge pour vélos",
-            "da": "Ladestation til cykler"
+            "da": "Ladestation til cykler",
+            "es": "Estación de carga para bicicletas"
           },
           "osmTags": "bicycle=yes"
         },
@@ -4125,7 +4167,8 @@
             "nl": "Oplaadpunten voor auto's",
             "de": "Ladestationen für Autos",
             "fr": "Station de charge pour automobiles",
-            "da": "Ladestation til biler"
+            "da": "Ladestation til biler",
+            "es": "Estación de carga para coches"
           },
           "osmTags": {
             "or": [
@@ -4144,7 +4187,8 @@
             "en": "Only working charging stations",
             "nl": "Enkel werkende oplaadpunten",
             "de": "Nur Ladestationen in Betrieb",
-            "da": "Kun fungerende ladestationer"
+            "da": "Kun fungerende ladestationer",
+            "es": "Solo estaciones de carga funcionales"
           },
           "osmTags": {
             "and": [
@@ -4163,7 +4207,8 @@
             "en": "All connectors",
             "nl": "Alle types",
             "de": "Alle Anschlüsse",
-            "ca": "Tots els connectors"
+            "ca": "Tots els connectors",
+            "es": "Todos los conectores"
           }
         },
         {
@@ -4199,17 +4244,17 @@
         },
         {
           "question": {
-            "en": "Has a <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
+            "en": "Has a <div style='display: inline-block'><b>Type 1 <i>without</i> cable (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772) <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker <i>ohne</i> Kabel</b>"
+            "de": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/> Stecker <i>ohne</i> Kabel</b></div>"
           },
           "osmTags": "socket:type1~*"
         },
         {
           "question": {
-            "en": "Has a <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector",
+            "en": "Has a <div style='display: inline-block'><b>Type 1 CCS (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker, auch bekannt als Typ 1 Combo</b>"
+            "de": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
           },
           "osmTags": "socket:type1_combo~*"
         },

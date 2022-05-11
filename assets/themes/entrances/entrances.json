@@ -7,7 +7,8 @@
     "de": "Eingänge",
     "nl": "Toegangsdeuren",
     "ca": "Entrades",
-    "es": "Entradas"
+    "es": "Entradas",
+    "nb_NO": "Innganger"
   },
   "icon": "./assets/layers/entrance/door.svg",
   "description": {
@@ -23,7 +24,8 @@
     "zh_Hant": "幫助輪椅導航來勘查出入口",
     "hu": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése",
     "de": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern",
-    "es": "Sondea entradas para ayudar el enrutado de sillas de ruedas"
+    "es": "Sondea entradas para ayudar el enrutado de sillas de ruedas",
+    "nl": "Breng ingangen in kaart om rolstoelnavigatie mogelijk te maken"
   },
   "version": "2021-12-04",
   "maintainer": "MapComplete",

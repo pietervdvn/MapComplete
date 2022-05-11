@@ -32,7 +32,8 @@
         "ru": "паб",
         "hu": "kocsma",
         "ca": "un bar",
-        "da": "en pub"
+        "da": "en pub",
+        "es": "un pub"
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
@@ -63,7 +64,8 @@
         "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
         "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
         "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
-        "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
+        "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
+        "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -80,7 +82,8 @@
         "ru": "кафе",
         "hu": "kávézó",
         "ca": "un cafè",
-        "da": "en cafe"
+        "da": "en cafe",
+        "es": "una cafetería"
       },
       "description": {
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
@@ -99,7 +102,8 @@
       "nl": "Café",
       "ca": "Bar",
       "de": "Kneipe",
-      "da": "Pub"
+      "da": "Pub",
+      "es": "Pub"
     },
     "mappings": [
       {
@@ -114,7 +118,8 @@
           "de": "<i>{name}</i>",
           "ru": "<i>{name}</i>",
           "ca": "<i>{name}</i>",
-          "da": "<i>{name}</i>"
+          "da": "<i>{name}</i>",
+          "es": "<i>{name}</i>"
         }
       }
     ]
@@ -128,7 +133,8 @@
         "de": "Wie heißt diese Kneipe?",
         "fr": "Quel est le nom de ce pub ?",
         "hu": "Mi a neve ennek a kocsmának?",
-        "da": "Hvad hedder denne pub?"
+        "da": "Hvad hedder denne pub?",
+        "es": "¿Cual es el nombre de este pub?"
       },
       "render": {
         "nl": "De naam van dit café is {name}",
@@ -136,7 +142,8 @@
         "de": "Diese Kneipe heißt {name}",
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
-        "da": "Denne pub hedder {name}"
+        "da": "Denne pub hedder {name}",
+        "es": "Este pub se llama {name}"
       },
       "freeform": {
         "key": "name"
@@ -149,7 +156,8 @@
         "nl": "Welk soort café is dit?",
         "de": "Was ist das für ein Café",
         "hu": "Milyen fajta kávézó ez?",
-        "da": "Hvilken slags cafe er dette"
+        "da": "Hvilken slags cafe er dette",
+        "es": "Qué tipo de café es este"
       },
       "mappings": [
         {
@@ -184,7 +192,8 @@
             "en": "A <b>restuarant</b> where one can get a proper meal",
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
             "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
-            "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid"
+            "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid",
+            "es": "Un <b>restaurante</b> donde puedes comer una comida de verdad"
           }
         },
         {
@@ -193,7 +202,8 @@
             "en": "An open space where beer is served, typically seen in Germany",
             "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland",
             "de": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland",
-            "da": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland"
+            "da": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland",
+            "es": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
           },
           "hideInAnswer": "_country!=de"
         }

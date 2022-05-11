@@ -231,9 +231,9 @@
         {
           "if": "rental=kid_bike",
           "then": {
-            "en": "Bikes for childs can be rented here",
+            "en": "Bikes for children can be rented here",
             "nl": "Kinderfietsen kunnen hier gehuurd worden",
-            "de": "Kinderfahrräder können hier gemietet werden",
+            "de": "Fahrräder für Kinder können hier gemietet werden",
             "es": "Aquí se pueden alquilar bicis infantiles",
             "da": "Børnecykler kan lejes her"
           }

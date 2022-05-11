@@ -5,6 +5,15 @@
         "retrying": "Falha ao carregar dados. Tentando novamente em {count} segundos…",
         "zoomIn": "Amplie para ver ou editar os dados"
     },
+    "delete": {
+        "cancel": "Cancelar",
+        "cannotBeDeleted": "Este recurso não pode ser excluído",
+        "delete": "Excluir",
+        "explanations": {
+            "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
+            "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
+        }
+    },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap",
         "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais",
@@ -153,14 +162,5 @@
         "title_singular": "Um comentário",
         "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
         "write_a_comment": "Deixe um comentário…"
-    },
-    "delete": {
-        "cannotBeDeleted": "Este recurso não pode ser excluído",
-        "explanations": {
-            "selectReason": "Por favor, selecione por que este recurso deve ser excluído",
-            "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente"
-        },
-        "delete": "Excluir",
-        "cancel": "Cancelar"
     }
 }

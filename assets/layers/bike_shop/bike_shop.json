@@ -229,7 +229,7 @@
           "if": "shop=rental",
           "then": {
             "nl": "Deze zaak focust op verhuur",
-            "en": "Deze business focuses on rental",
+            "en": "This business focuses on rental",
             "de": "Dieses Geschäft konzentriert sich auf die Vermietung",
             "da": "Denne virksomhed fokuserer på udlejning"
           }

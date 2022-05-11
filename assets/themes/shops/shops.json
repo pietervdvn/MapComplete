@@ -20,7 +20,8 @@
     "de": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
     "it": "Una cartina modificabile con informazioni di base dei negozi",
     "hu": "Szerkeszthető térkép üzletek alapvető adataival",
-    "es": "Un mapa editable con información básica sobre tiendas"
+    "es": "Un mapa editable con información básica sobre tiendas",
+    "nl": "Een bewerkbare kaart met simpele informatie over winkels"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
