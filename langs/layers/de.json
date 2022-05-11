@@ -490,7 +490,7 @@
                         "then": "Mountainbikes können hier gemietet werden"
                     },
                     "4": {
-                        "then": "Kinderfahrräder können hier gemietet werden"
+                        "then": "Fahrräder für Kinder können hier gemietet werden"
                     },
                     "5": {
                         "then": "Tandems können hier gemietet werden"
@@ -1124,7 +1124,7 @@
         }
     },
     "binocular": {
-        "description": "Fernglas",
+        "description": "Ferngläser",
         "name": "Ferngläser",
         "presets": {
             "0": {
@@ -1313,10 +1313,10 @@
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
                     },
                     "5": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772) <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker <i>ohne</i> Kabel</b>"
+                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/> Stecker <i>ohne</i> Kabel</b></div>"
                     },
                     "6": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker, auch bekannt als Typ 1 Combo</b>"
+                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
                     },
                     "7": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
@@ -4403,7 +4403,7 @@
                         "then": "Diese Kamera ist an einer Wand montiert"
                     },
                     "1": {
-                        "then": "Diese Kamera ist an einer Stange montiert"
+                        "then": "Diese Kamera ist an einer Stange befestigt"
                     },
                     "2": {
                         "then": "Diese Kamera ist an der Decke montiert"
