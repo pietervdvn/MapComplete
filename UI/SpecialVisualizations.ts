@@ -48,7 +48,7 @@ import {TextField} from "./Input/TextField";
 import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import {Translation} from "./i18n/Translation";
 import {AllTagsPanel} from "./AllTagsPanel";
-import NearbyImages, {P4CPicture, SelectOneNearbyImage} from "./Popup/NearbyImages";
+import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage} from "./Popup/NearbyImages";
 import Lazy from "./Base/Lazy";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {Tag} from "../Logic/Tags/Tag";
@@ -176,10 +176,13 @@ class NearbyImageVis implements SpecialVisualization {
 
         const nearby = new Lazy(() => {
             const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
-            const options = {
-                lon, lat, radius: 50,
+            const options : NearbyImageOptions & {value}= {
+                lon, lat, radius: 250,
                 value: selectedImage,
-                blacklist: alreadyInTheImage
+                blacklist: alreadyInTheImage,
+                towardscenter: false,
+                maxDaysOld: 365 * 5
+                
             };
             const slideshow = canBeEdited ? new SelectOneNearbyImage(options) : new NearbyImages(options);
             return new Combine([slideshow, new MapillaryLinkVis().constr(state, tagSource, [])])

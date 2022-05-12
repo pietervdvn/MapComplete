@@ -11,6 +11,7 @@ import {InputElement} from "../Input/InputElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {Mapillary} from "../../Logic/ImageProviders/Mapillary";
+import {SubtleButton} from "../Base/SubtleButton";
 
 export interface P4CPicture {
     pictureUrl: string,
@@ -30,12 +31,14 @@ export interface P4CPicture {
 }
 
 
-interface NearbyImageOptions {
+export interface NearbyImageOptions {
     lon: number,
     lat: number,
     radius: number,
-    maxDaysOld?: 1095,
-    blacklist: UIEventSource<{url: string}[]>
+    maxDaysOld?: 1095 | number,
+    blacklist: UIEventSource<{url: string}[]>,
+    shownImagesCount?: UIEventSource<number>,
+    towardscenter?: boolean;
 }
 
 export default class NearbyImages extends VariableUiElement {
@@ -44,10 +47,12 @@ export default class NearbyImages extends VariableUiElement {
         const t = Translations.t.image.nearbyPictures
         const P4C = require("../../vendor/P4C.min")
         const picManager = new P4C.PicturesManager({});
-
-        const loadedPictures = UIEventSource.FromPromise<P4CPicture[]>(
+        const shownImages = options.shownImagesCount ?? new UIEventSource(25);
+        const loadedPictures =
+            UIEventSource.FromPromise<P4CPicture[]>(
             picManager.startPicsRetrievalAround(new P4C.LatLng(options.lat, options.lon), options.radius, {
-                mindate: new Date().getTime() - (options.maxDaysOld ?? 1095) * 24 * 60 * 60 * 1000
+                mindate: new Date().getTime() - (options.maxDaysOld ?? (3*365)) * 24 * 60 * 60 * 1000,
+                towardscenter: options.towardscenter
             })
         ).map(images => {
             console.log("Images are" ,images, "blacklisted is", options.blacklist.data)
@@ -57,6 +62,18 @@ export default class NearbyImages extends VariableUiElement {
                 && i.details.isSpherical === false);
         }, [options.blacklist])
 
+        const loadMoreButton = new Combine([new SubtleButton(Svg.add_svg(), t.loadMore).onClick(() => {
+            shownImages.setData(shownImages.data + 25)
+        })]).SetClass("flex flex-col justify-center")
+        const imageElements = loadedPictures.map(imgs => {
+            const elements =  (imgs ?? []).slice(0, shownImages.data).map(i => this.prepareElement(i));
+            if(imgs !== undefined && elements.length < imgs.length){
+                // We effectively sliced some items, so we can increase the count
+                elements.push(loadMoreButton)
+            }
+            return elements;
+        },[shownImages]);
+        
         super(loadedPictures.map(images => {
             if(images === undefined){
               return  new Loading(t.loading);
@@ -64,7 +81,7 @@ export default class NearbyImages extends VariableUiElement {
             if(images.length === 0){
                 return t.nothingFound.SetClass("alert block")
             }
-            return new SlideShow(loadedPictures.map(imgs => (imgs ?? []).slice(0, 25).map(i => this.prepareElement(i))))
+            return new SlideShow(imageElements)
         }));
                
     }
