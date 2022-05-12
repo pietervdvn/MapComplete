@@ -162,7 +162,7 @@
           "fixme=Freeform tag `books` used, to be doublechecked"
         ]
       },
-      "multiAnswer": true
+      "multiAnswer": true,
       "mappings": [
         {
           "if": "books=children",
