@@ -280,6 +280,7 @@
             "browseNearby": "Browse nearby images...",
             "confirm": "The selected image shows {title()}",
             "hasMatchingPicture": "Does a picture match the object? Select it below",
+            "loadMore": "Load more images",
             "loading": "Loading nearby images...",
             "noImageSelected": "Select an image to link it to the object",
             "nothingFound": "No nearby images found...",
