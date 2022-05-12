@@ -1400,7 +1400,7 @@
                         "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
                     },
                     "10": {
-                        "then": "<b>Typ 1 CCS</b> (auch bekannt als Typ 1 Combo)"
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo)"
                     },
                     "11": {
                         "then": "<b> Typ 1 CCS </b> (auch bekannt als Typ 1 Combo)"
@@ -1412,25 +1412,25 @@
                         "then": "<b>Tesla Supercharger</b>"
                     },
                     "14": {
-                        "then": "<b>Typ 2</b> (mennekes)"
+                        "then": "<b>Typ 2</b> (Mennekes)"
                     },
                     "15": {
                         "then": "<b>Typ 2</b> (mennekes)"
                     },
                     "16": {
-                        "then": "<b>Typ 2 CCS</b> (mennekes)"
+                        "then": "<b>Typ 2 CCS</b> (Mennekes)"
                     },
                     "17": {
                         "then": "<b>Typ 2 CCS</b> (mennekes)"
                     },
                     "18": {
-                        "then": "<b>Typ 2 mit Kabel</b> (mennekes)"
+                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes)"
                     },
                     "19": {
                         "then": "<b>Typ 2 mit Kabel</b> (mennekes)"
                     },
                     "20": {
-                        "then": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)"
+                        "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)"
                     },
                     "21": {
                         "then": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)"
@@ -1442,7 +1442,7 @@
                         "then": "<b>Tesla Supercharger (Destination)</b>"
                     },
                     "24": {
-                        "then": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
                     },
                     "25": {
                         "then": "<b>Tesla supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
@@ -1497,13 +1497,13 @@
                         "then": "Diese Ladestation ist defekt"
                     },
                     "2": {
-                        "then": "Hier ist eine Ladestation geplant"
+                        "then": "Diese Ladestation ist erst in Planung"
                     },
                     "3": {
-                        "then": "Hier wird eine Ladestation errichtet"
+                        "then": "Diese Ladestation ist aktuell im Bau"
                     },
                     "4": {
-                        "then": "Diese Ladestation wurde dauerhaft geschlossen und wird nicht mehr benutzt, ist aber noch sichtbar"
+                        "then": "Diese Ladestation ist dauerhaft geschlossen und nicht mehr in Nutzung, aber noch sichtbar"
                     }
                 },
                 "question": "Ist dieser Ladepunkt in Betrieb?"
@@ -1531,22 +1531,22 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Fahrräder</b> können hier geladen werden"
+                        "then": "Hier können <b>Fahrräder</b> laden"
                     },
                     "1": {
-                        "then": "<b>Autos</b> können hier geladen werden"
+                        "then": "Hier können <b>Autos</b> laden"
                     },
                     "2": {
-                        "then": "<b>Roller</b> können hier geladen werden"
+                        "then": "Hier können <b>Roller</b> laden"
                     },
                     "3": {
-                        "then": "<b>LKW</b> können hier geladen werden"
+                        "then": "Hier können <b>LKW</b> laden"
                     },
                     "4": {
-                        "then": "<b>Busse</b> können hier geladen werden"
+                        "then": "Hier können <b>Busse</b> laden"
                     }
                 },
-                "question": "Welche Fahrzeuge dürfen hier laden?"
+                "question": "Welche Fahrzeuge können hier laden?"
             },
             "access": {
                 "mappings": {
@@ -1570,7 +1570,7 @@
                 "render": "Zugang ist {access}"
             },
             "capacity": {
-                "question": "Wie viele Fahrzeuge können hier gleichzeitig geladen werden?",
+                "question": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
                 "render": "{capacity} Fahrzeuge können hier gleichzeitig laden"
             },
             "charge": {
@@ -1584,19 +1584,19 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "Kostenlos nutzbar (ohne Authentifizierung)"
+                        "then": "Die Nutzung ist kostenlos, keine Authentifizierung erforderlich"
                     },
                     "1": {
-                        "then": "Kostenlose Nutzung, aber man muss sich authentifizieren"
+                        "then": "Die Nutzung ist kostenlos, Authentifizierung erforderlich"
                     },
                     "2": {
                         "then": "Kostenlose Nutzung"
                     },
                     "3": {
-                        "then": "Kostenpflichtige Nutzung, aber kostenlos für Kunden des Hotels / Pub / Krankenhauses / ... wer die Ladestation betreibt"
+                        "then": "Die Nutzung ist kostenpflichtig, aber kostenlos für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, ..."
                     },
                     "4": {
-                        "then": "Nutzung gebührenpflichtig"
+                        "then": "Die Nutzung ist kostenpflichtig"
                     }
                 },
                 "question": "Muss man für die Nutzung dieser Ladestation bezahlen?"
@@ -2023,10 +2023,18 @@
                     "1": {
                         "then": "<b>Typ 2</b> (Mennekes) liefert 400 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?"
             },
             "website": {
                 "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
+            },
+            "plugs-7": {
+                "render": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?"
+            },
+            "questions": {
+                "render": "<h3>Technische Fragen</h3>Die folgenden Fragen sind sehr technisch. Sie können sie gerne ignorieren<br/>{questions}"
             }
         },
         "title": {
