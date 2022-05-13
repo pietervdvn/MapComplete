@@ -57,7 +57,7 @@
                 "zoomInMore": "Ansicht vergrößern, um das Objekt zu importieren"
             },
             "importTags": "Das Element erhält {tags}",
-            "intro": "Sie haben auf eine Stelle in der Karte geklickt, an der noch keine Daten bekannt sind.<br>",
+            "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br>",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "pleaseLogin": "Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen",
