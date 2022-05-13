@@ -144,13 +144,25 @@
       "id": "bookcase-booktypes",
       "question": {
         "en": "What kind of books can be found in this public bookcase?",
-        "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
+        "nl": "Welke soort boeken zijn de meeste boeken in dit boekenruilkastje?",
         "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
         "fr": "Quel type de livres peut-on dans cette microbibliothèque ?",
         "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
         "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
         "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
       },
+            "render": {
+        "nl": "Deze plaats serveert vooral {books}",
+        "en": "This place mostly serves {books}",
+        "de": "An diesem Ort gibt es hauptsächlich {books}"
+      },
+      "freeform": {
+        "key": "books",
+        "addExtraTags": [
+          "fixme=Freeform tag `books` used, to be doublechecked"
+        ]
+      },
+      "multiAnswer": true,
       "mappings": [
         {
           "if": "books=children",
@@ -174,18 +186,6 @@
             "ru": "В основном книги для взрослых",
             "it": "Principalmente libri per persone in età adulta",
             "hu": "Többnyire felnőtteknek szóló könyvek"
-          }
-        },
-        {
-          "if": "books=children;adults",
-          "then": {
-            "en": "Both books for kids and adults",
-            "nl": "Boeken voor zowel kinderen als volwassenen",
-            "de": "Sowohl Bücher für Kinder als auch für Erwachsene",
-            "fr": "Livres pour enfants et adultes également",
-            "it": "Sia libri per l'infanzia, sia per l'età adulta",
-            "ru": "Книги и для детей, и для взрослых",
-            "hu": "Gyerekeknek és felnőtteknek szóló könyvek egyaránt"
           }
         }
       ]
