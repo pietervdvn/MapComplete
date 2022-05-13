@@ -252,20 +252,20 @@
         "name": "Sitzbänke",
         "presets": {
             "0": {
-                "title": "eine sitzbank"
+                "title": "eine Sitzbank"
             }
         },
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Rückenlehne: Ja"
+                        "then": "Die Sitzbank hat eine Rückenlehne"
                     },
                     "1": {
-                        "then": "Rückenlehne: Nein"
+                        "then": "Die Sitzbank hat keine Rückenlehne"
                     }
                 },
-                "question": "Hat diese Bank eine Rückenlehne?"
+                "question": "Hat diese Sitzbank eine Rückenlehne?"
             },
             "bench-colour": {
                 "mappings": {
@@ -304,25 +304,25 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Material: Holz"
+                        "then": "Die Sitzfläche ist aus Holz"
                     },
                     "1": {
-                        "then": "Material: Metall"
+                        "then": "Die Sitzfläche ist aus Metall"
                     },
                     "2": {
-                        "then": "Material: Stein"
+                        "then": "Die Sitzfläche ist aus Stein"
                     },
                     "3": {
-                        "then": "Material: Beton"
+                        "then": "Die Sitzfläche ist aus Beton"
                     },
                     "4": {
-                        "then": "Material: Kunststoff"
+                        "then": "Die Sitzfläche ist aus Kunststoff"
                     },
                     "5": {
-                        "then": "Material: Stahl"
+                        "then": "Die Sitzfläche ist aus Stahl"
                     }
                 },
-                "question": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?",
+                "question": "Aus welchem Material ist die Sitzfläche der Bank?",
                 "render": "Material: {material}"
             },
             "bench-seats": {
@@ -435,10 +435,10 @@
         "presets": {
             "0": {
                 "description": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
-                "title": "Ein Fahrradverleih"
+                "title": "ein Geschäft mit Fahrradverleih"
             },
             "1": {
-                "title": "Ein Fahrradverleih"
+                "title": "eine Fahrradleihstation"
             }
         },
         "tagRenderings": {
@@ -490,7 +490,7 @@
                         "then": "Mountainbikes können hier gemietet werden"
                     },
                     "4": {
-                        "then": "Fahrräder für Kinder können hier gemietet werden"
+                        "then": "Kinderfahrräder können hier gemietet werden"
                     },
                     "5": {
                         "then": "Tandems können hier gemietet werden"
@@ -499,11 +499,11 @@
                         "then": "Rennräder können hier gemietet werden"
                     },
                     "7": {
-                        "then": "Hier können Fahrradhelme ausgeliehen werden"
+                        "then": "Fahrradhelme können hier gemietet werden"
                     }
                 },
                 "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
-                "render": "{rental} wird hier vermietet"
+                "render": "{rental} können hier gemietet werden"
             },
             "bicycle_rental_type": {
                 "mappings": {
@@ -511,19 +511,19 @@
                         "then": "Dies ist ein Geschäft, dessen Schwerpunkt auf dem Fahrradverleih liegt"
                     },
                     "1": {
-                        "then": "Dies ist ein Vermietungsunternehmen, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt"
+                        "then": "Dies ist ein Geschäft, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt"
                     },
                     "2": {
                         "then": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet"
                     },
                     "3": {
-                        "then": "Dies ist eine automatisierte Dockingstation, bei der ein Fahrrad mechanisch in einer Struktur verriegelt wird"
+                        "then": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden"
                     },
                     "4": {
-                        "then": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+                        "then": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
                     },
                     "5": {
-                        "then": "Es handelt sich um einen Rückgabepunkt, z. B. einen reservierten Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
+                        "then": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
                     }
                 },
                 "question": "Was ist das für ein Fahrradverleih?"
@@ -696,13 +696,13 @@
             "Access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich zugänglich"
+                        "then": "Der Zugang ist öffentlich"
                     },
                     "1": {
-                        "then": "Der Zugang ist in erster Linie für Besucher eines Unternehmens bestimmt"
+                        "then": "Der Zugang ist vorwiegend für Besucher oder Kunden eines Unternehmens"
                     },
                     "2": {
-                        "then": "Der Zugang ist beschränkt auf Mitglieder einer Schule, eines Unternehmens oder einer Organisation"
+                        "then": "Der Zugang ist beschränkt auf Mitglieder einer Schule, Firma oder Organisation"
                     }
                 },
                 "question": "Wer kann diesen Fahrradparplatz nutzen?",
@@ -740,7 +740,7 @@
             },
             "Capacity": {
                 "question": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?",
-                "render": "Platz für {capacity} Fahrräder"
+                "render": "Der Parkplatz bietet Platz für {capacity} Fahrräder"
             },
             "Cargo bike capacity?": {
                 "question": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
@@ -763,7 +763,7 @@
             "Is covered?": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Parkplatz ist überdacht (er hat ein Dach)"
+                        "then": "Dieser Parkplatz ist überdacht"
                     },
                     "1": {
                         "then": "Dieser Parkplatz ist nicht überdacht"
@@ -774,13 +774,13 @@
             "Underground?": {
                 "mappings": {
                     "0": {
-                        "then": "Tiefgarage"
+                        "then": "In einer Tiefgarage"
                     },
                     "1": {
-                        "then": "Ebenerdiges Parken"
+                        "then": "Auf einem ebenerdigen Parkplatz"
                     },
                     "2": {
-                        "then": "Parkplatz auf dem Dach"
+                        "then": "Auf einem Parkplatz auf dem Dach"
                     },
                     "3": {
                         "then": "Ebenerdiges Parken"
@@ -4095,7 +4095,7 @@
         "name": "Picknick-Tische",
         "presets": {
             "0": {
-                "title": "eine picknicktisch"
+                "title": "ein Picknick-Tisch"
             }
         },
         "tagRenderings": {
@@ -5140,22 +5140,22 @@
             "toilet-access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlicher Zugang"
+                        "then": "Der Zugang ist öffentlich"
                     },
                     "1": {
-                        "then": "Nur Zugang für Kunden"
+                        "then": "Der Zugang ist nur für Kunden"
                     },
                     "2": {
-                        "then": "Nicht zugänglich"
+                        "then": "Der Zugang ist nicht erlaubt oder nicht möglich"
                     },
                     "3": {
-                        "then": "Zugänglich, aber man muss einen Schlüssel für die Eingabe verlangen"
+                        "then": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen"
                     },
                     "4": {
                         "then": "Öffentlicher Zugang"
                     }
                 },
-                "question": "Sind diese Toiletten öffentlich zugänglich?",
+                "question": "Ist diese Toilette öffentlich zugänglich?",
                 "render": "Zugang ist {access}"
             },
             "toilet-changing_table:location": {
