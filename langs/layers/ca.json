@@ -681,6 +681,22 @@
     "hydrant": {
         "title": {
             "render": "Hidrant"
+        },
+        "tagRenderings": {
+            "hydrant-type": {
+                "mappings": {
+                    "4": {
+                        "then": "L'hidrant està soterrat."
+                    }
+                }
+            },
+            "hydrant-color": {
+                "mappings": {
+                    "2": {
+                        "then": "El color de l'hidrant és roig."
+                    }
+                }
+            }
         }
     },
     "information_board": {
