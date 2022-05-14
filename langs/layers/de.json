@@ -1577,6 +1577,131 @@
                 "question": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?",
                 "render": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>"
             },
+            "current-0": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Schuko-Steckdose</b> ohne Erdungsstift (CEE7/4 Typ F) liefert 16 A"
+                    }
+                }
+            },
+            "current-1": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 16 A"
+                    }
+                }
+            },
+            "current-10": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 125 A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 350 A"
+                    }
+                }
+            },
+            "current-11": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> liefert maximal 125 A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> liefert maximal 350 A"
+                    }
+                }
+            },
+            "current-12": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 16 A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 32 A"
+                    }
+                }
+            },
+            "current-13": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 1 A"
+                    },
+                    "1": {
+                        "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 2 A"
+                    }
+                }
+            },
+            "current-2": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Chademo</b> liefert maximal 120 A"
+                    }
+                }
+            },
+            "current-3": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 32 A"
+                    }
+                }
+            },
+            "current-4": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 32 A"
+                    }
+                }
+            },
+            "current-5": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 50 A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 125 A"
+                    }
+                }
+            },
+            "current-6": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger</b> liefert maximal 125 A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger</b> liefert maximal 350 A"
+                    }
+                }
+            },
+            "current-7": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 16 A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 32 A"
+                    }
+                }
+            },
+            "current-8": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 125 A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 350 A"
+                    }
+                }
+            },
+            "current-9": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 16 A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 32 A"
+                    }
+                }
+            },
             "email": {
                 "question": "Wie lautet die E-Mail-Adresse des Betreibers?",
                 "render": "Bei Problemen senden Sie bitte eine E-Mail an <a href='mailto:{email}'>{email}</a>"
@@ -1622,200 +1747,24 @@
                 "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> sind hier vorhanden?",
                 "render": "Hier sind <b class='text-xl'>{socket:typee}</b> Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> vorhanden"
             },
-            "voltage-12": {
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt",
+            "plugs-7": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden"
+            },
+            "power-output-0": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert 230 Volt"
+                        "then": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F) liefert maximal 3,6 kw A"
+                    }
+                }
+            },
+            "power-output-1": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 3 kw A"
                     },
                     "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert 400 Volt"
-                    }
-                }
-            },
-            "voltage-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten liefert 5 Volt"
-                    }
-                },
-                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert {socket:USB-A:voltage} Volt"
-            },
-            "voltage-14": {
-                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
-            },
-            "current-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> liefert maximal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> liefert maximal 350 A"
-                    }
-                }
-            },
-            "current-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 1 A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 2 A"
-                    }
-                }
-            },
-            "power-output-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 3,7 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 6,6 kw A"
-                    },
-                    "3": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 7,2 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 7 kw A"
-                    }
-                }
-            },
-            "power-output-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 22 kw A"
-                    }
-                }
-            },
-            "power-output-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 22 kw A"
-                    }
-                }
-            },
-            "voltage-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert 200 Volt"
-                    },
-                    "1": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert 240 Volt"
-                    }
-                }
-            },
-            "power-output-6": {
-                "mappings": {
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> liefert maximal 150 kw A"
-                    },
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> liefert maximal 120 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Tesla Supercharger</b> liefert maximal 250 kW A"
-                    }
-                }
-            },
-            "current-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 16 A"
-                    }
-                }
-            },
-            "current-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko-Steckdose</b> ohne Erdungsstift (CEE7/4 Typ F) liefert 16 A"
-                    }
-                }
-            },
-            "current-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 350 A"
-                    }
-                }
-            },
-            "current-12": {
-                "mappings": {
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 32 A"
-                    },
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 16 A"
-                    }
-                }
-            },
-            "current-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> liefert maximal 120 A"
-                    }
-                }
-            },
-            "current-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 32 A"
-                    }
-                }
-            },
-            "current-5": {
-                "mappings": {
-                    "1": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 125 A"
-                    },
-                    "0": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 50 A"
-                    }
-                }
-            },
-            "current-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 32 A"
-                    }
-                }
-            },
-            "current-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 32 A"
-                    }
-                }
-            },
-            "current-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 350 A"
-                    }
-                }
-            },
-            "current-9": {
-                "mappings": {
-                    "1": {
-                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 32 A"
-                    },
-                    "0": {
-                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 16 A"
+                        "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 22 kw A"
                     }
                 }
             },
@@ -1823,16 +1772,6 @@
                 "mappings": {
                     "0": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 50 kw A"
-                    }
-                }
-            },
-            "power-output-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 22 kw A"
                     }
                 }
             },
@@ -1849,13 +1788,13 @@
                     }
                 }
             },
-            "power-output-3": {
+            "power-output-12": {
                 "mappings": {
-                    "1": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 7 kw A"
-                    },
                     "0": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 3,7 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 11 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 22 kw A"
                     }
                 }
             },
@@ -1869,10 +1808,113 @@
                     }
                 }
             },
+            "power-output-2": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Chademo</b> liefert maximal 50 kw A"
+                    }
+                }
+            },
+            "power-output-3": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 3,7 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 7 kw A"
+                    }
+                }
+            },
+            "power-output-4": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 3,7 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 6,6 kw A"
+                    },
+                    "2": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 7 kw A"
+                    },
+                    "3": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 7,2 kw A"
+                    }
+                }
+            },
+            "power-output-5": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 50 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 62,5 kw A"
+                    },
+                    "2": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 150 kw A"
+                    },
+                    "3": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 350 kw A"
+                    }
+                }
+            },
+            "power-output-6": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger</b> liefert maximal 120 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger</b> liefert maximal 150 kw A"
+                    },
+                    "2": {
+                        "then": "<b>Tesla Supercharger</b> liefert maximal 250 kW A"
+                    }
+                }
+            },
+            "power-output-7": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 11 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 2</b> (Mennekes) liefert maximal 22 kw A"
+                    }
+                }
+            },
             "power-output-8": {
                 "mappings": {
                     "0": {
                         "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 50 kw A"
+                    }
+                }
+            },
+            "power-output-9": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 11 kw A"
+                    },
+                    "1": {
+                        "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 22 kw A"
+                    }
+                }
+            },
+            "questions": {
+                "render": "<h3>Technische Fragen</h3>Die folgenden Fragen sind sehr technisch. Sie können sie gerne ignorieren<br/>{questions}"
+            },
+            "ref": {
+                "question": "Wie ist die Kennziffer der Ladestation",
+                "render": "Die Kennziffer ist <b>{ref}</b>"
+            },
+            "voltage-0": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Schuko-Stecker</b> ohne Schutzkontakt (CEE7/4 Typ F) liefert 230 Volt"
+                    }
+                }
+            },
+            "voltage-1": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Schutzkontakt (CEE7/4 Typ E) liefert 230 Volt"
                     }
                 }
             },
@@ -1893,6 +1935,29 @@
                     }
                 }
             },
+            "voltage-12": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert 230 Volt"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert 400 Volt"
+                    }
+                },
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt"
+            },
+            "voltage-13": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten liefert 5 Volt"
+                    }
+                },
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert {socket:USB-A:voltage} Volt"
+            },
+            "voltage-14": {
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
+            },
             "voltage-2": {
                 "mappings": {
                     "0": {
@@ -1909,6 +1974,44 @@
                         "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert 240 Volt"
                     }
                 }
+            },
+            "voltage-4": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert 200 Volt"
+                    },
+                    "1": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert 240 Volt"
+                    }
+                }
+            },
+            "voltage-5": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert 400 Volt"
+                    },
+                    "1": {
+                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert 1000 Volt"
+                    }
+                }
+            },
+            "voltage-6": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger</b> liefert 480 Volt"
+                    }
+                }
+            },
+            "voltage-7": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Typ 2</b> (Mennekes) liefert 230 Volt"
+                    },
+                    "1": {
+                        "then": "<b>Typ 2</b> (Mennekes) liefert 400 Volt"
+                    }
+                },
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?"
             },
             "voltage-8": {
                 "mappings": {
@@ -1930,148 +2033,35 @@
                     }
                 }
             },
-            "power-output-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 3 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 22 kw A"
-                    }
-                }
-            },
-            "power-output-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> liefert maximal 50 kw A"
-                    }
-                }
-            },
-            "ref": {
-                "question": "Wie ist die Kennziffer der Ladestation",
-                "render": "Die Kennziffer ist <b>{ref}</b>"
-            },
-            "voltage-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko-Stecker</b> ohne Schutzkontakt (CEE7/4 Typ F) liefert 230 Volt"
-                    }
-                }
-            },
-            "voltage-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> liefert 480 Volt"
-                    }
-                }
-            },
-            "voltage-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Schutzkontakt (CEE7/4 Typ E) liefert 230 Volt"
-                    }
-                }
-            },
-            "power-output-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F) liefert maximal 3,6 kw A"
-                    }
-                }
-            },
-            "current-6": {
-                "mappings": {
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> liefert maximal 350 A"
-                    },
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> liefert maximal 125 A"
-                    }
-                }
-            },
-            "voltage-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert 400 Volt"
-                    },
-                    "1": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert 1000 Volt"
-                    }
-                }
-            },
-            "power-output-5": {
-                "mappings": {
-                    "2": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 150 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 62,5 kw A"
-                    },
-                    "3": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 350 kw A"
-                    },
-                    "0": {
-                        "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 50 kw A"
-                    }
-                }
-            },
-            "voltage-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Typ 2</b> (Mennekes) liefert 230 Volt"
-                    },
-                    "1": {
-                        "then": "<b>Typ 2</b> (Mennekes) liefert 400 Volt"
-                    }
-                },
-                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?"
-            },
             "website": {
                 "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
-            },
-            "plugs-7": {
-                "render": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?"
-            },
-            "questions": {
-                "render": "<h3>Technische Fragen</h3>Die folgenden Fragen sind sehr technisch. Sie können sie gerne ignorieren<br/>{questions}"
             }
         },
         "title": {
-            "render": "Ladestation",
             "mappings": {
-                "1": {
-                    "then": "Ladestation für Autos"
-                },
                 "0": {
                     "then": "Ladestation für Elektrofahrräder"
+                },
+                "1": {
+                    "then": "Ladestation für Autos"
                 }
-            }
+            },
+            "render": "Ladestation"
         },
         "units": {
             "0": {
                 "applicableUnits": {
-                    "2": {
-                        "human": " Tage",
-                        "humanSingular": " Tag"
+                    "0": {
+                        "human": " Minuten",
+                        "humanSingular": " Minute"
                     },
                     "1": {
                         "human": " Stunden",
                         "humanSingular": " Stunde"
                     },
-                    "0": {
-                        "human": " Minuten",
-                        "humanSingular": " Minute"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Kilowatt"
-                    },
-                    "1": {
-                        "human": "Megawatt"
+                    "2": {
+                        "human": " Tage",
+                        "humanSingular": " Tag"
                     }
                 }
             },
@@ -2086,6 +2076,16 @@
                 "applicableUnits": {
                     "0": {
                         "human": "Ein"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Kilowatt"
+                    },
+                    "1": {
+                        "human": "Megawatt"
                     }
                 }
             }
@@ -2113,6 +2113,14 @@
                     }
                 },
                 "question": "Kann hier gebouldert werden?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Klettern ist hier kostenlos"
+                    }
+                },
+                "render": "Zum Klettern wird eine Gebühr von {charge} erhoben"
             },
             "max_difficulty": {
                 "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
@@ -2166,18 +2174,11 @@
             },
             "website": {
                 "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
-            },
-            "fee": {
-                "render": "Zum Klettern wird eine Gebühr von {charge} erhoben",
-                "mappings": {
-                    "0": {
-                        "then": "Das Klettern ist hier kostenlos"
-                    }
-                }
             }
         }
     },
     "climbing_area": {
+        "description": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, ... Enthält eine Sammlung von Routen",
         "name": "Klettermöglichkeiten",
         "presets": {
             "0": {
@@ -2240,8 +2241,7 @@
                 }
             },
             "render": "Klettermöglichkeit"
-        },
-        "description": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, ... Enthält eine Sammlung von Routen"
+        }
     },
     "climbing_club": {
         "description": "Ein Kletterverein oder -organisation",
@@ -2328,6 +2328,7 @@
         }
     },
     "climbing_route": {
+        "description": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
         "name": "Kletterrouten",
         "presets": {
             "0": {
@@ -2372,8 +2373,7 @@
                 }
             },
             "render": "Kleterroute"
-        },
-        "description": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet"
+        }
     },
     "crossings": {
         "description": "Übergänge für Fußgänger und Radfahrer",
@@ -2506,6 +2506,7 @@
         }
     },
     "cycleways_and_roads": {
+        "description": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
         "name": "Radwege und Straßen",
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -2782,40 +2783,40 @@
                     "3": {
                         "then": "Gemeinsamer Fuß-/Radweg"
                     },
-                    "7": {
-                        "then": "Kein Verkehrsschild vorhanden"
+                    "4": {
+                        "then": "Verpflichtender Radweg"
                     },
                     "5": {
                         "then": "Verpflichtender (Moped-)Radweg"
                     },
-                    "4": {
-                        "then": "Verpflichtender Radweg"
+                    "7": {
+                        "then": "Kein Verkehrsschild vorhanden"
                     }
                 },
                 "question": "Welches Verkehrszeichen hat dieser Radweg?"
             },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
-                    "6": {
-                        "then": "Kein zusätzliches Verkehrszeichen vorhanden"
-                    },
                     "0": {
                         "then": "Mopeds müssen den Radweg benutzen"
                     },
-                    "4": {
-                        "then": "Speed-Pedelecs sind nicht zulässig"
-                    },
-                    "3": {
-                        "then": "Mopeds sind nicht zulässig"
-                    },
-                    "5": {
-                        "then": "Mopeds und Speed-Pedelecs sind nicht zulässig"
+                    "1": {
+                        "then": "Speed-Pedelecs müssen den Radweg benutzen"
                     },
                     "2": {
                         "then": "Mopeds und Speed-Pedelecs müssen den Radweg benutzen"
                     },
-                    "1": {
-                        "then": "Speed-Pedelecs müssen den Radweg benutzen"
+                    "3": {
+                        "then": "Mopeds sind nicht zulässig"
+                    },
+                    "4": {
+                        "then": "Speed-Pedelecs sind nicht zulässig"
+                    },
+                    "5": {
+                        "then": "Mopeds und Speed-Pedelecs sind nicht zulässig"
+                    },
+                    "6": {
+                        "then": "Kein zusätzliches Verkehrszeichen vorhanden"
                     }
                 },
                 "question": "Hat das Verkehrszeichen D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) ein Zusatzzeichen?"
@@ -2865,10 +2866,10 @@
                 }
             },
             "render": "Radwege"
-        },
-        "description": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen"
+        }
     },
     "defibrillator": {
+        "description": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen",
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -2990,18 +2991,24 @@
         },
         "title": {
             "render": "Defibrillator"
-        },
-        "description": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen"
+        }
     },
     "direction": {
         "description": "Diese Ebene visualisiert Richtungen",
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
     "dogpark": {
+        "name": "Hundeparks",
+        "presets": {
+            "0": {
+                "description": "Ein Ort ohne Leinenzwang für Hunde",
+                "title": "Ein Hundepark"
+            }
+        },
         "tagRenderings": {
             "Name": {
-                "render": "Denne hundeskov hedder {name}",
-                "question": "Wie lautet der Name dieses Hundeparks?"
+                "question": "Wie lautet der Name dieses Hundeparks?",
+                "render": "Denne hundeskov hedder {name}"
             },
             "dogarea": {
                 "render": "Der Hundepark ist {_surface:ha} ha groß"
@@ -3029,18 +3036,22 @@
                 "question": "Hat der Hundepark einen separaten Bereich für Hundewelpen und kleine Hunde?"
             }
         },
-        "name": "Hundeparks",
-        "presets": {
-            "0": {
-                "description": "Ein Ort ohne Leinenzwang für Hunde",
-                "title": "Ein Hundepark"
-            }
-        },
         "title": {
             "render": "Hundepark"
         }
     },
     "drinking_water": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist"
+                },
+                "1": {
+                    "then": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>"
+                }
+            }
+        },
+        "description": "Eine Ebene mit Trinkwasserbrunnen",
         "name": "Trinkwasserstellen",
         "presets": {
             "0": {
@@ -3080,38 +3091,25 @@
         },
         "title": {
             "render": "Trinkwasserstelle"
-        },
-        "description": "Eine Ebene mit Trinkwasserbrunnen",
-        "deletion": {
-            "nonDeleteMappings": {
-                "1": {
-                    "then": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>"
-                },
-                "0": {
-                    "then": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist"
-                }
-            }
         }
     },
     "entrance": {
+        "description": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, ...)",
         "name": "Eingänge",
-        "title": {
-            "render": "Eingang"
-        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Der Türtyp ist nicht bekannt"
+                    },
+                    "1": {
+                        "then": "Eine klassische Drehtür mit Türbändern"
+                    },
                     "2": {
                         "then": "Eine Karusselltür, die sich um ihre eigene Achse dreht"
                     },
                     "3": {
                         "then": "Eine Schiebetür, bei der sich die Tür zur Seite bewegt"
-                    },
-                    "1": {
-                        "then": "Eine klassische Drehtür mit Türbändern"
-                    },
-                    "0": {
-                        "then": "Der Türtyp ist nicht bekannt"
                     },
                     "4": {
                         "then": "Ein Rolltor, das von oben nach unten rollt, typischerweise für Garagen"
@@ -3123,29 +3121,35 @@
             },
             "Entrance type": {
                 "mappings": {
-                    "3": {
-                        "then": "Dies ist ein Nebeneingang"
+                    "0": {
+                        "then": "Der Eingangstyp ist nicht bekannt"
                     },
                     "2": {
                         "then": "Dies ist der Haupteingang"
+                    },
+                    "3": {
+                        "then": "Dies ist ein Nebeneingang"
+                    },
+                    "5": {
+                        "then": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit"
                     },
                     "7": {
                         "then": "Dies ist ein Notausgang"
                     },
                     "8": {
                         "then": "Dies ist ein Eingang zu einem privaten Haus"
-                    },
-                    "5": {
-                        "then": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit"
-                    },
-                    "0": {
-                        "then": "Der Eingangstyp ist nicht bekannt"
                     }
                 },
                 "question": "Um welchen Eingangstyp handelt es sich hier?"
             },
             "automatic_door": {
                 "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Automatiktür"
+                    },
+                    "1": {
+                        "then": "Diese Tür ist <b>nicht</b> automatisiert"
+                    },
                     "4": {
                         "then": "Diese Tür öffnet sich automatisch, wenn ein <b>Taster betätigt wird</b>"
                     },
@@ -3158,14 +3162,8 @@
                     "7": {
                         "then": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage <b>per Rufknopf</b>"
                     },
-                    "0": {
-                        "then": "Dies ist eine Automatiktür"
-                    },
                     "8": {
                         "then": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage"
-                    },
-                    "1": {
-                        "then": "Diese Tür ist <b>nicht</b> automatisiert"
                     }
                 }
             },
@@ -3174,7 +3172,9 @@
                 "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter"
             }
         },
-        "description": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, ...)"
+        "title": {
+            "render": "Eingang"
+        }
     },
     "etymology": {
         "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
@@ -3192,12 +3192,12 @@
                 "question": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
                 "render": "Benannt nach {name:etymology}"
             },
+            "wikipedia": {
+                "render": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
+            },
             "wikipedia-etymology": {
                 "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
                 "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
-            },
-            "wikipedia": {
-                "render": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
             },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>"
@@ -3770,6 +3770,7 @@
         }
     },
     "nature_reserve": {
+        "description": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde",
         "filter": {
             "0": {
                 "options": {
@@ -3886,8 +3887,7 @@
         },
         "title": {
             "render": "Naturschutzgebiet"
-        },
-        "description": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde"
+        }
     },
     "note": {
         "filter": {
@@ -3963,11 +3963,11 @@
             },
             "10": {
                 "options": {
-                    "1": {
-                        "question": "Importnotizen ausblenden"
-                    },
                     "0": {
                         "question": "Alle Notizen"
+                    },
+                    "1": {
+                        "question": "Importnotizen ausblenden"
                     },
                     "2": {
                         "question": "Nur Importnotizen anzeigen"

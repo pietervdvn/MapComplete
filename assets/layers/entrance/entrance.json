@@ -8,7 +8,8 @@
   },
   "description": {
     "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)",
-    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)"
+    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)",
+    "de": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, ...)"
   },
   "source": {
     "osmTags": {
@@ -24,7 +25,8 @@
       "en": "Entrance",
       "nl": "Ingang",
       "ca": "Entrada",
-      "da": "Indgang"
+      "da": "Indgang",
+      "de": "Eingang"
     }
   },
   "tagRenderings": [
@@ -33,14 +35,16 @@
       "id": "Entrance type",
       "question": {
         "en": "What type of entrance is this?",
-        "nl": "Wat voor ingang is dit?"
+        "nl": "Wat voor ingang is dit?",
+        "de": "Um welchen Eingangstyp handelt es sich hier?"
       },
       "mappings": [
         {
           "if": "entrance=yes",
           "then": {
             "en": "No specific entrance type is known",
-            "nl": "Het specifieke type ingang is onbekend"
+            "nl": "Het specifieke type ingang is onbekend",
+            "de": "Der Eingangstyp ist nicht bekannt"
           },
           "hideInAnswer": true
         },
@@ -65,7 +69,8 @@
           },
           "then": {
             "en": "This is the main entrance",
-            "nl": "Dit is de hoofdingang"
+            "nl": "Dit is de hoofdingang",
+            "de": "Dies ist der Haupteingang"
           }
         },
         {
@@ -77,7 +82,8 @@
           },
           "then": {
             "en": "This is a secondary entrance",
-            "nl": "Dit is een secundaire ingang"
+            "nl": "Dit is een secundaire ingang",
+            "de": "Dies ist ein Nebeneingang"
           }
         },
         {
@@ -101,7 +107,8 @@
           },
           "then": {
             "en": "This is an exit where one can not enter",
-            "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen"
+            "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen",
+            "de": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit"
           }
         },
         {
@@ -125,7 +132,8 @@
           },
           "then": {
             "en": "This is emergency exit",
-            "nl": "Dit is een nooduitgang"
+            "nl": "Dit is een nooduitgang",
+            "de": "Dies ist ein Notausgang"
           }
         },
         {
@@ -137,7 +145,8 @@
           },
           "then": {
             "en": "This is the entrance to a private home",
-            "nl": "Dit is de ingang van een private woning"
+            "nl": "Dit is de ingang van een private woning",
+            "de": "Dies ist ein Eingang zu einem privaten Haus"
           }
         }
       ]
@@ -153,7 +162,8 @@
           "if": "door=yes",
           "then": {
             "en": "The door type is not known",
-            "nl": "Het type deur is onbekend"
+            "nl": "Het type deur is onbekend",
+            "de": "Der Türtyp ist nicht bekannt"
           },
           "hideInAnswer": true
         },
@@ -161,35 +171,40 @@
           "if": "door=hinged",
           "then": {
             "en": "A classical, hinged door supported by joints",
-            "nl": "Een gewone deur die aan scharnieren ophangt en openzwaait"
+            "nl": "Een gewone deur die aan scharnieren ophangt en openzwaait",
+            "de": "Eine klassische Drehtür mit Türbändern"
           }
         },
         {
           "if": "door=revolving",
           "then": {
             "en": "A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure",
-            "nl": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait"
+            "nl": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait",
+            "de": "Eine Karusselltür, die sich um ihre eigene Achse dreht"
           }
         },
         {
           "if": "door=sliding",
           "then": {
             "en": "A sliding door where the door slides sidewards, typically parallel with a wall",
-            "nl": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt"
+            "nl": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt",
+            "de": "Eine Schiebetür, bei der sich die Tür zur Seite bewegt"
           }
         },
         {
           "if": "door=overhead",
           "then": {
             "en": "A door which rolls from overhead, typically seen for garages",
-            "nl": "Een poort die langs boven dichtrolt, typisch voor garages"
+            "nl": "Een poort die langs boven dichtrolt, typisch voor garages",
+            "de": "Ein Rolltor, das von oben nach unten rollt, typischerweise für Garagen"
           }
         },
         {
           "if": "door=no",
           "then": {
             "en": "This is an entrance without a physical door",
-            "nl": "Er is een toegang zonder een deur"
+            "nl": "Er is een toegang zonder een deur",
+            "de": "Dies ist ein Eingang ohne Tür"
           },
           "hideInAnswer": "entrance="
         }
@@ -204,7 +219,8 @@
           "if": "automatic_door=yes",
           "then": {
             "en": "This is an automatic door",
-            "nl": "Dit is een automatische deur"
+            "nl": "Dit is een automatische deur",
+            "de": "Dies ist eine Automatiktür"
           },
           "hideInAnswer": true
         },
@@ -212,7 +228,8 @@
           "if": "automatic_door=no",
           "then": {
             "en": "This door is <b>not</b> automated",
-            "nl": "Deze deur is <b>niet</b> automatisch"
+            "nl": "Deze deur is <b>niet</b> automatisch",
+            "de": "Diese Tür ist <b>nicht</b> automatisiert"
           }
         },
         {
@@ -233,35 +250,40 @@
           "if": "automatic_door=button",
           "then": {
             "en": "This door will open automatically when a <b>button is pressed</b>",
-            "nl": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>"
+            "nl": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>",
+            "de": "Diese Tür öffnet sich automatisch, wenn ein <b>Taster betätigt wird</b>"
           }
         },
         {
           "if": "automatic_door=slowdown_button",
           "then": {
             "en": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users",
-            "nl": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers"
+            "nl": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers",
+            "de": "Diese Tür dreht sich durchgehend automatisch, hat aber einen<b>Knopf, um die Drehgeschwindigkeit zu reduzieren</b>, z.B. für Rollstuhlnutzer"
           }
         },
         {
           "if": "automatic_door=continuous",
           "then": {
             "en": "This door revolves automatically all the time",
-            "nl": "De deur draait continue automatisch"
+            "nl": "De deur draait continue automatisch",
+            "de": "Diese Tür dreht sich durchgehend automatisch"
           }
         },
         {
           "if": "automatic_door=serviced_on_button_press",
           "then": {
             "en": "This door will be opened by staff when requested by <b>pressing a button</b>",
-            "nl": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>"
+            "nl": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>",
+            "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage <b>per Rufknopf</b>"
           }
         },
         {
           "if": "automatic_door=serviced_on_request",
           "then": {
             "en": "This door will be opened by staff when requested",
-            "nl": "De deur wordt geopend door personeel wanneer je het vraagt"
+            "nl": "De deur wordt geopend door personeel wanneer je het vraagt",
+            "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage"
           }
         }
       ]
@@ -270,11 +292,13 @@
       "id": "width",
       "render": {
         "en": "This door has a width of {canonical(width)} meter",
-        "nl": "Deze deur heeft een breedte van {canonical(width)} meter"
+        "nl": "Deze deur heeft een breedte van {canonical(width)} meter",
+        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter"
       },
       "question": {
         "en": "What is the width of this door/entrance?",
-        "nl": "Wat is de breedte van deze deur/toegang?"
+        "nl": "Wat is de breedte van deze deur/toegang?",
+        "de": "Wie breit ist diese Tür bzw. dieser Eingang?"
       },
       "freeform": {
         "key": "width",

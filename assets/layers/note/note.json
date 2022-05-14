@@ -284,7 +284,8 @@
         {
           "question": {
             "en": "All Notes",
-            "nl": "Alle Notes"
+            "nl": "Alle Notes",
+            "de": "Alle Notizen"
           }
         },
         {
@@ -299,7 +300,8 @@
           "osmTags": "_is_import_note~*",
           "question": {
             "en": "Show only import Notes",
-            "nl": "Toon enkel import Notes"
+            "nl": "Toon enkel import Notes",
+            "de": "Nur Importnotizen anzeigen"
           }
         }
       ]

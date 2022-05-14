@@ -18,25 +18,29 @@
     {
       "title": {
         "en": "a dog park",
-        "da": "en hundeskov"
+        "da": "en hundeskov",
+        "de": "Ein Hundepark"
       },
       "tags": [
         "leisure=dog_park"
       ],
       "description": {
         "en": "A place for dogs, where they can run unleashed",
-        "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor"
+        "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor",
+        "de": "Ein Ort ohne Leinenzwang für Hunde"
       }
     }
   ],
   "name": {
     "en": "dog parks",
-    "da": "hundeskove"
+    "da": "hundeskove",
+    "de": "Hundeparks"
   },
   "title": {
     "render": {
       "en": "dog park",
-      "da": "hundeskov"
+      "da": "hundeskov",
+      "de": "Hundepark"
     },
     "mappings": [
       {
@@ -77,20 +81,23 @@
           "if": "barrier=fence",
           "then": {
             "en": "This dogpark is fenced all around",
-            "da": "Denne hundskov er indhegnet"
+            "da": "Denne hundskov er indhegnet",
+            "de": "Dieser Hundepark ist komplett umzäunt"
           }
         },
         {
           "if": "barrier=no",
           "then": {
             "en": "This dogpark is not fenced all around",
-            "da": "Denne hundskov er ikke indhegnet"
+            "da": "Denne hundskov er ikke indhegnet",
+            "de": "Dieser Hundepark ist nicht komplett umzäunt"
           }
         }
       ],
       "question": {
         "en": "It this dog park fenced in?",
-        "da": "Er denne hundeskov indhegnet?"
+        "da": "Er denne hundeskov indhegnet?",
+        "de": "Ist dieser Hundepark umzäunt?"
       }
     },
     {
@@ -100,26 +107,30 @@
           "if": "small_dog=separate",
           "then": {
             "en": "Have separate area for puppies and small dogs",
-            "da": "Har en indhegning til hvalpe og sm&aring; hunde"
+            "da": "Har en indhegning til hvalpe og sm&aring; hunde",
+            "de": "Hat einen separaten Bereich für Hundewelpen und kleine Hunde"
           }
         },
         {
           "if": "small_dog=shared",
           "then": {
             "en": "Does <strong>not</strong> have a separate area for puppies and small dogs",
-            "da": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde"
+            "da": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde",
+            "de": "Hat <strong>keinen</strong> separaten Bereich für Hundewelpen und kleine Hunde"
           }
         }
       ],
       "question": {
         "en": "Does this dog park have a separate fenced in area for small dogs and puppies?",
-        "da": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?"
+        "da": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?",
+        "de": "Hat der Hundepark einen separaten Bereich für Hundewelpen und kleine Hunde?"
       }
     },
     {
       "question": {
         "en": "What is the name of this dog park?",
-        "da": "Hvad hedder denne hundeskov?"
+        "da": "Hvad hedder denne hundeskov?",
+        "de": "Wie lautet der Name dieses Hundeparks?"
       },
       "render": {
         "en": "The name of this dog park is {name}",
@@ -134,7 +145,8 @@
       "id": "dogarea",
       "render": {
         "en": "This dogpark is {_surface:ha} ha big",
-        "da": "Denne hundeskov er på {_surface:ha} hektar"
+        "da": "Denne hundeskov er på {_surface:ha} hektar",
+        "de": "Der Hundepark ist {_surface:ha} ha groß"
       },
       "condition": "_surface:ha!=0"
     },

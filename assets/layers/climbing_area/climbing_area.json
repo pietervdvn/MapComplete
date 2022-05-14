@@ -9,7 +9,8 @@
     "it": "Opportunità di arrampicata"
   },
   "description": {
-    "en": "An area where climbing is possible, e.g. a crag, site, boulder, ... Contains aggregation of routes"
+    "en": "An area where climbing is possible, e.g. a crag, site, boulder, ... Contains aggregation of routes",
+    "de": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, ... Enthält eine Sammlung von Routen"
   },
   "minzoom": 10,
   "source": {

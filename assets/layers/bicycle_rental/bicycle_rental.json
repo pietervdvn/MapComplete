@@ -88,7 +88,7 @@
           "then": {
             "en": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
             "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
-            "de": "Dies ist ein Vermietungsunternehmen, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt",
+            "de": "Dies ist ein Geschäft, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt",
             "es": "Este es un negocio de alquileres que alquila varios objetos y/o vehículos. También alquila bicicletas, pero este no es el enfoque principal",
             "da": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus"
           }
@@ -113,7 +113,7 @@
           "then": {
             "en": "This is an automated docking station, where a bicycle is mechanically locked into a structure",
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
-            "de": "Dies ist eine automatisierte Dockingstation, bei der ein Fahrrad mechanisch in einer Struktur verriegelt wird",
+            "de": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden",
             "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente en una estructura"
           }
         },
@@ -123,7 +123,7 @@
             "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
             "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
             "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
-            "de": "Es gibt einen Automaten, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+            "de": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
           }
         },
         {
@@ -131,7 +131,7 @@
           "then": {
             "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only",
             "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur ",
-            "de": "Es handelt sich um einen Rückgabepunkt, z. B. einen reservierten Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
+            "de": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
           }
         }
       ],
@@ -178,7 +178,7 @@
       "render": {
         "en": "{rental} is rented here",
         "nl": "{rental} kunnen hier uitgeleend worden",
-        "de": "{rental} wird hier vermietet",
+        "de": "{rental} können hier gemietet werden",
         "es": "{rental} se alquilan aquí",
         "da": "{rental} udlejes her"
       },
@@ -233,7 +233,7 @@
           "then": {
             "en": "Bikes for children can be rented here",
             "nl": "Kinderfietsen kunnen hier gehuurd worden",
-            "de": "Fahrräder für Kinder können hier gemietet werden",
+            "de": "Kinderfahrräder können hier gemietet werden",
             "es": "Aquí se pueden alquilar bicis infantiles",
             "da": "Børnecykler kan lejes her"
           }
@@ -263,7 +263,7 @@
             "en": "Bike helmets can be rented here",
             "nl": "Fietshelmpen kunnen hier gehuurd worden",
             "es": "Aquí se pueden alquilar cascos",
-            "de": "Hier können Fahrradhelme ausgeliehen werden"
+            "de": "Fahrradhelme können hier gemietet werden"
           }
         }
       ]
@@ -378,7 +378,7 @@
         "en": "a bicycle rental shop",
         "nl": "een fietsverhuurzaak",
         "fr": "une magasin de location de vélos",
-        "de": "Ein Fahrradverleih",
+        "de": "ein Geschäft mit Fahrradverleih",
         "es": "una tienda de alquiler de bicicletas",
         "da": "en cykeludlejningsforretning"
       },
@@ -399,7 +399,7 @@
       "title": {
         "en": "a bicycle rental",
         "nl": "een fietsverhuur",
-        "de": "Ein Fahrradverleih",
+        "de": "eine Fahrradleihstation",
         "da": "cykeludlejning",
         "es": "un alquiler de bicicletas"
       },

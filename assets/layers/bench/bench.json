@@ -54,7 +54,7 @@
           "if": "backrest=yes",
           "then": {
             "en": "Backrest: Yes",
-            "de": "Rückenlehne: Ja",
+            "de": "Die Sitzbank hat eine Rückenlehne",
             "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
             "es": "Respaldo: sí",
@@ -77,7 +77,7 @@
           "if": "backrest=no",
           "then": {
             "en": "Backrest: No",
-            "de": "Rückenlehne: Nein",
+            "de": "Die Sitzbank hat keine Rückenlehne",
             "fr": "Dossier : Non",
             "nl": "Heeft geen rugleuning",
             "es": "Respaldo: no",
@@ -99,7 +99,7 @@
       ],
       "question": {
         "en": "Does this bench have a backrest?",
-        "de": "Hat diese Bank eine Rückenlehne?",
+        "de": "Hat diese Sitzbank eine Rückenlehne?",
         "fr": "Ce banc dispose-t-il d'un dossier ?",
         "nl": "Heeft deze zitbank een rugleuning?",
         "es": "¿Este banco tiene respaldo?",
@@ -189,7 +189,7 @@
           "if": "material=wood",
           "then": {
             "en": "Material: wood",
-            "de": "Material: Holz",
+            "de": "Die Sitzfläche ist aus Holz",
             "fr": "Matériau : bois",
             "nl": "Gemaakt uit hout",
             "es": "Material: madera",
@@ -212,7 +212,7 @@
           "if": "material=metal",
           "then": {
             "en": "Material: metal",
-            "de": "Material: Metall",
+            "de": "Die Sitzfläche ist aus Metall",
             "fr": "Matériau : métal",
             "nl": "Gemaakt uit metaal",
             "es": "Material: metal",
@@ -234,7 +234,7 @@
           "if": "material=stone",
           "then": {
             "en": "Material: stone",
-            "de": "Material: Stein",
+            "de": "Die Sitzfläche ist aus Stein",
             "fr": "Matériau : pierre",
             "nl": "Gemaakt uit steen",
             "es": "Material: piedra",
@@ -257,7 +257,7 @@
           "if": "material=concrete",
           "then": {
             "en": "Material: concrete",
-            "de": "Material: Beton",
+            "de": "Die Sitzfläche ist aus Beton",
             "fr": "Matériau : béton",
             "nl": "Gemaakt uit beton",
             "es": "Material: concreto",
@@ -280,7 +280,7 @@
           "if": "material=plastic",
           "then": {
             "en": "Material: plastic",
-            "de": "Material: Kunststoff",
+            "de": "Die Sitzfläche ist aus Kunststoff",
             "fr": "Matériau : plastique",
             "nl": "Gemaakt uit plastiek",
             "es": "Material: plastico",
@@ -303,7 +303,7 @@
           "if": "material=steel",
           "then": {
             "en": "Material: steel",
-            "de": "Material: Stahl",
+            "de": "Die Sitzfläche ist aus Stahl",
             "fr": "Matériau : acier",
             "nl": "Gemaakt uit staal",
             "es": "Material: acero",
@@ -325,7 +325,7 @@
       ],
       "question": {
         "en": "What is the bench (seating) made from?",
-        "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?",
+        "de": "Aus welchem Material ist die Sitzfläche der Bank?",
         "fr": "De quel matériau ce banc est-il fait ?",
         "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
         "hu": "Miből van a pad (ülő része)?",
@@ -661,7 +661,7 @@
       ],
       "title": {
         "en": "a bench",
-        "de": "eine sitzbank",
+        "de": "eine Sitzbank",
         "fr": "une banc",
         "nl": "een zitbank",
         "es": "una banco",

@@ -130,8 +130,8 @@
         "title": "Entrades"
     },
     "etymology": {
-        "title": "Open Etymology Map",
-        "shortDescription": "Quin és l'origen d'un topònim?"
+        "shortDescription": "Quin és l'origen d'un topònim?",
+        "title": "Open Etymology Map"
     },
     "facadegardens": {
         "layers": {
@@ -163,6 +163,10 @@
             }
         },
         "title": "Botigues de patates"
+    },
+    "hailhydrant": {
+        "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
+        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
     },
     "maps": {
         "title": "Un mapa de mapes"
@@ -287,9 +291,5 @@
     },
     "waste_basket": {
         "title": "Papepera"
-    },
-    "hailhydrant": {
-        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies",
-        "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies."
     }
 }

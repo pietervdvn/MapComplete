@@ -116,7 +116,8 @@
             "ru": "Гидрант красного цвета.",
             "fr": "La borne est rouge.",
             "de": "Die Farbe des Hydranten ist rot.",
-            "nl": "De brandkraan is rood."
+            "nl": "De brandkraan is rood.",
+            "ca": "El color de l'hidrant és roig."
           }
         }
       ]
@@ -233,7 +234,8 @@
             "fr": "Enterré.",
             "de": "Untergrundtyp.",
             "it": "Sottosuolo.",
-            "nl": "Ondergronds type."
+            "nl": "Ondergronds type.",
+            "ca": "L'hidrant està soterrat."
           },
           "icon": {
             "path": "./assets/themes/hailhydrant/hydrant_underground.svg",

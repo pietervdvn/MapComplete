@@ -11,7 +11,8 @@
     "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen",
     "hu": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások.",
     "nl": "Brandkranen, brandblussers, brandweerposten en ambulanceposten",
-    "es": "Hidrantes, Extintores, Parques de bomberos y Parques de ambulancias"
+    "es": "Hidrantes, Extintores, Parques de bomberos y Parques de ambulancias",
+    "ca": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
@@ -22,7 +23,8 @@
     "de": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
     "it": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze.",
     "hu": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez.",
-    "es": "Mapa para mostrar hidrantes, extintores, parques de bomberos y parques de ambulancias."
+    "es": "Mapa para mostrar hidrantes, extintores, parques de bomberos y parques de ambulancias.",
+    "ca": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies."
   },
   "description": {
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",

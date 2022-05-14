@@ -48,7 +48,7 @@
         "nl": "drinkbaar water",
         "fr": "une eau potable",
         "gl": "auga potábel",
-        "de": "eine trinkwasser",
+        "de": "Eine Trinkwasserstelle",
         "it": "una acqua potabile",
         "ru": "питьевая вода",
         "id": "air minum",
@@ -184,7 +184,8 @@
         },
         "then": {
           "en": "This is a decorative fountain of which the water is not drinkable by humans",
-          "nl": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen"
+          "nl": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen",
+          "de": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist"
         }
       },
       {
@@ -197,7 +198,8 @@
         },
         "then": {
           "en": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>",
-          "nl": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div"
+          "nl": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div",
+          "de": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>"
         }
       }
     ]
@@ -232,6 +234,7 @@
   "description": {
     "en": "A layer showing drinking water fountains",
     "nl": "Deze laag toont drinkwaterpunten",
-    "hu": "Ivóvizet adó kutakat megjelenítő réteg"
+    "hu": "Ivóvizet adó kutakat megjelenítő réteg",
+    "de": "Eine Ebene mit Trinkwasserbrunnen"
   }
 }

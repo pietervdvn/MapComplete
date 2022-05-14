@@ -338,7 +338,8 @@
         "en": "Is a fee required to climb here?"
       },
       "render": {
-        "en": "A fee of {charge} should be paid for climbing here"
+        "en": "A fee of {charge} should be paid for climbing here",
+        "de": "Zum Klettern wird eine Gebühr von {charge} erhoben"
       },
       "freeform": {
         "key": "charge",
@@ -354,7 +355,8 @@
             "charge="
           ],
           "then": {
-            "en": "Climbing here is free of charge"
+            "en": "Climbing here is free of charge",
+            "de": "Das Klettern ist hier kostenlos"
           }
         },
         {
