@@ -130,7 +130,8 @@
         "title": "Entrades"
     },
     "etymology": {
-        "title": "Open Etymology Map"
+        "title": "Open Etymology Map",
+        "shortDescription": "Quin és l'origen d'un topònim?"
     },
     "facadegardens": {
         "layers": {
@@ -286,5 +287,9 @@
     },
     "waste_basket": {
         "title": "Papepera"
+    },
+    "hailhydrant": {
+        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies",
+        "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies."
     }
 }
