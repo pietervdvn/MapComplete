@@ -20,9 +20,9 @@
   "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
   "version": "2021-09-17",
-  "startLat": -0.08706,
-  "startLon": 51.52224,
-  "startZoom": 17,
+  "startLat": 53.21261,
+  "startLon": -1.47216,
+  "startZoom": 7,
   "widenFactor": 1.01,
   "hideFromOverview": true,
   "clustering": {
