@@ -53,11 +53,15 @@ export interface LayerConfigJson {
              */
             maxCacheAge?: number
         }) &
-        ({      /* # Query OSM Via the overpass API with a custom script
-            * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
-            *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
-            *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
-            */
+        ({
+            /**
+             * If set, this custom overpass-script will be used instead of building one by using the OSM-tags.
+             * Specifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.
+             * _This should be really rare_.
+             * 
+             * For example, write `"source": {"overpassScript": "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );", "osmTags": "access=yes"}` 
+             * when you want to fetch all grass-areas in parks and which are marked as publicly accessible.
+             */
             overpassScript?: string
         } |
             {
@@ -203,10 +207,10 @@ export interface LayerConfigJson {
     presets?: {
         /**
          * The title - shown on the 'add-new'-button.
-         * 
+         *
          * This should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.
          * This text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.
-         * 
+         *
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          */
         title: string | any,
@@ -267,7 +271,7 @@ export interface LayerConfigJson {
      * If one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`
      * Remark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.
      * If they are not wanted, remove them with an override
-     * 
+     *
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
      * At last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.
@@ -349,7 +353,7 @@ export interface LayerConfigJson {
 
     /**
      * If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.
-     * 
+     *
      * If the way is part of a relation, MapComplete will attempt to update this relation as well
      */
     allowSplit?: boolean
