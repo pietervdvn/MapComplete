@@ -348,7 +348,9 @@ export interface LayerConfigJson {
     allowMove?: boolean | MoveConfigJson
 
     /**
-     * IF set, a 'split this road' button is shown
+     * If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.
+     * 
+     * If the way is part of a relation, MapComplete will attempt to update this relation as well
      */
     allowSplit?: boolean
 
