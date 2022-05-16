@@ -59,8 +59,15 @@ export interface LayerConfigJson {
              * Specifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.
              * _This should be really rare_.
              * 
-             * For example, write `"source": {"overpassScript": "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );", "osmTags": "access=yes"}` 
-             * when you want to fetch all grass-areas in parks and which are marked as publicly accessible.
+             * For example, when you want to fetch all grass-areas in parks and which are marked as publicly accessible: 
+             * ```
+             * "source": {
+             *   "overpassScript": 
+             *      "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );",
+             *      "osmTags": "access=yes"
+             * }
+             * ``` 
+             *
              */
             overpassScript?: string
         } |
