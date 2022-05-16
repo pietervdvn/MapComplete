@@ -46,9 +46,17 @@ self.addEventListener('fetch', (event) => {
             return
         }
         event.respondWith(
-            caches.match(event.request).then(function (response) {
-                return response || fetch(event.request);
-            }),
+            async () => {
+            const matched = caches.match(event.request)
+                if(matched){
+                    return matched
+                }
+                const response = fetch(event.request); 
+                const cache = await caches.open(version);
+                await cache.put(event.request.url, response);
+                console.log("Put ",event.request.url,"into the cache")
+                return response
+            }
         );
     } catch (e) {
         console.error("CRASH IN SW:", e)
