@@ -26,7 +26,7 @@
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Zaloguj się, aby dodać nowy punkt</a>",
+            "pleaseLogin": "Zaloguj się, aby dodać nowy punkt",
             "stillLoading": "Dane wciąż się ładują. Poczekaj chwilę, zanim dodasz nowy punkt.",
             "title": "Czy dodać nowy punkt?",
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt."

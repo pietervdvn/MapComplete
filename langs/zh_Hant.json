@@ -54,7 +54,7 @@
             "intro": "您點擊處目前未有已知的資料。<br>",
             "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的節點",
             "openLayerControl": "開啟圖層控制框",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">請先登入來新增節點</a>",
+            "pleaseLogin": "請先登入來新增節點",
             "presetInfo": "新的興趣點有 {tags}",
             "stillLoading": "目前仍在載入資料，請稍後再來新增節點。",
             "title": "新增新的節點？",

@@ -320,7 +320,8 @@
             "fr": "Quel type de plantes pousse ici ?",
             "de": "Welche Pflanzen wachsen hier?",
             "hu": "Milyen jellegű növények nőnek benne?",
-            "es": "¿Qué tipo de plantas crecen aquí?"
+            "es": "¿Qué tipo de plantas crecen aquí?",
+            "nb_NO": "Hva slags planter vokser her?"
           },
           "mappings": [
             {
@@ -385,7 +386,8 @@
             "de": "Weitere Details: {description}",
             "eo": "Pliaj detaloj: {description}",
             "hu": "További részletek: {description}",
-            "es": "Más detalles: {description}"
+            "es": "Más detalles: {description}",
+            "nb_NO": "Flere detaljer: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",

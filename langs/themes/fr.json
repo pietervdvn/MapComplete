@@ -42,7 +42,7 @@
                 "name": "Campings",
                 "presets": {
                     "0": {
-                        "description": "Ajouter une nouvelle aire  officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
+                        "description": "Ajouter une nouvelle aire officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
                         "title": "une aire de camping"
                     }
                 },

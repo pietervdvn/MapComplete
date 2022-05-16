@@ -84,7 +84,7 @@
       "id": "report-note",
       "render": {
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
-        "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze not melden als spam of ongepast</a>",
+        "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Diese Notiz als Spam oder unangemessen melden</a>"
       }
     }
@@ -293,10 +293,11 @@
     {
       "id": "no_imports",
       "options": [
-         {
+        {
           "question": {
             "en": "All Notes",
-            "nl": "Alle Notes"
+            "nl": "Alle Notes",
+            "de": "Alle Notizen"
           }
         },
         {
@@ -311,7 +312,8 @@
           "osmTags": "_is_import_note~*",
           "question": {
             "en": "Show only import Notes",
-            "nl": "Toon enkel import Notes"
+            "nl": "Toon enkel import Notes",
+            "de": "Nur Importnotizen anzeigen"
           }
         }
       ]

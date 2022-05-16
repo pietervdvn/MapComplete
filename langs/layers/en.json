@@ -13,7 +13,7 @@
                     }
                 },
                 "question": "What is the number of this house?",
-                "render": "The housenumber is <b>{addr:housenumber}</b>"
+                "render": "The house number is <b>{addr:housenumber}</b>"
             },
             "street": {
                 "question": "What street is this address located in?",
@@ -490,7 +490,7 @@
                         "then": "Mountainbikes can be rented here"
                     },
                     "4": {
-                        "then": "Bikes for childs can be rented here"
+                        "then": "Bikes for children can be rented here"
                     },
                     "5": {
                         "then": "Tandem bicycles can be rented here"
@@ -1074,7 +1074,7 @@
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
-                        "then": "Deze business focuses on rental"
+                        "then": "This business focuses on rental"
                     }
                 },
                 "render": "This shop is specialized in selling {shop} and does bicycle related activities"
@@ -1349,10 +1349,10 @@
                         "question": "Has a <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
                     },
                     "5": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
+                        "question": "Has a <div style='display: inline-block'><b>Type 1 <i>without</i> cable (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
                     },
                     "6": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector"
+                        "question": "Has a <div style='display: inline-block'><b>Type 1 CCS (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector"
                     },
                     "7": {
                         "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
@@ -3319,7 +3319,7 @@
                 "render": "The operational status is <i>{operational_status}</i>"
             },
             "render-closest-drinking-water": {
-                "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>"
+                "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>"
             }
         },
         "title": {
@@ -3832,8 +3832,8 @@
                 "render": "In remembrance of {name}"
             },
             "ghost_bike-source": {
-                "question": "On what webpage can one find more information about the Ghost bike or the accident?",
-                "render": "<a href='{source}' target='_blank'>More information is available</a>"
+                "question": "On what webpage can one find more info about the ghost bike or the accident?",
+                "render": "<a href='{source}' target='_blank'>More info available</a>"
             },
             "ghost_bike-start_date": {
                 "question": "When was this Ghost bike installed?",

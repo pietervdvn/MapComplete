@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Está no primeiro andar"
+                },
+                "4": {
+                    "then": "Localizado no primeiro nível da cave"
                 }
             },
             "question": "Em que nível se encontra este elemento?",

@@ -153,7 +153,8 @@
       "id": "zoeken op inventaris onroerend erfgoed",
       "render": {
         "nl": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>",
-        "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>"
+        "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>",
+        "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>"
       },
       "conditions": "_country=be"
     },
@@ -218,7 +219,8 @@
       "#": "Note that this is a _read_only_ option, to prevent people entering a 'wikidata'-link instead of 'name:etymology:wikidata'",
       "render": {
         "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}",
-        "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}"
+        "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}",
+        "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

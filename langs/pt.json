@@ -55,7 +55,7 @@
             "intro": "Clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está ativada. Ative esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controlo da camada",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, inicie a sessão para adicionar um novo ponto</a>",
+            "pleaseLogin": "Por favor, inicie a sessão para adicionar um novo ponto",
             "presetInfo": "O novo POI terá {tags}",
             "stillLoading": "Os dados ainda estão a ser carregados. Aguarde um pouco antes de adicionar um novo ponto.",
             "title": "Adicionar um novo ponto?",

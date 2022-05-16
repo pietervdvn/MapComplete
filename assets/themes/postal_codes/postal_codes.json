@@ -6,7 +6,8 @@
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
     "ca": "Codis postals",
-    "es": "Códigos postales"
+    "es": "Códigos postales",
+    "nb_NO": "Postkoder"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -14,7 +15,8 @@
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
     "ca": "Codis postals",
-    "es": "Códigos postales"
+    "es": "Códigos postales",
+    "nb_NO": "Postkoder"
   },
   "description": {
     "en": "Postal codes",
@@ -43,7 +45,8 @@
         "hu": "irányítószámok",
         "de": "Postleitzahlen",
         "ca": "codis postals",
-        "es": "códigos postales"
+        "es": "códigos postales",
+        "nb_NO": "postkoder"
       },
       "minzoom": 8,
       "title": {
@@ -52,7 +55,8 @@
           "id": "Kode pos {postal_code}",
           "hu": "Irányítószám: {postal_code}",
           "de": "Postleitzahl {postal_code}",
-          "es": "Código postal {postal_code}"
+          "es": "Código postal {postal_code}",
+          "nb_NO": "Postkode {postal_code}"
         }
       },
       "description": {},

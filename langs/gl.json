@@ -19,7 +19,7 @@
             "intro": "Marcaches un lugar onde non coñecemos os datos.<br/>",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Inicia a sesión para engadir un novo punto</a>",
+            "pleaseLogin": "Inicia a sesión para engadir un novo punto",
             "stillLoading": "Os datos seguen a cargarse. Agarda un intre antes de engadir ningún punto.",
             "title": "Queres engadir un punto?",
             "zoomInFurther": "Achégate para engadir un punto."

@@ -106,11 +106,11 @@
             "downloadAsSvgHelper": "Kompatibel Inkscape eller Adobe Illustrator; skal behandles yderligere  ",
             "downloadCSV": "Hent synligt data som CSV",
             "downloadCSVHelper": "Kompatibel med LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Hent som GeoJson fil",
-            "downloadFeatureAsGpx": "Hent som GPX fil",
+            "downloadFeatureAsGeojson": "Hent som GeoJSON-fil",
+            "downloadFeatureAsGpx": "Hent som GPX-fil",
             "downloadGeoJsonHelper": "Kompatibel med QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Hent synlig data som GeoJSON",
-            "downloadGpx": "Hent som GPX fil",
+            "downloadGpx": "Hent som GPX-fil",
             "downloadGpxHelper": "En GPX-fil kan bruges med de fleste navigationsenheder og programmer",
             "exporting": "Eksporterer…",
             "includeMetaData": "Inkluder metadata (sidste editor, beregnede værdier, ...)",
@@ -281,7 +281,7 @@
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "Hent geojson",
+            "downloadGeojson": "Hent GeoJSON",
             "giveDescription": "Skriv venligst en lille beskrivelse til nogen, som ser beskeden. A god besked beskriver hvad bidragsyderen skal gøre, fx; <i>Der kunne være en bænk her. Hvis du er i nærheden, kunne du venligst checke og indikere om bænken findes eller ej?</i> (Et link til MapComplete vil automatisk blive tilføjet)",
             "giveSource": "Hvad er kilden til disse data. Hvis 'source' er sat på elementen, vil denne værdi blive ignoreret",
             "giveWikilink": "På hvilken wikiside kan man finde mere information om denne import?",
@@ -314,7 +314,7 @@
         },
         "conflationChecker": {
             "cacheExpired": "Cachen udløb",
-            "downloadOverpassData": "Hent den indlæste geojson fra overpass",
+            "downloadOverpassData": "Hent den indlæste GeoJSON fra overpass",
             "importCandidatesCount": "De {count} røde elementer på det følgende kort er alle dine importkandidater.",
             "loadedDataAge": "Det indlæste data er fra cachen og er {age} gammelt",
             "mapShowingNearbyIntro": "Det følgende kort viser elementer til import, som indeholder et OSM-element ",

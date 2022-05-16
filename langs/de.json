@@ -57,7 +57,7 @@
                 "zoomInMore": "Ansicht vergrößern, um das Objekt zu importieren"
             },
             "importTags": "Das Element erhält {tags}",
-            "intro": "Sie haben auf eine Stelle in der Karte geklickt, an der noch keine Daten bekannt sind.<br>",
+            "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br>",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "pleaseLogin": "Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen",
@@ -106,7 +106,7 @@
             "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; muss weiter bearbeitet werden  ",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Download als GeoJson Datei",
+            "downloadFeatureAsGeojson": "GeoJSON-Datei herunterladen",
             "downloadFeatureAsGpx": "Download als GPX Datei",
             "downloadGeoJsonHelper": "Kompatibel mit QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
@@ -281,7 +281,7 @@
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "geojson herunterladen",
+            "downloadGeojson": "GeoJSON herunterladen",
             "giveDescription": "Bitte schreiben Sie eine kurze Beschreibung für jemanden, der die Notiz sieht. Eine gute Notiz beschreibt, was der Mitwirkende zu tun hat, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie in der Nähe sind, könnten Sie bitte überprüfen und angeben, ob die Bank existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
             "giveSource": "Was ist die Quelle dieser Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
             "giveWikilink": "Auf welcher Wikiseite gibt es weitere Informationen zu diesem Import?",
@@ -314,7 +314,7 @@
         },
         "conflationChecker": {
             "cacheExpired": "Der Cache ist abgelaufen",
-            "downloadOverpassData": "Die geladene geojson Datei von overpass herunterladen",
+            "downloadOverpassData": "Die geladene GeoJSON Datei von overpass herunterladen",
             "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
             "loadedDataAge": "Geladene Daten stammen aus dem Cache und sind {age} alt",
             "mapShowingNearbyIntro": "Die folgende Karte zeigt zu importierende Objekte, die ein OSM-Objekt enthalten ",
@@ -406,13 +406,13 @@
         "title": "Importhinweise überprüfen und verwalten"
     },
     "importLayer": {
-        "alreadyMapped": "Es gibt bereits einen anderen {title} auf der Karte - dieser Punkt ist ein Duplikat",
+        "alreadyMapped": "Es gibt bereits einen {title} auf der Karte - dieser Punkt ist ein Duplikat",
         "description": "Eine Ebene, die Einträge für {title} importiert",
         "importButton": "import_button({layerId}, _tags, Ich habe hier ein(en) {title} gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class=\"thanks\">Dieses Objekt wurde behandelt! Vielen Dank für Ihre Bemühungen</div>",
         "layerName": "Möglicher {title}",
         "notFound": "Ich konnte {title} nicht finden - entferne es",
-        "popupTitle": "Möglicher {title}"
+        "popupTitle": "Möglicherweise gibt es hier {title}"
     },
     "index": {
         "#": "Dieser Text wird über die Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
@@ -463,8 +463,8 @@
         "disableAllNoteFilters": "Deaktiviere alle Filter",
         "isClosed": "Dieser Hinweis wurde geklärt",
         "isCreated": "Deine Notiz wurde erstellt!",
-        "loginToAddComment": "Einloggen um zu Kommentieren",
-        "loginToAddPicture": "Einloggen um ein Bild hinzuzufügen",
+        "loginToAddComment": "Anmelden, um einen Kommentar hinzuzufügen",
+        "loginToAddPicture": "Anmelden, um ein Bild hinzuzufügen",
         "loginToClose": "Einloggen um diesen Hinweis zu schließen",
         "noteIsPublic": "Es wird für alle sichtbar sein",
         "noteLayerDoEnable": "Aktivieren Sie die Ebene der Hinweise",
@@ -679,7 +679,7 @@
         "text": {
             "description": "ein Stück Text"
         },
-        "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben jetzt {count} Zeichen",
+        "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben bereits {count} Zeichen.",
         "url": {
             "description": "Link zu einer Website",
             "feedback": "Dies ist keine gültige Webadresse"

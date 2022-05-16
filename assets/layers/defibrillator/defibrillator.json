@@ -56,7 +56,8 @@
         "en": "a defibrillator mounted on a wall",
         "nl": "een defibrillator die aan een muur hangt",
         "sl": "defibrilator je pritrjen na steno",
-        "da": "en hjertestarter monteret på en væg"
+        "da": "en hjertestarter monteret på en væg",
+        "de": "ein an einer Wand montierter Defibrillator"
       },
       "tags": [
         "emergency=defibrillator"
@@ -640,6 +641,7 @@
   "description": {
     "en": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device",
     "nl": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
-    "sl": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja"
+    "sl": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
+    "de": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen"
   }
 }

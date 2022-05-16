@@ -1008,7 +1008,8 @@
           "then": {
             "en": "Compulsory cycleway",
             "nl": "Verplicht fietspad",
-            "ca": "Via ciclista obligatòria"
+            "ca": "Via ciclista obligatòria",
+            "de": "Verpflichtender Radweg"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [
@@ -1024,7 +1025,8 @@
           "if": "traffic_sign=NL:G12a",
           "then": {
             "en": "Compulsory (moped)cycleway",
-            "nl": "Verplicht bromfietspad"
+            "nl": "Verplicht bromfietspad",
+            "de": "Verpflichtender (Moped-)Radweg"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [
@@ -1080,7 +1082,8 @@
           "if": "cycleway:traffic_sign=BE:D7;BE:M6",
           "then": {
             "en": "Mopeds must use the cycleway",
-            "nl": "Bromfiets Klass B verplicht op het fietspad"
+            "nl": "Bromfiets Klass B verplicht op het fietspad",
+            "de": "Mopeds müssen den Radweg benutzen"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1095,7 +1098,8 @@
           "if": "cycleway:traffic_sign=BE:D7;BE:M13",
           "then": {
             "en": "Speedpedelecs must use the cycleway",
-            "nl": "Speedpedelec (Bromfiets klasse P) verplicht op het fietspad"
+            "nl": "Speedpedelec (Bromfiets klasse P) verplicht op het fietspad",
+            "de": "Speed-Pedelecs müssen den Radweg benutzen"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1110,7 +1114,8 @@
           "if": "cycleway:traffic_sign=BE:D7;BE:M14",
           "then": {
             "en": "Mopeds and speedpedelecs must use the cycleway",
-            "nl": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht op het fietspad"
+            "nl": "Bromfiets klasse B en speedpedelec (Klasse P) verplicht op het fietspad",
+            "de": "Mopeds und Speed-Pedelecs müssen den Radweg benutzen"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1126,7 +1131,8 @@
           "if": "cycleway:traffic_sign=BE:D7;BE:M7",
           "then": {
             "en": "Mopeds are not allowed",
-            "nl": "Bromfiets klasse B <b>verboden</b>"
+            "nl": "Bromfiets klasse B <b>verboden</b>",
+            "de": "Mopeds sind nicht zulässig"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1141,7 +1147,8 @@
           "if": "cycleway:traffic_sign=BE:D7;BE:M15",
           "then": {
             "en": "Speedpedelecs are not allowed",
-            "nl": "Speedpedelec (bromfiets klasse P) <b>verboden</b>"
+            "nl": "Speedpedelec (bromfiets klasse P) <b>verboden</b>",
+            "de": "Speed-Pedelecs sind nicht zulässig"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1156,7 +1163,8 @@
           "if": "cycleway:traffic_sign=BE:D7;BE:M16",
           "then": {
             "en": "Mopeds and speedpedelecs are not allowed",
-            "nl": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>"
+            "nl": "Bromfiets klasse B en speedpedelec (klasse P) <b>verboden</b>",
+            "de": "Mopeds und Speed-Pedelecs sind nicht zulässig"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1397,6 +1405,7 @@
   ],
   "description": {
     "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\"",
-    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur"
+    "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
+    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen"
   }
 }

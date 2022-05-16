@@ -37,7 +37,8 @@
         "ru": "Тротуары",
         "de": "Gehwege",
         "ca": "Voreres",
-        "es": "Aceras"
+        "es": "Aceras",
+        "nb_NO": "Fortau"
       },
       "minzoom": 12,
       "source": {

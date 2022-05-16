@@ -625,7 +625,8 @@
       "pl": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?",
       "ja": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？",
       "fil": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?",
-      "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?"
+      "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?",
+      "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?"
     },
     "mappings": [
       {
@@ -643,7 +644,8 @@
           "ja": "屋内の席に座っているお客様には、家庭用コンセントがたくさん用意されており、そこで電子機器を充電することができます",
           "fil": "Maraming mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
           "es": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
-          "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+          "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
+          "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin"
         },
         "if": "service:electricity=yes"
       },
@@ -662,7 +664,8 @@
           "ja": "屋内の席に座ったお客様が充電できるよう、コンセントがいくつか用意されています",
           "fil": "May iilang mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
           "es": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
-          "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+          "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
+          "nb_NO": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin"
         },
         "if": "service:electricity=limited"
       },
@@ -681,7 +684,8 @@
           "ja": "屋内にはコンセントがありませんが、スタッフに声をかければ充電できるかもしれません",
           "fil": "Walang mga intsupe (socket) para sa mga suki, pero maaring tanungin ang kawani kung magpapa-karga",
           "es": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal",
-          "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det"
+          "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det",
+          "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen"
         },
         "if": "service:electricity=ask"
       },
@@ -700,7 +704,8 @@
           "ja": "屋内の席には、家庭用コンセントはありません",
           "fil": "Walang mga intsupe (socket) para sa mga suking nakaubo sa loob",
           "es": "No hay enchufes domésticos disponibles para los clientes sentados en el interior",
-          "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs"
+          "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs",
+          "nb_NO": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs"
         },
         "if": "service:electricity=no"
       }
@@ -1014,7 +1019,8 @@
           "ca": "Localitzat a la planta base",
           "fil": "Nasa silong",
           "es": "Situado en el primer nivel del sótano",
-          "nb_NO": "Er å finne på første kjellernivå"
+          "nb_NO": "Er å finne på første kjellernivå",
+          "pt": "Localizado no primeiro nível da cave"
         }
       }
     ]

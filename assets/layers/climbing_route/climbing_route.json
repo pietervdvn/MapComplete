@@ -10,7 +10,8 @@
     "it": "Vie di arrampicata"
   },
   "description": {
-    "en": "A single climbing route and its properties. Some properties are derived from the containing features"
+    "en": "A single climbing route and its properties. Some properties are derived from the containing features",
+    "de": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet"
   },
   "minzoom": 18,
   "source": {

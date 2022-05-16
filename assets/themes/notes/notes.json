@@ -10,7 +10,8 @@
     "nl": "Kaartnotas op OpenStreetMap",
     "de": "Notizen von OpenStreetMap",
     "ca": "Notes a OpenStreetMap",
-    "es": "Notas en OpenStreetMap"
+    "es": "Notas en OpenStreetMap",
+    "nb_NO": "Notater på OpenStreetMap"
   },
   "version": "0.1",
   "description": {

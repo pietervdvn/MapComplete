@@ -679,6 +679,22 @@
         }
     },
     "hydrant": {
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "2": {
+                        "then": "El color de l'hidrant és roig."
+                    }
+                }
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "4": {
+                        "then": "L'hidrant està soterrat."
+                    }
+                }
+            }
+        },
         "title": {
             "render": "Hidrant"
         }

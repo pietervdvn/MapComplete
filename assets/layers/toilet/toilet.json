@@ -65,7 +65,7 @@
     {
       "question": {
         "en": "Are these toilets publicly accessible?",
-        "de": "Sind diese Toiletten öffentlich zugänglich?",
+        "de": "Ist diese Toilette öffentlich zugänglich?",
         "fr": "Ces toilettes sont-elles accessibles au public ?",
         "nl": "Zijn deze toiletten publiek toegankelijk?",
         "it": "Questi servizi igienici sono aperti al pubblico?",
@@ -89,7 +89,7 @@
           "if": "access=yes",
           "then": {
             "en": "Public access",
-            "de": "Öffentlicher Zugang",
+            "de": "Der Zugang ist öffentlich",
             "fr": "Accès publique",
             "nl": "Publiek toegankelijk",
             "it": "Accesso pubblico",
@@ -100,7 +100,7 @@
           "if": "access=customers",
           "then": {
             "en": "Only access to customers",
-            "de": "Nur Zugang für Kunden",
+            "de": "Der Zugang ist nur für Kunden",
             "fr": "Accès réservé aux clients",
             "nl": "Enkel toegang voor klanten",
             "it": "Accesso riservato ai clienti e alle clienti"
@@ -110,7 +110,7 @@
           "if": "access=no",
           "then": {
             "en": "Not accessible",
-            "de": "Nicht zugänglich",
+            "de": "Der Zugang ist nicht erlaubt oder nicht möglich",
             "fr": "Toilettes privées",
             "nl": "Niet toegankelijk",
             "ru": "Недоступно",
@@ -121,7 +121,7 @@
           "if": "access=key",
           "then": {
             "en": "Accessible, but one has to ask a key to enter",
-            "de": "Zugänglich, aber man muss einen Schlüssel für die Eingabe verlangen",
+            "de": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen",
             "fr": "Accessible, mais vous devez demander la clé",
             "nl": "Toegankelijk na het vragen van de sleutel",
             "it": "Accessibile, ma occorre chiedere una chiave per accedere"

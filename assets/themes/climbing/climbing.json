@@ -127,7 +127,8 @@
                   "eo": " metro",
                   "it": " metri",
                   "ru": " метр",
-                  "ca": " metre"
+                  "ca": " metre",
+                  "nb_NO": " meter"
                 },
                 "default": true
               },
@@ -144,7 +145,8 @@
                   "de": " Fuß",
                   "eo": " futo",
                   "it": " piedi",
-                  "ca": " peus"
+                  "ca": " peus",
+                  "nb_NO": " fot"
                 }
               }
             ]
@@ -158,7 +160,7 @@
                 "if": "_embedding_feature:access=yes",
                 "then": {
                   "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}",
-                  "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
+                  "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
@@ -180,7 +182,8 @@
                   "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}",
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}",
-                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}"
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}",
+                  "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -189,7 +192,8 @@
                   "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}",
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}",
-                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}"
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}",
+                  "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -216,7 +220,8 @@
                   "fr": "Libre d’accès",
                   "de": "Öffentlich zugänglich für jedermann",
                   "it": "Pubblicamente accessibile a chiunque",
-                  "nl": "Voor iedereen publiek toegankelijk"
+                  "nl": "Voor iedereen publiek toegankelijk",
+                  "nb_NO": "Offentlig tilgjengelig for alle"
                 }
               },
               {
@@ -237,7 +242,8 @@
                   "de": "Nur für Kunden",
                   "it": "Riservato ai clienti",
                   "ca": "Només clients",
-                  "nl": "Enkel klanten"
+                  "nl": "Enkel klanten",
+                  "nb_NO": "Kun for kunder"
                 }
               },
               {
@@ -249,7 +255,8 @@
                   "de": "Nur für Vereinsmitglieder",
                   "it": "Riservato ai membri del club",
                   "ca": "Només membres del club",
-                  "nl": "Enkel clubleden"
+                  "nl": "Enkel clubleden",
+                  "nb_NO": "Kun klubbmedlemmer"
                 }
               },
               {

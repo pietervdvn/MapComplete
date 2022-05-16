@@ -67,7 +67,7 @@
     {
       "id": "housenumber",
       "render": {
-        "en": "The housenumber is <b>{addr:housenumber}</b>",
+        "en": "The house number is <b>{addr:housenumber}</b>",
         "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
         "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
         "hu": "A házszám: <b>{addr:housenumber}</b>",

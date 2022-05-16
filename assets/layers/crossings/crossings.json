@@ -151,7 +151,8 @@
           "if": "crossing=unmarked",
           "then": {
             "en": "Crossing without crossing markings",
-            "nl": "Oversteekplaats zonder kruispuntmarkeringen"
+            "nl": "Oversteekplaats zonder kruispuntmarkeringen",
+            "de": "Kreuzung ohne Kreuzungsmarkierungen"
           }
         }
       ]

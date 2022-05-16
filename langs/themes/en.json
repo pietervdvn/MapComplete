@@ -744,9 +744,9 @@
             },
             "2": {
                 "override": {
-                    "name": "dog-friendly shop",
+                    "name": "Dog-friendly shops",
                     "title": {
-                        "render": "dog-friendly shop"
+                        "render": "Dog-friendly shops"
                     }
                 }
             },
@@ -754,7 +754,7 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "description": "A shop whery you can bring a dog almost everywhere",
+                            "description": "A shop where you can bring a dog almost everywhere",
                             "title": "dog-friendly shop"
                         }
                     }

@@ -45,7 +45,8 @@
   },
   "description": {
     "en": "A nature reserve is an area where nature can take its course",
-    "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid."
+    "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
+    "de": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde"
   },
   "tagRenderings": [
     "images",

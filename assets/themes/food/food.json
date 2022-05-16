@@ -15,7 +15,8 @@
     "nl": "Restaurants en fast food",
     "en": "Restaurants and fast food",
     "de": "Restaurants und Schnellimbisse",
-    "es": "Restaurantes y comida rápida"
+    "es": "Restaurantes y comida rápida",
+    "nb_NO": "Restauranter og søppelmat"
   },
   "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",

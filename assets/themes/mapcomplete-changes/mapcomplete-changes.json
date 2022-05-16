@@ -3,12 +3,14 @@
   "title": {
     "en": "Changes made with MapComplete",
     "de": "Änderungen mit MapComplete",
-    "es": "Cambios hechos con MapComplete"
+    "es": "Cambios hechos con MapComplete",
+    "nb_NO": "Endringer utført med MapComplete"
   },
   "shortDescription": {
     "en": "Shows changes made by MapComplete",
     "de": "Zeigt Änderungen von MapComplete",
-    "es": "Muestra los cambios hechos por MapComplete"
+    "es": "Muestra los cambios hechos por MapComplete",
+    "nb_NO": "Vis endringer utført med MapComplete"
   },
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
@@ -30,7 +32,8 @@
       "name": {
         "en": "Changeset centers",
         "de": "Schwerpunkte von Änderungssätzen",
-        "es": "Centros de conjuntos de cambios"
+        "es": "Centros de conjuntos de cambios",
+        "nb_NO": "Endringssettsenter"
       },
       "minzoom": 0,
       "source": {
@@ -46,7 +49,8 @@
         "render": {
           "en": "Changeset for {theme}",
           "de": "Änderungen für {theme}",
-          "es": "Conjunto de cambios para {theme}"
+          "es": "Conjunto de cambios para {theme}",
+          "nb_NO": "Endringssett for {theme}"
         }
       },
       "description": {
@@ -60,7 +64,8 @@
           "render": {
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "de": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "es": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "es": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "nb_NO": "Endringssett <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
@@ -351,7 +356,8 @@
               ],
               "question": {
                 "en": "Themename contains {search}",
-                "de": "Themenname enthält {search}"
+                "de": "Themenname enthält {search}",
+                "nb_NO": "Temanavn inneholder {search}"
               }
             }
           ]

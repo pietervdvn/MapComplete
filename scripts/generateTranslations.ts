@@ -230,7 +230,7 @@ class TranslationPart {
                 if (subparts === null) {
                     if (neededSubparts.size > 0) {
                         errors.push({
-                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).join(",") + " . The full translation is " + value,
+                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).map(part => part.part +" (used in "+part.usedByLanguage+")").join(",") + " . The full translation is " + value,
                             path: path
                         })
                     }
