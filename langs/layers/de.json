@@ -1313,7 +1313,7 @@
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
                     },
                     "5": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>Stecker <i>ohne</i> Kabel"
+                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
@@ -3199,6 +3199,9 @@
                 "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
                 "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
+            "wikipedia": {
+                "render": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
+            },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>"
             }
@@ -3252,7 +3255,7 @@
                 "question": "Wie lautet der Name dieser Feuerwache?"
             },
             "station-operator": {
-                "render": "Der Betreiber ist {operator:type}"
+                "render": "Der Betreiber ist {operator:type}."
             },
             "station-street": {
                 "render": "Dieser Bahnhof liegt an der Straße {addr:street}."
@@ -3887,7 +3890,8 @@
         },
         "title": {
             "render": "Naturschutzgebiet"
-        }
+        },
+        "description": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde"
     },
     "note": {
         "filter": {
@@ -3968,6 +3972,9 @@
                     },
                     "1": {
                         "question": "Importnotizen ausblenden"
+                    },
+                    "0": {
+                        "question": "Alle Notizen"
                     },
                     "2": {
                         "question": "Nur Importnotizen anzeigen"
