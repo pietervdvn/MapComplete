@@ -516,7 +516,7 @@ export default class TagRenderingConfig {
                 `This rendering asks information about the property `,
                 Link.OsmWiki(this.freeform.key),
                 new Paragraph(new Combine([
-                    "This is rendered with",
+                    "This is rendered with ",
                     new FixedUiElement(this.render.txt).SetClass("literalcode bold")
                 ]))
 
@@ -531,7 +531,7 @@ export default class TagRenderingConfig {
                             new Combine(
                                 [
                             new FixedUiElement(m.then.txt).SetClass("bold"),
-                                    "corresponds with",
+                                    "corresponds with ",
                                     m.if.asHumanString(true, false, {})
                                 ]
                             )
@@ -550,10 +550,10 @@ export default class TagRenderingConfig {
         
         let condition : BaseUIElement = undefined
         if(this.condition !== undefined && !this.condition?.matchesProperties({})){
-            condition = new Combine(["Only visible if",
+            condition = new Combine(["Only visible if ",
                 new FixedUiElement( this.condition.asHumanString(false, false, {})
                 ).SetClass("code")
-                 , "is shown"])
+                 , " is shown"])
         }
         
         let group : BaseUIElement = undefined
