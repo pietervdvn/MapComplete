@@ -713,7 +713,7 @@
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Eine Notiz ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzer und Text gesucht werden.",
+        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {
@@ -731,7 +731,7 @@
         "title": "Parkplatzkarte"
     },
     "personal": {
-        "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
+        "description": "Stellen Sie Ihr persönliches Thema zusammen, das auf bereits verfügbaren Ebenen aller Themen basiert. Um diese anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
         "title": "Persönliches Thema"
     },
     "pets": {
