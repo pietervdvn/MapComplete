@@ -26,20 +26,20 @@
     },
     "ambulancestation": {
         "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
-        "name": "Rettungswachen anzeigen",
+        "name": "Rettungswachen",
         "presets": {
             "0": {
                 "description": "Eine Rettungsstation der Karte hinzufügen",
-                "title": "eine rettungswache"
+                "title": "eine Rettungswache"
             }
         },
         "tagRenderings": {
             "ambulance-agency": {
-                "question": "Welches Unternehmen betreibt diese Rettungswache?",
-                "render": "Diese Rettungswache wird betrieben von {operator}."
+                "question": "Wer betreibt die Rettungswache?",
+                "render": "Die Rettungswache wird betrieben von {operator}."
             },
             "ambulance-name": {
-                "question": "Wie heißt diese Rettungswache?",
+                "question": "Wie heißt die Rettungswache?",
                 "render": "Diese Rettungswache heißt {name}."
             },
             "ambulance-operator-type": {
@@ -48,7 +48,7 @@
                         "then": "Die Rettungswache wird von einer Behörde betrieben."
                     },
                     "1": {
-                        "then": "Die Rettungswache wird von einer gemeindenahen oder informellen Organisation betrieben."
+                        "then": "Die Rettungswache wird von einer gemeinnützigen Organisation betrieben."
                     },
                     "2": {
                         "then": "Die Rettungswache wird von einer Freiwilligenorganisation betrieben."
@@ -65,7 +65,7 @@
                 "render": "Diese Rettungswache befindet sich in {addr:place}."
             },
             "ambulance-street": {
-                "question": "Wie lautet der Name der Straße, in der sich die Rettungswache befindet?",
+                "question": "In welcher Straße liegt die Rettungswache?",
                 "render": "Dieser Bahnhof liegt an der Straße {addr:street}."
             }
         },
@@ -1173,10 +1173,11 @@
         "presets": {
             "0": {
                 "description": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
-                "title": "ein Vogelbeobachtungsturm"
+                "title": "ein Gebäude zur Vogelbeobachtung"
             },
             "1": {
-                "description": "Ein Schirm oder eine Wand mit Öffnungen zum Beobachten von Vögeln"
+                "description": "Ein Schirm oder eine Wand mit Öffnungen zum Beobachten von Vögeln",
+                "title": "einen Sichtschutz zur Vogelbeobachtung"
             }
         },
         "tagRenderings": {
@@ -1184,15 +1185,35 @@
                 "mappings": {
                     "1": {
                         "then": "Vogelbeobachtungsturm"
+                    },
+                    "0": {
+                        "then": "Sichtschutz zur Vogelbeobachtung"
+                    },
+                    "2": {
+                        "then": "Turm zur Vogelbeobachtung"
+                    },
+                    "3": {
+                        "then": "Unterstand zur Vogelbeobachtung"
                     }
-                }
+                },
+                "question": "Ist dies nur ein Sichtschutz oder ein überdachter Unterstand zur Vogelbeobachtung?"
             },
             "bird-hide-wheelchair": {
                 "mappings": {
                     "3": {
                         "then": "Nicht zugänglich für Rollstuhlfahrer"
+                    },
+                    "1": {
+                        "then": "Der Ort ist rollstuhlgerecht gestaltet"
+                    },
+                    "2": {
+                        "then": "Der Ort ist nur eingeschränkt rollstuhlgerecht gestaltet"
+                    },
+                    "0": {
+                        "then": "Für Rollstuhlfahrer gibt es besondere Vorrichtungen"
                     }
-                }
+                },
+                "question": "Ist der Ort rollstuhlgerecht gestaltet?"
             },
             "birdhide-operator": {
                 "mappings": {
@@ -1203,8 +1224,20 @@
                         "then": "Betrieben von einer Forst- bzw. Naturschutzbehörde"
                     }
                 },
-                "render": "Betrieben von {operator}"
+                "render": "Betrieben von {operator}",
+                "question": "Wer betreibt diesen Ort zur Vogelbeobachtung?"
             }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Vogelbeobachtungsplatz {name}"
+                },
+                "2": {
+                    "then": "Vogelversteck {name}"
+                }
+            },
+            "render": "Ort zur Vogelbeobachtung"
         }
     },
     "cafe_pub": {
@@ -1320,6 +1353,36 @@
                     },
                     "7": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
+                    },
+                    "12": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Anschluss"
+                    },
+                    "10": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
+                    },
+                    "11": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS vonTesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
+                    },
+                    "13": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
+                    },
+                    "14": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>USB</b>-Anschluss zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 3 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> und Kabel"
+                    },
+                    "9": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
+                    },
+                    "2": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
+                    },
+                    "8": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
+                    },
+                    "16": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
                     }
                 }
             }
@@ -1415,7 +1478,7 @@
                         "then": "<b>Typ 2</b> (Mennekes)"
                     },
                     "15": {
-                        "then": "<b>Typ 2</b> (mennekes)"
+                        "then": "<b>Typ 2</b> (Mennekes)"
                     },
                     "16": {
                         "then": "<b>Typ 2 CCS</b> (Mennekes)"
@@ -1491,22 +1554,22 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Ladestation ist in Betrieb"
+                        "then": "Die Station ist in Betrieb"
                     },
                     "1": {
-                        "then": "Diese Ladestation ist defekt"
+                        "then": "Die Station ist defekt"
                     },
                     "2": {
-                        "then": "Diese Ladestation ist erst in Planung"
+                        "then": "Die Station ist erst in Planung"
                     },
                     "3": {
-                        "then": "Diese Ladestation ist aktuell im Bau"
+                        "then": "Die Station ist aktuell im Bau"
                     },
                     "4": {
-                        "then": "Diese Ladestation ist dauerhaft geschlossen und nicht mehr in Nutzung, aber noch sichtbar"
+                        "then": "Die Station ist dauerhaft geschlossen und nicht mehr in Nutzung, aber noch sichtbar"
                     }
                 },
-                "question": "Ist dieser Ladepunkt in Betrieb?"
+                "question": "Ist die Station in Betrieb?"
             },
             "Operator": {
                 "mappings": {
@@ -1515,7 +1578,7 @@
                     }
                 },
                 "question": "Wer ist der Betreiber dieser Ladestation?",
-                "render": "Diese Ladestation wird betrieben von {operator}"
+                "render": "Die Station wird betrieben von {operator}"
             },
             "Parking:fee": {
                 "mappings": {
@@ -1551,7 +1614,7 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)"
+                        "then": "Jeder kann die Station nutzen (eventuell gegen Bezahlung)"
                     },
                     "1": {
                         "then": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)"
@@ -1560,10 +1623,10 @@
                         "then": "Nur Kunden des Ortes, zu dem diese Station gehört, können diese Ladestation nutzen<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann</span>"
                     },
                     "3": {
-                        "then": "Für den Zugang zu dieser Ladestation muss ein <b>Schlüssel</b> angefordert werden<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann, die an der Rezeption einen Schlüssel erhalten, um die Ladestation aufzuschließen</span>"
+                        "then": "Für den Zugang zur Station muss ein <b>Schlüssel</b> angefordert werden<br/><span class='subtle'>z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann, die an der Rezeption einen Schlüssel erhalten, um die Ladestation aufzuschließen</span>"
                     },
                     "4": {
-                        "then": "Nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, ...)"
+                        "then": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, ...)"
                     }
                 },
                 "question": "Wer darf diese Ladestation benutzen?",
@@ -1571,7 +1634,7 @@
             },
             "capacity": {
                 "question": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
-                "render": "{capacity} Fahrzeuge können hier gleichzeitig laden"
+                "render": "Hier können {capacity} Fahrzeuge gleichzeitig laden"
             },
             "charge": {
                 "question": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?",
@@ -1582,14 +1645,18 @@
                     "0": {
                         "then": "<b>Schuko-Steckdose</b> ohne Erdungsstift (CEE7/4 Typ F) liefert 16 A"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> liefert maximal {socket:schuko:current} A",
+                "question": "Welche Stromstärke liefern die Anschlüsse mit <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Schutzkontakt (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?"
             },
             "current-1": {
                 "mappings": {
                     "0": {
                         "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 16 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke bieten die Anschlüsse mit <div style='display: inline-block'><b><b>europäischem Stecker</b> mit Schutzkontakt (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> liefert maximal {socket:typee:current} A"
             },
             "current-10": {
                 "mappings": {
@@ -1599,7 +1666,9 @@
                     "1": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 350 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke bieten die Anschlüsse mit <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> liefert maximal {socket:tesla_supercharger_ccs:current} A"
             },
             "current-11": {
                 "mappings": {
@@ -1609,7 +1678,9 @@
                     "1": {
                         "then": "<b>Tesla Supercharger (Destination)</b> liefert maximal 350 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Anschlüsse mit <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert maximal {socket:tesla_destination:current} A"
             },
             "current-12": {
                 "mappings": {
@@ -1619,7 +1690,9 @@
                     "1": {
                         "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 32 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla mit Kabel)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla mit Kabel)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert maximal {socket:tesla_destination:current} A"
             },
             "current-13": {
                 "mappings": {
@@ -1629,28 +1702,36 @@
                     "1": {
                         "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 2 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:current} A"
             },
             "current-2": {
                 "mappings": {
                     "0": {
                         "then": "<b>Chademo</b> liefert maximal 120 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> liefert maximal {socket:chademo:current} A"
             },
             "current-3": {
                 "mappings": {
                     "0": {
                         "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 32 A"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1_cable:current} A",
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?"
             },
             "current-4": {
                 "mappings": {
                     "0": {
                         "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 32 A"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1:current} A",
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?"
             },
             "current-5": {
                 "mappings": {
@@ -1660,7 +1741,9 @@
                     "1": {
                         "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 125 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> liefert maximal {socket:type1_combo:current} A"
             },
             "current-6": {
                 "mappings": {
@@ -1670,7 +1753,9 @@
                     "1": {
                         "then": "<b>Tesla Supercharger</b> liefert maximal 350 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert maximal {socket:tesla_supercharger:current} A"
             },
             "current-7": {
                 "mappings": {
@@ -1680,7 +1765,9 @@
                     "1": {
                         "then": "<b>Typ 2</b> (Mennekes) liefert maximal 32 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> liefert maximal {socket:type2:current} A"
             },
             "current-8": {
                 "mappings": {
@@ -1690,7 +1777,9 @@
                     "1": {
                         "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 350 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> liefern maximal {socket:type2_combo:current} A"
             },
             "current-9": {
                 "mappings": {
@@ -1700,7 +1789,9 @@
                     "1": {
                         "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 32 A"
                     }
-                }
+                },
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert maximal {socket:type2_cable:current} A"
             },
             "email": {
                 "question": "Wie lautet die E-Mail-Adresse des Betreibers?",
@@ -2035,6 +2126,66 @@
             },
             "website": {
                 "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
+            },
+            "plugs-15": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:bosch_5pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> vorhanden"
+            },
+            "plugs-10": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden"
+            },
+            "plugs-2": {
+                "render": "Hier sind <b class='text-xl'>{socket:chademo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> sind hier vorhanden?"
+            },
+            "plugs-14": {
+                "render": "Hier sind <b class='text-xl'>{socket:bosch_3pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> sind hier vorhanden?"
+            },
+            "plugs-4": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type1}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden"
+            },
+            "plugs-13": {
+                "render": "Hier sind <b class='text-xl'>{socket:USB-A}</b>-Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> sind hier vorhanden?"
+            },
+            "plugs-5": {
+                "render": "Hier sind <b class='text-xl'>{socket:type1_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> sind hier vorhanden?"
+            },
+            "plugs-11": {
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?"
+            },
+            "plugs-6": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden"
+            },
+            "plugs-8": {
+                "render": "Hier sind <b class='text-xl'>{socket:type2_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?"
+            },
+            "current-14": {
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefern maximal {socket:bosch_3pin:current} A",
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
+            },
+            "plugs-12": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 Stecker mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 Stecker mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden"
+            },
+            "plugs-3": {
+                "question": "Wie viele Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type1_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden"
+            },
+            "current-15": {
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefern maximal {socket:bosch_5pin:current} A"
+            },
+            "plugs-9": {
+                "render": "Hier sind <b class='text-xl'>{socket:type2_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden",
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?"
             }
         },
         "title": {
@@ -2325,7 +2476,8 @@
         },
         "title": {
             "render": "Klettermöglichkeit?"
-        }
+        },
+        "description": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden"
     },
     "climbing_route": {
         "description": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
@@ -2791,6 +2943,9 @@
                     },
                     "7": {
                         "then": "Kein Verkehrsschild vorhanden"
+                    },
+                    "6": {
+                        "then": "Radweg ohne Nutzungspflicht"
                     }
                 },
                 "question": "Welches Verkehrszeichen hat dieser Radweg?"
@@ -2911,6 +3066,9 @@
                     },
                     "2": {
                         "then": "Dies ist ein normaler automatischer Defibrillator"
+                    },
+                    "3": {
+                        "then": "Dies ist eine besondere Art von Defibrillator: {defibrillator}"
                     }
                 },
                 "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
@@ -3055,7 +3213,7 @@
         "name": "Trinkwasserstellen",
         "presets": {
             "0": {
-                "title": "Eine Trinkwasserstelle"
+                "title": "eine Trinkwasserstelle"
             }
         },
         "tagRenderings": {
@@ -3117,7 +3275,8 @@
                     "5": {
                         "then": "Dies ist ein Eingang ohne Tür"
                     }
-                }
+                },
+                "question": "Um welche Art von Tür handelt es sich?<br/><span class='subtle'>Ob die Tür automatisiert ist oder nicht, wird in der nächsten Frage gefragt</span>"
             },
             "Entrance type": {
                 "mappings": {
@@ -3138,6 +3297,15 @@
                     },
                     "8": {
                         "then": "Dies ist ein Eingang zu einem privaten Haus"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, ..."
+                    },
+                    "6": {
+                        "then": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet"
                     }
                 },
                 "question": "Um welchen Eingangstyp handelt es sich hier?"
@@ -3164,6 +3332,12 @@
                     },
                     "8": {
                         "then": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage"
+                    },
+                    "2": {
+                        "then": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird"
+                    },
+                    "3": {
+                        "then": "Diese Tür öffnet sich automatisch, wenn ein <b>Sensor im Boden</b> ausgelöst wird"
                     }
                 }
             },
@@ -3199,21 +3373,21 @@
                 "question": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
                 "render": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
-            "wikipedia": {
-                "render": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
-            },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}"
             }
         }
     },
     "extinguisher": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
-        "name": "Karte mit Feuerlöschern.",
+        "name": "Feuerlöscher",
         "presets": {
             "0": {
                 "description": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
-                "title": "Ein Feuerlöscher"
+                "title": "einen Feuerlöscher"
             }
         },
         "tagRenderings": {
@@ -3236,11 +3410,11 @@
     },
     "fire_station": {
         "description": "Kartenebene zur Darstellung von Feuerwachen.",
-        "name": "Feuerwachen anzeigen",
+        "name": "Feuerwachen",
         "presets": {
             "0": {
                 "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
-                "title": "Eine Feuerwache"
+                "title": "eine Feuerwache"
             }
         },
         "tagRenderings": {
@@ -3252,13 +3426,27 @@
                 }
             },
             "station-name": {
-                "question": "Wie lautet der Name dieser Feuerwache?"
+                "question": "Wie ist der Name der Feuerwache?",
+                "render": "Der Name der Feuerwache ist {name}."
             },
             "station-operator": {
-                "render": "Der Betreiber ist {operator:type}."
+                "render": "Der Betreiber ist {operator:type}.",
+                "mappings": {
+                    "2": {
+                        "then": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben."
+                    },
+                    "1": {
+                        "then": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben."
+                    },
+                    "3": {
+                        "then": "Die Feuerwache wird von einer privaten Organisation betrieben."
+                    }
+                },
+                "question": "Wie kann der Betreiber der Feuerwache eingestuft werden?"
             },
             "station-street": {
-                "render": "Dieser Bahnhof liegt an der Straße {addr:street}."
+                "render": "Die Feuerwache liegt an der Straße namens {addr:street}.",
+                "question": " In welcher Straße ist die Feuerwache?"
             }
         },
         "title": {
@@ -3653,11 +3841,11 @@
     },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
-        "name": "Hydranten anzeigen",
+        "name": "Hydranten",
         "presets": {
             "0": {
                 "description": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
-                "title": "eine löschwasser-hydrant"
+                "title": "einen Hydranten"
             }
         },
         "tagRenderings": {
@@ -3682,7 +3870,7 @@
                         "then": "Der Hydrant ist (ganz oder teilweise) in Betrieb"
                     },
                     "1": {
-                        "then": "Der Hydrant ist nicht verfügbar"
+                        "then": "Der Hydrant ist nicht mehr in Betrieb"
                     },
                     "2": {
                         "then": "Der Hydrant wurde entfernt"
@@ -3696,19 +3884,19 @@
                         "then": "Der Typ des Hydranten ist unbekannt."
                     },
                     "1": {
-                        "then": "Säulenart."
+                        "then": "Überflurhydrant."
                     },
                     "2": {
-                        "then": "Rohrtyp."
+                        "then": "Druckloses Rohr."
                     },
                     "3": {
-                        "then": "Wandtyp."
+                        "then": "Wandhydrant."
                     },
                     "4": {
-                        "then": "Untergrundtyp."
+                        "then": "Unterflurhydrant."
                     }
                 },
-                "question": "Um welche Art von Hydrant handelt es sich?",
+                "question": "Welche Bauform hat der Hydrant?",
                 "render": " Hydranten-Typ: {fire_hydrant:type}"
             }
         },
@@ -3721,7 +3909,7 @@
         "name": "Informationstafeln",
         "presets": {
             "0": {
-                "title": "eine informationstafel"
+                "title": "eine Informationstafel"
             }
         },
         "title": {
@@ -3734,7 +3922,7 @@
         "presets": {
             "0": {
                 "description": "Fehlende Karte hinzufügen",
-                "title": "eine karte"
+                "title": "eine Karte"
             }
         },
         "tagRenderings": {
@@ -3890,8 +4078,7 @@
         },
         "title": {
             "render": "Naturschutzgebiet"
-        },
-        "description": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde"
+        }
     },
     "note": {
         "filter": {
@@ -3912,49 +4099,49 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Geöffnet vom Mitwirkenden {search}"
+                        "question": "Erstellt von {search}"
                     }
                 }
             },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Nicht</b> vom Mitwirkenden {search} geöffnet"
+                        "question": "<b>Nicht</b> erstellt von {search}"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet vom Mitwirkenden {search}"
+                        "question": "Zuletzt bearbeitet von {search}"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Geöffnet nach {search}"
+                        "question": "Zuletzt bearbeitet nach dem {search}"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Erstellt vor {search}"
+                        "question": "Erstellt vor dem {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Erstellt nach {search}"
+                        "question": "Erstellt nach dem {search}"
                     }
                 }
             },
             "8": {
                 "options": {
                     "0": {
-                        "question": "Nur Notizen anzeigen, die von anonymen Mitwirkenden geöffnet wurden"
+                        "question": "Nur Notizen anzeigen, die anonym erstellt wurden"
                     }
                 }
             },
@@ -3973,9 +4160,6 @@
                     "1": {
                         "question": "Importnotizen ausblenden"
                     },
-                    "0": {
-                        "question": "Alle Notizen"
-                    },
                     "2": {
                         "question": "Nur Importnotizen anzeigen"
                     }
@@ -3988,7 +4172,7 @@
                 "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} als Spam melden</a>"
             },
             "report-note": {
-                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Diese Notiz als Spam oder unangemessen melden</a>"
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>"
             }
         },
         "title": {
@@ -4024,19 +4208,19 @@
                 "render": "Dieser Turm ist {height} hoch"
             },
             "Operator": {
-                "question": "Wer betreibt diesen Turm?",
+                "question": "Wer betreibt den Turm?",
                 "render": "Betrieben von <b>{operator}</b>"
             },
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Turm ist öffentlich zugänglich"
+                        "then": "Der Turm ist öffentlich zugänglich"
                     },
                     "1": {
-                        "then": "Dieser Turm kann nur mit einem Führer besichtigt werden"
+                        "then": "Der Turm darf nur in Begleitung eines Führers betreten werden"
                     }
                 },
-                "question": "Kann dieser Turm besichtigt werden?"
+                "question": "Darf der Turm betreten werden?"
             },
             "elevator": {
                 "mappings": {
@@ -4052,11 +4236,11 @@
             "name": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Turm hat keinen eigenen Namen"
+                        "then": "Der Turm hat keinen eigenen Namen"
                     }
                 },
-                "question": "Wie heißt dieser Turm?",
-                "render": "Der Name dieses Turms lautet <b>{name}</b>"
+                "question": "Wie ist der Name des Turms?",
+                "render": "Der Name des Turms ist <b>{name}</b>"
             },
             "step_count": {
                 "question": "Wie viele einzelne Stufen muss man erklimmen, um die Spitze des Turms zu erreichen?",
@@ -4102,7 +4286,7 @@
         "name": "Picknick-Tische",
         "presets": {
             "0": {
-                "title": "ein Picknick-Tisch"
+                "title": "einen Picknick-Tisch"
             }
         },
         "tagRenderings": {
@@ -5128,11 +5312,11 @@
         "name": "Toiletten",
         "presets": {
             "0": {
-                "title": "eine öffentlich zugängliche toilette"
+                "title": "eine öffentliche Toilette"
             },
             "1": {
                 "description": "Eine Toilettenanlage mit mindestens einer rollstuhlgerechten Toilette",
-                "title": "eine toiletten mit rollstuhlgerechter toilette"
+                "title": "eine barrierefreie Toilette"
             }
         },
         "tagRenderings": {
@@ -5417,7 +5601,7 @@
         }
     },
     "veterinary": {
-        "name": "Tierarzt",
+        "name": "Tierärzte",
         "presets": {
             "0": {
                 "description": "ein Tierarzt, der Hunde behandelt",
@@ -5436,7 +5620,7 @@
     },
     "viewpoint": {
         "description": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
-        "name": "Aussichtspunkt",
+        "name": "Aussichtspunkte",
         "presets": {
             "0": {
                 "title": "eine aussichtspunkt"
@@ -5625,7 +5809,7 @@
         }
     },
     "watermill": {
-        "name": "Wassermühle"
+        "name": "Wassermühlen"
     },
     "windturbine": {
         "description": "Moderne Windmühlen zur Stromerzeugung",
@@ -5641,11 +5825,11 @@
                 "render": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter."
             },
             "turbine-height": {
-                "question": "Wie hoch ist dieses Windrad (inklusive Rotorradius) in Metern?",
+                "question": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
                 "render": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter."
             },
             "turbine-operator": {
-                "question": "Wer betreibt das Windrads?",
+                "question": "Wer betreibt das Windrad?",
                 "render": "Die Windturbine wird betrieben von {operator}."
             },
             "turbine-output": {
