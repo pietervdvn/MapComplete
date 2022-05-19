@@ -927,13 +927,13 @@
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
-                        "then": "Sclaverand (also known as Presta)"
+                        "then": "Sclaverand/Presta (narrow-width bike tires)"
                     },
                     "1": {
                         "then": "Dunlop"
                     },
                     "2": {
-                        "then": "Schrader (cars)"
+                        "then": "Schrader (cars and mountainbikes)"
                     }
                 },
                 "question": "What valves are supported?",
