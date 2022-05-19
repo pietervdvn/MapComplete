@@ -927,13 +927,13 @@
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
-                        "then": "Sclaverand (ook gekend als Presta)"
+                        "then": "Sclaverand/Presta (dunne fietsbanden)"
                     },
                     "1": {
                         "then": "Dunlop"
                     },
                     "2": {
-                        "then": "Schrader (auto's)"
+                        "then": "Schrader (auto's en mountainbikes)"
                     }
                 },
                 "question": "Welke ventielen werken er met de pomp?",
