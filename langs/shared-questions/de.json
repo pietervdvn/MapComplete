@@ -92,7 +92,7 @@
             "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
         },
         "website": {
-            "question": "Was ist die Website von {title()}?"
+            "question": "Wie ist die Website von {title()}?"
         },
         "wheelchair-access": {
             "mappings": {

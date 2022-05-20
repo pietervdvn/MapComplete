@@ -225,12 +225,18 @@ class TranslationPart {
                 if (typeof value !== "string") {
                     return;
                 }
-                
+                let [_, __, weblatepart, lang] = key.split("/")
+                if (lang === undefined) {
+                    // This is a core translation, it has one less path segment
+                    lang = weblatepart
+                    weblatepart = "core"
+                }
+                const fixLink = `Fix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent( path.join("."))}%22`;
                 let subparts: string[] = value.match(/{[^}]*}/g)
                 if (subparts === null) {
                     if (neededSubparts.size > 0) {
                         errors.push({
-                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).map(part => part.part +" (used in "+part.usedByLanguage+")").join(",") + " . The full translation is " + value,
+                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).map(part => part.part +" (used in "+part.usedByLanguage+")").join(",") + " . The full translation is " + value+"\n"+fixLink,
                             path: path
                         })
                     }
@@ -238,17 +244,12 @@ class TranslationPart {
                 }
                 subparts = subparts.map(p => p.split(/\(.*\)/)[0])
                 if (subparts.indexOf(part) < 0) {
-                    let [_, __, weblatepart, lang] = key.split("/")
-                    if (lang === undefined) {
-                        // This is a core translation, it has one less path segment
-                        lang = weblatepart
-                        weblatepart = "core"
-                    }
+         
                     if(lang === "en" || usedByLanguage === "en"){
                         errors.push({
                             error: `The translation for ${key} does not have the required subpart ${part}.
     \tThe full translation is ${value}
-    \tFix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent( path.join("."))}%22`,
+    \t${fixLink}`,
                             path: path
                         })
                     }
