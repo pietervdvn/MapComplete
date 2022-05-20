@@ -378,7 +378,7 @@
         "presets": {
             "0": {
                 "description": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
-                "title": "eine fahrradbibliothek"
+                "title": "eine Fahrradbibliothek"
             }
         },
         "tagRenderings": {
@@ -543,14 +543,14 @@
         "name": "Automaten für Fahrradschläuche",
         "presets": {
             "0": {
-                "title": "eine fahrradschlauch-automat"
+                "title": "einen Fahrradschlauch-Automaten"
             }
         },
         "tagRenderings": {
             "Still in use?": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Automat funktioniert"
+                        "then": "Dieser Automat ist in Betrieb"
                     },
                     "1": {
                         "then": "Dieser Automat ist kaputt"
@@ -559,7 +559,7 @@
                         "then": "Dieser Automat ist geschlossen"
                     }
                 },
-                "question": "Ist dieser Automat noch in Betrieb?",
+                "question": "Ist dieser Automat in Betrieb?",
                 "render": "Der Betriebszustand ist <i>{operational_status}</i>"
             }
         },
@@ -572,7 +572,7 @@
         "name": "Fahrrad-Cafés",
         "presets": {
             "0": {
-                "title": "eine fahrrad-café"
+                "title": "ein Fahrrad-Café"
             }
         },
         "tagRenderings": {
@@ -640,7 +640,7 @@
         "name": "Fahrrad-Reinigungsdienste",
         "presets": {
             "0": {
-                "title": "eine fahrrad-reinigungsdienst"
+                "title": "eine Fahrrad-Reinigung"
             }
         },
         "tagRenderings": {
@@ -689,7 +689,7 @@
         "name": "Fahrrad-Parkplätze",
         "presets": {
             "0": {
-                "title": "eine fahrrad-parkplätze"
+                "title": "einen Fahrrad-Parkplatz"
             }
         },
         "tagRenderings": {
@@ -799,15 +799,15 @@
         "presets": {
             "0": {
                 "description": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
-                "title": "eine fahrradpumpe"
+                "title": "eine Fahrradpumpe"
             },
             "1": {
                 "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
-                "title": "eine fahrrad-reparaturstation und pumpe"
+                "title": "eine Fahrrad-Reparaturstation mit Pumpe"
             },
             "2": {
                 "description": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
-                "title": "eine fahrrad-reparaturstation ohne pumpe"
+                "title": "eine Fahrrad-Reparaturstation ohne Pumpe"
             }
         },
         "tagRenderings": {
@@ -857,7 +857,7 @@
                         "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
                     }
                 },
-                "question": "Welche Einrichtungen stehen an dieser Fahrradstation zur Verfügung?"
+                "question": "Welche Einrichtungen sind an der Fahrradstation vorhanden?"
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
@@ -912,7 +912,7 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Immer geöffnet"
+                        "then": "Durchgehend geöffnet"
                     }
                 },
                 "question": "Wann ist diese Fahrradreparaturstelle geöffnet?"
@@ -966,104 +966,104 @@
         "name": "Fahrradgeschäfte und -werkstätten",
         "presets": {
             "0": {
-                "title": "eine fahrradwerkstatt/geschäft"
+                "title": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft"
             }
         },
         "tagRenderings": {
             "bike_repair_bike-pump-service": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft bietet eine Fahrradpumpe für alle an"
+                        "then": "Im Geschäft gibt es eine öffentlich nutzbare Luftpumpe"
                     },
                     "1": {
-                        "then": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an"
+                        "then": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe"
                     },
                     "2": {
-                        "then": "Es gibt eine Fahrradpumpe, sie wird als separater Punkt angezeigt "
+                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen "
                     }
                 },
-                "question": "Bietet dieses Geschäft eine Fahrradpumpe zur Benutzung für alle an?"
+                "question": "Gibt es im Geschäft eine öffentlich nutzbare Luftpumpe?"
             },
             "bike_repair_bike-wash": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft reinigt Fahrräder"
+                        "then": "Das Geschäft bietet Fahrradreinigungen an"
                     },
                     "1": {
-                        "then": "Dieser Laden hat eine Anlage, in der man Fahrräder selbst reinigen kann"
+                        "then": "Im Geschäft können Fahrräder selbst gereinigt werden"
                     },
                     "2": {
-                        "then": "Dieser Laden bietet keine Fahrradreinigung an"
+                        "then": "Das Geschäft bietet keine Fahrradreinigungen an"
                     }
                 },
-                "question": "Werden hier Fahrräder gewaschen?"
+                "question": "Bietet das Geschäft Fahrradreinigungen an?"
             },
             "bike_repair_rents-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft vermietet Fahrräder"
+                        "then": "Das Geschäft vermietet Fahrräder"
                     },
                     "1": {
-                        "then": "Dieses Geschäft vermietet keine Fahrräder"
+                        "then": "Das Geschäft vermietet keine Fahrräder"
                     }
                 },
-                "question": "Vermietet dieser Laden Fahrräder?"
+                "question": "Vermietet das Geschäft Fahrräder?"
             },
             "bike_repair_repairs-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft repariert Fahrräder"
+                        "then": "Das Geschäft repariert Fahrräder"
                     },
                     "1": {
-                        "then": "Dieses Geschäft repariert keine Fahrräder"
+                        "then": "Das Geschäft repariert keine Fahrräder"
                     },
                     "2": {
-                        "then": "Dieses Geschäft repariert nur hier gekaufte Fahrräder"
+                        "then": "Das Geschäft repariert nur hier gekaufte Fahrräder"
                     },
                     "3": {
-                        "then": "Dieses Geschäft repariert nur Fahrräder einer bestimmten Marke"
+                        "then": "Das Geschäft repariert nur Fahrräder einer bestimmten Marke"
                     }
                 },
-                "question": "Repariert dieses Geschäft Fahrräder?"
+                "question": "Repariert das Geschäft Fahrräder?"
             },
             "bike_repair_second-hand-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft verkauft gebrauchte Fahrräder"
+                        "then": "Das Geschäft verkauft gebrauchte Fahrräder"
                     },
                     "1": {
-                        "then": "Dieses Geschäft verkauft keine gebrauchten Fahrräder"
+                        "then": "Das Geschäft verkauft keine gebrauchten Fahrräder"
                     },
                     "2": {
-                        "then": "Dieses Geschäft verkauft nur gebrauchte Fahrräder"
+                        "then": "Das Geschäft verkauft ausschließlich gebrauchte Fahrräder"
                     }
                 },
-                "question": "Verkauft dieses Geschäft gebrauchte Fahrräder?"
+                "question": "Verkauft das Geschäft gebrauchte Fahrräder?"
             },
             "bike_repair_sells-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft verkauft Fahrräder"
+                        "then": "Das Geschäft verkauft Fahrräder"
                     },
                     "1": {
-                        "then": "Dieses Geschäft verkauft keine Fahrräder"
+                        "then": "Das Geschäft verkauft keine Fahrräder"
                     }
                 },
-                "question": "Verkauft dieser Laden Fahrräder?"
+                "question": "Verkauft das Geschäft Fahrräder?"
             },
             "bike_repair_tools-service": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft bietet Werkzeuge für die Heimwerkerreparatur an"
+                        "then": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren"
                     },
                     "1": {
-                        "then": "Dieses Geschäft bietet keine Werkzeuge für Heimwerkerreparaturen an"
+                        "then": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren"
                     },
                     "2": {
-                        "then": "Werkzeuge für die Selbstreparatur sind nur verfügbar, wenn Sie das Fahrrad im Laden gekauft/gemietet haben"
+                        "then": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde"
                     }
                 },
-                "question": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?"
+                "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
             },
             "bike_shop-access": {
                 "render": "Nur zugänglich für {access}"
@@ -1080,7 +1080,7 @@
                 "render": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig"
             },
             "bike_shop-name": {
-                "question": "Wie heißt dieser Fahrradladen?",
+                "question": "Wie heißt das Geschäft?",
                 "render": "Das Geschäft heißt {name}"
             },
             "bike_shop-phone": {
@@ -3220,13 +3220,13 @@
             "Bottle refill": {
                 "mappings": {
                     "0": {
-                        "then": "Es ist einfach, Wasserflaschen nachzufüllen"
+                        "then": "Wasserflaschen können hier problemlos gefüllt werden"
                     },
                     "1": {
-                        "then": "Wasserflaschen passen möglicherweise nicht"
+                        "then": "Wasserflaschen können hier nicht oder nur sehr aufwändig gefüllt werden"
                     }
                 },
-                "question": "Wie einfach ist es, Wasserflaschen zu füllen?"
+                "question": "Wie einfach hier das Befüllen von Wasserflaschen?"
             },
             "Still in use?": {
                 "mappings": {
@@ -4633,7 +4633,7 @@
                         "then": "Dieser Container befindet sich in einem Gebäude"
                     },
                     "2": {
-                        "then": "Dieser Container befindet sich im Freien"
+                        "then": "Der Container befindet sich im Freien"
                     }
                 },
                 "question": "Wo befindet sich dieser Container?"
@@ -4736,7 +4736,7 @@
                         "then": "Dies ist ein Wertstoffhof"
                     },
                     "2": {
-                        "then": "Dies ist ein Abfallcontainer für Restmüll"
+                        "then": "Dies ist ein Abfallbehälter für Restmüll"
                     }
                 },
                 "question": "Um welche Recyclingeinrichtung handelt es sich?"
