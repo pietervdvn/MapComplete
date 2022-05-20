@@ -46,8 +46,16 @@ export class AllKnownLayouts {
         return allLayers
     }
 
+    /**
+     * Returns all themes which use the given layer, reverse sorted by minzoom. This sort maximizes the chances that the layer is prominently featured on the first theme
+     */
     public static themesUsingLayer(id: string, publicOnly = true): LayoutConfig[] {
-        return AllKnownLayouts.layoutsList.filter(l => !(publicOnly && l.hideFromOverview) && l.id !== "personal" && l.layers.some(layer => layer.id === id))
+        const themes = AllKnownLayouts.layoutsList
+            .filter(l => !(publicOnly && l.hideFromOverview) && l.id !== "personal")
+            .map(theme => ({theme, minzoom: theme.layers.find(layer => layer.id === id)?.minzoom}))
+            .filter(obj => obj.minzoom !== undefined)
+        themes.sort((th0, th1) => th1.minzoom - th0.minzoom)
+        return themes.map(th => th.theme);
     }
 
     /**
