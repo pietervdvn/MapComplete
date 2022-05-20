@@ -63,7 +63,7 @@
         },
         "opening_hours": {
             "question": "Kapan jam buka {title()}?",
-            "render": "<h3>Jam buka</h3>{buka_jam_meja(jam_buka)}"
+            "render": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
         },
         "wheelchair-access": {
             "mappings": {
