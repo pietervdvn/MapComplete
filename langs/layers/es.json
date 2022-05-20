@@ -1144,7 +1144,8 @@
                     "6": {
                         "then": "Autenticación mediante tarjeta de débito disponible"
                     }
-                }
+                },
+                "question": "¿Qué tipo de autenticación está disponible en esta estación de carga?"
             },
             "Available_charging_stations (generated)": {
                 "mappings": {
@@ -1290,6 +1291,128 @@
                     }
                 },
                 "question": "¿A qué vehículos se permite la carga aquí?"
+            },
+            "access": {
+                "render": "El acceso está {access}",
+                "mappings": {
+                    "1": {
+                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+                    },
+                    "0": {
+                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+                    },
+                    "4": {
+                        "then": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
+                    },
+                    "3": {
+                        "then": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>"
+                    },
+                    "2": {
+                        "then": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>"
+                    }
+                },
+                "question": "¿A quién se le permite utilizar esta estación de carga?"
+            },
+            "current-13": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A"
+                    },
+                    "1": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A"
+                    }
+                },
+                "question": "¿Qué corriente ofrecen los conectores con <div style='display:i nline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem;display:inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem; display: inline-block' src='./assets/layers/changing_station/usb_port.svg'></div> salida de hasta {socket:USB-A:current}A"
+            },
+            "email": {
+                "question": "¿Cual es la dirección de correo electrónico de esta operadora?",
+                "render": "En caso de problemas, envía un correo electrónico a <a href=\"mailto:{email}'>{email}</a>"
+            },
+            "fee": {
+                "mappings": {
+                    "4": {
+                        "then": "Uso de pago"
+                    },
+                    "3": {
+                        "then": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
+                    }
+                },
+                "question": "¿Hay que pagar para utilizar esta estación de carga?"
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "No hay límite de tiempo para dejar tu vehículo aquí"
+                    }
+                },
+                "render": "Se puede estar como máximo <b>{canonical(maxstay)}</b>",
+                "question": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?"
+            },
+            "phone": {
+                "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>",
+                "question": "¿A qué número se puede llamar si hay un problema con esta estación de carga?"
+            },
+            "capacity": {
+                "render": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo",
+                "question": "¿Cuántos vehículos se pueden cargar a la vez aquí?"
+            },
+            "charge": {
+                "question": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
+                "render": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "2": {
+                        "human": " días",
+                        "humanSingular": " día"
+                    },
+                    "0": {
+                        "human": " minutos",
+                        "humanSingular": " minuto"
+                    },
+                    "1": {
+                        "human": " horas",
+                        "humanSingular": " hora"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Voltios"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilvatio"
+                    },
+                    "1": {
+                        "human": "megavatio"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Estación de carga",
+            "mappings": {
+                "1": {
+                    "then": "Estación de carga para coches"
+                },
+                "0": {
+                    "then": "Estación de carga para bicicletas eléctricas"
+                }
             }
         }
     },
@@ -1484,6 +1607,26 @@
         },
         "title": {
             "render": "Árbol"
+        }
+    },
+    "climbing": {
+        "tagRenderings": {
+            "average_length": {
+                "render": "Las rutas miden <b>{canonical(climbing:length)}</b> de media",
+                "question": "¿Cual es la longitud (media) de las rutas en metros?"
+            },
+            "fee": {
+                "question": "¿Se requiere una tasa para escalar aquí?",
+                "mappings": {
+                    "0": {
+                        "then": "La escalada es gratis"
+                    },
+                    "1": {
+                        "then": "Hay que pagar una tasa para escalar aquí"
+                    }
+                },
+                "render": "Se debe de pagar una tasa de {charge} para escalar aquí"
+            }
         }
     }
 }
