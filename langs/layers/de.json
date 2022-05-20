@@ -927,13 +927,13 @@
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
-                        "then": "Sklaverand (auch bekannt als Presta)"
+                        "then": "Sklaverand-/Prestaventil (für Rennräder)"
                     },
                     "1": {
                         "then": "Dunlop"
                     },
                     "2": {
-                        "then": "Schrader (Autos)"
+                        "then": "Schraderventil (für Autos und Mountainbikes)"
                     }
                 },
                 "question": "Welche Ventile werden unterstützt?",
@@ -1081,7 +1081,7 @@
             },
             "bike_shop-name": {
                 "question": "Wie heißt dieser Fahrradladen?",
-                "render": "Dieses Fahrradgeschäft heißt {name}"
+                "render": "Das Geschäft heißt {name}"
             },
             "bike_shop-phone": {
                 "question": "Wie lautet die Telefonnummer von {name}?"
