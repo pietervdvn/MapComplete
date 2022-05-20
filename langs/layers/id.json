@@ -427,7 +427,8 @@
     "windturbine": {
         "tagRenderings": {
             "turbine-operator": {
-                "render": "Turbin angin ini dioperasikan oleh {operator}."
+                "render": "Turbin angin ini dioperasikan oleh {operator}.",
+                "question": "Siapa yang mengoperasikan turbin angin ini?"
             },
             "turbine-output": {
                 "question": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
