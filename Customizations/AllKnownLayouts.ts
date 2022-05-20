@@ -17,31 +17,37 @@ export class AllKnownLayouts {
     // Must be below the list...
     private static sharedLayers: Map<string, LayerConfig> = AllKnownLayouts.getSharedLayers();
 
-    public static AllPublicLayers() {
+    public static AllPublicLayers(options?: {
+        includeInlineLayers:true | boolean
+    }) {
         const allLayers: LayerConfig[] = []
         const seendIds = new Set<string>()
         AllKnownLayouts.sharedLayers.forEach((layer, key) => {
             seendIds.add(key)
             allLayers.push(layer)
         })
-        
-        const publicLayouts = AllKnownLayouts.layoutsList.filter(l => !l.hideFromOverview)
-        for (const layout of publicLayouts) {
-            if (layout.hideFromOverview) {
-                continue
-            }
-            for (const layer of layout.layers) {
-                if (seendIds.has(layer.id)) {
+        if (options?.includeInlineLayers ?? true) {
+            const publicLayouts = AllKnownLayouts.layoutsList.filter(l => !l.hideFromOverview)
+            for (const layout of publicLayouts) {
+                if (layout.hideFromOverview) {
                     continue
                 }
-                seendIds.add(layer.id)
-                allLayers.push(layer)
-            }
+                for (const layer of layout.layers) {
+                    if (seendIds.has(layer.id)) {
+                        continue
+                    }
+                    seendIds.add(layer.id)
+                    allLayers.push(layer)
+                }
 
+            }
         }
-        
-        
+
         return allLayers
+    }
+
+    public static themesUsingLayer(id: string, publicOnly = true): LayoutConfig[] {
+        return AllKnownLayouts.layoutsList.filter(l => !(publicOnly && l.hideFromOverview) && l.id !== "personal" && l.layers.some(layer => layer.id === id))
     }
 
     /**
@@ -70,7 +76,7 @@ export class AllKnownLayouts {
                 if (builtinLayerIds.has(layer.id)) {
                     continue
                 }
-                if(layer.source.geojsonSource !== undefined){
+                if (layer.source.geojsonSource !== undefined) {
                     // Not an OSM-source
                     continue
                 }
@@ -184,6 +190,17 @@ export class AllKnownLayouts {
 
     }
 
+    public static GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement {
+        return new Combine([
+            new Title(new Combine([theme.title, "(", theme.id + ")"]), 2),
+            theme.description,
+            "This theme contains the following layers:",
+            new List(theme.layers.map(l => l.id)),
+            "Available languages:",
+            new List(theme.language)
+        ])
+    }
+
     private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
         for (const layer of known_themes.layers) {
@@ -228,17 +245,6 @@ export class AllKnownLayouts {
             }
         }
         return dict;
-    }
-    
-    public static GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement{
-        return new Combine([
-            new Title(new Combine([theme.title, "(",theme.id+")"]), 2),
-            theme.description,
-            "This theme contains the following layers:",
-            new List(theme.layers.map(l => l.id)),
-            "Available languages:",
-            new List(theme.language)
-        ])
     }
 
 }

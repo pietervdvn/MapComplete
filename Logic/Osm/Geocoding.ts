@@ -5,7 +5,8 @@ import {BBox} from "../BBox";
 export interface GeoCodeResult {
     display_name: string,
     lat: number, lon: number, boundingbox: number[],
-    osm_type: string, osm_id: string
+    osm_type: "node" | "way" | "relation",
+    osm_id: string
 }
 
 export class Geocoding {
