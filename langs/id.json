@@ -10,7 +10,8 @@
         "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
         "delete": "Hapus",
         "explanations": {
-            "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus"
+            "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus",
+            "hardDelete": "Titik ini akan dihapus di OpenStreetMap. Dapat dipulihkan oleh kontributor berpengalaman"
         },
         "isDeleted": "Fitur ini telah dihapus",
         "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi."
@@ -113,6 +114,63 @@
         "write_a_comment": "Beri ulasan…"
     },
     "split": {
-        "cancel": "Batal"
+        "cancel": "Batal",
+        "splitTitle": "Pilih di peta tempat membelah jalan ini"
+    },
+    "notes": {
+        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan",
+        "noteIsPublic": "Ini akan terlihat oleh semua orang",
+        "isClosed": "Catatan ini diselesaikan",
+        "loginToClose": "Masuk untuk menutup catatan ini",
+        "anonymous": "Pengguna anonim",
+        "loginToAddComment": "Masuk untuk menambahkan komentar",
+        "addCommentPlaceholder": "Tambahkan komentar...",
+        "loginToAddPicture": "Masuk untuk menambahkan gambar",
+        "disableAllNoteFilters": "Nonaktifkan semua filter",
+        "addCommentAndClose": "Tambah komentar dan tutup",
+        "closeNote": "Tutup catatan",
+        "isCreated": "Catatan Anda telah dibuat!",
+        "createNoteIntro": "Apakah ada yang salah atau hilang di peta? Buat catatan di sini. Nanti diperiksa oleh relawan.",
+        "createNoteTitle": "Buat catatan baru di sini",
+        "createNote": "Buat catatan baru"
+    },
+    "translations": {
+        "allMissing": "Belum ada terjemahan",
+        "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
+        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari",
+        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan"
+    },
+    "validation": {
+        "date": {
+            "description": "Tanggal, dimulai dari tahun"
+        },
+        "direction": {
+            "description": "Orientasi"
+        },
+        "email": {
+            "description": "alamat email",
+            "feedback": "Ini bukan alamat email yang valid"
+        },
+        "int": {
+            "description": "bilangan bulat"
+        },
+        "nat": {
+            "mustBePositive": "Angka ini harus positif",
+            "notANumber": "Masukkan nomor"
+        },
+        "decimal": {
+            "description": "Nomor"
+        },
+        "float": {
+            "description": "nomor",
+            "feedback": "Ini bukan nomor"
+        },
+        "wikidata": {
+            "description": "Pengidentifikasi Wikidata"
+        },
+        "url": {
+            "feedback": "Ini bukan alamat web yang valid",
+            "description": "tautan ke situs web"
+        }
     }
 }
