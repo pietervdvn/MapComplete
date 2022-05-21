@@ -1,5 +1,6 @@
 {
   "id": "veterinary",
+  "description": "A layer showing veterinarians",
   "source": {
     "osmTags": {
       "or": [
