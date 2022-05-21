@@ -46,7 +46,8 @@
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "script": "ts-node",
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git",
-    "weblate-fix": "git remote update weblate-github ; git merge weblate-github/weblate-mapcomplete-core; git merge weblate-github/weblate-mapcomplete-layers ; git merge weblate-github/weblate-mapcomplete-layer-translations"
+    "weblate-fix": "git remote update weblate-github ; git merge weblate-github/weblate-mapcomplete-core; git merge weblate-github/weblate-mapcomplete-layers ; git merge weblate-github/weblate-mapcomplete-layer-translations",
+    "housekeeping": "npm run generate && npm run generate:docs && npm run generate:contributor-list && git commit assets/ langs/ Docs/ -m 'Housekeeping...'"
   },
   "keywords": [
     "OpenStreetMap",
