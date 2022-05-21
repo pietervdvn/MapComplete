@@ -19,18 +19,18 @@
         "loading": "Eigenschaften untersuchen, um festzustellen, ob das Element gelöscht werden kann.",
         "loginToDelete": "Sie müssen angemeldet sein, um einen Punkt zu löschen",
         "notEnoughExperience": "Dieser Punkt wurde von jemand anderem erstellt.",
-        "onlyEditedByLoggedInUser": "Dieser Punkt wurde nur von Ihnen selbst bearbeitet, Sie können ihn gefahrlos löschen.",
+        "onlyEditedByLoggedInUser": "Dieser Punkt wurde nur von Ihnen selbst bearbeitet. Sie können ihn gefahrlos löschen.",
         "partOfOthers": "Dieser Punkt ist Teil eines Weges oder einer Relation und kann nicht direkt gelöscht werden.",
-        "readMessages": "Du hast ungelesene Nachrichten. Bitte beachte diese, bevor Du einen Punkt löschst - vielleicht hat jemand eine Rückmeldung",
+        "readMessages": "Ungelesene Nachrichten vorhanden. Bitte vor dem Löschen des Punkts beachten - vielleicht liegt eine Rückmeldung vor",
         "reasons": {
-            "disused": "Dieses Element wird nicht mehr verwendet oder entfernt",
+            "disused": "Dieses Element wird nicht mehr verwendet oder wurde entfernt",
             "duplicate": "Dieser Punkt ist ein Duplikat eines anderen Elements",
             "notFound": "Dieses Element konnte nicht gefunden werden",
             "test": "Dies war ein Testpunkt - das Element war nie wirklich vorhanden"
         },
-        "safeDelete": "Dieser Punkt kann sicher gelöscht werden.",
-        "useSomethingElse": "Verwenden Sie zum Löschen stattdessen einen anderen OpenStreetMap-Editor",
-        "whyDelete": "Warum sollte dieser Punkt gelöscht werden?"
+        "safeDelete": "Dieser Punkt kann gefahrlos gelöscht werden.",
+        "useSomethingElse": "Zum Löschen kann stattdessen ein anderer OpenStreetMap-Editor verwendet werden",
+        "whyDelete": "Warum soll der Punkt gelöscht werden?"
     },
     "favourite": {
         "loginNeeded": "<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar",
@@ -41,16 +41,16 @@
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapcomplete": "<h3>Über MapComplete</h3><p>Nutzen Sie MapComplete, um OpenStreetMap-Informationen zu einem <b>bestimmten Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Der <b>Theme-Maintainer</b> definiert Elemente, Fragen und Sprachen dafür.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, aber das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Punkte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie <b>ein Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie <b>bei der Übersetzung helfen</b>? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie <b>Ihren Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
-            "addNew": "Füge {category} hinzu",
+            "addNew": "{category} hinzufügen",
             "addNewMapLabel": "Hier klicken, um ein neues Element hinzuzufügen",
-            "confirmButton": "Fügen Sie eine {category} hinzu.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
-            "confirmIntro": "<h3>Füge einen {title} hinzu?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten.",
+            "confirmButton": "Eine {category} hinzufügen.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
+            "confirmIntro": "<h3>Einen {title} hinzufügen?</h3>Diese Eintragung wird <b>für alle sichtbar sein</b>. Bitte nur Dinge hinzufügen, die wirklich existieren. Viele Anwendungen verwenden diese Daten.",
             "disableFilters": "Alle Filter deaktivieren",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "hasBeenImported": "Dieser Punkt wurde bereits importiert",
             "import": {
                 "hasBeenImported": "Das Objekt wurde importiert",
-                "howToTest": "Um es zu testen, hänge <b>test=true</b> oder <b>backend=osm-test</b> an die URL an. Die Änderungen werden in der Konsole ausgegeben. Bitte erstelle einen PR um das Thema zu veröffentlichen das den Import Button freischält.",
+                "howToTest": "Zum Testen, <b>test=true</b> oder <b>backend=osm-test</b> an die URL anhängen. Die Änderungen werden in der Konsole ausgegeben. Bitte einen Pull Request erstellen, um das Thema offiziell zu veröffentlichen und den Import Button freizuschalten.",
                 "importTags": "Das Element wird {tags} bekommen",
                 "officialThemesOnly": "Die Import-Schaltfläche ist für inoffizielle Themen deaktiviert, um Störfälle zu vermeiden",
                 "wrongType": "Dieses Element ist kein Punkt oder Weg und kann deshalb nicht importiert werden",
@@ -58,66 +58,66 @@
             },
             "importTags": "Das Element erhält {tags}",
             "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br>",
-            "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen",
-            "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
-            "pleaseLogin": "Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen",
+            "layerNotEnabled": "Die Ebene {layer} ist nicht eingeschaltet. Die Ebene ist einzuschalten, um einen Punkt hinzuzufügen",
+            "openLayerControl": "Das Ebenen-Fenster öffnen",
+            "pleaseLogin": "Bitte anmelden, um einen neuen Punkt hinzuzufügen",
             "presetInfo": "Der neue POI hat {tags}",
-            "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie etwas, bevor Sie einen neuen Punkt hinzufügen.",
+            "stillLoading": "Die Daten werden noch geladen. Vor dem Hinzufügen neuer Punkte bitte warten.",
             "title": "Punkt hinzufügen?",
             "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
             "wrongType": "Dieses Element ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
-            "zoomInFurther": "Weiter einzoomen, um einen Punkt hinzuzufügen.",
-            "zoomInMore": "Vergrößern Sie die Ansicht, um dieses Element zu importieren"
+            "zoomInFurther": "Ausschnitt vergrößern, um einen Punkt hinzuzufügen.",
+            "zoomInMore": "Ansicht vergrößern, um dieses Element zu importieren"
         },
         "apply_button": {
-            "appliedOnAnotherObject": "Das Objekt {id} wird {tags} bekommen",
-            "isApplied": "Die Änderungen werden übernommen"
+            "appliedOnAnotherObject": "Das Objekt {id} erhält {tags}",
+            "isApplied": "Änderungen werden übernommen"
         },
         "attribution": {
-            "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>",
+            "attributionContent": "<p>Alle Daten werden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>",
             "attributionTitle": "Danksagung",
             "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} weiteren Beitragenden</a>",
             "donate": "MapComplete finanziell unterstützen",
             "editId": "Den OpenStreetMap Editor öffnen",
-            "editJosm": "Bearbeite mit JOSM",
+            "editJosm": "Mit JOSM bearbeiten",
             "iconAttribution": {
                 "title": "Verwendete Symbole"
             },
-            "josmNotOpened": "JOSM konnte nicht erreicht werden. Stelle sicher, dass es geöffnet ist und Fernkontrolle aktiviert ist",
+            "josmNotOpened": "JOSM konnte nicht erreicht werden. Bitte sicherstellen, dass das Programm geöffnet und Remote Control aktiviert ist",
             "josmOpened": "JOSM ist geöffnet",
-            "mapContributionsBy": "Die aktuell sichtbaren Daten wurden editiert durch {contributors}",
-            "mapContributionsByAndHidden": "Die aktuell sichtbaren Daten wurden editiert von {contributors} und {hiddenCount} weiteren Beitragenden",
-            "openIssueTracker": "Einen Fehler melden",
+            "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
+            "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
+            "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Letzte Bearbeitungen mit {theme} ansehen",
             "themeBy": "Thema betreut von {author}",
             "translatedBy": "MapComplete wurde übersetzt von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden</a>"
         },
         "back": "Zurück",
-        "backToMapcomplete": "Zurück zur Themenwahl",
+        "backToMapcomplete": "Zurück zur Themenübersicht",
         "backgroundMap": "Hintergrundkarte",
         "cancel": "Abbrechen",
-        "confirm": "Bestätige",
-        "customThemeIntro": "<h3>Benutzerdefinierte Themes</h3>Dies sind zuvor besuchte benutzergenerierte Themen.",
+        "confirm": "Bestätigen",
+        "customThemeIntro": "<h3>Benutzerdefinierte Themen</h3>Dies sind zuvor angesehene nutzergenerierte Themen.",
         "download": {
-            "downloadAsPdf": "PDF der aktuellen Karte herunterladen",
+            "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
             "downloadAsSvg": "Aktuelle Karte als SVG herunterladen",
-            "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; muss weiter bearbeitet werden  ",
+            "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; Weiterbearbeitung erforderlich  ",
             "downloadCSV": "Sichtbare Daten als CSV herunterladen",
             "downloadCSVHelper": "Kompatibel mit LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "GeoJSON-Datei herunterladen",
-            "downloadFeatureAsGpx": "Download als GPX Datei",
+            "downloadFeatureAsGeojson": "GeoJSON Datei herunterladen",
+            "downloadFeatureAsGpx": "GPX Datei herunterladen",
             "downloadGeoJsonHelper": "Kompatibel mit QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
-            "downloadGpx": "Download als GPX Datei",
-            "downloadGpxHelper": "Eine GPX Datei funktioniert mit den meisten Geräten und Anwendungen",
+            "downloadGpx": "GPX Datei herunterladen",
+            "downloadGpxHelper": "Eine GPX Datei kann von den meisten Geräten und Anwendungen gelesen werden",
             "exporting": "Exportieren…",
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist erforderlich</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
-            "noDataLoaded": "Noch keine Daten geladen. Download ist in Kürze verfügbar",
+            "noDataLoaded": "Noch keine Daten geladen. Download in Kürze verfügbar",
             "title": "Sichtbare Daten herunterladen",
-            "uploadGpx": "Lade deinen Track auf OpenStreetMap hoch"
+            "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
@@ -135,17 +135,17 @@
         },
         "loading": "Laden...",
         "loadingTheme": "Lade {theme}...",
-        "loginFailed": "Einloggen zu OpenStreetMap fehlgeschlagen",
+        "loginFailed": "Anmeldung bei OpenStreetMap fehlgeschlagen",
         "loginOnlyNeededToEdit": "zum Bearbeiten der Karte",
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "logout": "Abmelden",
         "morescreen": {
-            "createYourOwnTheme": "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu",
+            "createYourOwnTheme": "Ein eigenes MapComplete-Thema von Grund auf neu erstellen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
             "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br>Es sind weitere Themen verfügbar.",
             "previouslyHiddenTitle": "Zuvor besuchte versteckte Themen",
-            "requestATheme": "Wenn Sie ein benutzerdefiniertes Thema wünschen, fordern Sie es im Issue Tracker an",
+            "requestATheme": "Eigene Themenwünsche können im Issue Tracker angefragt werden",
             "streetcomplete": "Eine ähnliche App ist <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Der Name dieser {category} ist $$$",
@@ -162,7 +162,7 @@
             "closed_until": "Geschlossen bis {date}",
             "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden.",
             "loadingCountry": "Land ermitteln…",
-            "not_all_rules_parsed": "Die Öffnungszeiten sind kompliziert. Die folgenden Regeln werden im Eingabeelement ignoriert:",
+            "not_all_rules_parsed": "Die Öffnungszeiten sind kompliziert. Folgenden Regeln werden im Eingabefenster ignoriert:",
             "openTill": "bis",
             "open_24_7": "Durchgehend geöffnet",
             "open_during_ph": "An Feiertagen ist hier",
@@ -172,14 +172,14 @@
             "ph_open": "geöffnet",
             "ph_open_as_usual": "geöffnet wie üblich"
         },
-        "osmLinkTooltip": "Dieses Element auf OpenStreetMap durchsuchen für den Verlauf und weitere Bearbeitungsmöglichkeiten",
+        "osmLinkTooltip": "Dieses Element auf OpenStreetMap öffnen, um Verlauf und Bearbeitungsmöglichkeiten anzuzeigen",
         "pdf": {
             "attr": "Kartendaten © OpenStreetMap Contributors, wiederverwendbar unter ODbL",
-            "attrBackground": "Hintergrund-Ebene: {background}",
+            "attrBackground": "Hintergrund: {background}",
             "generatedWith": "Erstellt mit MapComplete.osm.be",
             "versionInfo": "v{version} - erstellt am {date}"
         },
-        "pickLanguage": "Sprache wählen: ",
+        "pickLanguage": "Sprache auswählen: ",
         "poweredByOsm": "Unterstützt von OpenStreetMap",
         "questions": {
             "emailIs": "Die E-Mail-Adresse dieser {category} lautet <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -187,25 +187,25 @@
             "phoneNumberIs": "Die Telefonnummer der {category} lautet <a target=\"_blank\">{phone}</a>",
             "phoneNumberOf": "Wie lautet die Telefonnummer der {category}?",
             "websiteIs": "Webseite: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Was ist die Website der {category}?"
+            "websiteOf": "Wie lautet die Webseite der {category}?"
         },
-        "readYourMessages": "Bitte lesen Sie alle Ihre OpenStreetMap-Nachrichten, bevor Sie einen neuen Punkt hinzufügen.",
-        "removeLocationHistory": "Lösche den Standortverlauf",
+        "readYourMessages": "Vor dem Hinzufügen neuer Punkte, bitte OpenStreetMap Benachrichtigungen lesen.",
+        "removeLocationHistory": "Standortverlauf löschen",
         "returnToTheMap": "Zurück zur Karte",
         "save": "Speichern",
-        "screenToSmall": "Öffne {theme} in einem neuen Fenster",
+        "screenToSmall": "{theme} in einem neuen Fenster öffnen",
         "search": {
-            "error": "Etwas ging schief…",
+            "error": "Etwas ist schief gelaufen…",
             "nothing": "Nichts gefunden…",
-            "search": "Einen Ort suchen",
+            "search": "Ortssuche",
             "searching": "Suchen …"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Karte zum Startbildschirm hinzufügen</h3> Sie können diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
-            "copiedToClipboard": "Link in die Zwischenablage kopiert",
-            "downloadCustomTheme": "Herunterladen der Konfiguration für diese Karte",
+            "addToHomeScreen": "<h3>Karte zum Startbildschirm hinzufügen</h3> Diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
+            "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
+            "downloadCustomTheme": "Konfiguration für diese Karte herunterladen",
             "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern",
-            "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
+            "editThemeDescription": "Fragen zu diesem Thema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
             "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie dazu - Sie müssen nicht einmal um Erlaubnis fragen. <br> Die Karte ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
             "fsAddNew": "Schaltfläche 'neuen POI hinzufügen' aktivieren",
@@ -218,7 +218,7 @@
             "fsSearch": "Suchleiste aktivieren",
             "fsUserbadge": "Anmeldeschaltfläche aktivieren",
             "fsWelcomeMessage": "Begrüßungsfenster und zugehörige Registerkarten anzeigen",
-            "intro": "<h3>Karte teilen</h3> Teilen Sie diese Karte, indem Sie den folgenden Link kopieren und an Freunde und Familie schicken:",
+            "intro": "<h3>Karte teilen</h3> Folgenden Link kopieren und an Freunde und Familie schicken:",
             "thanksForSharing": "Danke für das Teilen!"
         },
         "skip": "Frage überspringen",
@@ -242,19 +242,19 @@
             "tuesday": "Dienstag",
             "wednesday": "Mittwoch"
         },
-        "welcomeBack": "Sie sind eingeloggt, willkommen zurück!",
+        "welcomeBack": "Sie sind angemeldet, willkommen zurück!",
         "wikipedia": {
-            "createNewWikidata": "Einen neuen Wikidata-Eintrag erstellen",
+            "createNewWikidata": "Einen neues Wikidata Element erstellen",
             "doSearch": "Suche oben, um Ergebnisse zu sehen",
             "failed": "Laden des Wikipedia-Eintrags fehlgeschlagen",
             "loading": "Wikipedia laden...",
             "noResults": "Nichts gefunden für <i>{search}</i>",
-            "noWikipediaPage": "Dieses Wikidata-Element hat noch keine entsprechende Wikipedia-Seite.",
+            "noWikipediaPage": "Dieses Wikidata-Element hat noch keine dazugehörige Wikipedia-Seite.",
             "previewbox": {
-                "born": "Geboren: {value}",
-                "died": "Gestorben: {value}"
+                "born": "Geboren am: {value}",
+                "died": "Gestorben am: {value}"
             },
-            "searchWikidata": "Suche auf Wikidata",
+            "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
         }
     },
@@ -269,11 +269,11 @@
         "doDelete": "Bild entfernen",
         "dontDelete": "Abbrechen",
         "isDeleted": "Gelöscht",
-        "pleaseLogin": "Bitte einloggen, um ein Bild hinzuzufügen",
+        "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
         "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
-        "toBig": "Ihr Bild ist zu groß, da es {actual_size} ist. Bitte verwenden Sie Bilder von höchstens {max_size}",
+        "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
         "uploadDone": "Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!",
-        "uploadFailed": "Wir konnten Ihr Bild nicht hochladen. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
+        "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
         "uploadingMultiple": "{count} Bilder hochladen…",
         "uploadingPicture": "Bild wird hochgeladen…",
@@ -282,14 +282,14 @@
     "importHelper": {
         "askMetadata": {
             "downloadGeojson": "GeoJSON herunterladen",
-            "giveDescription": "Bitte schreiben Sie eine kurze Beschreibung für jemanden, der die Notiz sieht. Eine gute Notiz beschreibt, was der Mitwirkende zu tun hat, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie in der Nähe sind, könnten Sie bitte überprüfen und angeben, ob die Bank existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
-            "giveSource": "Was ist die Quelle dieser Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
-            "giveWikilink": "Auf welcher Wikiseite gibt es weitere Informationen zu diesem Import?",
-            "intro": "Bevor Sie {count} Notizen hinzufügen, geben Sie bitte einige zusätzliche Informationen an.",
-            "orDownload": "Alternativ können Sie den Datensatz auch herunterladen und direkt importieren",
+            "giveDescription": "Bitte eine kurze Beschreibung für den Leser der Notiz hinzufügen. Eine gute Notiz beschreibt, was der Leser tun sollte, z.B. <i>Hier könnte eine Bank stehen. Wenn Sie vor Ort sind, prüfen Sie bitte, ob die Bank tatsächlich existiert oder nicht?</i> (Ein Link zu MapComplete wird automatisch hinzugefügt)",
+            "giveSource": "Woher stammen die Daten? Wenn 'source' bereits als Attribut am Objekt vorhanden ist, wird dieser Wert ignoriert",
+            "giveWikilink": "Auf welcher Seite im OSM Wiki gibt es weitere Informationen zu diesem Import?",
+            "intro": "Vor dem Hinzufügen von {count} Notizen, bitte zusätzliche Informationen angeben.",
+            "orDownload": "Alternativ kann der Datensatz auch heruntergeladen und direkt importiert werden",
             "shouldBeOsmWikilink": "Link zu einer Seite auf wiki.openstreetmap.org erwartet",
             "shouldBeUrl": "Keine gültige URL",
-            "shouldNotBeHomepage": "Nein, die Homepage ist auch nicht erlaubt. Geben Sie die URL einer geeigneten Wikiseite ein, die Ihren Import dokumentiert",
+            "shouldNotBeHomepage": "Nein, diese Webseite ist auch nicht zulässig. Bitte die URL einer geeigneten Wikiseite angeben, die den Import dokumentiert",
             "title": "Metadaten angeben"
         },
         "compareToAlreadyExistingNotes": {
@@ -299,8 +299,8 @@
             "mapExplanation": "Die roten Elemente auf der nächsten Karte sind alle Datenpunkte aus Ihrem Datensatz. Es gibt <b>{length}</b> Elemente in Ihrem Datensatz.",
             "noPreviousNotesFound": "Keine früheren Importnotizen gefunden",
             "nothingNearby": "Keiner der vorgeschlagenen Punkte hat eine Importnotiz in der Nähe",
-            "someNearby": "{hasNearby} Punkte haben eine bereits eine Importnotiz innerhalb {distance} Meter",
-            "title": "Mit vorhandenen Hinweisen vergleichen",
+            "someNearby": "{hasNearby} Punkte haben bereits eine Importnotiz innerhalb {distance} Meter",
+            "title": "Mit vorhandenen Notizen vergleichen",
             "titleLong": "Mit bereits vorhandenen 'zu-importieren'-Notizen vergleichen",
             "wontBeImported": "Diese Datenpunkte werden <i>nicht</i> importiert und sind als rote Punkte auf der Karte unten dargestellt"
         },
@@ -310,10 +310,10 @@
             "readImportGuidelines": "Ich habe die Importrichtlinien im OSM-Wiki gelesen",
             "title": "Lizenz und Gemeinschaft",
             "titleLong": "Haben Sie den Importvorgang durchlaufen?",
-            "wikipageIsMade": "Der Vorgang ist im OSM-Wiki dokumentiert (diesen Link benötigen Sie später)"
+            "wikipageIsMade": "Der Vorgang ist im OSM-Wiki dokumentiert (dieser Link wird später benötigt)"
         },
         "conflationChecker": {
-            "cacheExpired": "Der Cache ist abgelaufen",
+            "cacheExpired": "Cache ist abgelaufen",
             "downloadOverpassData": "Die geladene GeoJSON Datei von overpass herunterladen",
             "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
             "loadedDataAge": "Geladene Daten stammen aus dem Cache und sind {age} alt",
@@ -344,12 +344,12 @@
         "gotoImportViewer": "Vorherige Importe überprüfen",
         "introduction": {
             "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Importer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
-            "importFormat": "Der Hinweistext sollte das folgende Format haben, um aufgenommen zu werden",
+            "importFormat": "Der Text in der Notiz sollte folgendes Format haben, um verarbeitet zu werden",
             "title": "Einführung"
         },
         "login": {
             "lockNotice": "Diese Seite ist gesperrt. Zum Zugang werden {importHelperUnlock} Änderungssätze benötigt.",
-            "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungen vorgenommen",
+            "loggedInWith": "Sie sind derzeit angemeldet als <b>{name}</b> und haben {csCount} Änderungssätze",
             "loginIsCorrect": "<b>{name}</b> ist das richtige Konto, mit dem die Importhinweise erstellt werden.",
             "loginRequired": "Bitte anmelden, um fortzufahren",
             "title": "Anmelden",
@@ -365,7 +365,7 @@
         "noteParts": {
             "datasource": "Originaldaten von {source}",
             "importEasily": "Diesen Punkt einfach mit MapComplete hinzufügen:",
-            "wikilink": "Weitere Informationen über diesen Import unter {wikilink}"
+            "wikilink": "Weitere Informationen zu diesem Import unter {wikilink}"
         },
         "previewAttributes": {
             "allAttributesSame": "Alle zu importierenden Objekte haben diesen Tag",
@@ -381,10 +381,10 @@
             "errNoName": "Einige Spalten haben keinen Namen",
             "errNotFeatureCollection": "Die geladene JSON-Datei ist keine geojson-featurecollection",
             "errPointsOnly": "Die geladene JSON-Datei sollte nur Punkte enthalten",
-            "fileFormatDescription": "Wähle eine <b class=\"code\">.csv</b> oder <b class=\"code\">.geojson</b> Datei",
-            "fileFormatDescriptionCsv": "In der CSV-Datei sollte es jeweils eine Spalte für <span class=\"literal-code\">lat</span> und <span class=\"literal-code\">lon</span>mit den Koordinaten in WGS84 geben. Jedes weitere Attribut sollte in einer eigenen Spalte sein.",
+            "fileFormatDescription": "Eine <b class=\"code\">.csv</b>.csv oder <b class=\"code\">.geojson</b> Datei auswählen",
+            "fileFormatDescriptionCsv": "In der CSV-Datei sollte jeweils eine Spalte für <span class=\"literal-code\">lat</span> und <span class=\"literal-code\">lon</span> mit den Koordinaten in WGS84 vorhanden sein. Jedes weitere Attribut sollte in einer eigenen Spalte sein.",
             "fileFormatDescriptionGeoJson": "In der geojson-Datei sollten nur Punkte enthalten sein. Die Eigenschaften sollten genau die Eigenschaften sein, die in OpenStreetMap verwendet werden sollen",
-            "loadedFilesAre": "Die Datei {file} ist geladen",
+            "loadedFilesAre": "Die geladene Datei ist {file}",
             "noFilesLoaded": "Keine Datei geladen",
             "title": "Datei auswählen"
         },
@@ -393,7 +393,7 @@
             "intro": "Alle folgenden Themen zeigen die Importhinweise an. Die Notiz auf OpenStreetMap kann jedoch nur mit einem einzigen Thema verknüpft werden. Wählen Sie das Thema, mit dem die erstellten Notizen verknüpft werden sollen",
             "misMatch": "Eigenschaft mit Schlüssel {k} hat nicht den erwarteten Wert {v}; stattdessen ist es {properties}",
             "missing": "Erwartet $k}={v}, aber es fehlt komplett",
-            "needsTags": "{title} benötigt tags {tags}",
+            "needsTags": "{title} benötigt Tags {tags}",
             "noMatchingPresets": "Dieses Thema hat keine Voreinstellungen geladen. Daher werden Importe hier nicht funktionieren",
             "notApplicable": "Voreinstellung {title} ist nicht anwendbar:",
             "title": "Thema auswählen",
@@ -409,17 +409,17 @@
         "alreadyMapped": "Es gibt bereits einen {title} auf der Karte - dieser Punkt ist ein Duplikat",
         "description": "Eine Ebene, die Einträge für {title} importiert",
         "importButton": "import_button({layerId}, _tags, Ich habe hier ein(en) {title} gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class=\"thanks\">Dieses Objekt wurde behandelt! Vielen Dank für Ihre Bemühungen</div>",
+        "importHandled": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
         "layerName": "Möglicher {title}",
         "notFound": "Ich konnte {title} nicht finden - entferne es",
         "popupTitle": "Möglicherweise gibt es hier {title}"
     },
     "index": {
-        "#": "Dieser Text wird über die Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
+        "#": "Dieser Text wird über der Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
         "featuredThemeTitle": "Diese Woche im Blickpunkt",
-        "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu Objekten eines bestimmten Themas angezeigt und angepasst werden können.",
-        "logIn": "Melden Sie sich an, um Themen anzuzeigen, die Sie zuvor besucht haben",
-        "pickTheme": "Wähle eines der folgenden Themen, um zu starten.",
+        "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu Objekten eines bestimmten Themas angezeigt und bearbeitet werden können.",
+        "logIn": "Anmelden, um Themen anzuzeigen, die Sie bereits besucht haben",
+        "pickTheme": "Eines der folgenden Themen auswählen, um zu starten.",
         "title": "Willkommen bei MapComplete"
     },
     "move": {
@@ -427,14 +427,14 @@
         "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
-            "generic": "Verschiebe diesen Punkt",
+            "generic": "Diesen Punkt verschieben",
             "reasonInaccurate": "Lagegenauigkeit dieses Objekts verbessern",
             "reasonRelocation": "Dieses Element an einen anderen Ort verschieben, weil es sich verlagert hat"
         },
         "inviteToMoveAgain": "Diesen Punkt erneut verschieben",
         "isRelation": "Dieses Element ist eine Relation und kann nicht verschoben werden",
         "isWay": "Dieses Element ist ein Weg. Verwenden Sie einen anderen OpenStreetMap-Editor, um ihn zu verschieben.",
-        "loginToMove": "Sie müssen eingeloggt sein, um einen Punkt zu verschieben",
+        "loginToMove": "Sie müssen angemeldet sein, um einen Punkt zu verschieben",
         "moveTitle": "Diesen Punkt verschieben",
         "partOfAWay": "Dieses Element ist Teil eines anderen Weges. Verwenden Sie einen anderen Editor, um es zu verschieben.",
         "partOfRelation": "Dieses Element ist Teil einer Relation. Verwenden Sie einen anderen Editor, um es zu verschieben.",
@@ -445,188 +445,188 @@
         },
         "selectReason": "Warum verschieben Sie dieses Element?",
         "whyMove": "Warum wollen Sie diesen Punkt verschieben?",
-        "zoomInFurther": "Weiter vergrößern, um die Verschiebung zu bestätigen"
+        "zoomInFurther": "Ausschnitt vergrößern, um die Verschiebung zu bestätigen"
     },
     "multi_apply": {
-        "autoApply": "Wenn Sie die Attribute {attr_names} ändern, diese Änderung automatisch auch auf {count} andere Objekte angewendet"
+        "autoApply": "Die Änderung der Attribute {attr_names} wird automatisch auf {count} weitere Objekte angewendet"
     },
     "notes": {
-        "addAComment": "Füge einen Kommentar hinzu",
-        "addComment": "Kommentieren",
-        "addCommentAndClose": "Kommentieren und Schließe",
+        "addAComment": "Einen Kommentar hinzufügen",
+        "addComment": "Einen Kommentar hinzufügen",
+        "addCommentAndClose": "Einen Kommentar hinzufügen und schließen",
         "addCommentPlaceholder": "Einen Kommentar hinzufügen...",
         "anonymous": "Anonymer Benutzer",
         "closeNote": "Notiz schließen",
-        "createNote": "Erstelle eine neue Notiz",
-        "createNoteIntro": "Ist etwas falsch oder fehlt auf der Karte? Erstellen Sie hier eine Notiz. Diese werden von Freiwilligen überprüft.",
-        "createNoteTitle": "Erstelle hier eine neue Notiz",
-        "disableAllNoteFilters": "Deaktiviere alle Filter",
-        "isClosed": "Dieser Hinweis wurde geklärt",
-        "isCreated": "Deine Notiz wurde erstellt!",
+        "createNote": "Eine neue Notiz erstellen",
+        "createNoteIntro": "Ist etwas falsch oder fehlt etwas auf der Karte? Erstellen Sie hier eine Notiz. Diese werden von Freiwilligen überprüft.",
+        "createNoteTitle": "Hier eine neue Notiz erstellen",
+        "disableAllNoteFilters": "Alle Filter ausschalten",
+        "isClosed": "Diese Notiz wurde erledigt",
+        "isCreated": "Die Notiz wurde erstellt!",
         "loginToAddComment": "Anmelden, um einen Kommentar hinzuzufügen",
         "loginToAddPicture": "Anmelden, um ein Bild hinzuzufügen",
-        "loginToClose": "Einloggen um diesen Hinweis zu schließen",
+        "loginToClose": "Anmelden, um diese Notiz zu schließen",
         "noteIsPublic": "Es wird für alle sichtbar sein",
-        "noteLayerDoEnable": "Aktivieren Sie die Ebene der Hinweise",
-        "noteLayerHasFilters": "Einige Notizen können durch einen Filter versteckt sein",
-        "noteLayerNotEnabled": "Die Ebene der Hinweise ist nicht aktiviert. Die Ebene muss aktiviert sein, um einen neuen Hinweis hinzuzufügen",
-        "notesLayerMustBeEnabled": "Die 'Hinweis'-Ebene ist deaktiviert. Aktivieren Sie sie, um einen Hinweis hinzuzufügen",
-        "reopenNote": "Hinweis wieder öffnen",
-        "reopenNoteAndComment": "Hinweis wieder öffnen und kommentieren",
-        "textNeeded": "Geben Sie einen beschreibenden Text ein, um einen Hinweis zu erstellen",
+        "noteLayerDoEnable": "Ebene mit Notizen einblenden",
+        "noteLayerHasFilters": "Einige Notizen können durch einen Filter ausgeblendet sein",
+        "noteLayerNotEnabled": "Die Ebene mit Notizen ist nicht eingeblendet. Die Ebene muss eingeblendet sein, um Notizen hinzuzufügen",
+        "notesLayerMustBeEnabled": "Die Notiz-Ebene ist ausgeblendet. Bitte einblenden, um Notizen hinzuzufügen",
+        "reopenNote": "Notiz erneut öffnen",
+        "reopenNoteAndComment": "Notiz erneut öffnen und kommentieren",
+        "textNeeded": "Beschreibung hinzufügen, um eine Notiz zu erstellen",
         "typeText": "Text eingeben, um einen Kommentar hinzuzufügen",
-        "warnAnonymous": "Sie sind nicht eingeloggt. Wir sind nicht in der Lage, Sie zu kontaktieren, um Ihr Problem zu lösen."
+        "warnAnonymous": "Sie sind nicht angemeldet. Wir können Sie nicht kontaktieren, um Ihr Problem zu lösen."
     },
     "privacy": {
-        "editing": "Wenn Sie Änderungen an der Karte vornehmen, werden diese auf OpenStreetMap gespeichert und sind für jeden öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten: <ul><li>Die von Ihnen vorgenommenen Änderungen</li><li>Ihren Benutzernamen</li><li>Den Zeitpunkt Ihrer Änderungen</li><li>Das MapComplete-Thema, das Sie bei Ihren Änderungen verwendet haben</li><li>Die Sprache Ihrer Benutzeroberfläche</li><li>Eine Angabe darüber, wie nah Sie an geänderten Objekten waren. Andere Kartierer können diese Informationen nutzen, um festzustellen, ob eine Änderung auf Basis einer Vor-Ort Erkundung oder einer Fernerkundung vorgenommen wurde</li></ul> Ausführliche Informationen finden Sie in <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">den Datenschutzbestimmungen auf OpenStreetMap.org</a>. Wir möchten Sie daran erinnern, dass Sie bei der Anmeldung einen fiktiven Namen verwenden können.",
+        "editing": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten: <ul><li>Ihre Änderungen</li><li>Ihren Benutzernamen</li><li>Den Zeitpunkt Ihrer Änderungen</li><li>Das bei Ihren Änderungen verwendete MapComplete-Thema</li><li>Die Sprache Ihrer Benutzeroberfläche</li><li>Ihre Entfernung zu den geänderten Objekten. Dadurch kann festgestellt werden, ob die Änderungen vor Ort gespeichert wurden</li></ul> Ausführliche Informationen finden Sie in <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">den Datenschutzbestimmungen auf OpenStreetMap.org</a>. Wir möchten Sie daran erinnern, dass Sie zur Anmeldung einen fiktiven Namen verwenden können.",
         "editingTitle": "Ihre Änderungen",
-        "geodata": "Wenn MapComplete Ihre aktuellenStandortdaten ermittelt, verbleiben diese wie auch zuvor ermittelte Standorte auf Ihrem Gerät. Ihre Standortdaten werden niemals automatisch an eine andere Stelle gesendet - es sei denn, eine Funktion gibt eindeutig etwas anderes an.",
-        "geodataTitle": "Ihr Standort",
+        "geodata": "Wenn MapComplete Ihren aktuellen Standort ermittelt, verbleibt dieser wie auch zuvor ermittelte Standorte auf Ihrem Gerät. Ihre Standortdaten werden niemals automatisch an eine andere Stelle gesendet - es sei denn, eine Funktion gibt eindeutig etwas anderes an.",
+        "geodataTitle": "Standortdaten",
         "intro": "Privatsphäre ist wichtig - sowohl für den Einzelnen als auch für die Gesellschaft. MapComplete versucht, Ihre Privatsphäre so weit wie möglich zu respektieren - bis zu dem Punkt, an dem kein lästiger Cookie-Banner mehr nötig ist. Dennoch möchten wir Sie darüber informieren, welche Informationen gesammelt und weitergegeben werden, unter welchen Umständen und warum diese Kompromisse gemacht werden.",
-        "miscCookies": "MapComplete integriert verschiedene andere Dienste, insbesondere um Bilder von Objekten zu laden. Bilder werden auf verschiedenen Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
+        "miscCookies": "MapComplete integriert weitere Dienste, insbesondere um Bilder von Objekten zu laden. Diese Bilder werden auf Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
         "miscCookiesTitle": "Andere Cookies",
-        "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.osm.be/surveillance\">ein Thema gemacht, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
+        "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.osm.be/surveillance\">ein Thema erstellt, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
         "title": "Datenschutzbestimmungen",
-        "tracking": "Um einen Einblick zu bekommen, wer unsere Website besucht, werden einige technische Informationen gesammelt. Dazu gehören das Land, aus dem Sie die Webseite besucht haben, die Webseite, die Sie auf MapComplete verwiesen hat, der Typ Ihres Geräts und die Bildschirmgröße. Ein Cookie wird auf Ihrem Gerät platziert, um anzuzeigen, dass Sie MapComplete heute bereits besucht haben. Diese Daten sind nicht detailliert genug, um Sie persönlich zu identifizieren. Diese Statistiken sind nur in aggregierter Form <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">öffentlich für jedermann zugänglich</a>",
+        "tracking": "Um zu erfahren, wer unsere Webseite besucht, werden technische Informationen gesammelt. Dazu gehören das Land, aus dem Sie die Webseite besucht haben, die Webseite, die Sie auf MapComplete verwiesen hat, der Typ Ihres Geräts und die Bildschirmgröße. Ein Cookie wird auf Ihrem Gerät gespeichert, um anzuzeigen, dass Sie MapComplete heute bereits besucht haben. Diese Daten sind nicht detailliert genug, um Sie persönlich zu identifizieren. Diese Statistiken sind nur in aggregierter Form <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">öffentlich zugänglich</a>",
         "trackingTitle": "Statistische Daten",
-        "whileYoureHere": "Ist Ihnen die Privatsphäre wichtig?"
+        "whileYoureHere": "Datenschutz ist Ihnen wichtig?"
     },
     "professional": {
         "aboutMc": {
             "internalUse": {
                 "intro": "Sobald die Daten in OpenStreetMap sind, werden Sie sie wahrscheinlich auch nutzen wollen. Ihr MapComplete-Thema kann eine praktische <i>export</i>-Schaltfläche haben, mit der Sie die Daten in vielen offenen Formaten herunterladen können, die in QGis, ArcGis, Excel, LibreOffice-calc, ... verwendbar sind.<p></p><p>Jemand mit grundlegenden Tabellenkalkulationskenntnissen kann so leicht Diagramme und Einblicke über die Daten erstellen, während die GIS-Experten in Ihrer Organisation leicht mit diesen Daten in ihrer bevorzugten Anwendung arbeiten können.</p><p>Wenn eine automatisierte Einrichtung benötigt wird, ist eine frei zu verwendende, von der Gemeinschaft betriebene API verfügbar.</p>",
-                "title": "Verwendung der Daten in internen Prozessen"
+                "title": "Daten in internen Prozessen verwenden"
             },
             "layers": {
                 "intro": "<p>MapComplete verfügt über ein leistungsfähiges Vorlagen-System, das es ermöglicht, schnell eine Karte zu erstellen, die genau die Objekte zeigt, die Sie benötigen, und die relevanten Attribute in den Popups anzuzeigen.</p><p>Diese Daten können direkt von <b>OpenStreetMap</b> geholt werden, MapComplete kann jedoch auch <b>externe Datensätze</b> verwenden - z.B. um OpenStreetMap mit einem anderen Datensatz zu vergleichen oder um Daten anzuzeigen, die nicht für OpenStreetMap geeignet sind (geplante Aktivitäten, Statistiken, ...)</p>",
-                "title": "Welche Daten können mit MapComplete gezeigt werden?"
+                "title": "Welche Daten zeigt MapComplete an?"
             },
             "survey": {
                 "intro": "MapComplete ist ein einfach zu bedienendes <i>Umfrage</i> Werkzeug. Es ist ideal, um das Notwendige in ein paar Klicks zu sammeln, sowohl auf dem Desktop und auf dem Handy. Diese Daten werden direkt in OpenStreetMap eingebracht.<p></p><p>Wir können ein <b>maßgeschneidertes Umfragetool</b> einrichten, das genau die Daten abfragt, die Sie zukunftssicher benötigen.</p><p>Haben Sie einen Datensatz, der (neu) geprüft werden muss? Das ist der perfekte Zeitpunkt, um auf OpenStreetMap umzusteigen. MapComplete kann Ihren Datensatz und OpenStreetMap gleichzeitig anzeigen, so dass es einfacher ist, alle Standorte zu besuchen und zu sehen, was die Gemeinschaft bereits beigetragen hat.</p>\n",
                 "title": "Umfragemöglichkeiten"
             },
-            "text0": "Wenn ein bestehendes MapComplete Thema das ist, was Sie brauchen, fühlen Sie sich frei, es zu benutzen oder betten Sie es auf Ihrer Website ein. Das Einbetten der öffentlichen Themen ist kostenlos und wird es immer sein.",
+            "text0": "Benötigen Sie ein bereits vorhandenes MapComplete Thema, können Sie dieses gerne benutzen oder auf Ihrer Webseite einbetten. Das Einbetten öffentlicher Themen ist kostenlos und wird es immer sein.",
             "text1": "Brauchen Sie andere Daten, aber das Thema existiert noch nicht? Die MapComplete-Entwickler können es <b>für Sie zusammenstellen</b> für einen fairen Betrag. Kontaktieren Sie uns über <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> oder <a href=\"https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet\">;senden Sie eine Nachricht über osm.org</a>",
             "text2": "Wenn Sie noch unsicher sind, finden Sie im Folgenden eine Übersicht über die Möglichkeiten. Außerdem werden einige häufig gestellte Fragen beantwortet",
-            "title": "Benutze MapComplete in deinem Organisation"
+            "title": "MapComplete in Ihrer Organisation verwenden"
         },
         "aboutOsm": {
             "aboutOsm": {
                 "intro": "OpenStreetMap ist eine gemeinsame, globale Datenbank, die von Freiwilligen aufgebaut wird. Alle Geodaten können zu OpenStreetMap beigetragen werden, solange sie <b>vor Ort verifiziert</b> werden können. <br>OpenStreetMap ist zu einem sehr breiten und detaillierten Datensatz herangewachsen, da es Daten über Tausende von Objektkategorien enthält. Ein einzelnes Objekt kann auch eine Menge Attribute haben, die viele Nuancen mit sich bringen, z. B:",
                 "li0": "Straßen haben eine Geometrie, können aber auch Informationen enthalten über die Höchstgeschwindigkeit, die Oberfläche, ob sie beleuchtet sind, ihren Namen, einen Link zu Wikipedia, einen Link zu dem, wonach sie benannt sind, welche Wander-, Rad- und Busrouten dort verlaufen, …",
                 "li1": "Geschäfte und andere Einrichtungen enthalten Öffnungszeiten, eine Telefonnummer, einen Link zur Website, die unterstützten Zahlungsmethoden, das Angebot, die angebotenen Dienstleistungen, …",
-                "li2": "Die Toiletten besitzen Informationen über die Zugänglichkeit für Rollstuhlfahrer, einen Wickeltisch, die Notwendigkeit einer Bezahlung, …",
+                "li2": "Toiletten enthalten Informationen zur Barrierefreiheit, zu Wickeltischen, Nutzungsgebühren, …",
                 "li3": "und vieles, vieles mehr…",
                 "title": "Was ist OpenStreetMap?"
             },
             "benefits": {
                 "intro": "Es kann sehr schwer sein, den eigenen Datensatz hinter sich zu lassen, da der Aufbau dieses Datensatzes oft viel Zeit und Mühe gekostet hat.<br>Die Vorteile des Wechsels zu OSM sind jedoch enorm:",
-                "li0": "Sie sind beim Sammeln und Pflegen dieses Datenbestands nicht mehr allein - eine ganze Gemeinschaft steht Ihnen zur Seite",
-                "li1": "Ihre Daten erreichen ein größeres Publikum als je zuvor über Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, fast alle Fahrrad-Applikationen, …",
-                "li2": "Viele Regierungsorganisationen und Kommunen nutzen OpenStreetMap auch auf ihren Webseiten",
-                "title": "Vorteile des OSM-Ökosystem"
+                "li0": "Sie sind beim Sammeln und Pflegen Ihrer Daten nicht mehr alleine - eine ganze Gemeinschaft steht Ihnen zur Seite",
+                "li1": "Ihre Daten erreichen ein breiteres Publikum als je zuvor über Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, fast alle Fahrrad-Applikationen, …",
+                "li2": "Auch viele Behörden und Gemeinden nutzen OpenStreetMap auf ihren Webseiten",
+                "title": "Vorteile des OSM-Ökosystems"
             },
             "license": {
                 "intro": "OpenStreetMap ist unter der Open Database License lizenziert. Der <a href=\"https://osm.org/copyright\" target=\"_blank\">vollständige Copyright-Text</a> lässt sich wie folgt zusammenfassen:",
                 "li0": "Ein Produkt, das OpenStreetMap-Daten verwendet, muss eine Quellenangabe enthalten.",
-                "li1": "OpenStreetMap-Daten müssen <i>offen</i> bleiben. Dies bedeutet, dass die Daten einer Karte, die OpenStreetMap-Daten enthält, erneut kopiert werden können.",
+                "li1": "OpenStreetMap-Daten müssen <i>offen</i> bleiben. Dies bedeutet, dass die Daten einer Karte, die OpenStreetMap-Daten enthält, erneut kopiert werden dürfen.",
                 "outro": "Die Lizenz hat einige Auswirkungen, die im Folgenden erläutert werden.",
                 "title": "Die Lizenz"
             },
             "vandalism": {
-                "intro": "Da jeder die Daten bearbeiten kann, ist es durchaus möglich, dass eine böswillige Änderung vorgenommen wird. Dies ist jedoch aus mehreren Gründen extrem selten:",
+                "intro": "Da jeder die Daten bearbeiten kann, ist es möglich, dass böswillige Änderungen vorgenommen werden. Dies ist jedoch aus mehreren Gründen extrem selten:",
                 "li0": "Die technische Hürde, Änderungen vorzunehmen, ist hoch",
-                "li1": "eine kleine böswillige Veränderung hat nur geringe Auswirkungen und ist daher für einen Vandalen wenig lohnend",
-                "li2": "eine Änderung, die sich stark auswirkt, wird schnell bemerkt und rückgängig gemacht, da so viele Menschen diese Daten nutzen",
+                "li1": "eine kleine böswillige Veränderung hat nur geringe Auswirkungen und ist daher für den Vandalen wenig lohnend",
+                "li2": "eine Änderung mit großer Auswirkung wird schnell bemerkt und revertiert, da so viele Menschen diese Daten nutzen",
                 "li3": "Alle Änderungen werden nachverfolgt und an einen einzelnen Benutzer gebunden. Ein Wiederholungstäter wird schnell gesperrt",
-                "li4": "In Belgien (und einigen anderen Ländern) wird der erste Beitrag eines neuen Verfassers systematisch überprüft und bei Bedarf korrigiert.",
+                "li4": "In Belgien (und einigen anderen Ländern) wird der erste Beitrag eines neuen Nutzers systematisch überprüft und bei Bedarf korrigiert.",
                 "title": "Gibt es Vandalismus?"
             }
         },
         "drawbacks": {
             "intro": "Der Beitritt zu dieser Gemeinschaft hat zwar enorme Vorteile, aber es gibt auch ein paar Dinge, die man sorgfältig bedenken sollte.",
             "licenseNuances": {
-                "intro": "OpenStreetMap ist unter der Open Database License lizenziert, die besagt, dass:",
+                "intro": "OpenStreetMap ist lizenziert unter der Open Database License, die besagt, dass:",
                 "li0": "Alle Daten können für jeden Zweck wiederverwendet werden - auch für kommerzielle Zwecke",
                 "li1": "Anwendungen oder Produkte, die OpenStreetMap verwenden, sollten einen deutlich sichtbaren Urheberrechtshinweis enthalten",
                 "li2": "Jeder Datensatz oder jedes Produkt, das OpenStreetMap-Daten enthält, muss ebenfalls unter ODbL veröffentlicht werden, einschließlich Änderungen an diesem Datensatz und in einem verwendbaren Format.",
                 "outro": "Dies hat einige Auswirkungen, die für einige Anwendungsfälle zu berücksichtigen sind, wie im Folgenden erläutert",
                 "title": "Implikationen der ODbL: einige Anwendungsfälle",
                 "usecaseGatheringOpenData": {
-                    "intro": "MapComplete ist eine hervorragende Möglichkeit, offene Daten zu erstellen, auch für Regierungen. Standardmäßig sind diese Daten unter der ODbL frei weiterverteilbar. Wenn jedoch die Anforderung besteht, die gesammelten Daten unter einer <i>Public Domain</i>-Lizenz zu veröffentlichen (bei der <b>alle</b> Rechte der Öffentlichkeit gewährt werden und keine Zuschreibung erforderlich ist), ist die ODbL zu restriktiv. In diesem Fall kann man die Mitwirkenden auffordern, die Daten als gemeinfrei einzustellen (z. B. indem man sie im mapcomplete-Thema darüber informiert).",
-                    "title": "Sammeln offener Daten"
+                    "intro": "MapComplete ist eine hervorragende Möglichkeit, offene Daten zu erstellen, auch für Behörden. Standardmäßig sind diese Daten unter der ODbL frei weiterverteilbar. Wenn jedoch die Anforderung besteht, die gesammelten Daten unter einer <i>Public Domain</i>-Lizenz zu veröffentlichen (bei der <b>alle</b> Rechte der Öffentlichkeit gewährt werden und keine Zuschreibung erforderlich ist), ist die ODbL zu restriktiv. In diesem Fall kann man die Mitwirkenden auffordern, die Daten als gemeinfrei einzustellen (z. B. indem man sie im mapcomplete-Thema darüber informiert).",
+                    "title": "Offene Daten sammeln"
                 },
                 "usecaseMapDifferentSources": {
                     "intro": "Man könnte zum Beispiel eine Karte mit allen Bänken in einer Stadt erstellen, die auf den von OpenStreetMap bekannten Bänken basiert. Diese gedruckte Karte muss einen klaren Hinweis enthalten, dass die Kartendaten auf OpenStreetMap basieren. Stellt der Kartenmacher fest, dass in einem bestimmten Gebiet Bänke fehlen, und fügt diese auf der gedruckten Karte hinzu, sind die Daten zu den fehlenden Bänken automatisch auch offene Daten. Das bedeutet, dass ein OpenStreetMap-Mitwirkender die gedruckte Karte nehmen und sie verwenden darf, um die fehlenden Bänke wieder in OpenStreetMap einzufügen. Dieser Mitwirkende hat auch das Recht, den Datensatz der fehlenden Bänke anzufordern, der ebenfalls bereitgestellt werden sollte.<p></p><p>Natürlich kann eine Karte nur mit Bänken langweilig sein. Der Kartenersteller könnte auch beschließen, eine Ebene mit Geschäften hinzuzufügen, die möglicherweise von einem anderen Geodatenanbieter unter einer anderen Lizenz bezogen werden. Dies ist zulässig, wenn auf der Karte deutlich angegeben wird, dass die Bänke von OSM (unter ODBL) stammen und die Geschäfte eine andere Quelle haben (eventuell mit einem \"All rights reserved\"). Wenn der Kartenersteller z. B. feststellt, dass OSM über ausgezeichnete Daten zu Bänken in einem Teil der Stadt verfügt und der Closed-Source-Anbieter über ausgezeichnete Daten zu Bänken in einem anderen Teil der Stadt, könnte die Zusammenführung dieser Datensätze zu einem einzigen problematisch sein: </p>",
                     "li0": "die offene Lizenz würde verlangen, dass die Modifikationen offen wiederveröffentlicht werden…",
                     "li1": "...wohingegen die All-Rights-Reserved-Lizenz dies untersagen würde.",
                     "outro": "Folglich ist diese Art der Vermischung nicht erlaubt",
-                    "title": "Erstellung einer Karte aus verschiedenen Quellen"
+                    "title": "Eine Karte aus verschiedenen Quellen erstellen"
                 }
             },
-            "title": "Ein paar Nachteile, die Sie beachten sollten",
+            "title": "Nachteile, die Sie beachten sollten",
             "unsuitedData": {
                 "intro": "Die Grundregel für OpenStreetMap ist, dass alle Daten <b>vor Ort überprüfbar</b> und einigermaßen dauerhaft sein müssen. Dies bedeutet, dass einige Daten <i>nicht</i> direkt an OpenStreetMap gesendet werden können - aber es gibt einige Umgehungsmöglichkeiten.",
-                "li0": "Subjektive Daten (wie z. B. Bewertungen) sind für OpenStreetMap nicht geeignet. MapComplete hat jedoch eine Integration mit <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a>, einer offen lizenzierten Bewertungswebsite",
-                "li1": "Veranstaltungen werden <i>nicht</i> erfasst, ebenso wenig wie Straßenarbeiten, die nur wenige Tage dauern.",
+                "li0": "Subjektive Daten (wie z. B. Bewertungen) sind für OpenStreetMap nicht geeignet. MapComplete hat jedoch eine Integration mit <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a>, einer offen lizenzierten Webseite für Rezensionen oder Bewertungen",
+                "li1": "Veranstaltungen werden <i>nicht</i> erfasst, ebenso wenig wie Straßenarbeiten, die nur wenige Tage andauern.",
                 "li2": "Zeitliche Daten (z.B. Statistiken zur Luftqualität, Verkehrsintensität, ...) können nicht auf OpenStreetMap gespeichert werden, da sie von einem Freiwilligen nur schwer zu überprüfen sind. Wenn diese Daten anderswo verfügbar sind, können sie dennoch in MapComplete als zusätzliche Ebene visualisiert werden.",
-                "title": "Nicht für OpenStreetMap geeignete Daten"
+                "title": "Daten, die nicht für OpenStreetMap geeignet sind"
             }
         },
         "indexPage": {
             "button": "Mehr über unsere Dienste erfahren",
             "hook": "Benötigen Sie professionelle Unterstützung?",
-            "hookMore": "Wir können bei der Erstellung von Umfragen, Datenimporten und OpenStreetMap-Beratung helfen"
+            "hookMore": "Wir helfen beim Erstellen von Umfragen oder Datenimporten und beraten zu OpenStreetMap"
         },
         "intro": "Der Entwickler von MapComplete bietet professionelle Unterstützung an. Dieses Dokument skizziert einige der Möglichkeiten, häufige Fragen und die Grenzen von MapComplete",
         "osmTitle": "Was können OpenStreetMap und MapComplete für Ihre Organisation tun?",
         "services": {
             "intro": "Der Entwickler von MapComplete kann Ihnen mit den folgenden Dienstleistungen helfen:",
-            "li0": "Einrichten eines auf Ihren Bedarf zugeschnittenen Themas",
-            "li1": "Hilfe bei der Einrichtung des internen Datenflusses zur Integration von OpenStreetMap",
-            "li2": "Schulung über die Bereitstellung von Daten mit MapComplete",
+            "li0": "Erstellung von Themen, die auf Ihren Bedarf zugeschnittenen sind",
+            "li1": "Unterstützung bei der Integration von OpenStreetMap in Ihre Datensätze",
+            "li2": "Schulung, wie Daten mit MapComplete bereitgestellt werden können",
             "li3": "Fortbildung (z.B. für das GIS-Team), wie man erweiterte Daten zu OpenStreetMap hinzufügt",
-            "li4": "Schulung zum Herunterladen gefilterter Daten von OpenStreetMap",
+            "li4": "Schulung, wie Daten von OpenStreetMap gefiltert und heruntergeladen werden können",
             "outro": "Diese Dienstleistungen werden zu wettbewerbsfähigen Preisen angeboten. Ein einfaches Thema ohne zusätzliche Unterstützung kann für nur 2.000 € eingerichtet werden, zuzüglich geringer jährlicher Hosting-Kosten.",
             "title": "MapComplete-Dienste"
         },
         "text0": "<p>Die Pflege eines Satzes aktueller Geodaten ist schwierig, fehleranfällig und teuer.<br>Zu allem Überfluss sammeln viele Organisationen dieselben Daten unabhängig voneinander - was zu doppelten Anstrengungen, nicht standardisierten Datenformaten und vielen unvollständigen, ungepflegten Datensätzen führt.</p><p>Gleichzeitig gibt es eine riesige Gemeinschaft, die viele Geodaten in einer gemeinsamen, globalen und standardisierten Datenbank sammelt - nämlich OpenStreetMap.org.</p>",
-        "text1": "<p>MapComplete ist der Editor, der das Einbringen von Daten in OpenStreetMap einfach macht.</p>",
+        "text1": "<p>MapComplete ist der Editor, der die Dateneingabe in OpenStreetMap einfach macht.</p>",
         "title": "Professionelle Unterstützung mit MapComplete"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
         "i_am_affiliated": "<span>Ich bin mit diesem Objekt vertraut</span><br><span class=\"subtle\">Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
-        "name_required": "Der Name des Objekts ist notwendig, um eine Bewertung erstellen zu können",
+        "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_rating": "Keine Bewertung vorhanden",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
         "plz_login": "Anmelden, um eine Bewertung abzugeben",
-        "posting_as": "Angemeldet als",
+        "posting_as": "Veröffentlichen als",
         "saved": "<span class=\"thanks\">Bewertung gespeichert. Danke fürs Teilen!</span>",
         "saving_review": "Speichern…",
         "title": "{count} Rezensionen",
         "title_singular": "Eine Rezension",
         "tos": "Mit deiner Bewertung stimmst du den <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
-        "write_a_comment": "Schreibe einen Kommentar…"
+        "write_a_comment": "Bewertung schreiben…"
     },
     "split": {
         "cancel": "Abbrechen",
         "hasBeenSplit": "Dieser Weg wurde geteilt",
-        "inviteToSplit": "Teilen Sie diese Straße in kleinere Segmente auf. Dies ermöglicht es, Straßenabschnitten unterschiedliche Eigenschaften zu geben.",
-        "loginToSplit": "Sie müssen angemeldet sein, um eine Straße aufzuteilen",
+        "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
+        "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
         "split": "Teilen",
-        "splitTitle": "Wählen Sie auf der Karte aus, wo die Straße geteilt werden soll"
+        "splitTitle": "Auf der Karte auswählen, wo die Straße geteilt werden soll"
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
         "allMissing": "Noch keine Übersetzungen",
-        "completeness": "Die Übersetzungen für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
-        "deactivate": "Schaltflächen für die Übersetzung deaktivieren",
-        "help": "Klicken Sie auf das 'translate'-Symbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Account. Erstellen Sie einen mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
+        "completeness": "Die Übersetzung für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
+        "deactivate": "Übersetzungssymbol ausblenden",
+        "help": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
-        "missing": "{count} unübersetzte Zeichenfolgen",
-        "notImmediate": "Die Übersetzungen werden nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
+        "missing": "{count} nicht übersetzte Zeichenfolgen",
+        "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
     },
     "validation": {
         "color": {
