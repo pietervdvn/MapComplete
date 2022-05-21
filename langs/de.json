@@ -2,7 +2,7 @@
     "centerMessage": {
         "loadingData": "Daten werden geladen…",
         "ready": "Erledigt!",
-        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden …",
+        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden…",
         "zoomIn": "Ausschnitt vergrößern, um Daten anzuzeigen oder zu bearbeiten"
     },
     "delete": {
@@ -11,12 +11,12 @@
         "delete": "Löschen",
         "explanations": {
             "hardDelete": "Dieser Punkt wird in OpenStreetMap gelöscht. Er kann von einem erfahrenen Mitwirkenden wiederhergestellt werden",
-            "selectReason": "Bitte wähle aus, warum dieses Element gelöscht werden soll",
+            "selectReason": "Bitte auswählen, warum dieses Element gelöscht werden soll",
             "softDelete": "Dieses Element wird aktualisiert und in dieser Anwendung ausgeblendet. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dieses Element wurde gelöscht",
-        "isntAPoint": "Es können nur Punkte gelöscht werden, das ausgewählte Element ist ein Weg, eine Fläche oder eine Relation.",
-        "loading": "Untersuchung der Eigenschaften, um zu prüfen, ob dieses Element gelöscht werden kann.",
+        "isntAPoint": "Es können nur Punkte gelöscht werden. Das ausgewählte Element ist ein Weg, eine Fläche oder eine Relation.",
+        "loading": "Eigenschaften untersuchen, um festzustellen, ob das Element gelöscht werden kann.",
         "loginToDelete": "Sie müssen angemeldet sein, um einen Punkt zu löschen",
         "notEnoughExperience": "Dieser Punkt wurde von jemand anderem erstellt.",
         "onlyEditedByLoggedInUser": "Dieser Punkt wurde nur von Ihnen selbst bearbeitet, Sie können ihn gefahrlos löschen.",
