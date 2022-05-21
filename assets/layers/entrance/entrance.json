@@ -57,7 +57,8 @@
           },
           "then": {
             "en": "This is an indoor door, separating a room or a corridor within a single building",
-            "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit"
+            "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit",
+            "de": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet"
           }
         },
         {
@@ -95,7 +96,8 @@
           },
           "then": {
             "en": "This is a service entrance - normally only used for employees, delivery, ...",
-            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, ..."
+            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, ...",
+            "de": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, ..."
           }
         },
         {
@@ -120,7 +122,8 @@
           },
           "then": {
             "en": "This is an entrance where one can only enter (but not exit)",
-            "nl": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)"
+            "nl": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)",
+            "de": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)"
           }
         },
         {
@@ -155,7 +158,8 @@
       "id": "Door_type",
       "question": {
         "en": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>",
-        "nl": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
+        "nl": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>",
+        "de": "Um welche Art von Tür handelt es sich?<br/><span class='subtle'>Ob die Tür automatisiert ist oder nicht, wird in der nächsten Frage gefragt</span>"
       },
       "mappings": [
         {
@@ -236,14 +240,16 @@
           "if": "automatic_door=motion",
           "then": {
             "en": "This door will open automatically when <b>motion</b> is detected",
-            "nl": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd"
+            "nl": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd",
+            "de": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird"
           }
         },
         {
           "if": "automatic_door=floor",
           "then": {
             "en": "This door will open automatically when a <b>sensor in the floor</b> is triggered",
-            "nl": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd"
+            "nl": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd",
+            "de": "Diese Tür öffnet sich automatisch, wenn ein <b>Sensor im Boden</b> ausgelöst wird"
           }
         },
         {

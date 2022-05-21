@@ -18,7 +18,8 @@
   "title": {
     "render": {
       "en": "Bird watching place",
-      "nl": "Vogelkijkplaats"
+      "nl": "Vogelkijkplaats",
+      "de": "Ort zur Vogelbeobachtung"
     },
     "mappings": [
       {
@@ -47,7 +48,8 @@
         "then": {
           "en": "Bird hide {name}",
           "nl": "Vogelkijkhut {name}",
-          "da": "Fugleskjul {name}"
+          "da": "Fugleskjul {name}",
+          "de": "Vogelbeobachtungsplatz {name}"
         }
       },
       {
@@ -58,7 +60,8 @@
         },
         "then": {
           "en": "Bird blind {name}",
-          "nl": "Vogelkijkwand {name}"
+          "nl": "Vogelkijkwand {name}",
+          "de": "Vogelversteck {name}"
         }
       }
     ]
@@ -75,7 +78,8 @@
       "id": "bird-hide-shelter-or-wall",
       "question": {
         "en": "Is this a bird blind or a bird watching shelter?",
-        "nl": "Is dit een kijkwand of kijkhut?"
+        "nl": "Is dit een kijkwand of kijkhut?",
+        "de": "Ist dies nur ein Sichtschutz oder ein überdachter Unterstand zur Vogelbeobachtung?"
       },
       "mappings": [
         {
@@ -88,7 +92,8 @@
           },
           "then": {
             "en": "Bird blind",
-            "nl": "Vogelkijkwand"
+            "nl": "Vogelkijkwand",
+            "de": "Sichtschutz zur Vogelbeobachtung"
           }
         },
         {
@@ -115,7 +120,8 @@
           },
           "then": {
             "en": "Bird tower hide",
-            "nl": "Vogelkijktoren"
+            "nl": "Vogelkijktoren",
+            "de": "Turm zur Vogelbeobachtung"
           }
         },
         {
@@ -128,7 +134,8 @@
           },
           "then": {
             "en": "Bird hide shelter",
-            "nl": "Vogelkijkhut"
+            "nl": "Vogelkijkhut",
+            "de": "Unterstand zur Vogelbeobachtung"
           },
           "hideInAnswer": true
         }
@@ -139,7 +146,8 @@
       "question": {
         "en": "Is this bird hide accessible to wheelchair users?",
         "nl": "Is deze vogelkijkplaats rolstoeltoegankelijk?",
-        "da": "Er dette fugleskjul tilgængeligt for kørestolsbrugere?"
+        "da": "Er dette fugleskjul tilgængeligt for kørestolsbrugere?",
+        "de": "Ist der Ort rollstuhlgerecht gestaltet?"
       },
       "mappings": [
         {
@@ -151,7 +159,8 @@
           "then": {
             "en": "There are special provisions for wheelchair users",
             "nl": "Er zijn speciale voorzieningen voor rolstoelen",
-            "es": "Hay provisiones especiales para usuarios de sillas de ruedas"
+            "es": "Hay provisiones especiales para usuarios de sillas de ruedas",
+            "de": "Für Rollstuhlfahrer gibt es besondere Vorrichtungen"
           }
         },
         {
@@ -163,7 +172,8 @@
           "then": {
             "en": "A wheelchair can easily use this birdhide",
             "nl": "Een rolstoel raakt er vlot",
-            "da": "En kørestolsbruger kan sagtens bruge dette fugleskjul"
+            "da": "En kørestolsbruger kan sagtens bruge dette fugleskjul",
+            "de": "Der Ort ist rollstuhlgerecht gestaltet"
           }
         },
         {
@@ -175,7 +185,8 @@
           "then": {
             "en": "This birdhide is reachable by wheelchair, but it is not easy",
             "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk",
-            "da": "Dette fugleskjul kan nås med kørestol, men det er ikke nemt"
+            "da": "Dette fugleskjul kan nås med kørestol, men det er ikke nemt",
+            "de": "Der Ort ist nur eingeschränkt rollstuhlgerecht gestaltet"
           }
         },
         {
@@ -208,7 +219,8 @@
       "question": {
         "en": "Who operates this birdhide?",
         "nl": "Wie beheert deze vogelkijkplaats?",
-        "da": "Hvem driver dette fugleskjul?"
+        "da": "Hvem driver dette fugleskjul?",
+        "de": "Wer betreibt diesen Ort zur Vogelbeobachtung?"
       },
       "mappings": [
         {
@@ -259,7 +271,7 @@
         "en": "a birdhide",
         "nl": "een vogelkijkhut",
         "da": "et fugleskjul",
-        "de": "ein Vogelbeobachtungsturm"
+        "de": "ein Gebäude zur Vogelbeobachtung"
       },
       "description": {
         "en": "A covered shelter where one can watch birds comfortably",
@@ -277,7 +289,8 @@
       ],
       "title": {
         "en": "a bird blind",
-        "nl": "een vogelkijkwand"
+        "nl": "een vogelkijkwand",
+        "de": "einen Sichtschutz zur Vogelbeobachtung"
       },
       "description": {
         "en": "A screen or wall with openings to watch birds",

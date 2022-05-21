@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 136,
+      "commits": 139,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 71,
+      "commits": 83,
       "contributor": "kjon"
     },
     {
@@ -13,12 +13,12 @@
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 29,
-      "contributor": "Artem"
+      "commits": 49,
+      "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 26,
-      "contributor": "Allan Nordhøy"
+      "commits": 29,
+      "contributor": "Artem"
     },
     {
       "commits": 25,
@@ -37,28 +37,28 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 16,
+      "commits": 18,
+      "contributor": "Iago"
+    },
+    {
+      "commits": 17,
+      "contributor": "Reza Almanda"
+    },
+    {
+      "commits": 17,
       "contributor": "SC"
+    },
+    {
+      "commits": 17,
+      "contributor": "Robin van der Linde"
     },
     {
       "commits": 16,
       "contributor": "el_libre como el chaval"
     },
     {
-      "commits": 16,
-      "contributor": "Robin van der Linde"
-    },
-    {
       "commits": 15,
       "contributor": "WaldiS"
-    },
-    {
-      "commits": 14,
-      "contributor": "Iago"
-    },
-    {
-      "commits": 14,
-      "contributor": "Reza Almanda"
     },
     {
       "commits": 14,
@@ -67,6 +67,10 @@
     {
       "commits": 13,
       "contributor": "Joost"
+    },
+    {
+      "commits": 10,
+      "contributor": "Win Olario"
     },
     {
       "commits": 10,
@@ -85,12 +89,12 @@
       "contributor": "Jacque Fresco"
     },
     {
-      "commits": 8,
-      "contributor": "Win Olario"
-    },
-    {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Vinicius"
     },
     {
       "commits": 6,
@@ -134,11 +138,11 @@
     },
     {
       "commits": 5,
-      "contributor": "Vinicius"
+      "contributor": "Alexey Shabanov"
     },
     {
-      "commits": 5,
-      "contributor": "Alexey Shabanov"
+      "commits": 4,
+      "contributor": "paunofu"
     },
     {
       "commits": 4,
@@ -167,6 +171,10 @@
     {
       "commits": 4,
       "contributor": "Fabio Bettani"
+    },
+    {
+      "commits": 3,
+      "contributor": "Joost Schouppe"
     },
     {
       "commits": 3,
@@ -206,11 +214,15 @@
     },
     {
       "commits": 2,
-      "contributor": "Olivier"
+      "contributor": "Midgard"
     },
     {
       "commits": 2,
-      "contributor": "paunofu"
+      "contributor": "M. Rey"
+    },
+    {
+      "commits": 2,
+      "contributor": "Olivier"
     },
     {
       "commits": 2,

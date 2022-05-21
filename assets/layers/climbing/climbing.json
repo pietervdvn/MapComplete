@@ -43,7 +43,8 @@
         "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
         "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
         "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
-        "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
+        "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
+        "es": "Las rutas miden <b>{canonical(climbing:length)}</b> de media"
       },
       "question": {
         "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
@@ -51,7 +52,8 @@
         "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
         "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
         "fr": "Quelle est la longueur moyenne des voies en mètres ?",
-        "it": "Quale è la lunghezza (media) delle vie in metri?"
+        "it": "Quale è la lunghezza (media) delle vie in metri?",
+        "es": "¿Cual es la longitud (media) de las rutas en metros?"
       },
       "freeform": {
         "key": "climbing:length",
@@ -335,11 +337,13 @@
     {
       "id": "fee",
       "question": {
-        "en": "Is a fee required to climb here?"
+        "en": "Is a fee required to climb here?",
+        "es": "¿Se requiere una tasa para escalar aquí?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for climbing here",
-        "de": "Zum Klettern wird eine Gebühr von {charge} erhoben"
+        "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
+        "es": "Se debe de pagar una tasa de {charge} para escalar aquí"
       },
       "freeform": {
         "key": "charge",
@@ -356,7 +360,8 @@
           ],
           "then": {
             "en": "Climbing here is free of charge",
-            "de": "Das Klettern ist hier kostenlos"
+            "de": "Das Klettern ist hier kostenlos",
+            "es": "La escalada es gratis"
           }
         },
         {
@@ -367,7 +372,8 @@
             ]
           },
           "then": {
-            "en": "Paying a fee is required to climb here"
+            "en": "Paying a fee is required to climb here",
+            "es": "Hay que pagar una tasa para escalar aquí"
           },
           "hideInAnswer": "charge~*"
         }

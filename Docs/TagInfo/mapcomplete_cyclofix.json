@@ -169,7 +169,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Bike repair/shop' shows shop=rental with a fixed text, namely 'Deze business focuses on rental' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike repair/shop' shows shop=rental with a fixed text, namely 'This business focuses on rental' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "rental"
     },
     {
@@ -262,7 +262,7 @@
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=kid_bike with a fixed text, namely 'Bikes for childs can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bike repair/shop' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "kid_bike"
     },
     {
@@ -620,7 +620,7 @@
     },
     {
       "key": "valves",
-      "description": "Layer 'Bicycle pump and repair' shows valves=sclaverand with a fixed text, namely 'Sclaverand (also known as Presta)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=sclaverand with a fixed text, namely 'Sclaverand/Presta (narrow-width bike tires)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "sclaverand"
     },
     {
@@ -630,7 +630,7 @@
     },
     {
       "key": "valves",
-      "description": "Layer 'Bicycle pump and repair' shows valves=schrader with a fixed text, namely 'Schrader (cars)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=schrader with a fixed text, namely 'Schrader (cars and mountainbikes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "schrader"
     },
     {

@@ -40,12 +40,12 @@
       "question": {
         "en": "What is the name of this tower?",
         "nl": "Heeft deze toren een naam?",
-        "de": "Wie heißt dieser Turm?"
+        "de": "Wie ist der Name des Turms?"
       },
       "render": {
         "en": "This tower is called <b>{name}</b>",
         "nl": "Deze toren heet <b>{name}</b>",
-        "de": "Der Name dieses Turms lautet <b>{name}</b>"
+        "de": "Der Name des Turms ist <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -56,7 +56,7 @@
           "then": {
             "en": "This tower doesn't have a specific name",
             "nl": "Deze toren heeft geen specifieke naam",
-            "de": "Dieser Turm hat keinen eigenen Namen"
+            "de": "Der Turm hat keinen eigenen Namen"
           }
         }
       ],
@@ -85,7 +85,7 @@
         "en": "Can this tower be visited?",
         "nl": "Is deze toren publiek toegankelijk?",
         "es": "¿Se puede visitar esta torre?",
-        "de": "Kann dieser Turm besichtigt werden?"
+        "de": "Darf der Turm betreten werden?"
       },
       "mappings": [
         {
@@ -93,7 +93,7 @@
           "then": {
             "en": "This tower is publicly accessible",
             "nl": "Deze toren is publiek toegankelijk",
-            "de": "Dieser Turm ist öffentlich zugänglich"
+            "de": "Der Turm ist öffentlich zugänglich"
           }
         },
         {
@@ -101,7 +101,7 @@
           "then": {
             "en": "This tower can only be visited with a guide",
             "nl": "Deze toren can enkel bezocht worden met een gids",
-            "de": "Dieser Turm kann nur mit einem Führer besichtigt werden"
+            "de": "Der Turm darf nur in Begleitung eines Führers betreten werden"
           }
         }
       ]
@@ -218,7 +218,7 @@
       "question": {
         "en": "Who maintains this tower?",
         "nl": "Wie onderhoudt deze toren?",
-        "de": "Wer betreibt diesen Turm?"
+        "de": "Wer betreibt den Turm?"
       },
       "render": {
         "nl": "Wordt onderhouden door <b>{operator}</b>",

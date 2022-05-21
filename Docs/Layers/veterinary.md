@@ -7,6 +7,8 @@
 
 <img src='https://mapcomplete.osm.be/./assets/layers/veterinary/vet.svg' height="100px"> 
 
+A layer showing veterinarians
+
 
 
 

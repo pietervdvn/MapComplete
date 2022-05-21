@@ -88,7 +88,8 @@
         "it": "Chi gestisce questa pala eolica?",
         "zh_Hant": "這個風機營業商是？",
         "hu": "Ki üzemelteti ezt a szélturbinát?",
-        "de": "Wer betreibt das Windrads?"
+        "de": "Wer betreibt das Windrad?",
+        "id": "Siapa yang mengoperasikan turbin angin ini?"
       },
       "freeform": {
         "key": "operator"
@@ -110,7 +111,7 @@
         "it": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
         "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
         "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
-        "de": "Wie hoch ist dieses Windrad (inklusive Rotorradius) in Metern?"
+        "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?"
       },
       "freeform": {
         "key": "height",

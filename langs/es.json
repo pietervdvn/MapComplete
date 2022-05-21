@@ -503,11 +503,17 @@
     },
     "split": {
         "cancel": "Cancelar",
-        "split": "Dividir",
-        "loginToSplit": "Debes de haber iniciado sesión para dividir una carretera",
         "hasBeenSplit": "Esta característica se ha dividido",
-        "splitTitle": "Escoge una opción en el mapa para dividir esta carretera",
-        "inviteToSplit": "Dividir esta carretera en segmentos más pequeños. Esto te permite darle propiedades diferentes a partes diferentes de la carretera."
+        "inviteToSplit": "Dividir esta carretera en segmentos más pequeños. Esto te permite darle propiedades diferentes a partes diferentes de la carretera.",
+        "loginToSplit": "Debes de haber iniciado sesión para dividir una carretera",
+        "split": "Dividir",
+        "splitTitle": "Escoge una opción en el mapa para dividir esta carretera"
+    },
+    "translations": {
+        "activateButton": "Ayuda a traducir MapComplete",
+        "allMissing": "Aún sin traducciónes",
+        "completeness": "Las traducciones para {theme} en {language} están al {percentage}%: {translated} cadenas de {total} están traducidas",
+        "deactivate": "Deshabilitar los botones de traducción"
     },
     "validation": {
         "decimal": {
@@ -525,11 +531,5 @@
         "opening_hours": {
             "description": "Horarios de apertura"
         }
-    },
-    "translations": {
-        "activateButton": "Ayuda a traducir MapComplete",
-        "allMissing": "Aún sin traducciónes",
-        "completeness": "Las traducciones para {theme} en {language} están al {percentage}%: {translated} cadenas de {total} están traducidas",
-        "deactivate": "Deshabilitar los botones de traducción"
     }
 }

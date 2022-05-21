@@ -73,7 +73,7 @@
       "render": {
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
-        "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Diese Notiz als Spam oder unangemessen melden</a>"
+        "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>"
       }
     }
   ],
@@ -155,7 +155,7 @@
           "question": {
             "en": "Opened by contributor {search}",
             "nl": "Geopend door bijdrager {search}",
-            "de": "Geöffnet vom Mitwirkenden {search}"
+            "de": "Erstellt von {search}"
           }
         }
       ]
@@ -173,7 +173,7 @@
           "question": {
             "en": "<b>Not</b> opened by contributor {search}",
             "nl": "<b>Niet</b> geopend door bijdrager {search}",
-            "de": "<b>Nicht</b> vom Mitwirkenden {search} geöffnet"
+            "de": "<b>Nicht</b> erstellt von {search}"
           }
         }
       ]
@@ -191,7 +191,7 @@
           "question": {
             "en": "Last edited by contributor {search}",
             "nl": "Laatst bewerkt door bijdrager {search}",
-            "de": "Zuletzt bearbeitet vom Mitwirkenden {search}"
+            "de": "Zuletzt bearbeitet von {search}"
           }
         }
       ]
@@ -209,7 +209,7 @@
           "question": {
             "en": "Opened after {search}",
             "nl": "Geopend na {search}",
-            "de": "Geöffnet nach {search}"
+            "de": "Zuletzt bearbeitet nach dem {search}"
           }
         }
       ]
@@ -228,7 +228,7 @@
           "question": {
             "en": "Created before {search}",
             "nl": "Aangemaakt voor {search}",
-            "de": "Erstellt vor {search}"
+            "de": "Erstellt vor dem {search}"
           }
         }
       ]
@@ -247,7 +247,7 @@
           "question": {
             "en": "Created after {search}",
             "nl": "Aangemaakt na {search}",
-            "de": "Erstellt nach {search}"
+            "de": "Erstellt nach dem {search}"
           }
         }
       ]
@@ -260,7 +260,7 @@
           "question": {
             "en": "Only show notes opened by an anonymous contributor",
             "nl": "Toon enkel de Notes geopend door een anonieme bijdrager",
-            "de": "Nur Notizen anzeigen, die von anonymen Mitwirkenden geöffnet wurden"
+            "de": "Nur Notizen anzeigen, die anonym erstellt wurden"
           }
         }
       ]

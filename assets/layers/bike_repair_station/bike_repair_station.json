@@ -593,11 +593,11 @@
         {
           "if": "valves=sclaverand",
           "then": {
-            "en": "Sclaverand (also known as Presta)",
-            "nl": "Sclaverand (ook gekend als Presta)",
+            "en": "Sclaverand/Presta (narrow-width bike tires)",
+            "nl": "Sclaverand/Presta (dunne fietsbanden)",
             "fr": "Sclaverand (aussi appelé Presta)",
             "gl": "Sclaverand (tamén coñecido como Presta)",
-            "de": "Sklaverand (auch bekannt als Presta)",
+            "de": "Sklaverand-/Prestaventil (für Rennräder)",
             "it": "Sclaverand (detta anche Presta)",
             "ru": "Клапан Presta (также известный как французский клапан)",
             "da": "Sclaverand (også kendt som Presta og racerventil)"
@@ -619,11 +619,11 @@
         {
           "if": "valves=schrader",
           "then": {
-            "en": "Schrader (cars)",
-            "nl": "Schrader (auto's)",
+            "en": "Schrader (cars and mountainbikes)",
+            "nl": "Schrader (auto's en mountainbikes)",
             "fr": "Schrader (les valves de voitures)",
             "gl": "Schrader (para automóbiles)",
-            "de": "Schrader (Autos)",
+            "de": "Schraderventil (für Autos und Mountainbikes)",
             "it": "Schrader (valvola delle auto)",
             "da": "Schrader (biler)"
           }

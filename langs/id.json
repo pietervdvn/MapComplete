@@ -10,8 +10,8 @@
         "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
         "delete": "Hapus",
         "explanations": {
-            "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus",
-            "hardDelete": "Titik ini akan dihapus di OpenStreetMap. Dapat dipulihkan oleh kontributor berpengalaman"
+            "hardDelete": "Titik ini akan dihapus di OpenStreetMap. Dapat dipulihkan oleh kontributor berpengalaman",
+            "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus"
         },
         "isDeleted": "Fitur ini telah dihapus",
         "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi."
@@ -101,6 +101,23 @@
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "title": "Selamat datang di MapComplete"
     },
+    "notes": {
+        "addCommentAndClose": "Tambah komentar dan tutup",
+        "addCommentPlaceholder": "Tambahkan komentar...",
+        "anonymous": "Pengguna anonim",
+        "closeNote": "Tutup catatan",
+        "createNote": "Buat catatan baru",
+        "createNoteIntro": "Apakah ada yang salah atau hilang di peta? Buat catatan di sini. Nanti diperiksa oleh relawan.",
+        "createNoteTitle": "Buat catatan baru di sini",
+        "disableAllNoteFilters": "Nonaktifkan semua filter",
+        "isClosed": "Catatan ini diselesaikan",
+        "isCreated": "Catatan Anda telah dibuat!",
+        "loginToAddComment": "Masuk untuk menambahkan komentar",
+        "loginToAddPicture": "Masuk untuk menambahkan gambar",
+        "loginToClose": "Masuk untuk menutup catatan ini",
+        "noteIsPublic": "Ini akan terlihat oleh semua orang",
+        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan"
+    },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "no_rating": "Tidak ada peringkat yang diberikan",
@@ -117,32 +134,18 @@
         "cancel": "Batal",
         "splitTitle": "Pilih di peta tempat membelah jalan ini"
     },
-    "notes": {
-        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan",
-        "noteIsPublic": "Ini akan terlihat oleh semua orang",
-        "isClosed": "Catatan ini diselesaikan",
-        "loginToClose": "Masuk untuk menutup catatan ini",
-        "anonymous": "Pengguna anonim",
-        "loginToAddComment": "Masuk untuk menambahkan komentar",
-        "addCommentPlaceholder": "Tambahkan komentar...",
-        "loginToAddPicture": "Masuk untuk menambahkan gambar",
-        "disableAllNoteFilters": "Nonaktifkan semua filter",
-        "addCommentAndClose": "Tambah komentar dan tutup",
-        "closeNote": "Tutup catatan",
-        "isCreated": "Catatan Anda telah dibuat!",
-        "createNoteIntro": "Apakah ada yang salah atau hilang di peta? Buat catatan di sini. Nanti diperiksa oleh relawan.",
-        "createNoteTitle": "Buat catatan baru di sini",
-        "createNote": "Buat catatan baru"
-    },
     "translations": {
         "allMissing": "Belum ada terjemahan",
+        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan",
         "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
-        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari",
-        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan"
+        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
     },
     "validation": {
         "date": {
             "description": "Tanggal, dimulai dari tahun"
+        },
+        "decimal": {
+            "description": "Nomor"
         },
         "direction": {
             "description": "Orientasi"
@@ -151,6 +154,10 @@
             "description": "alamat email",
             "feedback": "Ini bukan alamat email yang valid"
         },
+        "float": {
+            "description": "nomor",
+            "feedback": "Ini bukan nomor"
+        },
         "int": {
             "description": "bilangan bulat"
         },
@@ -158,19 +165,12 @@
             "mustBePositive": "Angka ini harus positif",
             "notANumber": "Masukkan nomor"
         },
-        "decimal": {
-            "description": "Nomor"
-        },
-        "float": {
-            "description": "nomor",
-            "feedback": "Ini bukan nomor"
+        "url": {
+            "description": "tautan ke situs web",
+            "feedback": "Ini bukan alamat web yang valid"
         },
         "wikidata": {
             "description": "Pengidentifikasi Wikidata"
-        },
-        "url": {
-            "feedback": "Ini bukan alamat web yang valid",
-            "description": "tautan ke situs web"
         }
     }
 }

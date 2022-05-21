@@ -197,7 +197,8 @@
       "id": "street-name-sign-image",
       "render": {
         "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
-        "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}"
+        "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}",
+        "de": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}"
       }
     },
     {
