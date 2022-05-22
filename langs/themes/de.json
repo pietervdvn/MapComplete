@@ -4,8 +4,8 @@
         "title": "AED-Karte"
     },
     "artwork": {
-        "description": "Willkommen bei der Freien Kunst-Karte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
-        "title": "Freie Kunstwerk-Karte"
+        "description": "Willkommen bei der Freien Kunstkarte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
+        "title": "Freie Kunstkarte"
     },
     "benches": {
         "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Konto können Sie neue Bänke eintragen oder Details existierender Bänke bearbeiten.",
@@ -14,7 +14,7 @@
     },
     "bicycle_rental": {
         "description": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
-        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern",
+        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
         "title": "Fahrradverleih"
     },
     "bicyclelib": {
@@ -43,7 +43,7 @@
                 "presets": {
                     "0": {
                         "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
-                        "title": "eine wohnmobilstellplatz"
+                        "title": "ein Wohnmobilstellplatz"
                     }
                 },
                 "tagRenderings": {
@@ -155,7 +155,7 @@
                 "presets": {
                     "0": {
                         "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-                        "title": "eine sanitäre entsorgungsstation"
+                        "title": "eine sanitäre Entsorgungsstation"
                     }
                 },
                 "tagRenderings": {
@@ -220,13 +220,13 @@
                     "dumpstations-waterpoint": {
                         "mappings": {
                             "0": {
-                                "then": "Dieser Ort hat eine Wasserstelle"
+                                "then": "Dieser Ort hat eine Wasserzapfstelle"
                             },
                             "1": {
-                                "then": "Dieser Ort hat keine Wasserstelle"
+                                "then": "Dieser Ort hat keine Wasserzapfstelle"
                             }
                         },
-                        "question": "Hat dieser Ort eine Wasserstelle?"
+                        "question": "Hat dieser Ort eine Wasserzapfstelle?"
                     }
                 },
                 "title": {
