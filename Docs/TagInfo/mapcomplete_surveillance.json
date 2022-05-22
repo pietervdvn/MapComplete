@@ -165,7 +165,7 @@
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed one a pole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed on a pole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "pole"
     },
     {

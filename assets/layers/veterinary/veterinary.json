@@ -1,5 +1,6 @@
 {
   "id": "veterinary",
+  "description": "A layer showing veterinarians",
   "source": {
     "osmTags": {
       "or": [
@@ -29,7 +30,7 @@
   "name": {
     "en": "veterinary",
     "da": "dyrl&aelig;ge",
-    "de": "Tierarzt"
+    "de": "Tierärzte"
   },
   "title": {
     "render": {

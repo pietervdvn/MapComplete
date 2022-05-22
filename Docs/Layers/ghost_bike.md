@@ -111,11 +111,11 @@ This is rendered with In remembrance of {name}
 
 
 
-The question is  On what webpage can one find more information about the Ghost bike or the accident?
+The question is  On what webpage can one find more info about the ghost bike or the accident?
 
 This rendering asks information about the property  [source](https://wiki.openstreetmap.org/wiki/Key:source) 
 
-This is rendered with <a href='{source}' target='_blank'>More information is available</a>
+This is rendered with <a href='{source}' target='_blank'>More info available</a>
 
 
 

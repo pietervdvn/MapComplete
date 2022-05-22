@@ -272,9 +272,9 @@ This is rendered with This pump supports the following valves: {valves}
 
 
 
-  - Sclaverand (also known as Presta) corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand' target='_blank'>sclaverand</a>
+  - Sclaverand/Presta (narrow-width bike tires) corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand' target='_blank'>sclaverand</a>
   - Dunlop corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop' target='_blank'>dunlop</a>
-  - Schrader (cars) corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader' target='_blank'>schrader</a>
+  - Schrader (cars and mountainbikes) corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader' target='_blank'>schrader</a>
 
 
 

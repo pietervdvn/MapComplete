@@ -271,7 +271,8 @@
             "en": "This is a special type of defibrillator: {defibrillator}",
             "nl": "Dit is een speciaal type defibrillator: {defibrillator}",
             "sl": "To je posebna vrsta defibrilatorja: {defibrillator}",
-            "da": "Dette er en særlig type hjertestarter: {defibrillator}"
+            "da": "Dette er en særlig type hjertestarter: {defibrillator}",
+            "de": "Dies ist eine besondere Art von Defibrillator: {defibrillator}"
           },
           "hideInAnswer": true
         }

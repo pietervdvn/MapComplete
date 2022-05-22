@@ -306,11 +306,6 @@
               "then": "This building has no housename"
             },
             {
-              "if": "addr:housename=",
-              "then": "<div class='subtle'>House or building name</div>",
-              "hideInAnswer": true
-            },
-            {
               "#": "By adding nohousenumber!=yes, this option will trigger when first added, but will be untriggered if a housenumber is added, resulting in the question poping up!",
               "if": {
                 "and": [
@@ -346,17 +341,6 @@
               "addExtraTags": [
                 "addr:housenumber="
               ]
-            },
-            {
-              "if": {
-                "and": [
-                  "addr:housenumber="
-                ]
-              },
-              "then": {
-                "en": "<div class='subtle'>Number (e.g. 1, 1A, 2)</div>"
-              },
-              "hideInAnswer": true
             }
           ]
         },

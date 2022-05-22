@@ -75,7 +75,7 @@ The question is  What is the number of this house?
 
 This rendering asks information about the property  [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) 
 
-This is rendered with The housenumber is <b>{addr:housenumber}</b>
+This is rendered with The house number is <b>{addr:housenumber}</b>
 
 
 

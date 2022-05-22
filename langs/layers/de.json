@@ -1183,11 +1183,11 @@
         "tagRenderings": {
             "bird-hide-shelter-or-wall": {
                 "mappings": {
-                    "1": {
-                        "then": "Vogelbeobachtungsturm"
-                    },
                     "0": {
                         "then": "Sichtschutz zur Vogelbeobachtung"
+                    },
+                    "1": {
+                        "then": "Vogelbeobachtungsturm"
                     },
                     "2": {
                         "then": "Turm zur Vogelbeobachtung"
@@ -1200,8 +1200,8 @@
             },
             "bird-hide-wheelchair": {
                 "mappings": {
-                    "3": {
-                        "then": "Nicht zugänglich für Rollstuhlfahrer"
+                    "0": {
+                        "then": "Für Rollstuhlfahrer gibt es besondere Vorrichtungen"
                     },
                     "1": {
                         "then": "Der Ort ist rollstuhlgerecht gestaltet"
@@ -1209,8 +1209,8 @@
                     "2": {
                         "then": "Der Ort ist nur eingeschränkt rollstuhlgerecht gestaltet"
                     },
-                    "0": {
-                        "then": "Für Rollstuhlfahrer gibt es besondere Vorrichtungen"
+                    "3": {
+                        "then": "Nicht zugänglich für Rollstuhlfahrer"
                     }
                 },
                 "question": "Ist der Ort rollstuhlgerecht gestaltet?"
@@ -1224,8 +1224,8 @@
                         "then": "Betrieben von einer Forst- bzw. Naturschutzbehörde"
                     }
                 },
-                "render": "Betrieben von {operator}",
-                "question": "Wer betreibt diesen Ort zur Vogelbeobachtung?"
+                "question": "Wer betreibt diesen Ort zur Vogelbeobachtung?",
+                "render": "Betrieben von {operator}"
             }
         },
         "title": {
@@ -1339,6 +1339,9 @@
                     "1": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
+                    "2": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
+                    },
                     "3": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
                     },
@@ -1354,14 +1357,20 @@
                     "7": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
                     },
-                    "12": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Anschluss"
+                    "8": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
+                    },
+                    "9": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
                     },
                     "10": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
                     },
                     "11": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS vonTesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
+                    },
+                    "12": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Anschluss"
                     },
                     "13": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
@@ -1371,15 +1380,6 @@
                     },
                     "15": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 3 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> und Kabel"
-                    },
-                    "9": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
-                    },
-                    "2": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
-                    },
-                    "8": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
                     },
                     "16": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
@@ -1646,8 +1646,8 @@
                         "then": "<b>Schuko-Steckdose</b> ohne Erdungsstift (CEE7/4 Typ F) liefert 16 A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> liefert maximal {socket:schuko:current} A",
-                "question": "Welche Stromstärke liefern die Anschlüsse mit <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Schutzkontakt (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?"
+                "question": "Welche Stromstärke liefern die Anschlüsse mit <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Schutzkontakt (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> liefert maximal {socket:schuko:current} A"
             },
             "current-1": {
                 "mappings": {
@@ -1706,6 +1706,14 @@
                 "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:current} A"
             },
+            "current-14": {
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefern maximal {socket:bosch_3pin:current} A"
+            },
+            "current-15": {
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefern maximal {socket:bosch_5pin:current} A"
+            },
             "current-2": {
                 "mappings": {
                     "0": {
@@ -1721,8 +1729,8 @@
                         "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 32 A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1_cable:current} A",
-                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?"
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1_cable:current} A"
             },
             "current-4": {
                 "mappings": {
@@ -1730,8 +1738,8 @@
                         "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 32 A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1:current} A",
-                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?"
+                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1:current} A"
             },
             "current-5": {
                 "mappings": {
@@ -1838,9 +1846,61 @@
                 "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> sind hier vorhanden?",
                 "render": "Hier sind <b class='text-xl'>{socket:typee}</b> Stecker des Typs <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> vorhanden"
             },
+            "plugs-10": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden"
+            },
+            "plugs-11": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden"
+            },
+            "plugs-12": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 Stecker mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 Stecker mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden"
+            },
+            "plugs-13": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:USB-A}</b>-Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> vorhanden"
+            },
+            "plugs-14": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:bosch_3pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> vorhanden"
+            },
+            "plugs-15": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:bosch_5pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> vorhanden"
+            },
+            "plugs-2": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:chademo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> vorhanden"
+            },
+            "plugs-3": {
+                "question": "Wie viele Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type1_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden"
+            },
+            "plugs-4": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type1}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden"
+            },
+            "plugs-5": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type1_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> vorhanden"
+            },
+            "plugs-6": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden"
+            },
             "plugs-7": {
                 "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?",
                 "render": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden"
+            },
+            "plugs-8": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type2_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden"
+            },
+            "plugs-9": {
+                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?",
+                "render": "Hier sind <b class='text-xl'>{socket:type2_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden"
             },
             "power-output-0": {
                 "mappings": {
@@ -2126,66 +2186,6 @@
             },
             "website": {
                 "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
-            },
-            "plugs-15": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:bosch_5pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> vorhanden"
-            },
-            "plugs-10": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden"
-            },
-            "plugs-2": {
-                "render": "Hier sind <b class='text-xl'>{socket:chademo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-14": {
-                "render": "Hier sind <b class='text-xl'>{socket:bosch_3pin}</b>-Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Stiften</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-4": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:type1}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden"
-            },
-            "plugs-13": {
-                "render": "Hier sind <b class='text-xl'>{socket:USB-A}</b>-Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen elektronischen Geräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-5": {
-                "render": "Hier sind <b class='text-xl'>{socket:type1_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-11": {
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?"
-            },
-            "plugs-6": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_supercharger}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> vorhanden"
-            },
-            "plugs-8": {
-                "render": "Hier sind <b class='text-xl'>{socket:type2_combo}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> sind hier vorhanden?"
-            },
-            "current-14": {
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefern maximal {socket:bosch_3pin:current} A",
-                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
-            },
-            "plugs-12": {
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 Stecker mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:tesla_destination}</b> Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 Stecker mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden"
-            },
-            "plugs-3": {
-                "question": "Wie viele Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> sind hier vorhanden?",
-                "render": "Hier sind <b class='text-xl'>{socket:type1_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> vorhanden"
-            },
-            "current-15": {
-                "question": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefern maximal {socket:bosch_5pin:current} A"
-            },
-            "plugs-9": {
-                "render": "Hier sind <b class='text-xl'>{socket:type2_cable}</b> Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> vorhanden",
-                "question": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> sind hier vorhanden?"
             }
         },
         "title": {
@@ -2454,6 +2454,7 @@
         }
     },
     "climbing_opportunity": {
+        "description": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden",
         "name": "Klettermöglichkeiten?",
         "tagRenderings": {
             "climbing-opportunity-name": {
@@ -2476,8 +2477,7 @@
         },
         "title": {
             "render": "Klettermöglichkeit?"
-        },
-        "description": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden"
+        }
     },
     "climbing_route": {
         "description": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
@@ -2941,11 +2941,11 @@
                     "5": {
                         "then": "Verpflichtender (Moped-)Radweg"
                     },
-                    "7": {
-                        "then": "Kein Verkehrsschild vorhanden"
-                    },
                     "6": {
                         "then": "Radweg ohne Nutzungspflicht"
+                    },
+                    "7": {
+                        "then": "Kein Verkehrsschild vorhanden"
                     }
                 },
                 "question": "Welches Verkehrszeichen hat dieser Radweg?"
@@ -3283,29 +3283,29 @@
                     "0": {
                         "then": "Der Eingangstyp ist nicht bekannt"
                     },
+                    "1": {
+                        "then": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet"
+                    },
                     "2": {
                         "then": "Dies ist der Haupteingang"
                     },
                     "3": {
                         "then": "Dies ist ein Nebeneingang"
                     },
+                    "4": {
+                        "then": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, ..."
+                    },
                     "5": {
                         "then": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit"
+                    },
+                    "6": {
+                        "then": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)"
                     },
                     "7": {
                         "then": "Dies ist ein Notausgang"
                     },
                     "8": {
                         "then": "Dies ist ein Eingang zu einem privaten Haus"
-                    },
-                    "4": {
-                        "then": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, ..."
-                    },
-                    "6": {
-                        "then": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)"
-                    },
-                    "1": {
-                        "then": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet"
                     }
                 },
                 "question": "Um welchen Eingangstyp handelt es sich hier?"
@@ -3317,6 +3317,12 @@
                     },
                     "1": {
                         "then": "Diese Tür ist <b>nicht</b> automatisiert"
+                    },
+                    "2": {
+                        "then": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird"
+                    },
+                    "3": {
+                        "then": "Diese Tür öffnet sich automatisch, wenn ein <b>Sensor im Boden</b> ausgelöst wird"
                     },
                     "4": {
                         "then": "Diese Tür öffnet sich automatisch, wenn ein <b>Taster betätigt wird</b>"
@@ -3332,12 +3338,6 @@
                     },
                     "8": {
                         "then": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage"
-                    },
-                    "2": {
-                        "then": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird"
-                    },
-                    "3": {
-                        "then": "Diese Tür öffnet sich automatisch, wenn ein <b>Sensor im Boden</b> ausgelöst wird"
                     }
                 }
             },
@@ -3366,6 +3366,9 @@
                 "question": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
                 "render": "Benannt nach {name:etymology}"
             },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}"
+            },
             "wikipedia": {
                 "render": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
             },
@@ -3375,9 +3378,6 @@
             },
             "zoeken op inventaris onroerend erfgoed": {
                 "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>"
-            },
-            "street-name-sign-image": {
-                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}"
             }
         }
     },
@@ -3430,23 +3430,23 @@
                 "render": "Der Name der Feuerwache ist {name}."
             },
             "station-operator": {
-                "render": "Der Betreiber ist {operator:type}.",
                 "mappings": {
-                    "2": {
-                        "then": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben."
-                    },
                     "1": {
                         "then": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben."
+                    },
+                    "2": {
+                        "then": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben."
                     },
                     "3": {
                         "then": "Die Feuerwache wird von einer privaten Organisation betrieben."
                     }
                 },
-                "question": "Wie kann der Betreiber der Feuerwache eingestuft werden?"
+                "question": "Wie kann der Betreiber der Feuerwache eingestuft werden?",
+                "render": "Der Betreiber ist {operator:type}."
             },
             "station-street": {
-                "render": "Die Feuerwache liegt an der Straße namens {addr:street}.",
-                "question": " In welcher Straße ist die Feuerwache?"
+                "question": " In welcher Straße ist die Feuerwache?",
+                "render": "Die Feuerwache liegt an der Straße namens {addr:street}."
             }
         },
         "title": {

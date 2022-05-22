@@ -7,7 +7,7 @@
     "nb_NO": "Kart over brannhydranter",
     "ru": "Карта пожарных гидрантов",
     "fr": "Carte des bornes incendie",
-    "de": "Hydranten anzeigen",
+    "de": "Hydranten",
     "it": "Mappa degli idranti",
     "nl": "Kaart van brandkranen"
   },
@@ -130,7 +130,7 @@
         "it": "Di che tipo è questo idrante?",
         "ru": "К какому типу относится этот гидрант?",
         "fr": "De quel type de borne s’agit-il ?",
-        "de": "Um welche Art von Hydrant handelt es sich?",
+        "de": "Welche Bauform hat der Hydrant?",
         "nl": "Wat voor soort brandkraan is dit?"
       },
       "freeform": {
@@ -173,7 +173,7 @@
             "en": "Pillar type.",
             "ja": "ピラー型。",
             "fr": "Pilier.",
-            "de": "Säulenart.",
+            "de": "Überflurhydrant.",
             "it": "Soprasuolo.",
             "nl": "Pillaar type."
           },
@@ -192,7 +192,7 @@
             "en": "Pipe type.",
             "ja": "パイプ型。",
             "fr": "Tuyau.",
-            "de": "Rohrtyp.",
+            "de": "Druckloses Rohr.",
             "it": "Tubo.",
             "nl": "Buis type."
           },
@@ -213,7 +213,7 @@
             "ru": "Тип стены.",
             "ja": "壁型。",
             "fr": "Mural.",
-            "de": "Wandtyp.",
+            "de": "Wandhydrant.",
             "it": "A muro.",
             "nl": "Muur type."
           },
@@ -232,7 +232,7 @@
             "en": "Underground type.",
             "ja": "地下式。",
             "fr": "Enterré.",
-            "de": "Untergrundtyp.",
+            "de": "Unterflurhydrant.",
             "it": "Sottosuolo.",
             "nl": "Ondergronds type.",
             "ca": "L'hidrant està soterrat."
@@ -282,7 +282,7 @@
             "en": "The hydrant is unavailable",
             "ja": "消火栓は使用できません。",
             "fr": "La borne est hors-service.",
-            "de": "Der Hydrant ist nicht verfügbar",
+            "de": "Der Hydrant ist nicht mehr in Betrieb",
             "it": "L’idrante è fuori servizio.",
             "nl": "De brandkraan is niet beschikbaar"
           }
@@ -319,7 +319,7 @@
         "ja": "消火栓",
         "nb_NO": "en brannhydrant",
         "fr": "une borne incendie",
-        "de": "eine löschwasser-hydrant",
+        "de": "einen Hydranten",
         "it": "una idrante antincendio",
         "nl": "een brandkraan"
       },

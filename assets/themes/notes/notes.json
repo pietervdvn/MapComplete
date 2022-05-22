@@ -18,7 +18,7 @@
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
     "hu": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>.",
     "nl": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ...",
-    "de": "Eine Notiz ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzer und Text gesucht werden.",
+    "de": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
     "es": "Una nota es un pin en el mapa con algún texto para indicar algo erróneo.<br/><br/>Asegúrate de comprobar la <a href='#filters'> vista de filtros</a> para buscar usuarios y texto."
   },
   "icon": "./assets/themes/notes/logo.svg",

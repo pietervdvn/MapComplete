@@ -227,7 +227,7 @@ This is rendered with Mounting method: {camera:mount}
 
 
   - This camera is placed against a wall corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a>
-  - This camera is placed one a pole corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole' target='_blank'>pole</a>
+  - This camera is placed on a pole corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole' target='_blank'>pole</a>
   - This camera is placed on the ceiling corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dceiling' target='_blank'>ceiling</a>
   - This camera is placed on a street light corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dstreet_lamp' target='_blank'>street_lamp</a>
   - This camera is placed on a tree corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dtree' target='_blank'>tree</a>

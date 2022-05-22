@@ -7,7 +7,7 @@
     "it": "Mappa delle caserme dei vigili del fuoco",
     "ru": "Карта пожарных частей",
     "fr": "Couche des stations de pompiers",
-    "de": "Feuerwachen anzeigen",
+    "de": "Feuerwachen",
     "nl": "Kaart van de brandweerstations"
   },
   "minzoom": 12,
@@ -51,7 +51,7 @@
         "ru": "Как называется эта пожарная часть?",
         "it": "Come si chiama questa caserma dei vigili del fuoco?",
         "fr": "Quel est le nom de la station ?",
-        "de": "Wie lautet der Name dieser Feuerwache?",
+        "de": "Wie ist der Name der Feuerwache?",
         "nl": "Wat is de naam van dit brandweerstation?"
       },
       "render": {
@@ -61,7 +61,8 @@
         "ru": "Эта часть называется {name}.",
         "fr": "Cette station s’appelle {name}.",
         "nb_NO": "Denne stasjonen heter {name}.",
-        "nl": "Dit station heet {name}."
+        "nl": "Dit station heet {name}.",
+        "de": "Der Name der Feuerwache ist {name}."
       }
     },
     {
@@ -75,7 +76,8 @@
         "it": " Qual è il nome della via in cui si trova la caserma?",
         "ru": " По какому адресу расположена эта часть?",
         "fr": " Quel est le nom de la rue dans lequel elle se situe ?",
-        "nl": " Aan welke straat ligt dit station?"
+        "nl": " Aan welke straat ligt dit station?",
+        "de": " In welcher Straße ist die Feuerwache?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -84,7 +86,7 @@
         "fr": "La station fait partie de la {addr:street}.",
         "it": "La stazione si trova in una strada chiamata {addr:street}.",
         "nl": "Dit station ligt aan {addr:street}.",
-        "de": "Dieser Bahnhof liegt an der Straße {addr:street}."
+        "de": "Die Feuerwache liegt an der Straße namens {addr:street}."
       }
     },
     {
@@ -154,7 +156,8 @@
         "ja": "ステーションの運営の分類は?",
         "fr": "Quel est le type d’exploitant ?",
         "it": "Com’è classificato il gestore di questa stazione?",
-        "nl": "Wat voor soort beheerder beheert dit station?"
+        "nl": "Wat voor soort beheerder beheert dit station?",
+        "de": "Wie kann der Betreiber der Feuerwache eingestuft werden?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -162,7 +165,7 @@
         "fr": "L’exploitant est de type {operator:type}.",
         "it": "Il gestore è un ente {operator:type}.",
         "nl": "De beheerder is een organisatie van type {operator:type} .",
-        "de": "Der Betreiber ist {operator:type}"
+        "de": "Der Betreiber ist {operator:type}."
       },
       "freeform": {
         "key": "operator:type"
@@ -194,7 +197,8 @@
             "ja": "任意団体やコミュニティが運営しているステーションである。",
             "fr": "La station est opérée par une organisation informelle.",
             "it": "Questa stazione è gestita dalla comunità oppure un’associazione informale.",
-            "nl": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie."
+            "nl": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie.",
+            "de": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben."
           }
         },
         {
@@ -208,7 +212,8 @@
             "ja": "公益団体が運営しているステーションである。",
             "fr": "La station est opérée par un groupe officiel de bénévoles.",
             "it": "Questa stazione è gestita da un gruppo di volontari ufficiale.",
-            "nl": "Dit station wordt beheerd door een formele groep vrijwilligers."
+            "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
+            "de": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben."
           }
         },
         {
@@ -222,7 +227,8 @@
             "ja": "個人が運営しているステーションである。",
             "fr": "La station est opérée par un groupe privé.",
             "it": "Questa stazione è gestita da privati.",
-            "nl": "Dit station wordt door private organisatie beheerd."
+            "nl": "Dit station wordt door private organisatie beheerd.",
+            "de": "Die Feuerwache wird von einer privaten Organisation betrieben."
           }
         }
       ]
@@ -239,7 +245,7 @@
         "ja": "消防署",
         "ru": "Пожарная часть",
         "fr": "une caserne de pompiers",
-        "de": "Eine Feuerwache",
+        "de": "eine Feuerwache",
         "it": "una caserma dei vigili del fuoco",
         "nb_NO": "en brannstasjon",
         "nl": "een brandweerstation"

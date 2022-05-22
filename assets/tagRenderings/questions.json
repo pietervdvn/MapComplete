@@ -81,7 +81,8 @@
           "fil": "Wala pang kawing ng Wikipedia page",
           "es": "Todavía no se ha enlazado una página de wikipedia",
           "zh_Hans": "尚未有连接到的维基百科页面",
-          "da": "Der er endnu ikke linket til nogen Wikipedia-side"
+          "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+          "id": "Belum ada halaman Wikipedia yang ditautkan"
         },
         "hideInAnswer": true
       }
@@ -186,7 +187,8 @@
           "fil": "Hindi naka-ugnay sa Wikipedia",
           "es": "No enlazado con Wikipedia",
           "zh_Hans": "不要连接到维基百科",
-          "da": "Ikke linket til Wikipedia"
+          "da": "Ikke linket til Wikipedia",
+          "id": "Tidak ditautkan dengan Wikipedia"
         }
       }
     ],
@@ -246,7 +248,7 @@
       "id": "Apa situs web dari {title()}?",
       "zh_Hant": "{title()} 網址是什麼？",
       "it": "Qual è il sito web di {title()}?",
-      "de": "Was ist die Website von {title()}?",
+      "de": "Wie ist die Website von {title()}?",
       "pt_BR": "Qual o site de {title()}?",
       "pl": "Jaka jest strona internetowa {title()}?",
       "sv": "Vad är webbplatsen för {title()}?",
@@ -347,7 +349,8 @@
           "ja": "この場所は、車いすで簡単に行くことができます",
           "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
           "es": "Este lugar es fácilmente accesible con una silla de ruedas",
-          "da": "Dette sted er let tilgængeligt med en kørestol"
+          "da": "Dette sted er let tilgængeligt med en kørestol",
+          "id": "Tempat ini mudah dijangkau dengan kursi roda"
         }
       },
       {
@@ -374,7 +377,8 @@
           "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
           "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
           "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
-          "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let"
+          "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+          "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
         }
       },
       {
@@ -580,7 +584,8 @@
       "fil": "Anong oras nagbubukas ang {title()}?",
       "es": "¿Cuales son las horas de apertura de {title()}?",
       "zh_Hans": "{title()} 的开放时间为何？",
-      "da": "Hvad er åbningstiderne for {title()}?"
+      "da": "Hvad er åbningstiderne for {title()}?",
+      "id": "Kapan jam buka {title()}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -603,7 +608,8 @@
       "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
       "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
       "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
-      "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}"
+      "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+      "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -893,7 +899,8 @@
       "fil": "Natagpuan sa ika-{level} na palapag",
       "es": "Localizada en la {level}° planta",
       "da": "Beliggende på {level}. etage",
-      "nb_NO": "Ligger i {level} etasje"
+      "nb_NO": "Ligger i {level} etasje",
+      "id": "Terletak di lantai {level}"
     },
     "freeform": {
       "key": "level",

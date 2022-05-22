@@ -1042,7 +1042,8 @@
           "if": "traffic_sign=NL:G13",
           "then": {
             "en": "Non-compulsory cycleway",
-            "nl": "Onverplicht fietspad"
+            "nl": "Onverplicht fietspad",
+            "de": "Radweg ohne Nutzungspflicht"
           },
           "hideInAnswer": "_country!=nl",
           "addExtraTags": [
