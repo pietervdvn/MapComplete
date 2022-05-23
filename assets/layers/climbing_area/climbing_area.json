@@ -299,7 +299,10 @@
     },
     {
       "color": {
-        "render": "#d38d5fAA"
+        "dashArray": "8 8",
+        "lineCap": "square",
+        "render": "#d38d5fAA",
+        "fill": "no"
       },
       "width": {
         "render": "8"
